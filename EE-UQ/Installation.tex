@@ -1,0 +1,18 @@
+\begin{enumerate}
+ \item The SimCenter is not recognized as either an Apple or a Windows software vendor. As a consequence, the applications are not recognized by the operating system as being signed. As a consequence It is required to start the software in a special way when they invoke it for first time. 
+ 
+a.	Mac: operating system the application must be started by right clicking (ctrl-click) on it.
+
+ \item To run the applications locally the external applications OpenSees and Dakota must both be installed and set up to run on your operating system. When both are installed further steps are required so that the EE-UQ application fids them:
+  
+a.	Mac: in your home directory there should be a file .bashrc. You need to add the paths to the OpenSees and Dakota executables to your PATH environment variable. For example, I placed the OpenSees executable in my home directory in the opensees-3.0.0/bin and I installed Dakota also in my home directory. I added the following 2 lines in my .bashrc file:
+
+export PATH=\$HOME/opensees-3.0.0/bin:\$PATH
+
+export PATH=\$HOME/dakota-6.7.0/bin:\$PATH \\
+
+b.	Windows (Assuming Windows 10): The windows version also requires that the Visual Studio 2017 C++ runtime be installed. Chances are some software you are using has already done this for you. If this is not the case you will be required to install it from the windows website. \\
+https://support.microsoft.com/en-us/help/2977003/the-latest-supported-visual-c-downloads
+
+ \item Python
+\end{enumerate}
