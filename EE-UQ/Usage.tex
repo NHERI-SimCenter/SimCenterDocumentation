@@ -1,21 +1,25 @@
 
-It is the UI that the user interacts with. The interface itself, as shown in \autoref{fig:figure1}, 
-provides the user with a selection of input widgets in which, for the application of choosing, 
-the user provides the information needed by the application for that part of the workflow. 
-As seen in \autoref{fig:figure1}, on the left-hand side of the UI the user is presented with a selection of different applications used in the workflow. 
-The input panel selection area consists of a number of choices:
+It is the UI that the user interacts with. The interface itself, as
+shown in \autoref{fig:figure1}, provides the user with a selection of
+input widgets in which, for the application of choosing, the user
+provides the information needed by the application for that part of
+the workflow.  As seen in \autoref{fig:figure1}, on the left-hand side
+of the UI the user is presented with a selection of different
+applications used in the workflow.  The input panel selection area
+consists of a number of choices:
 
 \begin{enumerate}
   \item BIM: structure information, description and model generation.
   \item EVT: earthquake motions specification
   \item FEM: finite element application
-  \item UQ: Uncertainty quantification: specification of the random variable parameters and UQ analysis options
+  \item UQ: Uncertainty quantification: specification of the random
+  variable parameters and UQ analysis options
   \item RES: results output.
 \end{enumerate}
 
-
-Selecting any of these will change the input panel. It is here that the user selects the actual application to be used and provides input for that application. 
-
+Selecting any of these will change the input panel. It is here that
+the user selects the actual application to be used and provides input
+for that application.
 
 \begin{figure}[!htbp]
   \centering {
@@ -25,8 +29,10 @@ Selecting any of these will change the input panel. It is here that the user sel
   \label{fig:figure1}
 \end{figure}
 
-Also in the UI is an area where status and error messages will be reported to you, a button to press to login (login is required only 
-if you want to run the job at DesignSafe) and an area with a number of push buttons:
+Also in the UI is an area where status and error messages will be
+reported to you, a button to press to login (login is required only if
+you want to run the job at DesignSafe) and an area with a number of
+push buttons:
 \begin{enumerate}
 \item	RUN – to run the simulation of the user’s desktop machine.
 \item	RUN at DesignSafe – to process the information, and send to DesignSafe where the job will be run on a supercomputer and results stored in your DesignSafe jobs folder.
@@ -44,7 +50,10 @@ defines information about the building. This includes the building type, name, y
 This information should be provided, as certain applications in the workflow that exist or are planned will need this information. 
 
 
-In the other frames the user provides the building location and in the last panel the units. this may be needed in applications further down the workflow to ensure units are consistent throughout the applications. 
+In the other frames the user provides the building location and in the
+last panel the units. this may be needed in applications further down
+the workflow to ensure units are consistent throughout the
+applications.
 
 \begin{figure}[!htbp]
   \centering {
@@ -72,24 +81,27 @@ The spatial dimension is used to align the ground motion components in the EVENT
   \label{fig:figure3}
 \end{figure}
 
-In the worked for version 1.1+ include code to describe the building in most general terms and allow 
-the user to select from expert or machine learning systems that produce the building model file.
+In the worked for version 1.1+ include code to describe the building
+in most general terms and allow the user to select from expert or
+machine learning systems that produce the building model file.
 
 \end{enumerate}
 
-
 \section{EVT (Event)}
-The event panel presents the user with a drop-down menu with a list of available applications. 
-Event applications are applications that given the building, 
-and user supplied data to the specific applications input panel will generate a list of events for the building. 
-There are a number of options:
+The event panel presents the user with a drop-down menu with a list of
+available applications.  Event applications are applications that
+given the building, and user supplied data to the specific
+applications input panel will generate a list of events for the
+building. There are a number of options:
 
 \subsection{Multiple Event}
 
-This is provided for the user to specify multiple existing SimCenter Event files. 
-If more than one event is provided it is done to provide the UQ engine with a discrete set of events to choose from. 
-It is not done with the intention of specifying that one event follows another. 
-The panel presented initially to the user is as shown in \autoref{fig:figure4}.
+This is provided for the user to specify multiple existing SimCenter
+Event files.  If more than one event is provided it is done to provide
+the UQ engine with a discrete set of events to choose from.  It is not
+done with the intention of specifying that one event follows another.
+The panel presented initially to the user is as shown
+in \autoref{fig:figure4}.
 
 \begin{figure}[!htbp]
   \centering {
@@ -141,14 +153,19 @@ Each component in a PEER event can have their own d=scale factor, again a number
 \end{figure}
 
 \subsection{Hazard Based Event}
-The panel for this event application is as shown in \autoref{fig:figure7}. 
-This application implements a scenario-based (deterministic) seismic event. 
-In this panel the user specifies an earthquake rupture (location, geometry and magnitude), a ground motion prediction equation, 
-a record selection database and the intensity measure used for record selection. 
-In the backend, this application relies on three other applications to perform seismic hazard analysis, 
-intensity measures simulation (to create a simulated target spectrum), and ground motion record selection/scaling. 
-Users interested in learning about those applications are referred to the documentation of 
-the (\href{https://github.com/NHERI-SimCenter/GroundMotionUtilities/blob/master/Readme.md}{SimCenter ground motion utilities}).
+The panel for this event application is as shown
+in \autoref{fig:figure7}.  This application implements a
+scenario-based (deterministic) seismic event.  In this panel the user
+specifies an earthquake rupture (location, geometry and magnitude), a
+ground motion prediction equation, a record selection database and the
+intensity measure used for record selection.  In the backend, this
+application relies on three other applications to perform seismic
+hazard analysis, intensity measures simulation (to create a simulated
+target spectrum), and ground motion record selection/scaling.  Users
+interested in learning about those applications are referred to the
+documentation of the
+(\href{https://github.com/NHERI-SimCenter/GroundMotionUtilities/blob/master/Readme.md}{SimCenter
+ground motion utilities}).
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.8\textwidth]
@@ -156,6 +173,9 @@ the (\href{https://github.com/NHERI-SimCenter/GroundMotionUtilities/blob/master/
   \caption{Hazard based event}
   \label{fig:figure7}
 \end{figure}
+
+\subsection{Stochastic Ground Motion Model}
+\input{stochastic_motions}
 
 \input{S3hark.tex}
 
