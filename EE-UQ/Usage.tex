@@ -1,25 +1,9 @@
 
-It is the UI that the user interacts with. The interface itself, as
-shown in \autoref{fig:figure1}, provides the user with a selection of
-input widgets in which, for the application of choosing, the user
-provides the information needed by the application for that part of
-the workflow.  As seen in \autoref{fig:figure1}, on the left-hand side
-of the UI the user is presented with a selection of different
-applications used in the workflow.  The input panel selection area
-consists of a number of choices:
+\section{User Interface}
 
-\begin{enumerate}
-  \item BIM: structure information, description and model generation.
-  \item EVT: earthquake motions specification
-  \item FEM: finite element application
-  \item UQ: Uncertainty quantification: specification of the random
-  variable parameters and UQ analysis options
-  \item RES: results output.
-\end{enumerate}
+It is the user interface (UI) that the user interacts with. The interface itself, as
+shown in \autoref{fig:figure1}, is broken down into a number of separate areas:
 
-Selecting any of these will change the input panel. It is here that
-the user selects the actual application to be used and provides input
-for that application.
 
 \begin{figure}[!htbp]
   \centering {
@@ -29,10 +13,29 @@ for that application.
   \label{fig:figure1}
 \end{figure}
 
-Also in the UI is an area where status and error messages will be
-reported to you, a button to press to login (login is required only if
-you want to run the job at DesignSafe) and an area with a number of
-push buttons:
+
+\begin{enumerate}
+
+\item Input Panel Selection: This  provides the user with a selection of items to choose from from: 
+
+\begin{enumerate}
+  \item GI: General information, for specifiction of building description, location and units.
+  \item SIM: Structure information model, for description of the building model.
+  \item EVT: Event, for selecting the earthquake motions input.
+  \item FEM: Finite element method, for specification of application and analysis options.
+  \item UQ: Uncertainty quantification, for defining the distribution of the random
+  variable paramaters and UQ method analysis options.
+  \item EDP: Engineering demand parameters, for specification of output response quantities.
+  \item RES: Results output.
+\end{enumerate}
+
+Selecting any of these will change the input panel presented.
+
+\item Input Panel: It is this are of the UI that the user provides input
+for the application chosen. For example if the user had selected UQ in the input panel selection, it is in this panel that the user would provide details on the distributions associated with each random variable or select the sampling method to use and provide the options necessary to run that method.
+
+\item Push Buttons: There are 3 buttons presented to the user:
+
 \begin{enumerate}
 \item	RUN – to run the simulation of the user’s desktop machine.
 \item	RUN at DesignSafe – to process the information, and send to DesignSafe where the job will be run on a supercomputer and results stored in your DesignSafe jobs folder.
@@ -42,13 +45,16 @@ push buttons:
 
 The Screens presented to user when the first 3 of these buttons will be discussed in 2.5.
 
-\section{BIM}
-The user in the BIM panels defines the building. There are tabbed panels for this:
-\begin{enumerate}
-\item	GIM: general Information about the building. The panel presents 3 separate frames. A frame in which the user as shown in \autoref{fig:figure2}, 
-defines information about the building. This includes the building type, name, year of construction, overall height, plan area, geographic location (needed for certain event types), etc. 
-This information should be provided, as certain applications in the workflow that exist or are planned will need this information. 
+\item Login Button: Before the user can launch any jobs on DesignSafe they must first login uses their DesignSafe login and password.
 
+\item Message Area: It is this area of the interface that error and status messaged will be displayed while the application is running.
+
+\end{enumerate}
+
+\section{GI: General Information}
+The user here provides information about the building, including information about building type and location. Additionally the outlines the units that the inputs in future panels will be input in. The widget itself presents 3 separate frames for this information. A frame in which the user as shown in \autoref{fig:figure2}, 
+defines information about the building. This includes the building type, name, year of construction, overall height, plan area, etc. 
+This information should be provided, as certain applications in the workflow that exist or are planned will need this information. 
 
 In the other frames the user provides the building location and in the
 last panel the units. this may be needed in applications further down
@@ -63,10 +69,17 @@ applications.
   \label{fig:figure2}
 \end{figure}
 
+\section{SIM: Structural Information Model}
 
-\item SIM: This panel is where the user defines the building. 
+This panel is where the user defines the building. 
 There is a drop-down menu that the user will use to select from a number of different modeling options. 
-At present there is a single option, OpenSees. 
+At present there are two options: MDOF and OpenSees.
+
+\subsection{MDOF}
+
+Some text
+
+\subsection{OpenSees}
 The panel that presents is as shown in \autoref{fig:figure3}. 
 The user specifies the main script that contains the building model, 
 a list of nodes that define a column line of interest for which the responses will be determined and an entry for the dimension of the model. 
@@ -85,16 +98,15 @@ In the worked for version 1.1+ include code to describe the building
 in most general terms and allow the user to select from expert or
 machine learning systems that produce the building model file.
 
-\end{enumerate}
 
-\section{EVT (Event)}
+\section{EVT: Event}
 The event panel presents the user with a drop-down menu with a list of
 available applications.  Event applications are applications that
 given the building, and user supplied data to the specific
 applications input panel will generate a list of events for the
 building. There are a number of options:
 
-\subsection{Multiple Event}
+\subsection{Multiple Existing}
 
 This is provided for the user to specify multiple existing SimCenter
 Event files.  If more than one event is provided it is done to provide
@@ -133,8 +145,20 @@ The user can change this to another real value (AT PRESENT DO NOT USE INTEGER) o
 has the option of defining this to be a random variable by entering a name as shown for the second event. 
 Note that this variable name must not start with a number, or contain any spaces or special characters, i.e. -, +,..
 
-The Remove button is pressed to remove events. 
-Once pressed it removes all button whose event selection box is highlighted.
+The Remove button is pressed to remove events. To remove an event the user must first select
+which events they wish to remove, done by clicking in the small circle at the start of the event. Once the events to remove 
+have been selected, the user removes all these selected evenets by pressing the remove button.
+
+If the user has multiple events to load, all the event files may first be placed by the user into a seperate folder. If the
+user selects load directory, it will load all the event file (any file with a .json suffix) into the widget. Initially each event
+will be given a load factor of 1.0. Should the user include in that directory a file named Records.txt the application will open 
+that file and load the events and assigned load factors from that file. Each line represents a record, and contains 2 comma seperated values: the first value being the event file and the second value the event factor. An example Records.txt is as shown below:
+
+\begin{verbatim}
+ElCentro.json,1.5
+Rinaldi.json,2.0
+\end{verbatim}
+
 
 \subsection{Multiple PEER Event}
 This is provided for the user to specify multiple existing PEER 
@@ -143,7 +167,8 @@ For PEER events the user is required to specify the individual components for th
 The Add/Remove buttons at the top are to create and remove an event, as per 2.2.1. 
 For the PEER events the user specifies components acting in the individual degree-of-freedom directions. 
 The + and – add and remove components with the remove removing all components selected. 
-Each component in a PEER event can have their own d=scale factor, again a number or a random variable.
+Each component in a PEER event can have their own scale factor, again a number or a random variable.
+
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.8\textwidth]
@@ -151,6 +176,15 @@ Each component in a PEER event can have their own d=scale factor, again a number
   \caption{PEER event}
   \label{fig:figure6}
 \end{figure}
+
+If the user has multiple events to load the user can again place att the PEER .AT2 files into a seperate folder and slect the Load Directory option. This will allow the user to select a directory. Once selected all .AT2 files in that directory will be loaded into the application. Similar to loading multiple SimCenter events should the user provide a file Records.txt in that directory, the application will load all files in the list and set the appropriate load factor. An example Results.txt file for multiple Peer events is as shown below:
+
+\begin{verbatim}
+elCentro.AT2,1.5
+Rinaldi228.AT2,2.0
+Rinaldi318.AT2,2.0
+\end{verbatim}
+
 
 \subsection{Hazard Based Event}
 The panel for this event application is as shown
