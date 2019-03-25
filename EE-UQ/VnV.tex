@@ -1,18 +1,22 @@
-The following section (will) contain examples that verify the functionality of the tool.
+This section provides examples of using \texttt{EE-UQ} for uncertainty
+quantification of structural analysis models used in earthquake
+engineering. Results of each model are verified against results
+obtained using other tools.
 
-Examples
-This section provides examples of using EE-UQ for uncertainty quantification of structural analysis models used in earthquake engineering. 
-Results of each model is verified against results obtained using other tools.
-Two-Dimensional Portal Frame subjected to Gravity and Earthquake Loading
-In this example, a simple 2D portal frame model is used to verify the results of $EE-UQ$. 
-The model is a linear elastic single-bay single-story model of a reinforced concrete portal frame (\autoref{fig:figure20}). 
-The analysis of this model considers both gravity loading and lateral earthquake loading due to El Centro earthquake 
-(Borrego Mountain 04/09/68 0230, El Centro ARRAY \#9, 270). 
-The original model and ground motion used in this example were obtained from 
-\href{http://opensees.berkeley.edu/wiki/index.php/OpenSees_Example_1b._Elastic_Portal_Frame}{example 1b} in OpenSees website, 
-and were modified to scale the ground motion record from gravity units (g) to the model units (in/sec2). 
-Files for this example are included with the release of the software and are available in the Examples folder in a subfolder called PortalFrame2D.
-
+\section{Two-Dimensional Portal Frame subjected to Gravity and Earthquake Loading}
+In this example, a simple 2D portal frame model is used to verify the
+results of \texttt{EE-UQ}. The model is a linear elastic single-bay,
+single-story model of a reinforced concrete portal frame, as shown in
+\autoref{fig:figure20}. The analysis of this model considers both
+gravity loading and lateral earthquake loading due to the El Centro
+earthquake (Borrego Mountain 04/09/68 0230, El Centro ARRAY \#9, 270).
+The original model and ground motion used in this example were
+obtained from
+\href{http://opensees.berkeley.edu/wiki/index.php/OpenSees_Example_1b._Elastic_Portal_Frame}{example 1b} on the \texttt{OpenSees} website, 
+and were modified to scale the ground motion record from gravity units, $g$,
+to the model units, $in/s^2$. Files for this example are included
+with the release of the software and are available in the Examples
+folder in a subfolder called \texttt{PortalFrame2D}.
 
 \begin{figure}[!htbp]
   \centering {
@@ -22,10 +26,13 @@ Files for this example are included with the release of the software and are ava
   \label{fig:figure20}
 \end{figure}
 
-To introduce uncertainty in the model, both mass and young’s modulus are assumed to be normally distributed random variables with means and 
-standard deviation values shown in Table 1. In this example, the model will be sampled with the Latin Hypercube sampling method using both 
-EE-UQ and a Python script (PortalFrameSampling.py) and response statistics from both analyses will be compared.
-
+To introduce uncertainty in the model, both mass and young’s modulus
+are assumed to be normally distributed random variables with means and
+standard deviation values shown in \autoref{tab:uncertainty}. In this
+example, the model will be sampled with the Latin Hypercube sampling
+method using both \texttt{EE-UQ} and a Python script
+(\texttt{PortalFrameSampling.py}) and response statistics from both
+analyses are compared.
 
 \begin{table}[hbt!]                       
   \centering
@@ -37,15 +44,14 @@ EE-UQ and a Python script (PortalFrameSampling.py) and response statistics from 
 	Young’s Modulus, E [ksi] & 	Normal	 & 4227	 & 500.0 \\ \hline
   \end{tabular}
 \end{adjustbox}
-  \caption{ Uncertain parameters defined in the portal frame model}             
+  \caption{Uncertain parameters defined in the portal frame model}             
   \label{tab:uncertainty}                 
 \end{table}
 
-
-
-Modeling uncertainty using EE-UQ can be done using the following steps:
+Modeling uncertainty using \texttt{EE-UQ} can be done using the
+following steps:
 \begin{enumerate}
-\item	 Start EE-UQ, click on the simulation tab (SIM) in the left bar to open a building simulation model. Click on choose button in the input script row:
+\item	 Start \texttt{EE-UQ}, click on the simulation tab (SIM) in the left bar to open a building simulation model. Click on choose button in the input script row:
 
 \begin{figure}[!htbp]
   \centering {
@@ -55,7 +61,7 @@ Modeling uncertainty using EE-UQ can be done using the following steps:
   \label{fig:figure21}
 \end{figure}
 
-\item	 Choose the model file Portal2D-UQ.tcl from PortalFrame2D example folder.
+\item	 Choose the model file \texttt{Portal2D-UQ.tcl} from PortalFrame2D example folder.
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.8\textwidth]
@@ -65,7 +71,7 @@ Modeling uncertainty using EE-UQ can be done using the following steps:
 \end{figure}
 
 
-\item	 In the list of Clines Nodes edit box, enter “1, 3”. This indicates to EE-UQ that nodes 1 and 3 are the nodes used to obtain EDP at different floor levels (i.e. base and first floor).
+\item	 In the list of Clines Nodes edit box, enter “1, 3”. This indicates to \texttt{EE-UQ} that nodes 1 and 3 are the nodes used to obtain EDP at different floor levels (i.e. base and first floor).
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.8\textwidth]
@@ -84,7 +90,7 @@ Then click on the choose button to select the event file.
   \label{fig:figure24}
 \end{figure}
 
-\item Choose the event file (BM68elc.json) for El Centro earthquake provided in the portal frame 2D example folder.
+\item Choose the event file (\texttt{BM68elc.json}) for El Centro earthquake provided in the portal frame 2D example folder.
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.8\textwidth]
@@ -93,9 +99,10 @@ Then click on the choose button to select the event file.
   \label{fig:figure25}
 \end{figure}
 
-\item Now select the random variables tab (RVs) from the left bar, change the random variables types to normal 
-and set the mean and standard deviation values of the floor mass and Young’s modulus. 
-Notice that EE-UQ has automatically detected parameters defined in the OpenSees tcl file using the pset command and defined them as random variables.
+\item Now select the random variables tab (RVs) from the left bar, change the random variables types to normal and set the mean and standard deviation values of the floor mass and
+Young’s modulus.  Notice that \texttt{EE-UQ} has automatically
+detected parameters defined in the \texttt{OpenSees} tcl file using the pset
+command and defined them as random variables.
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.8\textwidth]
@@ -117,15 +124,17 @@ If everything ran successfully the program will automatically open the results t
 \end{enumerate}
 
 
+\subsection{Verification Script}
+A verification script (Listing 1) for propagating the uncertainty was
+developed in Python and is included in the example folder.  The script
+creates 1000 samples for both the Young’s modulus and mass values
+using Latin Hypercube sampling, then modifies the \texttt{OpenSees} model, runs
+it and stores the output.  After all the model samples are processed,
+the script will compute and output the mean and standard deviation
+values of the peak floor acceleration and peak drift.
 
-Verification script
-A verification script (Listing 1) for propagating the uncertainty was developed in Python and is included in the example folder. 
-The script creates 1000 samples for both the Young’s modulus and mass values using Latin Hypercube sampling, 
-then modifies the OpenSees model, runs it and stores the output. 
-After all the model samples are processed, the script will compute and output the mean and standard deviation values of the peak floor acceleration and peak drift.
 
-{\tiny
-\begin{lstlisting}[caption=Python script for analyzing the portal frame model with uncertain parameters]
+\begin{python}[caption=Python script for analyzing the portal frame model with uncertain parameters]
 import numpy as np
 import os
 import shutil
@@ -185,21 +194,24 @@ print 'Peak Floor Acceleration Std. Dev: ', np.std(PFA)
 
 print 'Mean Peak Drift: ', np.mean(PID)
 print 'Peak Drift Std. Dev.: ', np.std(PID)
+\end{python}
 
-\end{lstlisting}
-}
+\subsection{Verification of Results}
+In this section, the results produced for the portal frame
+by \texttt{EE-UQ} are verified against the results of running the same
+problem using the Python script.  Running the uncertainty
+quantification problem on the local computer produces the results
+shown in \autoref{fig:figure28} Running the analysis using the
+sampling Python script produces the results shown
+in \autoref{fig:figure29}.  Both results (Mean and standard deviation
+values of EDPs) are compared in \autoref{tab:edp} and are shown to be in good
+agreement.
 
-
-Verification of results
-In this section, the results produced for the portal frame by EE-UQ are verified against the results of running the same problem using the Python script. 
-Running the uncertainty quantification problem on the local computer produces the results shown in \autoref{fig:figure28} 
-Running the analysis using the sampling Python script produces the results shown in \autoref{fig:figure29}. 
-Both results (Mean and standard deviation values of EDPs) are compared in Table 2 and are shown to be in good agreement.
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.8\textwidth]
     {figs/Figure28.png} }
-  \caption{Outputs from EE-UQ}
+  \caption{Outputs from \texttt{EE-UQ}}
   \label{fig:figure28}
 \end{figure}
 
@@ -220,7 +232,7 @@ Both results (Mean and standard deviation values of EDPs) are compared in Table 
 \begin{adjustbox}{max width=\textwidth}            
   \begin{tabular}{lllll}                    
     \toprule          
-      Engineering Demand Parameter &	 & EE-UQ	& Python Script	 & Percent Difference [\%]  \\ \hline
+      Engineering Demand Parameter &	 & \texttt{EE-UQ}	& Python Script	 & Percent Difference [\%]  \\ \hline
     
 	\multirow{2}{*}{Peak Floor Acceleration [in/$s^2$]} 
 	 & Mean &	67.4377	& 67.5448	& 0.16 \\
@@ -234,6 +246,9 @@ Both results (Mean and standard deviation values of EDPs) are compared in Table 
                             
   \end{tabular}
 \end{adjustbox}
-  \caption{Features (M=Mandatory, D=Desirable, O=Optional, P=Possible Future)}             
+  \caption{Engineering demand parameters verification}             
   \label{tab:edp}                 
 \end{table}
+
+\section{Response Spectrum Calculation using Stochastic Ground Motion Model}
+\input{smelt_EEUQ_verification}
