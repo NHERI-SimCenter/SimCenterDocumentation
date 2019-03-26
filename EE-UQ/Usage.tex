@@ -52,161 +52,23 @@ The Screens presented to user when the first 3 of these buttons will be discusse
 \end{enumerate}
 
 \section{GI: General Information}
-The user here provides information about the building and the units the user will work in. The widget itself presents 3 separate frames, as shown in \autoref{fig:figure2}, to the user:
-
-\begin{enumerate}
-\item Building Information frame in which user provide general information about the building, this include year of construction and type.
-\item Properties frame in which user provides information about number of stories, width, depth, plan area and height of the building.
-\item Location frame in which user provides location of the building. This information is used in some of event widgets to obtain events specific to the building.
-\item Units frame  in which user specifies what the units will be for the inputs and outputs. Some widgets will require inputs in different units. These entries will contain units beside the specific entry to mark this.
-\end{enumerate}
-
-
-\begin{figure}[!htbp]
-  \centering {
-    \includegraphics[width=0.8\textwidth]
-    {figs/Figure2.png} }
-  \caption{BIM}
-  \label{fig:figure2}
-\end{figure}
+\include{GeneralInformation}
 
 \section{SIM: Structural Information Model}
-
-This panel is where the user defines the structural model of the building. The structural model is that part of the building provided to resist the lateral loads. There are a number of backend applications provided for this part of the workflow, each responsible for providing the structural analysis model to the workflow. The drop-down menu at the top of this panel is where the user selects which application to use. As the user switches between applications, the entry data changes to reflect the different inputs the different applications require. At present there are two backend applications available through the drop down menu: MDOF and OpenSees.
-
-\subsection{MDOF}
-
-This panel is provided for users to quickly create simple shear models of a building. The panel is divided into 3 frames:
-\begin{enumerate}
-\item in the top left frame the user enters the number of stories. For each story the user then enter the story height, initial stifness in 1 and 2 directions, yield strength in 1 and 2 directions, and hardeing ratio again in 1 and 2 directions. In addition user enters the floor weights and damping ratios for each of the modes.
-\item In the lower left frame the user has the option of overriding an an individual floor or story basis, any of the properties set in the upper frame.
-\item on the right side of the frame is a graphical widget showing the current building. When entering data into the lower left frame, those floors and stories corresponding to data being modified is highlighted in red.
-\end{enumerate} 
-
-Random Variables: Random Variables can be created by the user entering a valid string instead of a number in the entry fields for all entries except the number of floors. The variable name entered will appear as a Random Variable in the UQ panel and it is there that the user must enter the distribution for the Random Variable.
-
-
-\subsection{OpenSees}
-The panel is for users who have existing OpenSees model of a building that performs a gravity analysis and now wish to subject that building model to one of the EVENT options provided. The panel that presents is as shown in \autoref{fig:figure3}. The user has 3 fields that he needs to fill out:
-\begin{enumerate} 
-\item The user specifies the main script that contains the building model. This script should build a model and perform any gravity analysis of the building that is required before the event is applied.
-\item A llist of nodes that define a column line of interest for which the responses will be determined. The column nodes should be in order from ground floor through to roof. The EDP options use this information to determine nodes at which displacement, acceleration and story drifts are calculated. 
-\item An entry for the dimension of the model, i.e. 1D, 2D or 3D. This information is used to apply ground motions.
-\end{enumerate}
-
-\begin{figure}[!htbp]
-  \centering {
-    \includegraphics[width=0.8\textwidth]
-    {figs/Figure3.png} }
-  \caption{OpenSees Input Model}
-  \label{fig:figure3}
-\end{figure}
-
-Random Variables: In OpenSees there is an option to set variables to have certain values using the pset command, e.g pset a 5.0 will set the variable a to have a value 5 in an OpenSees script. In EE-UQ any variable found in the main script to be set using the pset command will be assumed to be a Random Variable. As such, when a new main script is loaded all variables set with pset will appear as Random Variables in the UQ panel.
-
+\input{StructuralModels}
 
 \section{EVT: Event}
-The event panel presents the user with a drop-down menu with a list of available event applications. Event applications are applications that, given the building and user supplied data to the specific
-applications input panel, will generate a list of events for the building. There are a number of options available in the pull-down menu.
-
 \input{EarthquakeEvents}
 
 
 \section{FEM: Finite Element Method}
-The FEM panel is intended to present users with a selection of FEM applications that will take a building model generated by the BIM application and the EVENT from the event application and perform a deterministic simulation. 
-At present there is only one application available, OpenSees and there is no application selection box.  That will be modified in future versionsto allow user to provide their own simulation application.  This is not the standard OpenSees executable, but consists of a pre- and post-processor to take the  BIM and EVENT file and use OpenSees to determine the response, returning these responses in an EDP. 
-
-For the OpenSees application the user is required to specify the options to be used in the transient analysis. As shown in the figure this includes the choice of 
-\begin{enumerate}
-\item Solution algorithm, the default is Newton Raphson.
-\item Integration Scheme, the default is Newmarks linear acceleration method.
-\item Convergence Test, the default is a norm on the unbalance force.
-\item Convergence tolerance
-\item Damping Ratio.
-\end{enumerate}
-
-All the options available can be found in the OpenSees online user manual.\\
-
-A default transient analysis script is run with these inputs. It is built for Version 3.0.0+ of OpenSees and uses a divide and conquer  algorithm in event of a convergence failure issue. This new algorithm does not always work. \\
-
-The user is also able to specify their 
-own analysis script to run instead of the default. When chosen the variables numStep and dt that are obtained from the EVENT are set by the program. These variables can be used by the user when providing their own analysis script.
+\input{FEM}
 
 \section{UQ}
-Throughout the input specification the user is defining variables. As described in the above sections many of these variables can be specified by the user to be random variables with a distribution on their values. It is in the UQ panel that the user specifies what these distributions are. 
-It is also here that the user specifies the UQ method and the input values are for these UQ methods. 
-The panel is split,  as shown in \autoref{fig:figure10}, into 2 frames:
- \begin{enumerate}
-\item Sampling Methods 
-\item Random Variables
-\end{enumerate}
-
-\begin{figure}[!htbp]
-  \centering {
-    \includegraphics[width=0.8\textwidth]
-    {figs/Figure10.png} }
-  \caption{UQ}
-  \label{fig:figure10}
-\end{figure}
-
-
-\subsection{Sampling Methods}
-In the sampling methods the user selects the sampling method to use from the method dropdown. Currently this is limited to two options: 
-Monte Carlo and Latin Hypercube Sampling (LHS). For the one selected, the user specifies the number of simulations to be perform and the seed.
-
-\subsection{Random Variables}
-The Random Variable panel is where the user enters the random variables. Each random variable has a name and a distribution. The distribution is selected frm the drop-down menu. By changing the distribution type, the inputs required to define the distribution change. The following are the list of distributions available:
-\begin{enumerate}
-\item Normal
-\item Lognormal
-\item Beta
-\item Uniform
-\item Weibull
-|item Gumbell
-\item UserDef
-\end{enumerate} 
-
-As with other panels, the random variables can be added or removed. Care must be taken by the user in ensuring that if the user removes random variables from this panel that they also remove them from the other input widgets. Failing to do so may result in the program faling to complete.
-
-
-\begin{figure}[!htbp]
-  \centering {
-    \includegraphics[width=0.8\textwidth]
-    {figs/Figure11.png} }
-  \caption{Random variables}
-  \label{fig:figure11}
-\end{figure}
+\input{UQ}
 
 \section{EDP: Engineering Demand Parameters}
-This panel is where the user selects the outputs to be displayed when the simulation runs. There are two options available in the pull-down menu:
-\begin{enumerate}
-\item Standard Earthquake
-\item USer Defined
-\end{enumerate}
-
-\subsection{Standard Earthquake}
-When the user selects standard Earthquake there are no additional inputs required. The standard earthquake EDP generator will ensure the the max absolute value of the following are obtained: \begin{enumerate}
-\item Relative Floor displacements:
-\item Absolute Floor Accelerations
-\item Interstory Drifts
-\end{enumerate}
-
-The  results will contain results for these in abbreviated form:
-\begin{itemize}
-\item PFD peak relative floor displacement $1-PFD-FLOOR_CLINE$
-\item PFA peak floor acceleration (relative + ground motion): $1-PFA-FLOOR-CLINE$
-\item PID peak inter-story drift: $1-PID-STORY-CLINE$
-\end{itemize}
-
-\subsection{User Defined}
-This panel allows the user to provde to determine their own output and process it. When using this option the user provides additional data:
-\begin{enumerate}
-\item Additional Input: These are additional commands that are invoked by the analysis application before the transient analysis is performed. For example, foe OpenSees this would be a script containing a series of recorder commands.
-\item Postprocess Script: This is a python script that will be invoked after the finite element application has run. It must be provided by the user. It's purpose is to process the output files and create a single file, results.out. This file must contain a single line with as many entries as EDP's specified.
-
-\item Response Parameters. This is an area in which the user associates a variable name with the column of the results output file. If the process script has an array of strings named named EDP's the script, the Response Parameters will be initially set with these values from the script.
-\end{enumerate}
-
+\input{EDP}
 
 \section{RES}
 
