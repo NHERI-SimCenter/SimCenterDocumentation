@@ -16,7 +16,7 @@ shown in \autoref{fig:figure1}, is broken down into a number of separate areas:
 
 \begin{enumerate}
 
-\item Input Panel Selection: This  provides the user with a selection of items to choose from from: 
+\item Input Panel Selection: This  area on the left side provides the user with a selection of items to choose from from: 
 
 \begin{enumerate}
   \item GI: General information, for specifiction of building description, location and units.
@@ -31,10 +31,10 @@ shown in \autoref{fig:figure1}, is broken down into a number of separate areas:
 
 Selecting any of these will change the input panel presented.
 
-\item Input Panel: It is this are of the UI that the user provides input
-for the application chosen. For example if the user had selected UQ in the input panel selection, it is in this panel that the user would provide details on the distributions associated with each random variable or select the sampling method to use and provide the options necessary to run that method.
+\item Input Panel: This is the large central area of the UI that the user provides input
+for the application chosen and views the results. For example if the user had selected UQ in the input panel selection, it is in this panel that the user would provide details on the distributions associated with each random variable or select the sampling method to use and provide the options necessary to run that method.
 
-\item Push Buttons: There are 3 buttons presented to the user:
+\item Push Buttons: This is the area near the bottom of the UI in which 4 buttons are presented to the user:
 
 \begin{enumerate}
 \item	RUN – to run the simulation of the user’s desktop machine.
@@ -43,23 +43,24 @@ for the application chosen. For example if the user had selected UQ in the input
 \item	Exit: to exit the application.
 \end{enumerate}
 
-The Screens presented to user when the first 3 of these buttons will be discussed in 2.5.
+The Screens presented to user when the first 3 of these buttons will be discussed in section 3.10.
 
-\item Login Button: Before the user can launch any jobs on DesignSafe they must first login uses their DesignSafe login and password.
+\item Login Button: At the top right of the UI is the login button. Before the user can launch any jobs on DesignSafe they must first login to DesignSafe using their DesignSafe login and password. Pressing the login button will open up the login window for users to enter this information.
 
-\item Message Area: It is this area of the interface that error and status messaged will be displayed while the application is running.
+\item Message Area: In the top center of the application is the area of the interface that error and status messaged will be displayed while the application is running.
 
 \end{enumerate}
 
 \section{GI: General Information}
-The user here provides information about the building, including information about building type and location. Additionally the outlines the units that the inputs in future panels will be input in. The widget itself presents 3 separate frames for this information. A frame in which the user as shown in \autoref{fig:figure2}, 
-defines information about the building. This includes the building type, name, year of construction, overall height, plan area, etc. 
-This information should be provided, as certain applications in the workflow that exist or are planned will need this information. 
+The user here provides information about the building and the units the user will work in. The widget itself presents 3 separate frames, as shown in \autoref{fig:figure2}, to the user:
 
-In the other frames the user provides the building location and in the
-last panel the units. this may be needed in applications further down
-the workflow to ensure units are consistent throughout the
-applications.
+\begin{enumerate}
+\item Building Information frame in which user provide general information about the building, this include year of construction and type.
+\item Properties frame in which user provides information about number of stories, width, depth, plan area and height of the building.
+\item Location frame in which user provides location of the building. This information is used in some of event widgets to obtain events specific to the building.
+\item Units frame  in which user specifies what the units will be for the inputs and outputs. Some widgets will require inputs in different units. These entries will contain units beside the specific entry to mark this.
+\end{enumerate}
+
 
 \begin{figure}[!htbp]
   \centering {
@@ -71,45 +72,47 @@ applications.
 
 \section{SIM: Structural Information Model}
 
-This panel is where the user defines the building. 
-There is a drop-down menu that the user will use to select from a number of different modeling options. 
-At present there are two options: MDOF and OpenSees.
+This panel is where the user defines the structural model of the building. The structural model is that part of the building provided to resist the lateral loads. There are a number of backend applications provided for this part of the workflow, each responsible for providing the structural analysis model to the workflow. The drop-down menu at the top of this panel is where the user selects which application to use. As the user switches between applications, the entry data changes to reflect the different inputs the different applications require. At present there are two backend applications available through the drop down menu: MDOF and OpenSees.
 
 \subsection{MDOF}
 
-Some text
+This panel is provided for users to quickly create simple shear models of a building. The panel is divided into 3 frames:
+\begin{enumerate}
+\item in the top left frame the user enters the number of stories. For each story the user then enter the story height, initial stifness in 1 and 2 directions, yield strength in 1 and 2 directions, and hardeing ratio again in 1 and 2 directions. In addition user enters the floor weights and damping ratios for each of the modes.
+\item In the lower left frame the user has the option of overriding an an individual floor or story basis, any of the properties set in the upper frame.
+\item on the right side of the frame is a graphical widget showing the current building. When entering data into the lower left frame, those floors and stories corresponding to data being modified is highlighted in red.
+\end{enumerate} 
+
+Random Variables: Random Variables can be created by the user entering a valid string instead of a number in the entry fields for all entries except the number of floors. The variable name entered will appear as a Random Variable in the UQ panel and it is there that the user must enter the distribution for the Random Variable.
+
 
 \subsection{OpenSees}
-The panel that presents is as shown in \autoref{fig:figure3}. 
-The user specifies the main script that contains the building model, 
-a list of nodes that define a column line of interest for which the responses will be determined and an entry for the dimension of the model. 
-Note the column nodes should be in order from ground floor through to roof (as drifts are calculated based on this). 
-The spatial dimension is used to align the ground motion components in the EVENT file.
+The panel is for users who have existing OpenSees model of a building that performs a gravity analysis and now wish to subject that building model to one of the EVENT options provided. The panel that presents is as shown in \autoref{fig:figure3}. The user has 3 fields that he needs to fill out:
+\begin{enumerate} 
+\item The user specifies the main script that contains the building model. This script should build a model and perform any gravity analysis of the building that is required before the event is applied.
+\item A llist of nodes that define a column line of interest for which the responses will be determined. The column nodes should be in order from ground floor through to roof. The EDP options use this information to determine nodes at which displacement, acceleration and story drifts are calculated. 
+\item An entry for the dimension of the model, i.e. 1D, 2D or 3D. This information is used to apply ground motions.
+\end{enumerate}
 
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.8\textwidth]
     {figs/Figure3.png} }
-  \caption{GIM}
+  \caption{OpenSees Input Model}
   \label{fig:figure3}
 \end{figure}
 
-In the worked for version 1.1+ include code to describe the building
-in most general terms and allow the user to select from expert or
-machine learning systems that produce the building model file.
+Random Variables: In OpenSees there is an option to set variables to have certain values using the pset command, e.g pset a 5.0 will set the variable a to have a value 5 in an OpenSees script. In EE-UQ any variable found in the main script to be set using the pset command will be assumed to be a Random Variable. As such, when a new main script is loaded all variables set with pset will appear as Random Variables in the UQ panel.
 
 
 \section{EVT: Event}
-The event panel presents the user with a drop-down menu with a list of
-available applications.  Event applications are applications that
-given the building, and user supplied data to the specific
-applications input panel will generate a list of events for the
-building. There are a number of options:
+The event panel presents the user with a drop-down menu with a list of available event applications. Event applications are applications that, given the building and user supplied data to the specific
+applications input panel, will generate a list of events for the building. There are a number of options available in the pull-down menu.
 
 \subsection{Multiple Existing}
 
 This is provided for the user to specify multiple existing SimCenter
-Event files.  If more than one event is provided it is done to provide
+Event files.  If more than one event is specified it is done to provide
 the UQ engine with a discrete set of events to choose from.  It is not
 done with the intention of specifying that one event follows another.
 The panel presented initially to the user is as shown
@@ -123,11 +126,7 @@ in \autoref{fig:figure4}.
   \label{fig:figure4}
 \end{figure}
 
-To add a new event, the user presses the Add button. 
-This adds an event to the panel. 
-Pressing the button multiple times will keep adding events to the panel. 
-\autoref{fig:figure5} shows the state after the button has been pressed twice, 
-and data entered for the ElCentro and Rinaldi Events.
+To add a new event, the user presses the Add button.  This adds an event to the panel.  Pressing the button multiple times will keep adding events to the panel.  \autoref{fig:figure5} shows the state after the button has been pressed twice, and data entered for the ElCentro and Rinaldi Events.
 
 \begin{figure}[!htbp]
   \centering {
@@ -138,27 +137,23 @@ and data entered for the ElCentro and Rinaldi Events.
 \end{figure}
 
 
-The user can enter the full path manually to the file or use the choose button, 
-which brings up your typical file search screen. 
-By default, a scaling factor of 1.0 is assigned to the event. 
+The user can enter the full path manually to the file or use the choose button,  which brings up your typical file search screen.  By default, a scaling factor of 1.0 is assigned to the event. 
 The user can change this to another real value (AT PRESENT DO NOT USE INTEGER) or the user 
 has the option of defining this to be a random variable by entering a name as shown for the second event. 
-Note that this variable name must not start with a number, or contain any spaces or special characters, i.e. -, +,..
+
+Note that this variable name must not start with a number, or contain any spaces or special characters, i.e. no -, +,..
 
 The Remove button is pressed to remove events. To remove an event the user must first select
-which events they wish to remove, done by clicking in the small circle at the start of the event. Once the events to remove 
-have been selected, the user removes all these selected evenets by pressing the remove button.
+which events they wish to remove, done by clicking in the small circle at the start of the event. Once the events to remove  have been selected, the user removes all these selected evens by pressing the remove button.
 
-If the user has multiple events to load, all the event files may first be placed by the user into a seperate folder. If the
-user selects load directory, it will load all the event file (any file with a .json suffix) into the widget. Initially each event
-will be given a load factor of 1.0. Should the user include in that directory a file named Records.txt the application will open 
-that file and load the events and assigned load factors from that file. Each line represents a record, and contains 2 comma seperated values: the first value being the event file and the second value the event factor. An example Records.txt is as shown below:
+If the user has multiple events to load, all the event files may first be placed by the user into a seperate folder. If the user presses the  Load Directory, the user will be able to choose a directory and the application will load all the event file (any file with a .json suffix) into the widget by choosing the directory. Initially each event will be given a load factor of 1.0.  Should the user include in that directory a file named Records.txt the application will open that file and load the events and assigned load factors from that file. Each line in Recors.txt is considered ro represent a record, and contains 2 comma seperated values: the first value being the event file and the second value the event factor. An example Records.txt is as shown below:
 
 \begin{verbatim}
 ElCentro.json,1.5
 Rinaldi.json,2.0
 \end{verbatim}
 
+Random Variables: The user can, as mentioned, enter a string in the factor field to specify that the factor is to be considered a random variable. Subsequently in the UQ panel the user must provide information on the random variables distribution. Also, if multiple events are specified, the event itself will be treated as a random variable, with each event being part of the discrete set of possible events.
 
 \subsection{Multiple PEER Event}
 This is provided for the user to specify multiple existing PEER 
@@ -177,7 +172,7 @@ Each component in a PEER event can have their own scale factor, again a number o
   \label{fig:figure6}
 \end{figure}
 
-If the user has multiple events to load the user can again place att the PEER .AT2 files into a seperate folder and slect the Load Directory option. This will allow the user to select a directory. Once selected all .AT2 files in that directory will be loaded into the application. Similar to loading multiple SimCenter events should the user provide a file Records.txt in that directory, the application will load all files in the list and set the appropriate load factor. An example Results.txt file for multiple Peer events is as shown below:
+If the user has multiple events to load the user can again place att the PEER .AT2 files into a separate folder and select the Load Directory option. This will allow the user to select a directory. Once selected all .AT2 files in that directory will be loaded into the application. Similar to loading multiple SimCenter events, should the user provide a file Records.txt in that directory, the application will load all files in the list and set the appropriate load factor. An example Results.txt file for multiple Peer events is as shown below:
 
 \begin{verbatim}
 elCentro.AT2,1.5
@@ -185,6 +180,7 @@ Rinaldi228.AT2,2.0
 Rinaldi318.AT2,2.0
 \end{verbatim}
 
+Random Variables: The user can, as mentioned, enter a string in the factor field to specify that the factor is to be considered a random variable. Subsequently in the UQ panel the user must provide information on the random variables distribution. Also, if multiple events are specified, the event itself will be treated as a random variable, with each event being part of the discrete set of possible events.
 
 \subsection{Hazard Based Event}
 The panel for this event application is as shown
@@ -214,7 +210,6 @@ ground motion utilities}).
 \input{S3hark.tex}
 
 
-
 \subsection{User Application}
 The final selection option is a user specific application. 
 The user specifies the application name and the input file containing the specific input information 
@@ -235,35 +230,34 @@ world readable and executable (as when user running their application through De
 \end{figure}
 
 
-\section{FEM}
-The FEM panel is intended to present users with a selection of FEM applications that will take a building model 
-generated by the BIM application and the EVENT from the event application and perform a deterministic simulation. 
-At present there is only one application available, OpenSees and there is no application selection box. 
-That will be modified in Version 1.1.0 to allow user to provide their own simulation application. 
-This is not the standard OpenSees executable, but consists of a pre- and post-processor to take the 
-BIM and EVENT file and use OpenSees to determine the response, returning these responses in an EDP. 
-Presently the default EDPs are the relative floor displacements, total accelerations (ground motion + relative response) 
-and inter-story drifts for column lines specified in the BIM panel.
+\section{FEM: Finite Element Method}
+The FEM panel is intended to present users with a selection of FEM applications that will take a building model generated by the BIM application and the EVENT from the event application and perform a deterministic simulation. 
+At present there is only one application available, OpenSees and there is no application selection box.  That will be modified in future versionsto allow user to provide their own simulation application.  This is not the standard OpenSees executable, but consists of a pre- and post-processor to take the  BIM and EVENT file and use OpenSees to determine the response, returning these responses in an EDP. 
 
-\begin{figure}[!htbp]
-  \centering {
-    \includegraphics[width=0.8\textwidth]
-    {figs/Figure9.png} }
-  \caption{FEM}
-  \label{fig:figure9}
-\end{figure}
+For the OpenSees application the user is required to specify the options to be used in the transient analysis. As shown in the figure this includes the choice of 
+\begin{enumerate}
+\item Solution algorithm, the default is Newton Raphson.
+\item Integration Scheme, the default is Newmarks linear acceleration method.
+\item Convergence Test, the default is a norm on the unbalance force.
+\item Convergence tolerance
+\item Damping Ratio.
+\end{enumerate}
 
-In the OpenSees FEM panel, the user specifies the algorithm, integration strategy, convergence test, tolerance and damping ratio. 
-A default transient analysis script is run with these inputs. It is built for Version 3.0.0+ of OpenSees and uses a divide and conquer 
-algorithm in event of a convergence failure issue. This new algorithm does not always work. The user is also able to specify their 
-own analysis script to run instead of the default. When chosen the variables numStep and dt that are obtained from the EVENT 
-should be assumed to have been set by the application before the script is run and can be used in your user defined script.
+All the options available can be found in the OpenSees online user manual.\\
+
+A default transient analysis script is run with these inputs. It is built for Version 3.0.0+ of OpenSees and uses a divide and conquer  algorithm in event of a convergence failure issue. This new algorithm does not always work. \\
+
+The user is also able to specify their 
+own analysis script to run instead of the default. When chosen the variables numStep and dt that are obtained from the EVENT are set by the program. These variables can be used by the user when providing their own analysis script.
 
 \section{UQ}
-Throughout the input specification the user is defining variables. Many of these variables can be specified by the user to be 
-random variables with a distribution on their values. It is in the UQ panel that the user specifies what these distributions are. 
-It is also here that the user specifies what UQ engine, what UQ method and other inputs are for the UQ method. 
-The panel is split into 2 tabs: Sampling Methods and Random Variables as shown in \autoref{fig:figure10}.
+Throughout the input specification the user is defining variables. As described in the above sections many of these variables can be specified by the user to be random variables with a distribution on their values. It is in the UQ panel that the user specifies what these distributions are. 
+It is also here that the user specifies the UQ method and the input values are for these UQ methods. 
+The panel is split,  as shown in \autoref{fig:figure10}, into 2 frames:
+ \begin{enumerate}
+\item Sampling Methods 
+\item Random Variables
+\end{enumerate}
 
 \begin{figure}[!htbp]
   \centering {
@@ -276,25 +270,21 @@ The panel is split into 2 tabs: Sampling Methods and Random Variables as shown i
 
 \subsection{Sampling Methods}
 In the sampling methods the user selects the sampling method to use from the method dropdown. Currently this is limited to two options: 
-Monte Carlo and Latin Hypercube Sampling (LHS). For the one selected, the user specifies the number of simulations to perform and the seed.
+Monte Carlo and Latin Hypercube Sampling (LHS). For the one selected, the user specifies the number of simulations to be perform and the seed.
 
 \subsection{Random Variables}
-The Random Variable panel is where the user enters the random variables. Each random variable has a name associated with it, a distribution, 
-and depending on the distribution a number of additional variables to specify. As with the other panels discussed, random variables can be 
-added and removed using the added remove buttons. It should also be noted that the random variables should be created automatically 
-when they are entered in previous screens. 
+The Random Variable panel is where the user enters the random variables. Each random variable has a name and a distribution. The distribution is selected frm the drop-down menu. By changing the distribution type, the inputs required to define the distribution change. The following are the list of distributions available:
+\begin{enumerate}
+\item Normal
+\item Lognormal
+\item Beta
+\item Uniform
+\item Weibull
+|item Gumbell
+\item UserDef
+\end{enumerate} 
 
-
-Some Notes:
-\begin{itemize}
-\item A current limitation of the tool is that it does not check for multiple random variables with the same name, nor does it remove a 
-random variable if the random variable is removed, e.g. factor in an earthquake event is set to a number or a different OpenSees file is loaded. 
-The user in such circumstances is required to manually remove the variable from the UQ
-\item Also, do note that when initially created Random variables are assigned a constant type. 
-The UQ engine will ignore any variables with such a type as they are not random.
-\item When using OpenSees input files, this application will read any variable set with the pset command as a random variable and create a 
-random variable for it when the user chooses the main file. See the example in example/script/Frame.tcl directory.
-\end{itemize}
+As with other panels, the random variables can be added or removed. Care must be taken by the user in ensuring that if the user removes random variables from this panel that they also remove them from the other input widgets. Failing to do so may result in the program faling to complete.
 
 
 \begin{figure}[!htbp]
@@ -305,13 +295,41 @@ random variable for it when the user chooses the main file. See the example in e
   \label{fig:figure11}
 \end{figure}
 
+\section{EDP: Engineering Demand Parameters}
+This panel is where the user selects the outputs to be displayed when the simulation runs. There are two options available in the pull-down menu:
+\begin{enumerate}
+\item Standard Earthquake
+\item USer Defined
+\end{enumerate}
+
+\subsection{Standard Earthquake}
+When the user selects standard Earthquake there are no additional inputs required. The standard earthquake EDP generator will ensure the the max absolute value of the following are obtained: \begin{enumerate}
+\item Relative Floor displacements:
+\item Absolute Floor Accelerations
+\item Interstory Drifts
+\end{enumerate}
+
+The  results will contain results for these in abbreviated form:
+\begin{itemize}
+\item PFD peak relative floor displacement $1-PFD-FLOOR_CLINE$
+\item PFA peak floor acceleration (relative + ground motion): $1-PFA-FLOOR-CLINE$
+\item PID peak inter-story drift: $1-PID-STORY-CLINE$
+\end{itemize}
+
+\subsection{User Defined}
+This panel allows the user to provde to determine their own output and process it. When using this option the user provides additional data:
+\begin{enumerate}
+\item Additional Input: These are additional commands that are invoked by the analysis application before the transient analysis is performed. For example, foe OpenSees this would be a script containing a series of recorder commands.
+\item Postprocess Script: This is a python script that will be invoked after the finite element application has run. It must be provided by the user. It's purpose is to process the output files and create a single file, results.out. This file must contain a single line with as many entries as EDP's specified.
+
+\item Response Parameters. This is an area in which the user associates a variable name with the column of the results output file. If the process script has an array of strings named named EDP's the script, the Response Parameters will be initially set with these values from the script.
+\end{enumerate}
 
 
 \section{RES}
 
-When the user hits the Run button, and assuming the results are successful. The results are presented here. 
-A successful run or download of a job that ran successfully will result in 3 tabbed widgets being displayed in this panel. 
-The first panel shows summary statistics: mean and stdDev values or min-max values if discrete set, i.e. multiple events
+When the user hits the Run button, and assuming the results are successful. The results are presented here.  A successful run or download of a job that ran successfully will result in 3 tabbed widgets being displayed in this panel.  The first panel shows summary statistics: mean and stdDev values or min-max values if discrete set, i.e. multiple events for each of the EDP's specified in the EDP panel.
+
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.8\textwidth]
@@ -321,6 +339,7 @@ The first panel shows summary statistics: mean and stdDev values or min-max valu
 \end{figure}
 
 The second panel shows the summary information.
+
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.8\textwidth]
@@ -336,11 +355,7 @@ using both left and right keys, the CDF and PDF is displayed. If last mouse pres
 As for the columns. You will see a column for each random variable the workflow came across. There may be more than you specified if the applications want the 
 UQ engine to consider their own variables in the computation. The outputs at present are limited to:
 
-\begin{itemize}
-\item PFD peak relative floor displacement $1-PFD-FLOOR_CLINE$
-\item PFA peak floor acceleration (relative + ground motion): $1-PFA-FLOOR-CLINE$
-\item PID peak inter-story drift: $1-PID-STORY-CLINE$
-\end{itemize}
+
 
 \begin{figure}[!htbp]
   \centering {
