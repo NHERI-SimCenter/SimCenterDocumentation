@@ -1,6 +1,7 @@
 % Based on sample files of unknown authorship.
 
 \documentclass{simcenterdocumentation}
+
 \usepackage[backend=biber]{biblatex}
 \usepackage{hyperref}
 \hypersetup{
@@ -8,7 +9,7 @@
     citecolor=black,
     filecolor=black,
     linkcolor=black,
-    urlcolor=blue
+    urlcolor=black
 }
 
 % adding packages: 
@@ -17,7 +18,10 @@
 \usepackage{multirow}
 \usepackage{adjustbox,lipsum}% to adjust table width
 
-% To compile this file, run "latex/pdflatex codedoc", then "biber codedoc"
+%% Add unicode support for special characters
+%%\usepackage[utf8x]{inputenc}
+
+% To compile this file, run "latex/pdflatex codedoc", then "biber codedoc"b
 % (or "bibtex codedoc", if the output from latex asks for that instead),
 % and then "latex/pdflatex codedoc" (without the quotes in each case).
 
@@ -34,13 +38,12 @@
 \begin{document}
 % Declarations for Front Matter
 % Software title followed by optional second line
-\title{EE-UQ\\ \Large The Earthquake Engineering with Uncertainty Quantification (EE-UQ) Application}
+\title{PBE\\ Performance-Based Engineering Application}
 % Use superscripts to indicate author affiliations
-\author{Frank McKenna, Wael Elhaddad, Chaofeng Wang and Michael Gardner}
-%\author{Moe Howard$^{1,2}$ Larry Fine$^1$ Curly Howard$^2$}
+\author{Frank McKenna, Adam Zsarn\'oczay, Wael Elhaddad, Chaofeng Wang, and Michael Gardner}
 \institutions{NHERI SimCenter, UC Berkeley}
-\softwarename{EE-UQ}
-\softwareversion{1.1.0}
+\softwarename{PBE}
+\softwareversion{1.1.0 \textcolor{red}{Frank, let me know the current version.}}
 
 %%% DON'T MESS WITH THESE SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hypersetup{pageanchor=false}
@@ -69,35 +72,35 @@
 
 \chapter{About}
 \label{chap:about}
-\input{About.tex}
+\input{../EE-UQ/About.tex}
 
 \chapter{Installation Instructions}
 \label{chap:installation}
-\input{Installation.tex}
+\input{../EE-UQ/Installation.tex}
 
 \chapter{Usage}
 \label{chap:usage}
-\input{Usage.tex}
+\input{../EE-UQ/Usage.tex}
 
 \chapter{Theory and Implementation}
 \label{chap:theory}
-\input{TheoryAndImplementation.tex}
+\input{../EE-UQ/TheoryAndImplementation.tex}
 
 \chapter{Source Code}
 \label{chap:SourceCode}
-\input{SourceCode.tex}
+\input{../EE-UQ/SourceCode.tex}
 
 \chapter{User Training}
 \label{chap:training}
-\input{Training.tex}
+\input{../EE-UQ/Training.tex}
 
 \chapter{Requirements}
 \label{chap:requirements}
-\input{Requirements.tex}
+\input{../EE-UQ/Requirements.tex}
 
 \chapter{Verification and Validation}
 \label{chap:vnv}
-\input{VnV.tex}
+\input{../EE-UQ/VnV.tex}
 
 \nocite{*}
 
