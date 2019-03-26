@@ -1,4 +1,7 @@
+% Based on sample files of unknown authorship.
+
 \documentclass{simcenterdocumentation}
+
 \usepackage[backend=biber]{biblatex}
 \usepackage{hyperref}
 \hypersetup{
@@ -6,51 +9,19 @@
     citecolor=black,
     filecolor=black,
     linkcolor=black,
-    urlcolor=blue
+    urlcolor=black
 }
 
+% adding packages: 
 \usepackage{subfig}
 \usepackage{listings,xcolor}
 \usepackage{multirow}
 \usepackage{adjustbox,lipsum}% to adjust table width
 
-%% SETTING ENVIRONMENT FOR PYTHON CODE SNIPPETS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\usepackage[utf8]{inputenc}
-% Default fixed font does not support bold face
-\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
-\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+%% Add unicode support for special characters
+%%\usepackage[utf8x]{inputenc}
 
-% Custom colors
-\usepackage{color}
-\definecolor{deepblue}{rgb}{0,0,0.5}
-\definecolor{deepred}{rgb}{0.6,0,0}
-\definecolor{deepgreen}{rgb}{0,0.5,0}
-\usepackage{listings}
-
-% Python style for highlighting
-\newcommand\pythonstyle{\lstset{
-language=Python,
-basicstyle=\ttm,
-otherkeywords={self},             % Add keywords here
-keywordstyle=\ttb\color{deepblue},
-emph={MyClass,__init__},          % Custom highlighting
-emphstyle=\ttb\color{deepred},    % Custom highlighting style
-stringstyle=\color{deepgreen},
-frame=tb,                         % Any extra options here
-showstringspaces=false,            %
-breaklines=true
-}}
-
-% Python environment
-\lstnewenvironment{python}[1][]
-{
-\pythonstyle
-\lstset{#1}
-}
-{}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-% To compile this file, run "latex/pdflatex codedoc", then "biber codedoc"
+% To compile this file, run "latex/pdflatex codedoc", then "biber codedoc"b
 % (or "bibtex codedoc", if the output from latex asks for that instead),
 % and then "latex/pdflatex codedoc" (without the quotes in each case).
 
@@ -61,17 +32,18 @@ breaklines=true
 %% \dsp
 
 \bibliography{references}
+\hyphenation{mar-gin-al-ia}
+\hyphenation{bra-va-do}
 
 \begin{document}
 % Declarations for Front Matter
 % Software title followed by optional second line
-\title{EE-UQ\\ \Large The Earthquake Engineering with Uncertainty Quantification (EE-UQ) Application}
+\title{PBE\\ Performance-Based Engineering Application}
 % Use superscripts to indicate author affiliations
-\author{Frank McKenna, Wael Elhaddad, Chaofeng Wang and Michael Gardner}
-%\author{Moe Howard$^{1,2}$ Larry Fine$^1$ Curly Howard$^2$}
+\author{Frank McKenna, Adam Zsarn\'oczay, Wael Elhaddad, Chaofeng Wang, and Michael Gardner}
 \institutions{NHERI SimCenter, UC Berkeley}
-\softwarename{EE-UQ}
-\softwareversion{2.0.0}
+\softwarename{PBE}
+\softwareversion{1.1.0 \textcolor{red}{Frank, let me know the current version.}}
 
 %%% DON'T MESS WITH THESE SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hypersetup{pageanchor=false}
@@ -100,35 +72,35 @@ breaklines=true
 
 \chapter{About}
 \label{chap:about}
-\input{./about/about.tex}
+\input{../EE-UQ/About.tex}
 
 \chapter{Installation Instructions}
 \label{chap:installation}
-\input{./installation/installation.tex}
+\input{../EE-UQ/Installation.tex}
 
 \chapter{Usage}
 \label{chap:usage}
-\input{./usage/usage.tex}
+\input{../EE-UQ/Usage.tex}
 
 \chapter{Theory and Implementation}
 \label{chap:theory}
-\input{TheoryAndImplementation.tex}
+\input{../EE-UQ/TheoryAndImplementation.tex}
 
 \chapter{Source Code}
 \label{chap:SourceCode}
-\input{SourceCode.tex}
+\input{../EE-UQ/SourceCode.tex}
 
 \chapter{User Training}
 \label{chap:training}
-\input{Training.tex}
+\input{../EE-UQ/Training.tex}
 
 \chapter{Requirements}
 \label{chap:requirements}
-\input{Requirements.tex}
+\input{../EE-UQ/Requirements.tex}
 
 \chapter{Verification and Validation}
 \label{chap:vnv}
-\input{VnV.tex}
+\input{../EE-UQ/VnV.tex}
 
 \nocite{*}
 

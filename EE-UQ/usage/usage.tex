@@ -1,115 +1,26 @@
-
 \section{User Interface}
-
-It is the user interface (UI) that the user interacts with. The interface itself, as
-shown in \autoref{fig:figure1}, is broken down into a number of separate areas:
-
-
-\begin{figure}[!htbp]
-  \centering {
-    \includegraphics[width=0.8\textwidth]
-    {figs/Figure1.png} }
-  \caption{UI}
-  \label{fig:figure1}
-\end{figure}
-
-
-\begin{enumerate}
-
-\item Input Panel Selection: This  area on the left side provides the user with a selection of items to choose from from: 
-
-\begin{enumerate}
-  \item GI: General information, for specifiction of building description, location and units.
-  \item SIM: Structure information model, for description of the building model.
-  \item EVT: Event, for selecting the earthquake motions input.
-  \item FEM: Finite element method, for specification of application and analysis options.
-  \item UQ: Uncertainty quantification, for defining the distribution of the random
-  variable paramaters and UQ method analysis options.
-  \item EDP: Engineering demand parameters, for specification of output response quantities.
-  \item RES: Results output.
-\end{enumerate}
-
-Selecting any of these will change the input panel presented.
-
-\item Input Panel: This is the large central area of the UI that the user provides input
-for the application chosen and views the results. For example if the user had selected UQ in the input panel selection, it is in this panel that the user would provide details on the distributions associated with each random variable or select the sampling method to use and provide the options necessary to run that method.
-
-\item Push Buttons: This is the area near the bottom of the UI in which 4 buttons are presented to the user:
-
-\begin{enumerate}
-\item	RUN – to run the simulation of the user’s desktop machine.
-\item	RUN at DesignSafe – to process the information, and send to DesignSafe where the job will be run on a supercomputer and results stored in your DesignSafe jobs folder.
-\item	GET from DesignSafe – to obtain from DesignSafe your list of jobs and select from that list a job to download.
-\item	Exit: to exit the application.
-\end{enumerate}
-
-The Screens presented to user when the first 3 of these buttons will be discussed in section 3.10.
-
-\item Login Button: At the top right of the UI is the login button. Before the user can launch any jobs on DesignSafe they must first login to DesignSafe using their DesignSafe login and password. Pressing the login button will open up the login window for users to enter this information.
-
-\item Message Area: In the top center of the application is the area of the interface that error and status messaged will be displayed while the application is running.
-
-\end{enumerate}
+\input{./usage/ui}
 
 \section{GI: General Information}
-\include{GeneralInformation}
+\input{./usage/general_information}
 
 \section{SIM: Structural Information Model}
-\input{StructuralModels}
+\input{./usage/structural_models}
 
 \section{EVT: Event}
-\input{EarthquakeEvents}
-
+\input{./usage/earthquake_events}
 
 \section{FEM: Finite Element Method}
-\input{FEM}
+\input{./usage/fem}
 
-\section{UQ}
-\input{UQ}
+\section{UQ: Uncertainty Quantification}
+\input{./usage/uq}
 
 \section{EDP: Engineering Demand Parameters}
-\input{EDP}
+\input{./usage/edp}
 
 \section{RES}
-
-When the user hits the Run button, and assuming the results are successful. The results are presented here.  A successful run or download of a job that ran successfully will result in 3 tabbed widgets being displayed in this panel.  The first panel shows summary statistics: mean and stdDev values or min-max values if discrete set, i.e. multiple events for each of the EDP's specified in the EDP panel.
-
-\begin{figure}[!htbp]
-  \centering {
-    \includegraphics[width=0.8\textwidth]
-    {figs/Figure12.png} }
-  \caption{RES}
-  \label{fig:figure12}
-\end{figure}
-
-The second panel shows the summary information.
-
-\begin{figure}[!htbp]
-  \centering {
-    \includegraphics[width=0.8\textwidth]
-    {figs/Figure13.png} }
-  \caption{RES General tab}
-  \label{fig:figure13}
-\end{figure}
-
-The third panel presents graphically and in tabular form the results. By selecting different columns with left and right mouse buttons in the table below the graphic, 
-the information in the graph is changed. Selecting the left mouse button changes the Y axis, the right mouse changes the X axis. If the same column is selected 
-using both left and right keys, the CDF and PDF is displayed. If last mouse press was with the left button, the PDF and if right the CDF.
-
-As for the columns. You will see a column for each random variable the workflow came across. There may be more than you specified if the applications want the 
-UQ engine to consider their own variables in the computation. The outputs at present are limited to:
-
-
-
-\begin{figure}[!htbp]
-  \centering {
-    \includegraphics[width=0.8\textwidth]
-    {figs/Figure14.png} }
-  \caption{UQ Data Values}
-  \label{fig:figure14}
-\end{figure}
-
-
+\input{./usage/res}
 
 \section{Push Buttons}
 There are a number of buttons in the Push Button area of \autoref{fig:figure1}:
