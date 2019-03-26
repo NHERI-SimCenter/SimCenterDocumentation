@@ -1,0 +1,116 @@
+% Based on sample files of unknown authorship.
+
+\documentclass{simcenterdocumentation}
+
+\usepackage[backend=biber]{biblatex}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+% adding packages: 
+\usepackage{subfig}
+\usepackage{listings,xcolor}
+\usepackage{multirow}
+\usepackage{adjustbox,lipsum}% to adjust table width
+
+%% Add unicode support for special characters
+%%\usepackage[utf8x]{inputenc}
+
+% To compile this file, run "latex/pdflatex codedoc", then "biber codedoc"b
+% (or "bibtex codedoc", if the output from latex asks for that instead),
+% and then "latex/pdflatex codedoc" (without the quotes in each case).
+
+% Double spacing, if you want it.  Do not use for the final copy. Can also specify
+% draft as a document class option. This will generate double spacing and placeholders
+% for title page and header images
+%% \def\dsp{\def\baselinestretch{2.0}\large\normalsize}
+%% \dsp
+
+\bibliography{references}
+\hyphenation{mar-gin-al-ia}
+\hyphenation{bra-va-do}
+
+\begin{document}
+% Declarations for Front Matter
+% Software title followed by optional second line
+\title{PBE\\ Performance-Based Engineering Application}
+% Use superscripts to indicate author affiliations
+\author{Frank McKenna, Adam Zsarn\'oczay, Wael Elhaddad, Chaofeng Wang, and Michael Gardner}
+\institutions{NHERI SimCenter, UC Berkeley}
+\softwarename{PBE}
+\softwareversion{1.1.0 \textcolor{red}{Frank, let me know the current version.}}
+
+%%% DON'T MESS WITH THESE SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{pageanchor=false}
+\maketitle
+\copyrightpage
+\acknowledgments
+
+\hypersetup{pageanchor=true}
+\begin{frontmatter}
+
+\pagestyle{plain}
+{
+  \renewcommand{\thispagestyle}[1]{}
+  \tableofcontents
+  \clearpage
+  \listoffigures
+  \clearpage
+  \listoftables
+}
+
+\end{frontmatter}
+\pagestyle{somewhatsimple}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Create separate tex files for each chapter and provide them as inputs
+
+
+\chapter{About}
+\label{chap:about}
+\input{../EE-UQ/About.tex}
+
+\chapter{Installation Instructions}
+\label{chap:installation}
+\input{../EE-UQ/Installation.tex}
+
+\chapter{Usage}
+\label{chap:usage}
+\input{../EE-UQ/Usage.tex}
+
+\chapter{Theory and Implementation}
+\label{chap:theory}
+\input{../EE-UQ/TheoryAndImplementation.tex}
+
+\chapter{Source Code}
+\label{chap:SourceCode}
+\input{../EE-UQ/SourceCode.tex}
+
+\chapter{User Training}
+\label{chap:training}
+\input{../EE-UQ/Training.tex}
+
+\chapter{Requirements}
+\label{chap:requirements}
+\input{../EE-UQ/Requirements.tex}
+
+\chapter{Verification and Validation}
+\label{chap:vnv}
+\input{../EE-UQ/VnV.tex}
+
+\nocite{*}
+
+% \appendix
+% \chapter{More Monticello Candidates}
+
+\pagestyle{plain}
+{
+  \renewcommand{\thispagestyle}[1]{}	
+  \printbibliography           
+}
+
+\end{document}
