@@ -6,7 +6,10 @@ pseudo-acceleration for a single-degree-of-freedom system with varying
 natural frequencies calculated by \texttt{EE-UQ} is compared to the
 values predicted by \texttt{smelt} as well as the geometric mean
 of the four NGA-West2 ground motion prediction equations (GPMEs)
-that account for soil sites. 
+that account for soil sites. The scenario considered in this verification
+example is an event with a Moment Magnitude ($M_W$) of 6.5, closest-to-site
+rupture distance ($R_{rupt}$) of 20 \textit{km}, and average shear-wave velocity in the top
+30 \textit{m} of soil ($V_{s_{30}}$) equal to 400 \texttt{m/s}.
 
 The single-degree-of-freedom system was input using the MDOF option as
 the Building Model Input in \texttt{EE-UQ}. Here, the mass was set to
@@ -30,10 +33,10 @@ found in the
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.8\textwidth]
-    {figs/M65R20V400.pdf} }
+    {ver_and_val/figures/M65R20V400.pdf} }
   \caption{Response Spectra generated using NGA-West2 GMPEs,
     \texttt{smelt} \& \texttt{EE-UQ} for $M_W = 6.5$, closest-to-site
-    distance $R = 20km$, and average shear-wave velocity $V_{s_{30}} =
+    distance $R_{rupt} = 20km$, and average shear-wave velocity $V_{s_{30}} =
     400m/s$. The \texttt{smelt} and GMPE spectra show the mean and
     mean plus/minus one logarithmic standard deviation. The GMPE
     spectra are based on the geometric mean of the four NGA-West2

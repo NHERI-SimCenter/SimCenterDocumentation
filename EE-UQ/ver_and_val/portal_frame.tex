@@ -1,9 +1,3 @@
-This section provides examples of using \texttt{EE-UQ} for uncertainty
-quantification of structural analysis models used in earthquake
-engineering. Results of each model are verified against results
-obtained using other tools.
-
-\section{Two-Dimensional Portal Frame subjected to Gravity and Earthquake Loading}
 In this example, a simple 2D portal frame model is used to verify the
 results of \texttt{EE-UQ}. The model is a linear elastic single-bay,
 single-story model of a reinforced concrete portal frame, as shown in
@@ -13,15 +7,15 @@ earthquake (Borrego Mountain 04/09/68 0230, El Centro ARRAY \#9, 270).
 The original model and ground motion used in this example were
 obtained from
 \href{http://opensees.berkeley.edu/wiki/index.php/OpenSees_Example_1b._Elastic_Portal_Frame}{example 1b} on the \texttt{OpenSees} website, 
-and were modified to scale the ground motion record from gravity units, $g$,
-to the model units, $in/s^2$. Files for this example are included
-with the release of the software and are available in the Examples
-folder in a subfolder called \texttt{PortalFrame2D}.
+and were modified to scale the ground motion record from gravity
+units, $g$, to the model units, $in/s^2$. Files for this example are
+included with the release of the software and are available in the
+Examples folder in a subfolder called \texttt{PortalFrame2D}.
 
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.8\textwidth]
-    {figs/Figure20.png} }
+    {ver_and_val/figures/portalFrame.png} }
   \caption{Two-dimensional portal frame model subjected to gravity and earthquake loading}
   \label{fig:figure20}
 \end{figure}
@@ -56,7 +50,7 @@ following steps:
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.8\textwidth]
-    {figs/Figure21.png} }
+    {ver_and_val/figures/portalFrameTcl.png} }
   \caption{Choose building model}
   \label{fig:figure21}
 \end{figure}
@@ -65,7 +59,7 @@ following steps:
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.8\textwidth]
-    {figs/Figure22.png} }
+    {ver_and_val/figures/tclLocation.png} }
   \caption{Choose tcl file}
   \label{fig:figure22}
 \end{figure}
@@ -73,28 +67,25 @@ following steps:
 
 \item	 In the list of Clines Nodes edit box, enter “1, 3”. This indicates to \texttt{EE-UQ} that nodes 1 and 3 are the nodes used to obtain EDP at different floor levels (i.e. base and first floor).
 \begin{figure}[!htbp]
-  \centering {
-    \includegraphics[width=0.8\textwidth]
-    {figs/Figure23.png} }
-  \caption{Select nodes}
-  \label{fig:figure23}
+  \centering { \includegraphics[width=0.8\textwidth]
+    {ver_and_val/figures/cLineNodes.png} } \caption{Select
+    nodes} \label{fig:figure23}
 \end{figure}
 
 \item Click on the event tab (EVT) in the left bar to open the earthquake event specification tab, select Multiple Existing for loading Type. Click on the add button to add an earthquake event. 
 Then click on the choose button to select the event file.
 \begin{figure}[!htbp]
-  \centering {
-    \includegraphics[width=0.8\textwidth]
-    {figs/Figure24.png} }
-  \caption{Work on EVT tab}
-  \label{fig:figure24}
+  \centering { \includegraphics[width=0.8\textwidth]
+    {ver_and_val/figures/workEvtTab.png} }
+    \caption{Work on EVT
+    tab} \label{fig:figure24}
 \end{figure}
 
 \item Choose the event file (\texttt{BM68elc.json}) for El Centro earthquake provided in the portal frame 2D example folder.
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.8\textwidth]
-    {figs/Figure25.png} }
+    {ver_and_val/figures/evtFileLocation.png} }
   \caption{Choose event file}
   \label{fig:figure25}
 \end{figure}
@@ -106,19 +97,19 @@ command and defined them as random variables.
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.8\textwidth]
-    {figs/Figure26.png} }
-  \caption{Work on RVs tab}
+    {ver_and_val/figures/workUqTab.png} }
+  \caption{Work on \texttt{UQ} tab}
   \label{fig:figure26}
 \end{figure}
 
 \item Now click on run, set the analysis parameters, working directory and applications directory and click submit to run the analysis. 
-If everything ran successfully the program will automatically open the results tab showing the summary of results (\autoref{fig:figure27}).
+If everything ran successfully the program will automatically open the
+results tab showing the summary of results (\autoref{fig:figure27}).
 \begin{figure}[!htbp]
-  \centering {
-    \includegraphics[width=0.8\textwidth]
-    {figs/Figure27.png} }
-  \caption{Run}
-  \label{fig:figure27}
+  \centering { \includegraphics[width=0.8\textwidth]
+    {ver_and_val/figures/runAnalysis.png} }
+    \caption{Pop-up shown when clicking \texttt{Run}}
+    \label{fig:figure27}
 \end{figure}
 
 \end{enumerate}
@@ -128,10 +119,10 @@ If everything ran successfully the program will automatically open the results t
 A verification script (Listing 1) for propagating the uncertainty was
 developed in Python and is included in the example folder.  The script
 creates 1000 samples for both the Young’s modulus and mass values
-using Latin Hypercube sampling, then modifies the \texttt{OpenSees} model, runs
-it and stores the output.  After all the model samples are processed,
-the script will compute and output the mean and standard deviation
-values of the peak floor acceleration and peak drift.
+using Latin Hypercube sampling, then modifies the \texttt{OpenSees}
+model, runs it and stores the output.  After all the model samples are
+processed, the script will compute and output the mean and standard
+deviation values of the peak floor acceleration and peak drift.
 
 
 \begin{python}[caption=Python script for analyzing the portal frame model with uncertain parameters]
@@ -210,7 +201,7 @@ agreement.
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.8\textwidth]
-    {figs/Figure28.png} }
+    {ver_and_val/figures/resultsSummaryTab.png} }
   \caption{Outputs from \texttt{EE-UQ}}
   \label{fig:figure28}
 \end{figure}
@@ -219,13 +210,10 @@ agreement.
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.8\textwidth]
-    {figs/Figure29.png} }
+    {ver_and_val/figures/pyOutputs.png} }
   \caption{Outputs from PortalFrameSamplying.py script}
   \label{fig:figure29}
 \end{figure}
-
-
-
 
 \begin{table}[hbt!]                 
   \centering
@@ -235,12 +223,12 @@ agreement.
       Engineering Demand Parameter &	 & \texttt{EE-UQ}	& Python Script	 & Percent Difference [\%]  \\ \hline
     
 	\multirow{2}{*}{Peak Floor Acceleration [in/$s^2$]} 
-	 & Mean &	67.4377	& 67.5448	& 0.16 \\
-      & Std. Dev.	& 12.6487	 & 12.5487	& 0.8 \\ \hline
+	 & Mean &	68.0836	& 67.5448	& 0.80 \\
+      & Std. Dev.	& 12.6956	 & 12.5487	& 1.17 \\ \hline
       
       \multirow{2}{*}{Peak Story Drift [x10-3 in]} 
-      & Mean &	1.3428 &	1.347 &	0.3 \\
-      & Std. Dev.	& 0.2832 &	0.2955	& 4.1	 \\
+      & Mean &	1.3384 &	1.347 &	1.97 \\
+      & Std. Dev.	& 0.3017 &	0.2955	& 2.1	 \\
 
       \bottomrule      
                             
@@ -249,9 +237,3 @@ agreement.
   \caption{Engineering demand parameters verification}             
   \label{tab:edp}                 
 \end{table}
-
-\section{Response Spectrum Calculation using Stochastic Ground Motion Model}
-\input{smelt_EEUQ_verification}
-
-\section{Site Response Analysis using s$^3$hark}
-\input{S3hark_EEUQ_Verification}
