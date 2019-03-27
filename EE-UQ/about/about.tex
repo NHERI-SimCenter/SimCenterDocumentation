@@ -1,39 +1,12 @@
 The audience of this tool is researchers and practitioners trying to
-predict the response of a structure to earthquakes.\\
+predict the response of a structure to earthquake events.\\
 
-This open-source research application
-(\href{https://github.com/NHERI-SimCenter/EE-UQ}{https://github.com/NHERI-SimCenter/EE-UQ})
-provides an application researchers can use to predict the response of
-a building subjected to earthquake events. The application is focused
-on quantifying the uncertainties in the predicted response, given the
-that the properties of the buildings and the earthquake events are not
-known exactly, and that the simulation software and the user make
-simplifying assumptions in the numerical modeling of that
-structure. In the application, the user is required to characterize
-the uncertainties in the input. The application will after utilizing
-the selected sampling method, will provide information that
-characterizes the uncertainties in the response measures. The
-computations to make these determinations can be prohibitively
-expensive. To overcome this impediment the user has the option to
-perform the computations on the Stampede2 supercomputer. Stampede2 is
-located at the Texas Advanced Computing Center and made available to
-the user through NHERI DesignSafe, the cyberinfrastructure provider
-for the distributed NSF funded Natural Hazards in Engineering Research
+This open-source research application, the source code of which is available at the \href{https://github.com/NHERI-SimCenter/EE-UQ}{EE-UQ Github page},
+provides an application researchers can use to predict the response of a building subjected to earthquake events. The application is focused on quantifying the uncertainties in the predicted response, given the that the properties of the buildings and the earthquake events are not known exactly, and that both the simulation software and the user make simplifying assumptions in the numerical modeling of that structure. In this application, the user is required to characterize
+the uncertainties in the input. The application will, after utilizing the users selected sampling method, provide information that characterizes the uncertainties in the computed response measures. As the computations to make these determinations can be prohibitively expensive to perform on a users local computer, the user has the option to perform the computations remotely on the Stampede2 supercomputer. Stampede2 is located at the Texas Advanced Computing Center and made available to the user through NHERI DesignSafe, the cyberinfrastructure provider for the distributed NSF funded Natural Hazards in Engineering Research
 Infrastructure (NHERI) facility.\\
 
-The computations are performed in a workflow application. That is, the
-numerical simulations are actually performed by a number of different
-applications. The EE-UQ backend software runs these different
-applications for the user, taking the outputs from some programs and
-providing them as inputs to others. The design of the EE-UQ
-application is such that researchers are able to modify the backend
-application to utilize their own application in the workflow
-computations. This will ensure researchers are not limited to using
-the default applications we provide and will be enthused to provide
-their own applications for others to use. \\
+Whether running locally or remotely, the computations are performed, as will be discussed in Section \ref{theory}, in a workflow application. That is, the numerical simulations are actually performed by a number of different applications. The EE-UQ backend software runs these different applications for the user, taking the outputs from some programs and providing them as inputs to others. The design of the EE-UQ application is such that researchers are able to modify the backend application to utilize their own application in the workflow computations. This will ensure researchers are not limited to using
+the default applications we provide and will be enthused to provide their own applications for others to use. \\
 
-This is Version 2.0 of the tool. Researchers are encouraged to comment on what additional
-features and applications they would like to see in this
-application. If you want it, chances are many of your colleagues also
-would benefit from it.\\
-\\
+This is Version 1.1 of the tool. Researchers are encouraged to comment on what additiona; features and applications they would like to see in this application. If you want it, chances are many of your colleagues also would benefit from it. The user is encouraged to review Section \ref{requirements} to see what features are planned for this application. 

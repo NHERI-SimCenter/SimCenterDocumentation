@@ -1,6 +1,5 @@
 The following section describes the workings of the tool. If you intend to use the tool a lot or extend it, 
-it is important that you read this section.
-Some Definitions before we start:
+it is important that you read this section. Some Definitions before we start:
 \begin{itemize}
 \item Workflow: A sequence of steps involved in moving from a beginning state to an ending state.
 \item Scientific Workflow Application: An application that automates a workflow process through software, with each step in the 
@@ -9,20 +8,14 @@ workflow being performed by a separate “scientific” software application.
 user defined scientific workflow application. 
 \end{itemize}
 
-The EE-UQ application is a very limited scientific workflow system that allows users to create scientific workflow applications needed 
-for the characterization of the response of a building subjected to earthquake ground motions. It allows the users to then create and run 
-the workflow application using the data of the users choosing. The application itself is composed of 2 parts:
+The EE-UQ application is a very limited scientific workflow system that allows users to create scientific workflow applications needed for the characterization of the response of a building subjected to earthquake ground motions. It allows the users to then create and run the workflow application using the data of the users choosing. The application itself is composed of 2 parts:
 
 \begin{itemize}
-\item	Frontend User Interface (UI): This is the application the user interacts with to create a building description, the BIM, and specify 
-the workflow to run, i.e. given the building, the user chooses which applications to use and what data to use for the different applications. 
-The UI is what was explained in section 3. It’s purpose as is shown in \autoref{fig:figure17} is to create the BIM and start the workflow. 
+\item	Frontend User Interface (UI): This is the application the user interacts with to create a building description, the BIM, and specify  the workflow to run, i.e. given the building, the user chooses which applications to use and what data to use for the different applications. 
+The UI is what was explained in section 3. It’s purpose, as is shown in \autoref{fig:figure17}, is to create the BIM and start the workflow. 
 Currently the inputs for the workflow are stored in the BIM file to reduce file overhead.
-\item	Backend Application: This is the application that actually creates and runs the workflow. It consists of a script that processes the 
-output file from the UI to determine the applications to run and their data, it invokes these applications using the outputs from one 
-application as the input to another. The application that is run is a python script, EE-UQ.py, that can be found in the /applications/Workflow/ directory. 
-The input and output from each application is in the form of JavaScript Object Notation (JSON) files. JSON is a human readable file format used 
-widely for passing data between your front-end browser application (Safari, Firefox, Internet Explorer) and backend servers.
+\item	Backend Application: This is the application that actually creates and runs the workflow. It consists of a script that processes the output file from the UI to determine the applications to run and their data, it invokes these applications using the outputs from one application as the input to another. The application that is run is a python script, EE-UQ.py, that can be found in the /applications/Workflow/ directory. 
+The input and output from each application is in the form of JavaScript Object Notation (JSON) files. JSON is a human readable file format used  widely for passing data between your front-end browser application (Safari, Firefox, Internet Explorer) and backend servers.
 \end{itemize}
 
 
