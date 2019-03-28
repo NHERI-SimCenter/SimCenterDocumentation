@@ -1,4 +1,10 @@
-All SimCenter applications are available at the \href{https://simcenter.designsafe-ci.org/research-tools/overview/}{SimCenter website} under \emph{Research Tools}. The following sections outline the steps necessary to download and install the  \thisSoftware  application. The SimCenter applications do require that you install a number of other applications that are needed to run the workflows on your local machine as well as at DesignSafe. \\
+All SimCenter applications are available at
+the \href{https://simcenter.designsafe-ci.org/research-tools/overview/}{SimCenter
+website} under \emph{Research Tools}. The following sections outline
+the steps necessary to download and install the \getsoftwarename{}
+application. The SimCenter applications do require that you install a
+number of other applications that are needed to run the workflows on
+your local machine as well as at DesignSafe. \\
 
 
 %===============================================================================
@@ -7,7 +13,12 @@ All SimCenter applications are available at the \href{https://simcenter.designsa
 
 % \subsection{Download the Application Files}
 
-To download the EE-UQ application navigate to the \href{\thisSoftwarePage}{\thisSoftware page}  and click on the \emph{Download App \& User Manual} link on the right side of the page. This will bring you to another page which, as shown in \autoref{fig:app_choose_file},  contains a list of files and directories. 
+To download the EE-UQ application navigate to
+the \getsoftwarepage{\texttt{\getsoftwarename} page} and click on
+the \emph{Download App \& User Manual} link on the right side of the
+page. This will bring you to another page which, as shown
+in \autoref{fig:app_choose_file}, contains a list of files and
+directories.
 
 
 \begin{figure}[!htbp]
@@ -26,9 +37,22 @@ There are at least four files available for download from this page:
     \item The DMG file is an archive that contains the application files for a Mac OS X operating system.
 \end{enumerate}
 
-To download the \thisSoftware application click on the link for the appropriate file for your operating system  and then click on the Download button at bottom right corner of the ensuing pop-up window to download it. You need to unpackage the application from the downloaded file and place it in a location on your filesystem. On Windows, we recommend you to create a \texttt{C:/SimCenter/EE-UQ} directory and extract the contents of the \texttt{ZIP} archive there. On Mac, we recommend you to put the application in either your Documents folder or your Desktop folder. You are free to place the applications anywhere you wish, you will just need to make the appropriate adjustments with the following instructions if you do. \\
+To download the \getsoftwarename{} application click on the link for
+the appropriate file for your operating system and then click on the
+Download button at bottom right corner of the ensuing pop-up window to
+download it. You need to unpackage the application from the downloaded
+file and place it in a location on your filesystem. On Windows, we
+recommend you to create a \texttt{C:/SimCenter/\getsoftwarename{}}
+directory and extract the contents of the \texttt{ZIP} archive
+there. On Mac, we recommend you to put the application in either your
+Documents folder or your Desktop folder. You are free to place the
+applications anywhere you wish, you will just need to make the
+appropriate adjustments with the following instructions if you do. \\
 
-Now quickly test that the application starts. To do this navigate to the location where you placed the application and open it. You should see the user interface (UI) shown in  \autoref{fig:app_UI} after starting the application.\\
+Now quickly test that the application starts. To do this navigate to
+the location where you placed the application and open it. You should
+see the user interface (UI) shown in \autoref{fig:app_UI} after
+starting the application.\\
 
 \begin{figure}[!htbp]
   \centering {
@@ -38,11 +62,11 @@ Now quickly test that the application starts. To do this navigate to the locatio
   \label{fig:app_UI}
 \end{figure}
 
-Notes: 
+Notes:
 \begin{enumerate}
 \item The SimCenter is not recognized as either a Windows or an Apple vendor. Our applications are not recognized by the operating system as being signed. Consequently, you may receive a warning message when you start the EE-UQ application for the first time.
-\item  On a Mac you will need to right click on the .dmg file to open it. Furthermore, the UI will not start correctly while in the DMG file, you need to open the .dmg file and then copy the \thisSoftware application to your Documents or Desktop folder. You can then move the .dmg file to the trash or eject it after this has been done.
-\item  The \thisSoftware application requires additional software to work properly. Although the user interface loads, you will not be able to run calculations before installing those software.
+\item  On a Mac you will need to right click on the .dmg file to open it. Furthermore, the UI will not start correctly while in the DMG file, you need to open the .dmg file and then copy the \getsoftwarename{} application to your Documents or Desktop folder. You can then move the .dmg file to the trash or eject it after this has been done.
+\item  The \getsoftwarename{} application requires additional software to work properly. Although the user interface loads, you will not be able to run calculations before installing those software.
 \end{enumerate}
 
 
@@ -51,18 +75,38 @@ Notes:
 \section{Set up Python}
 %===============================================================================
 
-The SimCenter workflow applications are managed by Python scripts. These are required to prepare the input data for running analyses remotely on DesignSafe and also required for running simulations locally. As a consequence the user must have Python installed on their machine and have the appropriate environment variables set so that the UI can run these applications.
+The SimCenter workflow applications are managed by Python
+scripts. These are required to prepare the input data for running
+analyses remotely on DesignSafe and also required for running
+simulations locally. As a consequence the user must have Python
+installed on their machine and have the appropriate environment
+variables set so that the UI can run these applications.
 
 \subsection{Install Python}
 
-If you do not have a Python installation yet, we recommend installing \href{http://www.anaconda.com/distribution/#download-section}{Anaconda}. Anaconda provides all the important scientific packages in a single convenient install. We recommend installing the 64-Bit version based on Python 3.5 or newer.
+If you do not have a Python installation yet, we recommend
+installing \href{http://www.anaconda.com/distribution/#download-section}{Anaconda}. Anaconda
+provides all the important scientific packages in a single convenient
+install. We recommend installing the 64-Bit version based on Python
+3.5 or newer.
 
-Note: If you already have a Python installation that is Python 2.7 or newer, you do not have to install Anaconda to work with SimCenter applications. You may also use another Python distribution. However, if you do  please make sure that you install the following packages available: \texttt{numpy}, \texttt{scipy}, \texttt{pandas}.
+Note: If you already have a Python installation that is Python 2.7 or
+newer, you do not have to install Anaconda to work with SimCenter
+applications. You may also use another Python distribution. However,
+if you do please make sure that you install the following packages
+available: \texttt{numpy}, \texttt{scipy}, \texttt{pandas}.
 
 \subsection{Test Python}
 %===============================================================================
 
-Test if the python environment is set up properly by executing \texttt{python} in a terminal window. After Python starts, test if the packages are installed by executing \texttt{import numpy}, \texttt{import scipy}, and \texttt{import pandas}. You will receive an error message if a pacakage is missing. If no error appears, the terminal should look similar to \autoref{fig:python_test}. Exit Python by executing the \texttt{exit()} command.
+Test if the python environment is set up properly by
+executing \texttt{python} in a terminal window. After Python starts,
+test if the packages are installed by executing \texttt{import
+numpy}, \texttt{import scipy}, and \texttt{import pandas}. You will
+receive an error message if a pacakage is missing. If no error
+appears, the terminal should look similar
+to \autoref{fig:python_test}. Exit Python by executing
+the \texttt{exit()} command.
 
 \begin{figure}[!htbp]
   \centering {
@@ -76,7 +120,11 @@ Test if the python environment is set up properly by executing \texttt{python} i
 \section{Set up for Running Workflows Locally}\label{setup}
 %===============================================================================
 
-To run the workflows locally, the backend python application needs publicly available software to also be installed on your machine. These software applications need to be installed and configured on your operating system. If you do not plan to run the workflows locally, you will not need these applications.
+To run the workflows locally, the backend python application needs
+publicly available software to also be installed on your
+machine. These software applications need to be installed and
+configured on your operating system. If you do not plan to run the
+workflows locally, you will not need these applications.
 
 \subsection{Install OpenSees}
 %===============================================================================
@@ -84,19 +132,30 @@ To run the workflows locally, the backend python application needs publicly avai
 \href{https://opensees.berkeley.edu}{OpenSees} is an open-source finite element application publicly available for download from its \href{https://opensees.berkeley.edu/OpenSees/user/download.php}{download page}. If you have never downloaded OpenSees you will need to register your e-mail to gain access. After registration, you can proceed to the download page. OpenSees installation requires the user install both OpenSees and Tcl. The Windows and Mac downloads are in different locations on the download page, with the appropriate tcl installer beside the OpenSees link as is shown in \autoref{fig:opensees_installation}
 
 \begin{figure}[!htbp]
-  \centering {
-    \includegraphics[width=0.8\textwidth]
-    {figs/install/opensees_installation.png} }
-  \caption{Installation instructions for OpenSees.}
-  \label{fig:opensees_installation}
+  \centering { \includegraphics[width=0.8\textwidth]
+    {figs/install/opensees_installation.png} } \caption{Installation
+    instructions for OpenSees.}  \label{fig:opensees_installation}
 \end{figure}
 
-Follow the instructions on this page to install Tcl (\autoref{fig:opensees_installation}). On Windows, pay particular attetion to the location Tcl must be installed in, as this is not the default, and make sure you run the installer as administrator, otherwise you will not be able to create the \texttt{C:/Program Files/Tcl} folder.
+Follow the instructions on this page to install Tcl
+(\autoref{fig:opensees_installation}). On Windows, pay particular
+attetion to the location Tcl must be installed in, as this is not the
+default, and make sure you run the installer as administrator,
+otherwise you will not be able to create the \texttt{C:/Program
+Files/Tcl} folder.
 
-After Tcl is installed, we recommend you put OpenSees in the \texttt{C:/SimCenter/OpenSees} folder on Windows and in a \texttt{/usr/local/OpenSees} directory on the Mac (If you use finder on Mac to do navigation, use command-shift-G in Finder and specify /usr/local as the folder to go to. There create a new folder OpenSees and copy the OpenSees application to this folder).\\
+After Tcl is installed, we recommend you put OpenSees in
+the \texttt{C:/SimCenter/OpenSees} folder on Windows and in
+a \texttt{/usr/local/OpenSees} directory on the Mac (If you use finder
+on Mac to do navigation, use command-shift-G in Finder and specify
+/usr/local as the folder to go to. There create a new folder OpenSees
+and copy the OpenSees application to this folder).\\
 
 
-Now  you need to add the \texttt{OpenSees} folder to the system \texttt{PATH} environment variable to allow the SimCenter workflow applications to find the OpenSees executable on your computer. The steps to do this depend on your operating system:
+Now you need to add the \texttt{OpenSees} folder to the
+system \texttt{PATH} environment variable to allow the SimCenter
+workflow applications to find the OpenSees executable on your
+computer. The steps to do this depend on your operating system:
 
 \begin{enumerate}
 \item Windows: To add a folder to the \texttt{PATH} on Windows (\autoref{fig:add_env_path}):
@@ -151,7 +210,11 @@ Now  you need to add the \texttt{OpenSees} folder to the system \texttt{PATH} en
   \label{fig:dakota_installation}
 \end{figure}
 
-Similarly to OpenSees, you need to add TWO Dakota folders to the system \texttt{PATH} environment variable to allow the SimCenter workflow applications to find the Dakota tools on your computer. Use the procedure described above for OpenSees to add the following folders to your \texttt{PATH}:
+Similarly to OpenSees, you need to add TWO Dakota folders to the
+system \texttt{PATH} environment variable to allow the SimCenter
+workflow applications to find the Dakota tools on your computer. Use
+the procedure described above for OpenSees to add the following
+folders to your \texttt{PATH}:
 
 \begin{enumerate}
 \item Windows:
@@ -169,12 +232,18 @@ Similarly to OpenSees, you need to add TWO Dakota folders to the system \texttt{
 \subsection{Install  Perl}
 %===============================================================================
 
-Mac OS X has Perl pre-installed, but Windows users will have to install it to be able to use  Dakota. We recommend you use Strawberry Perl; you can install it by downloading the executable from its \href{http://strawberryperl.com}{Strawberry Perl website} and running it.
+Mac OS X has Perl pre-installed, but Windows users will have to
+install it to be able to use Dakota. We recommend you use Strawberry
+Perl; you can install it by downloading the executable from
+its \href{http://strawberryperl.com}{Strawberry Perl website} and
+running it.
 
 \subsection{Test the Install of the Local Applications}
 %===============================================================================
 
-Before running the EE-UQ application, perform the following tests to make sure that the local SimCenter working environment is set up appropriately:
+Before running the EE-UQ application, perform the following tests to
+make sure that the local SimCenter working environment is set up
+appropriately:
 
 \begin{itemize}
     \item Start a Terminal on Mac or a Command Prompt on Windows.
@@ -219,7 +288,7 @@ Before running the EE-UQ application, perform the following tests to make sure t
 \end{figure}
 
 %===============================================================================
-\section{Test the EE-UQ application}\label{install_test}
+\section{Test the EE-UQ application}
 %===============================================================================
 
 \subsection{Run a remote calculation}

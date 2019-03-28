@@ -104,6 +104,12 @@
 \RequirePackage{xcolor}
 \RequirePackage{listings}
 
+%\chapterstyle{article}
+%\chapterstyle{southall}
+%\chapterstyle{verville}
+%\chapterstyle{wilsondob}
+\chapterstyle{tandh}
+
 % Set section numbering depth. Depth of 3 sets numbering to go up to and including subsubsection
 \setcounter{secnumdepth}{3}
 
@@ -247,6 +253,10 @@ breaklines=true
 % The software name
 \def\softwarename#1{\gdef\@softwarename{#1}}
 \def\getsoftwarename{\@softwarename}
+
+% Software webpage
+\def\softwarepage#1{\gdef\@softwarepage{#1}}
+\def\getsoftwarepage#1{\href{\@softwarepage}{\color{blue}{#1}}}
 
 % The software version
 \def\softwareversion#1{\gdef\@softwareversion{#1}}

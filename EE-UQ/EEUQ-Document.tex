@@ -1,14 +1,8 @@
-\documentclass{simcenterdocumentation}
+\documentclass{../Latex/LatexClass/simcenterdocumentation}
 \usepackage[backend=biber]{biblatex}
 \usepackage{subfig}
 \usepackage{multirow}
 \usepackage{adjustbox}
-
-%\chapterstyle{article}
-%\chapterstyle{southall}
-%\chapterstyle{verville}
-%\chapterstyle{wilsondob}
-\chapterstyle{tandh}
 
 %% SETTING ENVIRONMENT FOR PYTHON CODE SNIPPETS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \usepackage[utf8]{inputenc}
@@ -38,9 +32,8 @@
 %\author{Moe Howard$^{1,2}$ Larry Fine$^1$ Curly Howard$^2$}
 \institutions{NHERI SimCenter, UC Berkeley}
 \softwarename{EE-UQ}
-\softwareversion{1.1.0}
-\newcommand\thisSoftware{EE-UQ }
-\newcommand\thisSoftwarePage{https://simcenter.designsafe-ci.org/research-tools/ee-uq-application/}
+\softwareversion{2.0.0}
+\softwarepage{https://simcenter.designsafe-ci.org/research-tools/ee-uq-application/}
 
 %%% DON'T MESS WITH THESE SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hypersetup{pageanchor=false}
@@ -74,7 +67,7 @@
 \label{chap:installation}
 \input{installation/installation.tex}
 
-\chapter{Usage}  \label{usage}
+\chapter{Usage}
 \label{chap:usage}
 \input{usage/usage.tex}
 
