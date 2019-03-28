@@ -1,7 +1,7 @@
 In this example, a simple 2D portal frame model is used to verify the
 results of \texttt{EE-UQ}. The model is a linear elastic single-bay,
 single-story model of a reinforced concrete portal frame, as shown in
-\autoref{fig:figure20}. The analysis of this model considers both
+\Cref{fig:figure20}. The analysis of this model considers both
 gravity loading and lateral earthquake loading due to the El Centro
 earthquake (Borrego Mountain 04/09/68 0230, El Centro ARRAY \#9, 270).
 The original model and ground motion used in this example were
@@ -22,7 +22,7 @@ Examples folder in a subfolder called \texttt{PortalFrame2D}.
 
 To introduce uncertainty in the model, both mass and young’s modulus
 are assumed to be normally distributed random variables with means and
-standard deviation values shown in \autoref{tab:uncertainty}. In this
+standard deviation values shown in \Cref{tab:uncertainty}. In this
 example, the model will be sampled with the Latin Hypercube sampling
 method using both \texttt{EE-UQ} and a Python script
 (\texttt{PortalFrameSampling.py}) and response statistics from both
@@ -104,7 +104,7 @@ command and defined them as random variables.
 
 \item Now click on run, set the analysis parameters, working directory and applications directory and click submit to run the analysis. 
 If everything ran successfully the program will automatically open the
-results tab showing the summary of results (\autoref{fig:figure27}).
+results tab showing the summary of results (\Cref{fig:figure27}).
 \begin{figure}[!htbp]
   \centering { \includegraphics[width=0.8\textwidth]
     {ver_and_val/figures/runAnalysis.png} }
@@ -192,10 +192,10 @@ In this section, the results produced for the portal frame
 by \texttt{EE-UQ} are verified against the results of running the same
 problem using the Python script.  Running the uncertainty
 quantification problem on the local computer produces the results
-shown in \autoref{fig:figure28} Running the analysis using the
+shown in \Cref{fig:figure28} Running the analysis using the
 sampling Python script produces the results shown
-in \autoref{fig:figure29}.  Both results (Mean and standard deviation
-values of EDPs) are compared in \autoref{tab:edp} and are shown to be in good
+in \Cref{fig:figure29}.  Both results (Mean and standard deviation
+values of EDPs) are compared in \Cref{tab:edp} and are shown to be in good
 agreement.
 
 \begin{figure}[!htbp]

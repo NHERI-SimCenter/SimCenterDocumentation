@@ -17,7 +17,7 @@ To download the EE-UQ application navigate to
 the \getsoftwarepage{\texttt{\getsoftwarename} page} and click on
 the \emph{Download App \& User Manual} link on the right side of the
 page. This will bring you to another page which, as shown
-in \autoref{fig:app_choose_file}, contains a list of files and
+in \Cref{fig:app_choose_file}, contains a list of files and
 directories.
 
 
@@ -51,7 +51,7 @@ appropriate adjustments with the following instructions if you do. \\
 
 Now quickly test that the application starts. To do this navigate to
 the location where you placed the application and open it. You should
-see the user interface (UI) shown in \autoref{fig:app_UI} after
+see the user interface (UI) shown in \Cref{fig:app_UI} after
 starting the application.\\
 
 \begin{figure}[!htbp]
@@ -105,7 +105,7 @@ test if the packages are installed by executing \texttt{import
 numpy}, \texttt{import scipy}, and \texttt{import pandas}. You will
 receive an error message if a pacakage is missing. If no error
 appears, the terminal should look similar
-to \autoref{fig:python_test}. Exit Python by executing
+to \Cref{fig:python_test}. Exit Python by executing
 the \texttt{exit()} command.
 
 \begin{figure}[!htbp]
@@ -129,7 +129,7 @@ workflows locally, you will not need these applications.
 \subsection{Install OpenSees}
 %===============================================================================
 
-\href{https://opensees.berkeley.edu}{OpenSees} is an open-source finite element application publicly available for download from its \href{https://opensees.berkeley.edu/OpenSees/user/download.php}{download page}. If you have never downloaded OpenSees you will need to register your e-mail to gain access. After registration, you can proceed to the download page. OpenSees installation requires the user install both OpenSees and Tcl. The Windows and Mac downloads are in different locations on the download page, with the appropriate tcl installer beside the OpenSees link as is shown in \autoref{fig:opensees_installation}
+\href{https://opensees.berkeley.edu}{OpenSees} is an open-source finite element application publicly available for download from its \href{https://opensees.berkeley.edu/OpenSees/user/download.php}{download page}. If you have never downloaded OpenSees you will need to register your e-mail to gain access. After registration, you can proceed to the download page. OpenSees installation requires the user install both OpenSees and Tcl. The Windows and Mac downloads are in different locations on the download page, with the appropriate tcl installer beside the OpenSees link as is shown in \Cref{fig:opensees_installation}
 
 \begin{figure}[!htbp]
   \centering { \includegraphics[width=0.8\textwidth]
@@ -138,7 +138,7 @@ workflows locally, you will not need these applications.
 \end{figure}
 
 Follow the instructions on this page to install Tcl
-(\autoref{fig:opensees_installation}). On Windows, pay particular
+(\Cref{fig:opensees_installation}). On Windows, pay particular
 attetion to the location Tcl must be installed in, as this is not the
 default, and make sure you run the installer as administrator,
 otherwise you will not be able to create the \texttt{C:/Program
@@ -158,7 +158,7 @@ workflow applications to find the OpenSees executable on your
 computer. The steps to do this depend on your operating system:
 
 \begin{enumerate}
-\item Windows: To add a folder to the \texttt{PATH} on Windows (\autoref{fig:add_env_path}):
+\item Windows: To add a folder to the \texttt{PATH} on Windows (\Cref{fig:add_env_path}):
 
 \begin{figure}[!htbp]
   \centering {
@@ -200,7 +200,7 @@ computer. The steps to do this depend on your operating system:
 \subsection{Install Dakota}
 %===============================================================================
 
-\href{http://dakota.sandia.gov}{Dakota}, an open-source  optimization and UQ application from Sandia National Labs, is publicly available for download at its \href{http://dakota.sandia.gov/download.html}{download page}. Select your operating system from the list and set the other options as shown in  \autoref{fig:dakota_installation}. Download the release in a \texttt{ZIP} file for Windows and \texttt{TAR.GZ} file for Mac. We recommend you to extract the archive to a \texttt{C:/SimCenter/Dakota} folder on Windows, and to a \texttt{/usr/local/Dakota} folder on a Mac.
+\href{http://dakota.sandia.gov}{Dakota}, an open-source  optimization and UQ application from Sandia National Labs, is publicly available for download at its \href{http://dakota.sandia.gov/download.html}{download page}. Select your operating system from the list and set the other options as shown in  \Cref{fig:dakota_installation}. Download the release in a \texttt{ZIP} file for Windows and \texttt{TAR.GZ} file for Mac. We recommend you to extract the archive to a \texttt{C:/SimCenter/Dakota} folder on Windows, and to a \texttt{/usr/local/Dakota} folder on a Mac.
 
 \begin{figure}[!htbp]
   \centering {
@@ -248,10 +248,10 @@ appropriately:
 \begin{itemize}
     \item Start a Terminal on Mac or a Command Prompt on Windows.
     \item On Mac, execute \texttt{cd /usr/Documents} to change the active directory to \texttt{/usr/Documents}. On Windows, execute \texttt{cd C:/} to change the active directory to \texttt{C:/}.
-    \item Test if OpenSees works correctly by executing the \texttt{OpenSees} command. The command should start OpenSees (\autoref{fig:opensees_test}). Close OpenSees with the \texttt{exit} command.
-    \item Test if Dakota works correctly by executing the \texttt{dakota} command. The command should start Dakota and you should see a message about a missing argument (\autoref{fig:dakota_test}).
-    \item Test if Perl works correctly by executing the \texttt{perl -v} command. The command should start Perl and return its version number (\autoref{fig:perl_test}).
-    \item Test if the python package in Dakota works correctly by starting Python with the \texttt{python} command and then executing the \texttt{import dakota} command. This should import the dakota package. If you do not see errors, then the package is successfully imported (\autoref{fig:dakota_py_test}). Exit Python with the \texttt{exit()} command.
+    \item Test if OpenSees works correctly by executing the \texttt{OpenSees} command. The command should start OpenSees (\Cref{fig:opensees_test}). Close OpenSees with the \texttt{exit} command.
+    \item Test if Dakota works correctly by executing the \texttt{dakota} command. The command should start Dakota and you should see a message about a missing argument (\Cref{fig:dakota_test}).
+    \item Test if Perl works correctly by executing the \texttt{perl -v} command. The command should start Perl and return its version number (\Cref{fig:perl_test}).
+    \item Test if the python package in Dakota works correctly by starting Python with the \texttt{python} command and then executing the \texttt{import dakota} command. This should import the dakota package. If you do not see errors, then the package is successfully imported (\Cref{fig:dakota_py_test}). Exit Python with the \texttt{exit()} command.
     \item If all the above tests ran without errors, your environment is set up appropriately.
 \end{itemize}
 
@@ -289,11 +289,6 @@ appropriately:
 
 %===============================================================================
 \section{Test the EE-UQ application}
+\label{sec:test_local}
+\input{installation/local_calc}
 %===============================================================================
-
-\subsection{Run a remote calculation}
-%===============================================================================
-
-\subsection{Run a local calculation}
-%===============================================================================
-
