@@ -1,9 +1,9 @@
 This is provided for the user to specify multiple existing SimCenter
-Event files.  If more than one event is specified it is done to provide
-the UQ engine with a discrete set of events to choose from.  It is not
-done with the intention of specifying that one event follows another.
-The panel presented initially to the user is as shown
-in \Cref{fig:figure4}.
+event files.  If more than one event is specified it is done to
+provide the UQ engine with a discrete set of events to choose
+from\textemdash it is not done with the intention of specifying that
+one event follows another.  The panel presented initially to the user
+is as shown in \Cref{fig:figure4}.
 
 \begin{figure}[!htbp]
   \centering {
@@ -13,7 +13,11 @@ in \Cref{fig:figure4}.
   \label{fig:figure4}
 \end{figure}
 
-To add a new event, the user presses the Add button.  This adds an event to the panel.  Pressing the button multiple times will keep adding events to the panel.  \Cref{fig:figure5} shows the state after the button has been pressed twice, and data entered for the ElCentro and Rinaldi Events.
+To add a new event, the user presses the \texttt{Add} button. This adds an
+event to the panel. Pressing the button multiple times will keep
+adding events to the panel. \Cref{fig:figure5} shows the state after
+the button has been pressed twice, and data entered for the ElCentro
+and Rinaldi Events.
 
 \begin{figure}[!htbp]
   \centering {
@@ -24,7 +28,7 @@ To add a new event, the user presses the Add button.  This adds an event to the 
 \end{figure}
 
 The user can enter the full path manually to the file or use the
-choose button, which brings up your typical file search screen.  By
+\texttt{Choose} button, which brings up your typical file search screen.  By
 default, a scaling factor of 1.0 is assigned to the event.  The user
 can change this to another real value (AT PRESENT DO NOT USE INTEGER)
 or the user has the option of defining this to be a random variable by
@@ -33,22 +37,22 @@ entering a name as shown for the second event.
 Note that this variable name must not start with a number, or contain
 any spaces or special characters, i.e. no -, +,..
 
-The Remove button is pressed to remove events. To remove an event the
-user must first select which events they wish to remove, done by
-clicking in the small circle at the start of the event. Once the
-events to remove have been selected, the user removes all these
-selected evens by pressing the remove button.
+The \texttt{Remove} button is pressed to remove events. To remove an
+event, the user must first select which events they wish to remove,
+done by clicking in the small circle at the start of the event. Once
+the events to remove have been selected, the user removes all these
+selected evens by pressing the \texttt{Remove} button.
 
 If the user has multiple events to load, all the event files may first
-be placed by the user into a seperate folder. If the user presses the
-Load Directory, the user will be able to choose a directory and the
-application will load all the event file (any file with a .json
-suffix) into the widget by choosing the directory. Initially each
+be placed by the user into a separate folder. If the user presses the
+\texttt{Load Directory} button, the user will be able to choose a directory and the
+application will load all the event files (any file with a \texttt{.json}
+suffix) into the widget by choosing the directory. Initially, each
 event will be given a load factor of 1.0.  Should the user include in
-that directory a file named \texttt{Records.txt} the application will open that
+that directory a file named \texttt{Records.txt}, the application will open that
 file and load the events and assigned load factors from that
-file. Each line in Recors.txt is considered ro represent a record, and
-contains 2 comma seperated values: the first value being the event
+file. Each line in \texttt{Records.txt} is considered to represent a record, and
+contains 2 comma separated values: the first value being the event
 file and the second value the event factor. An example \texttt{Records.txt} is
 as shown below:
 

@@ -260,6 +260,7 @@ breaklines=true
 
 % The software version
 \def\softwareversion#1{\gdef\@softwareversion{#1}}
+\def\getsoftwareversion{\@softwareversion}
 
 % Institutions
 \def\institutions#1{\gdef\@institutions{#1}}
