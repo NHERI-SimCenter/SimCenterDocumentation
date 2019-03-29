@@ -3,6 +3,12 @@
 \usepackage{subfig}
 \usepackage{multirow}
 \usepackage{adjustbox}% to adjust table width
+\usepackage{graphicx} %Loading the package
+\graphicspath{{../EE-UQ/}{.}} %Setting the graphicspath
+\makeatletter % Search additional directories for inputs
+\def\input@path{{../EE-UQ/}{.}}
+%or: \def\input@path{{/path/to/folder/}{/path/to/other/folder/}}
+\makeatother
 
 %% Add unicode support for special characters
 %%\usepackage[utf8x]{inputenc}
@@ -17,7 +23,7 @@
 %% \def\dsp{\def\baselinestretch{2.0}\large\normalsize}
 %% \dsp
 
-\bibliography{references}
+\bibliography{../EE-UQ/references}
 
 \begin{document}
 % Declarations for Front Matter
@@ -28,6 +34,7 @@
 \institutions{NHERI SimCenter, UC Berkeley}
 \softwarename{PBE}
 \softwareversion{2.0.0}
+\softwarepage{https://simcenter.designsafe-ci.org/research-tools/pbe-application/}
 
 %%% DON'T MESS WITH THESE SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hypersetup{pageanchor=false}
@@ -55,35 +62,39 @@
 
 \chapter{About}
 \label{chap:about}
-\input{../EE-UQ/about/about.tex}
+\input{about/about.tex}
 
 \chapter{Installation Instructions}
 \label{chap:installation}
-\input{../EE-UQ/installation/installation.tex}
+\input{installation/installation.tex}
 
 \chapter{Usage}
 \label{chap:usage}
-\input{../EE-UQ/usage/usage.tex}
+\input{usage/usage.tex}
 
 \chapter{Theory and Implementation}
 \label{chap:theory}
-\input{../EE-UQ/TheoryAndImplementation.tex}
+\input{theory_and_implementation/theory_and_implementation.tex}
 
 \chapter{Source Code}
 \label{chap:SourceCode}
-\input{../EE-UQ/SourceCode.tex}
+\input{source_code/source_code.tex}
 
 \chapter{User Training}
 \label{chap:training}
-\input{../EE-UQ/Training.tex}
+\input{training/training.tex}
 
 \chapter{Requirements}
 \label{chap:requirements}
-\input{../EE-UQ/Requirements.tex}
+\input{requirements/requirements.tex}
 
 \chapter{Verification and Validation}
 \label{chap:vnv}
-\input{../EE-UQ/VnV.tex}
+\input{ver_and_val/ver_and_val.tex}
+
+\chapter{Troubleshooting}
+\label{chap:troubleshooting}
+\input{troubleshooting/troubleshooting.tex}
 
 \nocite{*}
 
