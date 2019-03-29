@@ -1,6 +1,7 @@
 \documentclass{simcenterdocumentation}
 \usepackage[backend=biber]{biblatex}
-\usepackage{subfig}
+%\usepackage{subfig}
+\usepackage{subcaption}
 \usepackage{multirow}
 \usepackage{adjustbox}
 \usepackage{cleveref}
@@ -63,9 +64,12 @@
 \label{chap:about}
 \input{about/about.tex}
 
+
+
 \chapter{Installation Instructions}
 \label{chap:installation}
 \input{installation/installation.tex}
+
 
 \chapter{Usage}
 \label{chap:usage}
@@ -90,6 +94,10 @@
 \chapter{Requirements}
 \label{chap:requirements}
 \input{requirements/requirements.tex}
+
+\chapter{Troubleshooting}
+\label{chap:troubleshooting}
+\input{troubleshooting/troubleshooting.tex}
 
 \nocite{*}
 

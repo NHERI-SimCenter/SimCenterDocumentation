@@ -7,10 +7,14 @@ drop-down menu at the top of this panel is where the user selects
 which application to use. As the user switches between applications,
 the entry data changes to reflect the different inputs the different
 applications require. At present there are two backend applications
-available through the drop down menu: Multiple Degrees of Freedom
-(MDOF) and \texttt{OpenSees}.
+available through the drop down menu: 
 
-\subsection{Multiple Degrees of Freedom (MDOF)}
+\begin{enumerate}
+\item Multiple Degrees of Freedom (MDOF) (\ref{sec:MDOF})
+\item \texttt{OpenSees} (\ref{sec:OpenSeesSIM})
+\end{enumerate}
+
+\subsection{Multiple Degrees of Freedom (MDOF)}\label{sec:MDOF}
 
 This panel is provided for users to quickly create simple shear models
 of a building. The panel, as shown in \Cref{fig:mdof} is divided
@@ -45,7 +49,7 @@ except the number of floors. The variable name entered will appear as
 a Random Variable in the UQ panel and it is there that the user must
 enter the distribution for the Random Variable.
 
-\subsection{\texttt{OpenSees}}
+\subsection{\texttt{OpenSees}}\label{sec:OpenSeesSIM}
 This panel is for users who have an existing \texttt{OpenSees} model of a
 building that performs a gravity analysis and now wish to subject that
 building model to one of the \texttt{EVT} options provided. The input panel
