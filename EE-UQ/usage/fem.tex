@@ -18,7 +18,10 @@ this includes the choice of
   method.
 \item Convergence Test, the default is a norm on the unbalance force.
 \item Convergence tolerance
-\item Damping Ratio.
+\item Damping Ratio. To specify 2\% damping ratio the user would enter 0.02. If
+a damping ratio of 0 is specified, no damping is added by the simulation application.
+\item Analysis Script. This the user can leave blank. Advanced users of OpenSees who have their preferred script
+and who wish to provide their own damping model cam provide a analysis script to run.
 \end{enumerate}
 
 \begin{figure}[!htbp]
@@ -35,7 +38,20 @@ manual.\\
 A default transient analysis script is run with these inputs. It is
 built for Version 3.0.0+ of OpenSees and uses a divide and conquer
 algorithm in event of a convergence failure issue. This new algorithm
-does not always work. \\
+does not always work for every nonlinear problem. The actual analysis command
+that is created based on the defaults would be the following:
+
+\begin{verbatim}
+numberer RCM
+system Umfpack
+integrator Newmark 0.5 0.25
+test NormUnbalance 0.01 20 
+algorithm Newton
+analysis Transient -numSubLevels 2 -numSubSteps 10 
+analyze $numStep $dt
+\end{verbatim}
+
+
 
 The user is also able to specify their own analysis script to run
 instead of the default. When chosen the variables numStep and dt that
