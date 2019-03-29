@@ -5,15 +5,16 @@
 \usepackage[backend=biber]{biblatex}
 \usepackage{hyperref}
 \hypersetup{
-    colorlinks,
+    colorlinks
     citecolor=black,
     filecolor=black,
     linkcolor=black,
-    urlcolor=black
+    urlcolor=blue
 }
 
 % adding packages: 
 \usepackage{subfig}
+
 \usepackage{listings,xcolor}
 \usepackage{multirow}
 \usepackage{adjustbox,lipsum}% to adjust table width
@@ -43,7 +44,7 @@
 \author{Frank McKenna, Adam Zsarn\'oczay, Wael Elhaddad, Chaofeng Wang, and Michael Gardner}
 \institutions{NHERI SimCenter, UC Berkeley}
 \softwarename{PBE}
-\softwareversion{1.1.0 \textcolor{red}{Frank, let me know the current version.}}
+\softwareversion{2.0.0}
 
 %%% DON'T MESS WITH THESE SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hypersetup{pageanchor=false}
@@ -69,18 +70,17 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Create separate tex files for each chapter and provide them as inputs
 
-
 \chapter{About}
 \label{chap:about}
-\input{../EE-UQ/About.tex}
+\input{../EE-UQ/about/about.tex}
 
 \chapter{Installation Instructions}
 \label{chap:installation}
-\input{../EE-UQ/Installation.tex}
+\input{../EE-UQ/installation/installation.tex}
 
 \chapter{Usage}
 \label{chap:usage}
-\input{../EE-UQ/Usage.tex}
+\input{../EE-UQ/usage/usage.tex}
 
 \chapter{Theory and Implementation}
 \label{chap:theory}
