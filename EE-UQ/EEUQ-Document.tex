@@ -1,53 +1,13 @@
 \documentclass{simcenterdocumentation}
 \usepackage[backend=biber]{biblatex}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks,
-    citecolor=black,
-    filecolor=black,
-    linkcolor=black,
-    urlcolor=blue
-}
-
 \usepackage{subfig}
-\usepackage{listings,xcolor}
 \usepackage{multirow}
-\usepackage{adjustbox,lipsum}% to adjust table width
+\usepackage{adjustbox}
+\usepackage{cleveref}
 
 %% SETTING ENVIRONMENT FOR PYTHON CODE SNIPPETS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \usepackage[utf8]{inputenc}
-% Default fixed font does not support bold face
-\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
-\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
 
-% Custom colors
-\usepackage{color}
-\definecolor{deepblue}{rgb}{0,0,0.5}
-\definecolor{deepred}{rgb}{0.6,0,0}
-\definecolor{deepgreen}{rgb}{0,0.5,0}
-\usepackage{listings}
-
-% Python style for highlighting
-\newcommand\pythonstyle{\lstset{
-language=Python,
-basicstyle=\ttm,
-otherkeywords={self},             % Add keywords here
-keywordstyle=\ttb\color{deepblue},
-emph={MyClass,__init__},          % Custom highlighting
-emphstyle=\ttb\color{deepred},    % Custom highlighting style
-stringstyle=\color{deepgreen},
-frame=tb,                         % Any extra options here
-showstringspaces=false,            %
-breaklines=true
-}}
-
-% Python environment
-\lstnewenvironment{python}[1][]
-{
-\pythonstyle
-\lstset{#1}
-}
-{}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 
 % To compile this file, run "latex/pdflatex codedoc", then "biber codedoc"
@@ -63,6 +23,7 @@ breaklines=true
 \bibliography{references}
 
 \begin{document}
+
 % Declarations for Front Matter
 % Software title followed by optional second line
 \title{EE-UQ\\ \Large The Earthquake Engineering with Uncertainty Quantification (EE-UQ) Application}
@@ -71,7 +32,8 @@ breaklines=true
 %\author{Moe Howard$^{1,2}$ Larry Fine$^1$ Curly Howard$^2$}
 \institutions{NHERI SimCenter, UC Berkeley}
 \softwarename{EE-UQ}
-\softwareversion{2.0.0}
+\softwareversion{1.1}
+\softwarepage{https://simcenter.designsafe-ci.org/research-tools/ee-uq-application/}
 
 %%% DON'T MESS WITH THESE SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hypersetup{pageanchor=false}
@@ -97,38 +59,37 @@ breaklines=true
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Create separate tex files for each chapter and provide them as inputs
 
-
 \chapter{About}
 \label{chap:about}
-\input{./about/about.tex}
+\input{about/about.tex}
 
 \chapter{Installation Instructions}
 \label{chap:installation}
-\input{./installation/installation.tex}
+\input{installation/installation.tex}
 
 \chapter{Usage}
 \label{chap:usage}
-\input{./usage/usage.tex}
+\input{usage/usage.tex}
 
 \chapter{Theory and Implementation}
 \label{chap:theory}
-\input{TheoryAndImplementation.tex}
-
-\chapter{Source Code}
-\label{chap:SourceCode}
-\input{SourceCode.tex}
-
-\chapter{User Training}
-\label{chap:training}
-\input{Training.tex}
-
-\chapter{Requirements}
-\label{chap:requirements}
-\input{Requirements.tex}
+\input{theory_and_implementation/theory_and_implementation.tex}
 
 \chapter{Verification and Validation}
 \label{chap:vnv}
-\input{VnV.tex}
+\input{ver_and_val/ver_and_val.tex}
+
+\chapter{Source Code}
+\label{chap:SourceCode}
+\input{source_code/source_code.tex}
+
+\chapter{User Training}
+\label{chap:training}
+\input{training/training.tex}
+
+\chapter{Requirements}
+\label{chap:requirements}
+\input{requirements/requirements.tex}
 
 \nocite{*}
 

@@ -97,14 +97,21 @@
 \fi
 
 % Now load the memoir class, and configure it appropriately.
-
 \LoadClass{memoir}
 \RequirePackage{graphicx}
 \RequirePackage{titlesec}
+\RequirePackage{hyperref}
+\RequirePackage{xcolor}
+\RequirePackage{listings}
 
-% Remove chapter name and number from chapter titles
-\titleformat{\chapter}[display]
-  {\normalfont\bfseries}{}{0pt}{\Huge}
+%\chapterstyle{article}
+%\chapterstyle{southall}
+%\chapterstyle{verville}
+%\chapterstyle{wilsondob}
+\chapterstyle{tandh}
+
+% Set section numbering depth. Depth of 3 sets numbering to go up to and including subsubsection
+\setcounter{secnumdepth}{3}
 
 \setlrmarginsandblock{1in}{*}{*}
   \@tempdima=1in  \advance\@tempdima 25pt \advance\@tempdima\normalbaselineskip
@@ -182,7 +189,50 @@
 
 \let\memoirlistoftables=\listoftables
 \renewcommand\listoftables{\begin{SingleSpace}\memoirlistoftables
-  \end{SingleSpace}}
+\end{SingleSpace}}
+
+%%% THIS SECTION DECLARES ENVIRONMENTS FOR CODE SNIPPETS AND ALLOWS FOR SYNTAX HIGHLIGHTING %%%%%%%%%%%%%%%%%%%%
+% Set link colors 
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=blue
+}
+
+% Default fixed font does not support bold face
+\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{12} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{12}  % for normal
+
+% Custom colors for code snippets
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+otherkeywords={self},             % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false,            %
+breaklines=true
+}}
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %  draft option (this is where the draft option is actually implemented)
 %
@@ -202,12 +252,21 @@
 
 % The software name
 \def\softwarename#1{\gdef\@softwarename{#1}}
+\def\getsoftwarename{\@softwarename}
+
+% Software webpage
+\def\softwarepage#1{\gdef\@softwarepage{#1}}
+\def\getsoftwarepage#1{\href{\@softwarepage}{\color{blue}{#1}}}
 
 % The software version
 \def\softwareversion#1{\gdef\@softwareversion{#1}}
+\def\getsoftwareversion{\@softwareversion}
 
 % Institutions
 \def\institutions#1{\gdef\@institutions{#1}}
+
+% Function for getting link to feedback survey
+\def\insertsurveylink#1{\href{https://docs.google.com/forms/d/e/1FAIpQLSfh20kBxDmvmHgz9uFwhkospGLCeazZzL770A2GuYZ2KgBZBA/viewform?usp=sf_link}{\color{blue}{#1}}}
 
 % The alwayssingle environment ensures that front matter is always
 % single column even in a double-column document.
