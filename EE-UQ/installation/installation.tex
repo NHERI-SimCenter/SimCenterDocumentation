@@ -142,11 +142,11 @@ workflows locally, you will not need these applications.
 \subsection{Install \texttt{OpenSees}}
 %===============================================================================
 
-\href{https://opensees.berkeley.edu}{\texttt{OpenSees}} is an open-source finite element application publicly available for download from its \href{https://opensees.berkeley.edu/OpenSees/user/download.php}{download page}. If you have never downloaded \texttt{OpenSees} you will need to register your e-mail to gain access. After registration, you can proceed to the download page. \texttt{OpenSees} installation requires the user install both \texttt{OpenSees} and \texttt{Tcl}. The Windows and Mac downloads are in different locations on the download page, with the appropriate tcl installer beside the \texttt{OpenSees} link as is shown in \Cref{fig:openseesDownload}
+\href{https://opensees.berkeley.edu}{\texttt{OpenSees}} is an open-source finite element application publicly available for download from its \href{https://opensees.berkeley.edu/OpenSees/user/download.php}{download page}. \texttt{OpenSees} installation requires the user install both \texttt{OpenSees} and \texttt{Tcl}.  If you have never downloaded \texttt{OpenSees} you will need to register your e-mail to gain access. After registration, you can proceed to the download page by entering your email address and clicking the Submit button. The Windows and Mac downloads are in different locations on the download page, with the appropriate Tcl installer beside the \texttt{OpenSees} link.. This is as indicated in \Cref{fig:openseesDownload}
 
 \begin{figure}[!htbp]
   \centering {
-    \includegraphics[width=0.95\textwidth]
+    \includegraphics[width=\textwidth]
     {installation/figures/openSeesDownload.png} }
   \caption{Download OpenSees.}
   \label{fig:openseesDownload}
@@ -157,7 +157,7 @@ Follow the instructions on this page to install \texttt{Tcl}
 attetion to the location \texttt{Tcl} must be installed in, as this is not the
 default, and make sure you run the installer as administrator,
 otherwise you will not be able to create the \texttt{C:/Program
-Files/Tcl} folder.
+Files/Tcl} folder.\\
 
 After \texttt{Tcl} is installed, we recommend you put \texttt{OpenSees} in
 the \texttt{C:/SimCenter/OpenSees} folder on Windows and in
@@ -204,8 +204,8 @@ computer. The steps to do this depend on your operating system:
 
 \begin{figure}[!htbp]
   \centering {
-    \includegraphics[width=0.8\textwidth]
-    {installation/figures/add_env_path_Mac.png} }
+     \includegraphics[width=0.8\textwidth]
+    {installation/figures/add_env_path_mac.png} }
   \caption{Adding OpenSees to the PATH environment variable on Mac.}
   \label{fig:add_env_path_Mac}
 \end{figure}
@@ -219,13 +219,13 @@ computer. The steps to do this depend on your operating system:
 
 \begin{figure}[!htbp]
   \centering {
-    \includegraphics[width=0.8\textwidth]
+    \includegraphics[width=\textwidth]
     {installation/figures/dakota_installation.png} }
   \caption{Adding OpenSees to the PATH environment variable on Mac.}
   \label{fig:dakota_installation}
 \end{figure}
 
-Similarly to \texttt{OpenSees}, you need to add TWO \texttt{Dakota} folders to the
+Following the instructions provided for installing  \texttt{OpenSees}, you need to add TWO \texttt{Dakota} folders to the
 system \texttt{PATH} environment variable to allow the SimCenter
 workflow applications to find the \texttt{Dakota} tools on your computer. Use
 the procedure described above for \texttt{OpenSees} to add the following
