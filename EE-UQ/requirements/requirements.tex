@@ -1,6 +1,12 @@
-This user requirements chapter outlines in general the features provided by the tool, when the features were introduced, and what features we are expecting to introduce in the future. It provides a roadmap of where this tool has come from and where we think it is going. The future features are highly dependent on user feedback. You are highly encouraged to contact us to discuss any new features you would like to see added to the application. \\
+This user requirements chapter outlines in general the features provided by the tool, when the features 
+were introduced, and what features you can expect to see in the future. It provides a roadmap of 
+where this tool has come from and where it is headed. The future features are highly dependent on 
+user feedback. You are highly encouraged to contact us to discuss any new features you would like to see 
+added to the application. \\
 
-The \Cref{tab:schedule} shows the scheduled release dates for this tool and includes the list of features provided in that release or which are expected to be provided in the future release. individual requirements that are expected to be provided in that release. These requirements are listed in \Cref{tab:featureRequirements}.
+\Cref{tab:schedule} shows the scheduled release dates for this tool and includes the list of features 
+provided in that release or which you can expect to see in the future releases. The individual feature 
+requirements that are outlined in \Cref{tab:featureRequirements}.
 
 \begin{table}[hbt!]                    
   \centering
@@ -31,10 +37,10 @@ user survey is available \insertsurveylink{here}.
     \toprule          
       \# & Description & Priority & Version \\ \hline
     
-      1 & Ability to perform UQ on Building with Single Earthquake &  &  \\ \hline
+      1 & \textbf{Ability to perform UQ on Building with Single Earthquake} &  &  \\ 
 	1.1 & Run on Local Machine (Mac and Windows) & M & 1.0 \\ \hline
 	1.2 & Run on Stampede2 through DesignSafe utilizing Agave & M & 1.0 \\ \hline
-	2 & Motion Selection &  &  \\ \hline
+	2 & \textbf{Motion Selection} &  &  \\ \hline
 	2.1 & Ability to select from Multiple Earthquakes and view UQ due to all the discrete events & M & 1.0  \\ \hline
 	2.2 & Ability to select from list of SimCenter motions & M & 1.0 \\ \hline
 	2.3 & Ability to select from list of PEER motions. & D & 1.0 \\ \hline
@@ -48,10 +54,10 @@ user survey is available \insertsurveylink{here}.
 	 & c)     2d bidirectional with full stochastic characterization of soil layers & M & 1.3 \\ \hline
 
 	\multirow{5}{*}{2.8} 
-	& Ability to select from synthetic ground motions &  &  \\ 
+	& Ability to select from synthetic ground motions &  &  \\ \hline
 	 & a)     per Vlachos, Papakonstantinou, Deodatis (2017) & D & 1.1  \\ 
 	 & b)     per Dabaghi, Der Kiureghian (2017) & D & 1.2 \\ \hline
-	3 & Building Model Generation &  &  \\ \hline
+	3 & \textbf{Building Model Generation} &  &  \\ \hline
 	3.1 & Ability to use existing OpenSees model scripts. & M & 1.0 \\ \hline
 	\multirow{5}{*}{3.2}  & Ability to define building and use Expert System to generate FE mesh. &  &  \\
 	 & a)     Concrete Shear Walls & M & 2.0 \\ 
@@ -66,14 +72,14 @@ user survey is available \insertsurveylink{here}.
 	3.4 & Ability to specify connection details for member ends & M & 2.2 \\ \hline
 	3.5 & Ability to define a user-defined moment-rotation response representing the connection details & D & 2.2 \\ \hline
 	3.6 & Ability to quickly create a simple shear building model & D & 1.1 \\ \hline
-	4 & FEM &  &  \\ \hline
+	4 & \textbf{FEM} &  &  \\ \hline
 	4.1 & Ability to specify OpenSees as FEM engine and to specify different analysis options. & M & 1.0 \\ \hline
 	4.2 & Ability to provide own OpenSees Analysis script to OpenSees engine. & D & 1.0 \\ \hline
 	4.3 & Ability to use alternative FEM engine. & M & 2.0 \\ \hline
-	5 & UQ - Method &  &  \\ \hline
+	5 & \textbf{UQ - Method} &  &  \\ \hline
 	5.1 & Ability to Use Dakota UQ engine with the Monte Carlo and LHS methods to perform sampling & M & 1.0 \\ \hline
 	5.2 & Ability to Use alternative UQ engines & M & 2.0 \\ \hline
-	6 & UQ – Random Variables &  &  \\ \hline
+	6 & \textbf{UQ – Random Variables} &  &  \\ \hline
 	\multirow{5}{*}{6.1} & Ability to Define Variables of certain types: &  &  \\ 
 	 & a)     Normal &  &  \\ 
 	 & b)     Lognormal &  &  \\ 
@@ -84,10 +90,10 @@ user survey is available \insertsurveylink{here}.
 	6.2 & User defined Distribution & M & 1.2 \\ \hline
 	6.3 & Define Correlation Matrix & M & 1.1 \\ \hline
 	7 & Tool to allow user to load and save user inputs & M & 1.0 \\ \hline
-	8 & Engineering Demand Parameters &  &  \\ \hline
+	8 & \textbf{Engineering Demand Parameters} &  &  \\ \hline
 	8.1 & Ability to Process own Output Parameters & M & 1.1  \\ \hline
 	8.1 & Add to Standrard Earthquake a variable indicating analysis failure & D & 1.2  \\ \hline
-	9 & Misc. &  &  \\ \hline
+	9 & \textbf{Misc.} &  &  \\ \hline
 	9.1 & Simplify run local and run remote by removing workdir locations. move to preferences & D & 1.2  \\ \hline
       \bottomrule                                  
   \end{tabular}
