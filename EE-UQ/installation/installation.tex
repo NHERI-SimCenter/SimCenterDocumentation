@@ -16,26 +16,31 @@ your local machine as well as at DesignSafe. \\
 To download the \texttt{\getsoftwarename{}} application navigate to
 the \getsoftwarepage{\texttt{\getsoftwarename} page} and click on
 the \emph{Download App \& User Manual} link on the right side of the
-page. This will bring you to another page which, as shown
-in \Cref{fig:app_choose_file}, contains a list of files and
-directories.
-
+page. This will, as \Cref{fig:app_choose_file} indicates, bring you to another page which contains a list of downloadable files and directories.
 
 \begin{figure}[!htbp]
   \centering {
-    \includegraphics[width=0.8\textwidth]
-    {installation/figures/EE-UQ_app_website.png} }
-  \caption{Download the EE-UQ application from the SimCenter website.}
-  \label{fig:app_website}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \centering {
-    \includegraphics[width=0.8\textwidth]
-    {installation/figures/EE-UQ_app_choose_file.png} }
-  \caption{Choose the appropriate file for your operating system.}
+    \includegraphics[width=0.95\textwidth]
+    {installation/figures/applicationDownload.png} }
+  \caption{Download Application.}
   \label{fig:app_choose_file}
 \end{figure}
+
+%\begin{figure}[!htbp]
+%\centering {
+%\includegraphics[width=0.8\textwidth]
+%{installation/figures/EE-UQ_app_website.png} }
+%\caption{Download the EE-UQ application from the SimCenter website.}
+%\label{fig:app_website}
+% \end{figure}
+
+%\begin{figure}[!htbp]
+% \centering {
+  %  \includegraphics[width=0.8\textwidth]
+ % {installation/figures/EE-UQ_app_choose_file.png} }
+ % \caption{Choose the appropriate file for your operating system.}
+ % \label{fig:app_choose_file}
+%\end{figure}
 
 There are at least four files available for download from this page: 
 \begin{enumerate}
@@ -50,9 +55,9 @@ the appropriate file for your operating system and then click on the
 Download button at bottom right corner of the ensuing pop-up window to
 download it. You need to unpackage the application from the downloaded
 file and place it in a location on your filesystem. On Windows, we
-recommend you to create a \texttt{C:/SimCenter/\getsoftwarename{}}
+recommend that you create a \texttt{C:/SimCenter/\getsoftwarename{}}
 directory and extract the contents of the \texttt{ZIP} archive
-there. On Mac, we recommend you to put the application in either your
+there. On Mac, we recommend you copy the application to either your
 Documents folder or your Desktop folder. You are free to place the
 applications anywhere you wish, you will just need to make the
 appropriate adjustments with the following instructions if you do. \\
@@ -137,18 +142,18 @@ workflows locally, you will not need these applications.
 \subsection{Install \texttt{OpenSees}}
 %===============================================================================
 
-\href{https://opensees.berkeley.edu}{\texttt{OpenSees}} is an open-source finite element application publicly available for download from its \href{https://opensees.berkeley.edu/OpenSees/user/download.php}{download page}. If you have never downloaded \texttt{OpenSees} you will need to register your e-mail to gain access. After registration, you can proceed to the download page. \texttt{OpenSees} installation requires the user install both \texttt{OpenSees} and \texttt{Tcl}. The Windows and Mac downloads are in different locations on the download page, with the appropriate tcl installer beside the \texttt{OpenSees} link as is shown in \Cref{fig:opensees_installation}
+\href{https://opensees.berkeley.edu}{\texttt{OpenSees}} is an open-source finite element application publicly available for download from its \href{https://opensees.berkeley.edu/OpenSees/user/download.php}{download page}. If you have never downloaded \texttt{OpenSees} you will need to register your e-mail to gain access. After registration, you can proceed to the download page. \texttt{OpenSees} installation requires the user install both \texttt{OpenSees} and \texttt{Tcl}. The Windows and Mac downloads are in different locations on the download page, with the appropriate tcl installer beside the \texttt{OpenSees} link as is shown in \Cref{fig:openseesDownload}
 
 \begin{figure}[!htbp]
   \centering {
-    \includegraphics[width=0.8\textwidth]
-    {installation/figures/opensees_register.png} }
-  \caption{Registration at the OpenSees website.}
-  \label{fig:opensees_register}
+    \includegraphics[width=0.95\textwidth]
+    {installation/figures/openSeesDownload.png} }
+  \caption{Download OpenSees.}
+  \label{fig:openseesDownload}
 \end{figure}
 
 Follow the instructions on this page to install \texttt{Tcl}
-(\Cref{fig:opensees_installation}). On Windows, pay particular
+(\Cref{fig:openseesDownload}). On Windows, pay particular
 attetion to the location \texttt{Tcl} must be installed in, as this is not the
 default, and make sure you run the installer as administrator,
 otherwise you will not be able to create the \texttt{C:/Program
@@ -173,10 +178,11 @@ computer. The steps to do this depend on your operating system:
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.8\textwidth]
-    {installation/figures/opensees_installation.png} }
-  \caption{Installation instructions for OpenSees.}
-  \label{fig:opensees_installation}
+    {installation/figures/add_env_path.png} }
+  \caption{Adding OpenSees to the PATH environment variable on Windows.}
+  \label{fig:add_env_path}
 \end{figure}
+
 
 \begin{enumerate}
     \item open \emph{Start}, type \emph{env}, and choose \emph{Edit the system environment variables};
@@ -188,13 +194,6 @@ computer. The steps to do this depend on your operating system:
 
 \item MacOS: To add the /usr/local/OpenSees folder to the \texttt{PATH} variable::
 
-\begin{figure}[!htbp]
-  \centering {
-    \includegraphics[width=0.8\textwidth]
-    {installation/figures/add_env_path.png} }
-  \caption{Adding OpenSees to the PATH environment variable on Windows.}
-  \label{fig:add_env_path}
-\end{figure}
 
 \begin{enumerate}
     \item open a Terminal;
@@ -210,7 +209,7 @@ computer. The steps to do this depend on your operating system:
   \caption{Adding OpenSees to the PATH environment variable on Mac.}
   \label{fig:add_env_path_Mac}
 \end{figure}
-
+\end{enumerate}
 
 
 \subsection{Install \texttt{Dakota}}
