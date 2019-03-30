@@ -253,6 +253,11 @@ breaklines=true
 % The software name
 \def\softwarename#1{\gdef\@softwarename{#1}}
 \def\getsoftwarename{\@softwarename}
+\def\softwareSwitch#1#2#3{%
+   \ifthenelse{\equal{\@softwarename}{#1}}
+    {#2}
+    {#3}%
+}
 
 % Software webpage
 \def\softwarepage#1{\gdef\@softwarepage{#1}}
