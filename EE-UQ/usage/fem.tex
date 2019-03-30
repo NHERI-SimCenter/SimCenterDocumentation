@@ -9,21 +9,6 @@ but consists of a pre- and post-processor to take the BIM and EVENT
 file and use OpenSees to determine the response, returning these
 responses in an EDP.
 
-For the OpenSees application the user is required to specify the
-options to be used in the transient analysis. As shown \Cref{fig:fem},
-this includes the choice of
-\begin{enumerate}
-\item Solution algorithm, the default is Newton Raphson.
-\item Integration Scheme, the default is Newmarks linear acceleration
-  method.
-\item Convergence Test, the default is a norm on the unbalance force.
-\item Convergence tolerance
-\item Damping Ratio. To specify 2\% damping ratio the user would enter 0.02. If
-a damping ratio of 0 is specified, no damping is added by the simulation application.
-\item Analysis Script. This the user can leave blank. Advanced users of OpenSees who have their preferred script
-and who wish to provide their own damping model cam provide a analysis script to run.
-\end{enumerate}
-
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.8\textwidth]
@@ -31,6 +16,22 @@ and who wish to provide their own damping model cam provide a analysis script to
   \caption{Options for \texttt{OpenSees} transient analysis}
   \label{fig:fem}
 \end{figure}
+
+For the OpenSees application the user is required to specify the
+options to be used in the transient analysis. As shown \Cref{fig:fem},
+this includes the choice of
+\begin{enumerate}
+\item \href{http://opensees.berkeley.edu/wiki/index.php/Algorithm_Command}{Solution algorithm}, the default is Newton Raphson.
+\item \href{http://opensees.berkeley.edu/wiki/index.php/Integrator_Command}{Integration Scheme}, the default is Newmarks linear acceleration
+  method.
+\item \href{http://opensees.berkeley.edu/wiki/index.php/Test_Command}{Convergence Test}, the default is a norm on the unbalance force.
+\item Convergence tolerance
+\item Damping Ratio. To specify 2\% damping ratio the user would enter 0.02. If
+a damping ratio of 0 is specified, no damping is added by the simulation application.
+\item Analysis Script. This the user can leave blank. Advanced users of OpenSees who have their preferred script
+and who wish to provide their own damping model cam provide a analysis script to run.
+\end{enumerate}
+
 
 All the options available can be found in the OpenSees online user
 manual.\\
