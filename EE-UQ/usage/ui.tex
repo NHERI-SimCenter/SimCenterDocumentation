@@ -4,13 +4,23 @@ parameters to create the simulation, start the simulation both locally and
 remotely, and view the simulation results. The interface contains several
 separate areas:
 
+\softwareSwitch{PBE}{
 \begin{figure}[!htbp]
   \centering {
-    \includegraphics[width=0.8\textwidth]
-    {usage/figures/ui.png} }
-  \caption{UI}
-  \label{fig:figure1}
+    \includegraphics[width=0.95\textwidth]
+    {usage/figures/pbePanel.png} }
+  \caption{The User Interface (UI)}
+  \label{fig:app_choose_file}
 \end{figure}
+}{
+\begin{figure}[!htbp]
+  \centering {
+    \includegraphics[width=0.95\textwidth]
+    {usage/figures/eePanel.png} }
+  \caption{The User Interface (UI)}
+  \label{fig:app_choose_file}
+\end{figure}
+}
 
 \begin{enumerate}
 \item Input Panel Selection: This area on the left side provides the
@@ -25,7 +35,9 @@ separate areas:
   \item UQ: Uncertainty quantification (\ref{sec:uq}), for defining the distribution
     of the random variable paramaters and UQ method analysis options.
 
-\softwareSwitch{PBE}{}{ 
+\softwareSwitch{PBE}{
+ \item CMP:  Content Model Parameters (\ref{sec:edp}), for specification of the bulding contents and damage and  loss application to use.
+}{ 
   \item EDP: Engineering Demand Parameters (\ref{sec:edp}), for 
   specification of output response quantities.
 }
