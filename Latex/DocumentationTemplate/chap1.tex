@@ -1,3 +1,36 @@
+\section{Brief overview of some functionality available in \texttt{simcenterdocumentation.cls}}
+You can access the software name, \getsoftwarename{}, like this
+\texttt{\textbackslash getsoftwarename\{\}} after it has been input in
+the preamble using \texttt{\textbackslash softwarename}. You can also
+get the \insertsurveylink{link} to the feedback survey and place it in
+the text using \texttt{\textbackslash insertsurveylink\{text\_for\_link\}}.
+
+\vspace{0.25cm}
+Code snippets with syntax highlighting can also be inserted:
+
+\begin{python}[caption=Python script for analyzing the portal frame model with uncertain parameters]
+  import numpy as np
+  import os
+  import shutil
+  import subprocess
+  from pyDOE import *
+  from scipy.stats.distributions import norm  
+#Setting number of samples
+nSamples = 1000
+
+#Creating latin hyper cube designs
+design = lhs(2, samples=nSamples)
+
+#Sampling Young's Modulus and Mass
+ESamples = norm(loc=4227, scale=500.0).ppf(design[:,0])
+mSamples = norm(loc=5.18, scale=1.0).ppf(design[:,1])
+\end{python}
+
+At present, this is only defined for \texttt{Python}, but can be easily extended in the class
+for other languages. This in \textbf{no way} indicates any preference for a particular coding language
+and should not be interpreted as a preference for \texttt{Python}.
+
+
 \section{Faceplate Marginalia}
 
 Invasive brag; gait grew Fuji Budweiser penchant walkover pus hafnium

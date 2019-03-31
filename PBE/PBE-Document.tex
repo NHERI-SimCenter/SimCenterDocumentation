@@ -1,17 +1,19 @@
 \documentclass{simcenterdocumentation}
 \usepackage[backend=biber]{biblatex}
-%\usepackage{subfig}
-\usepackage{subcaption}
+\usepackage{subfig}
 \usepackage{multirow}
-\usepackage{adjustbox}
-\usepackage{cleveref}
+\usepackage{adjustbox}% to adjust table width
+\usepackage{graphicx} %Loading the package
+\graphicspath{{../EE-UQ/}{.}} %Setting the graphicspath
+\makeatletter % Search additional directories for inputs
+\def\input@path{{../EE-UQ/}{.}}
+%or: \def\input@path{{/path/to/folder/}{/path/to/other/folder/}}
+\makeatother
 
-%% SETTING ENVIRONMENT FOR PYTHON CODE SNIPPETS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-\usepackage[utf8]{inputenc}
+%% Add unicode support for special characters
+%%\usepackage[utf8x]{inputenc}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
-
-% To compile this file, run "latex/pdflatex codedoc", then "biber codedoc"
+% To compile this file, run "latex/pdflatex codedoc", then "biber codedoc"b
 % (or "bibtex codedoc", if the output from latex asks for that instead),
 % and then "latex/pdflatex codedoc" (without the quotes in each case).
 
@@ -21,20 +23,18 @@
 %% \def\dsp{\def\baselinestretch{2.0}\large\normalsize}
 %% \dsp
 
-\bibliography{references}
+\bibliography{../EE-UQ/references}
 
 \begin{document}
-
 % Declarations for Front Matter
 % Software title followed by optional second line
-\title{EE-UQ\\ \Large The Earthquake Engineering with Uncertainty Quantification (EE-UQ) Application}
+\title{PBE\\ Performance-Based Engineering Application}
 % Use superscripts to indicate author affiliations
-\author{Frank McKenna, Wael Elhaddad, Chaofeng Wang, and Michael Gardner}
-%\author{Moe Howard$^{1,2}$ Larry Fine$^1$ Curly Howard$^2$}
+\author{Frank McKenna, Adam Zsarn\'oczay, Wael Elhaddad, Chaofeng Wang, and Michael Gardner}
 \institutions{NHERI SimCenter, UC Berkeley}
-\softwarename{EE-UQ}
-\softwareversion{1.1}
-\softwarepage{https://simcenter.designsafe-ci.org/research-tools/ee-uq-application/}
+\softwarename{PBE}
+\softwareversion{2.0.0}
+\softwarepage{https://simcenter.designsafe-ci.org/research-tools/pbe-application/}
 
 %%% DON'T MESS WITH THESE SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \hypersetup{pageanchor=false}
@@ -64,12 +64,9 @@
 \label{chap:about}
 \input{about/about.tex}
 
-
-
 \chapter{Installation Instructions}
 \label{chap:installation}
 \input{installation/installation.tex}
-
 
 \chapter{Usage}
 \label{chap:usage}
@@ -78,10 +75,6 @@
 \chapter{Theory and Implementation}
 \label{chap:theory}
 \input{theory_and_implementation/theory_and_implementation.tex}
-
-\chapter{Verification and Validation}
-\label{chap:vnv}
-\input{ver_and_val/ver_and_val.tex}
 
 \chapter{Source Code}
 \label{chap:SourceCode}
@@ -94,6 +87,10 @@
 \chapter{Requirements}
 \label{chap:requirements}
 \input{requirements/requirements.tex}
+
+\chapter{Verification and Validation}
+\label{chap:vnv}
+\input{ver_and_val/ver_and_val.tex}
 
 \chapter{Troubleshooting}
 \label{chap:troubleshooting}
