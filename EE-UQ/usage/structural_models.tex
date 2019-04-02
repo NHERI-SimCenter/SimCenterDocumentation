@@ -1,12 +1,9 @@
-This panel is where the user defines the structural model of the
-building. The structural model is that part of the building provided
+The user here defines the structural model of the
+building. The structural model is the part of the building designed
 to resist the lateral loads. There are a number of backend
 applications provided for this part of the workflow, each responsible
-for providing the structural analysis model to the workflow. The
-drop-down menu at the top of this panel is where the user selects
-which application to use. As the user switches between applications,
-the entry data changes to reflect the different inputs the different
-applications require. At present there are two backend applications
+for defining the structural analysis model. The user can select the application to use from the drop-down menu at the top of this panel. As the user switches between applications,
+the entry data changes to reflect the inputs each particular application requires. At present, there are two backend applications
 available through the drop down menu: 
 
 \begin{enumerate}
@@ -20,19 +17,9 @@ This panel is provided for users to quickly create simple shear models
 of a building. The panel, as shown in \Cref{fig:mdof} is divided
 into 3 frames:
 \begin{enumerate}
-\item In the top left frame the user enters the number of stories. For
-  each story the user then enter the story height, initial stiffness in
-  1 and 2 directions, yield strength in the 1 and 2 directions, and
-  hardening ratio again in the 1 and 2 directions. Here, the 1 and 2 directions
-  are the orthogonal $x$ and $y$ axes in plan view. In addition, user enters
-  the floor weights and damping ratios for each of the nodes.
-\item In the lower left frame the user has the option of overriding an
-  individual floor or story basis, or any of the properties set in the
-  upper frame.
-\item On the right side of the frame is a graphical widget showing the
-  current building. When entering data into the lower left frame,
-  those floors and stories corresponding to data being modified is
-  highlighted in red.
+\item The top left frame allows the user to specify the number of stories and properties that are uniform for every story in the building. The following properties are available: floor weight, story height, and damping ratio for each story, and initial stiffness, yield strength, and hardening ratio for each direction in each story. Here, the 1 and 2 directions are orthogonal $x$ and $y$ axes in plan view.
+\item The lower left frame allows the user to override the structural parameters above for individual stories.
+\item The frame on the right is a graphical widget showing the current building. When entering data into the lower left frame, the stories corresponding to the data being modified are highlighted in red.
 \end{enumerate}
 
 \begin{figure}[!htbp]
@@ -43,30 +30,30 @@ into 3 frames:
   \label{fig:mdof}
 \end{figure}
 
-Random Variables: Random Variables can be created by the user entering
-a valid string instead of a number in the entry fields for all entries
-except the number of floors. The variable name entered will appear as
-a Random Variable in the UQ panel and it is there that the user must
-enter the distribution for the Random Variable.
+Random Variables: Random Variables can be created by entering
+a valid string instead of a number in the entry fields for any entry
+except for the \emph{Number of floors}. The variable name entered will appear as
+a Random Variable in the UQ panel and the user must specify its properties there.
 
 \subsection{\texttt{OpenSees}}\label{sec:OpenSeesSIM}
 This panel is for users who have an existing \texttt{OpenSees} model of a
-building that performs a gravity analysis and now wish to subject that
+building that performs a gravity analysis and now they wish to subject that
 building model to one of the \texttt{EVT} options provided. The input panel
-for this option is shown in \Cref{fig:figure3}. The user has 3 fields
-that they need to complete:
+for this option is shown in \Cref{fig:figure3}. Users need to provide three pieces of information:
 \begin{enumerate} 
-\item The user specifies the main script that contains the building
+\item Main OpenSees Script: The main script that contains the building
   model. This script should build a model and perform any gravity
   analysis of the building that is required before the event is
   applied.
-\item A list of nodes that define a column line of interest for which
+\item Column Line of Nodes: A list of node numbers that define a column line of interest for which
   the responses will be determined. The column nodes should be in
-  order from ground floor through to roof. The EDP options, described
+  order from ground floor to roof. 
+  
+  The EDP options, described
   in \Cref{sec:edp}, use this information to determine nodes at which
   displacement, acceleration and story drifts are calculated.
-\item An entry for the dimension of the model, i.e. 1D, 2D or 3D. This
-  information is used to apply ground motions.
+\item An entry for the dimension of the model, i.e. 1D, 2D, or 3D. This
+  information is used when ground motions are applied.
 \end{enumerate}
 
 \begin{figure}[!htbp]

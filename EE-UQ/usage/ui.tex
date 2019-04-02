@@ -1,4 +1,4 @@
-The user interface (UI), as shown in \Cref{fig:figure1}, is where the analysis
+The user interface (UI), as shown in \Cref{fig:generic_ui}, is where the analysis
 is configured and managed. Here, the user is able to provide the necessary
 parameters to create the simulation, start the simulation both locally and
 remotely, and view the simulation results. The interface contains several
@@ -10,7 +10,7 @@ separate areas:
     \includegraphics[width=0.95\textwidth]
     {usage/figures/pbePanel.png} }
   \caption{The User Interface (UI)}
-  \label{fig:app_choose_file}
+  \label{fig:generic_ui}
 \end{figure}
 }{
 \begin{figure}[!htbp]
@@ -18,25 +18,25 @@ separate areas:
     \includegraphics[width=0.95\textwidth]
     {usage/figures/eePanel.png} }
   \caption{The User Interface (UI)}
-  \label{fig:app_choose_file}
+  \label{fig:generic_ui}
 \end{figure}
 }
 
 \begin{enumerate}
 \item Input Panel Selection: This area on the left side provides the
-  user with a selection of items to choose from from:
+  user with a selection of items to choose from:
 \begin{enumerate}
-  \item GI: General Information (\ref{sec:generalInfo}), for specifiction of building
+  \item GI: General Information (\ref{sec:generalInfo}), for specification of building
     description, location and units.
   \item SIM: Structure Information Model (\ref{sec:structuralInfo}), for description of the
     building model.
-  \item EVT: Event (\ref{sec:event}), for selecting the input earthquake motions for building.
-  \item FEM: Finite element method (\ref{sec:fem}), for specifying the analysis options.
-  \item UQ: Uncertainty quantification (\ref{sec:uq}), for defining the distribution
-    of the random variable paramaters and UQ method analysis options.
+  \item EVT: Event (\ref{sec:event}), for selecting the input earthquake motions for the building.
+  \item FEM: Finite Element Method (\ref{sec:fem}), for specifying the options for structural response simulation.
+  \item UQ: Uncertainty Quantification (\ref{sec:uq}), for defining the distribution
+    of the random paramaters and UQ method analysis options.
 
 \softwareSwitch{PBE}{
- \item CMP:  Content Model Parameters (\ref{sec:edp}), for specification of the bulding contents and damage and  loss application to use.
+ \item CMP:  Damage and Loss Model (\ref{sec:dl}), for specification of the damage and loss model parameters.
 }{ 
   \item EDP: Engineering Demand Parameters (\ref{sec:edp}), for 
   specification of output response quantities.
@@ -47,9 +47,9 @@ separate areas:
 
 Selecting any of these will change the input panel presented.
 
-\item Input Panel: This is the large central area of the UI that the
+\item Input Panel: This is the large central area of the UI where the
   user provides input for the application chosen and views the
-  results. For example if the user had selected UQ in the input panel
+  results. For example, if the user had selected UQ in the input panel
   selection, it is in this panel that the user would provide details
   on the distributions associated with each random variable or select
   the sampling method to use and provide the options necessary to run
@@ -59,19 +59,18 @@ Selecting any of these will change the input panel presented.
   which 4 buttons are presented to the user:
 
 \begin{enumerate}
-\item RUN – to run the simulation of the user’s desktop machine.
-\item RUN at DesignSafe – to process the information, and send to
-  DesignSafe where the job will be run on a supercomputer and results
-  stored in your DesignSafe jobs folder.
-\item GET from DesignSafe – to obtain from DesignSafe your list of
-  jobs and select from that list a job to download.
-\item Exit: to exit the application.
+\item RUN – Run the simulation locally on the user’s desktop machine.
+\item RUN at DesignSafe – Process the information, and send to
+  DesignSafe. The simulation will be run there on a supercomputer, and results
+  will be stored in the user's DesignSafe jobs folder.
+\item GET from DesignSafe – Obtain the list of
+  jobs for the user from DesignSafe and select a job to download from that list.
+\item Exit: Exit the application.
 \end{enumerate}
 
-The use of the push buttons is discussed in \Cref{sec:push_buttons}.
+The first 3 of the above buttons and their use are discussed in more detail in \Cref{sec:push_buttons}.
 
-\item Login Button: At the top right of the UI is the login
-  button. Before the user can launch any jobs on DesignSafe, they must
+\item Login Button: The Login Button is at the top right of the UI. Before the user can launch any jobs on DesignSafe, they must
   first login to DesignSafe using their DesignSafe login and
   password. Pressing the login button will open up the login window
   for users to enter this information. Users can register for an
@@ -79,8 +78,6 @@ The use of the push buttons is discussed in \Cref{sec:push_buttons}.
   the \href{https://www.designsafe-ci.org/account/register/}{DesignSafe
   webpage}.
 
-\item Message Area: In the top center of the application is the area
-  of the interface that error and status messaged will be displayed
-  while the application is running.
+\item Message Area: While the application is running, error and status messages will be displayed here, in the top center of the user interface.
 
 \end{enumerate}
