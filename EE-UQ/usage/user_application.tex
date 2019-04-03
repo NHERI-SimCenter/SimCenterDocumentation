@@ -1,17 +1,18 @@
-The final selection option is a user specific application. 
+The final option for event definition is a user application. 
 The user specifies the application name and the input file containing the specific input information 
 needed by the application when it is running in the backend. 
-As will be discussed, the user is also required when they use an additional application not provided, 
-to edit the tools registry file. Here they must include a new event application with this same name 
+As will be discussed later, when they use an additional application not provided, the user is also required 
+to edit the tools registry file. There they must include a new event application with the same name 
 and the location where that application can be found relative to the tools application directory. 
-If running on DesignSafe, that application must of course be built and available on the Stampeded2 supercomputer. 
-NOTE that given how DesignSafe runs the applications through Agave, this applications file permissions must be 
-world readable and executable (as when user running their application through DesignSafe and Agave, they are not running as themselves!)
+If running on DesignSafe, that application must be built and must be available on the Stampede2 supercomputer. 
+
+Note: Given how DesignSafe runs the applications through Agave, the file permissions of this application must be 
+world readable and executable (i.e., when a user runs their application through DesignSafe and Agave, they are not running it as themselves!)
 
 \begin{figure}[!htbp]
   \centering {
-    \includegraphics[width=0.8\textwidth]
+    \includegraphics[width=1.0\textwidth]
     {usage/figures/userAppEvent.png} }
   \caption{User defined event}
-  \label{fig:figure8}
+  \label{fig:user_defined_event_panel}
 \end{figure}
