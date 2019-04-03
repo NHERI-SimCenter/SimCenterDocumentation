@@ -54,8 +54,8 @@ set as \texttt{Vlachos et al. (2018)}.
 Only three inputs are required for this test, of which one will be set
 to a random variable. As shown in \Cref{fig:input_event}, set the
 \emph{Moment Magnitude} ($M_W$) to 6.5, the \emph{Closest-to-Site Rupture Distance}
-($R_{rupt}$) to 20 \textit{km}, and the \emph{Average shear-wave velocity
-for the top 30 \textit{m}} ($V_{S_{30}}$)
+($R_{rupt}$) to 20 km, and the \emph{Average shear-wave velocity
+for the top 30 m} ($V_{S_{30}}$)
 to \texttt{vs30}. The \texttt{Provide seed value} radio button should
 be left unselected. By specifying these inputs, both $M_{W}$ and $R_{rupt}$
 will have constant values in all realizations while $V_{S_{30}}$ will
@@ -69,7 +69,7 @@ in this case. Since $V_{S_{30}}$ was identified as a random variable
 by inputting the parameter value as text, it is automatically added as
 a random variable, as shown in \Cref{fig:input_uq}. Set the
 distribution type to \texttt{normal} with a \texttt{Mean}
-and \texttt{Standard Dev} of 350\textit{m/s} and 25\textit{m/s},
+and \texttt{Standard Dev} of 350 m/s and 25 m/s,
 respectively.
 
 \softwareSwitch{PBE}{
@@ -78,7 +78,7 @@ respectively.
     \includegraphics[width=0.7\textwidth]
     {installation/figures/test_input_uq.png} }
   \caption{Specifying distribution type and parameters for random
-  variables in analysis\textemdash only $V_{S_{30}}$ in this case}
+  variables in analysis\textemdash only $V_{s30}$ in this case}
   \label{fig:input_uq}
 \end{figure}
 }{
@@ -87,15 +87,13 @@ respectively.
     \includegraphics[width=0.7\textwidth]
     {installation/figures/test_input_uq.png} }
   \caption{Specifying distribution type and parameters for random
-  variables in analysis\textemdash only $V_{S_{30}}$ in this case}
+  variables in analysis\textemdash only $V_{s30}$ in this case}
   \label{fig:input_uq}
 \end{figure}
 }
 
 \softwareSwitch{PBE}{
-
 The last step before running the analysis is to set up a damage and loss model. Navigate to the \textttt{CMP} tab and select \texttt{HAZUS MH} as the loss assessment method to use. Set up the model according to \Cref{fig:input_dl}.
-
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.7\textwidth]

@@ -7,13 +7,15 @@ event that the synthetic motion should emulate. In the current
 release, users can only select the model derived by Vlachos et
 al. (2018) \cite{vlachos2018predictive}. Additionally, users can
 provide a seed for the stochastic motion generation if they desire the
-same suite of synthetic motions to be generated on multiple occasions. The backend
+same suite of synthetic motions to be generated on multiple occasions.
+If the seed is not specified, a different realization of the time history
+will be generated for each run based on the input parameters. The backend
 application that generates the stochastic ground motions relies
 on \texttt{smelt}, a modular and extensible C++ library for generating
 stochastic time histories. Users interested in learning more about the
 implementation and design of
 \texttt{smelt} are referred to its
-\href{https://github.com/shellshocked2003/Stochastic-Loading-Module}{GitHub repository}.
+\href{https://github.com/NHERI-SimCenter/smelt}{GitHub repository}.
 
 All input parameters can be specified as random variables by entering
 a string in the parameter field. Please note that information for the
