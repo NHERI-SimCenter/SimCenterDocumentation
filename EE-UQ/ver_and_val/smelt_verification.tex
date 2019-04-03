@@ -8,8 +8,8 @@ values predicted by \texttt{smelt} as well as the geometric mean
 of the four NGA-West2 ground motion prediction equations (GPMEs)
 that account for soil sites. The scenario considered in this verification
 example is an event with a Moment Magnitude ($M_W$) of 6.5, closest-to-site
-rupture distance ($R_{rupt}$) of 20 \textit{km}, and average shear-wave velocity in the top
-30 \textit{m} of soil ($V_{s_{30}}$) equal to 400 \texttt{m/s}.
+rupture distance ($R_{\textrm{rupt}}$) of 20 km, and average shear-wave velocity in the top
+30 m of soil ($V_{s30}$) equal to 400 m/s.
 
 The single-degree-of-freedom system was input using the MDOF option as
 the Building Model Input in \texttt{EE-UQ}. Here, the mass was set to
@@ -27,7 +27,7 @@ backend to generate the synthetic motions. The full validation of
 \texttt{smelt} in implementing the predictive stochastic model
 proposed by Vlachos et al. (2018) \cite{vlachos2018predictive} can be
 found in the
-\href{https://github.com/shellshocked2003/Stochastic-Loading-Module/blob/master/README.md}{library
+\href{https://github.com/NHERI-SimCenter/smelt}{library
   documentation}.
 
 \begin{figure}[!htbp]
@@ -35,12 +35,12 @@ found in the
     \includegraphics[width=0.8\textwidth]
     {ver_and_val/figures/M65R20V400.pdf} }
   \caption[Response Spectra generated using NGA-West2
-    GMPEs, \texttt{smelt} \& \texttt{EE-UQ} for $M_W = 6.5$, $R_{rupt}
-    = 20km$, and $V_{s_{30}} = 400m/s$]
+    GMPEs, \texttt{smelt} \& \texttt{EE-UQ} for $M_W = 6.5$, $R_{\textrm{rupt}}
+    = 20\;\textrm{km}$, and $V_{s30} = 400\;\textrm{m/s}$]
     {Response Spectra generated using NGA-West2
     GMPEs, \texttt{smelt} \& \texttt{EE-UQ} for $M_W = 6.5$,
-    closest-to-site distance $R_{rupt} = 20km$, and average shear-wave
-    velocity $V_{s_{30}} = 400m/s$. The \texttt{smelt} and GMPE
+    closest-to-site distance $R_{\textrm{rupt}} = 20\;\textrm{km}$, and average shear-wave
+    velocity $V_{s30} = 400\;\textrm{m/s}$. The \texttt{smelt} and GMPE
     spectra show the mean and mean plus/minus one logarithmic standard
     deviation. The GMPE spectra are based on the geometric mean of the
     four NGA-West2 models that account for site soil
