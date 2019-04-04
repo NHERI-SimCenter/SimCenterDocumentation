@@ -1,0 +1,153 @@
+The Damage and Loss panel provides users a convenient way to define the damage and loss model for the building. The dropdown list at the top of the panel allows users to choose between two loss-assessment methods: FEMA P58 and HAZUS MH. The method chosen determines the information displayed in the rest of the panel. The two methods are discussed in the following sections.
+
+\subsection{FEMA P58}
+
+This option implements the loss assessment methodology described in the \href{https://www.fema.gov/media-library/assets/documents/90380}{FEMA P58} documents. The main panel is divided into three parts that can be accessed by clicking at the tabs at the top of the input panel.
+
+\subsubsection{General Settings}
+
+\Cref{fig:dl_p58_general} shows the first panel, which corresponds to general damage and loss settings. The panel allows the user to set the following parameters of the loss assessment:
+
+\begin{figure}[!htbp]
+  \centering {
+    \includegraphics[width=1.0\textwidth]
+    {usage/figures/dl_p58_general.png} }
+  \caption{The General Damage and Loss Settings panel. (The settings shown in the Figure serve demonstration purposes and are not the suggested inputs.)}
+  \label{fig:dl_p58_general}
+\end{figure}
+
+\begin{itemize}
+    \item Uncertainty Quantification
+    \begin{itemize}
+        \item Realizations: The number of realizations to generate using the stochastic loss model. Depending on the complexity of the model, a few thousand realizations might be sufficient to capture central tendencies. A much larger number is required to get appropriate estimates of the dispersion of results.
+        \item Additional uncertainty: Ground motion and modeling uncertainty per FEMA P58. The prescribed logarithmic standard deviation values are added to the dispersion of EDPs to arrive at the description of uncertain building response.
+    \end{itemize}
+    \item Decision Variables\\
+    These checkboxes allow the user to pick the decision variables of interest and save computation time and storage space by only focusing on those. Expect this list to grow as more decision variables are added in the future.
+    \item Inhabitants
+    \begin{itemize}
+        \item Occupancy type: The type of occupancy is used to describe the temporal distribution of the inhabitants. Note: the default FEMA P58 distribution can be overridden by a custom file provided in the Custom Data Sources box.
+        \item Peak Population: The maximum number of people present at each floor of the building. The example in \Cref{fig:dl_p58_general} shows a two-story wooden house with a cripple wall, hence the 0 population in the first floor.
+    \end{itemize}
+    \item Building Response
+    \begin{itemize}
+        \item Yield Drift Ratio: This prescribed value is used to estimate residual drifts from peak interstory drifts per Section 5.4 in FEMA P58. These are only needed if no reliable residual drifts are available from the simulation. Considering the large uncertainty in estimated residual drift values, it is recommended to consider using the peak interstory drift as a proxy even if it would be numerically possible to obtain residual drift values.
+        \item Detection Limits: These limits correspond to the maximum possible values that the response history analysis can provide. While peak interstory drifts will certainly have an upper limit, peak floor acceleration will not necessarily require such a setting. Leaving any of the fields empty corresponds to unlimited confidence in the simulation results.\\
+        Note: these limits will be used to consider EDP data as a set of censored samples when finding the multivariate distribution that fits the simulation results.
+    \end{itemize}
+    \item Building Damage and Loss
+    \begin{itemize}
+        \item Replacement Cost and Time: The cost (in the currency used to describe repair costs, typically US dollars) and the time (in days) it takes to replace the building.
+        \item Irrepairable Residual Drift: Describes the limiting residual drift as a random variable with a Lognormal distribution. See Figure 2-5 and Section 7.6 in FEMA P58 for details.
+        \item Collapse Limits: Collapse of the building in each realization is inferred from the magnitude of EDPs. The collapse limits describe the EDP value beyond which the building is considered collapsed. Note that collapse limits might be beyond the detection limits (although that is generally not a good idea) and certain EDPs might not have collapse limits associated with them (e.g. PFA).
+    \end{itemize}
+    \item Loss Model Dependencies\\
+    The PBE App allows you to specify dependencies between various parts of the loss model. The default FEMA P58 setting would assume all variables are independent, except for the fragility data, where the fragility of certain Component Subgroups (i.e. groups of components with identical behavior within Performance Groups) is perfectly correlated. This behavior is achieved by setting every other dependency to Independent and setting the Component Fragilities to \texttt{per ATC recommendation}.\\
+    Every type of prescribed dependency assumes perfect correlation between a certain subset of the loss model’s variables and no correlation between the others. Future versions will expand on this approach by introducing more complex correlation structures.\\
+    The user can assign perfect correlation between the following logical components of the model:
+    \begin{itemize}
+        \item Fragility Groups: Assumes that the selected parameters are correlated between Fragility Groups (i.e. the highest organizational level) and at every level below. That is, with this setting, the users assigns perfect correlation between every single parameter of the selected type in the model. Use this with caution.
+        \item Performance Groups: Assumes that the selected parameters are correlated between all Performance Groups and at every logical level below. For instance, this setting for Component Quantities will lead to identical deviations from mean quantities among the floors and directions in the building.
+        \item Floors: Assumes that the selected parameters are correlated between Performance Groups at various floors, but not between Performance Groups in different directions in the building. Also assumes perfect correlation between the Damage States within each Performance Group. This is useful when the parameter is direction-dependent and similar deviations are expected among all floors in the same direction.
+        \item Directions: Assumes that the selected parameters are correlated between Performance Groups in various (typically two) directions, but not between different floors of the building. This can be useful when you want to prescribe similar deviations from mean values within each floor, but want to allow independent behavior over the height of the building.
+        \item Damage States: Correlation at the lowest organizational level. Assumes that the selected parameters are correlated between Damage States only. This type of correlation, for instance, would assume that deviation from the median reconstruction cost is due to factors that affect all types of damage within a performance group in identical fashion.
+    \end{itemize}
+    The following model parameters can handle the assigned dependencies:
+    \begin{itemize}
+        \item Component Quantities: The amount of components in the building (see the description of the Components tab below for more details).
+        \item Component Fragilities: Each Damage State has a corresponding random EDP limit. The component fragilities is a collection of such EDP limit variables.\\
+        Note: most methodologies assume that such EDP limits are perfectly correlated at least among the Damage States within a Component Subgroup.
+        \item Reconstruction Costs and Times: The cost and time it takes to repair a particular type of damage to a component. The btw. Rec. Cost and Time checkbox allows you to define correlation between reconstruction cost and time on top of the correlations already set above for each of these individually. \\
+        Note: if you do define such a correlation structure, the more general correlation among the settings in the Reconstruction Costs and Reconstruction Times lines will need to be applied to both cases to respect conditional correlations in the system. (e.g., if you set costs to be correlated between Performance Groups and times to correlate between Floors and check the cost and time correlation as well, times will be forced to become correlated between Performance Groups.)
+        \item Injuries: The probability of being injured at a given severity when being in the affected area of a damaged component. Note that the Injuries lines prescribe correlations between the same level of injury at different places in the building. Correlation between different levels of injury at the same place can be prescribed by the btw. Injuries and Fatalities checkbox.
+        \item Red Tag Probabilities: The amount of damage in a given Damage State that triggers an unsafe placard or red tag.
+    \end{itemize}
+    \item Custom Data Sources\\
+    The loss assessment is performed using population and fragility data from the first edition of FEMA P58. Each data source can be overridden by custom user-defined data.\\
+    Note: the loss calculations are performed at the local computer. Consequently, the locally available fragility and population data files can be used to perform the calculations even if the response simulations are done at DesignSafe.
+\end{itemize}
+
+\subsubsection{Building Components}
+
+\Cref{fig:dl_p58_comp} shows the input panel where you can define the components of the building. The following pieces of information are required for each component:
+
+\begin{figure}[!htbp]
+  \centering {
+    \includegraphics[width=1.0\textwidth]
+    {usage/figures/dl_p58_comp.png} }
+  \caption{The Building Components panel. (The settings shown in the Figure serve demonstration purposes and are not the suggested inputs.)}
+  \label{fig:dl_p58_comp}
+\end{figure}
+
+\begin{itemize}
+    \item name: A name that helps you identify the component. It is arbitrary and not used by the loss assessment engine.
+    \item ID: The ID of the component is the ID used in FEMA P58 or in PACT and this shall be the same as the name of the \texttt{json} file that contains the component data. The first custom component in \Cref{fig:dl_p58_comp}, for example, has a unique ID and the corresponding file has been renamed accordingly.
+    \item quantity: A list of component quantities on each floor of the building. The quantities shall be specified in the units assigned to the component in the fragility data file. These are the units assigned in FEMA P58 by default.
+    \item cov: Coefficient of variation for the random distribution used to consider the uncertainty in component quantities.
+    \item distribution: The type of random distribution used to consider the uncertainty in component quantities.
+    \item unit: The unit assigned to the component in the fragility data file.
+    \item directions: Components within a Fragility Group are separated into Performance Groups by floor and direction. Components within a Performance Group are further separated into Component Subgroups that might experience independent damage and losses depending on the settings in the General tab. The list of directions provided here specifies the number of Component Subgroups in each direction. The specified pattern is applied to all floors of the building.\\
+    Note: the number of floors is defined by the number of elements in the list of quantities.
+    \item weights: These weights prescribe the proportion of component quantity in each floor that shall be assigned to each Component Subgroup. Consequently, these weights for each component shall sum to one and the number of weights shall be equal to the number of directions provided.
+    \item structural: This checkbox specifies if the component is a structural or a non-structural one.
+\end{itemize}
+
+\subsubsection{Collapse Modes}
+
+\Cref{fig:dl_p58_collmod} shows the input panel where you can specify the collapse modes of the building. Collapse modes provide information for the estimation of injuries from building collapse. As such, they are only used if injuries are among the requested Decision Variables. The following pieces of information are required for each collapse mode:
+
+\begin{figure}[!htbp]
+  \centering {
+    \includegraphics[width=0.6\textwidth]
+    {usage/figures/dl_p58_collmod.png} }
+  \caption{The Collapse Modes panel. (The settings shown in the Figure serve demonstration purposes and are not the suggested inputs.)}
+  \label{fig:dl_p58_collmod}
+\end{figure}
+
+\begin{itemize}
+    \item name: A name that helps you identify the collapse mode. It is arbitrary and not used by the loss assessment engine.
+    \item probability: Conditioned on collapse, the likelihood of this collapse mode.
+    \item affected area: The affected area (as a fraction of the total plan area) of the building at each floor. We assume that the floor area is uniform along the height of the building.
+    \item injuries: The probability of each level of injury when people are in the affected area and this collapse mode occurs. (FEMA P58 assumes two levels of severity: injuries and fatalities).
+\end{itemize}
+
+\subsection{HAZUS MH}
+
+This option implements the loss assessment methodology described in the \href{https://www.fema.gov/media-library-data/20130726-1820-25045-6286/hzmh2_1_eq_tm.pdf}{HAZUS MH Technical Manual} document. \Cref{fig:dl_hazus_general} shows the input panel that allows the user to set the following parameters of the loss assessment:
+
+\begin{figure}[!htbp]
+  \centering {
+    \includegraphics[width=0.7\textwidth]
+    {usage/figures/dl_hazus_general.png} }
+  \caption{The General Damage and Loss Settings panel. (The settings shown in the Figure serve demonstration purposes and are not the suggested inputs.)}
+  \label{fig:dl_hazus_general}
+\end{figure}
+
+\begin{itemize}
+    \item Uncertainty Quantification
+    \begin{itemize}
+        \item Realizations: The number of realizations to generate using the stochastic loss model. Depending on the complexity of the model, a few thousand realizations might be sufficient to capture central tendencies. A much larger number is required to get appropriate estimates of the dispersion of results.
+        \item Additional uncertainty: Ground motion and modeling uncertainty per FEMA P58 that is referred to as uncertainty in response due to variability of ground motion demand and variability in the capacity properties of the model building in HAZUS MH. The prescribed logarithmic standard deviation values are added to the dispersion of EDPs to arrive at the description of uncertain building response.
+    \end{itemize}
+    \item Decision Variables\\
+    These checkboxes allow the user to pick the decision variables of interest and save computation time and storage space by only focusing on those. Expect this list to grow as more decision variables are added in the future.
+    \item Inhabitants
+    \begin{itemize}
+        \item Occupancy type: The type of occupancy is used to describe the temporal distribution of the inhabitants. Note: the default HAZUS MH distribution can be overridden by a custom file provided in the Custom Data Sources box.
+        \item Peak Population: The maximum number of people present at each floor of the building. The example in \Cref{fig:dl_p58_general} shows a two-story wooden house with a cripple wall, hence the 0 population in the first floor.
+    \end{itemize}
+    \item Building Response
+    \begin{itemize}
+        \item Detection Limits: These limits correspond to the maximum possible values that the response history analysis can provide. While peak interstory drifts will certainly have an upper limit, peak floor acceleration will not necessarily require such a setting. Leaving any of the fields empty corresponds to unlimited confidence in the simulation results.\\
+        Note: these limits will be used to consider EDP data as a set of censored samples when finding the multivariate distribution that fits the simulation results.
+    \end{itemize}
+    \item Building Damage and Loss
+    \begin{itemize}
+        \item Replacement Cost and Time: The cost (in the currency used to describe repair costs, typically US dollars) and the time (in days) it takes to replace the building.
+        \item Design Information: The Structure Type and the Design Level per HAZUS MH. These two pieces of information are used to select the appropriate fragility and consequence functions from those provided in the HAZUS MH Tehcnical Manual.\\
+        Note: Any fragility or consequences function can be edited by the user and loaded by specifying a directory that contains those custom functions in the Custom Data Sources box.
+    \end{itemize}
+    \item Custom Data Sources\\
+    The loss assessment is performed using population and fragility data from the HAZUS MH Technical Manual. Each data source can be overridden by custom user-defined data.\\
+    Note: the loss calculations are performed at the local computer. Consequently, the locally available fragility and population data files can be used to perform the calculations even if the response simulations are done at DesignSafe.
+\end{itemize} 

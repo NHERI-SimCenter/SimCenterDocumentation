@@ -1,11 +1,7 @@
 Throughout the input specification the user is defining variables. As
 described in the above sections many of these variables can be
-specified by the user to be random variables with a distribution on
-their values. It is in the UQ panel that the user specifies what these
-distributions are.
-It is also here that the user specifies the UQ method and the input
-values are for these UQ methods.  The panel is split, as shown
-in \Cref{fig:figure10}, into 2 frames:
+specified by the user to be random. The UQ panel allows the user to specify the distribution of the previously identified random variables. Besides the properties of random variables, the sampling method and the number of requested samples shall also be defined by the user. The panel is split, as shown
+in \Cref{fig:uq_panel}, into two frames:
 
 \begin{enumerate}
 \item Sampling Methods 
@@ -17,22 +13,20 @@ in \Cref{fig:figure10}, into 2 frames:
     \includegraphics[width=0.8\textwidth]
     {usage/figures/uq1.png} }
   \caption{Uncertainty Quantification input panel}
-  \label{fig:figure10}
+  \label{fig:uq_panel}
 \end{figure}
 
 \subsection{Sampling Methods}
 In the \href{https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/methods-sampling.html}{sampling methods} the user selects the sampling 
-method to use from the method dropdown. Currently this is limited to 
-two options: Monte Carlo and Latin Hypercube Sampling (LHS). For the 
-one selected, the user specifies the number of simulations to be 
-perform and the seed.
+method to use from the method dropdown list. Currently, two methods are available: 
+Monte Carlo and Latin Hypercube Sampling (LHS). The value provided for the number of samples determines the number of simulations to be performed. Providing a random seed allows the user to reproduce the same set of samples from the random variables multiple times.
 
 \subsection{Random Variables}
-The Random Variable panel is where the user enters the random
+The Random Variable panel allows the user to characterize the random
 variables. Each random variable has a name and a distribution. The
 distribution is selected from the drop-down menu. By changing the
-distribution type, the inputs required to define the distribution
-change. The following are the list of distributions available (clicking on any link will take you to Dakota manual explaining inputs and theory):
+distribution type, the parameters required to define the distribution
+change. The following distributions are available (clicking on a link will take you to the Dakota manual that provides theoretical background and explains the requested parameters for each distribution):
 \begin{enumerate}
 \item \href{https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-normal_uncertain.html}{Normal}
 \item \href{https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-lognormal_uncertain.html}{Lognormal}

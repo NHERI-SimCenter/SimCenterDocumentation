@@ -22,18 +22,24 @@
 \input{usage/uq}
 
 \softwareSwitch{PBE}{
-\section{CMP: Content Model Parameters}
-\label{sec:cmp}
-\input{usage/cmp}
+\section{DL: Damage and Loss Model}
+\label{sec:dl}
+\input{usage/dl}
 }{ 
 \section{EDP: Engineering Demand Parameters}
 \label{sec:edp}
 \input{usage/edp}
 }
 
-\section{RES}
+\section{RES: Results}
 \label{sec:results}
+
+\softwareSwitch{PBE}{
+\input{usage/res_pbe}
+}{
 \input{usage/res}
+}
+
 
 \section{Push Buttons}
 \label{sec:push_buttons}
