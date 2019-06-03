@@ -26,7 +26,9 @@ page. This will, as \Cref{fig:app_choose_file} indicates, bring you to another p
   \caption{Download Application.}
   \label{fig:app_choose_file}
 \end{figure}
-}{
+}{}
+
+\softwareSwitch{EE-UQ}{
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.95\textwidth]
@@ -34,24 +36,18 @@ page. This will, as \Cref{fig:app_choose_file} indicates, bring you to another p
   \caption{Download Application.}
   \label{fig:app_choose_file}
 \end{figure}
-}
+}{}
 
+\softwareSwitch{WE-UQ}{
+\begin{figure}[!htbp]
+  \centering {
+    \includegraphics[width=0.95\textwidth]
+    {installation/figures/weDownload.png} }
+  \caption{Download Application.}
+  \label{fig:app_choose_file}
+\end{figure}
+}{}
 
-%\begin{figure}[!htbp]
-%\centering {
-%\includegraphics[width=0.8\textwidth]
-%{installation/figures/EE-UQ_app_website.png} }
-%\caption{Download the EE-UQ application from the SimCenter website.}
-%\label{fig:app_website}
-% \end{figure}
-
-%\begin{figure}[!htbp]
-% \centering {
-  %  \includegraphics[width=0.8\textwidth]
- % {installation/figures/EE-UQ_app_choose_file.png} }
- % \caption{Choose the appropriate file for your operating system.}
- % \label{fig:app_choose_file}
-%\end{figure}
 
 There are at least four files available for download from this page: 
 \begin{enumerate}
@@ -86,7 +82,19 @@ starting the application. Now Quit the application as there is more installtion 
   \caption{Running PBE Application.}
   \label{fig:app_UI}
 \end{figure}
-}{
+}{}
+
+\softwareSwitch{EE-UQ}{
+\begin{figure}[!htbp]
+  \centering {
+    \includegraphics[width=0.95\textwidth]
+    {installation/figures/EE_UQ.png} }
+  \caption{EE-UQ Application on Startup}
+  \label{fig:app_UI}
+\end{figure}
+}{}
+
+\softwareSwitch{WE-UQ}{
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.95\textwidth]
@@ -94,9 +102,9 @@ starting the application. Now Quit the application as there is more installtion 
   \caption{EE-UQ Application on Startup}
   \label{fig:app_UI}
 \end{figure}
-}
+}{}
 
-Notes:
+
 \begin{enumerate}
 \item The SimCenter is not recognized as either a Windows or an Apple vendor. Our applications are not recognized by the operating system as being signed. Consequently, you may receive a warning message when you start the \texttt{\getsoftwarename{}} application for the first time.
 \item  On a Mac you will need to right click on the .dmg file to open it. Furthermore, the UI will not start correctly while in the DMG file, you need to open the .dmg file and then copy the \texttt{\getsoftwarename{}} application to your Documents or Desktop folder. You can then move the .dmg file to the trash or eject it after this has been done.
