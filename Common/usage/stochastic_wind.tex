@@ -1,0 +1,31 @@
+This option allows users to generate synthetic wind velocity time
+histories for target wind loading. In order to do so, the stochastic
+wind model is selected from the drop-down menu, as shown in
+\Cref{fig:stochastic_wind_loading}. Depending on the model selected, the
+user will be asked to enter the parameters describing the wind loading
+scenario that the synthetic time history should emulate. In the
+current release, users can only select the model derived by Wittig \&
+Sinha (1975) \cite{wittig1975simulation}. Additionally, users can
+provide a seed for the stochastic wind generation if they desire the
+same suite of synthetic time histories to be generated on multiple occasions.
+If the seed is not specified, a different realization of the time
+history will be generated for each run based on the input
+parameters. The backend application that generates the stochastic
+wind loads relies on \texttt{smelt}, a modular and extensible C++
+library for generating stochastic time histories. Users interested in
+learning more about the implementation and design of \texttt{smelt}
+are referred to its
+\href{https://github.com/NHERI-SimCenter/smelt}{GitHub repository}.
+
+All input parameters can be specified as random variables by entering
+a string in the parameter field. Please note that information for the
+inputs that are identified as random variables needs to be provided in
+the \texttt{UQ} tab.
+
+\begin{figure}[!htbp]
+  \centering {
+    \includegraphics[width=0.8\textwidth]
+    {usage/figures/stochastic_wind_loading.png} }
+  \caption{Stochastic Wind Loading Event}
+  \label{fig:stochastic_wind_loading}
+\end{figure}

@@ -1,0 +1,90 @@
+\documentclass{simcenterdocumentation}
+\usepackage{biblatex}
+
+% To compile this file, run "latex/pdflatex TInF-documentation", then "biber TInF-documentation"
+% (or "bibtex TInF-documentation", if the output from latex asks for that instead),
+% and then "latex/pdflatex TInF-documentation" (without the quotes in each case).
+
+% Double spacing, if you want it.  Do not use for the final copy. Can also specify
+% draft as a document class option. This will generate double spacing and placeholders
+% for title page and header images
+%% \def\dsp{\def\baselinestretch{2.0}\large\normalsize}
+%% \dsp
+
+\graphicspath{%
+              {figs},%
+	      {images},%
+	      {theory},%
+	      {theory/figs}%
+	     }
+
+\input{macros}
+
+
+\bibliography{references}
+
+\begin{document}
+% Declarations for Front Matter
+% Software title followed by optional second line
+\title{Amazing Software\\ \Large Turbulent Inflow Tool}
+% Use superscripts to indicate author affiliations
+\author{Peter Mackenzie-Helnwein$^{1}$, Jia$^2$}
+\institutions{$^1$Univerisity of Washington \\$^2$Notre Dame}
+\softwarename{Turbulent Inflow Tool}
+\softwareversion{1.0.0}
+
+%%% DON'T MESS WITH THESE SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{pageanchor=false}
+\maketitle
+\copyrightpage
+\acknowledgments
+
+\hypersetup{pageanchor=true}
+\begin{frontmatter}
+
+\pagestyle{plain}
+{
+  \renewcommand{\thispagestyle}[1]{}
+  \tableofcontents
+  \clearpage
+  \listoffigures
+  \clearpage
+  \listoftables
+}
+
+\end{frontmatter}
+\pagestyle{somewhatsimple}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Create separate tex files for each chapter and provide them as inputs
+
+\chapter{Tool Audience}
+\input{chap1}
+
+\chapter{Introduction}
+\input{chap2}
+
+\chapter{Installation Instructions}
+
+\chapter{Usage}
+
+\chapter{Theory and Implementation}
+\input{theory/turbulent_inflow}  %%% JAY, THIS IS YOUR QUEUE
+
+\chapter{Source Code}
+
+\chapter{User Training}
+
+\chapter{Requirements}
+
+\chapter{Verification and Validation}
+
+% \appendix
+% \chapter{More Monticello Candidates}
+
+\pagestyle{plain}
+{
+  \renewcommand{\thispagestyle}[1]{}
+  \printbibliography           
+}
+
+\end{document}

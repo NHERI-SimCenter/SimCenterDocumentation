@@ -10,8 +10,14 @@
 \input{usage/structural_models}
 
 \section{EVT: Event}
+\softwareSwitch{WE-UQ}{
+\label{sec:event}
+\input{usage/wind_events}
+}{ 
 \label{sec:event}
 \input{usage/earthquake_events}
+}
+
 
 \section{FEM: Finite Element Method}
 \label{sec:fem}
