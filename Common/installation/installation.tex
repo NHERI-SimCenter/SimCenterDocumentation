@@ -254,8 +254,7 @@ computer. The steps to do this depend on your operating system:
   \label{fig:dakota_installation}
 \end{figure}
 
-Following the instructions provided for installing \texttt{OpenSees}, you need to add \textbf{two} \texttt{Dakota} folders to the
-system \texttt{PATH} environment variable to allow the SimCenter
+Following the instructions provided for installing \texttt{OpenSees}, you need to add \textbf{two} \texttt{Dakota} folders to the system \texttt{PATH} environment variable to allow the SimCenter
 workflow applications to find the \texttt{Dakota} tools on your computer. Use
 the procedure described above for \texttt{OpenSees} to add the following
 folders to your \texttt{PATH}:
@@ -273,6 +272,21 @@ folders to your \texttt{PATH}:
     \item \texttt{/usr/local/Dakota/share/dakota/Python}
 \end{itemize}
 \end{enumerate}
+
+In addition to modifications to the \texttt{PATH} environment variable, you need to create/modify another variable. This new variable name is \texttt{PYTHONPATH}. To add an environment variable on a Mac you need to edit the \texttt{.bashrc} file in your home directory and add the line shown below.
+
+\begin{enumerate}
+\item Windows:
+\begin{itemize}
+    \item \texttt{C:\textbackslash SimCenter\textbackslash Dakota\textbackslash share\textbackslash dakota\textbackslash Python}
+\end{itemize}
+
+\item MacOS:
+\begin{itemize}
+    \item \texttt{export PYTHONPATH=/usr/local/Dakota/share/dakota/Python}
+\end{itemize}
+\end{enumerate}
+
 \subsection{Install  Perl}
 %===============================================================================
 
