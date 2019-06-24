@@ -1,4 +1,4 @@
-This panel is where the user selects the outputs to be displayed when
+This panel is where the user selects which outputs will be displayed when
 the simulation runs. There are two options available in the pull-down
 menu:
 \begin{enumerate}
@@ -7,7 +7,7 @@ menu:
 \end{enumerate}
 
 \subsection{Standard Earthquake}\label{subsec:sectionStandardEarthquake}
-When the user selects standard Earthquake there are no additional
+When the user selects Standard Earthquake there are no additional
 inputs required. The standard earthquake EDP generator will ensure the
 the max absolute value of the following are obtained:
 \begin{enumerate}
@@ -24,8 +24,10 @@ The results will contain results for these in abbreviated form:
 \item PID peak inter-story drift: $1-PID-STORY-CLINE$
 \end{itemize}
 
+NOTE: Floors are numbered starting at floor 0, and stories are numbered starting at story 1.
+
 \subsection{User Defined}\label{subsec:sectionUserDefined}
-This panel shown in \Cref{fig:userEDP} allows the user to provde to determine their own output and process it. When using this option the user provides additional data:
+As shown in \Cref{fig:userEDP}, this panel allows the user to determine their own output and process it. When using this option the user provides additional data:
 
 \begin{figure}[!htbp]
   \centering {
@@ -38,10 +40,10 @@ This panel shown in \Cref{fig:userEDP} allows the user to provde to determine th
 \begin{enumerate}
 \item Additional Input: These are additional commands that are invoked
   by the analysis application before the transient analysis is
-  performed. For example, foe OpenSees this would be a script
+  performed. For example, for OpenSees this would be a script
   containing a series of recorder commands. \\
 
-For example, a recorder file passed to OpenSees might look like the following:
+A recorder file passed to OpenSees might look like the following:
 \begin{verbatim}
 recorder EnvelopeNode -file node.out -node 1 2 3 4 -dof 1 disp
 recorder EnvelopeElement -file ele.out -ele 1 2 3 forces
