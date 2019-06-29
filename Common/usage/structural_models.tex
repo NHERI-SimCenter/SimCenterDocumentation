@@ -1,9 +1,11 @@
-The user here defines the structural model of the
-building. The structural model is the part of the building designed
-to resist the lateral loads. There are a number of backend
-applications provided for this part of the workflow, each responsible
-for defining the structural analysis model. The user can select the application to use from the drop-down menu at the top of this panel. As the user switches between applications,
-the entry data changes to reflect the inputs each particular application requires. At present, there are two backend applications
+The user here defines the structural system of the
+building. The  structural system is the part of the building provided
+to resist the gravity loads and those loads arising from the natural hazard. 
+There are a number of backend applications provided for this part of the workflow, 
+each responsible for defining the structural analysis model. The user can select 
+the application to use from the drop-down menu at the top of this panel. As the 
+user switches between applications,
+the input panel changes to reflect the inputs each particular application requires. At present, there are two backend applications
 available through the drop down menu: 
 
 \begin{enumerate}
@@ -17,8 +19,8 @@ This panel is provided for users to quickly create simple shear models
 of a building. The panel, as shown in \Cref{fig:mdof} is divided
 into 3 frames:
 \begin{enumerate}
-\item The top left frame allows the user to specify the number of stories and properties that are uniform for every story in the building. The following properties are available: floor weight, story height, and damping ratio for each story, and initial stiffness, yield strength, and hardening ratio for each direction in each story. Here, the 1 and 2 directions are orthogonal $x$ and $y$ axes in plan view.
-\item The lower left frame allows the user to override the structural parameters above for individual stories.
+\item The top left frame allows the user to specify the number of stories and properties that are constant for every floor and story in the building. The following properties are available: floor weight, story height, damping ratio, initial stiffness, yield strength, and hardening ratio for each direction in each story. Here, the one and two directions are orthogonal $x$ and $y$ axes in plan view.
+\item The lower left frame allows the user to override the structural parameters above for individual floors and stories. 
 \item The frame on the right is a graphical widget showing the current building. When entering data into the lower left frame, the stories corresponding to the data being modified are highlighted in red.
 \end{enumerate}
 
@@ -30,10 +32,11 @@ into 3 frames:
   \label{fig:mdof}
 \end{figure}
 
-Random Variables: Random Variables can be created by entering
+Random Variables: Random Variables can be created by the user if they enter
 a valid string instead of a number in the entry fields for any entry
 except for the \emph{Number of floors}. The variable name entered will appear as
-a Random Variable in the UQ panel and the user must specify its properties there.
+a Random Variable in the UQ panel; it is ther the user must specify the distribution 
+associated with the Random Variable.
 
 \subsection{\texttt{OpenSees}}\label{sec:OpenSeesSIM}
 This panel is for users who have an existing \texttt{OpenSees} model of a
@@ -66,7 +69,7 @@ for this option is shown in \Cref{fig:figure3}. Users need to provide three piec
 
 Random Variables: In \texttt{OpenSees} there is an option to set
 variables to have certain values using the \texttt{pset} command, e.g
-\texttt{pset a 5.0} will set the variable a to have a value 5 in an
+\texttt{pset a 5.0} will set the variable a to have a value 5 in the
 \texttt{OpenSees} script. In \texttt{\getsoftwarename{}}, any variable
 found in the main script to be set using the \texttt{pset} command
 will be assumed to be a Random Variable. As such, when a new main

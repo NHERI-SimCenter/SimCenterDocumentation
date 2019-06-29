@@ -3,8 +3,10 @@ building by performing an effective free-field site response
 analysis of a soil column. In this panel the user specifies a ground 
 motion at the bottom of the column. After the soil layers have been properly 
 defined, the motion at the ground surface are given at the end 
-of the analysis, and is is this motion will be used in the 
+of the analysis and that motion will be used in the 
 simulation of the building response. 
+
+
 
 \begin{figure}[!htbp]
   \centering {
@@ -16,13 +18,12 @@ simulation of the building response.
 
 The UI of the Site Response is shown in \Cref{fig:s3hark1}. It is split into the following areas:
 \begin{enumerate}
-\item Soil Column Graphic: The first graphic on the left of the panel shows a visualization of the soil column. To select a layer, the user must move their cursor over the area and then select it. The selected layer will be outlined with a red box.
+\item Soil Column Graphic: The first graphic on the left of the panel shows a visualization of the soil column.
 \item FE Mesh Graphic: The second graphic on the left shows 
 the finite element mesh and profile plots. Selecting any of the tabs on the right inside this graphic (i.e, PGA, $\gamma_{max}$, maxDisp, maxRu, maxRuPWP) will show various results
 from the simulation at the mesh points.
-\item Operations Area: The right side of this area shows the height, total number of soil layers, graound water table (GWT), and includes plus and minus buttons. 
+\item Operations Area: The right side of this area shows some information (e.g., total height and number of soil layers), includes the Ground Water Table (GWT) input field, and plus and minus buttons. 
 If the user presses the plus button, a layer is added below the selected layer. If the minus button is pressed the selected layer is removed. The GWT input field allows the user to specify the level of the ground water table.
-\item Analyze Button: A button the user presses when inputs for this widget are all entered. The site response tool currently requires the site response analysis is performed before the RUN button can be pressed.
 \item Soil Layer Table: This table is where the user provides the characteristics of the soil layer, such as layer thickness, density, $V_{s30}$, material type, and element size in the finite element mesh.
 \item Tabbed Area: This area contains the three tabbed widgets described below.
 
@@ -92,3 +93,13 @@ NOTES:
 \item Variables are assumed to have m, kPa, and kN units in the Site Response panel.
 \item If the Analyze button is not pressed, no simulation will be performed. If no simulation is performed there will be no ground motions provided to the building.
 \end{enumerate}
+
+
+
+%Select a soil layer by clicking on the design table or by clicking on the graphic soil column.
+%When a layer is selected, it will be highlighted in both the design table and the graphic. 
+%In the design table, it is highlighted by changing the background color to light green. 
+
+
+%Given that the properties of the soil layers and the earthquake events are known,
+ %\texttt{\getsoftwarename{}} convert provide multiple nonlinear material models for simulating the soil behavior under earthquake loading.
