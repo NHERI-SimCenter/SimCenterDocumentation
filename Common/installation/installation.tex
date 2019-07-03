@@ -100,7 +100,7 @@ computations can be performed.\\
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.95\textwidth]
-    {installation/figures/EE-UQ.png} }
+    {installation/figures/WE-UQ.png} }
   \caption{WE-UQ Application on Startup}
   \label{fig:app_UI}
 \end{figure}
@@ -375,5 +375,11 @@ appropriately:
 \clearpage
 \section{Test the \texttt{\getsoftwarename{}} application}
 \label{sec:test_local}
+
+
+\softwareSwitch{WE-UQ}{
+\input{installation/localCalcWE}
+}{
 \input{installation/local_calc}
+}
 %===============================================================================
