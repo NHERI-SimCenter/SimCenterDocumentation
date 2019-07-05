@@ -3,7 +3,7 @@ building by performing an effective free-field site response
 analysis of a soil column. In this panel the user specifies a ground 
 motion at the bottom of the column. After the soil layers have been properly 
 defined, the motion at the ground surface are given at the end 
-of the analysis and that motion will be used in the 
+of the analysis, and is is this motion will be used in the 
 simulation of the building response. 
 
 \begin{figure}[!htbp]
@@ -16,18 +16,50 @@ simulation of the building response.
 
 The UI of the Site Response is shown in \Cref{fig:s3hark1}. It is split into the following areas:
 \begin{enumerate}
-\item Soil Column Graphic: The first graphic on the left of the panel shows a visualization of the soil column.
+\item Soil Column Graphic: The first graphic on the left of the panel shows a visualization of the soil column. To select a layer, the user must move their cursor over the area and then select it. The selected layer will be outlined with a red box.
 \item FE Mesh Graphic: The second graphic on the left shows 
 the finite element mesh and profile plots. Selecting any of the tabs on the right inside this graphic (i.e, PGA, $\gamma_{max}$, maxDisp, maxRu, maxRuPWP) will show various results
 from the simulation at the mesh points.
-\item Operations Area: The right side of this area shows some information (e.g., total height and number of soil layers), includes the Ground Water Table (GWT) input field, and plus and minus buttons. If the user presses the plus button, a layer is added below the selected layer. If the minus button is pressed the selected layer is removed. The GWT input field allows the user to specify the level of the ground water table.
+\item Operations Area: The right side of this area shows the height, total number of soil layers, graound water table (GWT), and includes plus and minus buttons. 
+If the user presses the plus button, a layer is added below the selected layer. If the minus button is pressed the selected layer is removed. The GWT input field allows the user to specify the level of the ground water table.
+\item Analyze Button: A button the user presses when inputs for this widget are all entered. The site response tool currently requires the site response analysis is performed before the RUN button can be pressed.
 \item Soil Layer Table: This table is where the user provides the characteristics of the soil layer, such as layer thickness, density, $V_{s30}$, material type, and element size in the finite element mesh.
 \item Tabbed Area: This area contains the three tabbed widgets described below.
 
+\begin{figure}[!htbp]
+  \centering {
+    \includegraphics[width=0.8\textwidth]
+    {usage/figures/2DSlope.pdf} }
+  \caption{Slope definition for 2D Column }
+  \label{fig:slope2D}
+\end{figure}
+
+
+\begin{figure}[!htbp]
+  \centering {
+    \includegraphics[width=0.8\textwidth]
+    {usage/figures/3DSlope.pdf} }
+  \caption{Slope definition for 3D Column}
+  \label{fig:slope3D}
+\end{figure}
+
+
+\begin{figure}[!htbp]
+  \centering {
+    \includegraphics[width=0.8\textwidth]
+    {usage/figures/response.png} }
+  \caption{Nodal and elemental responses}
+  \label{fig:response}
+\end{figure}
+
 \begin{enumerate}
-  \item Configure Tab: This tab allows the user to specify the path to the OpenSees executable and to a ground motion file that represent the ground shaking at the bedrock. The rock motion file must follow the SimCenter event format. Examples of SimCenter event files are available with the \href{https://github.com/NHERI-SimCenter/EE-UQ/tree/master/example1/event}{source code}.
+  \item Configure Tab: This tab allows the user to specify the path to the OpenSees executable and to a ground motion file that represent the ground shaking at the bedrock. 
+  The rock motion file must follow the SimCenter event format. Examples of SimCenter event files are available with the \href{https://github.com/NHERI-SimCenter/EE-UQ/tree/master/example1/event}{source code}.
+  \textit{s$^3$hark}  will determine to use 2D column or 3D column based on the ground motion file provided.
+  When a ground motion file is selected from the local computer, or the path of the ground motion file is typed in, \textit{s$^3$hark} will figure out if it's a 1D or 2D shaking file. 
+  If it's 1D shaking, all elements will be 2D. If it's 2D shaking, all elements will be 3D. The definition of 2D and 3D slope are different. See \Cref{fig:slope2D} and \Cref{fig:slope3D}.
   \item Layer Properties Tab: This tab allows the user to enter additional material properties for the selected soil layer (\Cref{fig:s3hark3}).
-  \item Response Tab: Once the site response analysis has been performed, this tab provides information about element and nodal time varying respone quantaties.
+  \item Response Tab: Once the site response analysis has been performed, this tab provides information about element and nodal time varying response quantities. See \Cref{fig:response}.
   \item Run Tab: Opens up a window in which by using the up and down arrows on the keyboard the dino will jump up and down. Something to do if the site response analysis is taking too long, which it may if many soil layers are used.
 \end{enumerate}
 

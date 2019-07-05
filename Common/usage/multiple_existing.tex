@@ -25,9 +25,9 @@ entering a variable name, such as \texttt{factorRinaldi} for the second event in
 
 Note: the name of the random variable must not start with a number, or contain any spaces or special characters, such as -, +, \%, etc.
 
-Use the \texttt{Remove} button to remove events. To remove an
-event, the user must first select which events they wish to remove,
-by clicking in the small circle at the left side of the event frame. All of the selected events are removed when the \texttt{Remove} button is pressed.
+The \texttt{Remove} button is used to remove events. To remove an
+event, the user must first select events they wish to remove,
+which is done by clicking in the small circle at the left side of the event frame. All of the selected events are removed when the \texttt{Remove} button is pressed.
 
 The \texttt{Load Directory} button provides a convenient method to load multiple events. All event files shall first
 be placed into the same folder. We recommend to put the files in a folder of their own, with no other files besides the earthquake events in it. After pressing the \texttt{Load Directory} button, the user will be able to choose the directory that contains the files, and the
@@ -42,7 +42,7 @@ ElCentro.json,1.5
 Rinaldi.json,2.0
 \end{verbatim}
 
-Random Variables: Random scale factors can be defined by entering a string in the factor field. The variable name entered will appear as a Random Variable in the UQ panel and the user must specify its properties there. If multiple
-events are specified, the event itself will be treated as a random
+Random Variables: Scale factors can be defined as being random variables by entering a string in the factor field. The variable name entered will appear as a Random Variable in the UQ panel and the user must specify its distribution there. If multiple
+events are specified, the event itself will be also be treated as a random
 variable, with each event being part of the discrete set of possible
-events.
+events. For this discrete set the user does not define a distribution as this is done automatically.

@@ -16,14 +16,14 @@ your local machine as well as at DesignSafe. \\
 To download the \texttt{\getsoftwarename{}} application navigate to
 the \getsoftwarepage{\texttt{\getsoftwarename{}} page} and click on
 the \emph{Download App \& User Manual} link on the right side of the
-page. This will, as \Cref{fig:app_choose_file} indicates, bring you to another page which contains a list of downloadable files and directories.
+page. As shown in \Cref{fig:app_choose_file}, this will bring you to another page which contains a list of downloadable files and directories.
 
 \softwareSwitch{PBE}{
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.95\textwidth]
     {installation/figures/pbeDownload.png} }
-  \caption{Download Application.}
+  \caption{Download Application}
   \label{fig:app_choose_file}
 \end{figure}
 }{}
@@ -33,7 +33,7 @@ page. This will, as \Cref{fig:app_choose_file} indicates, bring you to another p
   \centering {
     \includegraphics[width=0.95\textwidth]
     {installation/figures/eeDownload.png} }
-  \caption{Download Application.}
+  \caption{Download Application}
   \label{fig:app_choose_file}
 \end{figure}
 }{}
@@ -43,7 +43,7 @@ page. This will, as \Cref{fig:app_choose_file} indicates, bring you to another p
   \centering {
     \includegraphics[width=0.95\textwidth]
     {installation/figures/eeDownload.png} }
-  \caption{Download Application.}
+  \caption{Download Application}
   \label{fig:app_choose_file}
 \end{figure}
 }{}
@@ -59,42 +59,34 @@ There are at least four files available for download from this page:
 
 To download the \texttt{\getsoftwarename{}} application click on the link for
 the appropriate file for your operating system and then click on the
-Download button at bottom right corner of the ensuing pop-up window to
-download it. You need to unpackage the application from the downloaded
+Download button at bottom right corner of the ensuing pop-up window. 
+Unpackage the application from the downloaded
 file and place it in a location on your filesystem. On Windows, we
 recommend that you create a \texttt{C:/SimCenter/\getsoftwarename{}}
 directory and extract the contents of the \texttt{ZIP} archive
-there. It is also recommended to run the included installer for Visual C/C++ runtime library(vc\_redist.x64.exe). On Mac, we recommend you copy the application to either your
-Documents folder or your Desktop folder. You are free to place the
-applications anywhere you wish, you will just need to make the
+there. It is also recommended to run the included installer for Visual C/C++ runtime library(vc\_redist.x64.exe). 
+If you use a Mac we recommend you copy the application to either your
+home folder or your Desktop folder. You are free to place the
+applications anywhere you wish, you will need to make the
 appropriate adjustments with the following instructions if you do so. \\
 
-Now quickly test that the application starts. To do this navigate to
+Now test that the application starts. To do this navigate to
 the location where you placed the application and open it. You should
 see the user interface (UI) shown in \Cref{fig:app_UI} after
-starting the application. Now Quit the application as there is more installtion steps required.\\
+starting the application. Now Quit the application. Additional steps are required before 
+computations can be performed.\\
 
 \softwareSwitch{PBE}{
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.95\textwidth]
     {installation/figures/PBE.png} }
-  \caption{Running PBE Application.}
+  \caption{PBE Application on Startup}
   \label{fig:app_UI}
 \end{figure}
 }{}
 
 \softwareSwitch{EE-UQ}{
-\begin{figure}[!htbp]
-  \centering {
-    \includegraphics[width=0.95\textwidth]
-    {installation/figures/EE_UQ.png} }
-  \caption{EE-UQ Application on Startup}
-  \label{fig:app_UI}
-\end{figure}
-}{}
-
-\softwareSwitch{WE-UQ}{
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.95\textwidth]
@@ -104,13 +96,22 @@ starting the application. Now Quit the application as there is more installtion 
 \end{figure}
 }{}
 
+\softwareSwitch{WE-UQ}{
+\begin{figure}[!htbp]
+  \centering {
+    \includegraphics[width=0.95\textwidth]
+    {installation/figures/WE-UQ.png} }
+  \caption{WE-UQ Application on Startup}
+  \label{fig:app_UI}
+\end{figure}
+}{}
+
 
 \begin{enumerate}
 \item The SimCenter is not recognized as either a Windows or an Apple vendor. Our applications are not recognized by the operating system as being signed. Consequently, you may receive a warning message when you start the \texttt{\getsoftwarename{}} application for the first time.
-\item  On a Mac you will need to right click on the .dmg file to open it. Furthermore, the UI will not start correctly while in the DMG file, you need to open the .dmg file and then copy the \texttt{\getsoftwarename{}} application to your Documents or Desktop folder. You can then move the .dmg file to the trash or eject it after this has been done.
-\item  The \texttt{\getsoftwarename{}} application requires additional software to work properly. Although the user interface loads, you will not be able to run calculations before installing those software.
+\item  On a Mac you will need to right click on the .dmg file to open it. The UI will not start correctly while in the DMG file, you need to open the .dmg file and then copy the \texttt{\getsoftwarename{}} application to your Documents or Desktop folder. You can then move the .dmg file to the trash or eject it after this has been done.
+\item  The \texttt{\getsoftwarename{}} application requires additional software outlined in next subsections to work properly. Even of the software starts correctly, it will not run correctly until this software, outlined in the next section, is installed correctly.
 \end{enumerate}
-
 
 
 %===============================================================================
@@ -119,24 +120,47 @@ starting the application. Now Quit the application as there is more installtion 
 
 The SimCenter workflow applications are managed by Python
 scripts. These are required to prepare the input data for running
-analyses remotely on DesignSafe and also required for running
-simulations locally. As a consequence the user must have Python
+analyses either remotely on DesignSafe or locally. As a consequence the user must have Python
 installed on their machine and have the appropriate environment
 variables set so that the UI can run these applications.
 
 \subsection{Install Python}
 
-If you do not have a Python installation yet, we recommend
+\begin{enumerate}
+\item Windows:
+
+If you have not yet installed Python, we recommend
 installing \href{http://www.anaconda.com/distribution/#download-section}{Anaconda}. Anaconda
 provides all the important scientific packages in a single convenient
 install. We recommend installing the 64-Bit version based on Python
 3.5 or newer.
 
-Note: If you already have a Python installation that is Python 2.7 or
-newer, you do not have to install Anaconda to work with SimCenter
-applications. You may also use another Python distribution. However,
-if you do please make sure that you make the following packages
-available: \texttt{numpy}, \texttt{scipy}, \texttt{pandas}.
+Note: If you already have a Python installation that is Python 2.7 or newer, you do not 
+have to install Anaconda to work with SimCenter
+applications as you may also use another Python distribution.
+If you do please make sure that you install the following packages: 
+\texttt{numpy}, \texttt{scipy}, and \texttt{pandas}.
+
+\item Mac
+
+The Mac comes with Python pre-installed, which is currently the somewhat 
+dated version 2.7. You need to ensure that the following packages:
+\texttt{numpy}, \texttt{scipy}, and \texttt{pandas} are installed. To install 
+these packages, start a terminal window and type:
+
+\begin{verbatim}
+pip install numpy
+pip install scipy
+pip install pandas
+\end{verbatim}
+
+Notes: 
+\begin{enumerate}
+\item To start a terminal window you can use the spotlight app (magnifying top right of desktop). Start the spotlight app and type in terminal. The terminal application should appear as the top hit. Click on it to start it.
+\item If you have installed Python3 on your system, in the preceeding replace pip with pip3.
+Also in the tools preferences replace Python executable with Python3.
+\end{enumerate}
+\end{enumerate}
 
 \subsection{Test Python}
 %===============================================================================
@@ -171,7 +195,7 @@ workflows locally, you will not need these applications.
 \subsection{Install \texttt{OpenSees}}
 %===============================================================================
 
-\href{http://opensees.berkeley.edu}{\texttt{OpenSees}} is an open-source finite element application publicly available for download from its \href{http://opensees.berkeley.edu/OpenSees/user/download.php}{download page}. \texttt{OpenSees} installation requires the user install both \texttt{OpenSees} and \texttt{Tcl}.  If you have never downloaded \texttt{OpenSees} before, you will need to register your e-mail to gain access. After registration, you can proceed to the download page by entering your email address and clicking the Submit button. The Windows and Mac downloads are in different locations on the download page, with the appropriate Tcl installer beside the \texttt{OpenSees} link. This is as indicated in \Cref{fig:openseesDownload}
+\href{http://opensees.berkeley.edu}{\texttt{OpenSees}} is an open-source finite element application publicly available for download from its \href{http://opensees.berkeley.edu/OpenSees/user/download.php}{download page}. \texttt{OpenSees} installation requires the user install both \texttt{OpenSees} and \texttt{Tcl}.  If you have never downloaded \texttt{OpenSees} before, you will need to register your e-mail to gain access. After registration, you can proceed to the download page by entering your email address and clicking the Submit button. The Windows and Mac downloads are in different locations on the download page, with the appropriate Tcl installer beside the \texttt{OpenSees} link; see \Cref{fig:openseesDownload}
 
 \begin{figure}[!htbp]
   \centering {
@@ -182,17 +206,15 @@ workflows locally, you will not need these applications.
 \end{figure}
 
 Follow the instructions on the download page to install \texttt{Tcl}
-(\Cref{fig:openseesDownload}). On Windows, pay particular
-attention to the location \texttt{Tcl} must be installed in, as this is not the
-default, and make sure you run the installer as administrator,
-otherwise you will not be able to create the \texttt{C:/Program
-Files/Tcl} folder.\\
+(\Cref{fig:openseesDownload}). On Windows, you must select the Custom option for installton and you must specify
+the installtion directory as \texttt{C:\textbackslash Program Files\textbackslash Tcl}, 
+which is not the default. \\
 
 After \texttt{Tcl} is installed, we recommend you put \texttt{OpenSees} in
 the \texttt{C:/SimCenter/OpenSees} folder on Windows and in
 a \texttt{/usr/local/OpenSees} directory on the Mac (If you use finder
 on Mac to do navigation, use command-shift-G in Finder and specify
-/usr/local as the folder to go to. There create a new folder \texttt{OpenSees}
+/usr/local as the folder to go to. Create a new folder \texttt{OpenSees}
 and copy the \texttt{OpenSees} application to this folder).\\
 
 
@@ -208,7 +230,7 @@ computer. The steps to do this depend on your operating system:
   \centering {
     \includegraphics[width=0.8\textwidth]
     {installation/figures/add_env_path.png} }
-  \caption{Adding OpenSees to the PATH environment variable on Windows.}
+  \caption{Adding OpenSees to the PATH environment variable on Windows}
   \label{fig:add_env_path}
 \end{figure}
 
@@ -221,14 +243,16 @@ computer. The steps to do this depend on your operating system:
     \item click \emph{OK} in every dialog to close them and save your changes.
 \end{enumerate}
 
-\item MacOS: To add the /usr/local/OpenSees folder to the \texttt{PATH} variable::
-
+\item MacOS: To add the /usr/local/OpenSees folder to the \texttt{PATH} variable:
 
 \begin{enumerate}
     \item open a Terminal;
-    \item execute \texttt{sudo nano /etc/paths} and enter your password
-    \item add the path to the \texttt{OpenSees} executable to the end of the list (this will be \texttt{/usr/local/OpenSees} if you put the executable at the recommended location);
+    \item execute (type the following in the terminal window and hit the return key) the following: \begin{verbatim}nano ${HOME}/.bash_profile\end{verbatim}
+    \item if the file contains nothing, add the first 3 lines shown in \Cref{fig:add_env_path_Mac} to the file. This is done in
+case an existing .bashrc file exists for your system. Adding these 3 lines will test for the existance of this file, and source in any existing commands if the file does exist.
+    \item on a new line add the \texttt{OpenSees} executable to the PATH variable, by typing the following: \begin{verbatim}export PATH=/usr/local/OpenSees:${PATH}\end{verbatim}
     \item quit by hitting \texttt{Ctrl+X} and then \texttt{Y} when asked if you want to save modifications.
+    \item test it is entered correctl, the following command now entered in the terminal window should result in no errors: \begin{verbatim}source ${HOME}/.bash_profile\end{verbatim}. 
 \end{enumerate}
 
 \begin{figure}[!htbp]
@@ -238,6 +262,8 @@ computer. The steps to do this depend on your operating system:
   \caption{Adding OpenSees to the PATH environment variable on Mac.}
   \label{fig:add_env_path_Mac}
 \end{figure}
+
+
 \end{enumerate}
 
 
@@ -254,25 +280,39 @@ computer. The steps to do this depend on your operating system:
   \label{fig:dakota_installation}
 \end{figure}
 
-Following the instructions provided for installing \texttt{OpenSees}, you need to add \textbf{two} \texttt{Dakota} folders to the
-system \texttt{PATH} environment variable to allow the SimCenter
-workflow applications to find the \texttt{Dakota} tools on your computer. Use
+
+Following the instructions provided for installing \texttt{OpenSees}, you need to add \textbf{two} \texttt{Dakota} folders to the system \texttt{PATH} environment variable to allow the SimCenter workflow applications to find the \texttt{Dakota} tools on your computer. 
 the procedure described above for \texttt{OpenSees} to add the following
 folders to your \texttt{PATH}:
 
 \begin{enumerate}
-\item Windows:
+\item{Windows}
+
+Add the following 2 folders to your windows PATH variable:
 \begin{itemize}
     \item \texttt{C:\textbackslash SimCenter\textbackslash Dakota\textbackslash bin}
     \item \texttt{C:\textbackslash SimCenter\textbackslash Dakota\textbackslash share\textbackslash dakota\textbackslash Python}
 \end{itemize}
 
-\item MacOS:
+Now you need to create a new variable, \texttt{PYTHONPATH}, and point it to the following folder.
+
+
 \begin{itemize}
-    \item \texttt{/usr/local/Dakota/bin}
-    \item \texttt{/usr/local/Dakota/share/dakota/Python}
+    \item \texttt{C:\textbackslash SimCenter\textbackslash Dakota\textbackslash share\textbackslash dakota\textbackslash Python}
+\end{itemize}
+
+\item{MacOS}
+On the Mac you also need to add 2 lines, previously shown in \Cref{fig:add_env_path_Mac},
+ to the .bash\_profile file. One line adds the Dakota executable to the PATH variablem and 
+the other creates a new variable PYTHONPATH and points it to a folder in the  Dakota 
+installation directory. 
+
+\begin{itemize}
+    \item \texttt{export PATH=/usr/local/Dakota/bin:\${PATH}}
+    \item \texttt{export PYTHONPATH=/usr/local/Dakota/share/dakota/Python}
 \end{itemize}
 \end{enumerate}
+
 \subsection{Install  Perl}
 %===============================================================================
 
@@ -335,5 +375,11 @@ appropriately:
 \clearpage
 \section{Test the \texttt{\getsoftwarename{}} application}
 \label{sec:test_local}
+
+
+\softwareSwitch{WE-UQ}{
+\input{installation/localCalcWE}
+}{
 \input{installation/local_calc}
+}
 %===============================================================================
