@@ -30,7 +30,11 @@ separate areas:
     description, location and units.
   \item SIM: Structure Information Model (\Cref{sec:structuralInfo}), for description of the
     building model.
-  \item EVT: Event (\Cref{sec:event}), for selecting the input earthquake motions for the building.
+    \softwareSwitch{WE-UQ}{
+      \item EVT: Event (\Cref{sec:event}), for selecting the input wind loading for the building.    
+    }{
+      \item EVT: Event (\Cref{sec:event}), for selecting the input earthquake motions for the building.    
+    }
   \item FEM: Finite Element Method (\Cref{sec:fem}), for specifying the options for structural response simulation.
   \item UQ: Uncertainty Quantification (\Cref{sec:uq}), for defining the distribution
     of the random paramaters and UQ method analysis options.

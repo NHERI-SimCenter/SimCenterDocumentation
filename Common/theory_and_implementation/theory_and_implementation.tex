@@ -12,12 +12,13 @@ read this section.  Some Definitions before we start:
   defined scientific workflow application.
 \end{itemize}
 
-The \texttt{EE-UQ} application is a very limited scientific workflow system
-that allows users to create scientific workflow applications needed
-for the characterization of the response of a building subjected to
-earthquake ground motions. It allows the users to then create and run
-the workflow application using the data of the users choosing. The
-application itself is composed of two parts:
+The \texttt{\getsoftwarename{}} application is a very limited
+scientific workflow system that allows users to create scientific
+workflow applications needed for the characterization of the response
+of a building subjected to \softwareSwitch{WE-UQ}{wind
+  loading}{earthquake ground motions}. It allows the users to then
+create and run the workflow application using the data of the users
+choosing. The application itself is composed of two parts:
 
 \begin{itemize}
 \item Frontend User Interface (UI): This is the application the user
@@ -31,7 +32,7 @@ application itself is composed of two parts:
   processes the output file from the UI to determine the applications
   to run and their data, it invokes these applications using the
   outputs from one application as the input to another. The
-  application that is run is a python script, \texttt{EE-UQ.py}, that can be
+  application that is run is a python script, \texttt{\getsoftwarename{}.py}, that can be
   found in the /applications/Workflow/ directory.  The input and
   output from each application is in the form of JavaScript Object
   Notation (\texttt{JSON}) files. \texttt{JSON} is a human readable file format used
@@ -54,8 +55,10 @@ this script are categorized into certain types of applications, as shown
 in \Cref{fig:figure17}:
 \begin{enumerate}
 \item createEVENT: given the structure and the user input for hazard
-  application, define the loadings for the building, i.e. the ground
-  motions for an earthquake event. The output file is an EVENT file.
+  application, define the loadings for the building, i.e. the
+  \softwareSwitch{WE-UQ}{wind loads based on building location, shape,
+    and exposure}{ground motions for an earthquake event}. The output
+  file is an EVENT file.
 \item createSAM: given the building description and event, create a
   finite element model of the building. The output file is a SAM
   (Structural Analysis Model) file.
@@ -153,8 +156,8 @@ applications, as shown below and illustrated in \Cref{fig:uq_sampling}:
   \label{fig:uq_sampling}
 \end{figure}
 
-PerformUQ is the computationally expensive part of the simulation. 
-As discussed earlier, the user has the option of running
-locally or remotely at DesignSafe. When the user selects to run the
-job remotely, it is the PerformUQ operation that is run
-remotely. The operations peformed in the PreProcessUQ and PostProcessUQ stages are run locally.
+PerformUQ is the computationally expensive part of the simulation.  As
+discussed earlier, the user has the option of running locally or
+remotely at DesignSafe. When the user selects to run the job remotely,
+it is the PerformUQ operation that is run remotely. The operations
+peformed in the PreProcessUQ and PostProcessUQ stages are run locally.
