@@ -30,6 +30,7 @@ user survey is available \insertsurveylink{here}. \\
       \label{tab:schedule}                 
     \end{table}
 }{
+\softwareSwitch{EE-UQ}{
     \begin{table}[hbt!]                    
       \centering
     \begin{adjustbox}{max width=\textwidth}            
@@ -45,10 +46,78 @@ user survey is available \insertsurveylink{here}. \\
       \caption{Schedule of Release}             
       \label{tab:schedule}                 
     \end{table}
+}{
+    \begin{table}[hbt!]                    
+      \centering
+    \begin{adjustbox}{max width=\textwidth}            
+      \begin{tabular}{lll}                    
+        \toprule          
+          Version & 	Release	 & Requirements \\  \hline
+          1.0	 & July 2019 & 1.1, 1.2, 2.1, 2.2, 3.1, 3.6, 4.1, 4.2, 4.3, 4.1, 4.2, 4.3, 5.1, 7, 8.1, 9.1\\  \hline
+      \end{tabular}
+    \end{adjustbox}
+      \caption{Schedule of Release}             
+      \label{tab:schedule}                 
+    \end{table}
+}
 }
 
 \newpage
-
+\softwareSwitch{WE-UQ}{
+\begin{longtable}{| p{.05\textwidth} | p{.75\textwidth} | p{.08\textwidth} | p{.08\textwidth} |}
+    \toprule
+      \# & Description & Priority & Version \\ \hline
+      1 & \textbf{Ability to simulate wind loads specific to each building and surrounding terrain} &  &  \\ 
+	1.1 & Run on Local Machine (Mac and Windows) & M & 1.0 \\ \hline
+	1.2 & Run on Stampede2 through DesignSafe utilizing Agave & M & 1.0 \\ \hline
+	2 & \textbf{New tools for practice to determine wind loading effects validated against tests or other simulation methods} &  &  \\ \hline
+	2.1 & Ability to select from multiple wind loading events and view UQ due to all the discrete events & M & 1.0  \\ \hline
+	2.2 & Ability to select from synthetic wind loads &  &  \\
+	 & a)     per Wittig \& Sinha (1975) & M & 1.0  \\ \hline
+	3 & \textbf{Building Model Generation} &  & \\ \hline
+	3.1 & Ability to use existing OpenSees model scripts. & M & 1.0 \\ \hline
+	3.2 & Ability to define building and use Expert System to generate FE mesh of: &  &  \\
+	 & a)     Concrete Shear Walls & M & UPDATE \\ 
+	 & b)     Moment Frames & M & UPDATE \\ 
+	 & c)     Braced Frames & M & UPDATE  \\ \hline
+	3.3 & Ability to define building and use Machine Learning applications to generate FE mesh for: &  &  \\ 
+	 & a)     Concrete Shear Walls & M & UPDATE \\ 
+	 & b)     Moment Frames & M & UPDATE \\ 
+	 & c)     Braced Frames & M & UPDATE  \\ \hline
+	3.4 & Ability to specify connection details for member ends & M & UPDATE \\ \hline
+	3.5 & Ability to define a user-defined moment-rotation response representing the connection details & D & UPDATE \\ \hline
+	3.6 & Ability to quickly create a simple shear building model & D & 1.0 \\ \hline
+	4 & \textbf{FEM} &  &  \\ \hline
+	4.1 & Ability to specify OpenSees as FEM engine and to specify different analysis options. & M & 1.0 \\ \hline
+	4.2 & Ability to provide own OpenSees Analysis script to OpenSees engine. & D & 1.0 \\ \hline
+	4.3 & Ability to provide own Python script and use OpenSeesPy engine. & O & 1.0 \\ \hline
+	4.4 & Ability to use alternative FEM engine. & M & UPDATE \\ \hline
+	5 & \textbf{UQ - Method} &  &  \\ \hline
+	5.1 & Ability to Use Dakota UQ engine with the Monte Carlo and LHS methods to perform sampling & M & 1.0 \\ \hline
+	5.2 & Ability to Use alternative UQ engines & M & UPDATE \\ \hline
+    6 & \textbf{UQ – Random Variables} &  &  \\ \hline
+	6.1 & Ability to Define Variables of certain types: &  &  \\ 
+	 & a)     Normal &  &  \\ 
+	 & b)     Lognormal &  &  \\ 
+	 & c)     Uniform & M  & 1.0 \\ 
+	 & d)     Beta &  &  \\ 
+	 & e)     Weibull &  &  \\ 
+	 & f)     Gumbel &  &  \\ \hline
+	6.2 & User defined Distribution & M & UPDATE \\ \hline
+	6.3 & Define Correlation Matrix & M & UPDATE \\ \hline
+	7 & Tool to allow user to load and save user inputs & M & 1.0 \\ \hline
+    8 & \textbf{Engineering Demand Parameters} &  &  \\ \hline
+	8.1 & Ability to Process own Output Parameters & M & 1.0 \\ \hline
+	8.2 & Add to Standard Wind a variable indicating analysis failure & D & UPDATE  \\ \hline
+    9 & \textbf{Ability to use a cyber based wind tool that supports performance based design} & & \\ \hline
+    9.1 & Ability to generate floor loads using database-enabled design & M & 1.0 \\ \hline
+    10 & \textbf{Misc.} &  &  \\ \hline
+	10.1 & Simplify run local and run remote by removing workdir locations. Move to preferences & D & UPDATE  \\ \hline
+	\bottomrule 
+\caption{Feature Requirements (M=Mandatory, D=Desirable, O=Optional, P=Possible Future)}             
+  \label{tab:featureRequirements}                 
+\end{longtable}
+}{
 \begin{longtable}{| p{.05\textwidth} | p{.75\textwidth} | p{.08\textwidth} | p{.08\textwidth} |}
     \toprule
       \# & Description & Priority & Version \\ \hline
@@ -148,3 +217,4 @@ user survey is available \insertsurveylink{here}. \\
 \caption{Feature Requirements (M=Mandatory, D=Desirable, O=Optional, P=Possible Future)}             
   \label{tab:featureRequirements}                 
 \end{longtable}
+}

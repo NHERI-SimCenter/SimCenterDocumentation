@@ -2,14 +2,25 @@ This panel is where the user selects which outputs will be displayed when
 the simulation runs. There are two options available in the pull-down
 menu:
 \begin{enumerate}
-\item Standard Earthquake (\Cref{subsec:sectionStandardEarthquake})
+  \softwareSwitch{WE-UQ}{
+    \item Standard Wind (\Cref{subsec:sectionStandardWind})    
+  }{
+    \item Standard Earthquake (\Cref{subsec:sectionStandardEarthquake})    
+  }
 \item User Defined (\Cref{subsec:sectionUserDefined})
 \end{enumerate}
 
-\subsection{Standard Earthquake}\label{subsec:sectionStandardEarthquake}
-When the user selects Standard Earthquake there are no additional
-inputs required. The standard earthquake EDP generator will ensure the
-the max absolute value of the following are obtained:
+\softwareSwitch{WE-UQ}{
+  \subsection{Standard Wind}\label{subsec:sectionStandardWind}
+  When the user selects Standard Wind there are no additional
+  inputs required. The standard wind EDP generator will ensure the
+  the max absolute value of the following are obtained:  
+}{
+  \subsection{Standard Earthquake}\label{subsec:sectionStandardEarthquake}
+  When the user selects Standard Earthquake there are no additional
+  inputs required. The standard earthquake EDP generator will ensure the
+  the max absolute value of the following are obtained:  
+}
 \begin{enumerate}
 \item Relative Floor displacements:
 \item Absolute Floor Accelerations
@@ -18,8 +29,8 @@ the max absolute value of the following are obtained:
 
 The results will contain results for these in abbreviated form:
 \begin{itemize}
-\item PFD peak relative floor displacement $1-PFD-FLOOR_CLINE$
-\item PFA peak floor acceleration (relative + ground motion):
+\item PFD peak relative floor displacement $1-PFD-FLOOR-CLINE$
+\item PFA peak floor acceleration \softwareSwitch{WE-UQ}{}{(relative + ground motion)}:
   $1-PFA-FLOOR-CLINE$
 \item PID peak inter-story drift: $1-PID-STORY-CLINE$
 \end{itemize}
