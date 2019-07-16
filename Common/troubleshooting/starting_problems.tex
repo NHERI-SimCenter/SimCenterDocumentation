@@ -5,7 +5,13 @@ On Windows operating systems, if you receive an error when starting the applicat
   \softwareSwitch{PBE}{
   \includegraphics[width=0.8\textwidth]{troubleshooting/figures/PBE-MissingCRT.png}
   }{
-  \includegraphics[width=0.8\textwidth]{troubleshooting/figures/EE-UQ-MissingCRT.png} 
+    \softwareSwitch{EE-UQ}
+    {
+      \includegraphics[width=0.8\textwidth]{troubleshooting/figures/EE-UQ-MissingCRT.png} 
+    }
+    {
+      \includegraphics[width=0.8\textwidth]{troubleshooting/figures/WE-UQ-MissingCRT.png} 
+    }
   }
   }    
   \caption{Error message for missing Visual C/C++ runtime library}
