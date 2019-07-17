@@ -15,10 +15,19 @@ interface with the event tab (\texttt{EVT}), the uncertainty
 quantification tab (\texttt{UQ}), and the results tab (\texttt{RES}).
 
 The first step is to start the \texttt{\getsoftwarename{}}
+<<<<<<< HEAD
 application. Click on the \texttt{EVT} tab which will allow 
 the loading type to be selected. From the dropdown menu select 
 \texttt{Stochastic Wind}. The model will be set as 
 \texttt{Wittag and Sinha (1975)} as shown in \Cref{fig:input_event}.
+=======
+application.  Once the application is started, the second step is to
+input the parameters for the synthetic motions under the \texttt{EVT}
+(Event) tab. This is shown in \Cref{fig:input_event}. Click
+on the \texttt{EVT} tab which will allow the loading type to be
+selected. From the dropdown menu select \texttt{Stochastic Wind Event}
+model will be set as \texttt{Wittag and Sinha (1975)}.
+>>>>>>> upstream/master
 
 \begin{figure}[!htbp]
   \centering {
@@ -32,6 +41,7 @@ Only three inputs are required for this test, of which one will be set
 to a random variable. As shown in \Cref{fig:input_event}, set the
 \emph{Drag Coefficient} to {\texttt 1.5}, \emph{exposure condition} to \texttt{B}, and \emph{Gust Wind Speed} to \texttt{GWS}.
 to \texttt{vs30}. The \texttt{Provide seed value} radio button should
+<<<<<<< HEAD
 be left unselected. By specifying these inputs, both drag coefficient and the
 exposure condition will have constant values in all realizations while \texttt{GWS} will have different values based on the model parameters specified in the
 uncertainty quantification (\texttt{UQ}) tab. With these inputs specified, click on the \texttt{UQ} tab. Here the distributions and their relevant parameters will be specified for the random variables defined in the analysis\textemdash only $GWS$
@@ -40,6 +50,20 @@ by inputting the parameter value as text, it is automatically added as
 a random variable, as shown in \Cref{fig:input_uq}. Set the
 distribution type to \texttt{normal} with a \texttt{Mean}
 and \texttt{Standard Dev} of 100 and 10 mph,
+=======
+be left unselected. By specifying these inputs, both drag coefficient
+and the exposure condition will have constant values in all
+realizations while \texttt{GWS} will have different values based on
+the model parameters specified in the uncertainty quantification
+(\texttt{UQ}) tab. With these inputs specified, navigate to
+the \texttt{UQ} tab. Here the distributions and their relevant
+parameters will be specified for the random variables defined in the
+analysis\textemdash only $GWS$ in this case. Since $GWS$ was
+identified as a random variable by inputting the parameter value as
+text, it is automatically added as a random variable, as shown
+in \Cref{fig:input_uq}. Set the distribution type to \texttt{normal}
+with a \texttt{Mean} and \texttt{Standard Dev} of 100 and 10 mph,
+>>>>>>> upstream/master
 respectively.
 
 \begin{figure}[!htbp]
