@@ -267,6 +267,7 @@ TSWLatexianTemp*
 # Makefiles
 Makefile
 latexmkrc
+
 *~
 TInF/TInF-documentation\.pdf
 

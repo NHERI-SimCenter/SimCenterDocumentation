@@ -1,0 +1,33 @@
+\label{sec:TInF-installation}
+
+\section{Installing the Turbulent Inflow Tool}
+
+Download the installation package for your operation system from (a single line)
+\begin{verbatim}
+https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/
+            /SimCenter/Software/TurbulantInflowTool
+\end{verbatim}
+ SimCenter is providing packages for Windows~8/10 (64 bit version only) and MacOS.  
+The installer will place the executable on your system.  On Windows systems, a shortcut will be added to your start menu.
+On MacOS, the application is placed in your Applications folder.
+\bigskip
+
+For Linux systems, you will need to clone the source from 
+\begin{verbatim}
+https://github.com/NHERI-SimCenter/TurbulentInflowTool
+\end{verbatim}
+and compile it yourself performing the following steps:
+\begin{quote}
+\begin{verbatim}
+$ git clone https://github.com/NHERI-SimCenter/TurbulentInflowTool
+$ git clone https://github.com/NHERI-SimCenter/SimCenterCommon
+$ cd TurbulentInflowTool
+$ qmake TurbulentInflowTool.pro
+$ make
+$ sudo make install
+\end{verbatim}
+\end{quote}
+
+\section{Other requirements}
+
+JAY: We need a reference to your code on github and basic instructions on how to get OpenFOAM to use them.

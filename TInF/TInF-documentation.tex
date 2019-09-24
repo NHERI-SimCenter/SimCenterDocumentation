@@ -15,7 +15,7 @@
 
 \graphicspath{%
               {figs},%
-	      {images},%
+	      {images/},%
 	      {theory},%
 	      {theory/figs}%
 	     }
@@ -28,10 +28,10 @@
 \begin{document}
 % Declarations for Front Matter
 % Software title followed by optional second line
-\title{Amazing Software\\ \Large Turbulent Inflow Tool}
+\title{TInF\\ \Large Turbulent Inflow Tool}
 % Use superscripts to indicate author affiliations
-\author{Peter Mackenzie-Helnwein$^{1}$, Jia$^2$}
-\institutions{$^1$Univerisity of Washington \\$^2$Notre Dame}
+\author{Jiawei Wan$^{1}$, Peter Mackenzie-Helnwein$^2$}
+\institutions{$^1$Univerisity of Notre Dame \\$^2$University of Washington}
 \softwarename{Turbulent Inflow Tool}
 \softwareversion{1.0.0}
 
@@ -50,8 +50,8 @@
   \tableofcontents
   \clearpage
   \listoffigures
-  \clearpage
-  \listoftables
+  %\clearpage
+  %\listoftables
 }
 
 \end{frontmatter}
@@ -66,8 +66,10 @@
 \input{chap2}
 
 \chapter{Installation Instructions}
+\input{chap3}
 
 \chapter{Usage}
+\input{chap4}
 
 \chapter{Theory and Implementation}
 \input{theory/turbulent_inflow}  %%% JAY, THIS IS YOUR QUEUE
