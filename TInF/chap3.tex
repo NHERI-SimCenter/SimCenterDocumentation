@@ -28,6 +28,37 @@ $ sudo make install
 \end{verbatim}
 \end{quote}
 
-\section{Other requirements}
+\section{Compiling the Source Code in OpenFOAM}
 
-JAY: We need a reference to your code on github and basic instructions on how to get OpenFOAM to use them.
+Download the source code of the turbulent velocity boundary conditions from
+\begin{verbatim}
+https://github.com/NHERI-SimCenter/TurbulentInflowTool/tree/master/openFOAM_code
+\end{verbatim}
+
+\noindent  The source code files are contained in a directory named \textcolor{blue}{inflowTurbulence}. Note that the code is provided for OpenFOAM version 6 and 7, and is slightly different in this two versions. Please choose the correct package to download according the version of OpenFOAM you have installed on your computer.
+
+Create a project directory named \textcolor{blue}{run} within the \textcolor{blue}{\$HOME/OpenFOAM} directory named \textless{USER}\textgreater{-6} (e.g. Jack-6 for user Jack and OpenFOAM version 6) by typing the following script in a terminal prompt:
+
+\begin{quote}
+\begin{verbatim}
+$ mkdir -p $FOAM_RUN
+\end{verbatim}
+\end{quote}
+
+Copy or move the \textcolor{blue}{inflowTurbulence} directory which has been downloaded earlier and all the files in it to the \textcolor{blue}{\$HOME/OpenFOAM} directory. Go the relocated \textcolor{blue}{inflowTurbulence} directory by typing:
+
+\begin{quote}
+\begin{verbatim}
+$ cd $FOAM_RUN/inflowTurbulence
+\end{verbatim}
+\end{quote}
+
+Compile the codes in the \textcolor{blue}{inflowTurbulence} directory by typing the following in the terminal prompt:
+
+\begin{quote}
+\begin{verbatim}
+$ wmake
+\end{verbatim}
+\end{quote}
+
+After the compilation is successfully complete, a library file named \textcolor{blue}{libturbulentInflow.so} will be generated in the directory \textcolor{blue}{\$FOAM\_USER\_LIBBIN}.
