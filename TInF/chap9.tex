@@ -1,0 +1,51 @@
+An easy way to verify proper installation and operation of the TInF Tool is through the set of example modeling files
+distributed as part of the installation.  In order to validate your installation, first copy the folder
+\begin{verbatim}
+C:\Program Files\SimCenter Apps\SimCenterTInF\Examples
+\end{verbatim}
+on Windows~10, or
+\begin{verbatim}
+/Applications/SimCenter Apps/SimCenterTInF/Examples
+\end{verbatim}
+on MacOS,
+to your Desktop or Document folder.
+\medskip
+
+\noindent
+This folder contains, among others, the following files:
+\begin{enumerate}
+\item
+	\texttt{Examples/building/0/U}:
+	\lstinputlisting{validation/ExampleInput/building/0/U.orig}
+	
+\item 
+	and \texttt{Examples/building/system/controlDict}:
+	\lstinputlisting{validation/ExampleInput/building/system/controlDict.orig}
+	
+\end{enumerate}
+
+\noindent
+Now run the TInF Tool on that copy by selecting \texttt{Desktop$\backslash$Examples}
+(or, if you placed your copy in the Documents folder, \texttt{Documents$\backslash$Examples}), and 
+\begin{itemize}
+\item under ``select what boundary to modify'' select \texttt{inlet}
+\item under ``method selection'' select \texttt{synthetic eddy}
+\item use defaults for the rest
+\item click the EXPORT button (once). The files will be written on the first click. It is not recommended to click the EXPORT button more than once.\end{itemize}
+
+\noindent
+As a result, there will be two modified and one entirely new file with the contents as follows.
+\begin{enumerate}
+\item
+	modified \texttt{Examples/building/0/U}:
+	\lstinputlisting{validation/ExampleInput/building/0/U}
+
+\item
+	modified \texttt{Examples/building/system/controlDict}:
+	\lstinputlisting{validation/ExampleInput/building/system/controlDict}
+
+\item 
+	and added \texttt{Examples/building/constant/inflowProperties}:
+	\lstinputlisting{validation/ExampleInput/building/constant/inflowProperties}
+	
+\end{enumerate}
