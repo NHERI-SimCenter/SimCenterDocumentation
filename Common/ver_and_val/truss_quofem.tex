@@ -37,3 +37,44 @@ Table \Cref{tab:uncertainty} summarizes the uncertain input mentioned above.
 We assume that the random variables are independent (i.e., zero covariance), and aim to estimate the mean and standard deviation of the vertical displacement at point F, with $95\%$ confidence intervals for both statistics. In this example, Dakota was used in conjunction with OpenSees. The setup example problem, populated entries, and sample results are show in the following figures.
 
 
+Figures \Cref{fig:basic}, \Cref{fig:correlation}, \Cref{fig:cdfp}, \Cref{fig:cdfoutput}, and \Cref{fig:psamples} show the results corresponding to the forward problem, including sampling and surrogate-based. 
+
+\begin{figure}[!htbp]
+  \centering {
+    \includegraphics[width=0.8\textwidth]
+    {examples/fig_quofem/basic_summary.png} }
+  \caption{Basic summary statistics for the specified output. }
+  \label{fig:basic}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering {
+    \includegraphics[width=0.8\textwidth]
+    {examples/fig_quofem/correlation.png} }
+  \caption{Input panel for the correlation matrix for the random variables of the truss problem. }
+  \label{fig:correlation}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering {
+    \includegraphics[width=0.8\textwidth]
+    {examples/fig_quofem/p_cdf.png} }
+  \caption{Samples of the random variables P along with the corresponding Cumulative Distribution Function for the truss problem. }
+  \label{fig:cdfp}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering {
+    \includegraphics[width=0.8\textwidth]
+    {examples/fig_quofem/qoi_cdf.png} }
+  \caption{Samples of the output variable along with the corresponding Cumulative Distribution Function for the 2D truss problem. }
+  \label{fig:cdfoutput}
+\end{figure}
+
+\begin{figure}[!htbp]
+  \centering {
+    \includegraphics[width=0.8\textwidth]
+    {examples/fig_quofem/run_plot.png} }
+  \caption{Scatter plot of samples of the random variable P. }
+  \label{fig:psamples}
+\end{figure}
