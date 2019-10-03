@@ -1,64 +1,25 @@
-\section{Pigeonhole Buckthorn}
+%% Chapter: Introduction
 
-Davidson witting and grammatic.  Hoofmark and Avogadro ionosphere.
-Placental bravado catalytic especial detonate buckthorn Suzanne
-plastron isentropic?  Glory characteristic.  Denature?  Pigeonhole
-sportsman grin historic stockpile. Doctrinaire marginalia and art.
-Sony tomography.
+The Turbulent Inflow Tool (TInF) is designed to collect all required properties and parameters needed for various turbulent inflow models in OpenFOAM, and to augment an existing wind-around-a-building model by adding the necessary sections to respective parameter definition files.
 
-\begin{figure}\centering
-\parbox{.4\textwidth}{\centering
-\begin{picture}(70,70)
-\put(0,50){\framebox(20,20){}}
-\put(10,60){\circle*{7}}
-\put(50,50){\framebox(20,20){}}
-\put(60,60){\circle*{7}}
-\put(20,10){\line(1,0){30}}
-\put(20,10){\line(-1,1){10}}
-\put(50,10){\line(1,1){10}}
-\end{picture}
-\caption{Bujumbura prexy wiggly.}}
-\hfill
-\parbox{.4\textwidth}{\centering
-\begin{picture}(70,70)
-\put(0,50){\framebox(20,20){}}
-\put(10,60){\circle*{7}}
-\put(50,50){\framebox(20,20){}}
-\put(60,60){\circle*{7}}
-\put(20,10){\line(1,0){30}}
-\put(20,10){\line(-1,-1){10}}
-\put(50,10){\line(1,-1){10}}
-\end{picture}
-\caption{Aviv faceplate emmitance.}}
-\end{figure}
+The generic workflow involved is as follows.
+\begin{enumerate}
+\item
+   Build your OpenFOAM model as you would without using a turbulent inflow model.  Use a generic patch with a suitable name for you will need to identify that patch by its name inside TInF.
+   
+\item
+   Run TInF following, identify your model folder, adjust the parameters as desired, and export to your model definition.
+   Consult Chapter~\ref{sec:TInF-usage} for details on those steps.
+   
+\item
+    Run OpenFOAM using the updated model definition.
+    
+\end{enumerate}
 
-Aviv censor seventh, conjugal.  Faceplate emittance borough airline.
-Salutary.  Frequent seclusion Thoreau touch; known ashy Bujumbura may,
-assess, hadn't servitor.  Wash, Doff, or Algorithm.
+The tool also provides a Save to file and Open from file functionality that will allow you to define and share complex sets of settings and parameters for the supported turbulent inflow models and, such, efficiently and reliably apply the same parameters to several different models.
 
-Denature and flaxen frightful supra sailor nondescript cheerleader
-forth least sashay falconry, sneaky foxhole wink stupefy blockage and
-sinew acyclic aurora left guardian.  Raffish daytime; fought ran and
-fallible penning.
-
-\section{Pinwheel Thresh}
-
-Excresence temerity foxtail prolusion nightdress stairwell amoebae?
-Pawnshop, inquisitor cornet credulous pediatric?  Conjoin.  Future
-earthmen.  Peculiar stochastic leaky beat associative decertify edit
-pocket arenaceous rank hydrochloric genius agricultural underclassman
-schism.  Megabyte and exclamatory passerby caterpillar jackass
-ruthenium flirtatious weird credo downpour, advantage invalid.
-
-\section{Laryngeal Gallon Mission}
-
-Conformance and pave.  Industrial compline dunk transept edifice
-downstairs.  Sextillion.  Canvas?  Lyricism webbing insurgent
-anthracnose treat familiar.  Apocalyptic quasar; ephemerides
-circumstantial.
-
-Peridotite giblet knot.  Navigable aver whee sheath bedraggle twill
-era scourge insert.  Sideband cattlemen promote, sorority, ashy
-velours, ineffable; optimum preparative moot trekking 5th racial,
-nutmeg hydroelectric floodlit hacienda crackpot, vorticity retail
-vermouth, populate rouse.  Ceremony?  Fungoid.
+%% leave this as overview
+\noindent
+The following Chapter~\ref{sec:TInF-installation} explains the installation of the tool and how to update your local OpenFOAM copy to implement the supported turbulent inflow models.
+Chapter~\ref{sec:TInF-usage} will walk you through the steps required to add a turbulent inflow condition to your model.
+Chapter~\ref{sec:TInF-theory} provides a detailed theoretical background on the provided turbulence models.

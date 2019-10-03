@@ -22,7 +22,7 @@ page. As shown in \Cref{fig:app_choose_file}, this will bring you to another pag
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.95\textwidth]
-OA    {installation/figures/pbeDownload.png} }
+    {installation/figures/pbeDownload.png} }
   \caption{Download Application}
   \label{fig:app_choose_file}
 \end{figure}
@@ -66,7 +66,7 @@ recommend that you create a \texttt{C:/SimCenter/\getsoftwarename{}}
 directory and extract the contents of the \texttt{ZIP} archive
 there. It is also recommended to run the included installer for Visual C/C++ runtime library(vc\_redist.x64.exe). 
 If you use a Mac we recommend you copy the application to either your
-Documents folder or your Desktop folder. You are free to place the
+home folder or your Desktop folder. You are free to place the
 applications anywhere you wish, you will need to make the
 appropriate adjustments with the following instructions if you do so. \\
 
@@ -100,7 +100,7 @@ computations can be performed.\\
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.95\textwidth]
-    {installation/figures/EE-UQ.png} }
+    {installation/figures/WE-UQ.png} }
   \caption{WE-UQ Application on Startup}
   \label{fig:app_UI}
 \end{figure}
@@ -126,17 +126,45 @@ variables set so that the UI can run these applications.
 
 \subsection{Install Python}
 
-If you have not yet installed Python, we recommend
-installing \href{http://www.anaconda.com/distribution/#download-section}{Anaconda}. Anaconda
-provides all the important scientific packages in a single convenient
-install. We recommend installing the 64-Bit version based on Python
-3.5 or newer.
+SimCenter products require Python version 3.7 or above be installed on your machine as January 2020 marks the end of life for Python 2.7. 
 
-Note: If you already have a Python installation that is Python 2.7 or
-newer, you do not have to install Anaconda to work with SimCenter
-applications as you may also use another Python distribution.
-If you do please make sure that you install the following packages: 
-\texttt{numpy}, \texttt{scipy}, and \texttt{pandas}.
+\begin{enumerate}
+\item Windows:
+
+If you have not yet installed Python 3.7, we recommend installing from \href{https://www.python.org/downloads/windows}{Python.org}. We recommend installing using the \texttt{Windows x86-64 executable installer}.
+
+Allow the installer to change your system environment variables so that the install directory is added to your PATH. Once installed you need to You need to install the following python packages: \texttt{numpy}, \texttt{scipy}, and \texttt{pandas} are installed. To install these packages open a \href{https://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/}{terminal window as an Admin user} and in that window type the following instructions:
+
+To install these packages, start a terminal window and type:
+
+\begin{verbatim}
+pip install numpy
+pip install scipy
+pip install pandas
+\end{verbatim}
+
+\item Mac
+
+The Mac comes with Python pre-installed, which is currently the somewhat 
+dated version 2.7. To install Python 3.7 we recommend installing from 
+\href{https://www.python.org/downloads/}{Python.org}. We recommend installing using the 
+\texttt {macOS 64-bit installer} given for latest stable release. The installer will place a python3 executable in your /usr/local/bin directory, whose location should be on your system PATH.
+
+You need to install the following python packages: \texttt{numpy}, \texttt{scipy}, and \texttt{pandas} are installed. 
+To install these packages, start a terminal window and type:
+
+\begin{verbatim}
+pip3 install numpy
+pip3 install scipy
+pip3 install pandas
+\end{verbatim}
+
+Notes: 
+\begin{enumerate}
+\item To start a terminal window you can use the spotlight app (magnifying top right of desktop). Start the spotlight app and type in terminal. The terminal application should appear as the top hit. Click on it to start it.
+\item In tool preferences make sure that python3 appears as the python executable. If you used older versions of SImCEnter tools this was the default.
+\end{enumerate}
+\end{enumerate}
 
 \subsection{Test Python}
 %===============================================================================
@@ -221,12 +249,14 @@ computer. The steps to do this depend on your operating system:
 
 \item MacOS: To add the /usr/local/OpenSees folder to the \texttt{PATH} variable:
 
-
 \begin{enumerate}
     \item open a Terminal;
-    \item execute \texttt{sudo nano /etc/paths} and enter your password
-    \item add the path to the \texttt{OpenSees} executable to the end of the list (this will be \texttt{/usr/local/OpenSees} if you put the executable at the recommended location);
+    \item execute (type the following in the terminal window and hit the return key) the following: \begin{verbatim}nano ${HOME}/.bash_profile\end{verbatim}
+    \item if the file contains nothing, add the first 3 lines shown in \Cref{fig:add_env_path_Mac} to the file. This is done in
+case an existing .bashrc file exists for your system. Adding these 3 lines will test for the existance of this file, and source in any existing commands if the file does exist.
+    \item on a new line add the \texttt{OpenSees} executable to the PATH variable, by typing the following: \begin{verbatim}export PATH=/usr/local/OpenSees:${PATH}\end{verbatim}
     \item quit by hitting \texttt{Ctrl+X} and then \texttt{Y} when asked if you want to save modifications.
+    \item test it is entered correctl, the following command now entered in the terminal window should result in no errors: \begin{verbatim}source ${HOME}/.bash_profile\end{verbatim}. 
 \end{enumerate}
 
 \begin{figure}[!htbp]
@@ -236,6 +266,8 @@ computer. The steps to do this depend on your operating system:
   \caption{Adding OpenSees to the PATH environment variable on Mac.}
   \label{fig:add_env_path_Mac}
 \end{figure}
+
+
 \end{enumerate}
 
 
@@ -252,35 +284,35 @@ computer. The steps to do this depend on your operating system:
   \label{fig:dakota_installation}
 \end{figure}
 
-Following the instructions provided for installing \texttt{OpenSees}, you need to add \textbf{two} \texttt{Dakota} folders to the system \texttt{PATH} environment variable to allow the SimCenter
-workflow applications to find the \texttt{Dakota} tools on your computer. Use
+
+Following the instructions provided for installing \texttt{OpenSees}, you need to add \textbf{two} \texttt{Dakota} folders to the system \texttt{PATH} environment variable to allow the SimCenter workflow applications to find the \texttt{Dakota} tools on your computer. 
 the procedure described above for \texttt{OpenSees} to add the following
 folders to your \texttt{PATH}:
 
 \begin{enumerate}
-\item Windows:
+\item{Windows}
+
+Add the following 2 folders to your windows PATH variable:
 \begin{itemize}
     \item \texttt{C:\textbackslash SimCenter\textbackslash Dakota\textbackslash bin}
     \item \texttt{C:\textbackslash SimCenter\textbackslash Dakota\textbackslash share\textbackslash dakota\textbackslash Python}
 \end{itemize}
 
-\item MacOS:
-\begin{itemize}
-    \item \texttt{/usr/local/Dakota/bin}
-    \item \texttt{/usr/local/Dakota/share/dakota/Python}
-\end{itemize}
-\end{enumerate}
+Now you need to create a new variable, \texttt{PYTHONPATH}, and point it to the following folder.
 
-In addition to modifications to the \texttt{PATH} environment variable, you need to create/modify another variable. This new variable name is \texttt{PYTHONPATH}. To add an environment variable on a Mac you need to edit the \texttt{.bashrc} file in your home directory and add the line shown below.
 
-\begin{enumerate}
-\item Windows:
 \begin{itemize}
     \item \texttt{C:\textbackslash SimCenter\textbackslash Dakota\textbackslash share\textbackslash dakota\textbackslash Python}
 \end{itemize}
 
-\item MacOS:
+\item{MacOS}
+On the Mac you also need to add 2 lines, previously shown in \Cref{fig:add_env_path_Mac},
+ to the .bash\_profile file. One line adds the Dakota executable to the PATH variablem and 
+the other creates a new variable PYTHONPATH and points it to a folder in the  Dakota 
+installation directory. 
+
 \begin{itemize}
+    \item \texttt{export PATH=/usr/local/Dakota/bin:\${PATH}}
     \item \texttt{export PYTHONPATH=/usr/local/Dakota/share/dakota/Python}
 \end{itemize}
 \end{enumerate}
@@ -347,5 +379,11 @@ appropriately:
 \clearpage
 \section{Test the \texttt{\getsoftwarename{}} application}
 \label{sec:test_local}
+
+
+\softwareSwitch{WE-UQ}{
+\input{installation/localCalcWE}
+}{
 \input{installation/local_calc}
+}
 %===============================================================================

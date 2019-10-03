@@ -267,4 +267,22 @@ TSWLatexianTemp*
 # Makefiles
 Makefile
 latexmkrc
+
 *~
+TInF/TInF-documentation\.pdf
+
+WE-UQ/simcenterdocumentation\.cls
+
+WE-UQ/simcenterfooter\.png
+
+WE-UQ/simcenterlogo\.pdf
+
+TInF/.DS_Store
+
+TInF/validation/ExampleInput/.DS_Store
+
+TInF/validation/ExampleInput/building/0/.DS_Store
+
+TInF/validation/ExampleInput/building/constant/.DS_Store
+
+TInF/validation/ExampleInput/building/system/.DS_Store

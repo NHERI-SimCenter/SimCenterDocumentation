@@ -2,14 +2,16 @@ This option allows users to generate synthetic ground motions for a
 target seismic event. In order to do so, the stochastic ground motion
 model is selected from the drop-down menu, as shown
 in \Cref{fig:stochastic_loading}. Depending on the model selected, the
-user will be asked to enter values for a number of parameters that are used to generate
-a seismic event. In the current
-release, users can only select the model derived by Vlachos et
-al. (2018) \cite{vlachos2018predictive}. Additionally, users can
-provide a seed for the stochastic motion generation if they desire the
-same suite of synthetic motions to be generated on multiple occasions.
-If the seed is not specified, a different realization of the time history
-will be generated for each run based. The backend
+user will be asked to enter values for a number of parameters that are
+used to generate a seismic event. In the current release, users can
+select between the model derived by Vlachos et
+al. (2018) \cite{vlachos2018predictive} and the model developed by
+Dabaghi \& Der Kiureghian (2014, 2017, 2018)
+[\cite{dabaghi2014stochastic}, \cite{dabaghi2017stochastic}, \cite{dabaghi2018simulation}]. Additionally,
+users can provide a seed for the stochastic motion generation if they
+desire the same suite of synthetic motions to be generated on multiple
+occasions.  If the seed is not specified, a different realization of
+the time history will be generated for each run. The backend
 application that generates the stochastic ground motions relies
 on \texttt{smelt}, a modular and extensible C++ library for generating
 stochastic time histories. Users interested in learning more about the
