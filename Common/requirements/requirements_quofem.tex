@@ -1,220 +1,56 @@
 This chapter outlines the general features of the \texttt{\getsoftwarename{}} application. We show when the features were introduced and what features and when you can expect to see in the future. This provides a roadmap of where this application has come from and where it is headed. The future features are highly dependent on user feedback. You are highly encouraged to contact us to discuss any new features you would like to see in the application.\\
 
-\softwareSwitch{PBE}{
-Note: All but the Damage and Loss (9) features overlap with the requirements for the EE-UQ application.\\
-}{}
-
 \Cref{tab:schedule} shows the scheduled release dates for this tool and includes the list of features provided in that release or what you can expect to see in future releases. The individual feature requirements are outlined in \Cref{tab:featureRequirements}. If you would like some additional features added, please contact us.
 Additionally, we would appreciate any feedback on this tool. An anonymous
 user survey is available \insertsurveylink{here}. \\
 
-\softwareSwitch{PBE}{
-    \begin{table}[hbt!]                    
-      \centering
-    \begin{adjustbox}{max width=0.7\textwidth}            
-      \begin{tabular}{lll}                    
-        \toprule          
-          Version & 	Release	 & Requirements \\  \hline
-          1.0	& October 2018   &	 1.1, 1.2, 2.1, 2.2, 2.3, 2.4, 2.5\\
-                &                &   3.1, 4.1, 4.2, 5.1, 5.2, 6.1, 7\\
-                &                &   9.1a, 9.2a-i, 9.3a-d, 9.4a-c\\ \hline
-          1.1   & March 2019     &	 2.7a, 2.8a, 3.6, 6.3, 8.1\\
-                &                &   9.1b, 9.3e-f\\ \hline
-          1.2   & June 2019      &   2.7b, 9.3g, 10.1\\  \hline
-          2.0   & September 2019 &   2.6, 2.7c, 2.7d, 2.8b, 3.2, 4.3, 4.4\\
-                &                &   6.2, 6.3, 8.2\\
-                &                &   9.1c-e, 9.4d\\ \hline
-      \end{tabular}
-    \end{adjustbox}
-      \caption{Schedule of Release}             
-      \label{tab:schedule}                 
-    \end{table}
-}{
-\softwareSwitch{EE-UQ}{
-    \begin{table}[hbt!]                    
-      \centering
-    \begin{adjustbox}{max width=\textwidth}            
-      \begin{tabular}{lll}                    
-        \toprule          
-          Version & 	Release	 & Requirements \\  \hline
-          1.0	 & September 2018 &	1.1, 1.2, 2.1, 2.2, 2.3, 2.4, 2.5, 3.1, 4.1, 4.2, 5.1, 5.2, 6.1, 7\\  \hline
-          1.1	 & March 2019     &	2.7a, 2.8a, 3.6, 6.3, 8.1\\  \hline
-          1.2	 & June  2019      &	2.7b\\  \hline
-          2.0	 & September 2019 &	2.6, 2.7c, 2.7d, 2.8b, 3.2, 4.3, 4.4, 6.2, 6.3, 8.2\\  \hline
-      \end{tabular}
-    \end{adjustbox}
-      \caption{Schedule of Release}             
-      \label{tab:schedule}                 
-    \end{table}
-}{
-    \begin{table}[hbt!]                    
-      \centering
-    \begin{adjustbox}{max width=\textwidth}            
-      \begin{tabular}{lll}                    
-        \toprule          
-          Version & 	Release	 & Requirements \\  \hline
-          1.0	 & July 2019 & 1.1, 1.2, 2.1, 2.2, 3.1, 3.6, 4.1, 4.2, 4.3, 4.1, 4.2, 4.3, 5.1, 7, 8.1, 9.1\\  \hline
-      \end{tabular}
-    \end{adjustbox}
-      \caption{Schedule of Release}             
-      \label{tab:schedule}                 
-    \end{table}
-}
-}
+\begin{table}[hbt!]                    
+  \centering
+\begin{adjustbox}{max width=\textwidth}            
+  \begin{tabular}{lll}                    
+    \toprule          
+      Version & 	Release	 & Requirements \\  \hline
+      2.0	 & October 2019 & 1.1, 1.2, 2.1, 2.2, 3.1, 3.6, 4.1, 4.2, 4.3, 4.1, 4.2, 4.3, 5.1, 7, 8.1, 9.1\\  \hline
+  \end{tabular}
+\end{adjustbox}
+  \caption{Schedule of Release}             
+  \label{tab:schedule}                 
+\end{table}
+
 
 \newpage
-\softwareSwitch{WE-UQ}{
 \begin{longtable}{| p{.05\textwidth} | p{.75\textwidth} | p{.08\textwidth} | p{.08\textwidth} |}
     \toprule
       \# & Description & Priority & Version \\ \hline
-      1 & \textbf{Ability to simulate wind loads specific to each building and surrounding terrain} &  &  \\ 
-	1.1 & Run on Local Machine (Mac and Windows) & M & 1.0 \\ \hline
-	1.2 & Run on Stampede2 through DesignSafe utilizing Agave & M & 1.0 \\ \hline
-	2 & \textbf{New tools for practice to determine wind loading effects validated against tests or other simulation methods} &  &  \\ \hline
-	2.1 & Ability to select from multiple wind loading events and view UQ due to all the discrete events & M & 1.0  \\ \hline
-	2.2 & Ability to select from synthetic wind loads &  &  \\
-	 & a)     per Wittig \& Sinha (1975) & M & 1.0  \\ \hline
-	3 & \textbf{Building Model Generation} &  & \\ \hline
-	3.1 & Ability to use existing OpenSees model scripts. & M & 1.0 \\ \hline
-	3.2 & Ability to define building and use Expert System to generate FE mesh of: &  &  \\
-	 & a)     Concrete Shear Walls & M & UPDATE \\ 
-	 & b)     Moment Frames & M & UPDATE \\ 
-	 & c)     Braced Frames & M & UPDATE  \\ \hline
-	3.3 & Ability to define building and use Machine Learning applications to generate FE mesh for: &  &  \\ 
-	 & a)     Concrete Shear Walls & M & UPDATE \\ 
-	 & b)     Moment Frames & M & UPDATE \\ 
-	 & c)     Braced Frames & M & UPDATE  \\ \hline
-	3.4 & Ability to specify connection details for member ends & M & UPDATE \\ \hline
-	3.5 & Ability to define a user-defined moment-rotation response representing the connection details & D & UPDATE \\ \hline
-	3.6 & Ability to quickly create a simple shear building model & D & 1.0 \\ \hline
-	4 & \textbf{FEM} &  &  \\ \hline
-	4.1 & Ability to specify OpenSees as FEM engine and to specify different analysis options. & M & 1.0 \\ \hline
-	4.2 & Ability to provide own OpenSees Analysis script to OpenSees engine. & D & 1.0 \\ \hline
-	4.3 & Ability to provide own Python script and use OpenSeesPy engine. & O & 1.0 \\ \hline
-	4.4 & Ability to use alternative FEM engine. & M & UPDATE \\ \hline
-	5 & \textbf{UQ - Method} &  &  \\ \hline
-	5.1 & Ability to Use Dakota UQ engine with the Monte Carlo and LHS methods to perform sampling & M & 1.0 \\ \hline
-	5.2 & Ability to Use alternative UQ engines & M & UPDATE \\ \hline
-    6 & \textbf{UQ – Random Variables} &  &  \\ \hline
-	6.1 & Ability to Define Variables of certain types: &  &  \\ 
-	 & a)     Normal &  &  \\ 
-	 & b)     Lognormal &  &  \\ 
-	 & c)     Uniform & M  & 1.0 \\ 
-	 & d)     Beta &  &  \\ 
-	 & e)     Weibull &  &  \\ 
-	 & f)     Gumbel &  &  \\ \hline
-	6.2 & User defined Distribution & M & UPDATE \\ \hline
-	6.3 & Define Correlation Matrix & M & UPDATE \\ \hline
-	7 & Tool to allow user to load and save user inputs & M & 1.0 \\ \hline
-    8 & \textbf{Engineering Demand Parameters} &  &  \\ \hline
-	8.1 & Ability to Process own Output Parameters & M & 1.0 \\ \hline
-	8.2 & Add to Standard Wind a variable indicating analysis failure & D & UPDATE  \\ \hline
-    9 & \textbf{Ability to use a cyber based wind tool that supports performance based design} & & \\ \hline
-    9.1 & Ability to generate floor loads using database-enabled design & M & 1.0 \\ \hline
-    10 & \textbf{Misc.} &  &  \\ \hline
-	10.1 & Simplify run local and run remote by removing workdir locations. Move to preferences & D & UPDATE  \\ \hline
-	\bottomrule 
+      1 & \textbf{Forward Uncertainty Propagation} &  &  \\ 
+	1.1 & Input uncertainty characterization & M & 2.0 \\ \hline
+	1.2 & PDF Approximation & M & 2.0 \\ \hline
+	1.3 &  Descriptive output statistics & M & 2.0 \\ \hline
+	1.4 &  Basic Monte Carlo Sampling  & M & 2.0 \\ \hline	
+	1.5 &  Importance Sampling for rare events  & M & 2.0 \\ \hline	
+	1.6 &  Cross-Entropy sampling  & M & 2.0 \\ \hline
+	1.7 &  Surrogate modeling, Gauss. Pr. Models  & M & 2.0 \\ \hline
+	1.8 &  Surrogate modeling, Pol. Ch. Models  & M & 2.0 \\ \hline
+	1.9 &  Multi-fidelity sampling  & M & 2.0 \\ \hline
+	1.10 &  Spatial/temporal stochastic models  & M & 2.0 \\ \hline
+	1.11 &  CCDF estimation for rare events  & M & 2.0 \\ \hline
+	2 & \textbf{Sensitivity Analysis} &  &  \\ \hline
+	2.1 & Global sensitivity Sobol's indices & M & 2.0  \\ \hline
+	3 & \textbf{System Identification and Bayesian Inference} &  & 2.0 \\ \hline
+	3.1 & Parameter estimation & M & 2.0 \\ \hline
+	3.1 & Basic Bayesian parameter updating & M & 2.0 \\ \hline
+	3.1 & Advanced MCMC-based Bayesian updating & M & 2.0 \\ \hline
+	3.2 & Advanced Surrogate-based Bayesian updating & D & 2.0 \\ \hline
+	3.3 & Model class selection & D & 2.0 \\ \hline
+	3.3 & Sequential Bayesian updating & D & 2.0 \\ \hline
+	4 & \textbf{Optimization under Uncertainty} &  &  \\ \hline
+	4.1 & Reliability-Based Design Optimization & M & 2.0 \\ \hline
+	4.2 & Single-objective optimization under uncertainty & M & 2.0 \\ \hline
+	4.3 & Multi-objective optimization under uncertainty & M & 2.0 \\ \hline
+	5 & \textbf{Reliability Analysis} &  &  \\ \hline
+	5.1 & First/Second Order Reliability Methods & M & 2.0 \\ \hline
+	5.2 & Local/Global reliability & M & 2.0 \\ \hline
+	\bottomrule
 \caption{Feature Requirements (M=Mandatory, D=Desirable, O=Optional, P=Possible Future)}             
   \label{tab:featureRequirements}                 
 \end{longtable}
-}{
-\begin{longtable}{| p{.05\textwidth} | p{.75\textwidth} | p{.08\textwidth} | p{.08\textwidth} |}
-    \toprule
-      \# & Description & Priority & Version \\ \hline
-      1 & \textbf{Ability to perform UQ on Building with Single Earthquake} &  &  \\ 
-	1.1 & Run on Local Machine (Mac and Windows) & M & 1.0 \\ \hline
-	1.2 & Run on Stampede2 through DesignSafe utilizing Agave & M & 1.0 \\ \hline
-	2 & \textbf{Motion Selection} &  &  \\ \hline
-	2.1 & Ability to select from Multiple Earthquakes and view UQ due to all the discrete events & M & 1.0  \\ \hline
-	2.2 & Ability to select from list of SimCenter motions & M & 1.0 \\ \hline
-	2.3 & Ability to select from list of PEER motions. & D & 1.0 \\ \hline
-	2.4 & Ability to use OpenSHA and selection methods to generate motions & D & 1.0 \\ \hline
-	2.5 & Ability to Utilize Own Application in Workflow & M & 1.0 \\ \hline
-	2.6 & Ability to use Broadband & D & 3.0 \\ \hline
-	\multirow{5}{*}{2.7} 
-	& Ability to bring motion from rock to surface through soil &  &  \\ 
-	 & a)     1d soil effective stress analysis though different soil layers & M & 1.1  \\ 
-	 & b)     2d bidirectional loading & M & 1.2 \\ 
-	 & c)     2d bidirectional with full stochastic characterization of soil layers & M & 2.0 \\
-	 & d)     2d bidirectional with support for a set of input ground motions & O & 2.0 \\ 
-	 \hline
-	\multirow{5}{*}{2.8} 
-	& Ability to select from synthetic ground motions &  &  \\
-	 & a)     per Vlachos, Papakonstantinou, Deodatis (2017) & D & 1.1  \\ 
-	 & b)     per Dabaghi, Der Kiureghian (2017) & D & 2.0 \\ \hline
-	3 & \textbf{Building Model Generation} &  & 2.0 \\ \hline
-	3.1 & Ability to use existing OpenSees model scripts. & M & 1.0 \\ \hline
-	\multirow{5}{*}{3.2}  & Ability to define building and use Expert System to generate FE mesh of: &  &  \\
-	 & a)     Concrete Shear Walls & M & 2.0 \\ 
-	 & b)     Moment Frames & M & 2.0 \\ 
-	 & c)     Braced Frames & M & 2.0  \\ \hline
-	\multirow{5}{*}{3.3} & Ability to define building and use Machine Learning applications to generate FE mesh for: &  &  \\ 
-	 & a)     Concrete Shear Walls & M & 2.0 \\ 
-	 & b)     Moment Frames & M & 2.2 \\ 
-	 & c)     Braced Frames & M & 2.3  \\ \hline
-	3.4 & Ability to specify connection details for member ends & M & 2.2 \\ \hline
-	3.5 & Ability to define a user-defined moment-rotation response representing the connection details & D & 2.2 \\ \hline
-	3.6 & Ability to quickly create a simple shear building model & D & 1.1 \\ \hline
-	4 & \textbf{FEM} &  &  \\ \hline
-	4.1 & Ability to specify OpenSees as FEM engine and to specify different analysis options. & M & 1.0 \\ \hline
-	4.2 & Ability to provide own OpenSees Analysis script to OpenSees engine. & D & 1.0 \\ \hline
-	4.3 & Ability to provide own Python script and use OpenSeesPy engine. & O & 1.2 \\ \hline
-	4.4 & Ability to use alternative FEM engine. & M & 2.0 \\ \hline
-	5 & \textbf{UQ - Method} &  &  \\ \hline
-	5.1 & Ability to Use Dakota UQ engine with the Monte Carlo and LHS methods to perform sampling & M & 1.0 \\ \hline
-	5.2 & Ability to Use alternative UQ engines & M & 2.0 \\ \hline
-    6 & \textbf{UQ – Random Variables} &  &  \\ \hline
-	\multirow{5}{*}{6.1} & Ability to Define Variables of certain types: &  &  \\ 
-	 & a)     Normal &  &  \\ 
-	 & b)     Lognormal &  &  \\ 
-	 & c)     Uniform & M  & 1.0 \\ 
-	 & d)     Beta &  &  \\ 
-	 & e)     Weibull &  &  \\ 
-	 & f)     Gumbel &  &  \\ \hline
-	6.2 & User defined Distribution & M & 2.0 \\ \hline
-	6.3 & Define Correlation Matrix & M & 3.0 \\ \hline
-	7 & Tool to allow user to load and save user inputs & M & 1.0 \\ \hline
-	8 & \textbf{Engineering Demand Parameters} &  &  \\ \hline
-	8.1 & Ability to Process own Output Parameters & M & 1.1  \\ \hline
-	8.2 & Add to Standrard Earthquake a variable indicating analysis failure & D & 2.0  \\ \hline
-\softwareSwitch{PBE}{9 & \textbf{Damage and Loss Assessment} & & \\ \hline
-    \multirow{5}{*}{9.1} & Assessment Methods & & \\
-     & a) Ability to perform component-based (FEMA P58) loss assessment for an earthquake hazard. & M & 1.0 \\
-     & b) Ability to perform component-assembly-based (HAZUS MH) loss assessment for an earthquake hazard. & D & 1.1 \\
-     & c) Ability to perform downtime estimation using the REDi methodology. & D & 2.0 \\
-     & d) Ability to describe building performance with additional decision variables from HAZUS (e.g., business interruption, debris) & D & 2.0 \\
-     & e) Ability to perform time-based assessment & M & 2.0 \\
-     & f) Ability to perform loss assessment for other hazards & M & 2.0+ \\ \hline
-    \multirow{5}{*}{9.2} & Control & & \\
-     & a) Allow users to set the number of realizations & M & 1.0\\
-     & b) Allow users to specify added of uncertainty to EDPs & M & 1.0 \\
-     & c) Allow users to decide which decision variables to calculate & D & 1.0 \\
-     & d) Allow users to set the number of inhabitants on each floor and customize their temporal distribution. & D & 1.0 \\
-     & e) Allow users to specify the boundary conditions of repairability. & D & 1.0 \\
-     & f) Allow users to control collapse through EDP limits. & D & 1.0\\
-     & g) Allow users to specify the replacement cost and time for the building. & M & 1.0 \\
-     & h) Allow users to specify EDP boundaries that correspond to reliable simulation results. & D & 1.0\\
-     & i) Allow users to specify collapse modes and characterize the corresponding likelihood of injuries. & D & 1.0\\ \hline
-	\multirow{5}{*}{9.3} & Component damage and loss information & & \\
-	 & a) Make the component damage and loss data from FEMA P58 available. & M & 1.0 \\
-	 & b) Ability to use custom components for loss assessment. & D & 1.0 \\
-	 & c) Allow users to set different component quantities for each floor in each direction. & D & 1.0 \\
-	 & d) Allow users to set the number of identical component groups and their quantities within each performance group. & D & 1.0 \\
-     & e) Use a generic JSON data format for building components that can be shared by component-based and component-assembly-based assessments. & D & 1.1 \\
-	 & f) Convert FEMA P58 and HAZUS component damage and loss data to the new JSON format and make it available with the tool. & D & 1.1 \\
-	 & g) Make component definition easier by providing a list of available components in the given framework (e.g. FEMA P58 or HAZUS) and not requesting inputs that are already available in the data files. & D & 1.2 \\ \hline
-	 \multirow{5}{*}{9.4} & Stochastic loss model & & \\
-	 & a) Allow the user to specify basic dependencies (i.e. independence or perfect correlation) between logically similar parts of the stochastic model (i.e. within component quantities or one type of decision variable, but not between quantities and fragilities) & D & 1.0 \\
-	 & b) Allow the user to specify basic dependencies between reconstruction cost and reconstruction time. & D & 1.0 \\
-	 & c) Allow the user to specify basic dependencies between different levels of injuries. & D & 1.0 \\
-	 & d) Allow the user to specify intermediate levels of correlation (i.e. not limited to 0 or 1) and provide a convenient interface that makes sure the specified correlation structure is valid. & D & 2.0 \\ \hline    
-    10 & \textbf{Misc.} &  &  \\ \hline
-	10.1 & Simplify run local and run remote by removing workdir locations. Move to preferences & D & 1.2  \\ \hline
-}{  9 & \textbf{Misc.} &  &  \\ \hline
-	9.1 & Simplify run local and run remote by removing workdir locations. Move to preferences & D & 1.2  \\ \hline
-}
-	\bottomrule 
-\caption{Feature Requirements (M=Mandatory, D=Desirable, O=Optional, P=Possible Future)}             
-  \label{tab:featureRequirements}                 
-\end{longtable}
-}
