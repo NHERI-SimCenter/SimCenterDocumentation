@@ -1,0 +1,84 @@
+ SAP2000 v19.2.0 Ultimate 64-bit (Analysis Build 9581/64)                       
+ File: G:\My Drive\SimCenter S...Project\Examples\SAP2000\3SE\3SE_wholeFrame.OUT
+                                                                     
+                                                                       
+
+ D I S P L A C E M E N T   D E G R E E S   O F   F R E E D O M
+
+         (A) = Active DOF, equilibrium equation
+         (-) = Restrained DOF, reaction computed
+         (+) = Constrained DOF
+         (>) = External substructure DOF
+         ( ) = Null DOF
+
+  JOINTS              UX  UY  UZ  RX  RY  RZ
+       1               -   -   -   -   -   -
+       2               A   A   A   A   A   A
+       3               -   -   -   -   -   -
+       4               A   A   A   A   A   A
+       5               -   -   -   -   -   -
+       6               A   A   A   A   A   A
+       7               -   -   -   -   -   -
+       8               A   A   A   A   A   A
+       9               -   -   -   -   -   -
+      10               A   A   A   A   A   A
+      23               -   -   -   -   -   -
+      24               A   A   A   A   A   A
+      25               -   -   -   -   -   -
+      26               A   A   A   A   A   A
+      27               -   -   -   -   -   -
+      28               A   A   A   A   A   A
+      29               -   -   -   -   -   -
+      30               A   A   A   A   A   A
+      31               -   -   -   -   -   -
+      32               A   A   A   A   A   A
+      33               -   -   -   -   -   -
+      34               A   A   A   A   A   A
+      35               -   -   -   -   -   -
+      36               A   A   A   A   A   A
+      37               -   -   -   -   -   -
+      38               A   A   A   A   A   A
+      39               -   -   -   -   -   -
+      40               A   A   A   A   A   A
+      41               -   -   -   -   -   -
+      42               A   A   A   A   A   A
+      43               -   -   -   -   -   -
+      44               A   A   A   A   A   A
+      45               -   -   -   -   -   -
+      46               A   A   A   A   A   A
+      47               -   -   -   -   -   -
+      48               A   A   A   A   A   A
+      49               -   -   -   -   -   -
+      50               A   A   A   A   A   A
+      51               -   -   -   -   -   -
+      52               A   A   A   A   A   A
+      53               -   -   -   -   -   -
+      54               A   A   A   A   A   A
+      55               -   -   -   -   -   -
+      56               A   A   A   A   A   A
+      57               -   -   -   -   -   -
+      58               A   A   A   A   A   A
+      59               -   -   -   -   -   -
+      60               A   A   A   A   A   A
+      61               -   -   -   -   -   -
+      62               A   A   A   A   A   A
+      63               -   -   -   -   -   -
+      64               A   A   A   A   A   A
+      65               -   -   -   -   -   -
+      66               A   A   A   A   A   A
+      67               -   -   -   -   -   -
+      68               A   A   A   A   A   A
+      69               -   -   -   -   -   -
+      70               A   A   A   A   A   A
+      71               -   -   -   -   -   -
+      72               A   A   A   A   A   A
+      73               -   -   -   -   -   -
+      74               A   A   A   A   A   A
+      75               -   -   -   -   -   -
+      76               A   A   A   A   A   A
+      77               -   -   -   -   -   -
+      78               A   A   A   A   A   A
+      79               -   -   -   -   -   -
+      80               A   A   A   A   A   A
+      81               -   -   -   -   -   -
+      82               A   A   A   A   A   A
