@@ -1,0 +1,84 @@
+\begin{longtable}{| p{.07\textwidth} | p{.65\textwidth} | p{.08\textwidth} | p{.08\textwidth} |  p{.08\textwidth} |}
+    \toprule
+      \# & Description & Source & Priority & Version \\ \hline
+      1 & \textbf{Ability to determine response of Building Subject to Earthquake hazard including formal treatment of randomness and uncertainty uncertainty} & GC & M  & 1.0  \\ \hline
+      1.1 & Simulations able to utilize HPC resources & GC & M & 1.0 \\ \hline
+      1.2 & Tool should incorporate data from www & GC & M & 1.0 \\ \hline
+      1.3 & Tool available for download from web & GC & M & 1.0 \\ \hline
+      2 & \textbf{Various Motion Selection Options} & SP & M & 1.0  \\ \hline
+      2.1 & Ability to select from Multiple input motions and view UQ due to all the discrete events & GC & M & 1.0  \\ \hline
+      2.2 & Ability to select from list of SimCenter motions & SP & M & 1.0 \\ \hline
+      2.3 & Ability to select from list of PEER motions & SP & D & 1.0 \\ \hline
+      2.4 & Ability to use OpenSHA and selection methods to generate motions & UF & D & 1.0 \\ \hline
+      2.5 & Ability to Utilize Own Application in Workflow & SP & M & 1.0 \\ \hline
+      2.6 & Ability to use Broadband & SP & D &  \\ \hline
+      2.7  & Ability to include Soil Structure Interaction Effects & GC & M & 1.1 \\  \hline
+      2.7.1  & 1D nonlinear site response with effective stress analysis & SP & M & 1.1  \\ \hline
+      2.7.2  & Nonlinear site response with bidirectional loading & SP & M & 1.2 \\  \hline
+      2.7.3  & Nonlinear site response with full stochastic characterization of soil layers & SP & M &  \\ \hline
+      2.7.4 & Nonlinear site response, bidirectional different input motions  & SP & M &  \\  \hline
+      2.7.5 & Building in nonlinear soil domain utilizing large scale rupture simulation & GC  & M &  \\  \hline
+      2.7.5.1 & Interface using DRM method  & SP  & M &  \\  \hline
+      2.8 & Utilize PEER NGA www ground motion selection tool  & UF & D & 2.0 \\ \hline
+      2.9 & Ability to select from synthetic ground motions & SP & M & 1.0  \\
+      2.9.1 & per Vlachos, Papakonstantinou, Deodatis (2017) & SP & D & 1.1  \\ 
+      2.9.2 & per Dabaghi, Der Kiureghian (2017) & UF & D & 2.0 \\ \hline
+	3 & \textbf{Building Model Generation} & GC & M & 1.0 \\ \hline
+	3.1 & Ability to quickly create a simple nonlinear building model & GC & D & 1.1 \\ \hline
+	3.2 & Ability to use existing OpenSees model scripts & SP & M & 1.0 \\ \hline
+	3.3  & Ability to define building and use Expert System to generate FE mesh & SP & &  \\ \hline
+	3.3.1 & Expert system for Concrete Shear Walls & SP & M &  \\ \hline
+	3.3.2 & Expert system for Moment Frames & SP & M &  \\ \hline
+	3.3.3 & Expert system for  Braced Frames & SP & M &   \\ \hline
+	3.4 & Ability to define building and use Machine Learning applications to generate FE & GC &  &  \\ \hline
+	3.4.1 & Machine Learning for Concrete Shear Walls & SP & M &  \\ \hline
+	3.4.2 & Machine Learning for Moment Frames & SP & M &  \\ \hline
+	3.4.3 & Machine Learning for Braced Frames & SP & M &   \\ \hline
+	3.5 & Ability to specify connection details for member ends & UF & M & 2.2 \\ \hline
+	3.6 & Ability to define a user-defined moment-rotation response representing the connection details & UF & D & 2.2 \\ \hline
+	4 & \textbf{Perform Nonlinear Analysis} & GC & M & 1.0 \\ \hline
+	4.1 & Ability to specify OpenSees as FEM engine and to specify different analysis options & SP & M & 1.0 \\ \hline
+	4.2 & Ability to provide own OpenSees Analysis script to OpenSees engine. & SP & D & 1.0 \\ \hline
+	4.3 & Ability to provide own Python script and use OpenSeesPy engine. & SP & O & 1.2 \\ \hline
+	4.4 & Ability to use alternative FEM engine. & SP & M & 2.0 \\ \hline
+	5 & \textbf{Uncertainty Quantification Methods} &  GC & M & 1.0  \\ \hline
+	5.1 & \textbf{Various Forward Propogation Methods} & SP & M & 1.0  \\ \hline
+	5.1.1 & Ability to use basic  Monte Carlo and LHS methods & SP & M & 1.0 \\ \hline
+	5.1.2 & Ability to use Importance Sampling  & SP & M & 2.0 \\ \hline
+	5.1.3 & Ability to use Gaussian Process Regression & SP & M & 2.0 \\ \hline
+	5.1.4 & Ability to use Own External UQ Engine & SP & M &  \\ \hline
+	5.2 & \textbf{Various Reliability Methods} & UF & M &  \\ \hline
+	5.2.1 & Ability to use First Order Reliability method & UF & M &  \\ \hline
+	5.2.2 & Ability to use Second Order Reliability method & UF & M & \\ \hline
+	5.2.2 & Ability to use Surrogate Based Reliability & UF & M & \\ \hline
+	5.2.3 & Ability to use Own External Application to generate Results & UF & M &  \\ \hline
+	5.3 & \textbf{Various Sensitivity Methods} & UF & M &  \\ \hline
+	5.3.1 & Ability to obtain Global Sensitivity Sobol's indices & UF & M &  \\ \hline
+    6 & \textbf{Random Variables for Uncertainty Quantification} & GC & M & 1.0  \\ \hline
+    6.1 & Ability to Define Variables of certain types: & SP & M & 1.0  \\ 
+    6.1.1 & Normal & SP & M  & 1.0 \\ \hline
+    6.1.2 & Lognormal & SP & M & 1.0 \\ \hline
+    6.1.3 & Uniform & SP & M & 1.0  \\ \hline
+    6.1.4 & Beta & SP & M & 1.0 \\ \hline
+    6.1.5 & Weibull &  SP & M  & 1.0 \\ \hline
+    6.1.6 & Gumbel &  SP & M & 1.0  \\ \hline
+    6.2 & User defined Distribution & SP & M &  \\ \hline
+    6.3 & Correlated Random Variables & SP & M &  \\ \hline
+    6.4 & Random Fields & SP & M &  \\ \hline
+     7 & Tool to allow user to load and save user inputs & SP & M & 1.0 \\ \hline
+    8 & \textbf{Engineering Demand Parameters} &  &  \\ \hline
+    8.1 & Ability to Process own Output Parameters & UF & M & 1.1  \\ \hline
+    8.2 & Add to Standard Earthquake a variable indicating analysis failure & UF & D &   \\ \hline
+    9 & \textbf{Documentation} &  &  \\ \hline
+    9.1 & Documentation exists on tool usage & SP & M & 1.1  \\ \hline
+    9.2 & Video Exists demonstrating usage & SP & M & 1.1  \\ \hline
+    9.3 & Verification Examples Exist & SP & M & 1.1  \\ \hline
+    10 & \textbf{Misc.} &  &  \\ \hline
+    10.1 & Add to Standard Earthquake a variable indicating analysis failure & UF & D &   \\ \hline
+    10.2 & Installer which installs application and all needed software & UF & M &   \\ \hline
+  \bottomrule 
+\caption{Requirements for EE-UQ}
+  \label{tab:featureRequirements}                 
+\end{longtable}
+
+Feature Requirements (M=Mandatory, D=Desirable, O=Optional, P=Possible Future)
