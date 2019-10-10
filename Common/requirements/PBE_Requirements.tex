@@ -69,15 +69,49 @@
     8 & \textbf{Engineering Demand Parameters} &  &  \\ \hline
     8.1 & Ability to Process own Output Parameters & UF & M & 1.1  \\ \hline
     8.2 & Add to Standard Earthquake a variable indicating analysis failure & UF & D &   \\ \hline
-    9 & \textbf{Documentation} &  &  \\ \hline
-    9.1 & Documentation exists on tool usage & SP & M & 1.1  \\ \hline
-    9.2 & Video Exists demonstrating usage & SP & M & 1.1  \\ \hline
-    9.3 & Verification Examples Exist & SP & M & 1.1  \\ \hline
-    10 & \textbf{Misc.} &  &  \\ \hline
-    10.1 & Add to Standard Earthquake a variable indicating analysis failure & UF & D &   \\ \hline
-    10.2 & Installer which installs application and all needed software & UF & M &   \\ \hline
+
+9 & \textbf{Damage and Loss Assessment} & GC & M & 1.0\\ \hline
+9.1 & Different Assessment Methods & GC & M & 2.0 \\ \hline
+9.1.1 & Ability to perform component-based (FEMA P58) loss assessment for an earthquake hazard. & SP & M & 1.0 \\ \hline
+9.1.2 & Ability to perform component-assembly-based (HAZUS MH) loss assessment for an earthquake hazard. & SP & D & 1.1 \\ \hline
+9.1.3 & Ability to perform downtime estimation using the REDi methodology. & SP & D & 2.0 \\ \hline
+9.1.4 & Ability to describe building performance with additional decision variables from HAZUS (e.g., business interruption, debris) & SP & D & 2.0 \\ \hline
+9.1.5 &  Ability to perform time-based assessment & GC & M &  \\ \hline
+9.1.6 & Ability to perform loss assessment for other hazards & GC & M &  \\ \hline
+9.2 & Control & SP & M & 1.0 \\ \hline
+9.2.1 & Allow users to set the number of realizations & SP & M & 1.0\\ \hline
+9.2.2 &  Allow users to specify added of uncertainty to EDPs & SP & M & 1.0 \\ \hline
+9.2.3 &  Allow users to decide which decision variables to calculate & SP & D & 1.0 \\ \hline
+9.2.4 &  Allow users to set the number of inhabitants on each floor and customize their temporal distribution. & SP & D & 1.0 \\ \hline
+9.2.5 &  Allow users to specify the boundary conditions of repairability. & SP & D & 1.0 \\ \hline
+9.2.6 &  Allow users to control collapse through EDP limits. & SP & D & 1.0\\ \hline
+9.2.7 &  Allow users to specify the replacement cost and time for the building. & SP & M & 1.0 \\ \hline
+9.2.8 &  Allow users to specify EDP boundaries that correspond to reliable simulation results. & SP & D & 1.0\\ \hline
+9.2.9 & Allow users to specify collapse modes and characterize the corresponding likelihood of injuries. & SP & D & 1.0\\ \hline
+9.3 & Component damage and loss information & SP & M & 1.0\\ \hline
+9.3.1 & Make the component damage and loss data from FEMA P58 available. & SP & M & 1.0 \\ \hline
+9.3.2 & Ability to use custom components for loss assessment. & SP & D & 1.0 \\ \hline
+9.3.3 & Allow users to set different component quantities for each floor in each direction. & SP & D & 1.0 \\ \hline
+9.3.4 & Allow users to set the number of identical component groups and their quantities within each performance group. & SP & D & 1.0 \\ \hline
+9.3.5 & Use a generic JSON data format for building components that can be shared by component-based and component-assembly-based assessments. & SP & D & 1.1 \\ \hline
+9.3.6 & Convert FEMA P58 and HAZUS component damage and loss data to the new JSON format and make it available with the tool. & SP & D & 1.1 \\ \hline
+9.3.7 & Make component definition easier by providing a list of available components in the given framework (e.g. FEMA P58 or HAZUS) and not requesting inputs that are already available in the data files. & SP & D & 1.2 \\ \hline
+9.4 & Stochastic loss model & SP & M & 1.0 \\ \hline
+9.4.1 & Allow the user to specify basic dependencies (i.e. independence or perfect correlation) between logically similar parts of the stochastic model (i.e. within component quantities or one type of decision variable, but not between quantities and fragilities) & SP & D & 1.0 \\ \hline
+9.4.2 & Allow the user to specify basic dependencies between reconstruction cost and reconstruction time. & SP & D & 1.0 \\ \hline
+9.4.3 & Allow the user to specify basic dependencies between different levels of injuries. & SP & D & 1.0 \\ \hline
+9.4.4 & Allow the user to specify intermediate levels of correlation (i.e. not limited to 0 or 1) and provide a convenient interface that makes sure the specified correlation structure is valid. & SP & D & 2.0 \\ \hline    
+
+ M & \textbf{Misc.} & UF & M & 1.2  \\ \hline
+   M.1 & Simplify run local and run remote by removing workdir locations. Move to preferences & UF & D & 1.2  \\ \hline
+   M.2 & Add to EDP a variable indicating analysis failure & UF & D &   \\ \hline
+   M.3 & Installer which installs application and all needed software & UF & M &   \\ \hline
+ D & \textbf{Documentation} &  SP & M & 1.0 \\ \hline
+ D.1 & Documentation exists on tool usage & SP & M & 1.1  \\ \hline
+ D.2 & Video Exists demonstrating usage & SP & M & 1.1  \\ \hline
+ D.3 & Verification Examples Exist & SP & M & 1.1  \\ \hline
   \bottomrule 
-\caption{Requirements for EE-UQ}
+\caption{Requirements for PBE}
   \label{tab:featureRequirements}                 
 \end{longtable}
 
