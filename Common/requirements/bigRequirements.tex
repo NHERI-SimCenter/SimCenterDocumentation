@@ -1,44 +1,74 @@
-\begin{longtable}{| p{.08\textwidth} | p{.58\textwidth} | p{.08\textwidth} | p{.08\textwidth} | p{.08\textwidth} | p{.08\textwidth} |}
-    \toprule
-\# & Description & Source & WBS & Need & Version \\ \hline
-1 & Ability to perform regional simulation allowing communities to evaluate resilience and perform what-if types of analysis for natural hazard events & GC & M & 1.3.10 rWhale & 1.0 \\ \hline
-1.1 & Ability to perform physics based simulation that integrates earth sciences, engineering, and social science for Earthquakes & GC 2.12 &  1.3.10 rWhale &  M & 1.0  \\ \hline
-1.2 & Ability to perform physics based simulation that integrates earth sciences, engineering, and social science allowing communities to evaluate resilience and perform what-if types of analysis for Earthquakes & GC 2.12 &  1.3.10 rWhale &  M & 1.0  \\ \hline
-1.3 & Hurricane & GC & 1.3.10 rWhale & M & \\ \hline
-1.4 & Storm Surge & GC & 1.3.10 rWhale & M & \\ \hline
-2 & Ability to incorporate damage to lifelines in determination of community resilience & GC & 1.3.10 rWhale & M & 1.0 \\ \hline
-3 &  Ability to use GIS based loss estimation so communities can visualize hazard impacts & GC-2.7 & 1.3.10 RDT & M & \\ \hline
-4 &  Ability to utilize HPC resources in regional simulations & GC-2.7 & 1.3.10 RDT & M & 1.0 \\ \hline
-6 &  Ability to Utilize existing open-source software for faster deployment & GC 2.7 & 1.3.10 RDT & M & 1.0 \\ \hline
-5 &  Provide open-source software for developers to test new data and algorithms & GC 2.7 & 1.3.10 RDT & M & 1.0  \\ \hline
-7 &  Ability to perform validation studies to calibrate accuracy of models & GC 2.7 & 1.3.10 rWhale & M & 1.0   \\ \hline
-8 &  Ability to incorporate improved damage and fragility models for buildings and lifelines & GC 2.7 & 1.3.10 rWhale pelicun  & M & 1.1 \\ \hline
-9 &  Ability to incorporate improved indirect economic loss estimation models & GC 2.7 & 1.3.10 rWhale pelicun & M & \\ \hline
-10 & Promote 'living' community risk models utilizing local inventory data from various scources & GC 2.7 & 1.3.0 rWhale & M & \\ \hline
-10.1 & Developing and sharing standardized definitions, measurement protocols and strategies for data collection & GC 2.11 & 1.3.3 & M & \\ \hline
-10.2 & Devloping tools that utilize GIS information and online images, e.g. google maps, for data collection & GC & 1.3.4 BRAILS & M 1.0 \\ \hline
-10.2.1 & Predicting if building is a soft-story building for earthquake simulations & UF & 1.3.4 BRAILS & M & 1.0 \\ \hline
-10.2.2 & Predicting roof shape of building for hurricane wind simulation & SP & 1.3.4 BRAILS & M & 1.0 \\ \hline
-10.2.3 & Predicting level first floor of occupancy for hurricane storm surge simulation & SP & 1.3.4 BRAILS & M &  \\ \hline
-10.2.4 & Providing instruction on gathering information from www for purposes of these regional simulations & UF & 1.2.3 Summer Bootcamp & M & 2019 \\ \hline
-10.3 & Developing, sharing, and archiving datasets for analyzing and modeling resilience and vulnerability over time & GC 2.11 & 1.3.3 & M & \\ \hline
-11 & Support researchers investigating new disaster events & GC 2.11 & & M & \\ \hline
-12 & Ability to include multi-scale nonlinear models & GC 2.12 & 1.3.10 rWhale & M & 1.0 \\ \hline
-13 & Ability to include a formal treatment of uncertainty and randomness & GC 2.12 & 1.3.10 rWhale & M & 1.0 \\ \hline
-14 & Identify knowledge gaps and Promote NSF generated knowledge through regional demonstration projects that generate linkages to operational entities and decision makers & GC 2.18 & M & 1.4.2 &  \\ \hline
-14.1 & Earthquake & SP & 1.4.2 Earthquake Testbeds & M & 1.0 \\ \hline
-14.1.1 & Bay Area Testbed & SP & 1.4.2 Testbeds & M & 1.0 \\ \hline
-14.1.2 & Anchorage Testbed & SP & 1.4.2 Testbeds & M & 1.0 \\ \hline
-14.2 & Tsunami & SP & 1.4.2 Testbeds & M & \\ \hline
-14.3 & Hurricane Wind & SP & 1.4.2 Testbeds & M & 2.0 \\ \hline
-14.4 & Hurricane Wind and Storm Surge & SP & 1.4.2 Testbeds & M & \\ \hline
-14.5 & Earthquake and Liefelines & SP & 1.4.2 Testbeds & M & \\ \hline
+
+
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+\begin{longtable}{|  C{.07\textwidth} | p{.5\textwidth} | C{.08\textwidth} | C{.09\textwidth} | C{.08\textwidth} | C{.08\textwidth} |}
 
 \caption{Requirements for Regional Simulations aiding Community Resilience}
-  \label{tab:featureRequirements}                 
+\label{tab:regionalRequirements} 
+ \\
+   \hline
+\rowcolor{lightgray}
+
+\textbf{\#} & \textbf{Description} & \textbf{SRC} & \textbf{WBS} & \textbf{PRI} & \textbf{VER} \\ \hline
+R1 & Ability to perform regional simulation allowing communities to evaluate resilience and perform what-if types of analysis for natural hazard events & GC  & 1.3.10 rWhale & M & 1.0 \\  \hline
+R1.1 & Perform such simulations for ground shaking due to Earthquake & GC 2.T12 & 1.3.10 rWhale & M & 1.0  \\ \hline
+R1.2 & Ability to perform such simulations for wave action due to Earthquake induced Tsunami  & GC 2.T12 &  1.3.10 rWhale &  M &   \\  \hline
+R1.3 & Ability to perform such simulations for wind action due to Hurricane & GC  5.IC2 & 1.3.10 rWhale & M & \\  \hline
+R1.4 & Ability to perform such simulations for wave action due to Hurricane Storm Surge & GC 5.IC1 & R1.3.10 rWhale & M & \\ \hline
+R1.5 & Ability to perform such for multi-hazard simulations: wind + storm surge, rain, wind and water borne debris & GC 6.S3 & 1.3.10 rWhale & M & \\ \hline
+R1.6 & Ability to incorporate damage to lifelines in determination of community resilience & GC & 1.3.10 rWhale & M & 1.0 \\ \hhline{======}
+
+
+R2.1 & Ability of stakeholders to perform simulations of different scenarios & GC 2.6 & 1.3.10 rWhale & M & .0 \\ \hline
+R2.2 &  Ability to utilize HPC resources in regional simulations that enables repeated simulation for stochastic modeling & GC 3.3 & 1.3.10 RDT & M & 1.0 \\ \hline
+R2.3 &  Provide open-source software for developers to test new data and algorithms & GC 2.7 & 1.3.10 RDT & M & 1.0  \\ \hline
+R2.4 & Ability to use a tool created by linking heterogeneous array of simulation tools to provide a toolset for regional simulation & GC 3.3 & 1.3.10 rWhale & M & 1.0 \\ \hline
+R2.5 &  Ability to utilize existing open-source software for faster deployment & GC 2.7 & 1.3.10 RDT & M & 1.0 \\ \hline
+R2.6 &  Ability to utilize ensemble techniques  & GC 5.4 & 1.3.10 RDT & M & 1.0 \\ \hline
+R2.7  & Ability to include multi-scale nonlinear models & GC 2.12 & 1.3.10 rWhale & M & 1.0 \\ \hline
+R2.8 & Ability to include a formal treatment of uncertainty and randomness & GC 2.T12 & 1.3.10 rWhale & M & 1.0 \\ \hline
+R2.9 & Ability to include latest information and algorithms (i.e. new attenuation models, building fragility curves, demographics, lifeline performance models, network interdependencies, indirect economic loss)
+& GC 2.T7 & rWhale 1.3.10 & P & \\ \hline
+R2.10 &  Ability to use GIS so communities can visualize hazard impacts & GC-2.T7 & 1.3.10 RDT & M & \\ \hhline{======}
+
+R3.1& Ability to use open-source version of Hazus & GC 2.7 & 1.3.6 pelicun & M & 1.0 \\ \hline
+R3.2 &  Ability to incorporate improved damage and fragility models for buildings and lifelines & GC 2.7 & 1.3.10 rWhale 1.3.6 pelicun & M & 1.1 \\ \hline
+R3.3 &  Ability to incorporate improved indirect economic loss estimation models & GC 2.T7 & 1.3.10 rWhale 1.3.6 pelicun & M & \\ \hline
+R3.4 & Ability to include demand surge in determination of damage and loss estimation & GC 2.T9 & 1.3.6 pelicun & M & \\ \hline
+R3.5 & Ability to include lifeline disruptions & GC 2.T9 & 1.3.6 pelicun & M & \\ \hhline{======}
+
+
+R4.1 & Promote 'living' community risk models utilizing local inventory data from various scources & GC 2.T7 & 1.3.0 rWhale & M & \\ \hline
+R4.2 & Ability to use cumulative knowledge bases rather than the piecemeal individual approaches & GC 2.11 & 1.3.3 & M & \\ \hline
+R4.3 & Developing and sharing standardized definitions, measurement protocols and strategies for data collection & GC 2.11 & 1.3.3 & M & \\ \hline
+R4.3 & Developing tools that utilize GIS information and online images, e.g. google maps, for data collection & GC & 1.3.4 BRAILS & M & 1.0 \\ \hline
+R4.3.1 & Predicting if building is a soft-story building for earthquake simulations & UF & 1.3.4 BRAILS & M & 1.0 \\ \hline
+R4.3.2 & Predicting roof shape of building for hurricane wind simulation & SP & 1.3.4 BRAILS & M & 1.0 \\ \hline
+R4.2.3 & Predicting level first floor of occupancy for hurricane storm surge simulation & SP & 1.3.4 BRAILS & M &  \\ \hline
+R4.4 & Providing instruction on gathering information from www for purposes of these regional simulations & UF & 1.2.3 Summer Bootcamp & M & 2019 \\ \hline
+R4.5 & Developing, sharing, and archiving datasets for analyzing and modeling resilience and vulnerability over time & GC 2.11 & 1.3.3 & M & \\ \hhline{======}
+
+
+5.1  &  Ability to perform validation studies to calibrate accuracy of models & GC 2.7 & 1.3.10 rWhale & M & 1.0   \\ \hline
+5 & Identify knowledge gaps and promote NSF generated knowledge through regional demonstration projects that help generate linkages to operational entities and decision makers & GC 2.18 & 1.4.2 & M &  \\ \hline
+5.1 & Earthquake & SP & 1.4.2 Testbeds & M & 1.0 \\ \hline
+5.1.1 & Bay Area Earthquake Testbed & SP & 1.4.2 Testbeds & M & 1.0 \\ \hline
+5.1.2 & Anchorage Earthquake Testbed & SP & 1.4.2 Testbeds & M & 1.0 \\ \hline5
+.2 & Tsunami Testbed & SP & 1.4.2 Testbeds & M & \\ \hline
+5.3 & Atlantic City Hurricane Wind & SP & 1.4.2 Testbeds & M & 2.0 \\ \hline
+5.4 & Atlantic City Hurricane Wind and Storm Surge & SP & 1.4.2 Testbeds & M & \\ \hline
+5.5 & Earthquake and Liefelines Testbed& SP & 1.4.2 Testbeds & M & \\ \hhline{======}
+
+\\ \hline
+5.1 & Support researchers investigating new disaster events & GC 2.11 & & M & \\ \hline
+
+                
 \end{longtable}
 
-Feature Requirements (M=Mandatory, D=Desirable, O=Optional, P=Possible Future)
-
-
-
+\noindent
+KEY:\\
+Source (SRC): GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback \\
+Work Breakdown Structure (WBS): SimCenter WBS  Number \\
+Priority (PRI): M=Mandatory, D=Desirable, P=Possible Future \\
+Version (VER): Version number the basic requirement was first met 
