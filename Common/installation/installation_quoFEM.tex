@@ -338,6 +338,18 @@ installation directory.
 \end{itemize}
 \end{enumerate}
 
+NOTE: Apple, in the latest release of their operating system, MacOS 10.16 Catalina, has changed the default working of Gatekeeper.
+Gatekeeper, first introduced in OS X Mountain Lion, is a Mac security feature that helps protect your Mac from Malware and other malicious software. Gatekeeper checks to make sure the application is safe to run by checking it against the list of apps that Apple has vetted and approved for the Apple Mac Store and/or approved by Apple even if not offered through the app store. In previous versions of MacOS, Gatekeeper had three security level options: App Store, App Store and Identified Developers, and Anywhere. Anywhere has been removed and this will cause problems with Dakota. As a consequence, it is necessary to follow the following when you update the MacOS or install Dakota for the first time on machine with an updated MacOS. From the terminal app, with the above .bash\_profile settings set, you need to type the following in the terminal window:
+
+\begin{verbatim}
+sudo spctl --master-disable
+dakota
+sudo spctl --master-enable
+\end{verbatim}
+
+This will temporarily disable gatekeeper (basically setting Gatekeeper options to Anywhere), allow the Dakota application and it's .dylib files to be registered as safe, and then turn Gatekeeper options back to default.
+
+
 
 \subsection{Test the Install of the Local Applications}
 %===============================================================================
