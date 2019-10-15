@@ -108,13 +108,13 @@
 
 \graphicspath{{figures/}{}}
 
-Examples included in this document are based on the \href{https://simcenter.designsafe-ci.org/media/filer_public/a0/68/a068ba45-6a47-46f4-83b1-fae585d8ccbe/evw_documentation.pdf}{\textit{user manual}} provided on the \getsoftwarepage{\texttt{\getsoftwarename{}} application webpage}.
+Examples included in this document are based on the \href{https://simcenter.designsafe-ci.org/media/filer_public/a0/68/a068ba45-6a47-46f4-83b1-fae585d8ccbe/evw_documentation.pdf}{\textit{User Manual}} provided on the \getsoftwarepage{\texttt{\getsoftwarename{}} application webpage}.
 
 \renewcommand{\thesection}{Example \arabic{section}:}
 \renewcommand{\thesubsection}{Example \arabic{subsection}:}
 
-\section{The SAC 3-story Los Angeles Building, Hazard Level 2/50 (3LA250)}
-Building properties and loadings are adopted from SAC examples provieded in \textit{State of the Art Report on Systems Performance of Steel Moment Frames Subject to Earthquake Ground Shaking} \cite{FEMA335c2000}. Building floor plans and elevations are shown in \cref{fig:floor_plan_elev}. Only the \textsl{North-South} direction is taken into consideration. Layout of the moment resisting building for the LA building is shown in \cref{fig:MRF_LASE}.
+\section{The SAC 3-Story Los Angeles Building, Hazard Level 2/50 (3LA250)}
+Building properties and loadings are adopted from SAC examples provieded in \textit{State of the Art Report on Systems Performance of Steel Moment Frames Subject to Earthquake Ground Shaking} \cite{FEMA335c2000}. Building floor plans and elevations are shown in \cref{fig:floor_plan_elev}. Only the \textsl{North-South} direction is taken into consideration. Layout of the moment-resisting building for the LA building is shown in \cref{fig:MRF_LASE}.
 The loading used for the analysis of the frames is based on the details given in \cite{FEMA335c2000}, which result in the following floor load distribution (steel weight is assumed as 13 psf for all designs):
 
 \begin{itemize}
@@ -187,15 +187,15 @@ $\beta$ Mode exponent								& $1.0$							& user spec					\\
 Building density									& $1.03 \,\mathrm{slugs/ft^3}$	& bldg function				\\
 %Air density											& $0.0024 \,\mathrm{slugs/ft^3}$& bldg location				\\
 \bottomrule
-\multicolumn{3}{l}{\footnotesize $^{1)}$ for approximate natural frequencies see section 26.11.2 and C26.11 of the ASCE 7-16. For this example, since the building}	\\
-\multicolumn{3}{l}{\footnotesize \hspace{3mm} are designed and the properties of the building elements are known, the natural frequency is accurately calculated.}	\\
-\multicolumn{3}{l}{\footnotesize $^{2)}$ recommended values for damping ratio can be found in Table 11.2.1, Dynamics of Structures by
+\multicolumn{3}{l}{\footnotesize $^{1)}$ For approximate natural frequencies, see section 26.11.2 and C26.11 of the ASCE 7-16. For this example, since the}	\\
+\multicolumn{3}{l}{\footnotesize \hspace{3mm} building is designed and the properties of the building elements are known, the natural frequency is accurately calculated.}	\\
+\multicolumn{3}{l}{\footnotesize $^{2)}$ Recommended values for damping ratio can be found in Table 11.2.1, Dynamics of Structures by
 Chopra, 4th ed. \cite{ChopraAnilK2012Dos}}
 \end{tabular}}
 \end{table}
 
 \noindent\textbf{Procedure}\\
-In order to use the \getsoftwarepage{\texttt{\getsoftwarename{}} app}, input forces and building properties need to be known. For Gust wind speed, gust-effect factor should be computed based on the location and function of the building according to the chapter 26 of the \cite{asce7_2016}. This is shown in \cref{tab:gust_factor_3LA250}.
+In order to use the \getsoftwarepage{\texttt{\getsoftwarename{}} app}, input forces and building properties need to be known. For gust wind speed, the gust-effect factor should be computed based on the location and function of the building according to the Chapter 26 of \cite{asce7_2016}. This is shown in \cref{tab:gust_factor_3LA250}.
 
 \begin{table}[H]
 \centering \caption{Gust-effect factor, 3LA250.}
@@ -228,14 +228,14 @@ $G_f$ Gust-effect factor										& $1.162$							& eq. 26.11-10 ASCE 7-16			\\
 \end{tabular}
 \end{table}
 
-Therefore, Gust wind speed in mph is:
+Therefore, the gust-wind speed in mph is:
 \begin{equation*}
 G_f \times C = 1.162 \times 95 = \boxed{110.4}
 \end{equation*}
 
 %In the SAC case studies, the ground motions were scaled such that, on average, their spectral values match with a least square error fit to the USGS's mapped values at 0.3, 1.0, and 2.0 seconds, and an additional predicted value at 4.0 seconds \cite{FEMA335c2000}. For the 3-story building located in Los Angeles, the scale factor is $0.79$.
 
-For earthquake analysis and stick model, buildings can be idealized with mass concentrated at one location for each floor ($m$) and stiffness of each floor ($k$) represents the lateral stiffness of the moment resisting frames and/or walls in the direction considered. Idealized building mass and stiffness of the 3-story and 20-story buildings are shown in \cref{fig:ideal_mass_stiffness}.
+For earthquake analysis and stick model, buildings can be idealized with mass concentrated at one location for each floor ($m$), and stiffness of each floor ($k$) represents the lateral stiffness of the moment-resisting frames and/or walls in the direction considered. Idealized building mass and stiffness of the 3-story and 20-story buildings are shown in \cref{fig:ideal_mass_stiffness}.
 
 \begin{figure}[H]
 	\begin{subfigure}[b]{0.45\linewidth}
@@ -257,7 +257,7 @@ For earthquake analysis and stick model, buildings can be idealized with mass co
 
 \vspace{10mm}
 \noindent\textbf{Stiffness Calculation:}\\
-\indent For the exact calculation of the stiffness of any structure, properties and geometry of beams, columns, walls and slabs and lateral systems need to be known. However, these information are not available prior to design. Therefore, the stiffness is usually estimated. For a single degree of freedom (SDOF) frame structure (\cref{fig:frame_sdof}), the lateral stiffness for the two extreme cases are as follows \cite{ChopraAnilK2012Dos}:
+\indent For the exact calculation of the stiffness of any structure, properties and geometry of beams, columns, walls and slabs, and lateral systems need to be known. Because this information is not available prior to design, the stiffness is usually estimated. For a single-degree-of-freedom (SDOF) frame structure (\cref{fig:frame_sdof}), the lateral stiffness for the two extreme cases is as follows \cite{ChopraAnilK2012Dos}:
 
 \begin{align*}
 k &= \sum_\mathrm{columns} \frac{12 E I_c}{h^3}	&& \text{if the beam is rigid; i.e., } EI_b = \infty		\\
@@ -265,13 +265,13 @@ k &= \sum_\mathrm{columns} \frac{3 E I_c}{h^3}	&& \text{for a beam with no stiff
 \end{align*}
 \begin{figure}[H]
 	\centering \includegraphics[width=0.9\linewidth]{frame_sdof.pdf}
-	\caption{Single frame idealized as SDOF \cite{ChopraAnilK2012Dos}}
+	\caption{Single frame idealized as having a SDOF \cite{ChopraAnilK2012Dos}}
 	\label{fig:frame_sdof}
 \end{figure}
 
-In the equations above, $E$ is the modulus of elasticity of steel and $I_c$ and $I_b$ are the moments of inertia of the column and beam respectively.
+In the equations above, $E$ is the modulus of elasticity of steel, and $I_c$ and $I_b$ are the moments of inertia of the column and beam, respectively.
 
-To determine the lateral stiffness of the frame in \cref{fig:frame_sdof} considering the real stiffness of the beam, standard procedures of static structural analysis can be used (equation below). This procedure is explained in details by \cite{ChopraAnilK2012Dos}.
+To determine the lateral stiffness of the frame in \cref{fig:frame_sdof} considering the real stiffness of the beam, standard procedures of static structural analysis can be used (equation below). This procedure is explained in detail by \cite{ChopraAnilK2012Dos}.
 
 \begin{gather*}
 k = \frac{24 R I_c}{h^3} \frac{12 \rho + 1}{12 \rho + 4}
@@ -281,9 +281,9 @@ where $\rho$ is the beam-to-column stiffness ratio and expressed as
 \rho = \dfrac{EI_b / L}{2 E I_c/h}
 \end{gather*}
 
-For MDOF structures the stiffness of the frame can be determined using numerical analysis. Lateral load can be applied to the top of the story of interest and then the displacement caused by the applied load will be measured. Then the accurate lateral stiffness can be calculated from the displacement caused by the lateral load. 
+For MDOF structures, the stiffness of the frame can be determined using numerical analysis. Lateral load can be applied to the top of the story of interest, and the displacement caused by the applied load will be measured. Then the accurate lateral stiffness can be calculated from the displacement caused by the lateral load. 
 
-In the SAC examples included in this document, both extreme values of stiffness assuming $EI_b = \infty$ and $EI_b = 0$ and the actual $EI_b$ are considered. Numerical analysis employing SAP2000 \cite{sap2000} software package is used to account for the stiffness of the horizontal members for each story. \cref{tab:stiffness_3LASE} shows the story stiffness of the 3-story buildings in Seattle and Los Angeles. Actual $EI_b$ values shown in the \cref{tab:stiffness_3LASE} are based on the column and beam cross-sections provided in the \cite{FEMA335c2000}. Wherever, the column section is changing the in the mid-height of the story, the smaller cross-section is considered for the story stiffness calculations. The orientation of the column cross-sections for the moment frames are shown in \cref{fig:cols_orientation}. Note that only the stiffness of the lateral resisting elements are taken into consideration for each story stiffness and lateral stiffness of the gravity columns are ignored. Results of the story stiffness calculations for the 20-story buildings located in Seattle and Los Angeles are shown in \cref{tab:stiffness_20LASE}. The modulus of elasticity, $E$, and yield strength, $f_y$, of steel are assumed to be $29000 \ksi$ and $60 \ksi$, respectively. Values of moment of inertia for the standard steel sections given are available in \href{https://www.aisc.org/publications/steel-construction-manual-resources/}{AISC Steel Construction Manual} \cite{aiscManual}.
+In the SAC examples included in this document, both extreme values of stiffness assuming $EI_b = \infty$ and $EI_b = 0$, and the actual $EI_b$ are considered. Numerical analysis employing SAP2000 \cite{sap2000} software is used to account for the stiffness of the horizontal members for each story. \cref{tab:stiffness_3LASE} shows the story stiffness of the 3-story buildings in Seattle and Los Angeles. Actual $EI_b$ values shown in the \cref{tab:stiffness_3LASE} are based on the column and beam cross-sections provided in the \cite{FEMA335c2000}. Wherever the column section changes in the mid-height of the story, the smaller cross section is considered for the story stiffness calculations. The orientation of the column cross sections for the moment frames are shown in \cref{fig:cols_orientation}. Note that only the stiffness of the lateral resisting elements are taken into consideration for each story stiffness, and lateral stiffness of the gravity columns are ignored. Results of the story stiffness calculations for the 20-story buildings located in Seattle and Los Angeles are shown in \cref{tab:stiffness_20LASE}. The modulus of elasticity, $E$, and yield strength, $f_y$, of steel are assumed to be $29,000 \ksi$ and $60 \ksi$, respectively. Values of moment of inertia for the standard steel sections given are available in \href{https://www.aisc.org/publications/steel-construction-manual-resources/}{AISC Steel Construction Manual} \cite{aiscManual}.
 
 \begin{figure}[H]
 	\begin{subfigure}[b]{0.24\linewidth}
@@ -341,7 +341,7 @@ In the SAC examples included in this document, both extreme values of stiffness 
 
 
 %\vspace{10mm}
-Thus, for this example, the input forces and building properties used in the EVW app are shown in table below. For stiffness value, actual $EI_b$ are used.
+Thus, for this example, the input forces and building properties used in the EVW app are shown in table below. For the stiffness value, actual $EI_b$ is used.
 
 \begin{table}[H]
 	\centering \caption{Input forces and building properties (3LA250).}
@@ -352,14 +352,14 @@ Thus, for this example, the input forces and building properties used in the EVW
 	Earthquake:		& Input motion		& Northridge			\\
 					& Scale factor		& 0.79					\\
 	Wind:			& Exposure category	& B						\\
-					& Gust wind speed	& 110.4 mph				\\
+					& Gust-wind speed	& 110.4 mph				\\
 					& Seed				& 100					\\
 	\midrule
 	\multicolumn{3}{l}{\textit{Building Properties}}			\\
 	\cmidrule(rl){1-3}
 					& Number floor		& 3						\\
 					& Building weight	& 6503.1 k				\\
-					& shape				& Rectangular			\\
+					& Shape				& Rectangular			\\
 					& Height			& 468 in.				\\
 					& Width				& 2160 in.				\\
 					& Length			& 1440 in.				\\
@@ -367,16 +367,16 @@ Thus, for this example, the input forces and building properties used in the EVW
 					& Story stiffness	& see \cref{tab:stiffness_3LASE}				\\
 					& Damping ratio		& 0.02					\\
 	\midrule
-	\multicolumn{3}{l}{Disable PDelta effects}					\\
+	\multicolumn{3}{l}{Disable P-delta effects}					\\
 	\bottomrule
 	\end{tabular}
 \end{table}
 
 \begin{figure}[H]
 	\centering \includegraphics[width=0.9\linewidth]{3LA250_1.jpg}
-	\caption{Program display after inputs entered for building 3LA250.}
+	\caption{Program display after inputs entered for Building 3LA250.}
 \end{figure}
-Following figures show some of the graphics available in the tool.
+The following figures show some of the graphics available in the tool.
 \begin{figure}[H]
 	\centering \includegraphics[scale=0.35]{3LA250_fdh.JPG}
 	\caption{Floor displacement history, 3LA250, third floor.}
@@ -401,8 +401,8 @@ Following figures show some of the graphics available in the tool.
 %								Example 2										 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{The SAC 3-story Seattle Building, Hazard Level 2/50 (3SE250)}
-Properties of the 3-story building located in Seattle for the hazard level of 2/50 are tabulated in \cref{tab:prop_3SE250}. These propteries are based on the location, geometry and function of the building as described in \cite{FEMA335c2000}. Floor plans, elevations and plans of moment-resisting frames for the Seattle model building are shown in \cref{fig:floor_plan_elev,fig:MRF_LASE}.
+\section{The SAC 3-Story Seattle Building, Hazard Level 2/50 (3SE250)}
+Properties of the 3-story building located in Seattle for the hazard level of 2/50 are tabulated in \cref{tab:prop_3SE250}. These propteries are based on the location, geometry, and function of the building as described in \cite{FEMA335c2000}. Floor plans, elevations, and plans of moment-resisting frames for the Seattle model building are shown in \cref{fig:floor_plan_elev,fig:MRF_LASE}.
 
 \begin{table}[H]
 \centering \caption{3-story building properties, Seattle, hazard level: 2/50 (3SE250).}
@@ -423,15 +423,15 @@ $\beta$ Mode exponent								& $1.0$							& user spec					\\
 Building density									& $1.03 \,\mathrm{slugs/ft^3}$	& bldg function				\\
 %Air density											& $0.0024 \,\mathrm{slugs/ft^3}$& bldg location				\\
 \bottomrule
-\multicolumn{3}{l}{\footnotesize $^{1)}$ for approximate natural frequencies see section 26.11.2 and C26.11 of the ASCE 7-16. For this example, since the building}	\\
-\multicolumn{3}{l}{\footnotesize \hspace{3mm} are designed and the properties of the building elements are known, the natural frequency is accurately calculated.}	\\
-\multicolumn{3}{l}{\footnotesize $^{2)}$ recommended values for damping ratio can be found in Table 11.2.1, Dynamics of Structures by
+\multicolumn{3}{l}{\footnotesize $^{1)}$ For approximate natural frequencies, see section 26.11.2 and C26.11 of the ASCE 7-16. For this example, since the}	\\
+\multicolumn{3}{l}{\footnotesize \hspace{3mm} building is designed and the properties of the building elements are known, the natural frequency is accurately calculated.}	\\
+\multicolumn{3}{l}{\footnotesize $^{2)}$ Recommended values for damping ratio can be found in Table 11.2.1, Dynamics of Structures by
 Chopra, 4th ed. \cite{ChopraAnilK2012Dos}}
 \end{tabular}}
 \end{table}
 
 \noindent\textbf{Procedure}\\
-\indent Same as the previous example, in order to use the \getsoftwarepage{\texttt{\getsoftwarename{}} app}, input forces and building properties need to be known. Gust-effect factor is calculated as shown in \cref{tab:gust_factor_3SE250}.
+\indent As in the previous example, in order to use the \getsoftwarepage{\texttt{\getsoftwarename{}} app}, input forces and building properties need to be known. The gust-effect factor is calculated as shown in \cref{tab:gust_factor_3SE250}.
 
 \begin{table}[H]
 \centering \caption{Gust-effect factor, 3LA250.}
@@ -464,7 +464,7 @@ $G_f$ Gust-effect factor										& $0.81$							& eq. 26.11-10 ASCE 7-16			\\
 \end{tabular}
 \end{table}
 
-Therefore, Gust wind speed in mph is:
+Therefore, the gust-wind speed in mph is:
 \begin{equation*}
 G_f \times C = 0.81 \times 98 = \boxed{79.4}
 \end{equation*}
@@ -480,14 +480,14 @@ Thus, input forces and building properties used in the EVW app are shown in tabl
 	Earthquake:		& Input motion		& Northridge			\\
 					& Scale factor		& 0.22					\\
 	Wind:			& Exposure category	& B						\\
-					& Gust wind speed	& 79.4 mph				\\
+					& Gust-wind speed	& 79.4 mph				\\
 					& Seed				& 100					\\
 	\midrule
 	\multicolumn{3}{l}{\textit{Building Properties}}			\\
 	\cmidrule(rl){1-3}
 					& Number floor		& 3						\\
 					& Building weight	& 6503.1 k				\\
-					& shape				& Rectangular			\\
+					& Shape				& Rectangular			\\
 					& Height			& 468 in.				\\
 					& Width				& 2160 in.				\\
 					& Length			& 1440 in.				\\
@@ -495,16 +495,16 @@ Thus, input forces and building properties used in the EVW app are shown in tabl
 					& Story stiffness	& see \cref{tab:stiffness_3LASE}			\\
 					& Damping ratio		& 0.02					\\
 	\midrule
-	\multicolumn{3}{l}{Enable PDelta effects}					\\
+	\multicolumn{3}{l}{Enable P-delta effects}					\\
 	\bottomrule
 	\end{tabular}
 \end{table}
 
 \begin{figure}[H]
 	\centering \includegraphics[width=0.9\linewidth]{3SE250_1.jpg}
-	\caption{Program display after inputs entered for building 3SE250.}
+	\caption{Program display after inputs entered for Building 3SE250.}
 \end{figure}
-Following figures show some of the graphics available in the tool.
+The following figures show some of the graphics available in the tool.
 \begin{figure}[H]
 	\centering \includegraphics[scale=0.35]{3SE250_fdh.JPG}
 	\caption{Floor displacement history, 3SE250, third floor.}
@@ -529,8 +529,8 @@ Following figures show some of the graphics available in the tool.
 %								Example 3										 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{The SAC 20-story Los Angeles Building, Hazard Level 2/50 (20LA250)}
-Properties of the 20-story building located in Los Angeles for the hazard level of 2/50 are tabulated in \cref{tab:prop_20LA250}. Floor plans, elevations and plans of moment-resisting frames for the Seattle model building are shown in \cref{fig:floor_plan_elev,fig:MRF_LASE}.
+\section{The SAC 20-Story Los Angeles Building, Hazard Level 2/50 (20LA250)}
+Properties of the 20-story building located in Los Angeles for the hazard level of 2/50 are tabulated in \cref{tab:prop_20LA250}. Floor plans, elevations, and plans of moment-resisting frames for the Seattle model building are shown in \cref{fig:floor_plan_elev,fig:MRF_LASE}.
 
 \begin{table}[H]
 \centering \caption{20-story building properties, Los Angeles, hazard level: 2/50 (20LA250).}
@@ -551,15 +551,15 @@ $\beta$ Mode exponent								& $1.0$							& user spec					\\
 Building density									& $0.04 \,\mathrm{slugs/ft^3}$	& bldg function				\\
 %Air density											& $0.0024 \,\mathrm{slugs/ft^3}$& bldg location				\\
 \bottomrule
-\multicolumn{3}{l}{\footnotesize $^{1)}$ for approximate natural frequencies see section 26.11.2 and C26.11 of the ASCE 7-16. For this example, since the building}	\\
-\multicolumn{3}{l}{\footnotesize \hspace{3mm} are designed and the properties of the building elements are known, the natural frequency is accurately calculated.}	\\
-\multicolumn{3}{l}{\footnotesize $^{2)}$ recommended values for damping ratio can be found in Table 11.2.1, Dynamics of Structures by
+\multicolumn{3}{l}{\footnotesize $^{1)}$ For approximate natural frequencies, see section 26.11.2 and C26.11 of the ASCE 7-16. For this example, since the}	\\
+\multicolumn{3}{l}{\footnotesize \hspace{3mm} building is designed and the properties of the building elements are known, the natural frequency is accurately calculated.}	\\
+\multicolumn{3}{l}{\footnotesize $^{2)}$ Recommended values for damping ratio can be found in Table 11.2.1, Dynamics of Structures by
 Chopra, 4th ed. \cite{ChopraAnilK2012Dos}}
 \end{tabular}}
 \end{table}
 
 \noindent\textbf{Procedure}\\
-\indent Same as the previous example, in order to use the \getsoftwarepage{\texttt{\getsoftwarename{}} app}, input forces and building properties need to be known. Gust-effect factor is calculated as shown in \cref{tab:gust_factor_20LA250}.
+\indent As in the previous example, in order to use the \getsoftwarepage{\texttt{\getsoftwarename{}} app}, input forces and building properties need to be known. The gust-effect factor is calculated as shown in \cref{tab:gust_factor_20LA250}.
 
 \begin{table}[H]
 \centering \caption{Gust-effect factor, 3LA250.}
@@ -592,7 +592,7 @@ $G_f$ Gust-effect factor										& $0.97$							& eq. 26.11-10 ASCE 7-16			\\
 \end{tabular}
 \end{table}
 
-Therefore, Gust wind speed in mph is:
+Therefore, gust-wind speed in mph is:
 \begin{equation*}
 G_f \times C = 0.97 \times 95 = \boxed{92.2}
 \end{equation*}
@@ -608,7 +608,7 @@ Thus, input forces and building properties used in the EVW app are shown in tabl
 	Earthquake:		& Input motion		& Northridge			\\
 					& Scale factor		& 0.01					\\
 	Wind:			& Exposure category	& B						\\
-					& Gust wind speed	& 92.2 mph				\\
+					& Gust-wind speed	& 92.2 mph				\\
 					& Seed				& 100					\\
 	\midrule
 	\multicolumn{3}{l}{\textit{Building Properties}}			\\
@@ -623,16 +623,16 @@ Thus, input forces and building properties used in the EVW app are shown in tabl
 					& Story stiffness	& see \cref{tab:stiffness_20LASE}			\\
 					& Damping ratio		& 0.02					\\
 	\midrule
-	\multicolumn{3}{l}{Disable PDelta effects}					\\
+	\multicolumn{3}{l}{Disable P-delta effects}					\\
 	\bottomrule
 	\end{tabular}
 \end{table}
 
 \begin{figure}[H]
 	\centering \includegraphics[width=0.9\linewidth]{20LA250_1.jpg}
-	\caption{Program display after inputs entered for building 20LA250.}
+	\caption{Program display after inputs entered for Building 20LA250.}
 \end{figure}
-Following figures show some of the graphics available in the tool.
+The following figures show some of the graphics available in the tool.
 \begin{figure}[H]
 	\centering \includegraphics[scale=0.35]{20LA250_fdh.JPG}
 	\caption{Floor displacement history, 20LA250, \nth{20} floor.}
@@ -657,8 +657,8 @@ Following figures show some of the graphics available in the tool.
 %								Example 4										 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{The SAC 20-story Seattle Building, Hazard Level 2/50 (20SE250)}
-Properties of the 20-story building located in Seattle for the hazard level of 2/50 are tabulated in \cref{tab:prop_20SE250}. See \cref{fig:floor_plan_elev,fig:MRF_LASE} for floor plans, elevations and plans of moment-resisting frames.
+\section{The SAC 20-Story Seattle Building, Hazard Level 2/50 (20SE250)}
+Properties of the 20-story building located in Seattle for the hazard level of 2/50 are tabulated in \cref{tab:prop_20SE250}. See \cref{fig:floor_plan_elev,fig:MRF_LASE} for floor plans, elevations, and plans of moment-resisting frames.
 
 \begin{table}[H]
 \centering \caption{20-story building properties, Seattle, hazard level: 2/50 (20SE250).}
@@ -679,15 +679,15 @@ $\beta$ Mode exponent								& $1.0$							& user spec					\\
 Building density									& $0.04 \,\mathrm{slugs/ft^3}$	& bldg function				\\
 %Air density											& $0.0024 \,\mathrm{slugs/ft^3}$& bldg location				\\
 \bottomrule
-\multicolumn{3}{l}{\footnotesize $^{1)}$ for approximate natural frequencies see section 26.11.2 and C26.11 of the ASCE 7-16. For this example, since the building}	\\
-\multicolumn{3}{l}{\footnotesize \hspace{3mm} are designed and the properties of the building elements are known, the natural frequency is accurately calculated.}	\\
-\multicolumn{3}{l}{\footnotesize $^{2)}$ recommended values for damping ratio can be found in Table 11.2.1, Dynamics of Structures by
+\multicolumn{3}{l}{\footnotesize $^{1)}$ For approximate natural frequencies, see section 26.11.2 and C26.11 of the ASCE 7-16. For this example, since the}	\\
+\multicolumn{3}{l}{\footnotesize \hspace{3mm} building is designed and the properties of the building elements are known, the natural frequency is accurately calculated.}	\\
+\multicolumn{3}{l}{\footnotesize $^{2)}$ Recommended values for damping ratio can be found in Table 11.2.1, Dynamics of Structures by
 Chopra, 4th ed. \cite{ChopraAnilK2012Dos}}
 \end{tabular}}
 \end{table}
 
 \noindent\textbf{Procedure}\\
-\indent Same as the previous example, in order to use the \getsoftwarepage{\texttt{\getsoftwarename{}} app}, input forces and building properties need to be known. \cref{tab:gust_factor_20SE250} shows gust-effect factor calculations.
+\indent As in the previous example, in order to use the \getsoftwarepage{\texttt{\getsoftwarename{}} app}, input forces and building properties need to be known. \cref{tab:gust_factor_20SE250} shows gust-effect factor calculations.
 
 \begin{table}[H]
 \centering \caption{Gust-effect factor, 3LA250.}
@@ -720,7 +720,7 @@ $G_f$ Gust-effect factor										& $0.97$							& eq. 26.11-10 ASCE 7-16			\\
 \end{tabular}
 \end{table}
 
-Therefore, Gust wind speed in mph is:
+Therefore, the gust-wind speed in mph is:
 \begin{equation*}
 G_f \times C = 0.97 \times 98 = \boxed{95.0}
 \end{equation*}
@@ -736,14 +736,14 @@ Thus, input forces and building properties used in the EVW app are shown in tabl
 	Earthquake:		& Input motion		& Northridge			\\
 					& Scale factor		& 0.01					\\
 	Wind:			& Exposure category	& B						\\
-					& Gust wind speed	& 95.0 mph				\\
+					& Gust-wind speed	& 95.0 mph				\\
 					& Seed				& 100					\\
 	\midrule
 	\multicolumn{3}{l}{\textit{Building Properties}}			\\
 	\cmidrule(rl){1-3}
 					& Number floor		& 20					\\
 					& Building weight	& 24419.5 k				\\
-					& shape				& Rectangular			\\
+					& Shape				& Rectangular			\\
 					& Height			& 3180 in.				\\
 					& Width				& 1440 in.				\\
 					& Length			& 1200 in.				\\
@@ -751,16 +751,16 @@ Thus, input forces and building properties used in the EVW app are shown in tabl
 					& Story stiffness	& see \cref{tab:stiffness_20LASE}			\\
 					& Damping ratio		& 0.02					\\
 	\midrule
-	\multicolumn{3}{l}{Disable PDelta effects}					\\
+	\multicolumn{3}{l}{Disable P-delta effects}					\\
 	\bottomrule
 	\end{tabular}
 \end{table}
 
 \begin{figure}[H]
 	\centering \includegraphics[width=0.9\linewidth]{20SE250_1.jpg}
-	\caption{Program display after inputs entered for building 20SE250.}
+	\caption{Program display after inputs entered for Building 20SE250.}
 \end{figure}
-Following figures show some of the graphics available in the tool.
+The following figures show some of the graphics available in the tool.
 \begin{figure}[H]
 	\centering \includegraphics[scale=0.35]{20SE250_fdh.jpg}
 	\caption{Floor displacement history, 20SE250, \nth{20} floor.}
@@ -786,9 +786,9 @@ Following figures show some of the graphics available in the tool.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Walled Building}
-In this example, an 8-story walled building is taken into consideration where only the walls contribute to the lateral resistance. Therefore, for stiffness consideration, only walls will be considered. Floor plan and elevation of the building and locations of walls are shown in \cref{fig:8_floor_plan}. The building is located in Los Angeles. This example is adopted from  the final report for the Applied Technology Council’s project (ATC123 project); (Report to project technical committee and project review) \cite{FEMAp2012}.
+In this example, an 8-story walled building is taken into consideration where only the walls contribute to the lateral resistance. Therefore, when considering the stiffness, only walls will be considered. Floor plan and elevation of the building and locations of walls are shown in \cref{fig:8_floor_plan}. The building is located in Los Angeles. This example is adopted from  the final report for the Applied Technology Council’s project (ATC123 project); (Report to Project Technical Committee and Project review) \cite{FEMAp2012}.
 
-To find the stiffness of this building, as explained earlier, point loads were applied at top of the first story and then the stiffness was calculated based on the displacements caused by the point loads.
+To find the stiffness of this building, as explained earlier, point loads were applied at top of the first story, and then the stiffness was calculated based on the displacements caused by the point loads.
 
 \begin{figure}[H]
 	\begin{subfigure}[b]{0.7\linewidth}
@@ -822,15 +822,15 @@ $\beta$ Mode exponent								& $1.0$							& user spec					\\
 Building density									& $0.433 \,\mathrm{slugs/ft^3}$	& bldg function				\\
 %Air density											& $0.0024 \,\mathrm{slugs/ft^3}$& bldg location				\\
 \bottomrule
-\multicolumn{3}{l}{\footnotesize $^{1)}$ for approximate natural frequencies see section 26.11.2 and C26.11 of the ASCE 7-16. For this example, since the building}	\\
-\multicolumn{3}{l}{\footnotesize \hspace{3mm} are designed and the properties of the building elements are known, the natural frequency is accurately calculated.}	\\
-\multicolumn{3}{l}{\footnotesize $^{2)}$ recommended values for damping ratio can be found in Table 11.2.1, Dynamics of Structures by
+\multicolumn{3}{l}{\footnotesize $^{1)}$ For approximate natural frequencies, see section 26.11.2 and C26.11 of the ASCE 7-16. For this example, since the}	\\
+\multicolumn{3}{l}{\footnotesize \hspace{3mm} building is designed and the properties of the building elements are known, the natural frequency is accurately calculated.}	\\
+\multicolumn{3}{l}{\footnotesize $^{2)}$ Recommended values for damping ratio can be found in Table 11.2.1, Dynamics of Structures by
 Chopra, 4th ed. \cite{ChopraAnilK2012Dos}}
 \end{tabular}}
 \end{table}
 
 \noindent\textbf{Procedure}\\
-\indent Same as the previous example, in order to use the \getsoftwarepage{\texttt{\getsoftwarename{}} app}, input forces and building properties need to be known. \cref{tab:gust_factor_8_story_bldg} shows gust-effect factor calculations.
+\indent As in the previous example, in order to use the \getsoftwarepage{\texttt{\getsoftwarename{}} app}, input forces and building properties need to be known. \cref{tab:gust_factor_8_story_bldg} shows gust-effect factor calculations.
 
 \begin{table}[H]
 \centering \caption{Gust-effect factor, 3LA250.}
@@ -863,7 +863,7 @@ $G_f$ Gust-effect factor										& $0.85$							& eq. 26.11-10 ASCE 7-16			\\
 \end{tabular}
 \end{table}
 
-Therefore, Gust wind speed in mph is:
+Therefore, the gust-wind speed in mph is:
 \begin{equation*}
 G_f \times C = 0.85 \times 95 = \boxed{80.75}
 \end{equation*}
@@ -879,21 +879,21 @@ Thus, input forces and building properties used in the EVW app are shown in tabl
 	Earthquake:		& Input motion		& Northridge			\\
 					& Scale factor		& 0.01					\\
 	Wind:			& Exposure category	& B						\\
-					& Gust wind speed	& 95.0 mph				\\
+					& Gust-wind speed	& 95.0 mph				\\
 					& Seed				& 100					\\
 	\midrule
 	\multicolumn{3}{l}{\textit{Building Properties}}			\\
 	\cmidrule(rl){1-3}
 					& Number floor		& 8						\\
 					& Building weight	& 21276.0 k				\\
-					& shape				& Rectangular			\\
+					& Shape				& Rectangular			\\
 					& Height			& 1272 in.				\\
 					& Width				& 1440 in.				\\
 					& Drag coefficient	& 1.3					\\
 					& Story stiffness	& 6200.0 k/in.			\\
 					& Damping ratio		& 0.02					\\
 	\midrule
-	\multicolumn{3}{l}{Enable PDelta effects}					\\
+	\multicolumn{3}{l}{Enable P-delta effects}					\\
 	\bottomrule
 	\end{tabular}
 \end{table}
@@ -902,7 +902,7 @@ Thus, input forces and building properties used in the EVW app are shown in tabl
 	\centering \includegraphics[width=0.9\linewidth]{8_walled_bldg_1.jpg}
 	\caption{Program display after inputs entered for 8-story walled building.}
 \end{figure}
-Following figures show some of the graphics available in the tool.
+The following figures show some of the graphics available in the tool.
 \begin{figure}[H]
 	\centering \includegraphics[scale=0.35]{8_walled_bldg_fdh.jpg}
 	\caption{Floor displacement history, 8-story walled biuilding, \nth{8} floor.}
