@@ -1,0 +1,148 @@
+\begin{longtable}{| p{.07\textwidth} | p{.65\textwidth} | p{.08\textwidth} | p{.08\textwidth} |  p{.08\textwidth} |}
+
+\caption{Requirements for PBE}
+  \label{tab:featureRequirements}   
+    \\
+   \hline
+\rowcolor{lightgray}
+      \# & Description & Source & Priority & Version \\ \hline
+      
+      1 & \textbf{Ability to determine damage and loss calculations for a building subjected to a natural hazard including formal treatment of randomness and uncertainty uncertainty} & GC & M  & 1.0  \\ \hline
+      1.1 & Ability to determine  damage and loss for multiple different hazards & GC & M &  \\ \hline
+      1.1.1 & Damage and Loss for ground shaking due to Earthquake & GC 2.T12 & M & 1.0 \\ \hline
+      1.1.2 & Damage and Loss due to Wind Loading & GC 6.S4.2 & M &  \\ \hline
+      1.1.3 & Damage and Loss due to water damage due to Tsunami or Coastal Inundation & GC & M &  \\ \hline
+      1.1 & Ability of Practicing Engineers to use multiple coupled resources (applications, databases, viz tools) in engineering practice & GC 5.IC4 & M 1.0 & \\ \hline
+1.2 & Ability to utilize resources beyond the desktop including HPC & GC 5.IC4 & M & 1.0 \\ \hline
+1.3 & Tool should incorporate data from WWW & GC & M & 1.0 \\ \hline
+1.4 & Tool available for download from web & GC 6.S4.2& M & 1.0 \\ \hline
+      2 & \textbf{Various Motion Selection Options for Hazard Event} & SP & M & 1.0  \\ \hline
+      2.1 & Various Earthquake Events & SP & M & 1.0  \\ \hline
+      2.1.1 & Ability to select from Multiple input motions and view UQ due to all the discrete events & GC & M & 1.0  \\ \hline
+      2.1.2 & Ability to select from list of SimCenter motions & SP & M & 1.0 \\ \hline
+      2.1.3 & Ability to select from list of PEER motions & SP & D & 1.0 \\ \hline
+      2.1.4 & Ability to use OpenSHA and selection methods to generate motions & UF & D & 1.0 \\ \hline
+      2.1.5 & Ability to Utilize Own Application in Workflow & SP & M & 1.0 \\ \hline
+      2.1.6 & Ability to use Broadband & SP & D &  \\ \hline
+      2.1.7  & Ability to include Soil Structure Interaction Effects & GC & M & 1.1 \\  \hline
+      2.1.7.1  & 1D nonlinear site response with effective stress analysis & SP & M & 1.1  \\ \hline
+      2.1.7.2  & Nonlinear site response with bidirectional loading & SP & M & 1.2 \\  \hline
+      2.1.7.3  & Nonlinear site response with full stochastic characterization of soil layers & SP & M &  \\ \hline
+      2.1.7.4 & Nonlinear site response, bidirectional different input motions  & SP & M &  \\  \hline
+      2.1.7.5 & Building in nonlinear soil domain utilizing large scale rupture simulation & GC  & M &  \\  \hline
+      2.1.7.5.1 & Interface using DRM method  & SP  & M &  \\  \hline
+      2.1.8 & Utilize PEER NGA www ground motion selection tool  & UF & D & 2.0 \\ \hline
+      2.1.9 & Ability to select from synthetic ground motions & SP & M & 1.0  \\
+      2.1.9.1 & per Vlachos, Papakonstantinou, Deodatis (2017) & SP & D & 1.1  \\ 
+      2.1.9.2 & per Dabaghi, Der Kiureghian (2017) & UF & D & 2.0 \\ \hline
+      2.2 & Various Wind Loading Options & SP & M &   \\ \hline
+      2.3 & Various Water Loading Options & SP & M &   \\ \hline
+  3 & \textbf{Building Model Generation} & GC & M &  \\ \hline
+  3.1 & Ability to quickly create a simple nonlinear building model & GC & D & 1.1 \\ \hline
+  3.2 & Ability to use existing OpenSees model scripts & SP & M & 1.0 \\ \hline
+  3.3  & Ability to define building and use Expert System to generate FE mesh & SP & &  \\ \hline
+  3.3.1 & Expert system for Concrete Shear Walls & SP & M &  \\ \hline
+  3.3.2 & Expert system for Moment Frames & SP & M &  \\ \hline
+  3.3.3 & Expert system for  Braced Frames & SP & M &   \\ \hline
+  3.4 & Ability to define building and use Machine Learning applications to generate FE & GC &  &  \\ \hline
+  3.4.1 & Machine Learning for Concrete Shear Walls & SP & M &  \\ \hline
+  3.4.2 & Machine Learning for Moment Frames & SP & M &  \\ \hline
+  3.4.3 & Machine Learning for Braced Frames & SP & M &   \\ \hline
+  3.5 & Ability to specify connection details for member ends & UF & M &  \\ \hline
+  3.6 & Ability to define a user-defined moment-rotation response representing the connection details & UF & D & 2.2 \\ \hline
+  4 & \textbf{Perform Nonlinear Analysis} & GC & M & 1.0 \\ \hline
+  4.1 & Ability to specify OpenSees as FEM engine and to specify different analysis options & SP & M & 1.0 \\ \hline
+  4.2 & Ability to provide own OpenSees Analysis script to OpenSees engine. & SP & D & 1.0 \\ \hline
+  4.3 & Ability to provide own Python script and use OpenSeesPy engine. & UF & O &  \\ \hline
+  4.4 & Ability to use alternative FEM engine. & SP & M & 2.0 \\ \hline
+  5 & \textbf{Uncertainty Quantification Methods} &  GC & M & 1.0  \\ \hline
+  5.1 & \textbf{Various Forward Propogation Methods} & SP & M & 1.0  \\ \hline
+  5.1.1 & Ability to use basic  Monte Carlo and LHS methods & SP & M & 1.0 \\ \hline
+  5.1.2 & Ability to use Importance Sampling  & SP & M & 2.0 \\ \hline
+  5.1.3 & Ability to use Gaussian Process Regression & SP & M & 2.0 \\ \hline
+  5.1.4 & Ability to use Own External UQ Engine & SP & M &  \\ \hline
+  5.2 & \textbf{Various Reliability Methods} & UF & M &  \\ \hline
+  5.2.1 & Ability to use First Order Reliability method & UF & M &  \\ \hline
+  5.2.2 & Ability to use Second Order Reliability method & UF & M & \\ \hline
+  5.2.2 & Ability to use Surrogate Based Reliability & UF & M & \\ \hline
+  5.2.3 & Ability to use Own External Application to generate Results & UF & M &  \\ \hline
+  5.3 & \textbf{Various Sensitivity Methods} & UF & M &  \\ \hline
+  5.3.1 & Ability to obtain Global Sensitivity Sobol's indices & UF & M &  \\ \hline
+    6 & \textbf{Random Variables for Uncertainty Quantification} & GC & M & 1.0  \\ \hline
+    6.1 & Ability to Define Variables of certain types: & SP & M & 1.0  \\ 
+    6.1.1 & Normal & SP & M  & 1.0 \\ \hline
+    6.1.2 & Lognormal & SP & M & 1.0 \\ \hline
+    6.1.3 & Uniform & SP & M & 1.0  \\ \hline
+    6.1.4 & Beta & SP & M & 1.0 \\ \hline
+    6.1.5 & Weibull &  SP & M  & 1.0 \\ \hline
+    6.1.6 & Gumbel &  SP & M & 1.0  \\ \hline
+    6.2 & User defined Distribution & SP & M &  \\ \hline
+    6.3 & Correlated Random Variables & SP & M &  \\ \hline
+    6.4 & Random Fields & SP & M &  \\ \hline
+     7 & Tool to allow user to load and save user inputs & SP & M & 1.0 \\ \hline
+    8 & \textbf{Engineering Demand Parameters} &  &  \\ \hline
+    8.1 & Ability to Process own Output Parameters & UF & M &   \\ \hline
+    8.2 & Add to Standard Earthquake a variable indicating analysis failure & UF & D &   \\ \hline
+    8.3 & Allow users to provide their own set of EDPs for the analysis. & UF & D & 2.0\\ \hline
+
+9 & \textbf{Damage and Loss Assessment} & GC & M & 1.0\\ \hline
+9.1 & Different Assessment Methods & GC & M & 2.0 \\ \hline
+9.1.1 & Ability to perform component-based (FEMA P58) loss assessment for an earthquake hazard. & SP & M & 1.0 \\ \hline
+9.1.2 & Ability to perform component-assembly-based (HAZUS MH) loss assessment for an earthquake hazard. & SP & D & 1.1 \\ \hline
+9.1.3 & Ability to perform downtime estimation using the REDi methodology. & UF & D & \\ \hline
+9.1.4 & Ability to describe building performance with additional decision variables from HAZUS (e.g., business interruption, debris) & SP & D &  \\ \hline
+9.1.5 &  Ability to perform time-based assessment & GC & M &  \\ \hline
+9.1.6 & Ability to perform damage and loss assessment for hurricane wind & GC & M &  \\ \hline
+9.1.7 & Ability to perform damage and loss assessment for storm surge & GC & M &  \\ \hline
+9.2 & Control & SP & M & 1.0 \\ \hline
+9.2.1 & Allow users to set the number of realizations & SP & M & 1.0\\ \hline
+9.2.2 &  Allow users to specify the added uncertainty to EDPs & SP & M & 1.0 \\ \hline
+9.2.3 &  Allow users to decide which decision variables to calculate & SP & D & 1.0 \\ \hline
+9.2.4 &  Allow users to set the number of inhabitants on each floor and customize their temporal distribution. & SP & D & 1.0 \\ \hline
+9.2.5 &  Allow users to specify the boundary conditions of repairability. & SP & D & 1.0 \\ \hline
+9.2.6 &  Allow users to control collapse through EDP limits. & SP & D & 1.0\\ \hline
+9.2.7 &  Allow users to specify the replacement cost and time for the building. & SP & M & 1.0 \\ \hline
+9.2.8 &  Allow users to specify EDP boundaries that correspond to reliable simulation results. & SP & D & 1.0\\ \hline
+9.2.9 & Allow users to specify collapse modes and characterize the corresponding likelihood of injuries. & SP & D & 1.0\\ \hline
+9.2.10 & Allow users to specify the collapse probability of the structure. & UF & M & 1.2\\ \hline
+9.2.11 & Allow users to use empirical EDP data to estimate the collapse probability of the structure. & UF & M & 1.2\\ \hline
+9.2.12 & Allow users to choose the type of distribution they want to estimate the EDPs with. & UF & D & 1.2\\ \hline
+9.2.13 & Allow users to perform the EDP fitting only for non-collapsed cases. & UF & M & 1.2\\ \hline
+9.2.14 & Allow users to couple response estimation with loss assessment. & UF & M & \\ \hline
+9.3 & Component damage and loss information & SP & M & 1.0\\ \hline
+9.3.1 & Make the component damage and loss data from FEMA P58 available. & SP & M & 1.0 \\ \hline
+9.3.2 & Ability to use custom components for loss assessment. & SP & D & 1.0 \\ \hline
+9.3.3 & Allow users to set different component quantities for each floor in each direction. & SP & D & 1.0 \\ \hline
+9.3.4 & Allow users to set the number of identical component groups and their quantities within each performance group. & UF & D & 1.0 \\ \hline
+9.3.5 & Use a generic JSON data format for building components that can be shared by component-based and component-assembly-based assessments. & SP & D & 1.1 \\ \hline
+9.3.6 & Convert FEMA P58 and HAZUS component damage and loss data to the new JSON format and make it available with the tool. & SP & D & 1.1 \\ \hline
+9.3.7 & Make component definition easier by providing a list of available components in the given framework (e.g. FEMA P58 or HAZUS) and not requesting inputs that are already available in the data files. & UF & D & 1.2 \\ \hline
+9.3.8 & Make the component damage and loss data from FEMA P58 2nd edition available. & UF & M & 2.0 \\ \hline
+9.3.9 & Improve component definition by providing complete control over every characteristic on every floor and in every direction & UF & D & 2.0 \\ \hline
+9.3.10 & Allow users to view fragility and consequence functions in the application & UF & D &  \\ \hline
+9.3.11 & Allow users to edit fragility and consequence functions in the application & UF & D &  \\ \hline
+9.4 & Stochastic loss model & SP & M & 1.0 \\ \hline
+9.4.1 & Allow the user to specify basic dependencies (i.e. independence or perfect correlation) between logically similar parts of the stochastic model (i.e. within component quantities or one type of decision variable, but not between quantities and fragilities) & SP & D & 1.0 \\ \hline
+9.4.2 & Allow the user to specify basic dependencies between reconstruction cost and reconstruction time. & SP & D & 1.0 \\ \hline
+9.4.3 & Allow the user to specify basic dependencies between different levels of injuries. & SP & D & 1.0 \\ \hline
+9.4.4 & Allow the user to specify intermediate levels of correlation (i.e. not limited to 0 or 1) and provide a convenient interface that makes sure the specified correlation structure is valid. & SP & D & \\ \hline   
+9.4.5 & Allow the user to specify the correlation for EDPs. & SP & D &  \\ \hline  
+
+ M & \textbf{Misc.} & UF & M & 1.2  \\ \hline
+   M.1 & Simplify run local and run remote by removing workdir locations. Move to preferences & UF & D & 1.2  \\ \hline
+   M.2 & Add to EDP a variable indicating analysis failure & UF & D &   \\ \hline
+   M.3 & Installer which installs application and all needed software & UF & M &   \\ \hline
+ E & \textbf{Education} Ability to gain educational materials that will help and encourage PBE &  GC 2.T14  & M & 1.0 \\ \hline
+ E.1 & Documentation exists on tool usage & SP & M & 1.1  \\ \hline
+ E.2 & Video Exists demonstrating usage & SP & M & 1.1  \\ \hline
+ E.3 & Verification Examples Exist & SP & M & 1.1  \\ \hline
+  \bottomrule               
+\end{longtable}
+
+
+\noindent
+KEY:\\
+Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback \\
+Need: M=Mandatory, D=Desirable, P=Possible Future \\
+Version: Version number the basic requirement was met 
+

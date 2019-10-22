@@ -1,0 +1,82 @@
+\begin{longtable}{| p{.07\textwidth} | p{.65\textwidth} | p{.08\textwidth} | p{.08\textwidth} |  p{.08\textwidth} |}
+
+  \caption{Requirements for EE-UQ}
+  \label{tab:featureRequirements}    
+     \\
+   \hline
+\rowcolor{lightgray}
+
+      \# & Description & Source & Priority & Version \\ \hline
+      E1 & \textbf{Ability to determine response of Building Subject to Earthquake hazard including formal treatment of randomness and uncertainty uncertainty} & GC 2.T13 & M  & 1.0  \\ \hline
+ E1.1 & Ability of Practicing Engineers to use multiple coupled resources (applications, databases, viz tools) in engineering practice & GC 5.IC4 & M 1.0 & \\ \hline
+E1.2 & Ability to utilize resources beyond the desktop including HPC & GC 5.IC4 & M & 1.0 \\ \hline
+E1.3 & Tool should incorporate data from www & GC & M & 1.0 \\ \hline
+E1.4 & Tool available for download from web & GC & M & 1.0 \\ \hline
+E1.5 & Ability to benefit from programs that move research results into practice and obtain training & GC 2.13 & M & \\ \hhline{=====}
+
+      E2 & \textbf{Various Motion Selection Options} & SP & M & 1.0  \\ \hline
+      E2.1 & Ability to select from Multiple input motions and view UQ due to all the discrete events & GC & M & 1.0  \\ \hline
+      E2.2 & Ability to select from list of SimCenter motions & SP & M & 1.0 \\ \hline
+      E2.3 & Ability to select from list of PEER motions & SP & D & 1.0 \\ \hline
+      E2.4 & Ability to use OpenSHA and selection methods to generate motions & UF & D & 1.0 \\ \hline
+      E2.5 & Ability to Utilize Own Application in Workflow & SP & M & 1.0 \\ \hline
+      E2.6 & Ability to use Broadband & SP & D &  \\ \hline
+      E2.7  & Ability to include Soil Structure Interaction Effects & GC & M & 1.1 \\  \hline
+      E2.7.1  & 1D nonlinear site response with effective stress analysis & SP & M & 1.1  \\ \hline
+      E2.7.2  & Nonlinear site response with bidirectional loading & SP & M & 1.2 \\  \hline
+      E2.7.3  & Nonlinear site response with full stochastic characterization of soil layers & SP & M &  \\ \hline
+      E2.7.4 & Nonlinear site response, bidirectional different input motions  & SP & M &  \\  \hline
+      E2.7.5 & Ability to couple models from point of rupture through rock and soil into structure, which represents future of professional design practice & GC GC 2.T12 & M &  \\  \hline
+      E2.7.5.1 & Interface using DRM method  & SP  & M &  \\  \hline
+      E2.8 & Utilize PEER NGA www ground motion selection tool  & UF & D & 2.0 \\ \hline
+      E2.9 & Ability to select from synthetic ground motions & SP & M & 1.0  \\
+      E2.9.1 & per Vlachos, Papakonstantinou, Deodatis (2017) & SP & D & 1.1  \\ 
+      E2.9.2 & per Dabaghi, Der Kiureghian (2017) & UF & D & 2.0 \\  \hhline{=====}
+      
+      
+	E3 & \textbf{Building Model Generation} & GC & M & 1.0 \\ \hline
+	E3.1 & Ability to quickly create a simple nonlinear building model for simple methods of seismic evaluation & GC 2.T13 & D & 1.1 \\ \hline
+	E3.2 & Ability to use existing OpenSees model scripts & SP & M & 1.0 \\ \hline
+	E3.3  & Ability to define building and use Expert System to generate FE mesh & SP & &  \\ \hline
+	E3.3.1 & Expert system for Concrete Shear Walls & SP & M &  \\ \hline
+	E3.3.2 & Expert system for Moment Frames & SP & M &  \\ \hline
+	E3.3.3 & Expert system for  Braced Frames & SP & M &   \\ \hline
+	E3.4 & Ability to define building and use Machine Learning applications to generate FE & GC &  &  \\ \hline
+	E3.4.1 & Machine Learning for Concrete Shear Walls & SP & M &  \\ \hline
+	E3.4.2 & Machine Learning for Moment Frames & SP & M &  \\ \hline
+	E3.4.3 & Machine Learning for Braced Frames & SP & M &   \\ \hline
+	E3.5 & Ability to specify connection details for member ends & UF & M & 2.2 \\ \hline
+	E3.6 & Ability to define a user-defined moment-rotation response representing the connection details & UF & D & 2.2 \\  \hhline{=====}
+	
+	
+	E4 & \textbf{Perform Nonlinear Analysis} & GC & M & 1.0 \\ \hline
+	E4.1 & Ability to specify OpenSees as FEM engine and to specify different analysis options & SP & M & 1.0 \\ \hline
+	E4.2 & Ability to provide own OpenSees Analysis script to OpenSees engine. & SP & D & 1.0 \\ \hline
+	E4.3 & Ability to provide own Python script and use OpenSeesPy engine. & SP & O & 1.2 \\ \hline
+	E4.4 & Ability to use alternative FEM engine. & SP & M & 2.0 \\ \hhline{=====}
+
+\input{requirements/CommonUQ.tex}
+
+
+    EE & \textbf{Education} &  &  \\ \hline
+    EE1 & Ability to use educational provisions to gain interdisclipinary education so as to gain expertise in earth sciences and physics, engineering mechanics, geotechnical engineering, and structural engineering in order to be qualified to perform these simulations & GC 2.T12 & D & \\ \hline
+    EE2 & Documentation exists on tool usage & SP & M & 1.1  \\ \hline
+    EE3 & Video Exists demonstrating usage & SP & M & 1.1  \\ \hline
+    EE4 & Verification Examples Exist & SP & M & 1.1  \\ \hline
+    EM & \textbf{Misc.} &  &  \\ \hline
+    EM1 & Tool to allow user to load and save user inputs & SP & M & 1.0 \\ \hline
+    EM2 & \textbf{Engineering Demand Parameters} &  &  \\ \hline
+    EM3 & Ability to Process own Output Parameters & UF & M & 1.1  \\ \hline
+    EM4.2 & Add to Standard Earthquake a variable indicating analysis failure & UF & D &   \\ \hline
+    EM5 & Add to Standard Earthquake a variable indicating analysis failure & UF & D &   \\ \hline
+    EM6 & Installer which installs application and all needed software & UF & M &   \\ \hline
+      
+  \bottomrule 
+               
+\end{longtable}
+
+\noindent
+KEY:\\
+Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback \\
+Need: M=Mandatory, D=Desirable, P=Possible Future \\
+Version: Version number the basic requirement was met 
