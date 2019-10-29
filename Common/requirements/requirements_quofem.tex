@@ -19,37 +19,5 @@ user survey is available \insertsurveylink{here}. \\
 
 
 \newpage
-\begin{longtable}{| p{.05\textwidth} | p{.75\textwidth} | p{.08\textwidth} | p{.08\textwidth} |}
-    \toprule
-      \# & Description & Priority & Version \\ \hline
-      1 & \textbf{Forward Uncertainty Propagation} &  &  \\ 
-	1.1 & Input uncertainty characterization & M & 1.1 \\ \hline
-	1.2 & PDF Approximation & M & 1.1 \\ \hline
-	1.3 &  Descriptive output statistics & M & 1.1 \\ \hline
-	1.4 &  Basic Monte Carlo Sampling  & M & 1.1 \\ \hline	
-	1.5 &  Importance Sampling for rare events  & M & 2.0 \\ \hline	
-	1.6 &  Cross-Entropy sampling  & M &  \\ \hline
-	1.7 &  Forward Propagation, GPR Surrogate  & M & 2.0 \\ \hline
-	1.8 &  Forward Propagation, PCE Surrogate  & M & 2.0 \\ \hline
-	1.9 &  Multi-fidelity sampling  & M &  \\ \hline
-	1.10 &  Spatial/temporal stochastic models  & M &  \\ \hline
-	2 & \textbf{Sensitivity Analysis} &  &  \\ \hline
-	2.1 & Global sensitivity Sobol's indices & M & 2.0  \\ \hline
-	3 & \textbf{System Identification and Bayesian Inference} &  &  \\ \hline
-	3.1 & Parameter estimation & M &  \\ \hline
-	3.2 & Basic Bayesian parameter updating & M &  \\ \hline
-	3.3 & Advanced MCMC-based Bayesian updating & M & \\ \hline
-	3.4 & Advanced Surrogate-based Bayesian updating & M &  \\ \hline
-	3.5 & Model class selection & M &  \\ \hline
-	3.6 & Sequential Bayesian updating & M &  \\ \hline
-	4 & \textbf{Optimization under Uncertainty} &  &  \\ \hline
-	4.1 & Reliability-Based Design Optimization & M &  \\ \hline
-	4.2 & Single-objective optimization under uncertainty & M &  \\ \hline
-	4.3 & Multi-objective optimization under uncertainty & M &  \\ \hline
-	5 & \textbf{Reliability Analysis} &  &  \\ \hline
-	5.1 & First/Second Order Reliability Methods & M & 2.0 \\ \hline
-	5.2 & Surrogate-based reliability & M & 2.0 \\ \hline
-	\bottomrule
-\caption{Feature Requirements (M=Mandatory, D=Desirable, O=Optional, P=Possible Future)}             
-  \label{tab:featureRequirements}                 
-\end{longtable}
+\input{requirements/QUO_FEM_Requirements.tex}
+

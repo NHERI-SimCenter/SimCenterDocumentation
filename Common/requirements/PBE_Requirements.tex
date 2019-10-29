@@ -1,29 +1,43 @@
 \begin{longtable}{| p{.07\textwidth} | p{.65\textwidth} | p{.08\textwidth} | p{.08\textwidth} |  p{.08\textwidth} |}
-    \toprule
+
+\caption{Requirements for PBE}
+  \label{tab:featureRequirements}   
+    \\
+   \hline
+\rowcolor{lightgray}
       \# & Description & Source & Priority & Version \\ \hline
-      1 & \textbf{Ability to determine response of Building Subject to Earthquake hazard including formal treatment of randomness and uncertainty uncertainty} & GC & M  & 1.0  \\ \hline
-      1.1 & Simulations able to utilize HPC resources & GC & M & 1.0 \\ \hline
-      1.2 & Tool should incorporate data from www & GC & M & 1.0 \\ \hline
-      1.3 & Tool available for download from web & GC & M & 1.0 \\ \hline
-      2 & \textbf{Various Motion Selection Options} & SP & M & 1.0  \\ \hline
-      2.1 & Ability to select from Multiple input motions and view UQ due to all the discrete events & GC & M & 1.0  \\ \hline
-      2.2 & Ability to select from list of SimCenter motions & SP & M & 1.0 \\ \hline
-      2.3 & Ability to select from list of PEER motions & SP & D & 1.0 \\ \hline
-      2.4 & Ability to use OpenSHA and selection methods to generate motions & UF & D & 1.0 \\ \hline
-      2.5 & Ability to Utilize Own Application in Workflow & SP & M & 1.0 \\ \hline
-      2.6 & Ability to use Broadband & SP & D &  \\ \hline
-      2.7  & Ability to include Soil Structure Interaction Effects & GC & M & 1.1 \\  \hline
-      2.7.1  & 1D nonlinear site response with effective stress analysis & SP & M & 1.1  \\ \hline
-      2.7.2  & Nonlinear site response with bidirectional loading & SP & M & 1.2 \\  \hline
-      2.7.3  & Nonlinear site response with full stochastic characterization of soil layers & SP & M &  \\ \hline
-      2.7.4 & Nonlinear site response, bidirectional different input motions  & SP & M &  \\  \hline
-      2.7.5 & Building in nonlinear soil domain utilizing large scale rupture simulation & GC  & M &  \\  \hline
-      2.7.5.1 & Interface using DRM method  & SP  & M &  \\  \hline
-      2.8 & Utilize PEER NGA www ground motion selection tool  & UF & D & 2.0 \\ \hline
-      2.9 & Ability to select from synthetic ground motions & SP & M & 1.0  \\
-      2.9.1 & per Vlachos, Papakonstantinou, Deodatis (2017) & SP & D & 1.1  \\ 
-      2.9.2 & per Dabaghi, Der Kiureghian (2017) & UF & D & 2.0 \\ \hline
-  3 & \textbf{Building Model Generation} & GC & M & 1.0 \\ \hline
+      
+      1 & \textbf{Ability to determine damage and loss calculations for a building subjected to a natural hazard including formal treatment of randomness and uncertainty uncertainty} & GC & M  & 1.0  \\ \hline
+      1.1 & Ability to determine  damage and loss for multiple different hazards & GC & M &  \\ \hline
+      1.1.1 & Damage and Loss for ground shaking due to Earthquake & GC 2.T12 & M & 1.0 \\ \hline
+      1.1.2 & Damage and Loss due to Wind Loading & GC 6.S4.2 & M &  \\ \hline
+      1.1.3 & Damage and Loss due to water damage due to Tsunami or Coastal Inundation & GC & M &  \\ \hline
+      1.1 & Ability of Practicing Engineers to use multiple coupled resources (applications, databases, viz tools) in engineering practice & GC 5.IC4 & M 1.0 & \\ \hline
+1.2 & Ability to utilize resources beyond the desktop including HPC & GC 5.IC4 & M & 1.0 \\ \hline
+1.3 & Tool should incorporate data from WWW & GC & M & 1.0 \\ \hline
+1.4 & Tool available for download from web & GC 6.S4.2& M & 1.0 \\ \hline
+      2 & \textbf{Various Motion Selection Options for Hazard Event} & SP & M & 1.0  \\ \hline
+      2.1 & Various Earthquake Events & SP & M & 1.0  \\ \hline
+      2.1.1 & Ability to select from Multiple input motions and view UQ due to all the discrete events & GC & M & 1.0  \\ \hline
+      2.1.2 & Ability to select from list of SimCenter motions & SP & M & 1.0 \\ \hline
+      2.1.3 & Ability to select from list of PEER motions & SP & D & 1.0 \\ \hline
+      2.1.4 & Ability to use OpenSHA and selection methods to generate motions & UF & D & 1.0 \\ \hline
+      2.1.5 & Ability to Utilize Own Application in Workflow & SP & M & 1.0 \\ \hline
+      2.1.6 & Ability to use Broadband & SP & D &  \\ \hline
+      2.1.7  & Ability to include Soil Structure Interaction Effects & GC & M & 1.1 \\  \hline
+      2.1.7.1  & 1D nonlinear site response with effective stress analysis & SP & M & 1.1  \\ \hline
+      2.1.7.2  & Nonlinear site response with bidirectional loading & SP & M & 1.2 \\  \hline
+      2.1.7.3  & Nonlinear site response with full stochastic characterization of soil layers & SP & M &  \\ \hline
+      2.1.7.4 & Nonlinear site response, bidirectional different input motions  & SP & M &  \\  \hline
+      2.1.7.5 & Building in nonlinear soil domain utilizing large scale rupture simulation & GC  & M &  \\  \hline
+      2.1.7.5.1 & Interface using DRM method  & SP  & M &  \\  \hline
+      2.1.8 & Utilize PEER NGA www ground motion selection tool  & UF & D & 2.0 \\ \hline
+      2.1.9 & Ability to select from synthetic ground motions & SP & M & 1.0  \\
+      2.1.9.1 & per Vlachos, Papakonstantinou, Deodatis (2017) & SP & D & 1.1  \\ 
+      2.1.9.2 & per Dabaghi, Der Kiureghian (2017) & UF & D & 2.0 \\ \hline
+      2.2 & Various Wind Loading Options & SP & M &   \\ \hline
+      2.3 & Various Water Loading Options & SP & M &   \\ \hline
+  3 & \textbf{Building Model Generation} & GC & M &  \\ \hline
   3.1 & Ability to quickly create a simple nonlinear building model & GC & D & 1.1 \\ \hline
   3.2 & Ability to use existing OpenSees model scripts & SP & M & 1.0 \\ \hline
   3.3  & Ability to define building and use Expert System to generate FE mesh & SP & &  \\ \hline
@@ -118,13 +132,17 @@
    M.1 & Simplify run local and run remote by removing workdir locations. Move to preferences & UF & D & 1.2  \\ \hline
    M.2 & Add to EDP a variable indicating analysis failure & UF & D &   \\ \hline
    M.3 & Installer which installs application and all needed software & UF & M &   \\ \hline
- D & \textbf{Documentation} &  SP & M & 1.0 \\ \hline
- D.1 & Documentation exists on tool usage & SP & M & 1.1  \\ \hline
- D.2 & Video Exists demonstrating usage & SP & M & 1.1  \\ \hline
- D.3 & Verification Examples Exist & SP & M & 1.1  \\ \hline
-  \bottomrule 
-\caption{Requirements for PBE}
-  \label{tab:featureRequirements}                 
+ E & \textbf{Education} Ability to gain educational materials that will help and encourage PBE &  GC 2.T14  & M & 1.0 \\ \hline
+ E.1 & Documentation exists on tool usage & SP & M & 1.1  \\ \hline
+ E.2 & Video Exists demonstrating usage & SP & M & 1.1  \\ \hline
+ E.3 & Verification Examples Exist & SP & M & 1.1  \\ \hline
+  \bottomrule               
 \end{longtable}
 
-Feature Requirements (M=Mandatory, D=Desirable, O=Optional, P=Possible Future)
+
+\noindent
+KEY:\\
+Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback \\
+Need: M=Mandatory, D=Desirable, P=Possible Future \\
+Version: Version number the basic requirement was met 
+
