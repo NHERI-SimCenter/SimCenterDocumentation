@@ -264,9 +264,15 @@ TSWLatexianTemp*
 # standalone packages
 *.sta
 
+# compiled python files
+*.pyc
+
 # Makefiles
 Makefile
 latexmkrc
+
+# build folder of the docs
+docs/_build
 
 *~
 TInF/TInF-documentation\.pdf
