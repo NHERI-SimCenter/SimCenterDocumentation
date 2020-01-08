@@ -1,4 +1,8 @@
-EVT: Event
-============================
+.. only:: PBE_app
 
-Some text
+  .. include:: earthquakeEvents.rst
+
+.. only:: EEUQ_app
+
+  .. include:: earthquakeEvents.rst
+
