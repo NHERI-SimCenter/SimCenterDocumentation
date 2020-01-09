@@ -8,15 +8,13 @@ a list of events (i.e., typically time-dependent loads that represent natural di
 are available in the drop-down menu:
 
 .. toctree-filt::
-	:maxdepth: 2
+	:maxdepth: 3
 
 	stochasticGroundMotion	
+	peerNGA
 	multiplePEER
 	multipleExisting
 
-
-1. Multiple Existing SimCenter Events 
-2. Multiple PEER Events 
 3. Hazard Based Event 
 4. Stochastic Ground Motion 
 5. Site Response 
