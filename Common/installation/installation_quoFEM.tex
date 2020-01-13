@@ -126,27 +126,16 @@ variables set so that the UI can run these applications.
 
 \subsection{Install Python}
 
+SimCenter products require Python version 3.7 or above be installed on your machine as January 2020 marks the end of life for Python 2.7. 
+
 \begin{enumerate}
 \item Windows:
 
-If you have not yet installed Python, we recommend
-installing \href{http://www.anaconda.com/distribution/#download-section}{Anaconda}. Anaconda
-provides all the important scientific packages in a single convenient
-install. We recommend installing the 64-Bit version based on Python
-3.5 or newer.
+If you have not yet installed Python 3.7, we recommend installing from \href{https://www.python.org/downloads/windows}{Python.org}. We recommend installing using the \texttt{Windows x86-64 executable installer}.
 
-Note: If you already have a Python installation that is Python 2.7 or newer, you do not 
-have to install Anaconda to work with SimCenter
-applications as you may also use another Python distribution.
-If you do please make sure that you install the following packages: 
-\texttt{numpy}, \texttt{scipy}, and \texttt{pandas}.
+Allow the installer to change your system environment variables so that the install directory is added to your PATH. Once installed you need to You need to install the following python packages: \texttt{numpy}, \texttt{scipy}, and \texttt{pandas} are installed. To install these packages open a \href{https://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/}{terminal window as an Admin user} and in that window type the following instructions:
 
-\item Mac
-
-The Mac comes with Python pre-installed, which is currently the somewhat 
-dated version 2.7. You need to ensure that the following packages:
-\texttt{numpy}, \texttt{scipy}, and \texttt{pandas} are installed. To install 
-these packages, start a terminal window and type:
+To install these packages, start a terminal window and type:
 
 \begin{verbatim}
 pip install numpy
@@ -154,13 +143,28 @@ pip install scipy
 pip install pandas
 \end{verbatim}
 
+\item Mac
+
+The Mac comes with Python pre-installed, which is currently the somewhat 
+dated version 2.7. To install Python 3.7 we recommend installing from 
+\href{https://www.python.org/downloads/}{Python.org}. We recommend installing using the 
+\texttt {macOS 64-bit installer} given for latest stable release. The installer will place a python3 executable in your /usr/local/bin directory, whose location should be on your system PATH.
+
+You need to install the following python packages: \texttt{numpy}, \texttt{scipy}, and \texttt{pandas} are installed. 
+To install these packages, start a terminal window and type:
+
+\begin{verbatim}
+pip3 install numpy
+pip3 install scipy
+pip3 install pandas
+\end{verbatim}
+
 Notes: 
 \begin{enumerate}
 \item To start a terminal window you can use the spotlight app (magnifying top right of desktop). Start the spotlight app and type in terminal. The terminal application should appear as the top hit. Click on it to start it.
-\item If you have installed Python3 on your system, in the preceeding replace pip with pip3.
-Also in the tools preferences replace Python executable with Python3.
+\item In tool preferences make sure that python3 appears as the python executable. If you used older versions of SImCEnter tools this was the default.
 \end{enumerate}
-\end{enumerate}
+\end{enumerate} 
 
 \subsection{Test Python}
 %===============================================================================
@@ -191,6 +195,7 @@ publicly available software to also be installed on your
 machine. These software applications need to be installed and
 configured on your operating system. If you do not plan to run the
 workflows locally, you will not need these applications.
+
 
 \subsection{Install \texttt{OpenSees}}
 %===============================================================================
@@ -267,6 +272,26 @@ case an existing .bashrc file exists for your system. Adding these 3 lines will 
 \end{enumerate}
 
 
+\subsection{Install \texttt{FEAPpv}}
+%===============================================================================
+
+\href{http://projects.ce.berkeley.edu/feap/feappv/}{\texttt{FEAPpv}} is a general purpose finite element analysis program which is designed for research and educational use. The program is the companion to the books: \texttt{The Finite Element Method, 7th edition, Volumes 1 and 2 (but not Vol 3)}, authored by O.C. Zienkiewicz and R.L. Taylor and published by Elsevier, Oxford, 2013.  Pre-built executables are available for download from the main \href{http://projects.ce.berkeley.edu/feap/feappv/}{web page}.
+
+
+We recommend you put \texttt{FEAPpv} in
+the \texttt{C:/SimCenter/FEAPpv} folder on Windows and in
+a \texttt{/usr/local/FEAPpv} directory on the Mac (If you use finder
+on Mac to do navigation, use command-shift-G in Finder and specify
+/usr/local as the folder to go to. Create a new folder \texttt{FEAPpv}
+and copy the \texttt{FEAPpv} application to this folder).\\
+
+
+Now you need to add the \texttt{FEAPpv} folder to the
+system \texttt{PATH} environment variable to allow the SimCenter
+workflow applications to find the \texttt{FEAPpv} executable on your
+computer. The steps to do this are similar to those just described for installing OpenSees.
+
+
 \subsection{Install \texttt{Dakota}}
 %===============================================================================
 
@@ -313,14 +338,18 @@ installation directory.
 \end{itemize}
 \end{enumerate}
 
-\subsection{Install  Perl}
-%===============================================================================
+NOTE: Apple, in the latest release of their operating system, MacOS 10.16 Catalina, has changed the default working of Gatekeeper.
+Gatekeeper, first introduced in OS X Mountain Lion, is a Mac security feature that helps protect your Mac from Malware and other malicious software. Gatekeeper checks to make sure the application is safe to run by checking it against the list of apps that Apple has vetted and approved for the Apple Mac Store and/or approved by Apple even if not offered through the app store. In previous versions of MacOS, Gatekeeper had three security level options: App Store, App Store and Identified Developers, and Anywhere. Anywhere has been removed and this will cause problems with Dakota. As a consequence, it is necessary to follow the following when you update the MacOS or install Dakota for the first time on machine with an updated MacOS. From the terminal app, with the above .bash\_profile settings set, you need to type the following in the terminal window:
 
-Mac OS X has Perl pre-installed, but Windows users will have to
-install it to be able to use \texttt{Dakota}. We recommend you use Strawberry
-Perl; you can install it by downloading the executable from
-its \href{http://strawberryperl.com}{Strawberry Perl website} and
-running it.
+\begin{verbatim}
+sudo spctl --master-disable
+dakota
+sudo spctl --master-enable
+\end{verbatim}
+
+This will temporarily disable gatekeeper (basically setting Gatekeeper options to Anywhere), allow the Dakota application and it's .dylib files to be registered as safe, and then turn Gatekeeper options back to default.
+
+
 
 \subsection{Test the Install of the Local Applications}
 %===============================================================================
@@ -334,7 +363,6 @@ appropriately:
     \item On Mac, execute \texttt{cd /usr/Documents} to change the active directory to \texttt{/usr/Documents}. On Windows, execute \texttt{cd C:/} to change the active directory to \texttt{C:/}.
     \item Test if \texttt{OpenSees} works correctly by executing the \texttt{OpenSees} command. The command should start \texttt{OpenSees} (\Cref{fig:opensees_test}). Close \texttt{OpenSees} with the \texttt{exit} command.
     \item Test if \texttt{Dakota} works correctly by executing the \texttt{dakota} command. The command should start \texttt{Dakota} and you should see a message about a missing argument (\Cref{fig:dakota_test}).
-    \item Test if Perl works correctly by executing the \texttt{perl -v} command. The command should start Perl and return its version number (\Cref{fig:perl_test}).
     \item Test if the python package in \texttt{Dakota} works correctly by starting Python with the \texttt{python} command and then executing the \texttt{import dakota} command. This should import the dakota package. If you do not see errors, then the package is successfully imported (\Cref{fig:dakota_py_test}). Exit Python with the \texttt{exit()} command.
     \item If all the above tests ran without errors, your environment is set up appropriately.
 \end{itemize}
@@ -353,14 +381,6 @@ appropriately:
     {installation/figures/dakota_test.png} }
   \caption{Testing Dakota.}
   \label{fig:dakota_test}
-\end{figure}
-
-\begin{figure}[!htbp]
-  \centering {
-    \includegraphics[width=0.8\textwidth]
-    {installation/figures/perl_test.png} }
-  \caption{Testing Perl.}
-  \label{fig:perl_test}
 \end{figure}
 
 \begin{figure}[!htbp]

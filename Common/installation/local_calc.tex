@@ -3,7 +3,7 @@ functioning correctly, the \texttt{\getsoftwarename{}} Application
 can be tested. The simplest way to do this is by running an analysis
 using the default structural model with synthetic ground motions. By
 doing this, it is not necessary to enter any information on the
-structural model and only inputs for 
+structural model and only inputs for
 \softwareSwitch{WE-UQ}{
 the synthetic wind forces and uncertainty quantification
 }{}
@@ -15,7 +15,7 @@ the synthetic motions, uncertainty quantification, and loss assessment
 }{}
 are required. With this quick setup, the
 functionality of the \texttt{\getsoftwarename{}} UI and the associated backend
-workflow can be tested. The necessary steps to perform this
+workflow can be tested. The steps to perform this
 testing are provided below.
 
 A full description of how to use this software is provided
@@ -81,13 +81,8 @@ to \texttt{vs30}. The \texttt{Provide seed value} radio button should
 be left unselected. By specifying these inputs, both $M_{W}$ and $R_{rupt}$
 will have constant values in all realizations while $V_{S_{30}}$ will
 have different values based on the model parameters specified in the
-uncertainty quantification (\texttt{UQ}) tab. With these inputs specified, navigate to the \texttt{UQ} tab. Here the distributions and their relevant parameters will be specified for the random variables defined in the analysis\textemdash only $V_{S_{30}}$
-in this case. Since $V_{S_{30}}$ was identified as a random variable
-by inputting the parameter value as text, it is automatically added as
-a random variable, as shown in \Cref{fig:input_uq}. Set the
-distribution type to \texttt{normal} with a \texttt{Mean}
-and \texttt{Standard Dev} of 350 m/s and 25 m/s,
-respectively.
+uncertainty quantification (\texttt{UQ}) tab. With these inputs specified, navigate to the \texttt{UQ} tab. Once in the \texttt{UQ} tab, start with setting the number of samples (\# Samples under \emph{Sampling Method}) to 10. Next, the distributions and their relevant parameters will be specified for the random variables defined in the analysis\textemdash only $V_{S_{30}}$ in this case. Since $V_{S_{30}}$ was identified as a random variable
+by inputting the parameter value as text, it is automatically added as a random variable, as shown in \Cref{fig:input_uq}. Set the distribution type to \texttt{normal} with a \texttt{Mean} and \texttt{Standard Dev} of 350 m/s and 25 m/s, respectively.
 }
 
 \softwareSwitch{PBE}{
@@ -122,7 +117,7 @@ respectively.
 }{}
 
 \softwareSwitch{PBE}{
-The last step before running the analysis is to set up a damage and loss model. Navigate to the \texttt{DL} tab and select \texttt{HAZUS MH} as the loss assessment method to use. Set up the model according to \Cref{fig:input_dl}.
+The last step before running the analysis is to set up the models for damage and loss assessment. Navigate to the \texttt{DL} tab and select \texttt{HAZUS MH} as the loss assessment method to use. Set up the models according to \Cref{fig:input_dl}.
 \begin{figure}[!htbp]
   \centering {
     \includegraphics[width=0.95\textwidth]
@@ -132,12 +127,7 @@ The last step before running the analysis is to set up a damage and loss model. 
 \end{figure}
 }{}
 
-Now, click on the \texttt{RUN} button, which will bring up a pop-up
-menu that provides information on the application directory and
-the working directory. The application directory should already be
-automatically set to where \texttt{\getsoftwarename{}} is installed.
-If desired, the working directory can be changed. In order to start
-the analysis, click on the \texttt{Submit} button.
+Now, click on the \texttt{RUN} button, which will automatically start the calculations.
 
 \softwareSwitch{PBE}{
 \begin{figure}[!htbp]
@@ -177,7 +167,7 @@ analysis before automatically displaying the simulations results in
 the \texttt{RES} tab, as shown
 in \Cref{fig:show_results}. Remember, the results shown
 in \Cref{fig:show_results} most likely will not be the same as
-those from this local test since $V_{S_{30}}$ is a random variable and
+those from your local test since $V_{S_{30}}$ is a random variable and
 the values realized in the simulations will be different while still
 following the same distribution. In any case, if the simulations
 completed and the \texttt{RES} tab is showing simulation results, then

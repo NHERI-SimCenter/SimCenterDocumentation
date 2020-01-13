@@ -19,7 +19,7 @@ This panel is provided for users to quickly create simple shear models
 of a building. The panel, as shown in \Cref{fig:mdof} is divided
 into 3 frames:
 \begin{enumerate}
-\item The top left frame allows the user to specify the number of stories and properties that are constant for every floor and story in the building. The following properties are available: floor weight, story height, torsional stiffness, initial stiffness, yield strength, and hardening ratio for each direction in each story. Here, the one and two directions are orthogonal $x$ and $y$ axes in plan view.
+\item The top left frame allows the user to specify the number of stories and properties that are constant for every floor and story in the building. The following properties are available: floor weight, story height, torsional stiffness, initial stiffness, yield strength, and hardening ratio for each direction in each story. The user has the option of specifying values for eccentricty of mass in x and y directions, and eccentricities for the location of the response quantaties. Here, the one and two directions are orthogonal $x$ and $y$ axes in plan view.
 \item The lower left frame allows the user to override the structural parameters above for individual floors and stories.
 \item The frame on the right is a graphical widget showing the current building. When entering data into the lower left frame, the stories corresponding to the data being modified are highlighted in red.
 \end{enumerate}
@@ -48,15 +48,15 @@ for this option is shown in \Cref{fig:figure3}. Users need to provide three piec
   model. This script should build a model and perform any gravity
   analysis of the building that is required before the event is
   applied.
-\item Column Line of Nodes: A list of node numbers that define a column line of interest for which
+\item Response Nodes: A list of node numbers that define a column line of interest for which
   the responses will be determined. The column nodes should be in
   order from ground floor to roof. 
-  
   The EDP workflow application\softwareSwitch{PBE}{}{, described
   in \Cref{sec:edp},} uses this information to determine nodes at which
   displacement, acceleration, and story drifts are calculated.
 \item An entry for the dimension of the model (i.e., 2D or 3D). This
   information is used when \softwareSwitch{WE-UQ}{wind loads}{ground motions} are applied.
+\item entry for the number of degrees of freedom at each node in the model.
 \end{enumerate}
 
 \begin{figure}[!htbp]
@@ -66,6 +66,7 @@ for this option is shown in \Cref{fig:figure3}. Users need to provide three piec
   \caption{\texttt{OpenSees} Model}
   \label{fig:figure3}
 \end{figure}
+
 
 Random Variables: In \texttt{OpenSees} there is an option to set
 variables to have certain values using the \texttt{pset} command, e.g

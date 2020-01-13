@@ -1,8 +1,7 @@
-All SimCenter applications are available at
-the \href{https://simcenter.designsafe-ci.org/research-tools/overview/}{SimCenter
+All SimCenter applications are available at the \href{https://simcenter.designsafe-ci.org/research-tools/overview/}{SimCenter
 website} under \emph{Research Tools}. The following sections outline
 the steps necessary to download and install the \texttt{\getsoftwarename{}}
-application. The SimCenter applications do require that you install a
+application. The SimCenter applications require that you install a
 number of other applications that are needed to run the workflows on
 your local machine as well as at DesignSafe. \\
 
@@ -64,7 +63,7 @@ Unpackage the application from the downloaded
 file and place it in a location on your filesystem. On Windows, we
 recommend that you create a \texttt{C:/SimCenter/\getsoftwarename{}}
 directory and extract the contents of the \texttt{ZIP} archive
-there. It is also recommended to run the included installer for Visual C/C++ runtime library(vc\_redist.x64.exe). 
+there. It is also recommended to run the included installer for Visual C/C++ runtime library(vc\_redist.x64.exe).
 If you use a Mac we recommend you copy the application to either your
 home folder or your Desktop folder. You are free to place the
 applications anywhere you wish, you will need to make the
@@ -110,7 +109,7 @@ computations can be performed.\\
 \begin{enumerate}
 \item The SimCenter is not recognized as either a Windows or an Apple vendor. Our applications are not recognized by the operating system as being signed. Consequently, you may receive a warning message when you start the \texttt{\getsoftwarename{}} application for the first time.
 \item  On a Mac you will need to right click on the .dmg file to open it. The UI will not start correctly while in the DMG file, you need to open the .dmg file and then copy the \texttt{\getsoftwarename{}} application to your Documents or Desktop folder. You can then move the .dmg file to the trash or eject it after this has been done.
-\item  The \texttt{\getsoftwarename{}} application requires additional software outlined in next subsections to work properly. Even of the software starts correctly, it will not run correctly until this software, outlined in the next section, is installed correctly.
+\item  The \texttt{\getsoftwarename{}} application requires additional software outlined in next subsections to work properly. Even if the application starts correctly, it will not run the simulations until these software, outlined in the next section, are installed.
 \end{enumerate}
 
 
@@ -120,22 +119,24 @@ computations can be performed.\\
 
 The SimCenter workflow applications are managed by Python
 scripts. These are required to prepare the input data for running
-analyses either remotely on DesignSafe or locally. As a consequence the user must have Python
+analyses either remotely on DesignSafe or locally. Consequently, the user must have Python
 installed on their machine and have the appropriate environment
 variables set so that the UI can run these applications.
 
 \subsection{Install Python}
 
-SimCenter products require Python version 3.7 or above be installed on your machine as January 2020 marks the end of life for Python 2.7. 
+SimCEnter products require Python version 3.7.
+SimCenter products require Python version 3.7 or above be installed on your machine as January 2020 marks the end of life for Python 2.7. Our tools were tested with versions up to Python 3.7.5; we recommend using that version.
+
 
 \begin{enumerate}
 \item Windows:
 
-If you have not yet installed Python 3.7, we recommend installing from \href{https://www.python.org/downloads/windows}{Python.org}. We recommend installing using the \texttt{Windows x86-64 executable installer}.
+If you have not yet installed Python 3.7, we recommend installing from \href{https://www.python.org/downloads/windows}{Python.org}. We recommend installing using the \texttt{Windows x86-64 executable installer}. NOTE: At time of writing Python 3.8.0 release will fail to install scipy on Windows 10 and should thus not be installed.
 
-Allow the installer to change your system environment variables so that the install directory is added to your PATH. Once installed you need to You need to install the following python packages: \texttt{numpy}, \texttt{scipy}, and \texttt{pandas} are installed. To install these packages open a \href{https://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/}{terminal window as an Admin user} and in that window type the following instructions:
+Allow the installer to change your system environment variables so that the install directory is added to your PATH. 
 
-To install these packages, start a terminal window and type:
+Once Python is installed, you need to extend it by installing the following packages: \texttt{numpy}, \texttt{scipy}, and \texttt{pandas}. To install these packages open a \href{https://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/}{terminal window as an Admin user} and in that window type the following instructions:
 
 \begin{verbatim}
 pip install numpy
@@ -146,12 +147,11 @@ pip install pandas
 \item Mac
 
 The Mac comes with Python pre-installed, which is currently the somewhat 
-dated version 2.7. To install Python 3.7 we recommend installing from 
+dated version 2.7. We recommend installing Python 3.7 from 
 \href{https://www.python.org/downloads/}{Python.org}. We recommend installing using the 
-\texttt {macOS 64-bit installer} given for latest stable release. The installer will place a python3 executable in your /usr/local/bin directory, whose location should be on your system PATH.
+\texttt {macOS 64-bit installer}. The installer will place a python3 executable in your /usr/local/bin directory, whose location should be on your system PATH.
 
-You need to install the following python packages: \texttt{numpy}, \texttt{scipy}, and \texttt{pandas} are installed. 
-To install these packages, start a terminal window and type:
+Once Python is installed, you need to extend it by installing the following packages: \texttt{numpy}, \texttt{scipy}, and \texttt{pandas}. To install these packages, start a terminal window and type the following instructions:
 
 \begin{verbatim}
 pip3 install numpy
@@ -161,8 +161,8 @@ pip3 install pandas
 
 Notes: 
 \begin{enumerate}
-\item To start a terminal window you can use the spotlight app (magnifying top right of desktop). Start the spotlight app and type in terminal. The terminal application should appear as the top hit. Click on it to start it.
-\item In tool preferences make sure that python3 appears as the python executable. If you used older versions of SImCEnter tools this was the default.
+\item To start a terminal window you can use the spotlight app (magnifying glass at the top right corner of the desktop). Start the spotlight app and type in terminal. The terminal application should appear as the top hit. Click on it to start it.
+\item In the File/Preferences within the \texttt{\getsoftwarename{}} App make sure that python3 appears under External Applications / Python. If you used older versions of SimCenter tools this was the default.
 \end{enumerate}
 \end{enumerate}
 
@@ -286,7 +286,7 @@ case an existing .bashrc file exists for your system. Adding these 3 lines will 
 
 
 Following the instructions provided for installing \texttt{OpenSees}, you need to add \textbf{two} \texttt{Dakota} folders to the system \texttt{PATH} environment variable to allow the SimCenter workflow applications to find the \texttt{Dakota} tools on your computer. 
-the procedure described above for \texttt{OpenSees} to add the following
+The procedure described above for \texttt{OpenSees} to add the following
 folders to your \texttt{PATH}:
 
 \begin{enumerate}
@@ -316,6 +316,18 @@ installation directory.
     \item \texttt{export PYTHONPATH=/usr/local/Dakota/share/dakota/Python}
 \end{itemize}
 \end{enumerate}
+
+NOTE: Apple, in the latest release of their operating system, MacOS 10.16 Catalina, has changed the default working of Gatekeeper.
+Gatekeeper, first introduced in OS X Mountain Lion, is a Mac security feature that helps protect your Mac from Malware and other malicious software. Gatekeeper checks to make sure the application is safe to run by checking it against the list of apps that Apple has vetted and approved for the Apple Mac Store and/or approved by Apple even if not offered through the app store. In previous versions of MacOS, Gatekeeper had three security level options: App Store, App Store and Identified Developers, and Anywhere. Anywhere has been removed and this will cause problems with Dakota. As a consequence, it is necessary to follow the following when you update the MacOS or install Dakota for the first time on machine with an updated MacOS. From the terminal app, with the above .bash\_profile settings set, you need to type the following in the terminal window:
+
+\begin{verbatim}
+sudo spctl --master-disable
+dakota
+sudo spctl --master-enable
+\end{verbatim}
+
+This will temporarily disable gatekeeper (basically setting Gatekeeper options to Anywhere), allow the Dakota application and it's .dylib files to be registered as safe, and then turn Gatekeeper options back to default.
+
 
 \subsection{Install  Perl}
 %===============================================================================

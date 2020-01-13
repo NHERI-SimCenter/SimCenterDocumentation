@@ -1,11 +1,19 @@
 \documentclass{simcenterdocumentation}
-\usepackage[sorting=none, backend=biber]{biblatex}
-\usepackage{subfig}
+
+
+
+\usepackage[backend=biber]{biblatex}
+%\usepackage{subfig}
+\usepackage{subcaption}
 \usepackage{multirow}
-\usepackage{adjustbox} % to adjust table width
-\usepackage{graphicx} %Loading the package
-\usepackage{longtable}
+\usepackage{adjustbox}
 \usepackage{cleveref}
+\usepackage{longtable}
+
+\usepackage{hhline}
+\usepackage{color, colortbl}
+\definecolor{lightgray}{HTML}{E5E4E2}
+
 \graphicspath{{../Common/}{.}} %Setting the graphicspath
 \makeatletter % Search additional directories for inputs
 \def\input@path{{../Common/}{.}}
@@ -35,7 +43,7 @@
 \author{Frank McKenna, Adam Zsarn\'oczay, \\ Wael Elhaddad, Chaofeng Wang, and Michael Gardner}
 \institutions{NHERI SimCenter, UC Berkeley}
 \softwarename{PBE}
-\softwareversion{1.2}
+\softwareversion{2.0}
 \softwarepage{https://simcenter.designsafe-ci.org/research-tools/pbe-application/}
 
 %%% DON'T MESS WITH THESE SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -97,6 +105,8 @@
 \chapter{Requirements}
 \label{chap:requirements}
 \input{requirements/requirements.tex}
+
+ \input{requirements/PBE_Requirements.tex}
 
 \chapter{Troubleshooting}
 \label{chap:troubleshooting}

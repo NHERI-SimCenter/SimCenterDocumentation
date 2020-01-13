@@ -1,0 +1,93 @@
+\documentclass{simcenterdocumentation}
+
+
+\usepackage[backend=biber]{biblatex}
+%\usepackage{subfig}
+\usepackage{subcaption}
+\usepackage{multirow}
+\usepackage{adjustbox}
+\usepackage{cleveref}
+\usepackage{longtable}
+\usepackage{draftwatermark}
+
+\usepackage{hhline}
+\usepackage{color, colortbl}
+\definecolor{lightgray}{HTML}{E5E4E2}
+
+\graphicspath{{../Common/}{.}} %Setting the graphicspath
+\makeatletter % Search additional directories for inputs
+\def\input@path{{../Common/}{.}}
+%or: \def\input@path{{/path/to/folder/}{/path/to/other/folder/}}
+\makeatother
+
+%% Add unicode support for special characters
+%%\usepackage[utf8x]{inputenc}
+
+% To compile this file, run "latex/pdflatex codedoc", then "biber codedoc"b
+% (or "bibtex codedoc", if the output from latex asks for that instead),
+% and then "latex/pdflatex codedoc" (without the quotes in each case).
+
+% Double spacing, if you want it.  Do not use for the final copy. Can also specify
+% draft as a document class option. This will generate double spacing and placeholders
+% for title page and header images
+%% \def\dsp{\def\baselinestretch{2.0}\large\normalsize}
+%% \dsp
+
+\bibliography{../Common/references}
+
+\begin{document}
+% Declarations for Front Matter
+% Software title followed by optional second line
+\title{SimCenter Software Architecture}
+% Use superscripts to indicate author affiliations
+\author{Frank McKenna}
+\institutions{NHERI SimCenter, UC Berkeley}
+\softwarename{SA}
+\softwareversion{1.0}
+
+%%% DON'T MESS WITH THESE SETTINGS %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\hypersetup{pageanchor=false}
+\maketitle
+\acknowledgments
+
+\hypersetup{pageanchor=true}
+\begin{frontmatter}
+
+\pagestyle{plain}
+{
+  \renewcommand{\thispagestyle}[1]{}
+  \tableofcontents
+  \clearpage
+  \listoffigures
+  \clearpage
+  \listoftables
+}
+
+\end{frontmatter}
+\pagestyle{somewhatsimple}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Create separate tex files for each chapter and provide them as inputs
+
+\chapter{About}
+\label{chap:about}
+\input{about.tex}
+
+\chapter{Research Applications}
+\label{chap:about}
+\input{researchApplications.tex}
+
+\chapter{Data Gathering Applications}
+\label{chap:about}
+\input{dataGathering.tex}
+
+\chapter{Software Versioning}
+\label{chap:versioining}
+\input{versioning.tex}
+
+\pagestyle{plain}
+{
+  \renewcommand{\thispagestyle}[1]{}	
+  \printbibliography           
+}
+
+\end{document}
