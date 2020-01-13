@@ -1,0 +1,219 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% gloabal layout settings
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+% paragraph layout
+%
+% \parindent	0pt
+% \parskip	3pt plus2pt minus1pt
+%
+% border width of fbox
+%
+\fboxsep	10pt
+\fboxrule	1pt
+%
+% placement of floats
+%
+\def\topfraction{0.95}
+\def\bottomfraction{0.95}
+\def\textfraction{0.05}
+
+%%\setcounter{topnumber}{1}
+%%\setcounter{bottomnumber}{1}
+%
+% debug messages
+%
+%%\hfuzz 1pt
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% gloabal abbreviations
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%
+% where to find global definitions
+%
+\def\TeXDIR	{./TeX/}
+
+%
+% load glocal abbreviations file
+%
+% \usepackage{times,mathptm}
+% \usepackage{\TeXDIR PSshort}
+%\include{\TeXDIR kurz}
+
+%
+% layout style definitions
+%
+\def\DS{\displaystyle}
+\def\TS{\textstyle}
+\def\SS{\scriptstyle}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% definition of new environments
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% \newcounter{cremark}
+% \def\theremark{\arabic{cremark}}
+\newcounter{cremark}[section]
+\def\theremark{\thesection.\arabic{cremark}}
+
+\newcounter{ctable}
+\newenvironment{mybox}{%
+                         \localeqn
+			 \setcounter{ctable}{\value{table}}%
+			 \refstepcounter{ctable}%
+		         \def\theequation{\roman{equation}}%
+		         % \def\theequation{\arabic{ctable}-\roman{equation}}%
+			 \begin{minipage}[c]{0.95\hsize}%
+			}%
+                        {\par\end{minipage}%
+			 \globaleqn\medskip}  
+                        % {\hfill$\bullet$\par\medskip}  
+\newenvironment{rem}{%
+                         \refstepcounter{cremark}%
+                         %\localeqn
+		         %\def\theequation{\alph{equation}}%
+			 \par
+                         \penalty-1000
+                         \medskip
+                         \noindent
+                         {\textbf{Remark~\theremark:}}%
+                         % \penalty 10000
+			 \leavevmode
+			 \textsl\bgroup
+			}%
+                        {\egroup\par
+			 %\globaleqn
+			 \medskip}  
+                        % {\hfill$\bullet$\par\medskip}  
+\newcounter{saveequation}
+\def\localeqn{\setcounter{saveequation}{\value{equation}}%
+              \setcounter{equation}{0}%
+	      \let\savetheqn\theequation}
+\def\globaleqn{\setcounter{equation}{\value{saveequation}}%
+               \let\theequation\savetheeqn}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% local abbreviations
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\def\vectorform#1{\ensuremath{\left\{#1\right\}}}
+\def\matrixform#1{\ensuremath{\left[#1\right]}}
+
+\long\def\putinvector#1{\vectorform{\begin{array}{c}#1\end{array}}}
+\long\def\putinmatrix#1{\matrixform{\begin{array}{ccc}#1\end{array}}}
+
+\newcommand{\trace}{\mathop{\mathrm{tr}}}
+\newcommand{\sign}{\mathop{\mathrm{sign}}}
+\newcommand{\vol}{\mathop{\mathrm{vol}}}
+\newcommand{\dev}{\mathop{\mathrm{dev}}}
+\newcommand{\norm}[1]{\mathop{\left\Vert#1\right\Vert}}
+
+\def\mathBox#1{\fbox{$\displaystyle #1$}}
+
+\def\R{\mathbb{R}}
+\def\N{\mathbb{N}}
+
+%
+% number spaces
+%
+\def\R		{\mathbb{R}}
+\def\N		{\mathbb{N}}
+\def\Rplus	{\R^+}
+\def\Nplus	{\N^+}
+\def\Roplus	{\R_0^+}
+\def\Noplus	{\N_0^+}
+
+%
+% differential operations:
+%
+% ... total derivative
+\newcommand{\diff}[2]{\frac{d #1}{d #2}}
+%
+% ... second order total derivative
+\newcommand{\ddiff}[2]{\frac{d^2 #1}{d #2^2}}
+%
+% ... mixed second order total derivative
+\def\mddiff#1#2#3{\frac{d^2 #1}{d #2\,d #3}}
+%
+% ... partial derivative
+\newcommand{\pdiff}[2]{\frac{\partial #1}{\partial #2}}
+%
+% ... second order partial derivative
+\newcommand{\pddiff}[2]{\frac{\partial^2 #1}{\partial #2^2}}
+\newcommand{\ppdiff}[3]{\frac{\partial^2 #1}{\partial #2\otimes\partial #3}}
+%
+% ... mixed second order partial derivative
+\def\mppdiff#1#2#3{\frac{\partial^2 #1}{\partial #2\,\partial #3}}
+
+%
+% text in formulas
+%
+\def\AND	{\hbox{and}}
+\def\OR    {\hbox{or}}
+\def\WITH	{\hbox{with}}
+
+%
+% tensor operators
+%
+\def\tr		{\mathop{\mathrm{tr}}}
+\def\dev	{\mathop{\mathrm{dev}}}
+\def\DEV	{\mathop{\mathrm{DEV}}}
+\def\INV	{^{(-1)}}
+\def\inv	{^{-1}}
+\def\sqr	{^{2}}
+\def\qub	{^{3}}
+\def\Lie	{\mathcal{L}_v}
+
+%\newcommand{\vectr}[1]{\mathbf{#1}}
+\newcommand{\vectr}[1]{{\hbox{\boldmath$#1$}}}
+\newcommand{\tensor}[1]{{\hbox{\boldmath$#1$}}}
+
+\newcommand{\Div}{\mathop{\mathrm{Div}}}
+\newcommand{\Grad}{\mathop{\mathrm{Grad}}}
+\newcommand{\diver}{\mathop{\mathrm{div}}}
+\newcommand{\grad}{\mathop{\mathrm{grad}}}
+\newcommand{\deter}{\mathop{\mathrm{det}}}
+
+%
+% standard symbols
+%
+
+%
+% special tensors (4th-order)
+%
+\def\I		{\mathbb{I}}
+\def\IC		{\I_\vectr{C}}
+\def\ICinv	{\I_{\Cinv}}
+\def\Ib		{\I_\vectr{b}}
+\def\IMi	{\I_{\stackrel{1}{\vectr{M}}}}
+\def\IMii	{\I_{\stackrel{2}{\vectr{M}}}}
+\def\IMiii	{\I_{\stackrel{3}{\vectr{M}}}}
+\def\IMal	{\I_{\stackrel{\alpha}{\vectr{M}}}}
+\def\IMbe	{\I_{\stackrel{\beta}{\vectr{M}}}}
+\def\Imi	{\I_{\stackrel{1}{\vectr{m}}}}
+\def\Imii	{\I_{\stackrel{2}{\vectr{m}}}}
+\def\Imiii	{\I_{\stackrel{3}{\vectr{m}}}}
+\def\Imal	{\I_{\stackrel{\alpha}{\vectr{m}}}}
+\def\Imbe	{\I_{\stackrel{\beta}{\vectr{m}}}}
+
+\def\IDEV	{\I^{\textrm{dev}}}
+\def\Idev	{\left( \I-{\TS\frac{1}{3}}\,\Bone\otimes\Bone \right)}
+
+%
+% functions
+%
+\def\norm#1{\|#1\|}
+\def\inpd#1{{<}#1{>}}
+
+\newcommand{\citep}[1]{(\cite{#1})}
+
