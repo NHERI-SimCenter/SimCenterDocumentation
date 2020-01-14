@@ -15,10 +15,6 @@ are available in the drop-down menu:
 	multiplePEER
 	multipleExisting
 
-3. Hazard Based Event 
-4. Stochastic Ground Motion 
-5. Site Response 
-6. User Application 
 
 
 
