@@ -16,7 +16,7 @@ This panel is provided for users to quickly create simple shear models of a buil
 #. The frame on the right is a graphical widget showing the current building. When entering data into the lower left frame, the stories corresponding to the data being modified are highlighted in red.
 
 .. _fig-mdof:
-.. figure:: figures/mdof.png
+.. figure:: ./figures/mdof.png
 	:align: center
 	:figclass: align-center
 	MDOF or Shear Building Model
@@ -28,7 +28,7 @@ Random Variables: Random Variables can be created by the user if they enter a va
 
 This panel is for users who have an existing ``OpenSees`` model of a building that performs a gravity analysis and now they wish to subject that building model to one of the ``EVT`` options provided. The input panel for this option is shown in :numref:`fig-figure3`. Users need to provide three pieces of information:
 #. Main OpenSees Script: The main script that contains the building model. This script should build a model and perform any gravity analysis of the building that is required before the event is applied.
-#. Response Nodes: A list of node numbers that define a column line of interest for which the responses will be determined. The column nodes should be in order from ground floor to roof. The EDP workflow application\softwareSwitch{PBE}{}{, described in \Cref{sec:edp} `EDP: To be added`_,} uses this information to determine nodes at which displacement, acceleration, and story drifts are calculated.
+#. Response Nodes: A list of node numbers that define a column line of interest for which the responses will be determined. The column nodes should be in order from ground floor to roof. The EDP workflow application\softwareSwitch{PBE}{}{, described in `EDP: To be added`_,} uses this information to determine nodes at which displacement, acceleration, and story drifts are calculated.
 #. An entry for the dimension of the model (i.e., 2D or 3D). This information is used when \softwareSwitch{WE-UQ}{wind loads}{ground motions} are applied.
 #. Entry for the number of degrees of freedom at each node in the model.
 
