@@ -72,3 +72,4 @@ This is the large central area of the UI where the  user provides input for the 
 	:EEUQ:EDP
 	:WEUQ:EDP
 	RES
+	WindEvents
