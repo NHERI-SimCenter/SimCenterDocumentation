@@ -1,6 +1,7 @@
-**********************************
+*********************************
 SIM: Structural Information Model
-**********************************
+*********************************
+
 
 The user here defines the structural system of the building. The  structural system is the part of the building provided to resist the gravity loads and those loads arising from the natural hazard. There are a number of backend applications provided for this part of the workflow, each responsible for defining the structural analysis model. The user can select the application to use from the drop-down menu at the top of this panel. As the user switches between applications, the input panel changes to reflect the inputs each particular application requires. At present, there are two backend applications available.
 
@@ -24,12 +25,20 @@ This panel is provided for users to quickly create simple shear models of a buil
 	:align: center
 	:figclass: align-center
 
+
 	Multiple Degrees of Freedom (MDOF)
 
 Random Variables: Random Variables can be created by the user if they enter a valid string instead of a number in the entry fields for any entry except for the *Number of floors*. The variable name entered will appear as a Random Variable in the UQ panel; it is ther the user must specify the distribution associated with the Random Variable.
 
-``OpenSees``
-============
+  
+  MDOF or Shear Building Model
+
+
+.. note::  
+   ```Random Variables```: Random Variables can be created by the user if they enter a valid string instead of a number in the entry fields for any entry except for the *Number of floors*. The variable name entered will appear as a Random Variable in the UQ panel; it is ther the user must specify the distribution associated with the Random Variable.
+
+OpenSees
+========
 
 This panel is for users who have an existing ``OpenSees`` model of a building that performs a gravity analysis and now they wish to subject that building model to one of the ``EVT`` options provided. The input panel for this option is shown in :numref:`fig-figure3`. Users need to provide three pieces of information:
 
@@ -47,6 +56,10 @@ This panel is for users who have an existing ``OpenSees`` model of a building th
 	:align: center
 	:figclass: align-center
 
-	``OpenSees`` Model
+
 
 Random Variables: In ``OpenSees`` there is an option to set variables to have certain values using the ``pset`` command, e.g ``pset a 5.0`` will set the variable a to have a value 5 in the ``OpenSees`` script. In |full tool name|, any variable found in the main script to be set using the ``pset`` command will be assumed to be a Random Variable. As such, when a new main script is loaded all variables set with ``pset`` will appear as Random Variables in the UQ panel.
+
+.. note::
+   ```Random Variables```: In ``OpenSees`` there is an option to set variables to have certain values using the ``pset`` command, e.g ``pset a 5.0`` will set the variable a to have a value 5 in the ``OpenSees`` script. In ``\getsoftwarename{}``, any variable found in the main script to be set using the ``pset`` command will be assumed to be a Random Variable. As such, when a new main script is loaded all variables set with ``pset`` will appear as Random Variables in the UQ panel.
+
