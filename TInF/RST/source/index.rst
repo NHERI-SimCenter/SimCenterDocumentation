@@ -1,16 +1,15 @@
-.. MathDemo documentation master file, created by
-   sphinx-quickstart on Thu Jan  9 15:34:10 2020.
+.. TInF documentation master file, created by
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to MathDemo's documentation!
+Welcome to the SimCenter Turbulence Inflow Tool documentation!
 ====================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
-   theory/turbulent_inflow
+   TInF-documentation
 
 
 
