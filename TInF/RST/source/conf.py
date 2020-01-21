@@ -17,12 +17,12 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'MathDemo'
-copyright = '2020, Peter Mackenzie-Helnwein'
-author = 'Peter Mackenzie-Helnwein'
+project = 'TInF Tool'
+copyright = 'SimCenter, University of California at Berkeley'
+author = 'Jia-Wei Wan, Peter Mackenzie-Helnwein'
 
 # The full version, including alpha/beta/rc tags
-release = '0.1'
+release = '0.2'
 
 
 # -- General configuration ---------------------------------------------------
