@@ -1,6 +1,7 @@
-*********************************
+
+************
 How to Build
-*********************************
+************
 
 To build the tool, follow the below instructions:
 

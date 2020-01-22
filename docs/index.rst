@@ -19,8 +19,8 @@ This is Version |tool version| of the tool. Users are encouraged to comment on w
 
 .. toctree::
    :caption: User Manual
-   :maxdepth: 2
-   :numbered: 2
+   :maxdepth: 3
+   :numbered: 3
 
    common/user_manual/installation/installation
    common/user_manual/usage/usage

@@ -6,8 +6,8 @@
 
 # -- SimCenter App selection -------------------------------------------------
 
-#app_name = 'EE-UQ'
-app_name = 'PBE'
+app_name = 'EE-UQ'
+#app_name = 'PBE'
 
 # -- Path setup --------------------------------------------------------------
 
@@ -15,11 +15,11 @@ app_name = 'PBE'
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
+
 import os
 import sys
 sys.path.append(os.path.abspath('./sphinx_ext/'))
 # sys.path.insert(0, os.path.abspath('.'))
-
 
 # -- Project information -----------------------------------------------------
 
@@ -34,6 +34,21 @@ rst_prolog = """
 .. _EE-UQ app: https://simcenter.designsafe-ci.org/research-tools/ee-uq-application/
 .. |user survey link| replace:: `user survey`_
 .. _user survey: https://docs.google.com/forms/d/e/1FAIpQLSfh20kBxDmvmHgz9uFwhkospGLCeazZzL770A2GuYZ2KgBZBA/viewform?usp=sf_link
+.. |ResearchTools| replace:: `SimCenter Research Tools`_
+.. _SimCenter Research Tools: https://simcenter.designsafe-ci.org/research-tools/overview/
+.. |OpenSees| replace:: **OpenSees**
+.. |userSurveyLink| replace:: `user survey`_
+.. |Tcl| replace:: **Tcl**
+.. |OpenSeesLink| replace:: `OpenSees`_
+.. _OpenSees: https://opensees.berkeley.edu
+.. |OpenSeesDownload| replace:: `OpenSees Download`_
+.. _OpenSees Download: https://opensees.berkeley.edu/OpenSees/user/download.php
+.. |Dakota| replace:: **Dakota**
+.. |DakotaLink| replace:: `Dakota`_
+.. _Dakota: https://dakota.sandia.gov/
+.. |DakotaDownload| replace:: `Dakota Download`_
+.. _Dakota Download: https://dakota.sandia.gov/download.html
+
 """	
 
 # app-specific settings
@@ -52,6 +67,10 @@ if app_name == 'PBE':
 .. |short tool id| replace:: PBE
 .. |tool github link| replace:: `PBE Github page`_
 .. _PBE Github page: https://github.com/NHERI-SimCenter/PBE
+.. |app| replace:: PBE app
+.. |githubLink| replace:: `PBE Github page`_
+.. |appLink| replace:: `PBE Download`_
+.. _PBE Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE
 .. |tool version| replace:: 2.0
 """
 
@@ -62,7 +81,7 @@ elif app_name == 'EE-UQ':
 	copyright = '2019, The Regents of the University of California'
 	author = 'Frank McKenna'
 
-	tags.add('EE_UQ_app')
+	tags.add('EEUQ_app')
 	toc_filter_exclude = ['PBE',]
 
 	rst_prolog += """
@@ -72,6 +91,10 @@ elif app_name == 'EE-UQ':
 .. |tool github link| replace:: `EE-UQ Github page`_
 .. _EE-UQ Github page: https://github.com/NHERI-SimCenter/EE-UQ
 .. |tool version| replace:: 2.0
+.. |app| replace:: EE-UQ app
+.. |githubLink| replace:: `EE-UQ Github page`_
+.. |appLink| replace:: `EE-UQ Download`_
+.. _EE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/EE_UQ
 """	
 
 	html_logo = 'common/SimCenter_PBE_logo.png' #TODO: replace with EE-UQ logo!

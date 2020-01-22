@@ -1,5 +1,6 @@
+****************
 Technical Manual
-================
+****************
 
 The technical manual is provided in a `PDF file`_.
 

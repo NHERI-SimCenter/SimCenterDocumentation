@@ -6,3 +6,8 @@
 
   .. include:: earthquakeEvents.rst
 
+
+.. only:: WEUQ_app
+
+  .. include:: WimdEvents.rst
+
