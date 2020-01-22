@@ -1,6 +1,6 @@
-*********************************
+************
 Verification
-*********************************
+************
 
 This chapter collects carefully designed verification exercises that we use to test the functionality of the |full tool name| application. Verification of the structural response simulation part of the workflow are presented in the EE-UQ user manual.
 

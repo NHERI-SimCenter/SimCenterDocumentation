@@ -1,6 +1,5 @@
-*************************
 Stochastic Ground Motions
-*************************
+-------------------------
 
 This panel allows users to generate synthetic ground motions for a
 target seismic event. In order to do so, the stochastic ground motion
@@ -30,8 +29,6 @@ For the Dabaghi & Der Kiureghian model geometric directivity parameters, as show
 	:figclass: align-center
 
 	Dabaghi & Der Kiureghian (2018) model inputs
-
-
 
 
 Additionally, users can provide a seed for either model if they desire the same

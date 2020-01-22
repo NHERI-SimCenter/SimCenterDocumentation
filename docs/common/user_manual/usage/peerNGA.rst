@@ -1,6 +1,5 @@
-********
 PEER NGA
-********
+--------
 
 This event allows the user to perform ground motion records selection and scaling using `PEER NGA West 2 ground motions database <https://peer.berkeley.edu/research/nga-west-2>`_. The suite of records can be selected from the database to represent the uncertainty in the ground motion. As shown in :numref:`fig-nga-event` , the user must enter the following information for this event type:
 
@@ -25,12 +24,4 @@ Once the selection criteria has been entered, the user selects the  ``Select Rec
 
 .. note::
 
-   It is important to note that this event requires a PEER NGA West 2 account, users will be asked to provide their credentials (user name and password) to log in to the database. Users who do not have an account will be forwarded to the account sign up web page. 
-
-
-
-
-
-
-
-
+   It is important to note that this event requires a PEER NGA West 2 account, users will be asked to provide their credentials (user name and password) to log in to the database. Users who do not have an account will be forwarded to the account sign up web.

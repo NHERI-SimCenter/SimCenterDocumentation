@@ -1,31 +1,30 @@
-**************************
 DL: Damage and Loss Model
-**************************
+=========================
 
 The Damage and Loss panel provides users a convenient way to define the damage and loss model for the building. The dropdown list at the top of the panel allows users to choose between two loss-assessment methods: FEMA P58 :cite:`applied_technology_council_atc_fema_2012` and HAZUS MH :cite:`federal_emergency_management_agency_fema_hazus_2018-2`. The method chosen determines the information displayed in the rest of the panel. The two methods are discussed in the following sections.
 
 FEMA P58
-=========
+--------
 
 This option implements the loss assessment methodology described in the `FEMA P58`_ documents. The main panel is divided into four parts that can be accessed by clicking at the tabs at the top of the input panel.
 
 General Settings
------------------
+^^^^^^^^^^^^^^^^
 
 :numref:`fig-dl-p58-general` shows the first panel, which corresponds to general damage and loss settings. The panel allows the user to set the response, damage, and loss models for the assessment.
 
 .. _fig-dl-p58-general:
 
 .. figure:: figures/dl_p58_general.png
-	:align: center
-	:figclass: align-center
+   :align: center
+   :figclass: align-center
 
-	The General Damage and Loss Settings panel. (The settings shown in the Figure serve demonstration purposes and are not the suggested inputs.)
+	The General Damage and Loss Settings panel. 
 
+The General Damage and Loss Settings panel is divided into a number of areas:
 
 Response Model
-^^^^^^^^^^^^^^^^^
-
+""""""""""""""
 
 .. figure:: figures/dl_p58_general_response.png
     :align: right
@@ -67,7 +66,7 @@ Some text about the model
 
 
 Damage Model
-^^^^^^^^^^^^^^^^^
+""""""""""""
 
 
 .. figure:: figures/dl_p58_general_damage.png
@@ -101,7 +100,7 @@ Damage Model
 
 
 Loss Model
-^^^^^^^^^^^^^^^^^
+""""""""""
 
 
 .. figure:: figures/dl_p58_general_loss.png
@@ -137,7 +136,7 @@ Loss Model
 
 
 Building Components
---------------------
+^^^^^^^^^^^^^^^^^^^
 
 :numref:`fig-dl-p58-comp` shows the input panel where you can define the components of the building.
 
@@ -152,7 +151,7 @@ Building Components
  
 
 Component Ensemble
-^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""
 
 **Damage and Loss Data Folder**
 
@@ -181,7 +180,7 @@ Component Ensemble
 
 
 Component Details
-^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 
 This panel provides more information about the active component in the drop-down menu under Selected components and allows you to specify where and what quantities of those components are in the building. 
 
@@ -227,7 +226,7 @@ The example in :numref:`fig-dl-p58-comp-details` shows the assignment of Bucklin
 
 
 Collapse Modes
---------------------
+^^^^^^^^^^^^^^
 
 :numref:`fig-dl-p58-collmod` shows the input panel where you can specify the collapse modes of the building.
 
@@ -257,12 +256,13 @@ Collapse modes provide information for the estimation of injuries from building 
 
 
 Dependencies
---------------------
+^^^^^^^^^^^^
 
 
 .. _fig-dl-p58-deps:
 
 .. figure:: figures/dl_p58_deps.png
+
 	:align: right
 	:figwidth: 400px
 
@@ -334,12 +334,12 @@ The default FEMA P58 setting assumes that all variables are independent, except 
 
 
 HAZUS MH
-=========
+--------
 
 This option implements the loss assessment methodology described in the `HAZUS MH Technical Manual`_ document.
 
 General Settings
------------------
+^^^^^^^^^^^^^^^^
 
 :numref:`fig-dl-hazus-general` shows the input panel that allows the user to set the response, damage, and loss models for the assessment.
 
@@ -396,7 +396,7 @@ Some text about the model
 
 
 Damage Model
-^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^
 
 
 .. figure:: figures/dl_hazus_general_damage.png

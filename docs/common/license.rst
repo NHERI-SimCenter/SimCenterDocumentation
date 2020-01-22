@@ -1,8 +1,10 @@
 
 .. _lbl-license:
 
-Copyright and license
-================================
+*********************
+Copyright and License
+*********************
+
 The |full tool name| is copyright through the The Regents of the University of California.
 
 The software is distributed under the BSD 3-Clause License.
@@ -10,13 +12,15 @@ The software is distributed under the BSD 3-Clause License.
 The |full tool name| leverages several third-party software packages, which have separate licensing policies. 
 
 Copyright
-------------
+=========
+
 .. code-block:: none 
 
 	Copyright (c) 2018, The Regents of the University of California
 
 BSD 3-Caluse license
--------------------------
+====================
+
 .. code-block:: none 
 
 	Redistribution and use in source and binary forms, with or without

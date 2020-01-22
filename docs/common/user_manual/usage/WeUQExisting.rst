@@ -1,6 +1,7 @@
-***************************************
+
 Multiple Events for UQ Engine
-***************************************
+-----------------------------
+
 This panel is provided for the user to specify multiple existing SimCenter event files.  If more than one event is specified it is done to provide the UQ engine with a discrete set of events to choose from - it is not done with the intention of specifying that one event follows another.  The panel presented to the user is shown in :numref:`fig-SCEventPanel`.
 
 .. _fig-SCEventPanel:
