@@ -69,6 +69,7 @@ This area on the left side provides the user with a selection of buttons to choo
 This is the large central area of the UI where the  user provides input for the application chosen and where thay can view the results. For example, if the user had selected RV in the input panel  selection, it is in this panel that the user would provide details on the distributions associated with each random variable. In the following sections each of the panels that is presented to the user when the buttons in the input panel selection are reviewed:
 
 .. toctree-filt::
+   :maxdepth: 1
 
    UQ
    GI
@@ -77,6 +78,7 @@ This is the large central area of the UI where the  user provides input for the 
    :EEUQ:earthquakeEvents
    FEM
    :EEUQ:EDP
+   RV
    :PBE:DL
    :EEUQ:resEE
    :PBE:resPBE
