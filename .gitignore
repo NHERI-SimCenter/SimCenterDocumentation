@@ -288,5 +288,6 @@ TInF/validation/ExampleInput/.DS_Store
 TInF/validation/ExampleInput/building/0/.DS_Store
 TInF/validation/ExampleInput/building/constant/.DS_Store
 TInF/validation/ExampleInput/building/system/.DS_Store
-
+TInF/RST/build
 docs/web
+.DS_STORE

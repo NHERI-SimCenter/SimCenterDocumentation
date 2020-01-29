@@ -1,5 +1,6 @@
 
 .. _lbl-architecture:
 
+************
 Architecture
-=============
+************

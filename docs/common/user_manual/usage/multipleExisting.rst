@@ -1,6 +1,5 @@
-******************
 Multiple Existing 
-******************
+-----------------
 
 The panel, as shown in :numref:\fig-sc-event, is provided for the user to specify multiple existing SimCenter
 event files. A number of buttons at the top ``Add``, ``Remove``, and ``Load Directory`` allow the user to add and remove events.
@@ -21,7 +20,8 @@ and Rinaldi Events.
 The path to the event file can be entered manually in the line edit, or using the ``Choose`` button for convenience. Pushing the button brings up a typical file search screen. By default, a scale factor of 1.0 is assigned to the event.  The user can change this to another floating point value (DO NOT USE INTEGER), and they can define the scale factor as a random variable by entering a variable name, e.g. the *factorRinaldi* for the second event in :numref:`fig-sc-event`
 
 .. note::
-The name of the random variable must not start with a number, or contain any spaces or special characters, such as -, +, %, etc.
+
+   The name of the random variable must not start with a number, or contain any spaces or special characters, such as -, +, %, etc.
 
 The  ``Remove`` button is used to remove events. To remove an
 event, the user must first select events they wish to remove,
