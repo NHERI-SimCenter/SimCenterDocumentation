@@ -6,8 +6,8 @@
 
 # -- SimCenter App selection -------------------------------------------------
 
-#app_name = 'EE-UQ'
-app_name = 'PBE'
+app_name = 'EE-UQ'
+#app_name = 'PBE'
 
 # -- Path setup --------------------------------------------------------------
 
@@ -48,7 +48,9 @@ rst_prolog = """
 .. _Dakota: https://dakota.sandia.gov/
 .. |DakotaDownload| replace:: `Dakota Download`_
 .. _Dakota Download: https://dakota.sandia.gov/download.html
-
+.. |requirements| replace:: **REQUIREMENTS**
+.. |DesignSafe| replace:: `DesignSafe`_
+.. _DesignSafe: https://designsafe-ci.org
 """	
 
 # app-specific settings
@@ -71,7 +73,7 @@ if app_name == 'PBE':
 .. |app| replace:: PBE app
 .. |appName| replace:: PBE app
 .. |messageBoard| replace:: `Message Board`_
-.. _Message Board: http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
+.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
 .. |githubLink| replace:: `PBE Github page`_
 .. |appLink| replace:: `PBE Download`_
 .. _PBE Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE
@@ -105,7 +107,7 @@ elif app_name == 'EE-UQ':
 .. |appLink| replace:: `EE-UQ Download`_
 .. _EE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/EE_UQ
 .. |messageBoard| replace:: `Message Board`_
-.. _Message Board: http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
+.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
 .. |figUI| replace:: :numref:`figUI-EE`
 .. |figDownload| replace:: :numref:`figDownloadEE`
 .. |figGenericUI| replace:: :numref:`figGenericUI-EE`
@@ -145,9 +147,13 @@ html_theme_options = {
 	'style_nav_header_background': '#F2F2F2' #64B5F6 #607D8B
 }
 
+#	'style_nav_header_background': '#F2F2F2' #64B5F6 #607D8B
+
 html_css_files = [
 	'css/custom.css'
 ]
+
+#	'css/custom.css'#
 
 html_secnum_suffix = " "
 

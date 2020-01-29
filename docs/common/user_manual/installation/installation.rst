@@ -8,6 +8,7 @@ All SimCenter applications are available at the |ResearchTools| page. To install
 chapter walks you through the install process from downloading the application to testing that it has been installed correctly.
 
 .. toctree::
+   :maxdepth: 1
 
    downloadApp
    downloadOther
