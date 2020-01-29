@@ -28,6 +28,6 @@ In the inputs for the event, as shown in figure :numref:`fig-dedm-hrp` require t
 
 The actual loads applied to the building that are obtained using the pressure taps. They are scaled from the TPU datasets based on the height of the building provided in the general information. The scaling employed by Vortex-Winds does not take into account the width and depth provided in the General Information. The forces are determined based on widths and depths of the wind tunnel model scaled by the height in the General Information to the height of the model in the wind tunnel experiment.
 
-For details on ``DEDM HRP``, the user is recomended to read the following: Dae Kun Kwon, Seymour M.J.Spence, and Ahsan Kareem, ``A cyberbased Data-Enabled Design framework for high-rise buildings driven by synchronously measured surface pressures'', Advances in Engineering Software 2014, DOI:10.1016/j.advengsoft.2014.07.001
+For details on **DEDM HRP**, the user is recomended to read the following: Dae Kun Kwon, Seymour M.J.Spence, and Ahsan Kareem, ``A cyberbased Data-Enabled Design framework for high-rise buildings driven by synchronously measured surface pressures``, Advances in Engineering Software 2014, DOI:10.1016/j.advengsoft.2014.07.001
 
 For this event, the wind speed can be a random variable.

@@ -1,12 +1,12 @@
-.. _lbl-troubleshooting:
+.. _lblTroubleshooting:
 
 Troubleshooting
-================
+===============
 
-.. only:: html
+.. toctree::
 
-	.. figure:: figures/troubleshooting.gif
-		:align: center
-		:figclass: align-center
+   troubleshootingStartup
+   troubleshootingRunning
 
-		source: bookmarkedpage.blogspot.com
+If problems persists please visist the |messageBoard|.
+
