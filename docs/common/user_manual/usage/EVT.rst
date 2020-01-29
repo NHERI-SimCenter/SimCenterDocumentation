@@ -9,5 +9,5 @@
 
 .. only:: WEUQ_app
 
-  .. include:: WimdEvents.rst
+  .. include:: WindEvents.rst
 

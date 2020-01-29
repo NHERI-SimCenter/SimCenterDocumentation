@@ -6,8 +6,8 @@
 
 # -- SimCenter App selection -------------------------------------------------
 
-app_name = 'EE-UQ'
-#app_name = 'PBE'
+#app_name = 'EE-UQ'
+app_name = 'PBE'
 
 # -- Path setup --------------------------------------------------------------
 
@@ -60,6 +60,7 @@ if app_name == 'PBE':
 	author = 'Adam Zsarnóczay'
 
 	tags.add('PBE_app')
+	toc_filter_exclude = ['EEUQ','WEUQ']
 
 	rst_prolog += """\
 .. |full tool name| replace:: Performance Based Engineering Application
@@ -68,10 +69,17 @@ if app_name == 'PBE':
 .. |tool github link| replace:: `PBE Github page`_
 .. _PBE Github page: https://github.com/NHERI-SimCenter/PBE
 .. |app| replace:: PBE app
+.. |appName| replace:: PBE app
+.. |messageBoard| replace:: `Message Board`_
+.. _Message Board: http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
 .. |githubLink| replace:: `PBE Github page`_
 .. |appLink| replace:: `PBE Download`_
 .. _PBE Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE
 .. |tool version| replace:: 2.0
+.. |figDownload| replace:: :numref:`figDownloadPBE`
+.. |figUI| replace:: :numref:`figUI-PBE`
+.. |figGenericUI| replace:: :numref:`figGenericUI-PBE`
+.. |figMissingCRT| replace:: :numref:`figMissingCRT-PBE`
 """
 
 	html_logo = 'common/SimCenter_PBE_logo.png'
@@ -82,7 +90,7 @@ elif app_name == 'EE-UQ':
 	author = 'Frank McKenna'
 
 	tags.add('EEUQ_app')
-	toc_filter_exclude = ['PBE',]
+	toc_filter_exclude = ['PBE','WEUQ']
 
 	rst_prolog += """
 .. |full tool name| replace:: Earthquake Engineering Application with Uncertainty Quantification
@@ -92,9 +100,16 @@ elif app_name == 'EE-UQ':
 .. _EE-UQ Github page: https://github.com/NHERI-SimCenter/EE-UQ
 .. |tool version| replace:: 2.0
 .. |app| replace:: EE-UQ app
+.. |appName| replace:: EE-UQ app
 .. |githubLink| replace:: `EE-UQ Github page`_
 .. |appLink| replace:: `EE-UQ Download`_
 .. _EE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/EE_UQ
+.. |messageBoard| replace:: `Message Board`_
+.. _Message Board: http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
+.. |figUI| replace:: :numref:`figUI-EE`
+.. |figDownload| replace:: :numref:`figDownloadEE`
+.. |figGenericUI| replace:: :numref:`figGenericUI-EE`
+.. |figMissingCRT| replace:: :numref:`figMissingCRT-EE`
 """	
 
 	html_logo = 'common/SimCenter_PBE_logo.png' #TODO: replace with EE-UQ logo!

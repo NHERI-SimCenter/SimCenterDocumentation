@@ -4,13 +4,15 @@
 Usage
 *****
 
-Once the application is started the user is presented with the user interface (UI) shown in :numref:`fig-generic-ui`. It is in this UI that the user selects the applications to run, inputs the necessary
+Once the application is started the user is presented with the user interface (UI) shown in |figGenericUI|. It is in this UI that the user selects the applications to run, inputs the necessary
 parameters for each application, starts the workflow either locally or
 remotely, and finally views the simulation results. The UI contains several separate areas:
 
-.. _fig-generic-ui:
+
 
 .. only:: PBE_app
+
+   .. _figGenericUI-PBE:
 
    .. figure:: figures/pbePanel.png
 	:align: center
@@ -20,6 +22,8 @@ remotely, and finally views the simulation results. The UI contains several sepa
 
 .. only:: EEUQ_app
 
+   .. _figGenericUI-EE:
+
    .. figure:: figures/eePanel.png
 	       :align: center
 	       :figclass: align-center
@@ -27,6 +31,8 @@ remotely, and finally views the simulation results. The UI contains several sepa
 	       The User Interface
 
 .. only:: WEUQ_app
+
+   .. _figGenericUI-WE:
 
    .. figure:: figures/wePanel.png
 	:align: center
@@ -62,26 +68,19 @@ This area on the left side provides the user with a selection of buttons to choo
 
 This is the large central area of the UI where the  user provides input for the application chosen and where thay can view the results. For example, if the user had selected RV in the input panel  selection, it is in this panel that the user would provide details on the distributions associated with each random variable. In the following sections each of the panels that is presented to the user when the buttons in the input panel selection are reviewed:
 
-.. only:: PBE_app
+.. toctree-filt::
 
-   .. toctree-filt::
-	:maxdepth: 4
+   UQ
+   GI
+   SIM
+   :PBE:earthquakeEvents
+   :EEUQ:earthquakeEvents
+   FEM
+   :EEUQ:EDP
+   :PBE:DL
+   RES
 
-	GI
-	SIM
-	EVT
-	FEM
-	DL
-	RES
 
-.. only:: EEUQ_app
 
-   .. toctree-filt::
-	:maxdepth: 4
 
-	GI
-	SIM
-	EVT
-	FEM
-	EDP
-	RES
+

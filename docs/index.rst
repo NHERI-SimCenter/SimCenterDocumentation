@@ -1,4 +1,5 @@
 
+
 |full tool name|
 =====================================================================
 
@@ -19,15 +20,18 @@ This is Version |tool version| of the tool. Users are encouraged to comment on w
 
 .. toctree::
    :caption: User Manual
-   :maxdepth: 3
-   :numbered: 3
+   :maxdepth: 2
+   :numbered: 4
 
+   common/license
    common/user_manual/installation/installation
    common/user_manual/usage/usage
-   common/user_manual/requirements/requirements
    common/user_manual/troubleshooting/troubleshooting
    common/user_manual/examples/examples
-   common/license
+
+#   common/user_manual/requirements/requirements
+
+
 
 
 .. _lbl-technical-manual:
@@ -49,10 +53,12 @@ This is Version |tool version| of the tool. Users are encouraged to comment on w
 
    common/developer_manual/how_to_build/how_to_build
    common/developer_manual/architecture/architecture
-   common/developer_manual/API/API
    common/developer_manual/how_to_extend/how_to_extend
    common/developer_manual/verification/verification
    common/developer_manual/coding_style/coding_style
+
+#   common/developer_manual/API/API
+
 
 Developers
 ==========
@@ -67,11 +73,6 @@ Chaofeng Wang
 
 Michael Gardner
 
-License
-=======
-
-The |full tool name| is distributed under the BSD 3-Clause license, see :ref:`lbl-license` for details.
-
 Acknowledgement
 ===============
 
@@ -79,4 +80,4 @@ This material is based upon work supported by the National Science Foundation un
 
 Contact
 =======
-Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
+Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
