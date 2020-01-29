@@ -78,7 +78,8 @@ This is the large central area of the UI where the  user provides input for the 
    FEM
    :EEUQ:EDP
    :PBE:DL
-   RES
+   :EEUQ:resEE
+   :PBE:resPBE
 
 
 

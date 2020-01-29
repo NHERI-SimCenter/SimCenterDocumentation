@@ -1,3 +1,5 @@
+.. _lblGI:
+
 GI: General Information
 =======================
 
