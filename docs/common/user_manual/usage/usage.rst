@@ -76,11 +76,14 @@ This is the large central area of the UI where the  user provides input for the 
    SIM
    :PBE:earthquakeEvents
    :EEUQ:earthquakeEvents
+   :WEUQ:WindEvents
    FEM
    :EEUQ:EDP
+   :WEUQ:EDP
    RV
    :PBE:DL
    :EEUQ:resEE
+   :WEUQ:resEE
    :PBE:resPBE
 
 
