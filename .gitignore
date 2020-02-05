@@ -268,7 +268,7 @@ TSWLatexianTemp*
 *.pyc
 
 # Makefiles
-Makefile
+#Makefile
 latexmkrc
 
 # build folder of the docs
@@ -284,11 +284,10 @@ WE-UQ/simcenterfooter\.png
 WE-UQ/simcenterlogo\.pdf
 
 TInF/.DS_Store
-
 TInF/validation/ExampleInput/.DS_Store
-
 TInF/validation/ExampleInput/building/0/.DS_Store
-
 TInF/validation/ExampleInput/building/constant/.DS_Store
-
 TInF/validation/ExampleInput/building/system/.DS_Store
+TInF/RST/build
+docs/web
+.DS_STORE

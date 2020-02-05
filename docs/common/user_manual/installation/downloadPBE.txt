@@ -1,0 +1,7 @@
+.. _figDownloadApp:
+
+.. figure:: figures/pbeDownload.png
+   :align: center
+   :figclass: align-center
+
+      PBE Download Page
