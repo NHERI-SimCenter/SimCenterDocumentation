@@ -1,7 +1,7 @@
 Multiple Existing 
 -----------------
 
-The panel, as shown in :numref:\fig-sc-event, is provided for the user to specify multiple existing SimCenter
+The panel, as shown in :numref:`fig-sc-event`, is provided for the user to specify multiple existing SimCenter
 event files. A number of buttons at the top ``Add``, ``Remove``, and ``Load Directory`` allow the user to add and remove events.
 
 .. _fig-sc-event:

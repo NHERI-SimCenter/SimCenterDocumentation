@@ -4,8 +4,7 @@
 About
 *****
 
-This is an open-source research application. The source code at the |tool github link| provides 
-provides an application that can be used to predict the
+This is an open-source research application, which is available at |tool github link|, is released under a **BSD Clause 2** license. The |app| can be used to predict the
 response of a building subjected to earthquake events. The application
 is focused on quantifying the uncertainties in the predicted response,
 given the that the properties of the buildings and the earthquake
