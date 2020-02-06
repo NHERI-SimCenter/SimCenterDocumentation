@@ -1,6 +1,5 @@
-**********************************
 CFD Basic Template
-**********************************
+------------------
 
 This event facilitates generating a CFD model for wind flow around a building. A template is provided to the user to generate an OpenFOAM model based on a set of parameters for mesh generation and CFD simulation. The user needs to specify the domain size, mesh size, boundary conditions, simulation parameters and the method for extracting wind forces on the building as shown in :numref:`fig-cfd-template`.
 

@@ -1,6 +1,5 @@
-*************
 Multiple PEER
-*************
+-------------
 
 
 This panel as shown in :numref:`fig-peer-event` is provided for the user to utilize multiple existing 

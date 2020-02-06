@@ -1,6 +1,5 @@
-*********************************
-SIM: Structural Information Model
-*********************************
+SIM: Structural Model
+=====================
 
 
 The user here defines the structural system of the building. The  structural system is the part of the building provided to resist the gravity loads and those loads arising from the natural hazard. There are a number of backend applications provided for this part of the workflow, each responsible for defining the structural analysis model. The user can select the application to use from the drop-down menu at the top of this panel. As the user switches between applications, the input panel changes to reflect the inputs each particular application requires. At present, there are two backend applications available.
@@ -9,7 +8,7 @@ The user here defines the structural system of the building. The  structural sys
     :local:
 
 Multiple Degrees of Freedom (MDOF)
-==================================
+----------------------------------
 
 This panel is provided for users to quickly create simple shear models of a building. The panel, as shown in :numref:`fig-mdof` is divided into 3 frames:
 
@@ -38,7 +37,7 @@ Random Variables: Random Variables can be created by the user if they enter a va
    ```Random Variables```: Random Variables can be created by the user if they enter a valid string instead of a number in the entry fields for any entry except for the *Number of floors*. The variable name entered will appear as a Random Variable in the UQ panel; it is ther the user must specify the distribution associated with the Random Variable.
 
 OpenSees
-========
+--------
 
 This panel is for users who have an existing ``OpenSees`` model of a building that performs a gravity analysis and now they wish to subject that building model to one of the ``EVT`` options provided. The input panel for this option is shown in :numref:`fig-figure3`. Users need to provide three pieces of information:
 

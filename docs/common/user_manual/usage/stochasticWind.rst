@@ -1,6 +1,5 @@
-**********************************
 Stochastic Wind
-**********************************
+---------------
 
 This option allows users to generate synthetic wind velocity time histories for target wind loading. In order to do so, the stochastic wind model is selected from the drop-down menu, as shown in :numref:`fig-stochasticwindloading`.
 
@@ -19,6 +18,5 @@ inputs that are identified as random variables needs to be provided in the ``UQ`
 	Stochastic Wind Loading Event
 
 References
-=============
 
 .. [wittig1975simulation] Wittig, L. E. and Sinha, A. K., "Simulation of multicorrelated random processes using the FFT algorithm," The Journal of the Acoustical Society of America, vol. 58 (3), pp. 630-634 (1975)
