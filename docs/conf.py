@@ -8,6 +8,7 @@
 
 #app_name = 'EE-UQ'
 #app_name = 'PBE'
+#app_name = 'TInF'
 app_name = 'WE-UQ'
 
 print('app_name = ' + app_name)
@@ -31,6 +32,10 @@ sys.path.append(os.path.abspath('./sphinx_ext/'))
 
 numfig = True
 numfig_secnum_depth = 2
+
+math_number_all = True
+math_eqref_format = '({number})'
+math_numfig = True
 
 rst_prolog = """
 .. |EE-UQ short name| replace:: EE-UQ app
@@ -68,7 +73,7 @@ if app_name == 'PBE':
 	author = 'Adam Zsarnóczay'
 
 	tags.add('PBE_app')
-	toc_filter_exclude = ['EEUQ','WEUQ']
+	toc_filter_exclude = ['EEUQ','WEUQ','TInF']
 
 	rst_prolog += """\
 .. |full tool name| replace:: Performance Based Engineering Application
@@ -98,7 +103,7 @@ elif app_name == 'EE-UQ':
 	author = 'Frank McKenna'
 
 	tags.add('EEUQ_app')
-	toc_filter_exclude = ['PBE','WEUQ']
+	toc_filter_exclude = ['PBE','WEUQ','TInF']
 
 	rst_prolog += """
 .. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application
@@ -128,7 +133,7 @@ elif app_name == 'WE-UQ':
 	author = 'Frank McKenna'
 
 	tags.add('WEUQ_app')
-	toc_filter_exclude = ['PBE','EEUQ']
+	toc_filter_exclude = ['PBE','EEUQ','TInF']
 
 	rst_prolog += """
 .. |full tool name| replace:: Wind Engineering Application with Uncertainty Quantification
@@ -151,6 +156,26 @@ elif app_name == 'WE-UQ':
 """	
 
 	html_logo = 'common/SimCenter_PBE_logo.png' #TODO: replace with EE-UQ logo!
+
+elif app_name == 'TInF':
+
+	project = 'Turbulence Inflow Tool'
+	copyright = '2019, The Regents of the University of California'
+	author = 'Jaiwan Wan & Peter Mackenzie-Helnwein'
+
+	tags.add('TInF_app')
+	toc_filter_exclude = ['PBE','EEUQ','WEUQ']
+
+	rst_prolog += """
+.. |full tool name| replace:: Turbulence Inflow Tool
+.. |short tool name| replace:: TInF app
+.. |short tool id| replace:: TInF
+.. |tool github link| replace:: `TInF Github page`_
+.. _EE-UQ Github page: https://github.com/NHERI-SimCenter/TurbulenceInflowTool
+.. |tool version| replace:: 1.0.2
+"""	
+
+	html_logo = 'common/SimCenter_TInF_logo.png'
 
 # -- General configuration ---------------------------------------------------
 
