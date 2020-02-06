@@ -4,7 +4,7 @@ Download the Application
 ========================
 
 
-To download the |app| application navigate to |appLink| page. As shown in |figDownload|, this will bring you to another page which contains a list of downloadable files and directories. There are at least four files available for download from this page: 
+To download the |app| application navigate to |appLink| page. As shown in |figDownload|, from the application page you must click on the link ``Download app and User Manual`` which will bring you to another page. This page contains a list of downloadable files and directories. There are at least four files available for download from this page: 
 
 1. The PDF file is the User Manual that you are reading now.
 2. The MOV file is an video that provides an introduction to the usage of the application.
@@ -52,11 +52,7 @@ To download the |app| application click on the link for the appropriate file for
 
    2. If you use a **Mac** we recommend you copy the application to either your **~/Applications** folder or your **~/Desktop** folder. 
 
-   3. You are free to place the applications anywhere you wish, you will need to make the appropriate adjustments with the following instructions if you do so.
-
-
-Now test that the application starts. To do this navigate to the location where you placed the application and open it. You should see the user interface (UI) shown in |figUI| after starting the application. Now ``Quit`` the application. Additional installtion steps are required before 
-computations can be performed.
+Now test that the application starts. To do this navigate to the location where you placed the application and open it. You should see the user interface (UI) shown in |figUI| after starting the application. Now ``Quit`` the application. Additional installtion steps, outlined in :numref:`lblDownloadOther`, are required before computations can be performed.
 
 .. only:: PBE_app
 
@@ -94,5 +90,5 @@ computations can be performed.
 
    On a Mac you will need to right click on the .dmg file to open it. The UI will not start correctly while in the DMG file, you need to open the .dmg file and then copy the |short tool name| application to your Documents or Desktop folder. You can then move the .dmg file to the trash or eject it after this has been done.
 
-The |short tool name| application requires additional software outlined in next subsections to work properly. Even if the application starts correctly, it will not run the simulations until these software, outlined in the next section, are installed.
+The |short tool name| application requires additional software outlined in next subsections to work properly. Even if the application starts correctly, it will not run the simulations until these other software packages, outlined in the next section, are installed.
 

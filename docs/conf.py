@@ -6,8 +6,12 @@
 
 # -- SimCenter App selection -------------------------------------------------
 
-app_name = 'EE-UQ'
+#app_name = 'EE-UQ'
 #app_name = 'PBE'
+app_name = 'WE-UQ'
+
+print('app_name = ' + app_name)
+
 
 # -- Path setup --------------------------------------------------------------
 
@@ -51,6 +55,8 @@ rst_prolog = """
 .. |requirements| replace:: **REQUIREMENTS**
 .. |DesignSafe| replace:: `DesignSafe`_
 .. _DesignSafe: https://designsafe-ci.org
+.. |smelt| replace:: `smelt`_
+.. _smelt: https://github.com/NHERI-SimCenter/smelt
 """	
 
 # app-specific settings
@@ -87,7 +93,7 @@ if app_name == 'PBE':
 	html_logo = 'common/SimCenter_PBE_logo.png'
 
 elif app_name == 'EE-UQ':
-	project = 'Earthquake Engineering Application with Uncertainty Quantification'
+	project = 'Earthquake Engineering with Uncertainty Quantification'
 	copyright = '2019, The Regents of the University of California'
 	author = 'Frank McKenna'
 
@@ -95,7 +101,7 @@ elif app_name == 'EE-UQ':
 	toc_filter_exclude = ['PBE','WEUQ']
 
 	rst_prolog += """
-.. |full tool name| replace:: Earthquake Engineering Application with Uncertainty Quantification
+.. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application
 .. |short tool name| replace:: EE-UQ app
 .. |short tool id| replace:: EE-UQ
 .. |tool github link| replace:: `EE-UQ Github page`_
@@ -114,6 +120,36 @@ elif app_name == 'EE-UQ':
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-EE`
 """	
 
+	html_logo = 'common/SimCenter_PBE_logo.png'
+
+elif app_name == 'WE-UQ':
+	project = 'Wind Engineering with Uncertainty Quantification'
+	copyright = '2019, The Regents of the University of California'
+	author = 'Frank McKenna'
+
+	tags.add('WEUQ_app')
+	toc_filter_exclude = ['PBE','EEUQ']
+
+	rst_prolog += """
+.. |full tool name| replace:: Wind Engineering Application with Uncertainty Quantification
+.. |short tool name| replace:: WE-UQ app
+.. |short tool id| replace:: WE-UQ
+.. |tool github link| replace:: `WE-UQ Github page`_
+.. _WE-UQ Github page: https://github.com/NHERI-SimCenter/WE-UQ
+.. |tool version| replace:: 2.0
+.. |app| replace:: WE-UQ app
+.. |appName| replace:: WE-UQ app
+.. |githubLink| replace:: `WE-UQ Github page`_
+.. |appLink| replace:: `WE-UQ Download`_
+.. _WE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ
+.. |messageBoard| replace:: `Message Board`_
+.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
+.. |figUI| replace:: :numref:`figUI-WE`
+.. |figDownload| replace:: :numref:`figDownloadWE`
+.. |figGenericUI| replace:: :numref:`figGenericUI-WE`
+.. |figMissingCRT| replace:: :numref:`figMissingCRT-WE`
+"""	
+
 	html_logo = 'common/SimCenter_PBE_logo.png' #TODO: replace with EE-UQ logo!
 
 # -- General configuration ---------------------------------------------------
@@ -121,6 +157,7 @@ elif app_name == 'EE-UQ':
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
+
 extensions = [
 	'sphinxcontrib.bibtex',
 	'toctree_filter'
@@ -144,9 +181,12 @@ html_theme = 'sphinx_rtd_theme'
 html_theme_options = {
 	'logo_only': True,
 	'prev_next_buttons_location': None,
-	'style_nav_header_background': '#F2F2F2' #64B5F6 #607D8B
+	'style_nav_header_background': '#F2F2F2' 
 }
 
+
+
+#
 #	'style_nav_header_background': '#F2F2F2' #64B5F6 #607D8B
 
 html_css_files = [
