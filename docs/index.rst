@@ -70,15 +70,11 @@ This document covers the features and capabilities of Version |tool version|  of
 Developers
 ==========
 
-Adam Zsarnóczay 
-
-Frank McKenna
-
-Wael Elhaddad
-
-Chaofeng Wang
-
-Michael Gardner
+| Frank McKenna
+| Adam Zsarnóczay 
+| Wael Elhaddad
+| Chaofeng Wang
+| Michael Gardner
 
 Acknowledgement
 ===============
