@@ -1,8 +1,8 @@
 .. _lbl-usage:
 
-*****
-Usage
-*****
+**********
+User Guide
+**********
 
 Once the application is started the user is presented with the user interface (UI) shown in |figGenericUI|. It is in this UI that the user selects the applications to run, inputs the necessary
 parameters for each application, starts the workflow either locally or

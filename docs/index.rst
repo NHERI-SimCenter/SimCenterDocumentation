@@ -29,17 +29,14 @@ This document covers the features and capabilities of Version |tool version|  of
    :EEUQ:common/aboutEE
    :PBE:common/aboutPBE
    :PBE:common/aboutWE
-   common/license
    common/user_manual/installation/installation
    common/user_manual/usage/usage
    common/user_manual/troubleshooting/troubleshooting
    common/user_manual/examples/examples
    common/bugs
+   common/license
 
 #   common/user_manual/requirements/requirements
-
-
-
 
 .. _lbl-technical-manual:
 
