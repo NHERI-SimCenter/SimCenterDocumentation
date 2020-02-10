@@ -9,7 +9,7 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 
    .. math::
 
-      f(x) = \frac{1}{\sqrt{2 \pi} \sigma} e^{-{\frac{1}{2} \left( \frac{x - \mu}{\sigma} \right)^2}}
+      f(x) = \frac{1}{\sqrt{2 \pi} \sigma} exp \left( -{\frac{1}{2} \left( \frac{x - \mu}{\sigma} \right)^2} \right)
 
 2. `Lognormal <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-lognormal_uncertain.html>`_
 
@@ -18,7 +18,7 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 
    .. math::
 
-      f(x) = \frac{1}{\sqrt{2 \pi} \zeta x} e^{-{\frac{1}{2} \left( \frac{ln x - \lambda}{\zeta} \right)^2}}
+      f(x) = \frac{1}{\sqrt{2 \pi} \zeta x} exp \left( -{\frac{1}{2} \left( \frac{ln x - \lambda}{\zeta} \right)^2} \right)
 
 
   where :math:`\zeta^2 = ln \left( \frac{\sigma^2}{\mu^2} + 1 \right)` and :math:`\lambda = ln(\mu) - \frac{\zeta^2}{2}`
@@ -54,9 +54,9 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 
    .. math::
 
-      f(x) = \frac{k}{\lambda}\left(\frac{x}{\lambda}\right)^{k-1}e^{-(x/\lambda)^{k}} 
+      f(x) = \frac{k}{\lambda}\left(\frac{x}{\lambda}\right)^{k-1} exp \left( -(x/\lambda)^{k} \right)
 
-   where :math:`k>0` and :math:`\lambda>0` and :math:`x>0`. For :math:`x<=0`, :math:`f(x) = 0`.
+   where :math:`k,\lambda > 0` and :math:`x >= 0`. For :math:`x<0`, :math:`f(x) = 0`.
 
 
 6. `Gumbel <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-gumbel_uncertain.html>`_

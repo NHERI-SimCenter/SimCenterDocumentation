@@ -6,10 +6,11 @@
 
 # -- SimCenter App selection -------------------------------------------------
 
-#app_name = 'EE-UQ'
+app_name = 'EE-UQ'
 #app_name = 'PBE'
+#app_name = 'WE-UQ'
 #app_name = 'TInF'
-app_name = 'WE-UQ'
+#app_name = 'WE-UQ'
 
 print('app_name = ' + app_name)
 
@@ -95,7 +96,15 @@ if app_name == 'PBE':
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-PBE`
 """
 
-	html_logo = 'common/SimCenter_PBE_logo.png'
+	# html_logo = 'common/figures/SimCenter_PBE_logo.png'
+	html_logo = 'common/figures/PBE-Logo-grey2.png' 
+
+	html_theme_options = {
+		'analytics_id': 'UA-158130480-3',
+		'logo_only': True,
+		'prev_next_buttons_location': None,
+		'style_nav_header_background': '#F2F2F2'
+	}
 
 elif app_name == 'EE-UQ':
 	project = 'Earthquake Engineering with Uncertainty Quantification'
@@ -125,7 +134,14 @@ elif app_name == 'EE-UQ':
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-EE`
 """	
 
-	html_logo = 'common/SimCenter_PBE_logo.png'
+	html_logo = 'common/figures/EE-UQ-Logo-grey2.png' 
+
+	html_theme_options = {
+		'analytics_id': 'UA-158130480-1',
+		'logo_only': True,
+		'prev_next_buttons_location': None,
+		'style_nav_header_background': '#F2F2F2'
+	}
 
 elif app_name == 'WE-UQ':
 	project = 'Wind Engineering with Uncertainty Quantification'
@@ -155,7 +171,16 @@ elif app_name == 'WE-UQ':
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-WE`
 """	
 
-	html_logo = 'common/SimCenter_PBE_logo.png' #TODO: replace with EE-UQ logo!
+	html_logo = 'common/figures/WE-UQ-Logo-grey2.png' #TODO: replace with EE-UQ logo!
+
+
+	html_theme_options = {
+		'analytics_id': 'UA-158130480-2',
+		'logo_only': True,
+		'prev_next_buttons_location': None,
+		'style_nav_header_background': '#F2F2F2'
+	}
+
 
 elif app_name == 'TInF':
 
@@ -203,14 +228,11 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 #
 html_theme = 'sphinx_rtd_theme'
 
-html_theme_options = {
-	'logo_only': True,
-	'prev_next_buttons_location': None,
-	'style_nav_header_background': '#F2F2F2' 
-}
+#html_theme_options = {'body_max_width': '70%'}
 
-
-
+#	'style_nav_header_background': '#F2F2F2' 
+#	'style_nav_header_background': '#FFFFFF' 
+#	'style_nav_header_background': '#d5d5d5' 
 #
 #	'style_nav_header_background': '#F2F2F2' #64B5F6 #607D8B
 
