@@ -6,9 +6,9 @@
 
 # -- SimCenter App selection -------------------------------------------------
 
-app_name = 'EE-UQ'
+#app_name = 'EE-UQ'
 #app_name = 'PBE'
-#app_name = 'WE-UQ'
+app_name = 'WE-UQ'
 #app_name = 'TInF'
 #app_name = 'WE-UQ'
 

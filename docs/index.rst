@@ -26,9 +26,10 @@ This document covers the features and capabilities of Version |tool version|  of
    :maxdepth: 1
    :numbered: 4
 
+   common/user_manual/ack
    :EEUQ:common/aboutEE
    :PBE:common/aboutPBE
-   :PBE:common/aboutWE
+   :WE:common/aboutWE
    common/user_manual/installation/installation
    common/user_manual/usage/usage
    common/user_manual/troubleshooting/troubleshooting
@@ -72,11 +73,6 @@ Developers
 | Wael Elhaddad
 | Chaofeng Wang
 | Michael Gardner
-
-Acknowledgement
-===============
-
-This material is based upon work supported by the National Science Foundation under Grant No. 1612843. Any opinions, findings, and conclusions or recommendations expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
 
 Contact
 =======
