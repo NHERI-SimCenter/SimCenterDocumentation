@@ -24,6 +24,18 @@ author = 'Jia-Wei Wan, Peter Mackenzie-Helnwein'
 # The full version, including alpha/beta/rc tags
 release = '0.2'
 
+# simcenter additions
+rst_prolog = """
+.. |appName| replace:: Turbulence Inflow Tool
+.. |app| replace:: Turbulence Inflow Tool
+.. |githubLink| replace:: `Turbulance Inflow Tool Github page`_
+.. _Turbulance Inflow Tool Github page: https://github.com/NHERI-SimCenter/TinF
+.. |appLink| replace:: `Turbulance Inflow Tool`_
+.. _Turbulance Inflow Tool page: https://github.com/NHERI-SimCenter/TurbulanceInflowTool
+.. |messageBoard| replace:: `Message Board`_
+.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
+.. |toolVersion| replace:: '0.2'
+"""
 
 # -- General configuration ---------------------------------------------------
 
@@ -48,7 +60,18 @@ exclude_patterns = []
 # The theme to use for HTML and HTML Help pages.  See the documentation for
 # a list of builtin themes.
 #
-html_theme = 'alabaster'
+#html_theme = 'alabaster'
+html_theme = 'sphinx_rtd_theme'
+
+#html_logo = 'figures/TinF-Logo-grey.png' #TODO: replace with EE-UQ logo!
+
+
+html_theme_options = {
+#    'analytics_id': 'UA-158130480-2',
+    'logo_only': False,
+    'prev_next_buttons_location': None,
+#    'style_nav_header_background': '#F2F2F2'
+}
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

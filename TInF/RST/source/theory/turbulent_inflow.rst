@@ -1,8 +1,8 @@
 .. _sec_TInF-theory:
 .. _chap_theory:
 
-Turbulence Inflow Tool - Theory
-==============
+Theory
+======
 
 Introduction
 ------------
