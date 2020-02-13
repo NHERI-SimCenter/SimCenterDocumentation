@@ -13,6 +13,7 @@ importance for the accurate evaluation of wind effects on buildings and structur
 specifically, the task is to generate a turbulent velocity field :math:`\boldsymbol{u}(\boldsymbol{x},t)` with the form
 
 .. math::
+   :label: t1
     
     \boldsymbol{u}(\boldsymbol{x},t) = \boldsymbol{U}(\boldsymbol{x},t)+\boldsymbol{u}'(\boldsymbol{x},t)
 
