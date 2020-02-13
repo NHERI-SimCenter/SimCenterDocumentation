@@ -1,21 +1,71 @@
-.. TInF documentation master file, created by
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+Turbulence Inflow Tool
+======================
 
-Welcome to the SimCenter Turbulence Inflow Tool documentation!
-====================================
+The Turbulence Inflow Tool (TInF) is designed to collect all required properties and parameters
+needed for various turbulence inflow models in OpenFOAM, and to augment an existing wind-around-a-building model by adding the necessary sections to respective parameter definition files.
+
+The generic workflow involved is as follows.
+
+1.  Build your OpenFOAM model as you would without using a turbulence inflow model.  Use a generic patch with a suitable name for you will need to identify that patch by its name inside TInF.
+   
+2. Run TInF following, identify your model folder, adjust the parameters as desired, and export to your model definition.
+   Consult Chapter :ref:`sec_TInF-usage` for details on those steps.
+   
+3. Run OpenFOAM using the updated model definition.
+
+This document covers the features and capabilities of Version |toolVersion|  of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the |messageBoard|.
+
+
+.. _lblUserManual:
 
 .. toctree::
-   :maxdepth: 3
-   :caption: Contents:
+   :caption: User Manual
+   :maxdepth: 1
+   :numbered: 4
 
-   TInF-documentation
+   acknowledgment
+   about
+   installation
+   userManual
+   troubleshooting
+   examples/examples
+   bugs
+   copyright
+
+#   common/user_manual/requirements/requirements
+
+.. _lblTechnicalManual:
+
+.. toctree::
+   :caption: Technical Manual
+   :maxdepth: 1
+   :numbered: 2
+
+   theory/turbulent_inflow
 
 
+.. _lblDeveloperManual:
 
-Indices and tables
-==================
+.. toctree::
+   :caption: Developer Manual
+   :maxdepth: 1
+   :numbered: 4
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   building
+   architecture
+   howToExtend
+   validation/TinFverification
+   codingStyle
+
+
+Developers
+==========
+
+**Jiawei Wan** [1]_, **Peter Mackenzie-Helnwein** [2]_
+
+Contact
+=======
+Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu<
+
+.. [1] University of Notre Dame
+.. [2] University of Washington
