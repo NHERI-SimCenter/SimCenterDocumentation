@@ -12,18 +12,17 @@ wy-nav-content {
 }
 
 
-div.wy-side-scroll{
-	background:#cb463f;
-}
+#div.wy-side-scroll{
+#	background:#cb463f;
+#}
 
 #	background:#cb463f;
-
 
 span.caption-text{
 	color: #000000;
 }
 
-td{
-	white-space: normal !important;
+td {
+   white-space: normal !important;
 }
 

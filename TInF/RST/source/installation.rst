@@ -3,9 +3,8 @@
 Installation
 ==============
 
-Download the installation package for your operation system from (a single line)
+Download the installation package for your operation system from `download page <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/TurbulenceInflowTool>`_.
 
-    https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/TurbulantInflowTool
 
 SimCenter is providing packages for Windows~8/10 (64 bit version only) and MacOS.  
 The installer will place the executable on your system.

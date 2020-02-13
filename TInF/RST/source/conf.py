@@ -29,12 +29,12 @@ rst_prolog = """
 .. |appName| replace:: Turbulence Inflow Tool
 .. |app| replace:: Turbulence Inflow Tool
 .. |githubLink| replace:: `Turbulance Inflow Tool Github page`_
-.. _Turbulance Inflow Tool Github page: https://github.com/NHERI-SimCenter/TinF
+.. _Turbulance Inflow Tool Github page: https://github.com/NHERI-SimCenter/TurbulenceInflowTool
 .. |appLink| replace:: `Turbulance Inflow Tool`_
-.. _Turbulance Inflow Tool page: https://github.com/NHERI-SimCenter/TurbulanceInflowTool
+.. _Turbulance Inflow Tool page: https://simcenter.designsafe-ci.org/research-tools/tinf/
 .. |messageBoard| replace:: `Message Board`_
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
-.. |toolVersion| replace:: '0.2'
+.. |toolVersion| replace:: '1.0.2'
 """
 
 # -- General configuration ---------------------------------------------------
