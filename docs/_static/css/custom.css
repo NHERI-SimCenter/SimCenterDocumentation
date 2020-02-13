@@ -1,8 +1,14 @@
+wy-nav-content {
+    max-width: none;
+}
+
+
 div.wy-side-scroll{
 	background:#cb463f;
 }
 
 #	background:#cb463f;
+
 
 span.caption-text{
 	color: #000000;
@@ -11,3 +17,4 @@ span.caption-text{
 td{
 	white-space: normal !important;
 }
+
