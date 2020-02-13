@@ -1,8 +1,7 @@
-.. _sec_TInF-theory:
-.. _chap_theory:
+.. _lblTurbulanceInflowTheory:
 
-Theory
-======
+Turbulence Inflow
+=================
 
 Introduction
 ------------
