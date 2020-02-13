@@ -64,7 +64,7 @@ This document covers the features and capabilities of Version |toolVersion|  of 
 Contact
 -------
 
-Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu<
+Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna AT berkeley.edu
 
 .. [1] University of Notre Dame
 .. [2] University of Washington

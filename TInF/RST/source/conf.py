@@ -33,7 +33,7 @@ rst_prolog = """
 .. |appLink| replace:: `Turbulance Inflow Tool`_
 .. _Turbulance Inflow Tool page: https://simcenter.designsafe-ci.org/research-tools/tinf/
 .. |messageBoard| replace:: `Message Board`_
-.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
+.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=5.0
 .. |toolVersion| replace:: '1.0.2'
 """
 
@@ -67,7 +67,7 @@ html_theme = 'sphinx_rtd_theme'
 
 
 html_theme_options = {
-#    'analytics_id': 'UA-158130480-2',
+    'analytics_id': 'UA-158130480-6',
     'logo_only': False,
     'prev_next_buttons_location': None,
 #    'style_nav_header_background': '#F2F2F2'
