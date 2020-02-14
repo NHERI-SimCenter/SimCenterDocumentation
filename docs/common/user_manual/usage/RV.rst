@@ -11,6 +11,13 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 
       f(x) = \frac{1}{\sqrt{2 \pi} \sigma} exp \left( -{\frac{1}{2} \left( \frac{x - \mu}{\sigma} \right)^2} \right)
 
+
+.. figure:: figures/normal.png
+   :align: center
+   :figclass: align-center
+
+   Examples of PDF for Normal Distribution
+
 2. `Lognormal <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-lognormal_uncertain.html>`_
 
 
@@ -23,6 +30,12 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 
   where :math:`\zeta^2 = ln \left( \frac{\sigma^2}{\mu^2} + 1 \right)` and :math:`\lambda = ln(\mu) - \frac{\zeta^2}{2}`
 
+
+.. figure:: figures/lognormal.png
+   :align: center
+   :figclass: align-center
+
+   Examples of PDF for Lognormal Distribution
 
 3. `Beta <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-beta_uncertain.html>`_
 
@@ -50,7 +63,7 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 5. `Weibull <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-weibull_uncertain.html>`_
 
 
-   User provides shape parameter (:math:`k`) and scale parameter (:math:`\lambda`)  for the Weibull distibution. The density function of the normal distribution, as a function of these quantaties is:
+   User provides shape parameter (:math:`k`) and scale parameter (:math:`\lambda`)  for the Weibull distibution. The density function of the Weibull distribution, as a function of these quantaties is:
 
    .. math::
 
@@ -58,17 +71,27 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 
    where :math:`k,\lambda > 0` and :math:`x >= 0`. For :math:`x<0`, :math:`f(x) = 0`.
 
+.. figure:: figures/weibull.png
+   :align: center
+   :figclass: align-center
+
+   Examples of PDF for Weibull Distribution
+
 
 6. `Gumbel <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-gumbel_uncertain.html>`_
 
 
-   User provides :math:`\alpha` and :math:`\beta` for the Gumbel distibution. The density function of the normal distribution, as a function of these quantaties is:
+   User provides :math:`\alpha` and :math:`\beta` for the Gumbel distibution, where :math:`\beta` is known as the **location parameter** and :math:`\frac{1}{\alpha}` the **scale parameter**. The density function of the Gumbel distribution, as a function of these quantaties is:
 
    .. math::
    
 	f(x) = \alpha e^{-\alpha(x-\beta)}exp(-e^{-\alpha(x-\beta)})
 
+.. figure:: figures/gumbel.png
+   :align: center
+   :figclass: align-center
 
+   Examples of PDF for Gumbel Distribution
 
 
 For each random variable, the user must enter a name and select from the pull down menu the distribution associated with the random variable. For the distribution selected, the user must then provide the input arguments, which are as described above. :numref:`figRV` shows the panel for a problem with four Random Variables with all random input following Gaussian distributions. 

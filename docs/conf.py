@@ -7,10 +7,9 @@
 # -- SimCenter App selection -------------------------------------------------
 
 #app_name = 'EE-UQ'
-#app_name = 'PBE'
-app_name = 'WE-UQ'
-#app_name = 'TInF'
+app_name = 'PBE'
 #app_name = 'WE-UQ'
+#app_name = 'TInF'
 
 print('app_name = ' + app_name)
 

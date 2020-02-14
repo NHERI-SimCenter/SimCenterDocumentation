@@ -15,4 +15,4 @@ This chapter collects carefully designed verification exercises that we use to t
    :EEUQ:ResponseSpectrum
    :EEUQ:SiteResponse
    :WEUQ:PowerSpectralDensity
-   :WEUQ:TurbulanceInflowModel
+   :WEUQ:TinFverification

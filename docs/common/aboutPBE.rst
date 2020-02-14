@@ -1,8 +1,8 @@
 .. _lblAboutPBE:
 
-*********
-About PBE
-*********
+*****
+About
+*****
 
 This is an open-source research application, |tool github link|, released under a **BSD clause 2** license, :numref:`lblLicense`. The |app| can be used to assess the performance of a building in an earthquake scenario. The application focuses on quantifying building performance through decision variables. Given that the properties of the buildings and the earthquake events are not known exactly, and that the simulation software and the user make simplifying assumptions in the numerical modeling of the structure, the estimated response of the structure already exhibits significant variability. Such response can be estimated using our |EE-UQ app link|. The |short tool name| builds on the |EE-UQ short name| and uses its response estimates to assess the damage to building components and the consequences of such damage. Users who have response estimates from external simulations, have the option to load those and focus only on the damage and loss estimation in the |short tool name|.
 
