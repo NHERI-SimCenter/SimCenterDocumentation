@@ -1,0 +1,5 @@
+BA1, "Ability to select from different Nonlinear Analysis options", GC , M , 1.0 
+BA2, "Ability to specify OpenSees as FEM engine and to specify different analysis options", SP , M , 1.0 
+BA3, "Ability to provide own OpenSees Analysis script to OpenSees engine.", SP , D , 1.0 
+BA4, "Ability to provide own Python script and use OpenSeesPy engine.", SP , O , 1.2 
+BA5, "Ability to use alternative FEM engines.", SP, M, 

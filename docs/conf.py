@@ -9,7 +9,8 @@
 #app_name = 'EE-UQ'
 app_name = 'PBE'
 #app_name = 'WE-UQ'
-#app_name = 'TInF'
+#app_name = 'quoFEM'
+
 
 print('app_name = ' + app_name)
 
@@ -111,7 +112,7 @@ elif app_name == 'EE-UQ':
 	author = 'Frank McKenna'
 
 	tags.add('EEUQ_app')
-	toc_filter_exclude = ['PBE','WEUQ','TInF']
+	toc_filter_exclude = ['PBE','WEUQ','QUOFEM']
 
 	rst_prolog += """
 .. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application
@@ -148,7 +149,7 @@ elif app_name == 'WE-UQ':
 	author = 'Frank McKenna'
 
 	tags.add('WEUQ_app')
-	toc_filter_exclude = ['PBE','EEUQ','TInF']
+	toc_filter_exclude = ['PBE','EEUQ','QUOFEM']
 
 	rst_prolog += """
 .. |full tool name| replace:: Wind Engineering Application with Uncertainty Quantification
@@ -180,26 +181,44 @@ elif app_name == 'WE-UQ':
 		'style_nav_header_background': '#F2F2F2'
 	}
 
-
-elif app_name == 'TInF':
-
-	project = 'Turbulence Inflow Tool'
+elif app_name == 'quoFEM':
+	project = 'Quantified Uncertainty with Optimization for the Finite Element Method'
 	copyright = '2019, The Regents of the University of California'
-	author = 'Jaiwan Wan & Peter Mackenzie-Helnwein'
+	author = 'Frank McKenna'
 
-	tags.add('TInF_app')
+	tags.add('QUOFEM_app')
 	toc_filter_exclude = ['PBE','EEUQ','WEUQ']
 
 	rst_prolog += """
-.. |full tool name| replace:: Turbulence Inflow Tool
-.. |short tool name| replace:: TInF app
-.. |short tool id| replace:: TInF
-.. |tool github link| replace:: `TInF Github page`_
-.. _EE-UQ Github page: https://github.com/NHERI-SimCenter/TurbulenceInflowTool
-.. |tool version| replace:: 1.0.2
+.. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method
+.. |short tool name| replace:: quoFEM app
+.. |short tool id| replace:: quoFEM
+.. |tool github link| replace:: `quoFEM Github page`_
+.. _quoFEM Github page: https://github.com/NHERI-SimCenter/quoFEM
+.. |tool version| replace:: 2.0
+.. |app| replace:: quoFEM app
+.. |appName| replace:: quoFEM app
+.. |githubLink| replace:: `quoFEM Github page`_
+.. |appLink| replace:: `quoFEM Download`_
+.. _quoFEM Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
+.. |messageBoard| replace:: `Message Board`_
+.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
+.. |figUI| replace:: :numref:`figUI-quoFEM`
+.. |figDownload| replace:: :numref:`figDownload-quoFEM`
+.. |figGenericUI| replace:: :numref:`figGenericUI-quoFEM`
+.. |figMissingCRT| replace:: :numref:`figMissingCRT-quoFEM`
 """	
 
-	html_logo = 'common/SimCenter_TInF_logo.png'
+	html_logo = 'common/figures/WE-UQ-Logo-grey2.png' #TODO: replace with EE-UQ logo!
+
+
+	html_theme_options = {
+		'analytics_id': 'UA-158130480-2',
+		'logo_only': True,
+		'prev_next_buttons_location': None,
+		'style_nav_header_background': '#F2F2F2'
+	}
+
 
 # -- General configuration ---------------------------------------------------
 

@@ -15,6 +15,9 @@
 
    The |full tool name| (|app|) is an open-source research application that can be used to predict the response of a building subjected to wind loading events. The application is focused on quantifying the uncertainties in the predicted response, given the that the uncertainties in models, wind loads, and analysis. The computations are performed in a workflow application that will run on either the users local machine or on a high performance computer made available by |DesignSafe|. 
 
+.. only:: QUOFEM_app
+   
+   The |full tool name| (|app|) is an open-source research application which focuses on providing uncertainty quantification methods (forward, inverse, reliability, sensitivity and parameter estimation) to researchers in natural hazards who utilize existing simulation software applications, typically Finite Element applications, in their work.
 
 This document covers the features and capabilities of Version |tool version|  of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the |messageBoard|.
 
@@ -30,14 +33,16 @@ This document covers the features and capabilities of Version |tool version|  of
    :EEUQ:common/aboutEE
    :PBE:common/aboutPBE
    :WEUQ:common/aboutWE
+   :QUOFEM:common/aboutQUOFEM
    common/user_manual/installation/installation
    common/user_manual/usage/usage
    common/user_manual/troubleshooting/troubleshooting
    common/user_manual/examples/examples
+   :EEUQ:common/requirements/EEUQ
+   :WEUQ:common/requirements/WEUQ
+   :PBE:common/requirements/PBE
    common/bugs
    common/license
-
-#   common/user_manual/requirements/requirements
 
 .. _lbl-technical-manual:
 
