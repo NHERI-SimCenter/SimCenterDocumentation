@@ -21,4 +21,5 @@ UV1.6, "Gumbel",  SP, M, 1.0
 UV2, "User defined Distribution", SP, M,   
 UV3, "Define Correlation Matrix", SP, M,   
 UV4, "Random Fields", SP, M,
+UV5, "Ability to View Graphically the density function when defining the RV", UF, D,
 
