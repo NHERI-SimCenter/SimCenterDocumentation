@@ -49,6 +49,15 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 
    where :math:`\Gamma(\alpha)` is the `Gamma function <http://mathworld.wolfram.com/GammaFunction.html>`_.
 
+
+
+.. figure:: figures/beta.png
+   :align: center
+   :figclass: align-center
+
+   Examples of PDF for Beta Distribution
+
+
 4. `Uniform <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-uniform_uncertain.html>`_
 
 

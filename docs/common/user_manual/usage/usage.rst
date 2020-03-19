@@ -71,13 +71,20 @@ This is the large central area of the UI where the  user provides input for the 
 .. toctree-filt::
    :maxdepth: 1
 
+   
    UQ
-   GI
-   SIM
+   :PBE:GI
+   :EEUQ:GI
+   :WEUQ:GI
+   :PBE:SIM
+   :EEUQ:SIM
+   :WEUQ:SIM
    :PBE:earthquakeEvents
    :EEUQ:earthquakeEvents
    :WEUQ:WindEvents
-   FEM
+   :PBE:FEM
+   :EEUQ:FEM
+   :EEUQ:FEM
    :EEUQ:EDP
    :WEUQ:EDP
    RV

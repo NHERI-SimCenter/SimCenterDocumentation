@@ -12,15 +12,12 @@ deterministic simulation of structural response. The default application is the 
 .. contents::
     :local:
 
-Currently, there is one application
-available, OpenSees, and there is no application selection box. That
-will be modified in future versions to allow users to provide their own
-simulation application. The current OpenSees implementation extends the standard OpenSees executable with a pre- and post-processor to take the BIM and EVENT
+Currently, there is one application OpenSees. The current OpenSees implementation extends the standard OpenSees executable with a pre- and post-processor to take the BIM and EVENT
 files and use OpenSees to simulate the response, and return it in an EDP file.
 
 .. _figFEM:
 
-.. figure:: figures/fem.png
+.. figure:: figures/OpenSeesFEM.png
 	:align: center
 	:figclass: align-center
 
@@ -30,21 +27,28 @@ For the |OpenSees| application the user is required to specify the
 options to be used in the transient analysis. As shown in :numref:`figFEM`,
 this includes the choice of:
 
-     #. `Solution ALgorithm <http://opensees.berkeley.edu/wiki/index.php/Algorithm_Command>`_, the default is Newton Raphson.
+     #. `Solution Algorithm <http://opensees.berkeley.edu/wiki/index.php/Algorithm_Command>`_: The solution algorithm is the numerical algorithm used to solve the nonlinear equations at each time step/. The default is Newton Raphson, other options include ModifiedNewton, Newton -initial, BFGS, Linear.
 
-     #. `Integration Scheme <http://opensees.berkeley.edu/wiki/index.php/Integrator_Command>`_, the default is Newmark's linear acceleration method.
+     #. `System <http://opensees.berkeley.edu/wiki/index.php/System_Command>`_: The system defines how the matrix equation :math:`Ax = b` is stored in memory and solved. The default is the unsymmetric sparse solver Umfpack. Other options available include: profileSPD, BandSPD, BandGEM, Diagonal, SuperLU.
 
-     #. `Convergence Test <http://opensees.berkeley.edu/wiki/index.php/Test_Command>`_, the default is a norm on the unbalance force.
+     #. `Integration Scheme <http://opensees.berkeley.edu/wiki/index.php/Integrator_Command>`_: The integration scheme specifies the time stepping algorithm being employed to solve the transient problem (:math:`M \ddot{U}(t) + C \dot{U}(t)  + Fs(U(t)) = P(t)`). The integration scheme determined the coefficients in the :math:`A` matrix,  the meaning of the :math:`x` and :math:`b` vectors and how the nodal displacements, velocities, and accelerations should be updated given :math:`x`. The default is Newmark's linear acceleration method (Newmark 0.5 0.25). Other Newmark methods can be employed by changing the :math:`\alpha` and  :math:`\beta` terms, and other methods, HHT, CentralDifference, can be selected.
 
-     #. Convergence tolerance, with a default of 0.01.
+     #. `Convergence Test <http://opensees.berkeley.edu/wiki/index.php/Test_Command>`_, the default is a norm on the unbalance force with a convegence tolerance of 1.0e-2 and a limit of 10 trial steps to achieve convergence. Other convergence criteria can be chise incude: NormDispIncr, EnergyIncrement, and the relative norms.
 
-     #. Damping Ratio. the default is 2% equivalent viscous damping entered as 0.02. If a damping ratio of 0 is specified, no damping is added by the simulation application. This allows users to add their own damping in the OpenSees tcl script they load under SIM.
+     #. Damping Model: The pull down menu defaults to **Rayleigh Damping**. The other option is **Modal Damping**. The theory behind the two are presented in :ref:`lblDamping`.
 
-     #. Analysis Script. This shall be left blank by default. Advanced users of OpenSees who have their preferred analysis script and wish to provide their own damping model can provide it here.
+          #. Rayleigh Damping. With Rayleigh damping the user mist provide the damping ratio, :math:`\zeta` and spcify twomodes from which the damping coeeficients :math:`a_0` and :math:`a_1` will be determined. Mass proportional damping can be obtained by setting the **Mode 2** option to 0, **stiffness proportional damping** by setting **Mode 1** option to 0.
 
+	  #. Modal Damping: With modal damping the user specifies the number of modes and the damping ratio :math:`\zeta`. In addition the user has the option of specifying a **stiffness proportional damping ratio**, which as mentioned in the :ref:`lblDamping` is used to provide additional damping for the higher modes.
 
-The options available for each setting can be found in the OpenSees online user
-manual.
+	  .. figure:: figures/OpenSeesFEM-Modal.png
+	     :align: center
+	     :figclass: align-center
+
+	     Modal Damping Options for OpenSees 
+
+     #. Analysis Script. This shall be left blank by default. Advanced users of OpenSees who have their preferred analysis script and wish to provide their own damping model can provide it here. If this option is provided, the user in their scipt should use the variables **numStep** and **dt**.
+
 
 A default transient analysis script is run with these inputs. It is
 built for Version 3.0.0+ of OpenSees and uses a divide and conquer
