@@ -1,6 +1,7 @@
 |full tool name|
 =====================================================================
 
+|developers|
 
 .. only:: PBE_app
 
@@ -97,37 +98,8 @@ This document covers the features and capabilities of Version |tool version|  of
 
    :pelicun:common/developer_manual/API/pelicun/API
 
-Developers
-==========
-
-<<<<<<< HEAD
-.. only:: PBE_app
-
-   | Frank McKenna
-   | Adam Zsarnóczay 
-   | Wael Elhaddad
-   | Chaofeng Wang
-   | Michael Gardner
-
-.. only:: EEUQ_app
-
-   | Frank McKenna
-   | Wael Elhaddad
-   | Chaofeng Wang
-   | Michael Gardner
 
 
-.. only:: WEUQ_app
-
-   | Frank McKenna
-   | Jiawei Wan
-   | Wael Elhaddad
-   | Peter Mackenzie-Helnwein
-   | Michael Gardner
-
-=======
-|developers|
->>>>>>> upstream/master
 
 Contact
 =======
