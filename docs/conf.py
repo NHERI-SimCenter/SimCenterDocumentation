@@ -10,7 +10,7 @@ app_name = 'EE-UQ'
 #app_name = 'PBE'
 #app_name = 'WE-UQ'
 #app_name = 'quoFEM'
-
+#app_name = 'pelicun'
 
 print('app_name = ' + app_name)
 
@@ -25,7 +25,41 @@ print('app_name = ' + app_name)
 import os
 import sys
 sys.path.append(os.path.abspath('./sphinx_ext/'))
-# sys.path.insert(0, os.path.abspath('.'))
+
+if app_name == 'pelicun':
+	sys.path.insert(0, os.path.abspath('.'))
+	sys.path.insert(0, os.path.abspath('../'))
+
+exclude_patterns = [
+		'**/*desktop*',
+		'**/*response*',
+		'**/*earthquake*',
+		'**/*wind*', 
+		'**/*PBE*', 
+		'**/*WEUQ*',  
+		'**/*EEUQ*',  
+		'**/*TinF*', 
+		'**/*TInF*', 
+		'**/*pelicun*',
+		'**/*old*',
+	]
+
+
+toc_filter_exclusions = [
+	'desktop',
+	'response',
+	'earthquake',
+	'wind',
+	'PBE',
+	'WEUQ',
+	'EEUQ',
+	'TinF',
+	'TInF',
+	'S3hark',
+	'pelicun'	
+]
+
+extensions = []
 
 # -- Project information -----------------------------------------------------
 
@@ -63,6 +97,10 @@ rst_prolog = """
 .. _DesignSafe: https://designsafe-ci.org
 .. |smelt| replace:: `smelt`_
 .. _smelt: https://github.com/NHERI-SimCenter/smelt
+.. |br| raw:: html
+
+    <br>
+
 """	
 
 # app-specific settings
@@ -74,7 +112,17 @@ if app_name == 'PBE':
 	author = 'Adam Zsarnóczay'
 
 	tags.add('PBE_app')
-	toc_filter_exclude = ['EEUQ','WEUQ','TInF']
+	tags.add('desktop_app')
+	tags.add('earthquake')
+	
+	toc_filter_exclusions.remove('PBE')
+	toc_filter_exclusions.remove('desktop')
+	toc_filter_exclusions.remove('earthquake')
+	toc_filter_exclude = toc_filter_exclusions
+
+	exclude_patterns.remove('**/*desktop*')
+	exclude_patterns.remove('**/*earthquake*')
+	exclude_patterns.remove('**/*PBE*')
 
 	rst_prolog += """\
 .. |full tool name| replace:: Performance Based Engineering Application
@@ -94,6 +142,12 @@ if app_name == 'PBE':
 .. |figUI| replace:: :numref:`figUI-PBE`
 .. |figGenericUI| replace:: :numref:`figGenericUI-PBE`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-PBE`
+.. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
+.. |developers| replace:: Adam Zsarnóczay |br| 
+                          Frank McKenna |br|
+                          Chaofeng Wang |br|
+                          Wael Elhaddad |br|                          
+                          Michael Gardner
 """
 
 	# html_logo = 'common/figures/SimCenter_PBE_logo.png'
@@ -112,7 +166,20 @@ elif app_name == 'EE-UQ':
 	author = 'Frank McKenna'
 
 	tags.add('EEUQ_app')
-	toc_filter_exclude = ['PBE','WEUQ','QUOFEM']
+	tags.add('desktop_app')
+	tags.add('response')
+	tags.add('earthquake')
+
+	toc_filter_exclusions.remove('EEUQ')
+	toc_filter_exclusions.remove('desktop')
+	toc_filter_exclusions.remove('earthquake')
+	toc_filter_exclusions.remove('response')
+	toc_filter_exclude = toc_filter_exclusions
+
+	exclude_patterns.remove('**/*EEUQ*')
+	exclude_patterns.remove('**/*desktop*')
+	exclude_patterns.remove('**/*earthquake*')
+	exclude_patterns.remove('**/*response*')
 
 	rst_prolog += """
 .. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application
@@ -132,6 +199,12 @@ elif app_name == 'EE-UQ':
 .. |figDownload| replace:: :numref:`figDownloadEE`
 .. |figGenericUI| replace:: :numref:`figGenericUI-EE`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-EE`
+.. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
+.. |developers| replace:: Frank McKenna |br|                           
+                          Wael Elhaddad |br|                          
+                          Michael Gardner |br|
+                          Adam Zsarnóczay |br|
+                          Chaofeng Wang
 """	
 
 	html_logo = 'common/figures/EE-UQ-Logo-grey2.png' 
@@ -149,7 +222,21 @@ elif app_name == 'WE-UQ':
 	author = 'Frank McKenna'
 
 	tags.add('WEUQ_app')
-	toc_filter_exclude = ['PBE','EEUQ','QUOFEM']
+	tags.add('desktop_app')
+	tags.add('response')
+	tags.add('wind')
+
+	toc_filter_exclusions.remove('WEUQ')
+	toc_filter_exclusions.remove('desktop')
+	toc_filter_exclusions.remove('wind')
+	toc_filter_exclusions.remove('response')
+	toc_filter_exclude = toc_filter_exclusions
+
+	exclude_patterns.remove('**/*WEUQ*')
+	exclude_patterns.remove('**/*desktop*')
+	exclude_patterns.remove('**/*wind*')
+	exclude_patterns.remove('**/*response*')
+	exclude_patterns.remove('**/*TinF*')
 
 	rst_prolog += """
 .. |full tool name| replace:: Wind Engineering Application with Uncertainty Quantification
@@ -169,6 +256,14 @@ elif app_name == 'WE-UQ':
 .. |figDownload| replace:: :numref:`figDownloadWE`
 .. |figGenericUI| replace:: :numref:`figGenericUI-WE`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-WE`
+.. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
+.. |developers| replace:: Frank McKenna |br| 
+                          Peter Mackenzie-Helnwein |br|
+                          Wael Elhaddad |br|
+                          Michael Gardner |br|
+                          Jiawei Wan |br|
+                          Dae Kun Kwon
+
 """	
 
 	html_logo = 'common/figures/WE-UQ-Logo-grey2.png' #TODO: replace with EE-UQ logo!
@@ -181,43 +276,72 @@ elif app_name == 'WE-UQ':
 		'style_nav_header_background': '#F2F2F2'
 	}
 
-elif app_name == 'quoFEM':
-	project = 'Quantified Uncertainty with Optimization for the Finite Element Method'
-	copyright = '2019, The Regents of the University of California'
-	author = 'Frank McKenna'
+elif app_name == 'pelicun':
 
-	tags.add('QUOFEM_app')
-	toc_filter_exclude = ['PBE','EEUQ','WEUQ']
+	project = 'pelicun'
+	copyright = '(c) 2018, Leland Stanford Junior University and The Regents of the University of California'
+	author = 'Adam Zsarnóczay'
 
-	rst_prolog += """
-.. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method
-.. |short tool name| replace:: quoFEM app
-.. |short tool id| replace:: quoFEM
-.. |tool github link| replace:: `quoFEM Github page`_
-.. _quoFEM Github page: https://github.com/NHERI-SimCenter/quoFEM
-.. |tool version| replace:: 2.0
-.. |app| replace:: quoFEM app
-.. |appName| replace:: quoFEM app
-.. |githubLink| replace:: `quoFEM Github page`_
-.. |appLink| replace:: `quoFEM Download`_
-.. _quoFEM Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
+	tags.add('pelicun')
+
+	toc_filter_exclusions.remove('pelicun')
+	toc_filter_exclude = toc_filter_exclusions
+
+	exclude_patterns.remove('**/*pelicun*')
+	
+	rst_prolog += """\
+.. |pelicun expanded| replace:: Probabilistic Estimation of Losses, Injuries, and Community resilience Under Natural disasters
+.. |full tool name| replace:: pelicun library 
+.. |short tool name| replace:: pelicun
+.. |short tool id| replace:: pelicun
+.. |tool github link| replace:: `pelicun Github page`_
+.. _pelicun Github page: https://github.com/NHERI-SimCenter/pelicun
+.. |app| replace:: pelicun library
 .. |messageBoard| replace:: `Message Board`_
-.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
-.. |figUI| replace:: :numref:`figUI-quoFEM`
-.. |figDownload| replace:: :numref:`figDownload-quoFEM`
-.. |figGenericUI| replace:: :numref:`figGenericUI-quoFEM`
-.. |figMissingCRT| replace:: :numref:`figMissingCRT-quoFEM`
-"""	
+.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
+.. |githubLink| replace:: `pelicun Github page`_
+.. |tool version| replace:: 2.0.9
+.. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
+.. |developers| replace:: Adam Zsarnóczay
+"""
 
-	html_logo = 'common/figures/WE-UQ-Logo-grey2.png' #TODO: replace with EE-UQ logo!
+	extensions = [
+	    'sphinx.ext.autodoc',
+	    'sphinx.ext.todo',
+	    'sphinx.ext.mathjax',
+	    'sphinx.ext.viewcode',
+	    'sphinx.ext.githubpages',
+	    'numpydoc',
+	    'sphinx.ext.autosummary',
+	    'sphinx.ext.intersphinx',
+	    'sphinx.ext.coverage',
+	    'sphinx.ext.doctest',
+	]
 
+	numpydoc_show_class_members = True
+	numpydoc_class_members_toctree = False
+	autodoc_member_order = 'bysource'
+	autoclass_content = 'both'
+
+	import glob
+	autosummary_generate = glob.glob("source/*.rst")
+
+	master_doc = 'index'
+
+	language = None
+
+	pygments_style = 'sphinx'
+
+	html_logo = 'common/figures/pelicun-Logo-grey.png' 
 
 	html_theme_options = {
-		'analytics_id': 'UA-158130480-2',
+		'analytics_id': 'UA-158130480-7',
 		'logo_only': True,
 		'prev_next_buttons_location': None,
 		'style_nav_header_background': '#F2F2F2'
 	}
+
+	htmlhelp_basename = 'pelicundoc'
 
 
 # -- General configuration ---------------------------------------------------
@@ -226,7 +350,7 @@ elif app_name == 'quoFEM':
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 
-extensions = [
+extensions = extensions + [
 	'sphinxcontrib.bibtex',
 	'toctree_filter'
 ]
@@ -237,7 +361,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = exclude_patterns + ['_build', 'Thumbs.db', '.DS_Store']
 
 # -- Options for HTML output -------------------------------------------------
 
