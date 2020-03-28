@@ -6,8 +6,7 @@ interested in predicting the response of a structure to earthquake
 events.
 
 This open-source research application, the source code of which is
-available at the https://github.com/NHERI-SimCenter/TInF
-Github page, provides an application that can be used to predict the
+available at the |githubLink|, provides an application that can be used to predict the
 response of a building subjected to earthquake events. The application
 is focused on quantifying the uncertainties in the predicted response,
 given the that the properties of the buildings and the earthquake
@@ -49,5 +48,5 @@ we greatly appreciate any input you have. If there are
 features you want, chances are many of your colleagues also would
 benefit from them. Users are encouraged to review
 Chapter :ref:`chap_requirements` to see what features are planned for this
-application.
+application. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the |messageBoard|.
 

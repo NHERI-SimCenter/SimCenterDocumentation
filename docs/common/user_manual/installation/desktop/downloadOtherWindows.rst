@@ -37,7 +37,6 @@ Dakota
 OpenSees
 ^^^^^^^^
 
-|OpenSeesLink| is an open-source finite element application publicly available for download from its |OpenSeesDownload|.  OpenSees requires |Tcl| be installed to run. If you have never downloaded |OpenSees| before, you will need to register your e-mail to gain access. After registration, you can proceed to the download page by entering your email address and clicking the Submit button. The file to download is in the section `Windows Version`. Click on the link to download the file, extract it and place in a C:\SimCenter\OpenSees directory.
 
 Modify the Environment Variables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

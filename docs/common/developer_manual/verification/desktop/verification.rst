@@ -14,4 +14,5 @@ This chapter collects carefully designed verification exercises that we use to t
    :EEUQ:EEUQ/ResponseSpectrum
    :EEUQ:EEUQ/SiteResponse
    :WEUQ:WEUQ/PowerSpectralDensity
-   :WEUQ:WEUQ/TurbulanceInflowModel
+   :WEUQ:WEUQ/TinFverification
+
