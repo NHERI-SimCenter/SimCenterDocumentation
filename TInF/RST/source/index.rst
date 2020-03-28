@@ -1,6 +1,9 @@
 Turbulence Inflow Tool
 ======================
 
+**Jiawei Wan** [1]_, **Peter Mackenzie-Helnwein** [2]_
+
+
 The Turbulence Inflow Tool (TInF) is designed to collect all required properties and parameters
 needed for various turbulence inflow models in OpenFOAM, and to augment an existing wind-around-a-building model by adding the necessary sections to respective parameter definition files.
 
@@ -58,14 +61,10 @@ This document covers the features and capabilities of Version |toolVersion|  of 
    codingStyle
 
 
-Developers
-==========
-
-**Jiawei Wan** [1]_, **Peter Mackenzie-Helnwein** [2]_
-
 Contact
-=======
-Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu<
+-------
+
+Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna AT berkeley.edu
 
 .. [1] University of Notre Dame
 .. [2] University of Washington

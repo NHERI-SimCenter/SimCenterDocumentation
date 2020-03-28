@@ -6,10 +6,10 @@
 
 # -- SimCenter App selection -------------------------------------------------
 
-app_name = 'EE-UQ'
-#app_name = 'PBE'
+#app_name = 'EE-UQ'
+app_name = 'PBE'
 #app_name = 'WE-UQ'
-#app_name = 'TInF'
+#app_name = 'quoFEM'
 #app_name = 'pelicun'
 
 print('app_name = ' + app_name)
@@ -40,13 +40,13 @@ exclude_patterns = [
 		'**/*EEUQ*',  
 		'**/*TinF*', 
 		'**/*TInF*', 
-		'**/*S3hark*',
 		'**/*pelicun*',
 		'**/*old*',
 	]
 
+
 toc_filter_exclusions = [
-	'desktop_app',
+	'desktop',
 	'response',
 	'earthquake',
 	'wind',
@@ -143,11 +143,8 @@ if app_name == 'PBE':
 .. |figGenericUI| replace:: :numref:`figGenericUI-PBE`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-PBE`
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
-.. |developers| replace:: Adam Zsarnóczay |br| 
-                          Frank McKenna |br|
-                          Chaofeng Wang |br|
-                          Wael Elhaddad |br|                          
-                          Michael Gardner
+.. |developers| replace:: **Adam Zsarnóczay**, **Frank McKenna**, **Chaofeng Wang**, **Wael Elhaddad**, **Michael Gardner**
+                          
 """
 
 	# html_logo = 'common/figures/SimCenter_PBE_logo.png'
@@ -200,11 +197,8 @@ elif app_name == 'EE-UQ':
 .. |figGenericUI| replace:: :numref:`figGenericUI-EE`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-EE`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
-.. |developers| replace:: Frank McKenna |br|                           
-                          Wael Elhaddad |br|                          
-                          Michael Gardner |br|
-                          Adam Zsarnóczay |br|
-                          Chaofeng Wang
+.. |developers| replace:: **Frank McKenna**, **Wael Elhaddad**, **Michael Gardner**, **Chaofeng Wang**, **Adam Zsarnóczay**
+
 """	
 
 	html_logo = 'common/figures/EE-UQ-Logo-grey2.png' 
@@ -257,12 +251,8 @@ elif app_name == 'WE-UQ':
 .. |figGenericUI| replace:: :numref:`figGenericUI-WE`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-WE`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
-.. |developers| replace:: Frank McKenna |br| 
-                          Peter Mackenzie-Helnwein |br|
-                          Wael Elhaddad |br|
-                          Michael Gardner |br|
-                          Jiawei Wan |br|
-                          Dae Kun Kwon
+.. |developers| replace:: **Frank McKenna**, **Peter Mackenzie-Helnwein**, **Wael Elhaddad**, **Jiawei Wan**, **Michael Gardner**, **Dae Kun Kwon**
+                          
 
 """	
 
@@ -275,32 +265,6 @@ elif app_name == 'WE-UQ':
 		'prev_next_buttons_location': None,
 		'style_nav_header_background': '#F2F2F2'
 	}
-
-
-elif app_name == 'TInF':
-
-	project = 'Turbulence Inflow Tool'
-	copyright = '2019, The Regents of the University of California'
-	author = 'Jaiwan Wan & Peter Mackenzie-Helnwein'
-
-	tags.add('TInF_app')
-	tags.add('desktop_app')
-	toc_filter_exclude = ['PBE','EEUQ','WEUQ','pelicun']
-
-	rst_prolog += """
-.. |full tool name| replace:: Turbulence Inflow Tool
-.. |short tool name| replace:: TInF app
-.. |short tool id| replace:: TInF
-.. |tool github link| replace:: `TInF Github page`_
-.. _EE-UQ Github page: https://github.com/NHERI-SimCenter/TurbulenceInflowTool
-.. |tool version| replace:: 1.0.2
-.. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
-.. |developers| replace:: Jiawei Wan |br| 
-                          Peter Mackenzie-Helnwein |br|
-                          Frank McKenna
-"""	
-
-	html_logo = 'common/SimCenter_TInF_logo.png'
 
 elif app_name == 'pelicun':
 
@@ -328,7 +292,7 @@ elif app_name == 'pelicun':
 .. |githubLink| replace:: `pelicun Github page`_
 .. |tool version| replace:: 2.0.9
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
-.. |developers| replace:: Adam Zsarnóczay
+.. |developers| replace:: **Adam Zsarnóczay**
 """
 
 	extensions = [

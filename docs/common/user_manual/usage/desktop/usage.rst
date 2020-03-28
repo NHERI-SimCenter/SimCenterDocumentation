@@ -77,7 +77,7 @@ This is the large central area of the UI where the  user provides input for the 
    :earthquake:earthquake/earthquakeEvents
    :wind:wind/WindEvents
    FEM
-   :response:response/EDP
+   :RESPONSE:response/EDP
    RV
    :PBE:PBE/DL
    :response:response/resEE

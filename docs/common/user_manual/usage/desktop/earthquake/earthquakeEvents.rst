@@ -16,4 +16,5 @@ a list of events (i.e., typically time-dependent loads that represent natural di
 	peerNGA
 	multiplePEER
 	multipleExisting
+	usageS3hark
 

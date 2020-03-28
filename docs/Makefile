@@ -14,12 +14,27 @@ help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
 PBE:
+	make clean
+	rm -fr ../.../PBE-Documentation/docs/_sources
+	rm -fr ../../PBE-Documentation/docs/_static
+	rm -fr ../../PBE-Documentation/docs/_images
+	rm -fr ../../PBE-Documentation/docs/common
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" ../../PBE-Documentation/docs $(O)
 
 EE:
+	make clean
+	rm -fr ../../EE-UQ-Documentation/docs/_sources
+	rm -fr ../../EE-UQ-Documentation/docs/_static
+	rm -fr ../../EE-UQ-Documentation/docs/_images
+	rm -fr ../../EE-UQ-Documentation/docs/common
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" ../../EE-UQ-Documentation/docs $(O)
 
 WE:
+	make clean
+	rm -fr ../../WE-UQ-Documentation/docs/_sources
+	rm -fr ../../WE-UQ-Documentation/docs/_static
+	rm -fr ../../WE-UQ-Documentation/docs/_images
+	rm -fr ../../WE-UQ-Documentation/docs/common
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" ../../WE-UQ-Documentation/docs $(O)
 
 .PHONY: help Makefile
