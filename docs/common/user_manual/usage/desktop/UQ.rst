@@ -1,3 +1,5 @@
+
+
 UQ: Uncertainty Quantification
 ==============================
 
@@ -12,3 +14,7 @@ This engine utilizes the `Dakota Software <https://dakota.sandia.gov/>`_, a stat
    :maxdepth: 1
 
    DakotaSampling
+   :quoFEM:DakotaSensitivity
+   :quoFEM:DakotaReliability
+   :quoFEM:DakotaParameterEstimation
+   :quoFEM:DakotaInverseProblems

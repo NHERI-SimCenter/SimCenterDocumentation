@@ -8,8 +8,8 @@
 
 #app_name = 'EE-UQ'
 #app_name = 'PBE'
-app_name = 'WE-UQ'
-#app_name = 'quoFEM'
+#app_name = 'WE-UQ'
+app_name = 'quoFEM'
 #app_name = 'pelicun'
 
 print('app_name = ' + app_name)
@@ -51,6 +51,7 @@ toc_filter_exclusions = [
 	'earthquake',
 	'wind',
 	'PBE',
+	'quoFEM',
 	'WEUQ',
 	'EEUQ',
 	'TinF',
@@ -210,6 +211,52 @@ elif app_name == 'EE-UQ':
 		'style_nav_header_background': '#F2F2F2'
 	}
 
+elif app_name == 'quoFEM':
+	project = 'Quantified Uncertainty with Optimization for the FEM'
+	copyright = '2018-2020, The Regents of the University of California'
+	author = 'Frank McKenna'
+
+	tags.add('quoFEM_app')
+	tags.add('desktop_app')
+
+	toc_filter_exclusions.remove('desktop')
+	toc_filter_exclusions.remove('quoFEM')
+	toc_filter_exclude = toc_filter_exclusions
+
+	exclude_patterns.remove('**/*desktop*')
+
+	rst_prolog += """
+.. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method
+.. |short tool name| replace:: quoFEM app
+.. |short tool id| replace:: quoFEM
+.. |tool github link| replace:: `quoFEM Github page`_
+.. _quoFEM Github page: https://github.com/NHERI-SimCenter/quoFEM
+.. |tool version| replace:: 2.0
+.. |app| replace::quoFEM app
+.. |appName| replace:: quoFEM app
+.. |githubLink| replace:: `quoFEM Github page`_
+.. |appLink| replace:: `quoFEM Download`_
+.. _EE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
+.. |messageBoard| replace:: `Message Board`_
+.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
+.. |figUI| replace:: :numref:`figQUO_FEM`
+.. |figDownload| replace:: :numref:`figDownloadQUO_FEM`
+.. |figGenericUI| replace:: :numref:`figGenericUI-EE`
+.. |figMissingCRT| replace:: :numref:`figMissingCRT-EE`
+.. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
+.. |developers| replace:: **Frank McKenna**, **Nikhil Padhye**, **Adam Zsarnóczay**
+
+"""	
+
+	html_logo = 'common/figures/EE-UQ-Logo-grey2.png' 
+
+	html_theme_options = {
+		'analytics_id': 'UA-158130480-1',
+		'logo_only': True,
+		'prev_next_buttons_location': None,
+		'style_nav_header_background': '#F2F2F2'
+	}
+
 elif app_name == 'WE-UQ':
 	project = 'Wind Engineering with Uncertainty Quantification'
 	copyright = '2019, The Regents of the University of California'
@@ -269,7 +316,7 @@ elif app_name == 'WE-UQ':
 elif app_name == 'pelicun':
 
 	project = 'pelicun'
-	copyright = '(c) 2018, Leland Stanford Junior University and The Regents of the University of California'
+	copyright = '(c) 2018-2020, Leland Stanford Junior University and The Regents of the University of California'
 	author = 'Adam Zsarnóczay'
 
 	tags.add('pelicun')

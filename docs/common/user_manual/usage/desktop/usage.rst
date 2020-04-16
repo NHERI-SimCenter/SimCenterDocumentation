@@ -8,7 +8,15 @@ Once the application is started the user is presented with the user interface (U
 parameters for each application, starts the workflow either locally or
 remotely, and finally views the simulation results. The UI contains several separate areas:
 
+.. only:: quoFEM_app
 
+   .. _figGenericUI-QUOFEM:
+
+   .. figure:: figures/quoFEM.png
+	:align: center
+	:figclass: align-center
+
+	The User Interface
 
 .. only:: PBE_app
 
@@ -72,13 +80,18 @@ This is the large central area of the UI where the  user provides input for the 
    :maxdepth: 1
 
    UQ
-   GI
-   SIM
+   :earthquake:GI
+   :wind:GI
+   :earthquake:SIM
+   :wind:SIM
    :earthquake:earthquake/earthquakeEvents
-   :wind:wind/WindEvents
-   FEM
-   :RESPONSE:response/EDP
+   :wind:wind/WindEvent
+   :response:FEM
+   :quoFEM:quoFEM/FEM
+   :response:response/EDP
    RV
+   :quoFEM:quoFEM/QOI
    :PBE:PBE/DL
    :response:response/resEE
+   :quoFEM:quoFEM/resQUO
    :PBE:PBE/resPBE
