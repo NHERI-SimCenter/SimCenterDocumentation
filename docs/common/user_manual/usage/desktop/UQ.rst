@@ -14,6 +14,8 @@ This engine utilizes the `Dakota Software <https://dakota.sandia.gov/>`_, a stat
    :maxdepth: 1
 
    DakotaSampling
+   :EEUQ:DakotaSensitivity
+   :EEUQ:DakotaReliability
    :quoFEM:DakotaSensitivity
    :quoFEM:DakotaReliability
    :quoFEM:DakotaParameterEstimation
