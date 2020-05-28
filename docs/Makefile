@@ -21,6 +21,14 @@ PBE:
 	rm -fr ../../PBE-Documentation/docs/common
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" ../../PBE-Documentation/docs $(O)
 
+quoFEM:
+	make clean
+	rm -fr ../.../quoFEM-Documentation/docs/_sources
+	rm -fr ../../quoFEM-Documentation/docs/_static
+	rm -fr ../../quoFEM-Documentation/docs/_images
+	rm -fr ../../quoFEM-Documentation/docs/common
+	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" ../../quoFEM-Documentation/docs $(O)
+
 EE:
 	make clean
 	rm -fr ../../EE-UQ-Documentation/docs/_sources
