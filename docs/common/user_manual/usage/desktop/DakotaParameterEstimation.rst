@@ -4,7 +4,17 @@
 Parameter Estimation
 ********************
 
-Parameter Estimation involves the calculation of the parameters that best fits the experimental results, that is that **minimizes** the QoI, given no prior estimation as to the distribution associaciated with the random variables. As such the processing scripts should leave in the **results.out** file differences between observed response and simulated response. The algorithms employed will find a set of parameters that minimizes these differences. The algorithms themselves are general functional minimization algorithms.
+Parameter Estimation methods (also known as non-linear least squares methods) are  used to fit a set of m observations (in this tool defined in the QoI panel) with a model that is non-linear with n unknown parameters (in thus tool the unknown parameters are defined in the RV panel) :math:`(m \ge n)`.  The method are obtaining the parameters that best fits the experimental results, that is that **minimizes** the QoI, given no prior estimation as to the distribution associaciated with the random variables. As such the processing scripts should leave in the **results.out** file differences between observed response and simulated response. The algorithms employed will find a set of parameters that minimizes these differences. The algorithms themselves are general functional minimization algorithms seeking to minimize:
+
+.. math::
+
+      f(x) = \sum_{i=1}^{m} w_i R_i^2 = \sum_{i=1}{m} w_i \left ( y(x)_i^{model} - y_i^{experiment} \right)^2
+
+where :math:`R_i` might be the difference between experimental data :math:`y_i^{experiment}` and model predictions :math:`y(x)_i^{model}` for a response quantity at a particular location and/or time step, :math:`w_i` optional weights, and :math:`x \in R^n` the :math:`n` model parameters which are not precisely known and are being calibrated to match available data.
+
+
+.. note::
+   The unknown parameters (the random variables options in the RV panel) are limited to Continuous Design. The user provides min, max and starting point values for each random variable.
 
 For parameter estimation two different optimization algorithms are currently provided, namely OPT++GaussNewton and NL2SOL:
 
