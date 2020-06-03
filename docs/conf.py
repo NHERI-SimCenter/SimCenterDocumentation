@@ -159,7 +159,7 @@ if app_name == 'PBE':
 	}
 
 elif app_name == 'EE-UQ':
-	project = 'Earthquake Engineering with Uncertainty Quantification'
+	project = 'Earthquake Engineering with Uncertainty Quantification (EE-UQ)'
 	copyright = '2019, The Regents of the University of California'
 	author = 'Frank McKenna'
 
@@ -180,7 +180,7 @@ elif app_name == 'EE-UQ':
 	exclude_patterns.remove('**/*response*')
 
 	rst_prolog += """
-.. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application
+.. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application (EE-UQ)
 .. |short tool name| replace:: EE-UQ app
 .. |short tool id| replace:: EE-UQ
 .. |tool github link| replace:: `EE-UQ Github page`_
@@ -226,17 +226,17 @@ elif app_name == 'quoFEM':
 	exclude_patterns.remove('**/*desktop*')
 
 	rst_prolog += """
-.. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method
+.. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)
 .. |short tool name| replace:: quoFEM app
 .. |short tool id| replace:: quoFEM
 .. |tool github link| replace:: `quoFEM Github page`_
 .. _quoFEM Github page: https://github.com/NHERI-SimCenter/quoFEM
 .. |tool version| replace:: 2.0
-.. |app| replace::quoFEM app
+.. |app| replace:: quoFEM app
 .. |appName| replace:: quoFEM app
 .. |githubLink| replace:: `quoFEM Github page`_
 .. |appLink| replace:: `quoFEM Download`_
-.. _EE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
+.. _quoFEM Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
 .. |messageBoard| replace:: `Message Board`_
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
 .. |figUI| replace:: :numref:`figQUO_FEM`
