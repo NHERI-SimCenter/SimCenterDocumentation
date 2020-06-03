@@ -1,4 +1,4 @@
-|full tool name|
+]|full tool name|
 =====================================================================
 
 |developers|
@@ -41,6 +41,7 @@ This document covers the features and capabilities of Version |tool version|  of
    :PBE:common/user_manual/about/PBE/about
    :EEUQ:common/user_manual/about/EEUQ/about
    :WEUQ:common/user_manual/about/WEUQ/about
+   :quoFEM:common/user_manual/about/quoFEM/aboutQUOFEM
    :pelicun:common/user_manual/about/pelicun/about
    
    :desktop_app:common/user_manual/installation/desktop/installation
