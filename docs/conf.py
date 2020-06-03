@@ -280,7 +280,7 @@ elif app_name == 'WE-UQ':
 	exclude_patterns.remove('**/*TinF*')
 
 	rst_prolog += """
-.. |full tool name| replace:: Wind Engineering Application with Uncertainty Quantification
+.. |full tool name| replace:: Wind Engineering with Uncertainty Quantification Application (WE-UQ)
 .. |short tool name| replace:: WE-UQ app
 .. |short tool id| replace:: WE-UQ
 .. |tool github link| replace:: `WE-UQ Github page`_
