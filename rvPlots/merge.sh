@@ -1,0 +1,1 @@
+cat plotGumbel.m plotLognormal.m plotUniform.m plotWeibull.m >> rvplot.m
