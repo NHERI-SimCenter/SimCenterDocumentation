@@ -93,6 +93,9 @@ rst_prolog = """
 .. _Dakota: https://dakota.sandia.gov/
 .. |DakotaDownload| replace:: `Dakota Download`_
 .. _Dakota Download: https://dakota.sandia.gov/download.html
+.. |Dakota Theory Manual| replace:: `Dakota Theory Manual`_
+.. _Dakota Theory Manual: https://dakota.sandia.gov/sites/default/files/docs/6.11/Theory-6.11.0.pdf
+
 .. |requirements| replace:: **REQUIREMENTS**
 .. |DesignSafe| replace:: `DesignSafe`_
 .. _DesignSafe: https://designsafe-ci.org
