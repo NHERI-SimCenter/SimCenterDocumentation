@@ -3,9 +3,9 @@
 Interpoint Distances
 ====================
 
-This is not a structural example, but one used example in the literature to verify sampling methods.
-The example here is computing the average distance between randomly chosen points
-in a region. Such average distances come up in many settings. For cell phone companies, the probability that a distributed network is 
+This is not a structural example, but one used example in the literature to verify sampling methods as a mathematical formula
+exists for the solution. The example presented is computing the average distance between randomly chosen points
+in a square region. Such average distances come up in many settings. For cell phone companies, the probability that a distributed network is 
 fully connected depends on average distances between communicating nodes. For city planners preparing for disasters, 
 it could represent the average distances from dwellings to fire stations or from the dwellings to the epicenter of an earthquake.
 

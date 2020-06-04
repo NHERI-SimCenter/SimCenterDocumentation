@@ -1,12 +1,6 @@
 RV: Random Variables
 ====================
 
-.. figure:: figures/rvplot.png
-   :align: center
-   :figclass: align-center
-
-   Various distributions offered by the |app| .
-
 The RV panel allows the user to specify the probabilistic distribution for the random problem at hand. The following probabilistic distributions for the random variables are currently supported: 
 
 1. `Normal (Gaussian) <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-normal_uncertain.html>`_
@@ -95,3 +89,11 @@ For each random variable, the user must enter a name and select from the pull do
 .. warning::
 
    Removing a random variable may have unintended consequences and cause the UQ Engine to fail. 
+
+.. figure:: figures/rvplot.png
+   :align: center
+   :width: 800
+   :figclass: align-center
+
+   Various distributions offered by the |app| .
+
