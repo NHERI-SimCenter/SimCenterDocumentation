@@ -3,12 +3,23 @@
 UQ: Uncertainty Quantification
 ==============================
 
-The first selection panel the user must select from and enter data into is the **UQ** panel. It is this panel where the user selects from the UQ_Engine to use to perform the uncertainty quantification calculuations. Presently the UQ_engine option is limited to The **Dakota Engine** or a user provided **Other**.
+The first selection panel the user must select from and enter data into is the **UQ** panel. It is in this panel where the user selects from the UQ_Engine to use to perform the uncertainty quantification calculuations. Presently the UQ_engine option is limited to The **Dakota Engine**.
 
 Dakota UQ Engine
 ----------------
 
-This engine utilizes the `Dakota Software <https://dakota.sandia.gov/>`_, a state-of-the-art research and robust, usable software application for optimization and UQ. **Dakota** provides a number of methods which we divide into the following categories though th pull-down menu:
+This UQ engine utilizes the `Dakota Software <https://dakota.sandia.gov/>`_, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. **Dakota** provides the user with a large number of different methods. For this reason we have divided the methods into categories though a pull-down menu, as shown in :numref:`figDakota`. Once the category has been selected, a number of different methods are made available to the user.
+
+.. _figDakota
+
+
+.. figure:: figures/dakotaUQ.png
+   :align: center
+   :figclass: align-center
+
+   Dakota Engine and Category Selection
+
+The following categories are available:
 
 .. toctree-filt::
    :maxdepth: 1
@@ -20,3 +31,6 @@ This engine utilizes the `Dakota Software <https://dakota.sandia.gov/>`_, a stat
    :quoFEM:DakotaReliability
    :quoFEM:DakotaParameterEstimation
    :quoFEM:DakotaInverseProblems
+
+
+

@@ -4,8 +4,7 @@
 User Guide
 **********
 
-Once the application is started the user is presented with the user interface (UI) shown in |figGenericUI|. It is in this UI that the user selects the applications to run, inputs the necessary
-parameters for each application, starts the workflow either locally or
+The |app|, as will be discussed in :ref:`lblArchitecture`, is a scientific workflow application that creates workflows and runs them in the background. These workflows can involve multiple different applications. Once the application is started the user is presented with the user interface (UI) shown in |figGenericUI|. It is in this UI that the user selects the applications to run in a workflow, inputs the necessary parameters for each of the applications, starts the workflow either locally or
 remotely, and finally views the simulation results. The UI contains several separate areas:
 
 .. only:: quoFEM_app
@@ -58,19 +57,9 @@ The ``Login`` Button is at the top right of the UI. Before the user can launch a
 In the top center of the UI there is an area in which, while the application is running, error and status messages will be displayed. 
 
 
-3. Push Buttons:
-
-This is the area near the bottom of the UI in which 4 buttons are contained:
-
-     * ``RUN`` – Run the simulation locally on the user’s desktop machine.
-     * ``RUN at DesignSafe`` – Process the information, and send to DesignSafe. The simulation will be run there on a supercomputer, and results will be stored in the user's DesignSafe jobs folder.
-     * ``GET from DesignSafe`` – Obtain the list of jobs for the user from DesignSafe and select a job to download from that list.
-     * ``Exit``: Exit the application.
-
-
 3. Input Panel Selection: 
 
-This area on the left side provides the user with a selection of buttons to choose from, e.g. ``UQ``, ``GI``, ``SI``, ``EVT``, ``RV``, ``FEM``, ``RES``. Selecting any of these buttons will change what is displayed in the central input panel.
+This area on the left side provides the user with a selection of buttons to choose from, e.g. ``UQ``, ``GI``, ``SI``, ``EVT``, ``RV``, ``FEM``, ``RES``. Selecting any of these buttons will change what is displayed in the central input panel. Each panel, with exception of ``RV`` and ``QoI`` panels,  will present the user with an option for which application to choose for that part of the workflow, and will then present the users for inputs for that application.
 
 4. Input Panel: 
 
@@ -95,3 +84,15 @@ This is the large central area of the UI where the  user provides input for the 
    :response:response/resEE
    :quoFEM:quoFEM/resQUO
    :PBE:PBE/resPBE
+
+
+5. Push Buttons:
+
+This is the area near the bottom of the UI in which 4 buttons are contained:
+
+     * ``RUN`` – Run the simulation locally on the user’s desktop machine.
+     * ``RUN at DesignSafe`` – Process the information, and send to DesignSafe. The simulation will be run there on a supercomputer, and results will be stored in the user's DesignSafe jobs folder.
+     * ``GET from DesignSafe`` – Obtain the list of jobs for the user from DesignSafe and select a job to download from that list.
+     * ``Exit``: Exit the application.
+
+

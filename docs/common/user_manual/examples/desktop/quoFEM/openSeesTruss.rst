@@ -53,7 +53,7 @@ To perform a Sampling or Forward propogation uncertainty analysis the user would
 
 The steps involved:
 
-1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota, and the UQ Method as Forward Propogation, and the Forward Propagarion method as LHS (Latin Hypercude). Change the #samples to 1000 and the seed to 20 as shown in the figure.
+1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota, and the UQ Method Category as Forward Propogation, and the Forward Propagarion method as LHS (Latin Hypercude). Change the #samples to 1000 and the seed to 20 as shown in the figure.
 
 
 .. figure:: figures/trussUQ.png

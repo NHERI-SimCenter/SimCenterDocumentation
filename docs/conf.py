@@ -244,7 +244,7 @@ elif app_name == 'quoFEM':
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
 .. |figUI| replace:: :numref:`figQUO_FEM`
 .. |figDownload| replace:: :numref:`figDownloadQUO_FEM`
-.. |figGenericUI| replace:: :numref:`figGenericUI-EE`
+.. |figGenericUI| replace:: :numref:`figGenericUI-QUOFEM`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-EE`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 .. |developers| replace:: **Frank McKenna**, **Nikhil Padhye**, **Adam Zsarnóczay**
