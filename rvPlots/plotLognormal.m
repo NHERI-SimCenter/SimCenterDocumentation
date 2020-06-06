@@ -9,6 +9,8 @@ lambda1 = log(u1)-square_zeta1/2.0;
 
 u2=6
 s2=.5
+u2=2
+s2=2
 square_zeta2=log(s2^2/u2^2 + 1);
 zeta2 = sqrt(square_zeta2);
 lambda2 = log(u2)-square_zeta2/2.0;
@@ -23,6 +25,6 @@ plot(x,f1, x, f2)
 title("Lognormal Distribution")
 xlabel("x")
 ylabel("Probability Density Function")
-legend("mean = 5.0, std. dev = 1.0", "mean = 6.0, std. dev = 0.5")
+legend("mean = 5.0, std. dev = 1.0", "mean = 2.0, std. dev = 2.0")
 grid
 saveas(gcf,'lognormal.png')

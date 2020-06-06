@@ -15,4 +15,6 @@ This chapter collects carefully designed verification exercises that we use to t
    :EEUQ:EEUQ/SiteResponse
    :WEUQ:WEUQ/PowerSpectralDensity
    :WEUQ:WEUQ/TinFverification
+   :quoFEM:quoFEM/InterpointDistances
+   :quoFEM:quoFEM/PortalFrameEarthquake
 

@@ -9,14 +9,8 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 
    .. math::
 
-      f(x) = \frac{1}{\sqrt{2 \pi} \sigma} exp \left( -{\frac{1}{2} \left( \frac{x - \mu}{\sigma} \right)^2} \right)
+      f(x) = \frac{1}{\sqrt{2 \pi} \sigma} \exp \left( -{\frac{1}{2} \left( \frac{x - \mu}{\sigma} \right)^2} \right)
 
-
-.. figure:: figures/normal.png
-   :align: center
-   :figclass: align-center
-
-   Examples of PDF for Normal Distribution
 
 2. `Lognormal <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-lognormal_uncertain.html>`_
 
@@ -25,17 +19,11 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 
    .. math::
 
-      f(x) = \frac{1}{\sqrt{2 \pi} \zeta x} exp \left( -{\frac{1}{2} \left( \frac{ln x - \lambda}{\zeta} \right)^2} \right)
+      f(x) = \frac{1}{\sqrt{2 \pi} \zeta x} \exp \left( -{\frac{1}{2} \left( \frac{ln x - \lambda}{\zeta} \right)^2} \right)
 
 
-  where :math:`\zeta^2 = ln \left( \frac{\sigma^2}{\mu^2} + 1 \right)` and :math:`\lambda = ln(\mu) - \frac{\zeta^2}{2}`
+  where :math:`\zeta^2 = \ln \left( \frac{\sigma^2}{\mu^2} + 1 \right)` and :math:`\lambda = \ln(\mu) - \frac{\zeta^2}{2}`
 
-
-.. figure:: figures/lognormal.png
-   :align: center
-   :figclass: align-center
-
-   Examples of PDF for Lognormal Distribution
 
 3. `Beta <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-beta_uncertain.html>`_
 
@@ -49,13 +37,6 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 
    where :math:`\Gamma(\alpha)` is the `Gamma function <http://mathworld.wolfram.com/GammaFunction.html>`_.
 
-
-
-.. figure:: figures/beta.png
-   :align: center
-   :figclass: align-center
-
-   Examples of PDF for Beta Distribution
 
 
 4. `Uniform <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-uniform_uncertain.html>`_
@@ -76,15 +57,9 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 
    .. math::
 
-      f(x) = \frac{k}{\lambda}\left(\frac{x}{\lambda}\right)^{k-1} exp \left( -(x/\lambda)^{k} \right)
+      f(x) = \frac{k}{\lambda}\left(\frac{x}{\lambda}\right)^{k-1} \exp \left( -(x/\lambda)^{k} \right)
 
    where :math:`k,\lambda > 0` and :math:`x >= 0`. For :math:`x<0`, :math:`f(x) = 0`.
-
-.. figure:: figures/weibull.png
-   :align: center
-   :figclass: align-center
-
-   Examples of PDF for Weibull Distribution
 
 
 6. `Gumbel <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-gumbel_uncertain.html>`_
@@ -94,13 +69,7 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 
    .. math::
    
-	f(x) = \alpha e^{-\alpha(x-\beta)}exp(-e^{-\alpha(x-\beta)})
-
-.. figure:: figures/gumbel.png
-   :align: center
-   :figclass: align-center
-
-   Examples of PDF for Gumbel Distribution
+	f(x) = \alpha e^{-\alpha(x-\beta)} \exp(-e^{-\alpha(x-\beta)})
 
 
 For each random variable, the user must enter a name and select from the pull down menu the distribution associated with the random variable. For the distribution selected, the user must then provide the input arguments, which are as described above. :numref:`figRV` shows the panel for a problem with four Random Variables with all random input following Gaussian distributions. 
@@ -120,3 +89,11 @@ For each random variable, the user must enter a name and select from the pull do
 .. warning::
 
    Removing a random variable may have unintended consequences and cause the UQ Engine to fail. 
+
+.. figure:: figures/rvplot.png
+   :align: center
+   :width: 800
+   :figclass: align-center
+
+   Various distributions offered by the |app| .
+
