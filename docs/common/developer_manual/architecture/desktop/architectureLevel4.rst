@@ -1,5 +1,5 @@
 
-.. _lblArchitecture:
+.. _lblArchitecture4:
 
 *********************
 Software Architecture
@@ -128,7 +128,6 @@ While there are a number of different types of UML diagrams,  those shown in thi
 
 As was mentioned the Front end UI applications are built using Qt. In a Qt application the programmer creates a QApplication object, in :numref:`codeMainCode` the object named `app` and a QMainWindow, in the example named `window`. As will be shown in :numRef:`figUmlCommon`, MainWindowWorkflowApp is a type of QMainWindow that is used in all SimCenter research applications as it deals with all the application menu items, e.g. File open and close, Help cite, etc The QMainWindowWorkflowApp is a SImCenter class that contains a single QWidget of type WorkflowAppWidget. The WorkflowAppWidget object is passed a RemoteService, the remote cloud service that the application will interact with. This RemoteService is placed in it's own QThread object, so that the UI can respond to user requests while communication with cloud service is underway. Once the window object is shown, control is passed to the QApplication  until the user is done.
 
-For |app| the type of WorkflowAppWidget is of type |workflowWidgetAPP|, which is shown in :numref:`figUmlEE`. Other applications have their own subclasses of WorkflowAappWidget.
 
 
 .. _lblUmlEE:
@@ -187,7 +186,7 @@ PBE is a tool for performance based engineering. Given a building and an event i
    UML Diagram for PBE
 
 
-.. _lblUmlEarthquakeEvents
+.. _lblUmlEarthquakeEvents:
 
 UML EarthquakeEvents
 --------------------
@@ -224,7 +223,7 @@ Similar to the Earthquake Events package, the wind events package shown in :numr
 SimCenterCommon
 ---------------
 
-SimCenter common shown in :numref:`figumlCommon} contains a number of component selctions, BIM selection, EDP Selection, SAM Selection, FEM Selection and UQ Engine Selection. Each contains a number of options. The components and their options are all subclasses of the SImCenterAppWidget class, The SImCenterAppWidget has methods to output and input from a JSON object. SimCenterCommon also contains the RandomVariablesContainer class, each object being a container for a number of RandomVariables. Each RansomVariable having a name and a RandomVariable Distribution associated with it. Types of RandomVariableDistributions include for exmaple Normal, Lognormal, Uniform, Beta, and Gumbel.
+SimCenter common shown in :numref:`figUmlCommon` contains a number of component selctions, BIM selection, EDP Selection, SAM Selection, FEM Selection and UQ Engine Selection. Each contains a number of options. The components and their options are all subclasses of the SImCenterAppWidget class, The SImCenterAppWidget has methods to output and input from a JSON object. SimCenterCommon also contains the RandomVariablesContainer class, each object being a container for a number of RandomVariables. Each RansomVariable having a name and a RandomVariable Distribution associated with it. Types of RandomVariableDistributions include for exmaple Normal, Lognormal, Uniform, Beta, and Gumbel.
 
  
 .. _figUmlCommon:
