@@ -43,7 +43,7 @@ The postprocess.tcl script shown below will accept as input any of the 6 nodes i
 
 .. warning::
 
-   Do not place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containig these files multiple times. If you are like me, your root, Downloads or Documents folders contains and awful lot of files.
+   Do not place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containig these files multiple times. If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!
 
 
 Sampling Analysis
@@ -66,7 +66,7 @@ The steps involved:
    :align: center
    :figclass: align-center
 
-3. Next select the RV tab from the input panel. This should be prepopulated with four random variables with same names as those having pset in the tcl script. For each variable, from the drop down menu change them from having a constant disatribution to a lognormal one and then provide the means and standard deviations specified for the problem.
+3. Next select the RV tab from the input panel. This should be prepopulated with four random variables with same names as those having pset in the tcl script. For each variable, from the drop down menu change them from having a constant distribution to a normal one and then provide the means and standard deviations specified for the problem.
 
 .. figure:: figures/trussRV.png
    :align: center
