@@ -59,7 +59,7 @@ The message area is located in the top center of the UI and displays status and 
 
 3. Input Panel Selection: 
 
-The ribbon on the left side provides the user with a selection of buttons to choose from, i.e. ``UQ``, ``GI``, ``SI``, ``EVT``, ``RV``, ``FEM``, ``RES``. Selecting any of these buttons will change what is displayed in the central input panel. Each panel, with exception of ``RV`` and ``QoI`` panels,  will present the user with an option for which application to choose for that part of the workflow, and will then present the users for inputs for that application.
+The ribbon on the left side provides the user with a selection of buttons to choose from, e.g. ``UQ``, ``GI``, ``SI``, ``EVT``, ``RV``, ``FEM``, ``RES``. Selecting any of these buttons will change what is displayed in the central input panel. Each panel, with exception of ``RV`` and ``QoI`` panels,  will present the user with an option for which application to choose for that part of the workflow, and will then present the users for inputs for that application.
 
 4. Input Panel: 
 
