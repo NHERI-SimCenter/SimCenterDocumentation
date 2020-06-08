@@ -7,7 +7,7 @@ Forward Propogation Methods
 The forward propogation of uncertainty is concerned with the quantification of uncertainties in the output propagated from uncertain inputs.
 Currently there are five options available:  Monte Carlo Sampling (MCS),  Latin Hypercube Sampling (LHS), Importance Sampling (IS), and sampling based on surrogate models, including Gaussian Process Regression (GPR) and Polynomial Chaos Expansion (PCE). Depending on the option selected, the user must specifies the appropriate input parameters for each. For instance, for MCS, the number of samples specifies the number of simulations to be performed, and providing a random seed allows the user to reproduce the same set of samples from the random variables multiple times.
 
-The the user selects the sampling method to use from the dropdown menu `sampling methods <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/method-sampling.html>`_. 
+The the user selects the sampling method to use from the `sampling methods <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/method-sampling.html>`_ dropdown menu. 
 
 Monte Carlo Sampling (MCS) 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -91,7 +91,7 @@ For uncertainty propagation with Gaussian Process Regression (GPR),  :numref:`fi
 Polynomial Chaos Expansion (PCE)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Another response surface approximation scheme using surrogates is based on Polynomial Chaos Expansion (PCE) scheme. For uncertainty propagation with Polynomial Chaos Expansion (PCE), :numref:`figPCE` shows the input panel for the PCE model, with input panels for training and sampling as well, similar to the input GPR panel. The first set of input parameters in the surrogate training data specify the dataset used for training the surrogate model, while the second set of input parameters in the surrogate sampling data relate to the dataset used for sampling the surrogate. Extreme care must be taken in specifying the parameters of the training dataset to results in an accurate response surface approximation. 
+Another response surface approximation scheme using surrogates is based on Polynomial Chaos Expansion (PCE). For uncertainty propagation with Polynomial Chaos Expansion (PCE), :numref:`figPCE` shows the input panel for the PCE model, with input panels for training and sampling as well, similar to the input GPR panel. The first set of input parameters in the surrogate training data specify the dataset used for training the surrogate model, while the second set of input parameters in the surrogate sampling data relate to the dataset used for sampling the surrogate. Extreme care must be taken in specifying the parameters of the training dataset to results in an accurate response surface approximation. 
 
 
 .. _figPCE:
