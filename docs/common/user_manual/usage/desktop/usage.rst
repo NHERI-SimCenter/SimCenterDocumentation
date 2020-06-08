@@ -50,11 +50,11 @@ remotely, and finally views the simulation results. The main window of the UI is
 
 1. Login Button: 
 
-The ``Login`` Button is at the top right of the UI. Before the user can launch any jobs on DesignSafe, they must first login to DesignSafe using their DesignSafe login and password. Pressing the login button will open up the login window for users to enter this information. Users can register for an account on the `DesignSafe <https://www.designsafe-ci.org/account/register>`_.
+The ``Login`` Button is at the top right of the UI. Before the user can launch any jobs on DesignSafe, they must first login to DesignSafe using their DesignSafe login and password. Pressing the login button will open up the login window for users to enter this information. Users can register for an account on the `DesignSafe <https://www.designsafe-ci.org/account/register>`_ website.
 
 2. Message Area: 
 
-In the top center of the UI there is an area in which, while the application is running, error and status messages will be displayed. 
+The message area is located in the top center of the UI and displays status and error messages for a running background application. 
 
 
 3. Input Panel Selection: 
