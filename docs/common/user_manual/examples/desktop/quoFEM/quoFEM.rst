@@ -4,5 +4,5 @@ The following are a few examnples showing the usage of quoFEM. Video companions 
 .. toctree-filt::
 	:maxdepth: 1
 
-  	openSeesTruss
+  	TrussOpenSees
 	openSeesPyTruss

@@ -28,19 +28,19 @@ For building scale simulations, the requirements are broken down by SimCenter ap
 \subsection{Response of Building to Wind Hazard}
 The following are the requirements for response of single structure due to wind action. The requirements are being met by the WE-UQ application. All requirements in this section are related to work in WBS 1.3.7.
 
- \input{requirements/WEUQ_Requirements.tex}
+\input{requirements/WEUQ_Requirements.tex}
  
- \clearpage
- \subsection{Response of Building to Hydrodynamic Effects Due to Tsunami or Coastal Inundation}
-The following are the requirements for response of single structure due to hydrodynamic effects of water caused earthquake induced tsunami or coastal inundation due to a Hurricane.. The requirements are being met by the Hydro-UQ application. All requirements in this section are related to work in WBS 1.3.7.
+\clearpage
+\subsection{Response of Building to Hydrodynamic Effects Due to Tsunami or Coastal Inundation}
+The following are the requirements for response of single structure due to hydrodynamic effects of water caused earthquake induced tsunami or coastal inundation due to a Hurricane. The requirements are being met by the Hydro-UQ application. All requirements in this section are related to work in WBS 1.3.7.
 
- \input{requirements/HydroUQ_Requirements.tex}
+\input{requirements/HydroUQ_Requirements.tex}
  
- \clearpage
+\clearpage
 \subsection{Response of Building to Earthquake Hazard}
-The following are the requirements for response of single structure to earthquake hazards. The requirements are being met by the EE-UQ application. AAll requirements in this section are related to work in WBS 1.3.8.
+The following are the requirements for response of single structure to earthquake hazards. The requirements are being met by the EE-UQ application. All requirements in this section are related to work in WBS 1.3.8.
 
- \input{requirements/EEUQ_Requirements.tex}
+\input{requirements/EEUQ_Requirements.tex}
 
 \clearpage
 \subsection{quoFEM}
@@ -55,15 +55,11 @@ The following are the requirements for application(s) related to performance bas
 
 \input{requirements/PBE_Requirements.tex} 
 
-
 \section{Educational Software}
 
 The following are educational activities obtained that are related to software development.
 
 \input{requirements/edRequirements.tex} 
-
-
-
 
 .. _lbl-user-manual:
 

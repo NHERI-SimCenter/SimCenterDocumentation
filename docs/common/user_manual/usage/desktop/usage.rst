@@ -4,8 +4,8 @@
 User Guide
 **********
 
-The |app|, as will be discussed in :ref:`lblArchitecture`, is a scientific workflow application that creates workflows and runs them in the background. These workflows can involve multiple different applications. Once the application is started the user is presented with the user interface (UI) shown in |figGenericUI|. It is in this UI that the user selects the applications to run in a workflow, inputs the necessary parameters for each of the applications, starts the workflow either locally or
-remotely, and finally views the simulation results. The UI contains several separate areas:
+The |app|, as will be discussed in :ref:`lblArchitecture`, is a scientific workflow application that creates workflows and runs them in the background. These workflows can involve multiple different backend applications. Once the |app| is started, the user is presented with the user interface (UI) shown in |figGenericUI|. It is in this UI where the user selects the applications to run in a workflow, inputs the necessary parameters for each of these applications, starts the workflow either locally or
+remotely, and finally views the simulation results. The main window of the UI is divided into several separate areas:
 
 .. only:: quoFEM_app
 
@@ -79,7 +79,7 @@ This is the large central area of the UI where the  user provides input for the 
    :quoFEM:quoFEM/FEM
    :response:response/EDP
    RV
-   :quoFEM:quoFEM/QOI
+   :quoFEM:quoFEM/QuantatiesOfInterest
    :PBE:PBE/DL
    :response:response/resEE
    :quoFEM:quoFEM/resQUO

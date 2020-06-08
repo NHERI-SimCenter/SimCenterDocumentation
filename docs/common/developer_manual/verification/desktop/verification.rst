@@ -16,5 +16,5 @@ This chapter collects carefully designed verification exercises that we use to t
    :WEUQ:WEUQ/PowerSpectralDensity
    :WEUQ:WEUQ/TinFverification
    :quoFEM:quoFEM/InterpointDistances
-   :quoFEM:quoFEM/PortalFrameEarthquake
+
 

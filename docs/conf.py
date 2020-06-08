@@ -434,7 +434,11 @@ html_static_path = ['_static']
 # For a full list of configuration options see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-latex_docclass = {
-	r'manual': 'simcenterdocumentation',
-	r'howto': 'simcenterdocumentation'
+#latex_docclass = {
+#	r'manual': 'simcenterdocumentation',
+#	r'howto': 'simcenterdocumentation'
+#}
+
+latex_elements = {
+  'extraclassoptions': 'openany,oneside'
 }
