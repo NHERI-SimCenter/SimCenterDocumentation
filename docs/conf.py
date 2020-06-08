@@ -93,6 +93,9 @@ rst_prolog = """
 .. _Dakota: https://dakota.sandia.gov/
 .. |DakotaDownload| replace:: `Dakota Download`_
 .. _Dakota Download: https://dakota.sandia.gov/download.html
+.. |Dakota Theory Manual| replace:: `Dakota Theory Manual`_
+.. _Dakota Theory Manual: https://dakota.sandia.gov/sites/default/files/docs/6.11/Theory-6.11.0.pdf
+
 .. |requirements| replace:: **REQUIREMENTS**
 .. |DesignSafe| replace:: `DesignSafe`_
 .. _DesignSafe: https://designsafe-ci.org
@@ -241,7 +244,7 @@ elif app_name == 'quoFEM':
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
 .. |figUI| replace:: :numref:`figQUO_FEM`
 .. |figDownload| replace:: :numref:`figDownloadQUO_FEM`
-.. |figGenericUI| replace:: :numref:`figGenericUI-EE`
+.. |figGenericUI| replace:: :numref:`figGenericUI-QUOFEM`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-EE`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 .. |developers| replace:: **Frank McKenna**, **Nikhil Padhye**, **Adam Zsarnóczay**
@@ -280,7 +283,7 @@ elif app_name == 'WE-UQ':
 	exclude_patterns.remove('**/*TinF*')
 
 	rst_prolog += """
-.. |full tool name| replace:: Wind Engineering Application with Uncertainty Quantification
+.. |full tool name| replace:: Wind Engineering with Uncertainty Quantification Application (WE-UQ)
 .. |short tool name| replace:: WE-UQ app
 .. |short tool id| replace:: WE-UQ
 .. |tool github link| replace:: `WE-UQ Github page`_
@@ -431,7 +434,11 @@ html_static_path = ['_static']
 # For a full list of configuration options see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
-latex_docclass = {
-	r'manual': 'simcenterdocumentation',
-	r'howto': 'simcenterdocumentation'
+#latex_docclass = {
+#	r'manual': 'simcenterdocumentation',
+#	r'howto': 'simcenterdocumentation'
+#}
+
+latex_elements = {
+  'extraclassoptions': 'openany,oneside'
 }

@@ -4,7 +4,7 @@
 Software Architecture
 *********************
 
-The SimCenter is developing a software framework for building applications that run **scientific workflow applications** to perform computational simulations in field of NHE at both building level scale and regionsl scale. It is releasing a number of applications built using this framework. The |app| is one of those applications which have been released (EE-UQ, WE-UQ, PBE). Other applications are under development (RDT). The applications that the SimCenter are developing are limited **scientific workflow systems**. This chapter presents the software architecture for the framework and the |app| built using it using the `C4 model <https://c4model.com>_. The following sections present the architecture to level 3:
+The SimCenter is developing a software framework for building applications that run **scientific workflow applications** to perform computational simulations in field of NHE at both building level scale and regionsl scale. It is releasing a number of applications built using this framework. The |app| is one of those applications which have been released (EE-UQ, WE-UQ, PBE). Other applications are under development (RDT). The applications that the SimCenter are developing are limited **scientific workflow systems**. This chapter presents the software architecture for the framework and the |app| built using it using the `C4 model <https://c4model.com>`_. The following sections present the architecture to level 3:
 
 .. note:: 
 

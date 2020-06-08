@@ -7,8 +7,9 @@ Examples
 .. toctree-filt::
 	:maxdepth: 1
 
-	:quoFEM:quoFEM/openSeesTruss
-	:quoFEM:quoFEM/openSeesPyTruss
+	:quoFEM:quoFEM/TrussOpenSees
+	:quoFEM:quoFEM/OpenSeesPyTruss
+	:quoFEM:quoFEM/FramePeriod
 
 
 

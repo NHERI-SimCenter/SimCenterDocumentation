@@ -16,13 +16,13 @@ units, **g** to the model units, :math:`\frac{in}{s^2}`. Files for this example 
 included with the release of the software and are available in the
 Examples folder in a subfolder called **PortalFrame2D**.
 
-   .. _figPortalVerification:
+.. _figPortalVerification:
 
-   .. figure:: figures/portalFrame.png
-	:align: center
-	:figclass: align-center
+.. figure:: figures/portalFrame.png
+   :align: center
+   :figclass: align-center
 
-	Two-dimensional portal frame model subjected to gravity and earthquake loading
+   Two-dimensional portal frame model subjected to gravity and earthquake loading
 
 To introduce uncertainty in the model, both mass and young’s modulus
 are assumed to be normally distributed random variables with means and
@@ -32,8 +32,10 @@ method using both |app| and a Python script
 (**PortalFrameSampling.py**) and response statistics from both
 analyses are compared.
 
+.. _lblRV: 
+
 .. csv-table:: 
-   :header: "Uncertain Parameter", "Distribution", "Mean", "Standrad Deviation"
+   :header: "Uncertain Parameter", "Distribution", "Mean", "Standard Deviation"
    :widths: 40, 20, 20, 20
 
    Nodal Mass (m [kip])	 , Normal , 	5.18	 , 1.0 
@@ -77,7 +79,7 @@ Then click on the choose button to select the event file.
    :align: center
    :figclass: align-center
     
-    Work on EVT
+   Work on EVT
 
 #. Choose the event file (\texttt{BM68elc.json}) for El Centro earthquake provided in the portal frame 2D example folder.
 
@@ -107,7 +109,7 @@ results tab showing the summary of results (\Cref{fig:figure27}).
    :align: center
    :figclass: align-center
     
-    Pop-up shown when clicking **Run**
+   Pop-up shown when clicking **Run**
 
 Verification Script
 -------------------

@@ -1,12 +1,6 @@
 RV: Random Variables
 ====================
 
-.. figure:: figures/rvplot.png
-   :align: center
-   :figclass: align-center
-
-   Various distributions offered by the |app| .
-
 The RV panel allows the user to specify the probabilistic distribution for the random problem at hand. The following probabilistic distributions for the random variables are currently supported: 
 
 1. `Normal (Gaussian) <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-normal_uncertain.html>`_
@@ -25,7 +19,7 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 
    .. math::
 
-      f(x) = \frac{1}{\sqrt{2 \pi} \zeta x} \exp \left( -{\frac{1}{2} \left( \frac{ \ln x - \lambda}{\zeta} \right)^2} \right)
+      f(x) = \frac{1}{\sqrt{2 \pi} \zeta x} \exp \left( -{\frac{1}{2} \left( \frac{ln x - \lambda}{\zeta} \right)^2} \right)
 
 
   where :math:`\zeta^2 = \ln \left( \frac{\sigma^2}{\mu^2} + 1 \right)` and :math:`\lambda = \ln(\mu) - \frac{\zeta^2}{2}`
@@ -94,4 +88,12 @@ For each random variable, the user must enter a name and select from the pull do
 
 .. warning::
 
-   Removing a random variable may have unintended consequences and cause the UQ Engine to fail.
+   Removing a random variable may have unintended consequences and cause the UQ Engine to fail. 
+
+.. figure:: figures/rvplot.png
+   :align: center
+   :width: 800
+   :figclass: align-center
+
+   Various distributions offered by the |app| .
+

@@ -300,7 +300,7 @@ Inserting :eq:`twoPointCorrelations2` back to :eq:`twoPointCorrelations1` and us
     R_{ij}(\boldsymbol{x},\boldsymbol{r}) = R_{ij} \cdot \prod_{l=1}^3 \left[f_{\boldsymbol{\sigma}(\boldsymbol{x})} *f_{\boldsymbol{\sigma}(\boldsymbol{x}+\boldsymbol{r})} \right](r_l)
 
 
-where :math:`∗` denotes the convolution product. For homogeneous turbulence where integral
+where :math:`*` denotes the convolution product. For homogeneous turbulence where integral
 length scales :math:`\boldsymbol{\sigma}(\boldsymbol{x}) =
 \boldsymbol{\sigma}(\boldsymbol{x}+\boldsymbol{r}) =(\sigma,\sigma,\sigma)^T`, the two-point
 cross-correlation tensor :math:`R_{ij}(\boldsymbol{x},\boldsymbol{r})` only depends on
