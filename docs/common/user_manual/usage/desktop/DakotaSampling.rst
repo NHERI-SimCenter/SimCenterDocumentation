@@ -22,7 +22,7 @@ MCS is based on random sampling and is among the most robust approaches for prob
 	:align: center
 	:figclass: align-center
 
-  	Monte Carlo Sampling input panel
+  	Monte Carlo Sampling input panel.
 
 
 Latin Hypercube Sampling (LHS) 
@@ -39,7 +39,7 @@ LHS represents a pseudo-random, stratified sampling approach for uncertainty pro
 	:align: center
 	:figclass: align-center
 
-	Latin Hypercube Sampling input panel
+	Latin Hypercube Sampling input panel.
 
 
 Importance Sampling
@@ -60,7 +60,7 @@ For rare event analysis,  :numref:`figIS` shows the input panel for Importance S
 	:align: center
 	:figclass: align-center
 
-	Importance Sampling input panel
+	Importance Sampling input panel.
 
 
 For more information on each, please refer to the Dakota manual. 
@@ -79,7 +79,7 @@ One of methods for uncertainty propagation with surrogates is Gaussian Process R
 	:align: center
 	:figclass: align-center
 
-  	GPR forward propagation input panel
+  	GPR forward propagation input panel.
 
 For problems where conventional sampling schemes such as LHS, MCS, or other fail, surrogates can be leveraged to obtain an approximation of the response surface, and than sample from that surface accordingly. 
 
@@ -100,7 +100,7 @@ Another response surface approximation scheme using surrogates is based on Polyn
 	:align: center
 	:figclass: align-center
 
-	PCE forward propagation input panel
+	PCE forward propagation input panel.
 
 
 If you are not sure about the training parameters of the surrogates, please refrain from using the surrogates (PCE in particular) for forward propagation and use instead conventional sampling such as MCS and LHS as discussed above, even at a higher computational cost. 
