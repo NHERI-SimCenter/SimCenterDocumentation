@@ -13,7 +13,7 @@ The first panel :numref:`figResultsSummaryPBE` shows summary statistics: mean, s
 	:align: center
 	:figclass: align-center
 
-	Results Summary
+	Results summary.
 
 The second panel presents results for each realization in a plot and in tabular format. By selecting various columns with the left and right mouse buttons in the table below the graphic, the information in the plot is updated :numref:`resultsData_PBE`. The plot is controlled as follows:
 
@@ -27,7 +27,7 @@ The second panel presents results for each realization in a plot and in tabular 
 	:align: center
 	:figclass: align-center
 
-	Results presented graphically and in tabular form
+	Results presented graphically and in tabular form.
 
 The columns in the table typically identify the Decision Variable category (e.g. reconstruction, injuries, etc.) and a variable within that category preceded by a forward slash (e.g., injuries/fatalities). Boolean variables (e.g,. collapsed?, red_tagged?) are used to describe the occurrence of events. The reconstruction/time_impractical? and cost_impractical? variables identify realizations where reconstruction time or cost would exceed the replacement time or cost, respectively. In such cases, replacement is assumed instead of reconstruction. The minimum (i.e., based on parallel work) reconstruction time is used when making this decision.
 

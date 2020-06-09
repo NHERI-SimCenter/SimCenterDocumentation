@@ -19,7 +19,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
       :align: center
       :figclass: align-center
 
-      PBE Download Page
+      PBE download page.
 
 .. only:: EEUQ_app
 
@@ -29,7 +29,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
       :align: center
       :figclass: align-center
 
-      EE-UQ Download Page
+      EE-UQ download page.
 
 
 .. only:: WEUQ_app
@@ -40,8 +40,18 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
       :align: center
       :figclass: align-center
 
-      WE-UQ Download Page
+      WE-UQ download page.
 
+
+.. only:: quoFEM_app
+
+   .. _figDownloadQUO_FEM:
+
+   .. figure:: figures/QUO_FEMDownload.png
+      :align: center
+      :figclass: align-center
+
+      quoFEM download page.
 
 To download the |app| click on the link for the appropriate file for your operating system. This will bring up a pop-up window. Click on the ``Download`` button in bottom right hand corner of this pop-up. Unpackage the ensuing downloaded file and place it in a location on your filesystem. 
 
@@ -62,7 +72,7 @@ Now test that the application starts. To do this navigate to the location where 
 	:align: center
 	:figclass: align-center
 
-	PBE Application on Startup
+	PBE application on startup.
 
 .. only:: EEUQ_app
 
@@ -72,7 +82,7 @@ Now test that the application starts. To do this navigate to the location where 
 	:align: center
 	:figclass: align-center
 
-	EE-UQ Application on Startup
+	EE-UQ application on startup.
 
 .. only:: WEUQ_app
 
@@ -82,8 +92,17 @@ Now test that the application starts. To do this navigate to the location where 
 	:align: center
 	:figclass: align-center
 
-	WE-UQ Application on Startup
+	WE-UQ application on startup.
 
+.. only:: quoFEM_app
+
+   .. _figQUO_FEM:
+
+   .. figure:: figures/QUO_FEM.png
+	:align: center
+	:figclass: align-center
+
+	quoFEM application on startup.
 
 .. note::
    The SimCenter is not recognized as either a Windows or an Apple vendor. Our applications are not recognized by the operating system as being signed. Consequently, you may receive a warning message when you start the |short tool name| application for the first time.
