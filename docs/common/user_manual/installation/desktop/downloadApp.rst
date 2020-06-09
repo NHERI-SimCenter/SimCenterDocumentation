@@ -4,7 +4,7 @@ Download the Application
 ========================
 
 
-To download the |app| application navigate to |appLink| page. As shown in |figDownload|, from the application page you must click on the link ``Download app and User Manual`` which will bring you to another page. This page contains a list of downloadable files and directories. There are at least four files available for download from this page: 
+To download the |app|, first navigate to the |appLink| page. As shown in |figDownload|, from the application page you must click on the link ``Download app and User Manual`` which will bring you to another page. This page contains a list of downloadable files and directories. There are at least four files available for download from this page: 
 
 1. The PDF file is the User Manual that you are reading now.
 2. The MOV file is an video that provides an introduction to the usage of the application.
@@ -43,7 +43,7 @@ To download the |app| application navigate to |appLink| page. As shown in |figDo
       WE-UQ Download Page
 
 
-To download the |app| application click on the link for the appropriate file for your operating system. This will bring up a pop-up window. Click on the ``Download`` button in bottom right hand corner of this pop-up. Unpackage the ensuing downloaded file and place it in a location on your filesystem. 
+To download the |app| click on the link for the appropriate file for your operating system. This will bring up a pop-up window. Click on the ``Download`` button in bottom right hand corner of this pop-up. Unpackage the ensuing downloaded file and place it in a location on your filesystem. 
 
 
 .. note::
