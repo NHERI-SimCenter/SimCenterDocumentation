@@ -7,14 +7,14 @@ Forward Propogation Methods
 The forward propogation of uncertainty is concerned with the quantification of uncertainties in the output propagated from uncertain inputs.
 Currently there are five options available:  Monte Carlo Sampling (MCS),  Latin Hypercube Sampling (LHS), Importance Sampling (IS), and sampling based on surrogate models, including Gaussian Process Regression (GPR) and Polynomial Chaos Expansion (PCE). Depending on the option selected, the user must specifies the appropriate input parameters for each. For instance, for MCS, the number of samples specifies the number of simulations to be performed, and providing a random seed allows the user to reproduce the same set of samples from the random variables multiple times.
 
-The the user selects the sampling method to use from the `sampling methods <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/method-sampling.html>`_ dropdown menu. 
+The the user selects the sampling method to use from the sampling methods dropdown menu. Additional information regarding sampling methods offered in Dakota can be found `here <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/method-sampling.html>`_. 
 
 Monte Carlo Sampling (MCS) 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-MCS is based on random sampling and is among the most robust approaches for problems where other uncertainty propagation schemes fail. Moreover, the convergence rate of MCS methods is independent of the problem dimensionality, albeit the convergence rate of such MCS methods is relatively slow :math:`N^{-1/2}`. In MCS, a sample drawn at any step is independent of all previous samples. 
+MCS is based on random sampling and is among the most robust approaches for problems where other uncertainty propagation schemes fail. Moreover, the convergence rate of MCS methods is independent of the problem dimensionality, albeit the convergence rate of such MCS methods is relatively slow at :math:`N^{-1/2}`. In MCS, a sample drawn at any step is independent of all previous samples. 
 
-:numref:`figMCS` shows the input panel corresponding to the Monte Carlo Sampling (MCS) setting. Two input parameters need to be specified, the number of samples to be executed, as well as the seed used in generating the random samples. 
+:numref:`figMCS` shows the input panel corresponding to the Monte Carlo Sampling setting. Two input parameters need to be specified, the number of samples to be executed, as well as the seed used in generating the random samples. 
 
 .. _figMCS:
 
