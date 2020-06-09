@@ -10,6 +10,7 @@ Examples
 	:quoFEM:quoFEM/TrussOpenSees
 	:quoFEM:quoFEM/OpenSeesPyTruss
 	:quoFEM:quoFEM/FramePeriod
+	:EE-UQ:EE-UQ/ShearBuilding3
 
 
 
