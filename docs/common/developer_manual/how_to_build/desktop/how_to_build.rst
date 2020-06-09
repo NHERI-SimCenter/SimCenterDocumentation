@@ -93,8 +93,7 @@ Build using the terminal
   
             qmake ../|short tool id|.pro
 
-    2. Setup the development kit in Qt Creator. This is usually done by selecting the Qt version, compiler and configuration and following the onscreen dialog.
-    3. Build the application and run it in Qt Creator IDE by using the ``Run`` button. This can be done using the keyboard shortcut ``F5`` to build and start the tool.
+    3. Build the project by using the command ``make`` on Unix like systems. On Windows, you can either use ``nmake`` or ``jom`` to build in parallel. Once built, you can now run the tool executable.
 
 
 ************
