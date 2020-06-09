@@ -195,7 +195,9 @@ After the user fills in the rest of the tabs as per the previous section, the us
    :align: center
    :figclass: align-center
 
+.. warning::
 
+   Reliability analsyis can only be performed when their is only one EDP.
 
 
 
