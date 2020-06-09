@@ -3,7 +3,7 @@
 UQ: Uncertainty Quantification
 ==============================
 
-The first selection panel the user must select from and enter data into is the **UQ** panel. It is in this panel where the user selects from the UQ_Engine to use to perform the uncertainty quantification calculuations. Presently the UQ_engine option is limited to The **Dakota Engine**.
+The first selection panel the user must select from and enter data into is the ``UQ`` panel. It is in this panel where the user selects the UQ_Engine to use for performing the uncertainty quantification calculuations. Presently the UQ_engine option is limited to The **Dakota Engine**.
 
 Dakota UQ Engine
 ----------------

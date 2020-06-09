@@ -1,3 +1,5 @@
+%% Gumbel
+
 clear all;
 output = containers.Map()
 
@@ -14,7 +16,6 @@ a4=1/4;
 b4=3.0;
 
 
-
 numSteps = size(x,2);
 for i=1:numSteps
 z1 = exp(-a1*(x(i)-b1));
@@ -29,7 +30,7 @@ l = ["$\\alpha = 0.5$ \n $\\beta = 0.5$","$\\alpha = 0.5$ \n $\\beta = 1.0$", "$
 % plot(x,f1,x,f2,x,f3,x,f4)
 
 
-output('Gumbel Distribution') = containers.Map({'x','y','l'},{x,f,l});
+output('Gumbel') = containers.Map({'x','y','l'},{x,f,l});
 
 % title("Gumbel Distribution")
 % xlabel("x")
@@ -38,6 +39,7 @@ output('Gumbel Distribution') = containers.Map({'x','y','l'},{x,f,l});
 % grid
 % saveas(gcf,'gumbel.png')
 
+%% Lognormal %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clear x f;
 
 x=[0:.1:10]
@@ -62,13 +64,15 @@ end
 % plot(x,f1, x, f2)
 l = ["$\\mu = 5.0$ \n $\\sigma = 1.0$", "$\\mu = 6.0$ \n $\\sigma = 0.5$"];
 
-output('Lognormal Distribution') = containers.Map({'x','y','l'},{x,f,l});
+output('Lognormal') = containers.Map({'x','y','l'},{x,f,l});
 % title("Lognormal Distribution")
 % xlabel("x")
 % ylabel("Probability Density Function")
 % legend("mean = 5.0, std. dev = 1.0", "mean = 6.0, std. dev = 0.5")
 % grid
 % saveas(gcf,'lognormal.png')
+
+%% Uniform %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 clear x f;
 
 x=[0:.1:10]
@@ -82,13 +86,14 @@ end
 
 % plot(x,f1)
 l = ["$U_b = 10.0$ \n $L_b = 0.0$"];
-output("Uniform Distribution") = containers.Map({'x','y', 'l'},{x,f,l});
+output("Uniform") = containers.Map({'x','y', 'l'},{x,f,l});
 % xlabel("x")
 % ylabel("f(x)")
 % legend("Ub = 10.0, Lb = 0.0")
 % grid
 % ylim([0,.2])
 
+%% Weibull
 clear x f;
 
 x=[0:.1:10]
@@ -114,7 +119,7 @@ end
 % plot(x,f1,x,f2,x,f3,x,f4)
 l = ["$k = 2.0$ \n $\\lambda = 1.0$", "$k = 2.0$ \n $\\lambda = 2.0$","$k = 1.0$ \n $\\lambda = 2.0$", "$k = 0.5$ \n $\\lambda = 2.0$"]
 
-output("Weibull Distribution") = containers.Map({'x','y','l'},{x,f,l});
+output("Weibull") = containers.Map({'x','y','l'},{x,f,l});
 % xlabel("x")
 % ylabel("Probability Density Function")
 % legend("shape = 2.0, scale = 1.0", "shape = 2.0, scale = 2.0","shape = 1.0, scale = 2.0", "shape = 0.5, scale = 2.0")
