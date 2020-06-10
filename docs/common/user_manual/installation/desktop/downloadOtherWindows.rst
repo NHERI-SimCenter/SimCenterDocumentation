@@ -12,7 +12,7 @@ If you have not yet installed Python 3.7, we recommend installing Python 3.7 fro
 
 .. note:
 
-   allow the installer to change yur system envuronment variables so that the directory containing the executable is on your path.
+   allow the installer to change yur system environment variables so that the directory containing the executable is on your path.
 
 .. warning:
    The latest version of Python is 3.8. At time of writing Python 3.8 was no working with the current pandas package.
@@ -29,7 +29,7 @@ Once Python is installed, you need to extend it by installing the following pack
 Dakota
 ^^^^^^
 
-|DakotaLink| is the default UQ engine used by the |app| that is publicily available from its |DakotaDownload|. The download page offers an extensive list of downloadable files. You can narrrow this down to the file to be selected by selecting **Windows** in the `Platform`, **6.10** in the `Release`, and **Command Line Only** for the `interface type`. In the `Public` area you should now only have a single option, click on the link to download |Dakota|. When you extract the files that you download, they will all be contained in a single folder, we suggest moving that folder to a `C:\SimCenter\dakota\` folder.
+|DakotaLink| is the default UQ engine used by the |app| that is publicly available from its |DakotaDownload|. The download page offers an extensive list of downloadable files. You can narrow this down to the file to be selected by selecting **Windows** in the `Platform`, **6.10** in the `Release`, and **Command Line Only** for the `interface type`. In the `Public` area you should now only have a single option, click on the link to download |Dakota|. When you extract the files that you download, they will all be contained in a single folder, we suggest moving that folder to a `C:\SimCenter\dakota\` folder.
 
 
 
