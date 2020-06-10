@@ -15,7 +15,7 @@ remotely, and finally views the simulation results. The main window of the UI is
 	:align: center
 	:figclass: align-center
 
-	The User Interface
+	The |app| user interface.
 
 .. only:: PBE_app
 
@@ -25,17 +25,17 @@ remotely, and finally views the simulation results. The main window of the UI is
 	:align: center
 	:figclass: align-center
 
-	The User Interface
+	The |app| user interface.
 
 .. only:: EEUQ_app
 
    .. _figGenericUI-EE:
 
    .. figure:: figures/eePanel.png
-	       :align: center
-	       :figclass: align-center
+   :align: center
+   :figclass: align-center
 
-	       The User Interface
+   The |app| user interface.
 
 .. only:: WEUQ_app
 
@@ -45,7 +45,7 @@ remotely, and finally views the simulation results. The main window of the UI is
 	:align: center
 	:figclass: align-center
 
-	The User Interface
+	The |app| user interface.
 
 
 1. Login Button: 

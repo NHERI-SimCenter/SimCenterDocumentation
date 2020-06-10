@@ -11,7 +11,7 @@ This event allows the user to perform ground motion records selection and scalin
 	:align: center
 	:figclass: align-center
 
-	PEER NGA Records Event
+	PEER NGA records event.
 
 #. A target response spectrum must be specified by the user to be used for records selection and scaling.
 #. The user specifies a selection criteria, such as the number of records and optional ranges of earthquake magnitude, distance to rupture (:math:`R_{rup}`) and shear wave velocity in the top 30 meter of soil (:math:`V_s 30`).

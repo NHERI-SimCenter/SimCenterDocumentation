@@ -22,7 +22,7 @@ Examples folder in a subfolder called **PortalFrame2D**.
 	:align: center
 	:figclass: align-center
 
-	Two-dimensional portal frame model subjected to gravity and earthquake loading
+	Two-dimensional portal frame model subjected to gravity and earthquake loading.
 
 To introduce uncertainty in the model, both mass and young’s modulus
 are assumed to be normally distributed random variables with means and

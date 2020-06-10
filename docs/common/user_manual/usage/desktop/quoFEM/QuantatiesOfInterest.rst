@@ -11,7 +11,7 @@ The QoI panel is where the user specifies the variable names associated with the
 	:align: center
 	:figclass: align-center
 
-	Input for QoI panel 
+	Input for the QoI panel.
 
 In figure shown the user has added two response quantiaites, **Node_2_Disp_2** and **Node_4_Disp_1**. The postprocessing script, if one has been provided, will be passed these 2 values as arguments.
 

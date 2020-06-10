@@ -27,7 +27,7 @@ Response Model
     :align: right
     :figwidth: 300px
 
-    Response model settings
+    Response model settings.
 
 
 Some text about the model

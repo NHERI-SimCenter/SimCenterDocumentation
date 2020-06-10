@@ -14,7 +14,7 @@ On Windows operating systems, if you receive an error when starting the applicat
       :align: center
       :figclass: align-center
 
-      Error message for missing Visual C/C++ runtime library
+      Error message for missing Visual C/C++ runtime library.
 
 .. only:: EEUQ_app
 
@@ -24,7 +24,7 @@ On Windows operating systems, if you receive an error when starting the applicat
       :align: center
       :figclass: align-center
 
-      Error message for missing Visual C/C++ runtime library
+      Error message for missing Visual C/C++ runtime library.
 
 
 .. only:: WEUQ_app
@@ -35,6 +35,6 @@ On Windows operating systems, if you receive an error when starting the applicat
       :align: center
       :figclass: align-center
 
-      Error message for missing Visual C/C++ runtime library
+      Error message for missing Visual C/C++ runtime library.
 
 

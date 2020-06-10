@@ -17,4 +17,4 @@ To avoid duplication try the `Search` feature before creating a `New Topic`. Whe
 	:align: center
 	:figclass: align-center
 
-	Example of Submitting a Bug Report to Message Board
+	Example of submitting a bug report to message board.

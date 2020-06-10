@@ -24,8 +24,7 @@ This panel is provided for users to quickly create simple shear models of a buil
 	:align: center
 	:figclass: align-center
 
-
-	Multiple Degrees of Freedom (MDOF)
+	Multiple degrees of freedom (MDOF).
 
 Random Variables: Random Variables can be created by the user if they enter a valid string instead of a number in the entry fields for any entry except for the *Number of floors*. The variable name entered will appear as a Random Variable in the UQ panel; it is ther the user must specify the distribution associated with the Random Variable.
 
@@ -54,7 +53,6 @@ This panel is for users who have an existing ``OpenSees`` model of a building th
 .. figure:: figures/openSees_gen.png
 	:align: center
 	:figclass: align-center
-
 
 
 Random Variables: In ``OpenSees`` there is an option to set variables to have certain values using the ``pset`` command, e.g ``pset a 5.0`` will set the variable a to have a value 5 in the ``OpenSees`` script. In |full tool name|, any variable found in the main script to be set using the ``pset`` command will be assumed to be a Random Variable. As such, when a new main script is loaded all variables set with ``pset`` will appear as Random Variables in the UQ panel.

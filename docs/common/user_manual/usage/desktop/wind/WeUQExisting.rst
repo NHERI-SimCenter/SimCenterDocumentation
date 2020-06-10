@@ -9,7 +9,7 @@ This panel is provided for the user to specify multiple existing SimCenter event
 	:align: center
 	:figclass: align-center
 
-	Existing (SimCenter) Events
+	Existing (SimCenter) events.
 
 Use the ``Add`` button to add a new event. This adds an empty event to the panel. Pressing the button multiple times will keep adding events to the panel. :numref:`fig-SCEventPanel` shows the state after the button has been pressed twice, and data entered to load the ``Scenario1`` and ``Scenario2`` Events.
 

@@ -26,7 +26,7 @@ A Level 1 diagram showing the system context for the SimCenter applications, i.e
    :align: center
    :figclass: align-center
 
-   System Context Diagram for SimCenter Applications
+   System context diagram for SimCenter Applications.
 
 Level 2:  The Components of a SimCenter Application
 ===================================================
@@ -151,7 +151,7 @@ EE-UQ is an application to determine the response of a building subjected to an 
 UML WE-UQ
 ---------
 
- Similar in  construction to EE-UQ is WE-UQ, as shown in figure :numref:`figumlWE`.  In fact the only difference is that Wind Event Selection is present in the component selection, instead of Earthquake Events. The wind event applications, as will be shown in :numref:`figWindEvents` include stochastic wind models, wind loading from online services such as Vortex-Winds, applications which take online wind tunnel experimental datasets such as those from Tokyo Polytechnic.
+ Similar in construction to EE-UQ is WE-UQ, as shown in figure :numref:`figumlWE`.  In fact the only difference is that Wind Event Selection is present in the component selection, instead of Earthquake Events. The wind event applications, as will be shown in :numref:`figWindEvents` include stochastic wind models, wind loading from online services such as Vortex-Winds, applications which take online wind tunnel experimental datasets such as those from Tokyo Polytechnic.
 
 
 .. _figUmlWE:

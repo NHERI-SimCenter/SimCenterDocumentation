@@ -20,7 +20,7 @@ The panel that is presented to the user when this Dakota Category is chosen, is 
 	:align: center
 	:figclass: align-center
 
-  	Dakota Parameter Estimation Input Panel
+  	Dakota parameter estimation input panel.
 
 .. note::
    The unknown parameters (the random variables options in the RV panel) are limited to Continuous Design. The user provides min, max and starting point values for each random variable.

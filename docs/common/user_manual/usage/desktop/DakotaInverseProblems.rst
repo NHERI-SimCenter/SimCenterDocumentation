@@ -19,7 +19,7 @@ The inverse problem methods, like the parameter estimation methods presented in 
 	:align: center
 	:figclass: align-center
 
-  	DREAM input panel
+  	DREAM input panel.
 
 	.. [QUESO]
 	     Prudencio, Ernesto E and Schulz, Karl W, "The parallel C++ statistical library ‘QUESO’: Quantification of Uncertainty for Estimation, Simulation and Optimization, Euro-Par 2011: Parallel Processing Workshops, Springer, 2012, 398-407
@@ -37,7 +37,7 @@ The DiffeRential Evolution Adaptive Metropolis (DREAM) method runs multiple mark
 	:align: center
 	:figclass: align-center
 
-  	DREAM input panel
+  	DREAM input panel.
 
 .. [DREAM] 
    J. A. Vrugt, C. J. F. ter Braak, C. G. H. Diks, B. A. Robinson, J. M. Hyman, and D. Higdon. Accelerating Markov chain Monte Carlo simulation by self-adaptive differential evolution with randomized subspace sampling. International Journal of Nonlinear Scientific Numerical Simulation, 10(3), 2009. 1804, 2550

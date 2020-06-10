@@ -8,7 +8,7 @@ This event facilitates generating a CFD model for wind flow around a building. A
 	:align: center
 	:figclass: align-center
 
-	CFD Template Event
+	CFD template event.
 
 The following are the steps the user should follow to use the CFD template:
 

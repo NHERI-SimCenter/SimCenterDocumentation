@@ -10,7 +10,7 @@ To understand the inputs, it is necessary to understand that the DEDM-HRP websit
 	:align: center
 	:figclass: align-center
 
-	DEDM HRP Wind Loading Event
+	DEDM HRP wind loading event.
 
 In the inputs for the event, as shown in figure :numref:`fig-dedm-hrp` require the user to specify which of these tests to use:
 

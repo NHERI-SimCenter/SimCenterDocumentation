@@ -9,7 +9,7 @@ This application will take the wind tunnel data provided and scale it based on w
 	:align: center
 	:figclass: align-center
 
-	Wind Tunnel Experiment Wind Loading Event
+	Wind tunnel experiment wind loading event.
 
 #. The user to select the shape of the building, currently onlu Cuboid shapes are permitted.
 

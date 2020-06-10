@@ -11,7 +11,7 @@ The FEM panel will present users with a selection of FEM applications. Currently
 	:align: center
 	:figclass: align-center
 
-	Input for FEM panel 
+	Input for the FEM panel.
 
 .. note::
    Because the UQ engines treat the FEM applications as a black box, when the UQ engine runs each detreministic simulation it expects the FEM application to output a single file. This file must be named **results.out** and be placed in the same directory as the main input file. The **results.out** file must contain a single line. That line must contain as many QoI values as the user will enter in the QoI panel. Each value must be seperated by a space. An example **results.out** file for a problem specyfing **4** response QoI values is as shown:

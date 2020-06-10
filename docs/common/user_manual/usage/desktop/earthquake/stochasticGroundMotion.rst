@@ -16,7 +16,7 @@ used to generate a seismic event. For the Vlachos er al. model users is required
 	:align: center
 	:figclass: align-center
 
-	Vlachos er al. (2018) model inputs
+	Vlachos et al. (2018) model inputs.
 
 .. _fig-stochasticDabaghi-event:
 
@@ -28,7 +28,7 @@ For the Dabaghi & Der Kiureghian model geometric directivity parameters, as show
 	:align: center
 	:figclass: align-center
 
-	Dabaghi & Der Kiureghian (2018) model inputs
+	Dabaghi & Der Kiureghian (2018) model inputs.
 
 
 Additionally, users can provide a seed for either model if they desire the same

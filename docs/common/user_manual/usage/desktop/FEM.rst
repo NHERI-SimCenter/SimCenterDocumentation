@@ -21,7 +21,7 @@ files and use OpenSees to simulate the response, and return it in an EDP file.
 	:align: center
 	:figclass: align-center
 
-	Options for OpenSees 
+	Options for OpenSees. 
 
 For the |OpenSees| application the user is required to specify the
 options to be used in the transient analysis. As shown in :numref:`figFEM`,

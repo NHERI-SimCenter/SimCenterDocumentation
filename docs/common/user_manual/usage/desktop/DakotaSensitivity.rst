@@ -15,4 +15,4 @@ For Sensitivity Analysis the user has two options to generate the samples on whi
 	:align: center
 	:figclass: align-center
 
-  	Sensitivity Analysis input panel
+  	Sensitivity analysis input panel.

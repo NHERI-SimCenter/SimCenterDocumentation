@@ -27,7 +27,7 @@ Response Model
     :align: right
     :figwidth: 300px
     
-    Response model settings
+    Response model settings.
 
 Some text about the model
 
@@ -68,7 +68,7 @@ Damage Model
     :align: right
     :figwidth: 300px
 
-    Damage model settings
+    Damage model settings.
 
 
 **Irrepairable Residual Drift**
@@ -102,7 +102,7 @@ Loss Model
     :align: right
     :figwidth: 300px
 
-    Loss model settings
+    Loss model settings.
 
 
 **Replacement Cost and Time**
@@ -185,7 +185,7 @@ This panel provides more information about the active component in the drop-down
 .. figure:: figures/dl_p58_comp_details.png
     :align: center
 
-    Component details
+    Component details.
 
 
 **Component Groups**

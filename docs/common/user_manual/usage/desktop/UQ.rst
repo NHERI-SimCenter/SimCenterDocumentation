@@ -16,7 +16,7 @@ This UQ engine utilizes the `Dakota Software <https://dakota.sandia.gov/>`_, a s
    :align: center
    :figclass: align-center
 
-   Dakota Engine and Category Selection
+   Dakota engine and category selection.
 
 The following categories are available:
 

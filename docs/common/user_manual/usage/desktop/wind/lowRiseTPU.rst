@@ -10,7 +10,7 @@ As will be discussed in the theory section, the wind loads are obtained from the
 	:align: center
 	:figclass: align-center
 
-	Low Rise TPU Wind Loading Event
+	Low rise TPU wind loading event.
 
 In the inputs for the event, as shown in figure :numref:`fig-lowRise-TPU` require the user to specify which of these tests to use:
 

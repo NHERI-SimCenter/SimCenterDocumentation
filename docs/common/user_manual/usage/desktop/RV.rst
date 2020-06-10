@@ -80,7 +80,7 @@ For each random variable, the user must enter a name and select from the pull do
    :align: center
    :figclass: align-center
 
-   Random Variable specification
+   Random variable specification.
 
 .. note::
 
