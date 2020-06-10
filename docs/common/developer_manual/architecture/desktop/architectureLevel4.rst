@@ -9,7 +9,7 @@ The SimCenter is developing a software framework for building scientific workflo
 
 .. note:: 
 
-   1.   **Workflow**: A sequence of steps involved in moving from a beginning state to an ending state.
+   1. **Workflow**: A sequence of steps involved in moving from a beginning state to an ending state.
 
    2. **Scientific Workflow Application**: An application that automates a workflow process through software, with each step in the workflow being performed by a separate “scientific” software application.
 
@@ -39,7 +39,7 @@ Given how SimCenter applications fit in with the environment, a level 2 diagrams
    :align: center
    :figclass: align-center
 
-   System Container Diagram for SimCenter Applications
+   System container diagram for SimCenter applications.
 
 Level 3: Container Diagrams for the Front and Back End Components
 =================================================================
@@ -52,7 +52,7 @@ Two level 3 diagrams are now presented which break up the two containers into th
    :align: center
    :figclass: align-center
 
-   Component Diagram for Front End UI
+   Component diagram for front end UI.
 
 The component diagram for the backend application shown in :numref:`figComponentBack`, shows that the backend is made up of a number of component, all applications. The application “femUQ.py” is the application that parses the input from the front end, sets up the workflow and launches the UQ engine. Which UQ Engine and which applications to run in the workflow, is determined from the data passed from the UI and information contained in a WorkflowApplication.json file. A file is used to allow the researchers to modify the applications that may be run in the workflow w/o the need to recompile the application. Control is then passed to a UQ Engine, which repeatedly runs the workflow to generate the results. In running the workflow some of the applications will invoke applications not developed to meet the API. For such applications pre- and post-processors are provided.
 The figure shows the backend application running locally or remotely on a HPC@DesignSafe.
@@ -64,7 +64,7 @@ The figure shows the backend application running locally or remotely on a HPC@De
    :align: center
    :figclass: align-center
 
-   Component Diagram for Backend Application
+   Component diagram for the backend application.
 
 Level 4 UML Diagrams
 ====================
@@ -160,7 +160,7 @@ UML WE-UQ
    :align: center
    :figclass: align-center
 
-   UML Diagram for WE-UQ
+   UML diagram for WE-UQ.
 
 
 
@@ -183,7 +183,7 @@ PBE is a tool for performance based engineering. Given a building and an event i
    :align: center
    :figclass: align-center
 
-   UML Diagram for PBE
+   UML diagram for PBE.
 
 
 .. _lblUmlEarthquakeEvents:
@@ -199,7 +199,7 @@ The Earthquake Events package, as shown in :numref:`figumlEarthquakeEvents`, con
    :align: center
    :figclass: align-center
 
-   UML Diagram for Earthquake Events
+   UML diagram for earthquake events.
 
 .. _lblUmlWindEvents:
 
@@ -214,7 +214,7 @@ Similar to the Earthquake Events package, the wind events package shown in :numr
    :align: center
    :figclass: align-center
 
-   UML Diagram for Wind Events
+   UML diagram for wind events.
 
  
 .. _lblSimCenterCommon:
@@ -232,7 +232,7 @@ SimCenter common shown in :numref:`figUmlCommon` contains a number of component 
    :align: center
    :figclass: align-center
 
-   UML Diagram for SimCenter Common
+   UML diagram for SimCenter common.
 
 
 .. _lblSimCenterBackendApplications:
@@ -249,4 +249,4 @@ The BackendApplications are currently all in a single package. These are the app
    :align: center
    :figclass: align-center
 
-   Applications for Backend Applications
+   Applications for backend applications.
