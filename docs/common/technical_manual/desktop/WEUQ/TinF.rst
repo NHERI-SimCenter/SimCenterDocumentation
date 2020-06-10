@@ -455,7 +455,7 @@ Using again the convolution theorem as expressed, the above expression simplifie
 
 
 Commonly used velocity shape functions
-^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We list three commonly used velocity shape functions :math:`f` below for reference. There are the tent function, the step function and the truncated Gaussian function.
 
