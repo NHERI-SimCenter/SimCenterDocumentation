@@ -13,7 +13,7 @@ Consider the problem of estimating parameters for a model given some experimenta
 
    Two Story Steel Building
 
-What is unknown is the mass of the building. However from data collected the periods of the structure are determined to be 0.19052sec and 0.08887sec. For this exercise the unknown quantaties, m1 and m2, the mass of first and second floors to be used in the model will be considered our unknown variables. We will assume some bounds on these variables and provide initial estimates as shown in following table:
+What is unknown is the mass of the building. However from data collected the periods of the structure are determined to be 0.19052sec and 0.08887sec. For this exercise the unknown quantities, m1 and m2, the mass of first and second floors to be used in the model will be considered our unknown variables. We will assume some bounds on these variables and provide initial estimates as shown in following table:
 
 .. csv-table:: 
    :header: "variable", "lower (k-in/sec^2)", "upper (k-in/sec^2)", "initial estimate (k-in/sec^2)"
@@ -22,7 +22,7 @@ What is unknown is the mass of the building. However from data collected the per
    m1, 0.4, 0.8, 0.4
    m2, 0.1, 0.4, 0.1
 
-The goal of this exercise it to come up with estimates of these quantaties using the |app| that result in reasonably good matches between finite element model periods and the observed periods of the structure.
+The goal of this exercise it to come up with estimates of these quantities using the |app| that result in reasonably good matches between finite element model periods and the observed periods of the structure.
 
 The exercise requires a single OpenSees script file. The user is required to download this file and place it in a **NEW** folder. The file: 
 
@@ -37,7 +37,7 @@ The exercise requires a single OpenSees script file. The user is required to dow
 
 .. warning::
 
-   Do not place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containig these files multiple times. If you are like me, your root, Downloads or Documents folders contains and awful lot of files.
+   Do not place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like me, your root, Downloads or Documents folders contains and awful lot of files.
 
 The steps involved:
 
@@ -58,7 +58,7 @@ The steps involved:
 
    As discussed but it is worth noting again, because the script generates a **results.out** file, no postprocessing script is needed for this example. This might not always be the case for some of your problems.
 
-3. Next select the RV tab from the input panel. This should be prepopulated with two random variables with same names as those having pset in the tcl script, i.e. m1 and m2. For each variable, from the drop down menu change them from having a constant distribution to a uniform one and then provide the lower bounds, upper bounds and the strating points shown in the figure below.
+3. Next select the RV tab from the input panel. This should be pre-populated with two random variables with same names as those having pset in the tcl script, i.e. m1 and m2. For each variable, from the drop down menu change them from having a constant distribution to a uniform one and then provide the lower bounds, upper bounds and the starting points shown in the figure below.
 
 .. figure:: figures/joelRV.png
    :align: center
@@ -76,7 +76,7 @@ The steps involved:
 
 .. note::   
 
-   For this particular problem setup in which the user is not using a postprocessing script, the user may specify any names for the QoI variables. They are only being used by dakota to return information on the errors. We used 'dT1' and 'dT2' due to our affinity for 3 letter acronynms!
+   For this particular problem setup in which the user is not using a postprocessing script, the user may specify any names for the QoI variables. They are only being used by dakota to return information on the errors. We used 'dT1' and 'dT2' due to our affinity for 3 letter acronyms!
 
 5. Next click on the 'Run' button. This will cause the backend application to launch dakota. When done the RES panel tab will be selected and the results will be displayed as shown in the figure below. The figure shows dakota returned, for inputs provided, estimates of our unknown parameters to be :math:`m1=0.531508` and :math:`m2=0.249232`.
 
@@ -87,7 +87,7 @@ The steps involved:
 .. note::
 
    1. The computed values compare favorably to the values used to generate the 'observed results' when developing this problem, these being the values shown in the script, i.e. :math:`m1=0.53` and :math:`m2=0.25`. 
-   2. It would proove useful for you to adjust the parameters, observed values and inputs for the continuous design variables. The numbers were chosen to demonstrate the methods can give good results. They do not always return such good numbers.
+   2. It would prove useful for you to adjust the parameters, observed values and inputs for the continuous design variables. The numbers were chosen to demonstrate the methods can give good results. They do not always return such good numbers.
 
    
 
