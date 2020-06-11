@@ -106,15 +106,15 @@ The steps involved:
    :align: center
    :figclass: align-center
 
-If the user selects the "Data" tab in the results panel, they will be presented with both a graphical plot and a tabular listing of the data. By left- and right-clicking with the mouse in the individual columns the axcis change (left mouse click controls vertical axis, right mouse click the horizontal axis).
+If the user selects the "Data" tab in the results panel, they will be presented with both a graphical plot and a tabular listing of the data. By left- and right-clicking with the mouse in the individual columns the axis change (left mouse click controls vertical axis, right mouse click the horizontal axis).
 
-.. figure:: figures/shearRES3.png
+.. figure:: figures/shearRES7.png
    :align: center
    :figclass: align-center
 
 Various views of the graphical display can be obtained by left and right clicking in the columns of the tabular data. If a singular column of the tabular data is pressed with both right and left buttons a freequency and CDF will be displayed, as shown in figure below.
 
-.. figure:: figures/trussRES5.png
+.. figure:: figures/shearRES6.png
    :align: center
    :figclass: align-center
 
@@ -164,7 +164,7 @@ Global Sensitivity
 
 In a global sensitivity analysis the user is wishing to understand what is the influence of the individual random variables on the quantities of interest. This is typically done before the user launches large scale forward uncertainty problems in order to limit the number of random variables used so as to limit the number of simulations performed.
 
-To perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propogation method. To obtain reliability results using the Second-Order Reliability Method (SORM) for the truss problem the user would follow the same sequence of steps as previously. The difference would be in the UQ tab in which the user would select a Reliability as the Dakota Method Catagory and then choose Local reliability. In the figure the user is specifying that they are interetsed in the probability that the displacement will exceed certain response levels.
+To perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propogation method. To obtain reliability results using the global reliability method for this problem the user would follow the same sequence of steps as previously. The difference would be in the UQ tab in which the user would select a Reliability as the Dakota Method Catagory and then choose GLobal reliability. In the figure the user is specifying that they are interested in the probability that the displacement will exceed certain response levels.
 
 
 .. figure:: figures/shearSensitivityUQ.png
