@@ -4,7 +4,7 @@
 Coding Style
 ************
 
-The SimCenter frontend applications are written in **C++**. The applications that run in the backend are written in a mixture of langauages: **Python**, **C**, and **C++**. The SimCenter strives to use a common style across the applications. This section outlines that style. Consistency is the most important aspect of style. The second most important aspect is following a style that the average programmer is used to reading. Not all code will follow th guide, 
+The SimCenter frontend applications are written in **C++**. The applications that run in the backend are written in a mixture of languages: **Python**, **C**, and **C++**. The SimCenter strives to use a common style across the applications. This section outlines that style. Consistency is the most important aspect of style. The second most important aspect is following a style that the average programmer is used to reading. Not all code will follow th guide, 
 
 Python Style
 ============
@@ -15,7 +15,7 @@ For code written in Python SimCenter programmers follow the widely used
 C/C++ Style
 ===========
 
-Unlike Python, C/C++ do not have a widely accepted style guideline. Some guidlines of note include the `Google Style <https://google.github.io/styleguide/cppguide.html>`_, the `C++ Core Guidelines <http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines.html>`_ (edited by Stroustrup and Sutter), and an older
+Unlike Python, C/C++ do not have a widely accepted style guideline. Some guidelines of note include the `Google Style <https://google.github.io/styleguide/cppguide.html>`_, the `C++ Core Guidelines <http://isocpp.github.io/CppCoreGuidelines/CppCoreGuidelines.html>`_ (edited by Stroustrup and Sutter), and an older
 C++ 
 
 Comments
@@ -26,7 +26,7 @@ It goes without saying that you must use them. Try to use :code:`//` as opposed 
 Naming Conventions
 ------------------
 
-All names should be meaningful and Follow a camel case approach. For classes the names start with an uppercase letter, all class methods, functions, and variables shall start with a lowercase letter. The exception is consstant variables, which should be all uppercase, e.g. :code:`const double PI=3.14159265358979323;`
+All names should be meaningful and Follow a camel case approach. For classes the names start with an uppercase letter, all class methods, functions, and variables shall start with a lowercase letter. The exception is constant variables, which should be all uppercase, e.g. :code:`const double PI=3.14159265358979323;`
 
 Files
 -----
@@ -34,7 +34,7 @@ Files
 #. Use a **.cpp** extension for code files and a **.h** extension for interface files.
 #. All files should include at the start the :ref:`lblLicense`
 #. All file should contain some comments about what the file contains, and the name of the developers who worked substantially on the code.
-#. Use indendation to make the code easier to read, the **Qt** editor has a nice feature that will auto indent code for you.
+#. Use indentation to make the code easier to read, the **Qt** editor has a nice feature that will auto indent code for you.
 #. In addition, when writing h header files:
    #. Never ever ever use **using namespace** in a header.
    #. All header files should additionally include documentation as the the purpose of the class and the methods. The returns and args to the functions should be documented. 
@@ -52,4 +52,4 @@ Variables
 ---------
 
 #. Initialize all variables
-#. When initilializing float and double variables with values that could be read as integer always include a **.0**, i.e. :code:`double a = 1.0;`
+#. When initializing float and double variables with values that could be read as integer always include a **.0**, i.e. :code:`double a = 1.0;`

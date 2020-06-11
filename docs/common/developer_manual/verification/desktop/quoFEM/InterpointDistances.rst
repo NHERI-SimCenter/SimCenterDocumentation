@@ -44,7 +44,7 @@ The second a tcl script to be named ghosh.tcl. It is to be used with the OpenSee
 .. literalinclude:: ghosh.tcl
    :language: tcl
 
-2. Start the |app| and select Dakota UQ Engine, Forard propogartion type of problem and LHS method. Specify 10000 samples and a seed of 175.
+2. Start the |app| and select Dakota UQ Engine, Forward propagation type of problem and LHS method. Specify 10000 samples and a seed of 175.
 
 .. figure:: figures/ghoshUQ.png
    :align: center

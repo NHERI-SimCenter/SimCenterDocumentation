@@ -12,9 +12,9 @@ This panel as shown in :numref:`fig-peer-event` is provided for the user to util
 	:align: center
 	:figclass: align-center
 
-	Multiple PEER Events
+	Multiple PEER events.
 
-The ``Add`` button is used to add an empty PEER event. For each PEER event the user must input a name for the EVENT, a path to the AT2 file, a direction that the motion acts, and a scale factor. The ``+`` and ``-`` buttons wihin each PEER event allow the user to add or remove AT2 files so that motions can be provided in different directions. Each AT2 file should be specified to operate in a different direction.
+The ``Add`` button is used to add an empty PEER event. For each PEER event the user must input a name for the EVENT, a path to the AT2 file, a direction that the motion acts, and a scale factor. The ``+`` and ``-`` buttons within each PEER event allow the user to add or remove AT2 files so that motions can be provided in different directions. Each AT2 file should be specified to operate in a different direction.
 
 
 The ``Remove`` button is used to remove events. To remove an event, the user must first select events they wish to remove, which is done by clicking in the small circle at the left side of the event frame. All of the selected events are removed when the ``Remove`` button is pressed.

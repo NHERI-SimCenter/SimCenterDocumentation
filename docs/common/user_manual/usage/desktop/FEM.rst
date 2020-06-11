@@ -21,7 +21,7 @@ files and use OpenSees to simulate the response, and return it in an EDP file.
 	:align: center
 	:figclass: align-center
 
-	Options for OpenSees 
+	Options for OpenSees. 
 
 For the |OpenSees| application the user is required to specify the
 options to be used in the transient analysis. As shown in :numref:`figFEM`,
@@ -33,11 +33,11 @@ this includes the choice of:
 
      #. `Integration Scheme <http://opensees.berkeley.edu/wiki/index.php/Integrator_Command>`_: The integration scheme specifies the time stepping algorithm being employed to solve the transient problem (:math:`M \ddot{U}(t) + C \dot{U}(t)  + Fs(U(t)) = P(t)`). The integration scheme determined the coefficients in the :math:`A` matrix,  the meaning of the :math:`x` and :math:`b` vectors and how the nodal displacements, velocities, and accelerations should be updated given :math:`x`. The default is Newmark's linear acceleration method (Newmark 0.5 0.25). Other Newmark methods can be employed by changing the :math:`\alpha` and  :math:`\beta` terms, and other methods, HHT, CentralDifference, can be selected.
 
-     #. `Convergence Test <http://opensees.berkeley.edu/wiki/index.php/Test_Command>`_, the default is a norm on the unbalance force with a convegence tolerance of 1.0e-2 and a limit of 10 trial steps to achieve convergence. Other convergence criteria can be chise incude: NormDispIncr, EnergyIncrement, and the relative norms.
+     #. `Convergence Test <http://opensees.berkeley.edu/wiki/index.php/Test_Command>`_, the default is a norm on the unbalance force with a convergence tolerance of 1.0e-2 and a limit of 10 trial steps to achieve convergence. Other convergence criteria that can be chosen incude: NormDispIncr, EnergyIncrement, and the relative norms.
 
      #. Damping Model: The pull down menu defaults to **Rayleigh Damping**. The other option is **Modal Damping**. The theory behind the two are presented in :ref:`lblDamping`.
 
-          #. Rayleigh Damping. With Rayleigh damping the user mist provide the damping ratio, :math:`\zeta` and spcify twomodes from which the damping coeeficients :math:`a_0` and :math:`a_1` will be determined. Mass proportional damping can be obtained by setting the **Mode 2** option to 0, **stiffness proportional damping** by setting **Mode 1** option to 0.
+          #. Rayleigh Damping. With Rayleigh damping the user mist provide the damping ratio, :math:`\zeta` and specify two modes from which the damping coefficients :math:`a_0` and :math:`a_1` will be determined. Mass proportional damping can be obtained by setting the **Mode 2** option to 0, **stiffness proportional damping** by setting **Mode 1** option to 0.
 
 	  #. Modal Damping: With modal damping the user specifies the number of modes and the damping ratio :math:`\zeta`. In addition the user has the option of specifying a **stiffness proportional damping ratio**, which as mentioned in the :ref:`lblDamping` is used to provide additional damping for the higher modes.
 
@@ -47,7 +47,7 @@ this includes the choice of:
 
 	     Modal Damping Options for OpenSees 
 
-     #. Analysis Script. This shall be left blank by default. Advanced users of OpenSees who have their preferred analysis script and wish to provide their own damping model can provide it here. If this option is provided, the user in their scipt should use the variables **numStep** and **dt**.
+     #. Analysis Script. This shall be left blank by default. Advanced users of OpenSees who have their preferred analysis script and wish to provide their own damping model can provide it here. If this option is provided, the user in their script should use the variables **numStep** and **dt**.
 
 
 A default transient analysis script is run with these inputs. It is

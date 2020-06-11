@@ -1,10 +1,10 @@
 
 .. _lblDakotaForward:
 
-Forward Propogation Methods
+Forward Propagation Methods
 ***************************
  
-The forward propogation of uncertainty is concerned with the quantification of uncertainties in the output propagated from uncertain inputs.
+The forward propagation of uncertainty is concerned with the quantification of uncertainties in the output propagated from uncertain inputs.
 Currently there are five options available:  Monte Carlo Sampling (MCS),  Latin Hypercube Sampling (LHS), Importance Sampling (IS), and sampling based on surrogate models, including Gaussian Process Regression (GPR) and Polynomial Chaos Expansion (PCE). Depending on the option selected, the user must specifies the appropriate input parameters for each. For instance, for MCS, the number of samples specifies the number of simulations to be performed, and providing a random seed allows the user to reproduce the same set of samples from the random variables multiple times.
 
 The the user selects the sampling method to use from the sampling methods dropdown menu. Additional information regarding sampling methods offered in Dakota can be found `here <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/method-sampling.html>`_. 

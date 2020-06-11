@@ -4,7 +4,7 @@
 Reliability Analysis
 ********************
 
-Reliability methods are another class of probabilistic algorithms used for quantifying the effect of uncertainties in simulation input on response metrics of interest. These methods, unlike foward methods, provide PDFs and CDFs about user specified response and probability levels, i.e. given a set of uncertain input variables, they model the probability that the response output is below or above a certain level.  As a consequence of concentrating on only certain response outputs, these models are often more efficient when calculating responses in the tails of the response distributions (events with low probability) since the number of samples required by a forward method to resolve a low probability can be prohibitive.
+Reliability methods are another class of probabilistic algorithms used for quantifying the effect of uncertainties in simulation input on response metrics of interest. These methods, unlike forward methods, provide PDFs and CDFs about user specified response and probability levels, i.e. given a set of uncertain input variables, they model the probability that the response output is below or above a certain level.  As a consequence of concentrating on only certain response outputs, these models are often more efficient when calculating responses in the tails of the response distributions (events with low probability) since the number of samples required by a forward method to resolve a low probability can be prohibitive.
 
 Reliability methods can be split into local and global methods, as elaborated in the following sections. 
 
@@ -13,7 +13,7 @@ Local Reliability Methods
 
 Local reliability methods include the Mean Value method and a family of most probable point (MPP) search methods. Each of these methods is gradient-based, employing local approximations and/or local optimization methods. The user selects the local method using the pull down menu.
 
-The default local reliability method is the most probable point (MPP) method. For the MPP method the user provides the follwing inputs:
+The default local reliability method is the most probable point (MPP) method. For the MPP method the user provides the following inputs:
 
 .. _figLocalMPP:
 
@@ -83,5 +83,5 @@ The user specifies if the gaussian process is to be created in x-space (original
 
 .. warning::
    
-   Only a single quatity of interest may be specified when using global reliability
+   Only a single quantity of interest may be specified when using global reliability
    

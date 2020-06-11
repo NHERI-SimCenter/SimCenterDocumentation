@@ -15,7 +15,7 @@ inputs that are identified as random variables needs to be provided in the ``UQ`
 	:align: center
 	:figclass: align-center
 
-	Stochastic Wind Loading Event
+	Stochastic wind loading event.
 
 References
 

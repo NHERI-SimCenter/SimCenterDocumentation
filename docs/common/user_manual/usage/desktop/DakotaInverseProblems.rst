@@ -4,7 +4,7 @@
 Inverse Problem
 ***************
 
-The inverse problem methods, like the parameter estimation methods presented in :ref:`_lblParameterEstimation`, are concerend with estimation of input parameters given observational measurements. Unlike parameter estimation methods, in which the user provides a range and an initial starting point for the input random variables, when using an inverse method the user has some idea of the distributions associated with these parameters. This information is known as the prior distributions. The Inverse  methods take thiss prior information and combines it with observational data (e.g. from experiments) to infer posterior distributions on the parameter values. For the Inverse problem, a Bayesian updating paradigm is followed, the prior distribution on a parameter is updated through a Bayesian framework involving experimental data and a likelihood function. For the likelihood function, that function that specifies the likelihood of observing a particular observation given the model and its associated parameterization, Dakota uses a Gaussian liklihood function. The algorithms that generate the samples to produce the posterior distributions are typically based on some Markov Chain Monte Carlo (MCMC) algorithm. For |appName| two families of algorithms are provided for the MCMC: DREAM, and the algotithms provided by the QUESO library.
+The inverse problem methods, like the parameter estimation methods presented in :ref:`_lblParameterEstimation`, are concerned with estimation of input parameters given observational measurements. Unlike parameter estimation methods, in which the user provides a range and an initial starting point for the input random variables, when using an inverse method the user has some idea of the distributions associated with these parameters. This information is known as the prior distributions. The Inverse  methods take this prior information and combines it with observational data (e.g. from experiments) to infer posterior distributions on the parameter values. For the Inverse problem, a Bayesian updating paradigm is followed, the prior distribution on a parameter is updated through a Bayesian framework involving experimental data and a likelihood function. For the likelihood function, that function that specifies the likelihood of observing a particular observation given the model and its associated parameterization, Dakota uses a Gaussian likelihood function. The algorithms that generate the samples to produce the posterior distributions are typically based on some Markov Chain Monte Carlo (MCMC) algorithm. For |appName| two families of algorithms are provided for the MCMC: DREAM, and the algorithms provided by the QUESO library.
 
 
 ..
@@ -19,7 +19,7 @@ The inverse problem methods, like the parameter estimation methods presented in 
 	:align: center
 	:figclass: align-center
 
-  	DREAM input panel
+  	DREAM input panel.
 
 	.. [QUESO]
 	     Prudencio, Ernesto E and Schulz, Karl W, "The parallel C++ statistical library ‘QUESO’: Quantification of Uncertainty for Estimation, Simulation and Optimization, Euro-Par 2011: Parallel Processing Workshops, Springer, 2012, 398-407
@@ -37,7 +37,7 @@ The DiffeRential Evolution Adaptive Metropolis (DREAM) method runs multiple mark
 	:align: center
 	:figclass: align-center
 
-  	DREAM input panel
+  	DREAM input panel.
 
 .. [DREAM] 
    J. A. Vrugt, C. J. F. ter Braak, C. G. H. Diks, B. A. Robinson, J. M. Hyman, and D. Higdon. Accelerating Markov chain Monte Carlo simulation by self-adaptive differential evolution with randomized subspace sampling. International Journal of Nonlinear Scientific Numerical Simulation, 10(3), 2009. 1804, 2550

@@ -4,7 +4,7 @@
 Parameter Estimation
 ********************
 
-Parameter Estimation methods (also known as non-linear least squares methods) are  used to fit a set of m observations (in this tool defined in the QoI panel) with a model that is non-linear with n unknown parameters (in thus tool the unknown parameters are defined in the RV panel) :math:`(m \ge n)`.  The method are obtaining the parameters that best fits the experimental results, that is that **minimizes** the QoI, given no prior estimation as to the distribution associaciated with the random variables. As such the processing scripts should leave in the **results.out** file differences between observed response and simulated response. The algorithms employed will find a set of parameters that minimizes these differences. The algorithms themselves are general functional minimization algorithms seeking to minimize:
+Parameter Estimation methods (also known as non-linear least squares methods) are  used to fit a set of m observations (in this tool defined in the QoI panel) with a model that is non-linear with n unknown parameters (in thus tool the unknown parameters are defined in the RV panel) :math:`(m \ge n)`.  The method are obtaining the parameters that best fits the experimental results, that is that **minimizes** the QoI, given no prior estimation as to the distribution associated with the random variables. As such the processing scripts should leave in the **results.out** file differences between observed response and simulated response. The algorithms employed will find a set of parameters that minimizes these differences. The algorithms themselves are general functional minimization algorithms seeking to minimize:
 
 .. math::
 
@@ -20,7 +20,7 @@ The panel that is presented to the user when this Dakota Category is chosen, is 
 	:align: center
 	:figclass: align-center
 
-  	Dakota Parameter Estimation Input Panel
+  	Dakota parameter estimation input panel.
 
 .. note::
    The unknown parameters (the random variables options in the RV panel) are limited to Continuous Design. The user provides min, max and starting point values for each random variable.
@@ -42,16 +42,13 @@ OPT++ Provides a Gauss-Newton least squares capability which, on zero-residual t
 NL2SOL
 ^^^^^^
 
-The NL2SOL method is based on an adaptive nonlinear least-squares algorithm, devised by Dennis and colleagues[Dennis81]. NL2SOL uses a trust region method and adaptivily switches between two Hessian approximations, the Gauss-Newton approximation alone and the Gauss-Newton approximation plus a quasi-Newton approximation to the rest of the Hessian. This later approximation being useful when the starting guess is far from solution. For problems with large number of residuals, this algorithm is known to be more reliable than Gauss-Newton.
+The NL2SOL method is based on an adaptive nonlinear least-squares algorithm, devised by Dennis and colleagues[Dennis81]. NL2SOL uses a trust region method and adaptively switches between two Hessian approximations, the Gauss-Newton approximation alone and the Gauss-Newton approximation plus a quasi-Newton approximation to the rest of the Hessian. This later approximation being useful when the starting guess is far from solution. For problems with large number of residuals, this algorithm is known to be more reliable than Gauss-Newton.
 
 .. [Dennis81a]
    J. E. Dennis, D. M. Gay, and R. E. Welsch. An adaptive nonlinear least-squares algorithm. ACM Trans. Math. Softw.. 7(3). 348 - 368. 1981.
 
 .. [Dennis81b]
    J. E. Dennis, D. M. Gay, and R. E. Welsch. Algorithm 573: NL2SOL—An Adaptive Nonlinear Least-Squares Algorithm [E4] ACM Trans. Math. Softw.. 7(3). 369 - 383. 1981.
-
-
-
 
 
 

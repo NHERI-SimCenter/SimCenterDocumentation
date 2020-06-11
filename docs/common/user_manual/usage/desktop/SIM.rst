@@ -12,7 +12,7 @@ Multiple Degrees of Freedom (MDOF)
 
 This panel is provided for users to quickly create simple shear models of a building. The panel, as shown in :numref:`fig-mdof` is divided into 3 frames:
 
-#. The top left frame allows the user to specify the number of stories and properties that are constant for every floor and story in the building. The following properties are available: floor weight, story height, torsional stiffness, initial stiffness, yield strength, and hardening ratio for each direction in each story. The user has the option of specifying values for eccentricty of mass in :math:`x` and :math:`y` directions, and eccentricities for the location of the response quantaties. Here, the one and two directions are orthogonal :math:`x` and :math:`y` axes in plan view.
+#. The top left frame allows the user to specify the number of stories and properties that are constant for every floor and story in the building. The following properties are available: floor weight, story height, torsional stiffness, initial stiffness, yield strength, and hardening ratio for each direction in each story. The user has the option of specifying values for eccentricity of mass in :math:`x` and :math:`y` directions, and eccentricities for the location of the response quantities. Here, the one and two directions are orthogonal :math:`x` and :math:`y` axes in plan view.
 
 #. The lower left frame allows the user to override the structural parameters above for individual floors and stories.
 
@@ -24,17 +24,16 @@ This panel is provided for users to quickly create simple shear models of a buil
 	:align: center
 	:figclass: align-center
 
+	Multiple degrees of freedom (MDOF).
 
-	Multiple Degrees of Freedom (MDOF)
-
-Random Variables: Random Variables can be created by the user if they enter a valid string instead of a number in the entry fields for any entry except for the *Number of floors*. The variable name entered will appear as a Random Variable in the UQ panel; it is ther the user must specify the distribution associated with the Random Variable.
+Random Variables: Random variables can be created by the user if they enter a valid string instead of a number in the entry fields for any entry except for the *Number of floors*. The variable name entered will appear as a random variable in the UQ panel; it is there that the user must specify the distribution associated with the random variable.
 
   
   MDOF or Shear Building Model
 
 
-.. note::  
-   ```Random Variables```: Random Variables can be created by the user if they enter a valid string instead of a number in the entry fields for any entry except for the *Number of floors*. The variable name entered will appear as a Random Variable in the UQ panel; it is ther the user must specify the distribution associated with the Random Variable.
+    .. note::  
+       ```Random Variables```: Random Variables can be created by the user if they enter a valid string instead of a number in the entry fields for any entry except for the *Number of floors*. The variable name entered will appear as a Random Variable in the UQ panel; it is there that the user must specify the distribution associated with the Random Variable.
 
 OpenSees
 --------
@@ -54,7 +53,6 @@ This panel is for users who have an existing ``OpenSees`` model of a building th
 .. figure:: figures/openSees_gen.png
 	:align: center
 	:figclass: align-center
-
 
 
 Random Variables: In ``OpenSees`` there is an option to set variables to have certain values using the ``pset`` command, e.g ``pset a 5.0`` will set the variable a to have a value 5 in the ``OpenSees`` script. In |full tool name|, any variable found in the main script to be set using the ``pset`` command will be assumed to be a Random Variable. As such, when a new main script is loaded all variables set with ``pset`` will appear as Random Variables in the UQ panel.
