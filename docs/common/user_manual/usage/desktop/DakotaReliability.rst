@@ -83,5 +83,5 @@ The user specifies if the gaussian process is to be created in x-space (original
 
 .. warning::
    
-   Only a single quatity of interest may be specified when using global reliability
+   Only a single quantity of interest may be specified when using global reliability
    
