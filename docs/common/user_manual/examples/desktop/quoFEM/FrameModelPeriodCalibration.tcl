@@ -1,15 +1,14 @@
-
 # units kips, in
 
-set measuredPeriods {0.19052 0.07887}
+set measuredPeriods {0.19 0.08}
 set PI 3.14159
 
 #
 # some paramaters
 #
 
-pset m1 0.53
-pset m2 0.25
+pset m1 0.52
+pset m2 0.26
 
 set L  400.0
 set h  120.0
