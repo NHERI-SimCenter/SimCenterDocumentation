@@ -25,7 +25,7 @@ The goal of the exercise is to estimate the mean and standard deviation of the v
 
 .. note::
    
-   1. The first lines containing pset will be read by the application when the file is selected and the application will autopopulate the Random Variables input panel with these same variable names. It is of course possible to explicitly use Random Variables without the pset command as is demonstrated in the verification section.
+   1. The first lines containing ``pset`` will be read by the application when the file is selected and the application will autopopulate the Random Variables input panel with these same variable names. It is of course possible to explicitly use Random Variables without the ``pset`` command as is demonstrated in the verification section.
 
 2. `postprocess.tcl <https://github.com/NHERI-SimCenter/quoFEM/blob/master/examples/exampleOpenSeesForward/postprocess.tcl>`_. 
 
@@ -66,7 +66,7 @@ The steps involved:
    :align: center
    :figclass: align-center
 
-3. Next select the RV tab from the input panel. This should be pre-populated with four random variables with same names as those having pset in the tcl script. For each variable, from the drop down menu change them from having a constant distribution to a normal one and then provide the means and standard deviations specified for the problem.
+3. Next select the RV tab from the input panel. This should be pre-populated with four random variables with same names as those having ``pset`` in the tcl script. For each variable, from the drop down menu change them from having a constant distribution to a normal one and then provide the means and standard deviations specified for the problem.
 
 .. figure:: figures/trussRV.png
    :align: center

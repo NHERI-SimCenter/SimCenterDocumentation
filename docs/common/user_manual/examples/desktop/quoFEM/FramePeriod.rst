@@ -58,7 +58,7 @@ The steps involved:
 
    As discussed but it is worth noting again, because the script generates a **results.out** file, no postprocessing script is needed for this example. This might not always be the case for some of your problems.
 
-3. Next select the RV tab from the input panel. This should be pre-populated with two random variables with same names as those having pset in the tcl script, i.e. m1 and m2. For each variable, from the drop down menu change them from having a constant distribution to a uniform one and then provide the lower bounds, upper bounds and the starting points shown in the figure below.
+3. Next select the RV tab from the input panel. This should be pre-populated with two random variables with same names as those having ``pset`` in the tcl script, i.e. m1 and m2. For each variable, from the drop down menu change them from having a constant distribution to a uniform one and then provide the lower bounds, upper bounds and the starting points shown in the figure below.
 
 .. figure:: figures/joelRV.png
    :align: center

@@ -75,7 +75,7 @@ Damage Model
 
 **Structure Type and Design Level**
 
-  These two pieces of information are used to select the appropriate fragility and consequence functions from those provided in the HAZUS MH Tehcnical Manual.
+  These two pieces of information are used to select the appropriate fragility and consequence functions from those provided in the HAZUS MH Technical Manual.
 
   Note: Any fragility or consequences function can be edited by the user and loaded by specifying a directory that contains those custom functions in the Custom DL data box at the bottom right. The loss calculations are performed at the local computer. Consequently, the locally available fragility and population data files can be used to perform the calculations even if the response simulations are done at DesignSafe.
 
