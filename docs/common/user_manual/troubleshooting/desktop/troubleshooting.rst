@@ -8,5 +8,5 @@ Troubleshooting
    troubleshootingStartup
    troubleshootingRunning
 
-If problems persists please visist the |messageBoard|.
+If problems persists please visit the |messageBoard|.
 

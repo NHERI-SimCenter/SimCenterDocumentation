@@ -62,7 +62,7 @@ To download the |app| click on the link for the appropriate file for your operat
 
    2. If you use a **Mac** we recommend you copy the application to either your **~/Applications** folder or your **~/Desktop** folder. 
 
-Now test that the application starts. To do this navigate to the location where you placed the application and open it. You should see the user interface (UI) shown in |figUI| after starting the application. Now ``Quit`` the application. Additional installtion steps, outlined in :numref:`lblDownloadOther`, are required before computations can be performed.
+Now test that the application starts. To do this navigate to the location where you placed the application and open it. You should see the user interface (UI) shown in |figUI| after starting the application. Now ``Quit`` the application. Additional installation steps, outlined in :numref:`lblDownloadOther`, are required before computations can be performed.
 
 .. only:: PBE_app
 

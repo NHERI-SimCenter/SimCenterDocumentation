@@ -10,7 +10,7 @@ event files. A number of buttons at the top ``Add``, ``Remove``, and ``Load Dire
 	:align: center
 	:figclass: align-center
 
-	Multiple Existing (SimCenter)) Events
+	Multiple existing (SimCenter)) events.
 
 This ``Add`` button adds an empty event to the panel. Pressing the button multiple times will keep
 adding events to the panel. :numref:`fig-sc-event` shows the state after

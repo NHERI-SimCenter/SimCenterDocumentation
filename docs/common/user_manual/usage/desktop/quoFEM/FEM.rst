@@ -11,10 +11,10 @@ The FEM panel will present users with a selection of FEM applications. Currently
 	:align: center
 	:figclass: align-center
 
-	Input for FEM panel 
+	Input for the FEM panel.
 
 .. note::
-   Because the UQ engines treat the FEM applications as a black box, when the UQ engine runs each detreministic simulation it expects the FEM application to output a single file. This file must be named **results.out** and be placed in the same directory as the main input file. The **results.out** file must contain a single line. That line must contain as many QoI values as the user will enter in the QoI panel. Each value must be seperated by a space. An example **results.out** file for a problem specyfing **4** response QoI values is as shown:
+   Because the UQ engines treat the FEM applications as a black box, when the UQ engine runs each deterministic simulation it expects the FEM application to output a single file. This file must be named **results.out** and be placed in the same directory as the main input file. The **results.out** file must contain a single line. That line must contain as many QoI values as the user will enter in the QoI panel. Each value must be separated by a space. An example **results.out** file for a problem specifying **4** response QoI values is as shown:
 
    .. literalinclude:: results.out
 
@@ -23,12 +23,12 @@ OpenSees
 
 When the choice of FEM application is OpenSees (the default application), the user is presented with the input panel shown in figure above and their are two entry fields for filenames:
 
-1. Input Script: The user must specify a main input script. When entered the application will parse this file looking for variables set with the **pset** option (a unique set command to the OpenSees interpreter that is used to identify parameter values). For each variable whose value is set with **pset**, the program will auto populate the variable in the RV input.
+1. Input Script: The user must specify a main input script. When entered the application will parse this file looking for variables set with the ``pset`` option (a unique set command to the OpenSees interpreter that is used to identify parameter values). For each variable whose value is set with ``pset``, the program will auto populate the variable in the RV input.
 
 .. literalinclude:: TrussTemplate.tcl
    :language: tcl
 
-2. Postprocess Script: This is an optional entry where the user has the option of specyfying either a tcl script or a python script that will be used to postprocess the results and create a **results.out** file after the main script runs. 
+2. Postprocess Script: This is an optional entry where the user has the option of specifying either a tcl script or a python script that will be used to postprocess the results and create a **results.out** file after the main script runs. 
 
 .. note::
    The postprocess file can be either a tcl script or a python script and the file extensions must be either **.py** or **.tcl**.
@@ -65,7 +65,7 @@ For the OpenSeesPy application, the user provides a main script and has the opti
 
 1. a postprocessing script. This must be a python script which is provided the QoI variable names when started. This entry can be left blank if the main script creates a **results.out** file with a single line as described for the OpenSees application.
 
-2. a parameters file. This file, an example of which is is read by the application and autopopulates the RV input panel with any variables found in the file. For example if the file contained the following:
+2. a parameters file. This file, an example of which is is read by the application and automatically populates the RV input panel with any variables found in the file. For example if the file contained the following:
 
 .. literalinclude:: parameters.py
    :language: py

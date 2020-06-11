@@ -8,7 +8,7 @@ This event facilitates generating a CFD model for wind flow around a building. A
 	:align: center
 	:figclass: align-center
 
-	CFD Template Event
+	CFD template event.
 
 The following are the steps the user should follow to use the CFD template:
 
@@ -24,4 +24,4 @@ The following are the steps the user should follow to use the CFD template:
 
 #.  Finally, the user needs to specify how the force on the building are extracted. Currently, the only method supported is to group forces on the building into bins of equal height, where each bin corresponds to a building floor. In addition, a start time for the applying the forces on the building model has to be specified, forces before that time will not be used. This allows the user to ignore force values in the beginning of the CFD simulation as they may not be accurate.
 
-It has to be noted that this event can only run remotely at DesignSafe-CI, and is not supported to be run on the local computer. Once the analysis is run a mesh is generated using Gmsh based on the meshing parameters specified by the user, then and OpenFOAM model is generated, analyzed and its output will be used to extract forces acting on the building, assuming the building is a rigid body. It is also important to note that intermediate meshing and CFD simulation results are available in the output archive folder for the user to inspect, if needed. 
+It has to be noted that this event can only run remotely at DesignSafe-CI, and is not supported to be run on the local computer. Once the analysis is run a mesh is generated using Gmsh based on the meshing parameters specified by the user, then and OpenFOAM model is generated, analyzed and its output will be used to extract forces acting on the building, assuming the building is a rigid body. It is also important to note that intermediate meshing and CFD simulation results are available in the output archive folder for the user to inspect, if needed.

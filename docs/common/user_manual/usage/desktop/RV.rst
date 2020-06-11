@@ -5,7 +5,7 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 
 1. `Normal (Gaussian) <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-normal_uncertain.html>`_
 
-   User provides the mean (:math:`\mu`) and standard deviation (:math:`\sigma`) of the normal distibution. The density function of the normal distribution, as a function of :math:`\mu` and :math:`\sigma` is:
+   User provides the mean (:math:`\mu`) and standard deviation (:math:`\sigma`) of the normal distribution. The density function of the normal distribution, as a function of :math:`\mu` and :math:`\sigma` is:
 
    .. math::
 
@@ -15,7 +15,7 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 2. `Lognormal <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-lognormal_uncertain.html>`_
 
 
-   User provides the mean (:math:`\mu`) and standard deviation (:math:`\sigma`) of the lognormal distibution. The density function of the lognormal distribution, as a function of :math:`\mu` and :math:`\sigma` is:
+   User provides the mean (:math:`\mu`) and standard deviation (:math:`\sigma`) of the lognormal distribution. The density function of the lognormal distribution, as a function of :math:`\mu` and :math:`\sigma` is:
 
    .. math::
 
@@ -28,7 +28,7 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 3. `Beta <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-beta_uncertain.html>`_
 
 
-   User provides :math:`\alpha`, :math:`\beta`, lower bound (:math:`L_B`), and an upper bound (:math:`U_B`) for the beta distibution. The density function of the normal distribution, as a function of these quantaties is:
+   User provides :math:`\alpha`, :math:`\beta`, lower bound (:math:`L_B`), and an upper bound (:math:`U_B`) for the beta distribution. The density function of the normal distribution, as a function of these quantities is:
 
    .. math::
 
@@ -42,7 +42,7 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 4. `Uniform <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-uniform_uncertain.html>`_
 
 
-   User provides the lower bound (:math:`L_B`), and an upper bound (:math:`U_B`) for the uniform distibution. The density function of the normal distribution, as a function of these quantaties is:
+   User provides the lower bound (:math:`L_B`), and an upper bound (:math:`U_B`) for the uniform distribution. The density function of the normal distribution, as a function of these quantities is:
 
    .. math::
 
@@ -53,7 +53,7 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 5. `Weibull <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-weibull_uncertain.html>`_
 
 
-   User provides shape parameter (:math:`k`) and scale parameter (:math:`\lambda`)  for the Weibull distibution. The density function of the Weibull distribution, as a function of these quantaties is:
+   User provides shape parameter (:math:`k`) and scale parameter (:math:`\lambda`)  for the Weibull distribution. The density function of the Weibull distribution, as a function of these quantities is:
 
    .. math::
 
@@ -65,7 +65,7 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 6. `Gumbel <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-gumbel_uncertain.html>`_
 
 
-   User provides :math:`\alpha` and :math:`\beta` for the Gumbel distibution, where :math:`\beta` is known as the **location parameter** and :math:`\frac{1}{\alpha}` the **scale parameter**. The density function of the Gumbel distribution, as a function of these quantaties is:
+   User provides :math:`\alpha` and :math:`\beta` for the Gumbel distribution, where :math:`\beta` is known as the **location parameter** and :math:`\frac{1}{\alpha}` the **scale parameter**. The density function of the Gumbel distribution, as a function of these quantities is:
 
    .. math::
    
@@ -80,7 +80,7 @@ For each random variable, the user must enter a name and select from the pull do
    :align: center
    :figclass: align-center
 
-   Random Variable specification
+   Random variable specification.
 
 .. note::
 

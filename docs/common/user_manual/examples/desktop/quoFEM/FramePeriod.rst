@@ -22,7 +22,7 @@ What is unknown is the mass of the building. However from data collected the per
    m1, 0.4, 0.8, 0.4
    m2, 0.1, 0.4, 0.1
 
-The goal of this exercise it to come up with estimates of these quantaties using the |app| that result in reasonably good matches between finite element model periods and the observed periods of the structure.
+The goal of this exercise it to come up with estimates of these quantities using the |app| that result in reasonably good matches between finite element model periods and the observed periods of the structure.
 
 The exercise requires a single OpenSees script file. The user is required to download this file and place it in a **NEW** folder. The file: 
 
@@ -60,6 +60,7 @@ The steps involved:
 
 3. Next select the RV tab from the input panel. This should be prepopulated with two random variables with same names as those having pset in the tcl script, i.e. m1 and m2. For each variable, from the drop down menu change them from having a constant distribution to a continuous design one and then provide the lower bounds, upper bounds and the starting points shown in the figure below.
 
+
 .. figure:: figures/joelRV.png
    :align: center
    :figclass: align-center
@@ -87,6 +88,7 @@ The steps involved:
 .. note::
 
    1. The computed values compare favorably to the values used to generate the 'observed results' when developing this problem, these being the values shown in the script, i.e. :math:`m1=0.52` and :math:`m2=0.26`. 
+
    2. It would prove useful for you to adjust the parameters, observed values and inputs for the continuous design variables. The numbers were chosen to demonstrate the methods can give good results. They do not always return such good numbers.
 
    

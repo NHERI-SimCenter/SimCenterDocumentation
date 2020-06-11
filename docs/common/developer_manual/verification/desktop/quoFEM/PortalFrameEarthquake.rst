@@ -102,7 +102,7 @@ command and defined them as random variables.
    Work on **UQ** tab
 
 #.  Now click on run, set the analysis parameters, working directory and applications directory and click submit to run the analysis. 
-If the run is successfull the program will automatically open the
+If the run is successful the program will automatically open the
 results tab showing the summary of results (\Cref{fig:figure27}).
 
 .. figure:: figures/runAnalysis.png
@@ -148,7 +148,7 @@ agreement.
    :align: center
    :figclass: align-center
 
-   Outputs from PortalFrameSamplying.py script
+   Outputs from PortalFrameSampling.py script
 
 +------------------------------+-----------+-----------+------------+---------+
 | Engineering Demand Parameter |           |   EE-UQ   |  Python    | %Diff   |

@@ -100,3 +100,7 @@ Build using the terminal
 Set the User Interface Preferences
 ************    
     Once built, Open the |short tool id| tool, then click on file -> preferences and set the applications directory entry to point to the applications folder that the build process created for BackendApplications.
+
+.. _lblHowToBuild:
+
+

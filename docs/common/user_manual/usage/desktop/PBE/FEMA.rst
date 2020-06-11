@@ -27,7 +27,7 @@ Response Model
     :align: right
     :figwidth: 300px
     
-    Response model settings
+    Response model settings.
 
 Some text about the model
 
@@ -68,10 +68,10 @@ Damage Model
     :align: right
     :figwidth: 300px
 
-    Damage model settings
+    Damage model settings.
 
 
-**Irrepairable Residual Drift**
+**Irreparable Residual Drift**
 
   Describes the limiting residual drift as a random variable with a lognormal distribution. See Figure 2-5 and Section 7.6 in FEMA P58 for details. The prescribed yield drift ratio is used to estimate residual drifts from peak interstory drifts per Section 5.4 in FEMA P58. This is only needed if no reliable residual drifts are available from the simulation. Considering the large uncertainty in estimated residual drift values, it is recommended to consider using the peak interstory drift as a proxy even if it would be numerically possible to obtain residual drift values.
 
@@ -102,7 +102,7 @@ Loss Model
     :align: right
     :figwidth: 300px
 
-    Loss model settings
+    Loss model settings.
 
 
 **Replacement Cost and Time**
@@ -185,12 +185,12 @@ This panel provides more information about the active component in the drop-down
 .. figure:: figures/dl_p58_comp_details.png
     :align: center
 
-    Component details
+    Component details.
 
 
 **Component Groups**
 
-  Components are handled by defining component groups in the building. You can add a new component group definition or remove an existing one with the ``Add Component Group`` and ``Remove Component Group`` buttons. Each component group defintion allows you to assign component groups to various locations in the building.
+  Components are handled by defining component groups in the building. You can add a new component group definition or remove an existing one with the ``Add Component Group`` and ``Remove Component Group`` buttons. Each component group definition allows you to assign component groups to various locations in the building.
 
   The following settings are available:
 
@@ -217,7 +217,7 @@ This panel provides more information about the active component in the drop-down
 
 As long as you want to assign the same amount of components to every floor and every direction, one component group row is sufficient. Oftentimes, you will want to have more control over component quantities because the amount of components is not identical in all floors and directions.
 
-The example in :numref:`fig-dl-p58-comp-details` shows the assignment of Buckling Restrained Braces in a building. The first row assigns four BRBs in direction 1 to the first and second stories. The four braces are grouped in pairs (hence the ``2, 2`` entry under ``median quantity``). Damage to those two *Component Groups* can be evaluated independently. The second row assigns six braces to every floor in directon 2. These are also grouped in pairs, forming three *Component Groups*. Since the number of braces is known exactly, the ``distribution`` is set to ``N/A`` and there is no need to specifiy a ``cov`` value.
+The example in :numref:`fig-dl-p58-comp-details` shows the assignment of Buckling Restrained Braces in a building. The first row assigns four BRBs in direction 1 to the first and second stories. The four braces are grouped in pairs (hence the ``2, 2`` entry under ``median quantity``). Damage to those two *Component Groups* can be evaluated independently. The second row assigns six braces to every floor in direction 2. These are also grouped in pairs, forming three *Component Groups*. Since the number of braces is known exactly, the ``distribution`` is set to ``N/A`` and there is no need to specify a ``cov`` value.
 
 
 Collapse Modes
