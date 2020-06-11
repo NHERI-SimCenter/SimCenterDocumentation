@@ -42,7 +42,7 @@ R3.4 & Ability to include demand surge in determination of damage and loss estim
 R3.5 & Ability to include lifeline disruptions & GC & 1.3.6 pelicun & M & \\ \hhline{======}
 
 
-R4.1 & Promote 'living' community risk models utilizing local inventory data from various scources & GC & 1.3.0 rWhale & M & \\ \hline
+R4.1 & Promote 'living' community risk models utilizing local inventory data from various sources & GC & 1.3.0 rWhale & M & \\ \hline
 R4.2 & Ability to use cumulative knowledge bases rather than the piecemeal individual approaches & GC & 1.3.3 & M & \\ \hline
 R4.3 & Developing and sharing standardized definitions, measurement protocols and strategies for data collection & GC & 1.3.3 & M & \\ \hline
 R4.3 & Developing tools that utilize GIS information and online images, e.g. google maps, for data collection & GC & 1.3.4 BRAILS & M & 1.0 \\ \hline

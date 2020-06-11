@@ -22,11 +22,11 @@ It is important to note that this type of event is only supported when running t
 	:align: center
 	:figclass: align-center
 
-	CFD Expert Event
+	CFD expert event.
 
 There are at least 6 input parameters that needs to be provided by the user and can be summarized as follows:
 
-#. **Case:** The remote path of the OpenFOAM case that was uploaded in advance to DesignSafe data depot. By default, this is set to an example case that is provided by the SimCebnter in the community directory.
+#. **Case:** The remote path of the OpenFOAM case that was uploaded in advance to DesignSafe data depot. By default, this is set to an example case that is provided by the SimCenter in the community directory.
 
 #. **Solver:** The OpenFOAM solver that is used in the simulation.
 
@@ -45,4 +45,4 @@ If the user selects to specify the inflow conditions, the parameters for the inf
 	:align: center
 	:figclass: align-center
 
-	Inflow Condition Parameters
+	Inflow condition parameters.

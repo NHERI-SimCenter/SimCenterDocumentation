@@ -23,7 +23,7 @@ PBE17 , "Ability to select from all HydroUQ Event Options ", SP , M , 1.0
 PBE18 , "Ability to Select All Building Model Generators in EE-UQ ", SP , M , 1.0  
 PBE19, "Ability to Select All Building Model Generators in WE-UQ ", SP , M , 
 PBE20 , "Ability to Select All Building Model Generators in HydroUQ ", SP , M ,   
-PBE21 , "Ability to use all forward propogation methods available in EE-UQ, WE-UQ and HydroUQ", SP , M , 1.0
+PBE21 , "Ability to use all forward propagation methods available in EE-UQ, WE-UQ and HydroUQ", SP , M , 1.0
 PBE22, "Ability to use all random variable distributions in EE-UQ, WE-UQ and HydroUQ", SP , M , 1.0 
 PBE23 , "Specify Engineering Demand Parameters ",  ,  ,  
 PBE23.1 , "Ability to Process own Output Parameters ", UF , M ,    

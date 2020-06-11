@@ -28,7 +28,7 @@ Once Python is installed, you need to extend it by installing the following pack
 Dakota
 ^^^^^^
 
-|DakotaLink| is the default UQ engine used by the |app| that is publicily available from its |DakotaDownload|. The download page offers an extensive list of downloadable files. You can narrrow this down to the file to be selected by selecting **MacOS** in the `Platform`, **6.10** in the `Release`, and **Command Line Only** for the `interface type`. In the `Public`
+|DakotaLink| is the default UQ engine used by the |app| that is publicly available from its |DakotaDownload|. The download page offers an extensive list of downloadable files. You can narrow this down to the file to be selected by selecting **MacOS** in the `Platform`, **6.10** in the `Release`, and **Command Line Only** for the `interface type`. In the `Public`
 area you should now only have a single option, click on the link to download |Dakota|. When you extract the files that you download, they will all be contained in a single folder, we suggest moving that folder to your **bin** folder.
 
 OpenSees
@@ -37,7 +37,7 @@ OpenSees
 |OpenSeesLink| is an open-source finite element application publicly available for download from its |OpenSeesDownload|.  OpenSees requires |Tcl| be installed to run. If you have never downloaded |OpenSees| before, you will need to register your e-mail to gain access. After registration, you can proceed to the download page by entering your email address and clicking the Submit button. The Mac download link is at the bottom of the download page, with the appropriate Tcl installer beside the |OpenSees| link; 
 
 Steps to Install:
-      1. Download the OpenSees executable .zip file, uncompress it and put it in a folder. We suggest placing it in the **bin** folder in your local home directory. Note depending on the applications you use this may require you creating the **bin** folder.
+      1. Download the OpenSees executable .zip file, decompress it and put it in a folder. We suggest placing it in the **bin** folder in your local home directory. Note depending on the applications you use this may require you creating the **bin** folder.
       2. Download and run the Tcl installer.
 
 Edit Your .bashrc file

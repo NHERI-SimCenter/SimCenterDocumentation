@@ -15,7 +15,7 @@ remotely, and finally views the simulation results. The main window of the UI is
 	:align: center
 	:figclass: align-center
 
-	The User Interface
+	The |app| user interface.
 
 .. only:: PBE_app
 
@@ -25,17 +25,17 @@ remotely, and finally views the simulation results. The main window of the UI is
 	:align: center
 	:figclass: align-center
 
-	The User Interface
+	The |app| user interface.
 
 .. only:: EEUQ_app
 
    .. _figGenericUI-EE:
 
    .. figure:: figures/eePanel.png
-	       :align: center
-	       :figclass: align-center
+   :align: center
+   :figclass: align-center
 
-	       The User Interface
+   The |app| user interface.
 
 .. only:: WEUQ_app
 
@@ -45,7 +45,7 @@ remotely, and finally views the simulation results. The main window of the UI is
 	:align: center
 	:figclass: align-center
 
-	The User Interface
+	The |app| user interface.
 
 
 1. Login Button: 
@@ -63,7 +63,7 @@ The ribbon on the left side provides the user with a selection of buttons to cho
 
 4. Input Panel: 
 
-The input panel is the large central area of the UI where the user provides input for the application chosen and where thay can view the results. For example, if the user had selected ``RV`` in the input panel selection, it is in this panel that the user would provide details on the distributions associated with each random variable. In the following sections each of the panels that is presented to the user when the buttons in the input panel selection are reviewed:
+The input panel is the large central area of the UI where the user provides input for the application chosen and where they can view the results. For example, if the user had selected ``RV`` in the input panel selection, it is in this panel that the user would provide details on the distributions associated with each random variable. In the following sections each of the panels that is presented to the user when the buttons in the input panel selection are reviewed:
 
 .. toctree-filt::
    :maxdepth: 1
@@ -79,7 +79,7 @@ The input panel is the large central area of the UI where the user provides inpu
    :quoFEM:quoFEM/FEM
    :response:response/EDP
    RV
-   :quoFEM:quoFEM/QuantatiesOfInterest
+   :quoFEM:quoFEM/QuantitiesOfInterest
    :PBE:PBE/DL
    :response:response/resEE
    :quoFEM:quoFEM/resQUO
@@ -94,5 +94,3 @@ This is the area near the bottom of the UI in which 4 buttons are contained:
      * ``RUN at DesignSafe`` – Process the information, and send to DesignSafe. The simulation will be run there on a supercomputer, and results will be stored in the user's DesignSafe jobs folder.
      * ``GET from DesignSafe`` – Obtain the list of jobs for the user from DesignSafe and select a job to download from that list.
      * ``Exit``: Exit the application.
-
-

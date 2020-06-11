@@ -22,7 +22,7 @@ Examples folder in a subfolder called **PortalFrame2D**.
 	:align: center
 	:figclass: align-center
 
-	Two-dimensional portal frame model subjected to gravity and earthquake loading
+	Two-dimensional portal frame model subjected to gravity and earthquake loading.
 
 To introduce uncertainty in the model, both mass and young’s modulus
 are assumed to be normally distributed random variables with means and
@@ -33,7 +33,7 @@ method using both |app| and a Python script
 analyses are compared.
 
 .. csv-table:: 
-   :header: "Uncertain Parameter", "Distribution", "Mean", "Standrad Deviation"
+   :header: "Uncertain Parameter", "Distribution", "Mean", "Standard Deviation"
    :widths: 40, 20, 20, 20
 
    Nodal Mass (m [kip])	 , Normal , 	5.18	 , 1.0 
@@ -100,7 +100,7 @@ command and defined them as random variables.
    Work on **UQ** tab
 
 #.  Now click on run, set the analysis parameters, working directory and applications directory and click submit to run the analysis. 
-If the run is successfull the program will automatically open the
+If the run is successful the program will automatically open the
 results tab showing the summary of results (\Cref{fig:figure27}).
 
 .. figure:: figures/runAnalysis.png
@@ -146,7 +146,7 @@ agreement.
    :align: center
    :figclass: align-center
 
-   Outputs from PortalFrameSamplying.py script
+   Outputs from PortalFrameSampling.py script
 
 +------------------------------+-----------+-----------+------------+---------+
 | Engineering Demand Parameter |           |   EE-UQ   |  Python    | %Diff   |

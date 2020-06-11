@@ -3,7 +3,7 @@
 UQ: Uncertainty Quantification
 ==============================
 
-The first selection panel the user must select from and enter data into is the ``UQ`` panel. It is in this panel where the user selects the ``UQ Engine`` to use for performing the uncertainty quantification calculuations. Presently the ``UQ Engine`` option is limited to the Dakota engine.
+The first selection panel the user must select from and enter data into is the ``UQ`` panel. It is in this panel where the user selects the ``UQ Engine`` to use for performing the uncertainty quantification calculations. Presently the ``UQ Engine`` option is limited to the Dakota engine.
 
 Dakota UQ Engine
 ----------------
@@ -16,7 +16,7 @@ This UQ engine utilizes the `Dakota Software <https://dakota.sandia.gov/>`_, a s
    :align: center
    :figclass: align-center
 
-   Dakota Engine and Category Selection
+   Dakota engine and category selection.
 
 The following categories are available:
 
