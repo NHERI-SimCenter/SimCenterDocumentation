@@ -251,7 +251,7 @@ elif app_name == 'quoFEM':
 
 """	
 
-	html_logo = 'common/figures/EE-UQ-Logo-grey2.png' 
+	html_logo = 'common/figures/quoFEM-LogoImageGrey.png' 
 
 	html_theme_options = {
 		'analytics_id': 'UA-158130480-1',
