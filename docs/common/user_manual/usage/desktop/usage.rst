@@ -74,7 +74,7 @@ The input panel is the large central area of the UI where the user provides inpu
    :earthquake:SIM
    :wind:SIM
    :earthquake:earthquake/earthquakeEvents
-   :wind:wind/WindEvent
+   :wind:wind/WindEvents
    :response:FEM
    :quoFEM:quoFEM/FEM
    :response:response/EDP
