@@ -1,3 +1,7 @@
+*****************
+Build the Backend
+*****************
+
     SimCenterBackendApplications contains a number of applications written in C++, C and Python that are needed by all SimCenter User Interfaces. To build the backend you will need to follow tht follwoting steps:
 
     1. Clone the `SimCenterBackendApplications repository <https://github.com/NHERI-SimCenter/SimCenterBackendApplications>`_. 

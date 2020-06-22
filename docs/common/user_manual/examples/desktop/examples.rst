@@ -9,7 +9,7 @@ Examples
 
    :quoFEM:quoFEM/TrussOpenSees
    :quoFEM:quoFEM/FramePeriod
-   :EEUQ:EE-UQ/ShearBuilding3
+   :EEUQ:EEUQ/ShearBuilding3
 
 
 

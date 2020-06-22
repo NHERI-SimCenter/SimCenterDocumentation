@@ -24,8 +24,8 @@ dated version 2.7. We recommend installing Python 3.7 from `Python.org <https://
    #. In the current installation of **Python** it leaves two script files in a folder when the installation ends. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal. To execute the files, double click on them. The two files, shown in the image below, are: **Update Shell Profile.command.sh** and **Install CertificateCommand.sh**.
 
    .. figure:: figures/pythonInstallShell.png
-        :align: center
-      	:figclass: align-center
+      :align: center
+      :figclass: align-center
 
       Python: Folder Displayed at Conclusion of Install
 
@@ -95,7 +95,7 @@ Finally you want to edit that file so that the applications will find |OpenSees|
    export PYTHONPATH=$HOME/bin/dakota-6.10.0/share/dakota/Python
 
 .. note:
-   #. Apple in MacOS Catilina has moved from users defaulting to the **bash** shell to the **Z** shell. As a consequence the name of the files to edit has changed from **.bash_profile** to the **.zprofile**. 
+   #. Apple in MacOS Catalina has moved from users defaulting to the **bash** shell to the **Z** shell. As a consequence the name of the files to edit has changed from **.bash_profile** to the **.zprofile**. 
    #. If you upgrade your system from an older version of the operating system, it keeps your old shell preferences. You can confirm your current shell by typing in a terminal **env | grep shell**.
 
 Test the Install of Python, OpenSees & Dakota
@@ -127,17 +127,17 @@ Steps to Test the Installation of the Applications:
 
    Apple, in the latest release of their operating system, MacOS 10.16 Catalina, has changed the default working of Gatekeeper. Gatekeeper, first introduced in OS X Mountain Lion, is a Mac security feature that helps protect your Mac from Malware and other malicious software. Gatekeeper checks to make sure the application is safe to run by checking it against the list of apps that Apple has vetted and approved for the Apple Mac Store and/or approved by Apple even if not offered through the app store. In previous versions of MacOS, Gatekeeper had three security level options: App Store, App Store and Identified Developers, and Anywhere. Anywhere has been removed and this will cause problems with Dakota.
 
-   Apple has greatly increased security with **Catilina** and now by default terminal applications can no longer run if they are downloaded from the internet and not signed by a recognized Apple developer. To over come this issue, before you start issuing the above commands in a terminal, open **System Preferences/Security and Privacy**. As you issue the commands, click the **Cancel** button in the window that pops warning you the **application cannot be opened because the Developer cannot be verified** up and then click the button **Allow Anayway** that now appears beside the application name in the **Security an Privacy** window, as shown in figure below. Rerun the application and it should now work without the warning window popping up.
+   Apple has greatly increased security with **Catalina** and now by default terminal applications can no longer run if they are downloaded from the internet and not signed by a recognized Apple developer. To over come this issue, before you start issuing the above commands in a terminal, open **System Preferences/Security and Privacy**. As you issue the commands, click the **Cancel** button in the window that pops warning you the **application cannot be opened because the Developer cannot be verified** up and then click the button **Allow Anayway** that now appears beside the application name in the **Security an Privacy** window, as shown in figure below. Rerun the application and it should now work without the warning window popping up.
 
    .. figure:: figures/macSecurity.png
       :align: center
       :figclass: align-center
 
-      Catilina: Security and Privacy Panel for Unsigned Terminal Applications.
+      Catalina: Security and Privacy Panel for Unsigned Terminal Applications.
 
 .. warning:: 
 
-   **Dakota** has even more troubles installing on CAtilina. Not only is the develoepr not know, the application relies on code from other unsigned developers. As a consequence the above workaround for most terminal applications fails. For dakota, in the terminal we have to turn off gatekeeper even after we have o.k.'d the application for running. Issue the following commands inside the terminal window:
+   **Dakota** has even more troubles installing on Catalina. Not only is the develoepr not know, the application relies on code from other unsigned developers. As a consequence the above workaround for most terminal applications fails. For dakota, in the terminal we have to turn off gatekeeper even after we have o.k.'d the application for running. Issue the following commands inside the terminal window:
 
    .. code:: none
 

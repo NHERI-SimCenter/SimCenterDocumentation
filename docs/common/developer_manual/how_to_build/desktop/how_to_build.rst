@@ -47,10 +47,6 @@ Obtain the Source Code
 
     You will need to clone each dependency from its GitHub repository and place it in the same parent directory where the |short tool id| repository was cloned (note: not inside the |short tool id| directory itself, but directory above it, i.e. SimCenterCommon and |short tool id| directories both exist in the same parent directory).
 
-*****************
-Build the Backend
-*****************
-
 .. only:: quoFEM_app
 
    .. include:: quoFEMBackend.rst
@@ -89,7 +85,3 @@ Build using the terminal
 Set the User Interface Preferences
 **********************************
     Once built, Open the |short tool id| tool, then click on file -> preferences and set the applications directory entry to point to the applications folder that the build process created for BackendApplications.
-
-.. _lblHowToBuild:
-
-

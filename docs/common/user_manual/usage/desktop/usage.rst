@@ -12,45 +12,45 @@ remotely, and finally views the simulation results. The main window of the UI is
    .. _figGenericUI-QUOFEM:
 
    .. figure:: figures/quoFEM.png
-	:align: center
-	:figclass: align-center
+	    :align: center
+	    :figclass: align-center
 
-	The |app| user interface.
+	    The |app| user interface.
 
 .. only:: PBE_app
 
    .. _figGenericUI-PBE:
-
+    
    .. figure:: figures/pbePanel.png
-	:align: center
-	:figclass: align-center
-
-	The |app| user interface.
+      :align: center
+      :figclass: align-center
+ 
+      The |app| user interface.
 
 .. only:: EEUQ_app
 
    .. _figGenericUI-EE:
 
    .. figure:: figures/eePanel.png
-   :align: center
-   :figclass: align-center
+      :align: center
+      :figclass: align-center
 
-   The |app| user interface.
+      The |app| user interface.
 
 .. only:: WEUQ_app
 
    .. _figGenericUI-WE:
 
    .. figure:: figures/wePanel.png
-	:align: center
-	:figclass: align-center
+	    :align: center
+	    :figclass: align-center
 
-	The |app| user interface.
+	    The |app| user interface.
 
 
 1. Login Button: 
 
-The ``Login`` Button is at the top right of the UI. Before the user can launch any jobs on DesignSafe, they must first login to DesignSafe using their DesignSafe login and password. Pressing the login button will open up the login window for users to enter this information. Users can register for an account on the `DesignSafe <https://www.designsafe-ci.org/account/register>`_ website.
+The ``Login`` Button is at the top right of the UI. Before the user can launch any jobs on DesignSafe, they must first login to DesignSafe using their DesignSafe login and password. Pressing the login button will open up the login window for users to enter this information. Users can register for an account on the `DesignSafe-CI <https://www.designsafe-ci.org/account/register>`_ website.
 
 2. Message Area: 
 
@@ -75,13 +75,16 @@ The input panel is the large central area of the UI where the user provides inpu
    :wind:SIM
    :earthquake:earthquake/earthquakeEvents
    :wind:wind/WindEvents
-   :response:FEM
+   :earthquake:FEM
+   :wind:FEM
    :quoFEM:quoFEM/FEM
-   :response:response/EDP
+   :EEUQ:response/EDP
+   :WEUQ:response/EDP
    RV
    :quoFEM:quoFEM/QuantitiesOfInterest
    :PBE:PBE/DL
-   :response:response/resEE
+   :EEUQ:response/resEE
+   :WEUQ:response/resEE
    :quoFEM:quoFEM/resQUO
    :PBE:PBE/resPBE
 
@@ -94,3 +97,4 @@ This is the area near the bottom of the UI in which 4 buttons are contained:
      * ``RUN at DesignSafe`` – Process the information, and send to DesignSafe. The simulation will be run there on a supercomputer, and results will be stored in the user's DesignSafe jobs folder.
      * ``GET from DesignSafe`` – Obtain the list of jobs for the user from DesignSafe and select a job to download from that list.
      * ``Exit``: Exit the application.
+

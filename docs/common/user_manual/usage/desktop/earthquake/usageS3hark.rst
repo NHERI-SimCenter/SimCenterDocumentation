@@ -36,7 +36,7 @@ The UI of |s3harkName| consists of the following components:
 .. _profileColumn:
 
 Soil Column Graphic
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 The first graphic on the left of the panel shows a visualization of the soil column created. 
 Each layer has a different randomly generated color.
 When the user add or delete a soil layer, this graphic will refresh. 
@@ -44,13 +44,13 @@ When the user add or delete a soil layer, this graphic will refresh.
 .. _mesh:
 
 FE Mesh Graphic
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 The second graphic on the left shows the finite element mesh and profile plots. 
 Upon the finish of the analysis, selecting any of the tabs on the right inside this graphic (i.e., PGA, :math:`\gamma max`, maxDisp, maxRu, maxRuPWP) 
 will show various results from the simulation at the mesh points.
 
 Operations Area
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 The right side of this area shows some information of the created soil column, such as the total height and number of soil layers.
 The user also finds the Ground Water Table (GWT) input field, plus and minus buttons in this area.
 If the user pressed the plus button, a layer will be added below a currently selected layer. 
@@ -62,7 +62,7 @@ The GWT input field allows the user to specify the level of the ground water tab
    - Variables are assumed to have m, kPa, and kN units in |s3harkName|.
 
 Soil Layer Table
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 This table is where the user provides the characteristics of soil layers, such as layer thickness, density, Vs30, material type, and element size in the finite element mesh.
 
 Single click at a cell will make a soil layer selected, which will highlight the layer using green color in the table.
@@ -76,7 +76,7 @@ Double click a cell to edit it in the table.
 If you change the ``Material`` cell of a layer, the :ref:`Layer Properties Tab <layerPropertiesTab>` will change correspondingly.
 
 Tabbed Area
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 This area contains the three tabbed widgets described below.
 
 Configure Tab

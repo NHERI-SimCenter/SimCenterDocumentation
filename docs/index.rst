@@ -107,3 +107,8 @@ Contact
 =======
 
 |contact person|
+
+References
+==========
+
+.. bibliography:: common/references.bib
