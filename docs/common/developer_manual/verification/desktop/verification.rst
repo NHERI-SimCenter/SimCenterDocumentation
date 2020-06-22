@@ -4,7 +4,7 @@
 Verification
 ************
 
-This chapter collects carefully designed verification exercises that we use to test the correctness of the implementation of the |app| application.
+This chapter collects carefully designed verification exercises that we use to test the correctness of the implementation of the |app|.
 
 .. toctree-filt::
    :maxdepth: 1

@@ -20,4 +20,4 @@ The user here provides information about the building and the units the user wil
 	:align: center
 	:figclass: align-center
 
-	General Information Input Panel
+	General information input panel.

@@ -25,7 +25,7 @@ A Level 1 diagram showing the system context for the SimCenter applications, i.e
    :align: center
    :figclass: align-center
 
-   System Context Diagram for SimCenter Applications
+   System context diagram for SimCenter applications.
 
 Level 2:  The Components of a SimCenter Application
 ===================================================
@@ -38,7 +38,7 @@ Given how SimCenter applications fit in with the environment, a level 2 diagrams
    :align: center
    :figclass: align-center
 
-   System Container Diagram for SimCenter Applications
+   System container diagram for SimCenter applications.
 
 Level 3: Container Diagrams for the Front and Back End Components
 =================================================================
@@ -51,7 +51,7 @@ Two level 3 diagrams are now presented which break up the two containers into th
    :align: center
    :figclass: align-center
 
-   Component Diagram for Front End UI
+   Component diagram for front end UI.
 
 The component diagram for the backend application shown in :numref:`figComponentBack`, shows that the backend is made up of a number of component, all applications. The application “femUQ.py” is the application that parses the input from the front end, sets up the workflow and launches the UQ engine. Which UQ Engine and which applications to run in the workflow, is determined from the data passed from the UI and information contained in a WorkflowApplication.json file. A file is used to allow the researchers to modify the applications that may be run in the workflow w/o the need to recompile the application. Control is then passed to a UQ Engine, which repeatedly runs the workflow to generate the results. In running the workflow some of the applications will invoke applications not developed to meet the API. For such applications pre- and post-processors are provided.
 The figure shows the backend application running locally or remotely on a HPC@DesignSafe.
@@ -63,6 +63,6 @@ The figure shows the backend application running locally or remotely on a HPC@De
    :align: center
    :figclass: align-center
 
-   Component Diagram for Backend Application
+   Component diagram for backend application.
 
 

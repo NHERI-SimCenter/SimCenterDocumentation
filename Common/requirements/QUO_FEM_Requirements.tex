@@ -1,41 +1,47 @@
-\begin{longtable}{| p{.05\textwidth} | p{.75\textwidth} | p{.08\textwidth} | p{.08\textwidth} |}
-
+\begin{longtable}{| p{.07\textwidth} | p{.65\textwidth} | p{.08\textwidth} | p{.08\textwidth} |  p{.08\textwidth} |}
 \caption{Reuirements for quoFEM}             
   \label{tab:featureQuo_FEM}     
      \\
    \hline
 \rowcolor{lightgray}
-
-      \# & Description & Priority & Version \\ \hline
-     Q1 & \textbf{Forward Uncertainty Propagation} &  &  \\ 
-	Q1.1 & Input uncertainty characterization & M & 1.1 \\ \hline
-	Q1.2 & PDF Approximation & M & 1.1 \\ \hline
-	Q1.3 &  Descriptive output statistics & M & 1.1 \\ \hline
-	Q1.4 &  Basic Monte Carlo Sampling  & M & 1.1 \\ \hline	
-	Q1.5 &  Importance Sampling for rare events  & M & 2.0 \\ \hline	
-	Q1.6 &  Cross-Entropy sampling  & M &  \\ \hline
-	Q1.7 &  Forward Propagation, GPR Surrogate  & M & 2.0 \\ \hline
-	Q1.8 &  Forward Propagation, PCE Surrogate  & M & 2.0 \\ \hline
-	Q1.9 &  Multi-fidelity sampling  & M &  \\ \hline
-	Q1.10 &  Spatial/temporal stochastic models  & M &  \\ \hhline{====}
-	Q2 & \textbf{Sensitivity Analysis} &  &  \\ \hline
-	Q2.1 & Global sensitivity Sobol's indices & M & 2.0  \\ \hhline{====}
-	Q3 & \textbf{System Identification and Bayesian Inference} &  &  \\ \hline
-	Q3.1 & Parameter estimation & M &  \\ \hline
-	Q3.2 & Basic Bayesian parameter updating & M &  \\ \hline
-	Q3.3 & Advanced MCMC-based Bayesian updating & M & \\ \hline
-	Q3.4 & Advanced Surrogate-based Bayesian updating & M &  \\ \hline
-	Q3.5 & Model class selection & M &  \\ \hline
-	Q3.6 & Sequential Bayesian updating & M &  \\ \hhline{====}
-	Q4 & \textbf{Optimization under Uncertainty} &  &  \\ \hline
-	Q4.1 & Reliability-Based Design Optimization & M &  \\ \hline
-	Q4.2 & Single-objective optimization under uncertainty & M &  \\ \hline
-	Q4.3 & Multi-objective optimization under uncertainty & M &  \\ \hhline{====}
-	Q5 & \textbf{Reliability Analysis} &  &  \\ \hline
-	Q5.1 & First/Second Order Reliability Methods & M & 2.0 \\ \hline
-	Q5.2 & Surrogate-based reliability & M & 2.0 \\ \hline
+      \# & Description & Source & Priority & Version \\ \hline
+      Q1 & A tool that facilitates civil engineers performing UQ methods and provides a platform for those in UQ to promote their research to a broader audience & SP & M & 1.0     \\ \hline
+      Q1.1 &  Ability to utilize existing open-source software for faster deployment
+ & SP & M & 1.0 \\ \hline    
+     Q1.2 & Ability to extend to multiple UQ engines" & SP & M & \\ \hline
+     Q1.3 & Ability to utilize resources beyond the desktop, e.g. HPC, for computations & SP & M & 1.0 \\  \hhline{=====}
+     Q2 & \textbf{Forward Uncertainty Propagation} & SP &  &  \\  \hline
+	Q121 & Input uncertainty characterization & SP & M & 1.1 \\ \hline
+	Q2.2 & PDF Approximation & SP & M & 1.1 \\ \hline
+	Q2.3 &  Descriptive output statistics & SP & M & 1.1 \\ \hline
+	Q2.4 &  Basic Monte Carlo Sampling  & SP & M & 1.1 \\ \hline	
+	Q2.5 &  Importance Sampling for rare events  & SP & M & 2.0 \\ \hline	
+	Q2.6 &  Cross-Entropy sampling  & SP & M &  \\ \hline
+	Q2.7 &  Forward Propagation, GPR Surrogate  & SP & M & 2.0 \\ \hline
+	Q2.8 &  Forward Propagation, PCE Surrogate  & SP & M & 2.0 \\ \hline
+	Q2.9 &  Multi-fidelity sampling  & SP & M &  \\ \hline
+	Q2.10 &  Spatial/temporal stochastic models  & SP & M &  \\ \hhline{=====}
+	Q3 & \textbf{Sensitivity Analysis} &  &  & \\ \hline
+	Q3.1 & Global sensitivity Sobol's indices & SP & M & 2.0  \\ \hhline{=====}
+	Q4 & \textbf{System Identification and Bayesian Inference} &  &  \\ \hline
+	Q4.1 & Parameter estimation & SP & M &  \\ \hline
+	Q4.2 & Basic Bayesian parameter updating & SP & M &  \\ \hline
+	Q4.3 & Advanced MCMC-based Bayesian updating & SP & M & \\ \hline
+	Q4.4 & Advanced Surrogate-based Bayesian updating & SP & M &  \\ \hline
+	Q4.5 & Model class selection & SP & M &  \\ \hline
+	Q4.6 & Sequential Bayesian updating & SP & M &  \\ \hhline{=====}
+	Q5 & \textbf{Optimization under Uncertainty} &  &  & \\ \hline
+	Q5.1 & Reliability-Based Design Optimization & SP & M &  \\ \hline
+	Q5.2 & Single-objective optimization under uncertainty & SP & M &  \\ \hline
+	Q5.3 & Multi-objective optimization under uncertainty & SP & M &  \\ \hhline{=====}
+	Q6 & \textbf{Reliability Analysis} &  &  & \\ \hline
+	Q6.1 & First/Second Order Reliability Methods & SP & M & 2.0 \\ \hline
+	Q6.2 & Surrogate-based reliability & SP & M & 2.0 \\ \hline
+    QE & \textbf{Ability to obtain Educational material} &  SP &  M & 1.0  \\ \hline
+    QE1 & Documentation exists on tool usage & SP & M & 1.0 \\ \hline
+    QE2 & Video Exists demonstrating usage & SP & M & 1.0 \\ \hline
+    QE3 & Verification Examples Exist & SP & M &   \\ \hline
 	\bottomrule
-            
 \end{longtable}
 
 \noindent
