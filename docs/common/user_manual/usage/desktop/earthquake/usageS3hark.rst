@@ -83,7 +83,7 @@ Configure Tab
 “““““““““““““““““““
 This tab allows the user to specify the paths to the OpenSees executable and a ground motion file that represent the ground shaking at the
 bedrock. The rock motion file must follow the SimCenter event format. 
-Examples of SimCenter event files are available in the :download:`motion demos <../../../_static/files/DemoGM.zip>`. 
+Examples of SimCenter event files are available in the :download:`motion demos <https://nheri-simcenter.github.io/s3hark-Documentation/_downloads/4aad74c55afc9d112aa4bb1963afa7f7/DemoGM.zip>`. 
 |s3harkName| will determine to use 2D column or 3D column based on the ground motion file provided. 
 When a ground motion file is selected from the local computer, or the path of the ground motion file is typed in, 
 |s3harkName| will figure out if it’s a 1D or 2D shaking file. If it’s 1D shaking, all elements will be 2D. If it’s 2D shaking, 
@@ -181,8 +181,8 @@ In the configure tab, two paths need to be specified.
 
 You can either type them or click the '+' button to select them from your computer.
 
-If you don't have OpenSees install, the instruction can be found :ref:`here <quickstart>`.
-If you don't have a ground motion file, demos can be downloaded :download:`here <../../../_static/files/DemoGM.zip>`.
+If you don't have OpenSees installed, the instruction can be found :ref:`here <https://nheri-simcenter.github.io/s3hark-Documentation/common/user_manual/quickstart/quickstart.html#download-and-install-opensees>`.
+If you don't have a ground motion file, demos can be downloaded :download:`here <https://nheri-simcenter.github.io/s3hark-Documentation/_downloads/4aad74c55afc9d112aa4bb1963afa7f7/DemoGM.zip>`.
 
 .. note:: 
 
