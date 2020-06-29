@@ -3,18 +3,7 @@
 Earthquake Response of Portal Frame 
 ===================================
 
-In this example, a simple 2D portal frame model is used to verify the
-results of |app|. The model is a linear elastic single-bay,
-single-story model of a reinforced concrete portal frame, as shown in
-:numref:`figPortalVerification`. The analysis of this model considers both
-gravity loading and lateral earthquake loading due to the El Centro
-earthquake (Borrego Mountain 04/09/68 0230, El Centro ARRAY 9, 270).
-The original model and ground motion used in this example were
-obtained from `Example 1b <http://opensees.berkeley.edu/wiki/index.php/OpenSees_Example_1b._Elastic_Portal_Frame>`_ on the |OpenSees| website, 
-and were modified to scale the ground motion record from gravity
-units, **g** to the model units, :math:`\frac{in}{s^2}`. Files for this example are
-included with the release of the software and are available in the
-Examples folder in a subfolder called **PortalFrame2D**.
+In this example, a simple 2D portal frame model is used to verify the results of |app|. The model is a linear elastic single-bay, single-story model of a reinforced concrete portal frame, as shown in :numref:`figPortalVerification`. The analysis of this model considers both gravity loading and lateral earthquake loading due to the El Centro earthquake (Borrego Mountain 04/09/68 0230, El Centro ARRAY 9, 270). The original model and ground motion used in this example were obtained from `Example 1b <http://opensees.berkeley.edu/wiki/index.php/OpenSees_Example_1b._Elastic_Portal_Frame>`_ on the |OpenSees| website,  and were modified to scale the ground motion record from gravity units, **g** to the model units, :math:`\frac{in}{s^2}`. Files for this example are included with the release of the software and are available in the Examples folder in a subfolder called **PortalFrame2D**.
 
 .. _figPortalVerification:
 
@@ -24,13 +13,7 @@ Examples folder in a subfolder called **PortalFrame2D**.
 
    Two-dimensional portal frame model subjected to gravity and earthquake loading
 
-To introduce uncertainty in the model, both mass and young’s modulus
-are assumed to be normally distributed random variables with means and
-standard deviation values shown in :numref:`lblRV`; In this
-example, the model will be sampled with the Latin Hypercube sampling
-method using both |app| and a Python script
-(**PortalFrameSampling.py**) and response statistics from both
-analyses are compared.
+To introduce uncertainty in the model, both mass and young’s modulus are assumed to be normally distributed random variables with means and standard deviation values shown in :numref:`lblRV`; In this example, the model will be sampled with the Latin Hypercube sampling method using both |app| and a Python script (**PortalFrameSampling.py**) and response statistics from both analyses are compared.
 
 .. _lblRV: 
 

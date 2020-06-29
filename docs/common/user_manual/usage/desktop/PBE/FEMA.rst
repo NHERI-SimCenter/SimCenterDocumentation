@@ -334,7 +334,7 @@ The following model parameters can handle the assigned dependencies:
 
 The default FEMA P58 setting assumes that all variables are independent, except for the fragility data, where the fragilities of certain *Component Groups* (i.e. groups of components with identical behavior within Performance Groups) are perfectly correlated. This behavior is achieved by setting every other dependency to ``Independent`` and setting the ``Component Fragilities`` to ``per ATC recommendation``.
 
-.. bibliography:: ../../../../references.bib
+.. .. bibliography:: ../../../../references.bib
 
 .. _FEMA P58: https://www.fema.gov/media-library/assets/documents/90380
 .. _HAZUS MH Technical Manual: https://www.fema.gov/media-library-data/20130726-1820-25045-6286/hzmh2_1_eq_tm.pdf

@@ -1,4 +1,4 @@
-.. _lblPortalFrameEarthquake:
+.. _lblInterpointDistVeri:
 
 Interpoint Distances
 ====================

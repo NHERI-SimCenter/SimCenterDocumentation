@@ -14,7 +14,7 @@ chapter walks you through the install process from downloading the application t
    downloadApp
    testInstall
 
-The following videos demonstrate these installation instructions on brand new Windows 10 and MacOS Catilina systems.
+The following videos demonstrate these installation instructions on brand new Windows 10 and MacOS Catalina systems.
 
 .. raw:: html
 
