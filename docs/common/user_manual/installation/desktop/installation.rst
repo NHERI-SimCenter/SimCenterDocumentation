@@ -10,12 +10,19 @@ chapter walks you through the install process from downloading the application t
 .. toctree::
    :maxdepth: 1
 
-   downloadApp
    downloadOther
+   downloadApp
    testInstall
 
-The following videos demonstrate these installation instructions on brand new Windows 10 and MacOS Catilina systems.
+The following videos demonstrate these installation instructions on brand new Windows 10 and MacOS Catalina systems.
 
 .. raw:: html
 
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/RVcRhrWOIBc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/fQN1UtjfarY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/MjYCiFtdCdw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+.. note::
+   The videos demonstrate the instructions for one of our tools, the instructions for the others are exactly the same with the exceptioon that the download tool page will be different as will the testing for the tool.

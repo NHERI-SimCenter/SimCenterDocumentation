@@ -1,4 +1,4 @@
-.. _lblDamping
+.. _lblDamping:
 
 Damping Options
 ===============

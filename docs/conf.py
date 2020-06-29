@@ -42,6 +42,7 @@ exclude_patterns = [
 		'**/*TInF*', 
 		'**/*pelicun*',
 		'**/*old*',
+		'**/*quoFEM*'
 	]
 
 
@@ -101,6 +102,7 @@ rst_prolog = """
 .. _DesignSafe: https://designsafe-ci.org
 .. |smelt| replace:: `smelt`_
 .. _smelt: https://github.com/NHERI-SimCenter/smelt
+.. |s3harkName| replace:: s3hark
 .. |br| raw:: html
 
     <br>
@@ -127,6 +129,19 @@ if app_name == 'PBE':
 	exclude_patterns.remove('**/*desktop*')
 	exclude_patterns.remove('**/*earthquake*')
 	exclude_patterns.remove('**/*PBE*')
+
+	# TODO: fix these temporary changes
+	exclude_patterns.append('**/*architectureLevel4.rst*')
+	exclude_patterns.append('**/requirements/index.rst')
+	exclude_patterns.append('**/requirements/bigRequirements.rst')
+	exclude_patterns.append('**/DakotaSensitivity.rst')
+	exclude_patterns.append('**/DakotaReliability.rst')
+	exclude_patterns.append('**/DakotaParameterEstimation.rst')
+	exclude_patterns.append('**/DakotaInverseProblems.rst')
+	exclude_patterns.append('**/resEE.rst')
+
+
+	# END TODO
 
 	rst_prolog += """\
 .. |full tool name| replace:: Performance Based Engineering Application
@@ -227,6 +242,19 @@ elif app_name == 'quoFEM':
 	toc_filter_exclude = toc_filter_exclusions
 
 	exclude_patterns.remove('**/*desktop*')
+	exclude_patterns.remove('**/*quoFEM*')
+
+	# TODO: fix these temporary changes
+	exclude_patterns.append('**/*architectureLevel4.rst*')
+	exclude_patterns.append('**/requirements/index.rst')
+	exclude_patterns.append('**/requirements/bigRequirements.rst')
+	exclude_patterns.append('**/resEE.rst')
+	exclude_patterns.append('**/damping.rst')
+	exclude_patterns.append('**/desktop/FEM.rst')
+	exclude_patterns.append('**/desktop/GI.rst')
+	exclude_patterns.append('**/desktop/SIM.rst')
+
+	# END TODO
 
 	rst_prolog += """
 .. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)
@@ -251,7 +279,7 @@ elif app_name == 'quoFEM':
 
 """	
 
-	html_logo = 'common/figures/EE-UQ-Logo-grey2.png' 
+	html_logo = 'common/figures/quoFEM-LogoImageGrey.png' 
 
 	html_theme_options = {
 		'analytics_id': 'UA-158130480-1',

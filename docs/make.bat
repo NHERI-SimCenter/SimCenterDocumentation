@@ -19,6 +19,13 @@ if "%1" == "PBE" (
 	goto end
 )
 
+if "%1" == "quoFEM" (
+	%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+	robocopy %BUILDDIR%/html ../../quoFEM-Documentation/docs /E > nul
+	echo.Generating quoFEM Documentation...
+	goto end
+)
+
 if "%1" == "EE" (
 	%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
 	robocopy %BUILDDIR%/html ../../EE-UQ-Documentation/docs /E > nul

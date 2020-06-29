@@ -122,7 +122,7 @@ Loss Model
     The loss assessment is performed using fragility and loss data from the HAZUS Technical Manual. Each data source can be overridden by custom user-defined data.
 
 
-.. bibliography:: ../../../../references.bib
+.. .. bibliography:: ../../../../references.bib
 
 .. _FEMA P58: https://www.fema.gov/media-library/assets/documents/90380
 .. _HAZUS MH Technical Manual: https://www.fema.gov/media-library-data/20130726-1820-25045-6286/hzmh2_1_eq_tm.pdf

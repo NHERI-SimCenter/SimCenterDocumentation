@@ -1,5 +1,4 @@
-
-.. _lblDamping
+.. _lbluqTechnical:
 
 Dakota Methods
 ==============

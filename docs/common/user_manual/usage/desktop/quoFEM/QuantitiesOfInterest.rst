@@ -1,4 +1,4 @@
-.. _lblQUO_QOI
+.. _lblQUO_QOI:
 
 QoI: Quantities of Interest
 ===========================
