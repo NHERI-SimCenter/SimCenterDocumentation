@@ -7,9 +7,9 @@
 # -- SimCenter App selection -------------------------------------------------
 
 #app_name = 'EE-UQ'
-app_name = 'PBE'
+#app_name = 'PBE'
 #app_name = 'WE-UQ'
-#app_name = 'quoFEM'
+app_name = 'quoFEM'
 #app_name = 'pelicun'
 
 print('app_name = ' + app_name)
@@ -243,6 +243,18 @@ elif app_name == 'quoFEM':
 
 	exclude_patterns.remove('**/*desktop*')
 	exclude_patterns.remove('**/*quoFEM*')
+
+	# TODO: fix these temporary changes
+	exclude_patterns.append('**/*architectureLevel4.rst*')
+	exclude_patterns.append('**/requirements/index.rst')
+	exclude_patterns.append('**/requirements/bigRequirements.rst')
+	exclude_patterns.append('**/resEE.rst')
+	exclude_patterns.append('**/damping.rst')
+	exclude_patterns.append('**/desktop/FEM.rst')
+	exclude_patterns.append('**/desktop/GI.rst')
+	exclude_patterns.append('**/desktop/SIM.rst')
+
+	# END TODO
 
 	rst_prolog += """
 .. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)

@@ -4,7 +4,7 @@ Steel Frame: Parameter Estimation
 
 Consider the problem of estimating parameters for a model given some experimental data. In this educational example, which has been provided by Professor Joel Conte and his doctoral students Maitreya Kurumbhati and Mukesh Ramancha from UC San Diego, a simplified finite element model of a steel building is being developed. Consider the two-story building structure shown in :numref:`lblJoelFrame`. Each floor slab of the building is made of composite metal deck and is supported on four steel columns. Story heights of 10' are measured as are the lengths of the building along the X and Y direction, which are measured at 33'4" and 30'. For the steel columns, Young's modulus is measured to be :math:`29,000 ksi`, :math:`Area = 110 in^2`, and :math:`I_{xx} = 1190 in^4`. For modelling purposes, the four columns are assumed fixed at the base and the beams connecting them are assumed to be rigid.
 
-.. _lblJoelFrame
+.. _lblJoelFrame:
 
 .. figure:: figures/joelFrame.png
    :align: center

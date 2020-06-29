@@ -38,7 +38,8 @@ Obtain the Source Code
         * `SimCenterCommon repository <https://github.com/NHERI-SimCenter/SimCenterCommon>`_.
 
         .. only:: earthquake
-	    * `GroundMotionUtilities repository <https://github.com/NHERI-SimCenter/GroundMotionUtilities>`_
+
+            * `GroundMotionUtilities repository <https://github.com/NHERI-SimCenter/GroundMotionUtilities>`_
             * `s3hark repository <https://github.com/NHERI-SimCenter/s3hark>`_
 
         .. only:: PBE_app
