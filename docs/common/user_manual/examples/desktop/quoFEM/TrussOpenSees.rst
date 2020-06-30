@@ -72,7 +72,7 @@ The steps involved:
    :align: center
    :figclass: align-center
 
-4. Next select the QoI panel. Here enter 'Node_3_Disp_2' for the one variable. 
+4. Next select the ``QoI`` panel. Here enter 'Node_3_Disp_2' for the one variable. 
 
 .. figure:: figures/trussQoI.png
    :align: center
