@@ -11,6 +11,7 @@ This reference is based on [Purdue Owl](https://owl.purdue.edu/owl/purdue_owl.ht
 <details>
 
 <summary><b>Bold face</b> </summary>
+
 Use bold formatting (**), for UI elements and at the beginning of notices. This includes names for buttons, menus, dialogs, windows, list items, or any other feature in the page or console that has a visible name. Don't use code font for UI elements, unless it's an element that meets the requirements for code font. In that case, use both code font and bold.
 </details>
 
@@ -97,13 +98,13 @@ In general, use numerals for the following:
 Fractions
 
 - Express fractions as decimal numbers, when possible.
-
 - When expressing fractions as words, connect the numerator and denominator with a hyphen unless one of them is already hyphenated.
+
 </details>
 
 ## Punctuation
 
-- Don't use ampersands (&) as conjunctions or shorthand for *and*. Use *and* instead. That includes headings and navigation. **Exception:** It's okay to use & in cases where you need to refer to a UI element or the name of a menu that uses &.
+- Don't use ampersands (&) as conjunctions or shorthand for *and*. Use *and* instead. That includes headings and navigation. 
+  >**Exception:** It's okay to use & in cases where you need to refer to a UI element or the name of a menu that uses &.
 - Put quotation marks and end punctuation [outside of link text](https://developers.google.com/style/link-text#punctuation-with-links).
-
 
