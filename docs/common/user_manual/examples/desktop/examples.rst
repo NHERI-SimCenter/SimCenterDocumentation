@@ -8,7 +8,7 @@ Examples
 
 	The following are a few examples showing the usage of quoFEM. Video companions showing these examples are also provided. The files for the examples are available in github.
 
-.. only:: EEUQ_app:
+.. only:: EEUQ_app
 
 	The following are a few examples showing the usage of EE-UQ. Video companions showing these examples are also provided. The files for the examples are available in github.
 
@@ -24,6 +24,9 @@ Examples
    :quoFEM:quoFEM/TrussOpenSees
    :quoFEM:quoFEM/FramePeriod
    :EEUQ:EEUQ/ShearBuilding3
+   :PBE:PBE/basic_HAZUS
+   :PBE:PBE/basic_P58
+
 
 
 
