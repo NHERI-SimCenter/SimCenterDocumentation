@@ -105,6 +105,15 @@ rst_prolog = """
 .. |s3harkName| replace:: s3hark
 .. |br| raw:: html
 
+.. |quo-01| replace:: Forward Propagation - OpenSees/Tcl
+.. |quo-02| replace:: Forward Propagation - OpenSeesPy
+.. |quo-03| replace:: Reliability
+.. |quo-04| replace:: Sensitivity
+.. |quo-05| replace:: Arbitrary Python Scripts
+.. |quo-06| replace:: Conventional Estimation - Rosembrock
+.. |quo-07| replace:: Conventional Estimation - Steel Frame
+.. |quo-08| replace:: Baysian Estimation - Steel Frame
+
     <br>
 
 """	
