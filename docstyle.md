@@ -78,13 +78,13 @@ In general, use numerals for the following:
 
 - Numbers 10 and greater.
 
-    **Exceptions:** Always use numerals for the following items, even if they are less than 10:
-        Version numbers.
-        Technical quantities, such as amounts of memory, amounts of disk space, numbers of queries, or usage limits.
-        Page numbers.
-        Chapter numbers, sections, pages, and so on.
-        Prices.
-        Numbers without units, such as numbers used in mathematical expressions.
+  > **Exceptions:** Always use numerals for the following items, even if they are less than 10:
+  > - Version numbers.
+  > - Technical quantities, such as amounts of memory, amounts of disk space, numbers of queries, or usage limits.
+  > - Page numbers.
+  > - Chapter numbers, sections, pages, and so on.
+  > - Prices.
+  > - Numbers without units, such as numbers used in mathematical expressions.
 
 - Numbers less than 10 when they appear in the same sentence with numbers greater than 9. For example, "The menu contains 15 options but 6 of them are disabled".
 - Negative numbers.
