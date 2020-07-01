@@ -4,7 +4,7 @@
 Parameter Estimation
 ********************
 
-Parameter Estimation methods (also known as non-linear least squares methods) are  used to fit a set of m observations (in this tool defined in the QoI panel) with a model that is non-linear with n unknown parameters (in thus tool the unknown parameters are defined in the RV panel) :math:`(m \ge n)`.  The method are obtaining the parameters that best fits the experimental results, that is that **minimizes** the QoI, given no prior estimation as to the distribution associated with the random variables. As such the processing scripts should leave in the **results.out** file differences between observed response and simulated response. The algorithms employed will find a set of parameters that minimizes these differences. The algorithms themselves are general functional minimization algorithms seeking to minimize:
+Parameter Estimation methods (also known as non-linear least squares methods) are  used to fit a set of m observations (in this tool defined in the **QoI** tab) with a model that is non-linear with n unknown parameters (in thus tool the unknown parameters are defined in the **RV** tab) :math:`(m \ge n)`.  The method are obtaining the parameters that best fits the experimental results, that is that **minimizes** the QoI, given no prior estimation as to the distribution associated with the random variables. As such the processing scripts should leave in the ``results.out`` file differences between observed response and simulated response. The algorithms employed will find a set of parameters that minimizes these differences. The algorithms themselves are general functional minimization algorithms seeking to minimize:
 
 .. math::
 
@@ -23,7 +23,7 @@ The panel that is presented to the user when this Dakota Category is chosen, is 
   	Dakota parameter estimation input panel.
 
 .. note::
-   The unknown parameters (the random variables options in the RV panel) are limited to Continuous Design. The user provides min, max and starting point values for each random variable.
+   The unknown parameters (the random variables options in the **RV** tab) are limited to Continuous Design. The user provides min, max and starting point values for each random variable.
 
 For parameter estimation two different optimization algorithms are currently provided under the Method drop down menu, namely OPT++GaussNewton and NL2SOL. For both methods three input parameters need to be specified as shown in the figure: 
 1. the convergence tolerance

@@ -52,7 +52,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
       quoFEM download page.
 
-To download the |app| click on the link for the appropriate file for your operating system. This will bring up a pop-up window. Click on the ``Download`` button in bottom right hand corner of this pop-up. Unpackage the ensuing downloaded file and place it in a location on your filesystem. 
+To download the |app| click on the link for the appropriate file for your operating system. This will bring up a pop-up window. Click on the **Download** button in bottom right hand corner of this pop-up. Unpackage the ensuing downloaded file and place it in a location on your filesystem. 
 
 
 .. note::
@@ -60,7 +60,7 @@ To download the |app| click on the link for the appropriate file for your operat
    #. Windows: On computers running the Windows operating system we suggest placing the directory in the **C:\SimCEnter** folder. Once here, create a shorcut link to the application and move this to your Desktop folder.
    #. MacOS: We sugget copy the app to your Desktop.
 
-Now test that the application starts. To do this navigate to the location where you placed the application and open it. You should see the user interface (UI) shown in |figUI| after starting the application. Now ``Quit`` the application. Additional installation steps, outlined in :numref:`lblDownloadOther`, are required before computations can be performed.
+Now test that the application starts. To do this navigate to the location where you placed the application and open it. You should see the user interface (UI) shown in |figUI| after starting the application. Now quit the application. Additional installation steps, outlined in :numref:`lblDownloadOther`, are required before computations can be performed.
 
 .. only:: PBE_app
 

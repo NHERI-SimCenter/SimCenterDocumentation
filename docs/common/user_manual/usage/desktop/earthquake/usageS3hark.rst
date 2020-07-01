@@ -123,7 +123,7 @@ Once the site response analysis has been performed, this tab provides informatio
 
 Analyze Button
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-This ``Analyze`` button is located at the top-right corner of the UI and shall be used to run the simulation locally on your computer. 
+This **Analyze** button is located at the top-right corner of the UI and shall be used to run the simulation locally on your computer. 
 A progress bar will show up at the bottom of the application indicating the status of the analysis. 
 Upon the finish of the simulation, a message will be displayed (:numref:`done`). 
 

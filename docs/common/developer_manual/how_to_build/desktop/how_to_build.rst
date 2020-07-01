@@ -68,7 +68,7 @@ Build using the Qt Creator (Recommended)
 ----------------------------------------
     1. Start Qt Creator, then open the |short tool id|.pro file located in the |short tool id| directory that was downloaded in the previous steps.
     2. Setup the development kit in Qt Creator. This is usually done by selecting the Qt version, compiler and configuration and following the onscreen dialog.
-    3. Build the application and run it in Qt Creator IDE by using the ``Run`` button. This can be done using the keyboard shortcut ``F5`` to build and start the tool.
+    3. Build the application and run it in Qt Creator IDE by using the **Run** button. This can be done using the keyboard shortcut ``F5`` to build and start the tool.
 
 Build using the terminal
 ------------------------

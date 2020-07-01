@@ -102,8 +102,8 @@ Test the Install of Python, OpenSees & Dakota
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Steps to Test the Installation of the Applications:
-   1. Open a terminal windows (type `terminal` in spotlight search)
-   2. Type `python3` (this should bring up python interpreter)
+   1. Open a terminal windows (type ``terminal`` in spotlight search)
+   2. Type ``python3`` (this should bring up the Python interpreter)
    3. Enter the following to test the install of the modules and quit the application:
    
    .. code:: python
@@ -113,7 +113,7 @@ Steps to Test the Installation of the Applications:
       import pandas
       quit()
 
-   4. Type `OpenSees` (this should bring up the OpenSees interpreter)
+   4. Type ``OpenSees`` (this should bring up the OpenSees interpreter).
 
    5. Enter the following to exit this program:
    
@@ -121,7 +121,7 @@ Steps to Test the Installation of the Applications:
 
       exit
 
-   6. Type `dakota` (this should start the dakota application which should give some error messages)
+   6. Type ``dakota`` (this should start the Dakota application which should give some error messages).
 
 .. note::
 
