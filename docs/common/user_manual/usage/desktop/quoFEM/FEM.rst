@@ -14,7 +14,7 @@ The FEM panel will present users with a selection of FEM applications. Currently
 	Input for the FEM panel.
 
 .. note::
-   Because the UQ engines treat the FEM applications as a black box, when the UQ engine runs each deterministic simulation it expects the FEM application to output a single file. This file must be named **results.out** and be placed in the same directory as the main input file. The **results.out** file must contain a single line. That line must contain as many QoI values as the user will enter in the QoI panel. Each value must be separated by a space. An example **results.out** file for a problem specifying **4** response QoI values is as shown:
+   Because the UQ engines treat the FEM applications as a black box, when the UQ engine runs each deterministic simulation it expects the FEM application to output a single file. This file must be named **results.out** and be placed in the same directory as the main input file. The **results.out** file must contain a single line. That line must contain as many QoI values as the user will enter in the ``QoI`` panel. Each value must be separated by a space. An example **results.out** file for a problem specifying **4** response QoI values is as shown:
 
    .. literalinclude:: results.out
 
@@ -23,7 +23,7 @@ OpenSees
 
 When the choice of FEM application is OpenSees (the default application), the user is presented with the input panel shown in figure above and their are two entry fields for filenames:
 
-1. Input Script: The user must specify a main input script. When entered the application will parse this file looking for variables set with the ``pset`` option (a unique set command to the OpenSees interpreter that is used to identify parameter values). For each variable whose value is set with ``pset``, the program will auto populate the variable in the RV input.
+1. Input Script: The user must specify a main input script. When entered the application will parse this file looking for variables set with the ``pset`` option (a unique set command to the OpenSees interpreter that is used to identify parameter values). For each variable whose value is set with ``pset``, the program will auto populate the variable in the ``RV`` panel input.
 
 .. literalinclude:: TrussTemplate.tcl
    :language: tcl
@@ -70,7 +70,7 @@ For the OpenSeesPy application, the user provides a main script and has the opti
 .. literalinclude:: parameters.py
    :language: py
 
-The RV panel would show the E, P, Ao, and Au random variables.
+The ``RV`` panel would show the E, P, Ao, and Au random variables.
 
 .. note:
    

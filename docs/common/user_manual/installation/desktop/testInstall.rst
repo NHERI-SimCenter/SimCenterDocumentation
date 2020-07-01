@@ -15,8 +15,8 @@ Test the Installation
 
    	#. Start the application. Select the **FEM** panel and for the **Input Script** entry, press the ``Choose`` button and navigate to the **test** directory and select the **test.tcl** file. Now press ``Open``.
 
-   	#. Select the **RV** panel. Press the ``Add`` button twice to add two random variables. Name one **a** and the other **b**. For both change the distribution type to **Uniform** and enter min and max values for both of **0** and **1**, i.e. both points will be somewhere between **0** and **1**.
-   	#. Select the **QoI** panel. Press the ``Add`` button once and enter the name **D**.
+   	#. Select the ``RV`` panel. Press the ``Add`` button twice to add two random variables. Name one **a** and the other **b**. For both change the distribution type to **Uniform** and enter min and max values for both of **0** and **1**, i.e. both points will be somewhere between **0** and **1**.
+   	#. Select the ``QoI`` panel. Press the ``Add`` button once and enter the name **D**.
 
 	#. Press the ``Run`` button. After pressing this button some numbers should show up in the ``RES`` panel that are close to **1/3** and **1/6**.
 
