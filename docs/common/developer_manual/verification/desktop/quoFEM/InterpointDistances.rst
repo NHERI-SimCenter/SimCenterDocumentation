@@ -16,7 +16,7 @@ The problem is defined as follows: Suppose two points :math:`P` and :math:`Q` ar
 
 where :math:`d=\sqrt{L_w^2+L_h^2}`
       
-Using the above formula one can compute a number of expected distances for rectangles of different sizes, e.g.
+Using the above formula one can compute a number of expected distances for rectangles of different sizes, for example:
 
 .. csv-table:: 
    :header: "Lw", "Lh", "E"
@@ -32,9 +32,9 @@ Using the above formula one can compute a number of expected distances for recta
    .. literalinclude:: InterpointDistance.m
       :language: python
 
-In the following steps we will demonstrate how this is done using the |app| with figures showing the inputs for case with ``Lw=1.0``, ``Lh= 0.6`` and utilizing LHS with 1000 samples. A table will provide additional results for other sampling methods and numbers of samples.
+In the following steps we will demonstrate how this is done using the |app| with figures showing the inputs for case with ``Lw=1.0``, ``Lh= 0.6`` and utilizing **LHS** with 1000 samples. A table will provide additional results for other sampling methods and numbers of samples.
 
-1.  Repeating this exercise in quoFEM requires using either the OpenSees or the OpenSeesPy Interpreter. Depending on your choice, create a **NEW** folder and in it place one of the following files, the first is a python script to be named ghosh.py. It is to be used with the OpenSeesPy FEM application.
+1.  Repeating this exercise in quoFEM requires using either the OpenSees or the OpenSeesPy Interpreter. Depending on your choice, create a *new* folder and in it place one of the following files, the first is a Python script to be named ``ghosh.py``. It is to be used with the OpenSeesPy FEM application.
 
 .. literalinclude:: ghosh.py
    :language: python
@@ -44,31 +44,31 @@ The second a tcl script to be named ghosh.tcl. It is to be used with the OpenSee
 .. literalinclude:: ghosh.tcl
    :language: tcl
 
-2. Start the |app| and select Dakota UQ Engine, Forward propagation type of problem and LHS method. Specify 10000 samples and a seed of 175.
+2. Start the |app| and select Dakota UQ Engine, Forward propagation type of problem and LHS method. Specify ``10000`` samples and a seed of ``175``.
 
 .. figure:: figures/ghoshUQ.png
    :align: center
    :figclass: align-center
 
-3. Select next the FEM tab. From this tab select either OpenSees or OpenSeesPy depending on which file you choose to place in the folder. For the input file specify the full path to this file.
+3. Select next the **FEM** tab. From this tab select either OpenSees or OpenSeesPy depending on which file you choose to place in the folder. For the input file specify the full path to this file.
 
 .. figure:: figures/ghoshFEM.png
    :align: center
    :figclass: align-center
 
-4. Select the ``RV`` tab. Create 4 random variables named X1, Y1, X2, Y2. For each specify a uniform distribution with the range for the X variables being 0 and Lw and range of Y variables being 0 and Lh. This is as shown for Lw = 1.0 and Lh = 0.6.
+4. Select the **RV** tab. Create 4 random variables named ``X1``, ``Y1``, ``X2``, ``Y2``. For each specify a uniform distribution with the range for the X variables being 0 and ``Lw`` and range of Y variables being 0 and ``Lh``. This is as shown for ``Lw = 1.0`` and ``Lh = 0.6``.
 
 .. figure:: figures/ghoshRV.png
    :align: center
    :figclass: align-center
 
-5. Select the ``QoI`` tab. Create one EDP and name it E as shown.
+5. Select the **QoI** tab. Create one EDP and name it ``E`` as shown.
 
 .. figure:: figures/ghoshQoI.png
    :align: center
    :figclass: align-center
 
-6. Press the Run button. The results should show the mean to be 0.425709
+6. Press the Run button. The results should show the mean to be ``0.425709``.
 
 .. figure:: figures/ghoshRES.png
    :align: center

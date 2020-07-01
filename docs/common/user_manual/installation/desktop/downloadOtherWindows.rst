@@ -63,24 +63,24 @@ Modify the Environment Variables
 You now need to make some changes to your environment variables as neither OpenSees or Dakota includes an installer which typically performs this task.
 
 1. Open the Start Search, type in “env”, and choose “Edit the system environment variables”
-2. Click the ``Environment Variables…`` button at the bottom right of the application that pop up.
-3. Now we are going to edit the  **PATH** variable. Select the Path variable row to highlight it and then press the ``Edit`` button.
+2. Click the **Environment Variables…** button at the bottom right of the application that pop up.
+3. Now we are going to edit the  **PATH** variable. Select the Path variable row to highlight it and then press the **Edit** button.
 4. to the variables value you want to **APPEND** the following:
 
 .. :code-block:: none
    
    C:\SimCenter\OpenSees\OpenSees-3.1.0\bin;C:\SimCenter\dakota\dakota-6.10.0\bin
 
-5. Press the ``OK`` button.
-6. Now we are going to create a new variable, **PYTHONPATH** variable. Press the ``NEW`` button.
+5. Press the **OK** button.
+6. Now we are going to create a new variable, **PYTHONPATH** variable. Press the **NEW** button.
 7. For the variable name enter: **PYTHONPATH**.
 8. For the variable path enter
 
 .. :code-block:: none
    C:\SimCenter\dakota\share\dakota\Python
 
-9. Press the ``OK`` button.
-10. Press now the `Apply`` button and exit the SystemProperties application
+9. Press the **OK** button.
+10. Press now the **Apply** button and exit the SystemProperties application
 
 
 Test the Install of Python, OpenSees & Dakota
