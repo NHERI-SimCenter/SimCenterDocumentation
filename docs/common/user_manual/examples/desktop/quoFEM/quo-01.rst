@@ -52,29 +52,31 @@ To perform a Sampling or Forward propagation uncertainty analysis the user would
 
 1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota, and the UQ Method Category as Forward Propagation, and the Forward Propagation method as LHS (Latin Hypercube). Change the #samples to 1000 and the seed to 20 as shown in the figure.
 
-
-.. figure:: figures/trussUQ.png
-   :align: center
-   :figclass: align-center
+.. 
+   .. figure:: figures/trussUQ.png
+      :align: center
+      :figclass: align-center
 
 2. Next select the FEM tab from the input panel. This will default in the OpenSees FEM engine. For the main script copy the path name to TrussSelection.tcl or select choose and navigate to the file. For the postprocess script, repeat the same procedure for the postprocess.tcl script.
 
-.. figure:: figures/trussFEM.png
-   :align: center
-   :figclass: align-center
+.. 
+   .. figure:: figures/trussFEM.png
+      :align: center
+      :figclass: align-center
 
 3. Next select the RV tab from the input panel. This should be pre-populated with four random variables with same names as those having ``pset`` in the tcl script. For each variable, from the drop down menu change them from having a constant distribution to a normal one and then provide the means and standard deviations specified for the problem.
 
-.. figure:: figures/trussRV.png
-   :align: center
-   :figclass: align-center
+.. 
+   .. figure:: figures/trussRV.png
+      :align: center
+      :figclass: align-center
 
 4. Next select the QoI panel. Here enter 'Node_3_Disp_2' for the one variable. 
 
-.. figure:: figures/trussQoI.png
-   :align: center
-   :figclass: align-center
-.. note::
+.. 
+   .. figure:: figures/trussQoI.png
+      :align: center
+      :figclass: align-center
 
 .. note::   
 
@@ -82,9 +84,10 @@ To perform a Sampling or Forward propagation uncertainty analysis the user would
 
 5. Next click on the 'Run' button. This will cause the backend application to launch dakota. When done the RES panel tab will be selected and the results will be displayed. The results show the values the mean and standard deviation.
 
-.. figure:: figures/trussRES1.png
-   :align: center
-   :figclass: align-center
+.. 
+   .. figure:: figures/trussRES1.png
+      :align: center
+      :figclass: align-center
 
 Post-processing
 ^^^^^^^^^^^^^^^
