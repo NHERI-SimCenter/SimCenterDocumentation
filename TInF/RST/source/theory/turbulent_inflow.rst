@@ -1290,27 +1290,18 @@ It is noted that the points listed in this file should be able to define a singl
 Specification via prescribed functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Finally, the specification of the mean velocities, Reynolds stresses and integral length scales can also be done with the prescribed functions embedded in the presented boundary conditions. The entries related to this approach are all defined in the *inflowProperties* file in the *constant* folder. To employ this approach, the first step is to define a local coordinate system and its origin. The local :math:`(x_1',x_2',x_3')` coordinate system (see :numref:`fig_TInF_theory_03`) is constructed with its :math:`x_1'`-axis being parallel to normal of the inflow plane and pointing towards the interior of the computational domain.
+Finally, the specification of the mean velocities, Reynolds stresses and integral length scales can also be done with the prescribed functions embedded in the presented boundary conditions. The entries related to this approach are all defined in the *inflowProperties* file in the *constant* folder. To employ this approach, the first step is to define a local coordinate system and its origin. The local :math:`(x_1',x_2',x_3')` coordinate system is constructed with its :math:`x_1'`-axis being parallel to normal of the inflow plane and pointing towards the interior of the computational domain.
 
 .. _fig_TInF_theory_03:
 
 .. figure:: figures/TInF-theory-03.eps
    :align: center
    :figclass: align-center
-   :width: 300px
-   
-   The local :math:`(x_1,x_2,x_3)` and global :math:`(x_1',x_2',x_3')` coordinate systems
-   
-.. _fig_TInF_theory_04:
-
-.. figure:: figures/TInF-theory-04.eps
-   :align: center
-   :figclass: align-center
-   :width: 300px
+   :width: 250px
    
    A sketch of the Euler angles and the :math:`N`-axis
 
-To determine the orientation of the :math:`x_2'`- and :math:`x_3'`-axis, an entry named as *Naxis* is defined which takes a vector input. This vector represents the direction of the :math:`N`-axis (see :numref:`fig_TInF_theory_04`) where :math:`N` is the intersection line of the :math:`(x_1,x_2)`-plane and :math:`(x_1',x_2')`-plane. The :math:`x_2'`- and :math:`x_3'`-axis are then determined by :math:`\mathbf{x}_2' = \mathbf{x}_3'\times\mathbf{x}_1'` and :math:`\mathbf{x}_3' = \mathbf{x}_1'\times\mathbf{N}`. The reason why we specify the direction of the :math:`N`-axis instead of the :math:`x_2'`- or :math:`x_3'`-axis is because, once the direction of the :math:`x_1'`-axis is determined, the :math:`x_2`- and :math:`x_3`-axis cannot be specified arbitrarily since they must be parallel to the plane orthogonal to the :math:`x_1`-axis. In contrast, the direction of the :math:`N`-axis can be specified arbitrarily as long as the :math:`x_3`-components of :math:`N` is zero. The entry *Naxis* is set as :math:`(0 \ 0 \ 0)` by default. In this case, the :math:`(x_1',x_2')`-plane and :math:`(x_1,x_2)`-plane are parallel to each other and consequently the :math:`x_3`- and :math:`x_3'`-axis are align.
+To determine the orientation of the :math:`x_2'`- and :math:`x_3'`-axis, an entry named as *Naxis* is defined which takes a vector input. This vector represents the direction of the :math:`N`-axis (see :numref:`fig_TInF_theory_03`) where :math:`N` is the intersection line of the :math:`(x_1,x_2)`-plane and :math:`(x_1',x_2')`-plane. The :math:`x_2'`- and :math:`x_3'`-axis are then determined by :math:`\mathbf{x}_2' = \mathbf{x}_3'\times\mathbf{x}_1'` and :math:`\mathbf{x}_3' = \mathbf{x}_1'\times\mathbf{N}`. The reason why we specify the direction of the :math:`N`-axis instead of the :math:`x_2'`- or :math:`x_3'`-axis is because, once the direction of the :math:`x_1'`-axis is determined, the :math:`x_2`- and :math:`x_3`-axis cannot be specified arbitrarily since they must be parallel to the plane orthogonal to the :math:`x_1`-axis. In contrast, the direction of the :math:`N`-axis can be specified arbitrarily as long as the :math:`x_3`-components of :math:`N` is zero. The entry *Naxis* is set as :math:`(0 \ 0 \ 0)` by default. In this case, the :math:`(x_1',x_2')`-plane and :math:`(x_1,x_2)`-plane are parallel to each other and consequently the :math:`x_3`- and :math:`x_3'`-axis are align.
 
 
 Now, the remaining issue is the determination of the origin of the local coordinate system. Consider a rectangular defined on the :math:`(x_2,x_3)`-plane bounding all the nodes of the inflow patch. The origin of the local coordinate system is chosen as the lower left corner of this rectangular by default. We also allow users to offset the origin through the use of the entries *yOffset* and *zOffset* which take scalars for input.
