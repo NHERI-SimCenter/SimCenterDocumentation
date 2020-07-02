@@ -1,18 +1,22 @@
 .. _sec_TInF-installation:
 
-Building
-========
+Building TInF
+=============
 
-Installing Qt and OpenFOAM
---------------------------
+Install External Software
+-------------------------
 
-Please note that in order to install and run the Turbulent Inflow Tool, your system must have installations of the following components:
+Please note that in order to build and run the Turbulent Inflow Tool, your system must have installations of the following components:
 
-* Qt
+    #. Install a modern C++ compiler that is compliant with modern C++ standards (preferably C++17).
+    
+    #. Install the `Qt framework <https://www.qt.io/download/>`_. Qt is free for open source developers. Qt version 5.10 or later is required and version 5.12 or later is recommended.
 
-* OpenFOAM (v6 or v7 released by the OpenFOAM Foundation)
+    #. Install OpenFOAM (v6 or v7) from the |openfoam.org|
 
-The installations of these two components can be found through the links https://www.qt.io/download and https://openfoam.org/download/, respectively.
+.. note::
+
+   The first open source release of ``OpenFOAM`` was in 2004. It was based on the ``FOAM`` code, which was originally developed by Henry Weller in 1989. As sometimes happens with open source software when commercial interests get involved, the code forked over time and a number of open source distributions from different entities are available. The two main distributions of the code come from the |openfoam.org| and from |openfoam.com|. Currently |app| compiles and runs with versions **6** and **7** of the code released by the |openfoam.org|.
 
 Building the UI from Source
 ---------------------------
