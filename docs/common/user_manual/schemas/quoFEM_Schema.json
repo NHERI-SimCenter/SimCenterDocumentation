@@ -1,5 +1,4 @@
 
-
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "Schema for quoFEM input.json files.",
@@ -31,19 +30,8 @@
       },
       "EDP": {
         "type": "array",
-        "items": [
-          {
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "name"
-            ]
-          },
-          {
+        "description": "Inputs for the EDP tab.",
+        "items": {
             "type": "object",
             "properties": {
               "name": {
@@ -54,7 +42,6 @@
               "name"
             ]
           }
-        ]
       },
       "UQ_Method": {
         "type": "object",
@@ -76,15 +63,9 @@
           "samplingMethodData": {
             "type": "object",
             "properties": {
-              "method": {
-                "type": "string"
-              },
-              "samples": {
-                "type": "integer"
-              },
-              "seed": {
-                "type": "integer"
-              }
+              "method": {"type": "string" },
+              "samples": {"type": "integer"},
+              "seed": {"type": "integer"}
             },
             "required": [
               "method",
@@ -93,13 +74,14 @@
             ]
           },
           "reliabilityMethodData": {
-            "integrationMethod": {"type": "string"},
-            "levelType": {"type": "string"},
-            "localMethod": {"type": "string"},
-            "method": {"type": "string"},
-            "mpp_Method": {"type": "string"},
-            "probabilityLevel": {
-              "type": "array"
+            "type": "object",
+            "properties":{
+              "integrationMethod": {"type": "string"},
+              "levelType": {"type": "string"},
+              "localMethod": {"type": "string"},
+              "method": {"type": "string"},
+              "mpp_Method": {"type": "string"},
+              "probabilityLevel": {"type": "array"}
             }
           }
         }
@@ -152,56 +134,34 @@
         "type": "string",
         "description": "[incomplete]"
       },
-      "python": {
-        "type": "string"
-      },
+      "python":  {"type": "string"},
       "randomVariables": {
         "type": "array",
-        "items": [
-          {
-            "type": "object",
-            "properties": {
-              "distribution": {
-                "type": "string"
-              },
-              "mean": {
-                "type": "integer"
-              },
-              "name": {
-                "type": "string"
-              },
-              "refCount": {
-                "type": "integer"
-              },
-              "stdDev": {
-                "type": "integer"
-              },
-              "value": {
-                "type": "string"
-              },
-              "variableClass": {
-                "type": "string"
-              }
-            },
-            "required": [
-              "distribution",
-              "name",
-              "refCount",
-              "value",
-              "variableClass"
-            ]
-          }
-        ]
+        "items": {
+          "type": "object",
+          "properties": {
+            "distribution":  {"type": "string"},
+            "mean":          {"type": "integer"},
+            "name":          {"type": "string"},
+            "refCount":      {"type": "integer"},
+            "stdDev":        {"type": "integer"},
+            "lowerbound":    {"type": "number"},
+            "upperbound":    {"type": "number"},
+            "value":         {"type": "string"},
+            "variableClass": {"type": "string"}
+          },
+          "required": [
+            "distribution",
+            "name",
+            "refCount",
+            "value",
+            "variableClass"
+          ]
+        }
       },
-      "remoteAppDir": {
-        "type": "string"
-      },
-      "uqResults": {
-        "type": "object"
-      },
-      "workingDir": {
-        "type": "string"
-      }
+      "remoteAppDir":  {"type": "string"},
+      "uqResults":     {"type": "object"},
+      "workingDir":    {"type": "string"}
     },
     "required": [
       "Applications",
