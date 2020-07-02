@@ -56,12 +56,24 @@ Numerical Setup
 
 The dimensions of the computational domain are chosen as :math:`2\pi\delta\times 2\delta \times \pi\delta` in the stream-wise, wall-normal and span-wise directions, respectively. This is sufficient to resolve the largest structures of the flow at :math:`\mathrm{Re}_{\tau} = 395`. In the meantime, the number of grid nodes are chosen as :math:`100 \times 60 \times 60` in the stream-wise, wall-normal and span-wise directions, respectively. The grid nodes are uniformly distributed in the stream-wise and span-wise directions, whereas an exponential profile is employed to determine the grid spacing in the wall-normal direction. Periodic boundary conditions were applied in the span-wise direction, whereas no-slip boundary conditions were imposed at the walls. For all simulations, the time step :math:`\Delta t` was adjusted so that the maximum Courant-Friedrichs-Lewy (CFL) number remains lower than unity during all simulations. The :math:`k`-equation model with Van Driest damping at the wall is used for LES. The different synthetic turbulent inflow methods investigated are summarized in :numref:`table_TinF01_NE`.
 
-.. figure:: figures/TInF-NE-00.gif
-   :align: center
-   :figclass: align-center
-   :width: 350px
+.. only:: html
+
+   .. figure:: figures/TInF-NE-00.gif
+      :align: center
+      :figclass: align-center
+      :width: 350px
+
+      A velocity contour of the channel flow at :math:`\mathrm{Re}_{\tau} = 395`
+
+.. only:: latex
+
+   .. figure:: figures/TInF-NE-00.png
+      :align: center
+      :figclass: align-center
+      :width: 350px
    
-   A velocity contour of the channel flow at :math:`\mathrm{Re}_{\tau} = 395`
+      A velocity contour of the channel flow at :math:`\mathrm{Re}_{\tau} = 395`
+
 
 .. _table_TinF01_NE:
 

@@ -1,22 +1,24 @@
 Turbulence Inflow Tool
 ======================
 
-**Jiawei Wan** [1]_, **Peter Mackenzie-Helnwein** [2]_
+.. only:: html
+
+   **Jiawei Wan** [1]_, **Peter Mackenzie-Helnwein** [2]_
 
 
-The Turbulence Inflow Tool (TInF) is designed to collect all required properties and parameters
-needed for various turbulence inflow models in OpenFOAM, and to augment an existing wind-around-a-building model by adding the necessary sections to respective parameter definition files.
+   The Turbulence Inflow Tool (TInF) is designed to collect all required properties and parameters
+   needed for various turbulence inflow models in OpenFOAM, and to augment an existing wind-around-a-building model by adding the necessary sections to respective parameter definition files.
 
-The generic workflow involved is as follows.
+   The generic workflow involved is as follows.
 
-1.  Build your OpenFOAM model as you would without using a turbulence inflow model.  Use a generic patch with a suitable name for you will need to identify that patch by its name inside TInF.
+   1.  Build your OpenFOAM model as you would without using a turbulence inflow model.  Use a generic patch with a suitable name for you will need to identify that patch by its name inside TInF.
    
-2. Run TInF following, identify your model folder, adjust the parameters as desired, and export to your model definition.
+   2. Run TInF following, identify your model folder, adjust the parameters as desired, and export to your model definition.
    Consult Chapter :ref:`sec_TInF-usage` for details on those steps.
    
-3. Run OpenFOAM using the updated model definition.
+   3. Run OpenFOAM using the updated model definition.
 
-This document covers the features and capabilities of Version |toolVersion|  of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the |messageBoard|.
+   This document covers the features and capabilities of Version |toolVersion|  of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the |messageBoard|.
 
 
 .. _lblUserManual:
