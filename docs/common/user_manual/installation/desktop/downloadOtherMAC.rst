@@ -36,6 +36,8 @@ Once Python is installed, you need to extend it by installing the following pack
       pip3 install numpy
       pip3 install scipy
       pip3 install pandas
+      pip3 install tables
+      pip3 install hdf5
 
 .. note:: 
    #. To start a terminal window you can use the spotlight app (magnifying glass at the top right corner of the desktop). Start the spotlight app and type in terminal. The terminal application should appear as the top hit. Click on it to start it.
@@ -65,6 +67,11 @@ OpenSees
 Steps to Install OpenSees on a Mac:
       1. Follow the OpenSees link and download the OpenSees.zip file. Uncompress the file and you will have an **OpenSees-3.1.0** folder. Move that folder to the **bin/OpenSees** folder. 
       2. Download and run the Tcl installer.
+
+
+.. note::
+
+   The additional requirement of installing **Tcl** is about to be removed from the |OpenSees| installation process. If the table for the **Mac Download** does not contain a second link, it has been removed and no **Tcl** install is required.
 
 Edit Your Shell file
 ^^^^^^^^^^^^^^^^^^^^

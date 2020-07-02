@@ -35,6 +35,10 @@ rst_prolog = """
 .. |messageBoard| replace:: `Message Board`_
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=5.0
 .. |toolVersion| replace:: '1.0.2'
+.. |openfoam.org| replace:: `OpenFOAM Foundation`_
+.. _OpenFOAM Foundation: https://openfoam.org
+.. |openfoam.com| replace:: `ESI OpenFOAM`_
+.. _ESI OpenFOAM: https://openfoam.com
 """
 
 # -- General configuration ---------------------------------------------------
@@ -88,3 +92,7 @@ numfig = True
 math_number_all = True
 math_eqref_format = '({number})'
 math_numfig = True
+
+latex_elements = {
+  'extraclassoptions': 'openany,oneside'
+}
