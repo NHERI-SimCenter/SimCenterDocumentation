@@ -1,0 +1,255 @@
+# SimCenter Example Roster
+# Claudio Perez
+
+##############################################################################
+# PREAMBLE
+# This section is used to define anchors for commonly repeated inputs/objects.
+##############################################################################
+INPUT: &INPUT 
+  # boiler plate for input.json file 
+  $schema: "https://raw.githubusercontent.com/claudioperez/SimCenterDocumentation/examples/docs/common/user_manual/schemas/quoFEM_Schema.json"
+  Applications:
+    UQ:
+      Application: Dakota-UQ
+      ApplicationData: {}
+  remoteAppDir: "/home1/00477/tg457427/SimCenterBackendApplications/May-2020"
+  uqResults: {}
+  workingDir: C:/Workdir/quoFEM
+  localAppDir: C:/Tools/quoFEM/quoFEM
+  python: python
+
+UQ_METHOD:
+  FWD_LHS:  &FWD_LHS
+    samplingMethodData:
+      method: LHS
+      samples: 200
+      seed:    949
+    uqEngine: Dakota
+    uqType: Forward Propagation
+  CON_CAL:  &CON_CAL
+    calibrationMethodData:
+      convergenceTol: 1.0e-10
+      factors: ""
+      maxIterations: 50
+      method: NL2SOL
+    uqEngine: Dakota
+    uqType: Parameters Estimation
+  BAY_CAL:  &BAY_CAL
+    bayesianCalibrationMethodData:
+      burnInSamples: 100
+      chainSamples: 400
+      chains: 4
+      jumpStep: 5
+      method: DREAM
+      seed: 107
+    uqEngine: Dakota
+    uqType: Inverse Problem
+  REL_SORM: &REL_SORM
+    reliabilityMethodData: 
+      integrationMethod: Second Order
+      levelType: Probability Levels
+      localMethod: Most Probable Point
+      method: Local Reliability
+      mpp_Method: no_approx
+      probabilityLevel: [0.02, 0.2, 0.4, 0.6, 0.8, 0.99]
+    uqEngine: Dakota
+    uqType: Reliability Analysis
+  SEN_LHS:  &SEN_LHS
+    samplingMethodData:
+      method: LHS
+      samples: 1000
+      seed: 175
+    uqEngine: Dakota
+    uqType: Sensitivity Analysis
+
+FEM_MODELS:
+  TRUSS: &TRUSS
+    <<: *INPUT
+    fem:
+      dir: "{Current_Dir}/."
+      inputFile: "{Current_Dir}/model.tcl"
+      mainInput: model.tcl
+      mainPostprocessScript: 'post.tcl'
+      numInputs: 1
+      postprocessScript: "{Current_Dir}/post.tcl"
+      program: OpenSees
+    EDP:
+      - name: Node_3_Disp_2
+      - name: Node_2_Disp_2
+    randomVariables: 
+      - name: E
+        distribution: Weibull
+        refCount: 1
+        scaleparam: 210
+        shapeparam: 20
+        value: RV.E
+        variableClass: Uncertain
+      - name: P
+        distribution: Beta
+        alphas: 2
+        betas: 2
+        lowerbound: 20
+        refCount: 1
+        upperbound: 30
+        value: RV.P
+        variableClass: Uncertain
+      - name: Ao
+        distribution: Lognormal
+        mean: 250
+        refCount: 1
+        stdDev: 50
+        value: RV.Ao
+        variableClass: Uncertain
+      - name: Au
+        distribution: Normal
+        mean: 500
+        refCount: 1
+        stdDev: 100
+        value: RV.Au
+        variableClass: Uncertain
+  FRAME: &FRAME
+    <<: *INPUT
+    fem:
+      dir: "{Current_Dir}/."
+      inputFile: "{Current_Dir}/fem.tcl"
+      mainInput: fem.tcl
+      mainPostprocessScript: ""
+      numInputs: 1
+      postprocessScript: ""
+      program: OpenSees
+    EDP:
+      - name: eps_l1
+      - name: eps_l2
+      - name: eps_l3
+      - name: eps_l4
+      - name: eps_l5
+      - name: eps_p1
+      - name: eps_p2
+      - name: eps_p3
+      - name: eps_p4
+      - name: eps_p5
+    randomVariables:
+      - name: Ic1
+        distribution: ContinuousDesign
+        initialpoint: 1500
+        lowerbound: 500
+        refCount: 2
+        upperbound: 2000
+        value: RV.Ic1
+        variableClass: Design
+      - name: Ic2
+        distribution: ContinuousDesign
+        initialpoint: 500
+        lowerbound: 500
+        refCount: 2
+        upperbound: 2000
+        value: RV.Ic2
+        variableClass: Design
+  ROSEN: &ROSEN
+    <<: *INPUT
+    fem:
+      dir: "{Current_Dir}/."
+      inputFile: "{Current_Dir}/rosenbrock.py"
+      mainInput: rosenbrock.py
+      mainPostprocessScript: ""
+      numInputs: 1
+      parametersFile: params.py
+      parametersScript: "{Current_Dir}/params.py"
+      postprocessScript: ""
+      program: OpenSeesPy
+    EDP:
+      - name: f
+    randomVariables:
+      - name: "x"
+        distribution: Uniform
+        lowerbound: -2
+        refCount: 1
+        upperbound: 2
+        value: RV.x
+        variableClass: Uncertain
+      - name: "y"
+        distribution: Uniform
+        lowerbound: 1.4
+        refCount: 1
+        upperbound: 1.6
+        value: RV.y
+        variableClass: Uncertain
+
+##############################################################################
+# quoFEM Examples
+##############################################################################
+quoFEM:
+  - id: quo-01
+    name: Forward Propagation - OpenSees/Tcl
+    srcDir: "shared/truss"
+    input:
+      <<: *TRUSS
+      UQ_Method:  {<<: *FWD_LHS}
+  - id: quo-02
+    name: Forward Propagation - OpenSeesPy
+    srcDir: "shared/truss"
+    input:
+      <<: *TRUSS
+      fem:
+        dir: "{Current_Dir}/."
+        inputFile: "{Current_Dir}/model.py"
+        mainInput: model.py
+        mainPostprocessScript: ""
+        numInputs: 1
+        parametersFile: params.py
+        parametersScript: "{Current_Dir}/params.py"
+        postprocessScript: ""
+        program: OpenSeesPy
+      UQ_Method: {<<: *FWD_LHS}
+  - id: quo-03
+    name: Reliability Analysis
+    srcDir: "shared/truss"
+    input:
+      <<: *TRUSS
+      UQ_Method: {<<: *REL_SORM}
+  - id: quo-04
+    name: Sensitivity Analysis
+    srcDir: "shared/truss"
+    input:
+      <<: *TRUSS
+      UQ_Method: {<<: *SEN_LHS}
+  - id: quo-05
+    name: Arbitrary Python Scripts 
+    srcDir: "shared/rosenbrock"
+    input:
+      <<: *ROSEN
+      UQ_Method: {<<: *FWD_LHS}
+  - id: quo-06
+    name: Conventional Calibration - Rosenbrock
+    srcDir: "shared/rosenbrock"
+    input:
+      <<: *ROSEN
+      UQ_Method: {<<: *CON_CAL}
+  - id: quo-07
+    name: Conventional Calibration - Steel Frame
+    srcDir: "shared/frame"
+    input:
+      <<: *FRAME
+      UQ_Method: {<<: *CON_CAL}
+  - id: quo-08
+    name: Bayesian Calibration - Steel Frame
+    srcDir: "shared/frame"
+    input:
+      <<: *FRAME
+      UQ_Method: {<<: *BAY_CAL}
+  - id: quo-09
+    name: Forward Propagation - FEAP
+    srcDir: "shared/truss"
+    input:
+      <<: *TRUSS
+      fem:
+        dir: "{Current_Dir}/."
+        inputFile: "{Current_Dir}/model.tcl"
+        mainInput: model.py
+        mainPostprocessScript: 'FEAP_post.py'
+        numInputs: 1
+        postprocessScript: ""
+        program: FEAPpv
+      UQ_Method:  {<<: *FWD_LHS}
+
+

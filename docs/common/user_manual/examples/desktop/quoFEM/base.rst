@@ -1,7 +1,8 @@
-Forward Propagation - OpenSees/Tcl
-=======================================
 
-This example will use quoFEM to estimate the first and second central moments of a FE model’s response, given the marginal distributions of various random parameters.
+|quo-01|
+============================================================
+
+This example will use quoFEM to estimate the first and second central moments of a FE model's response, given the marginal distributions of various random parameters.
 
 Consider the problem of uncertainty quantification in a two-dimensional truss structure shown in the following figure.
 
@@ -43,14 +44,14 @@ The following input files must be placed in an *empty* folder:
 
 To perform a Sampling or Forward propagation uncertainty analysis the user would perform the following steps:
 
-1. In the **UQ** panel, keep the UQ engine as the default, i.e. **Dakota**, and the **UQ Method Category** as **Forward Propagation**, and the **Forward Propagation method** as **LHS (Latin Hypercube)**. Change the **# Samples** field to ``1000`` and the **Seed** field to ``20``.
+1. Start the application and the UQ selection will be highlighted. In the **UQ** panel, keep the UQ engine as that selected, i.e. Dakota, and the UQ Method Category as Forward Propagation, and the Forward Propagation method as LHS (Latin Hypercube). Change the #samples to 1000 and the seed to 20 as shown in the figure.
 
 .. 
    .. figure:: figures/trussUQ.png
       :align: center
       :figclass: align-center
 
-2. Next select the **FEM** tab from the input panel. This will default to the **OpenSees** FEM engine. For the main script copy the path name to ``TrussSelection.tcl`` or select choose and navigate to the file. For the postprocess script, repeat the same procedure for the ``postprocess.tcl`` script.
+2. Next select the **FEM** tab from the input panel. This will default in the OpenSees FEM engine. For the main script copy the path name to TrussSelection.tcl or select choose and navigate to the file. For the postprocess script, repeat the same procedure for the postprocess.tcl script.
 
 .. 
    .. figure:: figures/trussFEM.png
@@ -85,7 +86,7 @@ To perform a Sampling or Forward propagation uncertainty analysis the user would
 Post-processing
 ^^^^^^^^^^^^^^^
 
-If the user selects **Data** in the **RES** tab, they will be presented with both a graphical plot and a tabular listing of the data.
+If the user selects the **Data** tab in the results panel, they will be presented with both a graphical plot and a tabular listing of the data.
 
 .. figure:: figures/trussRES2.png
    :align: center

@@ -1,6 +1,12 @@
+Conventional Calibration - Steel Frame
 
-|quo-07|
-============================================================
+Conventional Calibration - Steel Frame
+
+
+
+
+
+Conventional Calibration - Steel FrameConsider the problem of estimating parameters for a model given some experimental data. In this educational example, which has been provided by Professor Joel Conte and his doctoral students Maitreya Kurumbhati and Mukesh Ramancha from UC San Diego, a simplified finite element model of a steel building is being developed. Consider the two-story building structure shown in :numref:`lblJoelFrame`. Each floor slab of the building is made of composite metal deck and is supported on four steel columns. Story heights of 10' are measured as are the lengths of the building along the X and Y direction, which are measured at 33'4" and 30'. For the steel columns, Young's modulus is measured to be :math:`29,000 \mathrm{ ksi}`, :math:`Area = 110 \mathrm{ in}^2`, and :math:`I_{xx} = 1190 \mathrm{ in}^4`. For modelling purposes, the four columns are assumed fixed at the base and the beams connecting them are assumed to be rigid.
 
 .. _lblJoelFrame:
 
@@ -9,133 +15,84 @@
    :width: 600
    :figclass: align-center
 
-   Two story steel building.
+   Two Story Steel Building
 
+What is unknown is the mass of the building. However from data collected the periods of the structure are determined to be 0.19 sec and 0.09 sec. For this exercise the unknown quantaties, m1 and m2, the mass of first and second floors to be used in the model will be considered our unknown variables. We will assume some bounds on these variables and provide initial estimates as shown in following table:
 
-The goal of the exercise is to estimate the frequencies and mode shapes (i.e. eigenvalues and eigenvectors) of the frame in :numref:`lblJoelFrame` based on experimental data using a conventional optimization procedure for parameter estimation. 
+.. csv-table:: 
+   :header: "variable", "lower (k-in/sec^2)", "upper (k-in/sec^2)", "initial estimate (k-in/sec^2)"
+   :widths: 20, 20, 20, 20
 
-Inputs
-^^^^^^^^^^^^^^^^^
+   m1, 0.4, 0.8, 0.4
+   m2, 0.1, 0.4, 0.1
 
-The exercise requires the following files:
+The goal of this exercise it to come up with estimates of these quantities using the |app| that result in reasonably good matches between finite element model periods and the observed periods of the structure.
 
-1. `xxx.tcl <https://github.com/NHERI-SimCenter/quoFEM/blob/master/examples/exampleOpenSeesForward/TrussTemplate.tcl>`_ 
+The exercise requires a single OpenSees script file. The user is required to download this file and place it in a **NEW** folder. The file: 
 
-   .. literalinclude:: TrussTemplate.tcl
-      :language: tcl
+1. `FrameModelPeriodCalibration.tcl <https://github.com/NHERI-SimCenter/quoFEM/blob/master/examples/calibrationPeriods/FrameModelPeriodCalibration.tcl>`_ 
 
-.. note::
-   
-   1. The first lines containing ``pset`` will be read by the application when the file is selected and the application will autopopulate the Random Variables input panel with these same variable names. It is of course possible to explicitly use Random Variables without the ``pset`` command as is demonstrated in the verification section.
-
-2. `postprocess.tcl <https://github.com/NHERI-SimCenter/quoFEM/blob/master/examples/exampleOpenSeesForward/postprocess.tcl>`_. 
-
-The postprocess.tcl script shown below will accept as input any of the 6 nodes in the domain and for each of the two dof directions.
-
-   .. literalinclude:: postprocess.tcl
-      :language: tcl
+.. literalinclude:: FrameModelPeriodCalibration.tcl
+   :language: tcl
 
 .. note::
-
-   The use has the option to provide no postprocess script (in which case the main script must create a results.out file containing a single line with as many space separated numbers as QoI or the user may provide a python script that also performs the postprocessing. An example of a postprocessing python script is `postprocess.py <https://github.com/NHERI-SimCenter/quoFEM/blob/master/examples/exampleOpenSeesForward/postprocess.py>`_. 
-
-   .. literalinclude:: postprocess.py
-      :language: python
+   1. The tcl script when it runs creates a **results.out**. As a consequence, no postprocessing script is needed. 
+   2. The values placed in **results.out** file are the difference between computed and observed values. Expressed another way, the function ``f(m1,m2)`` computed and written to the  ``results.out`` file is ``f(m1,m2) = ObservedPeriods - ComputedPeriods(m1,m2)``. The UQ algorithm when running is searching for values of the random variable parameters (``m1`` and ``m2``) that attempt to minimize the function. The user must take this fact into account when formulating the output from their own scripts for their own problems.
 
 .. warning::
 
-   Do not place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!
-
-
-Sampling Analysis
-^^^^^^^^^^^^^^^^^
-
-To perform a Sampling or Forward propagation uncertainty analysis the user would perform the following steps:
+   Do not place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like me, your root, Downloads or Documents folders contains and awful lot of files.
 
 The steps involved:
 
-1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota, and the UQ Method Category as Forward Propagation, and the Forward Propagation method as LHS (Latin Hypercube). Change the #samples to 1000 and the seed to 20 as shown in the figure.
+1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota. In the UQ Method category drop down menu change the category to ``Parameters Estimation``, and the method as NL2SOL, the convergence tolerance to ``1.0e-6`` and leave the scaling factors empty (assumes weights of 1.0 on all response values) as shown in the figure.
 
 
-.. figure:: figures/trussUQ.png
+.. figure:: figures/joelUQ.png
    :align: center
    :figclass: align-center
 
-2. Next select the FEM tab from the input panel. This will default in the OpenSees FEM engine. For the main script copy the path name to TrussSelection.tcl or select choose and navigate to the file. For the postprocess script, repeat the same procedure for the postprocess.tcl script.
+2. Next select the FEM tab from the input panel selection. This will default in the OpenSees FEM engine. For the main script copy the path name to the FrameModelPeriodSelection.tcl or select choose and navigate to the file. 
 
-.. figure:: figures/trussFEM.png
+.. figure:: figures/joelFEM.png
    :align: center
    :figclass: align-center
 
-3. Next select the RV tab from the input panel. This should be pre-populated with four random variables with same names as those having ``pset`` in the tcl script. For each variable, from the drop down menu change them from having a constant distribution to a normal one and then provide the means and standard deviations specified for the problem.
-
-.. figure:: figures/trussRV.png
-   :align: center
-   :figclass: align-center
-
-4. Next select the QoI panel. Here enter 'Node_3_Disp_2' for the one variable. 
-
-.. figure:: figures/trussQoI.png
-   :align: center
-   :figclass: align-center
 .. note::
+
+   As discussed but it is worth noting again, because the script generates a ``results.out`` file, no postprocessing script is needed for this example. This might not always be the case for some of your problems.
+
+3. Next select the RV tab from the input panel. This should be prepopulated with two random variables with same names as those having pset in the tcl script, i.e. m1 and m2. For each variable, from the drop down menu change them from having a constant distribution to a continuous design one and then provide the lower bounds, upper bounds and the starting points shown in the figure below.
+
+
+.. figure:: figures/joelRV.png
+   :align: center
+   :figclass: align-center
+
+.. note::
+   
+   For the Parameter Estimation category of UQ methods, only continuous design distributions may be entered.
+
+4. Next select the ``QoI`` panel. Here enter **2** variable names ``dT1`` and ``dT2``.
+
+.. figure:: figures/joelQoI.png
+   :align: center
+   :figclass: align-center
 
 .. note::   
 
-   The user can add additional QoI by selecting add and then providing additional names. As seen from the postprocess script any of the 6 nodes may be specified and for any node either the 1 or 2 dof direction.
+   For this particular problem setup in which the user is not using a postprocessing script, the user may specify any names for the QoI variables. They are only being used by Dakota to return information on the errors. We used 'dT1' and 'dT2' due to our affinity for 3 letter acronyms!
 
-5. Next click on the 'Run' button. This will cause the backend application to launch dakota. When done the RES panel tab will be selected and the results will be displayed. The results show the values the mean and standard deviation.
+5. Next click on the 'Run' button. This will cause the backend application to launch Dakota. When done the RES panel tab will be selected and the results will be displayed as shown in the figure below. The figure shows Dakota returned, for inputs provided, estimates of our unknown parameters to be :math:`m1=0.52 (0.515549)` and :math:`m2=0.26 (0.256492)`.
 
-.. figure:: figures/trussRES1.png
+.. figure:: figures/joelRES.png
    :align: center
    :figclass: align-center
 
+.. note::
 
-If the user selects the "Data" tab in the results panel, they will be presented with both a graphical plot and a tabular listing of the data.
+   1. The computed values compare favorably to the values used to generate the 'observed results' when developing this problem, these being the values shown in the script, i.e. :math:`m1=0.52` and :math:`m2=0.26`. 
 
-.. figure:: figures/trussRES2.png
-   :align: center
-   :figclass: align-center
+   2. It would prove useful for you to adjust the parameters, observed values and inputs for the continuous design variables. The numbers were chosen to demonstrate the methods can give good results. They do not always return such good numbers.
 
-Various views of the graphical display can be obtained by left and right clicking in the columns of the tabular data. If a singular column of the tabular data is pressed with both right and left buttons a frequency and CDF will be displayed, as shown in figure below.
-
-.. figure:: figures/trussRES5.png
-   :align: center
-   :figclass: align-center
-
-Reliability Analysis
-^^^^^^^^^^^^^^^^^^^^
-
-If the user is interested in the probability that a particular response measure will be exceeded, an alternate strategy is to perform a reliability analysis. In order to perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propagation method. To obtain reliability results using the Second-Order Reliability Method (SORM) for the truss problem the user would follow the same sequence of steps as previously. The difference would be in the UQ tab in which the user would select a Reliability as the Dakota Method Category and then choose Local reliability. In the figure the user is specifying that they are interested in the probability that the displacement will exceed certain response levels.
-
-
-.. figure:: figures/trussSORM-UQ.png
-   :align: center
-   :figclass: align-center
-
-After the user fills in the rest of the tabs as per the previous section, the user would then press the ''RUN'' button. The application (after spinning for a while with the wheel of death) will present the user with the results.
-
-.. figure:: figures/trussSORM-RES.png
-   :align: center
-   :figclass: align-center
-
-
-Global Sensitivity
-^^^^^^^^^^^^^^^^^^
-
-In a global sensitivity analysis the user is wishing to understand what is the influence of the individual random variables on the quantities of interest. This is typically done before the user launches large scale forward uncertainty problems in order to limit the number of random variables used so as to limit the number of simulations performed.
-
-To perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propagation method. To obtain reliability results using the Second-Order Reliability Method (SORM) for the truss problem the user would follow the same sequence of steps as previously. The difference would be in the UQ tab in which the user would select a Reliability as the Dakota Method Category and then choose Local reliability. In the figure the user is specifying that they are interested in the probability that the displacement will exceed certain response levels.
-
-
-.. figure:: figures/trussSens-UQ.png
-   :align: center
-   :figclass: align-center
-
-After the user fills in the rest of the tabs as per the previous section, the user would then press the ''RUN'' button. The application (after spinning for a while with the wheel of death) will present the user with the results.
-
-.. figure:: figures/trussSensitivity-RES.png
-   :align: center
-   :figclass: align-center
-
-
+   

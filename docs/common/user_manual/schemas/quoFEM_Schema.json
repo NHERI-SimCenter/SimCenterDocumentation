@@ -141,14 +141,16 @@
           "type": "object",
           "properties": {
             "distribution":  {"type": "string"},
-            "mean":          {"type": "integer"},
             "name":          {"type": "string"},
             "refCount":      {"type": "integer"},
-            "stdDev":        {"type": "integer"},
-            "lowerbound":    {"type": "number"},
-            "upperbound":    {"type": "number"},
+            "stdDev":        {"type": "number"},
             "value":         {"type": "string"},
             "variableClass": {"type": "string"}
+          },
+          "additionalProperties": {
+            "mean":          {"type": "number"},
+            "lowerbound":    {"type": "number"},
+            "upperbound":    {"type": "number"}
           },
           "required": [
             "distribution",

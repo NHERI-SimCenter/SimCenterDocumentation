@@ -1,18 +1,15 @@
-
 # units kN & mm
 
 #
 # set some parameters
-#
 
 pset E 205
 pset P 25
-pset Ao 250
 pset Au 500
+pset Ao 250
 
-#
+
 # build the model
-#
 
 model Basic -ndm 2 -ndf 2
 
@@ -39,19 +36,12 @@ element truss 8 3 6 $Ao 1
 element truss 9 5 3 $Ao 1
 timeSeries Linear 1
 pattern Plain 1 1 {
-    load 2 0 -$P
-    load 3 0 -$P
+    load 2 0 [expr -$P]
+    load 3 0 [expr -$P]
 }
 
-#
-# create a recorder
-#
 
-recorder Node -file node.out -scientific -precision 10 -node 1 2 3 4 5 6 -dof 1 2 disp
-
-#
 # build and perform the analysis
-#
 
 algorithm Linear
 integrator LoadControl 1.0
@@ -61,8 +51,7 @@ constraints Plain
 analysis Static
 analyze 1
 
-#
 # remove the recorders
-#
 
 remove recorders
+
