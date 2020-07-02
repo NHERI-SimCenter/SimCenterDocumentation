@@ -88,3 +88,7 @@ numfig = True
 math_number_all = True
 math_eqref_format = '({number})'
 math_numfig = True
+
+latex_elements = {
+  'extraclassoptions': 'openany,oneside'
+}
