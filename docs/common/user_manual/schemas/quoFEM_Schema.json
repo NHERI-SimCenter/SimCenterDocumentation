@@ -17,6 +17,7 @@
                 "type": "object"
               }
             },
+            "description": "[incomplete desciption.]",
             "required": [
               "Application",
               "ApplicationData"
