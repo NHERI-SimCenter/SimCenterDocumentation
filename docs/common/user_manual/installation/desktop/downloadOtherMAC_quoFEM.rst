@@ -6,7 +6,7 @@ MacOS Users
 Install Location
 ^^^^^^^^^^^^^^^^
 
-The following set of instructions assumes all files will be placed in the **bin** folder in your home directory. You can of course place them anywhere you want, you just need to make appropriate changes to the **env PATH** settings discussed later. If you wish to follow our placement strategy, inside this **bin** folder create **2** additional folders named **dakota** and **OpenSees**.
+The following set of instructions assumes all files will be placed in the **bin** folder in your home directory. You can of course place them anywhere you want, you just need to make appropriate changes to the **env PATH** settings discussed later. If you wish to follow our placement strategy, inside this **bin** folder create **3** additional folders named **dakota**, **OpenSees** and **FEAPpv**.
 
 .. note::
 
@@ -62,7 +62,7 @@ area you should now only have a single option, click on the link to download |Da
 OpenSees
 ^^^^^^^^
 
-|OpenSeesLink| is the default FEM engine used by the |app| that is publicly available from the |OpenSeesDownload| page. To download the **OpenSees** you have to enter your email address, which may also require you to register (that requirement is going away and may be gone by time you read this). At the bottom of the page undet the section **Mac Version** is a table with two links: one for the **OpenSees** and also a link to |Tcl|, whose libraries OpenSees needs on your computer to run. You will need to follow both links to download both applications.
+|OpenSeesLink| is one of the FEM engines used by the |app| that is publicly available from the |OpenSeesDownload| page. To download the **OpenSees** you have to enter your email address, which may also require you to register (that requirement is going away and may be gone by time you read this). At the bottom of the page undet the section **Mac Version** is a table with two links: one for the **OpenSees** and also a link to |Tcl|, whose libraries OpenSees needs on your computer to run. You will need to follow both links to download both applications.
 
 Steps to Install OpenSees on a Mac:
       1. Follow the OpenSees link and download the OpenSees.zip file. Uncompress the file and you will have an **OpenSees-3.1.0** folder. Move that folder to the **bin/OpenSees** folder. 
@@ -72,6 +72,32 @@ Steps to Install OpenSees on a Mac:
 .. note::
 
    The additional requirement of installing **Tcl** is about to be removed from the |OpenSees| installation process. If the table for the **Mac Download** does not contain a second link, it has been removed and no **Tcl** install is required.
+
+
+FEAPpv
+^^^^^^
+
+|FEAPpv| is the another FEM engine used by the |app| that is publicly available from the |FEAPpvDownload| page. FEAPpv is a general purpose finite element analysis program which is designed for research and educational use. To install |FEAPpv| you must download the source code and follow the build instructions on the **Source Code Download and Compile Instructions** section of the |FEAPpvDownload| page.
+
+
+OpenSeesPy
+^^^^^^^^^^
+
+|OpenSeesPy| is the another FEM engine used by the |app| that is publicly available using pip. 
+
+.. code-block:: python
+
+      pip install OpenSeesPy
+
+.. warning::
+
+   At time of writing OpenSeesPy is **not** available through pip.
+
+.. note::
+   
+	#. |FEAPpv|, |OpenSees|, and |OpenSeesPy| only need to be installed on the local machine if you intend to run the applications locally. 
+   	#. In addition, if the intent is to run locally, only those applications you intend to use need to be installed, i.e. if you only intend to run |FEAPpv| then |OpenSees| and |OpenSeesPy| need not be installed. The other applications are only needed if you want to use them. If not installed and you select that application, the backend application will fail when you press the ``Run`` button.
+
 
 Edit Your Shell file
 ^^^^^^^^^^^^^^^^^^^^
@@ -144,7 +170,7 @@ Steps to Test the Installation of the Applications:
 
 .. warning:: 
 
-   **Dakota** has even more troubles installing on Catalina. Not only is the develoepr not know, the application relies on code from other unsigned developers. As a consequence the above workaround for most terminal applications fails. For dakota, in the terminal we have to turn off gatekeeper even after we have o.k.'d the application for running. Issue the following commands inside the terminal window:
+   **Dakota** has even more troubles installing on Catalina. Not only is the developer not know, the application relies on code from other unsigned developers. As a consequence the above workaround for most terminal applications fails. For dakota, in the terminal we have to turn off gatekeeper even after we have o.k.'d the application for running. Issue the following commands inside the terminal window:
 
    .. code:: none
 

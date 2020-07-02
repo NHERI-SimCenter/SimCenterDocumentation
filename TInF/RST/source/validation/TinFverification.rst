@@ -42,7 +42,7 @@ When simulations are finished, one can easily verify if the synthetic turbulence
 
 .. _figTinF1V:
 
-.. figure:: figures/TInF-V&V-01.eps
+.. figure:: figures/TInF-V&V-01.png
    :align: center
    :figclass: align-center
    
@@ -50,7 +50,7 @@ When simulations are finished, one can easily verify if the synthetic turbulence
    
 .. _figTinF2V:
 
-.. figure:: figures/TInF-V&V-02.eps
+.. figure:: figures/TInF-V&V-02.png
    :align: center
    :figclass: align-center
    
@@ -58,7 +58,7 @@ When simulations are finished, one can easily verify if the synthetic turbulence
 
 .. _figTinF3V:
 
-.. figure:: figures/TInF-V&V-03.eps
+.. figure:: figures/TInF-V&V-03.png
    :align: center
    :figclass: align-center
 
@@ -66,7 +66,7 @@ When simulations are finished, one can easily verify if the synthetic turbulence
    
 .. _figTinF4V:
 
-   .. figure:: figures/TInF-V&V-04.eps
+   .. figure:: figures/TInF-V&V-04.png
       :align: center
       :figclass: align-center
 
@@ -74,7 +74,7 @@ When simulations are finished, one can easily verify if the synthetic turbulence
 
 .. _figTinF5V:
 
-.. figure:: figures/TInF-V&V-05.eps
+.. figure:: figures/TInF-V&V-05.png
    :align: center
    :figclass: align-center
 
@@ -82,7 +82,7 @@ When simulations are finished, one can easily verify if the synthetic turbulence
    
 .. _figTinF6V:
 
-   .. figure:: figures/TInF-V&V-06.eps
+   .. figure:: figures/TInF-V&V-06.png
       :align: center
       :figclass: align-center
 
@@ -90,7 +90,7 @@ When simulations are finished, one can easily verify if the synthetic turbulence
     
 .. _figTinF7V:
 
-.. figure:: figures/TInF-V&V-07.eps
+.. figure:: figures/TInF-V&V-07.png
    :align: center
    :figclass: align-center
 
@@ -98,7 +98,7 @@ When simulations are finished, one can easily verify if the synthetic turbulence
    
 .. _figTinF8V:
 
-   .. figure:: figures/TInF-V&V-08.eps
+   .. figure:: figures/TInF-V&V-08.png
       :align: center
       :figclass: align-center
 
