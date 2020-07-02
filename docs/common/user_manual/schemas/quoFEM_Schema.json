@@ -2,6 +2,7 @@
 
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Schema for quoFEM input.json files.",
     "type": "object",
     "properties": {
       "Applications": {
@@ -57,7 +58,21 @@
       },
       "UQ_Method": {
         "type": "object",
+        "description": "Inputs for the UQ tab.",
         "properties": {
+          
+          "uqEngine": {
+            "type": "string"
+          },
+          "uqType": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "uqEngine",
+          "uqType"
+        ],
+        "additionalProperties": {
           "samplingMethodData": {
             "type": "object",
             "properties": {
@@ -77,21 +92,21 @@
               "seed"
             ]
           },
-          "uqEngine": {
-            "type": "string"
-          },
-          "uqType": {
-            "type": "string"
+          "reliabilityMethodData": {
+            "integrationMethod": {"type": "string"},
+            "levelType": {"type": "string"},
+            "localMethod": {"type": "string"},
+            "method": {"type": "string"},
+            "mpp_Method": {"type": "string"},
+            "probabilityLevel": {
+              "type": "array"
+            }
           }
-        },
-        "required": [
-          "samplingMethodData",
-          "uqEngine",
-          "uqType"
-        ]
+        }
       },
       "fem": {
         "type": "object",
+        "description": "Inputs for the FEM tab.",
         "properties": {
           "dir": {
             "type": "string"
@@ -134,7 +149,8 @@
         ]
       },
       "localAppDir": {
-        "type": "string"
+        "type": "string",
+        "description": "[incomplete]"
       },
       "python": {
         "type": "string"
