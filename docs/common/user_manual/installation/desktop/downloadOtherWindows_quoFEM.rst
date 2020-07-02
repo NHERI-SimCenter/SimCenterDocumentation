@@ -6,14 +6,7 @@ Windows Users
 Install Location
 ^^^^^^^^^^^^^^^^
 
-.. only:: notQuoFEM
-
-   The following set of instructions assumes all files will be placed in a **C:\\SimCenter** folder. You can of course place them anywhere you want, you just need to make appropriate changes to the **env PATH** settings. If you wish to follow our placement strategy, inside the **C:\\SimCenter** folder create **2** additional folders named **dakota** and **OpenSees**.
-
-
-.. only:: quoFEM
-
-   The following set of instructions assumes all files will be placed in a **C:\\SimCenter** folder. You can of course place them anywhere you want, you just need to make appropriate changes to the **env PATH** settings. If you wish to follow our placement strategy, inside the **C:\\SimCenter** folder create **3** additional folders named **dakota**, **OpenSees** and **FEAPpv**.
+The following set of instructions assumes all files will be placed in a **C:\\SimCenter** folder. You can of course place them anywhere you want, you just need to make appropriate changes to the **env PATH** settings. If you wish to follow our placement strategy, inside the **C:\\SimCenter** folder create **3** additional folders named **dakota**, **OpenSees** and **FEAPpv**.
 
 .. note::
 
@@ -63,6 +56,27 @@ OpenSees
 ^^^^^^^^
 
 |OpenSeesLink| is the default FEM engine used by the |app| that is publicly available from the |OpenSeesDownload| page. To download the **OpenSees** you have to enter your email address, which may also require you to register (that requirement is going away and may be gone by time you read this). At the bottom of the page, under section **Windows Version** is the download link for the current executable, currently **3.2.0** Follow the link to download the application. It is in the form of a **.zip** file. The zip file contains a folder and in the bin directory is the **OpenSees.exe** application. The other files and folders are needed by the application and must be kept. Rename the folder to **OpenSees-3.2.0** and move the folder to the **C:\\SimCenter\\OpenSees** folder.
+
+FEAPpv
+^^^^^^
+
+|FEAPpv| is the another FEM engine used by the |app| that is publicly available from the |FEAPpvDownload| page. FEAPpv is a general purpose finite element analysis program which is designed for research and educational use. To install |FEAPpv| you must download the source code and follow the build instructions on the **Source Code Download and Compile Instructions** section of the |FEAPpvDownload| page.
+
+
+OpenSeesPy
+^^^^^^^^^^
+
+|OpenSeesPy| is the another FEM engine used by the |app| that is publicly available using pip. 
+
+.. code-block:: python
+
+      pip install OpenSeesPy
+
+.. note::
+   
+	#. FEAPpv, OpenSees, and OpenSeesPy only need to be installed on the local machine if user intends to run the applications locally. 
+   	#. If the intent is to run locally, only those applications you intend to use need to be installed. The other applications are only needed if you want to use them. If not installed and you select that application, the backend application will fail when you press the ``Run`` button.
+
 
 Modify the Environment Variables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
