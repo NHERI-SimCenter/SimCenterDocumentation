@@ -160,18 +160,18 @@ Component Ensemble
 
 **Add or Remove Components**
 
-  The ``Add Selected``, ``Add All``, ``Remove Selected``, ``Remove All`` buttons allow you to Add or Remove components from the available set to the selected one. 
+  The **Add Selected**, **Add All**, **Remove Selected**, **Remove All** buttons allow you to add or remove components from the available set to the selected one. 
 
-  Only the components in the ``Selected Components`` list will be used during the loss assessment.
+  Only the components in the **Selected Components** list will be used during the loss assessment.
 
 
 **Save Performance Model**
 
-  You can save the assigned performance model using the ``Save Performance Model to CSV`` button. The created ``csv`` file can be loaded by Excel or Matlab allowing you to edit it and reuse it later. 
+  You can save the assigned performance model using the **Save Performance Model to CSV** button. The created ``csv`` file can be loaded by Excel or Matlab allowing you to edit it and reuse it later. 
 
 **Load Performance Model**
 
-  If you have a pre-defined performance model available in a csv file, you can load it with the ``Load Performance Model from CSV``. Make sure you have the ``Damage and Loss Data Folder`` with the fragility definitions properly set up before loading a file that uses non-default components.
+  If you have a pre-defined performance model available in a csv file, you can load it with the **Load Performance Model from CSV**. Make sure you have the ``Damage and Loss Data Folder`` with the fragility definitions properly set up before loading a file that uses non-default components.
 
 
 Component Details
@@ -190,7 +190,7 @@ This panel provides more information about the active component in the drop-down
 
 **Component Groups**
 
-  Components are handled by defining component groups in the building. You can add a new component group definition or remove an existing one with the ``Add Component Group`` and ``Remove Component Group`` buttons. Each component group definition allows you to assign component groups to various locations in the building.
+  Components are handled by defining component groups in the building. You can add a new component group definition or remove an existing one with the **Add Component Group** and **Remove Component Group** buttons. Each component group definition allows you to assign component groups to various locations in the building.
 
   The following settings are available:
 

@@ -2,6 +2,8 @@
 
 This is the repository where documentation for SimCenter software is maintained. The current documentation is in restructred text format and is built using the sphinx python module.
 
+Contributors should follow the [style reference](docstyle.md) for guidelines on documentation formatting.
+
 ## Structure
 
 + docs   - the folder containing the most up to date material (all other directories contain legacy material)

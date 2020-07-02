@@ -29,7 +29,7 @@ are assumed to be normally distributed random variables with means and
 standard deviation values shown in :numref:`lblRV`; In this
 example, the model will be sampled with the Latin Hypercube sampling
 method using both |app| and a Python script
-(**PortalFrameSampling.py**) and response statistics from both
+(``PortalFrameSampling.py``) and response statistics from both
 analyses are compared.
 
 .. csv-table:: 

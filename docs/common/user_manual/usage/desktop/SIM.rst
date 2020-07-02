@@ -26,19 +26,19 @@ This panel is provided for users to quickly create simple shear models of a buil
 
 	Multiple degrees of freedom (MDOF).
 
-Random Variables: Random variables can be created by the user if they enter a valid string instead of a number in the entry fields for any entry except for the *Number of floors*. The variable name entered will appear as a random variable in the UQ panel; it is there that the user must specify the distribution associated with the random variable.
+Random Variables: Random variables can be created by the user if they enter a valid string instead of a number in the entry fields for any entry except for the *Number of floors*. The variable name entered will appear as a random variable in the **UQ** tab; it is there that the user must specify the distribution associated with the random variable.
 
   
   MDOF or Shear Building Model
 
 
     .. note::  
-       ```Random Variables```: Random Variables can be created by the user if they enter a valid string instead of a number in the entry fields for any entry except for the *Number of floors*. The variable name entered will appear as a Random Variable in the UQ panel; it is there that the user must specify the distribution associated with the Random Variable.
+       ```Random Variables```: Random Variables can be created by the user if they enter a valid string instead of a number in the entry fields for any entry except for the *Number of floors*. The variable name entered will appear as a Random Variable in the **UQ** tab; it is there that the user must specify the distribution associated with the Random Variable.
 
 OpenSees
 --------
 
-This panel is for users who have an existing ``OpenSees`` model of a building that performs a gravity analysis and now they wish to subject that building model to one of the ``EVT`` options provided. The input panel for this option is shown in :numref:`fig-figure3`. Users need to provide three pieces of information:
+This panel is for users who have an existing ``OpenSees`` model of a building that performs a gravity analysis and now they wish to subject that building model to one of the **EVT** options provided. The input panel for this option is shown in :numref:`fig-figure3`. Users need to provide three pieces of information:
 
 #. Main OpenSees Script: The main script that contains the building model. This script should build a model and perform any gravity analysis of the building that is required before the event is applied.
 
@@ -55,8 +55,8 @@ This panel is for users who have an existing ``OpenSees`` model of a building th
 	:figclass: align-center
 
 
-Random Variables: In ``OpenSees`` there is an option to set variables to have certain values using the ``pset`` command, e.g ``pset a 5.0`` will set the variable a to have a value 5 in the ``OpenSees`` script. In |full tool name|, any variable found in the main script to be set using the ``pset`` command will be assumed to be a Random Variable. As such, when a new main script is loaded all variables set with ``pset`` will appear as Random Variables in the UQ panel.
+Random Variables: In ``OpenSees`` there is an option to set variables to have certain values using the ``pset`` command, e.g ``pset a 5.0`` will set the variable a to have a value 5 in the ``OpenSees`` script. In |full tool name|, any variable found in the main script to be set using the ``pset`` command will be assumed to be a Random Variable. As such, when a new main script is loaded all variables set with ``pset`` will appear as Random Variables in the **UQ** tab.
 
 .. note::
-   ```Random Variables```: In ``OpenSees`` there is an option to set variables to have certain values using the ``pset`` command, e.g ``pset a 5.0`` will set the variable a to have a value 5 in the ``OpenSees`` script. In ``\getsoftwarename{}``, any variable found in the main script to be set using the ``pset`` command will be assumed to be a Random Variable. As such, when a new main script is loaded all variables set with ``pset`` will appear as Random Variables in the UQ panel.
+   ```Random Variables```: In ``OpenSees`` there is an option to set variables to have certain values using the ``pset`` command, e.g ``pset a 5.0`` will set the variable a to have a value 5 in the ``OpenSees`` script. In ``\getsoftwarename{}``, any variable found in the main script to be set using the ``pset`` command will be assumed to be a Random Variable. As such, when a new main script is loaded all variables set with ``pset`` will appear as Random Variables in the **UQ** tab.
 
