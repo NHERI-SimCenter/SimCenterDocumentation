@@ -17,7 +17,7 @@ Fully developed turbulent channel flow is one of the most studied flow problem o
 
 .. _fig_TinF01NE:
 
-.. figure:: figures/TInF-NE-01.eps
+.. figure:: figures/TInF-NE-01.png
    :align: center
    :figclass: align-center
    :width: 350px
@@ -36,7 +36,7 @@ Based on the data demonstrated in :numref:`fig_TinF02NE` and :numref:`fig_TinF03
 
 .. _fig_TinF02NE:
 
-.. figure:: figures/TInF-NE-02.eps
+.. figure:: figures/TInF-NE-02.png
    :align: center
    :figclass: align-center
    
@@ -44,7 +44,7 @@ Based on the data demonstrated in :numref:`fig_TinF02NE` and :numref:`fig_TinF03
    
 .. _fig_TinF03NE:
 
-.. figure:: figures/TInF-NE-03.eps
+.. figure:: figures/TInF-NE-03.png
    :align: center
    :figclass: align-center
    
@@ -188,7 +188,7 @@ In :numref:`fig_TinF08NE` ~ :numref:`fig_TinF11NE`, the pressure fluctuations in
 
 .. _fig_TinF08NE:
 
-.. figure:: figures/TInF-NE-08.eps
+.. figure:: figures/TInF-NE-08.png
    :align: center
    :figclass: align-center
    
@@ -197,7 +197,7 @@ In :numref:`fig_TinF08NE` ~ :numref:`fig_TinF11NE`, the pressure fluctuations in
    
 .. _fig_TinF09NE:
 
-.. figure:: figures/TInF-NE-09.eps
+.. figure:: figures/TInF-NE-09.png
    :align: center
    :figclass: align-center
    
@@ -206,7 +206,7 @@ In :numref:`fig_TinF08NE` ~ :numref:`fig_TinF11NE`, the pressure fluctuations in
 
 .. _fig_TinF10NE:
 
-.. figure:: figures/TInF-NE-10.eps
+.. figure:: figures/TInF-NE-10.png
    :align: center
    :figclass: align-center
    
@@ -215,7 +215,7 @@ In :numref:`fig_TinF08NE` ~ :numref:`fig_TinF11NE`, the pressure fluctuations in
    
 .. _fig_TinF11NE:
 
-.. figure:: figures/TInF-NE-11.eps
+.. figure:: figures/TInF-NE-11.png
    :align: center
    :figclass: align-center
    
@@ -227,7 +227,7 @@ In :numref:`fig_TinF12NE` ~ :numref:`fig_TinF15NE`, the main components of the R
 
 .. _fig_TinF12NE:
 
-.. figure:: figures/TInF-NE-12.eps
+.. figure:: figures/TInF-NE-12.png
    :align: center
    :figclass: align-center
    
@@ -235,7 +235,7 @@ In :numref:`fig_TinF12NE` ~ :numref:`fig_TinF15NE`, the main components of the R
    
 .. _fig_TinF13NE:
 
-.. figure:: figures/TInF-NE-13.eps
+.. figure:: figures/TInF-NE-13.png
    :align: center
    :figclass: align-center
    
@@ -243,7 +243,7 @@ In :numref:`fig_TinF12NE` ~ :numref:`fig_TinF15NE`, the main components of the R
    
 .. _fig_TinF14NE:
 
-.. figure:: figures/TInF-NE-14.eps
+.. figure:: figures/TInF-NE-14.png
    :align: center
    :figclass: align-center
    
@@ -251,7 +251,7 @@ In :numref:`fig_TinF12NE` ~ :numref:`fig_TinF15NE`, the main components of the R
    
 .. _fig_TinF15NE:
 
-.. figure:: figures/TInF-NE-15.eps
+.. figure:: figures/TInF-NE-15.png
    :align: center
    :figclass: align-center
    
