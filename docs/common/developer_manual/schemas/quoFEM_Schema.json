@@ -1,0 +1,310 @@
+
+
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "type": "object",
+    "properties": {
+      "Applications": {
+        "type": "object",
+        "properties": {
+          "UQ": {
+            "type": "object",
+            "properties": {
+              "Application": {
+                "type": "string"
+              },
+              "ApplicationData": {
+                "type": "object"
+              }
+            },
+            "required": [
+              "Application",
+              "ApplicationData"
+            ]
+          }
+        },
+        "required": [
+          "UQ"
+        ]
+      },
+      "EDP": {
+        "type": "array",
+        "items": [
+          {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+        ]
+      },
+      "UQ_Method": {
+        "type": "object",
+        "properties": {
+          "samplingMethodData": {
+            "type": "object",
+            "properties": {
+              "method": {
+                "type": "string"
+              },
+              "samples": {
+                "type": "integer"
+              },
+              "seed": {
+                "type": "integer"
+              }
+            },
+            "required": [
+              "method",
+              "samples",
+              "seed"
+            ]
+          },
+          "uqEngine": {
+            "type": "string"
+          },
+          "uqType": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "samplingMethodData",
+          "uqEngine",
+          "uqType"
+        ]
+      },
+      "fem": {
+        "type": "object",
+        "properties": {
+          "dir": {
+            "type": "string"
+          },
+          "inputFile": {
+            "type": "string"
+          },
+          "mainInput": {
+            "type": "string"
+          },
+          "mainPostprocessScript": {
+            "type": "string"
+          },
+          "numInputs": {
+            "type": "integer"
+          },
+          "parametersFile": {
+            "type": "string"
+          },
+          "parametersScript": {
+            "type": "string"
+          },
+          "postprocessScript": {
+            "type": "string"
+          },
+          "program": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "dir",
+          "inputFile",
+          "mainInput",
+          "mainPostprocessScript",
+          "numInputs",
+          "parametersFile",
+          "parametersScript",
+          "postprocessScript",
+          "program"
+        ]
+      },
+      "localAppDir": {
+        "type": "string"
+      },
+      "python": {
+        "type": "string"
+      },
+      "randomVariables": {
+        "type": "array",
+        "items": [
+          {
+            "type": "object",
+            "properties": {
+              "distribution": {
+                "type": "string"
+              },
+              "mean": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "refCount": {
+                "type": "integer"
+              },
+              "stdDev": {
+                "type": "integer"
+              },
+              "value": {
+                "type": "string"
+              },
+              "variableClass": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "distribution",
+              "mean",
+              "name",
+              "refCount",
+              "stdDev",
+              "value",
+              "variableClass"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "distribution": {
+                "type": "string"
+              },
+              "mean": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "refCount": {
+                "type": "integer"
+              },
+              "stdDev": {
+                "type": "integer"
+              },
+              "value": {
+                "type": "string"
+              },
+              "variableClass": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "distribution",
+              "mean",
+              "name",
+              "refCount",
+              "stdDev",
+              "value",
+              "variableClass"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "distribution": {
+                "type": "string"
+              },
+              "mean": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "refCount": {
+                "type": "integer"
+              },
+              "stdDev": {
+                "type": "integer"
+              },
+              "value": {
+                "type": "string"
+              },
+              "variableClass": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "distribution",
+              "mean",
+              "name",
+              "refCount",
+              "stdDev",
+              "value",
+              "variableClass"
+            ]
+          },
+          {
+            "type": "object",
+            "properties": {
+              "distribution": {
+                "type": "string"
+              },
+              "mean": {
+                "type": "integer"
+              },
+              "name": {
+                "type": "string"
+              },
+              "refCount": {
+                "type": "integer"
+              },
+              "stdDev": {
+                "type": "integer"
+              },
+              "value": {
+                "type": "string"
+              },
+              "variableClass": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "distribution",
+              "mean",
+              "name",
+              "refCount",
+              "stdDev",
+              "value",
+              "variableClass"
+            ]
+          }
+        ]
+      },
+      "remoteAppDir": {
+        "type": "string"
+      },
+      "uqResults": {
+        "type": "object"
+      },
+      "workingDir": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "Applications",
+      "EDP",
+      "UQ_Method",
+      "fem",
+      "localAppDir",
+      "python",
+      "randomVariables",
+      "remoteAppDir",
+      "uqResults",
+      "workingDir"
+    ]
+  }
+  
+  
