@@ -1,20 +1,4 @@
 Reliability Analysis
-<<<<<<< Updated upstream
-=======================================
-
-If the user is interested in the probability that a particular response measure will be exceeded, an alternate strategy is to perform a reliability analysis. To obtain reliability results using the Second-Order Reliability Method (SORM) for the truss problem the user would follow the same sequence of steps as previously. In the figure the user is specifying that they are interested in the probability that the displacement will exceed certain response levels.
-
-.. figure:: figures/trussSORM-UQ.png
-   :align: center
-   :figclass: align-center
-
-After the user fills in the rest of the tabs as per the previous section, the user would then press the **RUN** button. The application (after spinning for a while with the wheel of death) will present the user with the results.
-
-.. figure:: figures/trussSORM-RES.png
-   :align: center
-   :figclass: align-center
-
-=======
 ============================================================
 
 This example uses quoFEM to perform a second-order reliability analysis (SORM) of an OpenSees FE model.
@@ -51,6 +35,12 @@ Model Definition
 The following input files must be placed in an *empty* folder:
 
 
+#. ``truss/model.tcl``: This file is an OpenSees Tcl script that constructs and runs a finite element analysis of the truss for a given realization of the problem's random variables. It is supplied to the **Input File** field of the **FEM** tab.
+
+#. ``truss/post.tcl``: This file is an OpenSees Tcl script that processes the QoI identifiers supplied in the **QoI** tab, and writes the relevant response quantities to `results.out` from an OpenSees process. It is supplied to the **Postprocess File** field of the **FEM** tab.
+
+
+
 
 
 .. warning::
@@ -73,4 +63,3 @@ None
 
    :align: center
    :figclass: align-center
->>>>>>> Stashed changes

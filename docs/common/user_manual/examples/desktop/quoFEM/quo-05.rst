@@ -1,12 +1,3 @@
-<<<<<<< Updated upstream
-Arbitrary Python Scripts
-=======================================
-
-
-
-
-
-=======
 Non-structural problems with Python
 ============================================================
 
@@ -62,4 +53,3 @@ None
 .. figure:: None
    :align: center
    :figclass: align-center
->>>>>>> Stashed changes

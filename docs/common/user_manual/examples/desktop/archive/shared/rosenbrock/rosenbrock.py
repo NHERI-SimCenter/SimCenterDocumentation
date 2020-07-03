@@ -20,3 +20,4 @@ def rosenbrock(params):
 
 with open('results.out', 'w') as f:
 	f.write('{:.60g}'.format(rosenbrock([x, y])))
+

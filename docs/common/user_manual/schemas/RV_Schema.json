@@ -1,368 +1,357 @@
 
 {
     "$schema": "http://json-schema.org/draft-07/schema",
-    "$id": "http://example.com/example.json",
     "type": "object",
-    "title": "The root schema",
-    "description": "The root schema comprises the entire JSON document.",
+    "title": "The randomVariables schema",
+    "description": "No description.",
     "properties": {
-        "randomVariables": {
-            "$id": "#/properties/randomVariables",
-            "type": "array",
-            "title": "The randomVariables schema",
+        "beta": {
+            "$id": "#/properties/randomVariables/items/anyOf/0",
+            "type": "object",
+            "title": "beta",
             "description": "No description.",
-            "items": {
-                "beta": {
-                        "$id": "#/properties/randomVariables/items/anyOf/0",
-                        "type": "object",
-                        "title": "beta",
-                        "description": "No description.",
-                        "required": [
-                            "alphas",
-                            "betas",
-                            "lowerbound",
-                            "name",
-                            "refCount",
-                            "upperbound",
-                            "variableClass"
-                        ],
-                        "properties": {
-                            "alphas": {
-                                "$id": "#/properties/randomVariables/items/anyOf/0/properties/alphas",
-                                "type": "integer",
-                                "title": "The alphas schema",
-                                "description": "No description.",
-                                "default": 0,
-                                "examples": [
-                                    22
-                                ]
-                            },
-                            "betas": {
-                                "$id": "#/properties/randomVariables/items/anyOf/0/properties/betas",
-                                "type": "integer",
-                                "title": "The betas schema",
-                                "description": "No description.",
-                                "default": 0,
-                                "examples": [
-                                    22
-                                ]
-                            },
-                            "lowerbound": {
-                                "$id": "#/properties/randomVariables/items/anyOf/0/properties/lowerbound",
-                                "type": "integer",
-                                "tex": "L_B",
-                                "title": "The lowerbound schema",
-                                "description": "No description.",
-                                "default": 0,
-                                "examples": [
-                                    22
-                                ]
-                            },
-                            "refCount": {
-                                "$id": "#/properties/randomVariables/items/anyOf/0/properties/refCount",
-                                "type": "integer",
-                                "title": "The refCount schema",
-                                "description": "No description.",
-                                "default": 0,
-                                "examples": [
-                                    0
-                                ]
-                            },
-                            "upperbound": {
-                                "$id": "#/properties/randomVariables/items/anyOf/0/properties/upperbound",
-                                "type": "integer",
-                                "tex": "U_B",
-                                "title": "The upperbound schema",
-                                "description": "No description.",
-                                "default": 0,
-                                "examples": [
-                                    22
-                                ]
-                            },
-                            "variableClass": {
-                                "$id": "#/properties/randomVariables/items/anyOf/0/properties/variableClass",
-                                "type": "string",
-                                "title": "The variableClass schema",
-                                "description": "No description.",
-                                "default": "",
-                                "examples": [
-                                    "Uncertain"
-                                ]
-                            }
-                        }
-                    },
-                    "uniform": {
-                        "$id": "#/properties/randomVariables/items/anyOf/1",
-                        "type": "object",
-                        "title": "uniform",
-                        "description": "No description.",
-                        "required": [
-                            "lowerbound",
-                            "name",
-                            "refCount",
-                            "upperbound",
-                            "variableClass"
-                        ],
-                        "properties": {
-                            "lowerbound": {
-                                "$id": "#/properties/randomVariables/items/anyOf/1/properties/lowerbound",
-                                "type": "integer",
-                                "tex": "L_B",
-                                "title": "The lowerbound schema",
-                                "description": "No description.",
-                                "default": 0.0
-                            },
-                            "refCount": {
-                                "$id": "#/properties/randomVariables/items/anyOf/1/properties/refCount",
-                                "type": "number",
-                                "title": "The refCount schema",
-                                "description": "No description.",
-                                "default": 0.0
-                            },
-                            "upperbound": {
-                                "$id": "#/properties/randomVariables/items/anyOf/1/properties/upperbound",
-                                "type": "number",
-                                "tex": "U_B",
-                                "title": "The upperbound schema",
-                                "description": "No description.",
-                                "default": 0.0
-                            },
-                            "variableClass": {
-                                "$id": "#/properties/randomVariables/items/anyOf/1/properties/variableClass",
-                                "type": "string",
-                                "title": "The variableClass schema",
-                                "description": "No description.",
-                                "default": "",
-                                "examples": [
-                                    "Uncertain"
-                                ]
-                            }
-                        }
-                    },
-                    "Constant": {
-                        "$id": "#/properties/randomVariables/items/anyOf/2",
-                        "type": "object",
-                        "title": "The third anyOf schema",
-                        "description": "No description.",
-                        "default": {},
-                        "examples": [
-                            {
-                                "distribution": "Constant",
-                                "name": "E",
-                                "refCount": 0,
-                                "value": 22,
-                                "variableClass": "Uncertain"
-                            }
-                        ],
-                        "required": [
-                            "name",
-                            "refCount",
-                            "variableClass"
-                        ],
-                        "additionalProperties": true,
-                        "properties": {
-                            "distribution": {
-                                "$id": "#/properties/randomVariables/items/anyOf/2/properties/distribution",
-                                "type": "string",
-                                "title": "The distribution schema",
-                                "description": "No description.",
-                                "default": "",
-                                "examples": [
-                                    "Constant"
-                                ]
-                            },
-                            "name": {
-                                "$id": "#/properties/randomVariables/items/anyOf/2/properties/name",
-                                "type": "string",
-                                "title": "The name schema",
-                                "description": "No description.",
-                                "default": "",
-                                "examples": [
-                                    "E"
-                                ]
-                            },
-                            "refCount": {
-                                "$id": "#/properties/randomVariables/items/anyOf/2/properties/refCount",
-                                "type": "integer",
-                                "title": "The refCount schema",
-                                "description": "No description.",
-                                "default": 0,
-                                "examples": [
-                                    0
-                                ]
-                            },
-                            "value": {
-                                "$id": "#/properties/randomVariables/items/anyOf/2/properties/value",
-                                "type": "integer",
-                                "title": "The value schema",
-                                "description": "No description.",
-                                "default": 0,
-                                "examples": [
-                                    22
-                                ]
-                            },
-                            "variableClass": {
-                                "$id": "#/properties/randomVariables/items/anyOf/2/properties/variableClass",
-                                "type": "string",
-                                "title": "The variableClass schema",
-                                "description": "No description.",
-                                "default": "",
-                                "examples": [
-                                    "Uncertain"
-                                ]
-                            }
-                        }
-                    },
-                    "Weibull": {
-                        "$id": "#/properties/randomVariables/items/anyOf/3",
-                        "type": "object",
-                        "title": "Weibull",
-                        "description": "No description.",
-                        "required": [
-                            "name",
-                            "refCount",
-                            "scaleparam",
-                            "shapeparam",
-                            "variableClass"
-                        ],
-                        "properties": {
-                            "refCount": {
-                                "$id": "#/properties/randomVariables/items/anyOf/3/properties/refCount",
-                                "type": "integer",
-                                "title": "The refCount schema",
-                                "description": "No description.",
-                                "default": 0,
-                                "examples": [
-                                    0
-                                ]
-                            },
-                            "scaleparam": {
-                                "$id": "#/properties/randomVariables/items/anyOf/3/properties/scaleparam",
-                                "type": "number",
-                                "tex": "\\lambda",
-                                "title": "The scaleparam schema",
-                                "description": "No description.",
-                                "default": 0,
-                                "examples": [
-                                    22
-                                ]
-                            },
-                            "shapeparam": {
-                                "$id": "#/properties/randomVariables/items/anyOf/3/properties/shapeparam",
-                                "type": "number",
-                                "tex": "k",
-                                "title": "The shapeparam schema",
-                                "description": "No description.",
-                                "default": 0.0
-                            },
-                            "variableClass": {
-                                "$id": "#/properties/randomVariables/items/anyOf/3/properties/variableClass",
-                                "type": "string",
-                                "title": "The variableClass schema",
-                                "description": "No description.",
-                                "default": "",
-                                "examples": [
-                                    "Uncertain"
-                                ]
-                            }
-                        }
-                    },
-                    "Gumbel": {
-                        "$id": "#/properties/randomVariables/items/anyOf/4",
-                        "type": "object",
-                        "title": "Gumbel",
-                        "description": "No description.",
-                        "required": [
-                            "alphaparam",
-                            "betaparam",
-                            "name",
-                            "refCount",
-                            "variableClass"
-                        ],
-                        "properties": {
-                            "alphaparam": {
-                                "$id": "#/properties/randomVariables/items/anyOf/4/properties/alphaparam",
-                                "type": "number",
-                                "tex": "\\alpha",
-                                "title": "alpha",
-                                "description": "No description.",
-                                "default": 0
-                            },
-                            "betaparam": {
-                                "$id": "#/properties/randomVariables/items/anyOf/4/properties/betaparam",
-                                "type": "number",
-                                "tex": "\\beta",
-                                "title": "beta",
-                                "description": "No description.",
-                                "default": 0,
-                                "examples": [
-                                    22
-                                ]
-                            },
-                            "refCount": {
-                                "$id": "#/properties/randomVariables/items/anyOf/4/properties/refCount",
-                                "type": "integer",
-                                "title": "The refCount schema",
-                                "description": "No description.",
-                                "default": 0,
-                                "examples": [
-                                    0
-                                ]
-                            }, 
-                            "variableClass": {
-                                "$id": "#/properties/randomVariables/items/anyOf/4/properties/variableClass",
-                                "type": "string",
-                                "title": "The variableClass schema",
-                                "description": "No description.",
-                                "default": "",
-                                "examples": [
-                                    "Uncertain"
-                                ]
-                            }
-                        }
-                    },
-                    "Normal": {
-                        "$id": "#/properties/randomVariables/items/anyOf/5",
-                        "type": "object",
-                        "title": "Normal",
-                        "description": "No description.",
-                        "required": [
-                            "mean",
-                            "name",
-                            "refCount",
-                            "stdDev",
-                            "variableClass"
-                        ],
-                        "properties": {
-                            "mean": {
-                                "$id": "#/properties/randomVariables/items/anyOf/5/properties/mean",
-                                "type": "number",
-                                "tex": "\\mu",
-                                "title": "mean",
-                                "description": "No description.",
-                                "default": 0
-                            },
-                            "refCount": {
-                                "$id": "#/properties/randomVariables/items/anyOf/5/properties/refCount",
-                                "type": "integer",
-                                "title": "The refCount schema",
-                                "description": "No description.",
-                                "default": 0,
-                                "examples": [
-                                    0
-                                ]
-                            },
-                            "stdDev": {
-                                "$id": "#/properties/randomVariables/items/anyOf/5/properties/stdDev",
-                                "type": "integer",
-                                "tex": "\\sigma",
-                                "title": "standard deviation",
-                                "description": "No description.",
-                                "default": 0
-                            }
-                        }
-                    }
-                
+            "required": [
+                "alphas",
+                "betas",
+                "lowerbound",
+                "name",
+                "refCount",
+                "upperbound",
+                "variableClass"
+            ],
+            "properties": {
+                "alphas": {
+                    "$id": "#/properties/randomVariables/items/anyOf/0/properties/alphas",
+                    "type": "integer",
+                    "title": "The alphas schema",
+                    "description": "No description.",
+                    "default": 0,
+                    "examples": [
+                        22
+                    ]
+                },
+                "betas": {
+                    "$id": "#/properties/randomVariables/items/anyOf/0/properties/betas",
+                    "type": "integer",
+                    "title": "The betas schema",
+                    "description": "No description.",
+                    "default": 0,
+                    "examples": [
+                        22
+                    ]
+                },
+                "lowerbound": {
+                    "$id": "#/properties/randomVariables/items/anyOf/0/properties/lowerbound",
+                    "type": "integer",
+                    "tex": "L_B",
+                    "title": "The lowerbound schema",
+                    "description": "No description.",
+                    "default": 0,
+                    "examples": [
+                        22
+                    ]
+                },
+                "refCount": {
+                    "$id": "#/properties/randomVariables/items/anyOf/0/properties/refCount",
+                    "type": "integer",
+                    "title": "The refCount schema",
+                    "description": "No description.",
+                    "default": 0,
+                    "examples": [
+                        0
+                    ]
+                },
+                "upperbound": {
+                    "$id": "#/properties/randomVariables/items/anyOf/0/properties/upperbound",
+                    "type": "integer",
+                    "tex": "U_B",
+                    "title": "The upperbound schema",
+                    "description": "No description.",
+                    "default": 0,
+                    "examples": [
+                        22
+                    ]
+                },
+                "variableClass": {
+                    "$id": "#/properties/randomVariables/items/anyOf/0/properties/variableClass",
+                    "type": "string",
+                    "title": "The variableClass schema",
+                    "description": "No description.",
+                    "default": "",
+                    "examples": [
+                        "Uncertain"
+                    ]
+                }
+            }
+        },
+        "uniform": {
+            "$id": "#/properties/randomVariables/items/anyOf/1",
+            "type": "object",
+            "title": "uniform",
+            "description": "No description.",
+            "required": [
+                "lowerbound",
+                "name",
+                "refCount",
+                "upperbound",
+                "variableClass"
+            ],
+            "properties": {
+                "lowerbound": {
+                    "$id": "#/properties/randomVariables/items/anyOf/1/properties/lowerbound",
+                    "type": "integer",
+                    "tex": "L_B",
+                    "title": "The lowerbound schema",
+                    "description": "No description.",
+                    "default": 0.0
+                },
+                "refCount": {
+                    "$id": "#/properties/randomVariables/items/anyOf/1/properties/refCount",
+                    "type": "number",
+                    "title": "The refCount schema",
+                    "description": "No description.",
+                    "default": 0.0
+                },
+                "upperbound": {
+                    "$id": "#/properties/randomVariables/items/anyOf/1/properties/upperbound",
+                    "type": "number",
+                    "tex": "U_B",
+                    "title": "The upperbound schema",
+                    "description": "No description.",
+                    "default": 0.0
+                },
+                "variableClass": {
+                    "$id": "#/properties/randomVariables/items/anyOf/1/properties/variableClass",
+                    "type": "string",
+                    "title": "The variableClass schema",
+                    "description": "No description.",
+                    "default": "",
+                    "examples": [
+                        "Uncertain"
+                    ]
+                }
+            }
+        },
+        "Constant": {
+            "$id": "#/properties/randomVariables/items/anyOf/2",
+            "type": "object",
+            "title": "The third anyOf schema",
+            "description": "No description.",
+            "default": {},
+            "examples": [
+                {
+                    "distribution": "Constant",
+                    "name": "E",
+                    "refCount": 0,
+                    "value": 22,
+                    "variableClass": "Uncertain"
+                }
+            ],
+            "required": [
+                "name",
+                "refCount",
+                "variableClass"
+            ],
+            "properties": {
+                "distribution": {
+                    "$id": "#/properties/randomVariables/items/anyOf/2/properties/distribution",
+                    "type": "string",
+                    "title": "The distribution schema",
+                    "description": "No description.",
+                    "default": "",
+                    "examples": [
+                        "Constant"
+                    ]
+                },
+                "name": {
+                    "$id": "#/properties/randomVariables/items/anyOf/2/properties/name",
+                    "type": "string",
+                    "title": "The name schema",
+                    "description": "No description.",
+                    "default": "",
+                    "examples": [
+                        "E"
+                    ]
+                },
+                "refCount": {
+                    "$id": "#/properties/randomVariables/items/anyOf/2/properties/refCount",
+                    "type": "integer",
+                    "title": "The refCount schema",
+                    "description": "No description.",
+                    "default": 0,
+                    "examples": [
+                        0
+                    ]
+                },
+                "value": {
+                    "$id": "#/properties/randomVariables/items/anyOf/2/properties/value",
+                    "type": "integer",
+                    "title": "The value schema",
+                    "description": "No description.",
+                    "default": 0,
+                    "examples": [
+                        22
+                    ]
+                },
+                "variableClass": {
+                    "$id": "#/properties/randomVariables/items/anyOf/2/properties/variableClass",
+                    "type": "string",
+                    "title": "The variableClass schema",
+                    "description": "No description.",
+                    "default": "",
+                    "examples": [
+                        "Uncertain"
+                    ]
+                }
+            }
+        },
+        "Weibull": {
+            "$id": "#/properties/randomVariables/items/anyOf/3",
+            "type": "object",
+            "title": "Weibull",
+            "description": "No description.",
+            "required": [
+                "name",
+                "refCount",
+                "scaleparam",
+                "shapeparam",
+                "variableClass"
+            ],
+            "properties": {
+                "refCount": {
+                    "$id": "#/properties/randomVariables/items/anyOf/3/properties/refCount",
+                    "type": "integer",
+                    "title": "The refCount schema",
+                    "description": "No description.",
+                    "default": 0,
+                    "examples": [
+                        0
+                    ]
+                },
+                "scaleparam": {
+                    "$id": "#/properties/randomVariables/items/anyOf/3/properties/scaleparam",
+                    "type": "number",
+                    "tex": "\\lambda",
+                    "title": "The scaleparam schema",
+                    "description": "No description.",
+                    "default": 0,
+                    "examples": [
+                        22
+                    ]
+                },
+                "shapeparam": {
+                    "$id": "#/properties/randomVariables/items/anyOf/3/properties/shapeparam",
+                    "type": "number",
+                    "tex": "k",
+                    "title": "The shapeparam schema",
+                    "description": "No description.",
+                    "default": 0.0
+                },
+                "variableClass": {
+                    "$id": "#/properties/randomVariables/items/anyOf/3/properties/variableClass",
+                    "type": "string",
+                    "title": "The variableClass schema",
+                    "description": "No description.",
+                    "default": "",
+                    "examples": [
+                        "Uncertain"
+                    ]
+                }
+            }
+        },
+        "Gumbel": {
+            "$id": "#/properties/randomVariables/items/anyOf/4",
+            "type": "object",
+            "title": "Gumbel",
+            "description": "No description.",
+            "required": [
+                "alphaparam",
+                "betaparam",
+                "name",
+                "refCount",
+                "variableClass"
+            ],
+            "properties": {
+                "alphaparam": {
+                    "$id": "#/properties/randomVariables/items/anyOf/4/properties/alphaparam",
+                    "type": "number",
+                    "tex": "\\alpha",
+                    "title": "alpha",
+                    "description": "No description.",
+                    "default": 0
+                },
+                "betaparam": {
+                    "$id": "#/properties/randomVariables/items/anyOf/4/properties/betaparam",
+                    "type": "number",
+                    "tex": "\\beta",
+                    "title": "beta",
+                    "description": "No description.",
+                    "default": 0,
+                    "examples": [
+                        22
+                    ]
+                },
+                "refCount": {
+                    "$id": "#/properties/randomVariables/items/anyOf/4/properties/refCount",
+                    "type": "integer",
+                    "title": "The refCount schema",
+                    "description": "No description.",
+                    "default": 0,
+                    "examples": [
+                        0
+                    ]
+                }, 
+                "variableClass": {
+                    "$id": "#/properties/randomVariables/items/anyOf/4/properties/variableClass",
+                    "type": "string",
+                    "title": "The variableClass schema",
+                    "description": "No description.",
+                    "default": "",
+                    "examples": [
+                        "Uncertain"
+                    ]
+                }
+            }
+        },
+        "normal": {
+            "$id": "#/properties/randomVariables/items/anyOf/5",
+            "type": "object",
+            "title": "normal",
+            "description": "No description.",
+            "required": [
+                "mean",
+                "name",
+                "refCount",
+                "stdDev",
+                "variableClass"
+            ],
+            "properties": {
+                "mean": {
+                    "$id": "#/properties/randomVariables/items/anyOf/5/properties/mean",
+                    "type": "number",
+                    "tex": "\\mu",
+                    "title": "mean",
+                    "description": "No description.",
+                    "default": 0
+                },
+                "refCount": {
+                    "$id": "#/properties/randomVariables/items/anyOf/5/properties/refCount",
+                    "type": "integer",
+                    "title": "The refCount schema",
+                    "description": "No description.",
+                    "default": 0,
+                    "examples": [
+                        0
+                    ]
+                },
+                "stdDev": {
+                    "$id": "#/properties/randomVariables/items/anyOf/5/properties/stdDev",
+                    "type": "integer",
+                    "tex": "\\sigma",
+                    "title": "standard deviation",
+                    "description": "No description.",
+                    "default": 0
+                }
             }
         }
     }

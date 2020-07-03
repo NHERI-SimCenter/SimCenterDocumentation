@@ -1,21 +1,4 @@
 Sensitivity Analysis
-<<<<<<< Updated upstream
-=======================================
-
-In a global sensitivity analysis the user is wishing to understand what is the influence of the individual random variables on the quantities of interest. This is typically done before the user launches large scale forward uncertainty problems in order to limit the number of random variables used so as to limit the number of simulations performed.
-
-
-.. figure:: figures/trussSens-UQ.png
-   :align: center
-   :figclass: align-center
-
-After the user fills in the rest of the tabs as per the previous section, the user would then press the ''RUN'' button. The application (after spinning for a while with the wheel of death) will present the user with the results.
-
-.. figure:: figures/trussSensitivity-RES.png
-   :align: center
-   :figclass: align-center
-
-=======
 ============================================================
 
 This example uses quoFEM to perform a global sensitivity analysis of an OpenSees FE model.
@@ -52,6 +35,12 @@ Model Definition
 The following input files must be placed in an *empty* folder:
 
 
+#. ``truss/model.tcl``: This file is an OpenSees Tcl script that constructs and runs a finite element analysis of the truss for a given realization of the problem's random variables. It is supplied to the **Input File** field of the **FEM** tab.
+
+#. ``truss/post.tcl``: This file is an OpenSees Tcl script that processes the QoI identifiers supplied in the **QoI** tab, and writes the relevant response quantities to `results.out` from an OpenSees process. It is supplied to the **Postprocess File** field of the **FEM** tab.
+
+
+
 
 
 .. warning::
@@ -73,4 +62,3 @@ None
 .. figure:: None
    :align: center
    :figclass: align-center
->>>>>>> Stashed changes
