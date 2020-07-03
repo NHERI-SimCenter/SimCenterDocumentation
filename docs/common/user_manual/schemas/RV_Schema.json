@@ -110,7 +110,7 @@
                 }
             }
         },
-        "Weibull": {
+        "weibull": {
             "$id": "#/properties/randomVariables/items/anyOf/3",
             "type": "object",
             "title": "Weibull",
@@ -137,7 +137,7 @@
                 }
             }
         },
-        "Gumbel": {
+        "gumbel": {
             "$id": "#/properties/randomVariables/items/anyOf/4",
             "type": "object",
             "title": "Gumbel",
