@@ -175,18 +175,55 @@ FEM_MODELS:
         value: RV.y
         variableClass: Uncertain
 
+FILES:
+  truss:
+    truss_model_py: &truss_model_py
+      loc: shared/truss/model.py
+      description: This file is a Python script which takes a given realization of the problem's random variables, and runs a finite element analysis of the truss with OpenSeesPy. It is supplied to the **Input Script** field of the **FEM** tab, and obviates the need for supplying a **Postprocess Script**. When this script is invoked in the workflow, it receives the list of the identifiers supplied in the **QoI** tab through the operating system's `stdout` variable, and a set of random variable realizations by star-importing the **Parameters File** from the **FEM** tab.
+    truss_params_py: &truss_params_py 
+      loc: shared/truss/params.py
+      description: This file is a Python script which defines the problem's random variables as objects in the Python runtime. It is supplied to the **Parameters File** field of the **FEM** tab. *The literal values which are assigned to variables in this file will be varied at runtime by the UQ engine.*
+    truss_model_tcl: &truss_model_tcl 
+      loc: shared/truss/model.tcl
+      description: This file is an OpenSees Tcl script that constructs and runs a finite element analysis of the truss for a given realization of the problem's random variables. It is supplied to the **Input File** field of the **FEM** tab.
+    truss_post_tcl: &truss_post_tcl 
+      loc: shared/truss/post.tcl
+      description: This file is an OpenSees Tcl script that processes the QoI identifiers supplied in the **QoI** tab, and writes the relevant response quantities to `results.out` from an OpenSees process. It is supplied to the **Postprocess File** field of the **FEM** tab.
+  rosen:
+    rosen_rosen_py: &rosen_rosen_py 
+      loc: rosen/rosen.py
+      description: This file is a Python script which implements the Rosenbrock function. It is supplied to the **Input Script** field of the **FEM** tab. Because this file write directly to `results.out`, it obviates the need for supplying a **Postprocess Script**. When invoked in the workflow, the Python routine is supplied a set of random variable realizations through the star-import of the script supplied to the **Parameters File** field.
+    rosen_params_py: &rosen_params_py 
+      loc: rosen/params.py
+      description: This file is a Python script which defines the problem's random variables as objects in the Python runtime. It is supplied to the **Parameters File** field of the **FEM** tab. *The literal values which are assigned to variables in this file will be varied at runtime by the UQ engine.*
+
+       
 ##############################################################################
 # quoFEM Examples
 ##############################################################################
 quoFEM:
   - id: quo-01
-    name: Forward Propagation - OpenSees/Tcl
+    title: Forward Propagation - OpenSees/Tcl
+    docs:
+      files: []
+      synopsis: This example uses quoFEM to estimate the first and second central moments of a FE model's response, given the marginal distributions of various random parameters.
+      statement: Consider the problem of uncertainty quantification in a two-dimensional truss structure shown in the following figure. Two input scripts are used to define a forward propagation procedure to be coordinated by quoFEM which will estimate the mean and standard deviation of the vertical displacement at node 3 using Latin hypercube sampling.
+      model_fig: figures/truss.png
+      results: Various views of the graphical display can be obtained by left- and right-clicking the columns of the tabular data. If a singular column of the tabular data is selected with simultaneous right and left clicks, a frequency and CDF will be displayed, as shown in figure below.
+      res_fig: figures/trussRES5.png
     srcDir: "shared/truss"
     input:
       <<: *TRUSS
       UQ_Method:  {<<: *FWD_LHS}
   - id: quo-02
-    name: Forward Propagation - OpenSeesPy
+    title: Forward Propagation - OpenSeesPy
+    docs:
+      files: []
+      synopsis: This example illustrates how quoFEM interacts with OpenSeesPy. A simple forward propagation procedure is run to estimate the first and second central moments of a FE model's response, given the marginal distributions of various random parameters.
+      statement: Consider the problem of uncertainty quantification in a two-dimensional truss structure shown in the following figure. Two input scripts are used to define a forward propagation procedure to be coordinated by quoFEM which will estimate the mean and standard deviation of the vertical displacement at node 3 using Latin hypercube sampling.
+      model_fig: figures/truss.png
+      results: Various views of the graphical display can be obtained by left- and right-clicking the columns of the tabular data. If a singular column of the tabular data is selected with simultaneous right and left clicks, a frequency and CDF will be displayed, as shown in figure below.
+      res_fig: figures/trussRES5.png
     srcDir: "shared/truss"
     input:
       <<: *TRUSS
@@ -202,25 +239,56 @@ quoFEM:
         program: OpenSeesPy
       UQ_Method: {<<: *FWD_LHS}
   - id: quo-03
-    name: Reliability Analysis
+    title: Reliability Analysis
+    docs:
+      files: []
+      synopsis: This example uses quoFEM to perform a second-order reliability analysis (SORM) of an OpenSees FE model.
+      statement: Consider the stochastic response of a two-dimensional truss structure shown in the following figure with uncertain section dimensions, material moduli, and loading magnitude. Two input scripts are used to define a [local reliability](/common/user_manual/usage/desktop/DakotaReliability.html) procedure to be coordinated by quoFEM which will estimate response magnitudes whose probabilities of exceedance are 0.02, 0.2, 0.4, 0.6, 0.8, and 0.99.
+      model_fig: figures/truss.png
+      results: ~
+      res_fig: figures/trussSORM-RES.png
     srcDir: "shared/truss"
     input:
       <<: *TRUSS
       UQ_Method: {<<: *REL_SORM}
   - id: quo-04
-    name: Sensitivity Analysis
+    title: Sensitivity Analysis
+    docs:
+      files: []
+      synopsis: This example uses quoFEM to perform a global sensitivity analysis of an OpenSees FE model.
+      statement: Consider a stochastic model of a two-dimensional truss structure like that shown in the following figure. A [sensitivity analysis](/common/user_manual/usage/desktop/DakotaSensitivity.html) procedure is coordinated by quoFEM which will estimate the sensitivities of the response quantities of interest with respect to the problem's random variables.
+      model_fig: figures/truss.png
+      results: ~
+      res_fig: ~
     srcDir: "shared/truss"
     input:
       <<: *TRUSS
       UQ_Method: {<<: *SEN_LHS}
   - id: quo-05
-    name: Arbitrary Python Scripts 
+    title: Non-structural problems with Python
+    docs: &rosenbrock
+      files: []
+      synopsis: This example illustrates how Python scripting can be used with quoFEM to express general mathematical models without the use of a dedicated finite element analysis engine.
+      statement: >
+        The Rosenbrock function is a *test function* that is often used to evaluate numerical optimization algorithms.
+
+        $$
+        f(x, y)=(a-x)^{2}+b\left(y-x^{2}\right)^{2}
+        $$
+
+      model_fig: ~
+      results: ~
+      res_fig: ~
     srcDir: "shared/rosenbrock"
     input:
       <<: *ROSEN
       UQ_Method: {<<: *FWD_LHS}
   - id: quo-06
-    name: Conventional Calibration - Rosenbrock
+    title: Optimization
+    docs:
+      << : *rosenbrock
+      synopsis: In this example, quoFEM is used to solve a classical optimization problem, for which an analytic solution is known.
+      results: ~
     srcDir: "shared/rosenbrock"
     input:
       <<: *ROSEN

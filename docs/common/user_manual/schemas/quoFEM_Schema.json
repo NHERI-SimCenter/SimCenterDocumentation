@@ -31,6 +31,7 @@
       "EDP": {
         "type": "array",
         "description": "Inputs for the EDP tab.",
+        "title": "QoI",
         "items": {
             "type": "object",
             "properties": {
@@ -46,13 +47,16 @@
       "UQ_Method": {
         "type": "object",
         "description": "Inputs for the UQ tab.",
+        "title": "UQ",
         "properties": {
           
           "uqEngine": {
-            "type": "string"
+            "type": "string",
+            "title": "UQ Engine"
           },
           "uqType": {
-            "type": "string"
+            "type": "string",
+            "title":"Dakota Method Category"
           }
         },
         "required": [
@@ -62,10 +66,11 @@
         "additionalProperties": {
           "samplingMethodData": {
             "type": "object",
+            "title": "Forward Propagation",
             "properties": {
-              "method": {"type": "string" },
-              "samples": {"type": "integer"},
-              "seed": {"type": "integer"}
+              "method":  {"type": "string" , "title": "method"},
+              "samples": {"type": "integer", "title": "samples"},
+              "seed":    {"type": "integer", "title": "seed"}
             },
             "required": [
               "method",
@@ -75,13 +80,14 @@
           },
           "reliabilityMethodData": {
             "type": "object",
+            "title": "Reliability Analysis",
             "properties":{
               "integrationMethod": {"type": "string"},
-              "levelType": {"type": "string"},
-              "localMethod": {"type": "string"},
-              "method": {"type": "string"},
-              "mpp_Method": {"type": "string"},
-              "probabilityLevel": {"type": "array"}
+              "levelType":         {"type": "string"},
+              "localMethod":       {"type": "string"},
+              "method":            {"type": "string"},
+              "mpp_Method":        {"type": "string"},
+              "probabilityLevel":  {"type": "array" }
             }
           }
         }
@@ -89,12 +95,14 @@
       "fem": {
         "type": "object",
         "description": "Inputs for the FEM tab.",
+        "title": "FEM",
         "properties": {
           "dir": {
             "type": "string"
           },
           "inputFile": {
-            "type": "string"
+            "type": "string",
+            "title":"Input File"
           },
           "mainInput": {
             "type": "string"
@@ -137,15 +145,16 @@
       "python":  {"type": "string"},
       "randomVariables": {
         "type": "array",
+        "title": "RV",
         "items": {
           "type": "object",
           "properties": {
-            "distribution":  {"type": "string"},
-            "name":          {"type": "string"},
+            "distribution":  {"type": "string" },
+            "name":          {"type": "string" },
             "refCount":      {"type": "integer"},
-            "stdDev":        {"type": "number"},
-            "value":         {"type": "string"},
-            "variableClass": {"type": "string"}
+            "stdDev":        {"type": "number" },
+            "value":         {"type": "string" },
+            "variableClass": {"type": "string" }
           },
           "additionalProperties": {
             "mean":          {"type": "number"},

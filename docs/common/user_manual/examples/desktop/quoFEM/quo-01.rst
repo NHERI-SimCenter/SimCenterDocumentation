@@ -1,9 +1,11 @@
 Forward Propagation - OpenSees/Tcl
 =======================================
 
-This example will use quoFEM to estimate the first and second central moments of a FE model’s response, given the marginal distributions of various random parameters.
+This example will use quoFEM to estimate the first and second central moments of a FE model's response, given the marginal distributions of various random parameters.
 
 Consider the problem of uncertainty quantification in a two-dimensional truss structure shown in the following figure.
+
+.. _figTruss:
 
 .. figure:: figures/truss.png
    :align: center

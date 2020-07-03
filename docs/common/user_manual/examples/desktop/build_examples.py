@@ -2,6 +2,8 @@
 # Python 3.8
 
 import json, os, shutil
+
+import jinja2
 from ruamel_yaml import YAML
 
 #app_name = 'EE-UQ'
@@ -22,6 +24,18 @@ FILE_VARS = {
          'FEAPpv': []}
 }
 
+def make_doc(ex: dict, folder: str, template='base.rst', ext = '.rst'):
+    """Make a doc for an example that is serialized in `ex`."""
+    folder += '/'
+    tm = jinja2.Template(base)
+    with open(folder + ex['id'] + ext, 'w') as f: 
+        f.write(tm.render(page=ex))
+
+
+def make_dir(dict):
+    """Make a dir for an example that is serialized in `dict`."""
+
+    pass
 
 def make(app_name):
     with open('idx.yml') as file: index = yaml.load(file)
