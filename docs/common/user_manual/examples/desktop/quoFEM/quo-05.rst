@@ -1,3 +1,6 @@
+
+
+
 Non-structural problems with Python
 ============================================================
 
@@ -15,21 +18,24 @@ The Rosenbrock function is a *test function* that is often used to evaluate nume
 
 The following problem variables are modeled as uncertain parameters:
 
-#. ``x``
+#. , ``x``: Uniform distribution with a  lower bound :math:`(L_B)` of -2,  upper bound :math:`(U_B)` of 2, .
 
-#. ``y``
+#. , ``y``: Uniform distribution with a  lower bound :math:`(L_B)` of 1.4,  upper bound :math:`(U_B)` of 1.6, .
 
 
 
-Problem Workflow
-^^^^^^^^^^^^^^^^
 
-Workflow
 
 Model Definition
 ^^^^^^^^^^^^^^^^
 
 The following input files must be placed in an *empty* folder:
+
+
+#. ``rosen/rosen.py``: This file is a Python script which implements the Rosenbrock function. It is supplied to the **Input Script** field of the **FEM** tab. Because this file write directly to `results.out`, it obviates the need for supplying a **Postprocess Script**. When invoked in the workflow, the Python routine is supplied a set of random variable realizations through the star-import of the script supplied to the **Parameters File** field.
+
+#. ``rosen/params.py``: This file is a Python script which defines the problem's random variables as objects in the Python runtime. It is supplied to the **Parameters File** field of the **FEM** tab. *The literal values which are assigned to variables in this file will be varied at runtime by the UQ engine.*
+
 
 
 

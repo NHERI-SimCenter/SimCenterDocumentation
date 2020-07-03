@@ -3,12 +3,14 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "description": "Schema for quoFEM input.json files.",
     "type": "object",
+    "title": "quoFEM Schema",
     "properties": {
       "Applications": {
         "type": "object",
         "properties": {
           "UQ": {
             "type": "object",
+            "title": "UQ",
             "properties": {
               "Application": {
                 "type": "string"

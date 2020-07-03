@@ -28,6 +28,7 @@
     "randomVariables": [
         {
             "name": "x",
+            "title": "",
             "distribution": "Uniform",
             "lowerbound": -2,
             "refCount": 1,
@@ -37,6 +38,7 @@
         },
         {
             "name": "y",
+            "title": "",
             "distribution": "Uniform",
             "lowerbound": 1.4,
             "refCount": 1,

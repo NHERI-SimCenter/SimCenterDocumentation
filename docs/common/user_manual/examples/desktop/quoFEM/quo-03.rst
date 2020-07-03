@@ -1,3 +1,6 @@
+
+
+
 Reliability Analysis
 ============================================================
 
@@ -14,20 +17,17 @@ Consider the stochastic response of a two-dimensional truss structure shown in t
 
 The following problem variables are modeled as uncertain parameters:
 
-#. ``E``
+#. Elastic modulus, ``E``: Weibull distribution with a  scale parameter :math:`(\lambda)` of 210,  shape parameter :math:`(k)` of 20, .
 
-#. ``P``
+#. Load magnitude, ``P``: Beta distribution with a  first shape parameter :math:`(\alpha)` of 2,  second shape parameter :math:`(\beta)` of 2,  lower bound :math:`(L_B)` of 20,  upper bound :math:`(U_B)` of 30, .
 
-#. ``Ao``
+#. Cross sectional area for the other six bars, ``Ao``: Lognormal distribution with a  mean :math:`(\mu)` of 250,  standard deviation :math:`(\sigma)` of 50, .
 
-#. ``Au``
+#. Cross sectional area for the upper three bars, ``Au``: Normal distribution with a  mean :math:`(\mu)` of 500,  standard deviation :math:`(\sigma)` of 100, .
 
 
 
-Problem Workflow
-^^^^^^^^^^^^^^^^
 
-Workflow
 
 Model Definition
 ^^^^^^^^^^^^^^^^

@@ -43,14 +43,8 @@ Examples
 .. toctree-filt::
    :maxdepth: 1
 
-   :quoFEM:quoFEM/quo-01
-   :quoFEM:quoFEM/quo-02
-   :quoFEM:quoFEM/quo-03
-   :quoFEM:quoFEM/quo-04
-   :quoFEM:quoFEM/quo-05
-   :quoFEM:quoFEM/quo-06
-   :quoFEM:quoFEM/quo-07
-   :quoFEM:quoFEM/quo-08
+   schema
+
    :EEUQ:EEUQ/ShearBuilding3
    :PBE:PBE/basic_HAZUS
    :PBE:PBE/basic_P58

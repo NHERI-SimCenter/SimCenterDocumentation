@@ -30,6 +30,7 @@
     "randomVariables": [
         {
             "name": "E",
+            "title": "elastic modulus",
             "distribution": "Weibull",
             "refCount": 1,
             "scaleparam": 210,
@@ -39,6 +40,7 @@
         },
         {
             "name": "P",
+            "title": "load magnitude",
             "distribution": "Beta",
             "alphas": 2,
             "betas": 2,
@@ -50,6 +52,7 @@
         },
         {
             "name": "Ao",
+            "title": "cross sectional area for the other six bars",
             "distribution": "Lognormal",
             "mean": 250,
             "refCount": 1,
@@ -59,6 +62,7 @@
         },
         {
             "name": "Au",
+            "title": "cross sectional area for the upper three bars",
             "distribution": "Normal",
             "mean": 500,
             "refCount": 1,
