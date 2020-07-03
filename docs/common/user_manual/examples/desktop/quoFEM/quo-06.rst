@@ -26,11 +26,12 @@ The following problem variables are modeled as uncertain parameters:
 
 
 
+
 Model Definition
 ^^^^^^^^^^^^^^^^
 
-The following input files must be placed in an *empty* folder:
 
+The following input files must be placed in an *empty* folder:
 
 #. ``rosen/rosen.py``: This file is a Python script which implements the Rosenbrock function. It is supplied to the **Input Script** field of the **FEM** tab. Because this file write directly to `results.out`, it obviates the need for supplying a **Postprocess Script**. When invoked in the workflow, the Python routine is supplied a set of random variable realizations through the star-import of the script supplied to the **Parameters File** field.
 
@@ -47,7 +48,6 @@ The following input files must be placed in an *empty* folder:
 
 Results
 ^^^^^^^^^^^^^^^
-
 
 None
 

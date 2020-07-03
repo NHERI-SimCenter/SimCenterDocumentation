@@ -24,11 +24,12 @@ The following problem variables are modeled as uncertain parameters:
 
 
 
+
 Model Definition
 ^^^^^^^^^^^^^^^^
 
-The following input files must be placed in an *empty* folder:
 
+The following input files must be placed in an *empty* folder:
 
 #. ``frame/fem.tcl``: This file is an OpenSees Tcl script that defines a FE model for a given realization, runs an analysis, and creates a `results.out` fils. As a consequence, no postprocessing script is needed. The values placed in `results.out` file are the difference between computed and observed values. Expressed another way, the function `f(m1,m2)` computed and written to the `results.out` file is `f(m1,m2) = ObservedPeriods - ComputedPeriods(m1,m2)`. The UQ algorithm when running is searching for values of the random variable parameters (`m1` and `m2`) that minimize this loss function. The user must take this fact into account when formulating the output from their own scripts for their own problems.
 
@@ -43,7 +44,6 @@ The following input files must be placed in an *empty* folder:
 
 Results
 ^^^^^^^^^^^^^^^
-
 
 Once the analysis is complete the **RES** tab will be automatically selected and the results will be displayed as shown in the figure below. The figure shows that Dakota returned estimates of our unknown parameters to be :math:`m1=0.515549` and :math:`m2=0.256492`.
 

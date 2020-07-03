@@ -29,11 +29,12 @@ The following problem variables are modeled as uncertain parameters:
 
 
 
+
 Model Definition
 ^^^^^^^^^^^^^^^^
 
-The following input files must be placed in an *empty* folder:
 
+The following input files must be placed in an *empty* folder:
 
 #. ``truss/model.tcl``: This file is an OpenSees Tcl script that constructs and runs a finite element analysis of the truss for a given realization of the problem's random variables. It is supplied to the **Input File** field of the **FEM** tab.
 
@@ -50,7 +51,6 @@ The following input files must be placed in an *empty* folder:
 
 Results
 ^^^^^^^^^^^^^^^
-
 
 If the user selects **Data** in the **RES** tab, they will be presented with both a graphical plot and a tabular listing of the data.Various views of the graphical display can be obtained by left- and right-clicking the columns of the tabular data. If a singular column of the tabular data is selected with simultaneous right and left clicks, a frequency and CDF will be displayed, as shown in figure below.
 

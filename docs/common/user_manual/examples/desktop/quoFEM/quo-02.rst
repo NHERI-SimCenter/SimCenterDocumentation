@@ -29,11 +29,12 @@ The following problem variables are modeled as uncertain parameters:
 
 
 
+
 Model Definition
 ^^^^^^^^^^^^^^^^
 
-The following input files must be placed in an *empty* folder:
 
+The following input files must be placed in an *empty* folder:
 
 #. ``truss/model.py``: This file is a Python script which takes a given realization of the problem's random variables, and runs a finite element analysis of the truss with OpenSeesPy. It is supplied to the **Input Script** field of the **FEM** tab, and obviates the need for supplying a **Postprocess Script**. When this script is invoked in the workflow, it receives the list of the identifiers supplied in the **QoI** tab through the operating system's `stdout` variable, and a set of random variable realizations by star-importing the **Parameters File** from the **FEM** tab.
 
@@ -50,7 +51,6 @@ The following input files must be placed in an *empty* folder:
 
 Results
 ^^^^^^^^^^^^^^^
-
 
 Various views of the graphical display can be obtained by left- and right-clicking the columns of the tabular data. If a singular column of the tabular data is selected with simultaneous right- and left-clicks, a frequency and CDF will be displayed, as shown in figure below.
 
