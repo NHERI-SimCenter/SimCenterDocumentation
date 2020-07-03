@@ -35,6 +35,12 @@ Model Definition
 The following input files must be placed in an *empty* folder:
 
 
+#. ``truss/model.py``: This file is a Python script which takes a given realization of the problem's random variables, and runs a finite element analysis of the truss with OpenSeesPy. It is supplied to the **Input Script** field of the **FEM** tab, and obviates the need for supplying a **Postprocess Script**. When this script is invoked in the workflow, it receives the list of the identifiers supplied in the **QoI** tab through the operating system's `stdout` variable, and a set of random variable realizations by star-importing the **Parameters File** from the **FEM** tab.
+
+#. ``truss/params.py``: This file is a Python script which defines the problem's random variables as objects in the Python runtime. It is supplied to the **Parameters File** field of the **FEM** tab. *The literal values which are assigned to variables in this file will be varied at runtime by the UQ engine.*
+
+
+
 
 
 .. warning::
@@ -45,13 +51,8 @@ The following input files must be placed in an *empty* folder:
 Results
 ^^^^^^^^^^^^^^^
 
-If the user selects **Data** in the **RES** tab, they will be presented with both a graphical plot and a tabular listing of the data.
 
-.. figure:: figures/trussRES2.png
-   :align: center
-   :figclass: align-center
-
-Various views of the graphical display can be obtained by left- and right-clicking the columns of the tabular data. If a singular column of the tabular data is selected with simultaneous right and left clicks, a frequency and CDF will be displayed, as shown in figure below.
+Various views of the graphical display can be obtained by left- and right-clicking the columns of the tabular data. If a singular column of the tabular data is selected with simultaneous right- and left-clicks, a frequency and CDF will be displayed, as shown in figure below.
 
 
 .. figure:: truss/trussRES5.png

@@ -100,6 +100,8 @@ This document covers the features and capabilities of Version |tool version|  of
 
    :pelicun:common/developer_manual/API/pelicun/API
 
+   :desktop_app:common/user_manual/schemas/schema
+
 
 
 

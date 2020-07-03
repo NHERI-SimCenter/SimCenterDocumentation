@@ -51,13 +51,8 @@ The following input files must be placed in an *empty* folder:
 Results
 ^^^^^^^^^^^^^^^
 
-If the user selects **Data** in the **RES** tab, they will be presented with both a graphical plot and a tabular listing of the data.
 
-.. figure:: figures/trussRES2.png
-   :align: center
-   :figclass: align-center
-
-Various views of the graphical display can be obtained by left- and right-clicking the columns of the tabular data. If a singular column of the tabular data is selected with simultaneous right and left clicks, a frequency and CDF will be displayed, as shown in figure below.
+If the user selects **Data** in the **RES** tab, they will be presented with both a graphical plot and a tabular listing of the data.Various views of the graphical display can be obtained by left- and right-clicking the columns of the tabular data. If a singular column of the tabular data is selected with simultaneous right and left clicks, a frequency and CDF will be displayed, as shown in figure below.
 
 
 .. figure:: truss/trussRES5.png

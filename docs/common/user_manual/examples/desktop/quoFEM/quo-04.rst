@@ -51,11 +51,6 @@ The following input files must be placed in an *empty* folder:
 Results
 ^^^^^^^^^^^^^^^
 
-If the user selects **Data** in the **RES** tab, they will be presented with both a graphical plot and a tabular listing of the data.
-
-.. figure:: figures/trussRES2.png
-   :align: center
-   :figclass: align-center
 
 None
 
