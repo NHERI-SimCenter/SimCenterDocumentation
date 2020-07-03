@@ -188,11 +188,37 @@
                 },
                 "stdDev": {
                     "$id": "#/properties/randomVariables/items/anyOf/5/properties/stdDev",
-                    "type": "integer",
+                    "type": "number",
                     "tex": "\\sigma",
                     "title": "standard deviation",
                     "description": "No description.",
                     "default": 0
+                }
+            }
+        },
+        "lognormal": {
+            "$id": "#/properties/randomVariables/items/anyOf/5",
+            "type": "object",
+            "title": "lognormal",
+            "description": "No description.",
+            "required": [
+                "mean",
+                "stdDev"
+            ],
+            "properties": {
+                "mean": {
+                    "$id": "#/properties/randomVariables/items/anyOf/5/properties/mean",
+                    "type": "number",
+                    "tex": "\\mu",
+                    "title": "mean",
+                    "description": "No description."
+                },
+                "stdDev": {
+                    "$id": "#/properties/randomVariables/items/anyOf/5/properties/stdDev",
+                    "type": "number",
+                    "tex": "\\sigma",
+                    "title": "standard deviation",
+                    "description": "No description."
                 }
             }
         }
