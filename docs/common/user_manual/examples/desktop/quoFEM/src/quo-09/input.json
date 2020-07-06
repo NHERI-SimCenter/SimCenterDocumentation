@@ -11,7 +11,7 @@
     "UQ_Method": {
         "samplingMethodData": {
             "method": "LHS",
-            "samples": 100,
+            "samples": 200,
             "seed": 949
         },
         "uqEngine": "Dakota",
@@ -80,5 +80,5 @@
     "uqResults": {},
     "workingDir": "C:/Workdir/quoFEM",
     "localAppDir": "C:/Tools/quoFEM/quoFEM",
-    "python": "C:\\Users\\claud\\Anaconda3\\python.exe"
+    "python": "python"
 }

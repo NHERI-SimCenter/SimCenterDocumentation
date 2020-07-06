@@ -207,8 +207,7 @@
                     "tex":   "U_B",
                     "title": "upper bound",
                     "description": "Upper bound."
-                },
-                "value": {}
+                }
             },
             "variableClass": "Design"
         }

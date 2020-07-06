@@ -23,7 +23,10 @@
         "inputFile": "{Current_Dir}/model.tcl",
         "mainInput": "model.tcl",
         "mainPostprocessScript": "post.tcl",
+        "numInputs": 1,
         "postprocessScript": "{Current_Dir}/post.tcl",
+        "parametersFile": "",
+        "parametersScript": "",
         "program": "OpenSees"
     },
     "EDP": [
@@ -89,5 +92,5 @@
     "uqResults": {},
     "workingDir": "C:/Workdir/quoFEM",
     "localAppDir": "C:/Tools/quoFEM/quoFEM",
-    "python": "C:\\Users\\claud\\Anaconda3\\python.exe"
+    "python": "python"
 }

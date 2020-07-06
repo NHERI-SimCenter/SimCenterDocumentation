@@ -15,7 +15,7 @@
         {
             "name": "Ic1",
             "distribution": "Uniform",
-            "initialpoint": 1500.0,
+            "title": "first story column moment of inertia",
             "lowerbound": 500.0,
             "refCount": 2,
             "upperbound": 2000.0,
@@ -25,7 +25,7 @@
         {
             "name": "Ic2",
             "distribution": "Uniform",
-            "initialpoint": 500.0,
+            "title": "second story column moment of inertia",
             "lowerbound": 500.0,
             "refCount": 2,
             "upperbound": 2000.0,
@@ -40,6 +40,8 @@
         "mainPostprocessScript": "",
         "numInputs": 1,
         "postprocessScript": "",
+        "parametersFile": "",
+        "parametersScript": "",
         "program": "OpenSees"
     },
     "EDP": [
@@ -85,5 +87,5 @@
     "uqResults": {},
     "workingDir": "C:/Workdir/quoFEM",
     "localAppDir": "C:/Tools/quoFEM/quoFEM",
-    "python": "C:\\Users\\claud\\Anaconda3\\python.exe"
+    "python": "python"
 }

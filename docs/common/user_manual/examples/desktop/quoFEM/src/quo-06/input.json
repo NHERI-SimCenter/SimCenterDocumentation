@@ -9,6 +9,28 @@
         "uqEngine": "Dakota",
         "uqType": "Parameters Estimation"
     },
+    "randomVariables": [
+        {
+            "name": "X",
+            "title": "first variable",
+            "distribution": "Uniform",
+            "lowerbound": -2.0,
+            "refCount": 1,
+            "upperbound": 2.0,
+            "value": "RV.X",
+            "variableClass": "Uncertain"
+        },
+        {
+            "name": "Y",
+            "title": "second variable",
+            "distribution": "Uniform",
+            "lowerbound": -2.0,
+            "refCount": 1,
+            "upperbound": 2.0,
+            "value": "RV.Y",
+            "variableClass": "Uncertain"
+        }
+    ],
     "fem": {
         "dir": "{Current_Dir}/.",
         "inputFile": "{Current_Dir}/rosenbrock.py",
@@ -25,28 +47,6 @@
             "name": "f"
         }
     ],
-    "randomVariables": [
-        {
-            "name": "X",
-            "title": "first variable",
-            "distribution": "Uniform",
-            "lowerbound": -2.0,
-            "refCount": 1,
-            "upperbound": 2.0,
-            "value": "RV.X",
-            "variableClass": "Uncertain"
-        },
-        {
-            "name": "Y",
-            "title": "second variable",
-            "distribution": "Uniform",
-            "lowerbound": 1.4,
-            "refCount": 1,
-            "upperbound": 1.6,
-            "value": "RV.Y",
-            "variableClass": "Uncertain"
-        }
-    ],
     "$schema": "https://raw.githubusercontent.com/claudioperez/SimCenterDocumentation/examples/docs/common/user_manual/schemas/quoFEM_Schema.json",
     "Applications": {
         "UQ": {
@@ -58,5 +58,5 @@
     "uqResults": {},
     "workingDir": "C:/Workdir/quoFEM",
     "localAppDir": "C:/Tools/quoFEM/quoFEM",
-    "python": "C:\\Users\\claud\\Anaconda3\\python.exe"
+    "python": "python"
 }

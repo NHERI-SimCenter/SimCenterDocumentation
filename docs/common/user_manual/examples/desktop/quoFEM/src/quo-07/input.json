@@ -13,6 +13,7 @@
         {
             "name": "Ic1",
             "distribution": "ContinuousDesign",
+            "title": "first story column moment of inertia",
             "initialpoint": 1500.0,
             "lowerbound": 500.0,
             "refCount": 2,
@@ -23,6 +24,7 @@
         {
             "name": "Ic2",
             "distribution": "ContinuousDesign",
+            "title": "second story column moment of inertia",
             "initialpoint": 500.0,
             "lowerbound": 500.0,
             "refCount": 2,
@@ -38,6 +40,8 @@
         "mainPostprocessScript": "",
         "numInputs": 1,
         "postprocessScript": "",
+        "parametersFile": "",
+        "parametersScript": "",
         "program": "OpenSees"
     },
     "EDP": [
@@ -83,5 +87,5 @@
     "uqResults": {},
     "workingDir": "C:/Workdir/quoFEM",
     "localAppDir": "C:/Tools/quoFEM/quoFEM",
-    "python": "C:\\Users\\claud\\Anaconda3\\python.exe"
+    "python": "python"
 }
