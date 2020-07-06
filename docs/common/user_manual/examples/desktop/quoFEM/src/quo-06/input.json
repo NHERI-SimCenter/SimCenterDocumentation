@@ -27,23 +27,23 @@
     ],
     "randomVariables": [
         {
-            "name": "x",
-            "title": "",
+            "name": "X",
+            "title": "first variable",
             "distribution": "Uniform",
-            "lowerbound": -2,
+            "lowerbound": -2.0,
             "refCount": 1,
-            "upperbound": 2,
-            "value": "RV.x",
+            "upperbound": 2.0,
+            "value": "RV.X",
             "variableClass": "Uncertain"
         },
         {
-            "name": "y",
-            "title": "",
+            "name": "Y",
+            "title": "second variable",
             "distribution": "Uniform",
             "lowerbound": 1.4,
             "refCount": 1,
             "upperbound": 1.6,
-            "value": "RV.y",
+            "value": "RV.Y",
             "variableClass": "Uncertain"
         }
     ],
@@ -58,5 +58,5 @@
     "uqResults": {},
     "workingDir": "C:/Workdir/quoFEM",
     "localAppDir": "C:/Tools/quoFEM/quoFEM",
-    "python": "python"
+    "python": "C:\\Users\\claud\\Anaconda3\\python.exe"
 }

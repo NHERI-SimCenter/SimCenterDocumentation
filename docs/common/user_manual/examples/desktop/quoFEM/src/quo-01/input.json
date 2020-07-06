@@ -2,7 +2,7 @@
     "UQ_Method": {
         "samplingMethodData": {
             "method": "LHS",
-            "samples": 200,
+            "samples": 100,
             "seed": 949
         },
         "uqEngine": "Dakota",
@@ -13,7 +13,6 @@
         "inputFile": "{Current_Dir}/model.tcl",
         "mainInput": "model.tcl",
         "mainPostprocessScript": "post.tcl",
-        "numInputs": 1,
         "postprocessScript": "{Current_Dir}/post.tcl",
         "program": "OpenSees"
     },
@@ -31,8 +30,8 @@
             "title": "elastic modulus",
             "distribution": "Weibull",
             "refCount": 1,
-            "scaleparam": 210,
-            "shapeparam": 20,
+            "scaleparam": 210.0,
+            "shapeparam": 20.0,
             "value": "RV.E",
             "variableClass": "Uncertain"
         },
@@ -40,11 +39,11 @@
             "name": "P",
             "title": "load magnitude",
             "distribution": "Beta",
-            "alphas": 2,
-            "betas": 2,
-            "lowerbound": 20,
+            "alphas": 2.0,
+            "betas": 2.0,
+            "lowerbound": 20.0,
             "refCount": 1,
-            "upperbound": 30,
+            "upperbound": 30.0,
             "value": "RV.P",
             "variableClass": "Uncertain"
         },
@@ -52,9 +51,9 @@
             "name": "Ao",
             "title": "cross sectional area for the other six bars",
             "distribution": "Lognormal",
-            "mean": 250,
+            "mean": 250.0,
             "refCount": 1,
-            "stdDev": 50,
+            "stdDev": 50.0,
             "value": "RV.Ao",
             "variableClass": "Uncertain"
         },
@@ -62,9 +61,9 @@
             "name": "Au",
             "title": "cross sectional area for the upper three bars",
             "distribution": "Normal",
-            "mean": 500,
+            "mean": 500.0,
             "refCount": 1,
-            "stdDev": 100,
+            "stdDev": 100.0,
             "value": "RV.Au",
             "variableClass": "Uncertain"
         }
@@ -80,5 +79,5 @@
     "uqResults": {},
     "workingDir": "C:/Workdir/quoFEM",
     "localAppDir": "C:/Tools/quoFEM/quoFEM",
-    "python": "python"
+    "python": "C:\\Users\\claud\\Anaconda3\\python.exe"
 }

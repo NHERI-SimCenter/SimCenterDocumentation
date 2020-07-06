@@ -9,6 +9,28 @@
         "uqEngine": "Dakota",
         "uqType": "Parameters Estimation"
     },
+    "randomVariables": [
+        {
+            "name": "Ic1",
+            "distribution": "ContinuousDesign",
+            "initialpoint": 1500.0,
+            "lowerbound": 500.0,
+            "refCount": 2,
+            "upperbound": 2000.0,
+            "value": "RV.Ic1",
+            "variableClass": "Design"
+        },
+        {
+            "name": "Ic2",
+            "distribution": "ContinuousDesign",
+            "initialpoint": 500.0,
+            "lowerbound": 500.0,
+            "refCount": 2,
+            "upperbound": 2000.0,
+            "value": "RV.Ic2",
+            "variableClass": "Design"
+        }
+    ],
     "fem": {
         "dir": "{Current_Dir}/.",
         "inputFile": "{Current_Dir}/fem.tcl",
@@ -50,28 +72,6 @@
             "name": "eps_p5"
         }
     ],
-    "randomVariables": [
-        {
-            "name": "Ic1",
-            "distribution": "ContinuousDesign",
-            "initialpoint": 1500,
-            "lowerbound": 500,
-            "refCount": 2,
-            "upperbound": 2000,
-            "value": "RV.Ic1",
-            "variableClass": "Design"
-        },
-        {
-            "name": "Ic2",
-            "distribution": "ContinuousDesign",
-            "initialpoint": 500,
-            "lowerbound": 500,
-            "refCount": 2,
-            "upperbound": 2000,
-            "value": "RV.Ic2",
-            "variableClass": "Design"
-        }
-    ],
     "$schema": "https://raw.githubusercontent.com/claudioperez/SimCenterDocumentation/examples/docs/common/user_manual/schemas/quoFEM_Schema.json",
     "Applications": {
         "UQ": {
@@ -83,5 +83,5 @@
     "uqResults": {},
     "workingDir": "C:/Workdir/quoFEM",
     "localAppDir": "C:/Tools/quoFEM/quoFEM",
-    "python": "python"
+    "python": "C:\\Users\\claud\\Anaconda3\\python.exe"
 }

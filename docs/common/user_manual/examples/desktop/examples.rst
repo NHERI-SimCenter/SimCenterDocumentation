@@ -13,6 +13,7 @@ Examples
    .. toctree-filt::
       :maxdepth: 1
 
+      :quoFEM:quoFEM/quo-05
       :quoFEM:quoFEM/quo-01
       :quoFEM:quoFEM/quo-02
 
@@ -23,7 +24,6 @@ Examples
 
       :quoFEM:quoFEM/quo-03
       :quoFEM:quoFEM/quo-04
-      :quoFEM:quoFEM/quo-05
       :quoFEM:quoFEM/quo-06
       :quoFEM:quoFEM/quo-07
       :quoFEM:quoFEM/quo-08

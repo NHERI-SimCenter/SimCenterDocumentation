@@ -6,7 +6,6 @@
     "description": "No description.",
     "properties": {
         "beta": {
-            "$id": "#/properties/randomVariables/items/anyOf/0",
             "type": "object",
             "title": "beta",
             "description": "No description.",
@@ -21,35 +20,25 @@
             ],
             "properties": {
                 "alphas": {
-                    "$id": "#/properties/randomVariables/items/anyOf/0/properties/alphas",
                     "type": "number",
                     "tex": "\\alpha",
                     "title": "first shape parameter",
-                    "description": "No description.",
-                    "default": 0
+                    "description": "No description."
                 },
                 "betas": {
-                    "$id": "#/properties/randomVariables/items/anyOf/0/properties/betas",
                     "type": "number",
                     "tex": "\\beta",
                     "title": "second shape parameter",
-                    "description": "No description.",
-                    "default": 0
+                    "description": "No description."
                 },
                 "lowerbound": {
-                    "$id": "#/properties/randomVariables/items/anyOf/0/properties/lowerbound",
                     "type": "number",
                     "tex": "L_B",
                     "title": "lower bound",
-                    "description": "No description.",
-                    "default": 0,
-                    "examples": [
-                        22
-                    ]
+                    "description": "No description."
                 },
                 "upperbound": {
-                    "$id": "#/properties/randomVariables/items/anyOf/0/properties/upperbound",
-                    "type": "integer",
+                    "type": "number",
                     "tex": "U_B",
                     "title": "upper bound",
                     "description": "No description.",
@@ -61,7 +50,6 @@
             }
         },
         "uniform": {
-            "$id": "#/properties/randomVariables/items/anyOf/1",
             "type": "object",
             "title": "uniform",
             "description": "No description.",
@@ -74,25 +62,20 @@
             ],
             "properties": {
                 "lowerbound": {
-                    "$id": "#/properties/randomVariables/items/anyOf/1/properties/lowerbound",
                     "type": "number",
                     "tex": "L_B",
                     "title": "lower bound",
-                    "description": "No description.",
-                    "default": 0.0
+                    "description": "No description."
                 },
                 "upperbound": {
-                    "$id": "#/properties/randomVariables/items/anyOf/1/properties/upperbound",
                     "type": "number",
                     "tex": "U_B",
                     "title": "upper bound",
-                    "description": "No description.",
-                    "default": 0.0
+                    "description": "No description."
                 }
             }
         },
         "constant": {
-            "$id": "#/properties/randomVariables/items/anyOf/2",
             "type": "object",
             "title": "constant",
             "description": "No description.",
@@ -101,17 +84,14 @@
             ],
             "properties": {
                 "value": {
-                    "$id": "#/properties/randomVariables/items/anyOf/2/properties/value",
                     "type": "number",
                     "tex": "C",
                     "title": "constant value",
-                    "description": "No description.",
-                    "default": 0
+                    "description": "No description."
                 }
             }
         },
         "weibull": {
-            "$id": "#/properties/randomVariables/items/anyOf/3",
             "type": "object",
             "title": "Weibull",
             "description": "No description.",
@@ -121,14 +101,12 @@
             ],
             "properties": {
                 "scaleparam": {
-                    "$id": "#/properties/randomVariables/items/anyOf/3/properties/scaleparam",
                     "type": "number",
                     "tex": "\\lambda",
                     "title": "scale parameter",
                     "description": "No description."
                 },
                 "shapeparam": {
-                    "$id": "#/properties/randomVariables/items/anyOf/3/properties/shapeparam",
                     "type": "number",
                     "tex": "k",
                     "title": "shape parameter",
@@ -138,7 +116,6 @@
             }
         },
         "gumbel": {
-            "$id": "#/properties/randomVariables/items/anyOf/4",
             "type": "object",
             "title": "Gumbel",
             "description": "No description.",
@@ -148,23 +125,16 @@
             ],
             "properties": {
                 "alphaparam": {
-                    "$id": "#/properties/randomVariables/items/anyOf/4/properties/alphaparam",
                     "type": "number",
                     "tex": "\\alpha",
                     "title": "alpha",
-                    "description": "No description.",
-                    "default": 0
+                    "description": "No description."
                 },
                 "betaparam": {
-                    "$id": "#/properties/randomVariables/items/anyOf/4/properties/betaparam",
                     "type": "number",
                     "tex": "\\beta",
                     "title": "beta",
-                    "description": "No description.",
-                    "default": 0,
-                    "examples": [
-                        22
-                    ]
+                    "description": "No description."
                 }
             }
         },
@@ -197,7 +167,6 @@
             }
         },
         "lognormal": {
-            "$id": "#/properties/randomVariables/items/anyOf/5",
             "type": "object",
             "title": "lognormal",
             "description": "No description.",
@@ -207,20 +176,41 @@
             ],
             "properties": {
                 "mean": {
-                    "$id": "#/properties/randomVariables/items/anyOf/5/properties/mean",
                     "type": "number",
                     "tex": "\\mu",
                     "title": "mean",
                     "description": "No description."
                 },
                 "stdDev": {
-                    "$id": "#/properties/randomVariables/items/anyOf/5/properties/stdDev",
                     "type": "number",
                     "tex": "\\sigma",
                     "title": "standard deviation",
                     "description": "No description."
                 }
             }
+        },
+        "continuousdesign": {
+            "properties": {
+                "initialpoint":{
+                    "type": "number",
+                    "tex": "X_0",
+                    "title": "initial point"
+                },
+                "lowerbound": {
+                    "type": "number",
+                    "tex": "L_B",
+                    "title": "lower bound",
+                    "description": "No description."
+                },
+                "upperbound": {
+                    "type":  "number",
+                    "tex":   "U_B",
+                    "title": "upper bound",
+                    "description": "Upper bound."
+                },
+                "value": {}
+            },
+            "variableClass": "Design"
         }
     }
 }
