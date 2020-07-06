@@ -112,7 +112,7 @@
       "fem": {
         "type": "object",
         "description": "Inputs for the FEM tab.",
-        "title": "FEM",
+        "title": "FEM tab",
         "properties": {
           "dir": {
             "type": "string"
@@ -163,7 +163,7 @@
       "python":  {"type": "string"},
       "randomVariables": {
         "type": "array",
-        "title": "RV",
+        "title": "RV tab",
         "items": {
           "type": "object",
           "properties": {
