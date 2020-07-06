@@ -6,9 +6,9 @@ Examples
 
 .. only:: quoFEM_app
 
-	The following are a few examples showing the usage of quoFEM. Video companions showing these examples are also provided for select problems. The files for the examples are available in github.
+	The following are a few examples showing the usage of quoFEM. Video companions showing these examples are also provided for selected problems. The files for the examples are available on Github.
 
-   **FEM** Engines
+   Exploring **FEM** Engines
 
    .. toctree-filt::
       :maxdepth: 1
@@ -17,7 +17,7 @@ Examples
       :quoFEM:quoFEM/quo-01
       :quoFEM:quoFEM/quo-02
 
-   **UQ** Routines
+   Exploring **UQ** Routines
 
    .. toctree-filt::
       :maxdepth: 1
@@ -42,8 +42,6 @@ Examples
 
 .. toctree-filt::
    :maxdepth: 1
-
-   schema
 
    :EEUQ:EEUQ/ShearBuilding3
    :PBE:PBE/basic_HAZUS
