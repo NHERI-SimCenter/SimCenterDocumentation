@@ -152,7 +152,7 @@ A first impression of the turbulence in the flow is given in :numref:`fig_TinF04
    :figclass: align-center
    :width: 500px
    
-   Visualization of turbulent vortices in the channel flow simulation with DFM by contour-surfaces of :math:`\lambda_2 = 50`
+   Visualization of turbulent vortices in the channel flow simulation with DFM by contour-surfaces of :math:`\lambda_2`
    
    
 .. _fig_TinF05NE:
@@ -162,7 +162,7 @@ A first impression of the turbulence in the flow is given in :numref:`fig_TinF04
    :figclass: align-center
    :width: 500px
    
-   Visualization of turbulent vortices in the channel flow simulation with SEM by contour-surfaces of :math:`\lambda_2 = 50`
+   Visualization of turbulent vortices in the channel flow simulation with SEM by contour-surfaces of :math:`\lambda_2`
    
 
 .. _fig_TinF06NE:
@@ -172,7 +172,7 @@ A first impression of the turbulence in the flow is given in :numref:`fig_TinF04
    :figclass: align-center
    :width: 500px
    
-   Visualization of turbulent vortices in the channel flow simulation with ATSM_R by contour-surfaces of :math:`\lambda_2 = 50`
+   Visualization of turbulent vortices in the channel flow simulation with ATSM_R by contour-surfaces of :math:`\lambda_2`
    
    
 .. _fig_TinF07NE:
@@ -182,7 +182,7 @@ A first impression of the turbulence in the flow is given in :numref:`fig_TinF04
    :figclass: align-center
    :width: 500px
    
-   Visualization of turbulent vortices in the channel flow simulation with ATSM-L by contour-surfaces of :math:`\lambda_2 = 50`
+   Visualization of turbulent vortices in the channel flow simulation with ATSM-L by contour-surfaces of :math:`\lambda_2`
    
 In :numref:`fig_TinF08NE` ~ :numref:`fig_TinF11NE`, the pressure fluctuations in the channel flow simulations are plotted vs. the axial distance to the inlet. The SEM, which does not obey continuity, produces very intense pressure noise near the inlet. The peak amplitude of its pressure fluctuations is much larger than the amplitude of the natural pressure fluctuations in the channel. In comparsion, the DFSEM and ATSM formulations produce a pressure noise level which is much lower.
 
