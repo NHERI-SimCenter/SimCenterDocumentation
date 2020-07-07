@@ -103,7 +103,6 @@ rst_prolog = """
 .. |smelt| replace:: `smelt`_
 .. _smelt: https://github.com/NHERI-SimCenter/smelt
 .. |s3harkName| replace:: s3hark
-
 .. |br| raw:: html
 
     <br>
@@ -424,7 +423,7 @@ extensions = extensions + [
 	'sphinxcontrib.bibtex',
 	'toctree_filter'
 ]
-# smartquotes = False
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
