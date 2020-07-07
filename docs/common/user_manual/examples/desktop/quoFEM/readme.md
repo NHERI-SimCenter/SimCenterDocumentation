@@ -10,5 +10,5 @@
 - [x] `quo-05`: Forward Propagation - Rosenbrock
 - [x] `quo-06`: Optimization - Rosenbrock
 - [x] `quo-07`: Calibration - Frame
-- [ ] [`quo-08`](https://claudioperez.github.io/SimCenterExamples/common/user_manual/examples/desktop/quoFEM/quo-08.html): 
+- [ ] [`quo-08`](https://claudioperez.github.io/SimCenterExamples/common/user_manual/examples/desktop/quoFEM/quo-08.html): Bayesian Calibration - Frame 
   - [ ] cmp - stuck at `Processing Results`
