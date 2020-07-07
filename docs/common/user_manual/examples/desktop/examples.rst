@@ -8,28 +8,6 @@ Examples
 
 	The following are a few examples showing the usage of quoFEM. Video companions showing these examples are also provided for selected problems. The files for the examples are available on Github.
 
-   Exploring **FEM** Engines
-
-   .. toctree-filt::
-      :maxdepth: 1
-
-      :quoFEM:quoFEM/quo-05
-      :quoFEM:quoFEM/quo-01
-      :quoFEM:quoFEM/quo-02
-
-   Exploring **UQ** Routines
-
-   .. toctree-filt::
-      :maxdepth: 1
-
-      :quoFEM:quoFEM/quo-03
-      :quoFEM:quoFEM/quo-04
-      :quoFEM:quoFEM/quo-06
-      :quoFEM:quoFEM/quo-07
-      :quoFEM:quoFEM/quo-08
-
-
-
 .. only:: EEUQ_app
 
 	The following are a few examples showing the usage of EE-UQ. Video companions showing these examples are also provided. The files for the examples are available in github.
@@ -43,6 +21,9 @@ Examples
 .. toctree-filt::
    :maxdepth: 1
 
+   :quoFEM:quoFEM/TrussOpenSees
+   :quoFEM:quoFEM/quo-07
+   :quoFEM:quoFEM/quo-08
    :EEUQ:EEUQ/ShearBuilding3
    :PBE:PBE/basic_HAZUS
    :PBE:PBE/basic_P58
