@@ -68,5 +68,5 @@ The following files make up the **FEM** model definition.
 Results
 -------
 
-With :math:`50` iterations, our solution converges to :math:`x= 1.1829`
-and :math:`y=1.4`
+With :math:`50` iterations, our solution converges to :math:`x= 0.34548`
+and :math:`y=0.11`
