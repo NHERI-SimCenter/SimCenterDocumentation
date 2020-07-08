@@ -79,13 +79,13 @@ These simulations can be performed for a number of the different sampling method
 
 
 .. csv-table:: 
-   :header: "Method", "#Samples", "E(P,Q)"
-   :widths: 20, 20, 20
+   :header: "Method", "#Samples", "E(P,Q)", "Error"
+   :widths: 20, 20, 20, 20
 
-   MC, 100,  0.447626
-   MC, 1000, 0.430936
-   MC, 10000, 0.421910
-   LHS, 100,  0.435349
-   LHS, 1000, 0.425709
-   LHS, 10000, 0.422350
+   MC, 100,  0.447626, 0.0560
+   MC, 1000, 0.430936, 0.0166
+   MC, 10000, 0.421910, 0.0047
+   LHS, 100,  0.435349, 0.0270
+   LHS, 1000, 0.425709, 0.0043
+   LHS, 10000, 0.422350, 0.0037
 
