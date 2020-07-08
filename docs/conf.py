@@ -419,7 +419,7 @@ elif app_name == 'pelicun':
 # ones.
 
 extensions = extensions + [
-    'sphinx-jsonschema',
+    # 'sphinx-jsonschema',
 	'sphinxcontrib.bibtex',
 	'toctree_filter'
 ]
