@@ -1,11 +1,13 @@
+:page_template: vega.html
+
 Forward Propagation - OpenSeesPy
 ================================
 
-+----------------+----------------------------------------------------+
-| Problem folder | `quo-02 <https://github.com/claudioperez           |
-|                | /SimCenterDocumentation/tree/examples/docs/common/ |
-|                | user_manual/examples/desktop/quoFEM/src/quo-02>`__ |
-+----------------+----------------------------------------------------+
++---------------+-----------------------------------------------------+
+| Problem files | `quo-02 <https://github.com/claudioper              |
+|               | ez/SimCenterDocumentation/tree/examples/docs/common |
+|               | /user_manual/examples/desktop/quoFEM/src/quo-02>`__ |
++---------------+-----------------------------------------------------+
 
 This example illustrates how quoFEM interacts with OpenSeesPy. A simple
 forward propagation procedure is run to estimate the first and second
@@ -100,5 +102,50 @@ views of the graphical display can be obtained by left- and
 right-clicking the columns of the tabular data. If a singular column of
 the tabular data is selected with simultaneous right and left clicks, a
 frequency and CDF will be displayed.
+
+.. raw:: html
+
+   <div id="vis">
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <script>
+       // Assign the specification to a local variable vlSpec.
+       var vlSpec = {
+       $schema: 'https://vega.github.io/schema/vega-lite/v4.json',
+       data: {
+           values: [
+           {a: 'C', b: 2},
+           {a: 'C', b: 7},
+           {a: 'C', b: 4},
+           {a: 'D', b: 1},
+           {a: 'D', b: 2},
+           {a: 'D', b: 6},
+           {a: 'E', b: 8},
+           {a: 'E', b: 4},
+           {a: 'E', b: 7}
+           ]
+       },
+       mark: 'bar',
+       encoding: {
+           y: {field: 'a', type: 'nominal'},
+           x: {
+           aggregate: 'average',
+           field: 'b',
+           type: 'quantitative',
+           axis: {
+               title: 'Average of b'
+           }
+           }
+       }
+       };
+
+       // Embed the visualization in the container with id `vis`
+       vegaEmbed('#vis', vlSpec);
+   </script>
 
 .. |Truss schematic diagram| image:: truss/truss.png

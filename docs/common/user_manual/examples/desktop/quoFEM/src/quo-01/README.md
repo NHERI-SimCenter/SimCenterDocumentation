@@ -1,16 +1,21 @@
+---
+page_template: vega.html
+...
+:page_template: vega.html
+
 
 
 # Forward Propagation - OpenSees/Tcl
 
 |  |  |
-|---|---|
-| Problem folder | [quo-01](https://github.com/claudioperez/SimCenterDocumentation/tree/examples/docs/common/user_manual/examples/desktop/quoFEM/src/quo-01) |
+|----------|------|
+| Problem files | [quo-01](https://github.com/claudioperez/SimCenterDocumentation/tree/examples/docs/common/user_manual/examples/desktop/quoFEM/src/quo-01) |
 
 This example uses quoFEM to estimate the first and second central moments of a FE model's response, given the marginal distributions of various random parameters.
 
 Consider the problem of uncertainty quantification in a two-dimensional truss structure shown in the following figure. Two input scripts are used to define a forward propagation procedure to be coordinated by quoFEM which will estimate the mean and standard deviation of the vertical displacement at node 3 using Latin hypercube sampling.
 
-![Truss schematic diagram](truss/truss.png)
+![Truss schematic diagram](truss/truss.png){width="400"}
 
 
 
@@ -76,3 +81,40 @@ The results from this analysis with a maximum of $200$ iterations are as follows
 If the user selects **Data** in the **RES** tab, they will be presented with both a graphical plot and a tabular listing of the data. Various views of the graphical display can be obtained by left- and right-clicking the columns of the tabular data. If a singular column of the tabular data is selected with simultaneous right and left clicks, a frequency and CDF will be displayed.
 
 <!-- ![Stochastic truss results.]("truss/trussRES5.png") -->
+
+
+<div id="vis"></div>
+<script>
+    // Assign the specification to a local variable vlSpec.
+    var vlSpec = {
+    $schema: 'https://vega.github.io/schema/vega-lite/v4.json',
+    data: {
+        values: [
+        {a: 'C', b: 2},
+        {a: 'C', b: 7},
+        {a: 'C', b: 4},
+        {a: 'D', b: 1},
+        {a: 'D', b: 2},
+        {a: 'D', b: 6},
+        {a: 'E', b: 8},
+        {a: 'E', b: 4},
+        {a: 'E', b: 7}
+        ]
+    },
+    mark: 'bar',
+    encoding: {
+        y: {field: 'a', type: 'nominal'},
+        x: {
+        aggregate: 'average',
+        field: 'b',
+        type: 'quantitative',
+        axis: {
+            title: 'Average of b'
+        }
+        }
+    }
+    };
+
+    // Embed the visualization in the container with id `vis`
+    vegaEmbed('#vis', vlSpec);
+</script>

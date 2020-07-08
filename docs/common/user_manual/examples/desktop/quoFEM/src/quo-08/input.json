@@ -1,8 +1,8 @@
 {
     "UQ_Method": {
         "bayesianCalibrationMethodData": {
-            "burnInSamples": 10,
-            "chainSamples": 40,
+            "burnInSamples": 1000,
+            "chainSamples": 4000,
             "chains": 4,
             "jumpStep": 5,
             "method": "DREAM",

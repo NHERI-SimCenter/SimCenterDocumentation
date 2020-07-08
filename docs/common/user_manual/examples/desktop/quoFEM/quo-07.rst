@@ -1,11 +1,13 @@
+:page_template: vega.html
+
 Conventional Calibration - Steel Frame
 ======================================
 
-+----------------+----------------------------------------------------+
-| Problem folder | `quo-07 <https://github.com/claudioperez           |
-|                | /SimCenterDocumentation/tree/examples/docs/common/ |
-|                | user_manual/examples/desktop/quoFEM/src/quo-07>`__ |
-+----------------+----------------------------------------------------+
++---------------+-----------------------------------------------------+
+| Problem files | `quo-07 <https://github.com/claudioper              |
+|               | ez/SimCenterDocumentation/tree/examples/docs/common |
+|               | /user_manual/examples/desktop/quoFEM/src/quo-07>`__ |
++---------------+-----------------------------------------------------+
 
 In this example, a parameter estimation routine is used to estimate
 column stiffnesses of a simple steel frame, given data about it’s mode
@@ -15,7 +17,11 @@ Provided by Professor Joel Conte and his doctoral students Maitreya
 Kurumbhati and Mukesh Ramancha from UC San Diego, this example looks at
 the following simplified finite element model of a steel building.
 
-| |image0|
+.. figure:: frame/frameFE.png
+   :alt: Schematic model of frame.
+   :width: 300px
+
+   Schematic model of frame.
 
 Each floor slab of the building is made of composite metal deck and is
 supported on four steel columns. The story heights are measured at
@@ -44,9 +50,8 @@ Our goal will be to reobtain the original column moments of inertia from
 this data using a conventional calibration procedure.
 
 The unknown quantities of interest are the moments of inertia for the
-first and second story columns (``Ic1`` and ``Ic2`` respectively). Using
-the following bounds and initial estimates, these parameters are defined
-as follows in the **RV** tab of quoFEM:
+first and second story columns (``Ic1`` and ``Ic2`` respectively), on
+which we impose the the following bounds and initial estimates:
 
 1. First story column moment of inertia, ``Ic1``: **ContinuousDesign**
    distribution with a initial point :math:`(X_0)` of :math:`1500.0`,
@@ -103,4 +108,47 @@ selected and the results will be displayed as shown in the figure below.
 The resulting estimates for the column stiffnesses, ``Ic1`` and ``Ic2``
 are **1168.83** and **1211.25** respectively.
 
-.. |image0| image:: frame/frameFE.png
+.. raw:: html
+
+   <div id="vis">
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <script>
+       // Assign the specification to a local variable vlSpec.
+       var vlSpec = {
+       $schema: 'https://vega.github.io/schema/vega-lite/v4.json',
+       data: {
+           values: [
+           {a: 'C', b: 2},
+           {a: 'C', b: 7},
+           {a: 'C', b: 4},
+           {a: 'D', b: 1},
+           {a: 'D', b: 2},
+           {a: 'D', b: 6},
+           {a: 'E', b: 8},
+           {a: 'E', b: 4},
+           {a: 'E', b: 7}
+           ]
+       },
+       mark: 'bar',
+       encoding: {
+           y: {field: 'a', type: 'nominal'},
+           x: {
+           aggregate: 'average',
+           field: 'b',
+           type: 'quantitative',
+           axis: {
+               title: 'Average of b'
+           }
+           }
+       }
+       };
+
+       // Embed the visualization in the container with id `vis`
+       vegaEmbed('#vis', vlSpec);
+   </script>

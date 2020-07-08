@@ -1,16 +1,21 @@
+---
+page_template: vega.html
+...
+:page_template: vega.html
+
 
 
 # Conventional Calibration - Steel Frame
 
 |  |  |
-|---|---|
-| Problem folder | [quo-07](https://github.com/claudioperez/SimCenterDocumentation/tree/examples/docs/common/user_manual/examples/desktop/quoFEM/src/quo-07) |
+|----------|------|
+| Problem files | [quo-07](https://github.com/claudioperez/SimCenterDocumentation/tree/examples/docs/common/user_manual/examples/desktop/quoFEM/src/quo-07) |
 
 In this example, a parameter estimation routine is used to estimate column stiffnesses of a simple steel frame, given data about it's mode shapes and mass distribution.
 
 Provided by Professor Joel Conte and his doctoral students Maitreya Kurumbhati and Mukesh Ramancha from UC San Diego, this example looks at the following simplified finite element model of a steel building.
 
-![](frame/frameFE.png) \
+![Schematic model of frame.](frame/frameFE.png){style="float:right" width="300" align="center"}
 
 Each floor slab of the building is made of composite metal deck and is supported on four steel columns. The story heights are measured at $10'$ and in plan the side lengths measure $33'-4"$ by $30'$. Properties of the steel columns are taken deterministically  with an elastic modulus of $29,000 \mathrm{ksi}$, area of $110 \mathrm{in}^2$, and principal moment of inertial ($I_{yy}$) of $1190 \mathrm{ in}^4$. For modelling purposes, the four columns are assumed fixed at the base and the beams connecting them are assumed to be rigid. The first two vibration periods of the structure are determined to be $0.19 sec$ and $0.09 sec$. 
 
@@ -25,7 +30,7 @@ Our goal will be to reobtain the original column moments of inertia from this da
 
 
 
-The unknown quantities of interest are the moments of inertia for the first and second story columns (`Ic1` and `Ic2` respectively). Using the following bounds and initial estimates, these parameters are defined as follows in the **RV** tab of quoFEM:
+The unknown quantities of interest are the moments of inertia for the first and second story columns (`Ic1` and `Ic2` respectively), on which we impose the the following bounds and initial estimates:
 
 
 
@@ -70,3 +75,40 @@ The following files make up the **FEM** model definition.
 Once the analysis is complete the **RES** tab will be automatically selected and the results will be displayed as shown in the figure below. 
 
 The resulting estimates for the column stiffnesses, `Ic1` and `Ic2` are **1168.83** and **1211.25** respectively.
+
+
+<div id="vis"></div>
+<script>
+    // Assign the specification to a local variable vlSpec.
+    var vlSpec = {
+    $schema: 'https://vega.github.io/schema/vega-lite/v4.json',
+    data: {
+        values: [
+        {a: 'C', b: 2},
+        {a: 'C', b: 7},
+        {a: 'C', b: 4},
+        {a: 'D', b: 1},
+        {a: 'D', b: 2},
+        {a: 'D', b: 6},
+        {a: 'E', b: 8},
+        {a: 'E', b: 4},
+        {a: 'E', b: 7}
+        ]
+    },
+    mark: 'bar',
+    encoding: {
+        y: {field: 'a', type: 'nominal'},
+        x: {
+        aggregate: 'average',
+        field: 'b',
+        type: 'quantitative',
+        axis: {
+            title: 'Average of b'
+        }
+        }
+    }
+    };
+
+    // Embed the visualization in the container with id `vis`
+    vegaEmbed('#vis', vlSpec);
+</script>

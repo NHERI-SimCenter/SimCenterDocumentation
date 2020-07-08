@@ -1,10 +1,15 @@
+---
+page_template: vega.html
+...
+:page_template: vega.html
+
 
 
 # Bayesian Calibration - Steel Frame
 
 |  |  |
-|---|---|
-| Problem folder | [quo-08](https://github.com/claudioperez/SimCenterDocumentation/tree/examples/docs/common/user_manual/examples/desktop/quoFEM/src/quo-08) |
+|----------|------|
+| Problem files | [quo-08](https://github.com/claudioperez/SimCenterDocumentation/tree/examples/docs/common/user_manual/examples/desktop/quoFEM/src/quo-08) |
 
 In this example, Bayesian estimation is used to estimate column stiffnesses of a simple steel frame, given data about it's mode shapes and mass distribution.
 
@@ -46,8 +51,8 @@ To define the uncertainty workflow in quoFEM, select **Inverse Problem** for the
 
 |   |   |
 |---|---|
-| **No. Burn in Samples** | 10 |
-| **No. Chain Samples** | 40 |
+| **No. Burn in Samples** | 1000 |
+| **No. Chain Samples** | 4000 |
 | **No. Chains** | 4 |
 | **Jump Step** | 5 |
 | **DREAM** | DREAM |
@@ -75,3 +80,40 @@ The resulting estimates for the column stiffnesses with 40 chain samples are as 
 
 - `Ic1`: Mean $=1229.1$, Std. Dev $=192.407$.
 - `Ic2`: Mean $=1404.03$, Std. Dev $=253.584$.
+
+
+<div id="vis"></div>
+<script>
+    // Assign the specification to a local variable vlSpec.
+    var vlSpec = {
+    $schema: 'https://vega.github.io/schema/vega-lite/v4.json',
+    data: {
+        values: [
+        {a: 'C', b: 2},
+        {a: 'C', b: 7},
+        {a: 'C', b: 4},
+        {a: 'D', b: 1},
+        {a: 'D', b: 2},
+        {a: 'D', b: 6},
+        {a: 'E', b: 8},
+        {a: 'E', b: 4},
+        {a: 'E', b: 7}
+        ]
+    },
+    mark: 'bar',
+    encoding: {
+        y: {field: 'a', type: 'nominal'},
+        x: {
+        aggregate: 'average',
+        field: 'b',
+        type: 'quantitative',
+        axis: {
+            title: 'Average of b'
+        }
+        }
+    }
+    };
+
+    // Embed the visualization in the container with id `vis`
+    vegaEmbed('#vis', vlSpec);
+</script>

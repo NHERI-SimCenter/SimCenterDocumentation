@@ -1,11 +1,13 @@
+:page_template: vega.html
+
 Reliability Analysis
 ====================
 
-+----------------+----------------------------------------------------+
-| Problem folder | `quo-03 <https://github.com/claudioperez           |
-|                | /SimCenterDocumentation/tree/examples/docs/common/ |
-|                | user_manual/examples/desktop/quoFEM/src/quo-03>`__ |
-+----------------+----------------------------------------------------+
++---------------+-----------------------------------------------------+
+| Problem files | `quo-03 <https://github.com/claudioper              |
+|               | ez/SimCenterDocumentation/tree/examples/docs/common |
+|               | /user_manual/examples/desktop/quoFEM/src/quo-03>`__ |
++---------------+-----------------------------------------------------+
 
 This example uses quoFEM to perform a second-order reliability analysis
 (SORM) of an OpenSees FE model.
@@ -86,5 +88,50 @@ figure:
    :alt: Sensitivity analysis results.
 
    Sensitivity analysis results.
+
+.. raw:: html
+
+   <div id="vis">
+
+.. raw:: html
+
+   </div>
+
+.. raw:: html
+
+   <script>
+       // Assign the specification to a local variable vlSpec.
+       var vlSpec = {
+       $schema: 'https://vega.github.io/schema/vega-lite/v4.json',
+       data: {
+           values: [
+           {a: 'C', b: 2},
+           {a: 'C', b: 7},
+           {a: 'C', b: 4},
+           {a: 'D', b: 1},
+           {a: 'D', b: 2},
+           {a: 'D', b: 6},
+           {a: 'E', b: 8},
+           {a: 'E', b: 4},
+           {a: 'E', b: 7}
+           ]
+       },
+       mark: 'bar',
+       encoding: {
+           y: {field: 'a', type: 'nominal'},
+           x: {
+           aggregate: 'average',
+           field: 'b',
+           type: 'quantitative',
+           axis: {
+               title: 'Average of b'
+           }
+           }
+       }
+       };
+
+       // Embed the visualization in the container with id `vis`
+       vegaEmbed('#vis', vlSpec);
+   </script>
 
 .. |Simple truss model.| image:: truss/truss.png
