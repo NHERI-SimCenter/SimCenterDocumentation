@@ -39,7 +39,7 @@ In the following steps we will demonstrate how this is done using the |app| with
 .. literalinclude:: ghosh.py
    :language: python
 
-The second a tcl script to be named ghosh.tcl. It is to be used with the OpenSees FEM application.
+The second a tcl script to be named ``ghosh.tcl``. It is to be used with the OpenSees FEM application.
 
 .. literalinclude:: ghosh.tcl
    :language: tcl
@@ -56,7 +56,7 @@ The second a tcl script to be named ghosh.tcl. It is to be used with the OpenSee
    :align: center
    :figclass: align-center
 
-4. Select the **RV** tab. Create 4 random variables named ``X1``, ``Y1``, ``X2``, ``Y2``. For each specify a uniform distribution with the range for the X variables being 0 and ``Lw`` and range of Y variables being 0 and ``Lh``. This is as shown for ``Lw = 1.0`` and ``Lh = 0.6``.
+4. Select the **RV** tab. Create four random variables named ``X1``, ``Y1``, ``X2``, ``Y2``. For each specify a uniform distribution with the range for the ``X`` variables being ``0`` and ``Lw`` and range of ``Y`` variables being ``0`` and ``Lh``. This is as shown for ``Lw = 1.0`` and ``Lh = 0.6``.
 
 .. figure:: figures/ghoshRV.png
    :align: center
