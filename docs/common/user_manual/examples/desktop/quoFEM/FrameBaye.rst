@@ -1,6 +1,6 @@
 :page_template: vega.html
 
-Steel Frame - Bayesian Calibration
+Steel Frame: Bayesian Calibration
 ======================================
 
 +---------------+-----------------------------------------------------+

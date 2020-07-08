@@ -1,6 +1,6 @@
 :page_template: vega.html
 
-Steel Frame - Conventional Calibration
+Steel Frame: Conventional Calibration
 ======================================
 
 +---------------+-----------------------------------------------------+
