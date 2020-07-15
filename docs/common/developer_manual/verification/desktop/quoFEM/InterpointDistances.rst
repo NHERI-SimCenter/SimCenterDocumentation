@@ -39,7 +39,7 @@ In the following steps we will demonstrate how this is done using the |app| with
 .. literalinclude:: ghosh.py
    :language: python
 
-The second a tcl script to be named ghosh.tcl. It is to be used with the OpenSees FEM application.
+The second a tcl script to be named ``ghosh.tcl``. It is to be used with the OpenSees FEM application.
 
 .. literalinclude:: ghosh.tcl
    :language: tcl
@@ -56,7 +56,7 @@ The second a tcl script to be named ghosh.tcl. It is to be used with the OpenSee
    :align: center
    :figclass: align-center
 
-4. Select the **RV** tab. Create 4 random variables named ``X1``, ``Y1``, ``X2``, ``Y2``. For each specify a uniform distribution with the range for the X variables being 0 and ``Lw`` and range of Y variables being 0 and ``Lh``. This is as shown for ``Lw = 1.0`` and ``Lh = 0.6``.
+4. Select the **RV** tab. Create four random variables named ``X1``, ``Y1``, ``X2``, ``Y2``. For each specify a uniform distribution with the range for the ``X`` variables being ``0`` and ``Lw`` and range of ``Y`` variables being ``0`` and ``Lh``. This is as shown for ``Lw = 1.0`` and ``Lh = 0.6``.
 
 .. figure:: figures/ghoshRV.png
    :align: center
@@ -79,13 +79,13 @@ These simulations can be performed for a number of the different sampling method
 
 
 .. csv-table:: 
-   :header: "Method", "#Samples", "E(P,Q)"
-   :widths: 20, 20, 20
+   :header: "Method", "#Samples", "E(P,Q)", "Error"
+   :widths: 20, 20, 20, 20
 
-   MC, 100,  0.447626
-   MC, 1000, 0.430936
-   MC, 10000, 0.421910
-   LHS, 100,  0.435349
-   LHS, 1000, 0.425709
-   LHS, 10000, 0.422350
+   MC, 100,  0.447626, 0.0560
+   MC, 1000, 0.430936, 0.0166
+   MC, 10000, 0.421910, 0.0047
+   LHS, 100,  0.435349, 0.0270
+   LHS, 1000, 0.425709, 0.0043
+   LHS, 10000, 0.422350, 0.0037
 
