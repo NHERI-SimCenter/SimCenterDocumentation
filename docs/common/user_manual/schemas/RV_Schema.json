@@ -1,0 +1,216 @@
+
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "object",
+    "title": "The randomVariables schema",
+    "description": "No description.",
+    "properties": {
+        "beta": {
+            "type": "object",
+            "title": "beta",
+            "description": "No description.",
+            "required": [
+                "alphas",
+                "betas",
+                "lowerbound",
+                "name",
+                "refCount",
+                "upperbound",
+                "variableClass"
+            ],
+            "properties": {
+                "alphas": {
+                    "type": "number",
+                    "tex": "\\alpha",
+                    "title": "first shape parameter",
+                    "description": "No description."
+                },
+                "betas": {
+                    "type": "number",
+                    "tex": "\\beta",
+                    "title": "second shape parameter",
+                    "description": "No description."
+                },
+                "lowerbound": {
+                    "type": "number",
+                    "tex": "L_B",
+                    "title": "lower bound",
+                    "description": "No description."
+                },
+                "upperbound": {
+                    "type": "number",
+                    "tex": "U_B",
+                    "title": "upper bound",
+                    "description": "No description.",
+                    "default": 0,
+                    "examples": [
+                        22
+                    ]
+                }
+            }
+        },
+        "uniform": {
+            "type": "object",
+            "title": "uniform",
+            "description": "No description.",
+            "required": [
+                "lowerbound",
+                "name",
+                "refCount",
+                "upperbound",
+                "variableClass"
+            ],
+            "properties": {
+                "lowerbound": {
+                    "type": "number",
+                    "tex": "L_B",
+                    "title": "lower bound",
+                    "description": "No description."
+                },
+                "upperbound": {
+                    "type": "number",
+                    "tex": "U_B",
+                    "title": "upper bound",
+                    "description": "No description."
+                }
+            }
+        },
+        "constant": {
+            "type": "object",
+            "title": "constant",
+            "description": "No description.",
+            "required": [
+                "value"
+            ],
+            "properties": {
+                "value": {
+                    "type": "number",
+                    "tex": "C",
+                    "title": "constant value",
+                    "description": "No description."
+                }
+            }
+        },
+        "weibull": {
+            "type": "object",
+            "title": "Weibull",
+            "description": "No description.",
+            "required": [
+                "scaleparam",
+                "shapeparam"
+            ],
+            "properties": {
+                "scaleparam": {
+                    "type": "number",
+                    "tex": "\\lambda",
+                    "title": "scale parameter",
+                    "description": "No description."
+                },
+                "shapeparam": {
+                    "type": "number",
+                    "tex": "k",
+                    "title": "shape parameter",
+                    "description": "No description.",
+                    "default": 0.0
+                }
+            }
+        },
+        "gumbel": {
+            "type": "object",
+            "title": "Gumbel",
+            "description": "No description.",
+            "required": [
+                "alphaparam",
+                "betaparam"
+            ],
+            "properties": {
+                "alphaparam": {
+                    "type": "number",
+                    "tex": "\\alpha",
+                    "title": "alpha",
+                    "description": "No description."
+                },
+                "betaparam": {
+                    "type": "number",
+                    "tex": "\\beta",
+                    "title": "beta",
+                    "description": "No description."
+                }
+            }
+        },
+        "normal": {
+            "$id": "#/properties/randomVariables/items/anyOf/5",
+            "type": "object",
+            "title": "normal",
+            "description": "No description.",
+            "required": [
+                "mean",
+                "stdDev"
+            ],
+            "properties": {
+                "mean": {
+                    "$id": "#/properties/randomVariables/items/anyOf/5/properties/mean",
+                    "type": "number",
+                    "tex": "\\mu",
+                    "title": "mean",
+                    "description": "No description.",
+                    "default": 0
+                },
+                "stdDev": {
+                    "$id": "#/properties/randomVariables/items/anyOf/5/properties/stdDev",
+                    "type": "number",
+                    "tex": "\\sigma",
+                    "title": "standard deviation",
+                    "description": "No description.",
+                    "default": 0
+                }
+            }
+        },
+        "lognormal": {
+            "type": "object",
+            "title": "lognormal",
+            "description": "No description.",
+            "required": [
+                "mean",
+                "stdDev"
+            ],
+            "properties": {
+                "mean": {
+                    "type": "number",
+                    "tex": "\\mu",
+                    "title": "mean",
+                    "description": "No description."
+                },
+                "stdDev": {
+                    "type": "number",
+                    "tex": "\\sigma",
+                    "title": "standard deviation",
+                    "description": "No description."
+                }
+            }
+        },
+        "continuousdesign": {
+            "properties": {
+                "initialpoint":{
+                    "type": "number",
+                    "tex": "X_0",
+                    "title": "initial point"
+                },
+                "lowerbound": {
+                    "type": "number",
+                    "tex": "L_B",
+                    "title": "lower bound",
+                    "description": "No description."
+                },
+                "upperbound": {
+                    "type":  "number",
+                    "tex":   "U_B",
+                    "title": "upper bound",
+                    "description": "Upper bound."
+                }
+            },
+            "variableClass": "Design"
+        }
+    }
+}
+  

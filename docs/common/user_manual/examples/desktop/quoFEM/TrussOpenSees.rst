@@ -4,7 +4,7 @@ Two-Dimensional Truss: Sampling, Reliability and Sensitivity
 
 Consider the problem of uncertainty quantification in a two-dimensional truss structure shown in the following figure.
 
-.. figure:: figures/truss.png
+.. figure:: truss/truss.png
    :align: center
    :width: 600
    :figclass: align-center
@@ -31,14 +31,14 @@ The goal of the exercise is to estimate the mean and standard deviation of the v
 
 The postprocess.tcl script shown below will accept as input any of the 6 nodes in the domain and for each of the two dof directions.
 
-.. literalinclude:: postprocess.tcl
+.. literalinclude:: truss/post.tcl
    :language: tcl
 
 .. note::
 
    The use has the option to provide no postprocess script (in which case the main script must create a ``results.out`` file containing a single line with as many space separated numbers as QoI or the user may provide a Python script that also performs the postprocessing. An example of a postprocessing Python script is `postprocess.py <https://github.com/NHERI-SimCenter/quoFEM/blob/master/examples/exampleOpenSeesForward/postprocess.py>`_. 
 
-   .. literalinclude:: postprocess.py
+   .. literalinclude:: truss/post.py
       :language: python
 
 .. warning::
@@ -49,6 +49,12 @@ The postprocess.tcl script shown below will accept as input any of the 6 nodes i
 Sampling Analysis
 ^^^^^^^^^^^^^^^^^
 
++----------------+----------------------------------------------------+
+| Problem files  | `quo-01 <https://github.com/claudioperez           |
+|                | /SimCenterDocumentation/tree/examples/docs/common/ |
+|                | user_manual/examples/desktop/quoFEM/src/quo-01>`__ |
++----------------+----------------------------------------------------+
+
 To perform a Sampling or Forward propagation uncertainty analysis the user would perform the following steps:
 
 The steps involved:
@@ -56,25 +62,25 @@ The steps involved:
 1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota, and the UQ Method Category as Forward Propagation, and the Forward Propagation method as LHS (Latin Hypercube). Change the #samples to 1000 and the seed to 20 as shown in the figure.
 
 
-.. figure:: figures/trussUQ.png
+.. figure:: truss/trussUQ.png
    :align: center
    :figclass: align-center
 
 2. Next select the **FEM** tab from the input panel. This will default in the OpenSees FEM engine. For the main script copy the path name to TrussSelection.tcl or select choose and navigate to the file. For the postprocess script, repeat the same procedure for the postprocess.tcl script.
 
-.. figure:: figures/trussFEM.png
+.. figure:: truss/trussFEM.png
    :align: center
    :figclass: align-center
 
 3. Next select the **RV** tab from the input panel. This should be pre-populated with four random variables with same names as those having ``pset`` in the tcl script. For each variable, from the drop down menu change them from having a constant distribution to a normal one and then provide the means and standard deviations specified for the problem.
 
-.. figure:: figures/trussRV.png
+.. figure:: truss/trussRV.png
    :align: center
    :figclass: align-center
 
 4. Next select the **QoI** tab. Here enter 'Node_3_Disp_2' for the one variable. 
 
-.. figure:: figures/trussQoI.png
+.. figure:: truss/trussQoI.png
    :align: center
    :figclass: align-center
 .. note::
@@ -85,36 +91,42 @@ The steps involved:
 
 5. Next click on the **Run** button. This will cause the backend application to launch dakota. When done the **RES** tab will be selected and the results will be displayed. The results show the values the mean and standard deviation.
 
-.. figure:: figures/trussRES1.png
+.. figure:: truss/trussRES1.png
    :align: center
    :figclass: align-center
 
 
 If the user selects the **Data** tab in the results panel, they will be presented with both a graphical plot and a tabular listing of the data.
 
-.. figure:: figures/trussRES2.png
+.. figure:: truss/trussRES2.png
    :align: center
    :figclass: align-center
 
 Various views of the graphical display can be obtained by left and right clicking in the columns of the tabular data. If a singular column of the tabular data is pressed with both right and left buttons a frequency and CDF will be displayed, as shown in figure below.
 
-.. figure:: figures/trussRES5.png
+.. figure:: truss/trussRES5.png
    :align: center
    :figclass: align-center
 
 Reliability Analysis
 ^^^^^^^^^^^^^^^^^^^^
 
++----------------+----------------------------------------------------+
+| Problem files  | `quo-03 <https://github.com/claudioperez           |
+|                | /SimCenterDocumentation/tree/examples/docs/common/ |
+|                | user_manual/examples/desktop/quoFEM/src/quo-03>`__ |
++----------------+----------------------------------------------------+
+
 If the user is interested in the probability that a particular response measure will be exceeded, an alternate strategy is to perform a reliability analysis. In order to perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propagation method. To obtain reliability results using the Second-Order Reliability Method (SORM) for the truss problem the user would follow the same sequence of steps as previously. The difference would be in the **UQ** tab in which the user would select a Reliability as the Dakota Method Category and then choose Local reliability. In the figure the user is specifying that they are interested in the probability that the displacement will exceed certain response levels.
 
 
-.. figure:: figures/trussSORM-UQ.png
+.. figure:: truss/trussSORM-UQ.png
    :align: center
    :figclass: align-center
 
 After the user fills in the rest of the tabs as per the previous section, the user would then press the **RUN** button. The application (after spinning for a while with the wheel of death) will present the user with the results.
 
-.. figure:: figures/trussSORM-RES.png
+.. figure:: truss/trussSORM-RES.png
    :align: center
    :figclass: align-center
 
@@ -122,18 +134,24 @@ After the user fills in the rest of the tabs as per the previous section, the us
 Global Sensitivity
 ^^^^^^^^^^^^^^^^^^
 
++----------------+----------------------------------------------------+
+| Problem files  | `quo-04 <https://github.com/claudioperez           |
+|                | /SimCenterDocumentation/tree/examples/docs/common/ |
+|                | user_manual/examples/desktop/quoFEM/src/quo-04>`__ |
++----------------+----------------------------------------------------+
+
 In a global sensitivity analysis the user is wishing to understand what is the influence of the individual random variables on the quantities of interest. This is typically done before the user launches large scale forward uncertainty problems in order to limit the number of random variables used so as to limit the number of simulations performed.
 
 To perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propagation method. To obtain reliability results using the Second-Order Reliability Method (SORM) for the truss problem the user would follow the same sequence of steps as previously. The difference would be in the **UQ** tab in which the user would select a Reliability as the Dakota Method Category and then choose Local reliability. In the figure the user is specifying that they are interested in the probability that the displacement will exceed certain response levels.
 
 
-.. figure:: figures/trussSens-UQ.png
+.. figure:: truss/trussSens-UQ.png
    :align: center
    :figclass: align-center
 
 After the user fills in the rest of the tabs as per the previous section, the user would then press the **RUN** button. The application (after spinning for a while with the wheel of death) will present the user with the results.
 
-.. figure:: figures/trussSensitivity-RES.png
+.. figure:: truss/trussSensitivity-RES.png
    :align: center
    :figclass: align-center
 

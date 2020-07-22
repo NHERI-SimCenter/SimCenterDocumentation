@@ -6,7 +6,7 @@ Consider the problem of estimating parameters for a model given some experimenta
 
 .. _lblJoelFrame:
 
-.. figure:: figures/joelFrame.png
+.. figure:: frame/joelFrame.png
    :align: center
    :width: 600
    :figclass: align-center
@@ -44,13 +44,13 @@ The steps involved:
 1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota. In the UQ Method category drop down menu change the category to **Parameters Estimation**, and the method as **NL2SOL**, the convergence tolerance to ``1.0e-6`` and leave the scaling factors empty (assumes weights of 1.0 on all response values) as shown in the figure.
 
 
-.. figure:: figures/joelUQ.png
+.. figure:: frame/joelUQ.png
    :align: center
    :figclass: align-center
 
 2. Next select the **FEM** tab from the input panel selection. This will default in the OpenSees FEM engine. For the main script copy the path name to the FrameModelPeriodSelection.tcl file or select choose and navigate to the file. 
 
-.. figure:: figures/joelFEM.png
+.. figure:: frame/joelFEM.png
    :align: center
    :figclass: align-center
 
@@ -61,7 +61,7 @@ The steps involved:
 3. Next select the **RV** tab from the input panel. This should be prepopulated with two random variables with same names as those having ``pset`` in the tcl script, i.e. m1 and m2. For each variable, from the drop down menu change them from having a constant distribution to a continuous design one and then provide the lower bounds, upper bounds and the starting points shown in the figure below.
 
 
-.. figure:: figures/joelRV.png
+.. figure:: frame/joelRV.png
    :align: center
    :figclass: align-center
 
@@ -71,7 +71,7 @@ The steps involved:
 
 4. Next select the **QoI** panel. Here enter **2** variable names ``dT1`` and ``dT2``.
 
-.. figure:: figures/joelQoI.png
+.. figure:: frame/joelQoI.png
    :align: center
    :figclass: align-center
 
@@ -81,7 +81,7 @@ The steps involved:
 
 5. Next click on the **Run** button. This will cause the backend application to launch Dakota. When done the **RES** tab will be selected and the results will be displayed as shown in the figure below. The figure shows Dakota returned, for inputs provided, estimates of our unknown parameters to be :math:`m1=0.52 (0.515549)` and :math:`m2=0.26 (0.256492)`.
 
-.. figure:: figures/joelRES.png
+.. figure:: frame/joelRES.png
    :align: center
    :figclass: align-center
 
