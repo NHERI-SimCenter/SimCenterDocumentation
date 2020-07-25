@@ -11,7 +11,7 @@ A successful run or download of a job that ran successfully at |DesignSafe| will
 	:align: center
 	:figclass: align-center
 
-	Results Summary
+	Results summary.
 
 
 The second panel, shown in :numref:`figResultsData` presents the results both
@@ -24,7 +24,7 @@ either the CDF and PDF is displayed. If the last mouse press was with the left
 button, the PDF will be displayed; if the last mouse press was the right one, the CDF
 will be displayed.
  
-Regarding the columns in the table below the figure: You will see a column for each random variable the workflow came across and then the columns for the response quantaties. There may be more random variables than you specified. This is because certain applications the user selected may introduce additional random varaibles for the UQ engine to consider. 
+Regarding the columns in the table below the figure: You will see a column for each random variable the workflow came across and then the columns for the response quantities. There may be more random variables than you specified. This is because certain applications the user selected may introduce additional random variables for the UQ engine to consider. 
 
 .. _figResultsData:
 
@@ -32,5 +32,5 @@ Regarding the columns in the table below the figure: You will see a column for e
 	:align: center
 	:figclass: align-center
 
-	Results presented graphically and in tabular form
+	Results presented both graphically and in tabular form.
 

@@ -8,8 +8,8 @@
 
 #app_name = 'EE-UQ'
 #app_name = 'PBE'
-app_name = 'WE-UQ'
-#app_name = 'quoFEM'
+#app_name = 'WE-UQ'
+app_name = 'quoFEM'
 #app_name = 'pelicun'
 
 print('app_name = ' + app_name)
@@ -42,6 +42,7 @@ exclude_patterns = [
 		'**/*TInF*', 
 		'**/*pelicun*',
 		'**/*old*',
+		'**/*quoFEM*'
 	]
 
 
@@ -51,6 +52,7 @@ toc_filter_exclusions = [
 	'earthquake',
 	'wind',
 	'PBE',
+	'quoFEM',
 	'WEUQ',
 	'EEUQ',
 	'TinF',
@@ -92,11 +94,15 @@ rst_prolog = """
 .. _Dakota: https://dakota.sandia.gov/
 .. |DakotaDownload| replace:: `Dakota Download`_
 .. _Dakota Download: https://dakota.sandia.gov/download.html
+.. |Dakota Theory Manual| replace:: `Dakota Theory Manual`_
+.. _Dakota Theory Manual: https://dakota.sandia.gov/sites/default/files/docs/6.11/Theory-6.11.0.pdf
+
 .. |requirements| replace:: **REQUIREMENTS**
 .. |DesignSafe| replace:: `DesignSafe`_
 .. _DesignSafe: https://designsafe-ci.org
 .. |smelt| replace:: `smelt`_
 .. _smelt: https://github.com/NHERI-SimCenter/smelt
+.. |s3harkName| replace:: s3hark
 .. |br| raw:: html
 
     <br>
@@ -123,6 +129,19 @@ if app_name == 'PBE':
 	exclude_patterns.remove('**/*desktop*')
 	exclude_patterns.remove('**/*earthquake*')
 	exclude_patterns.remove('**/*PBE*')
+
+	# TODO: fix these temporary changes
+	exclude_patterns.append('**/*architectureLevel4.rst*')
+	exclude_patterns.append('**/requirements/index.rst')
+	exclude_patterns.append('**/requirements/bigRequirements.rst')
+	exclude_patterns.append('**/DakotaSensitivity.rst')
+	exclude_patterns.append('**/DakotaReliability.rst')
+	exclude_patterns.append('**/DakotaParameterEstimation.rst')
+	exclude_patterns.append('**/DakotaInverseProblems.rst')
+	exclude_patterns.append('**/resEE.rst')
+
+
+	# END TODO
 
 	rst_prolog += """\
 .. |full tool name| replace:: Performance Based Engineering Application
@@ -158,7 +177,7 @@ if app_name == 'PBE':
 	}
 
 elif app_name == 'EE-UQ':
-	project = 'Earthquake Engineering with Uncertainty Quantification'
+	project = 'Earthquake Engineering with Uncertainty Quantification (EE-UQ)'
 	copyright = '2019, The Regents of the University of California'
 	author = 'Frank McKenna'
 
@@ -179,7 +198,7 @@ elif app_name == 'EE-UQ':
 	exclude_patterns.remove('**/*response*')
 
 	rst_prolog += """
-.. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application
+.. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application (EE-UQ)
 .. |short tool name| replace:: EE-UQ app
 .. |short tool id| replace:: EE-UQ
 .. |tool github link| replace:: `EE-UQ Github page`_
@@ -202,6 +221,65 @@ elif app_name == 'EE-UQ':
 """	
 
 	html_logo = 'common/figures/EE-UQ-Logo-grey2.png' 
+
+	html_theme_options = {
+		'analytics_id': 'UA-158130480-1',
+		'logo_only': True,
+		'prev_next_buttons_location': None,
+		'style_nav_header_background': '#F2F2F2'
+	}
+
+elif app_name == 'quoFEM':
+	project = 'Quantified Uncertainty with Optimization for the FEM'
+	copyright = '2018-2020, The Regents of the University of California'
+	author = 'Frank McKenna'
+
+	tags.add('quoFEM_app')
+	tags.add('desktop_app')
+
+	toc_filter_exclusions.remove('desktop')
+	toc_filter_exclusions.remove('quoFEM')
+	toc_filter_exclude = toc_filter_exclusions
+
+	exclude_patterns.remove('**/*desktop*')
+	exclude_patterns.remove('**/*quoFEM*')
+
+	# TODO: fix these temporary changes
+	exclude_patterns.append('**/*architectureLevel4.rst*')
+	exclude_patterns.append('**/requirements/index.rst')
+	exclude_patterns.append('**/requirements/bigRequirements.rst')
+	exclude_patterns.append('**/resEE.rst')
+	exclude_patterns.append('**/damping.rst')
+	exclude_patterns.append('**/desktop/FEM.rst')
+	exclude_patterns.append('**/desktop/GI.rst')
+	exclude_patterns.append('**/desktop/SIM.rst')
+
+	# END TODO
+
+	rst_prolog += """
+.. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)
+.. |short tool name| replace:: quoFEM app
+.. |short tool id| replace:: quoFEM
+.. |tool github link| replace:: `quoFEM Github page`_
+.. _quoFEM Github page: https://github.com/NHERI-SimCenter/quoFEM
+.. |tool version| replace:: 2.0
+.. |app| replace:: quoFEM app
+.. |appName| replace:: quoFEM app
+.. |githubLink| replace:: `quoFEM Github page`_
+.. |appLink| replace:: `quoFEM Download`_
+.. _quoFEM Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
+.. |messageBoard| replace:: `Message Board`_
+.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
+.. |figUI| replace:: :numref:`figQUO_FEM`
+.. |figDownload| replace:: :numref:`figDownloadQUO_FEM`
+.. |figGenericUI| replace:: :numref:`figGenericUI-QUOFEM`
+.. |figMissingCRT| replace:: :numref:`figMissingCRT-EE`
+.. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
+.. |developers| replace:: **Frank McKenna**, **Nikhil Padhye**, **Adam Zsarnóczay**
+
+"""	
+
+	html_logo = 'common/figures/quoFEM-LogoImageGrey.png' 
 
 	html_theme_options = {
 		'analytics_id': 'UA-158130480-1',
@@ -233,7 +311,7 @@ elif app_name == 'WE-UQ':
 	exclude_patterns.remove('**/*TinF*')
 
 	rst_prolog += """
-.. |full tool name| replace:: Wind Engineering Application with Uncertainty Quantification
+.. |full tool name| replace:: Wind Engineering with Uncertainty Quantification Application (WE-UQ)
 .. |short tool name| replace:: WE-UQ app
 .. |short tool id| replace:: WE-UQ
 .. |tool github link| replace:: `WE-UQ Github page`_
@@ -269,7 +347,7 @@ elif app_name == 'WE-UQ':
 elif app_name == 'pelicun':
 
 	project = 'pelicun'
-	copyright = '(c) 2018, Leland Stanford Junior University and The Regents of the University of California'
+	copyright = '(c) 2018-2020, Leland Stanford Junior University and The Regents of the University of California'
 	author = 'Adam Zsarnóczay'
 
 	tags.add('pelicun')
@@ -341,6 +419,7 @@ elif app_name == 'pelicun':
 # ones.
 
 extensions = extensions + [
+    # 'sphinx-jsonschema',
 	'sphinxcontrib.bibtex',
 	'toctree_filter'
 ]
@@ -351,7 +430,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = exclude_patterns + ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = exclude_patterns + ['_build', 'Thumbs.db', '.DS_Store', '_archive']
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -383,3 +462,12 @@ html_static_path = ['_static']
 
 # For a full list of configuration options see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
+
+#latex_docclass = {
+#	r'manual': 'simcenterdocumentation',
+#	r'howto': 'simcenterdocumentation'
+#}
+
+latex_elements = {
+  'extraclassoptions': 'openany,oneside'
+}

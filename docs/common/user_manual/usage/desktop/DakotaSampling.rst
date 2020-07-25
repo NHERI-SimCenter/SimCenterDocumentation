@@ -1,18 +1,20 @@
 
-Forward Propogation Methods
+.. _lblDakotaForward:
+
+Forward Propagation Methods
 ***************************
  
+The forward propagation of uncertainty is concerned with the quantification of uncertainties in the output propagated from uncertain inputs.
+Currently there are five options available:  Monte Carlo Sampling (MCS),  Latin Hypercube Sampling (LHS), Importance Sampling (IS), and sampling based on surrogate models, including Gaussian Process Regression (GPR) and Polynomial Chaos Expansion (PCE). Depending on the option selected, the user must specifies the appropriate input parameters for each. For instance, for MCS, the number of samples specifies the number of simulations to be performed, and providing a random seed allows the user to reproduce the same set of samples from the random variables multiple times.
 
-In the forward propagation problem, the user selects the sampling 
-method to use from the dropdown menu `sampling methods <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/method-sampling.html>`_. Currently there are five options available: Monte Carlo Sampling (MCS),  Latin Hypercube Sampling (LHS), Importance Sampling (IS), and sampling based on surrogate models, including Gaussian Process Regression (GPR) and Polynomial Chaos Expansion (PCE). Depending on the option selected, the user must specifies the appropriate input parameters for each. For instance, for MCS, the number of samples specifies the number of simulations to be performed, and providing a random seed allows the user to reproduce the same set of samples from the random variables multiple times.
-
+The the user selects the sampling method to use from the sampling methods dropdown menu. Additional information regarding sampling methods offered in Dakota can be found `here <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/method-sampling.html>`_. 
 
 Monte Carlo Sampling (MCS) 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-MCS is based on random sampling and is among the most robust approaches for problems where other uncertainty propagation schemes fail. Moreover, the convergence rate of MCS methods is independent of the problem dimensionality, albeit the convergence rate of such MCS methods is relatively slow :math:`N^{-1/2}`. In MCS, a sample drawn at any step is independent of all previous samples. 
+MCS is based on random sampling and is among the most robust approaches for problems where other uncertainty propagation schemes fail. Moreover, the convergence rate of MCS methods is independent of the problem dimensionality, albeit the convergence rate of such MCS methods is relatively slow at :math:`N^{-1/2}`. In MCS, a sample drawn at any step is independent of all previous samples. 
 
-:numref:`figMCS` shows the input panel corresponding to the Monte Carlo Sampling (MCS) setting. Two input parameters need to be specified, the number of samples to be executed, as well as the seed used in generating the random samples. 
+:numref:`figMCS` shows the input panel corresponding to the Monte Carlo Sampling setting. Two input parameters need to be specified, the number of samples to be executed, as well as the seed used in generating the random samples. 
 
 .. _figMCS:
 
@@ -20,7 +22,7 @@ MCS is based on random sampling and is among the most robust approaches for prob
 	:align: center
 	:figclass: align-center
 
-  	Monte Carlo Sampling input panel
+  	Monte Carlo Sampling input panel.
 
 
 Latin Hypercube Sampling (LHS) 
@@ -37,7 +39,7 @@ LHS represents a pseudo-random, stratified sampling approach for uncertainty pro
 	:align: center
 	:figclass: align-center
 
-	Latin Hypercube Sampling input panel
+	Latin Hypercube Sampling input panel.
 
 
 Importance Sampling
@@ -58,7 +60,7 @@ For rare event analysis,  :numref:`figIS` shows the input panel for Importance S
 	:align: center
 	:figclass: align-center
 
-	Importance Sampling input panel
+	Importance Sampling input panel.
 
 
 For more information on each, please refer to the Dakota manual. 
@@ -77,7 +79,7 @@ One of methods for uncertainty propagation with surrogates is Gaussian Process R
 	:align: center
 	:figclass: align-center
 
-  	GPR forward propagation input panel
+  	GPR forward propagation input panel.
 
 For problems where conventional sampling schemes such as LHS, MCS, or other fail, surrogates can be leveraged to obtain an approximation of the response surface, and than sample from that surface accordingly. 
 
@@ -89,7 +91,7 @@ For uncertainty propagation with Gaussian Process Regression (GPR),  :numref:`fi
 Polynomial Chaos Expansion (PCE)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Another response surface approximation scheme using surrogates is based on Polynomial Chaos Expansion (PCE) scheme. For uncertainty propagation with Polynomial Chaos Expansion (PCE), :numref:`figPCE` shows the input panel for the PCE model, with input panels for training and sampling as well, similar to the input GPR panel. The first set of input parameters in the surrogate training data specify the dataset used for training the surrogate model, while the second set of input parameters in the surrogate sampling data relate to the dataset used for sampling the surrogate. Extreme care must be taken in specifying the parameters of the training dataset to results in an accurate response surface approximation. 
+Another response surface approximation scheme using surrogates is based on Polynomial Chaos Expansion (PCE). For uncertainty propagation with Polynomial Chaos Expansion (PCE), :numref:`figPCE` shows the input panel for the PCE model, with input panels for training and sampling as well, similar to the input GPR panel. The first set of input parameters in the surrogate training data specify the dataset used for training the surrogate model, while the second set of input parameters in the surrogate sampling data relate to the dataset used for sampling the surrogate. Extreme care must be taken in specifying the parameters of the training dataset to results in an accurate response surface approximation. 
 
 
 .. _figPCE:
@@ -98,10 +100,9 @@ Another response surface approximation scheme using surrogates is based on Polyn
 	:align: center
 	:figclass: align-center
 
-	PCE forward propagation input panel
+	PCE forward propagation input panel.
 
 
-If you are not sure about the training parameters of the surrogates, please refrain from using the surrogates (PCE in particular) for forward propagation and use instead conventional sampling such as MCS and LHS as discussed above, 
-even at a higher computational cost. 
+If you are not sure about the training parameters of the surrogates, please refrain from using the surrogates (PCE in particular) for forward propagation and use instead conventional sampling such as MCS and LHS as discussed above, even at a higher computational cost. 
 
 

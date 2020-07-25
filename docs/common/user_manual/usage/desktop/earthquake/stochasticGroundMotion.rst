@@ -16,7 +16,7 @@ used to generate a seismic event. For the Vlachos er al. model users is required
 	:align: center
 	:figclass: align-center
 
-	Vlachos er al. (2018) model inputs
+	Vlachos et al. (2018) model inputs.
 
 .. _fig-stochasticDabaghi-event:
 
@@ -28,7 +28,7 @@ For the Dabaghi & Der Kiureghian model geometric directivity parameters, as show
 	:align: center
 	:figclass: align-center
 
-	Dabaghi & Der Kiureghian (2018) model inputs
+	Dabaghi & Der Kiureghian (2018) model inputs.
 
 
 Additionally, users can provide a seed for either model if they desire the same
@@ -43,6 +43,6 @@ interested in learning more about the implementation and design of
 All input parameters can be specified as random variables by entering
 a string in the parameter field. Please note that information for the
 inputs that are identified as random variables needs to be provided in
-the ``UQ`` tab.
+the **UQ** tab.
 
-.. bibliography:: ../../../../references.bib
+.. .. bibliography:: ../../../../references.bib

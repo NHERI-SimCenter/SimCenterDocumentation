@@ -30,7 +30,7 @@ application. That is, the numerical simulations are actually performed
 by a number of different applications. The |app| backend software runs
 these different applications for the user, taking the outputs from
 some programs and providing them as inputs to others. The design of
-the |app| application is such that researchers are able to modify the
+the |app| is such that researchers are able to modify the
 backend application to utilize their own application in the workflow
 computations. This will ensure researchers are not limited to using
 the default applications we provide and will be enthused to provide

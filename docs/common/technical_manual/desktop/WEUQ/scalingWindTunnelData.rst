@@ -9,7 +9,7 @@ Due to size limitations, the physical size of the structure in the wind tunnel w
 Wind Tunnel Data
 ----------------
 
-The data obtained from the wind tunnel contais the following:
+The data obtained from the wind tunnel contains the following:
 
 #. Building Dimensions. For example for a cuboid shaped building this would contain: height, breadth(width) and depth.
 #. Time. The time step, :math:`\Delta t`, or frequency, :math:`f`, of the data.

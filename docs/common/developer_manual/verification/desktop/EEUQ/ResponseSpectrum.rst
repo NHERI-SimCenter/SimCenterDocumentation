@@ -39,7 +39,7 @@ found in the `smelt library documentation <https://github.com/NHERI-SimCenter/sm
    :align: center
    :figclass: align-center
 
-   Response Spectra generated using NGA-West2 GMPEs, smelt & EE-UQ for :math:`M_W = 6.5`, closest-to-site distance :math:`R_{rupt} = 20km`, and average shear-wave velocity :math:`V_{s30} = 400 \frac{m}{s}`. 
+   Response spectra generated using NGA-West2 GMPEs, smelt & EE-UQ for :math:`M_W = 6.5`, closest-to-site distance :math:`R_{rupt} = 20km`, and average shear-wave velocity :math:`V_{s30} = 400 \frac{m}{s}`. 
 
 .. note::
 

@@ -4,7 +4,7 @@ PBE Verification
 
 Verification of the structural response simulation part of the workflow are presented in the `EE-UQ user manual <https://nheri-simcenter.github.io/EE-UQ-Documentation/index.html>`_.
 
-This example was designed to verify that the central tendencies estimated by the ``PBE`` App are appropriate. The dispersion of every variable is reduced to a sufficiently low value (i.e., a :math:`10^{-4}` coefficient of variation is used) that makes it simple to obtain the decision variables analytically. Verification is performed by comparing analytical solutions to the estimated values. Note: this verification example is identical to the first system test of the ``pelicun`` Python library that the ``PBE`` App uses for loss estimation.
+This example was designed to verify that the central tendencies estimated by the ``PBE`` App are appropriate. The dispersion of every variable is reduced to a sufficiently low value (i.e., a :math:`10^{-4}` coefficient of variation is used) that makes it simple to obtain the decision variables analytically. Verification is performed by comparing analytical solutions to the estimated values. Note: this verification example is identical to the first system test of the ``pelicun`` Python library that the PBE App uses for loss estimation.
 
 The files required to run the verification are available in the ``Verification/01_Central_tendency`` folder. Most of the input information can be loaded automatically from the ``test_central_tendency.json`` file. After loading the file, the following locations need to be set manually:
 
@@ -90,7 +90,7 @@ All of the required files shall be available in the ``Verification/01_Central_te
     
         Cumulative distribution function of realizations that resulted in a red tag.
 
-#. Irrepairability and impractical repairs due to excessive cost or time are not examined by this test in detail. Similarly to the collapse modes, it can be verified that only 50% of the realizations provide a value for these decision variables and the provided value is 0 in all cases.
+#. Irreparability and impractical repairs due to excessive cost or time are not examined by this test in detail. Similarly to the collapse modes, it can be verified that only 50% of the realizations provide a value for these decision variables and the provided value is 0 in all cases.
 
 #. The fragility data is specified so that reconstruction costs are one hundred times the reconstruction times. Because there is only one component, there should be no difference between reconstruction times with parallel and sequential work assumptions. This can be verified by plotting the joint distribution of those two variables (:numref:`fig-ver-1-8`) and the joint distribution of reconstruction cost and time (:numref:`fig-ver-1-9`).
 
@@ -139,3 +139,4 @@ All of the required files shall be available in the ``Verification/01_Central_te
         :figclass: align-center
     
         Cumulative distribution function of fatalities.
+        

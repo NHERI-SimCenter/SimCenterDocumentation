@@ -8,14 +8,14 @@ Depending on the model selected, the user will be asked to enter the parameters 
 Additionally, users can provide a seed for the stochastic wind generation if they desire the same suite of synthetic time histories to be generated on multiple occasions. If the seed is not specified, a different realization of the time history will be generated for each run based on the input parameters. The backend application that generates the stochastic wind loads relies on ``smelt``, a modular and extensible C++ library for generating stochastic time histories. Users interested in learning more about the implementation and design of \texttt{smelt} are referred to its `GitHub repository <https://github.com/NHERI-SimCenter/smelt>`_.
 
 All input parameters can be specified as random variables by entering a string in the parameter field. Please note that information for the
-inputs that are identified as random variables needs to be provided in the ``UQ`` tab.
+inputs that are identified as random variables needs to be provided in the **UQ** tab.
 
 .. _fig-stochasticwindloading:
 .. figure:: figures/stochastic_wind_loading.png
 	:align: center
 	:figclass: align-center
 
-	Stochastic Wind Loading Event
+	Stochastic wind loading event.
 
 References
 

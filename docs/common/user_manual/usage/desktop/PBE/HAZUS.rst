@@ -27,7 +27,7 @@ Response Model
     :align: right
     :figwidth: 300px
 
-    Response model settings
+    Response model settings.
 
 
 Some text about the model
@@ -75,7 +75,7 @@ Damage Model
 
 **Structure Type and Design Level**
 
-  These two pieces of information are used to select the appropriate fragility and consequence functions from those provided in the HAZUS MH Tehcnical Manual.
+  These two pieces of information are used to select the appropriate fragility and consequence functions from those provided in the HAZUS MH Technical Manual.
 
   Note: Any fragility or consequences function can be edited by the user and loaded by specifying a directory that contains those custom functions in the Custom DL data box at the bottom right. The loss calculations are performed at the local computer. Consequently, the locally available fragility and population data files can be used to perform the calculations even if the response simulations are done at DesignSafe.
 
@@ -122,7 +122,7 @@ Loss Model
     The loss assessment is performed using fragility and loss data from the HAZUS Technical Manual. Each data source can be overridden by custom user-defined data.
 
 
-.. bibliography:: ../../../../references.bib
+.. .. bibliography:: ../../../../references.bib
 
 .. _FEMA P58: https://www.fema.gov/media-library/assets/documents/90380
 .. _HAZUS MH Technical Manual: https://www.fema.gov/media-library-data/20130726-1820-25045-6286/hzmh2_1_eq_tm.pdf
