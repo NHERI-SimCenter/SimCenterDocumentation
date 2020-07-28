@@ -53,6 +53,7 @@ toc_filter_exclusions = [
 	'wind',
 	'PBE',
 	'quoFEM',
+	'notQuoFEM',
 	'WEUQ',
 	'EEUQ',
 	'TinF',
@@ -96,6 +97,13 @@ rst_prolog = """
 .. _Dakota Download: https://dakota.sandia.gov/download.html
 .. |Dakota Theory Manual| replace:: `Dakota Theory Manual`_
 .. _Dakota Theory Manual: https://dakota.sandia.gov/sites/default/files/docs/6.11/Theory-6.11.0.pdf
+.. |FEAPpv| replace:: **FEAPpv**
+.. |FeapLink| replace:: `FEAPpv`_
+.. _FEAPpv: http://projects.ce.berkeley.edu/feap/feappv/
+.. |FEAPpvDownload| replace:: `FEAPpv`_
+.. |FEAPpv Theory Manual| replace:: `FEAPpv Manual`_
+.. _FEAPpv Manual: http://projects.ce.berkeley.edu/feap/feappv/manual_51.pdf
+.. |OpenSeesPy| replace:: **OpenSeesPy**
 
 .. |requirements| replace:: **REQUIREMENTS**
 .. |DesignSafe| replace:: `DesignSafe`_
@@ -115,15 +123,18 @@ if app_name == 'PBE':
 
 	project = 'Performance Based Engineering Application'
 	copyright = '2019, The Regents of the University of California'
-	author = 'Adam Zsarnóczay'
+
+	author = 'Adam Zsarnóczay, Frank McKenna, Chaofeng Wang, Wael Elhaddad, Michael Gardner'
 
 	tags.add('PBE_app')
 	tags.add('desktop_app')
 	tags.add('earthquake')
+	tags.add('notQuoFEM')
 	
 	toc_filter_exclusions.remove('PBE')
 	toc_filter_exclusions.remove('desktop')
 	toc_filter_exclusions.remove('earthquake')
+	toc_filter_exclusions.remove('notQuoFEM')
 	toc_filter_exclude = toc_filter_exclusions
 
 	exclude_patterns.remove('**/*desktop*')
@@ -139,7 +150,6 @@ if app_name == 'PBE':
 	exclude_patterns.append('**/DakotaParameterEstimation.rst')
 	exclude_patterns.append('**/DakotaInverseProblems.rst')
 	exclude_patterns.append('**/resEE.rst')
-
 
 	# END TODO
 
@@ -179,17 +189,19 @@ if app_name == 'PBE':
 elif app_name == 'EE-UQ':
 	project = 'Earthquake Engineering with Uncertainty Quantification (EE-UQ)'
 	copyright = '2019, The Regents of the University of California'
-	author = 'Frank McKenna'
+	author = 'Frank McKenna, Wael Elhaddad, Michael Gardner, Chaofeng Wang, Adam Zsarnóczay'
 
 	tags.add('EEUQ_app')
 	tags.add('desktop_app')
 	tags.add('response')
 	tags.add('earthquake')
+	tags.add('notQuoFEM')
 
 	toc_filter_exclusions.remove('EEUQ')
 	toc_filter_exclusions.remove('desktop')
 	toc_filter_exclusions.remove('earthquake')
 	toc_filter_exclusions.remove('response')
+	toc_filter_exclusions.remove('notQuoFEM')
 	toc_filter_exclude = toc_filter_exclusions
 
 	exclude_patterns.remove('**/*EEUQ*')
@@ -232,7 +244,7 @@ elif app_name == 'EE-UQ':
 elif app_name == 'quoFEM':
 	project = 'Quantified Uncertainty with Optimization for the FEM'
 	copyright = '2018-2020, The Regents of the University of California'
-	author = 'Frank McKenna'
+	author = 'Frank McKenna, Adam Zsarnóczay, Nikhil Padhye'
 
 	tags.add('quoFEM_app')
 	tags.add('desktop_app')
@@ -282,7 +294,7 @@ elif app_name == 'quoFEM':
 	html_logo = 'common/figures/quoFEM-LogoImageGrey.png' 
 
 	html_theme_options = {
-		'analytics_id': 'UA-158130480-1',
+		'analytics_id': 'UA-158130480-4',
 		'logo_only': True,
 		'prev_next_buttons_location': None,
 		'style_nav_header_background': '#F2F2F2'
@@ -297,11 +309,13 @@ elif app_name == 'WE-UQ':
 	tags.add('desktop_app')
 	tags.add('response')
 	tags.add('wind')
+	tags.add('notQuoFEM')
 
 	toc_filter_exclusions.remove('WEUQ')
 	toc_filter_exclusions.remove('desktop')
 	toc_filter_exclusions.remove('wind')
 	toc_filter_exclusions.remove('response')
+	toc_filter_exclusions.remove('notQuoFEM')
 	toc_filter_exclude = toc_filter_exclusions
 
 	exclude_patterns.remove('**/*WEUQ*')
