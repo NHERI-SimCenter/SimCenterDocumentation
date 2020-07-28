@@ -3,7 +3,7 @@
 Verification of the Turbulence Inflow 
 =====================================
 
-The performance of the turbulent inflow in reproducing the statistical properties of the targeted turbulence can be verified by examining the synthetic velocity fluctuations generated at the inflow patch. To carry out such a verification, the first step is to record those velocity fluctuations during the simulations which can be achieved by adding the following lines in the *inflowProperties* file.
+The performance of the turbulence inflow tool in reproducing the statistical properties of the targeted turbulence can be verified by examining the synthetic velocity fluctuations generated at the inflow patch. To carry out such a verification, the first step is to record those velocity fluctuations during the simulations which can be achieved by adding the following lines in the *inflowProperties* file.
 
 .. code-block:: none
 

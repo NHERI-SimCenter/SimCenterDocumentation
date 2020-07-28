@@ -8,11 +8,16 @@ This reference is based on [Purdue Owl](https://owl.purdue.edu/owl/purdue_owl.ht
 
 ## Text Formatting
 
+---------------------------
+
 <details>
 
 <summary><b>Bold face</b> </summary>
+
 Use bold formatting (**), for UI elements and at the beginning of notices. This includes names for buttons, menus, dialogs, windows, list items, or any other feature in the page or console that has a visible name. Don't use code font for UI elements, unless it's an element that meets the requirements for code font. In that case, use both code font and bold.
 </details>
+
+---------------------------
 
 <details>
 <summary><i>Italics</i></summary>
@@ -30,11 +35,15 @@ Some improper uses of italics:
 
 </details>
 
+---------------------------
+
 <details>
 <summary> <u>Underlining</u> (Don't underline) </summary>
 
 Don't underline.
 </details>
+
+---------------------------
 
 <details>
 <summary> <code>Code font</code> </summary>
@@ -46,17 +55,23 @@ Some proper uses:
 - Referring to file names.
 </details>
 
+---------------------------
+
 <details>
 <summary>Capitalization</summary>
 
 Use American English style for [general capitalization](https://developers.google.com/style/capitalization). When possible, use sentence case in low-level headings, titles, and navigation.
 </details>
 
+---------------------------
+
 <details>
 <summary>Quotation marks</summary>
 
 In general, use American English style when [punctuating quotations](https://developers.google.com/style/quotation-marks). For titles of shorter works-such as articles or episodes in a web series-put titles in quotation marks, unless they are part of a link.
 </details>
+
+---------------------------
 
 <details>
 <summary>Numbers</summary>
@@ -77,13 +92,13 @@ In general, use numerals for the following:
 
 - Numbers 10 and greater.
 
-    **Exceptions:** Always use numerals for the following items, even if they are less than 10:
-        Version numbers.
-        Technical quantities, such as amounts of memory, amounts of disk space, numbers of queries, or usage limits.
-        Page numbers.
-        Chapter numbers, sections, pages, and so on.
-        Prices.
-        Numbers without units, such as numbers used in mathematical expressions.
+  > **Exceptions:** Always use numerals for the following items, even if they are less than 10:
+  > - Version numbers.
+  > - Technical quantities, such as amounts of memory, amounts of disk space, numbers of queries, or usage limits.
+  > - Page numbers.
+  > - Chapter numbers, sections, pages, and so on.
+  > - Prices.
+  > - Numbers without units, such as numbers used in mathematical expressions.
 
 - Numbers less than 10 when they appear in the same sentence with numbers greater than 9. For example, "The menu contains 15 options but 6 of them are disabled".
 - Negative numbers.
@@ -97,13 +112,15 @@ In general, use numerals for the following:
 Fractions
 
 - Express fractions as decimal numbers, when possible.
-
 - When expressing fractions as words, connect the numerator and denominator with a hyphen unless one of them is already hyphenated.
+
 </details>
+
+---------------------------
 
 ## Punctuation
 
-- Don't use ampersands (&) as conjunctions or shorthand for *and*. Use *and* instead. That includes headings and navigation. **Exception:** It's okay to use & in cases where you need to refer to a UI element or the name of a menu that uses &.
+- Don't use ampersands (&) as conjunctions or shorthand for *and*. Use *and* instead. That includes headings and navigation. 
+  >**Exception:** It's okay to use & in cases where you need to refer to a UI element or the name of a menu that uses &.
 - Put quotation marks and end punctuation [outside of link text](https://developers.google.com/style/link-text#punctuation-with-links).
-
 

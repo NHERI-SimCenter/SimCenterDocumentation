@@ -13,7 +13,7 @@ Fully developed turbulent channel flow is one of the most studied flow problem o
         \frac{\mathrm{d}p}{\mathrm{d}x} = \frac{u_{\tau}^2}{2\delta}
 
 
-\noindent Due to the homogeneity of turbulent channel flows in the stream-wise and span-wise directions, periodic boundary conditions can be applied to the boundaries normal to these two directions. In a standard case where periodic boundary conditions are employed, the simulation generates its own turbulence and can therefore be considered as a benchmark to assess simulations with synthetic turbulent inflow.
+Due to the homogeneity of turbulent channel flows in the stream-wise and span-wise directions, periodic boundary conditions can be applied to the boundaries normal to these two directions. In a standard case where periodic boundary conditions are employed, the simulation generates its own turbulence and can therefore be considered as a benchmark to assess simulations with synthetic turbulence.
 
 .. _fig_TinF01NE:
 
@@ -24,7 +24,7 @@ Fully developed turbulent channel flow is one of the most studied flow problem o
    
    Sketch of a channel flow and the coordinate system adopted
 
-The turbulence in the fully developed channel flow shows different levels of anisotropy with the varying wall distance, and isotropy is approximately recovered only in a small region adjacent to the mid plane of the channel. Compared to more complex flow problems, where the downstream evolution of the inflow turbulence might be quickly dominated by complicated geometries or other forcing factors, the turbulence in the channel is only induced by the presence of the flat wall and develops quite slowly. These circumstances make the channel flow a challenging test case for turbulent inflow generation, because impurities in the generated turbulence are very clearly identified.
+The turbulence in the fully developed channel flow shows different levels of anisotropy with the varying wall distance, and isotropy is approximately recovered only in a small region adjacent to the mid plane of the channel. Compared to more complex flow problems, where the downstream evolution of the inflow turbulence might be quickly dominated by complicated geometries or other forcing factors, the turbulence in the channel is only induced by the presence of the flat wall and develops quite slowly. These circumstances make the channel flow a challenging test case for turbulence inflow generation, because impurities in the generated turbulence are very clearly identified.
 
 Over the past two decades, direct numerical simulation (DNS) and large eddy simulation (LES) have been a valuable tool for the investigation of turbulent channel flows with periodic boundaries. A variety of studies of such simulations have yielded insights into both the statistical and structural characteristics of wall-bounded turbulence. :numref:`fig_TinF02NE` and :numref:`fig_TinF03NE` demonstrate the mean velocity and Reynolds stress tensor extracted from a LES simulation for the channel flow (using the tutorial case *channel395* available in the OpenFOAM) at the friction Reynolds number :math:`\mathrm{Re}_{\tau} = 395` defined as
 
@@ -32,7 +32,7 @@ Over the past two decades, direct numerical simulation (DNS) and large eddy simu
 
         \mathrm{Re}_{\tau} = \frac{\delta u_{\tau}}{\nu}
 
-Based on the data demonstrated in :numref:`fig_TinF02NE` and :numref:`fig_TinF03NE`, the application of the turbulent inflow tool to generate inlet conditions for large eddy simulation (LES) of turbulent plane channel flow at :math:`\mathrm{Re}_{\tau} = 395` will be presented.
+Based on the data demonstrated in :numref:`fig_TinF02NE` and :numref:`fig_TinF03NE`, the application of the turbulence inflow tool to generate inlet conditions for large eddy simulation (LES) of turbulent plane channel flow at :math:`\mathrm{Re}_{\tau} = 395` will be presented.
 
 .. _fig_TinF02NE:
 
@@ -54,7 +54,7 @@ Based on the data demonstrated in :numref:`fig_TinF02NE` and :numref:`fig_TinF03
 Numerical Setup
 ^^^^^^^^^^^^^^^
 
-The dimensions of the computational domain are chosen as :math:`2\pi\delta\times 2\delta \times \pi\delta` in the stream-wise, wall-normal and span-wise directions, respectively. This is sufficient to resolve the largest structures of the flow at :math:`\mathrm{Re}_{\tau} = 395`. In the meantime, the number of grid nodes are chosen as :math:`100 \times 60 \times 60` in the stream-wise, wall-normal and span-wise directions, respectively. The grid nodes are uniformly distributed in the stream-wise and span-wise directions, whereas an exponential profile is employed to determine the grid spacing in the wall-normal direction. Periodic boundary conditions were applied in the span-wise direction, whereas no-slip boundary conditions were imposed at the walls. For all simulations, the time step :math:`\Delta t` was adjusted so that the maximum Courant-Friedrichs-Lewy (CFL) number remains lower than unity during all simulations. The :math:`k`-equation model with Van Driest damping at the wall is used for LES. The different synthetic turbulent inflow methods investigated are summarized in :numref:`table_TinF01_NE`.
+The dimensions of the computational domain are chosen as :math:`2\pi\delta\times 2\delta \times \pi\delta` in the stream-wise, wall-normal and span-wise directions, respectively. This is sufficient to resolve the largest structures of the flow at :math:`\mathrm{Re}_{\tau} = 395`. In the meantime, the number of grid nodes are chosen as :math:`100 \times 60 \times 60` in the stream-wise, wall-normal and span-wise directions, respectively. The grid nodes are uniformly distributed in the stream-wise and span-wise directions, whereas an exponential profile is employed to determine the grid spacing in the wall-normal direction. Periodic boundary conditions were applied in the span-wise direction, whereas no-slip boundary conditions were imposed at the walls. For all simulations, the time step :math:`\Delta t` was adjusted so that the maximum Courant-Friedrichs-Lewy (CFL) number remains lower than unity during all simulations. The :math:`k`-equation model with Van Driest damping at the wall is used for LES. The different synthetic turbulence methods investigated are summarized in :numref:`table_TinF01_NE`.
 
 .. only:: html
 
@@ -164,7 +164,7 @@ A first impression of the turbulence in the flow is given in :numref:`fig_TinF04
    :figclass: align-center
    :width: 500px
    
-   Visualization of turbulent vortices in the channel flow simulation with DFM by contour-surfaces of :math:`\lambda_2 = 50`
+   Visualization of turbulent vortices in the channel flow simulation with DFM by contour-surfaces of :math:`\lambda_2`
    
    
 .. _fig_TinF05NE:
@@ -174,7 +174,7 @@ A first impression of the turbulence in the flow is given in :numref:`fig_TinF04
    :figclass: align-center
    :width: 500px
    
-   Visualization of turbulent vortices in the channel flow simulation with SEM by contour-surfaces of :math:`\lambda_2 = 50`
+   Visualization of turbulent vortices in the channel flow simulation with SEM by contour-surfaces of :math:`\lambda_2`
    
 
 .. _fig_TinF06NE:
@@ -184,7 +184,7 @@ A first impression of the turbulence in the flow is given in :numref:`fig_TinF04
    :figclass: align-center
    :width: 500px
    
-   Visualization of turbulent vortices in the channel flow simulation with ATSM_R by contour-surfaces of :math:`\lambda_2 = 50`
+   Visualization of turbulent vortices in the channel flow simulation with ATSM_R by contour-surfaces of :math:`\lambda_2`
    
    
 .. _fig_TinF07NE:
@@ -194,7 +194,7 @@ A first impression of the turbulence in the flow is given in :numref:`fig_TinF04
    :figclass: align-center
    :width: 500px
    
-   Visualization of turbulent vortices in the channel flow simulation with ATSM-L by contour-surfaces of :math:`\lambda_2 = 50`
+   Visualization of turbulent vortices in the channel flow simulation with ATSM-L by contour-surfaces of :math:`\lambda_2`
    
 In :numref:`fig_TinF08NE` ~ :numref:`fig_TinF11NE`, the pressure fluctuations in the channel flow simulations are plotted vs. the axial distance to the inlet. The SEM, which does not obey continuity, produces very intense pressure noise near the inlet. The peak amplitude of its pressure fluctuations is much larger than the amplitude of the natural pressure fluctuations in the channel. In comparsion, the DFSEM and ATSM formulations produce a pressure noise level which is much lower.
 

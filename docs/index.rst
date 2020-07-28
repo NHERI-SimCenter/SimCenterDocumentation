@@ -101,6 +101,8 @@
 
    :pelicun:common/developer_manual/API/pelicun/API
 
+   :desktop_app:common/user_manual/schemas/schema
+
 
 
 

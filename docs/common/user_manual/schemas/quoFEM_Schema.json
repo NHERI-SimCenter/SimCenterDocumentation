@@ -1,0 +1,204 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "description": "Schema for quoFEM ``.json`` input files.",
+    "type": "object",
+    "title": "quoFEM Schema",
+    "properties": {
+      "Applications": {
+        "type": "object",
+        "properties": {
+          "UQ": {
+            "type": "object",
+            "title": "UQ",
+            "properties": {
+              "Application": { "type": "string" },
+              "ApplicationData": {"type": "object", "properties": {} }
+            },
+            "description": "[incomplete desciption.]",
+            "required": [
+              "Application",
+              "ApplicationData"
+            ]
+          }
+        },
+        "required": ["UQ"]
+      },
+      "EDP": {
+        "type": "array",
+        "description": "Inputs for the QoI tab.",
+        "title": "QoI",
+        "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "name"
+            ]
+          }
+      },
+      "UQ_Method": {
+        "type": "object",
+        "description": "Inputs for the UQ tab.",
+        "title": "UQ tab",
+        "properties": {
+          "uqEngine": {
+            "type": "string",
+            "title": "UQ Engine",
+            "description": "UQ engine.",
+            "default": "Dakota"
+          },
+          "uqType": {
+            "type": "string",
+            "title":"Dakota Method Category"
+          },
+          "samplingMethodData": {
+            "type": "object",
+            "title": "Forward Propagation",
+            "properties": {
+              "method":  {"type": "string" , "title": "Method"},
+              "samples": {"type": "integer", "title": "Samples"},
+              "seed":    {"type": "integer", "title": "Seed"}
+            }
+          },
+          "reliabilityMethodData": {
+            "type": "object",
+            "title": "Reliability Analysis",
+            "properties":{
+              "integrationMethod": {"type": "string", "title": "Integration Method"},
+              "levelType":         {"type": "string", "title": "Level Type"},
+              "localMethod":       {"type": "string", "title": "Local Method"},
+              "method":            {"type": "string", "title": "Reliability Method"},
+              "mpp_Method":        {"type": "string", "title": "MPP Search Method"},
+              "probabilityLevel":  {"type": "array" , "title": "Probability Levels"}
+            }
+          },
+          "bayesianCalibrationMethodData": {
+            "type": "object",
+            "title": "Inverse Problem",
+            "properties": {
+              "burnInSamples": {"type": "number", "title": "No. Burn in Samples"},
+              "chainSamples":  {"type": "number", "title": "No. Chain Samples"},
+              "chains":        {"type": "number", "title": "No. Chains"},
+              "jumpStep":      {"type": "number", "title": "Jump Step"},
+              "method":        {"type": "string", "title": "DREAM"},
+              "seed":          {"type": "number", "title": "Seed"}
+            }
+          },
+          "calibrationMethodData": {
+            "type": "object",
+            "description": "Input data for **Parameter Estimation**.",
+            "properties": {
+              "convergenceTol": {"type": "number", "title": "Convergence Tol", "description": "Convergence tolerance."},
+              "factors":        {"type": "number", "title": "Scaling Factors"},
+              "maxIterations":  {"type": "number", "title": "Max No. Iterations"},
+              "method":         {"type": "string", "title": "Method"}
+            }
+          }
+        },
+        "required": [
+          "uqEngine",
+          "uqType"
+        ],
+        "options": [
+          "samplingMethodData", 
+          "reliabilityMethodData",
+          "bayesianCalibrationMethodData",
+          "calibrationMethodData"
+        ]
+      },
+      "fem": {
+        "type": "object",
+        "description": "Inputs for the FEM tab.",
+        "title": "FEM tab",
+        "properties": {
+          "dir": {
+            "type": "string"
+          },
+          "inputFile": {
+            "type": "string",
+            "title":"Input File"
+          },
+          "mainInput": {
+            "type": "string"
+          },
+          "mainPostprocessScript": {
+            "type": "string",
+            "description": "Path to post-processing script."
+          },
+          "numInputs": {
+            "type": "integer"
+          },
+          "parametersFile": {
+            "type": "string"
+          },
+          "parametersScript": {
+            "type": "string"
+          },
+          "postprocessScript": {
+            "type": "string"
+          },
+          "program": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "dir",
+          "inputFile",
+          "mainInput",
+          "mainPostprocessScript",
+          "numInputs",
+          "parametersFile",
+          "parametersScript",
+          "postprocessScript",
+          "program"
+        ]
+      },
+      "localAppDir": {
+        "type": "string",
+        "description": "[incomplete]"
+      },
+      "python":  {"type": "string"},
+      "randomVariables": {
+        "type": "array",
+        "title": "RV tab",
+        "items": {
+          "type": "object",
+          "properties": {
+            "distribution":  {"type": "string" },
+            "name":          {"type": "string" },
+            "refCount":      {"type": "integer"},
+            "stdDev":        {"type": "number" },
+            "value":         {"type": "string" },
+            "variableClass": {"type": "string" }
+          },
+          "required": [
+            "distribution",
+            "name",
+            "refCount",
+            "value",
+            "variableClass"
+          ]
+        }
+      },
+      "remoteAppDir":  {"type": "string"},
+      "uqResults":     {"type": "object", "properties":{}},
+      "workingDir":    {"type": "string"}
+    },
+    "required": [
+      "Applications",
+      "EDP",
+      "UQ_Method",
+      "fem",
+      "localAppDir",
+      "python",
+      "randomVariables",
+      "remoteAppDir",
+      "uqResults",
+      "workingDir"
+    ]
+  }
+  
+  

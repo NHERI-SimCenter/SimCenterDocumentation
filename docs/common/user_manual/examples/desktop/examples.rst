@@ -6,7 +6,7 @@ Examples
 
 .. only:: quoFEM_app
 
-	The following are a few examples showing the usage of quoFEM. Video companions showing these examples are also provided. The files for the examples are available in github.
+	The following are a few examples showing the usage of quoFEM. Video companions showing these examples are also provided for selected problems. The files for the examples are available on Github.
 
 .. only:: EEUQ_app
 
@@ -28,13 +28,11 @@ Examples
    :maxdepth: 1
 
    :quoFEM:quoFEM/TrussOpenSees
-   :quoFEM:quoFEM/FramePeriod
+   :quoFEM:quoFEM/FrameConv
+   :quoFEM:quoFEM/FrameBaye
    :EEUQ:EEUQ/ShearBuilding3
    :WEUQ:WEUQ/ShearBuilding9
    :PBE:PBE/basic_HAZUS
    :PBE:PBE/basic_P58
-
-
-
 
 
