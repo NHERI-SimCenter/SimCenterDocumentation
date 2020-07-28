@@ -62,7 +62,7 @@ Dakota
 OpenSees
 ^^^^^^^^
 
-|OpenSeesLink| is the default FEM engine used by the |app| that is publicly available from the |OpenSeesDownload| page. To download the **OpenSees** you have to enter your email address, which may also require you to register (that requirement is going away and may be gone by time you read this). At the bottom of the page, under section **Windows Version** is the download link for the current executable, currently **3.2.0** Follow the link to download the application. It is in the form of a **.zip** file. The zip file contains a folder and in the bin directory is the **OpenSees.exe** application. The other files and folders are needed by the application and must be kept. Rename the folder to **OpenSees-3.2.0** and move the folder to the **C:\\SimCenter\\OpenSees** folder.
+|OpenSeesLink| is the default FEM engine used by the |app| that is publicly available from the |OpenSeesDownload| page. To download the **OpenSees** you have to enter your email address, which may also require you to register (that requirement is going away and may be gone by time you read this). At the bottom of the page, under section **Windows Version** is the download link for the current executable, currently **3.2.2** Follow the link to download the application. It is in the form of a **.zip** file. The zip file contains a folder and in the bin directory is the **OpenSees.exe** application. The other files and folders are needed by the application and must be kept. Rename the folder to **OpenSees-3.2.2** and move the folder to the **C:\\SimCenter\\OpenSees** folder.
 
 Modify the Environment Variables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -74,16 +74,17 @@ You now need to make some changes to your environment variables as neither OpenS
 3. Now we are going to edit the  **PATH** variable. Select the Path variable row to highlight it and then press the **Edit** button.
 4. to the variables value you want to **APPEND** the following:
 
-.. :code-block:: none
+.. code-block:: none
    
-   C:\\SimCenter\\OpenSees\\OpenSees-3.1.0\\bin;C:\\SimCenter\\dakota\\dakota-6.10.0\\bin
+   C:\\SimCenter\\OpenSees\\OpenSees-3.2.2\\bin;C:\\SimCenter\\dakota\\dakota-6.10.0\\bin
 
 5. Press the **OK** button.
 6. Now we are going to create a new variable, **PYTHONPATH** variable. Press the **NEW** button.
 7. For the variable name enter: **PYTHONPATH**.
 8. For the variable path enter
 
-.. :code-block:: none
+.. code-block:: none
+
    C:\\SimCenter\\dakota\\share\\dakota\\Python
 
 9. Press the **OK** button.
@@ -98,7 +99,7 @@ Steps to Test:
    2. Type `python3` in the application that starts (this should bring up python interpreter)
    3. Enter the following to test the install of the modules and quit the application:
    
-   .. :code-block:: python
+   .. code-block:: python
 
       import numpy
       import scipy
@@ -109,7 +110,7 @@ Steps to Test:
 
    5. Enter the following to exit this program:
    
-   .. :code-block:: tcl
+   .. code-block:: tcl
 
       exit
 
