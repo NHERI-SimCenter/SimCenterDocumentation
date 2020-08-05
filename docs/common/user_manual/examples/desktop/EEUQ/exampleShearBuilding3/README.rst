@@ -4,9 +4,9 @@ Shear Building: Sampling, Reliability and Sensitivity
 
 Consider the problem of uncertainty quantification in a three story shear building
 
-.. figure:: figures/shear.png
+.. figure:: figures/model.png
    :align: center
-   :width: 600
+   :width: 400
    :figclass: align-center
 
    Three Story Shear Building Model (P10.2.9, "Dynamics of Structures", A.K.Chopra)
@@ -17,41 +17,38 @@ The structure has uncertain properties that all follow normal distribution:
 2. Weight of Roof(wR): mean :math:`\mu_E=50 \mathrm{kip}` and standard deviation :math:`\sigma_E =5 \mathrm{kip}` (COV = 10%)
 3. Story Stiffness (k): mean :math:`\mu_k =326.32 \mathrm{kip/in}` and a standard deviation of :math:`\sigma_P = 3 \mathrm{kN}`, (COV = 12%).
 
-The goal of the exercise is to estimate the mean and standard deviation of the relative displacement of node **4** when subject to:
-1. ElCentro ground motion
-2. ElCEntro & Rinaldi E and W components.
-3. A Selection of ground motions selected from the PEER NGA database.
+The goal of the exercise is to estimate the mean and standard deviation of the relative displacement of the fourth node when subjected to an El Centro ground motion record.
 
-The exercise will use both the MDOF, :numref:`lblMDOF`,  and OpenSees, :numref:`lblOpenSeesSIM`, structural generators. For the OpenSees generator the following model script, `ShearBuilding3.tcl <https://github.com/NHERI-SimCenter/EE-UQ/blob/master/Examples/ShearBuilding3/ShearBuilding3.tcl>`_ :
+The exercise will use both the MDOF, :numref:`lblMDOF`,  and OpenSees, :numref:`lblOpenSeesSIM`, structural generators. For the OpenSees generator the following model script, `ShearBuilding3.tcl <https://github.com/NHERI-SimCenter/EE-UQ/blob/master/Examples/ShearBuilding3/ShearBuilding3.tcl>`_ is used:
 
 .. literalinclude:: ShearBuilding3.tcl
    :language: tcl
 
-.. note::
-   
-   1. The first lines containing ``pset`` will be read by the application when the file is selected and the application will autopopulate the Random Variables ``w``, ``wR``, and ``k`` in the **RV** tab with these same variable names. It is of course possible to explicitly use Random Variables without the ``pset`` command by "RV.**variable name" in the input file. However, no random variables will be autopopulated if user chooses this route.
+   .. note::
+      
+      1. The first lines containing ``pset`` will be read by the application when the file is selected and the application will autopopulate the Random Variables ``w``, ``wR``, and ``k`` in the **RV** tab with these same variable names. It is also possible to explicitly use random variables without the ``pset`` command by "RV.**variable name" in the input file. However, the **RV** panel will not automatically populate if user chooses this route.
 
 .. warning::
 
    Do not place the file in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing this file multiple times (a copy will be made for each sample specified). If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!
 
-Sampling Analysis with ElCentro
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Sampling Analysis with El Centro
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We shall first demonstrate the steps to perform a sampling analysis to study the effects of the roof response of models of the building subjected to the El Centro ground motion. We shall scale the input motion using a scale factor (factorEC) following a uniform distribution between **1.2** and **1.8**, i.e. mean :math:`\mu_{factorEC} = 1.5` and a standard deviation of :math:`\sigma_{factorEC} = 0.1732`, (COV = 12%).
+We will first demonstrate the steps to perform a sampling analysis to study the effects of the roof response of models of the building subjected to the El Centro ground motion. We will scale the input motion using a scale factor (which we name ``factorEC``) following a uniform distribution between **1.2** and **1.8**, i.e. mean :math:`\mu_{factorEC} = 1.5` and a standard deviation of :math:`\sigma_{factorEC} = 0.1732`, (COV = 12%).
 
 
 To perform a Sampling or Forward propagation uncertainty analysis the user would perform the following steps:
 
-The steps involved:
-
-1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota, and the UQ Method Category as Forward Propagation, and the Forward Propagation method as LHS (Latin Hypercube). Change the #samples to 1000 and the seed to 20 as shown in the figure.
+1. Upon opening the application the **UQ** tab will be highlighted. In is panel, keep the **UQ engine** as that selected, i.e. Dakota, and the **UQ Method Category** as **Forward Propagation**, and the **Method** field as **LHS** (Latin Hypercube). Change the **#samples** field to ``1000`` and the **Seed** to ``20`` as shown in the following figure.
 
 .. figure:: figures/shearUQ.png
    :align: center
    :figclass: align-center
 
-2. Next select the **SIM** tab from the input panel. This will default in the MDOF model generator. We will use this generator (the NOTE below contains instruction on how to use the OpenSees scipt instead). In the building information panel, specify number of stories as **3** (this will change the graphic). Also in the Building information frame specify **w** for the floor weights and **k** for story stiffness. Finally in the table below, go to the third row and enter **wR** for the roof weight (you will notice that when you enter that table cell the node at the top of the model will turn red, indicating you are editing the information for the top most node).
+2. The **GI** tab will not be used for this run; For the time being leave the default values as is, and they will be automatically updated based on the information entered in the remaining tabs.
+
+3. Next select the **SIM** tab from the input panel. This will default in the MDOF model generator. We will use this generator (the NOTE below contains instruction on how to use the OpenSees scipt instead). In the building information panel, specify number of stories as **3** (this will change the graphic). Also in the Building information frame specify **w** for the floor weights and **k** for story stiffness. Finally in the table below, go to the third row and enter **wR** for the roof weight (you will notice that when you enter that table cell the node at the top of the model will turn red, indicating you are editing the information for the top most node).
 
 .. figure:: figures/shearSIM.png
    :align: center
@@ -59,19 +56,19 @@ The steps involved:
 
 .. note::
 
-   To specify instead to use the OpenSees script instead, from yje Model Generator pull down menu select **OpenSees. For the fields in the panel presented enter the path to the ``ShearBuilding3d.tcl`` script. Also specify thee Response Nodes as **1 2 3 4** in the panel. The Response nodes will tell model generator which nodes correspond to nodes at the 4 floor levels for which responses are to be obtained when using the standard earthquake EDP's.
+   To specify instead to use the OpenSees script, from the **Model Generator** pull down menu select **OpenSees**. For the fields in the panel presented enter the path to the ``ShearBuilding3d.tcl`` script. Also specify three Response Nodes as **1 2 3 4** in the panel. This field will tell the model generator which nodes correspond to nodes at the four floor levels at which responses are to be obtained when using the standard earthquake EDPs.
 
    .. figure:: figures/shearSIM-OpenSees.png
       :align: center
       :figclass: align-center
 
-3. Next select the **EVT** panel. From the Load Generator pull down menu select the **Multiple PEER** option. This will present a panel with 3 buttons to **Add**, **Remove** and **Load Directory**. Press the **Add** button. Give the motion a name, here enter **elCentro** in the first line edit. Now for the motion enter the path to the **elCentro.AT2** motion. Leave the motion acting in the **1** dof direction and for this direction enter a scale factor, enter **factorEC**.
+4. Next select the **EVT** panel. From the **Load Generator** pull down menu select the **Multiple PEER** option. This will present a panel with three buttons: **Add**, **Remove** and **Load Directory**. Click the **Add** button. Give the motion a name, here enter ``elCentro`` in the first line edit. Now for the motion, enter the path to the ``elCentro.AT2`` motion. Leave the motion acting in the **1** dof direction and for the scale factor in this direction, enter **factorEC**.
 
 .. figure:: figures/shearEVT.png
    :align: center
    :figclass: align-center
 
-3. Next choose the **FEM** panel. Here we will change the entries to use Rayleigh damping, with rayleigh factor chosen using **1** and **3** modes. For the **MDOF** model generator, because it generates a model with two translational and 1 rotational degree-of-freedom in each direction and because we have provided the same **k** values in each translational direction, i.e. we will have duplicate eigenvalues, we specify as shown in the figure modes **1** and **6**.
+5. Next choose the **FEM** panel. Here we will change the entries to use Rayleigh damping, with Rayleigh factor chosen using the first and third modes. For the **MDOF** model generator, because it generates a model with two translational and one rotational degree-of-freedom in each direction and because we have provided the same ``k`` values in each translational direction (i.e. we will have duplicate eigenvalues), we specify as shown in the figure modes **1** and **6**.
 
 .. figure:: figures/shearFEM.png
    :align: center
@@ -86,10 +83,10 @@ The steps involved:
       :figclass: align-center
 
 
-4. We will skip the **EDP** panel leaving it in it's default condition, that being to use the **Standard Earthquake** EDP generator.
+6. We will skip the **EDP** panel leaving it in it's default condition, that being to use the **Standard Earthquake** EDP generator.
 
 
-5. For the **RV** panel, we will enter the distributions and values for our random variables. Because of the steps we have followed and entries we have made, the panel when we open it should contain the **4** random variables and they should all be set constant. For the w, wR and k random variables we change the distributions to normal and enter the values given for the problem, as shown in figure below. For the factorEC variable, we change the distribution to **uniform** and enter the values.
+7. For the **RV** panel, we will enter the distributions and values for our random variables. Because of the steps we have followed and entries we have made, when this tab is opened it should contain the four random variables and they should all be set constant. For the ``w``, ``wR`` and ``k`` random variables we change the distributions to normal and enter the values given for the problem, as shown in figure below. For the ``factorEC`` variable, change the distribution to **uniform** and enter the values in the figure.
 
 .. figure:: figures/shearRV.png
    :align: center
@@ -100,19 +97,19 @@ The steps involved:
 
    The user cannot leave any of the distributions for these values as constant for the Dakota UQ engine.
 
-5. Next click on the 'Run' button. This will cause the backend application to launch dakota. When done the **RES** tab will be selected and the results will be displayed. The results show the values the mean and standard deviation. The relative displacement of the roof, is the quantity **1-PFD-3-1** (first event (tool to be extended to multiple events), 3rd floor (in US ground floor considered 0), and 1 dof direction).
+8. Next click on the **Run** button. This will cause the backend application to launch Dakota. When the analysis is complete the **RES** tab will be selected and the results will be displayed. The results show the values for the mean and standard deviation. The relative displacement of the roof is the quantity **1-PFD-3-1**. This identifier signifies the first event, 3rd floor (in the US the ground floor is considered 0), and first dof direction.
 
 .. figure:: figures/shearRES1.png
    :align: center
    :figclass: align-center
 
-If the user selects the "Data" tab in the results panel, they will be presented with both a graphical plot and a tabular listing of the data. By left- and right-clicking with the mouse in the individual columns the axis change (left mouse click controls vertical axis, right mouse click the horizontal axis).
+If the user selects the **Data** tab in the **RES** panel, they will be presented with both a graphical plot and a tabular listing of the data. By left- and right-clicking with the mouse in the individual columns the axis changes (left mouse click controls vertical axis, right mouse click the horizontal axis).
 
 .. figure:: figures/shearRES7.png
    :align: center
    :figclass: align-center
 
-Various views of the graphical display can be obtained by left and right clicking in the columns of the tabular data. If a singular column of the tabular data is pressed with both right and left buttons a frequency and CDF will be displayed, as shown in figure below.
+Various views of the graphical display can be obtained by left- and right-clicking in the columns of the tabular data. If a singular column of the tabular data is selected with both right and left mouse buttons, a frequency and CDF plot will be displayed, as shown in figure below.
 
 .. figure:: figures/shearRES6.png
    :align: center
@@ -126,7 +123,7 @@ In the previous example we got the standard output, which can be both a lot and 
 
 For this example you will need two additional file `recorderCommands.tcl <https://github.com/NHERI-SimCenter/EE-UQ/blob/master/Examples/ShearBuilding3/recorderCommands.tcl>`_ and `postprocess.tcl <https://github.com/NHERI-SimCenter/EE-UQ/blob/master/Examples/ShearBuilding3/postprocess.tcl>`_. 
 
-The recorderCommands script as shown will record the envelope displacements in the first two degrees-of-freedom for nodes **1** through **4**. The file is as shown below:
+The ``recorderCommands.tcl`` script as shown below will record the envelope displacements in the first two degrees-of-freedom for nodes **1** through **4**. 
 
 .. literalinclude:: recorderCommands.tcl
    :language: tcl
@@ -152,7 +149,7 @@ The steps are the same as the previous example, with exception of step 4 definin
    :figclass: align-center
 
 
-2. Next click on the 'Run' button. This will cause the backend application to launch dakota. When done the **RES** tab will be selected and the results will be displayed. The results show the values the mean and standard deviation as before but now only for the one quantity of interest.
+2. Next click on the **Run** button. This will cause the backend application to launch dakota. When done the **RES** tab will be selected and the results will be displayed. The results show the values the mean and standard deviation as before but now only for the one quantity of interest.
 
 .. figure:: figures/shearRES-UO.png
    :align: center
