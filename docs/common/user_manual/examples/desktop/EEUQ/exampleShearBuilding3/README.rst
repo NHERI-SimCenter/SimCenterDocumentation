@@ -48,7 +48,7 @@ To perform a Sampling or Forward propagation uncertainty analysis the user would
 
 2. The **GI** tab will not be used for this run; For the time being leave the default values as is, and they will be automatically updated based on the information entered in the remaining tabs.
 
-3. Next select the **SIM** tab from the input panel. This will default in the MDOF model generator. We will use this generator (the NOTE below contains instruction on how to use the OpenSees scipt instead). In the building information panel, specify number of stories as **3** (this will change the graphic). Also in the Building information frame specify **w** for the floor weights and **k** for story stiffness. Finally in the table below, go to the third row and enter **wR** for the roof weight (you will notice that when you enter that table cell the node at the top of the model will turn red, indicating you are editing the information for the top most node).
+3. Next select the **SIM** tab from the input panel. This will default in the MDOF model generator. We will use this generator (the NOTE below contains instruction on how to use the OpenSees script instead). In the building information panel, specify number of stories as **3** (this will change the graphic). Also in the Building information frame specify **w** for the floor weights and **k** for story stiffness. Finally in the table below, go to the third row and enter **wR** for the roof weight (you will notice that when you enter that table cell the node at the top of the model will turn red, indicating you are editing the information for the top most node).
 
 .. figure:: figures/shearSIM.png
    :align: center

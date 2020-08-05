@@ -47,7 +47,7 @@ Step 2: GI
 
 Next, the **GI** panel may be used to define metadata and other general information about the model. However, for this exercise this panel will not be used; the default values may be left as they are, and they will be automatically updated based on the information entered in the following panels.
 
-.. figure:: figures/GI.png
+.. figure:: figures/GI-ex.png
    :align: center
    :figclass: align-center
 
@@ -95,7 +95,7 @@ Step 6: RV
 
 Now in the **RV** panel we will enter the distributions and values for our random variables. Because of the steps we have followed and entries we have made, when this tab is opened it should contain the ``wFloor``, ``wRoof`` and ``k`` random variables for which we supplied variable names in previous panels. 
 
-.. figure:: figures/RV.png
+.. figure:: figures/RV-ex.png
    :align: center
    :figclass: align-center
 
