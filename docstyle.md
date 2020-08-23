@@ -14,7 +14,9 @@ This reference is based on [Purdue Owl](https://owl.purdue.edu/owl/purdue_owl.ht
 
 <summary><b>Bold face</b> </summary>
 
-Use bold formatting (**), for UI elements and at the beginning of notices. This includes names for buttons, menus, dialogs, windows, list items, or any other feature in the page or console that has a visible name. Don't use code font for UI elements, unless it's an element that meets the requirements for code font. In that case, use both code font and bold.
+Use bold formatting for UI elements and at the beginning of notices. This includes names for buttons, menus, dialogs, windows, list items, or any other feature in the page or console that has a visible name.
+
+Do not use code font for UI elements, unless it's an element that meets the requirements for code font. In that case, use both code font and bold.
 </details>
 
 ---------------------------
@@ -46,13 +48,12 @@ Don't underline.
 ---------------------------
 
 <details>
-<summary> <code>Code font</code> </summary>
+<summary> <code>Code (Monospace) font</code> </summary>
 
-Surround text in double backticks (\`\`) to apply a monospace font to [code in text](https://developers.google.com/style/code-in-text), inline code, and user input. Use code blocks (`.. :code-block::`) for code samples or other blocks of code. Do not override or modify font styles inline. Use code font to mark up code, such as class names, method names, HTTP status codes, console output, and placeholder variables.
+Apply a monospace font to [code in text](https://developers.google.com/style/code-in-text), file names, inline code, and user input.
 
-Some proper uses:
+Use code blocks for code samples or other blocks of code. Do not override or modify font styles inline. Use code font to mark up code, such as class names, method names, HTTP status codes, console output, and placeholder variables.
 
-- Referring to file names.
 </details>
 
 ---------------------------
@@ -76,7 +77,7 @@ In general, use American English style when [punctuating quotations](https://dev
 <details>
 <summary>Numbers</summary>
 
-In general, spell out the following:
+<h3>Spell numbers out</h3>
 
 - Numbers from zero through nine, except as noted below in Numbers as numerals.
 
@@ -88,7 +89,7 @@ In general, spell out the following:
 
 - Indefinite and casual numbers (e.g. "The API might return a list of a million songs").
 
-In general, use numerals for the following:
+<h3>Use numerals</h3>
 
 - Numbers 10 and greater.
 
@@ -109,7 +110,7 @@ In general, use numerals for the following:
 - Measurements.
 - Numbers in a range.
 
-Fractions
+<h3>Fractions</h3>
 
 - Express fractions as decimal numbers, when possible.
 - When expressing fractions as words, connect the numerator and denominator with a hyphen unless one of them is already hyphenated.
@@ -123,4 +124,3 @@ Fractions
 - Don't use ampersands (&) as conjunctions or shorthand for *and*. Use *and* instead. That includes headings and navigation. 
   >**Exception:** It's okay to use & in cases where you need to refer to a UI element or the name of a menu that uses &.
 - Put quotation marks and end punctuation [outside of link text](https://developers.google.com/style/link-text#punctuation-with-links).
-

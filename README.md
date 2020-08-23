@@ -26,13 +26,13 @@ pip install sphinxcontrib.bibtex
 
 ### 2. Download the repo using git from a terminal window
 
-```
+```shell
 git clone https://github.com/NHERI-SimCenter/SimCenterDocumentation.git
 ```
 
 ### 3. Once sphinx is installed and the repo downloaded, type make html to build it
 
-```
+```shell
 cd SimCenterDocumentation
 cd docs
 make html
