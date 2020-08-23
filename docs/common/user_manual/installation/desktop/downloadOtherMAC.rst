@@ -65,13 +65,13 @@ OpenSees
 |OpenSeesLink| is the default FEM engine used by the |app| that is publicly available from the |OpenSeesDownload| page. To download the **OpenSees** you have to enter your email address, which may also require you to register (that requirement is going away and may be gone by time you read this). At the bottom of the page undet the section **Mac Version** is a table with two links: one for the **OpenSees** and also a link to |Tcl|, whose libraries OpenSees needs on your computer to run. You will need to follow both links to download both applications.
 
 Steps to Install OpenSees on a Mac:
-      1. Follow the OpenSees link and download the OpenSees.zip file. Uncompress the file and you will have an **OpenSees-3.1.0** folder. Move that folder to the **bin/OpenSees** folder. 
+      1. Follow the OpenSees link and download the OpenSees.zip file. Uncompress the file and you will have an **OpenSees-3.2.2** folder. Move that folder to the **bin/OpenSees** folder. 
       2. Download and run the Tcl installer.
 
 
 .. note::
 
-   The additional requirement of installing **Tcl** is about to be removed from the |OpenSees| installation process. If the table for the **Mac Download** does not contain a second link, it has been removed and no **Tcl** install is required.
+   The additional requirement of installing **Tcl** was removed from the |OpenSees| installation process with version **3.2.2**. 
 
 Edit Your Shell file
 ^^^^^^^^^^^^^^^^^^^^
