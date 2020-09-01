@@ -14,8 +14,8 @@ Consider the problem of uncertainty quantification in a nine story steel buildin
 
 The structure has uncertain properties that all follow normal distribution:
 
-1. Weight of Typical Floor(w): mean :math:`\mu_w=2200 \mathrm{kip}` and standard deviation :math:`\sigma_w =200 \mathrm{kip}` (COV = 10%)
-2. Story Stiffness(k): mean :math:`\mu_k=1600 \mathrm{kip/in}` and standard deviation :math:`\sigma_k =160 \mathrm{kip/in}` (COV = 10%)
+1. Weight of Typical Floor(``w``): mean :math:`\mu_w=2200 \mathrm{kip}` and standard deviation :math:`\sigma_w =200 \mathrm{kip}` (COV = 10%)
+2. Story Stiffness(``k``): mean :math:`\mu_k=1600 \mathrm{kip/in}` and standard deviation :math:`\sigma_k =160 \mathrm{kip/in}` (COV = 10%)
 
 .. note::
 
@@ -27,7 +27,7 @@ The structure has uncertain properties that all follow normal distribution:
    .. literalinclude:: 9Story.tcl
       :language: tcl
 
-   #. The first lines containing ``pset`` will be read by the application when the file is selected and the application will autopopulate the Random Variables ``w`` and ``k`` in the **RV** tab with this same variable name. It is of course possible to explicitly use Random Variables without the ``pset`` command by "RV.**variable name" in the input file. However, no random variables will be autopopulated if user chooses this route.
+   #. The first lines containing ``pset`` will be read by the application when the file is selected and the application will autopopulate the Random Variables ``w`` and ``k`` in the **RV** panel with this same variable name. It is of course possible to explicitly use Random Variables without the ``pset`` command by "RV.**variable name" in the input file. However, no random variables will be autopopulated if user chooses this route.
 
 .. warning::
 
@@ -50,7 +50,7 @@ To perform a Sampling or Forward propagation uncertainty analysis the user would
    :align: center
    :figclass: align-center
 
-3. Next select the **SIM** tab from the input panel. This will default in the MDOF model generator. We will use this generator (the NOTE below contains instruction on how to use the OpenSees scipt instead). In the building information panel, the number of stories should show **9** and the story heights **160**. In the building Information box specify **w** for the floor weights and **k** for story stiffness (in both x and y directions). 
+3. Next select the **SIM** panel from the input panel. This will default in the MDOF model generator. We will use this generator (the NOTE below contains instruction on how to use the OpenSees scipt instead). In the building information panel, the number of stories should show **9** and the story heights **160**. In the building Information box specify **w** for the floor weights and **k** for story stiffness (in both x and y directions). 
 
 
 .. figure:: figures/9story-SIM1.png
@@ -89,7 +89,7 @@ To perform a Sampling or Forward propagation uncertainty analysis the user would
 
    The user cannot leave any of the distributions for these values as constant for the Dakota UQ engine.
 
-5. Next click on the 'Run' button. This will cause the backend application to launch dakota. When done the **RES** tab will be selected and the results will be displayed. The results show the values the mean and standard deviation. The peak displacement of the roof, is the quantity **1-PFD-9-1** (first event (tool to be extended to multiple events), 9th floor (in US ground floor considered 0), and 1 dof direction). the **PFA** quantity defines peak floor acceleration, the **RMSA** quantity the root mean square of floor accelerations, and the **PID** quantity corresponds to peak interstory drift.
+5. Next click on the **Run** button. This will cause the backend application to launch dakota. When done the **RES** panel will be selected and the results will be displayed. The results show the values the mean and standard deviation. The peak displacement of the roof, is the quantity **1-PFD-9-1** (first event (tool to be extended to multiple events), 9th floor (in US ground floor considered 0), and 1 dof direction). the **PFA** quantity defines peak floor acceleration, the **RMSA** quantity the root mean square of floor accelerations, and the **PID** quantity corresponds to peak interstory drift.
 
 .. figure:: figures/9story-RES1.png
    :align: center
@@ -140,7 +140,7 @@ The steps are the same as the previous example, with exception of step 4 definin
    :figclass: align-center
 
 
-2. Next click on the 'Run' button. This will cause the backend application to launch dakota. When done the **RES** tab will be selected and the results will be displayed. The results show the values the mean and standard deviation as before but now only for the one quantity of interest.
+2. Next click on the **Run** button. This will cause the backend application to launch dakota. When done the **RES** panel will be selected and the results will be displayed. The results show the values the mean and standard deviation as before but now only for the one quantity of interest.
 
 .. figure:: figures/9story-RES-USER.png
    :align: center
