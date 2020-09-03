@@ -3,7 +3,7 @@
 RES: Results
 ------------
 
-After the user hits the ``Run`` button, the simulation of building response and the loss assessment is performed automatically in the background. Assuming that the calculations were successful, the |app| switches to the RES panel to present the results. A successful run or download of a job that ran successfully will result in two tabbed widgets being displayed in this panel.
+After the user hits the **Run** button, the simulation of building response and the loss assessment is performed automatically in the background. Assuming that the calculations were successful, the |app| switches to the **RES** tab to present the results. A successful run or download of a job that ran successfully will result in two tabbed widgets being displayed in this panel.
 
 The first panel :numref:`figResultsSummaryPBE` shows summary statistics: mean, standard deviation, and several important percentiles of the Decision Variables.
 

@@ -16,3 +16,7 @@ For Sensitivity Analysis the user has two options to generate the samples on whi
 	:figclass: align-center
 
   	Sensitivity analysis input panel.
+
+The results of the Sensitivity analysis will show both the main effect and total effect `Sobol indices <https://en.wikipedia.org/wiki/Variance-based_sensitivity_analysis>`_ for each RV for each of the QoI.
+
+

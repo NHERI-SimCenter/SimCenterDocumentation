@@ -36,6 +36,8 @@ Once Python is installed, you need to extend it by installing the following pack
       pip3 install numpy
       pip3 install scipy
       pip3 install pandas
+      pip3 install tables
+      pip3 install hdf5
 
 .. note:: 
    #. To start a terminal window you can use the spotlight app (magnifying glass at the top right corner of the desktop). Start the spotlight app and type in terminal. The terminal application should appear as the top hit. Click on it to start it.
@@ -63,8 +65,13 @@ OpenSees
 |OpenSeesLink| is the default FEM engine used by the |app| that is publicly available from the |OpenSeesDownload| page. To download the **OpenSees** you have to enter your email address, which may also require you to register (that requirement is going away and may be gone by time you read this). At the bottom of the page undet the section **Mac Version** is a table with two links: one for the **OpenSees** and also a link to |Tcl|, whose libraries OpenSees needs on your computer to run. You will need to follow both links to download both applications.
 
 Steps to Install OpenSees on a Mac:
-      1. Follow the OpenSees link and download the OpenSees.zip file. Uncompress the file and you will have an **OpenSees-3.1.0** folder. Move that folder to the **bin/OpenSees** folder. 
+      1. Follow the OpenSees link and download the OpenSees.zip file. Uncompress the file and you will have an **OpenSees-3.2.2** folder. Move that folder to the **bin/OpenSees** folder. 
       2. Download and run the Tcl installer.
+
+
+.. note::
+
+   The additional requirement of installing **Tcl** was removed from the |OpenSees| installation process with version **3.2.2**. 
 
 Edit Your Shell file
 ^^^^^^^^^^^^^^^^^^^^
@@ -102,8 +109,8 @@ Test the Install of Python, OpenSees & Dakota
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Steps to Test the Installation of the Applications:
-   1. Open a terminal windows (type `terminal` in spotlight search)
-   2. Type `python3` (this should bring up python interpreter)
+   1. Open a terminal windows (type ``terminal`` in spotlight search)
+   2. Type ``python3`` (this should bring up the Python interpreter)
    3. Enter the following to test the install of the modules and quit the application:
    
    .. code:: python
@@ -113,7 +120,7 @@ Steps to Test the Installation of the Applications:
       import pandas
       quit()
 
-   4. Type `OpenSees` (this should bring up the OpenSees interpreter)
+   4. Type ``OpenSees`` (this should bring up the OpenSees interpreter).
 
    5. Enter the following to exit this program:
    
@@ -121,7 +128,7 @@ Steps to Test the Installation of the Applications:
 
       exit
 
-   6. Type `dakota` (this should start the dakota application which should give some error messages)
+   6. Type ``dakota`` (this should start the Dakota application which should give some error messages).
 
 .. note::
 

@@ -2,18 +2,18 @@
 Steel Frame: Parameter Estimation
 ==================================
 
-Consider the problem of estimating parameters for a model given some experimental data. In this educational example, which has been provided by Professor Joel Conte and his doctoral students Maitreya Kurumbhati and Mukesh Ramancha from UC San Diego, a simplified finite element model of a steel building is being developed. Consider the two-story building structure shown in :numref:`lblJoelFrame`. Each floor slab of the building is made of composite metal deck and is supported on four steel columns. Story heights of 10' are measured as are the lengths of the building along the X and Y direction, which are measured at 33'4" and 30'. For the steel columns, Young's modulus is measured to be :math:`29,000 ksi`, :math:`Area = 110 in^2`, and :math:`I_{xx} = 1190 in^4`. For modelling purposes, the four columns are assumed fixed at the base and the beams connecting them are assumed to be rigid.
+Consider the problem of estimating parameters for a model given some experimental data. In this educational example, which has been provided by Professor Joel Conte and his doctoral students Maitreya Kurumbhati and Mukesh Ramancha from UC San Diego, a simplified finite element model of a steel building is being developed. Consider the two-story building structure shown in :numref:`lblJoelFrame`. Each floor slab of the building is made of composite metal deck and is supported on four steel columns. Story heights of 10' are measured as are the lengths of the building along the X and Y direction, which are measured at 33'4" and 30'. For the steel columns, Young's modulus is measured to be :math:`29,000 \mathrm{ ksi}`, :math:`Area = 110 \mathrm{ in}^2`, and :math:`I_{xx} = 1190 \mathrm{ in}^4`. For modelling purposes, the four columns are assumed fixed at the base and the beams connecting them are assumed to be rigid.
 
 .. _lblJoelFrame:
 
-.. figure:: figures/joelFrame.png
+.. figure:: frame/joelFrame.png
    :align: center
    :width: 600
    :figclass: align-center
 
    Two Story Steel Building
 
-What is unknown is the mass of the building. However from data collected the periods of the structure are determined to be 0.19sec and 0.09sec. For this exercise the unknown quantaties, m1 and m2, the mass of first and second floors to be used in the model will be considered our unknown variables. We will assume some bounds on these variables and provide initial estimates as shown in following table:
+What is unknown is the mass of the building. However from data collected the periods of the structure are determined to be 0.19 sec and 0.09 sec. For this exercise the unknown quantities, m1 and m2, the mass of first and second floors to be used in the model will be considered our unknown variables. We will assume some bounds on these variables and provide initial estimates as shown in following table:
 
 .. csv-table:: 
    :header: "variable", "lower (k-in/sec^2)", "upper (k-in/sec^2)", "initial estimate (k-in/sec^2)"
@@ -32,8 +32,8 @@ The exercise requires a single OpenSees script file. The user is required to dow
    :language: tcl
 
 .. note::
-   1. The tcl script when it runs creates a **results.out**. As a consequence, no postprocessing script is needed. 
-   2. The values placed in **results.out** file are the difference between computed and observed values. Expressed another way, the function f(m1,m2) computed and written to the  **results.out** file is f(m1,m2) = ObservedPeriods - ComputedPeriods(m1,m2). The UQ algorithm when running is searching for values of the random variable parameters (m1 and m2) that attempt to minimize the function. The user must take this fact into account when formulating the output from their own scripts for their own problems.
+   1. The tcl script when it runs creates a ``results.out``. As a consequence, no postprocessing script is needed. 
+   2. The values placed in ``results.out`` file are the difference between computed and observed values. Expressed another way, the function ``f(m1,m2)`` computed and written to the  ``results.out`` file is ``f(m1,m2) = ObservedPeriods - ComputedPeriods(m1,m2)``. The UQ algorithm when running is searching for values of the random variable parameters (``m1`` and ``m2``) that attempt to minimize the function. The user must take this fact into account when formulating the output from their own scripts for their own problems.
 
 .. warning::
 
@@ -41,27 +41,27 @@ The exercise requires a single OpenSees script file. The user is required to dow
 
 The steps involved:
 
-1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota. In the UQ Method category drop down menu change the category to ``Parameters Estimation``, and the method as NL2SOL, the convergence tolerance to 1.0e-6 and leave the scaling factors empty (assumes weights of 1.0 on all response values) as shown in the figure.
+1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota. In the UQ Method category drop down menu change the category to **Parameters Estimation**, and the method as **NL2SOL**, the convergence tolerance to ``1.0e-6`` and leave the scaling factors empty (assumes weights of 1.0 on all response values) as shown in the figure.
 
 
-.. figure:: figures/joelUQ.png
+.. figure:: frame/joelUQ.png
    :align: center
    :figclass: align-center
 
-2. Next select the FEM tab from the input panel selection. This will default in the OpenSees FEM engine. For the main script copy the path name to the FrameModelPeriodSelection.tcl or select choose and navigate to the file. 
+2. Next select the **FEM** tab from the input panel selection. This will default in the OpenSees FEM engine. For the main script copy the path name to the FrameModelPeriodSelection.tcl file or select choose and navigate to the file. 
 
-.. figure:: figures/joelFEM.png
+.. figure:: frame/joelFEM.png
    :align: center
    :figclass: align-center
 
 .. note::
 
-   As discussed but it is worth noting again, because the script generates a **results.out** file, no postprocessing script is needed for this example. This might not always be the case for some of your problems.
+   As discussed but it is worth noting again, because the script generates a ``results.out`` file, no postprocessing script is needed for this example. This might not always be the case for some of your problems.
 
-3. Next select the RV tab from the input panel. This should be prepopulated with two random variables with same names as those having pset in the tcl script, i.e. m1 and m2. For each variable, from the drop down menu change them from having a constant distribution to a continuous design one and then provide the lower bounds, upper bounds and the starting points shown in the figure below.
+3. Next select the **RV** tab from the input panel. This should be prepopulated with two random variables with same names as those having ``pset`` in the tcl script, i.e. m1 and m2. For each variable, from the drop down menu change them from having a constant distribution to a continuous design one and then provide the lower bounds, upper bounds and the starting points shown in the figure below.
 
 
-.. figure:: figures/joelRV.png
+.. figure:: frame/joelRV.png
    :align: center
    :figclass: align-center
 
@@ -69,19 +69,19 @@ The steps involved:
    
    For the Parameter Estimation category of UQ methods, only continuous design distributions may be entered.
 
-4. Next select the QoI panel. Here enter **2** variable names 'dT1' and 'dT2'.
+4. Next select the **QoI** panel. Here enter **2** variable names ``dT1`` and ``dT2``.
 
-.. figure:: figures/joelQoI.png
+.. figure:: frame/joelQoI.png
    :align: center
    :figclass: align-center
 
 .. note::   
 
-   For this particular problem setup in which the user is not using a postprocessing script, the user may specify any names for the QoI variables. They are only being used by Dakota to return information on the errors. We used 'dT1' and 'dT2' due to our affinity for 3 letter acronynms!
+   For this particular problem setup in which the user is not using a postprocessing script, the user may specify any names for the QoI variables. They are only being used by Dakota to return information on the errors. We used 'dT1' and 'dT2' due to our affinity for 3 letter acronyms!
 
-5. Next click on the 'Run' button. This will cause the backend application to launch Dakota. When done the RES panel tab will be selected and the results will be displayed as shown in the figure below. The figure shows Dakota returned, for inputs provided, estimates of our unknown parameters to be :math:`m1=0.52 (0.515549)` and :math:`m2=0.26 (0.256492)`.
+5. Next click on the **Run** button. This will cause the backend application to launch Dakota. When done the **RES** tab will be selected and the results will be displayed as shown in the figure below. The figure shows Dakota returned, for inputs provided, estimates of our unknown parameters to be :math:`m1=0.52 (0.515549)` and :math:`m2=0.26 (0.256492)`.
 
-.. figure:: figures/joelRES.png
+.. figure:: frame/joelRES.png
    :align: center
    :figclass: align-center
 
