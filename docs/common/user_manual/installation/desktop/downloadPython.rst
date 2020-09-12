@@ -75,7 +75,7 @@ Once Python is installed, you need to extend it by installing the following pack
 
 .. note::
 
-   If you forget to invoke the **UpdateShellProfile.command.sh" script at the end of the install, you can always edit the correct shell file later to update the **PATH** variable to point to the python application.
+   If you forget to invoke the **UpdateShellProfile.command.sh" script at the end of the install, you can always edit the correct shell file later to update the **PATH** variable to point to the Python application.
 
    On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e. there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the **bash** shell, the up and coming one is the **Z** shell. Power MacOS users will write shell scripts to do many many useful things. By default the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the users **PATH**. Users can modify this path by editing files that the shell program will read from everytime the program is started.
 
