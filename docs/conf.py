@@ -6,10 +6,10 @@
 
 # -- SimCenter App selection -------------------------------------------------
 
-app_name = 'EE-UQ'
+#app_name = 'EE-UQ'
 #app_name = 'PBE'
 #app_name = 'WE-UQ'
-#app_name = 'quoFEM'
+app_name = 'quoFEM'
 #app_name = 'pelicun'
 
 print('app_name = ' + app_name)
@@ -153,6 +153,9 @@ if app_name == 'PBE':
 
 	# END TODO
 
+
+
+
 	rst_prolog += """\
 .. |full tool name| replace:: Performance Based Engineering Application
 .. |short tool name| replace:: PBE app
@@ -281,7 +284,7 @@ elif app_name == 'quoFEM':
 .. |appLink| replace:: `quoFEM Download`_
 .. _quoFEM Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
 .. |messageBoard| replace:: `Message Board`_
-.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
+.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0
 .. |figUI| replace:: :numref:`figQUO_FEM`
 .. |figDownload| replace:: :numref:`figDownloadQUO_FEM`
 .. |figGenericUI| replace:: :numref:`figGenericUI-QUOFEM`
@@ -337,7 +340,7 @@ elif app_name == 'WE-UQ':
 .. |appLink| replace:: `WE-UQ Download`_
 .. _WE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ
 .. |messageBoard| replace:: `Message Board`_
-.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
+.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=5.0
 .. |figUI| replace:: :numref:`figUI-WE`
 .. |figDownload| replace:: :numref:`figDownloadWE`
 .. |figGenericUI| replace:: :numref:`figGenericUI-WE`
