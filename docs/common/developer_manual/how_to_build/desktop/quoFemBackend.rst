@@ -13,7 +13,7 @@ Build the Backend
 
             ``conan install .. --build missing``
 
-            This will install all the dependencies and will build dependencies from their source code as needed.
+        This will install all the dependencies and build dependencies from their source code as needed.
         
         2.3. Run CMake configuration this can be done using the command ``cmake ..``. Depending on your build environment, especially if you have multiple compiler, you may need to select a specific CMake generator. For instance on Window using Visual Studio 2017, you can configure CMake as follows:
 
