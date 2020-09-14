@@ -50,7 +50,7 @@ remotely, and finally views the simulation results. The main window of the UI is
 
 1. Login Button: 
 
-The **Login** button is at the top right of the UI. Before the user can launch any jobs on DesignSafe, they must first login to DesignSafe using their DesignSafe login and password. Pressing the login button will open up the login window for users to enter this information. Users can register for an account on the `DesignSafe-CI <https://www.designsafe-ci.org/account/register>`_ website.
+The **Login** button is at the top right of the user interface. Before the user can launch any jobs on DesignSafe, they must first login to DesignSafe using their DesignSafe login and password. Pressing the login button will open up the login window for users to enter this information. Users can register for an account on the `DesignSafe-CI <https://www.designsafe-ci.org/account/register>`_ website.
 
 2. Message Area: 
 
@@ -59,7 +59,7 @@ The message area is located in the top center of the UI and displays status and 
 
 3. Input Panel Selection: 
 
-The ribbon on the left side provides the user with a selection of buttons to choose from, e.g. **UQ**, **GI**, **SI**, **EVT**, **RV**, **FEM**, **RES**. Selecting any of these buttons will change what is displayed in the central input panel. Each panel, with exception of **RV** and **QoI** panels,  will present the user with an option for which application to choose for that part of the workflow, and will then present the users for inputs for that application.
+The ribbon on the left side provides the user with a selection of buttons to choose from (e.g. **UQ**, **RV**, **FEM**, **RES**). Selecting any of these buttons will change what is displayed in the central input panel. Each panel, with exception of **RV** and **QoI** panels,  will present the user with an option for which application to choose for that part of the workflow, and will then present the users for inputs for that application.
 
 4. Input Panel: 
 
