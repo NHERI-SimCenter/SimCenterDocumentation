@@ -44,7 +44,7 @@ The Mac comes with Python pre-installed, which is currently the outdated version
 
 .. note:: 
    #. We use the python.org installation over others, due to it's simplicity of install.
-   #. In the current installation of **Python** it leaves two script files in a folder when the installation ends. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal. To execute the files, double click on them. The two files, shown in the image below, are: **Update Shell Profile.command.sh** and **Install CertificateCommand.sh**.
+   #. In the current installation of Python it leaves two script files in a folder when the installation ends. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal. To execute the files, double click on them. The two files, shown in the image below, are: ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh``.
 
    .. figure:: figures/pythonInstallShell.png
       :align: center
