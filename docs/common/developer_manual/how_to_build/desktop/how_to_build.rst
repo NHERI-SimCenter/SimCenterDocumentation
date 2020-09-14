@@ -32,13 +32,15 @@ First, ensure the following dependencies are installed:
 Build the Workflow Application Files
 ************************
 
-Instructions to build the workflow applications on your local desktop depend on your operating system. 
+Instructions to build the workflow applications on your local desktop depend on your operating system.
 
 Build on Windows
 ----------------
 For Windows systems, the steps to building the workflow application are as follows:
 
-    #. **Obtain the source code:** Clone the |short tool id| repository from |tool github link|. You can do that by using your preferred Git client/GUI or by using the ``git clone`` command in the terminal.
+    #. **Obtain the source code:** Clone the SimCenterBackendApplications repository from `Github <https://github.com/NHERI-SimCenter/SimCenterBackendApplications>`_. You can do that by using your preferred Git client/GUI or by using the ``git clone`` command in the terminal:
+
+        ``git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications``
 
     #. **Set up the development environment:** Add Conan `SimCenter <https://bintray.com/nheri-simcenter/simcenter>`_ and  `BinCrafters <https://bintray.com/bincrafters/public-conan>`_ repositories to the Conan remotes. You can add these remotes using the following commands in the terminal:
 
@@ -56,7 +58,7 @@ For Windows systems, the steps to building the workflow application are as follo
 
     #. **Install backend dependencies:** You can install backend dependencies using Conan by running the command in the build output directory:
 
-        ``conan install ..``
+        ``conan install .. --build missing``
 
     #. **Run CMake configuration:** Run the command ``cmake ..``. If it is necessary to specify a compiler for CMake, you may alternatively run ``cmake .. -G "Visual Studio 16 2019"``.
 
