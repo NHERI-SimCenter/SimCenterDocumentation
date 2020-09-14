@@ -114,4 +114,4 @@ Steps to Test:
 
       exit
 
-   6. Type `dakota` in the command window (this should start the dakota application which should give some error messages)
+   6. Type ``dakota`` in the command window (this should start the dakota application which should give some error messages)

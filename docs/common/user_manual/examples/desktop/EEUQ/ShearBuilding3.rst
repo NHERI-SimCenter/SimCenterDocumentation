@@ -13,23 +13,23 @@ Consider the problem of uncertainty quantification in a three story shear buildi
 
 The structure has uncertain properties that all follow normal distribution:
 
-1. Weight of Typical Floor(w): mean :math:`\mu_E=100 \mathrm{kip}` and standard deviation :math:`\sigma_E =10 \mathrm{kip}` (COV = 10%)
-2. Weight of Roof(wR): mean :math:`\mu_E=50 \mathrm{kip}` and standard deviation :math:`\sigma_E =5 \mathrm{kip}` (COV = 10%)
-3. Story Stiffness (k): mean :math:`\mu_k =326.32 \mathrm{kip/in}` and a standard deviation of :math:`\sigma_P = 3 \mathrm{kN}`, (COV = 12%).
+1. Weight of Typical Floor (``w``): mean :math:`\mu_E=100 \mathrm{kip}` and standard deviation :math:`\sigma_E =10 \mathrm{kip}` (COV = 10%)
+2. Weight of Roof (``wR``): mean :math:`\mu_E=50 \mathrm{kip}` and standard deviation :math:`\sigma_E =5 \mathrm{kip}` (COV = 10%)
+3. Story Stiffness (``k``): mean :math:`\mu_k =326.32 \mathrm{kip/in}` and a standard deviation of :math:`\sigma_P = 3 \mathrm{kN}`, (COV = 12%).
 
 The goal of the exercise is to estimate the mean and standard deviation of the relative displacement of node **4** when subject to:
 1. ElCentro ground motion
 2. ElCEntro & Rinaldi E and W components.
 3. A Selection of ground motions selected from the PEER NGA database.
 
-The exercise will use both the MDOF, :numref:`lblMDOF`,  and OpenSees, :numref:`lblOpenSeesSIM`, structural generators. For the OpenSees generator the following model script, `ShearBuilding3.tcl <https://github.com/NHERI-SimCenter/EE-UQ/blob/master/Examples/ShearBuilding3/ShearBuilding3.tcl>`_ :
+The exercise will use both the MDOF, :numref:`lblMDOF`,  and OpenSees, :numref:`lblOpenSeesSIM`, structural generators. For the OpenSees generator the following model script, `ShearBuilding3.tcl <https://github.com/NHERI-SimCenter/EE-UQ/blob/master/Examples/ShearBuilding3/ShearBuilding3.tcl>`_ , is used:
 
 .. literalinclude:: ShearBuilding3.tcl
    :language: tcl
 
 .. note::
    
-   1. The first lines containing ``pset`` will be read by the application when the file is selected and the application will autopopulate the Random Variables ``w``, ``wR``, and ``k`` in the **RV** tab with these same variable names. It is of course possible to explicitly use Random Variables without the ``pset`` command by "RV.**variable name" in the input file. However, no random variables will be autopopulated if user chooses this route.
+   1. The first lines containing ``pset`` will be read by the application when the file is selected and the application will autopopulate the random variables ``w``, ``wR``, and ``k`` in the **RV**  panel with these same variable names. It is of course possible to explicitly use Random Variables without the ``pset`` command by "RV.**variable name" in the input file. However, no random variables will be autopopulated if user chooses this route.
 
 .. warning::
 
@@ -38,20 +38,18 @@ The exercise will use both the MDOF, :numref:`lblMDOF`,  and OpenSees, :numref:`
 Sampling Analysis with ElCentro
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We shall first demonstrate the steps to perform a sampling analysis to study the effects of the roof response of models of the building subjected to the El Centro ground motion. We shall scale the input motion using a scale factor (factorEC) following a uniform distribution between **1.2** and **1.8**, i.e. mean :math:`\mu_{factorEC} = 1.5` and a standard deviation of :math:`\sigma_{factorEC} = 0.1732`, (COV = 12%).
+We will first demonstrate the steps to perform a sampling analysis to study the effects of the roof response of models of the building subjected to the El Centro ground motion. We will scale the input motion using a scale factor (``factorEC``) following a uniform distribution between **1.2** and **1.8**, i.e. mean :math:`\mu_{factorEC} = 1.5` and a standard deviation of :math:`\sigma_{factorEC} = 0.1732`, (COV = 12%).
 
 
 To perform a Sampling or Forward propagation uncertainty analysis the user would perform the following steps:
 
-The steps involved:
-
-1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota, and the UQ Method Category as Forward Propagation, and the Forward Propagation method as LHS (Latin Hypercube). Change the #samples to 1000 and the seed to 20 as shown in the figure.
+1. Start the application and the **UQ** panel will be selected. In this panel, keep the **UQ engine** field as that selected, (i.e. Dakota), the **UQ Method Category** as **Forward Propagation**, and the **Forward Propagation** method as **LHS** (Latin Hypercube). Change the **#samples** field to ``1000`` and the **seed** to 20 as shown in the following figure.
 
 .. figure:: figures/shearUQ.png
    :align: center
    :figclass: align-center
 
-2. Next select the **SIM** tab from the input panel. This will default in the MDOF model generator. We will use this generator (the NOTE below contains instruction on how to use the OpenSees scipt instead). In the building information panel, specify number of stories as **3** (this will change the graphic). Also in the Building information frame specify **w** for the floor weights and **k** for story stiffness. Finally in the table below, go to the third row and enter **wR** for the roof weight (you will notice that when you enter that table cell the node at the top of the model will turn red, indicating you are editing the information for the top most node).
+2. Next select the **SIM** panel from the input panel. This will default to the MDOF model generator. We will use this generator (the note below contains instruction on how to use the OpenSees scipt instead). In the building information panel, specify number of stories as **3** (this will change the graphic). Also in the Building information frame specify **w** for the floor weights and **k** for story stiffness. Finally in the table below, go to the third row and enter **wR** for the roof weight (you will notice that when you enter that table cell the node at the top of the model will turn red, indicating you are editing the information for the top most node).
 
 .. figure:: figures/shearSIM.png
    :align: center
@@ -100,13 +98,13 @@ The steps involved:
 
    The user cannot leave any of the distributions for these values as constant for the Dakota UQ engine.
 
-5. Next click on the 'Run' button. This will cause the backend application to launch dakota. When done the **RES** tab will be selected and the results will be displayed. The results show the values the mean and standard deviation. The relative displacement of the roof, is the quantity **1-PFD-3-1** (first event (tool to be extended to multiple events), 3rd floor (in US ground floor considered 0), and 1 dof direction).
+5. Next click on the **Run** button. This will cause the backend application to launch Dakota. When done the **RES** panel will be selected and the results will be displayed. The results show the values the mean and standard deviation. The relative displacement of the roof, is the quantity **1-PFD-3-1** (first event (tool to be extended to multiple events), 3rd floor (in US ground floor considered 0), and 1 dof direction).
 
 .. figure:: figures/shearRES1.png
    :align: center
    :figclass: align-center
 
-If the user selects the "Data" tab in the results panel, they will be presented with both a graphical plot and a tabular listing of the data. By left- and right-clicking with the mouse in the individual columns the axis change (left mouse click controls vertical axis, right mouse click the horizontal axis).
+If the user selects the **Data** tab in the results panel, they will be presented with both a graphical plot and a tabular listing of the data. By left- and right-clicking with the mouse in the individual columns the axis change (left mouse click controls vertical axis, right mouse click the horizontal axis).
 
 .. figure:: figures/shearRES7.png
    :align: center
@@ -152,7 +150,7 @@ The steps are the same as the previous example, with exception of step 4 definin
    :figclass: align-center
 
 
-2. Next click on the 'Run' button. This will cause the backend application to launch dakota. When done the **RES** tab will be selected and the results will be displayed. The results show the values the mean and standard deviation as before but now only for the one quantity of interest.
+2. Next click on the **Run** button. This will cause the backend application to launch dakota. When done the **RES** panel will be selected and the results will be displayed. The results show the values the mean and standard deviation as before but now only for the one quantity of interest.
 
 .. figure:: figures/shearRES-UO.png
    :align: center
@@ -164,7 +162,7 @@ Global Sensitivity
 
 In a global sensitivity analysis the user is wishing to understand what is the influence of the individual random variables on the quantities of interest. This is typically done before the user launches large scale forward uncertainty problems in order to limit the number of random variables used so as to limit the number of simulations performed.
 
-To perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propagation method. To obtain reliability results using the global reliability method for this problem the user would follow the same sequence of steps as previously. The difference would be in the **UQ** tab in which the user would select a **Reliability** as the Dakota Method Category and then choose GLobal reliability. In the figure the user is specifying that they are interested in the probability that the displacement will exceed certain response levels.
+To perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propagation method. To obtain reliability results using the global reliability method for this problem the user would follow the same sequence of steps as previously. The difference would be in the **UQ** panel in which the user would select a **Reliability** as the Dakota Method Category and then choose GLobal reliability. In the figure the user is specifying that they are interested in the probability that the displacement will exceed certain response levels.
 
 
 .. figure:: figures/shearSensitivityUQ.png
@@ -198,6 +196,5 @@ After the user fills in the rest of the tabs as per the previous section, the us
 .. warning::
 
    Reliability analysis can only be performed when their is only one EDP.
-
 
 
