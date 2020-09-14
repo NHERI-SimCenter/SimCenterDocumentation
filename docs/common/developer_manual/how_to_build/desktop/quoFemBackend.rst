@@ -19,10 +19,12 @@ Build the Backend
 
             ``cmake .. -G Visual Studio 15 2017 Win64``
 
-        2.4. Build the release version of the backend, this can be done using the generated build system. For instance, on Unix based systems when using make files this can be achieved using the command ``make`` or ``make release``. When using an IDE like Visual Studio on Window or XCode on Mac, the generated project can opened in the IDE and used to build the code. In addition, this can also be done from the terminal using CMake the command:
+        2.4. Build the release version of the backend, this can be done using the generated build system. For instance, on Unix based systems when using make files this can be achieved using the command ``make`` or ``make release``. When using an IDE like Visual Studio on Window or XCode on Mac, the generated project can opened in the IDE and used to build the code. In addition, this can also be done from the terminal using CMake with the command:
 
             ``cmake --build . --config Release``
 
-    3. Install the backend applications to a local folder. This can be done by building the ``install target``. When using make on Unix based system. This can also be from IDE (e.g.) by selecting the install target or project and building it. In addition, this can be done from the terminal using the command:
+    3. Install the backend applications to a local folder. This can be done by building the ``install target`` when using ``make`` on Unix-like systems. This can also be done from an IDE by selecting the install target or project and building it. Finally, this can also be done from the terminal using the following command with CMake 3.15 or later:
         
-        ``cmake --build . --target install`` or ``cmake --install`` if you have CMake 3.15 or later. If building and installation were successful you should find a folder called ``applications`` in the repository with all the applications inside of it.
+        ``cmake --build . --target install`` or ``cmake --install`` 
+    
+    If building and installation was successful you should find a folder called ``applications`` in the repository with all the applications inside of it.
