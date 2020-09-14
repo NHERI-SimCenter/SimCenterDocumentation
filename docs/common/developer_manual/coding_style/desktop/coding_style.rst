@@ -37,7 +37,7 @@ Files
 #. Use indentation to make the code easier to read, the **Qt** editor has a nice feature that will auto indent code for you.
 #. In addition, when writing header files:
 
-   #. Never ever ever use **using namespace** in a header.
+   #. Never ever ever use ``using namespace`` in a header.
    #. All header files should additionally include documentation as the the purpose of the class and the methods. The returns and args to the functions should be documented. 
    #. Header files **MUST** contain a distinctly-named include guard to avoid problems with including the same header multiple times and to prevent conflicts with headers from other projects.
    #. The comments should be in a `Doxygen format <http://www.doxygen.nl/manual/docblocks.html>`_.
