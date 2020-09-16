@@ -31,7 +31,7 @@ The deterministic structural analysis model for this problem is implemented with
 HAZUS Assessment with a PEER Ground Motion Suite
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We will first demonstrate the steps to perform a HAZUS style damage and loss assessment by sequentially walking through the input panels and highlighting their role in the workflow. The file ``HAZUS_assessment.json`` contains all of the data for this exercise and may be used to obviate the manual entry of data into these panels.
+We will first demonstrate the steps to perform a HAZUS style damage and loss assessment by sequentially walking through the input panels and highlighting their role in the workflow. The file ``HAZUS_assessment.json`` contains all of the data for this exercise and may be used to bypass the manual entry of data into these panels.
 
 Step 1: UQ
 ~~~~~~~~~~~~
@@ -129,7 +129,7 @@ In the **Data** tab of the **RES** panel, we are presented with both a graphical
 FEMA P58 Style Assessment 
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We now revisit our experience with the **DL** panel to explore the interface PBE offers for a FEMA P58 style assessment. Similarly to the previous exercise, the file ``P58_assessment.json`` contains all of the problem data and may be used to obviate the manual entry of data into the UI panels.
+We now revisit our experience with the **DL** panel to explore the interface PBE offers for a FEMA P58 style assessment. Similarly to the previous exercise, the file ``P58_assessment.json`` contains all of the problem data and may be used to bypass the manual entry of data into the UI panels.
 
 The following figure shows a tab from the alternate **DL** panel interface which is provided when **FEMA P58** is selected from the **Damage and Loss Assessment** dropdown menu:
 
