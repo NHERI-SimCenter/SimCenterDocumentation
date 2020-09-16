@@ -32,6 +32,7 @@ Examples
    :quoFEM:quoFEM/FrameBaye
    :EEUQ:EEUQ/ShearBuilding3
    :WEUQ:WEUQ/ShearBuilding9
+   :PBE:PBE/exampleShearBuilding3/README
    :PBE:PBE/basic_HAZUS
    :PBE:PBE/basic_P58
 
