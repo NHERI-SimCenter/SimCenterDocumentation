@@ -1,7 +1,22 @@
 RV: Random Variables
 ====================
 
+``******This section is being modified -- SY******``
+
 The RV panel allows the user to specify the probabilistic distribution for the random problem at hand. The following probabilistic distributions for the random variables are currently supported: 
+
+Probability distribution
+------------------------
+
+.. note::
+
+   To add a new random variable the user presses the ``Add`` button. To remove a random variable, the user must first select it by checking the small circle before the random variable, and then pressing the ``Remove`` button.
+
+
+Dakota Engine
+++++++++++++
+
+The following six distribution classes are supported for Dakota engine.
 
 1. `Normal (Gaussian) <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-normal_uncertain.html>`_
 
@@ -59,7 +74,7 @@ The RV panel allows the user to specify the probabilistic distribution for the r
 
       f(x) = \frac{k}{\lambda}\left(\frac{x}{\lambda}\right)^{k-1} \exp \left( -(x/\lambda)^{k} \right)
 
-   where :math:`k,\lambda > 0` and :math:`x >= 0`. For :math:`x<0`, :math:`f(x) = 0`.
+   where :math:`k,\lambda > 0` and :math:`x \geq 0`. For :math:`x<0`, :math:`f(x) = 0`.
 
 
 6. `Gumbel <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-gumbel_uncertain.html>`_
@@ -82,9 +97,6 @@ For each random variable, the user must enter a name and select from the pull do
 
    Random variable specification.
 
-.. note::
-
-   To add a new random variable the user presses the ``Add`` button. To remove a random variable, the user must first select it by checking the small circle before the random variable, and then pressing the ``Remove`` button.
 
 .. warning::
 
@@ -96,4 +108,129 @@ For each random variable, the user must enter a name and select from the pull do
    :figclass: align-center
 
    Various distributions offered by the |app| .
+
+
+SimCeterUQ Engine
+++++++++++++
+
+Additional five distributions are supported for SimCenter UQ engine. Including above six distribution types, users are allowed to define distributions either by ``Parameters``, ``Moments`` and ``Dataset``. Particular moments are mean and standard deviation. The number of the required order of moments depends on the number of parameters of the distribution. 
+
+1. Exponential
+
+   User provides the parameter (:math:`\lambda`) of the exponential distribution. The density function of the exponential distribution, as a function of :math:`\lambda` is:
+
+   .. math::
+
+      f(x) = \lambda \exp(-\lambda x)
+
+   where :math:`x>0` and :math:`\lambda>0`. User can alternatively provide the mean of the exponential distribution. 
+
+   .. math::
+
+		m = \frac{1}{\lambda}
+
+
+2. Discrete 
+
+   User provides the :math:`N` discrete values (:math:`x_i`) and their weights (probability :math:`p_i`) for the multinomial distribution. The probability mass function of the discrete distribution is:
+
+   .. math::
+
+      p(x)=\begin{cases}
+   		 p_i, & \text{if $x=x_i$}\\
+   	 	 0, & \text{otherwise}
+      \end{cases}
+
+   where :math:`p_i>0`, The weights (:math:`p_i`) will be automatically normalized if it does not sum up to one. The option to define by moment is not supported for the discrete distribution.
+
+3. Gamma
+
+   User provides the shape parameter (:math:`k`) and scale parameter (:math:`\lambda`) of the Gamma distribution. The density function of the Gamma distribution, as a function of :math:`k` and :math:`\lambda` is:
+
+   .. math::
+
+      f(x) = \frac{\lambda^kx^{k-1}\exp(-\lambda x)}{\Gamma(k)}
+
+   where :math:`\lambda>0` and :math:`k>0`. User can alternatively provide the mean (:math:`m`) and standard deviation (:math:`\sigma`) . 
+
+   .. math::
+
+		m &= \frac{k}{\lambda} \\
+		\sigma &= \sqrt{\frac{k}{\lambda^2}}
+
+4. Chi-squared
+
+   User provides the parameter :math:`k` of the Chi-squared distribution. The density function of the Chi-squared distribution, as a function of :math:`k` is
+
+   .. math::
+
+      f(x) = \frac{1}{2^{\frac{k}{2}}\Gamma\left(\frac{k}{2}\right)}x^{\left(\frac{k}{2}-1\right)} \exp\left(-\frac{x}{2}\right)
+
+   where :math:`x>0` and :math:`k` is a natural number. User can alternatively select the moment option where the mean (:math:`m`) is 
+
+   .. math::
+
+		m = k
+
+5. Truncated exponential
+
+   User provides the parameter :math:`k` and bounds :math:`L_B` and :math:`U_B` for the truncated exponential distribution. The density function of the truncated exponential distribution, as a function is
+
+   .. math::
+
+      f(x) = \frac{\lambda}{c} \exp(-\lambda x), \text{  where $L_B<x<U_B$}
+
+   where :math:`c` is a normalization constant, i.e.
+
+   .. math::
+
+      c = \int_{L_B}^{U_B} \lambda\exp(-\lambda x) dx
+
+   where :math:`x>0` and :math:`\lambda>0`. User can alternatively provide the mean of the exponential distribution along with truncated bounds. 
+
+   .. figure:: figures/rv5.png
+    :align: center
+    :width: 800
+    :figclass: align-center
+
+    Extended random variable specification
+   
+   User can also define the random variables by providing sample realization data set as shown in the below figure, by selecting ``Dataset`` input type. The data will be fitted to one of the parameterized distributions to be implemented in UQ analysis. Note that for some of the bounded distributions, such as beta and truncated exponential, the bounds should additionally be specified.  
+
+.. _figRVdata
+
+.. figure:: figures/rv3.png
+    :align: center
+    :width: 800
+    :figclass: align-center
+
+    Example of input dataset file
+
+
+.. note::
+
+   - Clicking the ``Show PDF`` or ``Show PMF`` button will display probability distribution (or mass) function of a random variable with the specified parameters/moments. If the PDF or PMF is not displayed, we recommend you to double-check if the parameters/moments are in a valid range. The plotting function is not supported for the ``Dataset`` input type. 
+
+
+Correlation matrix
+------------------------
+
+Correlation coefficients between each variables can be defined by clicking the ``Correlation Matrix`` button. Default correlations between variables are set to be zero. Diagonal element of the matrix is fixed as one, and symmetricity of the correlation matrix is enforced by modifying only the entries of the lower triangular part of the matrix. 
+
+.. figure:: figures/rv4.png
+   :align: center
+   :width: 800
+   :figclass: align-center
+
+   Example of a valid correlation matrix
+
+Once the ``OK`` button is clicked after setting required entries, the the |app| will automatically check the validity of the matrix before closing the correlation matrix window. If the matrix is not **positively defined**, an error message will be displayed and the window will not be closed. In such case, user should adjust the correlation coefficients to be positive definite.
+
+.. note::
+
+   - When ``constant`` variable is introduced instead of probability distributions, the correlation coefficient corresponding to those variables will be ignored. 
+   - When more than one random variable is provided as ``Dataset``, correlations between the data pairs will not be incorporated automatically. If correlations exist, user can define them manually at the correlation matrix window.
+
+``******Refer era here -- SY******``
+
 
