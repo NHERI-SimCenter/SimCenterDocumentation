@@ -7,10 +7,9 @@
 # -- SimCenter App selection -------------------------------------------------
 
 
-#app_name = 'RDT'
+app_name = 'RDT'
 #app_name = 'PBE'
 #app_name = 'EE-UQ'
-
 #app_name = 'WE-UQ'
 #app_name = 'quoFEM'
 #app_name = 'pelicun'
@@ -126,7 +125,7 @@ rst_prolog = """
 
 if app_name == 'RDT':
 
-	project = 'Regional D* T* Application'
+	project = 'Regional Resilience Determination Tool'
 	copyright = '2019, The Regents of the University of California'
 
 	author = 'Adam Zsarnóczay, Frank McKenna, Michael Gardner, Wael Elhaddad, Joanna Zou, Chaofeng Wang'
@@ -162,7 +161,7 @@ if app_name == 'RDT':
 	# END TODO
 
 	rst_prolog += """\
-.. |full tool name| replace:: Regional D* T* Application
+.. |full tool name| replace:: Regional Resilience Determination Tool
 .. |short tool name| replace:: RDT app
 .. |short tool id| replace:: RDT
 .. |tool github link| replace:: `RDT Github page`_
@@ -170,7 +169,7 @@ if app_name == 'RDT':
 .. |app| replace:: RDT app
 .. |appName| replace:: RDT app
 .. |messageBoard| replace:: `Message Board`_
-.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
+.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0
 .. |githubLink| replace:: `RDT Github page`_
 .. |appLink| replace:: `RDT Download`_
 .. _RDT Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FRDT
@@ -179,8 +178,8 @@ if app_name == 'RDT':
 .. |figUI| replace:: :numref:`figUI-RDT`
 .. |figGenericUI| replace:: :numref:`figGenericUI-RDT`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-RDT`
-.. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
-.. |developers| replace:: **Adam Zsarnóczay**, **Frank McKenna**, **Michael Gardner**, **Wael Elhaddad**, **Joanna Zou**, **Chaofeng Wang**
+.. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
+.. |developers| replace:: **SimCenter PI's and Developers**
                           
 """
 
