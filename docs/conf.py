@@ -7,9 +7,9 @@
 # -- SimCenter App selection -------------------------------------------------
 
 #app_name = 'EE-UQ'
-#app_name = 'PBE'
+app_name = 'PBE'
 #app_name = 'WE-UQ'
-app_name = 'quoFEM'
+#app_name = 'quoFEM'
 #app_name = 'pelicun'
 
 print('app_name = ' + app_name)
@@ -438,7 +438,8 @@ elif app_name == 'pelicun':
 extensions = extensions + [
     # 'sphinx-jsonschema',
 	'sphinxcontrib.bibtex',
-	'toctree_filter'
+	'toctree_filter',
+    'sphinxcontrib.images',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
