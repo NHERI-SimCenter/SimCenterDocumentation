@@ -432,11 +432,11 @@ elif app_name == 'pelicun':
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 
-# extensions = extensions + [
-#     'sphinx-jsonschema',
-# 	'sphinxcontrib.bibtex',
-# 	'toctree_filter'
-# ]
+extensions = extensions + [
+    'sphinx-jsonschema'
+	# 'sphinxcontrib.bibtex',
+	# 'toctree_filter'
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
