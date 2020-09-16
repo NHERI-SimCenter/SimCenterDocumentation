@@ -1,0 +1,16 @@
+quoFEM:
+  exampleOpenSeesForward: ~
+  exampleFrameConv: ~
+  exampleFrameBaye: ~
+  exampleOpenSeesPyForward: ~
+
+EE-UQ: 
+  exampleShearBuilding3: ~ 
+
+PBE: 
+  exampleHazus: ~
+  exampleP58: ~ 
+
+WEUQ: 
+  exampleShearBuilding3: ~
+
