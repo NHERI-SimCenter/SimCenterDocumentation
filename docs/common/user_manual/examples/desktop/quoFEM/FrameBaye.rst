@@ -79,20 +79,24 @@ The exercise requires a single OpenSees script file. The user is required to dow
 
    Do not place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like me, your root, Downloads or Documents folders contains and awful lot of files.
 
-The steps involved:
+The steps involved are as follows:
 
 1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota. In the **UQ Method** category drop down menu change the category to **Inverse Problem**, the method as **DREAM**,  and the remaining parameters as shown in the figure.
 
 
-.. figure:: frame/joelBayeUQ.png
+.. thumbnail:: frame/joelBayeUQ.png
    :align: center
-   :figclass: align-center
+   :width: 100
+
+   Click to expand.
 
 2. Next select the **FEM** tab from the input panel selection. This will default to the OpenSees FEM engine. For the main script copy the path name to the ``fem.tcl`` file or select **choose** and navigate to the file. 
 
-.. figure:: frame/joelBayeFEM.png
+.. thumbnail:: frame/joelBayeFEM.png
    :align: center
-   :figclass: align-center
+   :width: 100
+
+   Click to expand.
 
 .. note::
 
@@ -101,10 +105,9 @@ The steps involved:
 3. Next select the **RV** tab from the input panel. This should be prepopulated with two random variables with same names as those having ``pset`` in the tcl script, i.e. ``Ic1`` and ``Ic2``. For each variable, from the drop down menu change them from having a constant distribution to a continuous design one and then provide the lower bounds and upper bounds shown in the figure below.
 
 
-.. figure:: frame/joelBayeRV.png
+.. thumbnail:: frame/joelBayeRV.png
    :align: center
-   :figclass: align-center
-
+   :width: 150
 
 4. Next select the **QoI** panel. Here enter **10** variable names. The following figure shows the first nine names used; the tenth entry used, which does not show up in the image was ``eps_p5``.
 
