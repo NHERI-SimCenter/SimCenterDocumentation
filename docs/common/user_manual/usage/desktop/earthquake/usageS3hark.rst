@@ -36,7 +36,7 @@ The UI of |s3harkName| consists of the following components:
 .. _profileColumn:
 
 Soil Column Graphic
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 The first graphic on the left of the panel shows a visualization of the soil column created. 
 Each layer has a different randomly generated color.
 When the user add or delete a soil layer, this graphic will refresh. 
@@ -44,13 +44,13 @@ When the user add or delete a soil layer, this graphic will refresh.
 .. _mesh:
 
 FE Mesh Graphic
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 The second graphic on the left shows the finite element mesh and profile plots. 
 Upon the finish of the analysis, selecting any of the tabs on the right inside this graphic (i.e., PGA, :math:`\gamma max`, maxDisp, maxRu, maxRuPWP) 
 will show various results from the simulation at the mesh points.
 
 Operations Area
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 The right side of this area shows some information of the created soil column, such as the total height and number of soil layers.
 The user also finds the Ground Water Table (GWT) input field, plus and minus buttons in this area.
 If the user pressed the plus button, a layer will be added below a currently selected layer. 
@@ -62,7 +62,7 @@ The GWT input field allows the user to specify the level of the ground water tab
    - Variables are assumed to have m, kPa, and kN units in |s3harkName|.
 
 Soil Layer Table
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 This table is where the user provides the characteristics of soil layers, such as layer thickness, density, Vs30, material type, and element size in the finite element mesh.
 
 Single click at a cell will make a soil layer selected, which will highlight the layer using green color in the table.
@@ -76,14 +76,14 @@ Double click a cell to edit it in the table.
 If you change the ``Material`` cell of a layer, the :ref:`Layer Properties Tab <layerPropertiesTab>` will change correspondingly.
 
 Tabbed Area
-^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 This area contains the three tabbed widgets described below.
 
 Configure Tab
 “““““““““““““““““““
 This tab allows the user to specify the paths to the OpenSees executable and a ground motion file that represent the ground shaking at the
 bedrock. The rock motion file must follow the SimCenter event format. 
-Examples of SimCenter event files are available in the :download:`motion demos <../../../_static/files/DemoGM.zip>`. 
+Examples of SimCenter event files are available in the :download:`motion demos <https://nheri-simcenter.github.io/s3hark-Documentation/_downloads/4aad74c55afc9d112aa4bb1963afa7f7/DemoGM.zip>`. 
 |s3harkName| will determine to use 2D column or 3D column based on the ground motion file provided. 
 When a ground motion file is selected from the local computer, or the path of the ground motion file is typed in, 
 |s3harkName| will figure out if it’s a 1D or 2D shaking file. If it’s 1D shaking, all elements will be 2D. If it’s 2D shaking, 
@@ -123,7 +123,7 @@ Once the site response analysis has been performed, this tab provides informatio
 
 Analyze Button
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-This ``Analyze`` button is located at the top-right corner of the UI and shall be used to run the simulation locally on your computer. 
+This **Analyze** button is located at the top-right corner of the UI and shall be used to run the simulation locally on your computer. 
 A progress bar will show up at the bottom of the application indicating the status of the analysis. 
 Upon the finish of the simulation, a message will be displayed (:numref:`done`). 
 
@@ -181,8 +181,8 @@ In the configure tab, two paths need to be specified.
 
 You can either type them or click the '+' button to select them from your computer.
 
-If you don't have OpenSees install, the instruction can be found :ref:`here <quickstart>`.
-If you don't have a ground motion file, demos can be downloaded :download:`here <../../../_static/files/DemoGM.zip>`.
+If you don't have OpenSees installed, the instruction can be found :ref:`here <https://nheri-simcenter.github.io/s3hark-Documentation/common/user_manual/quickstart/quickstart.html#download-and-install-opensees>`.
+If you don't have a ground motion file, demos can be downloaded :download:`here <https://nheri-simcenter.github.io/s3hark-Documentation/_downloads/4aad74c55afc9d112aa4bb1963afa7f7/DemoGM.zip>`.
 
 .. note:: 
 

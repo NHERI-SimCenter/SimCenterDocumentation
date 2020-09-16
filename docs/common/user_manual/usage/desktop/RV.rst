@@ -3,7 +3,7 @@ RV: Random Variables
 
 ``******This section is being modified -- SY******``
 
-The RV panel allows the user to specify the probabilistic distribution for the random problem at hand. The following probabilistic distributions for the random variables are currently supported: 
+The **RV** tab allows the user to specify the probabilistic distribution for the random problem at hand. The following probabilistic distributions for the random variables are currently supported: 
 
 Probability distribution
 ------------------------
@@ -97,10 +97,13 @@ For each random variable, the user must enter a name and select from the pull do
 
    Random variable specification.
 
+.. note::
+
+   To add a new random variable the user presses the **Add** button. To remove a random variable, the user must first select it by checking the small circle before the random variable, and then pressing the **Remove** button.
 
 .. warning::
 
-   Removing a random variable may have unintended consequences and cause the UQ Engine to fail. 
+   Removing a random variable may have unintended consequences and cause the UQ engine to fail. 
 
 .. figure:: figures/rvplot.png
    :align: center

@@ -43,6 +43,6 @@ interested in learning more about the implementation and design of
 All input parameters can be specified as random variables by entering
 a string in the parameter field. Please note that information for the
 inputs that are identified as random variables needs to be provided in
-the ``UQ`` tab.
+the **UQ** tab.
 
-.. bibliography:: ../../../../references.bib
+.. .. bibliography:: ../../../../references.bib

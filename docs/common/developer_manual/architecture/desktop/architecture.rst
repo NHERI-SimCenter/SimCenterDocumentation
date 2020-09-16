@@ -4,9 +4,9 @@
 Software Architecture
 *********************
 
-The SimCenter is developing a software framework for building applications that run **scientific workflow applications** to perform computational simulations in field of NHE at both building level scale and regionsl scale. It is releasing a number of applications built using this framework. The |app| is one of those applications which have been released (EE-UQ, WE-UQ, PBE). Other applications are under development (RDT). The applications that the SimCenter are developing are limited **scientific workflow systems**. This chapter presents the software architecture for the framework and the |app| built using it using the `C4 model <https://c4model.com>`_. The following sections present the architecture to level 3:
+The SimCenter is developing a software framework for building applications that run *scientific workflow applications* to perform computational simulations in field of NHE at both building level scale and regionsl scale. It is releasing a number of applications built using this framework. The |app| is one of those applications which have been released (EE-UQ, WE-UQ, PBE). Other applications are under development (RDT). The applications that the SimCenter are developing are limited *scientific workflow systems*. This chapter presents the software architecture for the framework and the |app| built using it using the `C4 model <https://c4model.com>`_. The following sections present the architecture to level 3:
 
-.. note:: 
+.. note::
 
    1. **Workflow**: A sequence of steps involved in moving from a beginning state to an ending state.
 
@@ -14,10 +14,36 @@ The SimCenter is developing a software framework for building applications that 
 
    3. **Scientific Workflow System**: software providing an infrastructure for the set-up, scheduling, running, and monitoring of a user defined scientific workflow application.
 
+Overview
+========
+
+Figure of how backend applications are the core to all SimCenter applications
+Flowchart of interface with local and remote simulation on DesignSafe
+
+
+Backend Applications
+====================
+
+Flowchart of input/output sequence through the applications
+
+.. toctree::
+   :maxdepth: 1
+
+   userDefinedInputs
+   buildingApps
+   regionalEventApps
+   eventApps
+   modelingApps
+   EDPApps
+   simulationApps
+   UQApps
+   DLQApps
+
+
 Level 1: A Context for SimCenter Applications
 =============================================
 
-A Level 1 diagram showing the system context for the SimCenter applications, i.e. how it fits in the world,  is shown in :numref:`figContext`. It shows SimCenter applications (EE-UQ, WE-UQ, PBE, RDT) as a box in the center surrounded by the user and the systems it and the user interact with. The SimCenter applications allows user to create and run scientific workflow applications, the data for the applications may be obtained from the web or DataDepot, the workflow applications are run on either the local desktop or on some HPC at |DesignSafe|. 
+A Level 1 diagram showing the system context for the SimCenter applications, i.e. how it fits in the world,  is shown in :numref:`figContext`. It shows SimCenter applications (EE-UQ, WE-UQ, PBE, RDT) as a box in the center surrounded by the user and the systems it and the user interact with. The SimCenter applications allows user to create and run scientific workflow applications, the data for the applications may be obtained from the web or DataDepot, the workflow applications are run on either the local desktop or on some HPC at |DesignSafe|.
 
 .. _figContext:
 
@@ -30,7 +56,7 @@ A Level 1 diagram showing the system context for the SimCenter applications, i.e
 Level 2:  The Components of a SimCenter Application
 ===================================================
 
-Given how SimCenter applications fit in with the environment, a level 2 diagrams now demonstrates how the SimCenter applications are broken into high level components. The SimCenter applications are, as shown in :numref:`figContainer`, broken into two components: A front end UI and a back end application that runs the workflow. The front end applications are desktop applications written using the cross-platform Qt framework. The back end is an application that processes the input from the front end, which comes in the form of a JSON file, creates a workflow and runs it. The workflow applications, written in Python, C, or C++, utilize existing applications were possible and run on either the local desktop machine or on a HPC utilizing resources made available to NHE community through DeisignSafe. 
+Given how SimCenter applications fit in with the environment, a level 2 diagrams now demonstrates how the SimCenter applications are broken into high level components. The SimCenter applications are, as shown in :numref:`figContainer`, broken into two components: A front end UI and a back end application that runs the workflow. The front end applications are desktop applications written using the cross-platform Qt framework. The back end is an application that processes the input from the front end, which comes in the form of a JSON file, creates a workflow and runs it. The workflow applications, written in Python, C, or C++, utilize existing applications were possible and run on either the local desktop machine or on a HPC utilizing resources made available to NHE community through DesignSafe.
 
 .. _figContainer:
 
@@ -43,7 +69,7 @@ Given how SimCenter applications fit in with the environment, a level 2 diagrams
 Level 3: Container Diagrams for the Front and Back End Components
 =================================================================
 
-Two level 3 diagrams are now presented which break up the two containers into the major building blocks or components in C4 terminology. In :numref:`figComponentFront` the component diagram for the front end UI is presented. It outlines the interaction between the user and the individual graphical elements (widgets) of the UI. Given the analogy of a jigsaw puzzle, the user selects which piece of the jigsaw puzzle they are working on in the component selection widget. The widget for the jigsaw piece will then be displayed on the desktop. The user for each jigsaw piece then selects which application to run for that piece, and for the chosen application, they provide the inputs. When the inputs are all provided, the user can select to run the simulations locally or remotely. For jobs that run remotely, the user can download and review previously run simulations. As seen the widgets may subsequentially interact with web services through HTTPS requests, or with DesignSafe utilizing TAPIS Restful API through the RemoteService container.
+Two level 3 diagrams are now presented which break up the two containers into the major building blocks or components in C4 terminology. In :numref:`figComponentFront` the component diagram for the front end UI is presented. It outlines the interaction between the user and the individual graphical elements (widgets) of the UI. Given the analogy of a jigsaw puzzle, the user selects which piece of the jigsaw puzzle they are working on in the component selection widget. The widget for the jigsaw piece will then be displayed on the desktop. The user for each jigsaw piece then selects which application to run for that piece, and for the chosen application, they provide the inputs. When the inputs are all provided, the user can select to run the simulations locally or remotely. For jobs that run remotely, the user can download and review previously run simulations. As seen the widgets may subsequently interact with web services through HTTPS requests, or with DesignSafe utilizing TAPIS Restful API through the RemoteService container.
 
 .. _figComponentFront:
 
@@ -53,10 +79,10 @@ Two level 3 diagrams are now presented which break up the two containers into th
 
    Component diagram for front end UI.
 
-The component diagram for the backend application shown in :numref:`figComponentBack`, shows that the backend is made up of a number of component, all applications. The application “femUQ.py” is the application that parses the input from the front end, sets up the workflow and launches the UQ engine. Which UQ Engine and which applications to run in the workflow, is determined from the data passed from the UI and information contained in a WorkflowApplication.json file. A file is used to allow the researchers to modify the applications that may be run in the workflow w/o the need to recompile the application. Control is then passed to a UQ Engine, which repeatedly runs the workflow to generate the results. In running the workflow some of the applications will invoke applications not developed to meet the API. For such applications pre- and post-processors are provided.
+The component diagram for the backend application shown in :numref:`figComponentBack`, shows that the backend is made up of a number of component, all applications. The application ``femUQ.py`` is the application that parses the input from the front end, sets up the workflow and launches the UQ engine. Which UQ Engine and which applications to run in the workflow, is determined from the data passed from the UI and information contained in a WorkflowApplication.json file. A file is used to allow the researchers to modify the applications that may be run in the workflow w/o the need to recompile the application. Control is then passed to a UQ engine, which repeatedly runs the workflow to generate the results. In running the workflow some of the applications will invoke applications not developed to meet the API. For such applications pre- and post-processors are provided.
 The figure shows the backend application running locally or remotely on a HPC@DesignSafe.
 
- 
+
 .. _figComponentBack:
 
 .. figure:: figures/componentBack.png
@@ -64,5 +90,3 @@ The figure shows the backend application running locally or remotely on a HPC@De
    :figclass: align-center
 
    Component diagram for backend application.
-
-

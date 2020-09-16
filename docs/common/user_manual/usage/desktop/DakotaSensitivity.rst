@@ -29,6 +29,8 @@ respectively, where :math:`\boldsymbol{x}_{\sim i}` indicates the set of all inp
 
 **Dakota Sensitivity Analysis** is based on efficient Monte Carlo method (see the paper of [Weirs12]_ referred in Dakota Technical manual [Adams20]_), and the user has two options to generate the samples on which the statistics are created: Monte Carlo, and Latin Hypercube Sampling (LHS). For both they are required, as shown in figure below, to specify the number of samples and a seed.
 
+The results of the Sensitivity analysis will show both the main effect and total effect `Sobol indices <https://en.wikipedia.org/wiki/Variance-based_sensitivity_analysis>`_ for each RV for each of the QoI.
+
 
 .. _figSensitivity:
 
@@ -37,7 +39,7 @@ respectively, where :math:`\boldsymbol{x}_{\sim i}` indicates the set of all inp
 	:figclass: align-center
 
   	Sensitivity analysis input panel.
-	
+
 .. note::
 
 	In case the FEM model is computationally expensive, user may want to consider that actual number of the runs are greater than specified number of samples. Actual number of the required samples are: NS*(2+NRV)
@@ -49,3 +51,4 @@ respectively, where :math:`\boldsymbol{x}_{\sim i}` indicates the set of all inp
 
 .. [Adams20]
 	B. M. Adams *et al*. DAKOTA, a multilevel parallel object-oriented framework for design optimization, parameter estimation, uncertainty quantification, and sensitivity analysis: version 6.12 user's manual. *Sandia National Laboratories, Tech. Rep.* SAND2020-5001 (2020).
+

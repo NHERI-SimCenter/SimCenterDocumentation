@@ -4,7 +4,7 @@ PBE Verification
 
 Verification of the structural response simulation part of the workflow are presented in the `EE-UQ user manual <https://nheri-simcenter.github.io/EE-UQ-Documentation/index.html>`_.
 
-This example was designed to verify that the central tendencies estimated by the ``PBE`` App are appropriate. The dispersion of every variable is reduced to a sufficiently low value (i.e., a :math:`10^{-4}` coefficient of variation is used) that makes it simple to obtain the decision variables analytically. Verification is performed by comparing analytical solutions to the estimated values. Note: this verification example is identical to the first system test of the ``pelicun`` Python library that the ``PBE`` App uses for loss estimation.
+This example was designed to verify that the central tendencies estimated by the ``PBE`` App are appropriate. The dispersion of every variable is reduced to a sufficiently low value (i.e., a :math:`10^{-4}` coefficient of variation is used) that makes it simple to obtain the decision variables analytically. Verification is performed by comparing analytical solutions to the estimated values. Note: this verification example is identical to the first system test of the ``pelicun`` Python library that the PBE App uses for loss estimation.
 
 The files required to run the verification are available in the ``Verification/01_Central_tendency`` folder. Most of the input information can be loaded automatically from the ``test_central_tendency.json`` file. After loading the file, the following locations need to be set manually:
 
@@ -139,3 +139,4 @@ All of the required files shall be available in the ``Verification/01_Central_te
         :figclass: align-center
     
         Cumulative distribution function of fatalities.
+        

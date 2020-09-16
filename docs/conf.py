@@ -6,10 +6,12 @@
 
 # -- SimCenter App selection -------------------------------------------------
 
-#app_name = 'EE-UQ'
+
+app_name = 'RDT'
 #app_name = 'PBE'
+#app_name = 'EE-UQ'
 #app_name = 'WE-UQ'
-app_name = 'quoFEM'
+#app_name = 'quoFEM'
 #app_name = 'pelicun'
 
 print('app_name = ' + app_name)
@@ -34,7 +36,8 @@ exclude_patterns = [
 		'**/*desktop*',
 		'**/*response*',
 		'**/*earthquake*',
-		'**/*wind*', 
+		'**/*wind*',
+		'**/*RDT*',  
 		'**/*PBE*', 
 		'**/*WEUQ*',  
 		'**/*EEUQ*',  
@@ -42,6 +45,7 @@ exclude_patterns = [
 		'**/*TInF*', 
 		'**/*pelicun*',
 		'**/*old*',
+		'**/*quoFEM*'
 	]
 
 
@@ -50,8 +54,10 @@ toc_filter_exclusions = [
 	'response',
 	'earthquake',
 	'wind',
+	'RDT',
 	'PBE',
 	'quoFEM',
+	'notQuoFEM',
 	'WEUQ',
 	'EEUQ',
 	'TinF',
@@ -95,12 +101,20 @@ rst_prolog = """
 .. _Dakota Download: https://dakota.sandia.gov/download.html
 .. |Dakota Theory Manual| replace:: `Dakota Theory Manual`_
 .. _Dakota Theory Manual: https://dakota.sandia.gov/sites/default/files/docs/6.11/Theory-6.11.0.pdf
+.. |FEAPpv| replace:: **FEAPpv**
+.. |FeapLink| replace:: `FEAPpv`_
+.. _FEAPpv: http://projects.ce.berkeley.edu/feap/feappv/
+.. |FEAPpvDownload| replace:: `FEAPpv`_
+.. |FEAPpv Theory Manual| replace:: `FEAPpv Manual`_
+.. _FEAPpv Manual: http://projects.ce.berkeley.edu/feap/feappv/manual_51.pdf
+.. |OpenSeesPy| replace:: **OpenSeesPy**
 
 .. |requirements| replace:: **REQUIREMENTS**
 .. |DesignSafe| replace:: `DesignSafe`_
 .. _DesignSafe: https://designsafe-ci.org
 .. |smelt| replace:: `smelt`_
 .. _smelt: https://github.com/NHERI-SimCenter/smelt
+.. |s3harkName| replace:: s3hark
 .. |br| raw:: html
 
     <br>
@@ -109,24 +123,112 @@ rst_prolog = """
 
 # app-specific settings
 
-if app_name == 'PBE':
+if app_name == 'RDT':
+
+	project = 'Regional Resilience Determination Tool'
+	copyright = '2019, The Regents of the University of California'
+
+	author = 'Adam Zsarnóczay, Frank McKenna, Michael Gardner, Wael Elhaddad, Joanna Zou, Chaofeng Wang'
+
+	tags.add('RDT_app')
+	tags.add('desktop_app')
+	tags.add('earthquake')
+	tags.add('response')
+	tags.add('notQuoFEM')
+	
+	toc_filter_exclusions.remove('RDT')
+	toc_filter_exclusions.remove('desktop')
+	toc_filter_exclusions.remove('earthquake')
+	toc_filter_exclusions.remove('response')
+	toc_filter_exclusions.remove('notQuoFEM')
+	toc_filter_exclude = toc_filter_exclusions
+
+	exclude_patterns.remove('**/*desktop*')
+	exclude_patterns.remove('**/*earthquake*')
+	exclude_patterns.remove('**/*response*')
+	exclude_patterns.remove('**/*RDT*')
+
+	# TODO: fix these temporary changes
+	exclude_patterns.append('**/*architectureLevel4.rst*')
+	exclude_patterns.append('**/requirements/index.rst')
+	exclude_patterns.append('**/requirements/bigRequirements.rst')
+	exclude_patterns.append('**/DakotaSensitivity.rst')
+	exclude_patterns.append('**/DakotaReliability.rst')
+	exclude_patterns.append('**/DakotaParameterEstimation.rst')
+	exclude_patterns.append('**/DakotaInverseProblems.rst')
+	exclude_patterns.append('**/resEE.rst')
+
+	# END TODO
+
+	rst_prolog += """\
+.. |full tool name| replace:: Regional Resilience Determination Tool
+.. |short tool name| replace:: RDT app
+.. |short tool id| replace:: RDT
+.. |tool github link| replace:: `RDT Github page`_
+.. _RDT Github page: https://github.com/NHERI-SimCenter/PBE
+.. |app| replace:: RDT app
+.. |appName| replace:: RDT app
+.. |messageBoard| replace:: `Message Board`_
+.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0
+.. |githubLink| replace:: `RDT Github page`_
+.. |appLink| replace:: `RDT Download`_
+.. _RDT Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FRDT
+.. |tool version| replace:: 2.0
+.. |figDownload| replace:: :numref:`figDownloadRDT`
+.. |figUI| replace:: :numref:`figUI-RDT`
+.. |figGenericUI| replace:: :numref:`figGenericUI-RDT`
+.. |figMissingCRT| replace:: :numref:`figMissingCRT-RDT`
+.. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
+.. |developers| replace:: **SimCenter PI's and Developers**
+                          
+"""
+
+	# html_logo = 'common/figures/SimCenter_RDT_logo.png'
+	html_logo = 'common/figures/RDT-Logo-grey2.png' 
+
+	html_theme_options = {
+		'analytics_id': '...', #TODO: add analytics ID
+		'logo_only': True,
+		'prev_next_buttons_location': None,
+		'style_nav_header_background': '#F2F2F2'
+	}
+
+elif app_name == 'PBE':
 
 	project = 'Performance Based Engineering Application'
 	copyright = '2019, The Regents of the University of California'
-	author = 'Adam Zsarnóczay'
+
+	author = 'Adam Zsarnóczay, Frank McKenna, Chaofeng Wang, Wael Elhaddad, Michael Gardner'
 
 	tags.add('PBE_app')
 	tags.add('desktop_app')
 	tags.add('earthquake')
+	tags.add('notQuoFEM')
 	
 	toc_filter_exclusions.remove('PBE')
 	toc_filter_exclusions.remove('desktop')
 	toc_filter_exclusions.remove('earthquake')
+	toc_filter_exclusions.remove('notQuoFEM')
 	toc_filter_exclude = toc_filter_exclusions
 
 	exclude_patterns.remove('**/*desktop*')
 	exclude_patterns.remove('**/*earthquake*')
 	exclude_patterns.remove('**/*PBE*')
+
+	# TODO: fix these temporary changes
+	exclude_patterns.append('**/*architectureLevel4.rst*')
+	exclude_patterns.append('**/requirements/index.rst')
+	exclude_patterns.append('**/requirements/bigRequirements.rst')
+	exclude_patterns.append('**/DakotaSensitivity.rst')
+	exclude_patterns.append('**/DakotaReliability.rst')
+	exclude_patterns.append('**/DakotaParameterEstimation.rst')
+	exclude_patterns.append('**/DakotaInverseProblems.rst')
+	exclude_patterns.append('**/resEE.rst')
+
+	# END TODO
+
+
+
 
 	rst_prolog += """\
 .. |full tool name| replace:: Performance Based Engineering Application
@@ -164,17 +266,19 @@ if app_name == 'PBE':
 elif app_name == 'EE-UQ':
 	project = 'Earthquake Engineering with Uncertainty Quantification (EE-UQ)'
 	copyright = '2019, The Regents of the University of California'
-	author = 'Frank McKenna'
+	author = 'Frank McKenna, Wael Elhaddad, Michael Gardner, Chaofeng Wang, Adam Zsarnóczay'
 
 	tags.add('EEUQ_app')
 	tags.add('desktop_app')
 	tags.add('response')
 	tags.add('earthquake')
+	tags.add('notQuoFEM')
 
 	toc_filter_exclusions.remove('EEUQ')
 	toc_filter_exclusions.remove('desktop')
 	toc_filter_exclusions.remove('earthquake')
 	toc_filter_exclusions.remove('response')
+	toc_filter_exclusions.remove('notQuoFEM')
 	toc_filter_exclude = toc_filter_exclusions
 
 	exclude_patterns.remove('**/*EEUQ*')
@@ -217,7 +321,7 @@ elif app_name == 'EE-UQ':
 elif app_name == 'quoFEM':
 	project = 'Quantified Uncertainty with Optimization for the FEM'
 	copyright = '2018-2020, The Regents of the University of California'
-	author = 'Frank McKenna'
+	author = 'Frank McKenna, Adam Zsarnóczay, Nikhil Padhye'
 
 	tags.add('quoFEM_app')
 	tags.add('desktop_app')
@@ -227,6 +331,19 @@ elif app_name == 'quoFEM':
 	toc_filter_exclude = toc_filter_exclusions
 
 	exclude_patterns.remove('**/*desktop*')
+	exclude_patterns.remove('**/*quoFEM*')
+
+	# TODO: fix these temporary changes
+	exclude_patterns.append('**/*architectureLevel4.rst*')
+	exclude_patterns.append('**/requirements/index.rst')
+	exclude_patterns.append('**/requirements/bigRequirements.rst')
+	exclude_patterns.append('**/resEE.rst')
+	exclude_patterns.append('**/damping.rst')
+	exclude_patterns.append('**/desktop/FEM.rst')
+	exclude_patterns.append('**/desktop/GI.rst')
+	exclude_patterns.append('**/desktop/SIM.rst')
+
+	# END TODO
 
 	rst_prolog += """
 .. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)
@@ -241,7 +358,7 @@ elif app_name == 'quoFEM':
 .. |appLink| replace:: `quoFEM Download`_
 .. _quoFEM Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
 .. |messageBoard| replace:: `Message Board`_
-.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
+.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0
 .. |figUI| replace:: :numref:`figQUO_FEM`
 .. |figDownload| replace:: :numref:`figDownloadQUO_FEM`
 .. |figGenericUI| replace:: :numref:`figGenericUI-QUOFEM`
@@ -254,7 +371,7 @@ elif app_name == 'quoFEM':
 	html_logo = 'common/figures/quoFEM-LogoImageGrey.png' 
 
 	html_theme_options = {
-		'analytics_id': 'UA-158130480-1',
+		'analytics_id': 'UA-158130480-4',
 		'logo_only': True,
 		'prev_next_buttons_location': None,
 		'style_nav_header_background': '#F2F2F2'
@@ -269,11 +386,13 @@ elif app_name == 'WE-UQ':
 	tags.add('desktop_app')
 	tags.add('response')
 	tags.add('wind')
+	tags.add('notQuoFEM')
 
 	toc_filter_exclusions.remove('WEUQ')
 	toc_filter_exclusions.remove('desktop')
 	toc_filter_exclusions.remove('wind')
 	toc_filter_exclusions.remove('response')
+	toc_filter_exclusions.remove('notQuoFEM')
 	toc_filter_exclude = toc_filter_exclusions
 
 	exclude_patterns.remove('**/*WEUQ*')
@@ -295,7 +414,7 @@ elif app_name == 'WE-UQ':
 .. |appLink| replace:: `WE-UQ Download`_
 .. _WE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ
 .. |messageBoard| replace:: `Message Board`_
-.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
+.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=5.0
 .. |figUI| replace:: :numref:`figUI-WE`
 .. |figDownload| replace:: :numref:`figDownloadWE`
 .. |figGenericUI| replace:: :numref:`figGenericUI-WE`
@@ -391,8 +510,10 @@ elif app_name == 'pelicun':
 # ones.
 
 extensions = extensions + [
+    'sphinx-jsonschema',
 	'sphinxcontrib.bibtex',
-	'toctree_filter'
+	'toctree_filter',
+    'sphinxcontrib.images',
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -401,7 +522,8 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = exclude_patterns + ['_build', 'Thumbs.db', '.DS_Store']
+exclude_patterns = (exclude_patterns + 
+					['_build', 'Thumbs.db', '.DS_Store', '_archive'])
 
 # -- Options for HTML output -------------------------------------------------
 

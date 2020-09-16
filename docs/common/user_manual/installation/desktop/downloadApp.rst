@@ -4,12 +4,10 @@ Download the Application
 ========================
 
 
-To download the |app|, first navigate to the |appLink| page. As shown in |figDownload|, from the application page you must click on the link ``Download app and User Manual`` which will bring you to another page. This page contains a list of downloadable files and directories. There are at least four files available for download from this page: 
+To download the |app|, first navigate to the |appLink| page. As shown in |figDownload|, from the application page you must click on the link ``Download app and User Manual`` which will bring you to another page. This page contains a list of downloadable files and directories. There are at least two files available for download from this page: 
 
-1. The PDF file is the User Manual that you are reading now.
-2. The MOV file is an video that provides an introduction to the usage of the application.
-3. The ZIP file is an archive that contains the application files for a Windows operating system.
-4. The DMG file is an archive that contains the application files for a Mac OS X operating system.
+1. The ZIP file is an archive that contains the application files for a Windows operating system.
+2. The DMG file is an archive that contains the application files for a Mac OS X operating system.
 
 .. only:: PBE_app
 
@@ -51,16 +49,14 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
       :figclass: align-center
 
       quoFEM download page.
-
-To download the |app| click on the link for the appropriate file for your operating system. This will bring up a pop-up window. Click on the ``Download`` button in bottom right hand corner of this pop-up. Unpackage the ensuing downloaded file and place it in a location on your filesystem. 
-
+To download the |app| click on the link for the appropriate file for your operating system: file ending with **Windows_Download.zip** for users on a Windows machine and file ending with **Mac_Download.dmg** for users on a Mac. This will bring up a pop-up window. Click on the **Download** button in bottom right hand corner of this pop-up. Unpackage the ensuing downloaded file and place it in a location on your filesystem. 
 
 .. note::
 
-   #. Windows: On computers running the Windows operating system we suggest placing the directory in the **C:\SimCEnter** folder. Once here, create a shorcut link to the application and move this to your Desktop folder.
-   #. MacOS: We sugget copy the app to your Desktop.
+   #. Windows: On computers running the Windows operating system we suggest placing the directory in the **C:\\SimCenter** folder. Once here, create a shorcut link to the application and move this shortcut link to your Desktop folder.
+   #. MacOS: We sugget copying the app to your Desktop.
 
-Now test that the application starts. To do this navigate to the location where you placed the application and open it. You should see the user interface (UI) shown in |figUI| after starting the application. Now ``Quit`` the application. Additional installation steps, outlined in :numref:`lblDownloadOther`, are required before computations can be performed.
+Now test that the application starts. To do this navigate to the location where you placed the application and open it. You should see the user interface (UI) shown in |figUI| after starting the application. Now quit the application. Additional installation steps, outlined in :numref:`lblDownloadOther`, are required before computations can be performed.
 
 .. only:: PBE_app
 
@@ -107,7 +103,7 @@ Now test that the application starts. To do this navigate to the location where 
 
    #. The SimCenter is not recognized as either a Windows or an Apple vendor. Our applications are not recognized by the operating system as being signed. Consequently, you may receive a warning message when you start the |short tool name| application for the first time. Follow the procedure you used in :numref:`lblDownloadOther` to remedy this issue.
 
-The |short tool name| application requires additional software outlined in :numref:`lblDownloadOther` to work properly. In :numref:`lblTestInstall`, instructions are given on testing the installation.
+The |short tool name| application requires an up to date version of Python, that outlined in :numref:`lblDownloadOther` to work properly. In :numref:`lblTestInstall`, instructions are given on testing the installation.
 
 
 

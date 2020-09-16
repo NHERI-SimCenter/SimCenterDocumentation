@@ -29,7 +29,7 @@ are assumed to be normally distributed random variables with means and
 standard deviation values shown in :numref:`lblRV`; In this
 example, the model will be sampled with the Latin Hypercube sampling
 method using both |app| and a Python script
-(**PortalFrameSampling.py**) and response statistics from both
+(``PortalFrameSampling.py``) and response statistics from both
 analyses are compared.
 
 .. csv-table:: 
@@ -77,7 +77,7 @@ Then click on the choose button to select the event file.
    :align: center
    :figclass: align-center
     
-    Work on EVT
+   Work on EVT
 
 #. Choose the event file (\texttt{BM68elc.json}) for El Centro earthquake provided in the portal frame 2D example folder.
 
@@ -107,7 +107,7 @@ results tab showing the summary of results (\Cref{fig:figure27}).
    :align: center
    :figclass: align-center
     
-    Pop-up shown when clicking **Run**
+   Pop-up shown when clicking **Run**
 
 Verification Script
 -------------------
