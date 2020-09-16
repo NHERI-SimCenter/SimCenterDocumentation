@@ -6,7 +6,7 @@ MacOS Users
 Install Location
 ^^^^^^^^^^^^^^^^
 
-The following set of instructions assumes all files will be placed in the **bin** folder in your home directory. You can of course place them anywhere you want, you just need to make appropriate changes to the **env PATH** settings discussed later. If you wish to follow our placement strategy, inside this **bin** folder create **2** additional folders named **dakota** and **OpenSees**.
+The following set of instructions assumes all files will be placed in the **bin** folder in your home directory. You can of course place them anywhere you want, you just need to make appropriate changes to the **env PATH** settings discussed later. If you wish to follow our placement strategy, inside this **bin** folder create two additional folders named ``dakota`` and ``OpenSees``.
 
 .. note::
 

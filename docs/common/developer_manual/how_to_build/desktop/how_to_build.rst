@@ -75,10 +75,24 @@ Build using the terminal
     1. First, create a build output directory. This can be done in the terminal using the command ``mkdir build``.
     2. Go into the build output directory and run QMake to Configure the project and create make files. This can be done by using the command:
     
-        .. parsed-literal::
-  
-            qmake ../|short tool id|.pro
+        .. only:: quoFEM_app
 
+            ``qmake ../quoFEM.pro`` 
+
+        .. only:: EEUQ_app
+
+            ``qmake ../EE-UQ.pro`` 
+
+
+        .. only:: WEUQ_app
+
+            ``qmake ../WE-UQ.pro`` 
+
+
+        .. only:: PBE_app
+
+            ``qmake ../PBE.pro`` 
+  
     3. Build the project by using the command ``make`` on Unix like systems. On Windows, you can either use ``nmake`` or ``jom`` to build in parallel. Once built, you can now run the tool executable.
 
 

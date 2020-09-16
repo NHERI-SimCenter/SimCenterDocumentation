@@ -103,7 +103,7 @@ Now test that the application starts. To do this navigate to the location where 
 
    #. The SimCenter is not recognized as either a Windows or an Apple vendor. Our applications are not recognized by the operating system as being signed. Consequently, you may receive a warning message when you start the |short tool name| application for the first time. Follow the procedure you used in :numref:`lblDownloadOther` to remedy this issue.
 
-The |short tool name| application requires an up to date version of **python**, that outlined in :numref:`lblDownloadOther` to work properly. In :numref:`lblTestInstall`, instructions are given on testing the installation.
+The |short tool name| application requires an up to date version of Python, that outlined in :numref:`lblDownloadOther` to work properly. In :numref:`lblTestInstall`, instructions are given on testing the installation.
 
 
 
