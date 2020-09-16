@@ -71,6 +71,7 @@
    common/user_manual/bugs
    common/user_manual/license
 
+
 .. _lbl-testbeds-manual:
 
 .. toctree-filt::
@@ -78,11 +79,10 @@
    :maxdepth: 1
    :numbered: 3
 
-   common/testbeds/sf_bay_area/index
-   common/testbeds/atlantic_city/index
-   common/testbeds/anchorage/index
-   common/testbeds/memphis/index
-
+   :RDT:common/testbeds/sf_bay_area/index
+   :RDT:common/testbeds/atlantic_city/index
+   :RDT:common/testbeds/anchorage/index
+   :RDT:common/testbeds/memphis/index
 
 
 .. _lbl-technical-manual:
