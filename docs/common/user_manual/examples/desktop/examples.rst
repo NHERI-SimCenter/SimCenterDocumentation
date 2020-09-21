@@ -30,10 +30,8 @@ Examples
    :quoFEM:quoFEM/TrussOpenSees
    :quoFEM:quoFEM/FrameConv
    :quoFEM:quoFEM/FrameBaye
-   :EEUQ:EEUQ/ShearBuilding3
+   :EEUQ:EEUQ/exampleShearBuilding3/README
    :WEUQ:WEUQ/exampleShearBuilding9/README
    :PBE:PBE/exampleShearBuilding3/README
-   :PBE:PBE/basic_HAZUS
-   :PBE:PBE/basic_P58
 
 

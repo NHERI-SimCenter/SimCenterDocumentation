@@ -50,8 +50,8 @@ Sampling Analysis
 ^^^^^^^^^^^^^^^^^
 
 +----------------+----------------------------------------------------+
-| Problem files  | `quo-01 <https://github.com/claudioperez           |
-|                | /SimCenterDocumentation/tree/examples/docs/common/ |
+| Problem files  | `quo-01 <https://github.com/NHERI-SimCenter        |
+|                | /SimCenterDocumentation/tree/master/docs/common/   |
 |                | user_manual/examples/desktop/quoFEM/src/quo-01>`__ |
 +----------------+----------------------------------------------------+
 
@@ -112,8 +112,8 @@ Reliability Analysis
 ^^^^^^^^^^^^^^^^^^^^
 
 +----------------+----------------------------------------------------+
-| Problem files  | `quo-03 <https://github.com/claudioperez           |
-|                | /SimCenterDocumentation/tree/examples/docs/common/ |
+| Problem files  | `quo-03 <https://github.com/NHERI-SimCenter        |
+|                | /SimCenterDocumentation/tree/master/docs/common/   |
 |                | user_manual/examples/desktop/quoFEM/src/quo-03>`__ |
 +----------------+----------------------------------------------------+
 
