@@ -126,7 +126,7 @@ Additional five distributions are supported for SimCenter UQ engine. Including a
 
       f(x) = \lambda \exp(-\lambda x)
 
-   where :math:`x>0` and :math:`\lambda>0`. User can alternatively provide the mean of the exponential distribution. 
+   where :math:`x>0` and :math:`\lambda>0`. User can alternatively provide the **mean** (:math:`m`) of the exponential distribution. 
 
    .. math::
 
@@ -154,7 +154,7 @@ Additional five distributions are supported for SimCenter UQ engine. Including a
 
       f(x) = \frac{\lambda^kx^{k-1}\exp(-\lambda x)}{\Gamma(k)}
 
-   where :math:`\lambda>0` and :math:`k>0`. User can alternatively provide the mean (:math:`m`) and standard deviation (:math:`\sigma`) . 
+   where :math:`\lambda>0` and :math:`k>0`. User can alternatively provide the **mean** (:math:`m`) and **standard deviation** (:math:`\sigma`) . 
 
    .. math::
 
@@ -169,7 +169,7 @@ Additional five distributions are supported for SimCenter UQ engine. Including a
 
       f(x) = \frac{1}{2^{\frac{k}{2}}\Gamma\left(\frac{k}{2}\right)}x^{\left(\frac{k}{2}-1\right)} \exp\left(-\frac{x}{2}\right)
 
-   where :math:`x>0` and :math:`k` is a natural number. User can alternatively select the moment option where the mean (:math:`m`) is 
+   where :math:`x>0` and :math:`k` is a natural number. User can alternatively select the moment option where the **mean** (:math:`m`) is 
 
    .. math::
 
@@ -189,7 +189,7 @@ Additional five distributions are supported for SimCenter UQ engine. Including a
 
       c = \int_{L_B}^{U_B} \lambda\exp(-\lambda x) dx
 
-   where :math:`x>0` and :math:`\lambda>0`. User can alternatively provide the mean of the exponential distribution along with truncated bounds. 
+   where :math:`x>0` and :math:`\lambda>0`. User can alternatively provide the **mean** of the distribution along with the **truncated bounds**. 
 
    .. figure:: figures/rv5.png
     :align: center
@@ -227,7 +227,7 @@ Correlation coefficients between each variables can be defined by clicking the `
 
    Example of a valid correlation matrix
 
-Once the ``OK`` button is clicked after setting required entries, the the |app| will automatically check the validity of the matrix before closing the correlation matrix window. If the matrix is not **positively defined**, an error message will be displayed and the window will not be closed. In such case, user should adjust the correlation coefficients to be positive definite.
+Once the ``OK`` button is clicked after setting required entries, it will automatically check the validity of the matrix before closing the correlation matrix window. If the matrix is not **positively defined**, an error message will be displayed and the window will not be closed. In such case, user should adjust the correlation coefficients to be positive definite.
 
 .. note::
 

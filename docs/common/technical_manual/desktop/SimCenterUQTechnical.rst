@@ -1,5 +1,4 @@
 
-.. _lblDakotaSensitivity
 
 Methods in SimCenterUQ Engine 
 ***************************
