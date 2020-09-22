@@ -1,8 +1,6 @@
 RV: Random Variables
 ====================
 
-``******This section is being modified -- SY******``
-
 The **RV** tab allows the user to specify the probabilistic distribution for the random problem at hand. The following probabilistic distributions for the random variables are currently supported: 
 
 Probability distribution
@@ -114,9 +112,9 @@ For each random variable, the user must enter a name and select from the pull do
 
 
 SimCeterUQ Engine
-++++++++++++
++++++++++++++++++
 
-Additional five distributions are supported for SimCenter UQ engine. Including above six distribution types, users are allowed to define distributions either by ``Parameters``, ``Moments`` and ``Dataset``. Particular moments are mean and standard deviation. The number of the required order of moments depends on the number of parameters of the distribution. 
+Additional five distributions are supported in the SimCenter UQ engine. The users can define distributions either by ``Parameters``, ``Moments`` and ``Dataset``. (**Note**: Nataf transform module developed by [ERA19]_ is adopted)
 
 1. Exponential
 
@@ -135,7 +133,7 @@ Additional five distributions are supported for SimCenter UQ engine. Including a
 
 2. Discrete 
 
-   User provides the :math:`N` discrete values (:math:`x_i`) and their weights (probability :math:`p_i`) for the multinomial distribution. The probability mass function of the discrete distribution is:
+   User provides the :math:`N` discrete values (:math:`x_i`) and their weights (probability :math:`p_i`) for a multinomial distribution. The probability mass function of the discrete distribution is:
 
    .. math::
 
@@ -144,7 +142,7 @@ Additional five distributions are supported for SimCenter UQ engine. Including a
    	 	 0, & \text{otherwise}
       \end{cases}
 
-   where :math:`p_i>0`, The weights (:math:`p_i`) will be automatically normalized if it does not sum up to one. The option to define by moment is not supported for the discrete distribution.
+   where :math:`p_i>0`. The weights (:math:`p_i`) will be automatically normalized if they do not sum up to one. The option to define by moments is not supported for the discrete distribution.
 
 3. Gamma
 
@@ -198,7 +196,7 @@ Additional five distributions are supported for SimCenter UQ engine. Including a
 
     Extended random variable specification
    
-   User can also define the random variables by providing sample realization data set as shown in the below figure, by selecting ``Dataset`` input type. The data will be fitted to one of the parameterized distributions to be implemented in UQ analysis. Note that for some of the bounded distributions, such as beta and truncated exponential, the bounds should additionally be specified.  
+   User can also define the random variables by providing sample realization data set as shown in the below figure, by selecting ``Dataset`` input type. The data will be fitted to the specified probability distribution model. Note that for some of the bounded distributions, such as beta and truncated exponential, the bounds should additionally be provided.  
 
 .. _figRVdata
 
@@ -212,13 +210,13 @@ Additional five distributions are supported for SimCenter UQ engine. Including a
 
 .. note::
 
-   - Clicking the ``Show PDF`` or ``Show PMF`` button will display probability distribution (or mass) function of a random variable with the specified parameters/moments. If the PDF or PMF is not displayed, we recommend you to double-check if the parameters/moments are in a valid range. The plotting function is not supported for the ``Dataset`` input type. 
+   - Clicking the ``Show PDF`` or ``Show PMF`` button will display probability distribution (or mass) function of each random variable with the specified parameters/moments. If the PDF or PMF is not displayed, we recommend the users to double-check the parameters/moments if they are in a valid range. The plotting button is not activated for the ``Dataset`` input type. 
 
 
 Correlation matrix
 ------------------------
 
-Correlation coefficients between each variables can be defined by clicking the ``Correlation Matrix`` button. Default correlations between variables are set to be zero. Diagonal element of the matrix is fixed as one, and symmetricity of the correlation matrix is enforced by modifying only the entries of the lower triangular part of the matrix. 
+Correlation coefficients between each variable can be defined by clicking the ``Correlation Matrix`` button. Default correlations between variables are set to be zero. The diagonal element of the matrix is fixed as one, and symmetricity of the correlation matrix is enforced once the entries of the lower triangular part of the matrix are modified. 
 
 .. figure:: figures/rv4.png
    :align: center
@@ -227,13 +225,13 @@ Correlation coefficients between each variables can be defined by clicking the `
 
    Example of a valid correlation matrix
 
-Once the ``OK`` button is clicked after setting required entries, it will automatically check the validity of the matrix before closing the correlation matrix window. If the matrix is not **positively defined**, an error message will be displayed and the window will not be closed. In such case, user should adjust the correlation coefficients to be positive definite.
+Once the ``OK`` button is clicked after setting all required entries, the program will automatically check the validity of the matrix before closing the correlation matrix window. If the matrix is not **positively defined**, an error message will be displayed and the window will not be closed. In such case, user should adjust the correlation coefficients to be positive definite.
 
 .. note::
 
    - When ``constant`` variable is introduced instead of probability distributions, the correlation coefficient corresponding to those variables will be ignored. 
    - When more than one random variable is provided as ``Dataset``, correlations between the data pairs will not be incorporated automatically. If correlations exist, user can define them manually at the correlation matrix window.
 
-``******Refer era here -- SY******``
 
-
+.. [ERA19]
+   Engineering Risk Analysis Group, Technische Universität München: https://www.bgu.tum.de/era/software/eradist/ (Matlab/python programs and documentations)
