@@ -1,9 +1,8 @@
 
-
 UQ: Uncertainty Quantification
 ==============================
 
-The first selection panel the user must select from and enter data into is the **UQ** tab. It is in this panel where the user selects the **UQ Engine** to use for performing the uncertainty quantification calculations. Presently the **UQ Engine** option is limited to the Dakota engine.
+The first selection panel the user must select from and enter data into is the **UQ** tab. It is in this panel where the user selects the **UQ Engine** to use for performing the uncertainty quantification calculations. Presently the **UQ Engine** option supports Dakota and SimCenterUQ engine.
 
 Dakota UQ Engine
 ----------------
@@ -31,5 +30,14 @@ The following categories are available:
    :quoFEM:DakotaParameterEstimation
    :quoFEM:DakotaInverseProblems
 
+
+SimCenter UQ Engine
+------------------
+This is an in-house developed UQ engine of SimCenter that accommodates different UQ methods. Currently the option is limited to global sensitivity analysis:
+
+.. toctree-filt::
+   :maxdepth: 1
+
+   :quoFEM:SimCenterUQSensitivity
 
 

@@ -28,6 +28,7 @@ Examples
    :maxdepth: 1
 
    :quoFEM:quoFEM/TrussOpenSees
+   :quoFEM:quoFEM/TrussOpenSeesSimUQ
    :quoFEM:quoFEM/FrameConv
    :quoFEM:quoFEM/FrameBaye
    :EEUQ:EEUQ/ShearBuilding3

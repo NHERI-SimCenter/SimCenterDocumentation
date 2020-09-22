@@ -12,6 +12,7 @@
 
    .. only:: PBE_app
 
+
       The |full tool name| (|app|) is an open-source research application that can be used to predict the performance of a building subjected to earthquake events. The application is focused on quantifying building performance given the uncertainties in models, earthquake loads, and analysis. The computations are performed in a workflow application that will run on either the users local machine or on a high performance computer made available by |DesignSafe|. 
 
    .. only:: EEUQ_app
