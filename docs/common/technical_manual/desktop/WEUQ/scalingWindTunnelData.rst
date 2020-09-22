@@ -25,9 +25,7 @@ Due to similitude, is is necessary to convert the time step :math:`\Delta t_M` o
 
 1. Length factor, :math:`\lambda_L = \frac{D_M}{D_R}`
 
-
 2. Time factor: :math:`\lambda_T= \frac{\Delta t_M}{\Delta t_R}`
-
 
 3. Velocity factor: :math:`\lambda_V= \frac{V_M}{V_R}`
 
@@ -51,7 +49,7 @@ Force Calculation on Real Structure Floors
 ------------------------------------------
 
 The pressure at a location in the real structure corresponding to a pressure tap location in the model can be obtained from
-the following equation:
+the following equation :cite:`parkDatabaseassistedDesignEquivalent2018`:
 
 .. math::
 
@@ -60,12 +58,12 @@ the following equation:
 where :math:`V_R` is the wind speed and :math:`\rho` the full scale air density, typically :math:`1.225kg/m^3`. It should be noted that the pressures in
 the wind tunnel are not needed, this is because :math:`C_p` is a dimensionless parameter. It should also be noted that it is essential that the wind speed :math:`V_R` have same basis as the model wind speed :math:`V_M`, i.e. averaging period, elevation, and vertical profile.
 
-The forces on the structure can be calculated integrating the pressures over the external surface area of the building.
+The forces on the structure can be calculated by integrating the pressures over the external surface area of the building.
 
 .. math::
    F = \int\limits_A P_R
 
-As the pressure are not known for all points on the building, the approximation used is to break the building into a number of sections and assuming the pressure is constant over that section determine the force on the section and from that the force on the building. In the SimCenter application, the current approach is for each story to divide the surface of the building story into a number of sections. For each section we determine the closest tap location to obtain a :math:`C_p` for that section. The force and moment contributed to the floor above and below the section are done assuming simply supported beam theory.
+As the pressures are not known for all points on the building, the approximation used is to break the building into a number of sections and assuming the pressure is constant over that section determine the force on the section and from that the force on the building. In the SimCenter application, the current approach is for each story to divide the surface of the building story into a number of sections. For each section we determine the closest tap location to obtain a :math:`C_p` for that section. The force and moment contributed to the floor above and below the section are done assuming simply supported beam theory.
 
 .. math::
    F_A = \sum\limits_{sections} F_{A^{section}} = \sum\limits_{sections} * F^{section} * \frac{b}{(a+b)} = \sum\limits_{sections} A^{section} * C_p^{section} * 0.5 * \rho *  V_R^2 * \frac{b}{(a+b)}
@@ -75,6 +73,5 @@ As the pressure are not known for all points on the building, the approximation 
 
 
 where :math:`F_A` represents force on floor *A* due to section between floors *A* and *B* and  :math:`M_A` the moment contribution due to these sections. These are calculated from :math:`F_{A section}` the force contribution to floor *A* due to a particular section, :math:`a` distance from centroid of section to floor *A*, :math:`b` distance from centroid of section to floor *B*, and :math:`c` distance from centroid of section to centroid of building face.
-
 
 
