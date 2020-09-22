@@ -49,14 +49,14 @@ Force Calculation on Real Structure Floors
 ------------------------------------------
 
 The pressure at a location in the real structure corresponding to a pressure tap location in the model can be obtained from
-the following equation :cite:`parkDatabaseassistedDesignEquivalent2018`:
+the following equation:
 
 .. math::
 
    P_R = C_p * 0.5*\rho * {V_R}^2
 
 where :math:`V_R` is the wind speed and :math:`\rho` the full scale air density, typically :math:`1.225kg/m^3`. It should be noted that the pressures in
-the wind tunnel are not needed, this is because :math:`C_p` is a dimensionless parameter. It should also be noted that it is essential that the wind speed :math:`V_R` have same basis as the model wind speed :math:`V_M`, i.e. averaging period, elevation, and vertical profile.
+the wind tunnel are not needed, this is because :math:`C_p` is a dimensionless parameter :cite:`parkDatabaseassistedDesignEquivalent2018`. It should also be noted that it is essential that the wind speed :math:`V_R` have same basis as the model wind speed :math:`V_M`, i.e. averaging period, elevation, and vertical profile.
 
 The forces on the structure can be calculated by integrating the pressures over the external surface area of the building.
 
