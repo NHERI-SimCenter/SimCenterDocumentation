@@ -4,7 +4,7 @@
 Software Architecture
 *********************
 
-The SimCenter is developing a software framework for building applications that run *scientific workflow applications* to perform computational simulations in field of NHE at both building level scale and regionsl scale. It is releasing a number of applications built using this framework. The |app| is one of those applications which have been released (EE-UQ, WE-UQ, PBE). Other applications are under development (RDT). The applications that the SimCenter are developing are limited *scientific workflow systems*. This chapter presents the software architecture for the framework and the |app| built using it using the `C4 model <https://c4model.com>`_. The following sections present the architecture to level 3:
+The SimCenter is developing a software framework for building applications that run **scientific workflow applications** to perform computational simulations in field of NHE at both building level scale and regionsl scale. It is releasing a number of applications built using this framework. The |app| is one of those applications which have been released (EE-UQ, WE-UQ, PBE). Other applications are under development (RDT). The applications that the SimCenter are developing are limited **scientific workflow systems**. This chapter presents the software architecture for the framework and the |app| built using it using the `C4 model <https://c4model.com>`_. The following sections present the architecture to level 3:
 
 .. note::
 
@@ -17,32 +17,6 @@ The SimCenter is developing a software framework for building applications that 
 Overview
 ========
 
-Figure of how backend applications are the core to all SimCenter applications
-Flowchart of interface with local and remote simulation on DesignSafe
-
-
-Backend Applications
-====================
-
-Flowchart of input/output sequence through the applications
-
-.. toctree::
-   :maxdepth: 1
-
-   userDefinedInputs
-   buildingApps
-   regionalEventApps
-   eventApps
-   modelingApps
-   EDPApps
-   simulationApps
-   UQApps
-   DLQApps
-
-
-Level 1: A Context for SimCenter Applications
-=============================================
-
 A Level 1 diagram showing the system context for the SimCenter applications, i.e. how it fits in the world,  is shown in :numref:`figContext`. It shows SimCenter applications (EE-UQ, WE-UQ, PBE, RDT) as a box in the center surrounded by the user and the systems it and the user interact with. The SimCenter applications allows user to create and run scientific workflow applications, the data for the applications may be obtained from the web or DataDepot, the workflow applications are run on either the local desktop or on some HPC at |DesignSafe|.
 
 .. _figContext:
@@ -53,9 +27,6 @@ A Level 1 diagram showing the system context for the SimCenter applications, i.e
 
    System context diagram for SimCenter applications.
 
-Level 2:  The Components of a SimCenter Application
-===================================================
-
 Given how SimCenter applications fit in with the environment, a level 2 diagrams now demonstrates how the SimCenter applications are broken into high level components. The SimCenter applications are, as shown in :numref:`figContainer`, broken into two components: A front end UI and a back end application that runs the workflow. The front end applications are desktop applications written using the cross-platform Qt framework. The back end is an application that processes the input from the front end, which comes in the form of a JSON file, creates a workflow and runs it. The workflow applications, written in Python, C, or C++, utilize existing applications were possible and run on either the local desktop machine or on a HPC utilizing resources made available to NHE community through DesignSafe.
 
 .. _figContainer:
@@ -65,9 +36,6 @@ Given how SimCenter applications fit in with the environment, a level 2 diagrams
    :figclass: align-center
 
    System container diagram for SimCenter applications.
-
-Level 3: Container Diagrams for the Front and Back End Components
-=================================================================
 
 Two level 3 diagrams are now presented which break up the two containers into the major building blocks or components in C4 terminology. In :numref:`figComponentFront` the component diagram for the front end UI is presented. It outlines the interaction between the user and the individual graphical elements (widgets) of the UI. Given the analogy of a jigsaw puzzle, the user selects which piece of the jigsaw puzzle they are working on in the component selection widget. The widget for the jigsaw piece will then be displayed on the desktop. The user for each jigsaw piece then selects which application to run for that piece, and for the chosen application, they provide the inputs. When the inputs are all provided, the user can select to run the simulations locally or remotely. For jobs that run remotely, the user can download and review previously run simulations. As seen the widgets may subsequently interact with web services through HTTPS requests, or with DesignSafe utilizing TAPIS Restful API through the RemoteService container.
 
@@ -90,3 +58,45 @@ The figure shows the backend application running locally or remotely on a HPC@De
    :figclass: align-center
 
    Component diagram for backend application.
+
+Figure of how backend applications are the core to all SimCenter applications
+Flowchart of interface with local and remote simulation on DesignSafe
+
+"Desktop application"
+"Backend application"
+"Building"/asset
+"Event"
+"Simulation"
+
+
+
+Backend Applications
+====================
+
+[Description of how files are propogated through the backend applications]
+
+.. _figBackendApps:
+
+.. figure:: figures/backendapps.png
+   :align: center
+   :figclass: align-center
+
+   Diagram of backend applications workflow.
+
+
+The following pages provide more detail on the requirements for input files and types of backend applications available.
+
+
+.. toctree::
+   :maxdepth: 1
+
+   Inputs
+   buildingApps
+   regionalMapApps
+   eventApps
+   modelingApps
+   EDPApps
+   simulationApps
+   UQApps
+   DLApps
+   Outputs

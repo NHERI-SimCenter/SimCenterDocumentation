@@ -80,10 +80,10 @@
    :numbered: 3
 
    :RDT:common/testbeds/sf_bay_area/index
-   :RDT:common/testbeds/atlantic_city/index
-   :RDT:common/testbeds/anchorage/index
+   :RDT:common/testbeds/atlantic_city/index   
    :RDT:common/testbeds/memphis/index
-
+   :RDT:common/testbeds/anchorage/index
+   :RDT:common/testbeds/lake_charles/index
 
 .. _lbl-technical-manual:
 

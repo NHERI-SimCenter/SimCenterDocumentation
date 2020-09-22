@@ -37,12 +37,12 @@ exclude_patterns = [
 		'**/*response*',
 		'**/*earthquake*',
 		'**/*wind*',
-		'**/*RDT*',  
-		'**/*PBE*', 
-		'**/*WEUQ*',  
-		'**/*EEUQ*',  
-		'**/*TinF*', 
-		'**/*TInF*', 
+		'**/*RDT*',
+		'**/*PBE*',
+		'**/*WEUQ*',
+		'**/*EEUQ*',
+		'**/*TinF*',
+		'**/*TInF*',
 		'**/*pelicun*',
 		'**/*old*',
 		'**/*quoFEM*'
@@ -63,14 +63,14 @@ toc_filter_exclusions = [
 	'TinF',
 	'TInF',
 	'S3hark',
-	'pelicun'	
+	'pelicun'
 ]
 
 extensions = []
 
 # -- Project information -----------------------------------------------------
 
-# shared among all SimCenter docs 
+# shared among all SimCenter docs
 
 numfig = True
 numfig_secnum_depth = 2
@@ -119,7 +119,7 @@ rst_prolog = """
 
     <br>
 
-"""	
+"""
 
 # app-specific settings
 
@@ -135,7 +135,7 @@ if app_name == 'RDT':
 	tags.add('earthquake')
 	tags.add('response')
 	tags.add('notQuoFEM')
-	
+
 	toc_filter_exclusions.remove('RDT')
 	toc_filter_exclusions.remove('desktop')
 	toc_filter_exclusions.remove('earthquake')
@@ -184,7 +184,7 @@ if app_name == 'RDT':
 """
 
 	# html_logo = 'common/figures/SimCenter_RDT_logo.png'
-	html_logo = 'common/figures/RDT-Logo-grey2.png' 
+	html_logo = 'common/figures/RDT-Logo-grey2.png'
 
 	html_theme_options = {
 		'analytics_id': '...', #TODO: add analytics ID
@@ -204,7 +204,7 @@ elif app_name == 'PBE':
 	tags.add('desktop_app')
 	tags.add('earthquake')
 	tags.add('notQuoFEM')
-	
+
 	toc_filter_exclusions.remove('PBE')
 	toc_filter_exclusions.remove('desktop')
 	toc_filter_exclusions.remove('earthquake')
@@ -250,11 +250,11 @@ elif app_name == 'PBE':
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-PBE`
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
 .. |developers| replace:: **Adam Zsarnóczay**, **Frank McKenna**, **Chaofeng Wang**, **Wael Elhaddad**, **Michael Gardner**
-                          
+
 """
 
 	# html_logo = 'common/figures/SimCenter_PBE_logo.png'
-	html_logo = 'common/figures/PBE-Logo-grey2.png' 
+	html_logo = 'common/figures/PBE-Logo-grey2.png'
 
 	html_theme_options = {
 		'analytics_id': 'UA-158130480-3',
@@ -307,9 +307,9 @@ elif app_name == 'EE-UQ':
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 .. |developers| replace:: **Frank McKenna**, **Wael Elhaddad**, **Michael Gardner**, **Chaofeng Wang**, **Adam Zsarnóczay**
 
-"""	
+"""
 
-	html_logo = 'common/figures/EE-UQ-Logo-grey2.png' 
+	html_logo = 'common/figures/EE-UQ-Logo-grey2.png'
 
 	html_theme_options = {
 		'analytics_id': 'UA-158130480-1',
@@ -366,9 +366,9 @@ elif app_name == 'quoFEM':
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 .. |developers| replace:: **Frank McKenna**, **Nikhil Padhye**, **Adam Zsarnóczay**
 
-"""	
+"""
 
-	html_logo = 'common/figures/quoFEM-LogoImageGrey.png' 
+	html_logo = 'common/figures/quoFEM-LogoImageGrey.png'
 
 	html_theme_options = {
 		'analytics_id': 'UA-158130480-4',
@@ -421,9 +421,9 @@ elif app_name == 'WE-UQ':
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-WE`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 .. |developers| replace:: **Frank McKenna**, **Peter Mackenzie-Helnwein**, **Wael Elhaddad**, **Jiawei Wan**, **Michael Gardner**, **Dae Kun Kwon**
-                          
 
-"""	
+
+"""
 
 	html_logo = 'common/figures/WE-UQ-Logo-grey2.png' #TODO: replace with EE-UQ logo!
 
@@ -447,10 +447,10 @@ elif app_name == 'pelicun':
 	toc_filter_exclude = toc_filter_exclusions
 
 	exclude_patterns.remove('**/*pelicun*')
-	
+
 	rst_prolog += """\
 .. |pelicun expanded| replace:: Probabilistic Estimation of Losses, Injuries, and Community resilience Under Natural disasters
-.. |full tool name| replace:: pelicun library 
+.. |full tool name| replace:: pelicun library
 .. |short tool name| replace:: pelicun
 .. |short tool id| replace:: pelicun
 .. |tool github link| replace:: `pelicun Github page`_
@@ -491,7 +491,7 @@ elif app_name == 'pelicun':
 
 	pygments_style = 'sphinx'
 
-	html_logo = 'common/figures/pelicun-Logo-grey.png' 
+	html_logo = 'common/figures/pelicun-Logo-grey.png'
 
 	html_theme_options = {
 		'analytics_id': 'UA-158130480-7',
@@ -511,8 +511,8 @@ elif app_name == 'pelicun':
 
 extensions = extensions + [
     'sphinx-jsonschema',
-	'sphinxcontrib.bibtex',
-	'toctree_filter',
+	  'sphinxcontrib.bibtex',
+	  'toctree_filter',
     'sphinxcontrib.images',
 ]
 
@@ -522,7 +522,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = (exclude_patterns + 
+exclude_patterns = (exclude_patterns +
 					['_build', 'Thumbs.db', '.DS_Store', '_archive'])
 
 # -- Options for HTML output -------------------------------------------------
@@ -534,9 +534,9 @@ html_theme = 'sphinx_rtd_theme'
 
 #html_theme_options = {'body_max_width': '70%'}
 
-#	'style_nav_header_background': '#F2F2F2' 
-#	'style_nav_header_background': '#FFFFFF' 
-#	'style_nav_header_background': '#d5d5d5' 
+#	'style_nav_header_background': '#F2F2F2'
+#	'style_nav_header_background': '#FFFFFF'
+#	'style_nav_header_background': '#d5d5d5'
 #
 #	'style_nav_header_background': '#F2F2F2' #64B5F6 #607D8B
 
