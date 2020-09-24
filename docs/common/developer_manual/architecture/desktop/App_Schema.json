@@ -6,7 +6,7 @@
     "properties": {
       "Inputs": {
         "configurationFile": {
-          "title": "1. configuration file",
+          "title": "Configuration File",
           "description": "JSON file containing simulation details and specifies the application selected for each workflow step.",
           "properties": {
             "runDir": {"type": "path", "description": "Directory where input_data folder is located."},
@@ -17,7 +17,7 @@
           }
         },
         "buildingSourceFile": {
-          "title": "2. building source file",
+          "title": "Building Source File",
           "description": "CSV file containing building properties for the response simulation and damage/loss estimation steps of the workflow. The following headers must be included (with any one of the header options listed):",
           "properties": {
             "id": {"type": "int", "description": "ID number of the building."},
@@ -33,11 +33,11 @@
           }
         },
         "modelFile": {
-          "title": "3. model file",
+          "title": "Model File",
           "description": "If the simulation application chosen is OpenSees-Simulation or OpenSeesPy-Simulation, then a model file must be provided. It consists of an OpenSees/OpenSeesPy script with functions for building and analyzing a custom structural model. See the Simulation Applications page for more details on application-specific inputs."
         },
         "eventFiles": {
-          "title": "4. event files",
+          "title": "Event Files",
           "description": "To specify the type, location, and intensity of each event, the following files must be provided in the input_data/records folder.",
           "properties": {
             "EventGrid": {
@@ -48,7 +48,7 @@
                 "lat": {"type": "float", "description": "Latitude coordinate of the site location." }
               }
             },
-            "Event Files": {
+            "Event IM Files": {
               "description": "CSV or JSON files containing information on the intensity measure of the event.",
               "properties": {
                 "name": {"type": "string", "description": "Name of ground motion record."},
@@ -69,6 +69,15 @@
           }
         }
       },
+      "Outputs": {
+        "outputEDP": {
+          "title": "EDP Output File",
+          "description": "",
+          "properties": {
+            
+          }
+        }
+      }
       "BuildingApplications": {
         "CSV_to_BIM": {
           "title": "CSV_to_BIM",
@@ -174,7 +183,7 @@
                 "EVENT file": {"type": "string", "description": "File containing event intensity measure for each simulation per building.", "default": "EVENT.json"},
                 "HAZUS data": {"type": "path", "description": "Defines location of the HAZUS building configuration file.", "default": "input_data/"},
                 "stdStiffness": {"type": "float", "description": "Defines the standard deviation that should be considered when sampling the stiffness for the building.", "default": "CHECK"},
-                "stdDamping": {"type": "float", "description": "Defines the standard deviation that should be considered when sampling the damping ratio for the building.", "default": "CHECK"},
+                "stdDamping": {"type": "float", "description": "Defines the standard deviation that should be considered when sampling the damping ratio for the building.", "default": "CHECK"}
               }
             },
             "Outputs": {
@@ -204,7 +213,7 @@
         },
         "OpenSeesPyInput": {
           "title": "OpenSeesPyInput",
-          "description": "Creates SAM.json file containing model information for an input OpenSeesPy structural model. The functions *build_model* and *run_analysis* must be defined in the model script. Analysis is executed in the OpenSeesPySimulation application.",
+          "description": "Creates SAM.json file containing model information for an input OpenSeesPy structural model. The functions 'build_model' and 'run_analysis' must be defined in the model script. Analysis is executed in the OpenSeesPySimulation application.",
           "properties": {
             "File Path": "applications/createSAM/openSeesPyInput/OpenSeesPyInput.py",
             "Inputs": {
@@ -215,12 +224,187 @@
                 "mainScript": {"type": "string", "description": "Defines the name of the main model file which contains the build_model and run_analysis functions."},
                 "ndm": {"type": "string", "description": "Defines the number of degrees of freedom in the numerical model.", "default": 6},
                 "dofMap": {"type": "int", "description": "By default, the workflow assumes X=1, Y=2, Z=3 mapping between directions and degrees of freedom, with XY being the horizontal directions. This input allows you to define an alternative mapping by providing three numbers separated by commas in a string, such as '1, 3, 2' if you wish to have Y as the vertical direction.", "default": "1,2,3"},
-                "ctrlNodes": {"type": "string", "description": "Defines the IDs of nodes in the OpenSeesPy model where EDPs are recorded. If the number of ctrlNodes provided exceeds the number of stories, only the firsts n+1 nodes will be used for an n-story building."},
+                "ctrlNodes": {"type": "string", "description": "Defines the IDs of nodes in the OpenSeesPy model where EDPs are recorded. If the number of ctrlNodes provided exceeds the number of stories, only the firsts n+1 nodes will be used for an n-story building."}
               }
             },
             "Outputs": {
               "properties": {
                 "SAM file": {"type": "string", "description": "File containing model information for response simulation.", "default": "SAM.json"}
+              }
+            }
+          }
+        }
+      },
+      "EDPApplications": {
+        "StandardEarthquakeEDP_R": {
+          "title": "StandardEarthquakeEDP_R",
+          "description": "Creates EDP.json file containing standard EDPs for earthquake hazard events, including peak interstory drift ratio (PID), peak floor acceleration (PFA), peak roof drift (PRD), and peak floor displacement (PFD).",
+          "properties": {
+            "File Path": "applications/createEDP/standardEarthquakeEDP_R/StandardEarthquakeEDP",
+            "Inputs": {
+              "properties": {
+                "BIM file": {"type": "string", "description": "File containing a dictionary of building information.", "default": "#-BIM.json"},
+                "EVENT file": {"type": "string", "description": "File containing event intensity measure for each simulation per building.", "default": "EVENT.json"},
+                "SAM file": {"type": "string", "description": "File containing model information for response simulation.", "default": "SAM.json"}
+              }
+            },
+            "Outputs": {
+              "properties": {
+                "EDP file": {"type": "string", "description": "File containing type, location, and direction of EDPs expected from the response simulation.", "default": "EDP.json"}
+              }
+            }
+          }
+        },
+        "UserDefinedEDP_R": {
+          "title": "UserDefinedEDP_R",
+          "description": "Creates EDP.json file containing EDP information which is custom-defined in an input EDP specifications file.",
+          "properties": {
+            "File Path": "applications/createEDP/userEDP_R/UserDefinedEDP.py",
+            "Inputs": {
+              "properties": {
+                "BIM file": {"type": "string", "description": "File containing a dictionary of building information.", "default": "#-BIM.json"},
+                "EVENT file": {"type": "string", "description": "File containing event intensity measure for each simulation per building.", "default": "EVENT.json"},
+                "SAM file": {"type": "string", "description": "File containing model information for response simulation.", "default": "SAM.json"},
+                "EDP specifications file": {"type": "string", "description": "JSON file containing a nested dictionary of custom-defined EDPs. The dictionary should be structured with: a 'location' sub-dictionary with custom column-line ('cline') IDs as the keys, followed by lists of node tags for nodes along the cline; and a 'EDP_types' sub-dictionary with EDPs as the keys, followed by dictionaries of the cline IDs and their DOFs of interest. See the example file below.", "default": "EDP_specs.json"}
+              }
+            },
+            "Outputs": {
+              "properties": {
+                "EDP file": {"type": "string", "description": "File containing type, location, and direction of EDPs expected from the response simulation.", "default": "EDP.json"}
+              }
+            }
+          }
+        }
+      },
+      "SimulationApplications": {
+        "OpenSees-Simulation_R": {
+          "title": "OpenSees-Simulation_R",
+          "description": "Executes script for building structural model in OpenSees and running analysis for the response simulation, then saves the results in EDP.json.",
+          "properties": {
+            "File Path": "applications/performSIMULATION/openSees_R/OpenSeesSimulation.py",
+            "Inputs": {
+              "properties": {
+                "BIM file": {"type": "string", "description": "File containing a dictionary of building information.", "default": "#-BIM.json"},
+                "EVENT file": {"type": "string", "description": "File containing event intensity measure for each simulation per building.", "default": "EVENT.json"},
+                "SAM file": {"type": "string", "description": "File containing model information for response simulation.", "default": "SAM.json"},
+                "EDP file": {"type": "string", "description": "File containing type, location, and direction of EDPs expected from the response simulation.", "default": "EDP.json"},
+                "model file": {"type": "Tcl script", "description": "Tcl file with scripts for building the model and running analysis on OpenSees. The name and path to the model file is specified in the BIM file."}
+              }
+            },
+            "Outputs": {
+              "properties": {
+                "EDP file": {"type": "string", "description": "File updated with EDPs recorded from the response simuluation, organized by type, location, and direction.", "default": "EDP.json"},
+                "SIM file": {"type": "string", "description": "File containing constants, settings, and methods for the response simulation. This file is deleted after the application is executed.", "default": "SIM.json"}
+              }
+            }
+          }
+        },
+        "OpenSeesPy-Simulation": {
+          "title": "OpenSees-Simulation_R",
+          "description": "Executes script for building structural model in OpenSeesPy and running analysis for the response simulation, then saves the results in EDP.json.",
+          "properties": {
+            "File Path": "applications/performSIMULATION/openSeesPy/OpenSeesPySimulation.py",
+            "Inputs": {
+              "properties": {
+                "BIM file": {"type": "string", "description": "File containing a dictionary of building information.", "default": "#-BIM.json"},
+                "EVENT file": {"type": "string", "description": "File containing event intensity measure for each simulation per building.", "default": "EVENT.json"},
+                "SAM file": {"type": "string", "description": "File containing model information for response simulation.", "default": "SAM.json"},
+                "EDP file": {"type": "string", "description": "File containing type, location, and direction of EDPs expected from the response simulation.", "default": "EDP.json"},
+                "model file": {"type": "Python script", "description": "Python file defining functions a) 'build_model(model_params)', where 'model_params' from the building source file are parsed for building the OpenSeesPy structural model; and b) 'run_analysis', which takes as input the event time step (dT), number of steps in the event (npts), list with time series of event points in two horizontal directions (TS_List), and the list of nodes at which EDPs are recorded (recorderNodes). The name and path to the model file is specified in the BIM file."}
+              }
+            },
+            "Outputs": {
+              "properties": {
+                "EDP file": {"type": "string", "description": "File updated with EDPs recorded from the response simuluation, organized by type, location, and direction.", "default": "EDP.json"},
+                "SIM file": {"type": "string", "description": "File containing constants, settings, and methods for the response simulation. This file is deleted after the application is executed.", "default": "SIM.json"}
+              }
+            }
+          }
+        },
+        "IMasEDP": {
+          "title": "IMasEDP",
+          "description": "Returns the input event IM as the EDP in the absence of a response simulation method. This application is appropriate to use when damages and losses are estimated as function of IM in the DL assessment.",
+          "properties": {
+            "File Path": "applications/performSIMULATION/IMasEDP/IMasEDP.py",
+            "Inputs": {
+              "properties": {
+                "BIM file": {"type": "string", "description": "File containing a dictionary of building information.", "default": "#-BIM.json"},
+                "EVENT file": {"type": "string", "description": "File containing event intensity measure for each simulation per building.", "default": "EVENT.json"},
+                "SAM file": {"type": "string", "description": "File used as a placeholder in the absence of response simulation.", "default": "SAM.json"},
+                "EDP file": {"type": "string", "description": "File expecting to use IMs from the EVENT file as the EDP types.", "default": "EDP.json"}
+              }
+            },
+            "Outputs": {
+              "properties": {
+                "EDP file": {"type": "string", "description": "File containing event IMs in place of the EDP.", "default": "EDP.json"},
+                "SIM file": {"type": "string", "description": "File used as a placeholder in the absence of response simulation. This file is deleted after the application is executed.", "default": "SIM.json"}
+              }
+            }
+          }
+        }
+      },
+      "UQApplications": {
+        "Dakota-FEM": {
+          "title": "Dakota-FEM",
+          "description": "Uses the uncertainty quantification package Dakota to sample random variables and execute the workflow driver file.",
+          "properties": {
+            "File Path": "applications/performUQ/dakota_R/DakotaFEM.py",
+            "Inputs": {
+              "properties": {
+                "BIM file": {"type": "string", "description": "File containing a dictionary of building information.", "default": "#-BIM.json"},
+                "EVENT file": {"type": "string", "description": "File containing event intensity measure for each simulation per building.", "default": "EVENT.json"},
+                "SAM file": {"type": "string", "description": "File containing model information for response simulation.", "default": "SAM.json"},
+                "EDP file": {"type": "string", "description": "File containing type, location, and direction of recorded EDPs from the response simulation.", "default": "EDP.json"},
+                "SIM file": {"type": "string", "description": "File containing constants, settings, and methods for the response simulation. This file is deleted after the application is executed.", "default": "SIM.json"},
+                "driver file": {"type": "string", "description": "Batch file containing commands for Dakota to execute, located in the working directory for each simulation.", "default": "workflow_driver.bat"},
+                "method": {"type": "string", "description": "Defines the UQ sampling method to use.", "default": "LHS"},
+                "samples": {"type": "int", "description": "Specifies the number of realizations to generate. For surrogate models, these samples are used to train the model.", "default": "None"},
+                "seed": {"type": "int", "description": "Specifies the random seed for sampling.", "default": "randrange(1,1000)"},
+                "samples2": {"type": "int", "description": "Only for surrogate models. Specifies the number of realizations to generate from the trained model.", "default": "None"},
+                "seed2": {"type": "int", "description": "Only for surrogate models. Specifies the random seed to generate samples from the models.", "default": "None"},
+                "ismethod": {"type": "string", "description": "Specifies the importance sampling method to use", "default": "None"},
+                "dataMethod": {"type": "string", "description": "...", "default": "None"},
+                "dataMethod2": {"type": "string", "description": "...", "default": "None"},
+                "type": {"type": "string", "description": "...", "default": "None"},
+                "concurrency": {"type": "int", "description": "Specifies the number of processes to use for simulation.", "default": "None"},
+                "keepSamples": {"type": "bool", "description": "True if the intermediate results shall be kept (not deleted) for each sample.", "default": "True"},
+                "runType": {"type": "string", "description": "..."}
+              }
+            },
+            "Outputs": {
+              "properties": {
+                "EDP file": {"type": "string", "description": "Name of EDP file to be added to.", "default": "EDP.json"}
+              }
+            }
+          }
+        }
+      },
+      "DLApplications": {
+        "pelicun": {
+          "title": "pelicun",
+          "description": "Performs damage and loss (DL) assessment using the pelicun Python package. The application uses built-in fragility functions and the replacement cost defined in the building source file to determine damage state and loss likelihoods.",
+          "properties": {
+            "File Path": "applications/performDL/pelicun/DL_calculation.py",
+            "Inputs": {
+              "properties": {
+                "DL file": {"type": "string", "description": "File containing the DL model information. The default is to source it from the building source file.", "default": "#-BIM.json"},
+                "EDP file": {"type": "string", "description": "File containing type, location, and direction of recorded EDPs from the response simulation.", "default": "EDP.json"},
+                "DL_Method": {"type": "string", "description": "Defines the damage and loss assessment method. Available choices include 'FEMA P58', 'HAZUS MH EQ', 'HAZUS MH', 'HAZUS MH EQ IM', and 'HAZUS MH HU'.", "default": "None"},
+                "Realizations": {"type": "int", "description": "Specifies the number of loss realizations to generate.", "default": "None"},
+                "detailed_results": {"type": "bool", "description": "If False, only the main results are saved to improve efficiency.", "default": "True"},
+                "detailed_results": {"type": "bool", "description": "If False, only the main results are saved to improve efficiency.", "default": "True"},
+                "log_file": {"type": "bool", "description": "If False, pelicun does not create a run log file.", "default": "True"},
+                "coupled_EDP": {"type": "bool", "description": "If True, the raw EDPs are used as-is without resampling.", "default": "False"},
+                "event_time": {"type": "string", "description": "Defines the time of the event in YYYY-MM-DD:HH format. 'off' turns all time-effects off.", "default": "None"},
+                "ground_failure": {"type": "bool", "description": "If True, fragility groups associated with ground failure are added in the auto-population phase. Note that such analysis requires PGD values as inputs.", "default": "False"},
+                "auto_script": {"type": "string", "description": "...", "default": "None"}
+              }
+            },
+            "Outputs": {
+              "properties": {
+                "output EDP": {"type": "string", "description": "File which stores EDP statistics (median and log standard deviation) from response simulation for the building asset.", "default": "EDP.csv"},
+                "output DM": {"type": "string", "description": "File which stores damage measures (damage state probability) for the building asset.", "default": "DM.csv"},
+                "output DV": {"type": "string", "description": "File which stores decision variables (loss estimates) for the building asset.", "default": "DV.csv"}
               }
             }
           }
