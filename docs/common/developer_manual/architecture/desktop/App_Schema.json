@@ -1,69 +1,237 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
-    "description": "Schema for the SimCenter workflow applications.",
+    "description": "Schema for the SimCenter backend applications.",
     "type": "object",
     "title": "App Schema",
     "properties": {
-      "Applications": {
-        "type": "object",
-        "properties": {
-          "UQ": {
-            "type": "object",
-            "title": "UQ",
-            "properties": {
-              "Application": { "type": "string" },
-              "ApplicationData": {"type": "object", "properties": {} }
-            },
-            "description": "[incomplete desciption.]",
-            "required": [
-              "Application",
-              "ApplicationData"
-            ]
+      "Inputs": {
+        "configurationFile": {
+          "title": "1. configuration file",
+          "description": "JSON file containing simulation details and specifies the application selected for each workflow step.",
+          "properties": {
+            "runDir": {"type": "path", "description": "Directory where input_data folder is located."},
+            "localAppDir": {"type": "path", "description": "Directory applications folder is located."},
+            "units": {"type": "string", "description": "Dictionary of strings which specifiy units for force, length, and time.", "default": "N, m, sec"},
+            "outputs": {"type": "bool", "description": "Indicator (True/False) of which workflow outputs (EDP, DM, DV) are provided in the simulation.", "default": "true"},
+            "Applications": {"type": "dict", "description": "Dictionary of applications selected for each workflow step, with their associated application-specific inputs."},
           }
         },
-        "required": ["UQ"]
-      },
-      "EDP": {
-        "type": "array",
-        "description": "Inputs for the QoI tab.",
-        "title": "QoI",
-        "items": {
-            "type": "object",
-            "properties": {
-              "name": {
-                "type": "string"
+        "buildingSourceFile": {
+          "title": "2. building source file",
+          "description": "CSV file containing building properties for the response simulation and damage/loss estimation steps of the workflow. The following headers must be included (with any one of the header options listed):",
+          "properties": {
+            "id": {"type": "int", "description": "ID number of the building."},
+            "'Longitude', 'longitude', 'lon', 'Lon'": {"type": "float", "description": "Longitude coordinate of the building site."},
+            "'Latitude', 'latitude', 'lat', 'Lat'": {"type": "float", "description": "Latitude coordinate of the building site."},
+            "'Stories', 'stories'": {"type": "int", "description": "Number of stories in the building."},
+            "'Year Built', 'yearbuilt', 'yearBuilt'": {"type": "int", "description": "Year that the building was built."},
+            "'Structure Type', 'structure', 'structureType'": {"type": "string", "description": "Structural type of the building."},
+            "'Type ID', 'occupancy', 'occupancyType'": {"type": "string", "description": "HAZUS occupancy class of the building."},
+            "'Area', 'areafootprint', 'areaFootprint', 'area'": {"type": "float", "description": "Floor plan/footprint area of the building."},
+            "'Replacement Cost', 'replacementCost'": {"type": "float", "description": "Cost of replacement of the building. If provided as '1.0', then the DL assessment will return an estimate losses as a percentage of the total replacement cost."},
+            "model_params": {"type": "float", "description": "(Optional) Columns for additional structural parameters used in the build_model function for creating a structural analysis model of the building."},
+          }
+        },
+        "modelFile": {
+          "title": "3. model file",
+          "description": "If the simulation application chosen is OpenSees-Simulation or OpenSeesPy-Simulation, then a model file must be provided. It consists of an OpenSees/OpenSeesPy script with functions for building and analyzing a custom structural model. See the Simulation Applications page for more details on application-specific inputs."
+        },
+        "eventFiles": {
+          "title": "4. event files",
+          "description": "To specify the type, location, and intensity of each event, the following files must be provided in the input_data/records folder.",
+          "properties": {
+            "EventGrid": {
+              "description": "CSV file which specifies the coordinate (latitude/longitude) location of each event site.",
+              "properties": {
+                "sta": {"type": "string", "description": "Name of event file associated with the given event site. If running time history analysis, then the name of the site file is provided instead." },
+                "lon": {"type": "float", "description": "Longitude coordinate of the site location." },
+                "lat": {"type": "float", "description": "Latitude coordinate of the site location." }
               }
             },
-            "required": [
-              "name"
-            ]
+            "Event Files": {
+              "description": "CSV or JSON files containing information on the intensity measure of the event.",
+              "properties": {
+                "name": {"type": "string", "description": "Name of ground motion record."},
+                "dT": {"type": "float", "description": "Time step of ground motion recording."},
+                "data_x": {"type": "list", "description": "List of acceleration points in the x-direction ground motion record."},
+                "data_y": {"type": "list", "description": "List of acceleration points in the y-direction ground motion record."},
+                "PGA_x": {"type": "float", "description": "Value of peak ground acceleration in the x-direction ground motion record."},
+                "PGA_y": {"type": "float", "description": "Value of peak ground acceleration in the y-direction ground motion record."},
+              }
+            },
+            "Site Files": {
+              "description": "CSV files listing the names of the event file(s) assigned to the site for time history analysis. This file can also provide other properties, such as a ground motion scale factor.",
+              "properties": {
+                "GM_file": {"type": "string", "description": "Name of the ground motion event file (for Earthquake hazard events)."},
+                "factor": {"type": "float", "description": "Factor for scaling the ground motion."}
+              }
+            }
           }
+        }
       },
       "BuildingApplications": {
         "CSV_to_BIM": {
           "title": "CSV_to_BIM",
           "description": "Parses building source information from CSV and saves into BIM.json files for each building.",
           "properties": {
+            "File Path": "applications/createBIM/CSV_to_BIM/CSV_to_BIM.py",
             "Inputs": {
               "properties":{
-                "Min": {"type": "int", "description": "min id of building to obtain BIM for", "default": 1, "location": "configuration file"},
-                "Max": {"type": "int", "description": "max id of building to obtain BIM for", "default": 10, "location": "configuration file"},
-                "buildingSourceFile": {"type": "path", "description": "path to buildings database file", "default": "input_data/"}
+                "Min": {"type": "int", "description": "Min id of building to run in workflow.", "default": 1, "location": "configuration file"},
+                "Max": {"type": "int", "description": "Max id of building to run in workflow.", "default": 10, "location": "configuration file"},
+                "Building source file": {"type": "path", "description": "Path to buildings database file.", "default": "input_data/"}
               }
             },
             "Outputs": {
               "properties": {
-                "buildingFile": {"type": "string", "description": "name of JSON file containing a dictionary of building information. For each building ID, the application creates a separate BIM file.", "default": "buildingsFile.json"}
+                "BIM file": {"type": "string", "description": "File containing a dictionary of building information. For each building ID, the application creates a separate BIM file.", "default": "#-BIM.json"}
               }
             }
           }
         }
       },
-      "RegionalEventApplications": {
+      "EventApplications": {
+        "SimCenterEvent": {
+          "title": "SimCenterEvent",
+          "description": "Python file creating EVENT.json file containing on event intensity measure from individual event files. Supports all hazard event types (Earthquake, Wind, Hurricane).",
+          "properties": {
+            "File Path": "applications/createEVENT/SimCenterEvent.py",
+            "Inputs": {
+              "properties": {
+                "Event files": {"type": "string", "description": "Event intensity measure saved in separate JSON files.", "default": "input_data/records/"},
+                "BIM file": {"type": "string", "description": "File containing a dictionary of building information.", "default": "#-BIM.json"}
+              }
+            },
+            "Outputs": {
+              "properties": {
+                "EVENT file": {"type": "string", "description": "File containing event intensity measure for each simulation per building.", "default": "EVENT.json"}
+              }
+            }
+          }
+        },
+        "ExistingPEER_Events": {
+          "title": "ExistingPEER_Events",
+          "description": "Application file creating EVENT.json file containing on event intensity measure from individual event files. Supports all hazard event types (Earthquake, Wind, Hurricane).",
+          "properties": {
+            "File Path": "applications/createEVENT/multiplePEER/MultiplePEER",
+            "Inputs": {
+              "properties": {
+                "Event files": {"type": "string", "description": "Event intensity measure saved in separate JSON files.", "default": "input_data/records/"},
+                "BIM file": {"type": "string", "description": "File containing a dictionary of building information.", "default": "#-BIM.json"}
+              }
+            },
+            "Outputs": {
+              "properties": {
+                "EVENT file": {"type": "string", "description": "File containing event intensity measure for each simulation per building.", "default": "EVENT.json"}
+              }
+            }
+          }
+        },
+        "StochasticWindWittigSinha": {
+          "title": "StochasticWindWittigSinha",
+          "description": "Application file creating EVENT.json files for stochastic wind fields based on the Witting-Sinha method. Supports Wind hazard events.",
+          "properties": {
+            "File Path": "applications/createEVENT/stochasticWind/StochasticWind",
+            "Inputs": {
+              "properties": {
+                "BIM file": {"type": "string", "description": "File containing a dictionary of building information.", "default": "#-BIM.json"}
+              }
+            },
+            "Outputs": {
+              "properties": {
+                "EVENT file": {"type": "string", "description": "File containing event intensity measure for each simulation per building.", "default": "EVENT.json"}
+              }
+            }
+          }
+        },
+        "StochasticGroundMotion": {
+          "title": "StochasticGroundMotion",
+          "description": "Application file for creating EVENT.json files for stochastic ground motion events based on the ___ GMPE. Supports Earthquake hazard events.",
+          "properties": {
+            "File Path": "applications/createEVENT/stochasticGroundMotion/StochasticGM",
+            "Inputs": {
+              "properties": {
+                "BIM file": {"type": "string", "description": "File containing a dictionary of building information.", "default": "#-BIM.json"}
+              }
+            },
+            "Outputs": {
+              "properties": {
+                "EVENT file": {"type": "string", "description": "File containing event intensity measure for each simulation per building.", "default": "EVENT.json"}
+              }
+            }
+          }
+        }
+      },
+      "ModelingApplications": {
+        "MDOF-LU": {
+          "title": "MDOF-LU",
+          "description": "Creates SAM.json file and generates script for creating a hysteretic multi-degree of freedom (MDOF) system subject to earthquake time history analysis, based on the Lu method. Analysis is executed by the OpenSeesSimulation application.",
+          "properties": {
+            "File Path": "applications/createSAM/MDOF-LU/MDOF-LU",
+            "Inputs": {
+              "properties": {
+                "BIM file": {"type": "string", "description": "File containing a dictionary of building information.", "default": "#-BIM.json"},
+                "EVENT file": {"type": "string", "description": "File containing event intensity measure for each simulation per building.", "default": "EVENT.json"},
+                "HAZUS data": {"type": "path", "description": "Defines location of the HAZUS building configuration file.", "default": "input_data/"},
+                "stdStiffness": {"type": "float", "description": "Defines the standard deviation that should be considered when sampling the stiffness for the building.", "default": "CHECK"},
+                "stdDamping": {"type": "float", "description": "Defines the standard deviation that should be considered when sampling the damping ratio for the building.", "default": "CHECK"},
+              }
+            },
+            "Outputs": {
+              "properties": {
+                "SAM file": {"type": "string", "description": "File containing model information for response simulation.", "default": "SAM.json"}
+              }
+            }
+          }
+        },
+        "OpenSeesInput": {
+          "title": "OpenSeesInput",
+          "description": "Creates SAM.json file containing model information for an input OpenSees structural model. Analysis is executed in the OpenSeesSimulation application.",
+          "properties": {
+            "File Path": "applications/createSAM/openSeesInput/OpenSeesInput",
+            "Inputs": {
+              "properties": {
+                "BIM file": {"type": "string", "description": "File containing a dictionary of building information.", "default": "#-BIM.json"},
+                "EVENT file": {"type": "string", "description": "File containing event intensity measure for each simulation per building.", "default": "EVENT.json"}
+              }
+            },
+            "Outputs": {
+              "properties": {
+                "SAM file": {"type": "string", "description": "File containing model information for response simulation.", "default": "SAM.json"}
+              }
+            }
+          }
+        },
+        "OpenSeesPyInput": {
+          "title": "OpenSeesPyInput",
+          "description": "Creates SAM.json file containing model information for an input OpenSeesPy structural model. The functions *build_model* and *run_analysis* must be defined in the model script. Analysis is executed in the OpenSeesPySimulation application.",
+          "properties": {
+            "File Path": "applications/createSAM/openSeesPyInput/OpenSeesPyInput.py",
+            "Inputs": {
+              "properties": {
+                "BIM file": {"type": "string", "description": "File containing a dictionary of building information.", "default": "#-BIM.json"},
+                "EVENT file": {"type": "string", "description": "File containing event intensity measure for each simulation per building.", "default": "EVENT.json"},
+                "modelPath": {"type": "path", "description": "Defines the location of the input OpenSeesPy model files.", "default": "input_data/model/"},
+                "mainScript": {"type": "string", "description": "Defines the name of the main model file which contains the build_model and run_analysis functions."},
+                "ndm": {"type": "string", "description": "Defines the number of degrees of freedom in the numerical model.", "default": 6},
+                "dofMap": {"type": "int", "description": "By default, the workflow assumes X=1, Y=2, Z=3 mapping between directions and degrees of freedom, with XY being the horizontal directions. This input allows you to define an alternative mapping by providing three numbers separated by commas in a string, such as '1, 3, 2' if you wish to have Y as the vertical direction.", "default": "1,2,3"},
+                "ctrlNodes": {"type": "string", "description": "Defines the IDs of nodes in the OpenSeesPy model where EDPs are recorded. If the number of ctrlNodes provided exceeds the number of stories, only the firsts n+1 nodes will be used for an n-story building."},
+              }
+            },
+            "Outputs": {
+              "properties": {
+                "SAM file": {"type": "string", "description": "File containing model information for response simulation.", "default": "SAM.json"}
+              }
+            }
+          }
+        }
+      },
+      "RegionalMapApplications": {
         "NNE": {
           "title": "Nearest Neighbor Events (NNE)",
-          "description": "Assigns events to building site by sampling from nearest neighboring event sites, using coordinate locations.",
+          "description": "Assigns events to building site by sampling from nearest neighboring event sites, using coordinate locations. The user specifies the number of sampled events and the number of neighbors to sample events from.",
           "properties": {
+            "File Path": "applications/performRegionalEventSimulation/NearestNeighborEvents/NNE.py",
             "Inputs": {
               "properties": {
                 "eventGrid": {"type": "path", "description": "path to file containing location information on each event file", "default": "input_data/records/"},
@@ -73,55 +241,8 @@
             },
             "Outputs": {
               "properties": {
-                "buildingFile": {"type": "string", "description": "name of JSON file containing a dictionary of building information, with event information added.", "default": "buildingsFile.json"}
+                "buildingFile": {"type": "string", "description": "file containing a dictionary of building information, with event information added.", "default": "#-BIM.json"}
               }
-            }
-          },
-          "uqType": {
-            "type": "string",
-            "title":"Dakota Method Category"
-          },
-          "samplingMethodData": {
-            "type": "object",
-            "title": "Forward Propagation",
-            "properties": {
-              "method":  {"type": "string" , "title": "Method"},
-              "samples": {"type": "integer", "title": "Samples"},
-              "seed":    {"type": "integer", "title": "Seed"}
-            }
-          },
-          "reliabilityMethodData": {
-            "type": "object",
-            "title": "Reliability Analysis",
-            "properties":{
-              "integrationMethod": {"type": "string", "title": "Integration Method"},
-              "levelType":         {"type": "string", "title": "Level Type"},
-              "localMethod":       {"type": "string", "title": "Local Method"},
-              "method":            {"type": "string", "title": "Reliability Method"},
-              "mpp_Method":        {"type": "string", "title": "MPP Search Method"},
-              "probabilityLevel":  {"type": "array" , "title": "Probability Levels"}
-            }
-          },
-          "bayesianCalibrationMethodData": {
-            "type": "object",
-            "title": "Inverse Problem",
-            "properties": {
-              "burnInSamples": {"type": "number", "title": "No. Burn in Samples"},
-              "chainSamples":  {"type": "number", "title": "No. Chain Samples"},
-              "chains":        {"type": "number", "title": "No. Chains"},
-              "jumpStep":      {"type": "number", "title": "Jump Step"},
-              "method":        {"type": "string", "title": "DREAM"},
-              "seed":          {"type": "number", "title": "Seed"}
-            }
-          },
-          "calibrationMethodData": {
-            "type": "object",
-            "description": "Input data for **Parameter Estimation**.",
-            "properties": {
-              "convergenceTol": {"type": "number", "title": "Convergence Tol", "description": "Convergence tolerance."},
-              "factors":        {"type": "number", "title": "Scaling Factors"},
-              "maxIterations":  {"type": "number", "title": "Max No. Iterations"},
-              "method":         {"type": "string", "title": "Method"}
             }
           }
         },
