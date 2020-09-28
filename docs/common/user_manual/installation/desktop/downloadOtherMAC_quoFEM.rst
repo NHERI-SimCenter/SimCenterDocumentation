@@ -20,8 +20,8 @@ dated version 2.7. We recommend installing Python 3.7 from `Python.org <https://
 **macOS 64-bit installer**. The installer used to place a python3 executable in your /usr/local/bin directory, whose location should be on your system PATH, Version 3.8 does not appear to do so anymore, see the note below. 
 
 .. note:: 
-   #. We use the python.org installation over others, due to it's simplicity of install.
-   #. In the current installation of **Python** it leaves two script files in a folder when the installation ends. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal. To execute the files, double click on them. The two files, shown in the image below, are: **Update Shell Profile.command.sh** and **Install CertificateCommand.sh**.
+   #. We use the `Python.org <https://www.python.org/downloads/windows>`_ installation over others, due to it's simplicity of install.
+   #. In the current installation of Python it leaves two script files in a folder when the installation ends. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal. To execute the files, double click on them. The two files, shown in the image below, are: **Update Shell Profile.command.sh** and **Install CertificateCommand.sh**.
 
    .. figure:: figures/pythonInstallShell.png
       :align: center

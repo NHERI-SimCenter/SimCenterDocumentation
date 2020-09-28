@@ -12,6 +12,12 @@ Examples
 
 	The following are a few examples showing the usage of EE-UQ. Video companions showing these examples are also provided. The files for the examples are available in github.
 
+
+.. only:: WEUQ_app
+
+	The following are a few examples showing the usage of WE-UQ. The files for the examples are available in github.
+
+
 .. only:: PBE_app
 
 	The following examples demonstrate the usage of the PBE application. The scope of these examples is limited to damage and loss assessment. The usage of the tool for response estimation is identical to that of the EE-UQ application. Examples on those features are available in the `EE-UQ Documentation <https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/examples/desktop/examples.html>`_. 
@@ -22,9 +28,12 @@ Examples
    :maxdepth: 1
 
    :quoFEM:quoFEM/TrussOpenSees
+   :quoFEM:quoFEM/TrussOpenSeesSimUQ
    :quoFEM:quoFEM/FrameConv
    :quoFEM:quoFEM/FrameBaye
    :EEUQ:EEUQ/ShearBuilding3
+   :WEUQ:WEUQ/ShearBuilding9
+   :PBE:PBE/exampleShearBuilding3/README
    :PBE:PBE/basic_HAZUS
    :PBE:PBE/basic_P58
 

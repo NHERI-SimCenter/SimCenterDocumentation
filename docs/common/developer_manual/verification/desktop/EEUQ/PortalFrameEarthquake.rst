@@ -77,7 +77,7 @@ Then click on the choose button to select the event file.
    :align: center
    :figclass: align-center
     
-    Work on EVT
+   Work on EVT
 
 #. Choose the event file (\texttt{BM68elc.json}) for El Centro earthquake provided in the portal frame 2D example folder.
 
@@ -107,7 +107,7 @@ results tab showing the summary of results (\Cref{fig:figure27}).
    :align: center
    :figclass: align-center
     
-    Pop-up shown when clicking **Run**
+   Pop-up shown when clicking **Run**
 
 Verification Script
 -------------------

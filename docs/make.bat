@@ -12,6 +12,13 @@ set BUILDDIR=_build
 
 if "%1" == "" goto help
 
+if "%1" == "RDT" (
+	%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+	robocopy %BUILDDIR%/html ../../RDT-Documentation/docs /E > nul
+	echo.Generating RDT Documentation...
+	goto end
+)
+
 if "%1" == "PBE" (
 	%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
 	robocopy %BUILDDIR%/html ../../PBE-Documentation/docs /E > nul
