@@ -28,6 +28,10 @@ Examples
    :maxdepth: 1
 
    :quoFEM:quoFEM/exampleTrussOpenSees/README
+   :quoFEM:quoFEM/exampleFrameConv/README
+   :quoFEM:quoFEM/exampleFrameBaye/README
+   :EEUQ:EEUQ/exampleShearBuilding3/README
+   :WEUQ:WEUQ/exampleShearBuilding9/README
    :PBE:PBE/exampleShearBuilding3/README
    :PBE:PBE/basic_HAZUS
    :PBE:PBE/basic_P58
