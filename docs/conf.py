@@ -9,8 +9,9 @@
 #app_name = 'EE-UQ'
 #app_name = 'PBE'
 #app_name = 'WE-UQ'
-app_name = 'quoFEM'
+#app_name = 'quoFEM'
 #app_name = 'pelicun'
+app_name = 'Bootcamp'
 
 print('app_name = ' + app_name)
 
@@ -42,7 +43,8 @@ exclude_patterns = [
 		'**/*TInF*', 
 		'**/*pelicun*',
 		'**/*old*',
-		'**/*quoFEM*'
+		'**/*quoFEM*',
+		'**/*Bootcamp*'
 	]
 
 
@@ -58,7 +60,11 @@ toc_filter_exclusions = [
 	'TinF',
 	'TInF',
 	'S3hark',
-	'pelicun'	
+	'pelicun',
+	'Bootcamp',
+	'python',
+	'c_cpp',
+	'celeste'
 ]
 
 extensions = []
@@ -411,6 +417,52 @@ elif app_name == 'pelicun':
 
 	htmlhelp_basename = 'pelicundoc'
 
+
+elif app_name == 'Bootcamp':
+	project = 'SimCenter Programming Bootcamp'
+	copyright = '2020'
+	author = 'Peter Mackenzie-Helnwein, Frank McKenna'
+
+	tags.add('Bootcamp')
+	#tags.remove('desktop_app')
+
+	toc_filter_exclusions.remove('Bootcamp')
+	toc_filter_exclude = toc_filter_exclusions
+
+	exclude_patterns.remove('**/*Bootcamp*')
+
+	rst_prolog += """
+.. |full tool name| replace:: SimCenter Programming Bootcamp 2020
+.. |short tool name| replace:: Bootcamp 2020
+.. |short tool id| replace:: Bootcamp
+.. |tool github link| replace:: `_SimCenterBootcamp2020 Github page`_
+.. _SimCenterBootcamp2020 Github page: https://github.com/NHERI-SimCenter/SimCenterBootcamp2020
+.. |tool version| replace:: 3.0
+.. |app| replace:: Bootcamp 2020
+.. |appName| replace:: Programmer Bootcamp 2020
+.. |githubLink| replace:: `SimCenterBootcamp2020 Github page`_
+.. |appLink| replace:: `SimCenterBootcamp2020 Github page`_
+.. |messageBoard| replace:: `Message Board`_
+.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
+.. |figUI| replace:: :numref:`figUI-WE`
+.. |figDownload| replace:: :numref:`figDownloadWE`
+.. |figGenericUI| replace:: :numref:`figGenericUI-WE`
+.. |figMissingCRT| replace:: :numref:`figMissingCRT-WE`
+.. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
+.. |developers| replace:: **Peter Mackenzie-Helnwein**, **Frank McKenna**
+                          
+
+"""	
+
+	html_logo = 'common/figures/SimCenter_Programming_Bootcamp2020.png'
+
+
+	html_theme_options = {
+		'analytics_id': 'UA-158130480-2',
+		'logo_only': True,
+		'prev_next_buttons_location': None,
+		'style_nav_header_background': '#F2F2F2'
+	}
 
 # -- General configuration ---------------------------------------------------
 
