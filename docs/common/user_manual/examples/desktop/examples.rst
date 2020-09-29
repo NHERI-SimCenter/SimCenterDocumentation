@@ -10,12 +10,12 @@ Examples
 
 .. only:: EEUQ_app
 
-	The following are a few examples showing the usage of EE-UQ. Video companions showing these examples are also provided. The files for the examples are available in github.
+	The following are a few examples showing the usage of EE-UQ. Video companions showing these examples are also provided. The files for the examples are available in Github.
 
 
 .. only:: WEUQ_app
 
-	The following are a few examples showing the usage of WE-UQ. The files for the examples are available in github.
+	The following are a few examples showing the usage of WE-UQ. The files for the examples are available on Github.
 
 
 .. only:: PBE_app
@@ -27,10 +27,11 @@ Examples
 .. toctree-filt::
    :maxdepth: 1
 
-   :quoFEM:quoFEM/TrussOpenSees
+
+   :quoFEM:quoFEM/exampleTrussOpenSees/README
    :quoFEM:quoFEM/TrussOpenSeesSimUQ
-   :quoFEM:quoFEM/FrameConv
-   :quoFEM:quoFEM/FrameBaye
+   :quoFEM:quoFEM/exampleFrameConv/README
+   :quoFEM:quoFEM/exampleFrameBaye/README
    :EEUQ:EEUQ/exampleShearBuilding3/README
    :WEUQ:WEUQ/exampleShearBuilding9/README
    :PBE:PBE/exampleShearBuilding3/README
