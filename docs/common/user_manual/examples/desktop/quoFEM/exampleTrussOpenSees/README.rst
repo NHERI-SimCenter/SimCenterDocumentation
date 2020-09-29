@@ -20,7 +20,7 @@ The goal of the exercise is to estimate the mean and standard deviation of the v
 
 1. `TrussTemplate.tcl <https://github.com/NHERI-SimCenter/quoFEM/blob/master/examples/exampleOpenSeesForward/TrussTemplate.tcl>`_ 
 
-.. literalinclude:: TrussTemplate.tcl
+.. literalinclude:: src/TrussTemplate.tcl
    :language: tcl
 
 .. note::
@@ -66,13 +66,13 @@ The steps involved:
    :align: center
    :figclass: align-center
 
-2. Next select the **FEM** tab from the input panel. This will default in the OpenSees FEM engine. For the main script copy the path name to TrussSelection.tcl or select choose and navigate to the file. For the postprocess script, repeat the same procedure for the postprocess.tcl script.
+2. Next select the **FEM** tab from the input panel. This will default in the OpenSees FEM engine. For the main script copy the path name to ``TrussSelection.tcl`` or select choose and navigate to the file. For the postprocess script, repeat the same procedure for the ``postprocess.tcl`` script.
 
 .. figure:: figures/trussFEM.png
    :align: center
    :figclass: align-center
 
-3. Next select the **RV** tab from the input panel. This should be pre-populated with four random variables with same names as those having ``pset`` in the tcl script. For each variable, from the drop down menu change them from having a constant distribution to a normal one and then provide the means and standard deviations specified for the problem.
+3. Next select the **RV** panel from the input panel. This should be pre-populated with four random variables with same names as those having ``pset`` in the tcl script. For each variable, from the drop down menu change them from having a constant distribution to a normal one and then provide the means and standard deviations specified for the problem.
 
 .. figure:: figures/trussRV.png
    :align: center
@@ -83,7 +83,7 @@ The steps involved:
 .. figure:: figures/trussQoI.png
    :align: center
    :figclass: align-center
-.. note::
+
 
 .. note::   
 
@@ -113,20 +113,20 @@ Reliability Analysis
 
 +----------------+----------------------------------------------------+
 | Problem files  | `quo-03 <https://github.com/NHERI-SimCenter        |
-|                | /SimCenterDocumentation/tree/master/docs/common/ |
+|                | /SimCenterDocumentation/tree/master/docs/common/   |
 |                | user_manual/examples/desktop/quoFEM/src/quo-03>`__ |
 +----------------+----------------------------------------------------+
 
 If the user is interested in the probability that a particular response measure will be exceeded, an alternate strategy is to perform a reliability analysis. In order to perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propagation method. To obtain reliability results using the Second-Order Reliability Method (SORM) for the truss problem the user would follow the same sequence of steps as previously. The difference would be in the **UQ** tab in which the user would select a Reliability as the Dakota Method Category and then choose Local reliability. In the figure the user is specifying that they are interested in the probability that the displacement will exceed certain response levels.
 
 
-.. figure:: truss/trussSORM-UQ.png
+.. figure:: figures/trussSORM-UQ.png
    :align: center
    :figclass: align-center
 
 After the user fills in the rest of the tabs as per the previous section, the user would then press the **RUN** button. The application (after spinning for a while with the wheel of death) will present the user with the results.
 
-.. figure:: truss/trussSORM-RES.png
+.. figure:: figures/trussSORM-RES.png
    :align: center
    :figclass: align-center
 
@@ -145,13 +145,13 @@ In a global sensitivity analysis the user is wishing to understand what is the i
 To perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propagation method. To obtain reliability results using the Second-Order Reliability Method (SORM) for the truss problem the user would follow the same sequence of steps as previously. The difference would be in the **UQ** tab in which the user would select a Reliability as the Dakota Method Category and then choose Local reliability. In the figure the user is specifying that they are interested in the probability that the displacement will exceed certain response levels.
 
 
-.. figure:: truss/trussSens-UQ.png
+.. figure:: figures/trussSens-UQ.png
    :align: center
    :figclass: align-center
 
 After the user fills in the rest of the tabs as per the previous section, the user would then press the **RUN** button. The application (after spinning for a while with the wheel of death) will present the user with the results.
 
-.. figure:: truss/trussSensitivity-RES.png
+.. figure:: figures/trussSensitivity-RES.png
    :align: center
    :figclass: align-center
 

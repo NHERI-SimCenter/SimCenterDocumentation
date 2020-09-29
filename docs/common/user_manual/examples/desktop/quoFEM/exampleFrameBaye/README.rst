@@ -18,7 +18,7 @@ Kurumbhati and Mukesh Ramancha from UC San Diego, this example looks at
 the following simplified finite element model of a steel building.
 
 
-.. figure:: frame/frameFE.png
+.. figure:: figures/frameFE.png
    :align: center
    :width: 300
    :figclass: align-center
@@ -69,7 +69,7 @@ The exercise requires a single OpenSees script file. The user is required to dow
 
 1. `fem.tcl <https://raw.githubusercontent.com/claudioperez/SimCenterExamples/master/static/frame/fem.tcl>`_ 
 
-.. literalinclude:: frame/fem.tcl
+.. literalinclude:: src/fem.tcl
    :language: tcl
 
 .. note::
@@ -84,15 +84,14 @@ The steps involved are as follows:
 1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota. In the **UQ Method** category drop down menu change the category to **Inverse Problem**, the method as **DREAM**,  and the remaining parameters as shown in the figure.
 
 
-.. thumbnail:: frame/joelBayeUQ.png
+.. figure:: figures/joelBayeUQ.png
    :align: center
    :width: 100
 
-   Click to expand.
 
-2. Next select the **FEM** tab from the input panel selection. This will default to the OpenSees FEM engine. For the main script copy the path name to the ``fem.tcl`` file or select **choose** and navigate to the file. 
+2. Next select the **FEM** panel from the input panel selection. This will default to the OpenSees FEM engine. For the main script copy the path name to the ``fem.tcl`` file or select **choose** and navigate to the file. 
 
-.. thumbnail:: frame/joelBayeFEM.png
+.. figure:: figures/joelBayeFEM.png
    :align: center
    :width: 100
 
@@ -105,14 +104,14 @@ The steps involved are as follows:
 3. Next select the **RV** tab from the input panel. This should be prepopulated with two random variables with same names as those having ``pset`` in the tcl script, i.e. ``Ic1`` and ``Ic2``. For each variable, from the drop down menu change them from having a constant distribution to a continuous design one and then provide the lower bounds and upper bounds shown in the figure below.
 
 
-.. thumbnail:: frame/joelBayeRV.png
+.. figure:: figures/joelBayeRV.png
    :align: center
    :width: 150
 
 4. Next select the **QoI** panel. Here enter **10** variable names. The following figure shows the first nine names used; the tenth entry used, which does not show up in the image was ``eps_p5``.
 
 
-.. figure:: frame/joelCalQoI.png
+.. figure:: figures/joelCalQoI.png
    :align: center
    :figclass: align-center
 

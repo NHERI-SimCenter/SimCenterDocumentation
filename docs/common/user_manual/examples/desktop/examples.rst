@@ -29,7 +29,7 @@ Examples
 
 
    :quoFEM:quoFEM/exampleTrussOpenSees/README
-   :quoFEM:quoFEM/TrussOpenSeesSimUQ
+   :quoFEM:quoFEM/exampleTrussOpenSeesSimUQ/README
    :quoFEM:quoFEM/exampleFrameConv/README
    :quoFEM:quoFEM/exampleFrameBaye/README
    :EEUQ:EEUQ/exampleShearBuilding3/README
