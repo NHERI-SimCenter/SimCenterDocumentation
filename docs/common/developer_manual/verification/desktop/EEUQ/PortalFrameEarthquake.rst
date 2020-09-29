@@ -53,7 +53,7 @@ following steps:
    Choose building model
 
 
-#. Choose the model file \texttt{Portal2D-UQ.tcl} from PortalFrame2D example folder.
+#. Choose the model file ``Portal2D-UQ.tcl`` from the ``PortalFrame2D`` example folder.
 
 .. figure:: figures/tclLocation.png
    :align: center
@@ -68,18 +68,18 @@ following steps:
    :align: center
    :figclass: align-center
 
-   Select Nodes
+   Node selection.
 
-#. Click on the event tab (EVT) in the left bar to open the earthquake event specification tab, select Multiple Existing for loading Type. Click on the add button to add an earthquake event. 
-Then click on the choose button to select the event file.
+#. Click on the event tab (**EVT**) in the left bar to open the earthquake event specification tab, select **Multiple Existing** for loading Type. Click on the **add** button to add an earthquake event. 
+Then click on the **choose** button to select the event file.
 
 .. figure:: figures/workEvtTab.png
    :align: center
    :figclass: align-center
     
-   Work on EVT
+   Work on EVT.
 
-#. Choose the event file (\texttt{BM68elc.json}) for El Centro earthquake provided in the portal frame 2D example folder.
+#. Choose the event file (``BM68elc.json``) for El Centro earthquake provided in the portal frame 2D example folder.
 
 
 .. figure:: figures/evtFileLocation.png
@@ -88,9 +88,9 @@ Then click on the choose button to select the event file.
    
    Choose event file
 
-#. Now select the random variables tab (RVs) from the left bar, change the random variables types to normal and set the mean and standard deviation values of the floor mass and
+#. Now select the random variables tab (**RV**) from the left bar, change the random variables types to normal and set the mean and standard deviation values of the floor mass and
 Young’s modulus.  Notice that |app| has automatically
-detected parameters defined in the \texttt{OpenSees} tcl file using the pset
+detected parameters defined in the OpenSees tcl file using the ``pset``
 command and defined them as random variables.
 
 .. figure:: figures/workUqTab.png
@@ -107,7 +107,7 @@ results tab showing the summary of results (\Cref{fig:figure27}).
    :align: center
    :figclass: align-center
     
-   Pop-up shown when clicking **Run**
+   Pop-up shown when clicking **Run**.
 
 Verification Script
 -------------------
@@ -115,7 +115,7 @@ Verification Script
 A verification script (Listing 1) for propagating the uncertainty was
 developed in Python and is included in the example folder.  The script
 creates 1000 samples for both the Young’s modulus and mass values
-using Latin Hypercube sampling, then modifies the \texttt{OpenSees}
+using Latin Hypercube sampling, then modifies the OpenSees
 model, runs it and stores the output.  After all the model samples are
 processed, the script will compute and output the mean and standard
 deviation values of the peak floor acceleration and peak drift.

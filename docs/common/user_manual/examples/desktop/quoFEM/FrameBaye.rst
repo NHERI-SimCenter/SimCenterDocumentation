@@ -4,8 +4,8 @@ Steel Frame: Bayesian Calibration
 ======================================
 
 +---------------+-----------------------------------------------------+
-| Problem files | `quo-08 <https://github.com/claudioper              |
-|               | ez/SimCenterDocumentation/tree/examples/docs/common |
+| Problem files | `quo-08 <https://github.com/NHERI-SimCenter         |
+|               | /SimCenterDocumentation/tree/master/docs/common     |
 |               | /user_manual/examples/desktop/quoFEM/src/quo-08>`__ |
 +---------------+-----------------------------------------------------+
 
@@ -90,7 +90,7 @@ The steps involved are as follows:
 
    Click to expand.
 
-2. Next select the **FEM** tab from the input panel selection. This will default to the OpenSees FEM engine. For the main script copy the path name to the ``fem.tcl`` file or select **choose** and navigate to the file. 
+2. Next select the **FEM** panel from the input panel selection. This will default to the OpenSees FEM engine. For the main script copy the path name to the ``fem.tcl`` file or select **choose** and navigate to the file. 
 
 .. thumbnail:: frame/joelBayeFEM.png
    :align: center
@@ -102,7 +102,7 @@ The steps involved are as follows:
 
    As discussed but it is worth noting again, because the script generates a ``results.out`` file, no postprocessing script is needed for this example. This might not always be the case for some of your problems.
 
-3. Next select the **RV** tab from the input panel. This should be prepopulated with two random variables with same names as those having ``pset`` in the tcl script, i.e. ``Ic1`` and ``Ic2``. For each variable, from the drop down menu change them from having a constant distribution to a continuous design one and then provide the lower bounds and upper bounds shown in the figure below.
+3. Next select the **RV** panel from the input panel. This should be prepopulated with two random variables with same names as those having ``pset`` in the tcl script, i.e. ``Ic1`` and ``Ic2``. For each variable, from the drop down menu change them from having a constant distribution to a continuous design one and then provide the lower bounds and upper bounds shown in the figure below.
 
 
 .. thumbnail:: frame/joelBayeRV.png

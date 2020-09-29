@@ -4,8 +4,8 @@ Steel Frame: Conventional Calibration
 ======================================
 
 +---------------+-----------------------------------------------------+
-| Problem files | `quo-07 <https://github.com/claudioper              |
-|               | ez/SimCenterDocumentation/tree/examples/docs/common |
+| Problem files | `quo-07 <https://github.com/NHERI-SimCenter         |
+|               | /SimCenterDocumentation/tree/master/docs/common     |
 |               | /user_manual/examples/desktop/quoFEM/src/quo-07>`__ |
 +---------------+-----------------------------------------------------+
 
