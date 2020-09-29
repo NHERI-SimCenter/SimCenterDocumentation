@@ -242,6 +242,9 @@ TSWLatexianTemp*
 *.bak
 *.sav
 
+# VSCode
+.vscode/*
+
 # Texpad
 .texpadtmp
 
