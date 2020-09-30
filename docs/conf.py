@@ -512,8 +512,8 @@ elif app_name == 'pelicun':
 extensions = extensions + [
 	'sphinx-jsonschema',
 	'toctree_filter',
-	'sphinxcontrib.bibtex'
-	# 'sphinxcontrib.images',
+	'sphinxcontrib.bibtex',
+	'sphinxcontrib.images'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
