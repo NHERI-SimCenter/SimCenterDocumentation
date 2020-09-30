@@ -72,12 +72,15 @@
       "Outputs": {
         "outputEDP": {
           "title": "EDP Output File",
-          "description": "",
+          "description": "CSV file which aggregates reponse simulation results from the EDP.json files of all building assets.",
           "properties": {
-            
+            "type": {"type": "string", "description": "Name of EDP type."},
+            "loc": {"type": "int", "description": "Location of where EDP is recorded on the model. If UserDefinedEDP is specified as the EDP application, then the location labelling is denoted in the EDP specification file. Otherwise, the numbering starts at 0, which denotes the ground level."},
+            "dir": {"type": "int", "description": "Direction of the EDP is recorded. The numbering used is X=1, Y=2, Z=3 (if OpenSeesPyInput is specified as the Modeling application, then the numbering convention is independent of the dofMap)."},
+            "stat": {"type": "string", "description": "Describes the statistic reported for each EDP. EDPs are assumed to follow a lognormal distribution described by a median parameter and beta (lognormal standard deviation) parameter. If 'samples' is set to 1 in the RegionalMapping application, then only one event is assigned to each building asset and only one statistic (median) is returned in the EDP Output File."}
           }
         }
-      }
+      },
       "BuildingApplications": {
         "CSV_to_BIM": {
           "title": "CSV_to_BIM",
