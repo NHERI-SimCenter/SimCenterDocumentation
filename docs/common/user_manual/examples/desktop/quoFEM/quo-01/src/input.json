@@ -10,11 +10,11 @@
     },
     "fem": {
         "dir": "{Current_Dir}/.",
-        "inputFile": "{Current_Dir}/model.tcl",
-        "mainInput": "model.tcl",
-        "mainPostprocessScript": "post.tcl",
+        "inputFile": "{Current_Dir}/TrussModel.tcl",
+        "mainInput": "TrussModel.tcl",
+        "mainPostprocessScript": "TrussPost.tcl",
         "numInputs": 1,
-        "postprocessScript": "{Current_Dir}/post.tcl",
+        "postprocessScript": "{Current_Dir}/TrussPost.tcl",
         "parametersFile": "",
         "parametersScript": "",
         "program": "OpenSees"

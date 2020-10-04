@@ -18,10 +18,10 @@ Kurumbhati and Mukesh Ramancha from UC San Diego, this example looks at
 the following simplified finite element model of a steel building.
 
 
-.. figure:: figures/frameFE.png
+.. figure:: ../quo-08/figures/frameFE.png
    :align: center
    :figclass: align-center
-   :width: 300
+   :width: 400
 
 Each floor slab of the building is made of composite metal deck and is
 supported on four steel columns. The story heights are measured at
@@ -64,15 +64,17 @@ which we impose the the following bounds and initial estimates:
    of :math:`2000.0`,
 
 
-The exercise requires a single OpenSees script file. The user is required to download this file and place it in a **NEW** folder. The file: 
+The exercise requires a single OpenSees script file. The user should download this file and place it in a *new* folder.
 
-1. `fem.tcl <https://raw.githubusercontent.com/claudioperez/SimCenterExamples/master/static/frame/fem.tcl>`_ 
+1. :quo-08:`src/Frame2FEM.tcl`
 
-.. literalinclude:: src/fem.tcl
+1. `Frame2FEM.tcl <|app|/quo-08/src/Frame2FEM.tcl>`_ 
+
+.. literalinclude:: ../quo-08/src/Frame2FEM.tcl
    :language: tcl
 
 .. note::
-   1. The tcl script when it runs creates a ``results.out``. As a consequence, no postprocessing script is needed.
+   1. This tcl script creates a ``results.out`` when it runs. As a consequence, no post-processing script is needed.
 
 .. warning::
 
@@ -83,24 +85,29 @@ The steps involved are as follows:
 1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota. In the **UQ Method** category drop down menu change the category to **Inverse Problem**, the method as **DREAM**,  and the remaining parameters as shown in the figure.
 
 
-.. figure:: figures/joelBayeUQ.png
+.. figure:: ../quo-08/figures/joelBayeUQ.png
+   :width: 600
    :align: center
+   :figclass: align-center
 
 
-2. Next select the **FEM** panel from the input panel selection. This will default to the OpenSees FEM engine. For the main script copy the path name to the ``fem.tcl`` file or select **choose** and navigate to the file. 
+2. Next select the **FEM** panel from the input panel selection. This will default to the OpenSees FEM engine. For the main script copy the path name to the ``Frame2FEM.tcl`` file or select **choose** and navigate to the file. 
 
-.. figure:: figures/joelBayeFEM.png
+.. figure:: ../quo-08/figures/joelBayeFEM.png
+   :width: 600
    :align: center
+   :figclass: align-center
 
 
 .. note::
 
    As discussed but it is worth noting again, because the script generates a ``results.out`` file, no postprocessing script is needed for this example. This might not always be the case for some of your problems.
 
-3. Next select the **RV** tab from the input panel. This should be prepopulated with two random variables with same names as those having ``pset`` in the tcl script, i.e. ``Ic1`` and ``Ic2``. For each variable, from the drop down menu change them from having a constant distribution to a continuous design one and then provide the lower bounds and upper bounds shown in the figure below.
+3. Next select the **RV** tab from the input panel. This should be pre-populated with two random variables with same names as those having ``pset`` in the tcl script, i.e. ``Ic1`` and ``Ic2``. For each variable, from the drop down menu change them from having a constant distribution to a continuous design one and then provide the lower bounds and upper bounds shown in the figure below.
 
 
-.. figure:: figures/joelBayeRV.png
+.. figure:: ../quo-08/figures/joelBayeRV.png
+   :width: 600
    :align: center
    :figclass: align-center
 
@@ -108,13 +115,14 @@ The steps involved are as follows:
 4. Next select the **QoI** panel. Here enter **10** variable names. The following figure shows the first nine names used; the tenth entry used, which does not show up in the image was ``eps_p5``.
 
 
-.. figure:: figures/joelCalQoI.png
+.. figure:: ../quo-08/figures/joelCalQoI.png
+   :width: 600
    :align: center
    :figclass: align-center
 
 .. note::   
 
-   For this particular problem setup in which the user is not using a postprocessing script, the user may specify any names for the QoI variables. They are only being used by Dakota to return information on the errors.
+   For this particular problem setup in which the user is not using a post-processing script, the user may specify any names for the QoI variables. They are only being used by Dakota to return information on the errors.
 
 5. Next click on the **Run** button. This will cause the backend application to launch Dakota. When done the **RES** tab will be selected and the results will be displayed as shown in the figure below. The figure shows Dakota returned, for inputs provided, estimates of our unknown parameters, ``Ic1`` and ``Ic2`` are **1168.83** and **1211.25** respectively.
 

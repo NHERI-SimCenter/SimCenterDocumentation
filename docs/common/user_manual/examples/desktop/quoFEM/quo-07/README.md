@@ -9,13 +9,13 @@ page_template: vega.html
 
 |  |  |
 |----------|------|
-| Problem files | [quo-07](https://github.com/claudioperez/SimCenterDocumentation/tree/examples/docs/common/user_manual/examples/desktop/quoFEM/src/quo-07) |
+| Problem files | [quo-07](https://github.com/claudioperez/SimCenterDocumentation/tree/examples/docs/common/user_manual/examples/desktop/quoFEM/quo-07) |
 
 In this example, a parameter estimation routine is used to estimate column stiffnesses of a simple steel frame, given data about it's mode shapes and mass distribution.
 
 Provided by Professor Joel Conte and his doctoral students Maitreya Kurumbhati and Mukesh Ramancha from UC San Diego, this example looks at the following simplified finite element model of a steel building.
 
-![Schematic model of frame.](frame/frameFE.png){style="float:right" width="300" align="center"}
+![Schematic model of frame.](figures/frameFE.png){style="float:right" width="300" align="center"}
 
 Each floor slab of the building is made of composite metal deck and is supported on four steel columns. The story heights are measured at $10'$ and in plan the side lengths measure $33'-4"$ by $30'$. Properties of the steel columns are taken deterministically  with an elastic modulus of $29,000 \mathrm{ksi}$, area of $110 \mathrm{in}^2$, and principal moment of inertial ($I_{yy}$) of $1190 \mathrm{ in}^4$. For modelling purposes, the four columns are assumed fixed at the base and the beams connecting them are assumed to be rigid. The first two vibration periods of the structure are determined to be $0.19 sec$ and $0.09 sec$. 
 
@@ -64,7 +64,7 @@ To define the uncertainty workflow in quoFEM, select **Parameters Estimation** f
 The following files make up the **FEM** model definition.
 
 
-#. [fem.tcl](https://raw.githubusercontent.com/claudioperez/SimCenterExamples/master/static/frame/fem.tcl): This file is an OpenSees Tcl script that defines a FE model for a given realization, runs an analysis, and creates a `results.out` file. As a consequence, no postprocessing script is needed. The values placed in `results.out` file are the difference between computed and observed values. Expressed another way, the function `f(Ic1,Ic2)` computed and written to the `results.out` file is `f(Ic1,Ic2) = ObservedPeriods - ComputedPeriods(Ic1,Ic2)`. The UQ algorithm when running is searching for values of the random variable parameters (`Ic1` and `Ic2`) that minimize this loss function. The user must take this fact into account when formulating the output from their own scripts for their own problems.
+#. [Frame2FEM.tcl](src/Frame2FEM.tcl): This file is an OpenSees Tcl script that defines a FE model for a given realization, runs an analysis, and creates a `results.out` file. As a consequence, no postprocessing script is needed. The values placed in `results.out` file are the difference between computed and observed values. Expressed another way, the function `f(Ic1,Ic2)` computed and written to the `results.out` file is `f(Ic1,Ic2) = ObservedPeriods - ComputedPeriods(Ic1,Ic2)`. The UQ algorithm when running is searching for values of the random variable parameters (`Ic1` and `Ic2`) that minimize this loss function. The user must take this fact into account when formulating the output from their own scripts for their own problems.
 
 
 

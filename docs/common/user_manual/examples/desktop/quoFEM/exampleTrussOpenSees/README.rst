@@ -27,18 +27,18 @@ The goal of the exercise is to estimate the mean and standard deviation of the v
    
    1. The first lines containing ``pset`` will be read by the application when the file is selected and the application will autopopulate the Random Variables input panel with these same variable names. It is of course possible to explicitly use Random Variables without the ``pset`` command as is demonstrated in the verification section.
 
-2. `postprocess.tcl <https://github.com/NHERI-SimCenter/quoFEM/blob/master/examples/exampleOpenSeesForward/postprocess.tcl>`_. 
+2. `TrussPost.tcl <src/TrussPost.tcl>`_. 
 
-The postprocess.tcl script shown below will accept as input any of the 6 nodes in the domain and for each of the two dof directions.
+The ``TrussPost.tcl`` script shown below will accept as input any of the 6 nodes in the domain and for each of the two dof directions.
 
-.. literalinclude:: src/post.tcl
+.. literalinclude:: ../quo-01/src/TrussPost.tcl
    :language: tcl
 
 .. note::
 
-   The use has the option to provide no postprocess script (in which case the main script must create a ``results.out`` file containing a single line with as many space separated numbers as QoI or the user may provide a Python script that also performs the postprocessing. An example of a postprocessing Python script is `postprocess.py <https://github.com/NHERI-SimCenter/quoFEM/blob/master/examples/exampleOpenSeesForward/postprocess.py>`_. 
+   The use has the option to provide no post-process script (in which case the main script must create a ``results.out`` file containing a single line with as many space separated numbers as QoI or the user may provide a Python script that also performs the postprocessing. An example of a postprocessing Python script is `postprocess.py <https://github.com/NHERI-SimCenter/quoFEM/blob/master/examples/exampleOpenSeesForward/postprocess.py>`_. 
 
-   .. literalinclude:: src/post.py
+   .. literalinclude:: ../quo-01/src/TrussPost.py
       :language: python
 
 .. warning::
@@ -52,7 +52,7 @@ Sampling Analysis
 +----------------+----------------------------------------------------+
 | Problem files  | `quo-01 <https://github.com/NHERI-SimCenter        |
 |                | /SimCenterDocumentation/tree/master/docs/common/   |
-|                | user_manual/examples/desktop/quoFEM/src/quo-01>`__ |
+|                | user_manual/examples/desktop/quoFEM/quo-01>`__     |
 +----------------+----------------------------------------------------+
 
 To perform a Sampling or Forward propagation uncertainty analysis the user would perform the following steps:
@@ -64,7 +64,7 @@ To perform a Sampling or Forward propagation uncertainty analysis the user would
    :align: center
    :figclass: align-center
 
-2. Next select the **FEM** panel from the input panel. This will default in the OpenSees FEM engine. For the main script copy the path name to ``TrussSelection.tcl`` or select choose and navigate to the file. For the postprocess script, repeat the same procedure for the ``postprocess.tcl`` script.
+2. Next select the **FEM** panel from the input panel. This will default in the OpenSees FEM engine. For the main script copy the path name to ``TrussSelection.tcl`` or select choose and navigate to the file. For the post-process script, repeat the same procedure for the ``postprocess.tcl`` script.
 
 .. figure:: figures/trussFEM.png
    :align: center
@@ -112,10 +112,10 @@ Reliability Analysis
 +----------------+----------------------------------------------------+
 | Problem files  | `quo-03 <https://github.com/NHERI-SimCenter        |
 |                | /SimCenterDocumentation/tree/master/docs/common/   |
-|                | user_manual/examples/desktop/quoFEM/src/quo-03>`__ |
+|                | user_manual/examples/desktop/quoFEM/quo-03>`__     |
 +----------------+----------------------------------------------------+
 
-If the user is interested in the probability that a particular response measure will be exceeded, an alternate strategy is to perform a reliability analysis. In order to perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propagation method. To obtain reliability results using the Second-Order Reliability Method (SORM) for the truss problem the user would follow the same sequence of steps as previously. The difference would be in the **UQ** tab in which the user would select a Reliability as the Dakota Method Category and then choose Local reliability. In the figure the user is specifying that they are interested in the probability that the displacement will exceed certain response levels.
+If one is interested in the probability that a particular response measure will be exceeded, an alternate strategy is to perform a reliability analysis. In order to perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propagation method. To obtain reliability results using the Second-Order Reliability Method (SORM) for the truss problem the user would follow the same sequence of steps as previously. The difference would be in the **UQ** panel in which the user would select a Reliability as the Dakota Method Category and then choose Local reliability. In the figure the user is specifying that they are interested in the probability that the displacement will exceed certain response levels.
 
 
 .. figure:: figures/trussSORM-UQ.png
@@ -135,7 +135,7 @@ Global Sensitivity
 +----------------+----------------------------------------------------+
 | Problem files  | `quo-04 <https://github.com/claudioperez           |
 |                | /SimCenterDocumentation/tree/examples/docs/common/ |
-|                | user_manual/examples/desktop/quoFEM/src/quo-04>`__ |
+|                | user_manual/examples/desktop/quoFEM/quo-04>`__     |
 +----------------+----------------------------------------------------+
 
 In a global sensitivity analysis the user is wishing to understand what is the influence of the individual random variables on the quantities of interest. This is typically done before the user launches large scale forward uncertainty problems in order to limit the number of random variables used so as to limit the number of simulations performed.

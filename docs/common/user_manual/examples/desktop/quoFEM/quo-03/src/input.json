@@ -1,21 +1,33 @@
 {
-    "fem": {
-        "dir": "{Current_Dir}/.",
-        "inputFile": "{Current_Dir}/model.tcl",
-        "mainInput": "model.py",
-        "mainPostprocessScript": "FEAP_post.py",
-        "numInputs": 1,
-        "postprocessScript": "",
-        "program": "FEAPpv"
-    },
     "UQ_Method": {
-        "samplingMethodData": {
-            "method": "LHS",
-            "samples": 200,
-            "seed": 949
+        "reliabilityMethodData": {
+            "integrationMethod": "Second Order",
+            "levelType": "Probability Levels",
+            "localMethod": "Most Probable Point",
+            "method": "Local Reliability",
+            "mpp_Method": "no_approx",
+            "probabilityLevel": [
+                0.02,
+                0.2,
+                0.4,
+                0.6,
+                0.8,
+                0.99
+            ]
         },
         "uqEngine": "Dakota",
-        "uqType": "Forward Propagation"
+        "uqType": "Reliability Analysis"
+    },
+    "fem": {
+        "dir": "{Current_Dir}/.",
+        "inputFile": "{Current_Dir}/TrussModel.tcl",
+        "mainInput": "TrussModel.tcl",
+        "mainPostprocessScript": "TrussPost.tcl",
+        "numInputs": 1,
+        "postprocessScript": "{Current_Dir}/TrussPost.tcl",
+        "parametersFile": "",
+        "parametersScript": "",
+        "program": "OpenSees"
     },
     "EDP": [
         {

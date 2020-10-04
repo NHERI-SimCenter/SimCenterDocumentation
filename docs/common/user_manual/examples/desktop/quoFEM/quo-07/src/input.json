@@ -35,8 +35,8 @@
     ],
     "fem": {
         "dir": "{Current_Dir}/.",
-        "inputFile": "{Current_Dir}/fem.tcl",
-        "mainInput": "fem.tcl",
+        "inputFile": "{Current_Dir}/Frame2FEM.tcl",
+        "mainInput": "Frame2FEM.tcl",
         "mainPostprocessScript": "",
         "numInputs": 1,
         "postprocessScript": "",

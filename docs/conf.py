@@ -121,6 +121,10 @@ rst_prolog = """
 
 """
 
+extlinks = {
+	f'quo-0{i}' : (f'https://github.com/claudioperez/SimCenterDocumentation/tree/master/docs/common/user_manual/examples/desktop/{app_name}/quo-0{i}/%s','') for i in range(1,10)
+}
+
 # app-specific settings
 
 if app_name == 'RDT':
@@ -511,9 +515,10 @@ elif app_name == 'pelicun':
 
 extensions = extensions + [
     'sphinx-jsonschema',
-	'sphinxcontrib.bibtex',
-	'toctree_filter',
+    'sphinxcontrib.bibtex',
+    'toctree_filter',
     'sphinxcontrib.images',
+	'sphinx.ext.extlinks',
 ]
 
 # Add any paths that contain templates here, relative to this directory.

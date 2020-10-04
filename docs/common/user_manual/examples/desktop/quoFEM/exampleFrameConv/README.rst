@@ -20,7 +20,7 @@ the following simplified finite element model of a steel building.
 
 .. figure:: figures/frameFE.png
    :align: center
-   :width: 300
+   :width: 400
    :figclass: align-center
 
 
@@ -86,12 +86,14 @@ The steps involved:
 
 
 .. figure:: figures/joelUQ.png
+   :width: 600
    :align: center
    :figclass: align-center
 
 2. Next select the **FEM** tab from the input panel selection. This will default to the OpenSees FEM engine. For the main script copy the path name to the ``fem.tcl`` file or select **choose** and navigate to the file. 
 
 .. figure:: figures/joelCalFEM.png
+   :width: 600
    :align: center
    :figclass: align-center
 
@@ -103,6 +105,7 @@ The steps involved:
 
 
 .. figure:: figures/joelCalRV.png
+   :width: 600
    :align: center
    :figclass: align-center
 
@@ -114,6 +117,7 @@ The steps involved:
 
 
 .. figure:: figures/joelCalQoI.png
+   :width: 600
    :align: center
    :figclass: align-center
 

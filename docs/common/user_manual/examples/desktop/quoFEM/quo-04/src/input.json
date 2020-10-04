@@ -1,30 +1,20 @@
 {
     "UQ_Method": {
-        "reliabilityMethodData": {
-            "integrationMethod": "Second Order",
-            "levelType": "Probability Levels",
-            "localMethod": "Most Probable Point",
-            "method": "Local Reliability",
-            "mpp_Method": "no_approx",
-            "probabilityLevel": [
-                0.02,
-                0.2,
-                0.4,
-                0.6,
-                0.8,
-                0.99
-            ]
+        "samplingMethodData": {
+            "method": "LHS",
+            "samples": 1000,
+            "seed": 175
         },
         "uqEngine": "Dakota",
-        "uqType": "Reliability Analysis"
+        "uqType": "Sensitivity Analysis"
     },
     "fem": {
         "dir": "{Current_Dir}/.",
-        "inputFile": "{Current_Dir}/model.tcl",
-        "mainInput": "model.tcl",
-        "mainPostprocessScript": "post.tcl",
+        "inputFile": "{Current_Dir}/TrussModel.tcl",
+        "mainInput": "TrussModel.tcl",
+        "mainPostprocessScript": "TrussPost.tcl",
         "numInputs": 1,
-        "postprocessScript": "{Current_Dir}/post.tcl",
+        "postprocessScript": "{Current_Dir}/TrussPost.tcl",
         "parametersFile": "",
         "parametersScript": "",
         "program": "OpenSees"

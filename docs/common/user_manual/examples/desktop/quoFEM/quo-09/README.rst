@@ -12,7 +12,7 @@ of the response quantities of interest with respect to the problem’s
 random variables.
 
 
-.. figure:: truss/truss.png
+.. figure:: figures/truss.png
    :align: center
    :width: 600
    :figclass: align-center
@@ -38,7 +38,7 @@ The following parameters are defined in the **RV** tab of quoFEM:
    deviation :math:`(\sigma)` of :math:`100.0`,
 
 
-.. figure:: truss/trussSensitivity-input-SimUQ.png
+.. figure:: figures/trussSensitivity-input-SimUQ.png
    :alt: Random variables for simple truss.
    :align: center
 
@@ -65,13 +65,13 @@ Model Files
 
 The following files make up the **FEM** model definition.
 
-#. `model.tcl <https://raw.githubusercontent.com/claudioperez/SimCenterExamples/master/static/truss/model.tcl>`__:
+#. `TrussModel.tcl <src/TrussModel.tcl>`__:
    This file is an OpenSees Tcl script that constructs and runs a finite
    element analysis of the truss for a given realization of the
    problem’s random variables. It is supplied to the **Input File**
    field of the **FEM** tab.
 
-#. `post.tcl <https://raw.githubusercontent.com/claudioperez/SimCenterExamples/master/static/truss/post.tcl>`__:
+#. `TrussPost.tcl <src/TrussPost.tcl>`__:
    This file is an OpenSees Tcl script that processes the QoI
    identifiers supplied in the **QoI** tab, and writes the relevant
    response quantities to ``results.out`` from an OpenSees process. It
@@ -84,11 +84,11 @@ The following files make up the **FEM** model definition.
 Results
 -------
 
-Once the analysis is complete the **RES** tab will be automatically
+Once the analysis is complete the **RES** panel will be automatically
 selected and the results will be displayed as shown in the following
 figure:
 
-.. figure:: truss/trussSensitivity-RES-SimUQ.png
+.. figure:: figures/trussSensitivity-RES-SimUQ.png
    :alt: Sensitivity analysis results for simple truss.
    :align: center
 
@@ -186,7 +186,7 @@ Result with correlated inputs
 ------------------------------
 Consider the case with correlated random variables. For example, below shows correlation matrix where the correlation between the variables ``Au`` and ``Ao`` are :math:`\rho=0.5`.
 
-.. figure:: truss/trussSensitivity-corr.png
+.. figure:: figures/trussSensitivity-corr.png
    :alt: Sensitivity analysis results for simple truss.
    :align: center
 
@@ -194,7 +194,7 @@ Consider the case with correlated random variables. For example, below shows cor
 
 The group-wise Sobol indices for {:math:`Au,Ao`} can be defined at the **QoI** tab.
 
-.. figure:: truss/trussSensitivity-advanced.png
+.. figure:: figures/trussSensitivity-advanced.png
    :alt: Sensitivity analysis results for simple truss.
    :align: center
 
@@ -202,7 +202,7 @@ The group-wise Sobol indices for {:math:`Au,Ao`} can be defined at the **QoI** t
 
 The results of sensitivity analysis:
 
-.. figure:: truss/trussSensitivity-RES-SimUQ2.png
+.. figure:: figures/trussSensitivity-RES-SimUQ2.png
    :alt: Sensitivity analysis results for simple truss.
    :align: center
 
