@@ -6,10 +6,17 @@ This example uses quoFEM to perform a global sensitivity analysis of an
 OpenSees FE model.
 
 Consider a stochastic model of a two-dimensional truss structure like
-that shown in the following figure. A `sensitivity
+that shown in the following figure. A sensitivity
 analysis procedure is coordinated by quoFEM which will estimate the sensitivities
 of the response quantities of interest with respect to the problem’s
-random variables. |Truss schematic diagram|
+random variables.
+
+
+.. figure:: truss/truss.png
+   :align: center
+   :width: 600
+   :figclass: align-center
+
 
 The following parameters are defined in the **RV** tab of quoFEM:
 

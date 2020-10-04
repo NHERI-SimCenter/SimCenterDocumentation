@@ -20,9 +20,8 @@ the following simplified finite element model of a steel building.
 
 .. figure:: figures/frameFE.png
    :align: center
-   :width: 300
    :figclass: align-center
-
+   :width: 300
 
 Each floor slab of the building is made of composite metal deck and is
 supported on four steel columns. The story heights are measured at
@@ -86,16 +85,13 @@ The steps involved are as follows:
 
 .. figure:: figures/joelBayeUQ.png
    :align: center
-   :width: 100
 
 
 2. Next select the **FEM** panel from the input panel selection. This will default to the OpenSees FEM engine. For the main script copy the path name to the ``fem.tcl`` file or select **choose** and navigate to the file. 
 
 .. figure:: figures/joelBayeFEM.png
    :align: center
-   :width: 100
 
-   Click to expand.
 
 .. note::
 
@@ -106,7 +102,8 @@ The steps involved are as follows:
 
 .. figure:: figures/joelBayeRV.png
    :align: center
-   :width: 150
+   :figclass: align-center
+
 
 4. Next select the **QoI** panel. Here enter **10** variable names. The following figure shows the first nine names used; the tenth entry used, which does not show up in the image was ``eps_p5``.
 

@@ -57,16 +57,14 @@ Sampling Analysis
 
 To perform a Sampling or Forward propagation uncertainty analysis the user would perform the following steps:
 
-The steps involved:
-
-1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota, and the UQ Method Category as Forward Propagation, and the Forward Propagation method as LHS (Latin Hypercube). Change the #samples to 1000 and the seed to 20 as shown in the figure.
+1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota, and the **UQ Method Category** as Forward Propagation, and the Forward Propagation method as LHS (Latin Hypercube). Change the #samples to 1000 and the seed to 20 as shown in the figure.
 
 
 .. figure:: figures/trussUQ.png
    :align: center
    :figclass: align-center
 
-2. Next select the **FEM** tab from the input panel. This will default in the OpenSees FEM engine. For the main script copy the path name to ``TrussSelection.tcl`` or select choose and navigate to the file. For the postprocess script, repeat the same procedure for the ``postprocess.tcl`` script.
+2. Next select the **FEM** panel from the input panel. This will default in the OpenSees FEM engine. For the main script copy the path name to ``TrussSelection.tcl`` or select choose and navigate to the file. For the postprocess script, repeat the same procedure for the ``postprocess.tcl`` script.
 
 .. figure:: figures/trussFEM.png
    :align: center
