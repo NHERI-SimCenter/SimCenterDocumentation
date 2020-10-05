@@ -38,7 +38,7 @@ The coefficients :math:`a_0` and :math:`a_1` are typically determined by specify
 
    \zeta_n = \frac{a_0}{2}\frac{1}{\omega_n}
 
-   a_0 = 2 \zeta_n \omega_n`
+   a_0 = 2 \zeta_n \omega_n
 
 In mass proportional damping, the damping matrix is inversely proportional to the natural frequency. The coefficient is chosen to represent the period at a single mode, modes with a higher frequency will have less damping, and modes with a smaller frequency will have more damping.
 

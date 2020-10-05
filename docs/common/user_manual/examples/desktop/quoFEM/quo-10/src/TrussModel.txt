@@ -4,37 +4,37 @@ FEAP * * Elastic Truss
 PARAmeter
 E 	= 205
 P 	= 25
-A2	= 500
-A1 	= 250
+Au	= 500
+Ao 	= 250
 
 MATErial 1
 TRUSs
 ELAStic isotropic E
-CROSs section A1
+CROSs section Ao
 
 MATErial 2
 TRUSs
 ELAStic isotropic E
-CROSs section A2
+CROSs section Au
 
 COORdinates
 1	0	0.0		0.0
-2	0	4e+3		0.0
-3	0	8e+3		0.0
-4	0	12e+3		0.0
-5	0	8e+3		4e+3
-6	0	4e+3		4e+3
+2	0	4000.0		0.0
+3	0	8000.0		0.0
+4	0	12000.0		0.0
+5	0	4000.0		4000.0
+6	0	8000.0		4000.0
 
 ELEMents
 1	0	1	1	2
 2	0	1	2	3
 3	0	1	3	4
-4	0	2	4	5
+4	0	2	1	5
 5	0	2	5	6
-6	0	2	6	1
-7	0	1	2	6
-8	0	1	6	3
-9	0	1	3	5
+6	0	2	6	4
+7	0	1	2	5
+8	0	1	3	6
+9	0	1	5	3
 
 BOUNdary
 1	0	1	1

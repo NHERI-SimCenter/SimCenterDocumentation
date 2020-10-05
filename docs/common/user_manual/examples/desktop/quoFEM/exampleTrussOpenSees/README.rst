@@ -20,7 +20,7 @@ The goal of the exercise is to estimate the mean and standard deviation of the v
 
 1. :quo-01:`TrussTemplate.tcl <src/TrussModel.tcl>`
 
-.. literalinclude:: src/TrussModel.tcl
+.. literalinclude:: ../quo-01/src/TrussModel.tcl
    :language: tcl
 
 .. note::
@@ -30,6 +30,7 @@ The goal of the exercise is to estimate the mean and standard deviation of the v
 2. :quo-01:`TrussPost.tcl <src/TrussPost.tcl>`. 
 
 The ``TrussPost.tcl`` script shown below will accept as input any of the 6 nodes in the domain and for each of the two dof directions.
+
 
 .. literalinclude:: ../quo-01/src/TrussPost.tcl
    :language: tcl
@@ -49,20 +50,20 @@ The ``TrussPost.tcl`` script shown below will accept as input any of the 6 nodes
 Sampling Analysis
 ^^^^^^^^^^^^^^^^^
 
-+----------------+-------------------+
-| Problem files  | :quo-01:`/`       |
-+----------------+-------------------+
++----------------+-----------------+
+| Problem files  | :quo-01:`/`     |
++----------------+-----------------+
 
-To perform a Sampling or Forward propagation uncertainty analysis the user would perform the following steps:
+To perform a sampling or forward propagation uncertainty analysis the user would perform the following steps:
 
-1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota, and the **UQ Method Category** as Forward Propagation, and the Forward Propagation method as LHS (Latin Hypercube). Change the #samples to 1000 and the seed to 20 as shown in the figure.
+1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota, and the **UQ Method Category** as Forward Propagation, and the Forward Propagation method as LHS (Latin Hypercube). Change the **#samples** to 1000 and the **seed** to 20 as shown in the figure.
 
 
 .. figure:: figures/trussUQ.png
    :align: center
    :figclass: align-center
 
-2. Next select the **FEM** panel from the input panel. This will default in the OpenSees FEM engine. For the main script copy the path name to ``TrussSelection.tcl`` or select choose and navigate to the file. For the post-process script, repeat the same procedure for the ``postprocess.tcl`` script.
+2. Next select the **FEM** panel from the input panel. This will default in the OpenSees FEM engine. For the main script copy the path name to ``TrussModel.tcl`` or select **choose** and navigate to the file. For the **post-process script** field, repeat the same procedure for the ``TrussPost.tcl`` script.
 
 .. figure:: figures/trussFEM.png
    :align: center
@@ -74,7 +75,7 @@ To perform a Sampling or Forward propagation uncertainty analysis the user would
    :align: center
    :figclass: align-center
 
-4. Next select the **QoI** tab. Here enter 'Node_3_Disp_2' for the one variable. 
+4. Next select the **QoI** tab. Here enter ``Node_3_Disp_2`` for the one variable. 
 
 .. figure:: figures/trussQoI.png
    :align: center
@@ -83,9 +84,9 @@ To perform a Sampling or Forward propagation uncertainty analysis the user would
 
 .. note::   
 
-   The user can add additional QoI by selecting add and then providing additional names. As seen from the postprocess script any of the 6 nodes may be specified and for any node either the 1 or 2 dof direction.
+   The user can add additional QoI by selecting add and then providing additional names. As seen from the post-process script any of the 6 nodes may be specified and for any node either the 1 or 2 DOF direction.
 
-5. Next click on the **Run** button. This will cause the backend application to launch dakota. When done the **RES** tab will be selected and the results will be displayed. The results show the values the mean and standard deviation.
+5. Next click on the **Run** button. This will cause the backend application to launch dakota. When done the **RES** panel will be selected and the results will be displayed. The results show the values the mean and standard deviation.
 
 .. figure:: figures/trussRES1.png
    :align: center
@@ -107,9 +108,9 @@ Various views of the graphical display can be obtained by left and right clickin
 Reliability Analysis
 ^^^^^^^^^^^^^^^^^^^^
 
-+----------------+--------------------+
-| Problem files  | :quo-03:`/`        |
-+----------------+--------------------+
++----------------+-----------------+
+| Problem files  | :quo-03:`/`     |
++----------------+-----------------+
 
 If one is interested in the probability that a particular response measure will be exceeded, an alternate strategy is to perform a reliability analysis. In order to perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propagation method. To obtain reliability results using the Second-Order Reliability Method (SORM) for the truss problem the user would follow the same sequence of steps as previously. The difference would be in the **UQ** panel in which the user would select a Reliability as the Dakota Method Category and then choose Local reliability. In the figure the user is specifying that they are interested in the probability that the displacement will exceed certain response levels.
 
@@ -128,9 +129,9 @@ After the user fills in the rest of the tabs as per the previous section, the us
 Global Sensitivity
 ^^^^^^^^^^^^^^^^^^
 
-+----------------+-----------------------+
-| Problem files  | :quo-04:`/`           |
-+----------------+-----------------------+
++----------------+-------------------+
+| Problem files  | :quo-04:`/`       |
++----------------+-------------------+
 
 In a global sensitivity analysis the user is wishing to understand what is the influence of the individual random variables on the quantities of interest. This is typically done before the user launches large scale forward uncertainty problems in order to limit the number of random variables used so as to limit the number of simulations performed.
 
