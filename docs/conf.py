@@ -123,7 +123,7 @@ rst_prolog = """
 
 extlinks = {
 }
-example_repo = "https://github.com/claudioperez/SimCenterDocumentation/tree/master/docs/common/user_manual/examples"
+example_repo = f'https://github.com/claudioperez/SimCenterDocumentation/tree/master/docs/common/user_manual/examples/desktop/{app_name.replace("-","")}'
 
 # app-specific settings
 
@@ -383,7 +383,7 @@ elif app_name == 'quoFEM':
 
 	# Example links
 	extlinks.update(
-	   {f'quo-{i:02}' : (f'{example_repo}/desktop/quoFEM/quo-{i:02}/%s',f'quo-{i:02}') for i in range(1,99)}
+	   {f'quo-{i:02}' : (f'{example_repo}/quo-{i:02}/%s',f'quo-{i:02}') for i in range(1,99)}
 	)
 
 elif app_name == 'WE-UQ':
@@ -446,7 +446,7 @@ elif app_name == 'WE-UQ':
 
 	# Example links
 	extlinks.update(
-	   {f'weuq-{i:02}' : (f'{example_repo}/desktop/WEUQ/weuq-{i:02}/%s',f'weuq-{i:02}') for i in range(1,99)}
+	   {f'weuq-{i:02}' : (f'{example_repo}/weuq-{i:02}/%s',f'weuq-{i:02}') for i in range(1,99)}
 	)
 
 

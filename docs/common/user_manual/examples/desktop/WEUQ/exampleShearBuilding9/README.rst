@@ -3,7 +3,7 @@
 9 Story Building: Sampling and Reliability Analysis
 ===================================================
 
-Consider the problem of uncertainty quantification in a nine story steel building. The building being modelled is the 9 story LA building presented in the FEMA-355C report. From the description in Appendix B of the FEMA document the building is a **150** ft square building with a height above ground of **120** ft with a weight of approx. **19,800** kips. Eigenvalues are shown in Table 5.1. of the FEMA document to be between **2.3** sec and **2.2** sec depending on connection detals. For this example (and for demonstrative purposes only), this building will be modelled as a shear building with **10** nodes and **9** elements, as shown in following figure. For loading, the Stochastic Wind Generation tool will be used with the gust wind speed being treated as a random variable with a normal distribtion described by a mean :math:`\mu_{gustWS}=20 \mathrm{mph}` and standard deviation :math:`\sigma_{gustWS} =3 \mathrm{mph}`. 
+Consider the problem of uncertainty quantification in a nine story steel building. The building being modelled is the 9 story Los Angeles building presented in the FEMA-355C report. From the description in Appendix B of the FEMA document the building is a **150** ft square building with a height above ground of **120** ft with a weight of approx. **19,800** kips. Eigenvalues are shown in Table 5.1. of the FEMA document to be between **2.3** sec and **2.2** sec depending on connection details. For this example (and for demonstrative purposes only), this building will be modelled as a shear building with **10** nodes and **9** elements, as shown in following figure. For loading, the Stochastic Wind Generation tool will be used with the gust wind speed being treated as a random variable with a normal distribution described by a mean :math:`\mu_{gustWS}=20 \mathrm{mph}` and standard deviation :math:`\sigma_{gustWS} =3 \mathrm{mph}`. 
 
 .. figure:: figures/9story.png
    :align: center
@@ -36,12 +36,12 @@ The structure has uncertain properties that all follow normal distribution:
 Sampling Analysis
 ^^^^^^^^^^^^^^^^^
 
-+----------------+-----------------------+
-| Problem files  | :weuq-01:`/`          |
-+----------------+-----------------------+
++----------------+--------------------+
+| Problem files  | :weuq-01:`/`       |
++----------------+--------------------+
 
 
-To perform a Sampling or Forward propagation uncertainty analysis the user would perform the following steps:
+To perform a sampling or forward propagation uncertainty analysis the user would perform the following steps:
 
 1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota, and the UQ Method Category as Forward Propagation, and the Forward Propagation method as LHS (Latin Hypercube). Change the #samples to 500 and the seed to 20 as shown in the figure.
 
@@ -55,7 +55,7 @@ To perform a Sampling or Forward propagation uncertainty analysis the user would
    :align: center
    :figclass: align-center
 
-3. Next select the **SIM** panel from the input panel. This will default in the MDOF model generator. We will use this generator (the NOTE below contains instruction on how to use the OpenSees scipt instead). In the building information panel, the number of stories should show **9** and the story heights **160**. In the building Information box specify **w** for the floor weights and **k** for story stiffness (in both x and y directions). 
+3. Next select the **SIM** panel from the input panel. This will default in the MDOF model generator. We will use this generator (the note below contains instruction on how to use the OpenSees script instead). In the building information panel, the number of stories should show **9** and the story heights **160**. In the building Information box specify **w** for the floor weights and **k** for story stiffness (in both x and y directions). 
 
 
 .. figure:: figures/9story-SIM1.png
@@ -94,7 +94,7 @@ To perform a Sampling or Forward propagation uncertainty analysis the user would
 
    The user cannot leave any of the distributions for these values as constant for the Dakota UQ engine.
 
-5. Next click on the **Run** button. This will cause the backend application to launch dakota. When done the **RES** panel will be selected and the results will be displayed. The results show the values the mean and standard deviation. The peak displacement of the roof, is the quantity **1-PFD-9-1** (first event (tool to be extended to multiple events), 9th floor (in US ground floor considered 0), and 1 dof direction). the **PFA** quantity defines peak floor acceleration, the **RMSA** quantity the root mean square of floor accelerations, and the **PID** quantity corresponds to peak interstory drift.
+5. Next click on the **Run** button. This will cause the backend application to launch dakota. When done the **RES** panel will be selected and the results will be displayed. The results show the values the mean and standard deviation. The peak displacement of the roof, is the quantity **1-PFD-9-1** (first event (tool to be extended to multiple events), 9th floor (in US ground floor considered 0), and 1 DOF direction). the **PFA** quantity defines peak floor acceleration, the **RMSA** quantity the root mean square of floor accelerations, and the **PID** quantity corresponds to peak inter-story drift.
 
 .. figure:: figures/9story-RES1.png
    :align: center
@@ -121,23 +121,23 @@ User Defined Output
 
 In this section we will demonstrate the use of the user defined output option for the EDP panel. In the previous example we got the standard output, which can be both a lot and also limited (in sense you may not get the information you want). In this example we will present how to obtain results just for the roof displacement, the displacement of node **10** in both the **MDOF** and **OpenSees** model generator examples and shear force at the base of the structure. For the OpenSees model, it is also possible to obtain the overturning moment (something not possible in MDOF model due to fact it is modelled using spring elements). The examples could be extended to output for example the element end rotations, plastic rotations, ...
 
-For this example you will need two additional file `recorder.tcl <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/9Story/recorder.tcl>`_ and `postprocess.tcl <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/9Story/postprocess.tcl>`_. 
+For this example you will need two additional files, :weuq:`FrameRecorder.tcl <src/FrameRecorder.tcl>`. 
 
-The recorder script as shown will record the envelope displacements and RMS acceleratiuons in the first two degrees-of-freedom for the nodes in the modes. The script will also record the element forces. The file is as shown below:
+The recorder script as shown will record the envelope displacements and RMS accelerations in the first two degrees-of-freedom for the nodes in the modes. The script will also record the element forces. The file is as shown below:
 
-.. literalinclude:: recorder.tcl
+.. literalinclude:: ../weuq-02/src/FrameRecorder.tcl
    :language: tcl
 
-The postprocess.tcl script shown below will accept as input any of the 10 nodes *in the domain and for each of the two dof directions and element forces.
+The ``FramePost.tcl`` script shown below will accept as input any of the 10 nodes in the domain and for each of the two DOF directions and element forces.
 
-.. literalinclude:: postprocess.tcl
+.. literalinclude:: ../weuq-02/src/FramePost.tcl
    :language: tcl
 
 .. note::
 
-   The user has the option when using the OpenSees SIM application to provide no postprocess script (in which case the main script must create a ``results.out`` file containing a single line with as many space separated numbers as QoI) or the user may provide a Python script that also performs the postprocessing. An example of a postprocessing Python script is :weuq-02:`postprocess.py <src/postprocess.py>`. The Python script at present only responds to nodal displacements.
+   The user has the option when using the OpenSees SIM application to provide no postprocess script (in which case the main script must create a ``results.out`` file containing a single line with as many space separated numbers as QoI) or the user may provide a Python script that also performs the postprocessing. An example of a postprocessing Python script is :weuq-02:`FramePost.py <src/FramePost.py>`. The Python script at present only responds to nodal displacements.
 
-   .. literalinclude:: ../weuq-02/src/postprocess.py
+   .. literalinclude:: ../weuq-02/src/FramePost.py
       :language: python
 
 The steps are the same as the previous example, with exception of step 4 defining the **EDP**.
