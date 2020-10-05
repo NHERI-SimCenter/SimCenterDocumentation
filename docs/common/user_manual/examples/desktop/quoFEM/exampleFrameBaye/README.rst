@@ -3,11 +3,9 @@
 Steel Frame: Bayesian Calibration
 ======================================
 
-+---------------+-----------------------------------------------------+
-| Problem files | `quo-08 <https://github.com/NHERI-SimCenter         |
-|               | /SimCenterDocumentation/tree/master/docs/common     |
-|               | /user_manual/examples/desktop/quoFEM/src/quo-08>`__ |
-+---------------+-----------------------------------------------------+
++---------------+---------------------------------------------+
+| Problem files | :quo-08:`/`                                 |
++---------------+---------------------------------------------+
 
 In this example, Bayesian estimation is used to estimate column
 stiffnesses of a simple steel frame, given data about it’s mode shapes
@@ -66,9 +64,7 @@ which we impose the the following bounds and initial estimates:
 
 The exercise requires a single OpenSees script file. The user should download this file and place it in a *new* folder.
 
-1. :quo-08:`src/Frame2FEM.tcl`
-
-1. `Frame2FEM.tcl <|app|/quo-08/src/Frame2FEM.tcl>`_ 
+1. :quo-08:`Frame2FEM.tcl <src/Frame2FEM.tcl>`
 
 .. literalinclude:: ../quo-08/src/Frame2FEM.tcl
    :language: tcl

@@ -3,11 +3,9 @@
 Steel Frame: Conventional Calibration
 ======================================
 
-+---------------+-----------------------------------------------------+
-| Problem files | `quo-07 <https://github.com/NHERI-SimCenter         |
-|               | /SimCenterDocumentation/tree/master/docs/common     |
-|               | /user_manual/examples/desktop/quoFEM/src/quo-07>`__ |
-+---------------+-----------------------------------------------------+
++---------------+---------------------+
+| Problem files | :quo-07:`/`         |
++---------------+---------------------+
 
 In this example, a parameter estimation routine is used to estimate
 column stiffnesses of a simple steel frame, given data about it’s mode
@@ -18,7 +16,7 @@ Kurumbhati and Mukesh Ramancha from UC San Diego, this example looks at
 the following simplified finite element model of a steel building.
 
 
-.. figure:: figures/frameFE.png
+.. figure:: ../quo-07/figures/frameFE.png
    :align: center
    :width: 400
    :figclass: align-center
@@ -67,9 +65,9 @@ which we impose the the following bounds and initial estimates:
 
 The exercise requires a single OpenSees script file. The user is required to download this file and place it in a **NEW** folder. The file: 
 
-1. `fem.tcl <https://raw.githubusercontent.com/claudioperez/SimCenterExamples/master/static/frame/fem.tcl>`_ 
+1. :quo-07:`Frame2FEM.tcl <src/Frame2FEM.tcl>` 
 
-.. literalinclude:: src/fem.tcl
+.. literalinclude:: ../quo-07/src/Frame2FEM.tcl
    :language: tcl
 
 .. note::
@@ -85,14 +83,14 @@ The steps involved:
 1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota. In the UQ Method category drop down menu change the category to **Parameters Estimation**, and the method as **NL2SOL**, the convergence tolerance to ``1.0e-6`` and leave the scaling factors empty (assumes weights of 1.0 on all response values) as shown in the figure.
 
 
-.. figure:: figures/joelUQ.png
+.. figure:: ../quo-07/figures/joelUQ.png
    :width: 600
    :align: center
    :figclass: align-center
 
 2. Next select the **FEM** tab from the input panel selection. This will default to the OpenSees FEM engine. For the main script copy the path name to the ``fem.tcl`` file or select **choose** and navigate to the file. 
 
-.. figure:: figures/joelCalFEM.png
+.. figure:: ../quo-07/figures/joelCalFEM.png
    :width: 600
    :align: center
    :figclass: align-center
@@ -104,7 +102,7 @@ The steps involved:
 3. Next select the **RV** tab from the input panel. This should be prepopulated with two random variables with same names as those having ``pset`` in the tcl script, i.e. ``Ic1`` and ``Ic2``. For each variable, from the drop down menu change them from having a constant distribution to a continuous design one and then provide the lower bounds, upper bounds and the starting points shown in the figure below.
 
 
-.. figure:: figures/joelCalRV.png
+.. figure:: ../quo-07/figures/joelCalRV.png
    :width: 600
    :align: center
    :figclass: align-center
@@ -116,7 +114,7 @@ The steps involved:
 4. Next select the **QoI** panel. Here enter **10** variable names. The following figure shows the first nine names used; the tenth entry used, which does not show up in the image was ``eps_p5``.
 
 
-.. figure:: figures/joelCalQoI.png
+.. figure:: ../quo-07/figures/joelCalQoI.png
    :width: 600
    :align: center
    :figclass: align-center
@@ -128,8 +126,15 @@ The steps involved:
 5. Next click on the **Run** button. This will cause the backend application to launch Dakota. When done the **RES** tab will be selected and the results will be displayed as shown in the figure below. The figure shows Dakota returned, for inputs provided, estimates of our unknown parameters, ``Ic1`` and ``Ic2`` are **1168.83** and **1211.25** respectively.
 
 
-.. figure:: figures/quo-07-res-sum.png
+.. figure:: ../quo-07/figures/quo-07-res-sum.png
    :width: 600
    :align: center
    :figclass: align-center
+
+.. figure:: ../quo-07/figures/quo-07-res-dat.png
+   :width: 600
+   :align: center
+   :figclass: align-center
+
+
 

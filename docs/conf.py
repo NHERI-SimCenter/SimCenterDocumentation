@@ -122,7 +122,7 @@ rst_prolog = """
 """
 
 extlinks = {
-	f'quo-0{i}' : (f'https://github.com/claudioperez/SimCenterDocumentation/tree/master/docs/common/user_manual/examples/desktop/{app_name}/quo-0{i}/%s','') for i in range(1,10)
+	f'quo-0{i}' : (f'https://github.com/claudioperez/SimCenterDocumentation/tree/master/docs/common/user_manual/examples/desktop/quoFEM/quo-0{i}/%s',f'quo-0{i}') for i in range(1,10)
 }
 
 # app-specific settings

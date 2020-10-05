@@ -2,7 +2,7 @@
 3 Story Building: Sensitivity Analysis
 ======================================
 
-Consider the problem of uncertainty quantification in a three story steel building. The building being modelled is the 3 story Boston building presented in the FEMA-355C report. From the description in Appendix B of the FEMA document the building is a rectangular building **120** ft by **180** ft with a height above ground of **39** ft. The building weight is approx. **6,500** kips. Eigenvalues are shown in Table 5.1. of the FEMA document to be between **1.6** sec and **1.9** sec depending on connection detals. For this example (and for demonstrative purposes only), this building will be modelled as a shear building with **10** nodes and **9** elements, as shown in following figure. For loading, the TPU Low Rise Wind Generation tool will be used with the mean wind speed being treated as a random variable with a normal distribtion described by a mean :math:`\mu_{gustWS}=20 \mathrm{mph}` and standard deviation :math:`\sigma_{gustWS} =3 \mathrm{mph}` (COV = 15%). 
+Consider the problem of uncertainty quantification in a three story steel building. The building being modelled is the 3 story Boston building presented in the FEMA-355C report. From the description in Appendix B of the FEMA document the building is a rectangular building **120** ft by **180** ft with a height above ground of **39** ft. The building weight is approx. **6,500** kips. Eigenvalues are shown in Table 5.1. of the FEMA document to be between **1.6** sec and **1.9** sec depending on connection detals. For this example (and for demonstrative purposes only), this building will be modelled as a shear building with **10** nodes and **9** elements, as shown in following figure. For loading, the TPU Low Rise Wind Generation tool will be used with the mean wind speed being treated as a random variable with a normal distribution described by a mean :math:`\mu_{gustWS}=20 \mathrm{mph}` and standard deviation :math:`\sigma_{gustWS} =3 \mathrm{mph}`. 
 
 .. figure:: figures/3story.png
    :align: center
@@ -40,7 +40,7 @@ Global Sensitivity Analysis
 
 In a global sensitivity analysis the user is wishing to understand what is the influence of the individual random variables on the quantities of interest. This is typically done before the user launches large scale forward uncertainty problems in order to limit the number of random variables used so as to limit the number of simulations performed.
 
-For this problem we will limit the response qunataties of interest to the following six quantaties. Peak Roof displacement in 1 and 2 directions, root mean square (RMS) accelerations in 1 and 2 directions, Peak BAse shear and moments in 1 and 2 directions. In order to do this we will introduce User defined EPD quantaties, which necessitates the followng two files: `recorder.tcl <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/3Story/recorder.tcl>`_ and `postprocess.tcl <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/3Story/postprocess.tcl>`_.  These files are the same as those presented in :ref:`lblWE-Example9`
+For this problem we will limit the response quantities of interest to the following six quantities. Peak Roof displacement in 1 and 2 directions, root mean square (RMS) accelerations in 1 and 2 directions, Peak BAse shear and moments in 1 and 2 directions. In order to do this we will introduce User defined EPD quantities, which necessitates the followng two files: `recorder.tcl <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/3Story/recorder.tcl>`_ and `postprocess.tcl <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/3Story/postprocess.tcl>`_.  These files are the same as those presented in :ref:`lblWE-Example9`
 
 
 To perform a Global Sensitivity  analysis the user would perform the following steps:
@@ -89,13 +89,13 @@ The steps involved:
 
    The user cannot leave any of the distributions for these values as constant for the Dakota UQ engine.
 
-5. Next click on the 'Run' button. This will cause the backend application to launch dakota. When done the **RES** tab will be selected and the results will be displayed. The results show the values the mean and standard deviation. The peak displacement of the roof, is the quantity **1-PFD-9-1** (first event (tool to be extended to multiple events), 9th floor (in US ground floor considered 0), and 1 dof direction). the **PFA** quantity defines peak floor acceleration, the **RMSA** quantity the root mean square of floor accelerations, and the **PID** quantity corresponds to peak interstory drift.
+5. Next click on the **Run** button. This will cause the backend application to launch Dakota. When done the **RES** tab will be selected and the results will be displayed. The results show the values the mean and standard deviation. The peak displacement of the roof, is the quantity **1-PFD-9-1** (first event (tool to be extended to multiple events), 9th floor (in US ground floor considered 0), and 1 dof direction). the **PFA** quantity defines peak floor acceleration, the **RMSA** quantity the root mean square of floor accelerations, and the **PID** quantity corresponds to peak interstory drift.
 
 .. figure:: figures/9story-RES1.png
    :align: center
    :figclass: align-center
 
-If the user selects the "Data" tab in the results panel, they will be presented with both a graphical plot and a tabular listing of the data. By left- and right-clicking with the mouse in the individual columns the axis change (left mouse click controls vertical axis, right mouse click the horizontal axis).
+If the user selects the **Data** tab in the results panel, they will be presented with both a graphical plot and a tabular listing of the data. By left- and right-clicking with the mouse in the individual columns the axis change (left mouse click controls vertical axis, right mouse click the horizontal axis).
 
 .. figure:: figures/9story-RES2.png
    :align: center
@@ -116,19 +116,19 @@ For this example you will need two additional file `recorder.tcl <https://github
 
 The recorder script as shown will record the envelope displacements and RMS acceleratiuons in the first two degrees-of-freedom for the nodes in the modes. The script will also record the element forces. The file is as shown below:
 
-.. literalinclude:: recorder.tcl
+.. literalinclude:: src/recorder.tcl
    :language: tcl
 
 The postprocess.tcl script shown below will accept as input any of the 10 nodes *in the domain and for each of the two dof directions and element forces.
 
-.. literalinclude:: postprocess.tcl
+.. literalinclude:: src/postprocess.tcl
    :language: tcl
 
 .. note::
 
    The user has the option when using the OpenSees SIM application to provide no postprocess script (in which case the main script must create a ``results.out`` file containing a single line with as many space separated numbers as QoI or the user may provide a Python script that also performs the postprocessing. An example of a postprocessing Python script is `postprocess.py <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/9story/postprocess.py>`_. The python script at present only respods to nodal displacements.
 
-   .. literalinclude:: postprocess.py
+   .. literalinclude:: src/postprocess.py
       :language: python
 
 The steps are the same as the previous example, with exception of step 4 defining the **EDP**.
@@ -140,7 +140,7 @@ The steps are the same as the previous example, with exception of step 4 definin
    :figclass: align-center
 
 
-2. Next click on the 'Run' button. This will cause the backend application to launch dakota. When done the **RES** tab will be selected and the results will be displayed. The results show the values the mean and standard deviation as before but now only for the one quantity of interest.
+2. Next click on the **Run** button. This will cause the backend application to launch dakota. When done the **RES** tab will be selected and the results will be displayed. The results show the values the mean and standard deviation as before but now only for the one quantity of interest.
 
 .. figure:: figures/9story-RES-USER.png
    :align: center
@@ -150,7 +150,7 @@ The steps are the same as the previous example, with exception of step 4 definin
 Reliability Analysis
 ^^^^^^^^^^^^^^^^^^^^
 
-If the user is interested in the probability that certain response measure will be exceeded an alternative strategy is to perform a reliability analysis. To perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propagation method. To obtain reliability results using the Global Reliability methose presented in Dakota choose the **Global Reliability** methods from the methods drop down menu. In the response levels enter a values of **0.5** and **0.8**, specifying that we are interested in the value of the CDF for a displacement of the roof of 0.5in and 0.8in, i.e. what is probability that displacement will be less than 0.8in.
+If the user is interested in the probability that certain response measure will be exceeded an alternative strategy is to perform a reliability analysis. To perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propagation method. To obtain reliability results using the Global Reliability methods presented in Dakota choose the **Global Reliability** methods from the methods drop down menu. In the response levels enter a values of **0.5** and **0.8**, specifying that we are interested in the value of the CDF for a displacement of the roof of 0.5in and 0.8in, i.e. what is probability that displacement will be less than 0.8in.
 
 
 .. figure:: figures/9story-UQ-Reliability.png
