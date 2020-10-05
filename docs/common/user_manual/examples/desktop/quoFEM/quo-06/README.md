@@ -1,9 +1,3 @@
----
-page_template: vega.html
-...
-:page_template: vega.html
-
-
 
 # Optimization
 
@@ -27,8 +21,6 @@ The following parameters are defined in the **RV** tab of quoFEM:
 1. Second variable, `Y`: **Uniform** distribution with a  lower bound $(L_B)$ of $-2.0$,  upper bound $(U_B)$ of $2.0$, 
 
 
-
-
 ## UQ Workflow
 
 
@@ -47,7 +39,6 @@ To define the uncertainty workflow in quoFEM, select **Parameters Estimation** f
 
 ## Model Files
 
-
 The following files make up the **FEM** model definition.
 
 
@@ -57,45 +48,6 @@ The following files make up the **FEM** model definition.
 
 
 
-<!-- <div class="admonition warning">Do not place the files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!</div> -->
-
 ## Results
 
 With $50$ iterations, our solution converges to $x= 0.34548$ and $y=0.11$
-
-
-<div id="vis"></div>
-<script>
-    // Assign the specification to a local variable vlSpec.
-    var vlSpec = {
-    $schema: 'https://vega.github.io/schema/vega-lite/v4.json',
-    data: {
-        values: [
-        {a: 'C', b: 2},
-        {a: 'C', b: 7},
-        {a: 'C', b: 4},
-        {a: 'D', b: 1},
-        {a: 'D', b: 2},
-        {a: 'D', b: 6},
-        {a: 'E', b: 8},
-        {a: 'E', b: 4},
-        {a: 'E', b: 7}
-        ]
-    },
-    mark: 'bar',
-    encoding: {
-        y: {field: 'a', type: 'nominal'},
-        x: {
-        aggregate: 'average',
-        field: 'b',
-        type: 'quantitative',
-        axis: {
-            title: 'Average of b'
-        }
-        }
-    }
-    };
-
-    // Embed the visualization in the container with id `vis`
-    vegaEmbed('#vis', vlSpec);
-</script>

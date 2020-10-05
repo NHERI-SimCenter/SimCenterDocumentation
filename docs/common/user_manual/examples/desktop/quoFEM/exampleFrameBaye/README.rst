@@ -1,11 +1,10 @@
-:page_template: vega.html
 
 Steel Frame: Bayesian Calibration
-======================================
+=================================
 
-+---------------+---------------------------------------------+
-| Problem files | :quo-08:`/`                                 |
-+---------------+---------------------------------------------+
++---------------+--------------------+
+| Problem files | :quo-08:`/`        |
++---------------+--------------------+
 
 In this example, Bayesian estimation is used to estimate column
 stiffnesses of a simple steel frame, given data about it’s mode shapes

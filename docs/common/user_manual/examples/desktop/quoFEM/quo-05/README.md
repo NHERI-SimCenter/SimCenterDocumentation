@@ -1,8 +1,6 @@
 ---
 page_template: vega.html
 ...
-:page_template: vega.html
-
 
 
 # Basic modeling with Python
@@ -14,19 +12,14 @@ page_template: vega.html
 This example illustrates how Python scripting can be used with quoFEM to express general mathematical models without the use of a dedicated finite element analysis engine.
 
 The Rosenbrock function is a *test function* that is often used to evaluate numerical optimization algorithms. It is given by the following expression:
-$$ g(x, y)=(a-x)^{2}+b\left(y-x^{2}\right)^{2} $$
-
-
+$$g(x, y)=(a-x)^{2}+b\left(y-x^{2}\right)^{2}$$
 
 A forward propagation analysis will be conducted to numerically integrate the first and second moments of a random variable whose value is obtained by applying the Rosenbrock function to the two following statistically independent random variables: 
-
-
 
 
 1. First variable, `X`: **Uniform** distribution with a  lower bound $(L_B)$ of $-2.0$,  upper bound $(U_B)$ of $2.0$, 
 
 1. Second variable, `Y`: **Uniform** distribution with a  lower bound $(L_B)$ of $1.4$,  upper bound $(U_B)$ of $1.6$, 
-
 
 
 
@@ -119,39 +112,3 @@ $$
 \sigma_g = 134.01  
 $$
 
-
-<div id="vis"></div>
-<script>
-    // Assign the specification to a local variable vlSpec.
-    var vlSpec = {
-    $schema: 'https://vega.github.io/schema/vega-lite/v4.json',
-    data: {
-        values: [
-        {a: 'C', b: 2},
-        {a: 'C', b: 7},
-        {a: 'C', b: 4},
-        {a: 'D', b: 1},
-        {a: 'D', b: 2},
-        {a: 'D', b: 6},
-        {a: 'E', b: 8},
-        {a: 'E', b: 4},
-        {a: 'E', b: 7}
-        ]
-    },
-    mark: 'bar',
-    encoding: {
-        y: {field: 'a', type: 'nominal'},
-        x: {
-        aggregate: 'average',
-        field: 'b',
-        type: 'quantitative',
-        axis: {
-            title: 'Average of b'
-        }
-        }
-    }
-    };
-
-    // Embed the visualization in the container with id `vis`
-    vegaEmbed('#vis', vlSpec);
-</script>

@@ -1,8 +1,6 @@
 ---
 page_template: vega.html
 ...
-:page_template: vega.html
-
 
 
 # Forward Propagation - OpenSeesPy
