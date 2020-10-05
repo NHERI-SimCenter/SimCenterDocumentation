@@ -21,9 +21,9 @@ The structure has uncertain properties that all follow normal distribution:
    #. For the mean values provided the natural period of the structure is **1.7** sec.
    #. The choice of COV percentages is for demonstrative purposes only.
 
-The exercise will use the OpenSees, :numref:`lblOpenSeesSIM`, structural generators. For the OpenSees generator the following model script, `3story.tcl <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/3Story/3story.tcl>`_ :
+The exercise will use the OpenSees, :numref:`lblOpenSeesSIM`, structural generators. For the OpenSees generator the following model script, :weuq-01:`Frame3Model.tcl <src/Frame3Model.tcl>`:
 
-.. literalinclude:: 3Story.tcl
+.. literalinclude:: src/Frame3Model.tcl
    :language: tcl
 
 .. note::
@@ -38,9 +38,13 @@ The exercise will use the OpenSees, :numref:`lblOpenSeesSIM`, structural generat
 Global Sensitivity Analysis
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
++----------------+-----------------------+
+| Problem files  | :weuq-01:`/`          |
++----------------+-----------------------+
+
 In a global sensitivity analysis the user is wishing to understand what is the influence of the individual random variables on the quantities of interest. This is typically done before the user launches large scale forward uncertainty problems in order to limit the number of random variables used so as to limit the number of simulations performed.
 
-For this problem we will limit the response quantities of interest to the following six quantities. Peak Roof displacement in 1 and 2 directions, root mean square (RMS) accelerations in 1 and 2 directions, Peak BAse shear and moments in 1 and 2 directions. In order to do this we will introduce User defined EPD quantities, which necessitates the followng two files: `recorder.tcl <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/3Story/recorder.tcl>`_ and `postprocess.tcl <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/3Story/postprocess.tcl>`_.  These files are the same as those presented in :ref:`lblWE-Example9`
+For this problem we will limit the response quantities of interest to the following six quantities. Peak Roof displacement in 1 and 2 directions, root mean square (RMS) accelerations in 1 and 2 directions, Peak BAse shear and moments in 1 and 2 directions. In order to do this we will introduce User defined EPD quantities, which necessitates the following two files: `FrameRecorder.tcl <src/FrameRecorder.tcl>`_ and `postprocess.tcl <src/postprocess.tcl>`_.  These files are the same as those presented in :ref:`lblWE-Example9`
 
 
 To perform a Global Sensitivity  analysis the user would perform the following steps:

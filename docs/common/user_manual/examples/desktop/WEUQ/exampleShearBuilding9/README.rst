@@ -1,9 +1,9 @@
-.. lblWE-Example9:
+.. _lblWE-Example9:
 
 9 Story Building: Sampling and Reliability Analysis
 ===================================================
 
-Consider the problem of uncertainty quantification in a nine story steel building. The building being modelled is the 9 story LA building presented in the FEMA-355C report. From the description in Appendix B of the FEMA document the building is a **150** ft square building with a height above ground of **120** ft with a weight of approx. **19,800** kips. Eigenvalues are shown in Table 5.1. of the FEMA document to be between **2.3** sec and **2.2** sec depending on connection detals. For this example (and for demonstrative purposes only), this building will be modelled as a shear building with **10** nodes and **9** elements, as shown in following figure. For loading, the Stochastic Wind Generation tool will be used with the gust wind speed being treated as a random variable with a normal distribtion described by a mean :math:`\mu_{gustWS}=20 \mathrm{mph}` and standard deviation :math:`\sigma_{gustWS} =3 \mathrm{mph}` (COV = 15%). 
+Consider the problem of uncertainty quantification in a nine story steel building. The building being modelled is the 9 story LA building presented in the FEMA-355C report. From the description in Appendix B of the FEMA document the building is a **150** ft square building with a height above ground of **120** ft with a weight of approx. **19,800** kips. Eigenvalues are shown in Table 5.1. of the FEMA document to be between **2.3** sec and **2.2** sec depending on connection detals. For this example (and for demonstrative purposes only), this building will be modelled as a shear building with **10** nodes and **9** elements, as shown in following figure. For loading, the Stochastic Wind Generation tool will be used with the gust wind speed being treated as a random variable with a normal distribtion described by a mean :math:`\mu_{gustWS}=20 \mathrm{mph}` and standard deviation :math:`\sigma_{gustWS} =3 \mathrm{mph}`. 
 
 .. figure:: figures/9story.png
    :align: center
@@ -22,12 +22,12 @@ The structure has uncertain properties that all follow normal distribution:
    #. For the mean values provided the natural period of the structure is **2.27** sec.
    #. The choice of COV percentages is for demonstrative purposes only.
 
-   #. The exercise will use both the MDOF, :numref:`lblMDOF`,  and OpenSees, :numref:`lblOpenSeesSIM`, structural generators. For the OpenSees generator the following model script, `9story.tcl <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/9Story/9Story.tcl>`_
+   #. The exercise will use both the MDOF, :numref:`lblMDOF`,  and OpenSees, :numref:`lblOpenSeesSIM`, structural generators. For the OpenSees generator the following model script, :weuq-01:`Frame9Model.tcl <src/Frame9Model.tcl>`.
 
-   .. literalinclude:: 9Story.tcl
+   .. literalinclude:: src/Frame9Model.tcl
       :language: tcl
 
-   #. The first lines containing ``pset`` will be read by the application when the file is selected and the application will autopopulate the Random Variables ``w`` and ``k`` in the **RV** panel with this same variable name. It is of course possible to explicitly use Random Variables without the ``pset`` command by "RV.**variable name" in the input file. However, no random variables will be autopopulated if user chooses this route.
+   #. The first lines containing ``pset`` will be read by the application when the file is selected and the application will auto-populate the random variables ``w`` and ``k`` in the **RV** panel with this same variable name. It is of course possible to explicitly use random variables without the ``pset`` command by "RV.**variable name" in the input file. However, no random variables will be auto-populated if user chooses this route.
 
 .. warning::
 
@@ -35,6 +35,11 @@ The structure has uncertain properties that all follow normal distribution:
 
 Sampling Analysis
 ^^^^^^^^^^^^^^^^^
+
++----------------+-----------------------+
+| Problem files  | :weuq-01:`/`          |
++----------------+-----------------------+
+
 
 To perform a Sampling or Forward propagation uncertainty analysis the user would perform the following steps:
 
@@ -59,7 +64,7 @@ To perform a Sampling or Forward propagation uncertainty analysis the user would
 
 .. note::
 
-   To specify instead to use the OpenSees script instead, from thee Model Generator pull down menu select ``OpenSees``. For the fields in the panel presented enter the path to the `9story.tcl <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/9Story/9Story.tcl>`_ script. For both the Centroid  Nodes (those nodes were the floor loads will be applied) the Response Nodes (those nodes from which the reponse quantities will be evaluated) as **1 2 3 4 5 6 7 8 9 10** in the panel. The Response nodes will tell model generator which nodes correspond to nodes at the 4 floor levels for which responses are to be obtained when using the standard earthquake EDP's.
+   To specify instead to use the OpenSees script instead, from thee Model Generator pull down menu select ``OpenSees``. For the fields in the panel presented enter the path to the :weuq-01:`Frame9Model.tcl <src/Frame9Model.tcl>` script. For both the Centroid  Nodes (those nodes were the floor loads will be applied) the Response Nodes (those nodes from which the reponse quantities will be evaluated) as **1 2 3 4 5 6 7 8 9 10** in the panel. The Response nodes will tell model generator which nodes correspond to nodes at the 4 floor levels for which responses are to be obtained when using the standard earthquake EDP's.
 
    .. figure:: figures/9story-SIM2.png
       :align: center
@@ -110,6 +115,10 @@ Various views of the graphical display can be obtained by left and right clickin
 User Defined Output
 ^^^^^^^^^^^^^^^^^^^
 
++----------------+-----------------------+
+| Problem files  | :weuq-02:`/`          |
++----------------+-----------------------+
+
 In this section we will demonstrate the use of the user defined output option for the EDP panel. In the previous example we got the standard output, which can be both a lot and also limited (in sense you may not get the information you want). In this example we will present how to obtain results just for the roof displacement, the displacement of node **10** in both the **MDOF** and **OpenSees** model generator examples and shear force at the base of the structure. For the OpenSees model, it is also possible to obtain the overturning moment (something not possible in MDOF model due to fact it is modelled using spring elements). The examples could be extended to output for example the element end rotations, plastic rotations, ...
 
 For this example you will need two additional file `recorder.tcl <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/9Story/recorder.tcl>`_ and `postprocess.tcl <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/9Story/postprocess.tcl>`_. 
@@ -126,9 +135,9 @@ The postprocess.tcl script shown below will accept as input any of the 10 nodes 
 
 .. note::
 
-   The user has the option when using the OpenSees SIM application to provide no postprocess script (in which case the main script must create a ``results.out`` file containing a single line with as many space separated numbers as QoI) or the user may provide a Python script that also performs the postprocessing. An example of a postprocessing Python script is `postprocess.py <https://github.com/NHERI-SimCenter/WE-UQ/blob/master/examples/9story/postprocess.py>`_. The Python script at present only responds to nodal displacements.
+   The user has the option when using the OpenSees SIM application to provide no postprocess script (in which case the main script must create a ``results.out`` file containing a single line with as many space separated numbers as QoI) or the user may provide a Python script that also performs the postprocessing. An example of a postprocessing Python script is :weuq-02:`postprocess.py <src/postprocess.py>`. The Python script at present only responds to nodal displacements.
 
-   .. literalinclude:: postprocess.py
+   .. literalinclude:: ../weuq-02/src/postprocess.py
       :language: python
 
 The steps are the same as the previous example, with exception of step 4 defining the **EDP**.
@@ -150,8 +159,11 @@ The steps are the same as the previous example, with exception of step 4 definin
 Reliability Analysis
 ^^^^^^^^^^^^^^^^^^^^
 
-If the user is interested in the probability that certain response measure will be exceeded an alternative strategy is to perform a reliability analysis. To perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propagation method. To obtain reliability results using the Global Reliability methose presented in Dakota choose the **Global Reliability** methods from the methods drop down menu. In the response levels enter a values of **0.5** and **0.8**, specifying that we are interested in the value of the CDF for a displacement of the roof of 0.5in and 0.8in, i.e. what is probability that displacement will be less than 0.8in.
++----------------+-----------------------+
+| Problem files  | :weuq-03:`/`          |
++----------------+-----------------------+
 
+If the user is interested in the probability that certain response measure will be exceeded an alternative strategy is to perform a reliability analysis. To perform a reliability analysis the steps above would be repeated with the exception that the user would select a reliability analysis method instead of a Forward Propagation method. To obtain reliability results using the Global Reliability methose presented in Dakota choose the **Global Reliability** methods from the methods drop down menu. In the response levels enter a values of **0.5** and **0.8**, specifying that we are interested in the value of the CDF for a displacement of the roof of 0.5in and 0.8in, i.e. what is probability that displacement will be less than 0.8in.
 
 .. figure:: figures/9story-UQ-Reliability.png
    :align: center

@@ -10,8 +10,8 @@
 #app_name = 'RDT'
 #app_name = 'PBE'
 #app_name = 'EE-UQ'
-#app_name = 'WE-UQ'
-app_name = 'quoFEM'
+app_name = 'WE-UQ'
+#app_name = 'quoFEM'
 #app_name = 'pelicun'
 
 print('app_name = ' + app_name)
@@ -122,8 +122,8 @@ rst_prolog = """
 """
 
 extlinks = {
-	f'quo-0{i}' : (f'https://github.com/claudioperez/SimCenterDocumentation/tree/master/docs/common/user_manual/examples/desktop/quoFEM/quo-0{i}/%s',f'quo-0{i}') for i in range(1,10)
 }
+example_repo = "https://github.com/claudioperez/SimCenterDocumentation/tree/master/docs/common/user_manual/examples"
 
 # app-specific settings
 
@@ -381,6 +381,11 @@ elif app_name == 'quoFEM':
 		'style_nav_header_background': '#F2F2F2'
 	}
 
+	# Example links
+	extlinks.update(
+	   {f'quo-{i:02}' : (f'{example_repo}/desktop/quoFEM/quo-{i:02}/%s',f'quo-{i:02}') for i in range(1,99)}
+	)
+
 elif app_name == 'WE-UQ':
 	project = 'Wind Engineering with Uncertainty Quantification'
 	copyright = '2019, The Regents of the University of California'
@@ -438,6 +443,12 @@ elif app_name == 'WE-UQ':
 		'prev_next_buttons_location': None,
 		'style_nav_header_background': '#F2F2F2'
 	}
+
+	# Example links
+	extlinks.update(
+	   {f'weuq-{i:02}' : (f'{example_repo}/desktop/WEUQ/weuq-{i:02}/%s',f'weuq-{i:02}') for i in range(1,99)}
+	)
+
 
 elif app_name == 'pelicun':
 
