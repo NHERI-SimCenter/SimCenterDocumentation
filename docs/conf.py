@@ -10,8 +10,8 @@
 #app_name = 'RDT'
 #app_name = 'PBE'
 #app_name = 'EE-UQ'
-app_name = 'WE-UQ'
-#app_name = 'quoFEM'
+#app_name = 'WE-UQ'
+app_name = 'quoFEM'
 #app_name = 'pelicun'
 
 print('app_name = ' + app_name)
@@ -123,7 +123,7 @@ rst_prolog = """
 
 extlinks = {
 }
-example_repo = f'https://github.com/claudioperez/SimCenterDocumentation/tree/master/docs/common/user_manual/examples/desktop/{app_name.replace("-","")}'
+example_repo = f'https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/user_manual/examples/desktop/{app_name.replace("-","")}'
 
 # app-specific settings
 
@@ -559,8 +559,6 @@ html_theme = 'sphinx_rtd_theme'
 html_css_files = [
 	'css/custom.css'
 ]
-
-#	'css/custom.css'#
 
 html_secnum_suffix = " "
 
