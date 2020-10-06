@@ -62,7 +62,7 @@ To perform a sampling or forward propagation uncertainty analysis the user would
 
    .. note::
 
-      To specify instead to use the OpenSees script instead, from thee Model Generator pull down menu select ``OpenSees``. For the fields in the panel presented enter the path to the :weuq-01:`Frame9Model.tcl <src/Frame9Model.tcl>` script. For both the Centroid  Nodes (those nodes were the floor loads will be applied) the Response Nodes (those nodes from which the reponse quantities will be evaluated) as **1 2 3 4 5 6 7 8 9 10** in the panel. The Response nodes will tell model generator which nodes correspond to nodes at the 4 floor levels for which responses are to be obtained when using the standard earthquake EDP's.
+      To specify instead to use the OpenSees script instead, from thee Model Generator pull down menu select **OpenSees**. For the fields in the panel presented enter the path to the :weuq-01:`Frame9Model.tcl <src/Frame9Model.tcl>` script. For both the Centroid  Nodes (those nodes were the floor loads will be applied) the Response Nodes (those nodes from which the reponse quantities will be evaluated) as **1 2 3 4 5 6 7 8 9 10** in the panel. The Response nodes will tell model generator which nodes correspond to nodes at the 4 floor levels for which responses are to be obtained when using the standard earthquake EDP's.
 
       .. figure:: figures/9story-SIM2.png
          :align: center
