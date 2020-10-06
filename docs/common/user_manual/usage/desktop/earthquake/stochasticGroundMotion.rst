@@ -33,7 +33,7 @@ For the Dabaghi and Der Kiureghian model geometric directivity parameters, as sh
 
 
 Additionally, users can provide a seed for either model if they desire the same
-suite of synthetic motions to be generated on multiple occasions.  If
+suite of synthetic motions to be generated on multiple occasions. If
 the seed is not specified, a different realization of the time history
 will be generated for each run. The backend application that generates
 the stochastic ground motions relies on **smelt**, a modular and

@@ -6,6 +6,8 @@ The user here defines the structural system of the building. The  structural sys
 .. contents::
    :local:
 
+.. _lblMDOFSIM:
+
 Multiple Degrees of Freedom (MDOF)
 ----------------------------------
 
@@ -35,6 +37,8 @@ Random variables can be created by the user if they enter a valid string instead
   ..
      .. note::  
         ```Random Variables```: Random Variables can be created by the user if they enter a valid string instead of a number in the entry fields for any entry except for the *Number of floors*. The variable name entered will appear as a Random Variable in the **UQ** tab; it is there that the user must specify the distribution associated with the Random Variable.
+
+.. _lblOpenSeesSIM:
 
 OpenSees
 --------

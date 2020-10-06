@@ -169,7 +169,7 @@ After the user fills in the rest of the tabs as per the previous section, the us
 
 .. warning::
 
-   Reliability analysis can only be performed when their is only one EDP.
+   Reliability analysis can only be performed when there is only one EDP.
 
    .. figure:: figures/9story-EDP-Reliability.png
       :align: center

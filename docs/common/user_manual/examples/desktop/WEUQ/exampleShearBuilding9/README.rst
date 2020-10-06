@@ -1,4 +1,3 @@
-.. _lblWE-Example9:
 
 9 Story Building: Sampling and Reliability Analysis
 ===================================================
@@ -22,7 +21,7 @@ The structure has uncertain properties that all follow normal distribution:
    #. For the mean values provided the natural period of the structure is **2.27** sec.
    #. The choice of COV percentages is for demonstrative purposes only.
 
-   #. The exercise will use both the MDOF, :numref:`lblMDOF`,  and OpenSees, :numref:`lblOpenSeesSIM`, structural generators. For the OpenSees generator the following model script, :weuq-01:`Frame9Model.tcl <src/Frame9Model.tcl>`.
+   #. The exercise will use both the MDOF, :numref:`lblMDOFSIM`,  and OpenSees, :numref:`lblOpenSeesSIM`, structural generators. For the OpenSees generator the following model script, :weuq-01:`Frame9Model.tcl <src/Frame9Model.tcl>`.
 
    .. literalinclude:: src/Frame9Model.tcl
       :language: tcl
@@ -43,58 +42,57 @@ Sampling Analysis
 
 To perform a sampling or forward propagation uncertainty analysis the user would perform the following steps:
 
-1. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota, and the UQ Method Category as Forward Propagation, and the Forward Propagation method as LHS (Latin Hypercube). Change the #samples to 500 and the seed to 20 as shown in the figure.
+#. Start the application and the UQ Selection will be highlighted. In the panel for the UQ selection, keep the UQ engine as that selected, i.e. Dakota, and the UQ Method Category as Forward Propagation, and the Forward Propagation method as LHS (Latin Hypercube). Change the #samples to 500 and the seed to 20 as shown in the figure.
 
-.. figure:: figures/9story-UQ.png
-   :align: center
-   :figclass: align-center
-
-2. Next select the **GI** panel. In this panel the building properties and units are set. For this example enter **9** for the number of stories, **1400** for building height, and **1600** for building breadth and depth
-
-.. figure:: figures/9story-GI.png
-   :align: center
-   :figclass: align-center
-
-3. Next select the **SIM** panel from the input panel. This will default in the MDOF model generator. We will use this generator (the note below contains instruction on how to use the OpenSees script instead). In the building information panel, the number of stories should show **9** and the story heights **160**. In the building Information box specify **w** for the floor weights and **k** for story stiffness (in both x and y directions). 
-
-
-.. figure:: figures/9story-SIM1.png
-   :align: center
-   :figclass: align-center
-
-.. note::
-
-   To specify instead to use the OpenSees script instead, from thee Model Generator pull down menu select ``OpenSees``. For the fields in the panel presented enter the path to the :weuq-01:`Frame9Model.tcl <src/Frame9Model.tcl>` script. For both the Centroid  Nodes (those nodes were the floor loads will be applied) the Response Nodes (those nodes from which the reponse quantities will be evaluated) as **1 2 3 4 5 6 7 8 9 10** in the panel. The Response nodes will tell model generator which nodes correspond to nodes at the 4 floor levels for which responses are to be obtained when using the standard earthquake EDP's.
-
-   .. figure:: figures/9story-SIM2.png
+   .. figure:: figures/9story-UQ.png
       :align: center
       :figclass: align-center
 
-3. Next select the **EVT** panel. From the Load Generator pull down menu select the **Stochastic Wind** option. Leave the exposure condition as **B**. Set the drag coefficient as **1.3** and enter ``gustWS`` for the 3 sec gust wind speed at the 33 ft height.
+#. Next select the **GI** panel. In this panel the building properties and units are set. For this example enter **9** for the number of stories, **1400** for building height, and **1600** for building breadth and depth
 
-.. figure:: figures/9story-EVENT.png
-   :align: center
-   :figclass: align-center
+   .. figure:: figures/9story-GI.png
+      :align: center
+      :figclass: align-center
 
-3. Next choose the **FEM** panel. Here we will change the entries to use Rayleigh damping, with rayleigh factor chosen using **1** and **6** modes. For the **MDOF** model generator, because it generates a model with two translational and 1 rotational degree-of-freedom in each direction and because we have provided the same **k** values in each translational direction, i.e. we will have duplicate eigenvalues, we specify as shown in the figure modes **1** and **6**.
+#. Next select the **SIM** panel from the input panel. This will default in the MDOF model generator. We will use this generator (the note below contains instruction on how to use the OpenSees script instead). In the building information panel, the number of stories should show **9** and the story heights **160**. In the building Information box specify **w** for the floor weights and **k** for story stiffness (in both x and y directions). 
 
-.. figure:: figures/9story-FEM.png
-   :align: center
-   :figclass: align-center
+   .. figure:: figures/9story-SIM1.png
+      :align: center
+      :figclass: align-center
 
-4. We will skip the **EDP** panel leaving it in it's default condition, that being to use the **Standard Wind** EDP generator.
+   .. note::
 
-5. For the **RV** panel, we will enter the distributions and values for our random variables. Because of the steps we have followed and entries we have made, the panel when we open it should contain the **3** random variables and they should all be set constant. For the w, k and wS random variables we change the distributions to normal and enter the values given for the problem, as shown in figure below. 
+      To specify instead to use the OpenSees script instead, from thee Model Generator pull down menu select ``OpenSees``. For the fields in the panel presented enter the path to the :weuq-01:`Frame9Model.tcl <src/Frame9Model.tcl>` script. For both the Centroid  Nodes (those nodes were the floor loads will be applied) the Response Nodes (those nodes from which the reponse quantities will be evaluated) as **1 2 3 4 5 6 7 8 9 10** in the panel. The Response nodes will tell model generator which nodes correspond to nodes at the 4 floor levels for which responses are to be obtained when using the standard earthquake EDP's.
 
-.. figure:: figures/9story-RV.png
-   :align: center
-   :figclass: align-center
+      .. figure:: figures/9story-SIM2.png
+         :align: center
+         :figclass: align-center
 
-.. warning::   
+#. Next select the **EVT** panel. From the Load Generator pull down menu select the **Stochastic Wind** option. Leave the exposure condition as **B**. Set the drag coefficient as **1.3** and enter ``gustWS`` for the 3 sec gust wind speed at the 33 ft height.
 
-   The user cannot leave any of the distributions for these values as constant for the Dakota UQ engine.
+   .. figure:: figures/9story-EVENT.png
+      :align: center
+      :figclass: align-center
 
-5. Next click on the **Run** button. This will cause the backend application to launch dakota. When done the **RES** panel will be selected and the results will be displayed. The results show the values the mean and standard deviation. The peak displacement of the roof, is the quantity **1-PFD-9-1** (first event (tool to be extended to multiple events), 9th floor (in US ground floor considered 0), and 1 DOF direction). the **PFA** quantity defines peak floor acceleration, the **RMSA** quantity the root mean square of floor accelerations, and the **PID** quantity corresponds to peak inter-story drift.
+#. Next choose the **FEM** panel. Here we will change the entries to use Rayleigh damping, with rayleigh factor chosen using **1** and **6** modes. For the **MDOF** model generator, because it generates a model with two translational and 1 rotational degree-of-freedom in each direction and because we have provided the same **k** values in each translational direction, i.e. we will have duplicate eigenvalues, we specify as shown in the figure modes **1** and **6**.
+
+   .. figure:: figures/9story-FEM.png
+      :align: center
+      :figclass: align-center
+
+#. We will skip the **EDP** panel leaving it in it's default condition, that being to use the **Standard Wind** EDP generator.
+
+#. For the **RV** panel, we will enter the distributions and values for our random variables. Because of the steps we have followed and entries we have made, the panel when we open it should contain the **3** random variables and they should all be set constant. For the w, k and wS random variables we change the distributions to normal and enter the values given for the problem, as shown in figure below. 
+
+   .. figure:: figures/9story-RV.png
+      :align: center
+      :figclass: align-center
+
+   .. warning::   
+
+      The user cannot leave any of the distributions for these values as constant for the Dakota UQ engine.
+
+#. Next click on the **Run** button. This will cause the backend application to launch dakota. When done the **RES** panel will be selected and the results will be displayed. The results show the values the mean and standard deviation. The peak displacement of the roof, is the quantity **1-PFD-9-1** (first event (tool to be extended to multiple events), 9th floor (in US ground floor considered 0), and 1 DOF direction). the **PFA** quantity defines peak floor acceleration, the **RMSA** quantity the root mean square of floor accelerations, and the **PID** quantity corresponds to peak inter-story drift.
 
 .. figure:: figures/9story-RES1.png
    :align: center
@@ -112,12 +110,13 @@ Various views of the graphical display can be obtained by left and right clickin
    :align: center
    :figclass: align-center
 
+
 User Defined Output
 ^^^^^^^^^^^^^^^^^^^
 
-+----------------+-----------------------+
-| Problem files  | :weuq-02:`/`          |
-+----------------+-----------------------+
++-------------+-----------------------+
+| Problem files  | :weuq-02:`/`       |
++----------------+--------------------+
 
 In this section we will demonstrate the use of the user defined output option for the EDP panel. In the previous example we got the standard output, which can be both a lot and also limited (in sense you may not get the information you want). In this example we will present how to obtain results just for the roof displacement, the displacement of node **10** in both the **MDOF** and **OpenSees** model generator examples and shear force at the base of the structure. For the OpenSees model, it is also possible to obtain the overturning moment (something not possible in MDOF model due to fact it is modelled using spring elements). The examples could be extended to output for example the element end rotations, plastic rotations, ...
 
@@ -142,18 +141,18 @@ The ``FramePost.tcl`` script shown below will accept as input any of the 10 node
 
 The steps are the same as the previous example, with exception of step 4 defining the **EDP**.
 
-1. For the **EDP** panel, we will change the generator to **User Defined**. In the panel that presents itself the user must provide the paths to both the recorder commands and the postprocessing script. Next the user must provide information on the response parameters they are interested in. The user presses the **Add** button and the enters ``Disp_10_1``, ``RMSA_10_1``, and ``Force_1_1`` in the entry field as shown in figure below.
+#. For the **EDP** panel, we will change the generator to **User Defined**. In the panel that presents itself the user must provide the paths to both the recorder commands and the postprocessing script. Next the user must provide information on the response parameters they are interested in. The user presses the **Add** button and the enters ``Disp_10_1``, ``RMSA_10_1``, and ``Force_1_1`` in the entry field as shown in figure below.
 
-.. figure:: figures/9story-EDP-USER.png
-   :align: center
-   :figclass: align-center
+   .. figure:: figures/9story-EDP-USER.png
+      :align: center
+      :figclass: align-center
 
 
-2. Next click on the **Run** button. This will cause the backend application to launch dakota. When done the **RES** panel will be selected and the results will be displayed. The results show the values the mean and standard deviation as before but now only for the one quantity of interest.
+#. Next click on the **Run** button. This will cause the backend application to launch dakota. When done the **RES** panel will be selected and the results will be displayed. The results show the values the mean and standard deviation as before but now only for the one quantity of interest.
 
-.. figure:: figures/9story-RES-USER.png
-   :align: center
-   :figclass: align-center
+   .. figure:: figures/9story-RES-USER.png
+      :align: center
+      :figclass: align-center
 
 
 Reliability Analysis
@@ -177,7 +176,7 @@ After the user fills in the rest of the tabs as per the previous section, the us
 
 .. warning::
 
-   Reliability analysis can only be performed when their is only one EDP.
+   Reliability analysis can only be performed when there is only one EDP.
 
    .. figure:: figures/9story-EDP-Reliability.png
       :align: center

@@ -22,7 +22,7 @@ The structure has uncertain properties that all follow normal distribution:
    #. For the mean values provided the natural period of the structure is **2.27** sec.
    #. The choice of COV percentages is for demonstrative purposes only.
 
-   #. The exercise will use both the MDOF, :numref:`lblMDOF`,  and OpenSees, :numref:`lblOpenSeesSIM`, structural generators. For the OpenSees generator the following model script, :weuq-01:`Frame9Model.tcl <src/Frame9Model.tcl>`.
+   #. The exercise will use both the MDOF, :numref:`lblMDOFSIM`,  and OpenSees, :numref:`lblOpenSeesSIM`, structural generators. For the OpenSees generator the following model script, :weuq-01:`Frame9Model.tcl <src/Frame9Model.tcl>`.
 
    .. literalinclude:: src/Frame9Model.tcl
       :language: tcl
