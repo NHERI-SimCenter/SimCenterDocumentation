@@ -21,8 +21,9 @@ used to generate a seismic event. For the Vlachos er al. model users is required
 .. _fig-stochasticDabaghi-event:
 
 
-For the Dabaghi & Der Kiureghian model geometric directivity parameters, as shown in \Cref{fig:dabaghi}, required by the Dabaghi \& Der Kiureghian model are described completely in Somerville et al. (1997)
-:cite:`somerville1997modification`. 
+For the Dabaghi and Der Kiureghian model geometric directivity parameters, as shown in :numref:`fig-dabaghi`, required by the Dabaghi and Der Kiureghian model are described completely in Somerville et al. (1997) :cite:`somerville1997modification`.
+
+.. _fig-dabaghi:
 
 .. figure:: figures/stochasticDabaghi.png
 	:align: center
