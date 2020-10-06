@@ -114,13 +114,13 @@ Various views of the graphical display can be obtained by left and right clickin
 User Defined Output
 ^^^^^^^^^^^^^^^^^^^
 
-+-------------+-----------------------+
++----------------+--------------------+
 | Problem files  | :weuq-02:`/`       |
 +----------------+--------------------+
 
 In this section we will demonstrate the use of the user defined output option for the EDP panel. In the previous example we got the standard output, which can be both a lot and also limited (in sense you may not get the information you want). In this example we will present how to obtain results just for the roof displacement, the displacement of node **10** in both the **MDOF** and **OpenSees** model generator examples and shear force at the base of the structure. For the OpenSees model, it is also possible to obtain the overturning moment (something not possible in MDOF model due to fact it is modelled using spring elements). The examples could be extended to output for example the element end rotations, plastic rotations, ...
 
-For this example you will need two additional files, :weuq:`FrameRecorder.tcl <src/FrameRecorder.tcl>`. 
+For this example you will need two additional files, :weuq-02:`FrameRecorder.tcl <src/FrameRecorder.tcl>`. 
 
 The recorder script as shown will record the envelope displacements and RMS accelerations in the first two degrees-of-freedom for the nodes in the modes. The script will also record the element forces. The file is as shown below:
 

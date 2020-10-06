@@ -123,7 +123,7 @@ The recorder script as shown will record the envelope displacements and RMS acce
 .. literalinclude:: src/recorder.tcl
    :language: tcl
 
-The postprocess.tcl script shown below will accept as input any of the 10 nodes *in the domain and for each of the two dof directions and element forces.
+The ``postprocess.tcl`` script shown below will accept as input any of the 10 nodes in the domain and for each of the two dof directions and element forces.
 
 .. literalinclude:: src/postprocess.tcl
    :language: tcl
