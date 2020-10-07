@@ -385,7 +385,7 @@ CDSS tests were done, a python script was called by Dakota to calculate the numb
 Number of cycles to reach 1\% and 2\% SA and the slope (-b) and intercept (a) of the CSR curves (:cite:`Idriss2008`) in logarithmic scale were also recorded. The number of cycles were rounded up to the nearest half. Then a cyclic strength curve was
 interpolated to calculate the Cyclic Resistance Ratio, CRR, which was determined as the CSR corresponding to 15 cycles. CRRs were bounded between 0.05 and 0.5 for interpolation accuracy.
 
-The results were processed through a linear regression analysis using \textit{Matlab} to find the correlation between the input, :math:`D_R`, :math:`h_{po}` and :math:`G_o`, and the output CRR. Different combination of terms were explored and the following
+The results were processed through a linear regression analysis using *Matlab* to find the correlation between the input, :math:`D_R`, :math:`h_{po}` and :math:`G_o`, and the output CRR. Different combination of terms were explored and the following
 format produced the largest :math:`R^2`,
 
 .. math::
