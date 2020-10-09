@@ -40,11 +40,11 @@ When the variables are correlated to each other, the summation may be greater or
 
 
 First-order Sobol indices
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 In the SimCenterUQ engine, Sensitivity indices are estimated by Gaussian mixture model-based probability distribution approximation framework presented in Hu and Mahadevan (2019) [Hu19]_. To run this sensitivity analysis, the user has to specify the number of samples and a random seed. The framework can handle correlated random variables as well.
 
-.. _figSensitivity:
+.. _figSimSensitivity:
 
 .. figure:: figures/SensitivityAnalysisSimUQ.png
 	:align: center
@@ -63,13 +63,13 @@ Group-wise Sobol indecies
 
 By default, the analysis results are first-order sensitivity indices of each random variable. User may activate the option to specify advanced outputs at the bottom of the **QoI** tab. Using this option, the user can manually provide groups of relevant random variables to get so-called group-wise Sobol indices.
 
-.. _figSensitivity2:
+.. _figSimSensitivity2:
 
 .. figure:: figures/SensitivityAnalysis2SimUQ.png
-	:align: center
-	:figclass: align-center
+   :align: center
+   :figclass: align-center
 
-  	Group-wise Sobol indicies
+   Group-wise Sobol indicies
 	
 The group-wise Sobol indices are useful when the user wants to obtain a sensitivity measure corresponding to a categorical group of input variables, for example, to compare the relative sensitivity between structural parameters and excitation parameters. In particular, when there are non-causal correlations between some random variables or when the user expects interactive contributions of the random variables that are in nature inseparable, one can introduce the group index. The group-wise Sobol index for joint variables :math:`x_i` and :math:`x_j` is defined as
 

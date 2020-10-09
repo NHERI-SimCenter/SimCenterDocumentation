@@ -9,7 +9,7 @@ Build the Backend
 
         2.1. Create a build directory for the build output, this can be done in the terminal using the command ``mkdir build``.
 
-        2.2. Install the backend dependencies using Conan. You can do that by going to the build output directory and running the command:
+        2.2. Install the backend dependencies using Conan. You can do this by going to the newly created build directory and running the command:
 
             ``conan install .. --build missing``
 
