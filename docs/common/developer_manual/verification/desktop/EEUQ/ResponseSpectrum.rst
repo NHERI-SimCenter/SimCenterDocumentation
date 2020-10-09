@@ -30,7 +30,7 @@ within the mean plus/minus one sigma bounds of the GMPEs and
 expected result as |app| is calling |smelt| in the
 backend to generate the synthetic motions. The full validation of
 |smelt| in implementing the predictive stochastic model
-proposed by Vlachos et al. (2018) \cite{vlachos2018predictive} can be
+proposed by Vlachos et al. (2018) :ref:`vlachos2018predictive` can be
 found in the `smelt library documentation <https://github.com/NHERI-SimCenter/smelt>`_.
 
 .. _figStochasticValidation:
