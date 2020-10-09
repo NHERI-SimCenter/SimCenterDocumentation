@@ -7,11 +7,11 @@
 # -- SimCenter App selection -------------------------------------------------
 
 
-#app_name = 'RDT'
+app_name = 'RDT'
 #app_name = 'PBE'
 #app_name = 'EE-UQ'
 #app_name = 'WE-UQ'
-app_name = 'quoFEM'
+# app_name = 'quoFEM'
 #app_name = 'pelicun'
 
 print('app_name = ' + app_name)
@@ -184,7 +184,7 @@ if app_name == 'RDT':
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-RDT`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 .. |developers| replace:: **SimCenter PI's and Developers**
-                          
+
 """
 
 	# html_logo = 'common/figures/SimCenter_RDT_logo.png'
@@ -489,7 +489,7 @@ elif app_name == 'pelicun':
 	    'sphinx.ext.autosummary',
 	    'sphinx.ext.intersphinx',
 	    'sphinx.ext.coverage',
-	    'sphinx.ext.doctest',
+	    'sphinx.ext.doctest'
 	]
 
 	numpydoc_show_class_members = True
@@ -530,6 +530,7 @@ extensions = extensions + [
     'toctree_filter',
     'sphinxcontrib.images',
 	'sphinx.ext.extlinks',
+	'sphinxcontrib.images'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
