@@ -25,7 +25,7 @@ When the choice of FEM application is OpenSees (the default application), the us
 
 1. **Input Script**: The user must specify a main input script. When entered the application will parse this file looking for variables set with the ``pset`` option (a unique set command to the OpenSees interpreter that is used to identify parameter values). For each variable whose value is set with ``pset``, the program will auto populate the variable in the **RV** tab.
 
-.. literalinclude:: TrussTemplate.tcl
+.. literalinclude:: ../../../examples/desktop/quoFEM/quo-01/src/TrussModel.tcl
    :language: tcl
 
 2. **Postprocess Script**: This is an optional entry where the user has the option of specifying either a tcl script or a Python script that will be used to postprocess the results and create a ``results.out`` file after the main script runs. 
@@ -47,11 +47,11 @@ Similar to the OpenSees application, when the user selects FEAPpv the user is re
 
 1. **Input File**: The user must specify a main input file.  A part of this file may contain variables set in the ``PARA`` section. The variables in this section will be read by the UI when the file is entered and will be autopopulated in the **RV** tab. For example if a file containing the following code was specified:
 
-.. literalinclude:: TrussTemplate.txt
+.. literalinclude:: ../../../examples/desktop/quoFEM/quo-10/src/TrussModel.txt
 
 then the parameters ``E``, ``P``, ``Ao``, ``Au`` would be read by the application and placed in the **RV** tab.
 
-2. **Postprocess Script**: The user must provide the name of the Python script that will run when FEAPpv has finished executing. This Python script must load the output file from FEAPpv and create the ``results.out`` file. Currently the user has no control over the name of the output file created by FEAPpv, ``SimCenterOut.txt``. It is this file the postprocess script must open and use to create the ``results.out`` file.
+2. **Postprocess Script**: The user must provide the name of the Python script that will run when FEAPpv has finished executing. This Python script must load the output file from FEAPpv and create the ``results.out`` file. Currently the user has no control over the name of the output file created by FEAPpv, ``SimCenterOut.txt``. It is this file the post-process script must open and use to create the ``results.out`` file.
 
 OpenSeesPy
 ^^^^^^^^^^
@@ -66,7 +66,7 @@ For the OpenSeesPy application, the user provides a main script and has the opti
 
 2. **Parameters File** (Optional). This file allows for the automatic population of the **RV** tab with any variables found in the file. For example if the file contained the following:
 
-.. literalinclude:: parameters.py
+.. literalinclude:: ../../../examples/desktop/quoFEM/quo-02/src/TrussParams.py
    :language: py
 
 The **RV** tab would be populated with the ``E``, ``P``, ``Ao``, and ``Au`` random variables.

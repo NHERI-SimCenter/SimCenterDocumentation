@@ -4,12 +4,12 @@
 Forward Propagation Methods
 ***************************
  
-The forward propagation analysis provides probabilistic understanding of output variables by producing **sample realizations and statistical moments (mean, standard deviation, skewness, and kurtosis)**. Currently five sampling methods are available: Monte Carlo Sampling (MCS), Latin Hypercube Sampling (LHS), Importance Sampling (IS), and sampling based on surrogate models, including Gaussian Process Regression (GPR) and Polynomial Chaos Expansion (PCE). Depending on the option selected, the user must specify the appropriate input parameters. For instance, for MCS, the number of samples specifies the number of simulations to be performed, and providing a random seed allows the user to reproduce the sampling results multiple times. The user selects the sampling method from the dropdown ``Methods`` menu. Additional information regarding sampling techniques offered in Dakota can be found `here <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/method-sampling.html>`_. 
+The forward propagation analysis provides probabilistic understanding of output variables by producing sample realizations and statistical moments (mean, standard deviation, skewness, and kurtosis). Currently five sampling methods are available: Monte Carlo Sampling (MCS), Latin Hypercube Sampling (LHS), Importance Sampling (IS), and sampling based on surrogate models, including Gaussian Process Regression (GPR) and Polynomial Chaos Expansion (PCE). Depending on the option selected, the user must specify the appropriate input parameters. For instance, for MCS, the number of samples specifies the number of simulations to be performed, and providing a random seed allows the user to reproduce the sampling results multiple times. The user selects the sampling method from the dropdown ``Methods`` menu. Additional information regarding sampling techniques offered in Dakota can be found `here <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/method-sampling.html>`_. 
 
 Monte Carlo Sampling (MCS) 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-MCS is the most robust and universally applicable sampling method. Moreover, the convergence rate of MCS methods is independent of the problem dimensionality, albeit the convergence rate of such MCS methods is relatively slow at :math:`N^{-1/2}`. In MCS, a sample drawn at any step is independent of all previous samples. 
+MCS is among the most robust and universally applicable sampling methods. Moreover, the convergence rate of MCS methods are independent of the problem dimensionality, albeit the convergence rate of such MCS methods is relatively slow at :math:`N^{-1/2}`. In MCS, a sample drawn at any step is independent of all previous samples. 
 
 :numref:`figMCS` shows the input panel corresponding to the Monte Carlo Sampling setting. Two input parameters need to be specified: the number of samples to be executed, and the random seed.
 
@@ -22,12 +22,12 @@ MCS is the most robust and universally applicable sampling method. Moreover, the
   	Monte Carlo Sampling input panel.
 
 
-Latin Hypercube Sampling (LHS) 
+Latin Hypercube Sampling (LHS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-LHS is a pseudo-random, stratified sampling approach. To achieve a better convergence, LHS evenly spreads out the samples to cover the whole range of the input domain. Each sample from LHS effectively represents each of N equal probability intervals of a cumulative density function.  
+Latin hypercube sampling (LHS) is a pseudo-random, stratified sampling approach. To achieve a better convergence, LHS evenly spreads out the samples to cover the whole range of the input domain. Each sample from LHS effectively represents each of N equal probability intervals of a cumulative density function.  
 
-:numref:`figLHS` shows the input panel corresponding to the Latin Hypercube Sampling (LHS) scheme. Two input parameters need to be specified: the number of samples to be executed and the random seed.
+:numref:`figLHS` shows the input panel corresponding to the Latin hypercube sampling (LHS) scheme. Two input parameters need to be specified: the number of samples to be executed and the random seed.
 
 
 .. _figLHS:
@@ -40,15 +40,15 @@ LHS is a pseudo-random, stratified sampling approach. To achieve a better conver
 
 
 Importance Sampling (IS)
-^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-For problems where one is interested in the rare events rather than the whole distribution of output, such as earthquake or storm surge events, conventional sampling methods may require an excessively large number of simulations to obtain an accurate estimation of tail distribution. For such problems, IS provides a bypass to conventional sampling methods (MCS or LHS), whereby an alternative sampling distribution is introduced around the tail part of the original distribution so that the generated samples have a better resolution at the domain of interest.
+For problems where one is interested in the rare events rather than the whole distribution of output, such as earthquake or storm surge events, conventional sampling methods may require an excessively large number of simulations to obtain an accurate estimation of tail distribution. For such problems, importance sampling (IS) provides a bypass to conventional sampling methods (MCS or LHS), whereby an alternative sampling distribution is introduced around the tail part of the original distribution so that the generated samples have a better resolution at the domain of interest.
 
 :numref:`figIS` shows the input panel for IS scheme. Similar to MCS and LHS, IS requires both the number of samples to be executed and the corresponding seed for generating such random samples. In addition, IS algorithm can be performed via three different approaches, as specified by the third input method:
 
-1.  **Basic Sampling**: a sampling density is constructed in the failure region based on an initial LHS sampling, followed by generation of importance samples and weights and evaluation of the Cumulative Distribution Function.  
-2. **Adaptive Sampling**: the basic sampling procedure is repeated iteratively until a convergence in failure probability is achieved. 
-3. **Multimodal Adaptive Sampling**: a multimodal sampling density is constructed based on samples in the failure and the adaptive sampling procedure is used.
+1.  **Basic Sampling**: A sampling density is constructed in the failure region based on an initial LHS sampling, followed by generation of importance samples and weights and evaluation of the Cumulative Distribution Function.  
+2. **Adaptive Sampling**: The basic sampling procedure is repeated iteratively until a convergence in failure probability is achieved. 
+3. **Multimodal Adaptive Sampling**: A multimodal sampling density is constructed based on samples in the failure and the adaptive sampling procedure is used.
 
 
 .. _figIS:

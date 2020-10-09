@@ -19,7 +19,7 @@ This application will take the wind tunnel data provided and scale it based on w
 
 Random Variables: For this event, the wind speed can be a random variable.
 
-The format for the wind tunnel data file is presently a JSON file. Future versions will allow the input of Matlab .mat files. A valid file is as follows:
+The format for the wind tunnel data file is presently a JSON file. Future versions will allow the input of Matlab ``.mat`` files. A valid file is as follows:
 ::
 
 	{
