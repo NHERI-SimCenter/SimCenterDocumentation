@@ -4,7 +4,7 @@
 Software Architecture
 *********************
 
-The SimCenter is developing a software framework for building applications that run **scientific workflow applications** to perform computational simulations in field of NHE at both building level scale and regionsl scale. It is releasing a number of applications built using this framework. The |app| is one of those applications which have been released (EE-UQ, WE-UQ, PBE). Other applications are under development (RDT). The applications that the SimCenter are developing are limited **scientific workflow systems**. This chapter presents the software architecture for the framework and the |app| built using it using the `C4 model <https://c4model.com>`_. The following sections present the architecture to level 3:
+The SimCenter is developing a software framework for building applications that run **scientific workflow applications** to perform computational simulations in field of NHE at both building level scale and regional scale. It is releasing a number of applications built using this framework. The |app| is one of those applications which have been released (EE-UQ, WE-UQ, PBE). Other applications are under development (RDT). The applications that the SimCenter are developing are limited **scientific workflow systems**. This chapter presents the software architecture for the framework and the |app| built using it using the `C4 model <https://c4model.com>`_. The following sections present the architecture to level 3:
 
 .. note::
 
@@ -17,7 +17,7 @@ The SimCenter is developing a software framework for building applications that 
 Overview
 ========
 
-A Level 1 diagram showing the system context for the SimCenter applications, i.e. how it fits in the world,  is shown in :numref:`figContext`. It shows SimCenter applications (EE-UQ, WE-UQ, PBE, RDT) as a box in the center surrounded by the user and the systems it and the user interact with. The SimCenter applications allows user to create and run scientific workflow applications, the data for the applications may be obtained from the web or DataDepot, the workflow applications are run on either the local desktop or on some HPC at |DesignSafe|.
+A Level 1 diagram showing the system context for the SimCenter applications, i.e. how it fits in the world, is shown in :numref:`figContext`. It shows SimCenter applications (EE-UQ, WE-UQ, PBE, RDT) as a box in the center surrounded by the user and the systems it and the user interact with. The SimCenter applications allows user to create and run scientific workflow applications, the data for the applications may be obtained from the web or DataDepot, the workflow applications are run on either the local desktop or on some HPC at |DesignSafe|.
 
 .. _figContext:
 
@@ -47,8 +47,8 @@ Two level 3 diagrams are now presented which break up the two containers into th
 
    Component diagram for front end UI.
 
-The component diagram for the backend application shown in :numref:`figComponentBack`, shows that the backend is made up of a number of component, all applications. The application ``femUQ.py`` is the application that parses the input from the front end, sets up the workflow and launches the UQ engine. Which UQ Engine and which applications to run in the workflow, is determined from the data passed from the UI and information contained in a WorkflowApplication.json file. A file is used to allow the researchers to modify the applications that may be run in the workflow w/o the need to recompile the application. Control is then passed to a UQ engine, which repeatedly runs the workflow to generate the results. In running the workflow some of the applications will invoke applications not developed to meet the API. For such applications pre- and post-processors are provided.
-The figure shows the backend application running locally or remotely on a HPC@DesignSafe.
+The component diagram for the backend application shown in :numref:`figComponentBack`, shows that the backend is made up of a number of component, all applications. The application ``femUQ.py`` is the application that parses the input from the front end, sets up the workflow and launches the UQ engine. Which UQ Engine and which applications to run in the workflow, is determined from the data passed from the UI and information contained in a ``WorkflowApplication.json`` file. A file is used to allow the researchers to modify the applications that may be run in the workflow w/o the need to recompile the application. Control is then passed to a UQ engine, which repeatedly runs the workflow to generate the results. In running the workflow some of the applications will invoke applications not developed to meet the API. For such applications pre- and post-processors are provided.
+The figure shows the backend application running locally or remotely on a HPC at DesignSafe.
 
 
 .. _figComponentBack:
@@ -73,7 +73,7 @@ Flowchart of interface with local and remote simulation on DesignSafe
 Backend Applications
 ====================
 
-[Description of how files are propogated through the backend applications]
+[Description of how files are propagated through the backend applications]
 
 .. _figBackendApps:
 
@@ -98,5 +98,4 @@ The following pages provide more detail on the requirements for input files and 
    EDPApps
    simulationApps
    UQApps
-   DLApps
    Outputs

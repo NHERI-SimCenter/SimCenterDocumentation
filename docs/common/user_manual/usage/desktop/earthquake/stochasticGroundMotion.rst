@@ -21,8 +21,9 @@ used to generate a seismic event. For the Vlachos er al. model users is required
 .. _fig-stochasticDabaghi-event:
 
 
-For the Dabaghi & Der Kiureghian model geometric directivity parameters, as shown in \Cref{fig:dabaghi}, required by the Dabaghi \& Der Kiureghian model are described completely in Somerville et al. (1997)
-:cite:`somerville1997modification`. 
+For the Dabaghi and Der Kiureghian model geometric directivity parameters, as shown in :numref:`fig-dabaghi`, required by the Dabaghi and Der Kiureghian model are described completely in Somerville et al. (1997) :cite:`somerville1997modification`.
+
+.. _fig-dabaghi:
 
 .. figure:: figures/stochasticDabaghi.png
 	:align: center
@@ -32,7 +33,7 @@ For the Dabaghi & Der Kiureghian model geometric directivity parameters, as show
 
 
 Additionally, users can provide a seed for either model if they desire the same
-suite of synthetic motions to be generated on multiple occasions.  If
+suite of synthetic motions to be generated on multiple occasions. If
 the seed is not specified, a different realization of the time history
 will be generated for each run. The backend application that generates
 the stochastic ground motions relies on **smelt**, a modular and
