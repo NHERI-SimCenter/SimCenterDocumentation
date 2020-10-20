@@ -8,11 +8,11 @@ that |app| is able to reproduce the correct
 power spectral density when using stochastically generated wind speed
 time histories. These time histories are generated using a discrete
 frequency function and Fast Fourier Transform, as described in
-Wittig & Sinha (1975) \cite{wittig1975simulation}. The calculated
+Wittig & Sinha (1975) :cite:`wittig1975simulation`. The calculated
 power spectral density matrix for the generated time histories is compared to
 an analytical spectral density matrix based on the Kaimal wind spectrum
-model \cite{kaimal1972spectral, simiu1996wind} and the Davenport coherence
-function \cite{davenport1967dependence}:
+model :cite:`kaimal1972spectral,simiu1996wind` and the Davenport coherence
+function :cite:`davenport1967dependence`:
 
 .. math::
    S_{rs} = \sqrt{S_{rr}(f) \cdot S_{ss}(f)} Coh(f)
@@ -90,13 +90,11 @@ D is subjected to wind loading with 3-second gust of 30 mph. An
 estimate of the power spectral density matrix for the stochastic wind
 velocity time history based on this condition was compared to the
 power spectral density matrix calculated based on the Kaimal spectrum
-with Davenport coherence. \Cref{fig:auto_corr} shows the auto correlation
-for the first floor (:math:`S_{11}`) while \Cref{fig:cross_corr} shows the cross
+with Davenport coherence. :numref:`fig_auto_corr` shows the auto correlation
+for the first floor (:math:`S_{11}`) while :numref:`fig_cross_corr` shows the cross
 correlation between the second and third floors (:math:`S_{23}`). As can be seen in
 these two figures, the two different results show very good agreement
 between the theoretical Kaimal values and the estimates based on the
 generated stochastic wind velocity time histories. Further information
 on the implementation of the Wittig \& Sinha (1975) model can be found
-in the documentation
-for |smelt| a C++ library for stochastically generating time histories for
-different types of natural hazards.
+in the documentation for |smelt| a C++ library for stochastically generating time histories for different types of natural hazards.

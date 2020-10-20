@@ -97,6 +97,7 @@ Damage Model
 Loss Model
 """"""""""
 
+.. _fig_dl_p58_general:
 
 .. figure:: figures/dl_p58_general_loss.png
     :align: right
@@ -121,7 +122,7 @@ Loss Model
 	
 	**Peak Population**
 
-	  The maximum number of people present at each floor of the building. The example in \Cref{fig:dl_p58_general} shows a two-story wooden house with a cripple wall, hence the 0 population in the first floor.
+	  The maximum number of people present at each floor of the building. The example in :numref:`fig_dl_p58_general` shows a two-story wooden house with a cripple wall, hence the 0 population in the first floor.
 	
 	**Custom distribution**
 
@@ -276,7 +277,7 @@ Dependencies
 Every type of prescribed dependency assumes perfect correlation between a certain subset of the model variables and no correlation between the others. Future versions will expand on this approach by introducing more complex correlation structures.
 
 Logical components
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^
 
 You can assign perfect correlation between the following logical components of the model:
 
