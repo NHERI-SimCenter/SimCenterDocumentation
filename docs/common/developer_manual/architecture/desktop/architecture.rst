@@ -91,11 +91,26 @@ The following pages provide more detail on the requirements for input files and 
    :maxdepth: 1
 
    Inputs
+   rWHALE
    buildingApps
    regionalMapApps
    eventApps
    modelingApps
    EDPApps
    simulationApps
+   DLApps
    UQApps
    Outputs
+
+
+
+Examples
+====================
+
+The following examples demonstrate how to use the backend applications for regional risk assessment.
+
+.. toctree::
+   :maxdepth: 1
+
+   earthquakeAssessment
+   hurricaneAssessment

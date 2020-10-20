@@ -36,6 +36,10 @@
           "title": "Model File",
           "description": "If the simulation application chosen is OpenSees-Simulation or OpenSeesPy-Simulation, then a model file must be provided. It consists of an OpenSees/OpenSeesPy script with functions for building and analyzing a custom structural model. See the Simulation Applications page for more details on application-specific inputs."
         },
+        "EDPspecs": {
+          "title": "EDP specifications file",
+          "description": "JSON file specifying types, locations, and directions of EDPs to record in the structural model during response simulation. If UserDefinedEDP is chosen as the EDP application, then the EDP specifications file must be included as an input."
+        },
         "eventFiles": {
           "title": "Event Files",
           "description": "To specify the type, location, and intensity of each event, the following files must be provided in the input_data/records folder.",
@@ -75,6 +79,16 @@
           "description": "CSV file which aggregates reponse simulation results from the EDP.json files of all building assets.",
           "properties": {
             "type": {"type": "string", "description": "Name of EDP type."},
+            "loc": {"type": "int", "description": "Location of where EDP is recorded on the model. If UserDefinedEDP is specified as the EDP application, then the location labelling is denoted in the EDP specification file. Otherwise, the numbering starts at 0, which denotes the ground level."},
+            "dir": {"type": "int", "description": "Direction of the EDP is recorded. The numbering used is X=1, Y=2, Z=3 (if OpenSeesPyInput is specified as the Modeling application, then the numbering convention is independent of the dofMap)."},
+            "stat": {"type": "string", "description": "Describes the statistic reported for each EDP. EDPs are assumed to follow a lognormal distribution described by a median parameter and beta (lognormal standard deviation) parameter. If 'samples' is set to 1 in the RegionalMapping application, then only one event is assigned to each building asset and only one statistic (median) is returned in the EDP Output File."}
+          }
+        },
+        "outputDM": {
+          "title": "DM Output File",
+          "description": "CSV file which aggregates damage state estimates from the DM.json files of all building assets.",
+          "properties": {
+            "comp_type": {"type": "string", "description": "Name of the type of component. The following abbreviations are used: 'probability' = measure of probability between 0 and 1, 'S' = structural components, 'NS' = all nonstructural components, 'NSA' = acceleration-sensitive nonstructural components, 'NSD' = drift-sensitive nonstructural components."},
             "loc": {"type": "int", "description": "Location of where EDP is recorded on the model. If UserDefinedEDP is specified as the EDP application, then the location labelling is denoted in the EDP specification file. Otherwise, the numbering starts at 0, which denotes the ground level."},
             "dir": {"type": "int", "description": "Direction of the EDP is recorded. The numbering used is X=1, Y=2, Z=3 (if OpenSeesPyInput is specified as the Modeling application, then the numbering convention is independent of the dofMap)."},
             "stat": {"type": "string", "description": "Describes the statistic reported for each EDP. EDPs are assumed to follow a lognormal distribution described by a median parameter and beta (lognormal standard deviation) parameter. If 'samples' is set to 1 in the RegionalMapping application, then only one event is assigned to each building asset and only one statistic (median) is returned in the EDP Output File."}
