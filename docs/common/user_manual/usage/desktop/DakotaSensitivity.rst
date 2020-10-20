@@ -6,9 +6,9 @@ Global Sensitivity Analysis
 
 Global sensitivity analysis is used to quantify contribution of each input variable to the uncertainty in QoI. Using the global sensitivity indices, users can set preferences between random variables considering both inherent randomness and its propagation through the model. Global sensitivity analysis helps users to understand the overall impact of different sources of uncertainties and their interactions, as well as to accelerate UQ computations by focusing on dominant dimensions or screening out trivial input variables. Sensitivity index can also be used to identify the input variables for which extra experimentation/research may be useful in reducing the uncertainty in the initial specification.
 
-**Sobol indices** are widely used variance-based global sensitivity measures which has two types: main effect and total effect sensitivity indices. The **main effect index** quantifies the fraction of variance in QoI that can be attributed to specific input random variable(s) but without considering interactive effect with other input variables. The **total effect index**, on the other hand, additionally takes the interactions into account.
+**Sobol indices** are widely used variance-based global sensitivity measures which have two types: main effect and total effect sensitivity indices. The **main effect index** quantifies the fraction of variance in QoI that can be attributed to specific input random variable(s) but without considering interactive effect with other input variables. The **total effect index**, on the other hand, additionally takes the interactions into account.
 
-Given an output of a model :math:`y=g(\boldsymbol{x})` and input random variables :math:`\boldsymbol{x}=\{x_1,x_2, \cdots ,x_d\}`, the first-order main and total effect indices of each input variable is defined as
+Given an output of a model :math:`y=g(\boldsymbol{x})` and input random variables :math:`\boldsymbol{x}=\{x_1,x_2, \cdots ,x_d\}`, the first-order main and total effect indices of each input variable are defined as
 
 
 .. math::

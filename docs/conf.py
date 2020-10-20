@@ -121,6 +121,10 @@ rst_prolog = """
 
 """
 
+extlinks = {
+}
+example_repo = f'https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/user_manual/examples/desktop/{app_name.replace("-","")}'
+
 # app-specific settings
 
 if app_name == 'RDT':
@@ -377,6 +381,11 @@ elif app_name == 'quoFEM':
 		'style_nav_header_background': '#F2F2F2'
 	}
 
+	# Example links
+	extlinks.update(
+	   {f'quo-{i:02}' : (f'{example_repo}/quo-{i:02}/%s',f'quo-{i:02}') for i in range(1,99)}
+	)
+
 elif app_name == 'WE-UQ':
 	project = 'Wind Engineering with Uncertainty Quantification'
 	copyright = '2019, The Regents of the University of California'
@@ -434,6 +443,12 @@ elif app_name == 'WE-UQ':
 		'prev_next_buttons_location': None,
 		'style_nav_header_background': '#F2F2F2'
 	}
+
+	# Example links
+	extlinks.update(
+	   {f'weuq-{i:02}' : (f'{example_repo}/weuq-{i:02}/%s',f'weuq-{i:02}') for i in range(1,99)}
+	)
+
 
 elif app_name == 'pelicun':
 
@@ -510,9 +525,11 @@ elif app_name == 'pelicun':
 # ones.
 
 extensions = extensions + [
-	'sphinx-jsonschema',
-	'toctree_filter',
-	'sphinxcontrib.bibtex',
+    'sphinx-jsonschema',
+    'sphinxcontrib.bibtex',
+    'toctree_filter',
+    'sphinxcontrib.images',
+	'sphinx.ext.extlinks',
 	'sphinxcontrib.images'
 ]
 
@@ -543,8 +560,6 @@ html_theme = 'sphinx_rtd_theme'
 html_css_files = [
 	'css/custom.css'
 ]
-
-#	'css/custom.css'#
 
 html_secnum_suffix = " "
 
