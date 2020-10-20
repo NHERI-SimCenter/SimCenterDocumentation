@@ -32,6 +32,7 @@ Examples
    :quoFEM:quoFEM/FrameConv
    :quoFEM:quoFEM/FrameBaye
    :EEUQ:EEUQ/ShearBuilding3
+   :EEUQ:EEUQ/randomField
    :WEUQ:WEUQ/ShearBuilding9
    :PBE:PBE/exampleShearBuilding3/README
    :PBE:PBE/basic_HAZUS
