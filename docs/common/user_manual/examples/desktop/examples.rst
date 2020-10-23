@@ -33,6 +33,7 @@ Examples
    :quoFEM:quoFEM/exampleFrameBaye/README
 
    :EEUQ:EEUQ/exampleShearBuilding3/README
+   :EEUQ:EEUQ/randomField
    :WEUQ:WEUQ/exampleShearBuilding9/README
    :PBE:PBE/exampleShearBuilding3/README
 
