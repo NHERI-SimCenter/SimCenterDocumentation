@@ -1,5 +1,7 @@
 ---
-page_template: vega.html
+title: Forward Propagation - OpenSees/Tcl
+synopsis: This example uses quoFEM to estimate the first and second central moments of a FE model's response, given the marginal distributions of various random parameters.
+
 ...
 
 
