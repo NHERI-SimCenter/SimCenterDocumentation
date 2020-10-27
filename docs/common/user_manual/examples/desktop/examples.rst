@@ -31,6 +31,7 @@ Examples
    :quoFEM:quoFEM/quo-09/README
    :quoFEM:quoFEM/exampleFrameConv/README
    :quoFEM:quoFEM/exampleFrameBaye/README
+   :quoFEM:quoFEM/quo-14/README
 
    :EEUQ:EEUQ/exampleShearBuilding3/README
    :EEUQ:EEUQ/randomField
