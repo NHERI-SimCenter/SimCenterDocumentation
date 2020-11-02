@@ -130,7 +130,7 @@ All of the required files shall be available in the ``Verification/01_Central_te
     
         Cumulative distribution function of reconstruction time.
 
-#. A similar calculation provides the following steps for the CDF of fatalities (\Cref{fig:ver_1_12}): 0 (35/56), 0.025 (1/56), 0.05 (3.5/36), 0.1 (2.5/56), 2.25 (2/56), 4.5 (7/56), 9.0 (5/56)
+#. A similar calculation provides the following steps for the CDF of fatalities (:numref:`fig-ver-1-12`): 0 (35/56), 0.025 (1/56), 0.05 (3.5/36), 0.1 (2.5/56), 2.25 (2/56), 4.5 (7/56), 9.0 (5/56)
 
     .. _fig-ver-1-12:
 

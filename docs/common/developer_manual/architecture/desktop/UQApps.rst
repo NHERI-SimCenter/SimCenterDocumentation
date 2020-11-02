@@ -8,3 +8,5 @@ It first populates values for the RVs, sampled from specified probability distri
 If no RVs are specified, then the UQ application directly runs commands in the driver file without random sampling.
 
 The following options for UQ applications vary in the software package used to perform uncertainty quantification.
+
+.. jsonschema:: App_Schema.json#/properties/UQApplications/Dakota-FEM

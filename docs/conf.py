@@ -11,7 +11,7 @@ app_name = 'RDT'
 #app_name = 'PBE'
 #app_name = 'EE-UQ'
 #app_name = 'WE-UQ'
-#app_name = 'quoFEM'
+# app_name = 'quoFEM'
 #app_name = 'pelicun'
 
 print('app_name = ' + app_name)
@@ -121,6 +121,10 @@ rst_prolog = """
 
 """
 
+extlinks = {
+}
+example_repo = f'https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/user_manual/examples/desktop/{app_name.replace("-","")}'
+
 # app-specific settings
 
 if app_name == 'RDT':
@@ -180,7 +184,7 @@ if app_name == 'RDT':
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-RDT`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 .. |developers| replace:: **SimCenter PI's and Developers**
-                          
+
 """
 
 	# html_logo = 'common/figures/SimCenter_RDT_logo.png'
@@ -377,6 +381,11 @@ elif app_name == 'quoFEM':
 		'style_nav_header_background': '#F2F2F2'
 	}
 
+	# Example links
+	extlinks.update(
+	   {f'quo-{i:02}' : (f'{example_repo}/quo-{i:02}/%s',f'quo-{i:02}') for i in range(1,99)}
+	)
+
 elif app_name == 'WE-UQ':
 	project = 'Wind Engineering with Uncertainty Quantification'
 	copyright = '2019, The Regents of the University of California'
@@ -435,6 +444,12 @@ elif app_name == 'WE-UQ':
 		'style_nav_header_background': '#F2F2F2'
 	}
 
+	# Example links
+	extlinks.update(
+	   {f'weuq-{i:02}' : (f'{example_repo}/weuq-{i:02}/%s',f'weuq-{i:02}') for i in range(1,99)}
+	)
+
+
 elif app_name == 'pelicun':
 
 	project = 'pelicun'
@@ -474,7 +489,7 @@ elif app_name == 'pelicun':
 	    'sphinx.ext.autosummary',
 	    'sphinx.ext.intersphinx',
 	    'sphinx.ext.coverage',
-	    'sphinx.ext.doctest',
+	    'sphinx.ext.doctest'
 	]
 
 	numpydoc_show_class_members = True
@@ -511,9 +526,11 @@ elif app_name == 'pelicun':
 
 extensions = extensions + [
     'sphinx-jsonschema',
-	  'sphinxcontrib.bibtex',
-	  'toctree_filter',
+    'sphinxcontrib.bibtex',
+    'toctree_filter',
     'sphinxcontrib.images',
+	'sphinx.ext.extlinks',
+	'sphinxcontrib.images'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -543,8 +560,6 @@ html_theme = 'sphinx_rtd_theme'
 html_css_files = [
 	'css/custom.css'
 ]
-
-#	'css/custom.css'#
 
 html_secnum_suffix = " "
 

@@ -9,3 +9,9 @@ It writes the type, location, and direction (DOF) of each EDP for a simulation i
 Note that in the EDP file, DOF=1,2 are assumed to correspond to perpendicular horizontal directions, and DOF=3 corresponds to the vertical direction.
 
 The following options for EDP applications vary in the type of EDPs identified for the simulation output.
+
+
+.. jsonschema:: App_Schema.json#/properties/EDPApplications/StandardEarthquakeEDP_R
+.. jsonschema:: App_Schema.json#/properties/EDPApplications/UserDefinedEDP_R
+
+An example EDP specifications file is here: :download:`EDP_specs.json <doc/EDP_specs.json>`
