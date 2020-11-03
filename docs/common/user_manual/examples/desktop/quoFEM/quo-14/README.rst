@@ -10,7 +10,9 @@ Outline
 -------
 In this example, Bayesian estimation is used to estimate the lateral story
 stiffnesses of the two stories of a simple steel frame, given data about 
-its mode shapes and frequencies.
+its mode shapes and frequencies. The transitional Markov chain Monte Carlo 
+algorithm is used to obtain samples from the posterior probability distribution 
+of the lateral story stiffnesses.
 
 Problem description
 -------------------
