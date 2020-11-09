@@ -47,6 +47,13 @@ if "%1" == "WE" (
 	goto end
 )
 
+if "%1" == "pelicun" (
+	%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+	robocopy %BUILDDIR%/html ../docs /E > nul
+	echo.Generating pelicun Documentation...
+	goto end
+)
+
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
 	echo.
