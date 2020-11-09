@@ -26,4 +26,6 @@ Once the selection criteria has been entered, the user selects the  **Select Rec
 
 .. note::
 
-   It is important to note that this event requires a PEER NGA West 2 account, users will be asked to provide their credentials (user name and password) to log in to the database. Users who do not have an account will be forwarded to the account sign up web.
+   It is important to note that this event requires a PEER NGA West 2 account, users will be asked to provide their credentials (user name and password) to log in to the database. Users who do not have an account will be forwarded to the account sign up web [#]_.
+
+.. [#] For more help on external services provided by PEER we encourage users to explore their `website <https://peer.berkeley.edu/>`_.
