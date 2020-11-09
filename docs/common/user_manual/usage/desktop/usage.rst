@@ -50,7 +50,8 @@ remotely, and finally views the simulation results. The main window of the UI is
 
 1. Login Button: 
 
-The **Login** button is at the top right of the user interface. Before the user can launch any jobs on DesignSafe, they must first login to DesignSafe using their DesignSafe login and password. Pressing the login button will open up the login window for users to enter this information. Users can register for an account on the `DesignSafe-CI <https://www.designsafe-ci.org/account/register>`_ website.
+The **Login** button is at the top right of the user interface. Before the user can launch any jobs on DesignSafe, they must first login to DesignSafe using their DesignSafe login and password. Pressing the login button will open up the login window for users to enter this information. Users can register for an account on the `DesignSafe-CI <https://www.designsafe-ci.org/account/register>`_ website [#]_. 
+
 
 2. Message Area: 
 
@@ -98,3 +99,5 @@ This is the area near the bottom of the UI in which 4 buttons are contained:
      * **GET from DesignSafe**: Obtain the list of jobs for the user from DesignSafe and select a job to download from that list.
      * **Exit**: Exit the application.
 
+
+.. [#] For more help on external services provided by DesignSafe-CI, such as creating an account, we encourage users to explore their `documentation <https://www.designsafe-ci.org/rw/user-guides/>`_ or consider `submitting a ticket <https://www.designsafe-ci.org/help/new-ticket/>`_.

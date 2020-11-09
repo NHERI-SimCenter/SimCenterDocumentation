@@ -41,3 +41,12 @@ This is an in-house developed UQ engine of SimCenter that accommodates different
    :quoFEM:SimCenterUQSensitivity
 
 
+UCSD UQ Engine
+--------------
+This is a module developed at UCSD. This module currently offers support for Bayesian calibration using the Transitional Markov chain Monte Carlo (TMCMC) algorithm, which is also known as the Sequential Monte Carlo algorithm:
+
+.. toctree-filt::
+   :maxdepth: 1
+
+   :quoFEM:UCSD_UQ_TMCMC
+
