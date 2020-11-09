@@ -12,3 +12,5 @@ Technical Manual
    :PBE:damping
    :WEUQ:WEUQ/scalingWindTunnelData
    :WEUQ:WEUQ/TinF
+   :quoFEM:SimCenterUQTechnical
+   :quoFEM:UCSDUQTechnical

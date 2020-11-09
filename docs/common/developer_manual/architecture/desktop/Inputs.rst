@@ -35,16 +35,20 @@ A suggested directory structure for the user-defined inputs is:
 
     cantilever_example
     ├── rWHALE_config.json
-    ├── input_data
+    └── input_data
         ├── model
             ├── cantilever.py
         ├── records
             ├── EventGrid.csv
             ├── RSN30.json
             ├── RSN63.json
-            ...
+            .
+            .
+            .
             ├── site0.csv
             ├── site1.csv
-            ...
+            .
+            .
+            .
             └── site8.csv
         └── input_params.csv

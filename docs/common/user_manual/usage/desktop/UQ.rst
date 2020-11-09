@@ -1,9 +1,8 @@
 
-
 UQ: Uncertainty Quantification
 ==============================
 
-The first selection panel the user must select from and enter data into is the **UQ** tab. It is in this panel where the user selects the **UQ Engine** to use for performing the uncertainty quantification calculations. Presently the **UQ Engine** option is limited to the Dakota engine.
+The first selection panel the user must select from and enter data into is the **UQ** tab. It is in this panel where the user selects the **UQ Engine** to use for performing the uncertainty quantification calculations. Presently the **UQ Engine** option supports Dakota and SimCenterUQ engine.
 
 Dakota UQ Engine
 ----------------
@@ -32,4 +31,22 @@ The following categories are available:
    :quoFEM:DakotaInverseProblems
 
 
+SimCenter UQ Engine
+------------------
+This is an in-house developed UQ engine of SimCenter that accommodates different UQ methods. Currently the option is limited to global sensitivity analysis:
+
+.. toctree-filt::
+   :maxdepth: 1
+
+   :quoFEM:SimCenterUQSensitivity
+
+
+UCSD UQ Engine
+--------------
+This is a module developed at UCSD. This module currently offers support for Bayesian calibration using the Transitional Markov chain Monte Carlo (TMCMC) algorithm, which is also known as the Sequential Monte Carlo algorithm:
+
+.. toctree-filt::
+   :maxdepth: 1
+
+   :quoFEM:UCSD_UQ_TMCMC
 
