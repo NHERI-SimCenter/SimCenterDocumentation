@@ -1,15 +1,16 @@
-.. _lblearthquakeAssessment:
+.. _lblhurricaneAssessment:
 
 
 *********************
-Earthquake Assessment
+Hurricane Assessment
 *********************
 
-This example is a small-scale regional earthquake risk assessment which performs response simulation and damage/loss estimation for a group of 20 buildings. The buildings are modeled as elastic-perfectly plastic single-degree-of-freedom (SDOF) systems defined by three input model parameters: the weight ``W``, yield strength ``f_yield``, and fundamental period ``T1``. The buildings are distributed in space in a 4x5 grid, within a 3x3 grid of event sites. At each event site, 5 ground motion records of similar intensity are assigned.
+This example is a small-scale regional hurricane risk assessment which performs damage/loss estimation for a group of 65 residential wood buildings. The buildings are subject to two types of hazards: wind, measured by peak wind speed (PWS), and flooding, measured by flood water depth (FWD). This example does not use response simulation; rather, an **IMasEDP** application translates the IMs directly to the DL application and uses IM-based component fragility functions to estimate damage.
+The distribution of the buildings' structural types and stories are illustrated below.
 
 .. _figContext:
 
-.. figure:: figures/regionalearthquakeexample.png
+.. figure:: figures/hurricaneeexample.png
    :align: center
    :figclass: align-center
 
@@ -17,31 +18,27 @@ This example is a small-scale regional earthquake risk assessment which performs
 Inputs
 ==========
 
-The example input files can be downloaded here: :download:`input_data_eq.zip <files/input_data_eq.zip>`. For more information about required input files, refer to :ref:`Inputs <lblUserDefInputs>`.
+The example input files can be downloaded here: :download:`input_data_hu.zip <files/input_data_hu.zip>`. For more information about required input files, refer to :ref:`Inputs <lblUserDefInputs>`.
 
 
 1. **Configuration file**: The configuration file specifies all simulation settings, including the application types, input file names, units, and type of outputs.
 
-.. literalinclude:: files/rWHALE_config_eq.json
+.. literalinclude:: files/rWHALE_config_hu.json
    :language: python
    :linenos:
 
-2. **Building Application**: This example uses the :ref:`CSV_to_BIM <lblBuildingApp>` building application. In the configuration file, the Max and Min parameters are set to run the full set of 20 buildings, and the name of the building source file is provided as "input_params.csv". In the :ref:`building source file <lblUserDefInputs>`, input parameters for (a) the response simulation (weight ``W``, yield strength ``f_yield``, and fundamental period ``T1``) and for (b) the DL assessment (``stories``, ``yearbuilt``, ``occupancy``, ``structure``, ``areafootprint``, ``replacementCost``) are specified.
+2. **Building Application**: This example uses the :ref:`CSV_to_BIM <lblBuildingApp>` building application. In the configuration file, the Max and Min parameters are set to run the full set of 65 buildings, and the name of the building source file is provided as "input_params.csv". In the :ref:`building source file <lblUserDefInputs>`, input parameters for the DL assessment (``stories``, ``yearbuilt``, ``occupancy``, ``structure``, ``areafootprint``, ``replacementCost``) are specified.
 
 **Building source file:**
 
-.. csv-table:: input_params.csv
-   :file: files/input_params.csv
+.. csv-table:: input_params_hu.csv
+   :file: files/input_params_hu.csv
    :header-rows: 1
    :align: center
 
-3. **Regional Mapping Application**: This example uses the :ref:`NearestNeighborEvents <lblregionalMapApp>` regional mapping application. From the parameters set in the configuration file, the algorithm is set to randomly select 5 samples of ground motion records from the 4 nearest neighbors for each building asset.
+3. **Regional Mapping Application**: This example uses the :ref:`NearestNeighborEvents <lblregionalMapApp>` regional mapping application. From the parameters set in the configuration file, the algorithm is set to randomly select 10 samples of wind/flooding IMs from the 4 nearest neighbors for each building asset.
 
-.. _figContext:
 
-.. figure:: figures/regionalearthquakeexample_annot.png
-   :align: center
-   :figclass: align-center
 
 4. **Event Application**: This example uses the :ref:`SimCenterEvents <lblEventApp>` event application. It takes as input the EventGrid.csv, event files with the ground motion intensity measures, and the site files which specify the five ground motions assigned to each event site.
 
@@ -80,24 +77,12 @@ The example input files can be downloaded here: :download:`input_data_eq.zip <fi
 
 
 
-8. **UQ Application**: This example uses the :ref:`Dakota-UQ <lblUQApp>` UQ application to run the response simulation. In the configuration file, the number of samples specified for the UQ application should match the number of ground motion samples per building asset specified for the RegionalMapping application.
+8. **UQ Application**: This example uses the :ref:`Dakota-UQ <lblUQApp>` UQ application to execute the workflow.
 
 
 
 9. **DL Application**: This example uses the :ref:`pelicun <lblDLApp>` DL application. From the :ref:`building source file <lblUserDefInputs>`, it uses input parameters, such as building occupancy class, number of stories, floor plan area, and construction year, to produce estimates of damage states and losses based on the HAZUS assessment method.
 
-
-Run Workflow
-============
-
-The workflow can be executed by uploading the appropriate files to :ref:`DesignSafe <lblrunRemote>`, or by running the example on your local desktop. using the following command in the terminal:
-
-.. code-block::
-
-    python "C:/rWHALE/applications/Workflow/RDT_workflow.py" "C:/rWHALE/cantilever_example/rWHALE_config.json" --registry "C:/rWHALE/applications/Workflow/WorkflowApplications.json" --referenceDir "C:/rWHALE/cantilever_example/input_data/" -w "C:/rWHALE/cantilever_example/results"
-
-
-Please ensure that the paths specified in the command are appropriate for the location of the applications folder and input files on your desktop.
 
 
 Outputs

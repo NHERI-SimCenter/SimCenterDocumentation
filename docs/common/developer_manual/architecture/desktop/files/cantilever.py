@@ -61,7 +61,7 @@ def build_model(model_params):
 
 	# define damping based on first eigenmode
 	damp_ratio = 0.05
-	angular_freq = eigen(1)**0.5
+	angular_freq = eigen(1)[0]**0.5
 	beta_k = 2 * damp_ratio / angular_freq
 	rayleigh(0., beta_k, 0., 0.)
 

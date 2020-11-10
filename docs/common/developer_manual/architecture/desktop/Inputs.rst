@@ -3,7 +3,7 @@
 Inputs
 ===================
 
-The following files must be provided by the user to execute the workflow. Illustrations of the file format are obtained from Example 1.
+The following files must be provided by the user to execute the workflow.
 
 .. jsonschema:: App_Schema.json#/properties/Inputs/configurationFile
 
@@ -12,47 +12,37 @@ An example configuration file is here: :download:`rWHALE_config.json <files/rWHA
 
 .. jsonschema:: App_Schema.json#/properties/Inputs/buildingSourceFile
 
-An example building source file is here: :download:`input_params.csv <files/input_params.csv>`
-
 
 .. jsonschema:: App_Schema.json#/properties/Inputs/modelFile
 
-An example model file is here: :download:`cantilever.py <files/cantilever.py>`
 
 .. jsonschema:: App_Schema.json#/properties/Inputs/EDPspecs
-
-An example EDP specifications file is here: :download:`EDP_specs.json <files/EDP_specs.json>`
 
 
 .. jsonschema:: App_Schema.json#/properties/Inputs/eventFiles
 
-An example event grid file is here: :download:`EventGrid.csv <files/EventGrid.csv>`
 
-An example seismic event file is here: :download:`RSN30.json <files/RSN30.json>`
-
-An example site file is here: :download:`site0.csv <files/site0.csv>`
-
-
-A suggested directory structure for the user-defined inputs is:
+Example input files are provided here: :download:`input_data.zip <files/input_data.zip>`, following the suggested directory structure for the user-defined inputs:
 
 ::
 
     cantilever_example
-    ├── rWHALE_config.json
+    ├── rWHALE_config.json              # configuration file
     └── input_data
         ├── model
-            ├── cantilever.py
+            ├── cantilever.py           # model file
         ├── records
-            ├── EventGrid.csv
-            ├── RSN30.json
+            ├── EventGrid.csv           # event grid file
+            ├── RSN30.json              # event IM files
             ├── RSN63.json
             .
             .
             .
-            ├── site0.csv
+            ├── site0.csv               # site files
             ├── site1.csv
             .
             .
             .
             └── site8.csv
-        └── input_params.csv
+        ├── EDPspecs.json               # EDP specifications file
+        └── input_params.csv            # building source file

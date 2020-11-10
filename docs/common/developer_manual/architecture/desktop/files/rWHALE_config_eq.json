@@ -2,6 +2,8 @@
   "Name": "rWHALE_",
   "Author": "Adam Zsarnóczay",
   "WorkflowType": "Parametric Study",
+  "runDir": "...",
+  "localAppDir": "C:/RDT/",
   "units": {
       "force": "kips",
       "length": "in",
@@ -18,7 +20,7 @@
       "Application": "CSV_to_BIM",
       "ApplicationData": {
         "Min": "1",
-        "Max": "20",
+        "Max": "2",
         "buildingSourceFile":"input_params.csv"
       }
     },

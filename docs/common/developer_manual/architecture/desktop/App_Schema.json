@@ -10,7 +10,7 @@
           "description": "JSON file containing simulation details and specifies the application selected for each workflow step.",
           "properties": {
             "runDir": {"type": "path", "description": "Directory where input_data folder is located."},
-            "localAppDir": {"type": "path", "description": "Directory applications folder is located."},
+            "localAppDir": {"type": "path", "description": "Directory where applications folder is located."},
             "units": {"type": "string", "description": "Dictionary of strings which specifiy units for force, length, and time.", "default": "N, m, sec"},
             "outputs": {"type": "bool", "description": "Indicator (True/False) of which workflow outputs (EDP, DM, DV) are provided in the simulation.", "default": "true"},
             "Applications": {"type": "dict", "description": "Dictionary of applications selected for each workflow step, with their associated application-specific inputs."},
@@ -38,7 +38,7 @@
         },
         "EDPspecs": {
           "title": "EDP specifications file",
-          "description": "JSON file specifying types, locations, and directions of EDPs to record in the structural model during response simulation. If UserDefinedEDP is chosen as the EDP application, then the EDP specifications file must be included as an input."
+          "description": "JSON file specifying types, locations, and directions of EDPs to record in the structural model during response simulation.The EDP specifications file is only necessary as an input if UserDefinedEDP is chosen as the EDP application."
         },
         "eventFiles": {
           "title": "Event Files",
@@ -76,7 +76,7 @@
       "Outputs": {
         "outputEDP": {
           "title": "EDP Output File",
-          "description": "CSV file which aggregates reponse simulation results from the EDP.json files of all building assets.",
+          "description": "File which aggregates reponse simulation results from the EDP.json files of all building assets. When run locally, the workflow returns the output in the form of a CSV file. When run remotely (on DesignSafe), the workflow returns the output in the form of a HDF file.",
           "properties": {
             "type": {"type": "string", "description": "Name of EDP type."},
             "loc": {"type": "int", "description": "Location of where EDP is recorded on the model. If UserDefinedEDP is specified as the EDP application, then the location labelling is denoted in the EDP specification file. Otherwise, the numbering starts at 0, which denotes the ground level."},
@@ -86,12 +86,21 @@
         },
         "outputDM": {
           "title": "DM Output File",
-          "description": "CSV file which aggregates damage state estimates from the DM.json files of all building assets.",
+          "description": "File which aggregates damage state estimates from the DM.json files of all building assets. When run locally, the workflow returns the output in the form of a CSV file. When run remotely (on DesignSafe), the workflow returns the output in the form of a HDF file.",
           "properties": {
-            "comp_type": {"type": "string", "description": "Name of the type of component. The following abbreviations are used: 'probability' = measure of probability between 0 and 1, 'S' = structural components, 'NS' = all nonstructural components, 'NSA' = acceleration-sensitive nonstructural components, 'NSD' = drift-sensitive nonstructural components."},
-            "loc": {"type": "int", "description": "Location of where EDP is recorded on the model. If UserDefinedEDP is specified as the EDP application, then the location labelling is denoted in the EDP specification file. Otherwise, the numbering starts at 0, which denotes the ground level."},
-            "dir": {"type": "int", "description": "Direction of the EDP is recorded. The numbering used is X=1, Y=2, Z=3 (if OpenSeesPyInput is specified as the Modeling application, then the numbering convention is independent of the dofMap)."},
-            "stat": {"type": "string", "description": "Describes the statistic reported for each EDP. EDPs are assumed to follow a lognormal distribution described by a median parameter and beta (lognormal standard deviation) parameter. If 'samples' is set to 1 in the RegionalMapping application, then only one event is assigned to each building asset and only one statistic (median) is returned in the EDP Output File."}
+            "Collapse probability": {"type": "float", "description": "Probability of collapse for each building asset, represented as a value between 0 and 1."},
+            "DS likelihood": {"type": "float", "description": "The probability of each damage state for every building asset, provided as a value between 0 and 1. Probabilities are reported for five damage states: '0' indicates no damage; '1_1' indicates DS1 (aesthetic damage), '2_1' indicates DS2 (mild damage), '3_1' indicates DS3 (moderate damage), and '4_1' indicates DS4 (severe damage). The DS likelihoods are additionally reported by component group, where the following abbreviations are used: 'S' = structural components, 'NS' = all nonstructural components, 'NSA' = acceleration-sensitive nonstructural components, 'NSD' = drift-sensitive nonstructural components. The probabilities of the five damage states for each component type (across the row) should sum to 1 (total probability for the building asset)."}
+          }
+        },
+        "outputDV": {
+          "title": "DV Output File",
+          "description": "File which aggregates decision variable estimates from the DV.json files of all building assets. When run locally, the workflow returns the output in the form of a CSV file. When run remotely (on DesignSafe), the workflow returns the output in the form of a HDF file.",
+          "properties": {
+            "Aggregate Repair Cost": {"type": "float", "description": "Repair cost for the entire building asset, reported with the statistics: mean, standard deviation, 10th percentile, median (50th percentile), and 90th percentile. The currency unit for the repair cost is the same as that of the the replacementCost property provided in the building input file. If replacementCost is set equal to 1, then the repair costs in the DV Output File are reported as a percentage of the replacement cost."},
+            "Repair Impractical": {"type": "float", "description": "Probability of repair being impractical for the building asset, provided as a value between 0 and 1."},
+            "Component Repair Cost": {"type": "float", "description": "Mean repair cost for the building asset reported by component group ('S' = structural components, 'NS' = all nonstructural components, 'NSA' = acceleration-sensitive nonstructural components, 'NSD' = drift-sensitive nonstructural components) and damage state ('aggregate' = total for the component group, '1_1' = DS1, '2_1' = DS2, '3_1' = DS3, '4_1' = DS4)."},
+            "Aggregate Repair Time": {"type": "float", "description": "Repair time for the entire building asset, reported with the statistics: mean, standard deviation, 10th percentile, median (50th percentile), and 90th percentile. Time is reported in units of ___."},
+            "Aggregate Injuries": {"type": "float", "description": "Number of injuries projected as a result of damage to the building asset, reported with the statistics: mean, standard deviation, 10th percentile, median (50th percentile), and 90th percentile. Injuries are provided at four severity levels."}
           }
         }
       },

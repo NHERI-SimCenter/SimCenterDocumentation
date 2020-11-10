@@ -84,6 +84,14 @@ Backend Applications
    Diagram of backend applications workflow.
 
 
+The following pages provide instructions for running the backend applications:
+
+.. toctree::
+   :maxdepth: 1
+
+   runLocal
+   runRemote
+
 The following pages provide more detail on the requirements for input files and types of backend applications available.
 
 
@@ -91,7 +99,6 @@ The following pages provide more detail on the requirements for input files and 
    :maxdepth: 1
 
    Inputs
-   rWHALE
    buildingApps
    regionalMapApps
    eventApps
