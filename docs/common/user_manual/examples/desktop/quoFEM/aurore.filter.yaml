@@ -1,0 +1,15 @@
+filters:
+- rules:
+    - 's/\.base\.git.*//g' 
+    - 's/\.git.*//g'
+    - 's/LICENSE//g'
+
+- match:
+    id: 'qfem-\d{4}'
+    title: '.*'
+  rules:
+    - 's/README\.(md|rst)/index.$1/g'
+    # - 's/README\.md/index.md/g'
+    # - 's/\/\..*//g'
+    # - 's/((?:[^/]*/)*)(.*)/$2'
+
