@@ -12,6 +12,41 @@ set BUILDDIR=_build
 
 if "%1" == "" goto help
 
+if "%1" == "RDT" (
+	%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+	robocopy %BUILDDIR%/html ../../RDT-Documentation/docs /E > nul
+	echo.Generating RDT Documentation...
+	goto end
+)
+
+if "%1" == "PBE" (
+	%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+	robocopy %BUILDDIR%/html ../../PBE-Documentation/docs /E > nul
+	echo.Generating PBE Documentation...
+	goto end
+)
+
+if "%1" == "quoFEM" (
+	%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+	robocopy %BUILDDIR%/html ../../quoFEM-Documentation/docs /E > nul
+	echo.Generating quoFEM Documentation...
+	goto end
+)
+
+if "%1" == "EE" (
+	%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+	robocopy %BUILDDIR%/html ../../EE-UQ-Documentation/docs /E > nul
+	echo.Generating EE-UQ Documentation...
+	goto end
+)
+
+if "%1" == "WE" (
+	%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+	robocopy %BUILDDIR%/html ../../WE-UQ-Documentation/docs /E > nul
+	echo.Generating WE-UQ Documentation...
+	goto end
+)
+
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
 	echo.

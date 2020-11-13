@@ -1,3 +1,0 @@
-
-EDP: Demand Parameters
-======================

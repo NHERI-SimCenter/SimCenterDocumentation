@@ -29,12 +29,16 @@ rst_prolog = """
 .. |appName| replace:: Turbulence Inflow Tool
 .. |app| replace:: Turbulence Inflow Tool
 .. |githubLink| replace:: `Turbulance Inflow Tool Github page`_
-.. _Turbulance Inflow Tool Github page: https://github.com/NHERI-SimCenter/TinF
+.. _Turbulance Inflow Tool Github page: https://github.com/NHERI-SimCenter/TurbulenceInflowTool
 .. |appLink| replace:: `Turbulance Inflow Tool`_
-.. _Turbulance Inflow Tool page: https://github.com/NHERI-SimCenter/TurbulanceInflowTool
+.. _Turbulance Inflow Tool page: https://simcenter.designsafe-ci.org/research-tools/tinf/
 .. |messageBoard| replace:: `Message Board`_
-.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
-.. |toolVersion| replace:: '0.2'
+.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=5.0
+.. |toolVersion| replace:: '1.0.2'
+.. |openfoam.org| replace:: `OpenFOAM Foundation`_
+.. _OpenFOAM Foundation: https://openfoam.org
+.. |openfoam.com| replace:: `ESI OpenFOAM`_
+.. _ESI OpenFOAM: https://openfoam.com
 """
 
 # -- General configuration ---------------------------------------------------
@@ -67,11 +71,15 @@ html_theme = 'sphinx_rtd_theme'
 
 
 html_theme_options = {
-#    'analytics_id': 'UA-158130480-2',
+    'analytics_id': 'UA-158130480-6',
     'logo_only': False,
     'prev_next_buttons_location': None,
 #    'style_nav_header_background': '#F2F2F2'
 }
+
+html_css_files = [
+	'css/custom.css'
+]
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
@@ -84,3 +92,7 @@ numfig = True
 math_number_all = True
 math_eqref_format = '({number})'
 math_numfig = True
+
+latex_elements = {
+  'extraclassoptions': 'openany,oneside'
+}

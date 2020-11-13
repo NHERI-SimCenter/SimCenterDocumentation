@@ -12,6 +12,15 @@ BUILDDIR      = build
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
+
+github:
+	make clean
+	rm -fr ../../../TinF-Documentation/docs/_sources
+	rm -fr ../../../TinF-Documentation/docs/_static
+	rm -fr ../../../TinF-Documentation/docs/_images
+	rm -fr ../../../TinF-Documentation/docs/common
+	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" ../../../TinF-Documentation/docs $(O)
+
 .PHONY: help Makefile
 
 # Catch-all target: route all unknown targets to Sphinx using the new
