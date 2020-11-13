@@ -3,3 +3,4 @@ sphinx_rtd_theme
 sphinxcontrib-bibtex
 sphinx-jsonschema
 sphinxcontrib-images
+numpydoc
