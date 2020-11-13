@@ -84,6 +84,14 @@ Backend Applications
    Diagram of backend applications workflow.
 
 
+The following pages provide instructions for running the backend applications:
+
+.. toctree::
+   :maxdepth: 1
+
+   runLocal
+   runRemote
+
 The following pages provide more detail on the requirements for input files and types of backend applications available.
 
 
@@ -97,5 +105,19 @@ The following pages provide more detail on the requirements for input files and 
    modelingApps
    EDPApps
    simulationApps
+   DLApps
    UQApps
    Outputs
+
+
+
+Examples
+====================
+
+The following examples demonstrate how to use the backend applications for regional risk assessment.
+
+.. toctree::
+   :maxdepth: 1
+
+   earthquakeAssessment
+   hurricaneAssessment
