@@ -114,7 +114,7 @@ rst_prolog = """
 .. _DesignSafe: https://designsafe-ci.org
 .. |smelt| replace:: `smelt`_
 .. _smelt: https://github.com/NHERI-SimCenter/smelt
-.. |s3harkName| replace:: s3hark
+.. |s3harkName| replace:: *s*\ :sup:`3`\ *hark*
 .. |br| raw:: html
 
     <br>
