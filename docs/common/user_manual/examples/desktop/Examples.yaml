@@ -4,6 +4,40 @@ references:
   title: Basic Shear Building Procedure
   type: book
 
+- id: optl-0001
+  title: Stochastic Truss
+  type: book
+
+- id: optl-0002
+  abstract: >-
+    This example demonstrates how to perform a pushover (nonlinear static)
+    analysis in OpenSees using a 2-story, 1-bay steel moment resisting frame.
+  author:
+    - family: Eads
+      given: Laura
+  note: >-
+    docs:
+    https://opensees.berkeley.edu/wiki/index.php/Pushover_Analysis_of_2-Story_Moment_Frame
+  title: Moment Frame Pushover Analysis - Part 1 Concentrated Plasticity
+  type: book
+
+- id: ostl-0003
+  title: Moment Frame Pushover Analysis - Part 1.5 Hinge Offsets
+  type: book
+
+- id: ostl-0004
+  author:
+    - family: Eads
+      given: Laura
+  title: Moment Frame Pushover Analysis - Part 2 Distributed Plasticity
+  type: book
+
+- id: ostl-0005
+  collection-title: Basic Examples Manual
+  title: Basic Truss Example
+  type: book
+  URL: 'https://opensees.berkeley.edu/wiki/index.php/Basic_Truss_Example'
+
 - id: qfem-0001
   abstract: >-
     This example illustrates how quoFEM interacts with OpenSeesPy. A simple
@@ -133,7 +167,7 @@ references:
   type: book
 
 - id: weuq-0001
-  archive: sim/
+  archive: $SIMCENTER_DEV
   archive_location: WE-UQ/examples/
   collection-title: 9-Story Frame
   medium: WE-UQ

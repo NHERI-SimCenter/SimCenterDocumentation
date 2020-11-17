@@ -26,6 +26,7 @@ Examples
 
 .. toctree-filt::
    :maxdepth: 1
+   :hidden:
 
    :quoFEM:quoFEM/exampleTrussOpenSees/README
    :quoFEM:quoFEM/quo-09/README
@@ -38,3 +39,8 @@ Examples
    :PBE:PBE/exampleShearBuilding3/README
 
 
+
+.. only:: quoFEM_app
+
+   .. raw:: html
+      :file: _static/html/quoFEM-Gallery.html
