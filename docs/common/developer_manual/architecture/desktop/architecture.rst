@@ -75,6 +75,10 @@ Backend Applications
 
 [Description of how files are propagated through the backend applications]
 
+:ref:`Backend Applications <lblbackendApps>`
+
+
+
 .. _figBackendApps:
 
 .. figure:: figures/backendapps.png
@@ -84,40 +88,21 @@ Backend Applications
    Diagram of backend applications workflow.
 
 
-The following pages provide instructions for running the backend applications:
+.. _figSequenceDiagram:
+
+.. figure:: figures/sequence_diagram.png
+   :align: center
+   :figclass: align-center
+
+
+
+How to Run
+====================
+
 
 .. toctree::
    :maxdepth: 1
 
    runLocal
    runRemote
-
-The following pages provide more detail on the requirements for input files and types of backend applications available.
-
-
-.. toctree::
-   :maxdepth: 1
-
-   Inputs
-   buildingApps
-   regionalMapApps
-   eventApps
-   modelingApps
-   EDPApps
-   simulationApps
-   DLApps
-   UQApps
-   Outputs
-
-
-
-Examples
-====================
-
-The following examples demonstrate how to use the backend applications for regional risk assessment.
-
-.. toctree::
-   :maxdepth: 1
-
-   earthquakeAssessment
-   hurricaneAssessment
+   troubleshooting

@@ -1,0 +1,59 @@
+{
+  "Name": "rWHALE_",
+  "Author": "Kuanshi Zhong",
+  "WorkflowType": "Regional Simulation",
+  "buildingFile":"buildings.json",
+  "runDir": "...",
+  "localAppDir": "C:/rWHALE/",
+  "units": {
+      "force": "kips",
+      "length": "ft",
+      "speed": "mph"
+   },
+  "outputs": {
+    "EDP": true,
+    "DM": true,
+    "DV": true,
+    "every_realization": false
+  },
+  "Applications": {
+    "Building": {
+      "Application": "CSV_to_BIM",
+      "ApplicationData": {
+        "Min": "1",
+        "Max": "10",
+        "buildingSourceFile":"input_params_hu.csv"
+      }
+    },
+    "RegionalMapping": {
+      "Application": "NearestNeighborEvents",
+      "ApplicationData": {
+        "filenameEVENTgrid": "IMs/EventGrid.csv",
+        "samples": 10,
+        "neighbors": 4
+      }
+    },
+    "Events": [{
+      "EventClassification": "Hurricane",
+      "Application": "SimCenterEvent",
+      "ApplicationData": {
+        "pathEventData": "IMs/"
+      }
+    }],
+    "Simulation": {
+       "Application": "IMasEDP",
+       "ApplicationData": {}
+    },
+    "DL": {
+       "Application": "pelicun",
+       "ApplicationData": {
+          "DL_Method": "HAZUS MH HU",
+          "Realizations": 5000,
+          "coupled_EDP": true,
+          "detailed_results": false,
+          "log_file": true,
+          "auto_script": "auto_HU_NJ.py"
+       }
+    }
+  }
+}
