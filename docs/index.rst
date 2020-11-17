@@ -60,7 +60,9 @@
    :desktop_app:common/user_manual/troubleshooting/desktop/troubleshooting
    :pelicun:common/user_manual/troubleshooting/pelicun/troubleshooting
    
-   :desktop_app:common/user_manual/examples/desktop/examples
+   :quoFEM:common/user_manual/examples/desktop/quoFEM/examples
+   :WEUQ:common/user_manual/examples/desktop/WEUQ/examples
+
    :pelicun:common/user_manual/examples/pelicun/examples
    
    :EEUQ:common/requirements/EEUQ
@@ -119,6 +121,15 @@
 
    :pelicun:common/developer_manual/API/pelicun/API
 
+
+.. _lbl-gallery:
+
+.. toctree-filt::
+   :caption: Gallery
+   :maxdepth: 1
+   :numbered: 4
+
+   :desktop_app:common/gallery/gallery
 
 
 Contact
