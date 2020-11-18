@@ -1,7 +1,7 @@
 .. _lblbackendApps:
 
 *********************
-Backend Applications
+Workflow Applications
 *********************
 
 The following pages provide more detail on the requirements for input files and types of backend applications available.
@@ -10,7 +10,6 @@ The following pages provide more detail on the requirements for input files and 
 .. toctree::
    :maxdepth: 1
 
-   Inputs
    buildingApps
    regionalMapApps
    eventApps
@@ -19,4 +18,3 @@ The following pages provide more detail on the requirements for input files and 
    simulationApps
    UQApps
    DLApps
-   Outputs

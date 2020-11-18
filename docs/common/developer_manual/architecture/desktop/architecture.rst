@@ -75,7 +75,30 @@ Backend Applications
 
 [Description of how files are propagated through the backend applications]
 
-:ref:`Backend Applications <lblbackendApps>`
+.. note::
+
+   The following terminology is used:
+
+   1. **Input Files**: files containing input data which is prepared by the user.
+
+   2. **Workflow**: sequence of steps which propogate input data through a series of applications to produce output files.
+
+   3. **Workflow Step**: general category of applications performing a step in the workflow (Building, RegionalMapping, Event, Modeling, EDP, Simulation, UQ, DL).
+
+   4. **Intermediate Files**: JSON files automatically produced during the execution of the workflow to aid in propagating data (BIM.json, EDP.json, EVENT.json, SAM.json, SIM.json).
+
+   5. **Application**: name of a specific instance of a workflow application, executed through software (i. e. MDOF-LU, OpenSeesInput, OpenSeesPyInput).
+
+   6. **Output Files**: files produced by the workflow with analysis results.
+
+
+
+.. toctree::
+   :maxdepth: 1
+
+   Inputs
+   backendApplications
+   Outputs
 
 
 
