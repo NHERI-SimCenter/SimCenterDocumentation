@@ -75,6 +75,33 @@ Backend Applications
 
 [Description of how files are propagated through the backend applications]
 
+.. note::
+
+   The following terminology is used:
+
+   1. **Input Files**: files containing input data which is prepared by the user.
+
+   2. **Workflow**: sequence of steps which propogate input data through a series of applications to produce output files.
+
+   3. **Workflow Step**: general category of applications performing a step in the workflow (Building, RegionalMapping, Event, Modeling, EDP, Simulation, UQ, DL).
+
+   4. **Intermediate Files**: JSON files automatically produced during the execution of the workflow to aid in propagating data (BIM.json, EDP.json, EVENT.json, SAM.json, SIM.json).
+
+   5. **Application**: name of a specific instance of a workflow application, executed through software (i. e. MDOF-LU, OpenSeesInput, OpenSeesPyInput).
+
+   6. **Output Files**: files produced by the workflow with analysis results.
+
+
+
+.. toctree::
+   :maxdepth: 1
+
+   Inputs
+   backendApplications
+   Outputs
+
+
+
 .. _figBackendApps:
 
 .. figure:: figures/backendapps.png
@@ -84,40 +111,21 @@ Backend Applications
    Diagram of backend applications workflow.
 
 
-The following pages provide instructions for running the backend applications:
+.. _figSequenceDiagram:
+
+.. figure:: figures/sequence_diagram.png
+   :align: center
+   :figclass: align-center
+
+
+
+How to Run
+====================
+
 
 .. toctree::
    :maxdepth: 1
 
    runLocal
    runRemote
-
-The following pages provide more detail on the requirements for input files and types of backend applications available.
-
-
-.. toctree::
-   :maxdepth: 1
-
-   Inputs
-   buildingApps
-   regionalMapApps
-   eventApps
-   modelingApps
-   EDPApps
-   simulationApps
-   DLApps
-   UQApps
-   Outputs
-
-
-
-Examples
-====================
-
-The following examples demonstrate how to use the backend applications for regional risk assessment.
-
-.. toctree::
-   :maxdepth: 1
-
-   earthquakeAssessment
-   hurricaneAssessment
+   troubleshooting

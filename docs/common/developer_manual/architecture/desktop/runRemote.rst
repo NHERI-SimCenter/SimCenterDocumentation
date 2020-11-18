@@ -10,7 +10,7 @@ There are two ways to run the applications remotely on DesignSafe: one is throug
 Prepare Input Files
 ==========================
 
-1. Prepare the input files in a folder called ``input_data``, then zip the folder. You may use this example input file set (:download:`input_data.zip <files/input_data.zip>`) as a template.
+1. Prepare the input files in a folder called ``input_data``, then zip the folder. You may use this example input file set (:download:`input_data_eq.zip <files/input_data_eq.zip>`) as a template.
 
 
 2. Prepare workflow settings in the configuration file. You may use the example configuration file (:download:`rWHALE_config_remote.json <files/rWHALE_config_remote.json>`) as a template.
@@ -26,6 +26,8 @@ Prepare Input Files
 
 4. Upload the :download:`CreateLauncherTasks script <files/CreateLauncherTasks.py>` and a Jupyter notebook with commands for setting up the job on Tapis. You can use this example Jupyter notebook (:download:`run_rWHALE.ipynb <files/run_rWHALE.ipynb>`) as a template.
 
+On DesignSafe, the files should appear on Data Depot as:
+
 .. _figContext:
 
 .. figure:: figures/DS_data_depot.png
@@ -40,24 +42,47 @@ Run Job Through Jupyter
 This method uses Jupyter notebook to run the job, accessing Tapis CLI in the backend.
 
 
-5. Click on the run_rWHALE.ipynb notebook, then click "Open in Jupyter". You will be taken to a new page for editing and running the Jupyter notebook.
+5. Click on the run_rWHALE.ipynb notebook, then click "Open in Jupyter". You will be taken to a new page for editing the Jupyter notebook.
 
-.. literalinclude:: files/run_rWHALE.py
-   :language: python
-   :linenos:
+.. _figContext:
+
+.. figure:: figures/DS_jupyter.png
+   :align: center
+   :figclass: align-center
 
 
-6. Specify settings for running the job on Stampede2. Submit the job by running all cells in the Jupyter notebook.
+6. Specify settings for running the job on Stampede2. Submit the job by running all cells in the Jupyter notebook (Cell > Run All).
 
 .. jsonschema:: App_Schema.json#/properties/runRemote
 
+
+7. To view the status of the job, navigate to the **Workspace** on DesignSafe. The right bar will list all jobs that have been submitted in order of newest to oldest. Job outputs can be accessed by clicking on "More Info" on the job.
+
+.. _figContext:
+
+.. figure:: figures/DS_workspace.png
+   :align: center
+   :figclass: align-center
+
+
+8. To access the job outputs, click on "More Info" on the job. It will navigate you to the job archive folder on Data Depot.
+
+      - The aggregated outputs are saved in HDF files: "DM.hdf", "DV.hdf", and "EDP.hdf" contain the EDP and DL summary results for all built assets. "realizations.hd5" contains the response simulation results for every event simulated per built asset.
+      - "launcher.err" contains error messages produced from running the job.
+      - "launcher.out" contains the log file.
+
+.. _figContext:
+
+.. figure:: figures/DS_results.png
+   :align: center
+   :figclass: align-center
 
 
 
 Submit Job Through Tapis
 ==========================
 
-This method submits the job using Tapis CLI directly. If using Windows,  this is executed in the Ubuntu subsystem.
+This method submits the job using Tapis CLI directly. If using Windows,  this is executed in the Ubuntu subsystem. Please refer to Chapter 9 of the `Tapis How-To Guide <https://www.designsafe-ci.org/media/filer_public/90/d5/90d5ff98-3ca1-40a5-a2cb-2ead8f51ecb9/tapis-cli-how-to-guide-readthedocs-io-en-latest.pdf>`_  for more details.
 
 5. First, ensure that Tapis CLI is installed on your computer. Open a Ubuntu window and install Tapis CLI using ``pip``:
 
@@ -66,7 +91,7 @@ This method submits the job using Tapis CLI directly. If using Windows,  this is
 
 Or, install Tapis CLI from Github:
 
-::
+.. code-block::
       git clone https://github.com/TACC-Cloud/tapis-cli-ng.git
       cd tapis-cli-ng/
       pip install --upgrade --user .
@@ -137,5 +162,17 @@ You will see an output in the Ubuntu window similar to the following.
       ``tapis jobs submit -F job.json``
 
 An ACCEPTED status indicates the job.json was valid, and e-mail alerts (if they were specified in job.json) will track
-the progress of the job. Also take note of the long hexadecimal id when you submit the job. This identifier can be
+the progress of the job. Also take note of the long hexadecimal ID (*job ID*) when you submit the job. This identifier can be
 used to track progress and download results.
+
+11. To check on the status of a particular job, run the following command with the job ID:
+
+      ``tapis jobs status <job ID>``
+
+12. Once the job has completed, the results can be downloaded either from the job archives (accessed from the Workspace on DesignSafe) or directly from Tapis, with the following command:
+
+      ``tapis jobs outputs download --progress <job ID string>``
+
+Or, to download a specific file from the outputs,
+
+      ``tapis jobs outputs download <job ID> <name of file>``
