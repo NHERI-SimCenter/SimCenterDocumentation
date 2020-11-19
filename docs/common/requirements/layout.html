@@ -1,0 +1,15 @@
+{% extends "!layout.html" %}
+{% block extrahead %}
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+{% endblock %}
+
+  {% block footer %} {{ super() }}
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+{% endblock %}
