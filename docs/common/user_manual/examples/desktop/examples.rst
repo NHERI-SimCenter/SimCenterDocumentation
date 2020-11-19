@@ -34,7 +34,7 @@ Examples
    :quoFEM:quoFEM/quo-14/README
 
    :EEUQ:EEUQ/exampleShearBuilding3/README
-   :EEUQ:EEUQ/randomField
+   :EEUQ:EEUQ/randomField/randomField
    :WEUQ:WEUQ/exampleShearBuilding9/README
    :PBE:PBE/exampleShearBuilding3/README
 

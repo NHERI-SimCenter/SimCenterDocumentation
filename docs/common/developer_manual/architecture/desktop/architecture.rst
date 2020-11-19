@@ -4,9 +4,9 @@
 Software Architecture
 *********************
 
-The SimCenter is developing a number of computational applications: quoFEM, EE-UQ, WE-UQ, HydroUQ, PBE, and RDT. These applications are intended to advance the field of natural hazard engineering (NHE) at both the building level scale and regional level scale. These applications link together existing open-source software applications, databases and software libraries by employing scientific workflows. The SimCenter applications are as such scientific workflow systems. In contrast to more general purpose scientfic workflow systems (Taverna[Oinn2003], Kepler[Goecks2010], PegasuspDeelman2015]), the SimCenter workflows that are launched are constrained in complexity and have been designed specifically for researchers in natural hazards engineering. Unlike these more powerful scientific workflow systems, the primary focus of SimCenter scientific workflow systems is for creating workflows that run multiple times inside applications that generate responses that include uncertainty quantification (UQ) measures. A consequence outputting uncertainty quantification (UQ) measures, is the need to utilize high performance computers for most any thing but trivial example problems which can be done using Cloud services. 
+The SimCenter is developing a number of computational applications: quoFEM, EE-UQ, WE-UQ, HydroUQ, PBE, and RDT. These applications are intended to advance the field of natural hazard engineering (NHE) at both the building level scale and regional level scale. These applications link together existing open-source software applications, databases and software libraries by employing scientific workflows. The SimCenter applications are in actuality `scientific workflow systems <https://en.wikipedia.org/wiki/Scientific_workflow_system>`_ . In contrast to more general purpose scientfic workflow systems, e.g. `Taverna <https://taverna.incubator.apache.org/>`_, `Kepler <https://kepler-project.org/>`_, and `Pegasus <https://pegasus.isi.edu/>`_, the SimCenter workflows that the user builds and runs are constrained in complexity and parts of the workflows run multiple times, typically in parallel, by an application at the start of the worflow responsible for generating end results that include uncertainty quantification (UQ) measures. A consequence of performing UQ, is the need to utilize high performance computers for most any thing but trivial example problems, which can be done using high performance computing resources made available Cloud services. 
 
-To facilitate the development of a number of applications and to encourage their reuse and extension by other NHE researchers, the SimCenter is providing the NHE community with a software framework for building such applications. From this framework the SimCenter is building the applications, of which |app| is but one, that it releases. These individual applications are built from the components of the framework. The components of the SimCenter are grouped, as shown in  figure below, into the following components:
+To facilitate the development of the development of the different SimCenter applications and to encourage their reuse and extension by other NHE researchers, the SimCenter is providing the NHE community with a software framework for building such applications. From this framework the SimCenter is building the applications, of which |app| is but one, that it releases. These individual applications are built from the components of the framework. The components of the SimCenter are grouped, as shown in  figure below, into the following components:
 
 #. Cloud: applications/libraries for communicating with remote web services to launch and monitor applications on HPC resources and to upload and download files from the filesystems of such resources.
 
@@ -26,7 +26,6 @@ To facilitate the development of a number of applications and to encourage their
 
 #. Databases containing information on building inventories for regional simulatioons, consequence functions for the DL applications, and experimental and corresponding simulation models for future machine learning based AI algorithms.
 
-
  Within the natural hazards engineering community, there exists a number of widely used open-source applications, e.g. OpenFOAM, and online datasets, e.g. PEER NGA, that researchers are currently using. As a consequence, and to avoid duplication, SimCenter applications incorprate many of the widely used appliecations, e.g. OpenFOAM. To do this SimCenter develops pre- and post-processors to these existing applications and utilize web-technologies for accessing online services.
 
    
@@ -34,7 +33,7 @@ To facilitate the development of a number of applications and to encourage their
 
 .. figure:: figures/SimCenterFramework.png
    :align: center
-   :width: 800
+   :width: 1000
    :figclass: align-center
 
    SimCenter Software Framework
@@ -44,20 +43,25 @@ The SimCenter scientific workflow systems are aimed at facilitating the use, reu
 - Level 1: The level one diagram is a system diagram that shows how the software system fits in the real world in terms of people who use it and other software systems it intercat with.
 - Level 2: The level two is a container diagram show the the containers (applications, databases, etc.) that  make up the software system.
 - Level 3: Level three diagram are component diagrams, showing how the componets pf the individual containers.
-- Level 4: The level 4 diagrams show how the individual components are implemented. They are typically UML class diagrams.
+- Level 4: The level four diagrams show how the individual components are implemented. They are typically UML class diagrams.
 
 The following sections present the architecture of SimCenter the SimCenter to level 3:
 
-.. note::
+.. note:: **Definitions**
 
-   1. **Workflow**: “The automation of a business process, in whole or part, during which documents, information or tasks are passed from one participant to another for action, according to a set of procedural rules.” [Workflow Management Coalition].
+   #. **Workflow**: “The automation of a business process, in whole or part, during which documents, information or tasks are passed from one participant to another for action, according to a set of procedural rules.” [Workflow Management Coalition].
 
-   2. **Scientific Workflow**: "A large scale loosely coupled application consisting of commodity off-the-shelf software components" [Benchmarking Grid Applications for Performance and Scalability Predictions] for performing an in-silico workflow. "The simplest computerized scientific workflows are scripts that call in data, programs, and other inputs and produce outputs that might include visualizations and analytical results".[Wikipedia, https://en.wikipedia.org/wiki/Scientific_workflow_system]
+   #. **Application**: A software application performs operations on data residing in a computer for a user or another program; it can be self contained, typically termed a program, or part of a group of programs.
 
-   3. **Scientific Workflow System**: software to set-up, schedule, run, and monitor a user defined scientific workflow.
 
-   4. **Software Framework**: A software framework provides a foundation on which software developers can build programs for a specific domain. For example, a framework may include predefined classes and functions that can be used to process input, manage hardware devices, and interact with system software. This streamlines the development process since programmers don't need to reinvent the wheel each time they develop a new application.
+   #. **Scientific Workflow**: A sequence of steps which propogate input data through a series of applications to produce output files. It is a loosely coupled application performing workflows in which each of the coordinated tasks is performed using an individual application. Each of the individual application taking some data inputs and producing data outputs, which are then consumed by subsequent tasks according to the workflow definition. They are termed scientific because they are typically used by scientists to process, manage, and visualize ever increasing ever increasing amounts of data using "scientific" applications. 
+
+   #. **Workflow Step**: A general category of applications performing a step in the workflow.
       
+   #. **Scientific Workflow System**: An application or applications to aid a user to set-up, schedule, run, and monitor a user defined scientific workflow.
+
+   #. **Software Framework**: A software framework defines a set of component interfaces and provides a set of implementations in code of these interfaces which allows developers to build applications for the domain for which the framework has been designed. For example, a C++ framework will provide a set of abstract classes that define interfaces, and a set of concrete classes that implement the interfaces which will allow developers to quickly build and release applications using the concrete classes.  Frameworks allow developers to extend the functionality of the applications by introducing their own components that meet the component interface.
+
       
 Overview
 ========
@@ -73,7 +77,7 @@ A Level 1 diagram showing the system context for the SimCenter applications, i.e
 
    System context diagram for SimCenter applications.
 
-Given how SimCenter applications fit in with the environment, a level 2 diagrams now demonstrates how the SimCenter applications are broken into high level components. The SimCenter applications are, as shown in :numref:`figContainer`, broken into two components: A front end UI and a back end application that runs the workflow. The front end applications are desktop applications written using the cross-platform Qt framework. The back end is an application that processes the input from the front end, which comes in the form of a JSON file, creates a workflow and runs it. The workflow applications, written in Python, C, or C++, utilize existing applications were possible and run on either the local desktop machine or on a HPC utilizing resources made available to NHE community through DesignSafe.
+Given how SimCenter applications fit in with the environment, a level 2 diagrams now demonstrates how the SimCenter applications are broken into high level components. The SimCenter applications are, as shown in :numref:`figContainer`, broken into two components: A front end UI and a back end application that runs the workflow. The front end applications are desktop applications written using the cross-platform `Qt framework <https://www.qt.io/product/framework>`_. The back end is an application that processes the input from the front end, which comes in the form of a JSON file, creates a workflow and runs it. The workflow applications, written in Python, C, or C++, utilize existing applications were possible and run on either the local desktop machine or on a HPC utilizing resources made available to NHE community through DesignSafe.
 
 .. _figContainer:
 
@@ -95,9 +99,7 @@ Two level 3 diagrams are now presented which break up the two containers into th
 
    Component diagram for front end UI.
 
-The component diagram for the backend application shown in :numref:`figComponentBack`, shows that the backend is made up of a number of component applications. The application ``femUQ.py`` is the application that parses the input from the front end, sets up the workflow by creating a ``workflow_driver`` script and then launchin the UQ engine. Which UQ Engine and which applications to run in the workflow, is determined from the data passed from the UI and information contained in a file, ``WorkflowApplication.json``. The ``WorkflowApplication.json`` file is a file that maps the applications specified in the output from the UI with a specific application contained on the users local machine or at the remote HPC resource, as such it allow the researchers to modify the applications that may be run in the workflow w/o the need to recompile the application. Once the ``workflow_driver`` file is created, control is passed to a UQ engine, which repeatedly runs the ``workflow_driver`` to generate the results. In running the workflow some of the applications will invoke applications not developed to meet the API. For such applications pre- and post-processors are provided.
-The figure shows the backend application running locally or remotely on a HPC at DesignSafe.
-
+The component diagram for the backend application shown in :numref:`figComponentBack`, shows that the backend is made up of a number of component applications. The application ``femUQ.py`` is the application that parses the input from the front end, sets up the workflow by creating a ``workflow_driver`` script and then launches the UQ engine. Which UQ Engine and which applications to run in the workflow, is determined from the data passed from the UI and information contained in a file, ``WorkflowApplication.json``. The ``WorkflowApplication.json`` file is a file that maps the applications specified in the output from the UI with a specific application contained on the users local machine or at the remote HPC resource, as such it allow the researchers to modify the applications that may be run in the workflow w/o the need to recompile the application. Once the ``workflow_driver`` file is created, control is passed to a UQ engine, which repeatedly runs the ``workflow_driver`` to generate the results. In running the workflow some of the applications will invoke applications not developed to meet the API. For such applications pre- and post-processors are provided. The figure shows the backend application running locally or remotely on a HPC at DesignSafe.
 
 .. _figComponentBack:
 
@@ -106,12 +108,68 @@ The figure shows the backend application running locally or remotely on a HPC at
    :width: 800
    :figclass: align-center
 
-   Component diagram for backend application.
+   Component diagram for Backend Application.
 
-To better understand the flow of control for the backend
+.. note::
+
+   ``femUQ.py`` is the backend application for the EE-UQ, WE-UQ, Hydro-UQ, and the PBE applications. For RDT the backend application is ``RDT_Workflow.py``.
+
+The interaction between the frontend and the backend is best understood by looking at the sequence of events that occurs when the user presses the ``Run`` button. As shown in the figure below, the UI application will first perform a number of steps:
+
+1. It will create a temporary directory in the Documents folder named ``tmp.SimCenter``, and inside ``tmp.SimCenter`` will create another dircetory ``templatedir``.
+
+2. It will then run through all the currently selected widgets and on each invoke the ``copyFiles()`` method, telling these widgets to copy all files that will be needed during the workflow to the ``templatedir`` directory.
+
+3. It will then create a JSON file and will run through the currenly selected widgets and on each invoke the methods ``outputToJSON()`` and ``outputAppDataToJSON``, these telling the application to augment the JSOIN file with the inputs the user has provided in the widget and also the name of the widget.
+
+4. The UI will now start the backend application and will spin until the backend application returns with a completion signal.
+
+Now that the UI has handed over to the backend application, the backend application will perform the following:
+
+5. Open the output file from the UI and parse it to obtain the name of the application to run and the arguments to run the application with. Open up another file, the ``WorkflowApplications.json`` file, contained with the application, to determine given the application name the full path to the executable to be invoked. It will the create in ``templatedir`` a file named ``workflow_driver``. This file is a script file that when run by the UQ engine will generate a file named ``results.out``. ``results.out`` when the ``workflow_driver`` script has completed will contain a single line of space seperated values, one value for each EDP.
    
-.. only:: RDT
+6.  It will invoke each of the applications with supplied arguments and an additional command line argument, ``--getRV``, to inform the application to process the input file, and to create any additional random variables and input files needed before the workflow runs.
+
+7. It will then launch the UQengine. The UQ engine, is typically a pre- and post- processor to an existing UQ engine.
+
+8. The pre-processor takes the json input file and creates an input file needed by the actual UQ engine.
+
+9. The preprocessor will launch the UQ application. This application will typically run the ``workflow_driver`` many times, passing as input to the workflow a file ``\params`` and obtaining as output from the ``workflow_driver`` a file ``results.out``.
+
+10. When done the engine will output its results.
+
+11. The UQengine will notify the UQpreprocessor that it is done.
+
+12. The UQpreprocessor will notify the femUQ application that it is done.
+    
+13. The femUQ application will notify the UI that it is done.
+
+14. The UI will read in the reuslts and present them to the user.
+    
+
+.. _figSequenceLocal:
+
+.. figure:: figures/sequenceLocal.png
+   :align: center
+   :width: 800
+   :figclass: align-center
+
+   Sequence diagram showing what happens when a Workflow runs Locally
+
+
+That is for the case where the computations are performed on the local computer. When the somputations are performed remotely the steps are different. The first 8 steps are the same. But now the UQwrapper will not start the UQ engine. Instead, control is returned to the UI. The UI will, as shown in the following: (111) Compress the temporary folder. (12) Send the compressed folder to the remote HPC, shown in the figure DesignSafe. (13) Start an application to perform the computations. All the remote data transfer and application invocation is down through a cloud service, in the figure presented the `TACC tapis <https://tapis-project.org/>`_ interface is being used and provides SimCenter users with access to the TACC HPC resources through DesignSafe portal.
+
+
+.. _figSequenceLocal:
+
+.. figure:: figures/sequenceRemote.png
+   :align: center
+   :width: 800
+   :figclass: align-center
+
+   Sequence diagram showing what happens when a Workflow runs Remotely
+
+.. only:: RDT_app
 
    .. include:: RDTbackend.rst
-
 

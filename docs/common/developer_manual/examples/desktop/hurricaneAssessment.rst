@@ -1,4 +1,4 @@
-.. _lblhurricaneAssessment:
+.. _lblhurricaneAssessment_2:
 
 
 *********************
@@ -10,7 +10,7 @@ The distribution of the buildings' structural types and stories are illustrated 
 
 .. _figContext:
 
-.. figure:: figures/hurricaneeexample.png
+.. figure:: figures/hurricaneexample.png
    :align: center
    :figclass: align-center
 
@@ -31,7 +31,7 @@ The example input files can be downloaded here: :download:`input_data_hu.zip <fi
 
 **Building source file:**
 
-.. csv-table:: input_params_hu.csv
+.. csv-table:: input_params.csv
    :file: files/input_params_hu.csv
    :header-rows: 1
    :align: center
@@ -40,55 +40,65 @@ The example input files can be downloaded here: :download:`input_data_hu.zip <fi
 
 
 
-4. **Event Application**: This example uses the :ref:`SimCenterEvents <lblEventApp>` event application. It takes as input the EventGrid.csv, event files with the ground motion intensity measures, and the site files which specify the five ground motions assigned to each event site.
+4. **Event Application**: This example uses the :ref:`SimCenterEvents <lblEventApp>` event application. It takes as input the EventGrid.csv and corresponding site files, which each have one instance of the intensity measures PWS and FWD assigned to the event site.
 
 **Event grid file:**
 
 .. csv-table:: EventGrid.csv
-   :file: files/EventGrid.csv
+   :file: files/EventGrid_hu.csv
    :header-rows: 1
    :align: center
 
 **Site file:**
 
-.. csv-table:: site0.csv
-   :file: files/site0.csv
+.. csv-table:: 1596.csv
+   :file: files/1596.csv
    :header-rows: 1
    :align: center
 
 
-5. **Modeling Application**: This example uses the :ref:`OpenSeesPyInput <lblModelingApp>` modeling application. The buildings are modeled as elastic-perfectly plastic single-degree-of-freedom (SDOF) systems defined by three input model parameters: the weight ``W``, yield strength ``f_yield``, and fundamental period ``T1``. Functions are included which record the peak response as EDPs for each of the EDP types specified in the EDP_specs.json file.
+5. This example does not use a **Modeling**, **EDP**, **Simulation**, or **UQ** application because EDPs are not simulated with structural analysis.
 
-**Model file:**
 
-.. literalinclude:: files/cantilever.py
-   :language: python
-   :linenos:
-
-6. **EDP Application**: This example uses the :ref:`UserDefinedEDP <lblEDPApp>` EDP application. Custom EDPs are specified in the EDP specifications file. The EDP types are peak interstory drift (PID) and peak floor acceleration (PFA), recorded at the base and top node of the structural model in two horizontal directions (1,2).
-
-**EDP specifications file:**
-
-.. literalinclude:: files/EDP_specs.json
-   :language: python
-   :linenos:
-
-7. **Simulation Application**: This example uses the :ref:`OpenSeesPySimulation <lblSimulationApp>` simulation application, which corresponds to the **OpenSeesPyInput** modeling application. It reads the ``build_model`` and ``run_analysis`` functions from the model file to perform the response simulation.
+6. **DL Application**: This example uses the :ref:`pelicun <lblDLApp>` DL application. From the :ref:`building source file <lblUserDefInputs>`, since the DL method selected is "HAZUS MH HU", damage/loss estimation is performed using the HAZUS loss assessment method based on hurricane IMs. Custom IM-based vulnerability functions are specified in the :download:`auto_HU_NJ.py <files/auto_HU_NJ.py>`.
 
 
 
-8. **UQ Application**: This example uses the :ref:`Dakota-UQ <lblUQApp>` UQ application to execute the workflow.
+Run Workflow
+============
+
+The workflow can be executed by uploading the appropriate files to :ref:`DesignSafe <lblrunRemote>`, or by running the example on your :ref:`local desktop <lblrunLocal>`, using the following *initialization command* in the terminal:
+
+.. code-block::
+
+      python "C:/rWHALE/applications/Workflow/RDT_workflow.py" "C:/rWHALE/hurricane_example/rWHALE_config_hu.json" --registry "C:/rWHALE/applications/Workflow/WorkflowApplications.json" --referenceDir "C:/rWHALE/hurricane_example/input_data/" -w "C:/rWHALE/hurricane_example/results"
 
 
 
-9. **DL Application**: This example uses the :ref:`pelicun <lblDLApp>` DL application. From the :ref:`building source file <lblUserDefInputs>`, it uses input parameters, such as building occupancy class, number of stories, floor plan area, and construction year, to produce estimates of damage states and losses based on the HAZUS assessment method.
+This command locates the backend applications in the folder "applications", and the input files in a directory "hurricane_example". Please ensure that the paths in the command appropriately identify the locations of the files in your directory.
+
+::
+
+   applications
+   hurricane_example
+   ├── rWHALE_config_hu.json          # configuration file
+   └── input_data
+      ├── IMs
+          ├── EventGrid.csv           # event grid file
+          ├── 1596.csv                # event IM files
+          .
+          .
+          .
+          └── 3149.csv
+      ├── auto_HU_NJ.py               # DL autoscript
+      └── input_params.csv            # building source file
 
 
 
 Outputs
 ==========
 
-The example output files can be downloaded here: :download:`output_data_eq.zip <files/output_data_eq.zip>`. For more information about the output files produced, refer to :ref:`Outputs <lblOutputs>`.
+The example output files can be downloaded here: :download:`output_data_hu.zip <files/output_data_hu.zip>`. For more information about the output files produced, refer to :ref:`Outputs <lblOutputs>`.
 
 1. **EDP_1-19.csv**: reports statistics on the EDP results from simulating 5 ground motions for each building asset. The statistics reported are the median and lognormal standard deviation of peak interstory drift (PID) and peak floor acceleration (PFA) in two directions.
 

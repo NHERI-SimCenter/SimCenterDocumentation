@@ -1,5 +1,8 @@
 .. _lbl-example_randomField:
 
+Including Spatial Variability in Site Response Event
+=======================================================
+
 This page shows two examples on how to incorporate spatial variability into UQ analysis by using various special materials, namely ElasticIsotropic,
 PM4Sand, and PDMY03, in Site Response option under EVENT tab.
 
@@ -122,7 +125,7 @@ The peak displacement of the roof, is the quantity **PFD**. The **PFA** and **PF
    :figclass: align-center
 
 
-Adding Spatial variability
+Adding Spatial Variability
 -----------------------------------------------------------
 
 Case 1: using ElasticIsotropic material
@@ -187,7 +190,7 @@ Comparing to elastic material, more variability are shown among these realizatio
    :align: center
    :figclass: align-center
 
-   Response spectra (5% damping) at surface obtained from 20 realizations.
+   Profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations.
 
 
 .. _fig_PM4Sand-Average-RespSpect:
@@ -196,8 +199,7 @@ Comparing to elastic material, more variability are shown among these realizatio
    :align: center
    :figclass: align-center
 
-   Profiles of shear wave velocity, peak horizontal acceleration, maximum shear strain, and maximum excess pore pressure ratio (Ru) obtained from 20 realizations.
-
+   Response spectra (5% damping) at surface obtained from 20 realizations.
 
 
 

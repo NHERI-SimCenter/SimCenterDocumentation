@@ -1,5 +1,4 @@
-.. _lblearthquakeAssessment:
-
+.. _lbleqAssessment:
 
 *********************
 Earthquake Assessment
@@ -31,7 +30,7 @@ The example input files can be downloaded here: :download:`input_data_eq.zip <fi
 **Building source file:**
 
 .. csv-table:: input_params.csv
-   :file: files/input_params.csv
+   :file: files/input_params_eq.csv
    :header-rows: 1
    :align: center
 
@@ -48,7 +47,7 @@ The example input files can be downloaded here: :download:`input_data_eq.zip <fi
 **Event grid file:**
 
 .. csv-table:: EventGrid.csv
-   :file: files/EventGrid.csv
+   :file: files/EventGrid_eq.csv
    :header-rows: 1
    :align: center
 
@@ -84,20 +83,45 @@ The example input files can be downloaded here: :download:`input_data_eq.zip <fi
 
 
 
-9. **DL Application**: This example uses the :ref:`pelicun <lblDLApp>` DL application. From the :ref:`building source file <lblUserDefInputs>`, it uses input parameters, such as building occupancy class, number of stories, floor plan area, and construction year, to produce estimates of damage states and losses based on the HAZUS assessment method.
+9. **DL Application**: This example uses the :ref:`pelicun <lblDLApp>` DL application. From the :ref:`building source file <lblUserDefInputs>`, since the DL method selected is "HAZUS MH EQ", damage/loss estimation is performed using the HAZUS loss assessment method based on earthquake EDPs produced from the response simulation.
 
 
 Run Workflow
 ============
 
-The workflow can be executed by uploading the appropriate files to :ref:`DesignSafe <lblrunRemote>`, or by running the example on your local desktop. using the following command in the terminal:
+The workflow can be executed by uploading the appropriate files to :ref:`DesignSafe <lblrunRemote>`, or by running the example on your :ref:`local desktop <lblrunLocal>`, using the following *initialization command* in the terminal:
 
 .. code-block::
 
-    python "C:/rWHALE/applications/Workflow/RDT_workflow.py" "C:/rWHALE/cantilever_example/rWHALE_config.json" --registry "C:/rWHALE/applications/Workflow/WorkflowApplications.json" --referenceDir "C:/rWHALE/cantilever_example/input_data/" -w "C:/rWHALE/cantilever_example/results"
+    python "C:/rWHALE/applications/Workflow/RDT_workflow.py" "C:/rWHALE/cantilever_example/rWHALE_config_eq.json" --registry "C:/rWHALE/applications/Workflow/WorkflowApplications.json" --referenceDir "C:/rWHALE/cantilever_example/input_data/" -w "C:/rWHALE/cantilever_example/results"
 
 
-Please ensure that the paths specified in the command are appropriate for the location of the applications folder and input files on your desktop.
+
+This command locates the backend applications in the folder "applications", and the input files in a directory "cantilever_example". Please ensure that the paths in the command appropriately identify the locations of the files in your directory.
+
+::
+    applications
+    cantilever_example
+    ├── rWHALE_config_eq.json              # configuration file
+    └── input_data
+        ├── model
+            ├── cantilever.py           # model file
+        ├── records
+            ├── EventGrid.csv           # event grid file
+            ├── RSN30.json              # event IM files
+            ├── RSN63.json
+            .
+            .
+            .
+            ├── site0.csv               # site files
+            ├── site1.csv
+            .
+            .
+            .
+            └── site8.csv
+        ├── EDPspecs.json               # EDP specifications file
+        └── input_params.csv            # building source file
+
 
 
 Outputs
