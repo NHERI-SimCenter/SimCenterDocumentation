@@ -3,23 +3,34 @@
 Methods in SimCenterUQ Engine 
 *****************************
 
-Nataf Transform
-================
+Nataf transformation
+====================
 
-Nataf transform is introduced to convert the samples in the standardized normal space (U-space) into physical space (X-space) and vise versa ([Liu86]_). The SimCenterUQ engine contains a part of the program developed by [ERA19]_ to generate the samples of the random variables.
+Nataf transformation is introduced to convert the samples in the physical space (X-space) into the standard normal samples (U-space), :math:`T:\rm{X} \rightarrow \rm{U}`, and vice versa, during UQ computations ([Liu_1986]_). Specifically, the latter transformation, called inverse Nataf :math:`T^{-1}`, is performed each time when UQ engine generates sample points and calls external workflow applications, so that the main UQ algorithms would face only the standard normal random variables. Among various standardization transformations, Nataf is one of the most popular methods which exploits **marginal distributions** of each physical variables and their **correlation coefficients**.
 
-.. [Liu86]
-   Liu, Pei-Ling and Armen Der Kiureghian (1986) Multivariate distribution models with prescribed marginals and covariances. *Probabilistic Engineering Mechanics* 1(2), 105-112
+.. _figNataf1:
 
-.. [ERA19]
+.. figure:: figures/SimCenterNataf1.png
+   :align: center
+   :figclass: align-center
+
+   Standardization of random variables using Nataf transformation
+
+For the Nataf trasformation, the SimCenterUQ engine borrows a part of the distribution class structure developed by ERA group in the Technical University of Munich [ERA_2019]_ 
+
+.. [Liu_1986]
+   Liu, P.L. and Der Kiureghian, A. (1986). Multivariate distribution models with prescribed marginals and covariances. *Probabilistic Engineering Mechanics*, 1(2), 105-112.
+
+.. [ERA_2019]
    Engineering Risk Analysis Group, Technische Universität München: https://www.bgu.tum.de/era/software/eradist/ (Matlab, python programs and documentations)
 
 
+Global sensitivity analysis
+===========================
 
 Variance-based global sensitivity indices
-=========================================
-
-Global sensitivity analysis is performed to quantify the contribution of each input variable to the uncertainty in QoI. Using the global sensitivity indices, users can set preferences between random variables considering both inherent randomness and its propagation through the model. Global sensitivity analysis helps users to understand the overall impact of different sources of uncertainties, as well as to accelerate UQ computations by focusing on dominant dimensions or screening out trivial input variables.
+-----------------------------------
+Global sensitivity analysis (GSA) is performed to quantify the contribution of each input variable to the uncertainty in QoI. Using the global sensitivity indices, users can set preferences between random variables considering both inherent randomness and its propagation through the model. GSA helps users to understand the overall impact of different sources of uncertainties, as well as to accelerate UQ computations by focusing on dominant dimensions or screening out trivial input variables.
 
 .. _figSensitivity1:
 
@@ -30,7 +41,7 @@ Global sensitivity analysis is performed to quantify the contribution of each in
    Concept of global sensitivity analysis
 	
 	
-Sobol indices are widely used variance-based global sensitivity measures. It has two types: main effect and total effect sensitivity indices. The **main effect index** quantifies the fraction of variance in QoI that can be attributed to specific input random variable(s) but without considering interactive effect with other input variables. The **total effect index**, on the other hand, additionally takes the interactions into account.
+Sobol indices are widely used variance-based global sensitivity measures. It has two types: main effect and total effect sensitivity indices. The **main effect index** finds the fraction of variance in QoI that can be attributed to specific input random variable(s) but without considering interactive effect with other input variables. The **total effect index**, on the other hand, additionally takes the interactions into account.
 
 Given the output of model :math:`y=g(\boldsymbol{x})` and input random variables :math:`\boldsymbol{x}=\{x_1,x_2, \cdots ,x_d\}`, the first-order main and total effect indices of each input variable is defined as
 
@@ -62,11 +73,11 @@ where :math:`\boldsymbol{x}_{\sim ij}` indicates the set of all input variables 
 
 
 Estimation of Sobol indices
-=============================
+----------------------------
 
-Global sensitivity analysis is typically computationally expensive. High computation cost attributes to the multiple integrations (:math:`d`-dimensional) associated with the variance and expectation operations shown in Eqs. :eq:`Si` and :eq:`SiT`. To reduce the computational cost, efficient Monte Carlo methods, stochastic expansion methods, or meta model-based methods can be employed. Among different approaches, the SimCenterUQ engine supports the probability model-based global sensitivity analysis (PM-GSA) framework developed by [Hu19]_. 
+GSA is typically computationally expensive. High computation cost attributes to the multiple integrations (:math:`d`-dimensional) associated with the variance and expectation operations shown in Eqs. :eq:`Si` and :eq:`SiT`. To reduce the computational cost, efficient Monte Carlo methods, stochastic expansion methods, or meta model-based methods can be employed. Among different approaches, the SimCenterUQ engine supports the probability model-based GSA (PM-GSA) framework developed by [Hu_2019]_. 
 
-The framework first conducts ordinary MCS to obtain input-output data pairs. Then by extracting only a subset dimension of the dataset, it approximates the probability distribution of a reduced dimension which is required for estimating the Sobol index. Among different probability models introduced in [Hu19]_ to approximate this lower dimension distribution, the Gaussian mixture model is implemented. For example, to identify 1st order main Sobol index for a variable :math:`x_i`, a bivariate Gaussian mixture model is fitted for the joint probability distribution of :math:`x_i` and :math:`y`, i.e.
+The framework first conducts ordinary MCS to obtain input-output data pairs. Then by extracting only a subset dimension of the dataset, the probability distribution of a reduced dimension can be approximated and used for estimating the Sobol index. Among different probability distribution models introduced in [Hu_2019]_  the Gaussian mixture model is implemented in this engine to approximate this lower dimension distribution. For example, to identify 1st order main Sobol index for a variable :math:`x_i`, a bivariate Gaussian mixture model is fitted for the joint probability distribution of :math:`x_i` and :math:`y`, i.e.
 
 .. math::
 	:label: GM
@@ -74,7 +85,7 @@ The framework first conducts ordinary MCS to obtain input-output data pairs. The
 	f_{x_i,y}(x_i,y) \simeq f_{x_i,y}^{GM} (x_i,y)
 	
 
-using expectation-maximization (EM) algorithm. The mean operation Eq. :eq:`Si` is then derived analytically derived using Gaussian mixture model, while variance is approximated by the sample variance. Therefore, the accuracy of the method depends on the quality of the base samples as well as the fitness of the mixture model. The below figure summarizes the procedure of Gaussian mixture model-based PM-GSA introduced in [Hu19]_. The number of mixture components is optimized along with the mixture parameters during expectation-maximization iterations. 
+using expectation-maximization (EM) algorithm. The mean operation Eq. :eq:`Si` is then derived analytically from the Gaussian mixture model, while variance is approximated to be the sample variance. Therefore, the accuracy of the method depends on the quality of the base samples as well as the fitness of the mixture model. The below figure summarizes the procedure of Gaussian mixture model-based PM-GSA introduced in [Hu_2019z]_. The number of mixture components is optimized along with the mixture parameters during expectation-maximization iterations. 
 
 .. _figSensitivity2:
 
@@ -84,8 +95,6 @@ using expectation-maximization (EM) algorithm. The mean operation Eq. :eq:`Si` i
 
   	Data-driven global sensitivity analysis by Hu and Mahadevan (2019)
 
-.. [Hu19]
+.. [Hu_2019]
    Hu, Z. and Mahadevan, S. (2019). Probability models for data-driven global sensitivity analysis. *Reliability Engineering & System Safety*, 187, 40-57.
-
-
 

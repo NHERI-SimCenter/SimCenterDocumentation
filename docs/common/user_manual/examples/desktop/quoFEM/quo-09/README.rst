@@ -143,7 +143,7 @@ QuoFEM also supports MCS-based sensitivity analysis method offered in Dakota eng
      - 0.17
      - 0.15
 
-.. list-table:: Dakota: Sensitivity indices from different number of samples (the first raw is the user-specified number of samples and the second raw is the actual number of simulation calls)
+.. list-table:: Dakota: Sensitivity indices from different number of samples (the first row is the user-specified number of samples and the second row is the actual number of simulation calls)
    :header-rows: 2
    :align: center
 
@@ -187,7 +187,7 @@ QuoFEM also supports MCS-based sensitivity analysis method offered in Dakota eng
 In the current example, the probability model (PM) based approximation method in the SimCenterUQ engine converges faster within a smaller number of simulations. However, caution should be taken when using PM-based method. It is noteworthy that while the MCS method in the Dakota engine always converges to exact value when a sufficiently large number of simulations are involved, such asymptotic exactness is not guaranteed for the PM-based method. Still, the sensitivity rank between the variables is relatively robust.
 
 
-Result with correlated inputs
+Results with correlated inputs
 ------------------------------
 Consider the case with correlated random variables. For example, below shows correlation matrix where the correlation between the variables ``Au`` and ``Ao`` are :math:`\rho=0.5`.
 
