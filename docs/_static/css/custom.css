@@ -11,6 +11,17 @@ wy-nav-content {
     float: right;
 }
 
+table {
+  display: block;
+  max-height: 400px;
+  overflow-y: scroll;
+}
+
+.literalinclude {
+  display: block;
+  max-height: 400px;
+  overflow-y: scroll;
+}
 
 #div.wy-side-scroll{
 #	background:#cb463f;

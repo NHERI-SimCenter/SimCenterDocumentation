@@ -15,11 +15,11 @@ help:
 
 RDT:
 	make clean
-	rm -fr ../../RDT/docs/_sources
-	rm -fr ../../RDT/docs/_static
-	rm -fr ../../RDT/docs/_images
-	rm -fr ../../RDT/docs/common
-	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" ../../PBE-Documentation/docs $(O)
+	rm -fr ../../RDT-Documentation/docs/_sources
+	rm -fr ../../RDT-Documentation/docs/_static
+	rm -fr ../../RDT-Documentation/docs/_images
+	rm -fr ../../RDT-Documentation/docs/common
+	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" ../../RDT-Documentation/docs $(O)
 
 PBE:
 	make clean

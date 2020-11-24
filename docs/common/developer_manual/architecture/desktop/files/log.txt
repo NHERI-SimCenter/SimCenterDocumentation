@@ -1,241 +1,285 @@
 RDT workflow
 
-2020-10-16T07:52:06Z System information
+2020-11-16T18:55:07Z System information
 
-2020-10-16T07:52:06Z 	python: 3.6.3 |Anaconda, Inc.| (default, Oct 15 2017, 03:27:45) [MSC v.1900 64 bit (AMD64)]
-2020-10-16T07:52:06Z 	numpy: 1.17.0
-2020-10-16T07:52:06Z 	pandas: 1.0.5
-2020-10-16T07:52:06Z -----------------------------------------------------------
-2020-10-16T07:52:06Z Started running the workflow script
-2020-10-16T07:52:06Z -----------------------------------------------------------
-2020-10-16T07:52:06Z Inputs provided:
-2020-10-16T07:52:06Z 	workflow input file: rWHALE_config.json
-2020-10-16T07:52:06Z 	application registry file: C:\rWHALE\applications\Workflow\WorkflowApplications.json
-2020-10-16T07:52:06Z 	run type: run
-2020-10-16T07:52:06Z -----------------------------------------------------------
-2020-10-16T07:52:06Z Parsing application registry file
-2020-10-16T07:52:06Z 	Loading the json file...
-2020-10-16T07:52:06Z 	OK
-2020-10-16T07:52:06Z 	Collecting application data...
-2020-10-16T07:52:06Z 	OK
-2020-10-16T07:52:06Z 	Available applications:
-2020-10-16T07:52:06Z 		Building : GenericBimDatabase
-2020-10-16T07:52:06Z 		Building : GeoJSON_to_BIM
-2020-10-16T07:52:06Z 		Building : CSV_to_BIM
-2020-10-16T07:52:06Z 		RegionalMapping : NearestNeighborEvents
-2020-10-16T07:52:06Z 		Event : SimCenterEvent
-2020-10-16T07:52:06Z 		Event : ExistingSimCenterEvents
-2020-10-16T07:52:06Z 		Event : ExistingPEER_Events
-2020-10-16T07:52:06Z 		Event : Site Response
-2020-10-16T07:52:06Z 		Event : HazardBasedEvent
-2020-10-16T07:52:06Z 		Event : DEDM_HRP
-2020-10-16T07:52:06Z 		Event : LowRiseTPU
-2020-10-16T07:52:06Z 		Event : WindTunnelExperiment
-2020-10-16T07:52:06Z 		Event : StochasticWindWittigSinha
-2020-10-16T07:52:06Z 		Event : StochasticGroundMotion
-2020-10-16T07:52:06Z 		Event : CFDEvent
-2020-10-16T07:52:06Z 		Event : NNGM
-2020-10-16T07:52:06Z 		Event : LLNL-SW4
-2020-10-16T07:52:06Z 		Event : ASCE7_WindSpeed
-2020-10-16T07:52:06Z 		Event : pointWindSpeed
-2020-10-16T07:52:06Z 		Modeling : MDOF-LU
-2020-10-16T07:52:06Z 		Modeling : OpenSeesInput
-2020-10-16T07:52:06Z 		Modeling : OpenSeesPyInput
-2020-10-16T07:52:06Z 		Modeling : MDOF_BuildingModel
-2020-10-16T07:52:06Z 		Modeling : SteelBuildingModel
-2020-10-16T07:52:06Z 		EDP : StandardEarthquakeEDP
-2020-10-16T07:52:06Z 		EDP : StandardEarthquakeEDP_R
-2020-10-16T07:52:06Z 		EDP : StandardWindEDP
-2020-10-16T07:52:06Z 		EDP : StandardGMT_EDP
-2020-10-16T07:52:06Z 		EDP : UserDefinedEDP
-2020-10-16T07:52:06Z 		EDP : UserDefinedEDP_R
-2020-10-16T07:52:06Z 		EDP : SimpleEDP
-2020-10-16T07:52:06Z 		Simulation : OpenSees-Simulation
-2020-10-16T07:52:06Z 		Simulation : OpenSeesPy-Simulation
-2020-10-16T07:52:06Z 		Simulation : ExtractPGA
-2020-10-16T07:52:06Z 		Simulation : OpenSees-Simulation_R
-2020-10-16T07:52:06Z 		Simulation : IMasEDP
-2020-10-16T07:52:06Z 		UQ : Dakota-UQ
-2020-10-16T07:52:06Z 		UQ : Dakota-FEM
-2020-10-16T07:52:06Z 		UQ : Dakota-UQ1
-2020-10-16T07:52:06Z 		DL : pelicun
-2020-10-16T07:52:06Z Successfully parsed application registry
-2020-10-16T07:52:06Z -----------------------------------------------------------
-2020-10-16T07:52:06Z Parsing workflow input file
-2020-10-16T07:52:06Z 	Loading the json file...
-2020-10-16T07:52:06Z 	OK
-2020-10-16T07:52:06Z 	The following units were specified: 
-2020-10-16T07:52:06Z 		force: N
-2020-10-16T07:52:06Z 		length: m
-2020-10-16T07:52:06Z 		time: sec
-2020-10-16T07:52:06Z 	Run dir : C:\rWHALE\sdof_study\results
-2020-10-16T07:52:06Z 	Local applications dir : C:/rWHALE/
-2020-10-16T07:52:06Z 	Remote applications dir : C:/rWHALE/
-2020-10-16T07:52:06Z 	Reference dir : C:\rWHALE\sdof_study\input_data
-2020-10-16T07:52:06Z 	No RegionalEvent among requested applications.
-2020-10-16T07:52:06Z 	No DL among requested applications.
-2020-10-16T07:52:06Z 	Requested workflow:
-2020-10-16T07:52:06Z 		Event : SimCenterEvent
-2020-10-16T07:52:06Z 		Building : CSV_to_BIM
-2020-10-16T07:52:06Z 		RegionalMapping : NearestNeighborEvents
-2020-10-16T07:52:06Z 		Modeling : OpenSeesPyInput
-2020-10-16T07:52:06Z 		EDP : UserDefinedEDP_R
-2020-10-16T07:52:06Z 		Simulation : OpenSeesPy-Simulation
-2020-10-16T07:52:06Z 		UQ : Dakota-UQ
-2020-10-16T07:52:06Z Successfully parsed workflow inputs
-2020-10-16T07:52:06Z -----------------------------------------------------------
-2020-10-16T07:52:06Z Initializing the working directory.
-2020-10-16T07:52:08Z Working directory successfully initialized.
-2020-10-16T07:52:08Z -----------------------------------------------------------
-2020-10-16T07:52:08Z Creating files for individual buildings
-2020-10-16T07:52:08Z Creating initial building files...
+2020-11-16T18:55:07Z 	python: 3.7.9 (default, Aug 31 2020, 17:10:11) [MSC v.1916 64 bit (AMD64)]
+2020-11-16T18:55:07Z 	numpy: 1.19.2
+2020-11-16T18:55:07Z 	pandas: 1.1.2
+2020-11-16T18:55:07Z -----------------------------------------------------------
+2020-11-16T18:55:07Z Started running the workflow script
+2020-11-16T18:55:07Z -----------------------------------------------------------
+2020-11-16T18:55:07Z Inputs provided:
+2020-11-16T18:55:07Z 	workflow input file: C:/rWHALE/earthquake_example/rWHALE_config.json
+2020-11-16T18:55:07Z 	application registry file: C:/rWHALE/applications/Workflow/WorkflowApplications.json
+2020-11-16T18:55:07Z 	run type: run
+2020-11-16T18:55:07Z -----------------------------------------------------------
+2020-11-16T18:55:07Z Parsing application registry file
+2020-11-16T18:55:07Z 	Loading the json file...
+2020-11-16T18:55:07Z 	OK
+2020-11-16T18:55:07Z 	Collecting application data...
+2020-11-16T18:55:07Z 	OK
+2020-11-16T18:55:07Z 	Available applications:
+2020-11-16T18:55:07Z 		Building : GenericBimDatabase
+2020-11-16T18:55:07Z 		Building : GeoJSON_to_BIM
+2020-11-16T18:55:07Z 		Building : CSV_to_BIM
+2020-11-16T18:55:07Z 		RegionalMapping : NearestNeighborEvents
+2020-11-16T18:55:07Z 		Event : SimCenterEvent
+2020-11-16T18:55:07Z 		Event : ExistingSimCenterEvents
+2020-11-16T18:55:07Z 		Event : ExistingPEER_Events
+2020-11-16T18:55:07Z 		Event : Site Response
+2020-11-16T18:55:07Z 		Event : HazardBasedEvent
+2020-11-16T18:55:07Z 		Event : DEDM_HRP
+2020-11-16T18:55:07Z 		Event : LowRiseTPU
+2020-11-16T18:55:07Z 		Event : WindTunnelExperiment
+2020-11-16T18:55:07Z 		Event : StochasticWindWittigSinha
+2020-11-16T18:55:07Z 		Event : StochasticGroundMotion
+2020-11-16T18:55:07Z 		Event : CFDEvent
+2020-11-16T18:55:07Z 		Event : NNGM
+2020-11-16T18:55:07Z 		Event : LLNL-SW4
+2020-11-16T18:55:07Z 		Event : ASCE7_WindSpeed
+2020-11-16T18:55:07Z 		Event : pointWindSpeed
+2020-11-16T18:55:07Z 		Modeling : MDOF-LU
+2020-11-16T18:55:07Z 		Modeling : OpenSeesInput
+2020-11-16T18:55:07Z 		Modeling : OpenSeesPyInput
+2020-11-16T18:55:07Z 		Modeling : MDOF_BuildingModel
+2020-11-16T18:55:07Z 		Modeling : SteelBuildingModel
+2020-11-16T18:55:07Z 		EDP : StandardEarthquakeEDP
+2020-11-16T18:55:07Z 		EDP : StandardEarthquakeEDP_R
+2020-11-16T18:55:07Z 		EDP : StandardWindEDP
+2020-11-16T18:55:07Z 		EDP : StandardGMT_EDP
+2020-11-16T18:55:07Z 		EDP : UserDefinedEDP
+2020-11-16T18:55:07Z 		EDP : UserDefinedEDP_R
+2020-11-16T18:55:07Z 		EDP : SimpleEDP
+2020-11-16T18:55:07Z 		Simulation : OpenSees-Simulation
+2020-11-16T18:55:07Z 		Simulation : OpenSeesPy-Simulation
+2020-11-16T18:55:07Z 		Simulation : ExtractPGA
+2020-11-16T18:55:07Z 		Simulation : OpenSees-Simulation_R
+2020-11-16T18:55:07Z 		Simulation : IMasEDP
+2020-11-16T18:55:07Z 		UQ : Dakota-UQ
+2020-11-16T18:55:07Z 		UQ : Dakota-FEM
+2020-11-16T18:55:07Z 		UQ : Dakota-UQ1
+2020-11-16T18:55:07Z 		DL : pelicun
+2020-11-16T18:55:07Z Successfully parsed application registry
+2020-11-16T18:55:07Z -----------------------------------------------------------
+2020-11-16T18:55:07Z Parsing workflow input file
+2020-11-16T18:55:07Z 	Loading the json file...
+2020-11-16T18:55:07Z 	OK
+2020-11-16T18:55:07Z 	The following units were specified: 
+2020-11-16T18:55:07Z 		force: kips
+2020-11-16T18:55:07Z 		length: in
+2020-11-16T18:55:07Z 		time: sec
+2020-11-16T18:55:07Z 	Run dir : C:/rWHALE/earthquake_example/results
+2020-11-16T18:55:07Z 	Local applications dir : C:/rWHALE/
+2020-11-16T18:55:08Z 	Remote applications dir : C:/rWHALE/
+2020-11-16T18:55:08Z 	Reference dir : C:/rWHALE/earthquake_example/input_data/
+2020-11-16T18:55:08Z 	No RegionalEvent among requested applications.
+2020-11-16T18:55:08Z 	Requested workflow:
+2020-11-16T18:55:08Z 		Event : SimCenterEvent
+2020-11-16T18:55:08Z 		Building : CSV_to_BIM
+2020-11-16T18:55:08Z 		RegionalMapping : NearestNeighborEvents
+2020-11-16T18:55:08Z 		Modeling : OpenSeesPyInput
+2020-11-16T18:55:08Z 		EDP : UserDefinedEDP_R
+2020-11-16T18:55:08Z 		Simulation : OpenSeesPy-Simulation
+2020-11-16T18:55:08Z 		UQ : Dakota-UQ
+2020-11-16T18:55:08Z 		DL : pelicun
+2020-11-16T18:55:08Z Successfully parsed workflow inputs
+2020-11-16T18:55:08Z -----------------------------------------------------------
+2020-11-16T18:55:08Z Initializing the working directory.
+2020-11-16T18:55:08Z Working directory successfully initialized.
+2020-11-16T18:55:08Z -----------------------------------------------------------
+2020-11-16T18:55:08Z Creating files for individual buildings
+2020-11-16T18:55:08Z Creating initial building files...
 
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/createBIM/CSV_to_BIM/CSV_to_BIM.py" "--buildingFile" "C:\rWHALE\sdof_study\results/buildings1-2.json" "--Min" "1" "--Max" "2" "--buildingSourceFile" "C:\rWHALE\sdof_study\input_data/input_params_new.csv" "--getRV" 
+python "C:/rWHALE/applications/createBIM/CSV_to_BIM/CSV_to_BIM.py" "--buildingFile" "C:/rWHALE/earthquake_example/results/buildings1-2.json" "--Min" "1" "--Max" "2" "--buildingSourceFile" "C:/rWHALE/earthquake_example/input_data/input_params.csv" "--getRV" 
 
-2020-10-16T07:52:10Z 	Output: 
-
-
-
-2020-10-16T07:52:10Z Building files successfully created.
-2020-10-16T07:52:10Z -----------------------------------------------------------
-2020-10-16T07:52:10Z Creating regional mapping...
-
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/performRegionalMapping/NearestNeighborEvents/NNE.py" "--buildingFile" "C:\rWHALE\sdof_study\results/buildings1-2.json" "--filenameEVENTgrid" "C:\rWHALE\sdof_study\input_data/records/EventGrid.csv" "--samples" "100" "--neighbors" "1" 
-
-2020-10-16T07:52:14Z 	Output: 
+2020-11-16T18:55:09Z 	Output: 
 
 
 
-2020-10-16T07:52:14Z Regional mapping successfully created.
-2020-10-16T07:52:14Z -----------------------------------------------------------
-2020-10-16T07:52:14Z {'id': '1', 'file': '1-BIM.json'}
-2020-10-16T07:52:14Z Initializing the simulation directory
-2020-10-16T07:52:14Z Simulation directory successfully initialized.
-2020-10-16T07:52:14Z -----------------------------------------------------------
-2020-10-16T07:52:14Z Creating files with random variables
-2020-10-16T07:52:14Z 	Running Event app for RV...
+2020-11-16T18:55:09Z Building files successfully created.
+2020-11-16T18:55:09Z -----------------------------------------------------------
+2020-11-16T18:55:09Z Creating regional mapping...
 
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/createEVENT/SimCenterEvent/SimCenterEvent.py" "--filenameBIM" "1-BIM.json" "--filenameEVENT" "EVENT.json" "--pathEventData" "C:\rWHALE\sdof_study\input_data/records/" "--getRV" 
+python "C:/rWHALE/applications/performRegionalMapping/NearestNeighborEvents/NNE.py" "--buildingFile" "C:/rWHALE/earthquake_example/results/buildings1-2.json" "--filenameEVENTgrid" "C:/rWHALE/earthquake_example/input_data/records/EventGrid.csv" "--samples" "2" "--neighbors" "1" 
 
-2020-10-16T07:52:15Z 	Output: 
+2020-11-16T18:55:12Z 	Output: 
 
 
 
-2020-10-16T07:52:15Z 	Running Modeling app for RV...
+2020-11-16T18:55:12Z Regional mapping successfully created.
+2020-11-16T18:55:12Z -----------------------------------------------------------
+2020-11-16T18:55:12Z {'id': '1', 'file': '1-BIM.json'}
+2020-11-16T18:55:12Z Initializing the simulation directory
+2020-11-16T18:55:12Z Simulation directory successfully initialized.
+2020-11-16T18:55:12Z -----------------------------------------------------------
+2020-11-16T18:55:12Z Creating files with random variables
+2020-11-16T18:55:12Z 	Running Event app for RV...
 
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/createSAM/openSeesPyInput/OpenSeesPyInput.py" "--filenameBIM" "1-BIM.json" "--filenameEVENT" "EVENT.json" "--filenameSAM" "SAM.json" "--mainScript" "bilinearSDOF.py" "--modelPath" "C:\rWHALE\sdof_study\input_data/model/" "--ndm" "3" "--dofMap" "1,2,3" "--getRV" 
+python "C:/rWHALE/applications/createEVENT/SimCenterEvent/SimCenterEvent.py" "--filenameBIM" "1-BIM.json" "--filenameEVENT" "EVENT.json" "--pathEventData" "C:/rWHALE/earthquake_example/input_data/records/" "--getRV" 
 
-2020-10-16T07:52:15Z 	Output: 
-
-
-
-2020-10-16T07:52:15Z 	Running EDP app for RV...
-
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/createEDP/userEDP_R/UserDefinedEDP.py" "--filenameBIM" "1-BIM.json" "--filenameEVENT" "EVENT.json" "--filenameSAM" "SAM.json" "--filenameEDP" "EDP.json" "--EDPspecs" "C:\rWHALE\sdof_study\input_data/EDP_specs.json" "--getRV" 
-
-2020-10-16T07:52:16Z 	Output: 
-
-
-
-2020-10-16T07:52:16Z 	Running Simulation app for RV...
-
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/performSIMULATION/openSeesPy/OpenSeesPySimulation.py" "--filenameBIM" "1-BIM.json" "--filenameSAM" "SAM.json" "--filenameEVENT" "EVENT.json" "--filenameEDP" "EDP.json" "--filenameSIM" "SIM.json" "--getRV" 
-
-2020-10-16T07:52:16Z 	Output: 
+2020-11-16T18:55:12Z 	Output: 
 
 
 
-2020-10-16T07:52:16Z Files with random variables successfully created.
-2020-10-16T07:52:16Z -----------------------------------------------------------
-2020-10-16T07:52:16Z Creating the workflow driver file
-2020-10-16T07:52:16Z Workflow driver script:
+2020-11-16T18:55:12Z 	Running Modeling app for RV...
 
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/createBIM/CSV_to_BIM/CSV_to_BIM.py" "--buildingFile" "C:\rWHALE\sdof_study\results/buildings1-2.json" "--Min" "1" "--Max" "2" "--buildingSourceFile" "C:\rWHALE\sdof_study\input_data/input_params_new.csv" 
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/createEVENT/SimCenterEvent/SimCenterEvent.py" "--filenameBIM" "1-BIM.json" "--filenameEVENT" "EVENT.json" "--pathEventData" "C:\rWHALE\sdof_study\input_data/records/" 
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/createSAM/openSeesPyInput/OpenSeesPyInput.py" "--filenameBIM" "1-BIM.json" "--filenameEVENT" "EVENT.json" "--filenameSAM" "SAM.json" "--mainScript" "bilinearSDOF.py" "--modelPath" "C:\rWHALE\sdof_study\input_data/model/" "--ndm" "3" "--dofMap" "1,2,3" 
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/createEDP/userEDP_R/UserDefinedEDP.py" "--filenameBIM" "1-BIM.json" "--filenameEVENT" "EVENT.json" "--filenameSAM" "SAM.json" "--filenameEDP" "EDP.json" "--EDPspecs" "C:\rWHALE\sdof_study\input_data/EDP_specs.json" 
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/performSIMULATION/openSeesPy/OpenSeesPySimulation.py" "--filenameBIM" "1-BIM.json" "--filenameSAM" "SAM.json" "--filenameEVENT" "EVENT.json" "--filenameEDP" "EDP.json" "--filenameSIM" "SIM.json" 
+python "C:/rWHALE/applications/createSAM/openSeesPyInput/OpenSeesPyInput.py" "--filenameBIM" "1-BIM.json" "--filenameEVENT" "EVENT.json" "--filenameSAM" "SAM.json" "--mainScript" "cantilever.py" "--modelPath" "C:/rWHALE/earthquake_example/input_data/model/" "--ndm" "3" "--dofMap" "1,2,3" "--getRV" 
+
+2020-11-16T18:55:12Z 	Output: 
 
 
-2020-10-16T07:52:16Z Workflow driver file successfully created.
-2020-10-16T07:52:16Z -----------------------------------------------------------
-2020-10-16T07:52:16Z Running response simulation
-2020-10-16T07:52:16Z 	Simulation command:
 
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/performUQ/dakota/DakotaFEM.py" "--filenameBIM" "1-BIM.json" "--filenameSAM" "SAM.json" "--filenameEVENT" "EVENT.json" "--filenameEDP" "EDP.json" "--filenameSIM" "SIM.json" "--driverFile" "driver" "--method" "LHS" "--samples" "100" "--type" "UQ" "--concurrency" "1" "--keepSamples" "True" "--runType" "run" 
+2020-11-16T18:55:12Z 	Running EDP app for RV...
 
-2020-10-16T08:04:25Z 	Output: 
+python "C:/rWHALE/applications/createEDP/userEDP_R/UserDefinedEDP.py" "--filenameBIM" "1-BIM.json" "--filenameEVENT" "EVENT.json" "--filenameSAM" "SAM.json" "--filenameEDP" "EDP.json" "--EDPspecs" "C:/rWHALE/earthquake_example/input_data/EDP_specs.json" "--getRV" 
+
+2020-11-16T18:55:13Z 	Output: 
+
+
+
+2020-11-16T18:55:13Z 	Running Simulation app for RV...
+
+python "C:/rWHALE/applications/performSIMULATION/openSeesPy/OpenSeesPySimulation.py" "--filenameBIM" "1-BIM.json" "--filenameSAM" "SAM.json" "--filenameEVENT" "EVENT.json" "--filenameEDP" "EDP.json" "--filenameSIM" "SIM.json" "--getRV" 
+
+2020-11-16T18:55:13Z 	Output: 
+
+
+
+2020-11-16T18:55:13Z Files with random variables successfully created.
+2020-11-16T18:55:13Z -----------------------------------------------------------
+2020-11-16T18:55:13Z Creating the workflow driver file
+2020-11-16T18:55:13Z Workflow driver script:
+
+python "C:/rWHALE/applications/createBIM/CSV_to_BIM/CSV_to_BIM.py" "--buildingFile" "C:/rWHALE/earthquake_example/results/buildings1-2.json" "--Min" "1" "--Max" "2" "--buildingSourceFile" "C:/rWHALE/earthquake_example/input_data/input_params.csv" 
+python "C:/rWHALE/applications/createEVENT/SimCenterEvent/SimCenterEvent.py" "--filenameBIM" "1-BIM.json" "--filenameEVENT" "EVENT.json" "--pathEventData" "C:/rWHALE/earthquake_example/input_data/records/" 
+python "C:/rWHALE/applications/createSAM/openSeesPyInput/OpenSeesPyInput.py" "--filenameBIM" "1-BIM.json" "--filenameEVENT" "EVENT.json" "--filenameSAM" "SAM.json" "--mainScript" "cantilever.py" "--modelPath" "C:/rWHALE/earthquake_example/input_data/model/" "--ndm" "3" "--dofMap" "1,2,3" 
+python "C:/rWHALE/applications/createEDP/userEDP_R/UserDefinedEDP.py" "--filenameBIM" "1-BIM.json" "--filenameEVENT" "EVENT.json" "--filenameSAM" "SAM.json" "--filenameEDP" "EDP.json" "--EDPspecs" "C:/rWHALE/earthquake_example/input_data/EDP_specs.json" 
+python "C:/rWHALE/applications/performSIMULATION/openSeesPy/OpenSeesPySimulation.py" "--filenameBIM" "1-BIM.json" "--filenameSAM" "SAM.json" "--filenameEVENT" "EVENT.json" "--filenameEDP" "EDP.json" "--filenameSIM" "SIM.json" 
+
+
+2020-11-16T18:55:13Z Workflow driver file successfully created.
+2020-11-16T18:55:13Z -----------------------------------------------------------
+2020-11-16T18:55:13Z Running response simulation
+2020-11-16T18:55:13Z 	Simulation command:
+
+python "C:/rWHALE/applications/performUQ/dakota/DakotaFEM.py" "--filenameBIM" "1-BIM.json" "--filenameSAM" "SAM.json" "--filenameEVENT" "EVENT.json" "--filenameEDP" "EDP.json" "--filenameSIM" "SIM.json" "--driverFile" "driver" "--method" "LHS" "--samples" "2" "--type" "UQ" "--concurrency" "1" "--keepSamples" "True" "--runType" "run" 
+
+2020-11-16T18:55:18Z 	Output: 
 
 
 Parsing random variables...
 1-BIM.json:
 EVENT.json:
-	eventID | discrete set=['RSN108x00044', 'RSN108x00094', 'RSN1103x00027', 'RSN1103x00077', 'RSN1246x00017', 'RSN1246x00067', 'RSN1320x00016', 'RSN1320x00066', 'RSN1367x00007', 'RSN1367x00057', 'RSN1398x00028', 'RSN1398x00078', 'RSN1690x00032', 'RSN1690x00082', 'RSN1803x00038', 'RSN1803x00088', 'RSN195x00043', 'RSN195x00093', 'RSN1993x00048', 'RSN1993x00098', 'RSN200x00021', 'RSN200x00042', 'RSN200x00071', 'RSN200x00092', 'RSN201x00000', 'RSN201x00010', 'RSN201x00020', 'RSN201x00030', 'RSN201x00031', 'RSN201x00040', 'RSN201x00041', 'RSN201x00050', 'RSN201x00060', 'RSN201x00070', 'RSN201x00080', 'RSN201x00081', 'RSN201x00090', 'RSN201x00091', 'RSN2099x00029', 'RSN2099x00039', 'RSN2099x00079', 'RSN2099x00089', 'RSN2100x00019', 'RSN2100x00069', 'RSN2103x00009', 'RSN2103x00059', 'RSN2117x00008', 'RSN2117x00018', 'RSN2117x00058', 'RSN2117x00068', 'RSN215x00046', 'RSN215x00096', 'RSN2368x00024', 'RSN2368x00074', 'RSN2485x00006', 'RSN2485x00056', 'RSN2498x00004', 'RSN2498x00054', 'RSN2513x00049', 'RSN2513x00099', 'RSN255x00025', 'RSN255x00075', 'RSN296x00035', 'RSN296x00085', 'RSN3307x00014', 'RSN3307x00064', 'RSN429x00005', 'RSN429x00015', 'RSN429x00055', 'RSN429x00065', 'RSN442x00023', 'RSN442x00073', 'RSN443x00034', 'RSN443x00084', 'RSN468x00026', 'RSN468x00076', 'RSN493x00033', 'RSN493x00083', 'RSN507x00003', 'RSN507x00013', 'RSN507x00053', 'RSN507x00063', 'RSN508x00001', 'RSN508x00002', 'RSN508x00011', 'RSN508x00012', 'RSN508x00022', 'RSN508x00051', 'RSN508x00052', 'RSN508x00061', 'RSN508x00062', 'RSN508x00072', 'RSN54x00036', 'RSN54x00086', 'RSN79x00045', 'RSN79x00095', 'RSN840x00047', 'RSN840x00097', 'RSN862x00037', 'RSN862x00087']
+	eventID | discrete set=['RSN1737x00000', 'RSN707x00001']
 SAM.json:
 ERROR: SIM.json file not found.
 EDP.json:
-['RSN108x00044', 'RSN108x00094', 'RSN1103x00027', 'RSN1103x00077', 'RSN1246x00017', 'RSN1246x00067', 'RSN1320x00016', 'RSN1320x00066', 'RSN1367x00007', 'RSN1367x00057', 'RSN1398x00028', 'RSN1398x00078', 'RSN1690x00032', 'RSN1690x00082', 'RSN1803x00038', 'RSN1803x00088', 'RSN195x00043', 'RSN195x00093', 'RSN1993x00048', 'RSN1993x00098', 'RSN200x00021', 'RSN200x00042', 'RSN200x00071', 'RSN200x00092', 'RSN201x00000', 'RSN201x00010', 'RSN201x00020', 'RSN201x00030', 'RSN201x00031', 'RSN201x00040', 'RSN201x00041', 'RSN201x00050', 'RSN201x00060', 'RSN201x00070', 'RSN201x00080', 'RSN201x00081', 'RSN201x00090', 'RSN201x00091', 'RSN2099x00029', 'RSN2099x00039', 'RSN2099x00079', 'RSN2099x00089', 'RSN2100x00019', 'RSN2100x00069', 'RSN2103x00009', 'RSN2103x00059', 'RSN2117x00008', 'RSN2117x00018', 'RSN2117x00058', 'RSN2117x00068', 'RSN215x00046', 'RSN215x00096', 'RSN2368x00024', 'RSN2368x00074', 'RSN2485x00006', 'RSN2485x00056', 'RSN2498x00004', 'RSN2498x00054', 'RSN2513x00049', 'RSN2513x00099', 'RSN255x00025', 'RSN255x00075', 'RSN296x00035', 'RSN296x00085', 'RSN3307x00014', 'RSN3307x00064', 'RSN429x00005', 'RSN429x00015', 'RSN429x00055', 'RSN429x00065', 'RSN442x00023', 'RSN442x00073', 'RSN443x00034', 'RSN443x00084', 'RSN468x00026', 'RSN468x00076', 'RSN493x00033', 'RSN493x00083', 'RSN507x00003', 'RSN507x00013', 'RSN507x00053', 'RSN507x00063', 'RSN508x00001', 'RSN508x00002', 'RSN508x00011', 'RSN508x00012', 'RSN508x00022', 'RSN508x00051', 'RSN508x00052', 'RSN508x00061', 'RSN508x00062', 'RSN508x00072', 'RSN54x00036', 'RSN54x00086', 'RSN79x00045', 'RSN79x00095', 'RSN840x00047', 'RSN840x00097', 'RSN862x00037', 'RSN862x00087']
-100
+['RSN1737x00000', 'RSN707x00001']
+2
 running Dakota:  dakota -input dakota.in -output dakota.out -error dakota.err
 
 
-2020-10-16T08:04:25Z Response simulation finished successfully.
-2020-10-16T08:04:25Z -----------------------------------------------------------
-2020-10-16T08:04:25Z 
-2020-10-16T08:04:25Z No DL requested, loss assessment step is skipped.
-2020-10-16T08:04:25Z 
-2020-10-16T08:04:25Z {'id': '2', 'file': '2-BIM.json'}
-2020-10-16T08:04:25Z Initializing the simulation directory
-2020-10-16T08:04:25Z Simulation directory successfully initialized.
-2020-10-16T08:04:25Z -----------------------------------------------------------
-2020-10-16T08:04:25Z Creating files with random variables
-2020-10-16T08:04:25Z 	Running Event app for RV...
+2020-11-16T18:55:18Z Response simulation finished successfully.
+2020-11-16T18:55:18Z -----------------------------------------------------------
+2020-11-16T18:55:18Z Running damage and loss assessment
+2020-11-16T18:55:18Z 	Damage and loss assessment command:
 
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/createEVENT/SimCenterEvent/SimCenterEvent.py" "--filenameBIM" "2-BIM.json" "--filenameEVENT" "EVENT.json" "--pathEventData" "C:\rWHALE\sdof_study\input_data/records/" "--getRV" 
+python "C:/rWHALE/applications/performDL/pelicun/DL_calculation.py" "--filenameDL" "1-BIM.json" "--filenameEDP" "response.csv" "--outputEDP" "EDP.csv" "--outputDM" "DM.csv" "--outputDV" "DV.csv" "--DL_Method" "HAZUS MH EQ" "--Realizations" "2" "--detailed_results" "False" "--log_file" "True" "--coupled_EDP" "True" "--event_time" "off" "--ground_failure" "False" 
 
-2020-10-16T08:04:26Z 	Output: 
+2020-11-16T18:55:18Z First line of DL_calculation
+2020-11-16T18:55:20Z Initializing pelicun calculation...
+WARNING No loss model defined in the BIM file. Trying to auto-populate.
+start creating the edp file
+2020-11-16T18:55:21Z pelicun calculation completed.
 
+2020-11-16T18:55:22Z Damage and loss assessment finished successfully.
+2020-11-16T18:55:22Z -----------------------------------------------------------
+2020-11-16T18:55:22Z {'id': '2', 'file': '2-BIM.json'}
+2020-11-16T18:55:22Z Initializing the simulation directory
+2020-11-16T18:55:22Z Simulation directory successfully initialized.
+2020-11-16T18:55:22Z -----------------------------------------------------------
+2020-11-16T18:55:22Z Creating files with random variables
+2020-11-16T18:55:22Z 	Running Event app for RV...
 
+python "C:/rWHALE/applications/createEVENT/SimCenterEvent/SimCenterEvent.py" "--filenameBIM" "2-BIM.json" "--filenameEVENT" "EVENT.json" "--pathEventData" "C:/rWHALE/earthquake_example/input_data/records/" "--getRV" 
 
-2020-10-16T08:04:26Z 	Running Modeling app for RV...
-
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/createSAM/openSeesPyInput/OpenSeesPyInput.py" "--filenameBIM" "2-BIM.json" "--filenameEVENT" "EVENT.json" "--filenameSAM" "SAM.json" "--mainScript" "bilinearSDOF.py" "--modelPath" "C:\rWHALE\sdof_study\input_data/model/" "--ndm" "3" "--dofMap" "1,2,3" "--getRV" 
-
-2020-10-16T08:04:26Z 	Output: 
-
-
-
-2020-10-16T08:04:26Z 	Running EDP app for RV...
-
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/createEDP/userEDP_R/UserDefinedEDP.py" "--filenameBIM" "2-BIM.json" "--filenameEVENT" "EVENT.json" "--filenameSAM" "SAM.json" "--filenameEDP" "EDP.json" "--EDPspecs" "C:\rWHALE\sdof_study\input_data/EDP_specs.json" "--getRV" 
-
-2020-10-16T08:04:26Z 	Output: 
+2020-11-16T18:55:22Z 	Output: 
 
 
 
-2020-10-16T08:04:26Z 	Running Simulation app for RV...
+2020-11-16T18:55:22Z 	Running Modeling app for RV...
 
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/performSIMULATION/openSeesPy/OpenSeesPySimulation.py" "--filenameBIM" "2-BIM.json" "--filenameSAM" "SAM.json" "--filenameEVENT" "EVENT.json" "--filenameEDP" "EDP.json" "--filenameSIM" "SIM.json" "--getRV" 
+python "C:/rWHALE/applications/createSAM/openSeesPyInput/OpenSeesPyInput.py" "--filenameBIM" "2-BIM.json" "--filenameEVENT" "EVENT.json" "--filenameSAM" "SAM.json" "--mainScript" "cantilever.py" "--modelPath" "C:/rWHALE/earthquake_example/input_data/model/" "--ndm" "3" "--dofMap" "1,2,3" "--getRV" 
 
-2020-10-16T08:04:27Z 	Output: 
-
-
-
-2020-10-16T08:04:27Z Files with random variables successfully created.
-2020-10-16T08:04:27Z -----------------------------------------------------------
-2020-10-16T08:04:27Z Creating the workflow driver file
-2020-10-16T08:04:27Z Workflow driver script:
-
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/createBIM/CSV_to_BIM/CSV_to_BIM.py" "--buildingFile" "C:\rWHALE\sdof_study\results/buildings1-2.json" "--Min" "1" "--Max" "2" "--buildingSourceFile" "C:\rWHALE\sdof_study\input_data/input_params_new.csv" 
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/createEVENT/SimCenterEvent/SimCenterEvent.py" "--filenameBIM" "2-BIM.json" "--filenameEVENT" "EVENT.json" "--pathEventData" "C:\rWHALE\sdof_study\input_data/records/" 
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/createSAM/openSeesPyInput/OpenSeesPyInput.py" "--filenameBIM" "2-BIM.json" "--filenameEVENT" "EVENT.json" "--filenameSAM" "SAM.json" "--mainScript" "bilinearSDOF.py" "--modelPath" "C:\rWHALE\sdof_study\input_data/model/" "--ndm" "3" "--dofMap" "1,2,3" 
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/createEDP/userEDP_R/UserDefinedEDP.py" "--filenameBIM" "2-BIM.json" "--filenameEVENT" "EVENT.json" "--filenameSAM" "SAM.json" "--filenameEDP" "EDP.json" "--EDPspecs" "C:\rWHALE\sdof_study\input_data/EDP_specs.json" 
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/performSIMULATION/openSeesPy/OpenSeesPySimulation.py" "--filenameBIM" "2-BIM.json" "--filenameSAM" "SAM.json" "--filenameEVENT" "EVENT.json" "--filenameEDP" "EDP.json" "--filenameSIM" "SIM.json" 
+2020-11-16T18:55:22Z 	Output: 
 
 
-2020-10-16T08:04:27Z Workflow driver file successfully created.
-2020-10-16T08:04:27Z -----------------------------------------------------------
-2020-10-16T08:04:27Z Running response simulation
-2020-10-16T08:04:27Z 	Simulation command:
 
-"C:\Users\Joanna Zou\Anaconda3\python.exe" "C:/rWHALE/applications/performUQ/dakota/DakotaFEM.py" "--filenameBIM" "2-BIM.json" "--filenameSAM" "SAM.json" "--filenameEVENT" "EVENT.json" "--filenameEDP" "EDP.json" "--filenameSIM" "SIM.json" "--driverFile" "driver" "--method" "LHS" "--samples" "100" "--type" "UQ" "--concurrency" "1" "--keepSamples" "True" "--runType" "run" 
+2020-11-16T18:55:22Z 	Running EDP app for RV...
+
+python "C:/rWHALE/applications/createEDP/userEDP_R/UserDefinedEDP.py" "--filenameBIM" "2-BIM.json" "--filenameEVENT" "EVENT.json" "--filenameSAM" "SAM.json" "--filenameEDP" "EDP.json" "--EDPspecs" "C:/rWHALE/earthquake_example/input_data/EDP_specs.json" "--getRV" 
+
+2020-11-16T18:55:22Z 	Output: 
+
+
+
+2020-11-16T18:55:22Z 	Running Simulation app for RV...
+
+python "C:/rWHALE/applications/performSIMULATION/openSeesPy/OpenSeesPySimulation.py" "--filenameBIM" "2-BIM.json" "--filenameSAM" "SAM.json" "--filenameEVENT" "EVENT.json" "--filenameEDP" "EDP.json" "--filenameSIM" "SIM.json" "--getRV" 
+
+2020-11-16T18:55:23Z 	Output: 
+
+
+
+2020-11-16T18:55:23Z Files with random variables successfully created.
+2020-11-16T18:55:23Z -----------------------------------------------------------
+2020-11-16T18:55:23Z Creating the workflow driver file
+2020-11-16T18:55:23Z Workflow driver script:
+
+python "C:/rWHALE/applications/createBIM/CSV_to_BIM/CSV_to_BIM.py" "--buildingFile" "C:/rWHALE/earthquake_example/results/buildings1-2.json" "--Min" "1" "--Max" "2" "--buildingSourceFile" "C:/rWHALE/earthquake_example/input_data/input_params.csv" 
+python "C:/rWHALE/applications/createEVENT/SimCenterEvent/SimCenterEvent.py" "--filenameBIM" "2-BIM.json" "--filenameEVENT" "EVENT.json" "--pathEventData" "C:/rWHALE/earthquake_example/input_data/records/" 
+python "C:/rWHALE/applications/createSAM/openSeesPyInput/OpenSeesPyInput.py" "--filenameBIM" "2-BIM.json" "--filenameEVENT" "EVENT.json" "--filenameSAM" "SAM.json" "--mainScript" "cantilever.py" "--modelPath" "C:/rWHALE/earthquake_example/input_data/model/" "--ndm" "3" "--dofMap" "1,2,3" 
+python "C:/rWHALE/applications/createEDP/userEDP_R/UserDefinedEDP.py" "--filenameBIM" "2-BIM.json" "--filenameEVENT" "EVENT.json" "--filenameSAM" "SAM.json" "--filenameEDP" "EDP.json" "--EDPspecs" "C:/rWHALE/earthquake_example/input_data/EDP_specs.json" 
+python "C:/rWHALE/applications/performSIMULATION/openSeesPy/OpenSeesPySimulation.py" "--filenameBIM" "2-BIM.json" "--filenameSAM" "SAM.json" "--filenameEVENT" "EVENT.json" "--filenameEDP" "EDP.json" "--filenameSIM" "SIM.json" 
+
+
+2020-11-16T18:55:23Z Workflow driver file successfully created.
+2020-11-16T18:55:23Z -----------------------------------------------------------
+2020-11-16T18:55:23Z Running response simulation
+2020-11-16T18:55:23Z 	Simulation command:
+
+python "C:/rWHALE/applications/performUQ/dakota/DakotaFEM.py" "--filenameBIM" "2-BIM.json" "--filenameSAM" "SAM.json" "--filenameEVENT" "EVENT.json" "--filenameEDP" "EDP.json" "--filenameSIM" "SIM.json" "--driverFile" "driver" "--method" "LHS" "--samples" "2" "--type" "UQ" "--concurrency" "1" "--keepSamples" "True" "--runType" "run" 
+
+2020-11-16T18:55:28Z 	Output: 
+
+
+Parsing random variables...
+2-BIM.json:
+EVENT.json:
+	eventID | discrete set=['RSN1737x00000', 'RSN707x00001']
+SAM.json:
+ERROR: SIM.json file not found.
+EDP.json:
+['RSN1737x00000', 'RSN707x00001']
+2
+running Dakota:  dakota -input dakota.in -output dakota.out -error dakota.err
+
+
+2020-11-16T18:55:28Z Response simulation finished successfully.
+2020-11-16T18:55:28Z -----------------------------------------------------------
+2020-11-16T18:55:28Z Running damage and loss assessment
+2020-11-16T18:55:28Z 	Damage and loss assessment command:
+
+python "C:/rWHALE/applications/performDL/pelicun/DL_calculation.py" "--filenameDL" "2-BIM.json" "--filenameEDP" "response.csv" "--outputEDP" "EDP.csv" "--outputDM" "DM.csv" "--outputDV" "DV.csv" "--DL_Method" "HAZUS MH EQ" "--Realizations" "2" "--detailed_results" "False" "--log_file" "True" "--coupled_EDP" "True" "--event_time" "off" "--ground_failure" "False" 
+
+2020-11-16T18:55:28Z First line of DL_calculation
+2020-11-16T18:55:31Z Initializing pelicun calculation...
+WARNING No loss model defined in the BIM file. Trying to auto-populate.
+start creating the edp file
+2020-11-16T18:55:32Z pelicun calculation completed.
+
+2020-11-16T18:55:32Z Damage and loss assessment finished successfully.
+2020-11-16T18:55:32Z -----------------------------------------------------------
+2020-11-16T18:55:32Z Collecting damage and loss results
+2020-11-16T18:55:32Z Damage and loss results collected successfully.
+2020-11-16T18:55:32Z -----------------------------------------------------------

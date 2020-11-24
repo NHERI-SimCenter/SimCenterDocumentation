@@ -370,8 +370,8 @@
         }
       },
       "UQApplications": {
-        "Dakota-FEM": {
-          "title": "Dakota-FEM",
+        "Dakota-UQ": {
+          "title": "Dakota-UQ",
           "description": "Uses the uncertainty quantification package Dakota to sample random variables and execute the workflow driver file.",
           "properties": {
             "File Path": "applications/performUQ/dakota_R/DakotaFEM.py",
