@@ -7,11 +7,11 @@
 # -- SimCenter App selection -------------------------------------------------
 
 
-#app_name = 'RDT'
+app_name = 'RDT'
 #app_name = 'PBE'
 #app_name = 'EE-UQ'
 #app_name = 'WE-UQ'
-app_name = 'quoFEM'
+#app_name = 'quoFEM'
 #app_name = 'pelicun'
 
 print('app_name = ' + app_name)
@@ -114,7 +114,7 @@ rst_prolog = """
 .. _DesignSafe: https://designsafe-ci.org
 .. |smelt| replace:: `smelt`_
 .. _smelt: https://github.com/NHERI-SimCenter/smelt
-.. |s3harkName| replace:: s3hark
+.. |s3harkName| replace:: *s*\ :sup:`3`\ *hark*
 .. |br| raw:: html
 
     <br>

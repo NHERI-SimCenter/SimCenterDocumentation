@@ -1,0 +1,19 @@
+BR1.0 , "Promote living community risk models utilizing local inventory data from various sources", GC , M , 
+BR2.0 , "Ability to use cumulative knowledge bases rather than the piecemeal individual approaches", GC , M , 
+BR3.0 , "Developing and sharing standardized definitions, measurement protocols and strategies for data collection", GC , M , 
+BR4, "**Developing tools that utilize GIS information and online images, e.g. google maps, for data collection for gathering Building Information**", "", "", ""
+BR4.1 , "Predicting if building is a soft-story building for earthquake simulations", UF , M , 1.0 
+BR4.2 , "Predicting Roof Shape", SP , M , 1.0 
+BR4.3 , "Predicting First Floor of Occupancy Level", SP , M ,
+BR4.4 , "Predicting Roof Height", SP , M ,
+BR4.5 , "Predicting Eave Height", SP , M ,
+BR4.5 , "Predicting Eave Length", SP , M ,
+BR4.6 , "Predicting Roof Shape", SP , M ,
+BR4.6 , "Predicting Roof Pitch", SP , M ,
+BR4.7 , "Predicting Roof Material", SP , M ,
+BR4.8 , "Predicting Window Area", SP , M ,
+BR4.9 , "Predicting Wind", SP , M ,
+BR4.10 , "Predicting Building Material", SP , M ,
+BR4.11 , "Predicting Foundation Type", SP , M ,
+BR4.12 , "Predicting Structural Type", SP , M ,
+BR4.13 , "Predicting Occupancy Type", SP , M ,

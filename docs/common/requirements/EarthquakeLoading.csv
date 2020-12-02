@@ -8,7 +8,7 @@ EL6, "Ability to use Broadband ", SP, D,
 EL7, "Ability to include Soil Structure Interaction Effects ", GC, M, 1.1   
 EL7.1, "1D nonlinear site response with effective stress analysis ", SP, M, 1.1   
 EL7.2, "Nonlinear site response with bidirectional loading ", SP, M, 1.2   
-EL7.3, "Nonlinear site response with full stochastic characterization of soil layers ", SP, M,   
+EL7.3, "Nonlinear site response with full stochastic characterization of soil layers ", SP, M, 2.2
 EL7.4, "Nonlinear site response, bidirectional different input motions  ", SP, M,    
 EL7.5, "Ability to couple models from point of rupture through rock and soil into structure, which represents future of professional design practice ", GC, M,    
 EL7.5.1, "Interface using DRM method", SP, M,    

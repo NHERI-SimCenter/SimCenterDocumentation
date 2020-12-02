@@ -19,7 +19,7 @@ First, ensure the following dependencies are installed:
 
 * **DAKOTA**: The workflow applications require an installation of `DAKOTA <https://dakota.sandia.gov/>`_ to handle and propagate the uncertainties defined in the input files for the workflow applications.
 
-* **Python**: The workflow requires Python 3.6.
+* **Python**: The workflow requires at least Python 3.6.
 
 * **Conan**: This repository uses `Conan <https://conan.io/>`_ for dependency management. Conan is a python library and can be installed using the following `instructions <https://docs.conan.io/en/latest/installation.html>`_. Version 1.25 or later is recommended.
 
@@ -73,64 +73,14 @@ Build on MacOS
 --------------
 For Mac systems, the steps to building the workflow application are as follows:
 
-    #. **Obtain the source code:** Clone the |short tool id| repository from |tool github link|. You can do that by using your preferred Git client/GUI or by using the ``git clone`` command in the terminal.
 
-    #. **Set up the development environment:** Add Conan `SimCenter <https://bintray.com/nheri-simcenter/simcenter>`_ and  `BinCrafters <https://bintray.com/bincrafters/public-conan>`_ repositories to the Conan remotes. You can add these remotes using the following commands in the terminal:
-
-        ``conan remote add simcenter https://api.bintray.com/conan/nheri-simcenter/simcenter``
-
-        ``conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan``
-
-    #. **Configure your compiler:** Check the default profile of your build environment using ``conan profile show default``. If the compiler name and compiler version are *not* listed, then you will need to select a specific compiler. For instance, on Windows using Visual Studio 2019, you can specify the compiler as follows:
-
-        ``conan profile update settings.compiler="Visual Studio" default``
-
-        ``conan profile update settings.compiler.version="16" default``
-
-    #. **Create the build output directory:** In the terminal, navigate into the "SimCenterBackendApplications" repository on your desktop. Create a new folder called "build" using the command ``mkdir build``, then navigate into that folder using ``cd build``.
-
-    #. **Install backend dependencies:** You can install backend dependencies using Conan by running the command in the build output directory:
-
-        ``conan install ..``
-
-    #. **Run CMake configuration:** Run the command ``cmake ..``. If it is necessary to specify a compiler for CMake, you may alternatively run ``cmake .. -G "Visual Studio 16 2019"``.
-
-    #. **Build the release version of the backend:** When using an IDE like XCode on Mac, the generated project can opened in the IDE and used to build the code. This function can also be done from the same terminal window using CMake by the command:
-
-        ``cmake --build . --config release``
-
-    #.  **Install the workflow applications folder:** Run the command ``cmake --install .``. If the installation and build are successful, then you should find a folder called "applications" in the "SimCenterBackendApplications" repository which contains all the workflow application files.
 
 
 Build on Unix
 -------------
 For Unix systems, the steps to building the workflow application are as follows:
 
-    #. **Obtain the source code:** Clone the |short tool id| repository from |tool github link|. You can do that by using your preferred Git client/GUI or by using the ``git clone`` command in the terminal.
 
-    #. **Set up the development environment:** Add Conan `SimCenter <https://bintray.com/nheri-simcenter/simcenter>`_ and  `BinCrafters <https://bintray.com/bincrafters/public-conan>`_ repositories to the Conan remotes. You can add these remotes using the following commands in the terminal:
-
-        ``conan remote add simcenter https://api.bintray.com/conan/nheri-simcenter/simcenter``
-
-        ``conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan``
-
-    #. **Configure your compiler:** Check the default profile of your build environment using ``conan profile show default``. If the compiler name and compiler version are *not* listed, then you will need to select a specific compiler. For instance, on Windows using Visual Studio 2019, you can specify the compiler as follows:
-
-        ``conan profile update settings.compiler="Visual Studio" default``
-
-        ``conan profile update settings.compiler.version="16" default``
-
-    #. **Create the build output directory:** In the terminal, navigate into the "SimCenterBackendApplications" repository on your desktop. Create a new folder called "build" using the command ``mkdir build``, then navigate into that folder using ``cd build``.
-
-    #. **Install backend dependencies:** You can install backend dependencies using Conan by running the command in the build output directory:
-
-        ``conan install ..``
-
-    #. **Run CMake configuration:** Run the command ``cmake ..``. If it is necessary to specify a compiler for CMake, you may alternatively run ``cmake .. -G "Visual Studio 16 2019"``.
-
-    #. **Build the release version of the backend:** On Unix-based systems, building the backend can be achieved using the command ``make`` or ``make release``.
-
-    #.  **Install the workflow applications folder:** Run the command ``cmake --install .``. If the installation and build are successful, then you should find a folder called "applications" in the "SimCenterBackendApplications" repository which contains all the workflow application files.
 
 
 

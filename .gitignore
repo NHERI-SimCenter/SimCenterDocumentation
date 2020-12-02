@@ -294,3 +294,4 @@ TInF/validation/ExampleInput/building/system/.DS_Store
 TInF/RST/build
 docs/web
 .DS_STORE
+*.pyc

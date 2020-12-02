@@ -1,9 +1,10 @@
-PBE1, "Ability to determine damage and loss calculations for a building subjected to a natural hazard including formal treatment of randomness and uncertainty uncertainty ", GC , M  , 1.0   
-PBE1.1 , "Ability to determine  damage and loss for multiple different hazards ", GC , M ,   
+PBE1, "*Ability to determine damage and loss calculations for a building subjected to a natural hazard including formal treatment of randomness and uncertainty uncertainty*", "", "",    
+PBE1.1 , "*Ability to determine  damage and loss for multiple different hazards*", "", "",    
 PBE1.1.1 , "Damage and Loss for ground shaking due to Earthquake ", GC , M , 1.0  
 PBE1.1.2 , "Damage and Loss due to Wind Loading ", GC , M ,   
 PBE1.1.3 , "Damage and Loss due to water damage due to Tsunami or Coastal Inundation ", GC , M ,   
-PBE1.1 , "Ability of Practicing Engineers to use multiple coupled resources (applications, databases, viz tools) in engineering practice ", GC , 1.0  
+PBE1.2 , "Ability of Practicing Engineers to use multiple coupled resources (applications, databases, viz tools) in engineering practice ", GC , 1.0
+, , , 
 PBE2 , "Ability to utilize resources beyond the desktop including HPC ", GC , M , 1.0  
 PBE3 , "Tool should incorporate data from WWW ", GC , M , 1.0  
 PBE4 , "Tool available for download from web ", GC , M , 1.0  
@@ -25,7 +26,7 @@ PBE19, "Ability to Select All Building Model Generators in WE-UQ ", SP , M ,
 PBE20 , "Ability to Select All Building Model Generators in HydroUQ ", SP , M ,   
 PBE21 , "Ability to use all forward propagation methods available in EE-UQ, WE-UQ and HydroUQ", SP , M , 1.0
 PBE22, "Ability to use all random variable distributions in EE-UQ, WE-UQ and HydroUQ", SP , M , 1.0 
-PBE23 , "Specify Engineering Demand Parameters ",  ,  ,  
+PBE23 , "*Specify Engineering Demand Parameters*",  "",  "",  
 PBE23.1 , "Ability to Process own Output Parameters ", UF , M ,    
 PBE23.2 , Add to Standard Earthquake a variable indicating analysis failure ", UF , D ,    
 PBE23.3 , "Allow users to provide their own set of EDPs for the analysis. ", UF , D , 2.0 
