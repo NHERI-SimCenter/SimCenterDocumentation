@@ -18,7 +18,7 @@ The distribution of the buildings' structural types and stories are illustrated 
 Inputs
 ==========
 
-The example input files can be downloaded here: :download:`input_data_hu.zip <files/input_data_hu.zip>`. For more information about required input files, refer to :ref:`Inputs <lblUserDefInputs>`.
+The example input files can be downloaded here: :download:`example_hu.zip <files/example_hu.zip>`. For more information about required input files, refer to :ref:`Inputs <lblUserDefInputs>`.
 
 
 1. **Configuration file**: The configuration file specifies all simulation settings, including the application types, input file names, units, and type of outputs.
