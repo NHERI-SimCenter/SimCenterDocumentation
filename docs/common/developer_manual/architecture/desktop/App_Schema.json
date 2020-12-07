@@ -26,7 +26,7 @@
             "'Stories', 'stories'": {"type": "int", "description": "Number of stories in the building."},
             "'Year Built', 'yearbuilt', 'yearBuilt'": {"type": "int", "description": "Year that the building was built."},
             "'Structure Type', 'structure', 'structureType'": {"type": "string", "description": "Structural type of the building."},
-            "'Type ID', 'occupancy', 'occupancyType'": {"type": "string", "description": "HAZUS occupancy class of the building."},
+            "'Type ID', 'occupancy', 'occupancyType'": {"type": "string", "description": "Occupancy class of the building. If running a HAZUS assessment, "},
             "'Area', 'areafootprint', 'areaFootprint', 'area'": {"type": "float", "description": "Floor plan/footprint area of the building."},
             "'Replacement Cost', 'replacementCost'": {"type": "float", "description": "Cost of replacement of the building. If provided as '1.0', then the DL assessment will return an estimate losses as a percentage of the total replacement cost."},
             "model_params": {"type": "float", "description": "(Optional) Columns for additional structural parameters used in the build_model function for creating a structural analysis model of the building."},
@@ -248,7 +248,7 @@
                 "EVENT file": {"type": "string", "description": "File containing event intensity measure for each simulation per building.", "default": "EVENT.json"},
                 "modelPath": {"type": "path", "description": "Defines the location of the input OpenSeesPy model files.", "default": "input_data/model/"},
                 "mainScript": {"type": "string", "description": "Defines the name of the main model file which contains the build_model and run_analysis functions."},
-                "ndm": {"type": "string", "description": "Defines the number of degrees of freedom in the numerical model.", "default": 6},
+                "ndm": {"type": "string", "description": "Defines the number of degrees of freedom (DOF) in the numerical model. ndm=3 corresponds to a 2D model (X,Y translation and Z rotation). ndm=6 corresponds to a 3D model (X,Y,Z translation and X,Y,Z rotation).", "default": 6},
                 "dofMap": {"type": "int", "description": "By default, the workflow assumes X=1, Y=2, Z=3 mapping between directions and degrees of freedom, with XY being the horizontal directions. This input allows you to define an alternative mapping by providing three numbers separated by commas in a string, such as '1, 3, 2' if you wish to have Y as the vertical direction.", "default": "1,2,3"},
                 "ctrlNodes": {"type": "string", "description": "Defines the IDs of nodes in the OpenSeesPy model where EDPs are recorded. If the number of ctrlNodes provided exceeds the number of stories, only the firsts n+1 nodes will be used for an n-story building."}
               }
