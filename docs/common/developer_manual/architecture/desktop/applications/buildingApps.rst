@@ -9,16 +9,18 @@ The inputs are parsed into "#-BIM.json" files in the **results** folder.
 
 .. _figContext:
 
-.. figure:: figures/backendapps_Building.png
+.. figure:: _static/images/backendapps_Building.png
    :align: center
    :figclass: align-center
 
 
 The following options for building applications vary in the file type of the input building source file it processes.
 
+.. raw:: html
+   :file: _static/html/createBIM-gallery.html
 
+.. .. jsonschema:: App_Schema.json#/properties/BuildingApplications/CSV_to_BIM
 
-.. jsonschema:: App_Schema.json#/properties/BuildingApplications/CSV_to_BIM
 
 In the configuration file, **CSV_to_BIM** is called under "Applications" as:
 

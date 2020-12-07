@@ -76,7 +76,7 @@
       "Outputs": {
         "outputEDP": {
           "title": "EDP Output File",
-          "description": "File which aggregates reponse simulation results from the EDP.json files of all building assets. When run locally, the workflow returns the output in the form of a CSV file. When run remotely (on DesignSafe), the workflow returns the output in the form of a HDF file.",
+          "description": "File which aggregates response simulation results from the EDP.json files of all building assets. When run locally, the workflow returns the output in the form of a CSV file. When run remotely (on DesignSafe), the workflow returns the output in the form of a HDF file.",
           "properties": {
             "type": {"type": "string", "description": "Name of EDP type."},
             "loc": {"type": "int", "description": "Location of where EDP is recorded on the model. If UserDefinedEDP is specified as the EDP application, then the location labelling is denoted in the EDP specification file. Otherwise, the numbering starts at 0, which denotes the ground level."},

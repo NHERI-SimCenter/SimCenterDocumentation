@@ -9,14 +9,17 @@ If no RVs are specified, then the UQ application directly runs commands in the d
 
 .. _figContext:
 
-.. figure:: figures/backendapps_UQ.png
+.. figure:: _static/images/backendapps_UQ.png
    :align: center
    :figclass: align-center
 
 
 The following options for UQ applications vary in the software package used to perform uncertainty quantification.
 
-.. jsonschema:: App_Schema.json#/properties/UQApplications/Dakota-UQ
+.. raw:: html
+   :file: _static/html/performUQ-gallery.html
+
+.. .. jsonschema:: App_Schema.json#/properties/UQApplications/Dakota-UQ
 
 In the configuration file, **Dakota-UQ** is called under "Applications" as:
 

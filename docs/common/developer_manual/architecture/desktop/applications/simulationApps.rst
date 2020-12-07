@@ -9,7 +9,7 @@ After response simulation is completed, the "EDP.json" file is populated with th
 
 .. _figContext:
 
-.. figure:: figures/backendapps_Simulation.png
+.. figure:: _static/images/backendapps_Simulation.png
    :align: center
    :figclass: align-center
 

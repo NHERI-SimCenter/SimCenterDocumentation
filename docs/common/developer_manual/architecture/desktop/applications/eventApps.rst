@@ -8,7 +8,7 @@ This input information is saved in an "EVENT.json" file, located in its correspo
 
 .. _figContext:
 
-.. figure:: figures/backendapps_Events.png
+.. figure:: _static/images/backendapps_Events.png
    :align: center
    :figclass: align-center
 

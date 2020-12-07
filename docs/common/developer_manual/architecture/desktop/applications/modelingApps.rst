@@ -9,7 +9,7 @@ The input structural model information is parsed into a "SAM.json" file, located
 
 .. _figContext:
 
-.. figure:: figures/backendapps_Modeling.png
+.. figure:: _static/images/backendapps_Modeling.png
    :align: center
    :figclass: align-center
 

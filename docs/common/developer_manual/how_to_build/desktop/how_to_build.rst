@@ -28,14 +28,15 @@ First, ensure the following dependencies are installed:
 * **Qt Creator**: The Qt framework is only necessary if you choose to build the user interface for the |short tool id| software. `Qt Creator <https://www.qt.io/download>`_ is free for open source developers. Version 5.10 or later is required, and version 5.12 or later is recommended.
 
 
-************************
+************************************
 Build the Workflow Application Files
-************************
+************************************
 
 Instructions to build the workflow applications on your local desktop depend on your operating system.
 
 Build on Windows
 ----------------
+
 For Windows systems, the steps to building the workflow application are as follows:
 
     #. **Obtain the source code:** Clone the SimCenterBackendApplications repository from `Github <https://github.com/NHERI-SimCenter/SimCenterBackendApplications>`_. You can do that by using your preferred Git client/GUI or by using the ``git clone`` command in the terminal:
@@ -71,6 +72,7 @@ For Windows systems, the steps to building the workflow application are as follo
 
 Build on MacOS
 --------------
+
 For Mac systems, the steps to building the workflow application are as follows:
 
 

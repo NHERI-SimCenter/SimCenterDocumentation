@@ -10,7 +10,7 @@ Once events are chosen, the application writes the name of the event file in its
 
 .. _figContext:
 
-.. figure:: figures/backendapps_RegionalMapping.png
+.. figure:: _static/images/backendapps_RegionalMapping.png
    :align: center
    :figclass: align-center
 

@@ -10,7 +10,7 @@ Note that in the EDP file, DOF=1,2 are assumed to correspond to perpendicular ho
 
 .. _figContext:
 
-.. figure:: figures/backendapps_EDP.png
+.. figure:: _static/images/backendapps_EDP.png
    :align: center
    :figclass: align-center
 
