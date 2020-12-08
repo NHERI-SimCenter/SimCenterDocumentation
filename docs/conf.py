@@ -188,7 +188,7 @@ if app_name == 'RDT':
 """
 
 	# html_logo = 'common/figures/SimCenter_RDT_logo.png'
-	html_logo = 'common/figures/RDT-Logo-grey2.png'
+	html_logo = 'common/figures/RDT-Logo-grey3.png'
 
 	html_theme_options = {
 		'analytics_id': '...', #TODO: add analytics ID
@@ -258,7 +258,7 @@ elif app_name == 'PBE':
 """
 
 	# html_logo = 'common/figures/SimCenter_PBE_logo.png'
-	html_logo = 'common/figures/PBE-Logo-grey2.png'
+	html_logo = 'common/figures/PBE-Logo-grey3.png'
 
 	html_theme_options = {
 		'analytics_id': 'UA-158130480-3',
@@ -313,7 +313,7 @@ elif app_name == 'EE-UQ':
 
 """
 
-	html_logo = 'common/figures/EE-UQ-Logo-grey2.png'
+	html_logo = 'common/figures/EE-UQ-Logo-grey3.png'
 
 	html_theme_options = {
 		'analytics_id': 'UA-158130480-1',
@@ -372,7 +372,7 @@ elif app_name == 'quoFEM':
 
 """
 
-	html_logo = 'common/figures/quoFEM-LogoImageGrey.png'
+	html_logo = 'common/figures/quoFEM-LogoImageGrey-app.png'
 
 	html_theme_options = {
 		'analytics_id': 'UA-158130480-4',
@@ -434,7 +434,7 @@ elif app_name == 'WE-UQ':
 
 """
 
-	html_logo = 'common/figures/WE-UQ-Logo-grey2.png' #TODO: replace with EE-UQ logo!
+	html_logo = 'common/figures/WE-UQ-Logo-grey3.png' #TODO: replace with EE-UQ logo!
 
 
 	html_theme_options = {
@@ -506,7 +506,7 @@ elif app_name == 'pelicun':
 
 	pygments_style = 'sphinx'
 
-	html_logo = 'common/figures/pelicun-Logo-grey.png'
+	html_logo = 'common/figures/pelicun-Logo-grey3.png'
 
 	html_theme_options = {
 		'analytics_id': 'UA-158130480-7',
@@ -566,7 +566,7 @@ html_secnum_suffix = " "
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ['_static','_static/css/']
 
 # For a full list of configuration options see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
