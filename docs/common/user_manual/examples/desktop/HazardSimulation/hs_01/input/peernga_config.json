@@ -1,0 +1,9 @@
+{
+    "Event": {
+        [...],
+        "Database": "NGAWest2",
+        "UserName": "username@mail.com",
+        "UserPassword": "password",
+        "OutputFormat": "SimCenterEvent"
+    }
+}

@@ -87,15 +87,25 @@ def parse_BIM(BIM_in):
     ap_RoofType = {
         'hip'   : 'hip',
         'hipped': 'hip',
+        'Hip'   : 'hip',
         'gabled': 'gab',
         'gable' : 'gab',
-        'flat'  : 'flt'
+        'Gable' : 'gab',
+        'flat'  : 'flt',
+        'Flat'  : 'flt'
     }
     # maps roof system to the internal representation
     ap_RoofSyste = {
         'Wood': 'trs',
-        'OWSJ': 'ows'
+        'OWSJ': 'ows',
+        'N/A': 'trs'
     }
+    roof_system = BIM_in.get('RoofSystem','Wood')
+    try:
+        if np.isnan(roof_system):
+            roof_system = 'Wood'
+    except:
+        pass
     # maps number of units to the internal representation
     ap_NoUnits = {
         'Single': 'sgl',
@@ -103,33 +113,107 @@ def parse_BIM(BIM_in):
         'Multi': 'mlt',
         'nav': 'nav'
     }
+    # maps for split level
+    ap_SplitLevel = {
+        'NO': 0,
+        'YES': 1
+    }
+    # maps for design level (Marginal Engineered is mapped to Engineered as default)
+    ap_DesignLevel = {
+        'E': 'E',
+        'NE': 'NE',
+        'PE': 'PE',
+        'ME': 'E'
+    }
+    design_level = BIM_in.get('DesignLevel','E')
+    try:
+        if np.isnan(design_level):
+            design_level = 'E'
+    except:
+        pass
+
+    foundation = BIM_in.get('FoundationType',3501)
+    if np.isnan(foundation):
+        foundation = 3501
+
+    nunits = BIM_in.get('NoUnits',1)
+    if np.isnan(nunits):
+        nunits = 1
+
+    # Average January Temp.
+    ap_ajt = {
+        'Above': 'above',
+        'Below': 'below'
+    }
+
+    # Year built
+    alname_yearbuilt = ['yearBuilt', 'YearBuiltMODIV']
+    try:
+        yearbuilt = BIM_in['YearBuiltNJDEP']
+    except:
+        for i in alname_yearbuilt:
+            if i in BIM_in.keys():
+                yearbuilt = BIM_in[i]
+                break
+        # default yearbuilt
+        yearbuilt = 1985
+    print('yearbuilt = ', yearbuilt)
+
+
+    # Number of Stories
+    alname_nstories = ['stories', 'NumberofStories0']
+    try:
+        nstories = BIM_in['NumberofStories1']
+    except:
+        for i in alname_nstories:
+            if i in BIM_in.keys():
+                nstories = BIM_in[i]
+                break
+
+    # Plan Area
+    alname_area = ['area', 'PlanArea1']
+    try:
+        area = BIM_in['PlanArea0']
+    except:
+        for i in alname_area:
+            if i in BIM_in.keys():
+                area = BIM_in[i]
+                break
+
+    # if getting RES3 then converting it to default RES3A
+    oc = BIM_in.get('occupancy','RES1')
+    if oc == 'RES3':
+        oc = 'RES3A'
 
     # first, pull in the provided data
     BIM = dict(
-        occupancy_class=str(BIM_in.get('OccupancyClass','RES1')),
+        occupancy_class=str(oc),
         bldg_type=BIM_in['BuildingType'],
-        year_built=int(BIM_in['YearBuiltNJDEP']),
+        year_built=int(yearbuilt),
         # double check with Tracey for format - (NumberStories0 is 4-digit code)
         # (NumberStories1 is image-processed story number)
-        stories=int(BIM_in['NumberofStories1']),
-        area=BIM_in['PlanArea0'],
+        stories=int(nstories),
+        area=float(area),
         flood_zone=BIM_in['FloodZone'],
         V_ult=float(BIM_in['DSWII']),
-        avg_jan_temp=str(BIM_in.get('AveJanTemp','below')),
+        avg_jan_temp=ap_ajt[BIM_in.get('AvgJanTemp','Below')],
         roof_shape=ap_RoofType[BIM_in['RoofShape']],
         roof_slope=float(BIM_in.get('RoofSlope',0.25)), # default 0.25
         sheathing_t=float(BIM_in.get('SheathingThick',1.0)), # default 1.0
-        roof_system=str(ap_RoofSyste[BIM_in.get('RoofSystem','Wood')]), # only valid for masonry structures
+        roof_system=str(ap_RoofSyste[roof_system]), # only valid for masonry structures
         garage_tag=float(BIM_in.get('Garage',-1.0)),
-        lulc=int(BIM_in.get('LULC',-1)),
+        lulc=BIM_in.get('LULC',-1),
+        z0 = float(BIM_in.get('z0',-1)), # if the z0 is already in the input file
+        Terrain = BIM_in.get('Terrain',-1),
         mean_roof_height=float(BIM_in.get('MeanRoofHt',15.0)), # default 15
-        design_level=str(BIM_in.get('DesignLevel','E')), # default engineered
-        no_units=str(ap_NoUnits[BIM_in.get('NoUnits','nav')]),
+        design_level=str(ap_DesignLevel[design_level]), # default engineered
+        no_units=int(nunits),
         window_area=float(BIM_in.get('WindowArea',0.20)),
         first_floor_ht1=float(BIM_in.get('FirstFloorHt1',10.0)),
-        split_level=bool(BIM_in.get('SplitLevel',0)), # dfault: no
-        fdtn_type=int(BIM_in.get('FoundationType',3501)), # default: pile
-        city=BIM_in['City']
+        split_level=bool(ap_SplitLevel[BIM_in.get('SplitLevel','NO')]), # dfault: no
+        fdtn_type=int(foundation), # default: pile
+        city=BIM_in.get('City','NA'),
+        wind_zone=str(BIM_in.get('WindZone', 'I'))
     )
 
     # add inferred, generic meta-variables
@@ -195,16 +279,34 @@ def parse_BIM(BIM_in):
     # Emergent Herbaceous Wetlands (6240) with zo=0.03 assume Open
     # Note: HAZUS category of trees (1.00) does not apply to any LU/LC in NJ
     terrain = 15 # Default in Reorganized Rulesets - WIND
-    if ((BIM['lulc'] >= 5000) and (BIM['lulc'] <= 5999)):
-        terrain = 3 # Open
-    elif ((BIM['lulc'] == 4400) or (BIM['lulc'] == 6240)) or (BIM['lulc'] == 7600):
-        terrain = 3 # Open
-    elif ((BIM['lulc'] >= 2000) and (BIM['lulc'] <= 2999)):
-        terrain = 15 # Light suburban
-    elif ((BIM['lulc'] >= 1110) and (BIM['lulc'] <= 1140)) or ((BIM['lulc'] >= 6250) and (BIM['lulc'] <= 6252)):
-        terrain = 35 # Suburban
-    elif ((BIM['lulc'] >= 4100) and (BIM['lulc'] <= 4300)) or (BIM['lulc'] == 1600):
-        terrain = 70 # light trees
+    if (BIM['z0'] > 0):
+        terrain = int(100 * BIM['z0'])
+    elif (BIM['lulc'] > 0):
+        if BIM['flood_zone'] in [6101, 6102, 6104, 6106, 6109]:
+            terrain = 3
+        elif ((BIM['lulc'] >= 5000) and (BIM['lulc'] <= 5999)):
+            terrain = 3 # Open
+        elif ((BIM['lulc'] == 4400) or (BIM['lulc'] == 6240)) or (BIM['lulc'] == 7600):
+            terrain = 3 # Open
+        elif ((BIM['lulc'] >= 2000) and (BIM['lulc'] <= 2999)):
+            terrain = 15 # Light suburban
+        elif ((BIM['lulc'] >= 1110) and (BIM['lulc'] <= 1140)) or ((BIM['lulc'] >= 6250) and (BIM['lulc'] <= 6252)):
+            terrain = 35 # Suburban
+        elif ((BIM['lulc'] >= 4100) and (BIM['lulc'] <= 4300)) or (BIM['lulc'] == 1600):
+            terrain = 70 # light trees
+    elif (BIM['Terrain'] > 0):
+        if BIM['flood_zone'] in [6101, 6102, 6104, 6106, 6109]:
+            terrain = 3
+        elif ((BIM['Terrain'] >= 50) and (BIM['Terrain'] <= 59)):
+            terrain = 3 # Open
+        elif ((BIM['Terrain'] == 44) or (BIM['Terrain'] == 62)) or (BIM['Terrain'] == 76):
+            terrain = 3 # Open
+        elif ((BIM['Terrain'] >= 20) and (BIM['Terrain'] <= 29)):
+            terrain = 15 # Light suburban
+        elif (BIM['Terrain'] == 11) or (BIM['Terrain'] == 61):
+            terrain = 35 # Suburban
+        elif ((BIM['Terrain'] >= 41) and (BIM['Terrain'] <= 43)) or (BIM['Terrain'] in [16, 17]):
+            terrain = 70 # light trees
 
     BIM.update(dict(
         # Nominal Design Wind Speed
@@ -250,6 +352,8 @@ def building_class(BIM):
             # Wood Single-Family Homes (WSF1 or WSF2)
             # OR roof type = flat (HAZUS can only map flat to WSF1)
             # OR default (by '')
+            if BIM['roof_shape'] == 'flt': # checking if there is a misclassication
+                BIM['roof_shape'] = 'gab' # ensure the WSF has gab (by default, note gab is more vulneable than hip)
             return 'WSF'
         else:
             # BuildingType = 3001
@@ -275,10 +379,12 @@ def building_class(BIM):
             # BuildingType = 3002
             # Steel Pre-Engineered Metal Building (SPMBS, SPMBM, SPMBL)
             return 'SPMB'
+        else:
+            return 'SECB'
     elif BIM['bldg_type'] == 3003:
         if ((BIM['design_level'] == 'E') and
             (BIM['occupancy_class'] in ['RES3A', 'RES3B', 'RES3C', 'RES3D',
-                                         'RES3E', 'RES3F'])):
+                                         'RES3E', 'RES3F', 'RES5', 'RES6'])):
             # BuildingType = 3003
             # Concrete Engineered Residential Building (CERBL, CERBM, CERBH)
             return 'CERB'
@@ -288,27 +394,14 @@ def building_class(BIM):
             # BuildingType = 3003
             # Concrete Engineered Commercial Building (CECBL, CECBM, CECBH)
             return 'CECB'
+        else:
+            return 'CECB'
     elif BIM['bldg_type'] == 3004:
         if BIM['occupancy_class'] == 'RES1':
             # BuildingType = 3004
             # OccupancyClass = RES1
             # Masonry Single-Family Homes (MSF1 or MSF2)
             return 'MSF'
-        elif BIM['occupancy_class'] in ['RES3A', 'RES3B', 'RES3C', 'RES3D',
-                                        'RES3E', 'RES3F', 'RES5', 'RES6', 'COM8']:
-            # BuildingType = 3004
-            # OccupancyClass = RES3X or COM8
-            # Masonry Multi-Unit Hotel/Motel (MMUH1, MMUH2, or MMUH3)
-            return 'MMUH'
-        elif ((BIM['stories'] == 1) and
-                (BIM['occupancy_class'] in ['COM1', 'COM2'])):
-            # BuildingType = 3004
-            # Low-Rise Masonry Strip Mall (MLRM1 or MLRM2)
-            return 'MLRM'
-        elif BIM['occupancy_class'] in ['IND1', 'IND2', 'IND3', 'IND4', 'IND5', 'IND6']:
-            # BuildingType = 3004
-            # Masonry Low-Rise Masonry Warehouse/Factory (MLRI)
-            return 'MLRI'
         elif ((BIM['occupancy_class'] in ['RES3A', 'RES3B', 'RES3C', 'RES3D',
                                         'RES3E', 'RES3F']) and (BIM['design_level'] == 'E')):
             # BuildingType = 3004
@@ -320,6 +413,23 @@ def building_class(BIM):
             # BuildingType = 3004
             # Masonry Engineered Commercial Building (MECBL, MECBM, MECBH)
             return 'MECB'
+        elif BIM['occupancy_class'] in ['IND1', 'IND2', 'IND3', 'IND4', 'IND5', 'IND6']:
+            # BuildingType = 3004
+            # Masonry Low-Rise Masonry Warehouse/Factory (MLRI)
+            return 'MLRI'
+        elif BIM['occupancy_class'] in ['RES3A', 'RES3B', 'RES3C', 'RES3D',
+                                        'RES3E', 'RES3F', 'RES5', 'RES6', 'COM8']:
+            # BuildingType = 3004
+            # OccupancyClass = RES3X or COM8
+            # Masonry Multi-Unit Hotel/Motel (MMUH1, MMUH2, or MMUH3)
+            return 'MMUH'
+        elif ((BIM['stories'] == 1) and
+                (BIM['occupancy_class'] in ['COM1', 'COM2'])):
+            # BuildingType = 3004
+            # Low-Rise Masonry Strip Mall (MLRM1 or MLRM2)
+            return 'MLRM'
+        else:
+            return 'MECB' # for others not covered by the above
         #elif ((BIM['occupancy_class'] in ['RES3A', 'RES3B', 'RES3C', 'RES3D',
         #                                'RES3E', 'RES3F', 'RES5', 'RES6',
         #                                'COM8']) and (BIM['design_level'] in ['NE', 'ME'])):
@@ -327,7 +437,12 @@ def building_class(BIM):
         #    # Masonry Multi-Unit Hotel/Motel Non-Engineered
         #    # (MMUH1NE, MMUH2NE, or MMUH3NE)
         #    return 'MMUHNE'
+    elif BIM['bldg_type'] == 3005:
+        return 'MH'
 
+    else:
+        return 'WMUH'
+        # if nan building type is provided, return the dominant class
 
 
 def WSF_config(BIM):
@@ -375,9 +490,9 @@ def WSF_config(BIM):
         # Almost all other roof types require underlayment of some sort, but
         # the ruleset is based on asphalt shingles because it is most
         # conservative.
-        if BIM['roof_shape'] == 'flt':
+        if BIM['roof_shape'] == 'flt': # note there is actually no 'flt'
             SWR = True
-        elif BIM['roof_shape'] in ['gab','hit']:
+        elif BIM['roof_shape'] in ['gab','hip']:
             if BIM['roof_slope'] <= 0.17:
                 SWR = True
             elif BIM['roof_slope'] < 0.33:
@@ -492,7 +607,10 @@ def WSF_config(BIM):
     # 1983 to 1986, 19/44 entries (43.18%) with shutters
     else:
         # year <= 2000
-        shutters = random.random() < 0.45
+        if BIM['WBD']:
+            shutters = random.random() < 0.45
+        else:
+            shutters = False
 
     # Garage
     # As per IRC 2015:
@@ -512,6 +630,7 @@ def WSF_config(BIM):
     if BIM['garage_tag'] == -1:
         # no garage data, using the default "standard"
         garage = 'std'
+        shutters = 0 # HAZUS ties standard garage to w/o shutters
     else:
         if year > 2000:
             if shutters:
@@ -519,26 +638,30 @@ def WSF_config(BIM):
                     garage = 'no'
                 else:
                     garage = 'sup' # SFBC 1994
+                    shutters = 1 # HAZUS ties SFBC 1994 to with shutters
             else:
                 if BIM['garage_tag'] < 1:
                     garage = 'no' # None
                 else:
                     garage = 'std' # Standard
+                    shutters = 0 # HAZUS ties standard garage to w/o shutters
         elif year > (datetime.datetime.now().year - 30):
             if BIM['garage_tag'] < 1:
                 garage = 'no' # None
             else:
                 garage = 'std' # Standard
+                shutters = 0 # HAZUS ties standard garage to w/o shutters
         else:
             # year <= current year - 30
             if BIM['garage_tag'] < 1:
                 garage = 'no' # None
             else:
                 garage = 'wkd' # Weak
+                shutters = 0 # HAZUS ties weak garage to w/o shutters
 
     # building configuration tag
     bldg_config = f"WSF" \
-                  f"{int(BIM['stories'])}_" \
+                  f"{int(min(BIM['stories'],2))}_" \
                   f"{BIM['roof_shape']}_" \
                   f"{int(SWR)}_" \
                   f"{RDA}_" \
@@ -568,16 +691,16 @@ def WMUH_config(BIM):
     year = BIM['year_built']  # just for the sake of brevity
 
     # Secondary Water Resistance (SWR)
-    SWR = 'null' # Default
+    SWR = 0 # Default
     if year > 2000:
         if BIM['roof_shape'] == 'flt':
             SWR = 'null' # because SWR is not a question for flat roofs
-        elif BIM['roof_shape'] in ['gab','hit']:
+        elif BIM['roof_shape'] in ['gab','hip']:
             SWR = int(random.random() < 0.6)
     elif year > 1987:
         if BIM['roof_shape'] == 'flt':
             SWR = 'null' # because SWR is not a question for flat roofs
-        elif (BIM['roof_shape'] == 'gab') or (BIM['roof_shape'] == 'hit'):
+        elif (BIM['roof_shape'] == 'gab') or (BIM['roof_shape'] == 'hip'):
             if BIM['roof_slope'] < 0.33:
                 SWR = int(True)
             else:
@@ -643,12 +766,12 @@ def WMUH_config(BIM):
     # light suburban, even though these are not considered by the code.
     if year > 2009:
         if BIM['terrain'] >= 35: # suburban or light trees
-            if BIM['V_ult'] > 130.0:
+            if BIM['V_ult'] > 168.0:
                 RDA = '8s'  # 8d @ 6"/6" 'D'
             else:
                 RDA = '8d'  # 8d @ 6"/12" 'B'
         else:  # light suburban or open
-            if BIM['V_ult'] > 110.0:
+            if BIM['V_ult'] > 142.0:
                 RDA = '8s'  # 8d @ 6"/6" 'D'
             else:
                 RDA = '8d'  # 8d @ 6"/12" 'B'
@@ -742,7 +865,10 @@ def WMUH_config(BIM):
     # up their businesses before Hurricane Katrina. In addition, compliance
     # rates based on the Homeowners Survey data hover between 43 and 50 percent.
     else:
-        shutters = random.random() < 0.46
+        if BIM['WBD']:
+            shutters = random.random() < 0.46
+        else:
+            shutters = False
 
     # Stories
     # Buildings with more than 3 stories are mapped to the 3-story configuration
@@ -796,7 +922,22 @@ def MSF_config(BIM):
     # surrounding the opening, and the attachments are resistant to corrosion
     # and are able to resist component and cladding loads;
     # Earlier IRC editions provide similar rules.
-    shutters = BIM['WBD']
+    if year >= 2000:
+        shutters = BIM['WBD']
+    # BOCA 1996 and earlier:
+    # Shutters were not required by code until the 2000 IBC. Before 2000, the
+    # percentage of commercial buildings that have shutters is assumed to be
+    # 46%. This value is based on a study on preparedness of small businesses
+    # for hurricane disasters, which says that in Sarasota County, 46% of
+    # business owners had taken action to wind-proof or flood-proof their
+    # facilities. In addition to that, 46% of business owners reported boarding
+    # up their businesses before Hurricane Katrina. In addition, compliance
+    # rates based on the Homeowners Survey data hover between 43 and 50 percent.
+    else:
+        if BIM['WBD']:
+            shutters = random.random() < 0.45
+        else:
+            shutters = False
 
     # Garage
     # As per IRC 2015:
@@ -822,7 +963,7 @@ def MSF_config(BIM):
                 garage = 'nav' # None
             else:
                 if shutters:
-                    garage = 'sup'
+                    garage = 'sup' # SFBC 1994
                 else:
                     garage = 'std' # Standard
         else:
@@ -874,7 +1015,7 @@ def MSF_config(BIM):
 
         stories = min(BIM['stories'], 2)
         bldg_config = f"MSF" \
-                      f"{int(BIM['stories'])}_" \
+                      f"{int(stories)}_" \
                       f"{BIM['roof_shape']}_" \
                       f"{int(SWR)}_" \
                       f"{RDA}_" \
@@ -917,14 +1058,14 @@ def MSF_config(BIM):
 
         stories = min(BIM['stories'], 2)
         bldg_config = f"MSF" \
-                      f"{int(BIM['stories'])}_" \
+                      f"{int(stories)}_" \
                       f"{BIM['roof_shape']}_" \
                       f"{int(SWR)}_" \
                       f"{RDA}_" \
                       f"{RWC}_" \
                       f"{garage}_" \
                       f"{int(shutters)}_" \
-                      f"{RM}_" \
+                      f"{int(MR)}_" \
                       f"{int(BIM['terrain'])}"
         return bldg_config
 
@@ -1035,7 +1176,22 @@ def MMUH_config(BIM):
     # surrounding the opening, and the attachments are resistant to corrosion
     # and are able to resist component and cladding loads;
     # Earlier IRC editions provide similar rules.
-    shutters = BIM['WBD']
+    if year >= 2000:
+        shutters = BIM['WBD']
+    # BOCA 1996 and earlier:
+    # Shutters were not required by code until the 2000 IBC. Before 2000, the
+    # percentage of commercial buildings that have shutters is assumed to be
+    # 46%. This value is based on a study on preparedness of small businesses
+    # for hurricane disasters, which says that in Sarasota County, 46% of
+    # business owners had taken action to wind-proof or flood-proof their
+    # facilities. In addition to that, 46% of business owners reported boarding
+    # up their businesses before Hurricane Katrina. In addition, compliance
+    # rates based on the Homeowners Survey data hover between 43 and 50 percent.
+    else:
+        if BIM['WBD']:
+            shutters = random.random() < 0.46
+        else:
+            shutters = False
 
     # Masonry Reinforcing (MR)
     # R606.6.4.1.2 Metal Reinforcement states that walls other than interior
@@ -1144,9 +1300,6 @@ def MLRM_config(BIM):
         # RWC
         RWC = 'tnail'  # Toe-nail (HAZUS the only available option for OWSJ)
 
-        # shutters
-        shutters = BIM['WBD']
-
         # Metal RDA
         # 1507.2.8.1 High Wind Attachment.
         # Underlayment applied in areas subject to high winds (Vasd greater
@@ -1185,6 +1338,15 @@ def MLRM_config(BIM):
         else:
             RWC = 'tnail'  # Toe-nail
 
+    # shutters
+    if year >= 2000:
+        shutters = BIM['WBD']
+    else:
+        if BIM['WBD']:
+            shutters = random.random() < 0.46
+        else:
+            shutters = False
+
     if BIM['mean_roof_height'] < 15.0:
         # if it's MLRM1, configure outputs
         bldg_config = f"MLRM1_" \
@@ -1200,14 +1362,17 @@ def MLRM_config(BIM):
                       f"{int(BIM['terrain'])}"
         return bldg_config
     else:
+        unit_tag = 'nav'
         # MLRM2 needs more rulesets
         if BIM['roof_system'] == 'trs':
             JSPA = 0
         elif BIM['roof_system'] == 'ows':
-            if BIM['no_units'] == 'sgl':
+            if BIM['no_units'] == 1:
                 JSPA = 0
+                unit_tag = 'sgl'
             else:
                 JSPA = 4
+                unit_tag = 'mlt'
 
         bldg_config = f"MLRM2_" \
                       f"{roof_cover}_" \
@@ -1218,7 +1383,7 @@ def MLRM_config(BIM):
                       f"{RWC}_" \
                       f"{int(shutters)}_" \
                       f"{WIDD}_" \
-                      f"{BIM['no_units']}_" \
+                      f"{unit_tag}_" \
                       f"{int(MR)}_" \
                       f"{MRDA}_" \
                       f"{int(BIM['terrain'])}"
@@ -1308,7 +1473,8 @@ def MERB_config(BIM):
 
     # Roof cover
     if BIM['roof_shape'] in ['gab', 'hip']:
-        roof_cover = 'nav'
+        roof_cover = 'bur'
+        # no info, using the default supoorted by HAZUS
     else:
         if year >= 1975:
             roof_cover = 'spm'
@@ -1317,7 +1483,13 @@ def MERB_config(BIM):
             roof_cover = 'bur'
 
     # shutters
-    shutters = BIM['WBD']
+    if year >= 2000:
+        shutters = BIM['WBD']
+    else:
+        if BIM['WBD']:
+            shutters = random.random() < 0.45
+        else:
+            shutters = False
 
     # Wind Debris (widd in HAZSU)
     # HAZUS A: Res/Comm, B: Varies by direction, C: Residential, D: None
@@ -1388,7 +1560,7 @@ def MECB_config(BIM):
     # Roof cover
     if BIM['roof_shape'] in ['gab', 'hip']:
         roof_cover = 'bur'
-        # typically would not be in this option (see the flat roof shape below)
+        # no info, using the default supoorted by HAZUS
     else:
         if year >= 1975:
             roof_cover = 'spm'
@@ -1397,7 +1569,13 @@ def MECB_config(BIM):
             roof_cover = 'bur'
 
     # shutters
-    shutters = BIM['WBD']
+    if year >= 2000:
+        shutters = BIM['WBD']
+    else:
+        if BIM['WBD']:
+            shutters = random.random() < 0.46
+        else:
+            shutters = False
 
     # Wind Debris (widd in HAZSU)
     # HAZUS A: Res/Comm, B: Varies by direction, C: Residential, D: None
@@ -1489,7 +1667,10 @@ def CECB_config(BIM):
     # up their businesses before Hurricane Katrina. In addition, compliance
     # rates based on the Homeowners Survey data hover between 43 and 50 percent.
     else:
-        shutters = random.random() < 0.46
+        if BIM['WBD']:
+            shutters = random.random() < 0.46
+        else:
+            shutters = False
 
     # Wind Debris (widd in HAZSU)
     # HAZUS A: Res/Comm, B: Varies by direction, C: Residential, D: None
@@ -1568,7 +1749,10 @@ def CERB_config(BIM):
     # up their businesses before Hurricane Katrina. In addition, compliance
     # rates based on the Homeowners Survey data hover between 43 and 50 percent.
     else:
-        shutters = random.random() < 0.45
+        if BIM['WBD']:
+            shutters = random.random() < 0.45
+        else:
+            shutters = False
 
     # Wind Debris (widd in HAZSU)
     # HAZUS A: Res/Comm, B: Varies by direction, C: Residential, D: None
@@ -1590,11 +1774,11 @@ def CERB_config(BIM):
         WWR = 'hig'
 
     if BIM['stories'] <= 2:
-        bldg_tag = 'CECBL'
+        bldg_tag = 'CERBL'
     elif BIM['stories'] <= 5:
-        bldg_tag = 'CECBM'
+        bldg_tag = 'CERBM'
     else:
-        bldg_tag = 'CECBH'
+        bldg_tag = 'CERBH'
 
     bldg_config = f"{bldg_tag}_" \
                   f"{roof_cover}_" \
@@ -1642,7 +1826,10 @@ def SPMB_config(BIM):
     # up their businesses before Hurricane Katrina. In addition, compliance
     # rates based on the Homeowners Survey data hover between 43 and 50 percent.
     else:
-        shutters = random.random() < 0.46
+        if BIM['WBD']:
+            shutters = random.random() < 0.46
+        else:
+            shutters = False
 
     # Metal RDA
     # 1507.2.8.1 High Wind Attachment.
@@ -1713,7 +1900,10 @@ def SECB_config(BIM):
     # up their businesses before Hurricane Katrina. In addition, compliance
     # rates based on the Homeowners Survey data hover between 43 and 50 percent.
     else:
-        shutters = random.random() < 0.46
+        if BIM['WBD']:
+            shutters = random.random() < 0.46
+        else:
+            shutters = False
 
     # Wind Debris (widd in HAZSU)
     # HAZUS A: Res/Comm, B: Varies by direction, C: Residential, D: None
@@ -1805,7 +1995,10 @@ def SERB_config(BIM):
     # up their businesses before Hurricane Katrina. In addition, compliance
     # rates based on the Homeowners Survey data hover between 43 and 50 percent.
     else:
-        shutters = random.random() < 0.46
+        if BIM['WBD']:
+            shutters = random.random() < 0.46
+        else:
+            shutters = False
 
     # Wind Debris (widd in HAZSU)
     # HAZUS A: Res/Comm, B: Varies by direction, C: Residential, D: None
@@ -1855,6 +2048,63 @@ def SERB_config(BIM):
     return bldg_config
 
 
+def MH_config(BIM):
+    """
+    Rules to identify a HAZUS WSF configuration based on BIM data
+
+    Parameters
+    ----------
+    BIM: dictionary
+        Information about the building characteristics.
+
+    Returns
+    -------
+    config: str
+        A string that identifies a specific configration within this buidling
+        class.
+    """
+
+    year = BIM['year_built'] # just for the sake of brevity
+    if year <= 1976:
+        # MHPHUD
+        bldg_tag = 'MHPHUD'
+        if BIM['WBD']:
+            shutters = random.random() < 0.45
+        else:
+            shutters = False
+        # TieDowns
+        TD = random.random() < 0.45
+
+    elif year <= 1994:
+        # MH76HUD
+        bldg_tag = 'MH76HUD'
+        if BIM['WBD']:
+            shutters = random.random() < 0.45
+        else:
+            shutters = False
+        # TieDowns
+        TD = random.random() < 0.45
+
+    else:
+        # MH94HUD I, II, III
+        if BIM['V_ult'] >= 100.0:
+            shutters = True
+        else:
+            shutters = False
+        # TieDowns
+        if BIM['V_ult'] >= 70.0:
+            TD = True
+        else:
+            TD = False
+        bldg_tag = 'MH94HUD' + BIM['wind_zone']
+
+    bldg_config = f"{bldg_tag}_" \
+                  f"{int(shutters)}_" \
+                  f"{int(TD)}_" \
+                  f"{int(BIM['terrain'])}"
+    return bldg_config
+
+
 def FL_config(BIM):
     """
     Rules to identify the flood vunerability category
@@ -1876,11 +2126,11 @@ def FL_config(BIM):
     if BIM['flood_zone'] in [6105, 6108]:
         flood_type = 'raz' # Riverline/A-Zone
     elif BIM['flood_zone'] in [6103, 6104, 6106, 6107, 6109]:
-        flood_type = 'caz' # Costal/A-Zone
+        flood_type = 'cvz' # Costal-Zone
     elif BIM['flood_zone'] in [6101, 6102]:
-        flood_type = 'cvz' # Costal/V-Zone
+        flood_type = 'cvz' # Costal-Zone
     else:
-        flood_type = 'caz' # Default
+        flood_type = 'cvz' # Default
 
     # First Floor Elevation (FFE)
     if flood_type in ['raz', 'caz']:
@@ -2001,6 +2251,7 @@ def FL_config(BIM):
 
     return fl_config
 
+
 def Assm_config(BIM):
     """
     Rules to identify the flood vunerability category
@@ -2114,6 +2365,8 @@ def auto_populate(BIM):
         bldg_config = SECB_config(BIM_ap)
     elif bldg_class == 'SERB':
         bldg_config = SERB_config(BIM_ap)
+    elif bldg_class == 'MH':
+        bldg_config = MH_config(BIM_ap)
     else:
         raise ValueError(
             f"Building class {bldg_class} not recognized by the "
