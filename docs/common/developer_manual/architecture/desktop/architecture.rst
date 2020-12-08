@@ -15,12 +15,15 @@ The |app| is one of the SimCenter's computational applications, which are `scien
 
 Documentation of the software architecture is detailed in the following pages.
 
-.. toctree-filter::
+
+.. toctree-filt::
    :maxdepth: 1
 
-   file-types
-   backendApplications
-   workflows
-   :RDT: run-manually
+   file-types.rst
+   backendApplications.rst
+   :RDT:workflows
+
+   :RDT:run-manually
+
    c4model
 
