@@ -103,27 +103,28 @@ The interaction between the frontend and the backend is best understood by looki
 
 4. The UI will now start the backend application and will spin until the backend application returns with a completion signal.
 
+
 Now that the UI has handed over to the backend application, the backend application will perform the following:
 
-5. Open the output file from the UI and parse it to obtain the name of the application to run and the arguments to run the application with. Open up another file, the ``WorkflowApplications.json`` file, contained with the application, to determine given the application name the full path to the executable to be invoked. It will the create in ``templatedir`` a file named ``workflow_driver``. This file is a script file that when run by the UQ engine will generate a file named ``results.out``. ``results.out`` when the ``workflow_driver`` script has completed will contain a single line of space seperated values, one value for each EDP.
+#. Open the output file from the UI and parse it to obtain the name of the application to run and the arguments to run the application with. Open up another file, the ``WorkflowApplications.json`` file, contained with the application, to determine given the application name the full path to the executable to be invoked. It will the create in ``templatedir`` a file named ``workflow_driver``. This file is a script file that when run by the UQ engine will generate a file named ``results.out``. ``results.out`` when the ``workflow_driver`` script has completed will contain a single line of space seperated values, one value for each EDP.
 
-6.  It will invoke each of the applications with supplied arguments and an additional command line argument, ``--getRV``, to inform the application to process the input file, and to create any additional random variables and input files needed before the workflow runs.
+#.  It will invoke each of the applications with supplied arguments and an additional command line argument, ``--getRV``, to inform the application to process the input file, and to create any additional random variables and input files needed before the workflow runs.
 
-7. It will then launch the UQengine. The UQ engine, is typically a pre- and post- processor to an existing UQ engine.
+#. It will then launch the UQengine. The UQ engine, is typically a pre- and post- processor to an existing UQ engine.
 
-8. The pre-processor takes the json input file and creates an input file needed by the actual UQ engine.
+#. The pre-processor takes the json input file and creates an input file needed by the actual UQ engine.
 
-9. The preprocessor will launch the UQ application. This application will typically run the ``workflow_driver`` many times, passing as input to the workflow a file ``\params`` and obtaining as output from the ``workflow_driver`` a file ``results.out``.
+#. The preprocessor will launch the UQ application. This application will typically run the ``workflow_driver`` many times, passing as input to the workflow a file ``\params`` and obtaining as output from the ``workflow_driver`` a file ``results.out``.
 
-10. When done the engine will output its results.
+#. When done the engine will output its results.
 
-11. The UQengine will notify the UQpreprocessor that it is done.
+#. The UQengine will notify the UQpreprocessor that it is done.
 
-12. The UQpreprocessor will notify the femUQ application that it is done.
+#. The UQpreprocessor will notify the femUQ application that it is done.
 
-13. The femUQ application will notify the UI that it is done.
+#. The femUQ application will notify the UI that it is done.
 
-14. The UI will read in the reuslts and present them to the user.
+#. The UI will read in the reuslts and present them to the user.
 
 
 

@@ -13,44 +13,17 @@ The |app| is one of the SimCenter's computational applications, which are `scien
    - a modular framework which allows developers to incorporate their own software applications as components to the workflow system, so long as it meets the input-output structure at component interfaces.
 
 
-
-.. note:: **Terminology**
-
-   #. **Workflow**: The automation of a business process, in whole or part, during which documents, information or tasks are passed from one participant to another for action, according to a set of procedural rules.” [Workflow Management Coalition].
-
-   #. **Application**: A software application performs operations on data residing in a computer for a user or another program; it can be self contained, typically termed a program, or part of a group of programs.
-
-   #. **Scientific Workflow**: A sequence of steps which propogate input data through a series of applications to produce output files. It is a loosely coupled application performing workflows in which each of the coordinated tasks is performed using an individual application. Each of the individual application taking some data inputs and producing data outputs, which are then consumed by subsequent tasks according to the workflow definition. They are termed scientific because they are typically used by scientists to process, manage, and visualize ever increasing ever increasing amounts of data applied to "scientific" problems.
-
-   #. **Scientific Workflow System**: An application or applications to aid a user to set-up, schedule, run, and monitor a user defined scientific workflow.
-
-   #. **Software Framework**: A software framework defines a set of component interfaces and provides a set of implementations in code of these interfaces which allows developers to build applications for the domain for which the framework has been designed. For example, a C++ framework will provide a set of abstract classes that define interfaces, and a set of concrete classes that implement the interfaces which will allow developers to quickly build and release applications using the concrete classes.  Frameworks allow developers to extend the functionality of the applications by introducing their own components that meet the component interface.
-
-
-SimCenter Applications Overview
-===============================
 Documentation of the software architecture is detailed in the following pages.
 
-.. toctree::
+
+.. toctree-filt::
    :maxdepth: 1
+
+   file-types.rst
+   backendApplications.rst
+   :RDT:workflows
+
+   :RDT:run-manually
 
    c4model
-   backendApplications
 
-
-How to Run
-====================
-
-Instructions for how to run the backend applications are detailed in the following pages.
-
-.. toctree::
-   :maxdepth: 1
-
-   runLocal
-   runRemote
-   troubleshooting
-
-
-.. only:: RDT_app
-
-   .. include:: RDTworkflows.rst

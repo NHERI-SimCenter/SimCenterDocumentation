@@ -28,14 +28,15 @@ First, ensure the following dependencies are installed:
 * **Qt Creator**: The Qt framework is only necessary if you choose to build the user interface for the |short tool id| software. `Qt Creator <https://www.qt.io/download>`_ is free for open source developers. Version 5.10 or later is required, and version 5.12 or later is recommended.
 
 
-************************
+************************************
 Build the Workflow Application Files
-************************
+************************************
 
 Instructions to build the workflow applications on your local desktop depend on your operating system.
 
 Build on Windows
 ----------------
+
 For Windows systems, the steps to building the workflow application are as follows:
 
     #. **Obtain the source code:** Clone the SimCenterBackendApplications repository from `Github <https://github.com/NHERI-SimCenter/SimCenterBackendApplications>`_. You can do that by using your preferred Git client/GUI or by using the ``git clone`` command in the terminal:
@@ -71,6 +72,7 @@ For Windows systems, the steps to building the workflow application are as follo
 
 Build on MacOS
 --------------
+
 For Mac systems, the steps to building the workflow application are as follows:
 
 
@@ -78,9 +80,8 @@ For Mac systems, the steps to building the workflow application are as follows:
 
 Build on Unix
 -------------
+
 For Unix systems, the steps to building the workflow application are as follows:
-
-
 
 
 
@@ -90,23 +91,26 @@ Build the User Interface
 
 Build using the Qt Creator (Recommended)
 ----------------------------------------
+
     1. Start Qt Creator, then open the |short tool id|.pro file located in the |short tool id| directory that was downloaded in the previous steps.
     2. Setup the development kit in Qt Creator. This is usually done by selecting the Qt version, compiler and configuration and following the onscreen dialog.
     3. Build the application and run it in Qt Creator IDE by using the **Run** button. This can be done using the keyboard shortcut ``F5`` to build and start the tool.
 
 Build using the terminal
 ------------------------
-    1. First, create a build output directory. This can be done in the terminal using the command ``mkdir build``.
-    2. Go into the build output directory and run QMake to Configure the project and create make files. This can be done by using the command:
 
-        .. parsed-literal::
+1. First, create a build output directory. This can be done in the terminal using the command ``mkdir build``.
+2. Go into the build output directory and run QMake to Configure the project and create make files. This can be done by using the command:
 
-            qmake ../|short tool id|.pro
+    .. parsed-literal::
 
-    3. Build the project by using the command ``make`` on Unix like systems. On Windows, you can either use ``nmake`` or ``jom`` to build in parallel. Once built, you can now run the tool executable.
+        qmake ../|short tool id|.pro
+
+3. Build the project by using the command ``make`` on Unix like systems. On Windows, you can either use ``nmake`` or ``jom`` to build in parallel. Once built, you can now run the tool executable.
 
 
 **********************************
 Set the User Interface Preferences
 **********************************
-    Once built, Open the |short tool id| tool, then click on file -> preferences and set the applications directory entry to point to the applications folder that the build process created for BackendApplications.
+
+Once built, Open the |short tool id| tool, then click on file -> preferences and set the applications directory entry to point to the applications folder that the build process created for BackendApplications.
