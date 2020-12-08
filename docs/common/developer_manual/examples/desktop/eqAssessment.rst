@@ -25,7 +25,7 @@ The example input files can be downloaded here: :download:`input_data_eq.zip <fi
    :language: python
    :linenos:
 
-2. **Building Application**: This example uses the :ref:`CSV_to_BIM <lblBuildingApp>` building application. In the configuration file, the Max and Min parameters are set to run the full set of 20 buildings, and the name of the building source file is provided as "input_params.csv". In the :ref:`building source file <lblUserDefInputs>`, input parameters for (a) the response simulation (weight ``W``, yield strength ``f_yield``, and fundamental period ``T1``) and for (b) the DL assessment (``stories``, ``yearbuilt``, ``occupancy``, ``structure``, ``areafootprint``, ``replacementCost``) are specified.
+2. **Building Application**: This example uses the :ref:`CSV_to_BIM <lblBuildingApp>` building application. In the configuration file, the Max and Min parameters are set to run the full set of 20 buildings, and the name of the building source file is provided as "input_params.csv". In the :ref:`building source file <lblUserDefInputs>`, input parameters for (a) the response simulation (weight ``W``, yield strength ``f_yield``, and fundamental period ``T1``) and for (b) the DL assessment (e.g., ``NumberofStories``, ``YearBuilt``, ``OccupancyClass``, ``StructureType``, ``PlanArea``, ``ReplacementCost``) are specified.
 
 **Building source file:**
 
