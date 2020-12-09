@@ -101,7 +101,7 @@ Outputs
 
 The example output files can be downloaded here: :download:`output_data_hu.zip <files/output_data_hu.zip>`. For more information about the output files produced, refer to :ref:`Outputs <lblOutputs>`.
 
-1. **EDP_1-20.csv**: reports statistics on the EDP results from . As in HAZUS, the statistics reported are the median and lognormal standard deviation of peak wind speed (PWS) and flood water depth (FWD).
+1. **EDP_1-20.csv**: reports statistics on EDP results, where the hazard IM is used as the EDP. As in HAZUS, the statistics reported are the median and lognormal standard deviation of peak wind speed (PWS) and flood water depth (FWD).
 
 .. csv-table:: EDP_1-20.csv
    :file: files/EDP_1-20.csv

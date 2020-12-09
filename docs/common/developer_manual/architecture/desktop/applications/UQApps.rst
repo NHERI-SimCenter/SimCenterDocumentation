@@ -19,7 +19,7 @@ The following options for UQ applications vary in the software package used to p
 .. raw:: html
    :file: _static/html/performUQ-gallery.html
 
-.. .. jsonschema:: App_Schema.json#/properties/UQApplications/Dakota-UQ
+.. jsonschema:: App_Schema.json#/properties/UQApplications/Dakota-UQ
 
 In the configuration file, **Dakota-UQ** is called under "Applications" as:
 

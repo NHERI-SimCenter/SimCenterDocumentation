@@ -18,10 +18,10 @@ It returns damage probabilities in a "DM.csv" file and decision variable estimat
 The following options for DL applications vary in the software package used to perform the damage and loss assessment.
 
 .. raw:: html
-   :file: _static/html/performDL-gallery.html 
+   :file: _static/html/performDL-gallery.html
 
 
-.. .. jsonschema:: App_Schema.json#/properties/DLApplications/pelicun
+.. jsonschema:: App_Schema.json#/properties/DLApplications/pelicun
 
 In the configuration file, **pelicun** is called under "Applications" as:
 

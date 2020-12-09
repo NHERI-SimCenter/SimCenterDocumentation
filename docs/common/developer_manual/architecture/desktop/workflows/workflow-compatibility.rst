@@ -46,7 +46,7 @@ The following flowchart can be used to determine which workflow is suitable for 
    :figclass: align-center
 
 
-**Workflow 5** (EQ, HU, W): This workflow is appropriate for implementations where response is simulated on an user-created structural model in OpenSeesPy, and the user defines custom types and locations of EDPs to record on the model. The OpenSeesPy model script and the EDP specifications file must be included as additional inputs.
+**Workflow 5** (EQ, W): This workflow is appropriate for implementations where response is simulated on an user-created structural model in OpenSeesPy, and the user defines custom types and locations of EDPs to record on the model. The OpenSeesPy model script and the EDP specifications file must be included as additional inputs.
 
 .. figure:: figures/workflow_diagram_5.png
    :name: figWorkflowDiagram5

@@ -100,6 +100,7 @@ The workflow can be executed by uploading the appropriate files to :ref:`DesignS
 This command locates the backend applications in the folder "applications", and the input files in a directory "cantilever_example". Please ensure that the paths in the command appropriately identify the locations of the files in your directory.
 
 ::
+
     applications
     cantilever_example
     ├── rWHALE_config_eq.json              # configuration file

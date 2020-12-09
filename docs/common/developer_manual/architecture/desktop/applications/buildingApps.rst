@@ -19,7 +19,7 @@ The following options for building applications vary in the file type of the inp
 .. raw:: html
    :file: _static/html/createBIM-gallery.html
 
-.. .. jsonschema:: App_Schema.json#/properties/BuildingApplications/CSV_to_BIM
+.. jsonschema:: App_Schema.json#/properties/BuildingApplications/CSV_to_BIM
 
 
 In the configuration file, **CSV_to_BIM** is called under "Applications" as:

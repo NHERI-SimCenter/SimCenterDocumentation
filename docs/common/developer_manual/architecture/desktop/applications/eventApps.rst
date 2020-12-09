@@ -14,10 +14,13 @@ This input information is saved in an "EVENT.json" file, located in its correspo
 
 The following options for event applications vary in the type of event, event properties, and format of the event file which it processes.
 
-.. .. jsonschema:: App_Schema.json#/properties/EventApplications/SimCenterEvent
-
 .. raw:: html
    :file: _static/html/createEVENT-gallery.html
+
+   
+
+.. jsonschema:: App_Schema.json#/properties/EventApplications/SimCenterEvent
+
 
 In the configuration file, **SimCenterEvent** is called under "Applications" as:
 
@@ -31,10 +34,10 @@ In the configuration file, **SimCenterEvent** is called under "Applications" as:
       }
     }]
 
-.. .. jsonschema:: App_Schema.json#/properties/EventApplications/ExistingPEER_Events
+.. jsonschema:: App_Schema.json#/properties/EventApplications/ExistingPEER_Events
 
 
-.. .. jsonschema:: App_Schema.json#/properties/EventApplications/StochasticWindWittigSinha
+.. jsonschema:: App_Schema.json#/properties/EventApplications/StochasticWindWittigSinha
 
 
-.. .. jsonschema:: App_Schema.json#/properties/EventApplications/StochasticGroundMotion
+.. jsonschema:: App_Schema.json#/properties/EventApplications/StochasticGroundMotion

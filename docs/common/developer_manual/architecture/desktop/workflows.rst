@@ -3,9 +3,10 @@
 Creating Workflows
 ===================
 
+
+.. include:: workflows/readingTheLog.rst
+
+
 .. toctree::
 
-   workflows/readingTheLog
    workflows/workflow-compatibility
-   
-   

@@ -22,7 +22,7 @@ The following options for EDP applications vary in the type of EDPs identified f
    :file: _static/html/createEDP-gallery.html
 
 
-.. .. jsonschema:: App_Schema.json#/properties/EDPApplications/StandardEarthquakeEDP_R
+.. jsonschema:: App_Schema.json#/properties/EDPApplications/StandardEarthquakeEDP_R
 
 In the configuration file, **StandardEarthquakeEDP_R** is called under "Applications" as:
 
@@ -35,7 +35,7 @@ In the configuration file, **StandardEarthquakeEDP_R** is called under "Applicat
       }
 
 
-.. .. jsonschema:: App_Schema.json#/properties/EDPApplications/UserDefinedEDP_R
+.. jsonschema:: App_Schema.json#/properties/EDPApplications/UserDefinedEDP_R
 
 In the configuration file, **UserDefinedEDP_R** is called under "Applications" as:
 

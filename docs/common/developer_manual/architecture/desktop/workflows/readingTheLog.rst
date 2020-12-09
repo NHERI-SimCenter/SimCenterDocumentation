@@ -2,7 +2,7 @@
 Workflows
 ******************
 
-The structure of a general workflow is depicted in :numref:`figBackendApps` with the following key:
+The structure of a general workflow is depicted in :numref:`figBackendApps` with the following keys:
 
 - User-provided input files are shown in orange.
 - Component applications are shown in blue. File dependencies for each component application are shown with arrows.
@@ -133,6 +133,3 @@ The full log file is shown below:
 .. literalinclude:: _static/log.txt
     :linenos:
     :emphasize-lines: 12,13,16,64,93,103,111,118,126,134,142,153,154,155,156,157,165,189,198,213,315
-
-
-
