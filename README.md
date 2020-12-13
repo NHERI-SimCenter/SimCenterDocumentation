@@ -4,7 +4,7 @@ This is the repository where documentation for SimCenter software is maintained.
 
 Contributors should follow the [style reference](docstyle.md) for guidelines on documentation formatting.
 
-## Structure
+## Directory Structure
 
 + docs   - the folder containing the most up to date material (all other directories contain legacy material)
 + docs/Makefile - Linux and MacOS makefile for building current document
@@ -12,7 +12,7 @@ Contributors should follow the [style reference](docstyle.md) for guidelines on 
 + docs/conf.py - configuration file (in this file set app for which doc is requiretd)
 + docs/index.rst - main index file, which pulls in files in docs/common
 + otherFolder - ignore as these contain legacy text files
-   
+
 
 ## Building the HTML files
 

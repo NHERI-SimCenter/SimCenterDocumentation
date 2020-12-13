@@ -1,0 +1,215 @@
+
+
+
+<hr>
+<div class="twbs">
+  <div class="gallery accordion" id="gallery">
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0024</code>
+        <h5 class="card-title mb-0" >
+          <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
+          OpenSees-Simulation_R
+          <!-- </button> -->
+        </h5>
+        <p class="card-text">
+          Executes script for building structural model in OpenSees and running analysis for the response simulation, then saves the results in EDP.json.
+        </p>
+      </summary>
+
+      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0024"> -->
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0024">
+        <div class="card-body">
+          <div class="nav nav-tabs">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0024')" >CLI</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0024')" >Inputs</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0024">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0024">
+              <ul>
+              
+                <li>filenameBIM</li>
+              
+                <li>filenameSAM</li>
+              
+                <li>filenameEVENT</li>
+              
+                <li>filenameEDP</li>
+              
+                <li>filenameSIM</li>
+              
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0025</code>
+        <h5 class="card-title mb-0" >
+          <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
+          OpenSees-Simulation_R
+          <!-- </button> -->
+        </h5>
+        <p class="card-text">
+          Executes script for building structural model in OpenSeesPy and running analysis for the response simulation, then saves the results in EDP.json.
+        </p>
+      </summary>
+
+      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0025"> -->
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0025">
+        <div class="card-body">
+          <div class="nav nav-tabs">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0025')" >CLI</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0025')" >Inputs</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0025">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre>usage: OpenSeesPySimulation.py [-h] [--filenameBIM FILENAMEBIM]
+                               [--filenameSAM FILENAMESAM]
+                               [--filenameEVENT FILENAMEEVENT]
+                               [--filenameEDP FILENAMEEDP]
+                               [--filenameSIM FILENAMESIM] [--getRV [GETRV]]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --filenameBIM FILENAMEBIM
+  --filenameSAM FILENAMESAM
+  --filenameEVENT FILENAMEEVENT
+  --filenameEDP FILENAMEEDP
+  --filenameSIM FILENAMESIM
+  --getRV [GETRV]
+</pre>
+              </code>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0025">
+              <ul>
+              
+                <li>filenameBIM</li>
+              
+                <li>filenameSAM</li>
+              
+                <li>filenameEVENT</li>
+              
+                <li>filenameEDP</li>
+              
+                <li>filenameSIM</li>
+              
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0026</code>
+        <h5 class="card-title mb-0" >
+          <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
+          IMasEDP
+          <!-- </button> -->
+        </h5>
+        <p class="card-text">
+          Returns the input event IM as the EDP in the absence of a response simulation method. This application is appropriate to use when damages and losses are estimated as function of IM in the DL assessment.
+        </p>
+      </summary>
+
+      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0026"> -->
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0026">
+        <div class="card-body">
+          <div class="nav nav-tabs">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0026')" >CLI</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0026')" >Inputs</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0026">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre>usage: IMasEDP.py [-h] [--filenameBIM FILENAMEBIM] [--filenameSAM FILENAMESAM]
+                  [--filenameEVENT FILENAMEEVENT] [--filenameEDP FILENAMEEDP]
+                  [--filenameSIM FILENAMESIM] [--getRV [GETRV]]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --filenameBIM FILENAMEBIM
+  --filenameSAM FILENAMESAM
+  --filenameEVENT FILENAMEEVENT
+  --filenameEDP FILENAMEEDP
+  --filenameSIM FILENAMESIM
+  --getRV [GETRV]
+</pre>
+              </code>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0026">
+              <ul>
+              
+                <li>filenameBIM</li>
+              
+                <li>filenameSAM</li>
+              
+                <li>filenameEVENT</li>
+              
+                <li>filenameEDP</li>
+              
+                <li>filenameSIM</li>
+              
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  </div>
+</div>
+
+
+<script>
+function openCardTab(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script> 
+

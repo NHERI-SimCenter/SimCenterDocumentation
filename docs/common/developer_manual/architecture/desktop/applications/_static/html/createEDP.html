@@ -1,0 +1,149 @@
+
+
+
+<hr>
+<div class="twbs">
+  <div class="gallery accordion" id="gallery">
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0022</code>
+        <h5 class="card-title mb-0" >
+          <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
+          StandardEarthquakeEDP_R
+          <!-- </button> -->
+        </h5>
+        <p class="card-text">
+          Creates EDP.json file containing standard EDPs for earthquake hazard events, including peak interstory drift ratio (PID), peak floor acceleration (PFA), peak roof drift (PRD), and peak floor displacement (PFD).
+        </p>
+      </summary>
+
+      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0022"> -->
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0022">
+        <div class="card-body">
+          <div class="nav nav-tabs">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0022')" >CLI</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0022')" >Inputs</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0022">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0022">
+              <ul>
+              
+                <li>filenameBIM</li>
+              
+                <li>filenameEVENT</li>
+              
+                <li>filenameSAM</li>
+              
+                <li>filenameEDP</li>
+              
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0023</code>
+        <h5 class="card-title mb-0" >
+          <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
+          UserDefinedEDP_R
+          <!-- </button> -->
+        </h5>
+        <p class="card-text">
+          Creates EDP.json file containing EDP information which is custom-defined in an input EDP specifications file.
+        </p>
+      </summary>
+
+      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0023"> -->
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0023">
+        <div class="card-body">
+          <div class="nav nav-tabs">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0023')" >CLI</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0023')" >Inputs</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0023">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre>usage: UserDefinedEDP.py [-h] [--filenameBIM FILENAMEBIM]
+                         [--filenameEVENT FILENAMEEVENT]
+                         [--filenameSAM FILENAMESAM]
+                         [--filenameEDP FILENAMEEDP] [--EDPspecs EDPSPECS]
+                         [--getRV [GETRV]]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --filenameBIM FILENAMEBIM
+  --filenameEVENT FILENAMEEVENT
+  --filenameSAM FILENAMESAM
+  --filenameEDP FILENAMEEDP
+  --EDPspecs EDPSPECS
+  --getRV [GETRV]
+</pre>
+              </code>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0023">
+              <ul>
+              
+                <li>filenameBIM</li>
+              
+                <li>filenameEVENT</li>
+              
+                <li>filenameSAM</li>
+              
+                <li>filenameEDP</li>
+              
+                <li>EDPspecs</li>
+              
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  </div>
+</div>
+
+
+<script>
+function openCardTab(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script> 
+

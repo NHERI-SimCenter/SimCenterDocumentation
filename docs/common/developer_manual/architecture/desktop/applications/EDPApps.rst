@@ -19,7 +19,7 @@ Note that in the EDP file, DOF=1,2 are assumed to correspond to perpendicular ho
 The following options for EDP applications vary in the type of EDPs identified for the simulation output.
 
 .. raw:: html
-   :file: _static/html/createEDP-gallery.html
+   :file: _static/html/createEDP.html
 
 
 .. .. jsonschema:: App_Schema.json#/properties/EDPApplications/StandardEarthquakeEDP_R
