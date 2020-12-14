@@ -7,7 +7,7 @@
   
 <div class="accordion-item card shadow-sm my-3 gallery-item" >
     <details>
-      <summary class="card-header"><code>bknd-0028</code>
+      <summary class="card-header"><code>bknd-0043</code>
         <h5 class="card-title mb-0" >
           <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
           pelicun
@@ -18,21 +18,21 @@
         </p>
       </summary>
 
-      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0028"> -->
-      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0028">
+      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0043"> -->
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0043">
         <div class="card-body">
-          <div class="nav nav-tabs">
+          <div class="nav nav-tabs py-4">
             <div class="nav-item">
-              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0028')" >CLI</a>
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0043')" >CLI</a>
             </div>
             <div class="nav-item">
-              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0028')" >Inputs</a>
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0043')" >Inputs</a>
             </div>
           </div>
           <div class="tab-content">
-            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0028">
+            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0043">
               <code class="my-2 mx-2" style="border: none;">
-                <pre>2020-12-12T03:18:54Z First line of DL_calculation
+                <pre>2020-12-14T03:18:24Z First line of DL_calculation
 usage: DL_calculation.py [-h] [--filenameDL FILENAMEDL]
                          [--filenameEDP FILENAMEEDP] [--DL_Method DL_METHOD]
                          [--Realizations REALIZATIONS] [--outputEDP OUTPUTEDP]
@@ -63,36 +63,42 @@ optional arguments:
 </pre>
               </code>
             </div>
-            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0028">
-              <ul>
-              
-                <li>filenameDL</li>
-              
-                <li>filenameEDP</li>
-              
-                <li>outputEDP</li>
-              
-                <li>outputDM</li>
-              
-                <li>outputDV</li>
-              
-                <li>DL_Method</li>
-              
-                <li>Realizations</li>
-              
-                <li>detailed_results</li>
-              
-                <li>log_file</li>
-              
-                <li>coupled_EDP</li>
-              
-                <li>event_time</li>
-              
-                <li>ground_failure</li>
-              
-                <li>auto_script</li>
-              
-              </ul>
+            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0043">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>DL file<code>&ltstring&gt</code></dt>
+                  <dd>File containing the DL model information. The default is to source it from the building source file.</dd>
+                
+                  <dt>EDP file<code>&ltstring&gt</code></dt>
+                  <dd>File containing type, location, and direction of recorded EDPs from the response simulation.</dd>
+                
+                  <dt>DL_Method<code>&ltstring&gt</code></dt>
+                  <dd>Defines the damage and loss assessment method. Available choices include 'FEMA P58', 'HAZUS MH EQ', 'HAZUS MH', 'HAZUS MH EQ IM', and 'HAZUS MH HU'.</dd>
+                
+                  <dt>Realizations<code>&ltint&gt</code></dt>
+                  <dd>Specifies the number of loss realizations to generate.</dd>
+                
+                  <dt>detailed_results<code>&ltbool&gt</code></dt>
+                  <dd>If False, only the main results are saved to improve efficiency.</dd>
+                
+                  <dt>log_file<code>&ltbool&gt</code></dt>
+                  <dd>If False, pelicun does not create a run log file.</dd>
+                
+                  <dt>coupled_EDP<code>&ltbool&gt</code></dt>
+                  <dd>If True, the raw EDPs are used as-is without resampling.</dd>
+                
+                  <dt>event_time<code>&ltstring&gt</code></dt>
+                  <dd>Defines the time of the event in YYYY-MM-DD:HH format. 'off' turns all time-effects off.</dd>
+                
+                  <dt>ground_failure<code>&ltbool&gt</code></dt>
+                  <dd>If True, fragility groups associated with ground failure are added in the auto-population phase. Note that such analysis requires PGD values as inputs.</dd>
+                
+                  <dt>auto_script<code>&ltstring&gt</code></dt>
+                  <dd>...</dd>
+                
+                </dl>
+              </div>
             </div>
           </div>
         </div>

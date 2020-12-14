@@ -21,7 +21,7 @@
       <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0001"> -->
       <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0001">
         <div class="card-body">
-          <div class="nav nav-tabs">
+          <div class="nav nav-tabs py-4">
             <div class="nav-item">
               <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0001')" >CLI</a>
             </div>
@@ -47,17 +47,20 @@ optional arguments:
               </code>
             </div>
             <div class="tabcontent tab-pane" id="tab-inputs-bknd-0001">
-              <ul>
-              
-                <li>buildingFile</li>
-              
-                <li>Min</li>
-              
-                <li>Max</li>
-              
-                <li>buildingSourceFile</li>
-              
-              </ul>
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>Min<code>&ltint&gt</code></dt>
+                  <dd>Min id of building to run in workflow.</dd>
+                
+                  <dt>Max<code>&ltint&gt</code></dt>
+                  <dd>Max id of building to run in workflow.</dd>
+                
+                  <dt>Building source file<code>&ltpath&gt</code></dt>
+                  <dd>Path to buildings database file.</dd>
+                
+                </dl>
+              </div>
             </div>
           </div>
         </div>
@@ -82,7 +85,7 @@ optional arguments:
       <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0002"> -->
       <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0002">
         <div class="card-body">
-          <div class="nav nav-tabs">
+          <div class="nav nav-tabs py-4">
             <div class="nav-item">
               <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0002')" >CLI</a>
             </div>
@@ -97,19 +100,23 @@ optional arguments:
               </code>
             </div>
             <div class="tabcontent tab-pane" id="tab-inputs-bknd-0002">
-              <ul>
-              
-                <li>buildingFile</li>
-              
-                <li>Min</li>
-              
-                <li>Max</li>
-              
-                <li>buildingSourceFile</li>
-              
-                <li>config</li>
-              
-              </ul>
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>Min<code>&ltint&gt</code></dt>
+                  <dd>min id of building to obtain BIM for</dd>
+                
+                  <dt>Max<code>&ltint&gt</code></dt>
+                  <dd>max id of building to obtain BIM for</dd>
+                
+                  <dt>buildingSourceFile<code>&ltpath&gt</code></dt>
+                  <dd>path to buildings file</dd>
+                
+                  <dt>config<code>&ltpath&gt</code></dt>
+                  <dd>path to buildings config file</dd>
+                
+                </dl>
+              </div>
             </div>
           </div>
         </div>
@@ -134,7 +141,7 @@ optional arguments:
       <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0003"> -->
       <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0003">
         <div class="card-body">
-          <div class="nav nav-tabs">
+          <div class="nav nav-tabs py-4">
             <div class="nav-item">
               <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0003')" >CLI</a>
             </div>
@@ -160,19 +167,26 @@ optional arguments:
               </code>
             </div>
             <div class="tabcontent tab-pane" id="tab-inputs-bknd-0003">
-              <ul>
-              
-                <li>buildingFile</li>
-              
-                <li>Min</li>
-              
-                <li>Max</li>
-              
-                <li>buildingSourceFile</li>
-              
-                <li>configFile</li>
-              
-              </ul>
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>buildingFile<code>&ltFileName(W)&gt</code></dt>
+                  <dd>name of JSON file containing an array of id,filename pairs. For each building id the aplication creates a BIM file with name filename</dd>
+                
+                  <dt>Min<code>&ltint&gt</code></dt>
+                  <dd>min id of building to obtain BIM for</dd>
+                
+                  <dt>Max<code>&ltint&gt</code></dt>
+                  <dd>max id of building to obtain BIM for</dd>
+                
+                  <dt>buildingSourceFile<code>&ltpath&gt</code></dt>
+                  <dd>path to buildings database file</dd>
+                
+                  <dt>configFile<code>&ltpath&gt</code></dt>
+                  <dd>path to workflow config file</dd>
+                
+                </dl>
+              </div>
             </div>
           </div>
         </div>
