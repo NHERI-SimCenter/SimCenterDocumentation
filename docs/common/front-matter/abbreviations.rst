@@ -6,14 +6,14 @@ Abbreviations
 
 The following abbreviations may be found throughout this document:
 
-#. **BIM** = Building Information Model
-#. **DL** = Damage and Loss
-#. **EDP** = Engineering Demand Parameter
-#. **GM** = Ground Motion (of earthquake hazard)
-#. **IM** = Intensity Measure (of hazard event)
-#. **SAM** = Structural Analysis Model (i. e. finite element model)
-#. **SIM** = Simulation
-#. **UQ** = Uncertainty Quantification
+:BIM: Building Information Model
+:DL: Damage and Loss
+:EDP: Engineering Demand Parameter
+:GM: Ground Motion (of earthquake hazard)
+:IM: Intensity Measure (of hazard event)
+:SAM: Structural Analysis Model (i. e. finite element model)
+:SIM: Simulation
+:UQ: Uncertainty Quantification
 
 
 

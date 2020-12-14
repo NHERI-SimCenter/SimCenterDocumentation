@@ -19,6 +19,7 @@ CLEANDIR      = _sources _static _images common
 
 help:
 	@echo 'usage: make <app> <target>'
+	@echo '   or: make all'
 	@printf '\n'
 	@echo 'where <app> is one of:'
 	@echo '    qfem'
@@ -26,7 +27,7 @@ help:
 	@echo '    pbe'
 	@echo '    ee'
 	@echo '    we'
-	@echo '    all   Make all of the above'
+	@# @echo '    all   Make all of the above'
 	@echo ''
 	@echo 'and <target> is one of:'
 	@echo '    web'
@@ -34,38 +35,39 @@ help:
 	@echo '    latex'
 	@echo ''
 
-pandoc:
-	# echo **/*.rst | sed -e 's/ /\n/g'
-	pandoc **/*.rst -o doc.pdf
+ee:      export SIMDOC_APP=EE-UQ
+we:      export SIMDOC_APP=WE-UQ
+rdt:     export SIMDOC_APP=RDT
+pbe:     export SIMDOC_APP=PBE
+qfem:    export SIMDOC_APP=quoFEM
+pelicun: export SIMDOC_APP=pelicun
 
-
-ee:     export SIMDOC_APP=EE-UQ
-we:     export SIMDOC_APP=WE-UQ
-rdt:    export SIMDOC_APP=RDT
-pbe:    export SIMDOC_APP=PBE
-qfem: export SIMDOC_APP=quoFEM
 export SIMDOC_APP
 
-# .PHONY: help Makefile pbe rdt qfem we ee
+all:
+	make pelicun html
+	make qfem html
+	make rdt html
+	make pbe html
+	make we html
+	make ee html
 
-rdt pbe qfem we ee:
+pelicun rdt pbe qfem we ee:
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
 
 web:
 	@echo removing $(addprefix $(call PUBLDIR,$(SIMDOC_APP)),$(CLEANDIR))
 	rm -fr $(addprefix $(call PUBLDIR,$(SIMDOC_APP)),$(CLEANDIR))
-	python3 test.py
+	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" $(call PUBLDIR,$(SIMDOC_APP)) $(O)
 
 html:
-	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" $(call BUILDDIR,$(SIMDOC_APP)) $(O)
+	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" $(call BUILDDIR,$(SIMDOC_APP))/html $(O)
+
+
+pandoc:
+	# echo **/*.rst | sed -e 's/ /\n/g'
+	pandoc **/*.rst -o doc.pdf
 
 
 .PHONY: help Makefile pbe rdt qfem we ee html
 
-
-
-
-# Catch-all target: route all unknown targets to Sphinx using the new
-# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-%: Makefile
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
