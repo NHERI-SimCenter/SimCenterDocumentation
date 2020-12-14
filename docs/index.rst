@@ -35,17 +35,16 @@
 
    This document covers the features and capabilities of Version |tool version| of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the |messageBoard|.
 
+   .. _lbl-front-matter:
 
-.. _lbl-front-matter:
+   .. toctree-filt::
+      :caption: About
+      :maxdepth: 1
 
-.. toctree-filt::
-   :caption: About
-   :maxdepth: 1
-
-   common/front-matter/ack
-   common/front-matter/license
-   common/front-matter/glossary.rst
-   common/front-matter/abbreviations.rst
+      common/front-matter/ack
+      common/front-matter/license
+      common/front-matter/glossary.rst
+      common/front-matter/abbreviations.rst
 
 
 .. _lbl-user-manual:
