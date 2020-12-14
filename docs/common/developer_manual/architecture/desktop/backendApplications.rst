@@ -37,11 +37,7 @@ The backend applications are categorized by function into the following workflow
         :maxdepth: 1
         :hidden:
 
-        applications/buildingApps
         applications/eventApps
-        applications/modelingApps
-        applications/EDPApps
-        applications/simulationApps
         applications/UQApps
 
 
