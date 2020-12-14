@@ -8,11 +8,11 @@
 
 import os 
 app_name = os.path.expandvars("$SIMDOC_APP")
-if app_name:
+if app_name in ["RDT", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun"]:
 	pass 
 else:
 	pass
-	#app_name = 'RDT'
+	app_name = 'RDT'
 	#app_name = 'PBE'
 	#app_name = 'EE-UQ'
 	#app_name = 'WE-UQ'
