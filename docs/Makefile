@@ -8,7 +8,6 @@ SPHINXBUILD   ?= sphinx-build
 #SPHINXBUILD   ?= python3 -m sphinx
 SOURCEDIR     = .
 BUILDDIR      = ./web
-EXMPLDIR	  = ./common/user_manual/examples/desktop
 
 # Put it first so that "make" without argument is like "make help".
 help:
@@ -55,12 +54,6 @@ WE:
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" ../../WE-UQ-Documentation/docs $(O)
 
 .PHONY: help Makefile expl
-
-expl:
-	aurore -vvv copy \
-	-F $(EXMPLDIR)/aurore.filter.yaml \
-	$(EXMPLDIR)/Examples.yaml \
-	$(EXMPLDIR)
 
 
 # Catch-all target: route all unknown targets to Sphinx using the new
