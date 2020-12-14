@@ -17,18 +17,18 @@ The following options for event applications vary in the type of event, event pr
 .. only:: WEUQ_app
 
     .. raw:: html
-       :file: _static/html/wind-events.html
+       :file: _static/html/WE-UQ/createEVENT.html
 
 
 .. only:: EEUQ_app
 
     .. raw:: html
-       :file: _static/html/earthquake-events.html
+       :file: _static/html/EE-UQ/createEVENT.html
 
 
 .. only:: RDT_app
 
     .. raw:: html
-       :file: _static/html/createEVENT.html
+       :file: _static/html/RDT/createEVENT.html
  
 

@@ -27,6 +27,24 @@ The backend applications are categorized by function into the following workflow
 
 .. |performDL| replace:: :ref:`Damage and Loss (DL) Applications <lblDLApp>` - estimate expected damages and losses from the EDP application's output.
 
+
+.. only:: quoFEM_app
+
+    #. |performSIM|
+    #. |performUQ|
+    
+    .. toctree::
+        :maxdepth: 1
+        :hidden:
+
+        applications/buildingApps
+        applications/eventApps
+        applications/modelingApps
+        applications/EDPApps
+        applications/simulationApps
+        applications/UQApps
+
+
 .. only:: WEUQ_app
 
     #. |createSAM|
@@ -34,6 +52,18 @@ The backend applications are categorized by function into the following workflow
     #. |createEVENT|
     #. |performSIMULATION|
     #. |performUQ|
+    
+    .. toctree::
+        :maxdepth: 1
+        :hidden:
+
+        applications/buildingApps
+        applications/eventApps
+        applications/modelingApps
+        applications/EDPApps
+        applications/simulationApps
+        applications/UQApps
+
 
 .. only:: EEUQ_app
 
@@ -42,6 +72,18 @@ The backend applications are categorized by function into the following workflow
     #. |createEVENT|
     #. |performSIMULATION|
     #. |performUQ|
+    
+    .. toctree::
+        :maxdepth: 1
+        :hidden:
+
+        applications/buildingApps
+        applications/eventApps
+        applications/modelingApps
+        applications/EDPApps
+        applications/simulationApps
+        applications/UQApps
+
 
 .. only:: PBE_app
 
@@ -53,6 +95,18 @@ The backend applications are categorized by function into the following workflow
     #. |performSIMULATION|
     #. |performUQ|
     #. |performDL|
+    
+    .. toctree::
+        :maxdepth: 1
+        :hidden:
+
+        applications/buildingApps
+        applications/eventApps
+        applications/modelingApps
+        applications/EDPApps
+        applications/simulationApps
+        applications/UQApps
+        applications/DLApps
 
 
 .. only:: RDT_app
@@ -66,21 +120,23 @@ The backend applications are categorized by function into the following workflow
     #. |performUQ|
     #. |performDL|
 
+    .. toctree::
+        :maxdepth: 1
+        :hidden:
+
+        applications/buildingApps
+        applications/eventApps
+        applications/modelingApps
+        applications/EDPApps
+        applications/simulationApps
+        applications/UQApps
+        applications/DLApps
+        applications/regionalMapApps
+
+
 These applications make up the "backbone" of SimCenter workflow systems, with each one calling on a different subset of the component applications. 
 
 
 .. The following pages provide more detail on the requirements for input files and types of backend applications available.
 
 
-.. toctree-filter::
-   :maxdepth: 1
-   :hidden:
-
-   applications/buildingApps
-   :RDT:applications/regionalMapApps
-   applications/eventApps
-   applications/modelingApps
-   applications/EDPApps
-   applications/simulationApps
-   applications/UQApps
-   applications/DLApps

@@ -16,40 +16,5 @@ After response simulation is completed, the "EDP.json" file is populated with th
 
 The following options for simulation applications vary in the type of finite element program or procedure used for EDPs estimation.
 
-.. jsonschema:: App_Schema.json#/properties/SimulationApplications/OpenSees-Simulation_R
-
-In the configuration file, **OpenSees-Simulation_R** is called under "Applications" as:
-
-.. code-block::
-
-      "Simulation": {
-         "Application": "OpenSees-Simulation_R",
-            "ApplicationData": {
-            }
-      }
-
-
-.. jsonschema:: App_Schema.json#/properties/SimulationApplications/OpenSeesPy-Simulation
-
-
-In the configuration file, **OpenSeesPy-Simulation** is called under "Applications" as:
-
-.. code-block::
-
-      "Simulation": {
-         "Application": "OpenSeesPy-Simulation",
-            "ApplicationData": {
-            }
-      }
-
-.. jsonschema:: App_Schema.json#/properties/SimulationApplications/IMasEDP
-
-In the configuration file, **IMasEDP** is called under "Applications" as:
-
-.. code-block::
-
-      "Simulation": {
-         "Application": "IMasEDP",
-            "ApplicationData": {
-            }
-      }
+.. raw:: html
+   :file: _static/html/performSIMULATION.html 

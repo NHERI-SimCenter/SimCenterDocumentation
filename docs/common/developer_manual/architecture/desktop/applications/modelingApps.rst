@@ -16,25 +16,7 @@ The input structural model information is parsed into a "SAM.json" file, located
 
 The following options for modeling applications vary in the type of model and finite element program used for response simulation.
 
-.. raw:: html
-   :file: _static/html/performSIMULATION-gallery.html 
-
-.. .. jsonschema:: App_Schema.json#/properties/ModelingApplications/MDOF-LU
-
-.. .. jsonschema:: App_Schema.json#/properties/ModelingApplications/OpenSeesInput
-
-.. .. jsonschema:: App_Schema.json#/properties/ModelingApplications/OpenSeesPyInput
-
-In the configuration file, **OpenSeesPyInput** is called under "Applications" as:
-
-.. code-block::
-
-      "Modeling": {
-         "Application": "OpenSeesPyInput",
-            "ApplicationData": {
-             "mainScript": "cantilever.py",
-             "modelPath": "model/",
-             "ndm": 3,
-             "dofMap": "1,2,3"
-         }
-      }
+.. only:: WEUQ_App
+   
+   .. raw:: html
+      :file: _static/html/WE-UQ/createSAM.html 

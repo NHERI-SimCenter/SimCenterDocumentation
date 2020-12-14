@@ -84,7 +84,6 @@ Build on Unix
 For Unix systems, the steps to building the workflow application are as follows:
 
 
-
 ************************
 Build the User Interface
 ************************

@@ -7,6 +7,196 @@
   
 <div class="accordion-item card shadow-sm my-3 gallery-item" >
     <details>
+      <summary class="card-header"><code>bknd-0001</code>
+        <h5 class="card-title mb-0" >
+          <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
+          CSV_to_BIM
+          <!-- </button> -->
+        </h5>
+        <p class="card-text">
+          Parses building source information from CSV and saves into BIM.json files for each building.
+        </p>
+      </summary>
+
+      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0001"> -->
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0001">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0001')" >CLI</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0001')" >Inputs</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0001">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre>usage: CSV_to_BIM.py [-h] [--buildingFile BUILDINGFILE]
+                     [--buildingSourceFile BUILDINGSOURCEFILE] [--Min MIN]
+                     [--Max MAX] [--getRV [GETRV]]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --buildingFile BUILDINGFILE
+  --buildingSourceFile BUILDINGSOURCEFILE
+  --Min MIN
+  --Max MAX
+  --getRV [GETRV]
+</pre>
+              </code>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0001">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>Min<code>&ltint&gt</code></dt>
+                  <dd>Min id of building to run in workflow.</dd>
+                
+                  <dt>Max<code>&ltint&gt</code></dt>
+                  <dd>Max id of building to run in workflow.</dd>
+                
+                  <dt>Building source file<code>&ltpath&gt</code></dt>
+                  <dd>Path to buildings database file.</dd>
+                
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0002</code>
+        <h5 class="card-title mb-0" >
+          <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
+          GenericBimDatabase
+          <!-- </button> -->
+        </h5>
+        <p class="card-text">
+          No description
+        </p>
+      </summary>
+
+      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0002"> -->
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0002">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0002')" >CLI</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0002')" >Inputs</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0002">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0002">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>Min<code>&ltint&gt</code></dt>
+                  <dd>min id of building to obtain BIM for</dd>
+                
+                  <dt>Max<code>&ltint&gt</code></dt>
+                  <dd>max id of building to obtain BIM for</dd>
+                
+                  <dt>buildingSourceFile<code>&ltpath&gt</code></dt>
+                  <dd>path to buildings file</dd>
+                
+                  <dt>config<code>&ltpath&gt</code></dt>
+                  <dd>path to buildings config file</dd>
+                
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0003</code>
+        <h5 class="card-title mb-0" >
+          <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
+          GeoJSON_to_BIM
+          <!-- </button> -->
+        </h5>
+        <p class="card-text">
+          No description
+        </p>
+      </summary>
+
+      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0003"> -->
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0003">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0003')" >CLI</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0003')" >Inputs</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0003">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre>usage: GeoJSON_to_BIM.py [-h] [--buildingFile BUILDINGFILE]
+                         [--buildingSourceFile BUILDINGSOURCEFILE] [--Min MIN]
+                         [--Max MAX] [--getRV [GETRV]]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --buildingFile BUILDINGFILE
+  --buildingSourceFile BUILDINGSOURCEFILE
+  --Min MIN
+  --Max MAX
+  --getRV [GETRV]
+</pre>
+              </code>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0003">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>buildingFile<code>&ltFileName(W)&gt</code></dt>
+                  <dd>name of JSON file containing an array of id,filename pairs. For each building id the aplication creates a BIM file with name filename</dd>
+                
+                  <dt>Min<code>&ltint&gt</code></dt>
+                  <dd>min id of building to obtain BIM for</dd>
+                
+                  <dt>Max<code>&ltint&gt</code></dt>
+                  <dd>max id of building to obtain BIM for</dd>
+                
+                  <dt>buildingSourceFile<code>&ltpath&gt</code></dt>
+                  <dd>path to buildings database file</dd>
+                
+                  <dt>configFile<code>&ltpath&gt</code></dt>
+                  <dd>path to workflow config file</dd>
+                
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
       <summary class="card-header"><code>bknd-0004</code>
         <h5 class="card-title mb-0" >
           <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
@@ -317,43 +507,49 @@ optional arguments:
   
 <div class="accordion-item card shadow-sm my-3 gallery-item" >
     <details>
-      <summary class="card-header"><code>bknd-0010</code>
+      <summary class="card-header"><code>bknd-0024</code>
         <h5 class="card-title mb-0" >
           <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
-          LowRiseTPU
+          StandardEarthquakeEDP_R
           <!-- </button> -->
         </h5>
         <p class="card-text">
-          No description
+          Creates EDP.json file containing standard EDPs for earthquake hazard events, including peak interstory drift ratio (PID), peak floor acceleration (PFA), peak roof drift (PRD), and peak floor displacement (PFD).
         </p>
       </summary>
 
-      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0010"> -->
-      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0010">
+      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0024"> -->
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0024">
         <div class="card-body">
           <div class="nav nav-tabs py-4">
             <div class="nav-item">
-              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0010')" >CLI</a>
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0024')" >CLI</a>
             </div>
             <div class="nav-item">
-              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0010')" >Inputs</a>
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0024')" >Inputs</a>
             </div>
           </div>
           <div class="tab-content">
-            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0010">
+            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0024">
               <code class="my-2 mx-2" style="border: none;">
                 <pre></pre>
               </code>
             </div>
-            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0010">
+            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0024">
               <div class="pt-2 mt-2">
                 <dl>
                 
-                  <dt>filenameBIM<code>&ltstring&gt</code></dt>
+                  <dt>filenameBIM<code>&ltFileName(R)&gt</code></dt>
                   <dd>name of bim file</dd>
                 
-                  <dt>filenameEVENT<code>&ltFileName(W)&gt</code></dt>
+                  <dt>filenameEVENT<code>&ltFileName(R)&gt</code></dt>
                   <dd>name of file containing the event data</dd>
+                
+                  <dt>filenameSAM<code>&ltFileName(R)&gt</code></dt>
+                  <dd>name of file containing the SAM</dd>
+                
+                  <dt>filenameEDP<code>&ltFileName(W)&gt</code></dt>
+                  <dd>name of file containing the EDP to be determined from the analysis</dd>
                 
                 </dl>
               </div>
@@ -367,105 +563,49 @@ optional arguments:
   
 <div class="accordion-item card shadow-sm my-3 gallery-item" >
     <details>
-      <summary class="card-header"><code>bknd-0011</code>
+      <summary class="card-header"><code>bknd-0025</code>
         <h5 class="card-title mb-0" >
           <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
-          WindTunnelExperiment
+          StandardEarthquakeEDP
           <!-- </button> -->
         </h5>
         <p class="card-text">
-          No description
+          Creates EDP.json file containing standard EDPs for earthquake hazard events, including peak interstory drift ratio (PID), peak floor acceleration (PFA), peak roof drift (PRD), and peak floor displacement (PFD).
         </p>
       </summary>
 
-      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0011"> -->
-      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0011">
+      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0025"> -->
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0025">
         <div class="card-body">
           <div class="nav nav-tabs py-4">
             <div class="nav-item">
-              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0011')" >CLI</a>
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0025')" >CLI</a>
             </div>
             <div class="nav-item">
-              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0011')" >Inputs</a>
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0025')" >Inputs</a>
             </div>
           </div>
           <div class="tab-content">
-            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0011">
+            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0025">
               <code class="my-2 mx-2" style="border: none;">
                 <pre></pre>
               </code>
             </div>
-            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0011">
+            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0025">
               <div class="pt-2 mt-2">
                 <dl>
                 
-                  <dt>filenameBIM<code>&ltstring&gt</code></dt>
+                  <dt>filenameBIM<code>&ltFileName(R)&gt</code></dt>
                   <dd>name of bim file</dd>
                 
-                  <dt>filenameEVENT<code>&ltFileName(W)&gt</code></dt>
+                  <dt>filenameEVENT<code>&ltFileName(R)&gt</code></dt>
                   <dd>name of file containing the event data</dd>
                 
-                </dl>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </details>
-</div>
-
-  
-<div class="accordion-item card shadow-sm my-3 gallery-item" >
-    <details>
-      <summary class="card-header"><code>bknd-0012</code>
-        <h5 class="card-title mb-0" >
-          <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
-          StochasticWindWittigSinha
-          <!-- </button> -->
-        </h5>
-        <p class="card-text">
-          Application file creating EVENT.json files for stochastic wind fields based on the Witting-Sinha method. Supports Wind hazard events.
-        </p>
-      </summary>
-
-      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0012"> -->
-      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0012">
-        <div class="card-body">
-          <div class="nav nav-tabs py-4">
-            <div class="nav-item">
-              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0012')" >CLI</a>
-            </div>
-            <div class="nav-item">
-              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0012')" >Inputs</a>
-            </div>
-          </div>
-          <div class="tab-content">
-            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0012">
-              <code class="my-2 mx-2" style="border: none;">
-                <pre>usage:
-  StochasticWind  options
-
-where options are:
-  -?, -h, --help                           display usage information
-  --filenameEVENT &ltEvent file location>    Location where generated time
-                                           history should be stored
-  --filenameBIM &ltBIM file location>        Location where building
-                                           information model is stored
-  --seed &ltSeed value>                      Seed value that should be used to
-                                           generate time histories
-  -r, --getRV                              Flag indicating whether the
-                                           generated event file should
-                                           specify random variable
-
-</pre>
-              </code>
-            </div>
-            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0012">
-              <div class="pt-2 mt-2">
-                <dl>
+                  <dt>filenameSAM<code>&ltFileName(R)&gt</code></dt>
+                  <dd>name of file containing the SAM</dd>
                 
-                  <dt>BIM file<code>&ltstring&gt</code></dt>
-                  <dd>File containing a dictionary of building information.</dd>
+                  <dt>filenameEDP<code>&ltFileName(W)&gt</code></dt>
+                  <dd>name of file containing the EDP to be determined from the analysis</dd>
                 
                 </dl>
               </div>
@@ -479,179 +619,49 @@ where options are:
   
 <div class="accordion-item card shadow-sm my-3 gallery-item" >
     <details>
-      <summary class="card-header"><code>bknd-0013</code>
+      <summary class="card-header"><code>bknd-0028</code>
         <h5 class="card-title mb-0" >
           <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
-          StochasticGroundMotion
+          UserDefinedEDP
           <!-- </button> -->
         </h5>
         <p class="card-text">
-          Application file for creating EVENT.json files for stochastic ground motion events based on the ___ GMPE. Supports Earthquake hazard events.
+          Creates EDP.json file containing EDP information which is custom-defined in an input EDP specifications file.
         </p>
       </summary>
 
-      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0013"> -->
-      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0013">
+      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0028"> -->
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0028">
         <div class="card-body">
           <div class="nav nav-tabs py-4">
             <div class="nav-item">
-              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0013')" >CLI</a>
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0028')" >CLI</a>
             </div>
             <div class="nav-item">
-              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0013')" >Inputs</a>
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0028')" >Inputs</a>
             </div>
           </div>
           <div class="tab-content">
-            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0013">
-              <code class="my-2 mx-2" style="border: none;">
-                <pre>usage:
-  StochasticGM  options
-
-where options are:
-  -?, -h, --help                           display usage information
-  --modelName &ltModel name>                 Name of stochastic model to use
-  --filenameEVENT &ltEvent file location>    Location where generated time
-                                           history should be stored
-  --filenameBIM &ltBIM file location>        Location where building
-                                           information model is stored
-  --seed &ltSeed value>                      Seed value that should be used to
-                                           generate time histories
-  -r, --getRV                              Flag indicating whether the
-                                           generated event file should
-                                           specify random variable
-
-</pre>
-              </code>
-            </div>
-            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0013">
-              <div class="pt-2 mt-2">
-                <dl>
-                
-                  <dt>BIM file<code>&ltstring&gt</code></dt>
-                  <dd>File containing a dictionary of building information.</dd>
-                
-                </dl>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </details>
-</div>
-
-  
-<div class="accordion-item card shadow-sm my-3 gallery-item" >
-    <details>
-      <summary class="card-header"><code>bknd-0014</code>
-        <h5 class="card-title mb-0" >
-          <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
-          CFDEvent
-          <!-- </button> -->
-        </h5>
-        <p class="card-text">
-          No description
-        </p>
-      </summary>
-
-      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0014"> -->
-      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0014">
-        <div class="card-body">
-          <div class="nav nav-tabs py-4">
-            <div class="nav-item">
-              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0014')" >CLI</a>
-            </div>
-            <div class="nav-item">
-              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0014')" >Inputs</a>
-            </div>
-          </div>
-          <div class="tab-content">
-            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0014">
-              <code class="my-2 mx-2" style="border: none;">
-                <pre>usage: CFDEvent.py [-h] -b FILENAMEBIM -e FILENAMEEVENT [--getRV]
-
-Get sample EVENT file produced by CFD
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -b FILENAMEBIM, --filenameBIM FILENAMEBIM
-                        BIM File
-  -e FILENAMEEVENT, --filenameEVENT FILENAMEEVENT
-                        Event File
-  --getRV               getRV
-</pre>
-              </code>
-            </div>
-            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0014">
-              <div class="pt-2 mt-2">
-                <dl>
-                
-                  <dt>filenameBIM<code>&ltstring&gt</code></dt>
-                  <dd>name of bim file</dd>
-                
-                  <dt>filenameEVENT<code>&ltFileName(W)&gt</code></dt>
-                  <dd>name of file containing the event data</dd>
-                
-                  <dt>OpenFOAMCase<code>&ltstring&gt</code></dt>
-                  <dd>Remote directory containing OpenFOAM case input</dd>
-                
-                  <dt>OpenFOAMSolver<code>&ltstring&gt</code></dt>
-                  <dd>OpenFOAM solver used</dd>
-                
-                </dl>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-  </details>
-</div>
-
-  
-<div class="accordion-item card shadow-sm my-3 gallery-item" >
-    <details>
-      <summary class="card-header"><code>bknd-0015</code>
-        <h5 class="card-title mb-0" >
-          <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
-          NNGM
-          <!-- </button> -->
-        </h5>
-        <p class="card-text">
-          No description
-        </p>
-      </summary>
-
-      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0015"> -->
-      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0015">
-        <div class="card-body">
-          <div class="nav nav-tabs py-4">
-            <div class="nav-item">
-              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0015')" >CLI</a>
-            </div>
-            <div class="nav-item">
-              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0015')" >Inputs</a>
-            </div>
-          </div>
-          <div class="tab-content">
-            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0015">
+            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0028">
               <code class="my-2 mx-2" style="border: none;">
                 <pre></pre>
               </code>
             </div>
-            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0015">
+            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0028">
               <div class="pt-2 mt-2">
                 <dl>
                 
-                  <dt>filenameBIM<code>&ltstring&gt</code></dt>
+                  <dt>filenameBIM<code>&ltFileName(R)&gt</code></dt>
                   <dd>name of bim file</dd>
                 
-                  <dt>filenameEVENT<code>&ltFileName(W)&gt</code></dt>
+                  <dt>filenameEVENT<code>&ltFileName(R)&gt</code></dt>
                   <dd>name of file containing the event data</dd>
                 
-                  <dt>groundMotions<code>&ltpath&gt</code></dt>
-                  <dd>Configuration file with information about the ground motions to use</dd>
+                  <dt>filenameSAM<code>&ltFileName(R)&gt</code></dt>
+                  <dd>name of file containing the SAM</dd>
                 
-                  <dt>recordsFolder<code>&ltpath&gt</code></dt>
-                  <dd>Folder containing records</dd>
+                  <dt>filenameEDP<code>&ltFileName(W)&gt</code></dt>
+                  <dd>name of file containing the EDP to be determined from the analysis</dd>
                 
                 </dl>
               </div>
@@ -665,10 +675,10 @@ optional arguments:
   
 <div class="accordion-item card shadow-sm my-3 gallery-item" >
     <details>
-      <summary class="card-header"><code>bknd-0016</code>
+      <summary class="card-header"><code>bknd-0030</code>
         <h5 class="card-title mb-0" >
           <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
-          LLNL-SW4
+          StandardWindEDP
           <!-- </button> -->
         </h5>
         <p class="card-text">
@@ -676,45 +686,170 @@ optional arguments:
         </p>
       </summary>
 
-      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0016"> -->
-      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0016">
+      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0030"> -->
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0030">
         <div class="card-body">
           <div class="nav nav-tabs py-4">
             <div class="nav-item">
-              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0016')" >CLI</a>
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0030')" >CLI</a>
             </div>
             <div class="nav-item">
-              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0016')" >Inputs</a>
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0030')" >Inputs</a>
             </div>
           </div>
           <div class="tab-content">
-            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0016">
+            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0030">
               <code class="my-2 mx-2" style="border: none;">
-                <pre>usage: LLNL_SW4.py [-h] [--filenameBIM FILENAMEBIM]
-                   [--filenameEVENT FILENAMEEVENT]
-                   [--pathSW4results PATHSW4RESULTS] [--getRV [GETRV]]
+                <pre></pre>
+              </code>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0030">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>filenameBIM<code>&ltFileName(R)&gt</code></dt>
+                  <dd>name of bim file</dd>
+                
+                  <dt>filenameEVENT<code>&ltFileName(R)&gt</code></dt>
+                  <dd>name of file containing the event data</dd>
+                
+                  <dt>filenameSAM<code>&ltFileName(R)&gt</code></dt>
+                  <dd>name of file containing the SAM</dd>
+                
+                  <dt>filenameEDP<code>&ltFileName(W)&gt</code></dt>
+                  <dd>name of file containing the EDP to be determined from the analysis</dd>
+                
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0031</code>
+        <h5 class="card-title mb-0" >
+          <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
+          OpenSees-Simulation_R
+          <!-- </button> -->
+        </h5>
+        <p class="card-text">
+          Executes script for building structural model in OpenSees and running analysis for the response simulation, then saves the results in EDP.json.
+        </p>
+      </summary>
+
+      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0031"> -->
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0031">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0031')" >CLI</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0031')" >Inputs</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0031">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0031">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>filenameBIM<code>&ltFileName(R)&gt</code></dt>
+                  <dd>name of file containing the BIM</dd>
+                
+                  <dt>filenameSAM<code>&ltFileName(R)&gt</code></dt>
+                  <dd>name of file containing the SAM</dd>
+                
+                  <dt>filenameEVENT<code>&ltFileName(R)&gt</code></dt>
+                  <dd>name of file containing the event data</dd>
+                
+                  <dt>filenameEDP<code>&ltFileName(W)&gt</code></dt>
+                  <dd>name of EDP file to be added to</dd>
+                
+                  <dt>filenameSIM<code>&ltFileName(W)&gt</code></dt>
+                  <dd>name of SIM file to be added to</dd>
+                
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0032</code>
+        <h5 class="card-title mb-0" >
+          <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
+          OpenSeesPy-Simulation
+          <!-- </button> -->
+        </h5>
+        <p class="card-text">
+          Executes script for building structural model in OpenSeesPy and running analysis for the response simulation, then saves the results in EDP.json.
+        </p>
+      </summary>
+
+      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0032"> -->
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0032">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0032')" >CLI</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0032')" >Inputs</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0032">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre>usage: OpenSeesPySimulation.py [-h] [--filenameBIM FILENAMEBIM]
+                               [--filenameSAM FILENAMESAM]
+                               [--filenameEVENT FILENAMEEVENT]
+                               [--filenameEDP FILENAMEEDP]
+                               [--filenameSIM FILENAMESIM] [--getRV [GETRV]]
 
 optional arguments:
   -h, --help            show this help message and exit
   --filenameBIM FILENAMEBIM
+  --filenameSAM FILENAMESAM
   --filenameEVENT FILENAMEEVENT
-  --pathSW4results PATHSW4RESULTS
+  --filenameEDP FILENAMEEDP
+  --filenameSIM FILENAMESIM
   --getRV [GETRV]
 </pre>
               </code>
             </div>
-            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0016">
+            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0032">
               <div class="pt-2 mt-2">
                 <dl>
                 
-                  <dt>filenameBIM<code>&ltstring&gt</code></dt>
-                  <dd>name of bim file</dd>
+                  <dt>filenameBIM<code>&ltFileName(R)&gt</code></dt>
+                  <dd>name of file containing the BIM</dd>
                 
-                  <dt>filenameEVENT<code>&ltFileName(W)&gt</code></dt>
+                  <dt>filenameSAM<code>&ltFileName(R)&gt</code></dt>
+                  <dd>name of file containing the SAM</dd>
+                
+                  <dt>filenameEVENT<code>&ltFileName(R)&gt</code></dt>
                   <dd>name of file containing the event data</dd>
                 
-                  <dt>pathSW4results<code>&ltpath&gt</code></dt>
-                  <dd>Path to directory containig output point files</dd>
+                  <dt>filenameEDP<code>&ltFileName(W)&gt</code></dt>
+                  <dd>name of EDP file to be added to</dd>
+                
+                  <dt>filenameSIM<code>&ltFileName(W)&gt</code></dt>
+                  <dd>name of SIM file to be added to</dd>
                 
                 </dl>
               </div>
@@ -728,55 +863,64 @@ optional arguments:
   
 <div class="accordion-item card shadow-sm my-3 gallery-item" >
     <details>
-      <summary class="card-header"><code>bknd-0017</code>
+      <summary class="card-header"><code>bknd-0033</code>
         <h5 class="card-title mb-0" >
           <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
-          ASCE7_WindSpeed
+          IMasEDP
           <!-- </button> -->
         </h5>
         <p class="card-text">
-          No description
+          Returns the input event IM as the EDP in the absence of a response simulation method. This application is appropriate to use when damages and losses are estimated as function of IM in the DL assessment.
         </p>
       </summary>
 
-      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0017"> -->
-      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0017">
+      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0033"> -->
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0033">
         <div class="card-body">
           <div class="nav nav-tabs py-4">
             <div class="nav-item">
-              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0017')" >CLI</a>
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0033')" >CLI</a>
             </div>
             <div class="nav-item">
-              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0017')" >Inputs</a>
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0033')" >Inputs</a>
             </div>
           </div>
           <div class="tab-content">
-            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0017">
+            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0033">
               <code class="my-2 mx-2" style="border: none;">
-                <pre>usage: ASCE7_WindSpeed.py [-h] [--filenameBIM FILENAMEBIM]
-                          [--filenameEVENT FILENAMEEVENT]
-                          [--windDatabase WINDDATABASE] [--severity SEVERITY]
-                          [--getRV [GETRV]]
+                <pre>usage: IMasEDP.py [-h] [--filenameBIM FILENAMEBIM] [--filenameSAM FILENAMESAM]
+                  [--filenameEVENT FILENAMEEVENT] [--filenameEDP FILENAMEEDP]
+                  [--filenameSIM FILENAMESIM] [--getRV [GETRV]]
 
 optional arguments:
   -h, --help            show this help message and exit
   --filenameBIM FILENAMEBIM
+  --filenameSAM FILENAMESAM
   --filenameEVENT FILENAMEEVENT
-  --windDatabase WINDDATABASE
-  --severity SEVERITY
+  --filenameEDP FILENAMEEDP
+  --filenameSIM FILENAMESIM
   --getRV [GETRV]
 </pre>
               </code>
             </div>
-            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0017">
+            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0033">
               <div class="pt-2 mt-2">
                 <dl>
                 
-                  <dt>filenameBIM<code>&ltstring&gt</code></dt>
-                  <dd>name of bim file</dd>
+                  <dt>filenameBIM<code>&ltFileName(R)&gt</code></dt>
+                  <dd>name of file containing the BIM</dd>
                 
-                  <dt>filenameEVENT<code>&ltFileName(W)&gt</code></dt>
+                  <dt>filenameSAM<code>&ltFileName(R)&gt</code></dt>
+                  <dd>name of file containing the SAM</dd>
+                
+                  <dt>filenameEVENT<code>&ltFileName(R)&gt</code></dt>
                   <dd>name of file containing the event data</dd>
+                
+                  <dt>filenameEDP<code>&ltFileName(W)&gt</code></dt>
+                  <dd>name of EDP file to be added to</dd>
+                
+                  <dt>filenameSIM<code>&ltFileName(W)&gt</code></dt>
+                  <dd>name of SIM file to be added to</dd>
                 
                 </dl>
               </div>
@@ -790,10 +934,10 @@ optional arguments:
   
 <div class="accordion-item card shadow-sm my-3 gallery-item" >
     <details>
-      <summary class="card-header"><code>bknd-0018</code>
+      <summary class="card-header"><code>bknd-0034</code>
         <h5 class="card-title mb-0" >
           <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
-          pointWindSpeed
+          OpenSees-Simulation
           <!-- </button> -->
         </h5>
         <p class="card-text">
@@ -801,35 +945,114 @@ optional arguments:
         </p>
       </summary>
 
-      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0018"> -->
-      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0018">
+      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0034"> -->
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0034">
         <div class="card-body">
           <div class="nav nav-tabs py-4">
             <div class="nav-item">
-              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0018')" >CLI</a>
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0034')" >CLI</a>
             </div>
             <div class="nav-item">
-              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0018')" >Inputs</a>
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0034')" >Inputs</a>
             </div>
           </div>
           <div class="tab-content">
-            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0018">
+            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0034">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre>usage: OpenSeesPySimulation.py [-h] [--filenameBIM FILENAMEBIM]
+                               [--filenameSAM FILENAMESAM]
+                               [--filenameEVENT FILENAMEEVENT]
+                               [--filenameEDP FILENAMEEDP]
+                               [--filenameSIM FILENAMESIM] [--getRV [GETRV]]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --filenameBIM FILENAMEBIM
+  --filenameSAM FILENAMESAM
+  --filenameEVENT FILENAMEEVENT
+  --filenameEDP FILENAMEEDP
+  --filenameSIM FILENAMESIM
+  --getRV [GETRV]
+</pre>
+              </code>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0034">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>filenameBIM<code>&ltFileName(R)&gt</code></dt>
+                  <dd>name of file containing the BIM</dd>
+                
+                  <dt>filenameSAM<code>&ltFileName(R)&gt</code></dt>
+                  <dd>name of file containing the SAM</dd>
+                
+                  <dt>filenameEVENT<code>&ltFileName(R)&gt</code></dt>
+                  <dd>name of file containing the event data</dd>
+                
+                  <dt>filenameEDP<code>&ltFileName(W)&gt</code></dt>
+                  <dd>name of EDP file to be added to</dd>
+                
+                  <dt>filenameSIM<code>&ltFileName(W)&gt</code></dt>
+                  <dd>name of SIM file to be added to</dd>
+                
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0035</code>
+        <h5 class="card-title mb-0" >
+          <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
+          ExtractPGA
+          <!-- </button> -->
+        </h5>
+        <p class="card-text">
+          No description
+        </p>
+      </summary>
+
+      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0035"> -->
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0035">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0035')" >CLI</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0035')" >Inputs</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0035">
               <code class="my-2 mx-2" style="border: none;">
                 <pre></pre>
               </code>
             </div>
-            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0018">
+            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0035">
               <div class="pt-2 mt-2">
                 <dl>
                 
-                  <dt>filenameBIM<code>&ltstring&gt</code></dt>
-                  <dd>name of bim file</dd>
+                  <dt>filenameBIM<code>&ltFileName(R)&gt</code></dt>
+                  <dd>name of file containing the BIM</dd>
                 
-                  <dt>filenameEVENT<code>&ltFileName(W)&gt</code></dt>
+                  <dt>filenameSAM<code>&ltFileName(R)&gt</code></dt>
+                  <dd>name of file containing the SAM</dd>
+                
+                  <dt>filenameEVENT<code>&ltFileName(R)&gt</code></dt>
                   <dd>name of file containing the event data</dd>
                 
-                  <dt>filenameWindSpeedCloudData<code>&ltFILENAME(R)&gt</code></dt>
-                  <dd>None</dd>
+                  <dt>filenameEDP<code>&ltFileName(W)&gt</code></dt>
+                  <dd>name of EDP file to be added to</dd>
+                
+                  <dt>filenameSIM<code>&ltFileName(W)&gt</code></dt>
+                  <dd>name of SIM file to be added to</dd>
                 
                 </dl>
               </div>
