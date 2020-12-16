@@ -29,13 +29,9 @@ The backend applications are categorized by function into the following workflow
 
 
 .. only:: quoFEM_app
-
-    #. |performSIM|
-    #. |performUQ|
     
     .. toctree::
         :maxdepth: 1
-        :hidden:
 
         applications/preprocFEM
         applications/preprocUQ
