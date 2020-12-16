@@ -9,33 +9,25 @@
     <details>
       <summary class="card-header"><code>bknd-0019</code>
         <h5 class="card-title mb-0" >
-          <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
           MDOF-LU
-          <!-- </button> -->
         </h5>
         <p class="card-text">
           Creates SAM.json file and generates script for creating a hysteretic multi-degree of freedom (MDOF) system subject to earthquake time history analysis, based on the Lu method. Analysis is executed by the OpenSeesSimulation application.
         </p>
       </summary>
 
-      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0019"> -->
       <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0019">
         <div class="card-body">
           <div class="nav nav-tabs py-4">
             <div class="nav-item">
-              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0019')" >CLI</a>
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0019')" >Inputs</a>
             </div>
             <div class="nav-item">
-              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0019')" >Inputs</a>
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0019')" >CLI</a>
             </div>
           </div>
           <div class="tab-content">
-            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0019">
-              <code class="my-2 mx-2" style="border: none;">
-                <pre></pre>
-              </code>
-            </div>
-            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0019">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0019">
               <div class="pt-2 mt-2">
                 <dl>
                 
@@ -57,6 +49,11 @@
                 </dl>
               </div>
             </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0019">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
           </div>
         </div>
       </div>
@@ -68,33 +65,25 @@
     <details>
       <summary class="card-header"><code>bknd-0020</code>
         <h5 class="card-title mb-0" >
-          <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
           OpenSeesInput
-          <!-- </button> -->
         </h5>
         <p class="card-text">
           Creates SAM.json file containing model information for an input OpenSees structural model. Analysis is executed in the OpenSeesSimulation application.
         </p>
       </summary>
 
-      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0020"> -->
       <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0020">
         <div class="card-body">
           <div class="nav nav-tabs py-4">
             <div class="nav-item">
-              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0020')" >CLI</a>
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0020')" >Inputs</a>
             </div>
             <div class="nav-item">
-              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0020')" >Inputs</a>
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0020')" >CLI</a>
             </div>
           </div>
           <div class="tab-content">
-            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0020">
-              <code class="my-2 mx-2" style="border: none;">
-                <pre></pre>
-              </code>
-            </div>
-            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0020">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0020">
               <div class="pt-2 mt-2">
                 <dl>
                 
@@ -110,6 +99,11 @@
                 </dl>
               </div>
             </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0020">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
           </div>
         </div>
       </div>
@@ -121,49 +115,25 @@
     <details>
       <summary class="card-header"><code>bknd-0021</code>
         <h5 class="card-title mb-0" >
-          <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
           OpenSeesPyInput
-          <!-- </button> -->
         </h5>
         <p class="card-text">
           Creates SAM.json file containing model information for an input OpenSeesPy structural model. The functions 'build_model' and 'run_analysis' must be defined in the model script. Analysis is executed in the OpenSeesPySimulation application.
         </p>
       </summary>
 
-      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0021"> -->
       <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0021">
         <div class="card-body">
           <div class="nav nav-tabs py-4">
             <div class="nav-item">
-              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0021')" >CLI</a>
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0021')" >Inputs</a>
             </div>
             <div class="nav-item">
-              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0021')" >Inputs</a>
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0021')" >CLI</a>
             </div>
           </div>
           <div class="tab-content">
-            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0021">
-              <code class="my-2 mx-2" style="border: none;">
-                <pre>usage: OpenSeesPyInput.py [-h] [--filenameBIM FILENAMEBIM]
-                          [--filenameEVENT FILENAMEEVENT]
-                          [--filenameSAM FILENAMESAM]
-                          [--mainScript MAINSCRIPT] [--modelPath MODELPATH]
-                          [--ndm NDM] [--dofMap DOFMAP] [--getRV [GETRV]]
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --filenameBIM FILENAMEBIM
-  --filenameEVENT FILENAMEEVENT
-  --filenameSAM FILENAMESAM
-  --mainScript MAINSCRIPT
-  --modelPath MODELPATH
-  --ndm NDM
-  --dofMap DOFMAP
-  --getRV [GETRV]
-</pre>
-              </code>
-            </div>
-            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0021">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0021">
               <div class="pt-2 mt-2">
                 <dl>
                 
@@ -194,6 +164,27 @@ optional arguments:
                 </dl>
               </div>
             </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0021">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre>usage: OpenSeesPyInput.py [-h] [--filenameBIM FILENAMEBIM]
+                          [--filenameEVENT FILENAMEEVENT]
+                          [--filenameSAM FILENAMESAM]
+                          [--mainScript MAINSCRIPT] [--modelPath MODELPATH]
+                          [--ndm NDM] [--dofMap DOFMAP] [--getRV [GETRV]]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --filenameBIM FILENAMEBIM
+  --filenameEVENT FILENAMEEVENT
+  --filenameSAM FILENAMESAM
+  --mainScript MAINSCRIPT
+  --modelPath MODELPATH
+  --ndm NDM
+  --dofMap DOFMAP
+  --getRV [GETRV]
+</pre>
+              </code>
+            </div>
           </div>
         </div>
       </div>
@@ -205,33 +196,25 @@ optional arguments:
     <details>
       <summary class="card-header"><code>bknd-0022</code>
         <h5 class="card-title mb-0" >
-          <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
           MDOF_BuildingModel
-          <!-- </button> -->
         </h5>
         <p class="card-text">
           No description
         </p>
       </summary>
 
-      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0022"> -->
       <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0022">
         <div class="card-body">
           <div class="nav nav-tabs py-4">
             <div class="nav-item">
-              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0022')" >CLI</a>
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0022')" >Inputs</a>
             </div>
             <div class="nav-item">
-              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0022')" >Inputs</a>
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0022')" >CLI</a>
             </div>
           </div>
           <div class="tab-content">
-            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0022">
-              <code class="my-2 mx-2" style="border: none;">
-                <pre></pre>
-              </code>
-            </div>
-            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0022">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0022">
               <div class="pt-2 mt-2">
                 <dl>
                 
@@ -246,6 +229,11 @@ optional arguments:
                 
                 </dl>
               </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0022">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
             </div>
           </div>
         </div>
