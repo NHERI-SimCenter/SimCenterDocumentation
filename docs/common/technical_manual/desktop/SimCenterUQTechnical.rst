@@ -6,7 +6,7 @@ Methods in SimCenterUQ Engine
 Nataf transformation
 ====================
 
-Nataf transformation is introduced to convert the samples in the physical space (X-space) into the standard normal samples (U-space), :math:`T:\rm{X} \rightarrow \rm{U}`, and vice versa, during UQ computations ([Liu1986]_). Specifically, the latter transformation, called inverse Nataf :math:`T^{-1}`, is performed each time when UQ engine generates sample points and calls external workflow applications, so that the main UQ algorithms would face only the standard normal random variables. Among various standardization transformations, Nataf is one of the most popular methods which exploits **marginal distributions** of each physical variables and their **correlation coefficients**.
+Nataf transformation is introduced to convert the samples in the physical space (X-space) into the standard normal samples (U-space), :math:`T:\rm{X} \rightarrow \rm{U}`, and vice versa, during UQ computations [Liu1986]_. Specifically, the latter transformation, called inverse Nataf :math:`T^{-1}`, is performed each time when UQ engine generates sample points and calls external workflow applications, so that the main UQ algorithms would face only the standard normal random variables. Among various standardization transformations, Nataf is one of the most popular methods which exploits **marginal distributions** of each physical variables and their **correlation coefficients**.
 
 .. _figNataf1:
 
@@ -112,32 +112,41 @@ Global surrogate modeling aims to build a regression model that reproduces the o
 
 	\boldsymbol{y}=f^{\rm{ex}} (\boldsymbol{x}) \simeq f^{\rm{sur}} (\boldsymbol{x})  
 
-where the basic assumption is that function evaluation speed of :math:`f^{\rm{sur}}(\boldsymbol{x})` is incomparably faster than :math:`f^{\rm{sur}}(\boldsymbol{x})`. To perform surrogate modeling, we first need to acquire data samples, :math:`(\boldsymbol{x},\boldsymbol{y})`, of exact model based on few rounds of model simulations, and then the function interpolated and extrapolated based on the data set. In particular Kriging approach approximates the response surface as by Gaussian process model. Kriging surrogate model has the following form: 
+where the basic assumption is that function evaluation speed of :math:`f^{\rm{sur}}(\boldsymbol{x})` is incomparably faster than :math:`f^{\rm{sur}}(\boldsymbol{x})`. To perform surrogate modeling, we first need to acquire data samples, :math:`(\boldsymbol{x},\boldsymbol{y})`, of exact model based on few rounds of model evaluations, and then the function is interpolated and extrapolated based on the data set. Among various surrogate techniques, Kriging approximates the response surface using a Gaussian process model. Specifically, Kriging surrogate model has the following form: 
 
 .. math::
 	:label: GPsurr
 
 	f^{\rm{sur}} (\boldsymbol{x}) = \tilde{f}(\boldsymbol{x})^T\boldsymbol{\beta}+z(\boldsymbol{x})
 
-where the term :math:`\tilde{f}(\boldsymbol{x})^T\boldsymbol{\beta}` is the global regression component consist of basis functions and linear combination coefficents. The second term is the local fitting to the regression residuals. The assumption is that the true residual value is one of the realization of a stochastic Gaussian process model.
+where the term :math:`\tilde{f}(\boldsymbol{x})^T\boldsymbol{\beta}` captures the deterministic global trend via basis functions and linear combination coefficients :math:`\boldsymbol{\beta}`. The second term :math:`z(\boldsymbol{x})` represents the residual and is modeled as a centered second-order stationary Gaussian process. The assumption is that the true residual value is one of the realizations of the random process:
 
 .. math::
 	:label: GPresidual
 
-	z(\boldsymbol{x}) \sim GP (x;0,K(x_i,x_j))
+	z(\boldsymbol{x}) \sim GP (\boldsymbol{x};0,K(\boldsymbol{x_i},\boldsymbol{x_j}))
 
-where the mean is accounted outside of the process by the global regression component term. Therefore the task of surrogate modeling module is to optimize the parameters in :math:`\beta` and :math:`K(x_i,x_j)` for the samples of :math:`(\boldsymbol{x},\boldsymbol{y})`, such that the likelihood of the process is minimized. Gaussian process can additionally handle inherent uncertainty. Consider that we have a noisy observations often expressed as
-
-.. math::
-	:label: GP
-
-		\boldsymbol{y}=f^{\rm{ex}} (\boldsymbol{x}) + \boldsymbol{\varepsilon}
+Therefore the main tasks of surrogate modeling is (1) to find optimal stochastic parameters :math:`\hat{\boldsymbol{\beta}}` and :math:`\hat{K}(x_i,x_j)` that best match the observations, and (2) to predict the response at an arbitrary sample point :math:`\boldsymbol{x^*}` as a conditional distribution of :math:`f(\boldsymbol{y^*}|\boldsymbol{y^{obs}})`, exploiting the fact that 
+:math:`\boldsymbol{y^*}` and :math:`\boldsymbol{y^{obs}}` are joint Gaussian distribution with known mean and covariances.
 
 
-in which :math:`\boldsymbol{\varepsilon}` follows a normal distribution with zero mean and covariance :math:`\Sigma`
+* **Dealing with noisy measurements**
+
+  | In natural hazard applications, it is often not feasible to have an exact observation of an outcome :math:`\boldsymbol{y}`, and only a noisy observation :math:`\boldsymbol{y^{obs}}` is available:
+
+	.. math::
+		:label: GP
+
+			\boldsymbol{y^{obs}}=\boldsymbol{y} + \boldsymbol{\varepsilon} =f^{\rm{ex}} (\boldsymbol{x}) + \boldsymbol{\varepsilon}
 
 
-(write about nugget)
+  | in which a common assumption is that :math:`\boldsymbol{\varepsilon}` is a white Gaussian measurement noise, i.e. is unbiased, follows a normal distribution with variance :math:`\tau`, and is independent to the observation noises in other samples. Since the information of the noise level is often unknown, :math:`\tau` is also calibrated along with :math:`\beta` and :math:`K(x_i,x_j)`. In such setting, surrogate model estimation will not interpolate the observation output, but instead make a regression curve passing through the optimal estimation of the true underlying outputs. Additional to measurement noise, a mild amount of inherent uncertainty (mild compared to a global trend) can be accounted for by introducing the same noise parameter.
+
+
+* **Nugget effect: artificial noise for numerical stability**
+
+  | Constructed Kriging surrogate model is always smooth and continuous as it is a realization of a Gaussian process, while the actual response may be non-smooth, discontinuous, or highly variant over the capacity of the model. Especially when the outcome is noiseless and deterministic given inputs, the Gaussian process parameters can suffer from numerical instability where the parameters cannot be calibrated. In such ill-posed problems, the introduction of a small amount of artificial noise, often referred to as *nugget effect*, may significantly improve the algorithmic stability. The nugget parameter can be either preselected or optimized in the loop along with the other parameters. (Note: technically, nugget effect and measurement noise does not coincide in mathematical formulation as the nugget effect conserves the interpolating property while measurement noise does not [Roustant2012]_. However, this program treats artificial noise as a nugget as they are often practically indistinguishable.)
+
 
 
 Construction of surrogate model
@@ -146,42 +155,47 @@ Construction of surrogate model
 Input-Output settings
 ^^^^^^^^^^^^^^^^^^^^^
 
-+---------+----------------------------------------------------------+-------------------------------------------+
-|         | Input (RV) type                                          |  Output (QoI) type                        |
-+=========+==========================================================+===========================================+
-| Case1   | Data set :                                               | Data set :                                |
-|         |                                                          |                                           |
-|         | {:math:`\boldsymbol{x_1,x_2, ... ,x_N}`}                 | {:math:`\boldsymbol{y_1,y_2, ... ,y_N}`}  |
-+---------+----------------------------------------------------------+-------------------------------------------+
-| Case2   | Data set :                                               | Simulator :                               |
-|         |                                                          |                                           |
-|         | {:math:`\boldsymbol{x_1,x_2, ... ,x_N}`}                 | :math:`\boldsymbol{y}=f(\boldsymbol{x})`  |
-+---------+----------------------------------------------------------+-------------------------------------------+
-| Case3   | Design of Experiments :                                  | Simulator :                               |
-|         |                                                          |                                           |
-|         | given a bounded variable space of :math:`\boldsymbol{x}` | :math:`\boldsymbol{y}=f(\boldsymbol{x})`  |
-+---------+------------------------------------------+---------------+-------------------------------------------+
++-----------+----------------------------------------------------------+-------------------------------------------+
+|           | Input (RV) type                                          |  Output (QoI) type                        |
++===========+==========================================================+===========================================+
+| **Case1** | Data set :                                               | Data set :                                |
+|           |                                                          |                                           |
+|           | {:math:`\boldsymbol{x_1,x_2, ... ,x_N}`}                 | {:math:`\boldsymbol{y_1,y_2, ... ,y_N}`}  |
++-----------+----------------------------------------------------------+-------------------------------------------+
+| **Case2** | Data set :                                               | Simulator :                               |
+|           |                                                          |                                           |
+|           | {:math:`\boldsymbol{x_1,x_2, ... ,x_N}`}                 | :math:`\boldsymbol{y}=f(\boldsymbol{x})`  |
++-----------+----------------------------------------------------------+-------------------------------------------+
+| **Case3** | Design of Experiments :                                  | Simulator :                               |
+|           |                                                          |                                           |
+|           | a bounded variable space of :math:`\boldsymbol{x}`       | :math:`\boldsymbol{y}=f(\boldsymbol{x})`  |
++-----------+------------------------------------------+---------------+-------------------------------------------+
 
 
 User have the following options:
 
 * **Case1** : user can provide pairs of input-output dataset
 * **Case2** : user can provide input data points and a simulation model
-* **Case3** : user can provide a range of input variables (bounds) and a simulation model. After initial space-filling phase using Latin hypercube sampling (LHS), adaptive design of experiment (DoE) is activated. Given current predictions, the next optimal simulation point is optimize such that expected gain is maximized. DoE technique is only activated when the simulation cost (in terms of time) is at least twice greater than a DoE optimization cost. Otherwise, the simulation points are selected solely by LHS.
+* **Case3** : user can provide a range of input variables (bounds) and a simulation model. After initial space-filling phase using Latin hypercube sampling (LHS), adaptive design of experiment (DoE) is activated. Given current predictions, the next optimal simulation point is optimized such that expected gain is maximized. DoE technique is only activated when the simulation cost (in terms of time) is at least twice greater than a DoE optimization cost. Otherwise, the simulation points are selected solely by LHS.
 
 
 
 Kernel and basis functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-1. Correlation: Radial-basis function (RBF) - Default
+The covariance kernel of the outcome process is unknown in most practical applications. Therefore, the mathematical from of the kernel is first chosen by the engineer, and its parameters are calibrated based on the observation data. Followings are some of the most widely implemented stationary covariance kernels. 
 
-.. math::
-	:label: RBD
 
-	k(\boldsymbol{x_i},\boldsymbol{x_j}) = \sigma\prod_{d=1}^{D} \exp\Bigg(-\frac{1}{2} \frac{(x_{i,d}-x_{j,d})^2}{l_d^2}\Bigg)
+* **Radial-basis function (RBF)**
+
+  | Radial-basis function, also known ad squared-exponential and Gaussian kernel, is most widely-used covariance kernel. 
+
+	.. math::
+		:label: RBD
+
+		k(\boldsymbol{x_i},\boldsymbol{x_j}) = \sigma\prod_{d=1}^{D} \exp\Bigg(-\frac{1}{2} \frac{(x_{i,d}-x_{j,d})^2}{l_d^2}\Bigg)
+
 	
-where the hyper parameters :math:`\sigma, l_d` control its properties. 
-
+  | where :math:`\boldsymbol{x_i}` and :math:`\boldsymbol{x_j}` are two arbitrary points in the domain and the hyper parameters :math:`\sigma, l_d` respectively control the error scale and correlation length of the process. 
 
 .. _figGP2:
 
@@ -191,54 +205,83 @@ where the hyper parameters :math:`\sigma, l_d` control its properties.
 
   	Gaussian process regression for different correlation length parameters
 
-2. Correlation: Matern :math:`\nu,=5/2`
 
-.. math::
-	:label: Matern1
+* **Exponential**
 
-	k(\boldsymbol{x_i},\boldsymbol{x_j}) = \sigma\prod_{d=1}^{D} g_d(h_{d})
+  | Similarly, exponential covariance function is defined as follows.
 
-where :math:`h_d = x_{i,d}-x_{j,d}` and
+	.. math::
+		:label: exponential
 
-.. math::
-	:label: Matern2
+		k(\boldsymbol{x_i},\boldsymbol{x_j}) = \sigma\prod_{d=1}^{D} \exp\Bigg(-\frac{1}{2} \frac{|x_{i,d}-x_{j,d}|}{l_d}\Bigg)
 
-	g_d(h_d)= \Bigg(1+ \frac{\sqrt{5}|h_d|}{l_d}+\frac{5h_d^2}{3l_d^2}\Bigg)\exp\Bigg(-\frac{\sqrt{5}|h_d|}{l_d}\Bigg)
+* **Matern Class** 
 
-	
+  | Matern class of covariance function is another popular choice. It has a positive shape  parameter often denotoed as :math:`\nu` which additionally determines the roughness of the parameters. For kriging regression :math:`\nu=5/2` and :math:`\nu=3/2` is known to be an effective choice considering roughness property and the simplicity of the functional form. [Rasmussen2006]_
 
-2. Mean: linear basis function - Default
+	.. math::
+		:label: Matern1
 
-   (write something)
+		k(\boldsymbol{x_i},\boldsymbol{x_j}) = \sigma\prod_{d=1}^{D} g_d(h_{d})
 
 
-Optimization methods
-^^^^^^^^^^^^^^^^^^^^
-Refer to GPy package documentation for GP optimization algorithms
+  | where :math:`h_d = x_{i,d}-x_{j,d}` and for :math:`g_d(h_{d})`,
+
+	.. math::
+		:label: Matern2
+
+		g_{d,\frac{5}{2}}(h_d) &= \Bigg(1+ \frac{\sqrt{5}|h_d|}{l_d}+\frac{5h_d^2}{3l_d^2}\Bigg)\exp\Bigg(-\frac{\sqrt{5}|h_d|}{l_d}\Bigg)     \\
+		g_{d,\frac{3}{2}}(h_d) &= \Bigg(1+ \frac{\sqrt{3}|h_d|}{l_d}\Bigg)\exp\Bigg(-\frac{\sqrt{3}|h_d|}{l_d}\Bigg)
+
+
+  | respectively for :math:`\nu=5/2` (smoother) and :math:`\nu=3/2` (rougher). It is noted in the literature that if :math:`\nu` is greater than :math:`5/2`, the Matern kernel is similar to the radial-basis function. 
+
+
+When kernel is selected, the parameters are calibrated to maximize the likelihood of observations within the Gaussian process model. The default optimization function embedded in GPy is limited-memory BFGS with bound constraints (L-BFGS-B) algorithm from `Python/Numpy <https://docs.scipy.org/doc/scipy/reference/optimize.minimize-lbfgsb.html>`_ package. [ShaffieldML2012]_
 
 
 Adaptive Design of Experiments (DoE)
 -------------------------------------
-When selecting the sampling points, both extrapolation and exploitation should be balanced
-Integrated predictive variance weighted by cross-validation error. Here the score functions of Sacks *et al.* (1989) is introduced as:
+
+The case when bounds of input variables and a simulator model is provided (Case3), the point of model evaluation can be selected by space-filling methods, e.g. Latin hyper cube sampling (LHS). This is non-adaptive Design of Experiments (DoE) in a sense that the whole samples can be located before running any simulations. On the other hand, the number of model evaluations can be reduced by selecting evaluation points *adaptively* after each round to get the best model improvements. 
+
+.. _figGP_DoE1:
+
+.. figure:: figures/GPtmp1.png
+	:align: center
+	:figclass: align-center
+
+  	Two optimizations in design of experiments
+
+
+However, as shown in the figure, adaptive DoE requires multiple optimization turns to find the optimal surrogate model parameters as well as the next optimal design of experiments. Therefore, it is noted that the adaptive DoE is efficient only when model evaluation time is significantly greater than the optimization time. **In the program, we automatically compare the DoE time and model simulation time, and activates adaptive DoE only when it is more efficient.** Otherwise, the input points are generated in batch by LHS. 
+
+**DoE algorithm**
+
+Since we aim for the global surrogate modeling (opposed to a local surrogate which have specific objective functions), a good score function is defined accounting for the reduced amount of both variance and bias. There are many variations of the objective  score function [Fuhg2020]_, and in the program, the modified integrated mean squared error (IMSE) from Kyprioti *et al.* (2020) is introduced as:
 
 .. math::
 	:label: IMSE
 
 	\begin{align*}
-		\rm{IMSE}(\boldsymbol{X},\boldsymbol{x_{new}}) &= \int_{\boldsymbol{X_d}} \phi^\rho\boldsymbol{\sigma_n}^2(\boldsymbol{x}|\boldsymbol{X,x_{new}})dx
+		\rm{IMSE}_w(\boldsymbol{X},\boldsymbol{x_{new}}) &= \int_{\boldsymbol{X_d}} \phi^\rho\boldsymbol{\sigma_n}^2(\boldsymbol{x}|\boldsymbol{X,x_{new}})dx
 	\end{align*}
 
 
-where :math:`\phi` is bias measure from leave-one-out cross validation (LOOCV) analysis, :math:`\rho` is a weighting coefficient, and :math:`\boldsymbol{\sigma_n}^2(\boldsymbol{x}|\boldsymbol{X,x_{new}})` is the predictive variance after additional observation :math:`x_{new}`.
+where :math:`\phi` is bias measure from leave-one-out cross validation (LOOCV) analysis, :math:`\rho` is a weighting coefficient, and :math:`\boldsymbol{\sigma_n}^2(\boldsymbol{x}|\boldsymbol{X,x_{new}})` is the predictive variance after additional observation :math:`x_{new}` [Kyprioti2020]_. To find the sample location that gives minimum IMSE value, two step screening-clustering algorithm is implemented.
 
-.. _figGP_DoE:
+.. _figGP_DoE2:
 
 .. figure:: figures/GPtmp2.png
+	:align: center
+	:figclass: align-center
 
-Adaptive DoE is stopped and the surrogate model converges if one of the three conditions are satisfied:
+  	Adaptive DoE procedure by Kyprioti et al. (2020) [Kyprioti2020]_
 
-* **Time**: analysis time exceeds a predefined time constraint
+
+Adaptive DoE is terminated and the final surrogate model is constructed if one of the three conditions are satisfied:
+
+* **Time**: analysis time exceeds a predefined (rough) time constraint
 * **Count**: number of model evaluation exceeds a predefined count constraint 
 * **Accuracy**: accuracy measure of the model meets a predefined convergence level
 
@@ -246,70 +289,74 @@ Adaptive DoE is stopped and the surrogate model converges if one of the three co
 Verification of surrogate model
 -------------------------------
 
-Once the parameters of GP are calibrated, leave-one-out cross validation (LOOCV)-based measure is employed for verification. Specifically, a surrogate model :math:`\hat{y}=f^{sur}_{loo,k}(\boldsymbol{x})` is constructed using the samples :math:`\{x_1,x_2,...,x_{k-1},x_{k+1},...,x_N\}` without re-calibration, and its prediction at point :math:`{x}_k,~\hat{y}_k,` is compared with the exact outcome :math:`y_k=f(\boldsymbol{x}_k)`.
+Once the parameters of GP are calibrated, leave-one-out cross validation (LOOCV)-based measure is used verification. Specifically, a test surrogate model :math:`\hat{y}=f^{sur}_{loo,k}(\boldsymbol{x})` is constructed using the samples :math:`\{x_1,x_2,...,x_{k-1},x_{k+1},...,x_N\}` without re-calibration of parameters, and its prediction at point :math:`{x}_k,~\hat{y}_k,` is compared with the exact outcome :math:`y_k=f(\boldsymbol{x}_k)`.
 
 * **R2 error**
 
-	| R2 error is defined in terms of the total sum of squares over the residual sum of squares
+  | R2 error is defined in terms of the total sum of squares over the residual sum of squares
 
-.. math::
-	:label: R2
+	.. math::
+		:label: R2
 
-	\begin{align*}
-		R^2 &= 1 - \frac{\sum^N_{k=1} (\hat{y}_k-\mu_\hat{y})^2}{\sum^N_{k=1} (\hat{y}_k-y_k)^2}
-	\end{align*}	
+		\begin{align*}
+			R^2 &= 1 - \frac{\sum^N_{k=1} (\hat{y}_k-\mu_\hat{y})^2}{\sum^N_{k=1} (\hat{y}_k-y_k)^2}
+		\end{align*}	
 
 * **Normalized root-mean-squared-error (NRMSE)**
 
-.. math::
-	:label: NRMSE
+	.. math::
+		:label: NRMSE
 
-	\begin{align*}
-		\rm{NRMSE} ~ &= \frac{\sqrt{\frac{1}{N_t} \sum^{N_t}_{k=1} (y_k-\hat{y}_k)^2}}{\max_{k=1,...,N_t}(y_k)-\min_{k=1,...,N_t}(y_k)}
-	\end{align*}	
+		\begin{align*}
+			\rm{NRMSE} ~ &= \frac{\sqrt{\frac{1}{N_t} \sum^{N_t}_{k=1} (y_k-\hat{y}_k)^2}}{\max_{k=1,...,N_t}(y_k)-\min_{k=1,...,N_t}(y_k)}
+		\end{align*}	
 
 
 
 * **Correlation coefficient**
 
-	| Correlation coefficient is a statistic that measures linear correlation between two variables
+  | Correlation coefficient is a statistic that measures linear correlation between two variables
 
-.. math::
-	:label: corr
+	.. math::
+		:label: corr
 
-		\rho_{y,\hat{y}} = \frac{\sum^N_{k=1}(y_k-\mu_{y})(\hat{y}_k-\mu_{\hat{y}})} {\sigma_y \sigma_\hat{y}}
+			\rho_{y,\hat{y}} = \frac{\sum^N_{k=1}(y_k-\mu_{y})(\hat{y}_k-\mu_{\hat{y}})} {\sigma_y \sigma_\hat{y}}
 
 
-|   where 
-|      :math:`\mu_{y}` : mean of :math:`\{y_k\}`
-|      :math:`\mu_{\hat{y}}`: mean of :math:`\{\hat{y}_k\}`
-|      :math:`\sigma_{y}`: standard deviation of :math:`\{y_k\}`
-|      :math:`\sigma_{\hat{y}}`: standard deviation of :math:`\{\hat{y}_k\}`
+  |   where 
+  |      :math:`\mu_{y}` : mean of :math:`\{y_k\}`
+  |      :math:`\mu_{\hat{y}}`: mean of :math:`\{\hat{y}_k\}`
+  |      :math:`\sigma_{y}`: standard deviation of :math:`\{y_k\}`
+  |      :math:`\sigma_{\hat{y}}`: standard deviation of :math:`\{\hat{y}_k\}`
 
 
 Prediction by surrogate model
 ---------------------------------
 
-+---------+-----------------+----------------------+
-|         | Use surrogate   |  Use exact simulator |
-+=========+=================+======================+
-| Case1   | Yes             | No                   |
-+---------+-----------------+----------------------+
-| Case2   | Yes             | Yes                  |
-+---------+-----------------+----------------------+
++-----------+-----------------+----------------------+
+|           | Use surrogate   |  Use exact simulator |
++===========+=================+======================+
+| **Case1** | Yes             | No                   |
++-----------+-----------------+----------------------+
+| **Case2** | Yes             | Yes                  |
++-----------+-----------------+----------------------+
 
 User have the following options:
 
-#. **Case1** : prediction is always based on the surrogate model prediction. When predictive error is too high at a sampled input point, program will emit error and stop analysis.
-#. **Case2** : when predictive R2 error is high at sampled input points, exact simulator is called instead of using surrogate estimates or calling exit. Thus Case2 requires simulator as a input and takes longer time, but guarantees a better precision. Surrogate model is updated each time when simulator is called.
+* **Case1** : prediction is always based on the surrogate model prediction. When predictive error is too high at a sampled input point, program will emit error and stop analysis.
+* **Case2** : when predictive R2 error is high at sampled input points, exact simulator is called instead of using surrogate estimates or calling exit. Thus Case2 requires simulator as a input and takes longer time, but guarantees a better precision. Surrogate model is updated each time when simulator is called.
 
 .. [Rasmussen2006]
 	Rasmussen, C.E. and Williams, C.K. (2006). *Gaussian Process for Machine Learning*. Cambridge, MA: The MIT Press, 2006 (available on-line at http://www.gaussianprocess.org/gpml/)
 
 .. [Kyprioti2020]
    	Kyprioti, A.P., Zhang, J., and Taflanidis, A.A. (2020). Adaptive design of experiments for global Kriging metamodeling through cross-validation information. *Structural and Multidisciplinary Optimization*, 1-23.
-.. [GPy2021]
+.. [ShaffieldML2012]
    	GPy, A Gaussian process framework in python, http://github.com/SheffieldML/GPy, since 2012
 .. [Sacks1989]
-	Sacks J,Welch WJ,Mitchell TJ,Wynn HP (1989) Design and analysis of
+	Sacks J.,Welch W.J.,Mitchell T.J.,Wynn H.P. (1989). Design and analysis of
 	computer experiments. *Stat Sci* 4(4):409–435
+.. [Fuhg2020]
+	Fuhg, J.N., Fau, A., and Nackenhorst, U. (2020). State-of-the-art and comparative review of adaptive sampling methods for kriging. *Archives of Computational Methods in Engineering*, 1-59.
+.. [Roustant2012]
+	Roustant, O., Ginsbourger, D., and Deville, Y. (2012). DiceKriging, DiceOptim: Two R packages for the analysis of computer experiments by kriging-based metamodeling and optimization. *Journal of Statistical Software*, 21:1–55, 2012
