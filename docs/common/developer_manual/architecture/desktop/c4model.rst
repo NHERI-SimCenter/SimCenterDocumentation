@@ -1,10 +1,10 @@
 .. _lblc4model:
 
 **********************************
-C4 Model of Software Architecture
+Design Philosophy
 **********************************
 
-The SimCenter workflow systems are aimed at facilitating the use, reuse and extension of common workflows encoutred in NHE by a broad range of natural hazards engineering researchers with varying levels of software skills. In order to encourage this use and adoption, this chapter presents the software architecture for the SimCenter framework and |app| using the `C4 model <https://c4model.com>`_. The C4 model is graphical approach for documenting software architecture through diagrams that describe and communicate the software architecture at different levels of abstraction. It is a top-down approach which starts at a high level (level 1) showing how a user would interact with the software and drills down through three more levels, with level 4 containing the typical UML diagrams. The choice of the **C4** model was made to provide NHE researchers with a diverse range of software architecture knowledge an understanding of the software architecture behind SimCenter applications that fits their skill level. The four levels:
+The SimCenter workflow systems are aimed at facilitating the use, reuse and extension of common workflows encountered in NHE by a broad range of natural hazards engineering researchers with varying levels of software skills. In order to encourage this use and adoption, this chapter presents the software architecture for the SimCenter framework and |app| using the `C4 model <https://c4model.com>`_. The C4 model is graphical approach for documenting software architecture through diagrams that describe and communicate the software architecture at different levels of abstraction. It is a top-down approach which starts at a high level (level 1) showing how a user would interact with the software and drills down through three more levels, with level 4 containing the typical UML diagrams. The choice of the **C4** model was made to provide NHE researchers with a diverse range of software architecture knowledge an understanding of the software architecture behind SimCenter applications that fits their skill level. The four levels:
 
 
 Level 1: Context Diagram
@@ -103,28 +103,27 @@ The interaction between the frontend and the backend is best understood by looki
 
 4. The UI will now start the backend application and will spin until the backend application returns with a completion signal.
 
-
 Now that the UI has handed over to the backend application, the backend application will perform the following:
 
-#. Open the output file from the UI and parse it to obtain the name of the application to run and the arguments to run the application with. Open up another file, the ``WorkflowApplications.json`` file, contained with the application, to determine given the application name the full path to the executable to be invoked. It will the create in ``templatedir`` a file named ``workflow_driver``. This file is a script file that when run by the UQ engine will generate a file named ``results.out``. ``results.out`` when the ``workflow_driver`` script has completed will contain a single line of space seperated values, one value for each EDP.
+5. Open the output file from the UI and parse it to obtain the name of the application to run and the arguments to run the application with. Open up another file, the ``WorkflowApplications.json`` file, contained with the application, to determine given the application name the full path to the executable to be invoked. It will the create in ``templatedir`` a file named ``workflow_driver``. This file is a script file that when run by the UQ engine will generate a file named ``results.out``. ``results.out`` when the ``workflow_driver`` script has completed will contain a single line of space seperated values, one value for each EDP.
 
-#.  It will invoke each of the applications with supplied arguments and an additional command line argument, ``--getRV``, to inform the application to process the input file, and to create any additional random variables and input files needed before the workflow runs.
+6.  It will invoke each of the applications with supplied arguments and an additional command line argument, ``--getRV``, to inform the application to process the input file, and to create any additional random variables and input files needed before the workflow runs.
 
-#. It will then launch the UQengine. The UQ engine, is typically a pre- and post- processor to an existing UQ engine.
+7. It will then launch the UQengine. The UQ engine, is typically a pre- and post- processor to an existing UQ engine.
 
-#. The pre-processor takes the json input file and creates an input file needed by the actual UQ engine.
+8. The pre-processor takes the json input file and creates an input file needed by the actual UQ engine.
 
-#. The preprocessor will launch the UQ application. This application will typically run the ``workflow_driver`` many times, passing as input to the workflow a file ``\params`` and obtaining as output from the ``workflow_driver`` a file ``results.out``.
+9. The preprocessor will launch the UQ application. This application will typically run the ``workflow_driver`` many times, passing as input to the workflow a file ``\params`` and obtaining as output from the ``workflow_driver`` a file ``results.out``.
 
-#. When done the engine will output its results.
+10. When done the engine will output its results.
 
-#. The UQengine will notify the UQpreprocessor that it is done.
+11. The UQengine will notify the UQpreprocessor that it is done.
 
-#. The UQpreprocessor will notify the femUQ application that it is done.
+12. The UQpreprocessor will notify the femUQ application that it is done.
 
-#. The femUQ application will notify the UI that it is done.
+13. The femUQ application will notify the UI that it is done.
 
-#. The UI will read in the reuslts and present them to the user.
+14. The UI will read in the reuslts and present them to the user.
 
 
 
