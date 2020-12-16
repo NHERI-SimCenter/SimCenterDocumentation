@@ -1,0 +1,135 @@
+
+
+
+<hr>
+<div class="twbs">
+  <div class="gallery accordion" id="gallery">
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0044</code>
+        <h5 class="card-title mb-0" >
+          <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
+          pelicun
+          <!-- </button> -->
+        </h5>
+        <p class="card-text">
+          Performs damage and loss (DL) assessment using the pelicun Python package. The application uses built-in fragility functions and the replacement cost defined in the building source file to determine damage state and loss likelihoods.
+        </p>
+      </summary>
+
+      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0044"> -->
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0044">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0044')" >CLI</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0044')" >Inputs</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0044">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre>2020-12-16T00:52:26Z First line of DL_calculation
+usage: DL_calculation.py [-h] [--filenameDL FILENAMEDL]
+                         [--filenameEDP FILENAMEEDP] [--DL_Method DL_METHOD]
+                         [--Realizations REALIZATIONS] [--outputEDP OUTPUTEDP]
+                         [--outputDM OUTPUTDM] [--outputDV OUTPUTDV]
+                         [--dirnameOutput DIRNAMEOUTPUT]
+                         [--event_time EVENT_TIME]
+                         [--detailed_results [DETAILED_RESULTS]]
+                         [--coupled_EDP [COUPLED_EDP]] [--log_file [LOG_FILE]]
+                         [--ground_failure [GROUND_FAILURE]]
+                         [--auto_script AUTO_SCRIPT]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --filenameDL FILENAMEDL
+  --filenameEDP FILENAMEEDP
+  --DL_Method DL_METHOD
+  --Realizations REALIZATIONS
+  --outputEDP OUTPUTEDP
+  --outputDM OUTPUTDM
+  --outputDV OUTPUTDV
+  --dirnameOutput DIRNAMEOUTPUT
+  --event_time EVENT_TIME
+  --detailed_results [DETAILED_RESULTS]
+  --coupled_EDP [COUPLED_EDP]
+  --log_file [LOG_FILE]
+  --ground_failure [GROUND_FAILURE]
+  --auto_script AUTO_SCRIPT
+</pre>
+              </code>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0044">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>DL file<code> &lt;string&gt;</code></dt>
+                  <dd>File containing the DL model information. The default is to source it from the building source file.</dd>
+                
+                  <dt>EDP file<code> &lt;string&gt;</code></dt>
+                  <dd>File containing type, location, and direction of recorded EDPs from the response simulation.</dd>
+                
+                  <dt>DL_Method<code> &lt;string&gt;</code></dt>
+                  <dd>Defines the damage and loss assessment method. Available choices include 'FEMA P58', 'HAZUS MH EQ', 'HAZUS MH', 'HAZUS MH EQ IM', and 'HAZUS MH HU'.</dd>
+                
+                  <dt>Realizations<code> &lt;int&gt;</code></dt>
+                  <dd>Specifies the number of loss realizations to generate.</dd>
+                
+                  <dt>detailed_results<code> &lt;bool&gt;</code></dt>
+                  <dd>If False, only the main results are saved to improve efficiency.</dd>
+                
+                  <dt>log_file<code> &lt;bool&gt;</code></dt>
+                  <dd>If False, pelicun does not create a run log file.</dd>
+                
+                  <dt>coupled_EDP<code> &lt;bool&gt;</code></dt>
+                  <dd>If True, the raw EDPs are used as-is without resampling.</dd>
+                
+                  <dt>event_time<code> &lt;string&gt;</code></dt>
+                  <dd>Defines the time of the event in YYYY-MM-DD:HH format. 'off' turns all time-effects off.</dd>
+                
+                  <dt>ground_failure<code> &lt;bool&gt;</code></dt>
+                  <dd>If True, fragility groups associated with ground failure are added in the auto-population phase. Note that such analysis requires PGD values as inputs.</dd>
+                
+                  <dt>auto_script<code> &lt;string&gt;</code></dt>
+                  <dd>...</dd>
+                
+                </dl>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  </div>
+</div>
+
+
+<script>
+function openCardTab(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script> 
+

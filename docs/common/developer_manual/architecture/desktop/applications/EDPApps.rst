@@ -18,32 +18,18 @@ Note that in the EDP file, DOF=1,2 are assumed to correspond to perpendicular ho
 
 The following options for EDP applications vary in the type of EDPs identified for the simulation output.
 
-.. raw:: html
-   :file: _static/html/createEDP-gallery.html
+.. only:: WEUQ_app
+
+   .. raw:: html
+      :file: _static/html/WE-UQ/createEDP.html
+
+.. only:: EEUQ_app
+
+   .. raw:: html
+      :file: _static/html/EE-UQ/createEDP.html
 
 
-.. jsonschema:: App_Schema.json#/properties/EDPApplications/StandardEarthquakeEDP_R
+.. only:: RDT_app
 
-In the configuration file, **StandardEarthquakeEDP_R** is called under "Applications" as:
-
-.. code-block::
-
-      "EDP": {
-         "Application": "StandardEarthquakeEDP_R",
-         "ApplicationData": {
-         }
-      }
-
-
-.. jsonschema:: App_Schema.json#/properties/EDPApplications/UserDefinedEDP_R
-
-In the configuration file, **UserDefinedEDP_R** is called under "Applications" as:
-
-.. code-block::
-
-      "EDP": {
-         "Application": "UserDefinedEDP_R",
-            "ApplicationData": {
-             "EDPspecs": "EDP_specs.json"
-         }
-      }
+   .. raw:: html
+      :file: _static/html/RDT/createEDP.html

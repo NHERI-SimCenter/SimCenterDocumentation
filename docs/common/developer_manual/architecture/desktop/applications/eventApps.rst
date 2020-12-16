@@ -14,30 +14,19 @@ This input information is saved in an "EVENT.json" file, located in its correspo
 
 The following options for event applications vary in the type of event, event properties, and format of the event file which it processes.
 
-.. raw:: html
-   :file: _static/html/createEVENT-gallery.html
+.. only:: WEUQ_app
 
-   
-
-.. jsonschema:: App_Schema.json#/properties/EventApplications/SimCenterEvent
+    .. raw:: html
+       :file: _static/html/WE-UQ/createEVENT.html
 
 
-In the configuration file, **SimCenterEvent** is called under "Applications" as:
+.. only:: EEUQ_app
 
-.. code-block::
-
-    "Events": [{
-      "EventClassification": "Earthquake",
-      "Application": "SimCenterEvent",
-      "ApplicationData": {
-        "pathEventData": "records/"
-      }
-    }]
-
-.. jsonschema:: App_Schema.json#/properties/EventApplications/ExistingPEER_Events
+    .. raw:: html
+       :file: _static/html/EE-UQ/createEVENT.html
 
 
-.. jsonschema:: App_Schema.json#/properties/EventApplications/StochasticWindWittigSinha
+.. only:: RDT_app
 
-
-.. jsonschema:: App_Schema.json#/properties/EventApplications/StochasticGroundMotion
+    .. raw:: html
+       :file: _static/html/RDT/createEVENT.html

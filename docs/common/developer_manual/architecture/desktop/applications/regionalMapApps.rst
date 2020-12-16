@@ -17,17 +17,8 @@ Once events are chosen, the application writes the name of the event file in its
 
 The following options for regional mapping applications vary in the algorithm or method used to make the event assignment.
 
-.. jsonschema:: App_Schema.json#/properties/RegionalMapApplications/NNE
 
-In the configuration file, **NNE** is called under "Applications" as:
-
-.. code-block::
-
-      "RegionalMapping": {
-         "Application": "NearestNeighborEvents",
-         "ApplicationData": {
-          "filenameEVENTgrid": "records/EventGrid.csv",
-          "samples": 10,
-          "neighbors": 2
-         }
-      }
+.. only:: RDT_app
+   
+   .. raw:: html
+      :file: _static/html/RDT/performRegionalMapping.html

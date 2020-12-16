@@ -17,21 +17,4 @@ If no RVs are specified, then the UQ application directly runs commands in the d
 The following options for UQ applications vary in the software package used to perform uncertainty quantification.
 
 .. raw:: html
-   :file: _static/html/performUQ-gallery.html
-
-.. jsonschema:: App_Schema.json#/properties/UQApplications/Dakota-UQ
-
-In the configuration file, **Dakota-UQ** is called under "Applications" as:
-
-.. code-block::
-
-      "UQ": {
-         "Application": "Dakota-UQ",
-            "ApplicationData": {
-            "method": "LHS",
-            "samples": 10,
-            "type": "UQ",
-            "concurrency": 1,
-            "keepSamples": true
-         }
-      }
+   :file: _static/html/performUQ.html

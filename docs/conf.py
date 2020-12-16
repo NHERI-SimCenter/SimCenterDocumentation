@@ -6,13 +6,18 @@
 
 # -- SimCenter App selection -------------------------------------------------
 
-
-app_name = 'RDT'
-#app_name = 'PBE'
-#app_name = 'EE-UQ'
-#app_name = 'WE-UQ'
-#app_name = 'quoFEM'
-#app_name = 'pelicun'
+import os 
+app_name = os.path.expandvars("$SIMDOC_APP")
+if app_name in ["RDT", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun"]:
+	pass 
+else:
+	pass
+	app_name = 'RDT'
+	#app_name = 'PBE'
+	#app_name = 'EE-UQ'
+	#app_name = 'WE-UQ'
+	#app_name = 'quoFEM'
+	#app_name = 'pelicun'
 
 print('app_name = ' + app_name)
 
@@ -24,7 +29,6 @@ print('app_name = ' + app_name)
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 
-import os
 import sys
 sys.path.append(os.path.abspath('./sphinx_ext/'))
 
