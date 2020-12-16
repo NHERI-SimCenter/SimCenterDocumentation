@@ -37,8 +37,8 @@ The backend applications are categorized by function into the following workflow
         :maxdepth: 1
         :hidden:
 
-        applications/eventApps
-        applications/UQApps
+        applications/preprocFEM
+        applications/preprocUQ
 
 
 .. only:: WEUQ_app

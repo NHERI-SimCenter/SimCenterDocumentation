@@ -1,7 +1,4 @@
-#
-# make RDT html
 SHELL = /bin/bash -O globstar
-
 
 SPHINXOPTS    ?= 
 SPHINXBUILD   ?= sphinx-build
@@ -12,28 +9,19 @@ PUBLDIR       = ../$(1)-Documentation/docs/
 # Directories to remove when cleaning
 CLEANDIR      = _sources _static _images common
 
-# define build_dir
-# publish: export BUILDDIR = ../$(1)-Documentation/docs
-# %:       export BUILDDIR = ./build/$(1)
-# endef
-
 help:
 	@echo 'usage: make <app> <target>'
 	@echo '   or: make all'
 	@printf '\n'
 	@echo 'where <app> is one of:'
-	@echo '    qfem'
-	@echo '    rdt'
-	@echo '    pbe'
-	@echo '    ee'
-	@echo '    we'
-	@# @echo '    all   Make all of the above'
-	@echo ''
+	@printf '    {pelicun, qfem, rdt, pbe, we, ee}\n\n'
 	@echo 'and <target> is one of:'
-	@echo '    web'
-	@echo '    html'
-	@echo '    latex'
-	@echo ''
+	@echo '    web    Run html target with build directory'
+	@echo '           set to app publishing repository.'
+	@echo '    html   Run html target in dev build directory.'
+	@echo '    latex  Run latex target in dev build directory.'
+	@printf "\nRunning 'make all' will run 'make <app> html'\n"
+	@printf "for all <app> options listed above.\n\n"
 
 ee:      export SIMDOC_APP=EE-UQ
 we:      export SIMDOC_APP=WE-UQ
@@ -41,7 +29,6 @@ rdt:     export SIMDOC_APP=RDT
 pbe:     export SIMDOC_APP=PBE
 qfem:    export SIMDOC_APP=quoFEM
 pelicun: export SIMDOC_APP=pelicun
-
 export SIMDOC_APP
 
 all:
@@ -63,11 +50,13 @@ web:
 html:
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" $(call BUILDDIR,$(SIMDOC_APP))/html $(O)
 
-
 pandoc:
-	# echo **/*.rst | sed -e 's/ /\n/g'
-	pandoc **/*.rst -o doc.pdf
-
+	for filepath in **/*.rst; do \
+		cd `dirname $$filename`; \
+		filename=`basename $$filepath`; \
+		pandoc $$filename -o .build/latex/$${filename%.*}.pdf; \
+	done
+	# pandoc **/*.rst -o doc.pdf
 
 .PHONY: help Makefile pbe rdt qfem we ee html
 
