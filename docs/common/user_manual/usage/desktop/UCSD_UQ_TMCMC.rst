@@ -15,6 +15,7 @@ This is an algorithm which is used to draw samples from the posterior probabilit
 
 Defining the log-likelihood function
 ====================================
+
 By allowing users to define a ``log_likelihood`` function in the **Log Likelihood Script**, the workflow provides users full control in defining the log-likelihood model they desire to use. 
 The ``log_likelihood`` function is called internally during the execution of the TMCMC algorithm, and this function must compute and return the log-likelihood value at a point in the parameter space. The function must take four arguments as shown: ``log_likelihood(particleNum, par, variables, resultsLocation)``. Here, ``particleNum`` is the sample index, which is an integer between ``0`` and ``# Samples - 1``; ``par`` is the corresponding vector of parameter values at which the log-likelihood must be evaluated; ``variables`` is a dictionary that contains information required to define the prior probability distribution of the parameters; and ``resultsLocation`` is a string that defines the path to the directory where the analysis is conducted. These arguments are passed to the log-likelihood function internally by the TMCMC algorithm. 
 
