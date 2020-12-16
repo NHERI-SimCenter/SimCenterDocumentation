@@ -25,10 +25,11 @@ Documentation of the software architecture is detailed in the following pages:
    :RDT:run-manually
 
 
-For additional reading into the software design philosophy, refer to the *C4 model* diagrams:
+For additional reading into the software architecture, refer to the **C4 model** diagrams:
 
 
 .. toctree-filt::
    :maxdepth: 1
 
    c4model
+   architectureLevel4
