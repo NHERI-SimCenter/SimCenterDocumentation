@@ -4,6 +4,6 @@ FEM Pre-processors
 
 
 .. raw:: html
-    :file: _static/html/quoFEM/performSIM.html
+    :file: _static/html/quoFEM/preprocSIM.html
 
 
