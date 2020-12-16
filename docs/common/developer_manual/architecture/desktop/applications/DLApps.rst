@@ -17,8 +17,10 @@ It returns damage probabilities in a "DM.csv" file and decision variable estimat
 
 The following options for DL applications vary in the software package used to perform the damage and loss assessment.
 
-.. raw:: html
-   :file: _static/html/performDL.html 
+.. only:: RDT_app
+
+   .. raw:: html
+      :file: _static/html/RDT/performDL.html 
 
 
 
