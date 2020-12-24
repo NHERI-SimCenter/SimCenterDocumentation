@@ -1,0 +1,27 @@
+// Example JSON Configuration for Custom UQ Engine
+
+{
+    "Parameters" :  [
+	{
+	    "type" : "ComboBox",
+	    "name" : "Combo Box Input",
+	    "values" : ["Choice 1", "Choice 2", "Choice 3"]
+	},
+	{
+	    "type" : "SpinBox",
+	    "name" : "An Integer Input"
+	},	
+	{
+	    "type" : "DoubleSpinBox",
+	    "name" : "A Real Number Input"
+	},
+	{
+	    "type" : "FileInput",
+	    "name" : "A File Input"
+	},	
+	{
+	    "type" : "LineEdit",
+	    "name" : "UQ Driver"
+	}
+    ]
+}
