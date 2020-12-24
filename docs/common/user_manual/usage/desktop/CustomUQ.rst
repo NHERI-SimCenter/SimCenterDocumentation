@@ -79,7 +79,7 @@ custom UQ driver.
    follow the format shown in the example ``params.in`` file shown :ref:`below
    <paramsIn>`. The first line specifies the number of random variables while
    the subsequent lines first contain the name of the random variable and the
-   value of the current realization separated by a space
+   value of the current realization separated by a space.
 
    .. _paramsIn:
    .. literalinclude:: params.in   
@@ -93,8 +93,7 @@ directory.
 Lastly, the name of the UQ driver needs to be added to *configureAndRunUQ.py* in
 the list of UQ driver options--this corresponds to the UQ driver name provided
 in the customized user interface. The *configureAndRunUQ.py* file is also
-located in *repositoryRoot/applications/performUQ/other*.
-
-With the derived UQ runner class and the name of the UQ driver added to the list
-of UQ driver options, the custom UQ engine has been plugged into the quoFEM backend
-and can now be invoked from the quoFEM user interface.
+located in *repositoryRoot/applications/performUQ/other*. With the derived UQ
+runner class and the name of the UQ driver added to the list of UQ driver
+options, the custom UQ engine has been plugged into the quoFEM backend and can
+now be invoked from the quoFEM user interface.
