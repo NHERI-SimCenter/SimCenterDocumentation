@@ -69,35 +69,44 @@ The input panel is the large central area of the user-interface where the user p
 
 4. Input Panel Selection Ribbon: 
 
-The ribbon on the left side provides the user with a selection of buttons to choose from (e.g. **VIZ: Visualization**, **HAZ: Hazards**, **ASD: Asset Definition**). Selecting any of these buttons will change what is displayed in the central input panel. Each panel will present the user with an option for which application to choose for that part of the workflow, and will then allow a user to provide inputs for that application. In the following sections, each of the panels in the input panel selection ribbon are reviewed:
+The ribbon on the left side provides the user with a selection of buttons to choose from (e.g. **RV: Random Variables**, **RES: Results**). Selecting any of these buttons will change what is displayed in the central input panel. Each panel will present the user with an option for which application to choose for that part of the workflow, and will then allow a user to provide inputs for that application. In the following sections, each of the panels in the input panel selection ribbon are reviewed:
 
 .. toctree-filt::
    :maxdepth: 1
 
-   VIZ
-   GI
-   HAZ
-   ASD
-   HTA
-   MOD
-   ANA
-   DL
+   :RDT:RDT/VIZ
+   :RDT:RDT/GI
+   :RDT:RDT/HAZ
+   :RDT:RDT/ASD
+   :RDT:RDT/HTA
+   :RDT:RDT/MOD
+   :RDT:RDT/ANA
+   :RDT:RDT/DL
    UQ
-   RV
-   RES
    :wind:GI
+   :EEUQ:GI
+   :WEUQ:GI
+   :EEUQ:SIM
+   :WEUQ:SIM
+   :PBE:SIM
    :wind:Assets
+   :EEUQ:earthquake/earthquakeEvents.rst
+   :PBE:earthquake/EarthquakeEvents.rst	 	 
    :wind:wind/WindEvents
    :wind:FEM
+   :EEUQ:FEM
    :quoFEM:quoFEM/FEM
    :EEUQ:response/EDP
    :WEUQ:response/EDP
    :quoFEM:quoFEM/QuantitiesOfInterest
+   RV
    :PBE:PBE/DL
    :EEUQ:response/resEE
    :WEUQ:response/resEE
    :quoFEM:quoFEM/resQUO
    :PBE:PBE/resPBE
+   :RDT:RDT/RES
+	
 
 5. Push Buttons:
 
