@@ -11,7 +11,7 @@ Buildings
 
 Buildings :numref:`fig-buildingModelingPanel`
 
-.. _fig-buildingModelingPanel:
+.. _fig_buildingModelingPanel:
 
 .. figure:: figures/RDTMODInputPanel.png
   :align: center

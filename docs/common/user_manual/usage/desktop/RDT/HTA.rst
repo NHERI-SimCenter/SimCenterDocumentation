@@ -14,7 +14,7 @@ Nearest Neighbor Event
 
 The ``Nearest Neighbor Event`` application draws samples of the hazard intensity from nearby grid points. The ``Number of samples`` input controls the number of samples considered at each grid point, while the `Number of neighbors` input is the number of neighboring grid points that samples will be drawn from.
 
-.. _fig-RegionalMapping:
+.. _fig_RegionalMapping:
 
 .. figure:: figures/RDTHTAPanel.png
 	:align: center

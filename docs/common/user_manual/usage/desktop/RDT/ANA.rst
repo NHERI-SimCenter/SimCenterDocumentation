@@ -9,9 +9,9 @@ In this panel the user can select the applications that will be used to analyze 
 Buildings
 ---------
 
-Buildings :numref:`fig-buildingAnalysisPanel`
+Buildings :numref:`fig_buildingAnalysisPanel`
 
-.. _fig-buildingAnalysisPanel:
+.. _fig_buildingAnalysisPanel:
 
 .. figure:: figures/RDTANAInputPanel.png
   :align: center

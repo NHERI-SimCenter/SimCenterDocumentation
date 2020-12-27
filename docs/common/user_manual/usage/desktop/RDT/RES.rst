@@ -3,9 +3,9 @@
 RES: Results
 ============
 
-The results panel... :numref:`fig-Results` 
+The results panel... :numref:`fig_Results` 
 
-.. _fig-Results:
+.. _fig_Results:
 
 .. figure:: figures/RDTRESPanel.png
 	:align: center
