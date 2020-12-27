@@ -3,20 +3,19 @@
 GI: General Information
 =======================
 
-The **GI** tab allows the user to provide information about the building and the units the user will work with. The widget contains the following four frames, as shown in :numref:`figGI`.
+The **General Information** tab allows the user to provide information about the analysis, such as the analysis name and the units the user will work with. The widget contains the following four frames, as shown in :numref:`figGI`.
 
+#. **Analysis Name**: The user can provide a unique name for the analysis. This will be the default filename under which the analysis results and input files will be saved. 
 
-#. **Building Information**: Collects general information about the building. This includes the name, type, and year of construction.
+#. **Units Selection**: Collects information about the units used in the inputs and outputs. Some widgets will require inputs in different units. Those widgets will display units beside those special entry fields.
 
-#. **Properties**: Collects information about the number of stories, width, depth, plan area and height of the building.
+#. **Asset Layer Selection**: This is where the user can select the asset classes to include in a regional analysis. When a user selects a particular asset class, the corresponding panel for that asset will appear in the other input panels, such as in the **ASD: Asset Definition** and **MOD: Asset Modeling** input panels.
 
-#. **Location**: Collects information about the location of the building. This information is used by some event widgets to characterize events that are specific to the building location.
-
-#. **Units**: Collects information about the units used in the inputs and outputs. Some widgets will require inputs in different units. Those widgets will display units beside those special entry fields.
+#. **Output Settings**: The user can specify the level of output detail provided in the results. 
 
 .. _figGI:
 
-.. figure:: figures/gi.png
+.. figure:: figures/RDTGIPanel.png
 	:align: center
 	:figclass: align-center
 
