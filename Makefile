@@ -9,6 +9,11 @@ PUBLDIR       = ../$(1)-Documentation/docs/
 # Directories to remove when cleaning
 CLEANDIR      = _sources _static _images common
 
+#----------------------------------------------------------
+#PDFLATEX = latexmk -pdf -dvi- -ps- 
+PDFLATEX = pdflatex -interaction=nonstopmode 
+
+#----------------------------------------------------------
 help:
 	@echo 'usage: make <app> <target>'
 	@echo '   or: make all'
@@ -22,6 +27,9 @@ help:
 	@echo '    latex  Run latex target in dev build directory.'
 	@printf "\nRunning 'make all' will run 'make <app> html'\n"
 	@printf "for all <app> options listed above.\n\n"
+#----------------------------------------------------------
+
+.PHONY: help Makefile pbe rdt qfem we ee html pdf latexpdf latex
 
 ee:      export SIMDOC_APP=EE-UQ
 we:      export SIMDOC_APP=WE-UQ
@@ -30,6 +38,10 @@ pbe:     export SIMDOC_APP=PBE
 qfem:    export SIMDOC_APP=quoFEM
 pelicun: export SIMDOC_APP=pelicun
 export SIMDOC_APP
+
+export TEXINPUTS:=${SIMCENTER_DEV}/texmf//:./build/${SIMDOC_APP}/latex//:/${TEXINPUTS}
+export TEXINPUTS:=~/texlive/2020//:${TEXINPUTS} 
+export BSTINPUTS:=../texmf//:${BSTINPUTS} 
 
 all:
 	make pelicun html
@@ -50,6 +62,26 @@ web:
 html:
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" $(call BUILDDIR,$(SIMDOC_APP))/html $(O)
 
+
+latex:
+	@$(SPHINXBUILD) -b latex "$(SOURCEDIR)" $(call BUILDDIR,$(SIMDOC_APP))/latex $(O)
+
+# pdf:
+# 	cd $(call BUILDDIR,$(SIMDOC_APP))/latex && \
+# 	$(PDFLATEX) \
+# 	./*.tex \
+# 	#-output-directory="../pdf/" \
+
+
+pdf:
+	$(PDFLATEX) \
+	-output-directory="$(call BUILDDIR,$(SIMDOC_APP))/pdf/" \
+	$(call BUILDDIR,$(SIMDOC_APP))/latex/*.tex
+
+latexpdf:
+	make latex
+	make pdf
+
 pandoc:
 	for filepath in **/*.rst; do \
 		cd `dirname $$filename`; \
@@ -58,5 +90,4 @@ pandoc:
 	done
 	# pandoc **/*.rst -o doc.pdf
 
-.PHONY: help Makefile pbe rdt qfem we ee html
 
