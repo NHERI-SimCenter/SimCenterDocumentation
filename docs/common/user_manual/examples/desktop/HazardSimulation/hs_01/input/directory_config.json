@@ -1,7 +1,0 @@
-{
-  "Directory":{
-      "Work": "PATH/TO/HazardSimulation/",
-      "Input": "PATH/TO/HazardSimulation/test/eq_input/",
-      "Output": "PATH/TO/HazardSimulation/test/records/"
-  }
-}

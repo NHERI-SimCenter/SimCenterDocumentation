@@ -9,61 +9,25 @@
     <details>
       <summary class="card-header"><code>bknd-0044</code>
         <h5 class="card-title mb-0" >
-          <!-- <button class="accordion-button" type="button" data-bs-toggle="collapse" > -->
           pelicun
-          <!-- </button> -->
         </h5>
         <p class="card-text">
           Performs damage and loss (DL) assessment using the pelicun Python package. The application uses built-in fragility functions and the replacement cost defined in the building source file to determine damage state and loss likelihoods.
         </p>
       </summary>
 
-      <!-- <div class="collapse show" data-parent="gallery" id="collapse-bknd-0044"> -->
       <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0044">
         <div class="card-body">
           <div class="nav nav-tabs py-4">
             <div class="nav-item">
-              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-cli-bknd-0044')" >CLI</a>
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0044')" >Inputs</a>
             </div>
             <div class="nav-item">
-              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-inputs-bknd-0044')" >Inputs</a>
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0044')" >CLI</a>
             </div>
           </div>
           <div class="tab-content">
-            <div class="tabcontent tab-pane active show" id="tab-cli-bknd-0044">
-              <code class="my-2 mx-2" style="border: none;">
-                <pre>2020-12-16T00:52:26Z First line of DL_calculation
-usage: DL_calculation.py [-h] [--filenameDL FILENAMEDL]
-                         [--filenameEDP FILENAMEEDP] [--DL_Method DL_METHOD]
-                         [--Realizations REALIZATIONS] [--outputEDP OUTPUTEDP]
-                         [--outputDM OUTPUTDM] [--outputDV OUTPUTDV]
-                         [--dirnameOutput DIRNAMEOUTPUT]
-                         [--event_time EVENT_TIME]
-                         [--detailed_results [DETAILED_RESULTS]]
-                         [--coupled_EDP [COUPLED_EDP]] [--log_file [LOG_FILE]]
-                         [--ground_failure [GROUND_FAILURE]]
-                         [--auto_script AUTO_SCRIPT]
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --filenameDL FILENAMEDL
-  --filenameEDP FILENAMEEDP
-  --DL_Method DL_METHOD
-  --Realizations REALIZATIONS
-  --outputEDP OUTPUTEDP
-  --outputDM OUTPUTDM
-  --outputDV OUTPUTDV
-  --dirnameOutput DIRNAMEOUTPUT
-  --event_time EVENT_TIME
-  --detailed_results [DETAILED_RESULTS]
-  --coupled_EDP [COUPLED_EDP]
-  --log_file [LOG_FILE]
-  --ground_failure [GROUND_FAILURE]
-  --auto_script AUTO_SCRIPT
-</pre>
-              </code>
-            </div>
-            <div class="tabcontent tab-pane" id="tab-inputs-bknd-0044">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0044">
               <div class="pt-2 mt-2">
                 <dl>
                 
@@ -99,6 +63,39 @@ optional arguments:
                 
                 </dl>
               </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0044">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre>2020-12-16T16:56:16Z First line of DL_calculation
+usage: DL_calculation.py [-h] [--filenameDL FILENAMEDL]
+                         [--filenameEDP FILENAMEEDP] [--DL_Method DL_METHOD]
+                         [--Realizations REALIZATIONS] [--outputEDP OUTPUTEDP]
+                         [--outputDM OUTPUTDM] [--outputDV OUTPUTDV]
+                         [--dirnameOutput DIRNAMEOUTPUT]
+                         [--event_time EVENT_TIME]
+                         [--detailed_results [DETAILED_RESULTS]]
+                         [--coupled_EDP [COUPLED_EDP]] [--log_file [LOG_FILE]]
+                         [--ground_failure [GROUND_FAILURE]]
+                         [--auto_script AUTO_SCRIPT]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --filenameDL FILENAMEDL
+  --filenameEDP FILENAMEEDP
+  --DL_Method DL_METHOD
+  --Realizations REALIZATIONS
+  --outputEDP OUTPUTEDP
+  --outputDM OUTPUTDM
+  --outputDV OUTPUTDV
+  --dirnameOutput DIRNAMEOUTPUT
+  --event_time EVENT_TIME
+  --detailed_results [DETAILED_RESULTS]
+  --coupled_EDP [COUPLED_EDP]
+  --log_file [LOG_FILE]
+  --ground_failure [GROUND_FAILURE]
+  --auto_script AUTO_SCRIPT
+</pre>
+              </code>
             </div>
           </div>
         </div>

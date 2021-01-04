@@ -16,5 +16,17 @@ If no RVs are specified, then the UQ application directly runs commands in the d
 
 The following options for UQ applications vary in the software package used to perform uncertainty quantification.
 
-.. raw:: html
-   :file: _static/html/performUQ.html
+.. only:: WEUQ_app
+
+   .. raw:: html
+      :file: _static/html/WE-UQ/performUQ.html
+
+.. only:: EEUQ_app
+
+   .. raw:: html
+      :file: _static/html/EE-UQ/performUQ.html
+
+.. only:: RDT_app
+
+   .. raw:: html
+      :file: _static/html/RDT/performUQ.html
