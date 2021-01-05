@@ -91,7 +91,8 @@ This method submits the job using Tapis CLI directly. If using Windows,  this is
 
 Or, install Tapis CLI from Github:
 
-.. code-block::
+.. code-block:: console
+
       git clone https://github.com/TACC-Cloud/tapis-cli-ng.git
       cd tapis-cli-ng/
       pip install --upgrade --user .
