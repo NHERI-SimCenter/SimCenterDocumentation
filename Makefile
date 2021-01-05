@@ -1,5 +1,7 @@
 SHELL = /bin/bash -O globstar
 
+export SIMCENTER_DEV = $(realpath ../)
+
 SPHINXOPTS    ?= 
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = ./docs
@@ -9,16 +11,16 @@ PUBLDIR       = ../$(1)-Documentation/docs/
 # Directories to remove when cleaning
 CLEANDIR      = _sources _static _images common
 
-#----------------------------------------------------------
+#-LaTeX----------------------------------------------------
 #PDFLATEX = latexmk -pdf -dvi- -ps- 
 PDFLATEX = pdflatex -interaction=nonstopmode 
 
 #-Examples-------------------------------------------------
 EXPDIR = ./docs/common/user_manual/examples/desktop
-EXPSRC = $(SIMCENTER_DEV)/$(SIMDOC_APP)/examples
+EXPSRC = ${SIMCENTER_DEV}/$(SIMDOC_APP)/examples
 RENDRE = rendre -D $(EXPSRC)/.aurore/aurore.cache.json
-#----------------------------------------------------------
 
+#-Help-----------------------------------------------------
 help:
 	@echo 'usage: make <app> <target>'
 	@echo '   or: make <all|update>'
@@ -32,6 +34,7 @@ help:
 	@echo '    latex  Run latex target in dev build directory.'
 	@printf "\nRunning 'make all' will run 'make <app> html'\n"
 	@printf "for all <app> options listed above.\n\n"
+
 #----------------------------------------------------------
 
 .PHONY: help Makefile pbe rdt qfem we ee html pdf latexpdf latex
@@ -43,7 +46,6 @@ pbe:     export SIMDOC_APP=PBE
 qfem:    export SIMDOC_APP=quoFEM
 pelicun: export SIMDOC_APP=pelicun
 export SIMDOC_APP
-export SIMCENTER_DEV = ../
 export TEXINPUTS:=${SIMCENTER_DEV}/texmf//:./build/${SIMDOC_APP}/latex//:/${TEXINPUTS}
 export TEXINPUTS:=~/texlive/2020//:${TEXINPUTS} 
 export BSTINPUTS:=../texmf//:${BSTINPUTS} 
@@ -56,13 +58,12 @@ all:
 	make we html
 	make ee html
 
-pelicun:
+pelicun rdt pbe ee:
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
 
-rdt pbe qfem we ee:
-	
+qfem we:
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
-	rsync -Rcv $(shell $(RENDRE) list --line -- \%./doc)  $(EXPDIR)
+	rsync -Rcv $(addprefix $(EXPSRC)/./,$(shell $(RENDRE) -l examples.yaml#/$(SIMDOC_APP) path -j ' ' -- \%%:doc))  $(EXPDIR)
 
 web:
 	@echo removing $(addprefix $(call PUBLDIR,$(SIMDOC_APP)),$(CLEANDIR))
