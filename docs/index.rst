@@ -55,6 +55,7 @@
    :numbered: 4
 
    :PBE:common/user_manual/about/PBE/about
+   :RDT:common/user_manual/about/RDT/about
    :EEUQ:common/user_manual/about/EEUQ/about
    :WEUQ:common/user_manual/about/WEUQ/about
    :quoFEM:common/user_manual/about/quoFEM/aboutQUOFEM
@@ -125,20 +126,20 @@
    :desktop_app:common/developer_manual/coding_style/desktop/coding_style
    :pelicun:common/developer_manual/coding_style/pelicun/coding_style
 
-   :desktop_app:common/developer_manual/examples/desktop/examples
+   :RDT:common/developer_manual/examples/desktop/examples
    :pelicun:common/developer_manual/examples/pelicun/examples
 
    :pelicun:common/developer_manual/API/pelicun/API
 
 
-.. _lbl-gallery:
+.. .. _lbl-gallery:
 
-.. toctree-filt::
-   :caption: Gallery
-   :maxdepth: 1
-   :numbered: 4
+.. .. toctree-filt::
+..    :caption: Gallery
+..    :maxdepth: 1
+..    :numbered: 4
 
-   :desktop_app:common/gallery/gallery
+..    :desktop_app:common/gallery/gallery
 
 
 Contact

@@ -1,3 +1,8 @@
 quoFEM:
   exclude-item:
     ? qfem-000[3479]
+    ? qfem-000[10-13]
+
+WE-UQ:
+  include-item:
+    ? weuq-0001

@@ -38,11 +38,14 @@ The results of the Sensitivity analysis will show both the main effect and total
 
   	Sensitivity analysis input panel.
 
+
 .. note::
 
 	When the associated FEM model is computationally expensive, the user should consider that the actual number of the simulation runs is larger than the number of samples specified in the input panel. The actual number of simulation runs are NS*(2+NRV)
+	
 		- NS = number of samples specified by user
 		- NRV = number of random variables
+
 
 .. [Weirs12]
 	V. G. Weirs, J. R. Kamm, L. P. Swiler, M. Ratto, S. Tarantola, B. M. Adams, W. J. Rider, and M. S Eldred. Sensitivity analysis techniques applied to a system of hyperbolic conservation laws. *Reliability Engineering and System Safety*, 107:157–170, 2012

@@ -6,17 +6,17 @@
 
 # -- SimCenter App selection -------------------------------------------------
 
-import os 
+import os
 app_name = os.path.expandvars("$SIMDOC_APP")
 if app_name in ["RDT", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun"]:
-	pass 
+	pass
 else:
 	pass
-	app_name = 'RDT'
+	#app_name = 'RDT'
 	#app_name = 'PBE'
 	#app_name = 'EE-UQ'
 	#app_name = 'WE-UQ'
-	#app_name = 'quoFEM'
+	app_name = 'quoFEM'
 	#app_name = 'pelicun'
 
 print('app_name = ' + app_name)
@@ -52,6 +52,10 @@ exclude_patterns = [
 		'**/*quoFEM*'
 	]
 
+source_suffix = {
+	".rst": "restructuredtext",
+	# ".md" : "markdown"
+}
 
 toc_filter_exclusions = [
 	'desktop',
@@ -69,6 +73,10 @@ toc_filter_exclusions = [
 	'S3hark',
 	'pelicun'
 ]
+# gallery data sources
+rendre_config = {
+
+}
 
 extensions = []
 
@@ -534,7 +542,8 @@ extensions = extensions + [
     'toctree_filter',
     'sphinxcontrib.images',
 	'sphinx.ext.extlinks',
-	'sphinxcontrib.images'
+	'sphinxcontrib.images',
+	'rendre.sphinx'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

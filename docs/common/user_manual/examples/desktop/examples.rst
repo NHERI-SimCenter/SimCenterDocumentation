@@ -26,6 +26,7 @@ Examples
 	After the initial basic examples, each section focuses on a particular feature of PBE and describes how various settings affect the damage and loss assessment. All examples come with input files that are available in the `PBE Github repository <https://github.com/NHERI-SimCenter/PBE/tree/master/Examples>`_. 
 
 
+
 .. toctree-filt::
    :maxdepth: 1
 
@@ -39,14 +40,13 @@ Examples
 ..    :quoFEM:quoFEM/quo-09/README
 ..    :quoFEM:quoFEM/exampleFrameConv/README
 ..    :quoFEM:quoFEM/exampleFrameBaye/README
-..    :quoFEM:quoFEM/quo-14/README
 
 
 .. rendre:: filtered-gallery
 	:data-file: $SIMCENTER_DEV/$SIMDOC_APP/examples/.aurore/aurore.cache.json
+	:load-defaults: $SIMCENTER_DEV/SimCenterDocumentation/examples.yaml#/$SIMDOC_APP
 	
-	:include-item: qfem-00??
-	:include-item: weuq-0001
 	:link: ./%i/README
+
 
 
