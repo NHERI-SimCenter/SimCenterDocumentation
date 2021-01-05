@@ -16,17 +16,11 @@ If no RVs are specified, then the UQ application directly runs commands in the d
 
 The following options for UQ applications vary in the software package used to perform uncertainty quantification.
 
-.. only:: WEUQ_app
 
-   .. raw:: html
-      :file: _static/html/WE-UQ/performUQ.html
+.. rendre:: cli-gallery
+   :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/.aurore/aurore.cache.json
+   :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
 
-.. only:: EEUQ_app
+   :include-exclusive: %./categories:performUQ
 
-   .. raw:: html
-      :file: _static/html/EE-UQ/performUQ.html
 
-.. only:: RDT_app
-
-   .. raw:: html
-      :file: _static/html/RDT/performUQ.html
