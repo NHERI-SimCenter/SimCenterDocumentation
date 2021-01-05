@@ -38,7 +38,7 @@ pbe:     export SIMDOC_APP=PBE
 qfem:    export SIMDOC_APP=quoFEM
 pelicun: export SIMDOC_APP=pelicun
 export SIMDOC_APP
-
+export SIMCENTER_DEV = ../
 export TEXINPUTS:=${SIMCENTER_DEV}/texmf//:./build/${SIMDOC_APP}/latex//:/${TEXINPUTS}
 export TEXINPUTS:=~/texlive/2020//:${TEXINPUTS} 
 export BSTINPUTS:=../texmf//:${BSTINPUTS} 
@@ -66,14 +66,9 @@ html:
 latex:
 	@$(SPHINXBUILD) -b latex "$(SOURCEDIR)" $(call BUILDDIR,$(SIMDOC_APP))/latex $(O)
 
-# pdf:
-# 	cd $(call BUILDDIR,$(SIMDOC_APP))/latex && \
-# 	$(PDFLATEX) \
-# 	./*.tex \
-# 	#-output-directory="../pdf/" \
-
 
 pdf:
+	mkdir -p $(call BUILDDIR,$(SIMDOC_APP))/pdf/
 	$(PDFLATEX) \
 	-output-directory="$(call BUILDDIR,$(SIMDOC_APP))/pdf/" \
 	$(call BUILDDIR,$(SIMDOC_APP))/latex/*.tex
@@ -82,12 +77,5 @@ latexpdf:
 	make latex
 	make pdf
 
-pandoc:
-	for filepath in **/*.rst; do \
-		cd `dirname $$filename`; \
-		filename=`basename $$filepath`; \
-		pandoc $$filename -o .build/latex/$${filename%.*}.pdf; \
-	done
-	# pandoc **/*.rst -o doc.pdf
 
 
