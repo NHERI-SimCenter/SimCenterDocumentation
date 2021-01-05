@@ -18,7 +18,15 @@ Once events are chosen, the application writes the name of the event file in its
 The following options for regional mapping applications vary in the algorithm or method used to make the event assignment.
 
 
-.. only:: RDT_app
+.. .. only:: RDT_app
    
-   .. raw:: html
-      :file: _static/html/RDT/performRegionalMapping.html
+..    .. raw:: html
+..       :file: _static/html/RDT/performRegionalMapping.html
+
+.. rendre:: cli-gallery
+   :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/.aurore/aurore.cache.json
+   :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
+
+   :include-exclusive: %./categories:performRegionalMapping
+
+

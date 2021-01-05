@@ -17,9 +17,9 @@ The inputs are parsed into ``#-BIM.json`` files in the **results** folder.
 The following options for building applications vary in the file type of the input building source file it processes.
 
 
-.. only:: RDT_app
 
-   .. raw:: html
-     :file: _static/html/RDT/createBIM.html
+.. rendre:: cli-gallery
+   :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/.aurore/aurore.cache.json
+   :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
 
-
+   :include-exclusive: %./categories:createBIM

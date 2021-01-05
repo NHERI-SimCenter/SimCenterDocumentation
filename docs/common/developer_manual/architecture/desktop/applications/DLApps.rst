@@ -17,10 +17,11 @@ It returns damage probabilities in a "DM.csv" file and decision variable estimat
 
 The following options for DL applications vary in the software package used to perform the damage and loss assessment.
 
-.. only:: RDT_app
-
-   .. raw:: html
-      :file: _static/html/RDT/performDL.html 
 
 
+.. rendre:: cli-gallery
+   :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/.aurore/aurore.cache.json
+   :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
+
+   :include-exclusive: %./categories:performDL
 

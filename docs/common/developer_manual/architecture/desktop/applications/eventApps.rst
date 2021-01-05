@@ -14,21 +14,12 @@ This input information is saved in an "EVENT.json" file, located in its correspo
 
 The following options for event applications vary in the type of event, event properties, and format of the event file which it processes.
 
-.. only:: WEUQ_app
-
-    .. raw:: html
-       :file: _static/html/WE-UQ/createEVENT.html
-
-
-.. only:: EEUQ_app
-
-    .. raw:: html
-       :file: _static/html/EE-UQ/createEVENT.html
-
-
-.. only:: RDT_app
-
-    .. raw:: html
-       :file: _static/html/RDT/createEVENT.html
  
+
+
+.. rendre:: cli-gallery
+   :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/.aurore/aurore.cache.json
+   :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
+
+   :include-exclusive: %./categories:createEVENT
 
