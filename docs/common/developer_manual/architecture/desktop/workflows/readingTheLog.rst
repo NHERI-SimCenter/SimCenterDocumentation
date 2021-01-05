@@ -1,8 +1,8 @@
 .. _lblreadingLog:
 
-******************
+********************
 Reading the Log File
-******************
+********************
 
 The sequence of tasks carried out by the backend applications is outlined in the **log file** produced by the workflow. For :ref:`local runs <lblrunLocal>`, this log is displayed in the command terminal and is reproduced in a file named ``log.txt`` in the ``results/`` directory. For :ref:`remote runs <lblrunRemote>` through Tapis, this log file is called ``launcher.out`` in the job archive folder on DesignSafe. This guide will explain how to understand the statements printed in the log file.
 
