@@ -16,7 +16,7 @@ PDFLATEX = pdflatex -interaction=nonstopmode
 #----------------------------------------------------------
 help:
 	@echo 'usage: make <app> <target>'
-	@echo '   or: make all'
+	@echo '   or: make <all|update>'
 	@printf '\n'
 	@echo 'where <app> is one of:'
 	@printf '    {pelicun, qfem, rdt, pbe, we, ee}\n\n'
@@ -78,4 +78,6 @@ latexpdf:
 	make pdf
 
 
+update:
+	pip install -r requirements.txt 
 
