@@ -13,7 +13,12 @@ CLEANDIR      = _sources _static _images common
 #PDFLATEX = latexmk -pdf -dvi- -ps- 
 PDFLATEX = pdflatex -interaction=nonstopmode 
 
+#-Examples-------------------------------------------------
+EXPDIR = ./docs/common/user_manual/examples/desktop
+EXPSRC = $(SIMCENTER_DEV)/$(SIMDOC_APP)/examples
+RENDRE = rendre -D $(EXPSRC)/.aurore/aurore.cache.json
 #----------------------------------------------------------
+
 help:
 	@echo 'usage: make <app> <target>'
 	@echo '   or: make <all|update>'
@@ -51,8 +56,13 @@ all:
 	make we html
 	make ee html
 
-pelicun rdt pbe qfem we ee:
+pelicun:
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
+
+rdt pbe qfem we ee:
+	
+	$(eval SIMDOC_APP=$(SIMDOC_APP))
+	rsync -Rcv $(shell $(RENDRE) list --line -- \%./doc)  $(EXPDIR)
 
 web:
 	@echo removing $(addprefix $(call PUBLDIR,$(SIMDOC_APP)),$(CLEANDIR))
