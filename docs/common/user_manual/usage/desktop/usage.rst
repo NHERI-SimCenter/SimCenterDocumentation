@@ -44,6 +44,13 @@ remotely, and finally views the simulation results. The main window of the UI is
    .. figure:: figures/wePanel.png
 	   :align: center
 	   :figclass: align-center
+	   
+.. only:: RDT_app
+
+   .. _figGenericUI-RDT:
+   .. figure:: figures/RDTPanel.png
+	   :align: center
+	   :figclass: align-center
 
 	   The |app| user interface.
 
@@ -52,43 +59,54 @@ remotely, and finally views the simulation results. The main window of the UI is
 
 The **Login** button is at the top right of the user interface. Before the user can launch any jobs on DesignSafe, they must first login to DesignSafe using their DesignSafe login and password. Pressing the login button will open up the login window for users to enter this information. Users can register for an account on the `DesignSafe-CI <https://www.designsafe-ci.org/account/register>`_ website [#]_. 
 
-
 2. Message Area: 
 
 The message area is located in the top center of the UI and displays status and error messages for a running background application. 
 
+3. Input Panel: 
 
-3. Input Panel Selection: 
+The input panel is the large central area of the user-interface where the user provides input for the various applications, and also where they can view the results. 
 
-The ribbon on the left side provides the user with a selection of buttons to choose from (e.g. **UQ**, **RV**, **FEM**, **RES**). Selecting any of these buttons will change what is displayed in the central input panel. Each panel, with exception of **RV** and **QoI** panels,  will present the user with an option for which application to choose for that part of the workflow, and will then present the users for inputs for that application.
+4. Input Panel Selection Ribbon: 
 
-4. Input Panel: 
-
-The input panel is the large central area of the UI where the user provides input for the application chosen and where they can view the results. For example, if the user had selected **RV** in the input panel selection, it is in this panel that the user would provide details on the distributions associated with each random variable. In the following sections each of the panels that is presented to the user when the buttons in the input panel selection are reviewed:
+The ribbon on the left side provides the user with a selection of buttons to choose from (e.g. **RV: Random Variables**, **RES: Results**). Selecting any of these buttons will change what is displayed in the central input panel. Each panel will present the user with an option for which application to choose for that part of the workflow, and will then allow a user to provide inputs for that application. In the following sections, each of the panels in the input panel selection ribbon are reviewed:
 
 .. toctree-filt::
    :maxdepth: 1
 
+   :RDT:RDT/VIZ
+   :RDT:RDT/GI
+   :RDT:RDT/HAZ
+   :RDT:RDT/ASD
+   :RDT:RDT/HTA
+   :RDT:RDT/MOD
+   :RDT:RDT/ANA
+   :RDT:RDT/DL
    UQ
-   :earthquake:GI
    :wind:GI
-   :earthquake:SIM
-   :wind:SIM
-   :earthquake:earthquake/earthquakeEvents
+   :EEUQ:GI
+   :WEUQ:GI
+   :EEUQ:SIM
+   :WEUQ:SIM
+   :PBE:SIM
+   :wind:Assets
+   :EEUQ:earthquake/earthquakeEvents.rst
+   :PBE:earthquake/EarthquakeEvents.rst	 	 
    :wind:wind/WindEvents
-   :earthquake:FEM
    :wind:FEM
+   :EEUQ:FEM
    :quoFEM:quoFEM/FEM
    :EEUQ:response/EDP
    :WEUQ:response/EDP
-   RV
    :quoFEM:quoFEM/QuantitiesOfInterest
+   RV
    :PBE:PBE/DL
    :EEUQ:response/resEE
    :WEUQ:response/resEE
    :quoFEM:quoFEM/resQUO
    :PBE:PBE/resPBE
-
+   :RDT:RDT/RES
+	
 
 5. Push Buttons:
 

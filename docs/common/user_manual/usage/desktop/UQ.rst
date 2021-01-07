@@ -53,3 +53,12 @@ This is a module developed at UCSD. This module currently offers support for Bay
 
    :quoFEM:UCSD_UQ_TMCMC
 
+Custom UQ Engine
+----------------
+This option allows the user to plug different UQ engines into the quoFEM workflow such that different uncertainty quantification
+methods and tools can be easily applied within the SimCenter framework.
+
+.. toctree-filt::
+   :maxdepth: 1
+
+   :quoFEM:CustomUQ
