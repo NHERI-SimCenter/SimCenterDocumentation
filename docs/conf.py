@@ -63,7 +63,8 @@ toc_filter_exclusions = [
 	'TinF',
 	'TInF',
 	'S3hark',
-	'pelicun'
+	'pelicun',
+	'HazardSimulation'
 ]
 
 extensions = []
@@ -139,12 +140,14 @@ if app_name == 'RDT':
 	tags.add('earthquake')
 	tags.add('response')
 	tags.add('notQuoFEM')
+	tags.add('HazardSimulation_app')
 
 	toc_filter_exclusions.remove('RDT')
 	toc_filter_exclusions.remove('desktop')
 	toc_filter_exclusions.remove('earthquake')
 	toc_filter_exclusions.remove('response')
 	toc_filter_exclusions.remove('notQuoFEM')
+	toc_filter_exclusions.remove('HazardSimulation')
 	toc_filter_exclude = toc_filter_exclusions
 
 	exclude_patterns.remove('**/*desktop*')

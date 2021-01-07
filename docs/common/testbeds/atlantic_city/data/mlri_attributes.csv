@@ -1,0 +1,6 @@
+Attribute,Valid Entries,Basis
+masonry reinforcement,yes | no,Codes/standards
+roof cover,N/A | BUR | SPM,Trends/norms
+roof quality,N/A | poor | good,Trends/norms
+metal roof deck attachment,standard | superior,Codes/standards
+terrain roughness,open (0.03) | light suburban (0.15) | suburban (0.35) | light trees (0.70) | trees (1.00),Land Use/Land Cover

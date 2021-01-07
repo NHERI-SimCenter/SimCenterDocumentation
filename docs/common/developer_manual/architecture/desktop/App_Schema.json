@@ -71,6 +71,87 @@
               }
             }
           }
+        },
+        "hazardFiles": {
+          "title": "Hazard Simulation",
+          "description": "This is an optional pre-processing application for users to simulate regional earthquake events and prepare the Event Files in the previous section. Users need to provide the a configuration json file following the schema summarized below.",
+          "properties": {
+            "Site": {
+              "description": "Location information about the sites of interest.",
+              "properties": {
+                "Type": {"type": "string", "description": "Information source type, e.g., 'From_CSV'" },
+                "input_file": {"type": "path", "description": "Filename of the site information file, e.g., 'SiteFile.csv'." },
+                "min_ID": {"type": "int", "description": "The first site ID in the site information file." },
+                "max_ID": {"type": "int", "description": "The last site ID in the site information file." }
+              }
+            },
+            "Scenario": {
+              "description": "Definitions of the hazard scenario(s) and earthquake source(s).",
+              "properties": {
+                "Type": {"type": "string", "description": "Hazard type which in this case is 'Earthquake'."},
+                "Number": {"type": "int", "description": "Number of scenarios in the simulation."},
+                "Generator": {"type": "string", "description": "Method of generating the scenario, currently supported: 'Selection'."},
+                "EqRupture": {
+                  "description": "Earthquake rupture selection criteria",
+                  "properties": {
+                    "Type": {"type": "string", "description": "Data source, currently supported: 'ERF'"},
+                    "Model": {"type": "string", "description": "Earthquake source model type, e.g., 'WGCEP (2007) UCERF2 - Single Branch'."},
+                    "Name": {"type": "string", "description": "Keywords in the earthquake name, e.g., 'San Andreas'."},
+                    "min_Mag": {"type": "float", "description": "Minimum magnitude of interest."},
+                    "max_Mag": {"type": "float", "description": "Maximum magnitude of interest."},
+                    "max_Dist": {"type": "float", "description": "Maximum distance (to the geometric centroid of the sites) of interest."}
+                  }
+                }
+              }
+            },
+            "Event": {
+              "description": "Specifying the ground motion prediciton models and intensity measures for selecting ground motion records.",
+              "properties": {
+                "NumberPerSite": {"type": "int", "description": "Number of simulated ground motion records per site."},
+                "GMPE": {
+                  "description": "Defining the ground motion prediction model.",
+                  "properties": {
+                    "Type": {"type": "string", "description": "Ground motion prediction model name, e.g, 'Chiou & Youngs (2014)'."},
+                    "Parameters": {"type": "list", "description": "Optional configurations for specific ground motion prediction models."}
+                  }
+                },
+                "CorrelationModel": {
+                  "description": "Defining the intensity measure correlation model.",
+                  "properties": {
+                    "SaInterEvent": {"type": "string", "description": "Inter-event correlation model name, e.g, 'Baker & Jayaram (2008)'."},
+                    "SaIntraEvent": {"type": "string", "description": "Intra-event correlation model name, e.g, 'Markhvida et al. (2017)'."}
+                  }
+                },
+                "IntensityMeasure": {
+                  "description": "Defining the intensity measure type and periods (if any).",
+                  "properties": {
+                    "Type": {"type": "string", "description": "Intensity measure name, e.g, 'SA'."},
+                    "Periods": {"type": "list", "description": "A float number list of periods for Sa."}
+                  }
+                },
+                "ScalingFactor": {
+                  "description": "Scaling factor limits in ground motion selection.",
+                  "properties": {
+                    "Maximum": {"type": "float", "description": "Maximal allowable scaling factor."},
+                    "Periods": {"type": "float", "description": "Minimal allowable scaling factor."}
+                  }
+                },
+                "SaveIM": {"type": "boolean", "description": "Choice to save simulated regional intensity measures."},
+                "Database": {"type": "string", "description": "Ground motion database name, currently supported: 'NGAWest2'."},
+                "UserName": {"type": "string", "description": "User name on PEER NGA-West database (optional for downloading records)."},
+                "UserPassword": {"type": "string", "description": "User password on PEER NGA-West database (optional for downloading records)."},
+                "OutputFormat": {"type": "string", "description": "Output data format, currently supported: 'SimCenterEvent' (optional for downloading records)."}
+              }
+            },
+            "Directory": {
+              "description": "Specifying the directories for the application.",
+              "properties": {
+                "Work": {"type": "path", "description": "The main directory of the Hazard Simulation application."},
+                "Input": {"type": "path", "description": "The directory of the site information file."},
+                "Output": {"type": "path", "description": "The diectory of the saved records."}
+              }
+            }
+          }
         }
       },
       "Outputs": {

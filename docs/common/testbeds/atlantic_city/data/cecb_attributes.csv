@@ -1,0 +1,6 @@
+Attribute,Valid Entries,Basis
+roof cover,N/A | BUR | SPM,Trends/norms
+shutters,yes | no,Codes/standards
+wind borne debris,residential | commercial,Trends/norms
+window wall ratio,low | medium | high,Trends/norms
+terrain roughness,open (0.03) | light suburban (0.15) | suburban (0.35) | light trees (0.70) | trees (1.00),Land Use/Land Cover

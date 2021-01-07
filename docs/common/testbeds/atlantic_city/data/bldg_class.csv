@@ -1,0 +1,37 @@
+Description,HAZUS building classification
+"Wood, Single-Family Homes 1 story",WSF1
+"Wood, Single-Family Homes 2+ stories",WSF2
+"Wood, Multi-Unit/Hotel/Motel 1 story",WMUH1
+"Wood, Multi-Unit/Hotel/Motel 2 stories",WMUH2
+"Wood, Multi-Unit/Hotel/Motel 3+ stories",WMUH3
+"Masonry, Single Family Homes 1 story",MSF1
+"Masonry, Single Family Homes 2+ stories",MSF2
+"Masonry, Multi-Unit/Hotel/Motel 1 story",MMUH1
+"Masonry, Multi-Unit/Hotel/Motel 2 stories",MMUH2
+"Masonry, Multi-Unit/Hotel/Motel 3+ stories",MMUH3
+"Masonry, Low-Rise Strip Mall height < 15 ft",MLRM1
+"Masonry, Low-Rise Strip Mall height > 15 ft",MLRM2
+"Masonry, Low-Rise Industrial/Warehouse/Factory Building",MLRI
+"Masonry, Engineered Residential Building, Low-Rise (1-2 Stories)",MERBL
+"Masonry, Engineered Residential Building, Mid-Rise (3-5 Stories)",MERBM
+"Masonry, Engineered Residential Building, High-Rise (6+ Stories)",MERBH
+"Masonry, Engineered Commercial Building, Low-Rise (1-2 Stories)",MECBL
+"Masonry, Engineered Commercial Building, Mid-Rise (3-5 Stories)",MECBM
+"Masonry, Engineered Commercial Building, High-Rise (6+ Stories)",MECBH
+"Concrete, Engineered Residential Building, Low-Rise (1-2 Stories)",CERBL
+"Concrete, Engineered Residential Building, Mid-Rise (3-5 Stories)",CERBM
+"Concrete, Engineered Residential Building, High-Rise (6+ Stories)",CERBH
+"Concrete, Engineered Commercial Building, Low-Rise (1-2 Stories)",CECBL
+"Concrete, Engineered Commercial Building, Mid-Rise (3-5 Stories)",CECBM
+"Concrete, Engineered Commercial Building, High-Rise (6+ Stories)",CECBH
+"Steel, Engineered Residential Building, Low-Rise (1-2 Stories)",SERBL
+"Steel, Engineered Residential Building, Mid-Rise (3-5 Stories)",SERBM
+"Steel, Engineered Residential Building, High-Rise (6+ Stories)",SERBH
+"Steel, Engineered Commercial Building, Low-Rise (1-2 Stories)",SECBL
+"Steel, Engineered Commercial Building, Mid-Rise (3-5 Stories)",SECBM
+"Steel, Engineered Commercial Building, High-Rise (6+ Stories)",SECBH
+"Manufactured Home, Pre-HUD",MHPHUD
+"Manufactured Home, 1976 HUD",MH76HUD
+"Manufactured Home, 1994 HUD - Wind Zone I",MH94HUD-I
+"Manufactured Home, 1994 HUD - Wind Zone II",MH94HUD-II
+"Manufactured Home, 1994 HUD - Wind Zone III",MH94HUD-III

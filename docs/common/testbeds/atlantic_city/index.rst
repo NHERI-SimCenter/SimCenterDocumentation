@@ -4,9 +4,6 @@
 Atlantic City, NJ
 *****************
 
-About text [...]
-
-
 .. _lbl-testbeds-manual:
 
 .. toctree-filt::
@@ -24,5 +21,3 @@ About text [...]
 
 
 Acknowledgements text [...]
-
-

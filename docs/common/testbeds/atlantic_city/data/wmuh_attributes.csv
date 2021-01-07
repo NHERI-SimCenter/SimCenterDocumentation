@@ -1,0 +1,9 @@
+Attribute,Valid Entries,Basis
+roof shape,gable | hip | flat,Image processing
+secondary water resistance (SWR),yes | no,Codes/standards
+roof cover,N/A | BUR | SPM,Trends/norms
+roof quality,N/A | poor | good,Trends/norms
+roof deck attachment,"6d @ 6""/12"" | 8d @ 6""/12"" | 6d/8d mix @ 6""/6"" | 8D @ 6""/6""",Codes/standards
+roof-wall connection,strap | toe-nail,Codes/standards
+shutters,yes | no,Codes/standards
+terrain roughness,open (0.03) | light suburban (0.15) | suburban (0.35) | light trees (0.70) | trees (1.00),Land Use/Land Cover

@@ -1,0 +1,12 @@
+Attribute,Valid Entries,Basis
+roof cover,N/A | BUR | SPM,Trends/norms
+shutters,yes | no,Codes/standards
+masonry reinforcement,yes | no,Trends/norms
+wind borne debris,residential | commercial,Trends/norms
+terrain roughness,open (0.03) | light suburban (0.15) | suburban (0.35) | light trees (0.70) | trees (1.00),Land Use/Land Cover
+roof deck attachment (wood truss roof only),"6d @ 6""/12"" | 8d @ 6""/12""| 6d/8d mix @ 6""/6"" | 8d @ 6""/6""",Codes/standards
+roof to wall connection (wood truss roof only),strap | toe-nail,Codes/standards
+roof deck attachment (steel joist roof only),sheet metal standard | sheet metal superior | cover shingle stanford | cover shingle superior,Trends/norms
+roof deck age (steel joist roof only),new | average | old,Trends/norms
+unit class (steel joist roof and MLRM2 only),single | multiple,Trends/norms
+joist space (steel joist roof and MLRM2 only),N/A | 4 | 6,Trends/norms
