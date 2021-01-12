@@ -17,16 +17,16 @@ The input structural model information is parsed into a "SAM.json" file, located
 The following options for modeling applications vary in the type of model and finite element program used for response simulation.
 
 .. only:: EEUQ_app
-   
+
    .. raw:: html
-      :file: _static/html/EE-UQ/createSAM.html 
+      :file: _static/html/EE-UQ/createSAM.html
 
 .. only:: WEUQ_app
-   
+
    .. raw:: html
-      :file: _static/html/WE-UQ/createSAM.html 
+      :file: _static/html/WE-UQ/createSAM.html
 
 .. only:: RDT_app
-   
+
    .. raw:: html
       :file: _static/html/RDT/createSAM.html

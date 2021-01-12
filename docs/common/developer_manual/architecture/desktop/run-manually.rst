@@ -3,12 +3,11 @@
 Running Manually
 ===================
 
-This section is specific to implementations of RDT for quantifying regional risk and resilience to natural hazards. User-defined inputs and expected outputs for RDT are detailed in the following pages.
+This section provides instructions on how to use the |app| to run regional natural hazard risk simulations. To view illustrative examples for running the |app|, refer to the :ref:`Examples <lbldevExamples>` section under the Developer Manual.
 
 .. toctree::
    :maxdepth: 1
 
-   manual-workflows/workflow-compatibility
-   manual-workflows/troubleshooting
-   manual-workflows/examples
-
+   run-manually/runLocal
+   run-manually/runRemote
+   run-manually/troubleshooting

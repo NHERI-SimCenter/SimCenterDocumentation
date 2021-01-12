@@ -6,10 +6,12 @@
 Backend Applications
 *********************
 
-The backend applications are categorized by function into the following workflow |term1| which create and populate *intermediate files* used to propagate information from one component application to the next. The component applications and their intermediate files are as follows:
+
+The backend applications are categorized by function into the following workflow |term1| which create and populate *intermediate files* used to propagate information from one component application to the next. The |term1| and their intermediate files are as follows:
 
 
 .. |term1| replace:: modules
+
 
 .. |createBIM| replace:: :ref:`Building Applications <lblBuildingApp>` - create the BIM files for every building asset, containing building properties.
 
@@ -29,13 +31,9 @@ The backend applications are categorized by function into the following workflow
 
 
 .. only:: quoFEM_app
-
-    #. |performSIM|
-    #. |performUQ|
     
     .. toctree::
         :maxdepth: 1
-        :hidden:
 
         applications/preprocFEM
         applications/preprocUQ
@@ -43,12 +41,12 @@ The backend applications are categorized by function into the following workflow
 
 .. only:: WEUQ_app
 
+    #. |createEVENT|
     #. |createSAM|
     #. |createEDP|
-    #. |createEVENT|
     #. |performSIMULATION|
     #. |performUQ|
-    
+
     .. toctree::
         :maxdepth: 1
         :hidden:
@@ -62,19 +60,19 @@ The backend applications are categorized by function into the following workflow
 
 .. only:: EEUQ_app
 
+    #. |createEVENT|
     #. |createSAM|
     #. |createEDP|
-    #. |createEVENT|
     #. |performSIMULATION|
     #. |performUQ|
-    
+
     .. toctree::
         :maxdepth: 1
         :hidden:
 
         applications/eventApps
-        applications/EDPApps
         applications/modelingApps
+        applications/EDPApps
         applications/simulationApps
         applications/UQApps
 
@@ -82,14 +80,13 @@ The backend applications are categorized by function into the following workflow
 .. only:: PBE_app
 
     #. |createBIM|
+    #. |createEVENT|
     #. |createSAM|
     #. |createEDP|
-    #. |createEVENT|
-    #. |performRegionalMap|
     #. |performSIMULATION|
     #. |performUQ|
     #. |performDL|
-    
+
     .. toctree::
         :maxdepth: 1
         :hidden:
@@ -106,10 +103,10 @@ The backend applications are categorized by function into the following workflow
 .. only:: RDT_app
 
     #. |createBIM|
+    #. |performRegionalMap|
+    #. |createEVENT|
     #. |createSAM|
     #. |createEDP|
-    #. |createEVENT|
-    #. |performRegionalMap|
     #. |performSIMULATION|
     #. |performUQ|
     #. |performDL|
@@ -119,18 +116,13 @@ The backend applications are categorized by function into the following workflow
         :hidden:
 
         applications/buildingApps
+        applications/regionalMapApps
         applications/eventApps
         applications/modelingApps
         applications/EDPApps
         applications/simulationApps
         applications/UQApps
         applications/DLApps
-        applications/regionalMapApps
 
 
-These applications make up the "backbone" of SimCenter workflow systems, with each one calling on a different subset of the component applications. 
-
-
-.. The following pages provide more detail on the requirements for input files and types of backend applications available.
-
-
+These applications make up the "backbone" of SimCenter workflow systems, with each one calling on a different subset of the component applications.

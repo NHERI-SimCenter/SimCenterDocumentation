@@ -1,31 +1,14 @@
+.. _lblreadingLog:
+
 ******************
-Workflows
-******************
-
-The structure of a general workflow is depicted in :numref:`figBackendApps` with the following key:
-
-- User-provided input files are shown in orange.
-- Component applications are shown in blue. File dependencies for each component application are shown with arrows.
-- Intermediate files produced by the workflow to propagate data is shown in grey.
-- Output files provided to the user are shown in green.
-- Within the parallelized workflow for running each building asset simulation, two passes through the component applications are illustrated: the first pass in setting up the intermediate files (in red), then the second pass of executing the simulation and producing output results (in green).
-
-.. figure:: figures/backendapps.png
-   :name: figBackendApps
-   :align: center
-   :figclass: align-center
-
-   Diagram of backend applications workflow.
-
-
 Reading the Log File
---------------------
+******************
 
 The sequence of tasks carried out by the backend applications is outlined in the **log file** produced by the workflow. For :ref:`local runs <lblrunLocal>`, this log is displayed in the command terminal and is reproduced in a file named ``log.txt`` in the ``results/`` directory. For :ref:`remote runs <lblrunRemote>` through Tapis, this log file is called ``launcher.out`` in the job archive folder on DesignSafe. This guide will explain how to understand the statements printed in the log file.
 
 The following is an example log file for a successful workflow run. The workflow can be broken down into the following sections:
 
-I. **Reading the configuration file.** At the start of the workflow, the workflow settings specified in the configuration file are parsed. *Note that if a particular component application is excluded from the configuration file, then it is automatically skipped in the workflow.*
+I. **Read the configuration file:**
 
     - **lines 12-13**: Identifies the path to the :ref:`configuration file <lblUserDefInputs>`, which specifies the job details, and the *application registry file*, which specifies all available applications.
 
@@ -33,7 +16,7 @@ I. **Reading the configuration file.** At the start of the workflow, the workflo
 
     - **line 64-85**: Reads the configuration file and displays the units, local application directory, remote application directory, reference directory, and the applications chosen for each workflow step. Any workflow steps which are skipped (excluded from the configuration file) are also listed here.
 
-II. **Pre-processing building and event data.** The workflow completes a one-time step of setting up BIM files for each building asset and assigning events to each building site.
+II. **Pre-process building and event data:**
 
     - **line 93**: Python command for executing the :ref:`Building <lblBuildingApp>` application, creating the BIM files for each building asset.
 
@@ -49,7 +32,7 @@ II. **Pre-processing building and event data.** The workflow completes a one-tim
             python "C:/rWHALE/applications/performRegionalMapping/NearestNeighborEvents/NNE.py" "--buildingFile" "C:/rWHALE/earthquake_example/results/buildings1-2.json" "--filenameEVENTgrid" "C:/rWHALE/earthquake_example/input_data/records/EventGrid.csv" "--samples" "2" "--neighbors" "1"
 
 
-III. **Setting up and running simulations for each building asset.** From here, the workflow begins its iterative processes (usually parallelized) of running simulations for each building asset. The workflow runs two passes for each building asset: the supporting simulation files are set up in the first pass, and the workflow commands are executed in the second pass.
+III. **Set up and run simulations for each building asset:**
 
     - **line 111**: Starts with the first building asset. In this first pass, the EVENT, SAM, EDP, SIM files corresponding to "1-BIM.json" are created.
 
@@ -116,7 +99,7 @@ III. **Setting up and running simulations for each building asset.** From here, 
     - **line 213**: Continues to the second building asset ("2-BIM.json") and repeats the same workflow steps.
 
 
-IV. **Aggregate outputs for all building assets.** After iterating through simulations, the workflow aggregates the content of individual EDP.csv, DM.csv, and DV.csv results for every building asset into single output summary files (see :ref:`Outputs <lblOutputs>`).
+IV. **Aggregate outputs for all building assets:**
 
     - **line 315**: Aggregates results to create the EDP, DM, and DV output files.
 
@@ -133,6 +116,3 @@ The full log file is shown below:
 .. literalinclude:: _static/log.txt
     :linenos:
     :emphasize-lines: 12,13,16,64,93,103,111,118,126,134,142,153,154,155,156,157,165,189,198,213,315
-
-
-

@@ -13,7 +13,7 @@ The |app| is one of the SimCenter's computational applications, which are `scien
    - a modular framework which allows developers to incorporate their own software applications as components to the workflow system, so long as it meets the input-output structure at component interfaces.
 
 
-Documentation of the software architecture is detailed in the following pages.
+Documentation of the software architecture is detailed in the following pages:
 
 
 .. toctree-filt::
@@ -22,8 +22,14 @@ Documentation of the software architecture is detailed in the following pages.
    file-types.rst
    backendApplications.rst
    :RDT:workflows
-
    :RDT:run-manually
 
-   c4model
 
+For additional reading into the software architecture, refer to the **C4 model** diagrams:
+
+
+.. toctree-filt::
+   :maxdepth: 1
+
+   c4model
+   architectureLevel4
