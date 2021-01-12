@@ -360,6 +360,27 @@ elif app_name == 'quoFEM':
 	exclude_patterns.append('**/desktop/SIM.rst')
 
 	# END TODO
+	app_vars = {
+		"full tool name": "Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)",
+		"short tool name": "quoFEM app",
+		"short tool id": "quoFEM",
+		"tool github link": "`quoFEM Github page`_",
+		"tool version": "2.0",
+		"app": "quoFEM app",
+		"appName": "quoFEM app",
+		"githubLink": "`quoFEM Github page`_",
+		"appLink": "`quoFEM Download`_",
+		"messageBoard": "`Message Board`_",
+		"figUI": ":numref:`figQUO_FEM`",
+		"figDownload": ":numref:`figDownloadQUO_FEM`",
+		"figGenericUI": ":numref:`figGenericUI-QUOFEM`",
+		"figMissingCRT": ":numref:`figMissingCRT-EE`",
+		"contact person": "Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu",
+		"developers": "**Frank McKenna**, **Nikhil Padhye**, **Adam Zsarnóczay**"
+	}
+# .. _quoFEM Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
+# .. _quoFEM Github page: https://github.com/NHERI-SimCenter/quoFEM
+# .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0
 
 	rst_prolog += """
 .. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)
@@ -395,7 +416,7 @@ elif app_name == 'quoFEM':
 
 	# Example links
 	extlinks.update(
-	   {f'quo-{i:02}' : (f'{example_repo}/quo-{i:02}/%s',f'quo-{i:02}') for i in range(1,99)}
+	   {f'qfem-{i:04}' : (f'{example_repo}/qfem-{i:04}/%s',f'qfem-{i:04}') for i in range(1,99)}
 	)
 
 elif app_name == 'WE-UQ':
@@ -592,3 +613,13 @@ html_static_path = ['_static','_static/css/']
 latex_elements = {
   'extraclassoptions': 'openany,oneside'
 }
+latex_documents = [
+	(
+		'index',
+		app_name + ".tex", # tex output file
+		project,          # Document title
+		author.replace(', ',' \\and '), # authors
+		'manual'           # latex theme
+	)
+]
+latex_logo = 'common/figures/NSF_SimCenter_NO TEXT_SimCenter.png'
