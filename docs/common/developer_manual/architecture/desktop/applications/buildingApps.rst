@@ -19,7 +19,7 @@ The following options for building applications vary in the file type of the inp
 
 
 .. rendre:: cli-gallery
-   :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/.aurore/aurore.cache.json
+   :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/backends.cache.json
    :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
 
    :include-exclusive: %./categories:createBIM

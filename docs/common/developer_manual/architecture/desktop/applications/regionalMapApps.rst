@@ -24,7 +24,7 @@ The following options for regional mapping applications vary in the algorithm or
 ..       :file: _static/html/RDT/performRegionalMapping.html
 
 .. rendre:: cli-gallery
-   :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/.aurore/aurore.cache.json
+   :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/backends.cache.json
    :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
 
    :include-exclusive: %./categories:performRegionalMapping

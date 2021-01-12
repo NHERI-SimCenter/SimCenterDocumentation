@@ -43,7 +43,7 @@ Examples
 
 
 .. rendre:: filtered-gallery
-	:data-file: $SIMCENTER_DEV/$SIMDOC_APP/examples/.aurore/aurore.cache.json
+	:data-file: $SIMCENTER_DEV/$SIMDOC_APP/examples/examples.json
 	:load-defaults: $SIMCENTER_DEV/SimCenterDocumentation/examples.yaml#/$SIMDOC_APP
 	
 	:link: ./%i/README

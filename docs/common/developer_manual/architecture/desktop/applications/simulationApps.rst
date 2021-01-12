@@ -18,7 +18,7 @@ The following options for simulation applications vary in the type of finite ele
 
 
 .. rendre:: cli-gallery
-   :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/.aurore/aurore.cache.json
+   :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/backends.cache.json
    :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
 
    :include-exclusive: %./categories:performSIMULATION

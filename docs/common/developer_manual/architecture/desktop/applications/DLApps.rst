@@ -20,7 +20,7 @@ The following options for DL applications vary in the software package used to p
 
 
 .. rendre:: cli-gallery
-   :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/.aurore/aurore.cache.json
+   :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/backends.cache.json
    :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
 
    :include-exclusive: %./categories:performDL
