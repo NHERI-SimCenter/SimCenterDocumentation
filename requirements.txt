@@ -6,5 +6,4 @@ sphinxcontrib-bibtex<2.0.0 # version 2 incompatible
 sphinx-jsonschema
 sphinxcontrib-images
 numpydoc
-aurore @ git+https://github.com/claudioperez/aurore@master
-rendre @ git+https://github.com/claudioperez/rendre@master
+rendre
