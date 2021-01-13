@@ -24,14 +24,6 @@ Documentation of the software architecture is detailed in the following pages:
    :RDT:workflows
    :RDT:run-manually
    c4model 
-   architectureLevel4
+   :notQuoFEM:architectureLevel4
 
 
-.. For additional reading into the software architecture, refer to the **C4 model** diagrams:
-
-
-.. .. toctree-filt::
-..    :maxdepth: 1
-
-..    c4model
-..    architectureLevel4

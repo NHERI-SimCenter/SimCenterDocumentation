@@ -18,7 +18,7 @@ Prepare Input Files
 
       - Set ``'runDir'`` to ``/tmp/rWhale/``.
       - Set ``'localAppDir'`` to ``/tmp/rWhale/``.
-      - Specify applications for each workflow step and their inputs. For more details on the format of the configuration file, see :ref:`Inputs <lblInputs>`.
+      - Specify applications for each workflow step and their inputs. For more details on the format of the configuration file, see :ref:`Inputs <lblUserDefInputs>`.
 
 
 3. Upload the zipped ``input_data`` file and configuration file to "My Data" on the DesignSafe `Data Depot <https://www.designsafe-ci.org/data/browser/>`_.
@@ -53,7 +53,7 @@ This method uses Jupyter notebook to run the job, accessing Tapis CLI in the bac
 
 6. Specify settings for running the job on Stampede2. Submit the job by running all cells in the Jupyter notebook (Cell > Run All).
 
-.. jsonschema:: App_Schema.json#/properties/runRemote
+.. .. jsonschema:: App_Schema.json#/properties/runRemote
 
 
 7. To view the status of the job, navigate to the **Workspace** on DesignSafe. The right bar will list all jobs that have been submitted in order of newest to oldest. Job outputs can be accessed by clicking on "More Info" on the job.

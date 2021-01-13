@@ -21,7 +21,7 @@ The structure has uncertain properties that all follow normal distribution:
    #. For the mean values provided the natural period of the structure is **1.7** sec.
    #. The choice of COV percentages is for demonstrative purposes only.
 
-The exercise will use the OpenSees, :numref:`lblOpenSeesSIM`, structural generators. For the OpenSees generator the following model script, :weuq-01:`Frame3Model.tcl <src/Frame3Model.tcl>`:
+The exercise will use the OpenSees, :ref:`lblOpenSeesSIM`, structural generators. For the OpenSees generator the following model script, :weuq-01:`Frame3Model.tcl <src/Frame3Model.tcl>`:
 
 .. literalinclude:: src/Frame3Model.tcl
    :language: tcl

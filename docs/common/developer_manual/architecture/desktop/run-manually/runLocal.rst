@@ -14,7 +14,7 @@ Running applications locally on a personal desktop is convenient for running sma
 
     - Set ``'runDir'`` to the path containing the ``input_data`` folder. If the configuration file is in the same directory, set ``'remoteDir'='...'``.
     - Set ``'localAppDir'`` to the path containing the applications folder (such as ``C:/rWHALE/``).
-    - Specify applications for each workflow step and their inputs. For more details on the format of the configuration file, see :ref:`Inputs <lblInputs>`.
+    - Specify applications for each workflow step and their inputs. For more details on the format of the configuration file, see :ref:`Inputs <lblUserDefInputs>`.
 
 
 3. The workflow is run through the command window by calling on Python and specifying paths to the application files, input files, and desired location for the results folder. The following is an example of the **initialization command**:

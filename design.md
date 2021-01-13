@@ -41,7 +41,7 @@ Every website is assumed to be associated with one clearly identifiable **primar
 This document is targeted at *base users* of the **primary application**. Documentation catering to this user must make the following accommodations:
 
 - [ ] Coding experience?
-    - [ ] control flow (`if`/`then`, `for`) ?
+    - [x] control flow (`if`/`then`, `for`) ?
     - [ ] tcl?
     - [ ] C/C++ tools chains?
 - [ ] Command line?
@@ -55,9 +55,9 @@ This document is targeted at *base users* of the **primary application**. Docume
 
 ####  User Guide
 
-####  Troubleshooting
+####  Troubleshooting +
 
-####  Examples
+####  Examples +
 
 ####  Bugs \& Feature Requests
 
@@ -66,6 +66,18 @@ This document is targeted at *base users* of the **primary application**. Docume
 ### Audience: `Engaging User`
 
 This document is targeted at *engaging users* of the **primary application**.
+
+User manual + Engineering background
+
+- [ ] Coding experience?
+    - [x] control flow (`if`/`then`, `for`) ?
+    - [ ] tcl?
+    - [ ] C/C++ tools chains?
+- [ ] Command line?
+    - [ ] option parsing?
+    - [ ] streams/pipes?
+    - [ ] ssh?
+
 
 ## Developer Manual:
 

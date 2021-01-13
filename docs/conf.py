@@ -47,7 +47,9 @@ exclude_patterns = [
 		'**/*RDT*',
 		'**/*PBE*',
 		'**/*WEUQ*',
+		'**/*WE[-_]UQ*',
 		'**/*EEUQ*',
+		'**/*EE[-_]UQ*',
 		'**/*TinF*',
 		'**/*TInF*',
 		'**/*pelicun*',
@@ -304,6 +306,7 @@ elif app_name == 'EE-UQ':
 	exclude_patterns.remove('**/*desktop*')
 	exclude_patterns.remove('**/*earthquake*')
 	exclude_patterns.remove('**/*response*')
+	exclude_patterns.remove('**/*EE[-_]UQ*')
 
 	rst_prolog += """
 .. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application (EE-UQ)
@@ -361,31 +364,12 @@ elif app_name == 'quoFEM':
 	exclude_patterns.append('**/desktop/FEM.rst')
 	exclude_patterns.append('**/desktop/GI.rst')
 	exclude_patterns.append('**/desktop/SIM.rst')
-
+	# exclude_patterns.append('**/desktop/qfem-*')
+	exclude_patterns.append('**/desktop/quo-*')
+	exclude_patterns.append('**/testbeds/*')
 	# END TODO
-	app_vars = {
-		"full tool name": "Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)",
-		"short tool name": "quoFEM app",
-		"short tool id": "quoFEM",
-		"tool github link": "`quoFEM Github page`_",
-		"tool version": "2.0",
-		"app": "quoFEM app",
-		"appName": "quoFEM app",
-		"githubLink": "`quoFEM Github page`_",
-		"appLink": "`quoFEM Download`_",
-		"messageBoard": "`Message Board`_",
-		"figUI": ":numref:`figQUO_FEM`",
-		"figDownload": ":numref:`figDownloadQUO_FEM`",
-		"figGenericUI": ":numref:`figGenericUI-QUOFEM`",
-		"figMissingCRT": ":numref:`figMissingCRT-EE`",
-		"contact person": "Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu",
-		"developers": "**Frank McKenna**, **Nikhil Padhye**, **Adam Zsarnóczay**"
-	}
-# .. _quoFEM Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
-# .. _quoFEM Github page: https://github.com/NHERI-SimCenter/quoFEM
-# .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0
 
-	rst_prolog += """
+	rst_prolog += f"""
 .. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)
 .. |short tool name| replace:: quoFEM app
 .. |short tool id| replace:: quoFEM
@@ -404,9 +388,7 @@ elif app_name == 'quoFEM':
 .. |figGenericUI| replace:: :numref:`figGenericUI-QUOFEM`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-EE`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
-.. |developers| replace:: **Frank McKenna**, **Nikhil Padhye**, **Adam Zsarnóczay**
-
-"""
+.. |developers| replace:: {author}"""
 
 	html_logo = 'common/figures/quoFEM-LogoImageGrey-app.png'
 
@@ -445,6 +427,7 @@ elif app_name == 'WE-UQ':
 	exclude_patterns.remove('**/*wind*')
 	exclude_patterns.remove('**/*response*')
 	exclude_patterns.remove('**/*TinF*')
+	exclude_patterns.remove('**/*WE[-_]UQ*')
 
 	rst_prolog += """
 .. |full tool name| replace:: Wind Engineering with Uncertainty Quantification Application (WE-UQ)
