@@ -60,10 +60,10 @@ where `<app>` is one of:
 and `<target>` is one of:
 | `<target>` | description | 
 |------------|-------------|
-|  web    | Generate HTML output in the app publishing repository (i.e., `../<app-name>-Documentation/`).
-|  html   | Generate HTML output in `build/<app-name>/html/`.
-|  latex  | Generate LaTeX output in `build/<app-name>/pdf/`.
-|  pdf    | Generate PDF output in `build/<app-name>/pdf/`.
+|  `web`    | Generate HTML output in the app publishing repository (i.e., `../<app-name>-Documentation/`).
+|  `html`   | Generate HTML output in `build/<app-name>/html/`.
+|  `latex`  | Generate LaTeX output in `build/<app-name>/pdf/`.
+|  `pdf`    | Generate PDF output in `build/<app-name>/pdf/`.
 
 
 Several targets may be chained at the end of a command for a particular application, as shown in the [examples](#examples) below.
