@@ -58,17 +58,13 @@ where `<app>` is one of:
 | ee      |  EE-UQ
 
 and `<target>` is one of:
+| `<target>` | description | 
+|------------|-------------|
+|  web    | Run html target with the build directory set to the app publishing repository (i.e., `../<app-name>-Documentation/`).
+|  html   | Generate HTML output in `build/<app-name>/html/`.
+|  latex  | Generate LaTeX output in `build/<app-name>/pdf/`.
+|  pdf    | Generate PDF output in `build/<app-name>/pdf/`.
 
-    web    Run html target with the build directory
-           set to the app publishing repository
-           (i.e., `../<app-name>-Documentation/`).
-    html   Generate HTML output in the dev build directory.
-    latex  Generate LaTeX output in the dev build directory.
-    pdf    
-
-The "dev" build directory is given by the following path relative to the documentation root:
-
-```build/<app-name>/<target>```
 
 Several targets may be chained at the end of a command for a particular application, as shown in the [examples](#examples) below.
 
