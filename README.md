@@ -16,27 +16,35 @@ Contributors should follow the [style reference](docstyle.md) for guidelines on 
 
 ## Building the HTML files
 
-### 1. Building requires sphinx and some packages for sphinx (The full list is in requirements.txt)
 
-```
-pip install -U -r requirements.txt
-```
+### 1. Download the repository from Github
 
-### 2. Download the repo using git from a terminal window
+For Git users, this can be done by running the following command in a terminal.
 
-```
+```shell
 git clone https://github.com/NHERI-SimCenter/SimCenterDocumentation.git
 ```
 
-### 3. Once sphinx is installed and the repo downloaded, type make html to build it
+### 2. Install dependencies
 
-```
-cd SimCenterDocumentation
-cd docs
-make html
+Install the project dependencies by running the following terminal command from the root of the project:
+
+```shell
+pip3 install -U -r requirements.txt
 ```
 
-### 4. If it works the html files are in the web/html folder
+> Note: A Python 3 installation must be available in your terminal environment.
+
+### 3. Run the build script
+
+```shell
+make <app_name> html
+```
+
+where <app> is one of:
+    {pelicun, qfem, rdt, pbe, we, ee}
+
+### 4. If it works the html files are in the build/<app_name>/html folder
 
 on Linux type the following to open a browser with index page
 
