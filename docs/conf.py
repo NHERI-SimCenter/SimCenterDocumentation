@@ -19,6 +19,9 @@ else:
 	app_name = 'quoFEM'
 	#app_name = 'pelicun'
 
+	os.environ['SIMDOC_APP'] = app_name
+	os.environ['SIMCENTER_DEV'] = '../../'
+
 print('app_name = ' + app_name)
 
 
