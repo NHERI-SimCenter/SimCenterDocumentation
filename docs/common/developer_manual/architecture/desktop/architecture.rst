@@ -53,14 +53,13 @@ The following sections present the architecture of SimCenter the SimCenter to le
 
    #. **Application**: A software application performs operations on data residing in a computer for a user or another program; it can be self contained, typically termed a program, or part of a group of programs.
 
+   #. **Scientific Workflow**: A sequence of steps which propogate input data through a series of applications to produce output. It is a loosely coupled application performing workflows in which each of the coordinated tasks is performed using an individual application. Each of the individual application taking some data inputs and producing data outputs, which are then consumed by subsequent tasks according to the workflow definition. They are termed scientific because they are typically used by scientists to process, manage, and visualize ever increasing ever increasing amounts of data using "scientific" applications. 
 
-   #. **Scientific Workflow**: A sequence of steps which propogate input data through a series of applications to produce output files. It is a loosely coupled application performing workflows in which each of the coordinated tasks is performed using an individual application. Each of the individual application taking some data inputs and producing data outputs, which are then consumed by subsequent tasks according to the workflow definition. They are termed scientific because they are typically used by scientists to process, manage, and visualize ever increasing ever increasing amounts of data using "scientific" applications. 
+   #. **Scientific Workflow System**: An application or applications to aid a user to set-up, schedule, run, and monitor a user defined scientific workflow. 
 
-   #. **Workflow Step**: A general category of applications performing a step in the workflow.
-      
-   #. **Scientific Workflow System**: An application or applications to aid a user to set-up, schedule, run, and monitor a user defined scientific workflow.
-
-   #. **Software Framework**: A software framework defines a set of component interfaces and provides a set of implementations in code of these interfaces which allows developers to build applications for the domain for which the framework has been designed. For example, a C++ framework will provide a set of abstract classes that define interfaces, and a set of concrete classes that implement the interfaces which will allow developers to quickly build and release applications using the concrete classes.  Frameworks allow developers to extend the functionality of the applications by introducing their own components that meet the component interface.
+      #. **Software Framework**: A collection of software for building applications
+in a specific domain. The framework defines the interfaces between the components of the software,
+provides example applications that can be developed using the provided software, and defines a clear set of interfaces such that the software can be extended to build other applications.
 
       
 Overview
