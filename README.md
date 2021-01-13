@@ -16,7 +16,7 @@ Contributors should follow the [style reference](docstyle.md) for guidelines on 
 
 ## Building the Documentation
 
-Documentation files for a particular SimCenter application can be built by running the following steps.
+Documentation files for a particular SimCenter application can be built by completing the following steps.
 
 ### 1. Download this repository from Github
 
