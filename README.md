@@ -60,7 +60,7 @@ where `<app>` is one of:
 and `<target>` is one of:
 | `<target>` | description | 
 |------------|-------------|
-|  web    | Run html target with the build directory set to the app publishing repository (i.e., `../<app-name>-Documentation/`).
+|  web    | Generate HTML output in the app publishing repository (i.e., `../<app-name>-Documentation/`).
 |  html   | Generate HTML output in `build/<app-name>/html/`.
 |  latex  | Generate LaTeX output in `build/<app-name>/pdf/`.
 |  pdf    | Generate PDF output in `build/<app-name>/pdf/`.
