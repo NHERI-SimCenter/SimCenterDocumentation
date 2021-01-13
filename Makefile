@@ -1,6 +1,6 @@
 SHELL = /bin/bash -O globstar
 
-export SIMCENTER_DEV = $(realpath ../)
+include Makefile.in
 
 SPHINXOPTS    ?= 
 SPHINXBUILD   ?= sphinx-build
@@ -10,10 +10,6 @@ PUBLDIR       = ../$(1)-Documentation/docs/
 
 # Directories to remove when cleaning
 CLEANDIR      = _sources _static _images common
-
-#-LaTeX----------------------------------------------------
-#PDFLATEX = latexmk -pdf -dvi- -ps- 
-PDFLATEX = pdflatex -interaction=nonstopmode 
 
 #-Examples-------------------------------------------------
 EXPDIR = ./docs/common/user_manual/examples/desktop
