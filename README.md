@@ -40,7 +40,7 @@ pip3 install -U -r requirements.txt
 
 ### 3a Build with Make
 
-On systems with `make` installed, the following command can be run from the documentation root to build a particular documentation target. Windows users who do not wish to install `make` can alternatively use the Powershell script outlined in step [3b](#3b).
+On systems with `make` installed, the following command can be run from the documentation root to build a particular documentation target. Windows users who do not wish to install `make` can alternatively use the Powershell script outlined in step [3b](#Build-HTML-from-Powershell).
 
 ```shell
 make <app> <target>...
@@ -66,9 +66,11 @@ and `<target>` is one of:
     latex  Generate LaTeX output in the dev build directory.
     pdf    
 
-The "dev" build directory is given by the following path relative to the documentation root: `build/<app-name>/<target>` 
+The "dev" build directory is given by the following path relative to the documentation root:
 
-Several targets may be chained at the end of a command for a particular application, as shown in the [examples](#examples)
+```build/<app-name>/<target>```
+
+Several targets may be chained at the end of a command for a particular application, as shown in the [examples](#examples) below.
 
 ### 3b Build HTML from Powershell
 
