@@ -14,7 +14,7 @@ CLEANDIR      = _sources _static _images common
 #-Examples-------------------------------------------------
 EXPDIR = ./docs/common/user_manual/examples/desktop
 EXPSRC = ${SIMCENTER_DEV}/$(SIMDOC_APP)/examples
-RENDRE = rendre -D $(EXPSRC)/.aurore/aurore.cache.json
+RENDRE = rendre -D $(EXPSRC)/examples.json
 
 #-Help-----------------------------------------------------
 help:
@@ -55,10 +55,10 @@ all:
 	make ee html
 
 pelicun rdt pbe ee:
-	$(eval SIMDOC_APP=$(SIMDOC_APP))
+	# $(eval SIMDOC_APP=$(SIMDOC_APP))
 
 qfem we:
-	$(eval SIMDOC_APP=$(SIMDOC_APP))
+	# $(eval SIMDOC_APP=$(SIMDOC_APP))
 	# sync example files
 	-rsync -Rcv $(addprefix $(EXPSRC)/./,$(shell $(RENDRE) -l examples.yaml#/$(SIMDOC_APP) path -j ' ' -- \%%:doc))  $(EXPDIR)
 
