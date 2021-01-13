@@ -132,15 +132,6 @@
    :pelicun:common/developer_manual/API/pelicun/API
 
 
-.. .. _lbl-gallery:
-
-.. .. toctree-filt::
-..    :caption: Gallery
-..    :maxdepth: 1
-..    :numbered: 4
-
-..    :desktop_app:common/gallery/gallery
-
 
 Contact
 =======
