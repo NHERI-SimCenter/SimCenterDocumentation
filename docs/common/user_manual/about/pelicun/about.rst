@@ -4,7 +4,7 @@
 About
 ******
 
-|short tool name| is an open-source library (|tool github link|) released under a **3-Clause BSD** license (see :numref:`lblLicense`). The |app| can be used to quantify losses from an earthquake or hurricane scenario in the form of *decision variables* (DVs). This functionality is typically utilized for performance-based engineering and regional natural hazard risk assessment. This library can help you in several steps of performance assessment:
+|short tool name| is an open-source library (|tool github link|) released under a **3-Clause BSD** license (see :ref:`lblLicense`). The |app| can be used to quantify losses from an earthquake or hurricane scenario in the form of *decision variables* (DVs). This functionality is typically utilized for performance-based engineering and regional natural hazard risk assessment. This library can help you in several steps of performance assessment:
 
 * **Describe the joint distribution of asset response.** The response of a structure or other type of asset to an earthquake or hurricane wind is typically described by so-called engineering demand parameters (EDPs). |short tool name| provides methods that take a finite number of EDP vectors and find a multivariate distribution that describes the joint distribution of EDP data well. You can control the type of target distribution, apply truncation limits and censor part of the data to consider detection limits in your analysis. Alternatively, you can choose to use your EDP vectors as-is without resampling from a fitted distribution.
 

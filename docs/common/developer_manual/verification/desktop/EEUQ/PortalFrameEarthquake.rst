@@ -26,7 +26,7 @@ Examples folder in a subfolder called **PortalFrame2D**.
 
 To introduce uncertainty in the model, both mass and young’s modulus
 are assumed to be normally distributed random variables with means and
-standard deviation values shown in :numref:`lblRV`; In this
+standard deviation values shown in :ref:`lblRV`; In this
 example, the model will be sampled with the Latin Hypercube sampling
 method using both |app| and a Python script
 (``PortalFrameSampling.py``) and response statistics from both

@@ -12,7 +12,7 @@ Probability distribution
 
 
 Dakota Engine
-++++++++++++
++++++++++++++
 
 The following six distribution classes are supported for Dakota engine.
 

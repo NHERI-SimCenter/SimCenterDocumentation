@@ -35,6 +35,17 @@
 
    This document covers the features and capabilities of Version |tool version| of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the |messageBoard|.
 
+   .. _lbl-front-matter:
+
+   .. toctree-filt::
+      :caption: About
+      :maxdepth: 1
+
+      common/front-matter/ack
+      common/front-matter/license
+      common/front-matter/glossary.rst
+      common/front-matter/abbreviations.rst
+
 
 .. _lbl-user-manual:
 
@@ -43,9 +54,8 @@
    :maxdepth: 1
    :numbered: 4
 
-   common/user_manual/ack
-
    :PBE:common/user_manual/about/PBE/about
+   :RDT:common/user_manual/about/RDT/about
    :EEUQ:common/user_manual/about/EEUQ/about
    :WEUQ:common/user_manual/about/WEUQ/about
    :quoFEM:common/user_manual/about/quoFEM/aboutQUOFEM
@@ -69,7 +79,6 @@
    :pelicun:common/user_manual/requirements/pelicun/requirements
 
    common/user_manual/bugs
-   common/user_manual/license
 
 
 .. _lbl-testbeds-manual:
@@ -117,7 +126,7 @@
    :desktop_app:common/developer_manual/coding_style/desktop/coding_style
    :pelicun:common/developer_manual/coding_style/pelicun/coding_style
 
-   :desktop_app:common/developer_manual/examples/desktop/examples
+   :RDT:common/developer_manual/examples/desktop/examples
    :pelicun:common/developer_manual/examples/pelicun/examples
 
    :pelicun:common/developer_manual/API/pelicun/API
@@ -128,6 +137,7 @@ Contact
 =======
 
 |contact person|
+
 
 References
 ==========
