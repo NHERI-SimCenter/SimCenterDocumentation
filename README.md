@@ -6,11 +6,11 @@ Contributors should follow the [style reference](docstyle.md) for guidelines on 
 
 ## Directory Structure
 
-+ docs   - the folder containing the most up to date material (all other directories contain legacy material)
-+ docs/Makefile - Linux and MacOS makefile for building current document
-+ docs/make.bat   - Windows make.bat to do same thing
-+ docs/conf.py - configuration file (in this file set app for which doc is requiretd)
-+ docs/index.rst - main index file, which pulls in files in docs/common
++ `docs/`   - the folder containing the most up to date material (all other directories contain legacy material)
++ `docs/Makefile` - Legacy Linux and MacOS makefile for building current document
++ `docs/make.bat`   - Legacy Windows make.bat to do same thing
++ `docs/conf.py` - configuration file (in this file set app for which doc is requiretd)
++ `docs/index.rst` - main index file, which pulls in files in `docs/common`
 + otherFolder - ignore as these contain legacy text files
 
 
@@ -18,7 +18,7 @@ Contributors should follow the [style reference](docstyle.md) for guidelines on 
 
 Documentation files for a particular SimCenter application can be built by running the following steps.
 
-### 1. Download the repository from Github
+### 1. Download this repository from Github
 
 For Git users, this can be done by running the following command in a terminal.
 
@@ -40,7 +40,7 @@ pip3 install -U -r requirements.txt
 
 ### 3a Build with Make
 
-On systems with `make` installed, the following command can be run from the documentation root to build a particular documentation target. Windows users who do not wish to install `make` can alternatively use the Powershell script outlined in step [3b](#Build-HTML-from-Powershell).
+On systems with `make` installed, the following command can be run from the documentation root to build a particular documentation target. `make` is typically available by default for MacOS and Linux users and can readily be installed on Windows. However, Windows users who do not wish to install `make` may alternatively use the Powershell script outlined in step [3b](#Build-HTML-from-Powershell).
 
 ```shell
 make <app> <target>...
