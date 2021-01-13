@@ -15,6 +15,7 @@ CLEANDIR      = _sources _static _images common
 EXPDIR = ./docs/common/user_manual/examples/desktop
 EXPSRC = ${SIMCENTER_DEV}/$(SIMDOC_APP)/examples
 RENDRE = rendre -D $(EXPSRC)/examples.json
+EXAMPLES = $(shell $(RENDRE) -l examples.yaml\#/$(SIMDOC_APP) path -j ' ' -- \%%:doc)
 
 #-Help-----------------------------------------------------
 help:
@@ -55,12 +56,13 @@ all:
 	make ee html
 
 pelicun rdt pbe ee:
-	# $(eval SIMDOC_APP=$(SIMDOC_APP))
+	$(eval SIMDOC_APP=$(SIMDOC_APP))
 
 qfem we:
-	# $(eval SIMDOC_APP=$(SIMDOC_APP))
+	$(eval SIMDOC_APP=$(SIMDOC_APP))
 	# sync example files
-	-rsync -Rcv $(addprefix $(EXPSRC)/./,$(shell $(RENDRE) -l examples.yaml#/$(SIMDOC_APP) path -j ' ' -- \%%:doc))  $(EXPDIR)
+	-rsync -Rcv $(addprefix $(EXPSRC)/./,$(EXAMPLES))  $(EXPDIR)
+	# -rsync -Rcv $(addprefix $(EXPSRC)/./,$(shell $(RENDRE) -l examples.yaml#/$(SIMDOC_APP) path -j ' ' -- \%%:doc))  $(EXPDIR)
 
 web:
 	@echo removing $(addprefix $(call PUBLDIR,$(SIMDOC_APP)),$(CLEANDIR))
