@@ -50,12 +50,12 @@ where `<app>` is one of:
 
 | `<app>` |  `<app-name>` |
 | --------|---------------|
-| pelicun |  Pelicun
-| qfem    |  quoFEM
-| rdt     |  RDT
-| pbe     |  PBE
-| we      |  WE-UQ
-| ee      |  EE-UQ
+| `pelicun` |  Pelicun
+| `qfem`    |  quoFEM
+| `rdt`     |  RDT
+| `pbe`     |  PBE
+| `we`      |  WE-UQ
+| `ee`      |  EE-UQ
 
 and `<target>` is one of:
 | `<target>` | description | 
