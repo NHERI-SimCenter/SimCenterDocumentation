@@ -3,9 +3,9 @@
 GI: General Information
 =======================
 
-The **General Information** tab allows the user to provide information about the analysis, such as the analysis name and the units the user will work with. The widget contains the following four frames, as shown in :numref:`figGI`.
+The **General Information** panel allows the user to provide information about the analysis, such as the analysis name and the units the user will work with. The widget contains the following four frames, as shown in :numref:`figGI`.
 
-#. **Analysis Name**: The user can provide a unique name for the analysis. This will be the default filename under which the analysis results and input files will be saved. 
+#. **Analysis Name**: The user can provide a unique name for the analysis. 
 
 #. **Units Selection**: Collects information about the units used in the inputs and outputs. Some widgets will require inputs in different units. Those widgets will display units beside those special entry fields.
 
