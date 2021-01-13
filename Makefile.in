@@ -1,0 +1,7 @@
+
+export SIMCENTER_DEV = $(realpath ../)
+
+#-LaTeX----------------------------------------------------
+#PDFLATEX = latexmk -pdf -dvi- -ps- 
+PDFLATEX = pdflatex -interaction=nonstopmode 
+
