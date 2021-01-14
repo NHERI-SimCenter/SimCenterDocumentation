@@ -98,4 +98,6 @@ The particular application must be selected by un-commenting the appropriate `ap
     ```shell
     make rdt latex pdf
     ```
-Note, however, that in order to achieve a proper build, one may need to run the `make <app> latex` target several times in succession before running `make <app> pdf`.
+    Note, however, that in order to achieve a proper build, one may need to run the `make <app> latex` target several times in succession before running `make <app> pdf`.
+
+> Note: Legacy build scripts in the `docs` directory do not sync example files from their source repositories.
