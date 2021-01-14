@@ -25,11 +25,11 @@ Index :math:`j` denotes the stage number, :math:`m` denotes the total number of 
 prior joint PDF :math:`p(\theta)`. The TMCMC sampler progresses by monotonically increasing the value of :math:`\beta_j` , at each stage :math:`j`, until it reaches the value of 1. At the final stage :math:`(j = m)`, parameter :math:`\beta_m = 1`, the tempered distribution :math:`p(\mathbf{\theta \ | \ y})_{j = m}` is the target posterior joint PDF :math:`p(\mathbf{\theta \ | \ y})`. 
 
 
-TMCMC represents the tempered posterior PDF at every stage by a set of weighted samples (known as particles). TMCMC approximates the :math:`j^{th}` stage tempered posterior PDF :math:`p(\mathbf{\theta \ | \ y})_j`  by weighing, resampling, and perturbing the particles of the :math:`j-1^{th}` stage intermediate joint PDF :math:`p(\mathbf{\theta \ | \ y})_{j-1}` . For details about the TMCMC algorithm, the interested reader is referred to Ching and Chen [2007]_, Minson et. al. [2013]_.
+TMCMC represents the tempered posterior PDF at every stage by a set of weighted samples (known as particles). TMCMC approximates the :math:`j^{th}` stage tempered posterior PDF :math:`p(\mathbf{\theta \ | \ y})_j`  by weighing, resampling, and perturbing the particles of the :math:`j-1^{th}` stage intermediate joint PDF :math:`p(\mathbf{\theta \ | \ y})_{j-1}` . For details about the TMCMC algorithm, the interested reader is referred to Ching and Chen [Ching2007]_, Minson et. al. [Minson2013]_.
 
 
-.. [2007] 
+.. [Ching2007] 
    J. Ching and Y.-C. Chen, “Transitional Markov Chain Monte Carlo Method for Bayesian Model Updating, Model Class Selection, and Model Averaging”, *Journal of Engineering Mechanics*, 133(7), 816-832, 2007.
    
-.. [2013] 
+.. [Minson2013] 
    S. E. Minson, M. Simons, and J. L. Beck, “Bayesian Inversion for Finite Fault Earthquake Source Models I-Theory and Algorithm”, *Geophysical Journal International*, 194(3), 1701- 1726, 2013.
