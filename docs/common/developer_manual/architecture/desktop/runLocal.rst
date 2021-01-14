@@ -16,40 +16,54 @@ Running applications locally on a personal desktop is convenient for running sma
     - Set ``'localAppDir'`` to the path containing the applications folder (such as ``C:/rWHALE/``).
     - Specify applications for each workflow step and their inputs. For more details on the format of the configuration file, see :ref:`Inputs <lblInputs>`.
 
-Depending on the required application-specific inputs, the final file directory structure may follow a format such as:
 
-::
-
-    rWHALE
-    ├── applications
-    └── cantilever_example
-        ├── rWHALE_config.json
-        └── input_data
-            ├── model
-            ├── records
-            ├── EDPspecs.json
-            └── input_params.csv
-
-3. The workflow is run through the command window by calling on python and specifying paths to the application files, input files, and desired location for the results folder.
+3. The workflow is run through the command window by calling on Python and specifying paths to the application files, input files, and desired location for the results folder. The following is an example of the **initialization command**:
 
 .. code-block::
 
     python <path to RDT_workflow.py> <path to rWHALE_config.json> --registry <path to WorkflowApplications.json> --referenceDir <path to input_data folder> -w <path to output results folder>
 
 
-
-    where:
-    - **<path to RDT_workflow.py>** is the full path to the file "RDT_workflow.py" in the applications folder, i. e. "C:/rWHALE/applications/Workflow/RDT_workflow.py"
-    - **<path to rWHALE_config.json>** is the full path to the provided file "rWHALE_config.json", i. e. "C:/rWHALE/rWHALE_config.json"
-    - **<path to WorkflowApplications.json>** is the full path to the file "WorkflowApplications.json" in the applications folder, i. e. "C:/rWHALE/applications/Workflow/WorkflowApplications.json"
-    - **<path to input_data folder>** is the full path to the folder with all input files, i. e. "C:/rWHALE/cantilever_example/input_data/"
-    - **<path to output results folder>** is the full path to the folder where results will be saved, i. e. "C:/rWHALE/cantilever_example/results"
-
+where:
+    - **<path to RDT_workflow.py>** is the full path to the file "RDT_workflow.py" in the applications folder
+    - **<path to rWHALE_config.json>** is the full path to the provided file "rWHALE_config.json"
+    - **<path to WorkflowApplications.json>** is the full path to the file "WorkflowApplications.json" in the applications folder
+    - **<path to input_data folder>** is the full path to the folder with all input files
+    - **<path to output results folder>** is the full path to where a "results" folder will be created to contain the output files
 
 
 
-4. In the command window, the workflow will output the following messages:
+4. A results folder is produced, which contains both the aggregated output files (EDP_{min id}_{max id}.csv, DM_{min id}_{max id}.csv, DV_{min id}_{max id}.csv), as well as the individual output files (EDP.csv, DM.csv, DV.csv) for each built asset in their respective folders.
 
-.. literalinclude:: files/log.txt
-    :linenos:
-    :emphasize-lines: 1
+::
+
+   results
+   ├── 1                            # folder for building asset 1
+      ├── templatedir               # folder of template files
+      ├── workdir.1                 # working directory for each event simulation
+      ├── workdir.2
+      ├── workdir.3
+      .
+      .
+      .
+      ├── dakota.err                # dakota files
+      ├── dakota.in
+      ├── dakota.out
+      ├── DL_summary.csv            # damage/loss summary
+      ├── DM.csv                    # individual building asset output files
+      ├── DV.csv
+      ├── EDP.csv
+      └── response.csv
+   ├── 2
+   .
+   .
+   .
+   ├── 1-BIM                       # BIM files for each building asset
+   ├── 2-BIM
+   .
+   .
+   .
+   ├── DM_{min id}_{max id}.csv    # aggregated results
+   ├── DV_{min id}_{max id}.csv
+   ├── EDP_{min id}_{max id}.csv
+   └── log.txt                     # log file

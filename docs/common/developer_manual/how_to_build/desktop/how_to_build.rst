@@ -19,7 +19,7 @@ First, ensure the following dependencies are installed:
 
 * **DAKOTA**: The workflow applications require an installation of `DAKOTA <https://dakota.sandia.gov/>`_ to handle and propagate the uncertainties defined in the input files for the workflow applications.
 
-* **Python**: The workflow requires Python 3.6.
+* **Python**: The workflow requires at least Python 3.6.
 
 * **Conan**: This repository uses `Conan <https://conan.io/>`_ for dependency management. Conan is a python library and can be installed using the following `instructions <https://docs.conan.io/en/latest/installation.html>`_. Version 1.25 or later is recommended.
 
@@ -80,7 +80,7 @@ Build on Unix
 -------------
 For Unix systems, the steps to building the workflow application are as follows:
 
-    
+
 
 
 

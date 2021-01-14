@@ -1,0 +1,5 @@
+P1, "Ability to use open-source version of Hazus", GC , M , 1.0 
+P2 , "Ability to incorporate improved damage and fragility models for buildings and lifelines", GC , M , 1.0 
+P3 , "Ability to incorporate improved indirect economic loss estimation models", GC , M , 
+P4 , "Ability to include demand surge in determination of damage and loss estimation", GC , M , 
+P5 , "Ability to include lifeline disruptions", GC , M ,

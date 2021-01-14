@@ -16,12 +16,10 @@ Contributors should follow the [style reference](docstyle.md) for guidelines on 
 
 ## Building the HTML files
 
-### 1. Building requires sphinx and some packages for sphinx
+### 1. Building requires sphinx and some packages for sphinx (The full list is in requirements.txt)
 
 ```
-pip install -U sphinx
-pip install sphinx_rtd_theme
-pip install sphinxcontrib.bibtex
+pip install -U -r requirements.txt
 ```
 
 ### 2. Download the repo using git from a terminal window

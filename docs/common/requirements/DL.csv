@@ -1,4 +1,4 @@
-DL1 ,"Different Assessment Methods ", GC , M ,2.0
+DL1 ,"**Different Assessment Methods**", "", "",
 DL1.1 ,"Ability to perform component-based (FEMA P58) loss assessment for an earthquake hazard. ", SP , M ,1.0
 DL1.2 ,"Ability to perform component-assembly-based (HAZUS MH) loss assessment for an earthquake hazard. ", SP , D ,1.1
 DL1.3 ,"Ability to perform downtime estimation using the REDi methodology. ", UF , D ,  
@@ -7,7 +7,7 @@ DL1.5 ,"Ability to perform time-based assessment ", GC , M ,
 DL1.6 ,"Ability to perform damage and loss assessment for hurricane wind ", GC , M ,   
 DL1.7 ,"Ability to perform damage and loss assessment for storm surge ", GC , M ,   
 DL1.8,"Ability to perform response estimation without simulation using HAZUS capacity curves",UF,D,
-DL2 ,"Control ", SP , M ,1.0
+DL2 ,"**Control**", "", "", 
 DL2.1 ,"Allow users to set the number of realizations ", SP , M ,1.0
 DL2.2 ,"Allow users to specify the added uncertainty to EDPs ", SP , M ,1.0
 DL2.3 ,"Allow users to decide which decision variables to calculate ", SP , D ,1.0
@@ -22,7 +22,7 @@ DL2.11 ,"Allow users to use empirical EDP data to estimate the collapse probabil
 DL2.12 ,"Allow users to choose the type of distribution they want to estimate the EDPs with. ", UF , D ,1.2
 DL2.13 ,"Allow users to perform the EDP fitting only for non-collapsed cases. ", UF , M ,1.2
 DL2.14 ,"Allow users to couple response estimation with loss assessment. ", UF , M ,  
-DL3 ,"Component damage and loss information ", SP , M ,1.0
+DL3 ,"**Component damage and loss information**", "", "", 
 DL3.1 ,"Make the component damage and loss data from FEMA P58 available. ", SP , M ,1.0
 DL3.2 ,"Ability to use custom components for loss assessment. ", SP , D ,1.0
 DL3.3 ,"Allow users to set different component quantities for each floor in each direction. ", SP , D ,1.0
@@ -37,7 +37,7 @@ DL3.11 ,"Allow users to edit fragility and consequence functions in the applicat
 DL3.12,"Replace JSON files with a more efficient method to store the damage and loss data for the large number of available Fragility Groups",SP,D,
 DL3.13,"Allow users to export and load component information using CSV files",UF,D,2.0
 DL3.14,"Provide a method to users that automatically populates the performance model for commonly used structures.",UF,D,
-DL4 ," Stochastic loss model ", SP , M ,1.0
+DL4 ,"**Stochastic loss model**", "", "", 
 DL4.1 ,"Allow the user to specify basic dependencies (i.e. independence or perfect correlation) between logically similar parts of the stochastic model (i.e. within component quantities or one type of decision variable, but not between quantities and fragilities) ", SP , D ,1.0
 DL4.2 ,"Allow the user to specify basic dependencies between reconstruction cost and reconstruction time. ", SP , D ,1.0
 DL4.3 ,"Allow the user to specify basic dependencies between different levels of injuries. ", SP , D ,1.0
