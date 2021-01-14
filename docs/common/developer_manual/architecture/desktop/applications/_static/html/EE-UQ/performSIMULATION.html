@@ -1,0 +1,353 @@
+
+
+
+<hr>
+<div class="twbs">
+  <div class="gallery accordion" id="gallery">
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0031</code>
+        <h5 class="card-title mb-0" >
+          OpenSees-Simulation_R
+        </h5>
+        <p class="card-text">
+          Executes script for building structural model in OpenSees and running analysis for the response simulation, then saves the results in EDP.json.
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0031">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0031')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0031')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0031">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>filenameBIM<code> &lt;FileName(R)&gt;</code></dt>
+                  <dd>name of file containing the BIM</dd>
+                
+                  <dt>filenameSAM<code> &lt;FileName(R)&gt;</code></dt>
+                  <dd>name of file containing the SAM</dd>
+                
+                  <dt>filenameEVENT<code> &lt;FileName(R)&gt;</code></dt>
+                  <dd>name of file containing the event data</dd>
+                
+                  <dt>filenameEDP<code> &lt;FileName(W)&gt;</code></dt>
+                  <dd>name of EDP file to be added to</dd>
+                
+                  <dt>filenameSIM<code> &lt;FileName(W)&gt;</code></dt>
+                  <dd>name of SIM file to be added to</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0031">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0032</code>
+        <h5 class="card-title mb-0" >
+          OpenSeesPy-Simulation
+        </h5>
+        <p class="card-text">
+          Executes script for building structural model in OpenSeesPy and running analysis for the response simulation, then saves the results in EDP.json.
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0032">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0032')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0032')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0032">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>filenameBIM<code> &lt;FileName(R)&gt;</code></dt>
+                  <dd>name of file containing the BIM</dd>
+                
+                  <dt>filenameSAM<code> &lt;FileName(R)&gt;</code></dt>
+                  <dd>name of file containing the SAM</dd>
+                
+                  <dt>filenameEVENT<code> &lt;FileName(R)&gt;</code></dt>
+                  <dd>name of file containing the event data</dd>
+                
+                  <dt>filenameEDP<code> &lt;FileName(W)&gt;</code></dt>
+                  <dd>name of EDP file to be added to</dd>
+                
+                  <dt>filenameSIM<code> &lt;FileName(W)&gt;</code></dt>
+                  <dd>name of SIM file to be added to</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0032">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre>usage: OpenSeesPySimulation.py [-h] [--filenameBIM FILENAMEBIM]
+                               [--filenameSAM FILENAMESAM]
+                               [--filenameEVENT FILENAMEEVENT]
+                               [--filenameEDP FILENAMEEDP]
+                               [--filenameSIM FILENAMESIM] [--getRV [GETRV]]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --filenameBIM FILENAMEBIM
+  --filenameSAM FILENAMESAM
+  --filenameEVENT FILENAMEEVENT
+  --filenameEDP FILENAMEEDP
+  --filenameSIM FILENAMESIM
+  --getRV [GETRV]
+</pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0033</code>
+        <h5 class="card-title mb-0" >
+          IMasEDP
+        </h5>
+        <p class="card-text">
+          Returns the input event IM as the EDP in the absence of a response simulation method. This application is appropriate to use when damages and losses are estimated as function of IM in the DL assessment.
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0033">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0033')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0033')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0033">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>filenameBIM<code> &lt;FileName(R)&gt;</code></dt>
+                  <dd>name of file containing the BIM</dd>
+                
+                  <dt>filenameSAM<code> &lt;FileName(R)&gt;</code></dt>
+                  <dd>name of file containing the SAM</dd>
+                
+                  <dt>filenameEVENT<code> &lt;FileName(R)&gt;</code></dt>
+                  <dd>name of file containing the event data</dd>
+                
+                  <dt>filenameEDP<code> &lt;FileName(W)&gt;</code></dt>
+                  <dd>name of EDP file to be added to</dd>
+                
+                  <dt>filenameSIM<code> &lt;FileName(W)&gt;</code></dt>
+                  <dd>name of SIM file to be added to</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0033">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre>usage: IMasEDP.py [-h] [--filenameBIM FILENAMEBIM] [--filenameSAM FILENAMESAM]
+                  [--filenameEVENT FILENAMEEVENT] [--filenameEDP FILENAMEEDP]
+                  [--filenameSIM FILENAMESIM] [--getRV [GETRV]]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --filenameBIM FILENAMEBIM
+  --filenameSAM FILENAMESAM
+  --filenameEVENT FILENAMEEVENT
+  --filenameEDP FILENAMEEDP
+  --filenameSIM FILENAMESIM
+  --getRV [GETRV]
+</pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0034</code>
+        <h5 class="card-title mb-0" >
+          OpenSees-Simulation
+        </h5>
+        <p class="card-text">
+          No description
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0034">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0034')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0034')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0034">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>filenameBIM<code> &lt;FileName(R)&gt;</code></dt>
+                  <dd>name of file containing the BIM</dd>
+                
+                  <dt>filenameSAM<code> &lt;FileName(R)&gt;</code></dt>
+                  <dd>name of file containing the SAM</dd>
+                
+                  <dt>filenameEVENT<code> &lt;FileName(R)&gt;</code></dt>
+                  <dd>name of file containing the event data</dd>
+                
+                  <dt>filenameEDP<code> &lt;FileName(W)&gt;</code></dt>
+                  <dd>name of EDP file to be added to</dd>
+                
+                  <dt>filenameSIM<code> &lt;FileName(W)&gt;</code></dt>
+                  <dd>name of SIM file to be added to</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0034">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre>usage: OpenSeesPySimulation.py [-h] [--filenameBIM FILENAMEBIM]
+                               [--filenameSAM FILENAMESAM]
+                               [--filenameEVENT FILENAMEEVENT]
+                               [--filenameEDP FILENAMEEDP]
+                               [--filenameSIM FILENAMESIM] [--getRV [GETRV]]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --filenameBIM FILENAMEBIM
+  --filenameSAM FILENAMESAM
+  --filenameEVENT FILENAMEEVENT
+  --filenameEDP FILENAMEEDP
+  --filenameSIM FILENAMESIM
+  --getRV [GETRV]
+</pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0035</code>
+        <h5 class="card-title mb-0" >
+          ExtractPGA
+        </h5>
+        <p class="card-text">
+          No description
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0035">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0035')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0035')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0035">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>filenameBIM<code> &lt;FileName(R)&gt;</code></dt>
+                  <dd>name of file containing the BIM</dd>
+                
+                  <dt>filenameSAM<code> &lt;FileName(R)&gt;</code></dt>
+                  <dd>name of file containing the SAM</dd>
+                
+                  <dt>filenameEVENT<code> &lt;FileName(R)&gt;</code></dt>
+                  <dd>name of file containing the event data</dd>
+                
+                  <dt>filenameEDP<code> &lt;FileName(W)&gt;</code></dt>
+                  <dd>name of EDP file to be added to</dd>
+                
+                  <dt>filenameSIM<code> &lt;FileName(W)&gt;</code></dt>
+                  <dd>name of SIM file to be added to</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0035">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  </div>
+</div>
+
+
+<script>
+function openCardTab(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script> 
+

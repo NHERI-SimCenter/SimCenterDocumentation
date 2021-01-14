@@ -56,7 +56,7 @@ To download the |app| click on the link for the appropriate file for your operat
    #. Windows: On computers running the Windows operating system we suggest placing the directory in the **C:\\SimCenter** folder. Once here, create a shorcut link to the application and move this shortcut link to your Desktop folder.
    #. MacOS: We sugget copying the app to your Desktop.
 
-Now test that the application starts. To do this navigate to the location where you placed the application and open it. You should see the user interface shown in |figUI| after starting the application. Now quit the application. Additional installation steps, outlined in :numref:`lblDownloadOther`, are required before computations can be performed.
+Now test that the application starts. To do this navigate to the location where you placed the application and open it. You should see the user interface shown in |figUI| after starting the application. Now quit the application. Additional installation steps, outlined in :ref:`lblDownloadOther`, are required before computations can be performed.
 
 .. only:: PBE_app
 

@@ -3,7 +3,7 @@
   "Author": "Adam Zsarnóczay",
   "WorkflowType": "Parametric Study",
   "runDir": "...",
-  "localAppDir": "C:/RDT/",
+  "localAppDir": "C:/rWHALE/",
   "units": {
       "force": "kips",
       "length": "in",

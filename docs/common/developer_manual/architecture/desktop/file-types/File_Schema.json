@@ -1,0 +1,102 @@
+{
+    "$schema": "http://json-schema.org/file/schema#",
+    "description": "Schema for input and output files.",
+    "type": "object",
+    "title": "File Schema",
+    "properties": {
+      "Inputs": {
+        "configurationFile": {
+          "title": "Configuration File",
+          "description": "JSON file containing simulation details and specifies the application selected for each workflow step.",
+          "properties": {
+            "runDir": {"type": "path", "description": "Directory where input_data folder is located."},
+            "localAppDir": {"type": "path", "description": "Directory where applications folder is located."},
+            "units": {"type": "string", "description": "Dictionary of strings which specifiy units for force, length, and time.", "default": "N, m, sec"},
+            "outputs": {"type": "bool", "description": "Indicator (True/False) of which workflow outputs (EDP, DM, DV) are provided in the simulation.", "default": "true"},
+            "Applications": {"type": "dict", "description": "Dictionary of applications selected for each workflow step, with their associated application-specific inputs."},
+          }
+        },
+        "buildingSourceFile": {
+          "title": "Building Source File",
+          "description": "CSV file containing building properties for the response simulation and damage/loss estimation steps of the workflow. This file contains all information necessary for constructing BIM files for each building asset. Required headers are grouped into categories, as follows:",
+          "properties": {
+            "Basic": {"description": "Headers required for all hazard types, including Earthquake/Wind/Flood."},
+            "Wind": {"description": "Headers only required for Wind hazards."},
+            "Flood": {"description": "Headers only required for Flood hazards."},
+            "OptionalInputs": {"description": "(Optional) Additional column headers which may be included for custom building definitions. For example, structural model parameters used in the Simulation application or alternate building classifications used in the DL application may be specified here."}
+          }
+        },
+        "modelFile": {
+          "title": "Model File",
+          "description": "If the simulation application chosen is OpenSees-Simulation or OpenSeesPy-Simulation, then a model file must be provided. It consists of an OpenSees/OpenSeesPy script with functions for building and analyzing a custom structural model. See the Simulation Applications page for more details on application-specific inputs."
+        },
+        "EDPspecs": {
+          "title": "EDP specifications file",
+          "description": "JSON file specifying types, locations, and directions of EDPs to record in the structural model during response simulation.The EDP specifications file is only necessary as an input if UserDefinedEDP is chosen as the EDP application."
+        },
+        "eventFiles": {
+          "title": "Event Files",
+          "description": "To specify the type, location, and intensity of each event, the following files must be provided in the input_data/records folder.",
+          "properties": {
+            "EventGrid": {
+              "description": "CSV file which specifies the coordinate (latitude/longitude) location of each event site.",
+              "properties": {
+                "sta": {"type": "string", "description": "Name of event file associated with the given event site. If running time history analysis, then the name of the site file is provided instead." },
+                "lon": {"type": "float", "description": "Longitude coordinate of the site location." },
+                "lat": {"type": "float", "description": "Latitude coordinate of the site location." }
+              }
+            },
+            "Event IM Files": {
+              "description": "CSV or JSON files containing information on the intensity measure of the event.",
+              "properties": {
+                "name": {"type": "string", "description": "Name of ground motion record."},
+                "dT": {"type": "float", "description": "Time step of ground motion recording."},
+                "data_x": {"type": "list", "description": "List of acceleration points in the x-direction ground motion record."},
+                "data_y": {"type": "list", "description": "List of acceleration points in the y-direction ground motion record."},
+                "PGA_x": {"type": "float", "description": "Value of peak ground acceleration in the x-direction ground motion record."},
+                "PGA_y": {"type": "float", "description": "Value of peak ground acceleration in the y-direction ground motion record."},
+              }
+            },
+            "Site Files": {
+              "description": "CSV files listing the names of the event file(s) assigned to the site for time history analysis. This file can also provide other properties, such as a ground motion scale factor.",
+              "properties": {
+                "GM_file": {"type": "string", "description": "Name of the ground motion event file (for Earthquake hazard events)."},
+                "factor": {"type": "float", "description": "Factor for scaling the ground motion."}
+              }
+            }
+          }
+        }
+      },
+      "Outputs": {
+        "outputEDP": {
+          "title": "EDP Output File",
+          "description": "File which aggregates response simulation results from the EDP.csv files of all building assets.",
+          "properties": {
+            "type": {"type": "string", "description": "Name of EDP type. Typical earthquake EDPS are peak floor acceleration (PFA), peak interstory drift (PID), peak floor displacement (PFA), and peak roof displacement (PRD). If IMs are used as EDPs (with the 'IMasEDP' EDP application), then the IM name is returned in this field."},
+            "loc": {"type": "int", "description": "Location of where EDP is recorded on the model. If UserDefinedEDP is specified as the EDP application, then the location labelling is denoted in the EDP specification file. Otherwise, the numbering starts at 0, which denotes the ground level."},
+            "dir": {"type": "int", "description": "Direction of the EDP is recorded. The numbering used in the file is X=1, Y=2, Z=3."},
+            "stat": {"type": "string", "description": "Describes the statistic reported for each EDP. EDPs are assumed to follow a lognormal distribution described by a median parameter and beta (lognormal standard deviation) parameter. Note: If the 'samples' entry of the RegionalMapping application is set to 1, then only one event is assigned to each building asset and the response is reported as the 'median' in the EDP Output File."}
+          }
+        },
+        "outputDM": {
+          "title": "DM Output File",
+          "description": "File which aggregates damage state estimates from the DM.csv files of all building assets.",
+          "properties": {
+            "Collapse probability": {"type": "float", "description": "Probability of collapse for each building asset, represented as a value between 0 and 1."},
+            "DS likelihood": {"type": "float", "description": "The probability of each damage state for every building asset, provided as a value between 0 and 1. Probabilities are reported for five damage states: '0' indicates no damage; '1_1' indicates DS1 (aesthetic damage), '2_1' indicates DS2 (mild damage), '3_1' indicates DS3 (moderate damage), and '4_1' indicates DS4 (severe damage). The DS likelihoods are additionally reported by component group, where the following abbreviations are used: 'S' = structural components, 'NS' = all nonstructural components, 'NSA' = acceleration-sensitive nonstructural components, 'NSD' = drift-sensitive nonstructural components. The probabilities of the five damage states for each component type (across the row) should sum to 1 (total probability for the building asset)."}
+          }
+        },
+        "outputDV": {
+          "title": "DV Output File",
+          "description": "File which aggregates decision variable estimates from the DV.csv files of all building assets.",
+          "properties": {
+            "Aggregate Repair Cost": {"type": "float", "description": "Repair cost for the entire building asset, reported with the statistics: mean, standard deviation, 10th percentile, median (50th percentile), and 90th percentile. The currency unit for the repair cost is the same as that of the the replacementCost property provided in the building input file. If replacementCost is set equal to 1, then the repair costs in the DV Output File are reported as a percentage of the replacement cost."},
+            "Repair Impractical": {"type": "float", "description": "Probability of repair being impractical for the building asset, provided as a value between 0 and 1."},
+            "Component Repair Cost": {"type": "float", "description": "Mean repair cost for the building asset reported by component group ('S' = structural components, 'NS' = all nonstructural components, 'NSA' = acceleration-sensitive nonstructural components, 'NSD' = drift-sensitive nonstructural components) and damage state ('aggregate' = total for the component group, '1_1' = DS1, '2_1' = DS2, '3_1' = DS3, '4_1' = DS4)."},
+            "Aggregate Repair Time": {"type": "float", "description": "Repair time for the entire building asset, reported with the statistics: mean, standard deviation, 10th percentile, median (50th percentile), and 90th percentile. Time is reported in units of ___."},
+            "Aggregate Injuries": {"type": "float", "description": "Number of injuries projected as a result of damage to the building asset, reported with the statistics: mean, standard deviation, 10th percentile, median (50th percentile), and 90th percentile. Injuries are provided at four severity levels."}
+          }
+        }
+      }
+    }
+  }
