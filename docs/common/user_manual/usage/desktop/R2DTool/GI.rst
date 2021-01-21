@@ -13,9 +13,9 @@ The **General Information** panel allows the user to provide information about t
 
 #. **Output Settings**: The user can specify the level of output detail provided in the results. 
 
-.. _figGI_RDT:
+.. _figGI_R2D:
 
-.. figure:: figures/RDTGIPanel.png
+.. figure:: figures/R2DGIPanel.png
 	:align: center
 	:figclass: align-center
 

@@ -1,9 +1,9 @@
-.. _lblRDTworkflows:
+.. _lblR2Dworkflows:
 
-RDT Workflows
+R2D Workflows
 ===============
 
-This section is specific to implementations of RDT for quantifying regional risk and resilience to natural hazards. User-defined inputs and expected outputs for RDT are detailed in the following pages.
+This section is specific to implementations of R2D for quantifying regional risk and resilience to natural hazards. User-defined inputs and expected outputs for R2D are detailed in the following pages.
 
 .. toctree::
    :maxdepth: 1
@@ -14,7 +14,7 @@ This section is specific to implementations of RDT for quantifying regional risk
 Choosing Component Applications
 -------------------------------
 
-A user's choice of :ref:`component applications <lblbackendApps>` for RDT depends on the hazard type, available data, and user preferences. All currently supported component applications and possible workflows are summarized in :numref:`figWorkflowDiagram`.
+A user's choice of :ref:`component applications <lblbackendApps>` for R2D depends on the hazard type, available data, and user preferences. All currently supported component applications and possible workflows are summarized in :numref:`figWorkflowDiagram`.
 
 
 .. figure:: figures/workflow_diagram.png

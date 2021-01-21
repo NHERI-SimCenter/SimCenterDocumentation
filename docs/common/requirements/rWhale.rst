@@ -7,7 +7,7 @@
 rWhale Requirements
 ===================
 
-rWhale is the backend applications for the RDT application. The requirements are related to section 1.3.10 of the SimCenter WBS.
+rWhale is the backend applications for the R2D application. The requirements are related to section 1.3.10 of the SimCenter WBS.
 
 .. csv-table:: Requirements - rWhale
   :header: "#", "Description", "Source", "Priority", "Version"

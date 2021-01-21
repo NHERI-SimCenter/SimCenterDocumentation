@@ -13,8 +13,9 @@ CLEANDIR      = _sources _static _images common
 
 #-Examples-------------------------------------------------
 EXPDIR = ./docs/common/user_manual/examples/desktop
-EXPSRC = ${SIMCENTER_DEV}/$(SIMDOC_APP)/examples
-RENDRE = rendre -D $(EXPSRC)/examples.json
+EXPSRC = ${SIMCENTER_DEV}/$(SIMDOC_APP)/Examples
+# RENDRE = rendre -vvv -D $(EXPSRC)/examples.json
+RENDRE = rendre -vvv -D $(EXPSRC)/.aurore/aurore.cache.json
 EXAMPLES = $(shell $(RENDRE) -l examples.yaml\#/$(SIMDOC_APP) path -j ' ' -- \%%:doc)
 
 #-Help-----------------------------------------------------
@@ -23,7 +24,7 @@ help:
 	@echo '   or: make <all|update>'
 	@printf '\n'
 	@echo 'where <app> is one of:'
-	@printf '    {pelicun, qfem, rdt, pbe, we, ee}\n\n'
+	@printf '    {pelicun, qfem, r2d, pbe, we, ee}\n\n'
 	@echo 'and <target> is one of:'
 	@echo '    web    Run html target with build directory'
 	@echo '           set to app publishing repository.'
@@ -34,11 +35,11 @@ help:
 
 #----------------------------------------------------------
 
-.PHONY: help Makefile pbe rdt qfem we ee html pdf latexpdf latex
+.PHONY: help Makefile pbe r2d qfem we ee html pdf latexpdf latex
 
 ee:      export SIMDOC_APP=EE-UQ
 we:      export SIMDOC_APP=WE-UQ
-rdt:     export SIMDOC_APP=RDT
+r2d:     export SIMDOC_APP=R2DTool
 pbe:     export SIMDOC_APP=PBE
 qfem:    export SIMDOC_APP=quoFEM
 pelicun: export SIMDOC_APP=pelicun
@@ -50,15 +51,15 @@ export BSTINPUTS:=../texmf//:${BSTINPUTS}
 all:
 	make pelicun html
 	make qfem html
-	make rdt html
+	make r2d html
 	make pbe html
 	make we html
 	make ee html
 
-pelicun rdt pbe ee:
+pelicun pbe ee:
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
 
-qfem we:
+r2d qfem we:
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
 	# sync example files
 	-rsync -Rcv $(addprefix $(EXPSRC)/./,$(EXAMPLES))  $(EXPDIR)

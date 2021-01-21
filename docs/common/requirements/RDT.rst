@@ -1,18 +1,18 @@
 
-.. _RDT_Requirements:
+.. _R2D_Requirements:
 
 .. raw:: latex
 
     \clearpage
 
-RDT Requirements
+R2D Requirements
 ================
 
-**RDT** is the UI for a regional simulation. It uses **rWhale** to run the workflow. The requirements are related to section 1.3.10 of the SimCenter WBS. The requirements are related to section 1.3.10 of the SimCenter WBS.
+**R2D** is the UI for a regional simulation. It uses **rWhale** to run the workflow. The requirements are related to section 1.3.10 of the SimCenter WBS. The requirements are related to section 1.3.10 of the SimCenter WBS.
 
-.. csv-table:: Requirements - RDT
+.. csv-table:: Requirements - R2D
   :header: "#", "Description", "Source", "Priority", "Version"
   :widths: 10, 60, 10, 10, 10	   
-  :file: RDT.csv
+  :file: R2D.csv
 
 .. include:: key.rst

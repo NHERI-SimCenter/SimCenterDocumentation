@@ -93,7 +93,7 @@ The workflow can be executed by uploading the appropriate files to :ref:`DesignS
 
 .. code-block::
 
-    python "C:/rWHALE/applications/Workflow/RDT_workflow.py" "C:/rWHALE/cantilever_example/rWHALE_config_eq.json" --registry "C:/rWHALE/applications/Workflow/WorkflowApplications.json" --referenceDir "C:/rWHALE/cantilever_example/input_data/" -w "C:/rWHALE/cantilever_example/results"
+    python "C:/rWHALE/applications/Workflow/R2D_workflow.py" "C:/rWHALE/cantilever_example/rWHALE_config_eq.json" --registry "C:/rWHALE/applications/Workflow/WorkflowApplications.json" --referenceDir "C:/rWHALE/cantilever_example/input_data/" -w "C:/rWHALE/cantilever_example/results"
 
 
 

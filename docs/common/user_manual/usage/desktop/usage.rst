@@ -45,10 +45,10 @@ remotely, and finally views the simulation results. The main window of the UI is
 	   :align: center
 	   :figclass: align-center
 	   
-.. only:: RDT_app
+.. only:: R2D_app
 
-   .. _figGenericUI-RDT:
-   .. figure:: figures/RDTPanel.png
+   .. _figGenericUI-R2D:
+   .. figure:: figures/R2DPanel.png
 	   :align: center
 	   :figclass: align-center
 
@@ -74,14 +74,14 @@ The ribbon on the left side provides the user with a selection of buttons to cho
 .. toctree-filt::
    :maxdepth: 1
 
-   :RDT:RDT/VIZ
-   :RDT:RDT/GI
-   :RDT:RDT/HAZ
-   :RDT:RDT/ASD
-   :RDT:RDT/HTA
-   :RDT:RDT/MOD
-   :RDT:RDT/ANA
-   :RDT:RDT/DL
+   :R2D:R2DTool/VIZ
+   :R2D:R2DTool/GI
+   :R2D:R2DTool/HAZ
+   :R2D:R2DTool/ASD
+   :R2D:R2DTool/HTA
+   :R2D:R2DTool/MOD
+   :R2D:R2DTool/ANA
+   :R2D:R2DTool/DL
    UQ
    :wind:GI
    :EEUQ:GI
@@ -105,7 +105,7 @@ The ribbon on the left side provides the user with a selection of buttons to cho
    :WEUQ:response/resEE
    :quoFEM:quoFEM/resQUO
    :PBE:PBE/resPBE
-   :RDT:RDT/RES
+   :R2D:R2DTool/RES
 	
 
 5. Push Buttons:
