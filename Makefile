@@ -14,8 +14,7 @@ CLEANDIR      = _sources _static _images common
 #-Examples-------------------------------------------------
 EXPDIR = ./docs/common/user_manual/examples/desktop
 EXPSRC = ${SIMCENTER_DEV}/$(SIMDOC_APP)/Examples
-# RENDRE = rendre -vvv -D $(EXPSRC)/examples.json
-RENDRE = rendre -vvv -D $(EXPSRC)/.aurore/aurore.cache.json
+RENDRE = rendre -vvv -D $(EXPSRC)/index.json
 EXAMPLES = $(shell $(RENDRE) -l examples.yaml\#/$(SIMDOC_APP) path -j ' ' -- \%%:doc)
 
 #-Help-----------------------------------------------------

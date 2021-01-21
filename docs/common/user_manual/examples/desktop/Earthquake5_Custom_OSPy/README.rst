@@ -1,6 +1,7 @@
 
-Earthquake - Alameda
-====================
+Earthquake - Custom - OpenSeesPy
+================================
+
 
 #. **GI**
     
