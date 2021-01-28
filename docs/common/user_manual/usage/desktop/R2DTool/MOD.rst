@@ -5,7 +5,7 @@ In this panel the user can select the applications that will be used to model ea
 
 .. _fig-buildingModelingPanel:
 
-.. figure:: figures/RDTMODInputPanel.png
+.. figure:: figures/R2DMODInputPanel.png
   :align: center
   :figclass: align-center
 
@@ -32,7 +32,7 @@ The **MDOF-LU** building modeling application creates a hysteretic, multi-degree
 
 .. _fig-MDOFLUModelingPanel:
 
-.. figure:: figures/RDTMDOFLUBuildingModel.png
+.. figure:: figures/R2DMDOFLUBuildingModel.png
   :align: center
   :figclass: align-center
 
@@ -43,16 +43,16 @@ The **MDOF-LU** building modeling application creates a hysteretic, multi-degree
 OpenSeesPy Building Model
 *************************
 
-The **OpenSeesPy** building modeling application creates an OpenSeesPy structural model from a user-defined Python script. The input panel, shown in :numref:`fig-RDTOpenSeesPyBuildingModel`, has the following inputs:
+The **OpenSeesPy** building modeling application creates an OpenSeesPy structural model from a user-defined Python script. The input panel, shown in :numref:`fig-R2DOpenSeesPyBuildingModel`, has the following inputs:
 
 	#. **OpenSeesPy Script:** Script containing the code to create the building model. 
 	#. **Node Response Mapping:** By default, the workflow assumes X=1, Y=2, Z=3 mapping between the *x,y,z* directions and degrees of freedom, with *x* and *y* being the horizontal directions. This input allows you to define an alternative mapping by providing three numbers separated by commas in a string, such as ‘1, 3, 2’ if you wish to have *y* as the vertical direction.
 	#. **Analysis Spatial Dimensions:** Number of dimensions in the OpenSeesPy analysis.
 	#. **Degrees-of-Freedom at Node:** Number of degrees-of-freedom at each node. 
 
-.. _fig-RDTOpenSeesPyBuildingModel:
+.. _fig-R2DOpenSeesPyBuildingModel:
 
-.. figure:: figures/RDTOpenSeesPyBuildingModel.png
+.. figure:: figures/R2DOpenSeesPyBuildingModel.png
   :align: center
   :figclass: align-center
 

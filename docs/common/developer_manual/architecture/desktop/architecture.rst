@@ -21,8 +21,8 @@ Documentation of the software architecture is detailed in the following pages:
 
    file-types.rst
    backendApplications.rst
-   :RDT:workflows
-   :RDT:run-manually
+   :R2D:workflows
+   :R2D:run-manually
    c4model 
    :notQuoFEM:architectureLevel4
 

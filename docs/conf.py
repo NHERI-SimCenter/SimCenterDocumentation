@@ -8,11 +8,11 @@
 
 import os
 app_name = os.path.expandvars("$SIMDOC_APP")
-if app_name in ["RDT", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun"]:
+if app_name in ["R2DTool", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun"]:
 	pass
 else:
 	pass
-	#app_name = 'RDT'
+	#app_name = 'R2DTool'
 	#app_name = 'PBE'
 	#app_name = 'EE-UQ'
 	#app_name = 'WE-UQ'
@@ -44,7 +44,7 @@ exclude_patterns = [
 		'**/*response*',
 		'**/*earthquake*',
 		'**/*wind*',
-		'**/*RDT*',
+		'**/*R2DTool*',
 		'**/*PBE*',
 		'**/*WEUQ*',
 		'**/*WE[-_]UQ*',
@@ -54,7 +54,8 @@ exclude_patterns = [
 		'**/*TInF*',
 		'**/*pelicun*',
 		'**/*old*',
-		'**/*quoFEM*'
+		'**/*quoFEM*',
+		'**/qfem*'
 	]
 
 source_suffix = {
@@ -67,7 +68,7 @@ toc_filter_exclusions = [
 	'response',
 	'earthquake',
 	'wind',
-	'RDT',
+	'R2D',
 	'PBE',
 	'quoFEM',
 	'notQuoFEM',
@@ -144,20 +145,20 @@ example_repo = f'https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/
 
 # app-specific settings
 
-if app_name == 'RDT':
+if app_name == 'R2DTool':
 
 	project = 'Regional Resilience Determination Tool'
 	copyright = '2019, The Regents of the University of California'
 
 	author = 'Adam Zsarnóczay, Frank McKenna, Michael Gardner, Wael Elhaddad, Joanna Zou, Chaofeng Wang'
 
-	tags.add('RDT_app')
+	tags.add('R2D_app')
 	tags.add('desktop_app')
 	tags.add('earthquake')
 	tags.add('response')
 	tags.add('notQuoFEM')
 
-	toc_filter_exclusions.remove('RDT')
+	toc_filter_exclusions.remove('R2D')
 	toc_filter_exclusions.remove('desktop')
 	toc_filter_exclusions.remove('earthquake')
 	toc_filter_exclusions.remove('response')
@@ -167,7 +168,7 @@ if app_name == 'RDT':
 	exclude_patterns.remove('**/*desktop*')
 	exclude_patterns.remove('**/*earthquake*')
 	exclude_patterns.remove('**/*response*')
-	exclude_patterns.remove('**/*RDT*')
+	exclude_patterns.remove('**/*R2DTool*')
 
 	# TODO: fix these temporary changes
 	exclude_patterns.append('**/*architectureLevel4.rst*')
@@ -183,22 +184,22 @@ if app_name == 'RDT':
 
 	rst_prolog += """\
 .. |full tool name| replace:: Regional Resilience Determination Tool
-.. |short tool name| replace:: RDT app
-.. |short tool id| replace:: RDT
-.. |tool github link| replace:: `RDT Github page`_
-.. _RDT Github page: https://github.com/NHERI-SimCenter/PBE
-.. |app| replace:: RDT app
-.. |appName| replace:: RDT app
+.. |short tool name| replace:: R2D app
+.. |short tool id| replace:: R2D
+.. |tool github link| replace:: `R2D Github page`_
+.. _R2D Github page: https://github.com/NHERI-SimCenter/R2DTool
+.. |app| replace:: R2D app
+.. |appName| replace:: R2D app
 .. |messageBoard| replace:: `Message Board`_
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0
-.. |githubLink| replace:: `RDT Github page`_
-.. |appLink| replace:: `RDT Download`_
-.. _RDT Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FRDT
+.. |githubLink| replace:: `R2D Github page`_
+.. |appLink| replace:: `R2D Download`_
+.. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FRDT
 .. |tool version| replace:: 2.0
-.. |figDownload| replace:: :numref:`figDownloadRDT`
-.. |figUI| replace:: :numref:`figUI-RDT`
-.. |figGenericUI| replace:: :numref:`figGenericUI-RDT`
-.. |figMissingCRT| replace:: :numref:`figMissingCRT-RDT`
+.. |figDownload| replace:: :numref:`figDownloadR2D`
+.. |figUI| replace:: :numref:`figUI-R2D`
+.. |figGenericUI| replace:: :numref:`figGenericUI-R2D`
+.. |figMissingCRT| replace:: :numref:`figMissingCRT-R2D`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 .. |developers| replace:: **SimCenter PI's and Developers**
 
@@ -354,6 +355,7 @@ elif app_name == 'quoFEM':
 
 	exclude_patterns.remove('**/*desktop*')
 	exclude_patterns.remove('**/*quoFEM*')
+	exclude_patterns.remove('**/qfem*')
 
 	# TODO: fix these temporary changes
 	exclude_patterns.append('**/*architectureLevel4.rst*')

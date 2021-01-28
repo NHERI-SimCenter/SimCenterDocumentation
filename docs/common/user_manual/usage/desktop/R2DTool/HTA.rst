@@ -17,7 +17,7 @@ The **Nearest Neighbor Event** application draws samples of hazard intensities f
 
 .. _fig-RegionalMapping:
 
-.. figure:: figures/RDTHTAPanel.png
+.. figure:: figures/R2DHTAPanel.png
 	:align: center
 	:figclass: align-center
 

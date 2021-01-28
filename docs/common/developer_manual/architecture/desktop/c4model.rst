@@ -11,7 +11,7 @@ Level 1: Context Diagram
 ------------------------
 
 A Level 1 diagram in :numref:`figContext` shows the system context for the SimCenter applications, i.e. how it fits in the world. In the diagram:
-- the SimCenter computational applications (EE-UQ, WE-UQ, PBE, RDT) are shown in the center surrounded by the user and the systems it interacts with.
+- the SimCenter computational applications (EE-UQ, WE-UQ, PBE, R2D) are shown in the center surrounded by the user and the systems it interacts with.
 - input data for the SimCenter applications can be obtained either from NHERI datasets accessible on the DesignSafe `Data Depot <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/>`_, shown to the right, or from web-based databases, shown to the left.
 - the SimCenter applications can then be run in conjunction with open-source software applications (such as Dakota, FEAP, OpenSees, Python, OpenFOAM, etc.) either on a local desktop, shown below, or using HPC resources on |DesignSafe|, shown to the right.
 
@@ -91,7 +91,7 @@ To facilitate the development of the different SimCenter applications and to enc
 
 .. note::
 
-   ``femUQ.py`` is the backend application for the EE-UQ, WE-UQ, Hydro-UQ, and the PBE applications. For RDT the backend application is ``RDT_Workflow.py``.
+   ``femUQ.py`` is the backend application for the EE-UQ, WE-UQ, Hydro-UQ, and the PBE applications. For R2D the backend application is ``R2D_Workflow.py``.
 
 The interaction between the frontend and the backend is best understood by looking at the sequence of events that occurs when the user presses the ``Run`` button. As shown in the figure below, the UI application will first perform a number of steps:
 

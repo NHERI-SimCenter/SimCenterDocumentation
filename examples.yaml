@@ -7,5 +7,7 @@ WE-UQ:
   include-item:
     ? weuq-0001
 
-RDT: ~
+R2DTool:
+  include-item:
+    ? '*'
 

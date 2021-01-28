@@ -5,7 +5,7 @@ In this panel, shown in :numref:`fig-regionalGISPanel`, the user can visualize t
 
 .. _fig-regionalGISPanel:
 
-.. figure:: figures/RDTVIZPanel.png
+.. figure:: figures/R2DVIZPanel.png
   :align: center
   :figclass: align-center
 
@@ -21,7 +21,7 @@ In this panel, shown in :numref:`fig-regionalGISPanel`, the user can visualize t
 
 .. _fig-AssetSelection:
 
-.. figure:: figures/RDTAssetSelection.png
+.. figure:: figures/R2DAssetSelection.png
   :align: center
   :figclass: align-center
 
