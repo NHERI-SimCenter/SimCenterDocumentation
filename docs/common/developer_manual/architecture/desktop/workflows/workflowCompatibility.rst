@@ -3,7 +3,7 @@ Choosing Component Applications
 
 For the workflow to run successfully, component applications must be selected to satisfy compatibility requirements between workflow components. This page is a guide on how to choose component applications for a particular case study.
 
-A user's choice of :ref:`component applications <lblbackendApps>` for RDT depends on the hazard type, available data, and user preferences. All currently supported component applications and possible workflows are summarized in :numref:`figWorkflowDiagram`.
+A user's choice of :ref:`component applications <lblbackendApps>` for R2D depends on the hazard type, available data, and user preferences. All currently supported component applications and possible workflows are summarized in :numref:`figWorkflowDiagram`.
 
 
 .. figure:: figures/workflow_diagram.png

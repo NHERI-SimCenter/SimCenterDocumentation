@@ -24,7 +24,7 @@ The **CSV to BIM** application imports a building inventory database from a user
 
 .. _fig-buildingInputPanel:
 
-.. figure:: figures/RDTBuildingsInputPanel.png
+.. figure:: figures/R2DBuildingsInputPanel.png
   :align: center
   :figclass: align-center
 

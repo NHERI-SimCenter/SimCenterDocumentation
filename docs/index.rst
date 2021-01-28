@@ -5,7 +5,7 @@
 
    |developers|
 
-   .. only:: RDT_app
+   .. only:: R2D_app
 
       The |full tool name| (|app|) is an open-source research application that can be used to simulate the performance of the built environment in an urban region subjected to natural hazards. The application
       predict the performance of a building subjected to earthquake events. [...] The computations are performed by a simulation workflow that will run on either the user's local machine or on a high performance computer made available by |DesignSafe|.
@@ -55,7 +55,7 @@
    :numbered: 4
 
    :PBE:common/user_manual/about/PBE/about
-   :RDT:common/user_manual/about/RDT/about
+   :R2D:common/user_manual/about/R2DTool/about
    :EEUQ:common/user_manual/about/EEUQ/about
    :WEUQ:common/user_manual/about/WEUQ/about
    :quoFEM:common/user_manual/about/quoFEM/aboutQUOFEM
@@ -88,11 +88,11 @@
    :maxdepth: 1
    :numbered: 3
 
-   :RDT:common/testbeds/sf_bay_area/index
-   :RDT:common/testbeds/atlantic_city/index
-   :RDT:common/testbeds/memphis/index
-   :RDT:common/testbeds/anchorage/anchorage
-   :RDT:common/testbeds/lake_charles/index
+   :R2D:common/testbeds/sf_bay_area/index
+   :R2D:common/testbeds/atlantic_city/index
+   :R2D:common/testbeds/memphis/index
+   :R2D:common/testbeds/anchorage/index
+   :R2D:common/testbeds/lake_charles/index
 
 .. _lbl-technical-manual:
 
@@ -126,7 +126,7 @@
    :desktop_app:common/developer_manual/coding_style/desktop/coding_style
    :pelicun:common/developer_manual/coding_style/pelicun/coding_style
 
-   :RDT:common/developer_manual/examples/desktop/examples
+   :R2D:common/developer_manual/examples/desktop/examples
    :pelicun:common/developer_manual/examples/pelicun/examples
 
    :pelicun:common/developer_manual/API/pelicun/API

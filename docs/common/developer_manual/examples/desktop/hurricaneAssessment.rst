@@ -72,7 +72,7 @@ The workflow can be executed by uploading the appropriate files to :ref:`DesignS
 
 .. code-block::
 
-      python "C:/rWHALE/applications/Workflow/RDT_workflow.py" "C:/rWHALE/hurricane_example/rWHALE_config_hu.json" --registry "C:/rWHALE/applications/Workflow/WorkflowApplications.json" --referenceDir "C:/rWHALE/hurricane_example/input_data/" -w "C:/rWHALE/hurricane_example/results"
+      python "C:/rWHALE/applications/Workflow/R2D_workflow.py" "C:/rWHALE/hurricane_example/rWHALE_config_hu.json" --registry "C:/rWHALE/applications/Workflow/WorkflowApplications.json" --referenceDir "C:/rWHALE/hurricane_example/input_data/" -w "C:/rWHALE/hurricane_example/results"
 
 
 

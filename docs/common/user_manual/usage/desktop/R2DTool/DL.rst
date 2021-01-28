@@ -9,7 +9,7 @@ The **Damage and Loss** panel is where the user selects a damage and loss method
 Pelicun Damage and Loss 
 -----------------------
 
-Shown in :numref:`fig-RDTPelicunDLPanel`, the **Pelicun Damage and Loss** application has the following inputs:
+Shown in :numref:`fig-R2DPelicunDLPanel`, the **Pelicun Damage and Loss** application has the following inputs:
 
 	#. **Damage and Loss Methodology:** The type of damage and loss methodology to use. The following damage and loss methodologies are available:
 	
@@ -26,9 +26,9 @@ Shown in :numref:`fig-RDTPelicunDLPanel`, the **Pelicun Damage and Loss** applic
 	
 	#. **Include Ground Failure:** Checking this box will include ground failure in the analysis. If ground failure is included, fragility groups associated with ground failure are added in the auto-population phase. Note that such analysis requires peak ground displacement (PGD) values as inputs.
 
-.. _fig-RDTPelicunDLPanel:
+.. _fig-R2DPelicunDLPanel:
 
-.. figure:: figures/RDTPelicunDLPanel.png
+.. figure:: figures/R2DPelicunDLPanel.png
 	:align: center
 	:figclass: align-center
 

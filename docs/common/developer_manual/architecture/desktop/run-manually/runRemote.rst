@@ -147,9 +147,9 @@ You will see an output in the Ubuntu window similar to the following.
 
 
 
-7. Initialize a job with the name "RDT_test_run" by executing the command:
+7. Initialize a job with the name "R2D_test_run" by executing the command:
 
-      ``tapis jobs init rWhale-2.1.0 --name RDT_test_run > job.json``
+      ``tapis jobs init rWhale-2.1.0 --name R2D_test_run > job.json``
 
 8. A job.json file is created. You may make changes to this file using VIM Editor, by running the command:
 

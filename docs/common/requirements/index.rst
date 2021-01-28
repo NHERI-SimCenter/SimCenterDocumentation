@@ -37,7 +37,7 @@ Applications to allow researchers to improve on methods related to determining o
 Regional Scale Applications
 +++++++++++++++++++++++++++
 
-For regional scale, the requirements are broken down into four classes. AI related requirements in **BRAILS**, damage and loss prediction in **pelicun**, backend workflow requirements in **rWhale**, and front end user interface requirements in **RDT**.
+For regional scale, the requirements are broken down into four classes. AI related requirements in **BRAILS**, damage and loss prediction in **pelicun**, backend workflow requirements in **rWhale**, and front end user interface requirements in **R2D**.
 
 .. toctree-filt::
    :caption: Regional Scale 
@@ -47,7 +47,7 @@ For regional scale, the requirements are broken down into four classes. AI relat
    BRAILS
    pelicun
    rWhale
-   RDT
+   R2D
    testbeds
 
 
