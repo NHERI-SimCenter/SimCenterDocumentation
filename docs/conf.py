@@ -12,11 +12,11 @@ if app_name in ["R2DTool", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun"]:
 	pass
 else:
 	pass
-	#app_name = 'R2DTool'
+	app_name = 'R2DTool'
 	#app_name = 'PBE'
 	#app_name = 'EE-UQ'
 	#app_name = 'WE-UQ'
-	app_name = 'quoFEM'
+	#app_name = 'quoFEM'
 	#app_name = 'pelicun'
 
 	os.environ['SIMDOC_APP'] = app_name
@@ -77,8 +77,7 @@ toc_filter_exclusions = [
 	'TinF',
 	'TInF',
 	'S3hark',
-	'pelicun',
-	'HazardSimulation'
+	'pelicun'
 ]
 # gallery data sources
 rendre_config = {
@@ -158,14 +157,12 @@ if app_name == 'R2DTool':
 	tags.add('earthquake')
 	tags.add('response')
 	tags.add('notQuoFEM')
-	tags.add('HazardSimulation_app')
 
 	toc_filter_exclusions.remove('R2D')
 	toc_filter_exclusions.remove('desktop')
 	toc_filter_exclusions.remove('earthquake')
 	toc_filter_exclusions.remove('response')
 	toc_filter_exclusions.remove('notQuoFEM')
-	toc_filter_exclusions.remove('HazardSimulation')
 	toc_filter_exclude = toc_filter_exclusions
 
 	exclude_patterns.remove('**/*desktop*')
