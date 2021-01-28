@@ -6,13 +6,21 @@
 
 # -- SimCenter App selection -------------------------------------------------
 
+import os
+app_name = os.path.expandvars("$SIMDOC_APP")
+if app_name in ["R2DTool", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun"]:
+	pass
+else:
+	pass
+	#app_name = 'R2DTool'
+	#app_name = 'PBE'
+	#app_name = 'EE-UQ'
+	#app_name = 'WE-UQ'
+	app_name = 'quoFEM'
+	#app_name = 'pelicun'
 
-app_name = 'RDT'
-#app_name = 'PBE'
-#app_name = 'EE-UQ'
-#app_name = 'WE-UQ'
-#app_name = 'quoFEM'
-#app_name = 'pelicun'
+	os.environ['SIMDOC_APP'] = app_name
+	os.environ['SIMCENTER_DEV'] = os.path.normpath('../../')
 
 print('app_name = ' + app_name)
 
@@ -24,7 +32,6 @@ print('app_name = ' + app_name)
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 
-import os
 import sys
 sys.path.append(os.path.abspath('./sphinx_ext/'))
 
@@ -37,24 +44,31 @@ exclude_patterns = [
 		'**/*response*',
 		'**/*earthquake*',
 		'**/*wind*',
-		'**/*RDT*',
+		'**/*R2DTool*',
 		'**/*PBE*',
 		'**/*WEUQ*',
+		'**/*WE[-_]UQ*',
 		'**/*EEUQ*',
+		'**/*EE[-_]UQ*',
 		'**/*TinF*',
 		'**/*TInF*',
 		'**/*pelicun*',
 		'**/*old*',
-		'**/*quoFEM*'
+		'**/*quoFEM*',
+		'**/qfem*'
 	]
 
+source_suffix = {
+	".rst": "restructuredtext",
+	# ".md" : "markdown"
+}
 
 toc_filter_exclusions = [
 	'desktop',
 	'response',
 	'earthquake',
 	'wind',
-	'RDT',
+	'R2D',
 	'PBE',
 	'quoFEM',
 	'notQuoFEM',
@@ -66,6 +80,10 @@ toc_filter_exclusions = [
 	'pelicun',
 	'HazardSimulation'
 ]
+# gallery data sources
+rendre_config = {
+
+}
 
 extensions = []
 
@@ -128,21 +146,21 @@ example_repo = f'https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/
 
 # app-specific settings
 
-if app_name == 'RDT':
+if app_name == 'R2DTool':
 
 	project = 'Regional Resilience Determination Tool'
 	copyright = '2019, The Regents of the University of California'
 
 	author = 'Adam Zsarnóczay, Frank McKenna, Michael Gardner, Wael Elhaddad, Joanna Zou, Chaofeng Wang'
 
-	tags.add('RDT_app')
+	tags.add('R2D_app')
 	tags.add('desktop_app')
 	tags.add('earthquake')
 	tags.add('response')
 	tags.add('notQuoFEM')
 	tags.add('HazardSimulation_app')
 
-	toc_filter_exclusions.remove('RDT')
+	toc_filter_exclusions.remove('R2D')
 	toc_filter_exclusions.remove('desktop')
 	toc_filter_exclusions.remove('earthquake')
 	toc_filter_exclusions.remove('response')
@@ -153,7 +171,7 @@ if app_name == 'RDT':
 	exclude_patterns.remove('**/*desktop*')
 	exclude_patterns.remove('**/*earthquake*')
 	exclude_patterns.remove('**/*response*')
-	exclude_patterns.remove('**/*RDT*')
+	exclude_patterns.remove('**/*R2DTool*')
 
 	# TODO: fix these temporary changes
 	exclude_patterns.append('**/*architectureLevel4.rst*')
@@ -169,29 +187,29 @@ if app_name == 'RDT':
 
 	rst_prolog += """\
 .. |full tool name| replace:: Regional Resilience Determination Tool
-.. |short tool name| replace:: RDT app
-.. |short tool id| replace:: RDT
-.. |tool github link| replace:: `RDT Github page`_
-.. _RDT Github page: https://github.com/NHERI-SimCenter/PBE
-.. |app| replace:: RDT app
-.. |appName| replace:: RDT app
+.. |short tool name| replace:: R2D app
+.. |short tool id| replace:: R2D
+.. |tool github link| replace:: `R2D Github page`_
+.. _R2D Github page: https://github.com/NHERI-SimCenter/R2DTool
+.. |app| replace:: R2D app
+.. |appName| replace:: R2D app
 .. |messageBoard| replace:: `Message Board`_
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0
-.. |githubLink| replace:: `RDT Github page`_
-.. |appLink| replace:: `RDT Download`_
-.. _RDT Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FRDT
+.. |githubLink| replace:: `R2D Github page`_
+.. |appLink| replace:: `R2D Download`_
+.. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FRDT
 .. |tool version| replace:: 2.0
-.. |figDownload| replace:: :numref:`figDownloadRDT`
-.. |figUI| replace:: :numref:`figUI-RDT`
-.. |figGenericUI| replace:: :numref:`figGenericUI-RDT`
-.. |figMissingCRT| replace:: :numref:`figMissingCRT-RDT`
+.. |figDownload| replace:: :numref:`figDownloadR2D`
+.. |figUI| replace:: :numref:`figUI-R2D`
+.. |figGenericUI| replace:: :numref:`figGenericUI-R2D`
+.. |figMissingCRT| replace:: :numref:`figMissingCRT-R2D`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 .. |developers| replace:: **SimCenter PI's and Developers**
 
 """
 
 	# html_logo = 'common/figures/SimCenter_RDT_logo.png'
-	html_logo = 'common/figures/RDT-Logo-grey2.png'
+	html_logo = 'common/figures/RDT-Logo-grey3.png'
 
 	html_theme_options = {
 		'analytics_id': '...', #TODO: add analytics ID
@@ -261,7 +279,7 @@ elif app_name == 'PBE':
 """
 
 	# html_logo = 'common/figures/SimCenter_PBE_logo.png'
-	html_logo = 'common/figures/PBE-Logo-grey2.png'
+	html_logo = 'common/figures/PBE-Logo-grey3.png'
 
 	html_theme_options = {
 		'analytics_id': 'UA-158130480-3',
@@ -292,6 +310,7 @@ elif app_name == 'EE-UQ':
 	exclude_patterns.remove('**/*desktop*')
 	exclude_patterns.remove('**/*earthquake*')
 	exclude_patterns.remove('**/*response*')
+	exclude_patterns.remove('**/*EE[-_]UQ*')
 
 	rst_prolog += """
 .. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application (EE-UQ)
@@ -316,7 +335,7 @@ elif app_name == 'EE-UQ':
 
 """
 
-	html_logo = 'common/figures/EE-UQ-Logo-grey2.png'
+	html_logo = 'common/figures/EE-UQ-Logo-grey3.png'
 
 	html_theme_options = {
 		'analytics_id': 'UA-158130480-1',
@@ -339,6 +358,7 @@ elif app_name == 'quoFEM':
 
 	exclude_patterns.remove('**/*desktop*')
 	exclude_patterns.remove('**/*quoFEM*')
+	exclude_patterns.remove('**/qfem*')
 
 	# TODO: fix these temporary changes
 	exclude_patterns.append('**/*architectureLevel4.rst*')
@@ -349,10 +369,12 @@ elif app_name == 'quoFEM':
 	exclude_patterns.append('**/desktop/FEM.rst')
 	exclude_patterns.append('**/desktop/GI.rst')
 	exclude_patterns.append('**/desktop/SIM.rst')
-
+	# exclude_patterns.append('**/desktop/qfem-*')
+	exclude_patterns.append('**/desktop/quo-*')
+	exclude_patterns.append('**/testbeds/*')
 	# END TODO
 
-	rst_prolog += """
+	rst_prolog += f"""
 .. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)
 .. |short tool name| replace:: quoFEM app
 .. |short tool id| replace:: quoFEM
@@ -371,11 +393,9 @@ elif app_name == 'quoFEM':
 .. |figGenericUI| replace:: :numref:`figGenericUI-QUOFEM`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-EE`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
-.. |developers| replace:: **Frank McKenna**, **Nikhil Padhye**, **Adam Zsarnóczay**
+.. |developers| replace:: {author}"""
 
-"""
-
-	html_logo = 'common/figures/quoFEM-LogoImageGrey.png'
+	html_logo = 'common/figures/quoFEM-LogoImageGrey-app.png'
 
 	html_theme_options = {
 		'analytics_id': 'UA-158130480-4',
@@ -386,7 +406,7 @@ elif app_name == 'quoFEM':
 
 	# Example links
 	extlinks.update(
-	   {f'quo-{i:02}' : (f'{example_repo}/quo-{i:02}/%s',f'quo-{i:02}') for i in range(1,99)}
+	   {f'qfem-{i:04}' : (f'{example_repo}/qfem-{i:04}/%s',f'qfem-{i:04}') for i in range(1,99)}
 	)
 
 elif app_name == 'WE-UQ':
@@ -412,6 +432,7 @@ elif app_name == 'WE-UQ':
 	exclude_patterns.remove('**/*wind*')
 	exclude_patterns.remove('**/*response*')
 	exclude_patterns.remove('**/*TinF*')
+	exclude_patterns.remove('**/*WE[-_]UQ*')
 
 	rst_prolog += """
 .. |full tool name| replace:: Wind Engineering with Uncertainty Quantification Application (WE-UQ)
@@ -437,7 +458,7 @@ elif app_name == 'WE-UQ':
 
 """
 
-	html_logo = 'common/figures/WE-UQ-Logo-grey2.png' #TODO: replace with EE-UQ logo!
+	html_logo = 'common/figures/WE-UQ-Logo-grey3.png' #TODO: replace with EE-UQ logo!
 
 
 	html_theme_options = {
@@ -509,7 +530,7 @@ elif app_name == 'pelicun':
 
 	pygments_style = 'sphinx'
 
-	html_logo = 'common/figures/pelicun-Logo-grey.png'
+	html_logo = 'common/figures/pelicun-Logo-grey3.png'
 
 	html_theme_options = {
 		'analytics_id': 'UA-158130480-7',
@@ -533,7 +554,8 @@ extensions = extensions + [
     'toctree_filter',
     'sphinxcontrib.images',
 	'sphinx.ext.extlinks',
-	'sphinxcontrib.images'
+	'sphinxcontrib.images',
+	'rendre.sphinx'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -569,7 +591,7 @@ html_secnum_suffix = " "
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ['_static','_static/css/']
 
 # For a full list of configuration options see the documentation:
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
@@ -582,3 +604,13 @@ html_static_path = ['_static']
 latex_elements = {
   'extraclassoptions': 'openany,oneside'
 }
+latex_documents = [
+	(
+		'index',
+		app_name + ".tex", # tex output file
+		project,          # Document title
+		author.replace(', ',' \\and '), # authors
+		'manual'           # latex theme
+	)
+]
+latex_logo = 'common/figures/NSF_SimCenter_NO TEXT_SimCenter.png'

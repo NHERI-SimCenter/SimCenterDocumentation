@@ -19,7 +19,7 @@ The distribution of the buildings' structural types and stories are illustrated 
 Inputs
 ==========
 
-The example input files can be downloaded here: :download:`input_data_hu.zip <files/input_data_hu.zip>`. For more information about required input files, refer to :ref:`Inputs <lblUserDefInputs>`.
+The example input files can be downloaded here: :download:`example_hu.zip <files/example_hu.zip>`. For more information about required input files, refer to :ref:`Inputs <lblUserDefInputs>`.
 
 
 1. **Configuration file**: The configuration file specifies all simulation settings, including the application types, input file names, units, and type of outputs.
@@ -72,7 +72,7 @@ The workflow can be executed by uploading the appropriate files to :ref:`DesignS
 
 .. code-block::
 
-      python "C:/rWHALE/applications/Workflow/RDT_workflow.py" "C:/rWHALE/hurricane_example/rWHALE_config_hu.json" --registry "C:/rWHALE/applications/Workflow/WorkflowApplications.json" --referenceDir "C:/rWHALE/hurricane_example/input_data/" -w "C:/rWHALE/hurricane_example/results"
+      python "C:/rWHALE/applications/Workflow/R2D_workflow.py" "C:/rWHALE/hurricane_example/rWHALE_config_hu.json" --registry "C:/rWHALE/applications/Workflow/WorkflowApplications.json" --referenceDir "C:/rWHALE/hurricane_example/input_data/" -w "C:/rWHALE/hurricane_example/results"
 
 
 
@@ -101,7 +101,7 @@ Outputs
 
 The example output files can be downloaded here: :download:`output_data_hu.zip <files/output_data_hu.zip>`. For more information about the output files produced, refer to :ref:`Outputs <lblOutputs>`.
 
-1. **EDP_1-20.csv**: reports statistics on the EDP results from . As in HAZUS, the statistics reported are the median and lognormal standard deviation of peak wind speed (PWS) and flood water depth (FWD).
+1. **EDP_1-20.csv**: reports statistics on EDP results, where the hazard IM is used as the EDP. As in HAZUS, the statistics reported are the median and lognormal standard deviation of peak wind speed (PWS) and flood water depth (FWD).
 
 .. csv-table:: EDP_1-20.csv
    :file: files/EDP_1-20.csv

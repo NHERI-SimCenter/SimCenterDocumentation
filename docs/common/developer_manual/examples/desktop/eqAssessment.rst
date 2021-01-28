@@ -16,7 +16,7 @@ This example is a small-scale regional earthquake risk assessment which performs
 Inputs
 ==========
 
-The example input files can be downloaded here: :download:`input_data_eq.zip <files/input_data_eq.zip>`. For more information about required input files, refer to :ref:`Inputs <lblUserDefInputs>`.
+The example input files can be downloaded here: :download:`example_eq.zip <files/example_eq.zip>`. For more information about required input files, refer to :ref:`Inputs <lblUserDefInputs>`.
 
 
 1. **Configuration file**: The configuration file specifies all simulation settings, including the application types, input file names, units, and type of outputs.
@@ -93,13 +93,14 @@ The workflow can be executed by uploading the appropriate files to :ref:`DesignS
 
 .. code-block::
 
-    python "C:/rWHALE/applications/Workflow/RDT_workflow.py" "C:/rWHALE/cantilever_example/rWHALE_config_eq.json" --registry "C:/rWHALE/applications/Workflow/WorkflowApplications.json" --referenceDir "C:/rWHALE/cantilever_example/input_data/" -w "C:/rWHALE/cantilever_example/results"
+    python "C:/rWHALE/applications/Workflow/R2D_workflow.py" "C:/rWHALE/cantilever_example/rWHALE_config_eq.json" --registry "C:/rWHALE/applications/Workflow/WorkflowApplications.json" --referenceDir "C:/rWHALE/cantilever_example/input_data/" -w "C:/rWHALE/cantilever_example/results"
 
 
 
 This command locates the backend applications in the folder "applications", and the input files in a directory "cantilever_example". Please ensure that the paths in the command appropriately identify the locations of the files in your directory.
 
 ::
+
     applications
     cantilever_example
     ├── rWHALE_config_eq.json              # configuration file

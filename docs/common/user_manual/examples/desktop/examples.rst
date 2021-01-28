@@ -7,6 +7,7 @@ Examples
 .. only:: quoFEM_app
 
 	The following are a few examples showing the usage of quoFEM. Video companions showing these examples are also provided for selected problems. The files for the examples are available on Github.
+   
 
 .. only:: EEUQ_app
 
@@ -28,18 +29,28 @@ Examples
 
 		The following is one example showing the usage of |short tool name|. Video companions showing these examples are also provided. The files for the examples are available in |tool github link|.
 
+
+
 .. toctree-filt::
    :maxdepth: 1
 
-   :quoFEM:quoFEM/exampleTrussOpenSees/README
-   :quoFEM:quoFEM/quo-09/README
-   :quoFEM:quoFEM/exampleFrameConv/README
-   :quoFEM:quoFEM/exampleFrameBaye/README
-   :quoFEM:quoFEM/quo-14/README
-
    :EEUQ:EEUQ/exampleShearBuilding3/README
    :EEUQ:EEUQ/randomField/randomField
-   :WEUQ:WEUQ/exampleShearBuilding9/README
    :PBE:PBE/exampleShearBuilding3/README
+..    :WEUQ:WEUQ/exampleShearBuilding9/README
+
+
+..    :quoFEM:quoFEM/exampleTrussOpenSees/README
+..    :quoFEM:quoFEM/quo-09/README
+..    :quoFEM:quoFEM/exampleFrameConv/README
+..    :quoFEM:quoFEM/exampleFrameBaye/README
+
+
+.. rendre:: filtered-gallery
+	:data-file: $SIMCENTER_DEV/$SIMDOC_APP/Examples/index.json
+	:load-defaults: $SIMCENTER_DEV/SimCenterDocumentation/examples.yaml#/$SIMDOC_APP
+	
+	:link: ./%%:base/README
+
 
 	 :HazardSimulation:HazardSimulation/hs_01/README
