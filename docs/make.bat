@@ -47,13 +47,6 @@ if "%1" == "WE" (
 	goto end
 )
 
-if "%1" == "Testbed" (
-	%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
-	robocopy %BUILDDIR%/html ../../HurricaneTestbedDoc/docs /E > nul
-	echo.Generating RDT Documentation...
-	goto end
-)
-
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
 	echo.
