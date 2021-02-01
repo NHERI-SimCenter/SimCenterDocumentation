@@ -2,54 +2,72 @@
 Earthquake - Alameda
 ====================
 
++-----------------+----------------------------------------------------+
+| Download files  | :github:`Github <Examples/Earthquake2_Alameda/>`   |
++-----------------+----------------------------------------------------+
+
+
+
+#. **VIZ**
+    
+   .. figure:: figures/r2dt-0002-VIZ.png
+      :width: 600px
+      :align: center
+
+
 #. **GI**
     
    .. figure:: figures/r2dt-0002-GI.png
-      :width: 400px
+      :width: 600px
+      :align: center
 
 
 #. **HAZ**
     
    .. figure:: figures/r2dt-0002-HAZ.png
-      :width: 400px
+      :width: 600px
+      :align: center
 
 #. **ASD** 
 
    .. figure:: figures/r2dt-0002-ASD.png
-      :width: 400px
+      :width: 600px
+      :align: center
 
 #. **HTA** 
 
    .. figure:: figures/r2dt-0002-HTA.png
-      :width: 400px
+      :width: 600px
+      :align: center
 
-#. **MOD** 
+#. **MOD** In the building modeling panel, simply leave the first dropdown box set to **None**.
 
-   .. figure:: figures/r2dt-0002-MOD.png
-      :width: 400px
 
 #. **ANA** 
 
    .. figure:: figures/r2dt-0002-ANA.png
-      :width: 400px
+      :width: 600px
+      :align: center
 
 #. **DL** 
 
    .. figure:: figures/r2dt-0002-DL.png
-      :width: 400px
+      :width: 600px
+      :align: center
 
-#. **UQ** 
+#. **UQ**
 
    .. figure:: figures/r2dt-0002-UQ.png
-      :width: 400px
+      :width: 600px
+      :align: center
 
 #. **RV** 
 
-   .. figure:: figures/r2dt-0002-RV.png
-      :width: 400px
+   The random variable panel will be left empty for this example.
 
 #. **RES** 
 
    .. figure:: figures/r2dt-0002-RES.png
-      :width: 400px
+      :width: 600px
+      :align: center
 
