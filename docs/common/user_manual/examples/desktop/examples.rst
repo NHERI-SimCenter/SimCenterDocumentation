@@ -47,6 +47,6 @@ Examples
 	:load-defaults: $SIMCENTER_DEV/SimCenterDocumentation/examples.yaml#/$SIMDOC_APP
 	
 	:link: ./%%:base/README
-
+	:add-filter: %c/Simulation
 
 
