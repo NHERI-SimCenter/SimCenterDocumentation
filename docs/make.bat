@@ -12,8 +12,14 @@ set BUILDDIR=_build
 
 if "%1" == "" goto help
 
+
+
 if "%1" == "RDT" (
 	%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+	rd /s ../../RDT-Documentation/docs/_sources
+	rd /s ../../RDT-Documentation/docs/_static
+	rd /s ../../RDT-Documentation/docs/_images
+	rd /s ../../RDT-Documentation/docs/common
 	robocopy %BUILDDIR%/html ../../RDT-Documentation/docs /E > nul
 	echo.Generating RDT Documentation...
 	goto end
