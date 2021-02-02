@@ -1,0 +1,16 @@
+RW1 , "**Ability to perform regional simulation allowing communities to evaluate resilience and perform what-if types of analysis for natural hazard events**", "", "", ""
+RW1.1, "Perform such simulations for ground shaking due to Earthquake", GC , M , 1.0  
+RW1.2 , "Ability to perform such simulations for wave action due to Earthquake induced Tsunami ", GC ,  M ,  
+RW1.3 , "Ability to perform such simulations for wind action due to Hurricane", GC  , M , 2.1
+RW1.4 ,"Ability to perform such simulations for wave action due to Hurricane Storm Surge", GC , M , 2.2
+RW1.5 , "Ability to perform such for multi-hazard simulations: wind + storm surge, rain, wind and water borne debris", GC , M , 
+RW1.6 ,"Ability to incorporate damage to lifelines in determination of community resilience", GC , M ,
+RW2.1 , "Ability of stakeholders to perform simulations of different scenarios that aid in planning and response after damaging events", GC , M , 1.0 
+RW2.2 , "Ability to utilize HPC resources in regional simulations that enables repeated simulation for stochastic modeling", GC , M , 1.0 
+RW2.3, "Provide open-source software for developers to test new data and algorithms", GC , M , 1.0
+RW2.4 , "Ability to use a tool created by linking heterogeneous array of simulation tools to provide a toolset for regional simulation", GC , M , 1.0 
+RW2.5 , "Ability to utilize existing open-source software for faster deployment", GC , M , 1.0 
+RW2.6 , "Ability to utilize ensemble techniques ", GC , M , 1.0 
+RW2.7  , "Ability to include multi-scale nonlinear models", GC , M , 1.0 
+RW2.8 , "Ability to include a formal treatment of uncertainty and randomness", GC , M , 1.0 
+RW2.9 , "Ability to include latest information and algorithms (i.e. new attenuation models, building fragility curves, demographics, lifeline performance models, network interdependencies, indirect economic loss)", GC , D ,

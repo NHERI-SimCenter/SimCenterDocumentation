@@ -15,11 +15,11 @@ help:
 
 RDT:
 	make clean
-	rm -fr ../../RDT/docs/_sources
-	rm -fr ../../RDT/docs/_static
-	rm -fr ../../RDT/docs/_images
-	rm -fr ../../RDT/docs/common
-	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" ../../PBE-Documentation/docs $(O)
+	rm -fr ../../RDT-Documentation/docs/_sources
+	rm -fr ../../RDT-Documentation/docs/_static
+	rm -fr ../../RDT-Documentation/docs/_images
+	rm -fr ../../RDT-Documentation/docs/common
+	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" ../../RDT-Documentation/docs $(O)
 
 PBE:
 	make clean
@@ -53,7 +53,8 @@ WE:
 	rm -fr ../../WE-UQ-Documentation/docs/common
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" ../../WE-UQ-Documentation/docs $(O)
 
-.PHONY: help Makefile
+.PHONY: help Makefile expl
+
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
