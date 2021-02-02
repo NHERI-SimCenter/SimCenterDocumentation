@@ -33,10 +33,16 @@ Most of the remaining terminal commands should be run from the root of this repo
 Install the project dependencies by running the following terminal command from the documentation root:
 
 ```shell
-pip3 install -U -r requirements.txt
+pip install -r requirements.txt
 ```
 
-> Note: A Python 3 installation must be available in your terminal environment.
+or
+
+```shell
+pip3 install -r requirements.txt
+```
+
+> Note: A Python 3 installation must be available in your terminal environment. The pip command is used on Windows and pip3 on a Mac. Iy you do not have admin rights, add a -U before the -r.
 
 ### 3a Build with Make
 
