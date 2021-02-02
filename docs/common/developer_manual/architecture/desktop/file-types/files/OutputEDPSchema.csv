@@ -1,0 +1,5 @@
+type,PFA,PFA,PFA,PFA,PFA,PFA,PFA,PFA,PID,PID,PID,PID
+loc,0,0,0,0,1,1,1,1,1,1,1,1
+dir,1,1,2,2,1,1,2,2,1,1,2,2
+stat,median,beta,median,beta,median,beta,median,beta,median,beta,median,beta
+1,130.996,0.478197571,145.494,0.080967514,264.518,0.152547475,276.529,0.27654027,0.00182557,0.151875634,0.00190603,0.277128181

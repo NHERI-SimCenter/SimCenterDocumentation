@@ -1,0 +1,40 @@
+
+# Claudio M. Perez
+# Fall 2020
+
+SHELL = /bin/bash -O globstar
+
+export TEXINPUTS:=./texmf//:${TEXINPUTS}
+export BSTINPUTS:=./texmf//:${BSTINPUTS}
+
+LATEX    = pdflatex
+PDFBUILD = 
+
+.PHONY: tex all bib tables images
+
+all:
+	make idx
+	make tex-draft
+	make bib
+	make tex
+	make tex
+
+tex:
+	# -  lualatex --output-directory=build --interaction=nonstopmode ./editor.tex
+	-  pdflatex -output-directory=build -interaction=nonstopmode ./editor.tex
+
+bib:
+	-  biber ./build/editor
+
+idx: # process .bib file to add related reference keys
+	python scripts/index-prgms.py > index.sed
+	sed -i -f index.sed zotero-refs-BLT.bib
+
+images:
+	for i in `echo **/Figures/*.png | sed -r 's/ /\n/g' | sed -r 's/(.*)\.png/\1.pdf/g' | tr '\n' ' '`; do \
+		make $$i; \
+	done
+
+%.pdf: %.png
+	echo '$<' '$@'
+	convert '$<' -density 300 -units PixelsPerInch '$@'

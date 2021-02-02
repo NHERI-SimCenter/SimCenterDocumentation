@@ -21,7 +21,7 @@
       "Application": "CSV_to_BIM",
       "ApplicationData": {
         "Min": "1",
-        "Max": "10",
+        "Max": "20",
         "buildingSourceFile":"input_params_hu.csv"
       }
     },

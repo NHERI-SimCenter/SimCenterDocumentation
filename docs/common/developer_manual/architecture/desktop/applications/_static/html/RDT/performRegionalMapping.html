@@ -1,0 +1,94 @@
+
+
+
+<hr>
+<div class="twbs">
+  <div class="gallery accordion" id="gallery">
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0045</code>
+        <h5 class="card-title mb-0" >
+          NearestNeighborEvents
+        </h5>
+        <p class="card-text">
+          Assigns events to building site by sampling from nearest neighboring event sites, using coordinate locations. The user specifies the number of sampled events and the number of neighbors to sample events from.
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0045">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0045')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0045')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0045">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>eventGrid<code> &lt;path&gt;</code></dt>
+                  <dd>path to file containing location information on each event file</dd>
+                
+                  <dt>samples<code> &lt;int&gt;</code></dt>
+                  <dd>number of event samples to assign to each building</dd>
+                
+                  <dt>neighbors<code> &lt;int&gt;</code></dt>
+                  <dd>number of neighboring event sites to sample from</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0045">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre>usage: NNE.py [-h] [--buildingFile BUILDINGFILE]
+              [--filenameEVENTgrid FILENAMEEVENTGRID] [--samples SAMPLES]
+              [--neighbors NEIGHBORS] [--filter_label FILTER_LABEL]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --buildingFile BUILDINGFILE
+  --filenameEVENTgrid FILENAMEEVENTGRID
+  --samples SAMPLES
+  --neighbors NEIGHBORS
+  --filter_label FILTER_LABEL
+</pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  </div>
+</div>
+
+
+<script>
+function openCardTab(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script> 
+

@@ -35,7 +35,7 @@ The following categories are available:
 .. only:: quoFEM_app
 	   
 	  SimCenter UQ Engine
-	  ------------------
+	  -------------------
 	  This is an in-house developed UQ engine of SimCenter that accommodates different UQ methods. Currently the option is limited to global sensitivity analysis:
 
 	  .. toctree-filt::
@@ -46,6 +46,7 @@ The following categories are available:
 
 UCSD UQ Engine
 --------------
+
 This is a module developed at UCSD. This module currently offers support for Bayesian calibration using the Transitional Markov chain Monte Carlo (TMCMC) algorithm, which is also known as the Sequential Monte Carlo algorithm:
 
 .. toctree-filt::
@@ -53,3 +54,12 @@ This is a module developed at UCSD. This module currently offers support for Bay
 
    :quoFEM:UCSD_UQ_TMCMC
 
+Custom UQ Engine
+----------------
+This option allows the user to plug different UQ engines into the quoFEM workflow such that different uncertainty quantification
+methods and tools can be easily applied within the SimCenter framework.
+
+.. toctree-filt::
+   :maxdepth: 1
+
+   :quoFEM:CustomUQ

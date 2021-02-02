@@ -5,20 +5,21 @@
 Hurricane Assessment
 *********************
 
-This example is a small-scale regional hurricane risk assessment which performs damage/loss estimation for a group of 65 residential wood buildings. The buildings are subject to two types of hazards: wind, measured by peak wind speed (PWS), and flooding, measured by flood water depth (FWD). This example does not use response simulation; rather, an **IMasEDP** application translates the IMs directly to the DL application and uses IM-based component fragility functions to estimate damage.
+This example is a small-scale regional hurricane risk assessment which performs damage/loss estimation for a group of 20 wood buildings in Atlantic City under the Sandy Storm. The buildings are subject to two types of hazards: wind, measured by peak wind speed (PWS), and flooding, measured by flood water depth (FWD). This example does not use response simulation; rather, an **IMasEDP** application translates the IMs directly to the DL application and uses IM-based component fragility functions to estimate damage.
 The distribution of the buildings' structural types and stories are illustrated below.
 
 .. _figContext:
 
-.. figure:: figures/hurricaneexample.png
+.. figure:: figures/SandyWindFlood.png
    :align: center
    :figclass: align-center
 
+   Peak wind speed and floor water depth maps of the Sandy Storm
 
 Inputs
 ==========
 
-The example input files can be downloaded here: :download:`input_data_hu.zip <files/input_data_hu.zip>`. For more information about required input files, refer to :ref:`Inputs <lblUserDefInputs>`.
+The example input files can be downloaded here: :download:`example_hu.zip <files/example_hu.zip>`. For more information about required input files, refer to :ref:`Inputs <lblUserDefInputs>`.
 
 
 1. **Configuration file**: The configuration file specifies all simulation settings, including the application types, input file names, units, and type of outputs.
@@ -27,7 +28,7 @@ The example input files can be downloaded here: :download:`input_data_hu.zip <fi
    :language: python
    :linenos:
 
-2. **Building Application**: This example uses the :ref:`CSV_to_BIM <lblBuildingApp>` building application. In the configuration file, the Max and Min parameters are set to run the full set of 65 buildings, and the name of the building source file is provided as "input_params.csv". In the :ref:`building source file <lblUserDefInputs>`, input parameters for the DL assessment (``stories``, ``yearbuilt``, ``occupancy``, ``structure``, ``areafootprint``, ``replacementCost``) are specified.
+2. **Building Application**: This example uses the :ref:`CSV_to_BIM <lblBuildingApp>` building application. In the configuration file, the Max and Min parameters are set to run the full set of 20 buildings, and the name of the building source file is provided as "input_params.csv". In the :ref:`building source file <lblUserDefInputs>`, input parameters for the DL assessment (e.g., ``NumberofStories``, ``YearBuilt``, ``OccupancyClass``, ``StructureType``, ``PlanArea``, ``ReplacementCost``) are specified.
 
 **Building source file:**
 
@@ -71,7 +72,7 @@ The workflow can be executed by uploading the appropriate files to :ref:`DesignS
 
 .. code-block::
 
-      python "C:/rWHALE/applications/Workflow/RDT_workflow.py" "C:/rWHALE/hurricane_example/rWHALE_config_hu.json" --registry "C:/rWHALE/applications/Workflow/WorkflowApplications.json" --referenceDir "C:/rWHALE/hurricane_example/input_data/" -w "C:/rWHALE/hurricane_example/results"
+      python "C:/rWHALE/applications/Workflow/R2D_workflow.py" "C:/rWHALE/hurricane_example/rWHALE_config_hu.json" --registry "C:/rWHALE/applications/Workflow/WorkflowApplications.json" --referenceDir "C:/rWHALE/hurricane_example/input_data/" -w "C:/rWHALE/hurricane_example/results"
 
 
 
@@ -89,7 +90,7 @@ This command locates the backend applications in the folder "applications", and 
           .
           .
           .
-          └── 3149.csv
+          └── 3500.csv
       ├── auto_HU_NJ.py               # DL autoscript
       └── input_params.csv            # building source file
 
@@ -100,25 +101,25 @@ Outputs
 
 The example output files can be downloaded here: :download:`output_data_hu.zip <files/output_data_hu.zip>`. For more information about the output files produced, refer to :ref:`Outputs <lblOutputs>`.
 
-1. **EDP_1-19.csv**: reports statistics on the EDP results from simulating 5 ground motions for each building asset. The statistics reported are the median and lognormal standard deviation of peak interstory drift (PID) and peak floor acceleration (PFA) in two directions.
+1. **EDP_1-20.csv**: reports statistics on EDP results, where the hazard IM is used as the EDP. As in HAZUS, the statistics reported are the median and lognormal standard deviation of peak wind speed (PWS) and flood water depth (FWD).
 
-.. csv-table:: EDP_1-19.csv
-   :file: files/EDP_1-19.csv
+.. csv-table:: EDP_1-20.csv
+   :file: files/EDP_1-20.csv
    :header-rows: 1
    :align: center
 
 
-2. **DM_1-19.csv**: reports collapse probability and damage state probability for each building asset.
+2. **DM_1-20.csv**: reports collapse probability and damage state probability for each building asset. In the table below the "DSG_DS" values 0, 1_1, 2_1, 3_1, and 4_1 are four wind-induced damage states (from minor to severe), while the rest are the flood-induced damage states.
 
-.. csv-table:: DM_1-19.csv
-   :file: files/DM_1-19.csv
+.. csv-table:: DM_1-20.csv
+   :file: files/DM_1-20.csv
    :header-rows: 1
    :align: center
 
 
-2. **DV_1-19.csv**: reports decision variable estimates (repair cost, repair time, injuries) for each building asset.
+2. **DV_1-20.csv**: reports decision variable estimates (i.e., repair cost) for each building asset.
 
-.. csv-table:: DV_1-19.csv
-   :file: files/DV_1-19.csv
+.. csv-table:: DV_1-20.csv
+   :file: files/DV_1-20.csv
    :header-rows: 1
    :align: center
