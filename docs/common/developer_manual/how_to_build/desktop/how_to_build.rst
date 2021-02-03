@@ -13,7 +13,7 @@ Install Dependencies
 
 First, ensure the following dependencies are installed:
 
-* **C++11 compliant compiler**: many of the workflow applications included use C++11 features, consequently they may need a newer C++11 compliant compiler. Fow Windows users, MSVC in `Visual Studio (Community edition) <https://visualstudio.microsoft.com/vs/>`_ can be used.
+* **C++11 compliant compiler**: many of the workflow applications included use C++11 features, consequently they may need a newer C++11 compliant compiler. Fow Windows users, MSVC in `Visual Studio (Community edition) <https://visualstudio.microsoft.com/vs/>`_ can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with c++ and Visual Studio extension development; under the Individual components tab, check C++ CMake tools for windows. Then click Modify.
 
 * **OpenSees**: The workflow applications require an installation of `OpenSees <http://opensees.berkeley.edu/>`_ to carry out structural analysis using the finite element method.
 
@@ -25,7 +25,7 @@ First, ensure the following dependencies are installed:
 
 * **CMake**: This repository uses `CMake <https://cmake.org/download/>`_ for managing the build process. Version 3.15 or later is recommended.
 
-* **Qt Creator**: `Qt Creator <https://www.qt.io/download>`_ is free for open source developers. Version 5.15 or later is required.
+* **Qt**: `Qt <https://www.qt.io/download>`_ is free for open source developers. Version 5.15 or later is required. Make sure to include Qt Creator in the installer.
 
 .. warning::
 
@@ -37,15 +37,9 @@ Build the Backend Applications
 
 Instructions to build the workflow applications on your local desktop depend on your operating system.
 
-For Windows systems, the steps to building the workflow application are as follows:
-
-    #. **Obtain the source code:** Clone the SimCenterBackendApplications repository from `Github <https://github.com/NHERI-SimCenter/SimCenterBackendApplications>`_. You can do that by using your preferred Git client/GUI or by using the ``git clone`` command in the terminal:
-
-    .. code::
-
-       git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications
-
-    #. **Set up the development environment:** Add Conan `SimCenter <https://bintray.com/nheri-simcenter/simcenter>`_ and  `BinCrafters <https://bintray.com/bincrafters/public-conan>`_ repositories to the Conan remotes. You can add these remotes by typing the following commands in the terminal:
+Setup the development environment with Conan
+============================================
+1. Add Conan `SimCenter <https://bintray.com/nheri-simcenter/simcenter>`_ and  `BinCrafters <https://bintray.com/bincrafters/public-conan>`_ repositories to the Conan remotes. You can add these remotes by typing the following commands in the terminal:
 
     .. code::
        
@@ -53,13 +47,20 @@ For Windows systems, the steps to building the workflow application are as follo
 
         conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
 
-    #. **Configure your compiler:** Check the default profile of your build environment using:
+2. Create a default Conan profile if this is the first time you use Conan for building packages.
+
+    .. code::
+       
+        conan profile new default --detect
+
+
+3. Check the default profile of your build environment using:
 
     .. code::
 
        conan profile show default
 
-    If the compiler name and compiler version are *not* listed, then you will need to select a specific compiler. For instance, on Windows using Visual Studio 2019, you can specify the compiler as follows:
+4. If the compiler name and compiler version are *not* listed, then you will need to select a specific compiler. For instance, on Windows using Visual Studio 2019, you can specify the compiler as follows:
 
     .. code::       
 
@@ -67,7 +68,17 @@ For Windows systems, the steps to building the workflow application are as follo
 
        conan profile update settings.compiler.version="16" default
 
-    #. **Build the backend applications:** To build the applications you need to now navigate to the **SimCenterBackendApplications** folder that was created with the **git clone** command. Once there you will issue the following set of commands to create a **build** folder, change director to that folder, install needed software using conan, and finally use **cmake** to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail):
+
+Build the applications
+============================================
+
+1. Obtain the code in the SimCenterBackendApplications repository from `Github <https://github.com/NHERI-SimCenter/SimCenterBackendApplications>`_. You can do that by using your preferred Git client/GUI or by using the ``git clone`` command in the terminal:
+
+    .. code::
+
+       git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications
+
+2. To build the applications you need to now navigate to the **SimCenterBackendApplications** folder that was created with the **git clone** command. Once there you will issue the following set of commands to create a **build** folder, change director to that folder, install needed software using conan, and finally use **cmake** to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail):
 
        .. code::
 	   
@@ -78,6 +89,7 @@ For Windows systems, the steps to building the workflow application are as follo
           cmake --build . --config Release
           cmake --install .
           cd ..
+
 	  
     .. note::
 

@@ -12,11 +12,11 @@ if app_name in ["R2DTool", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun"]:
 	pass
 else:
 	pass
-	#app_name = 'R2DTool'
+	app_name = 'R2DTool'
 	#app_name = 'PBE'
 	#app_name = 'EE-UQ'
 	#app_name = 'WE-UQ'
-	app_name = 'quoFEM'
+	#app_name = 'quoFEM'
 	#app_name = 'pelicun'
 
 	os.environ['SIMDOC_APP'] = app_name
