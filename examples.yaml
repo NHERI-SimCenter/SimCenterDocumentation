@@ -9,5 +9,5 @@ WE-UQ:
 
 R2DTool:
   include-item:
-    ? '*'
+    ? r2dt-000[1-4]
 
