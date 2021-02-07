@@ -15,7 +15,7 @@ If you have not yet installed Python, we recommend installing Python 3.8 from
    Allow the installer to change your system environment variables so that the directory containing the executable will be on your path. This requires checking the small box asking for this when the installer starts. The box is located at bottom of installer application window.
 
 .. warning::
-   The latest version of Python is 3.9. We recommend using the penultimate version to avoid issues with packages that might not have adopted yet to the latest version.
+   The latest version of Python is 3.9.1. We require a previous version, 3.8.6 and above, to avoid issues with packages that have not have been adopted to the latest version and as a consequence fail to install.
 
 Once Python is installed, you need to extend it by installing a few additional packages. To faciliate this phase of the installation, we created a **nheri_simcenter** python package that automatically installs all other dependencies. Start a `terminal window as an Admin user <https://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/>`_ and type the following command:
 

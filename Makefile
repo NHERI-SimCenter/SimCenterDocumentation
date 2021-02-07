@@ -38,7 +38,7 @@ help:
 
 ee:      export SIMDOC_APP=EE-UQ
 we:      export SIMDOC_APP=WE-UQ
-r2d:     export SIMDOC_APP=R2DTool
+r2d:     export SIMDOC_APP=R2D
 pbe:     export SIMDOC_APP=PBE
 qfem:    export SIMDOC_APP=quoFEM
 pelicun: export SIMDOC_APP=pelicun
