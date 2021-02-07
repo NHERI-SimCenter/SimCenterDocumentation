@@ -24,7 +24,6 @@ else:
 
 print('app_name = ' + app_name)
 
-
 # -- Path setup --------------------------------------------------------------
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -200,7 +199,7 @@ if app_name == 'R2D':
 .. |githubLink| replace:: `R2D Github page`_
 .. |appLink| replace:: `R2D Download`_
 .. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FRDT
-.. |tool version| replace:: 2.0
+.. |tool version| replace:: 1.0
 .. |figDownload| replace:: :numref:`figDownloadR2D`
 .. |figUI| replace:: :numref:`figUI-R2D`
 .. |figGenericUI| replace:: :numref:`figGenericUI-R2D`
