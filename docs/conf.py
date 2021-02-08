@@ -8,11 +8,11 @@
 
 import os
 app_name = os.path.expandvars("$SIMDOC_APP")
-if app_name in ["R2DTool", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun"]:
+if app_name in ["R2D", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun"]:
 	pass
 else:
 	pass
-	app_name = 'R2DTool'
+	app_name = 'R2D'
 	#app_name = 'PBE'
 	#app_name = 'EE-UQ'
 	#app_name = 'WE-UQ'
@@ -23,7 +23,6 @@ else:
 	os.environ['SIMCENTER_DEV'] = os.path.normpath('../../')
 
 print('app_name = ' + app_name)
-
 
 # -- Path setup --------------------------------------------------------------
 
@@ -82,7 +81,8 @@ toc_filter_exclusions = [
 	'TinF',
 	'TInF',
 	'S3hark',
-	'pelicun'
+	'pelicun',
+	'docTestbeds'        
 ]
 
 # gallery data sources
@@ -153,12 +153,14 @@ examples_url = f'https://github.com/NHERI-SimCenter/{app_name}/tree/master/Examp
 
 # app-specific settings
 
-if app_name == 'R2DTool':
+docTestbeds='True'
+
+if app_name == 'R2D':
 
 	project = 'Regional Resilience Determination Tool'
 	copyright = '2019, The Regents of the University of California'
 
-	author = 'Adam Zsarnóczay, Frank McKenna, Michael Gardner, Wael Elhaddad, Joanna Zou, Chaofeng Wang'
+	author = 'Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez'
 
 	tags.add('R2D_app')
 	tags.add('desktop_app')
@@ -178,6 +180,8 @@ if app_name == 'R2DTool':
 	exclude_patterns.remove('**/*response*')
 	exclude_patterns.remove('**/*R2DTool*')
 
+
+                
 	# TODO: fix these temporary changes
 	exclude_patterns.append('**/*architectureLevel4.rst*')
 	exclude_patterns.append('**/requirements/index.rst')
@@ -203,13 +207,13 @@ if app_name == 'R2DTool':
 .. |githubLink| replace:: `R2D Github page`_
 .. |appLink| replace:: `R2D Download`_
 .. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FRDT
-.. |tool version| replace:: 2.0
+.. |tool version| replace:: 1.0
 .. |figDownload| replace:: :numref:`figDownloadR2D`
 .. |figUI| replace:: :numref:`figUI-R2D`
 .. |figGenericUI| replace:: :numref:`figGenericUI-R2D`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-R2D`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
-.. |developers| replace:: **SimCenter PI's and Developers**
+.. |developers| replace:: Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez
 
 """
 
