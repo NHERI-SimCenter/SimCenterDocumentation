@@ -8,7 +8,8 @@
 
 import os
 app_name = os.path.expandvars("$SIMDOC_APP")
-if app_name in ["R2D", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun"]:
+if app_name in ["R2DTool", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun"]:
+    # `make` was invoked from root, all env vars should already be defined.
 	pass
 else:
 	pass
