@@ -8,7 +8,8 @@
 
 import os
 app_name = os.path.expandvars("$SIMDOC_APP")
-if app_name in ["R2D", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun"]:
+if app_name in ["R2DTool", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun"]:
+    # `make` was invoked from root, all env vars should already be defined.
 	pass
 else:
 	pass
@@ -33,10 +34,15 @@ print('app_name = ' + app_name)
 
 import sys
 sys.path.append(os.path.abspath('./sphinx_ext/'))
+sys.path.append(os.path.abspath('./modules/'))
 
 if app_name == 'pelicun':
 	sys.path.insert(0, os.path.abspath('.'))
 	sys.path.insert(0, os.path.abspath('../'))
+
+app_info = {
+	'github': f'https://github.com/NHERI-SimCenter/{app_name}'
+}
 
 exclude_patterns = [
 		'**/*desktop*',
@@ -79,6 +85,7 @@ toc_filter_exclusions = [
 	'pelicun',
 	'docTestbeds'        
 ]
+
 # gallery data sources
 rendre_config = {
 
@@ -140,8 +147,10 @@ rst_prolog = """
 """
 
 extlinks = {
+	'github' : (f'{app_info["github"]}/tree/master/%s', f'Github')
 }
-example_repo = f'https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/user_manual/examples/desktop/{app_name.replace("-","")}'
+
+examples_url = f'https://github.com/NHERI-SimCenter/{app_name}/tree/master/Examples/'
 
 # app-specific settings
 
@@ -209,6 +218,9 @@ if app_name == 'R2D':
 
 """
 
+	extlinks.update(
+	   {f'r2dt-{i:04}' : (f'{examples_url}/r2dt-{i:04}/%s',f'r2dt-{i:04}') for i in range(1,20)}
+	)
 	# html_logo = 'common/figures/SimCenter_RDT_logo.png'
 	html_logo = 'common/figures/RDT-Logo-grey3.png'
 
@@ -405,7 +417,7 @@ elif app_name == 'quoFEM':
 
 	# Example links
 	extlinks.update(
-	   {f'qfem-{i:04}' : (f'{example_repo}/qfem-{i:04}/%s',f'qfem-{i:04}') for i in range(1,99)}
+	   {f'qfem-{i:04}' : (f'{examples_url}/qfem-{i:04}/%s',f'qfem-{i:04}') for i in range(1,99)}
 	)
 
 elif app_name == 'WE-UQ':
@@ -469,7 +481,7 @@ elif app_name == 'WE-UQ':
 
 	# Example links
 	extlinks.update(
-	   {f'weuq-{i:02}' : (f'{example_repo}/weuq-{i:02}/%s',f'weuq-{i:02}') for i in range(1,99)}
+	   {f'weuq-{i:04}' : (f'{examples_url}/weuq-{i:04}/%s',f'weuq-{i:04}') for i in range(1,99)}
 	)
 
 
@@ -554,7 +566,8 @@ extensions = extensions + [
     'sphinxcontrib.images',
 	'sphinx.ext.extlinks',
 	'sphinxcontrib.images',
-	'rendre.sphinx'
+	'rendre.sphinx',
+	'sphinx.ext.autodoc'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
