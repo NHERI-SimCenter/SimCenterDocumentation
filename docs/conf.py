@@ -156,7 +156,7 @@ examples_url = f'https://github.com/NHERI-SimCenter/{app_name}/tree/master/Examp
 
 docTestbeds='True'
 
-if app_name == 'R2D':
+if app_name == 'R2DTool':
 
 	project = 'Regional Resilience Determination Tool'
 	copyright = '2019, The Regents of the University of California'
