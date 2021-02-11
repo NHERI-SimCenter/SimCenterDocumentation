@@ -48,8 +48,7 @@ Examples
 	
 	:link: ./%%:base/README
 
-
 ..
-    :add-filter: %c/Simulation
+    :add-filter: %c/Simulation %c/Difficulty
 
 
