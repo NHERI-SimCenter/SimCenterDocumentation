@@ -15,9 +15,9 @@ CLEANDIR      = _sources _static _images common
 #-Examples-------------------------------------------------
 EXPDIR = ./docs/common/user_manual/examples/desktop
 EXPSRC = ${SIMCENTER_DEV}/$(SIMDOC_APP)/Examples
-RENDRE = rendre -vvv -D $(EXPSRC)/index.json
+RENDRE = rendre -v -D $(EXPSRC)/index.json
 # Create list of files
-EXAMPLES = $(shell $(RENDRE) -l examples.yaml\#/$(SIMDOC_APP) path -j ' ' -- \%%:doc)
+EXAMPLES = $(shell $(RENDRE) -l examples.yaml\#/$(SIMDOC_APP) path -j ' ' -- $(EXPSRC)/./\%%:doc)
 
 
 #-Help-----------------------------------------------------
@@ -74,7 +74,9 @@ pelicun pbe ee:
 r2d qfem we:
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
 	# sync example files
-	-rsync -Rcv $(addprefix $(EXPSRC)/./,$(EXAMPLES))  $(EXPDIR)
+	@# -rsync -Rcv $(addprefix $(EXPSRC)/./,$(EXAMPLES))  $(EXPDIR)
+	-rsync -Rcv $(EXAMPLES) $(EXPDIR)
+	
 
 
 
