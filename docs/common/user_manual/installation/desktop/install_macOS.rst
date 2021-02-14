@@ -7,12 +7,12 @@ Install Python 3.8
 ^^^^^^^^^^^^^^^^^^
 
 The Mac comes with Python pre-installed, but the default Python is the outdated version 2.7. As of January 1st, 2020 no new bug reports, fixes, or changes will be made to Python 2, and Python 2 is officially no longer supported. SimCenter tools require Python 3.8.
-If you have not yet installed Python, we recommend installing Python 3.8 from `Python.org <https://www.python.org/downloads/mac-osx>`_ , using the
+If you have not yet installed Python, we recommend installing Python 3.8 from |PythonDownload| , using the
 **macOS 64-bit installer**. The installer will place a python3 executable in your **PATH**.
 
 .. warning::
-   
-   The latest version of Python is 3.9.1. Certain modules required by SimCenter applications fail in the pip install process detailed below. This is typical of python releases, e.g. it was not until 3.8.6 that all modules needed compiled on both Mac and Windows.
+
+   The latest version of Python is 3.9.1. Certain modules required by SimCenter applications fail in the pip install process detailed below.
 
 .. note::
    #. We use the python.org installation over others, due to it's simplicity of installation.
