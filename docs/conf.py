@@ -9,10 +9,11 @@
 import os
 app_name = os.path.expandvars("$SIMDOC_APP")
 if app_name in ["R2DTool", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun"]:
+    # `make` was invoked from root, all env vars should already be defined.
 	pass
 else:
 	pass
-	app_name = 'R2DTool'
+	app_name = 'R2D'
 	#app_name = 'PBE'
 	#app_name = 'EE-UQ'
 	#app_name = 'WE-UQ'
@@ -24,7 +25,6 @@ else:
 
 print('app_name = ' + app_name)
 
-
 # -- Path setup --------------------------------------------------------------
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -34,10 +34,15 @@ print('app_name = ' + app_name)
 
 import sys
 sys.path.append(os.path.abspath('./sphinx_ext/'))
+sys.path.append(os.path.abspath('./modules/'))
 
 if app_name == 'pelicun':
 	sys.path.insert(0, os.path.abspath('.'))
 	sys.path.insert(0, os.path.abspath('../'))
+
+app_info = {
+	'github': f'https://github.com/NHERI-SimCenter/{app_name}'
+}
 
 exclude_patterns = [
 		'**/*desktop*',
@@ -77,8 +82,10 @@ toc_filter_exclusions = [
 	'TinF',
 	'TInF',
 	'S3hark',
-	'pelicun'
+	'pelicun',
+	'docTestbeds'        
 ]
+
 # gallery data sources
 rendre_config = {
 
@@ -140,17 +147,21 @@ rst_prolog = """
 """
 
 extlinks = {
+	'github' : (f'{app_info["github"]}/tree/master/%s', f'Github')
 }
-example_repo = f'https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/user_manual/examples/desktop/{app_name.replace("-","")}'
+
+examples_url = f'https://github.com/NHERI-SimCenter/{app_name}/tree/master/Examples/'
 
 # app-specific settings
 
-if app_name == 'R2DTool':
+docTestbeds='True'
+
+if app_name == 'R2D':
 
 	project = 'Regional Resilience Determination Tool'
 	copyright = '2019, The Regents of the University of California'
 
-	author = 'Adam Zsarnóczay, Frank McKenna, Michael Gardner, Wael Elhaddad, Joanna Zou, Chaofeng Wang'
+	author = 'Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez'
 
 	tags.add('R2D_app')
 	tags.add('desktop_app')
@@ -170,6 +181,8 @@ if app_name == 'R2DTool':
 	exclude_patterns.remove('**/*response*')
 	exclude_patterns.remove('**/*R2DTool*')
 
+
+                
 	# TODO: fix these temporary changes
 	exclude_patterns.append('**/*architectureLevel4.rst*')
 	exclude_patterns.append('**/requirements/index.rst')
@@ -195,16 +208,19 @@ if app_name == 'R2DTool':
 .. |githubLink| replace:: `R2D Github page`_
 .. |appLink| replace:: `R2D Download`_
 .. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FRDT
-.. |tool version| replace:: 2.0
+.. |tool version| replace:: 1.0
 .. |figDownload| replace:: :numref:`figDownloadR2D`
 .. |figUI| replace:: :numref:`figUI-R2D`
 .. |figGenericUI| replace:: :numref:`figGenericUI-R2D`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-R2D`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
-.. |developers| replace:: **SimCenter PI's and Developers**
+.. |developers| replace:: Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez
 
 """
 
+	extlinks.update(
+	   {f'r2dt-{i:04}' : (f'{examples_url}/r2dt-{i:04}/%s',f'r2dt-{i:04}') for i in range(1,20)}
+	)
 	# html_logo = 'common/figures/SimCenter_RDT_logo.png'
 	html_logo = 'common/figures/RDT-Logo-grey3.png'
 
@@ -248,8 +264,6 @@ elif app_name == 'PBE':
 	exclude_patterns.append('**/resEE.rst')
 
 	# END TODO
-
-
 
 
 	rst_prolog += """\
@@ -403,7 +417,7 @@ elif app_name == 'quoFEM':
 
 	# Example links
 	extlinks.update(
-	   {f'qfem-{i:04}' : (f'{example_repo}/qfem-{i:04}/%s',f'qfem-{i:04}') for i in range(1,99)}
+	   {f'qfem-{i:04}' : (f'{examples_url}/qfem-{i:04}/%s',f'qfem-{i:04}') for i in range(1,99)}
 	)
 
 elif app_name == 'WE-UQ':
@@ -467,7 +481,7 @@ elif app_name == 'WE-UQ':
 
 	# Example links
 	extlinks.update(
-	   {f'weuq-{i:02}' : (f'{example_repo}/weuq-{i:02}/%s',f'weuq-{i:02}') for i in range(1,99)}
+	   {f'weuq-{i:04}' : (f'{examples_url}/weuq-{i:04}/%s',f'weuq-{i:04}') for i in range(1,99)}
 	)
 
 
@@ -552,7 +566,8 @@ extensions = extensions + [
     'sphinxcontrib.images',
 	'sphinx.ext.extlinks',
 	'sphinxcontrib.images',
-	'rendre.sphinx'
+	'rendre.sphinx',
+	'sphinx.ext.autodoc'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
