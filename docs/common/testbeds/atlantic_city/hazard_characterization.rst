@@ -77,11 +77,11 @@ Storm Surge Modeling
 
 Coastal hazard descriptions use the outputs of the aforementioned SHP Tool, which estimates storm
 surge and total run up due to the breaking of near-shore waves for an arbitrary hurricane scenario
-using surrogate modeling techniques ([Jia13_], [Jia15_]). The SHP Tool
+using surrogate modeling techniques ([Jia13]_, [Jia15]_). The SHP Tool
 leverages the US Army Corps of Engineers (USACE) NACCS: North Atlantic Coastal
-Comprehensive Study ([NadalCaraballo15_]), which contains over 1000 high-fidelity
-numerical simulations of hurricanes using the ADCIRC ([Luettich92_]) storm surge model,
-coupled with STWAVE ([Smith01_]) to capture the additional effects of waves offshore. The
+Comprehensive Study ([NadalCaraballo15]_), which contains over 1000 high-fidelity
+numerical simulations of hurricanes using the ADCIRC ([Luettich92]_) storm surge model,
+coupled with STWAVE ([Smith01]_) to capture the additional effects of waves offshore. The
 NACCS database was further enhanced with wave run-up simulations that capture the interaction of
 the waves with site-specific bathymetry/topography (2015 USGS CoNED Topobathy DEM: New
 Jersey and Delaware (1888 - 2014) dataset) to project the total run up inland, along transects spaced
@@ -108,7 +108,7 @@ Multiple Category Analysis (MCA)
 =================================
 
 Note that the resulting 3s-gust PWS values by this Category-5 hurricane is much higher than
-the design wind speed specified by ASCE 7-16 ([ASCE16_]) for the Atlantic County which ranges
+the design wind speed specified by ASCE 7-16 ([ASCE16]_) for the Atlantic County which ranges
 from 105 mph to 115 mph. Since this extreme scenario bears a small likelihood, this testbed
 also scales the wind and flood water field down to lower categories to conduct the so-called
 Multiple Category Analysis to exam the building performance under different intense scenarios.

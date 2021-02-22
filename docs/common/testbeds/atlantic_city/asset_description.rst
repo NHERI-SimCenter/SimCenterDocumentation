@@ -4,128 +4,25 @@
 Asset Description
 *****************
 
-Testbed Building Inventory
-===========================
-
-This testbed includes 32,828 assets in the 23 cities of Atlantic County. The example
-building inventory of these assets are shown in :numref:`bldg_inv`.
-
-.. csv-table:: Example building inventory
-   :name: bldg_inv
-   :file: data/example_inventory.csv
-   :header-rows: 1
-   :align: center
-
-The description of assets in the inventory adopts an augmented parcel approach
-that initiates with the assignment of HAZUS-consistent building classifications
-through a series of rulesets using fields common in tax assessor data, called
-*MOD IV* in the New Jersey database ([NJGIN20]_). To overcome inevitable gaps
-and errors in these large state-wide datasets, a SimCenter developed AI-powered
-Spatial Uncertainty Research Framework package, SURF ([Wang19]_), is employed to
-discover patterns in the dataset and to enhance it. Although the testbed still
-does not able to include all existing assets in the Atlantic County, they resulting
-inventory is believed to able to have a decent resolution, especially for the populated
-coastal region. For instance, the most populated cities are Atlantic City
-(6136 building assets), Margate City (5102), and Ventor City (4492) which
-contribute to about 50% of the entire building inventory.
-
-.. figure:: figure/num_building_city.png
-   :name: num_building_city
-   :align: center
-   :figclass: align-center
-   :figwidth: 90%
-
-   Number of buildings in this testbed for the 23 cities of Atlantic County.
-
-In the entire building inventory, :numref:`built_year` classifies the assets into 8
-built eras from Pre-1950 to 2010s. Roughly 70% buildings in the testbed were built
-before 1970. In the coastal region, large percentage buildings in the Ventor, Margate,
-and Longport were dated to Pre-1950, while the downtown Atlantic City and South
-Brigantine see more recent constructions (:numref:`built_year_spatial`).
-
-.. figure:: figure/built_year.png
-   :name: built_year
-   :align: center
-   :figclass: align-center
-   :figwidth: 70%
-
-   Distribution of built years.
-
-.. figure:: figure/year_built_spatial.png
-   :name: built_year_spatial
-   :align: center
-   :figclass: align-center
-   :figwidth: 100%
-
-   Distribution of built years in the coastal region.
-
-The wood structure is found to be the predominant building type in the building
-inventory which accounts for more than 90% of the assets in the County
-(:numref:`building_type`). Concrete and masonry structures follow with roughly
-3% contribution of each. Limited number of steel constructions and manufactured
-home structures are seen in the inventory. The concrete structures are mainly
-seen in the downtown Atlantic City (:numref:`building_type_spatial`).
-
-.. figure:: figure/building_type.png
-   :name: building_type
-   :align: center
-   :figclass: align-center
-   :figwidth: 80%
-
-   Distribution of structural types.
-
-.. figure:: figure/building_type_spatial.png
-   :name: building_type_spatial
-   :align: center
-   :figclass: align-center
-   :figwidth: 100%
-
-   Distribution of structural types in the coastal region.
-
-Residential buildings contribute more than 90% of the entire inventory,
-commercial buildings take about 5%, while other occupancy types are Agriculture,
-Education, Government, Industry, and Religion (:numref:`occupancy_type`). Also,
-most residential buildings are 1 to 2 stories, so these low rise buildings contribute
-to about 90% of the entire inventory.
-
-.. figure:: figure/occupancy_type.png
-   :name: occupancy_type
-   :align: center
-   :figclass: align-center
-   :figwidth: 80%
-
-   Distribution of occupancy types.
-
-.. figure:: figure/story_number.png
-   :align: center
-   :figclass: align-center
-   :figwidth: 80%
-
-   Distribution of stories numbers.
-
-
-Processing Method of Building Inventory
-========================================
-
-This section, organized by the workflow's progressive levels of fidelity, describes how a large-scale
-building inventory was derived for the case study region from tax assessor data, with various levels
-of augmentation to address errors and omissions.
-
-At Level 1, a building inventory is populated using publicly-available data and phased approach that
-leverages machine learning and image processing to generate all attributes required for the corresponding
-Level-1 loss assessment. It is emphasized that the intent is to demonstrate how an inventory could
-be constructed and not to address potential errors, omissions or inaccuracies in the source data,
-i.e., source data are assumed to be accurate and no  additional quality assurance was conducted outside
-of addressing glaring omissions or errors.
+This section describes how a large-scale building inventory was constructed using a phased approach that 
+augments tax assessor data, using machine learning and image processing to address errors/omissions and 
+generate all attributes required for the corresponding loss assessment. It is emphasized that the intent 
+is to demonstrate how an inventory could be constructed and not to address potential errors, omissions or 
+inaccuracies in the source data, i.e., source data are assumed to be accurate and no additional quality 
+assurance was conducted outside of addressing glaring omissions or errors.
 
 Phase I: Attribute Definition
-------------------------------
+===============================
 
-All the attributes required for loss estimation were first identified to develop the Building Inventory
-data model, which catalogs each attribute, its purpose, its format (alphanumeric, floating point number,
-etc.), the data source used to define that attribute and the field(s) needed from that data source, any
-transformations of that source data necessary to align with the units or conventions used in the Building
-Inventory, and any relevant details explaining notations, assumptions, or reference documents (:numref:`bldg_inv_dm`).
+All the attributes required for loss estimation were first identified to develop the Building Inventory 
+data model, which catalogs each attribute, its purpose, its format (alphanumeric, floating point number, 
+etc.), the data source used to define that attribute and the field(s) needed from that data source, any 
+transformations of that source data necessary to align with the units or conventions used in the Building 
+Inventory, and any relevant details explaining notations, assumptions, or reference documents (:numref:`tab-bldgInventory`). 
+The Building Inventory data model should be comprehensive, encompassing all attributes required for loss 
+estimation, although these may be populated in the Building Inventory at different points in the workflow.
+
+.. _tab-bldgInventory:
 
 .. csv-table:: Building Inventory data model developed in this testbed.
    :name: bldg_inv_dm
@@ -134,12 +31,11 @@ Inventory, and any relevant details explaining notations, assumptions, or refere
    :align: center
 
 Phase II: Footprint Selection
-------------------------------
+===============================
 
-The Atlantic County Building Inventory was populated initially with Footprint Data generated by the New
-Jersey Department of Environmental Protection (NJDEP). The NJDEP dataset focused specifically on buildings
-in Specific Flood Hazard Areas (SFHAs), creating two Geodatabases encompassing approximately 453,000 footprints
-across the entire state:
+Inventory development initiated with the Footprint Data generated by the New Jersey Department of 
+Environmental Protection (NJDEP). These NJDEP footprints include flood-exposed properties cataloged 
+in two geodatabases encompassing approximately 453,000 footprints across the entire state:
 
 1. **BF_NJDEP_20190612**: all building footprints within 1% annual chance (AC) floodplain, as defined by FEMA Flood
 Insurance Rate Maps (FIRMs).
@@ -147,46 +43,101 @@ Insurance Rate Maps (FIRMs).
 2. **02pct_20190520 Building_Footprints_02pct**: buildings that are not in the first dataset but fall within a
 200-ft buffer of the 1% AC floodplain boundary.
 
+These databases were then combined, with only properties within the limits of Atlantic County retained to form 
+the Flood-Exposed Inventory. This inventory was then extended to include other footprints within the county 
+boundaries. Microsoft (MS) Footprint Database was utilized as the primary source of Non-NJDEP footprint polygons.
+One observed shortcoming of the MS Footprint Database is it incorrectly lumps together the footprints of closely 
+spaced buildings. This issue was resolved by a combination of manual inspections and applying a separate roof 
+segmentation algorithm to the satellite images obtained for the buildings. This resulted in the Atlantic County 
+Inventory.
+
 Phase III: Augmentation Using Third-Party Data
------------------------------------------------
+================================================
 
-Attributes parsed from third-party data providers are then populated into the Building Inventory for each
-identified footprint, beginning first with the footprints form NJDEP. These footprints were enriched with
-various attributes necessary to conduct standard FEMA risk assessments. Specifically, all footprints included
-a set of Basic Attributes (:numref:`basic_attri`). A subset of the data, including Atlantic County,
-had additional Advanced Attributes required by HAZUS User Defined Facilities (UDF) Module (:numref:`udf_attri`) and
-FEMA Substantial Damage Estimator (SDE) Tool (:numref:`sde_attri`).
+Attributes were then parsed from third-party data providers to populate all required attributes in the Building 
+Inventory data model. For the Flood-Exposed Inventory, NJDEP had already enriched these footprints with various 
+attributes necessary to conduct standard FEMA risk assessments. Specifically, all footprints included a set of 
+Basic Attributes (:numref:`tab-basicAttri`). A subset of the data, including Atlantic County, had additional Advanced 
+Attributes required by HAZUS User Defined Facilities (UDF) Module (:numref:`tab-udfAttri`) and FEMA Substantial Damage 
+Estimator (SDE) Tool (:numref:`tab-sdeAttri`).
 
-.. csv-table:: NJDEP basic attributes.
-   :name: basic_attri
+.. _tab-basicAttri:
+
+.. csv-table:: NJDEP basic attributes available for all properties in Flood-Exposed Inventory.
    :file: data/basic_attributes.csv
    :header-rows: 1
    :align: center
 
-.. csv-table:: Advanced attributes for UDF.
-   :name: udf_attri
+.. _tab-udfAttri:
+
+.. csv-table:: Advanced attributes for HAZUS User Defined Facilities (UDF), available for all properties in Flood-Exposed Inventory.
    :file: data/udf_attributes.csv
    :header-rows: 1
    :align: center
 
-.. csv-table:: Advanced attributes for SDE.
+.. _tab-sdeAttri:
+
+.. csv-table:: Advanced attributes for FEMA Substantial Damage Estimator (SDE) Tool, available for all properties in Flood-Exposed Inventory.
    :name: sde_attri
    :file: data/sde_attributes.csv
    :header-rows: 1
    :align: center
 
-For footprints that were not included in the NJDEP dataset, attributes that were previously assigned using NJDEP Basic,
-UDF or SDE fields were derived by parsing New Jersey Tax Assessor Data (called *MODIV*)
-as defined in the MODIV User Manual . This notably affected attributes such as *OccupancyClass*,
-*BuildingType* and *FoundationType*. In all cases where attributes were derived from *MODIV* data,
-whose fields can be sparsely populated, default values were initially assigned to ensure that
-every footprint would have the attributes required for the workflow. These default values were
-selected using engineering judgement to represent the most common/likely attribute expected or
-conservatively from the perspective of anticipated losses (i.e., picking the more vulnerable attribute option).
-These initial assignments are then updated if additional data is available in *MODIV* to make a more faithful attribute assignment.
+For the Atlantic County Inventory, any buildings not included in the NJDEP footprints had attributes encompassed 
+by NJDEP Basic, UDF or SDE fields assigned by parsing New Jersey Tax Assessor Data (called **MODIV**) as defined in 
+the MODIV User Manual. This notably affected attributes such as OccupancyClass, BuildingType and FoundationType. 
+In all cases where attributes were derived from MODIV data, whose fields can be sparsely populated, default 
+values were initially assigned to ensure that every footprint would have the attributes required to execute 
+the workflow. These default values were selected using engineering judgement to represent the most common/likely 
+attribute expected or conservatively from the perspective of anticipated losses (i.e., picking the more 
+vulnerable attribute option). These initial assignments are then updated if additional data is available in 
+**MODIV** to make a more faithful attribute assignment.
+
+Some attributes in the Inventory Data Model were not encompassed by NJDEP Basic, UDF or SDE fields, thus 
+remaining attributes in both the Flood-Exposed and Atlantic County Inventories were assigned using data 
+from the following third-party sources:
+1. **Locations of essential facilities** were sourced from NJ Office of Information Technology (part of NJGIN Open Data [NJGIN20]_)
+2. **ATC Hazards** by Location API ([ATC20]_) is used to query Design Wind Speeds as defined in ASCE 7 
+3. **Terrain features** (roughness length associated with different exposure classes) was derived from Land Use Land Cover data (part of NJGIN Open Data [NJGIN20]_)
+
+See the Transformation and Detail columns in (:numref:`tab-bldgInventory`) for specifics of how each attribute 
+was assigned using these various third-party data sources.
 
 Phase IV: Augmentation Using Image Processing
-----------------------------------------------
+===============================================
+
+A number of required attributes pertaining to externally-visible features of the building were either not 
+included in the NJDEP footprints or MODIV data or were included but warranted cross validation. 
+The methodology used for each of these attributes is now described.
+
+1. **Number of Stories**: This attribute was available in state inventory data but was cross-validated.
+2. **Building Elevations**: Building elevations are not available in state inventory data and required for both 
+                           wind and flood loss modeling. The elevation of the bottom plane of the roof (lowest edge 
+                           of roof line), elevation of the roof (peak of gable or apex of hip), and height of top of 
+                           floor as estimated from base of door’s height, all defined with respect to grade (in feet), 
+                           were estimated from streetview imagery. These geometric properties are defined visually 
+                           for common residential coastal typologies in Figure 2.2.1. The mean height of the roof system 
+                           is then derived from the aforementioned roof elevations. 
+3. **Roof Geometry**: Roof shape and slope are not available in state inventory data and required for wind loss 
+                      modeling. The SimCenter developed application Building Recognition using Artificial 
+                      Intelligence at Large Scales, BRAILS ([Wang19]_), is used to interpret satellite images 
+                      of building roofs, which are collected from Google Maps. The satellite images are labeled 
+                      with shape types to form a dataset, upon which a Convolutional Neural Network (CNN) is 
+                      trained so that it can give rapid predictions of roof types when given new images of roofs. 
+                      Microsoft Building Footprint data ([Microsoft2018]_) is used as the location index when downloading images 
+                      automatically from Google Maps. While more complex roof shapes could in theory be classified, 
+                      the current use of HAZUS damage and loss functions required the use of similitude measures 
+                      to define each roof as an “effective” gable, hip or flat geometry. Using BRAILS, this 
+                      classification was achieved with approximately 85% accuracy based on validation studies.
+4. **Window Area**: The proportion of windows to the overall surface area is not available in state inventory data 
+                    and required for wind loss modeling. Generally, window area can be assumed based on the 
+                    building occupancy class given Department of Energy industry databases. This property can also 
+                    be estimated from Google streetview imagery, under the assumption that the proportion of 
+                    surface area occupied by windows at the front of the building is representative of the amount 
+                    of window openings on the sides and rear of the building, an assumption that may hold for 
+                    single family residential buildings, but possibly not for other commercial construction where 
+                    street fronts have higher proportions of glass.
+
 
 A number of required attributes pertaining to externally-visible features of the building were either
 not included by NJDEP or warranted cross validation. Thus fields like roof shape, roof slope, building
@@ -202,9 +153,16 @@ classified, the current use of HAZUS damage and loss functions required the use 
 define each roof as an “effective” gable, hip or flat geometry. Using BRAILS, this classification was
 achieved with approximately 85% accuracy based on validation studies.
 
+.. [ATC20]
+   ATC (2020b), ATC Hazards By Location, https://hazards.atcouncil.org/, Applied Technology Council, Redwood City, CA.
 
 .. [NJGIN20]
    NJ Geographic Information Network, State of New Jersey, https://njgin.nj.gov/njgin/#!/
 
 .. [Wang19]
    Wang C. (2019), NHERI-SimCenter/SURF: v0.2.0 (Version v0.2.0). Zenodo. http://doi.org/10.5281/zenodo.3463676
+
+.. [Microsoft2018]
+   Microsoft (2018) US Building Footprints. https://github.com/Microsoft/USBuildingFootprints
+
+
