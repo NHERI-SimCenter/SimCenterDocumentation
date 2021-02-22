@@ -174,6 +174,8 @@ if app_name == 'R2D':
 	toc_filter_exclusions.remove('earthquake')
 	toc_filter_exclusions.remove('response')
 	toc_filter_exclusions.remove('notQuoFEM')
+	if docTestbeds:
+		toc_filter_exclusions.remove('docTestbeds')
 	toc_filter_exclude = toc_filter_exclusions
 
 	exclude_patterns.remove('**/*desktop*')

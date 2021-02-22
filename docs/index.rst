@@ -81,6 +81,8 @@
 
    common/user_manual/bugs
 
+.. _lbl-testbeds-manual:
+
 .. toctree-filt::
    :caption: Testbeds
    :maxdepth: 1
