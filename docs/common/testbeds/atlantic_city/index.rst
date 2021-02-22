@@ -1,7 +1,7 @@
 .. _lbl-testbed_Atlantic_City:
 
 *****************
-Atlantic City, NJ
+Atlantic County, NJ
 *****************
 
 .. _lbl-testbeds-manual:
