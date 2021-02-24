@@ -67,17 +67,35 @@ described based on a variety of data sources (Figure 2.1.1). The buildings in th
 only OR the combination of wind and floodplain hazards.
 
 **Flood-Exposed Inventory**: This subset of the Atlantic County inventory is confined to 32,828 buildings in 
-FEMA Special Flood Hazard Areas (SFHAs) (Figure 2.1.2), as identified by the New Jersey Department of Environmental 
+FEMA Special Flood Hazard Areas (SFHAs) (:numref:`fig-buildingClassFEI`), as identified by the New Jersey Department of Environmental 
 Protection (NJDEP). This includes all buildings in (or within 200-foot buffer of) the 1% annual chance (AC) 
 floodplain, as defined by FEMA Flood Insurance Rate Maps (FIRMs). The buildings in this inventory are exposed 
 to the combination of wind and floodplain hazards, and includes some of the most populated municipalities in the 
 county: Atlantic City, Margate City, and Ventor City which contribute to about 50% of the entire building inventory 
 in Atlantic County.
 
+.. _fig-buildingClassFEI:
+
+.. figure:: figure/new_inventory_map.png
+   :align: center
+   :figclass: align-center
+   :width: 1200
+
+   Geospatial visualization of subclasses of buildings in Flood-Exposed Inventory.
+
 **Exploration Inventory**: A subset of 1000 buildings drawn from the Flood-Exposed Inventory intended to provide 
 a less computationally demanding implementation for new users or for those wishing to test the development of new 
-contributions to the workflow (Figure 2.1.3). The buildings in this inventory are exposed to the combination of 
+contributions to the workflow (:numref:`fig-buildingClassEI`). The buildings in this inventory are exposed to the combination of 
 wind and floodplain hazards.
+
+.. _fig-buildingClassEI:
+
+.. figure:: figure/new_inventory_map_expl.png
+   :align: center
+   :figclass: align-center
+   :width: 700
+
+   Geospatial visualization of subclasses of buildings in Flood-Exposed Inventory.
 
 The following figures summarize characteristics of these inventories, including distribution by municipality 
 (:numref:`fig-distAssetMunicipality`), by year built (:numref:`fig-distBuiltYear`), by occupancy (:numref:`fig-occupancyType`), 
