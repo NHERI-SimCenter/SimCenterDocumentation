@@ -138,20 +138,33 @@ The methodology used for each of these attributes is now described.
                     single family residential buildings, but possibly not for other commercial construction where 
                     street fronts have higher proportions of glass.
 
+.. note::
 
-A number of required attributes pertaining to externally-visible features of the building were either
-not included by NJDEP or warranted cross validation. Thus fields like roof shape, roof slope, building
-elevations and the number of stories were augmented using image processing techniques.
-As roof geometry is not a standard field in MOD IV data, satellite imagery is processed to further augment
-the basic parcel data. The SimCenter developed application Building Recognition using Artificial Intelligence
-at Large Scales, BRAILS ([Wang19]_), is used to interpret satellite images of building roofs, which
-are collected from Google Maps.  The satellite images are labeled with shape types to form a dataset, upon
-which a Convolutional Neural Network (CNN) is trained so that it can give rapid predictions of roof types
-when given new images of roofs.  Microsoft Building Footprint data is used as the location index when
-downloading images automatically from Google Maps. While more complex roof shapes could in theory be
-classified, the current use of HAZUS damage and loss functions required the use of similitude measures to
-define each roof as an “effective” gable, hip or flat geometry. Using BRAILS, this classification was
-achieved with approximately 85% accuracy based on validation studies.
+   The process of constructing the **Atlantic County Inventory** for footprints beyond those in the 
+   **Flood-Exposed Inventory** underscored a number of tasks/issues that are commonly encountered when constructing an inventory 
+   in a location with sparse inventory data. Recommended best practices are summarized in :ref:`lbl-testbed_AC_best_practices`.
+
+Populated Inventories
+========================
+
+Executing this four-phase process resulted in the assignment of all required attributes at the asset description 
+stage of the workflow for both the **Atlantic County Inventory** and the **Flood-Exposed Inventory**. 
+Table 2.2.6 and :numref:`bldg_inv_fei` provide respective examples of each of these inventories. 
+The Flood-Exposed Inventory then was used to extract out the subset of buildings defining the  
+**Exploration Inventory** (see example in :numref:`bldg_inv_ei`). The full inventories can be downloaded 
+:download:`here <data/full_inventories.zip>`.
+
+.. csv-table:: Illustrative sample of building in Flood-Exposed Inventory.
+   :name: bldg_inv_fei
+   :file: data/example_inventory.csv
+   :header-rows: 1
+   :align: center
+
+.. csv-table:: Illustrative sample of building in Exploration Inventory.
+   :name: bldg_inv_ei
+   :file: data/example_inventory_exploration.csv
+   :header-rows: 1
+   :align: center
 
 .. [ATC20]
    ATC (2020b), ATC Hazards By Location, https://hazards.atcouncil.org/, Applied Technology Council, Redwood City, CA.
