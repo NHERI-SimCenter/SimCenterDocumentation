@@ -4,19 +4,27 @@
 Software Architecture
 *********************
 
-The SimCenter is developing a number of computational applications: quoFEM, EE-UQ, WE-UQ, HydroUQ, PBE, and RDT. These applications are intended to advance the field of natural hazard engineering (NHE) at both the building level scale and regional level scale. These applications link together existing open-source software applications, databases and software libraries by employing scientific workflows. The SimCenter applications are in actuality `scientific workflow systems <https://en.wikipedia.org/wiki/Scientific_workflow_system>`_ . In contrast to more general purpose scientfic workflow systems, e.g. `Taverna <https://taverna.incubator.apache.org/>`_, `Kepler <https://kepler-project.org/>`_, and `Pegasus <https://pegasus.isi.edu/>`_, the SimCenter workflows that the user builds and runs are constrained in complexity and parts of the workflows run multiple times, typically in parallel, by an application at the start of the worflow responsible for generating end results that include uncertainty quantification (UQ) measures. A consequence of performing UQ, is the need to utilize high performance computers for most any thing but trivial example problems, which can be done using high performance computing resources made available Cloud services. 
+The |app| is one of the SimCenter's computational applications, which are `scientific workflow systems <https://en.wikipedia.org/wiki/Scientific_workflow_system>`_ that execute a sequence of computational tasks specialized for natural hazard engineering (NHE) problems. In contrast to more general-purpose scientific workflow systems (such as `Taverna <https://taverna.incubator.apache.org/>`_, `Kepler <https://kepler-project.org/>`_, and `Pegasus <https://pegasus.isi.edu/>`_), SimCenter workflow systems include the following features:
 
-To facilitate the development of the development of the different SimCenter applications and to encourage their reuse and extension by other NHE researchers, the SimCenter is providing the NHE community with a software framework for building such applications. From this framework the SimCenter is building the applications, of which |app| is but one, that it releases. These individual applications are built from the components of the framework. The components of the SimCenter are grouped, as shown in  figure below, into the following components:
+   - access to high performance computing resources, available on the cloud through |DesignSafe|, to enable parallel workflows for non-trivial large-scale NHE problems;
+   - uncertainty quantification capabilities using `Dakota <https://dakota.sandia.gov/>`_, which allows users to introduce input uncertainties which are propagated through the workflow with random variables;
+   - streamlined interfaces between existing software applications and datasets that are widely used by the NHE community, such as `OpenFOAM <https://openfoam.org/>`_, `OpenSees <https://opensees.berkeley.edu/>`_, `ADCIRC <http://adcirc.org/>`_, and `PEER Strong Ground Motion Databases <https://peer.berkeley.edu/peer-strong-ground-motion-databases>`_. To do this, the SimCenter develops pre- and post-processors to these existing applications and utilize web technologies for accessing online services;
+   - additional custom software applications produced by the SimCenter. Among these are applications which automate the acquisition of building inventory data (`BRAILS <https://nheri-simcenter.github.io/BRAILS-Documentation/>`_), applications which simulate hazard evens and generate corresponding input files for passing through the workflow system (RegionalEvent Applications), applications for damage and loss assessment (`pelicun <https://nheri-simcenter.github.io/pelicun/>`_), and more.
+   - a modular framework which allows developers to incorporate their own software applications as components to the workflow system, so long as it meets the input-output structure at component interfaces.
 
-#. Cloud: applications/libraries for communicating with remote web services to launch and monitor applications on HPC resources and to upload and download files from the filesystems of such resources.
 
-#. UQ: applications for performing sampling, sensitivity, reliability and optimization methods.
+Documentation of the software architecture is detailed in the following pages:
 
-#. SAM: applications for creating finite element models.
 
-#. EVENT: applications for creating loads on buildings and infrastructure given a natural hazard event.
+.. toctree-filt::
+   :maxdepth: 1
 
-#. FEM: application for determining the response parameter of the building/lifeline given applied loads.
+   file-types.rst
+   backendApplications.rst
+   :R2D:workflows
+   :R2D:run-manually
+   c4model 
+   :notQuoFEM:architectureLevel4
 
 #. DL: application to determine the damage & loss to the builing/infrastructure given the event.
 
@@ -53,14 +61,13 @@ The following sections present the architecture of SimCenter the SimCenter to le
 
    #. **Application**: A software application performs operations on data residing in a computer for a user or another program; it can be self contained, typically termed a program, or part of a group of programs.
 
+   #. **Scientific Workflow**: A sequence of steps which propogate input data through a series of applications to produce output. It is a loosely coupled application performing workflows in which each of the coordinated tasks is performed using an individual application. Each of the individual application taking some data inputs and producing data outputs, which are then consumed by subsequent tasks according to the workflow definition. They are termed scientific because they are typically used by scientists to process, manage, and visualize ever increasing ever increasing amounts of data using "scientific" applications. 
 
-   #. **Scientific Workflow**: A sequence of steps which propogate input data through a series of applications to produce output files. It is a loosely coupled application performing workflows in which each of the coordinated tasks is performed using an individual application. Each of the individual application taking some data inputs and producing data outputs, which are then consumed by subsequent tasks according to the workflow definition. They are termed scientific because they are typically used by scientists to process, manage, and visualize ever increasing ever increasing amounts of data using "scientific" applications. 
+   #. **Scientific Workflow System**: An application or applications to aid a user to set-up, schedule, run, and monitor a user defined scientific workflow. 
 
-   #. **Workflow Step**: A general category of applications performing a step in the workflow.
-      
-   #. **Scientific Workflow System**: An application or applications to aid a user to set-up, schedule, run, and monitor a user defined scientific workflow.
-
-   #. **Software Framework**: A software framework defines a set of component interfaces and provides a set of implementations in code of these interfaces which allows developers to build applications for the domain for which the framework has been designed. For example, a C++ framework will provide a set of abstract classes that define interfaces, and a set of concrete classes that implement the interfaces which will allow developers to quickly build and release applications using the concrete classes.  Frameworks allow developers to extend the functionality of the applications by introducing their own components that meet the component interface.
+      #. **Software Framework**: A collection of software for building applications
+in a specific domain. The framework defines the interfaces between the components of the software,
+provides example applications that can be developed using the provided software, and defines a clear set of interfaces such that the software can be extended to build other applications.
 
       
 Overview

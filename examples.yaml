@@ -1,0 +1,13 @@
+quoFEM:
+  exclude-item:
+    ? qfem-000[3479]
+    ? qfem-000[10-13]
+
+WE-UQ:
+  include-item:
+    ? weuq-0001
+
+R2DTool:
+  include-item:
+    ? r2dt-000[1-4]
+
