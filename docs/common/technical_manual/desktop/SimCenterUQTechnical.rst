@@ -145,8 +145,16 @@ Therefore the main tasks of surrogate modeling is (1) to find optimal stochastic
 
 * **Nugget effect: artificial noise for numerical stability**
 
-  | Constructed Kriging surrogate model is always smooth and continuous as it is a realization of a Gaussian process, while the actual response may be non-smooth, discontinuous, or highly variant over the capacity of the model. Especially when the outcome is noiseless and deterministic given inputs, the Gaussian process parameters can suffer from numerical instability where the parameters cannot be calibrated. In such ill-posed problems, the introduction of a small amount of artificial noise, often referred to as *nugget effect*, may significantly improve the algorithmic stability. The nugget parameter can be either preselected or optimized in the loop along with the other parameters. (Note: technically, nugget effect and measurement noise does not coincide in mathematical formulation as the nugget effect conserves the interpolating property while measurement noise does not [Roustant2012]_. However, this program treats artificial noise as a nugget as they are often practically indistinguishable.)
+  | Constructed Kriging surrogate model is always smooth and continuous as it is a realization of a Gaussian process, while the actual response may be non-smooth, discontinuous, or highly variant over the capacity of the model. Especially when the outcome is noiseless and deterministic given inputs, the Gaussian process parameters can suffer from numerical instability where the parameters cannot be calibrated. In such ill-posed problems, the introduction of a small amount of artificial noise, often referred to as *nugget effect*, may significantly improve the algorithmic stability. The nugget parameter can be either preselected or optimized in the loop along with the other parameters. (Note: technically, nugget effect and measurement noise does not coincide in mathematical formulation as the nugget effect conserves the interpolating property while measurement noise does not [Roustant2012]_. However, this program treats nugget as an artificial noise as they are often practically indistinguishable.)
 
+
+.. _figGP1_2:
+
+.. figure:: figures/GPnugget.png
+	:align: center
+	:figclass: align-center
+
+  	Gaussian process regression with and without measurement noise ( or nugget effect)
 
 
 Construction of surrogate model
