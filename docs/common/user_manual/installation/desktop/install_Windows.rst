@@ -7,7 +7,7 @@ Install Python 3.8
 ^^^^^^^^^^^^^^^^^^
 
 If you have not yet installed Python, we recommend installing Python 3.8 from
-`python.org <https://www.python.org/downloads/windows>`_ , using the
+|PythonDownload|, using the
 **Windowsx86 64-bit executable installer**.
 
 .. note::

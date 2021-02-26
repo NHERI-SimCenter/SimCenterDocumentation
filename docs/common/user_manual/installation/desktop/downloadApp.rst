@@ -49,6 +49,19 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
       :figclass: align-center
 
       quoFEM download page.
+
+
+.. only:: R2D_app
+
+   .. _figDownloadR2D:
+
+   .. figure:: figures/R2DDownload.png
+      :align: center
+      :figclass: align-center
+
+      R2D download page.
+
+
 To download the |app| click on the link for the appropriate file for your operating system: file ending with **Windows_Download.zip** for users on a Windows machine and file ending with **Mac_Download.dmg** for users on a Mac. This will bring up a pop-up window. Click on the **Download** button in bottom right hand corner of this pop-up. Unpackage the ensuing downloaded file and place it in a location on your filesystem. 
 
 .. note::

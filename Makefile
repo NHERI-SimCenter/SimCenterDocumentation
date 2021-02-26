@@ -15,9 +15,9 @@ CLEANDIR      = _sources _static _images common
 #-Examples-------------------------------------------------
 EXPDIR = ./docs/common/user_manual/examples/desktop
 EXPSRC = ${SIMCENTER_DEV}/$(SIMDOC_APP)/Examples
-RENDRE = rendre -vvv -D $(EXPSRC)/index.json
+RENDRE = rendre -v -D '$(EXPSRC)/index.json'
 # Create list of files
-EXAMPLES = $(shell $(RENDRE) -l examples.yaml\#/$(SIMDOC_APP) path -j ' ' -- \%%:doc)
+EXAMPLES = $(shell $(RENDRE) -l examples.yaml\#/$(SIMDOC_APP) path -j ' ' -- $(EXPSRC)/./\%%:doc)
 
 
 #-Help-----------------------------------------------------
@@ -74,7 +74,9 @@ pelicun pbe ee:
 r2d qfem we:
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
 	# sync example files
-	-rsync -Rcv $(addprefix $(EXPSRC)/./,$(EXAMPLES))  $(EXPDIR)
+	@# -rsync -Rcv $(addprefix $(EXPSRC)/./,$(EXAMPLES))  $(EXPDIR)
+	-rsync -Rcv $(EXAMPLES) $(EXPDIR)
+	
 
 
 
@@ -88,18 +90,18 @@ web:
 
 
 html:
-	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" $(call BUILDDIR,$(SIMDOC_APP))/html $(O)
+	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(call BUILDDIR,$(SIMDOC_APP))/html" $(O)
 
 
 latex:
-	@$(SPHINXBUILD) -b latex "$(SOURCEDIR)" $(call BUILDDIR,$(SIMDOC_APP))/latex $(O)
+	@$(SPHINXBUILD) -b latex "$(SOURCEDIR)" "$(call BUILDDIR,$(SIMDOC_APP))/latex" $(O)
 
 
 pdf:
 	mkdir -p $(call BUILDDIR,$(SIMDOC_APP))/pdf/
 	$(PDFLATEX) \
 	-output-directory="$(call BUILDDIR,$(SIMDOC_APP))/pdf/" \
-	$(call BUILDDIR,$(SIMDOC_APP))/latex/*.tex
+	"$(call BUILDDIR,$(SIMDOC_APP))/latex/*.tex"
 
 latexpdf:
 	make latex
