@@ -35,6 +35,7 @@ print('app_name = ' + app_name)
 import sys
 sys.path.append(os.path.abspath('./sphinx_ext/'))
 sys.path.append(os.path.abspath('./modules/'))
+sys.path.append(os.path.abspath('./modules/tmpl_0007/'))
 
 if app_name == 'pelicun':
 	sys.path.insert(0, os.path.abspath('.'))
@@ -217,9 +218,10 @@ if app_name == 'R2DTool':
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0
 .. |githubLink| replace:: `R2D Github page`_
 .. |appLink| replace:: `R2D Download`_
-.. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FRDT
+.. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt
 .. |tool version| replace:: 1.0
 .. |figDownload| replace:: :numref:`figDownloadR2D`
+.. |figDownloadWin| replace:: :numref:`figDownloadR2DWin`
 .. |figUI| replace:: :numref:`figUI-R2D`
 .. |figGenericUI| replace:: :numref:`figGenericUI-R2D`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-R2D`
