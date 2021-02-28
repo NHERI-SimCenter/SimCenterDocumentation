@@ -1,0 +1,72 @@
+{% macro single_item(card) %}
+<div class="card shadow-sm mb-3 {# for f in card.categories.values() %} {{ f.replace(' ','-') if f else '' }}{% endfor #} gallery-item" style="max-width: 50em; background-color: #f8f9fa;" data-gallery_info='{{ card.categories|tojson }}'>
+  <div class="row g-0 mb-3">
+  <!-- <div class="row"> -->
+    <div class="card-header">
+        <p>
+          <a href="{{ card.url + '.html' }}"> 
+              <h5 class="gx-6">{{ card.title }}</h5><!-- <h5 >{{ card.title }}</h5> -->
+          </a>
+        </p>
+    </div>
+    <!-- <div class="col-md-{{ '5' if card.image else '7' }}"> -->
+    <div class="col">
+      <div class="card-body">
+          <!-- <h5 class="card-title">{{ card.title }}</h5> -->
+        <p class="card-text bg-light">
+          {%-if card.summary -%}
+          {{ card.summary }}
+          {%-endif-%}
+        </p>
+          {# for f in card.categories.values() %}<span class="btn btn-outline-secondary btn-sm disabled">{{ f }}</span>{% endfor #}
+      </div>
+    </div>
+        {# if card.image #}
+      <!-- <div class="col-md-4 ml-auto mr-2 my-1"> -->
+        <!-- <img src="{{ card.image }}" class="card-image" style="max-width:275px;max-height:220px;width:auto;height:auto;"> -->
+      <!-- </div> -->
+        {# endif #}
+  </div>
+</div>
+{% endmacro %}
+
+{% macro filter_script() %}
+<script>
+let selectedFilters = [];
+const images  = document.getElementsByClassName("gallery-item");
+const filters = [...document.querySelectorAll('.filter select')];
+const toggles = [...document.querySelectorAll('.filter input')];
+
+var show = function (elem) {
+    elem.style.display = 'block';
+};
+var hide = function (elem) {
+    elem.style.display = 'none';
+};
+var toggleFilter =  function(el,elid) {
+    const filter = document.getElementById(elid);
+    filter.disabled = !el.checked;
+   
+    if ("createEvent" in document) {
+        var evt = document.createEvent("HTMLEvents");
+        evt.initEvent("change", false, true);
+        filter.dispatchEvent(evt);
+    }
+    else
+        filter.fireEvent("change");
+};
+
+for (const filter of filters) {
+    filter.addEventListener('change', function(event) {
+        selectedFilters = filters.map(filter => filter.disabled ? '' : filter.value).filter(Boolean);
+        console.log(selectedFilters);
+        for (const image of images) {
+            if (selectedFilters.every(filter => image.classList.contains(filter))) {
+                show(image);
+            }
+            else {hide(image)};
+        };
+    })
+};
+</script>
+{%endmacro%}
