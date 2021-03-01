@@ -81,13 +81,14 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
 .. only:: R2D_app
 
-   .. _figDownload:
+   .. _figDownloadR2D:
 
-   .. figure:: figures/pbeDownload.png
+   .. figure:: figures/R2DDownload.png
       :align: center
       :figclass: align-center
 
       R2DTool download page.
+
 
 .. only:: PBE_app
 
@@ -143,7 +144,8 @@ Now test if the application starts properly. Navigate to the location where you 
 
 .. note::
 
-   Since the SimCenter app is codesigned and nororized, but it is not downloaded from the app store. As a consequence, depending on your security settings, when you start it for the first time macOS may bring up a dialog box indicating it is unsfae. If this dialog should appear, hit the cancel button. Restart the app by right clicking on it and selecting open. our applications are not recognized by the operating system as being signed. Consequently, you may receive a warning message when you start the |short tool name| application for the first time.
+   SimCenter apps are codesigned and notarized, but because they are not downloaded from the operating system's app store, they may not be recognized as such. As a consequence, depending on your security settings, when you start a SimCenter app for the first time, your operating system may bring up a dialog box indicating it is unsafe. If this dialog should appear, hit the cancel button. Restart the app by right clicking on it and selecting open.
+
 
 .. only:: R2D_app
 

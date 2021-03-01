@@ -48,13 +48,13 @@ If you plan to use OpenSeesPy to run finite element analyses, you should also in
 Download the Application
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-To download the |app|, first navigate to the |appLink| page. As shown in |figDownload|, to get to the download page, you need to click on the link ``Download app and User Manual`` in the application page. The download page contains a list of downloadable files and directories.
+To download the |app|, first navigate to the |appLink| page. As shown in :numref:`figDownload_win`, to get to the download page, you need to click on the link ``Download app and User Manual`` in the application page. The download page contains a list of downloadable files and directories.
 
 .. only:: R2D_app
 
-   .. _figDownload:
+   .. _figDownload_win:
 
-   .. figure:: figures/pbeDownload.png
+   .. figure:: figures/R2DDownload.png
       :align: center
       :figclass: align-center
 

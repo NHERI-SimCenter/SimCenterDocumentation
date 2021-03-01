@@ -7,7 +7,15 @@ WE-UQ:
   include-item:
     ? weuq-0001
 
+
+EE-UQ:
+  include-item:
+    ? eeuq-000*
+
 R2DTool:
   include-item:
-    ? r2dt-000[1-4]
+    - r2dt-0003
+      #- r2dt-0004
+    - r2dt-0001
+    - r2dt-0002
 
