@@ -9,6 +9,7 @@
 import os
 app_name = os.path.expandvars("$SIMDOC_APP")
 if app_name in ["R2DTool", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun"]:
+    # `make` was invoked from root, all env vars should already be defined.
 	pass
 else:
 	pass
@@ -24,7 +25,6 @@ else:
 
 print('app_name = ' + app_name)
 
-
 # -- Path setup --------------------------------------------------------------
 
 # If extensions (or modules to document with autodoc) are in another directory,
@@ -34,10 +34,17 @@ print('app_name = ' + app_name)
 
 import sys
 sys.path.append(os.path.abspath('./sphinx_ext/'))
+sys.path.append(os.path.abspath('./modules/'))
+sys.path.append(os.path.abspath('./modules/tmpl_0007/'))
 
 if app_name == 'pelicun':
 	sys.path.insert(0, os.path.abspath('.'))
 	sys.path.insert(0, os.path.abspath('../'))
+#-----------------------------------------------------------------------------
+
+external_links = {
+	'github': f'https://github.com/NHERI-SimCenter/{app_name}',
+}
 
 exclude_patterns = [
 		'**/*desktop*',
@@ -77,8 +84,10 @@ toc_filter_exclusions = [
 	'TinF',
 	'TInF',
 	'S3hark',
-	'pelicun'
+	'pelicun',
+	'docTestbeds'        
 ]
+
 # gallery data sources
 rendre_config = {
 
@@ -105,13 +114,20 @@ rst_prolog = """
 .. _user survey: https://docs.google.com/forms/d/e/1FAIpQLSfh20kBxDmvmHgz9uFwhkospGLCeazZzL770A2GuYZ2KgBZBA/viewform?usp=sf_link
 .. |ResearchTools| replace:: `SimCenter Research Tools`_
 .. _SimCenter Research Tools: https://simcenter.designsafe-ci.org/research-tools/overview/
-.. |OpenSees| replace:: **OpenSees**
 .. |userSurveyLink| replace:: `user survey`_
-.. |Tcl| replace:: **Tcl**
+
+.. |OpenSees| replace:: **OpenSees**
 .. |OpenSeesLink| replace:: `OpenSees`_
 .. _OpenSees: https://opensees.berkeley.edu
 .. |OpenSeesDownload| replace:: `OpenSees Download`_
 .. _OpenSees Download: https://opensees.berkeley.edu/OpenSees/user/download.php
+.. |OpenSeesPy| replace:: **OpenSeesPy**
+
+.. |Tcl| replace:: **Tcl**
+
+.. |PythonDownload| replace:: `Python.org`_
+.. _Python.org: https://www.python.org/downloads/release/python-386/
+
 .. |Dakota| replace:: **Dakota**
 .. |DakotaLink| replace:: `Dakota`_
 .. _Dakota: https://dakota.sandia.gov/
@@ -119,13 +135,14 @@ rst_prolog = """
 .. _Dakota Download: https://dakota.sandia.gov/download.html
 .. |Dakota Theory Manual| replace:: `Dakota Theory Manual`_
 .. _Dakota Theory Manual: https://dakota.sandia.gov/sites/default/files/docs/6.11/Theory-6.11.0.pdf
+
+
 .. |FEAPpv| replace:: **FEAPpv**
 .. |FeapLink| replace:: `FEAPpv`_
 .. _FEAPpv: http://projects.ce.berkeley.edu/feap/feappv/
 .. |FEAPpvDownload| replace:: `FEAPpv`_
 .. |FEAPpv Theory Manual| replace:: `FEAPpv Manual`_
 .. _FEAPpv Manual: http://projects.ce.berkeley.edu/feap/feappv/manual_51.pdf
-.. |OpenSeesPy| replace:: **OpenSeesPy**
 
 .. |requirements| replace:: **REQUIREMENTS**
 .. |DesignSafe| replace:: `DesignSafe`_
@@ -140,17 +157,22 @@ rst_prolog = """
 """
 
 extlinks = {
+	'github' : (f'{external_links["github"]}/tree/master/%s', f'Github'),
+	#'download_python' : (f'{external_links["python_download"]}', f'Python.org')
 }
-example_repo = f'https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/user_manual/examples/desktop/{app_name.replace("-","")}'
+
+examples_url = f'https://github.com/NHERI-SimCenter/{app_name}/tree/master/Examples/'
 
 # app-specific settings
+
+docTestbeds='True'
 
 if app_name == 'R2DTool':
 
 	project = 'Regional Resilience Determination Tool'
 	copyright = '2019, The Regents of the University of California'
 
-	author = 'Adam Zsarnóczay, Frank McKenna, Michael Gardner, Wael Elhaddad, Joanna Zou, Chaofeng Wang'
+	author = 'Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez'
 
 	tags.add('R2D_app')
 	tags.add('desktop_app')
@@ -170,6 +192,8 @@ if app_name == 'R2DTool':
 	exclude_patterns.remove('**/*response*')
 	exclude_patterns.remove('**/*R2DTool*')
 
+
+                
 	# TODO: fix these temporary changes
 	exclude_patterns.append('**/*architectureLevel4.rst*')
 	exclude_patterns.append('**/requirements/index.rst')
@@ -194,17 +218,21 @@ if app_name == 'R2DTool':
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0
 .. |githubLink| replace:: `R2D Github page`_
 .. |appLink| replace:: `R2D Download`_
-.. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FRDT
-.. |tool version| replace:: 2.0
+.. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt
+.. |tool version| replace:: 1.0
 .. |figDownload| replace:: :numref:`figDownloadR2D`
+.. |figDownloadWin| replace:: :numref:`figDownloadR2DWin`
 .. |figUI| replace:: :numref:`figUI-R2D`
 .. |figGenericUI| replace:: :numref:`figGenericUI-R2D`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-R2D`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
-.. |developers| replace:: **SimCenter PI's and Developers**
+.. |developers| replace:: Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez
 
 """
 
+	extlinks.update(
+	   {f'r2dt-{i:04}' : (f'{examples_url}/r2dt-{i:04}/%s',f'r2dt-{i:04}') for i in range(1,20)}
+	)
 	# html_logo = 'common/figures/SimCenter_RDT_logo.png'
 	html_logo = 'common/figures/RDT-Logo-grey3.png'
 
@@ -248,8 +276,6 @@ elif app_name == 'PBE':
 	exclude_patterns.append('**/resEE.rst')
 
 	# END TODO
-
-
 
 
 	rst_prolog += """\
@@ -366,7 +392,6 @@ elif app_name == 'quoFEM':
 	exclude_patterns.append('**/desktop/FEM.rst')
 	exclude_patterns.append('**/desktop/GI.rst')
 	exclude_patterns.append('**/desktop/SIM.rst')
-	# exclude_patterns.append('**/desktop/qfem-*')
 	exclude_patterns.append('**/desktop/quo-*')
 	exclude_patterns.append('**/testbeds/*')
 	# END TODO
@@ -403,7 +428,7 @@ elif app_name == 'quoFEM':
 
 	# Example links
 	extlinks.update(
-	   {f'qfem-{i:04}' : (f'{example_repo}/qfem-{i:04}/%s',f'qfem-{i:04}') for i in range(1,99)}
+	   {f'qfem-{i:04}' : (f'{examples_url}/qfem-{i:04}/%s',f'qfem-{i:04}') for i in range(1,99)}
 	)
 
 elif app_name == 'WE-UQ':
@@ -467,7 +492,7 @@ elif app_name == 'WE-UQ':
 
 	# Example links
 	extlinks.update(
-	   {f'weuq-{i:02}' : (f'{example_repo}/weuq-{i:02}/%s',f'weuq-{i:02}') for i in range(1,99)}
+	   {f'weuq-{i:04}' : (f'{examples_url}/weuq-{i:04}/%s',f'weuq-{i:04}') for i in range(1,99)}
 	)
 
 
@@ -552,7 +577,8 @@ extensions = extensions + [
     'sphinxcontrib.images',
 	'sphinx.ext.extlinks',
 	'sphinxcontrib.images',
-	'rendre.sphinx'
+	'rendre.sphinx',
+	'sphinx.ext.autodoc'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

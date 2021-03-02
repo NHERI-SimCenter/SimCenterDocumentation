@@ -176,7 +176,7 @@ That is for the case where the computations are performed on the local computer.
 
    Sequence diagram showing what happens when a Workflow runs Remotely
 
-.. only:: RDT_app
+.. only:: R2T_app
 
-   .. include:: RDTbackend.rst
+   .. include:: R2Tworkflows.rst
 

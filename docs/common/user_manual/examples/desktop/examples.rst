@@ -36,10 +36,6 @@ Examples
 ..    :WEUQ:WEUQ/exampleShearBuilding9/README
 
 
-..    :quoFEM:quoFEM/exampleTrussOpenSees/README
-..    :quoFEM:quoFEM/quo-09/README
-..    :quoFEM:quoFEM/exampleFrameConv/README
-..    :quoFEM:quoFEM/exampleFrameBaye/README
 
 
 .. rendre:: filtered-gallery
@@ -48,5 +44,8 @@ Examples
 	
 	:link: ./%%:base/README
 
+
+..
+    :add-filter: %c/Simulation %c/Difficulty
 
 

@@ -72,11 +72,14 @@ Setup the development environment with Conan
 Build the applications
 ============================================
 
-1. Obtain the code in the SimCenterBackendApplications repository from `Github <https://github.com/NHERI-SimCenter/SimCenterBackendApplications>`_. You can do that by using your preferred Git client/GUI or by using the ``git clone`` command in the terminal:
+.. only:: notQuoFEM
 
-    .. code::
+   1. Obtain the code in the SimCenterBackendApplications repository from `Github <https://github.com/NHERI-SimCenter/SimCenterBackendApplications>`_. You can do that by using your preferred Git client/GUI or by using the ``git clone`` command in the terminal:
 
-       git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications
+      .. code::
+
+         git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications
+
 
 2. To build the applications you need to now navigate to the **SimCenterBackendApplications** folder that was created with the **git clone** command. Once there you will issue the following set of commands to create a **build** folder, change director to that folder, install needed software using conan, and finally use **cmake** to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail):
 

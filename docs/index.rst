@@ -7,8 +7,8 @@
 
    .. only:: R2D_app
 
-      The |full tool name| (|app|) is an open-source research application that can be used to simulate the performance of the built environment in an urban region subjected to natural hazards. The application
-      predict the performance of a building subjected to earthquake events. [...] The computations are performed by a simulation workflow that will run on either the user's local machine or on a high performance computer made available by |DesignSafe|.
+	     
+      The |full tool name| (|app|) is an open-source research application that can be used to simulate the performance of the built environment subjected to natural hazards. Version 1 will allow users to predict the performance of the buildings in the region when subjected to earthquake events. Version 2, due May 2021, will allow researchers to study the effects given a Hurricane event. Future version will allow users to study effects of lifleines and interdependencies. The computations are performed by a simulation workflow that will run on either the user's local machine or on a high performance computer made available by |DesignSafe|.
 
    .. only:: PBE_app
 
@@ -35,16 +35,24 @@
 
    This document covers the features and capabilities of Version |tool version| of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the |messageBoard|.
 
-   .. _lbl-front-matter:
+.. _lbl-front-matter:
 
-   .. toctree-filt::
-      :caption: About
-      :maxdepth: 1
+.. toctree-filt::
+   :caption: About
+   :maxdepth: 1
+   :numbered: 4
 
-      common/front-matter/ack
-      common/front-matter/license
-      common/front-matter/glossary.rst
-      common/front-matter/abbreviations.rst
+   :PBE:common/user_manual/about/PBE/about
+   :R2D:common/user_manual/about/R2D/about
+   :EEUQ:common/user_manual/about/EEUQ/about
+   :WEUQ:common/user_manual/about/WEUQ/about
+   :quoFEM:common/user_manual/about/quoFEM/aboutQUOFEM
+   :pelicun:common/user_manual/about/pelicun/about
+      
+   common/front-matter/ack
+   common/front-matter/license
+   common/front-matter/glossary.rst
+   common/front-matter/abbreviations.rst
 
 
 .. _lbl-user-manual:
@@ -53,13 +61,6 @@
    :caption: User Manual
    :maxdepth: 1
    :numbered: 4
-
-   :PBE:common/user_manual/about/PBE/about
-   :R2D:common/user_manual/about/R2DTool/about
-   :EEUQ:common/user_manual/about/EEUQ/about
-   :WEUQ:common/user_manual/about/WEUQ/about
-   :quoFEM:common/user_manual/about/quoFEM/aboutQUOFEM
-   :pelicun:common/user_manual/about/pelicun/about
 
    :desktop_app:common/user_manual/installation/desktop/installation
    :pelicun:common/user_manual/installation/pelicun/installation
@@ -80,19 +81,16 @@
 
    common/user_manual/bugs
 
-
-.. _lbl-testbeds-manual:
-
 .. toctree-filt::
    :caption: Testbeds
    :maxdepth: 1
    :numbered: 3
 
-   :R2D:common/testbeds/sf_bay_area/index
-   :R2D:common/testbeds/atlantic_city/index
-   :R2D:common/testbeds/memphis/index
-   :R2D:common/testbeds/anchorage/index
-   :R2D:common/testbeds/lake_charles/index
+   :docTestbeds:common/testbeds/sf_bay_area/index
+   :docTestbeds:common/testbeds/atlantic_city/index
+   :docTestbeds:common/testbeds/memphis/index
+   :docTestbeds:common/testbeds/anchorage/index
+   :docTestbeds:common/testbeds/lake_charles/index
 
 .. _lbl-technical-manual:
 
@@ -126,7 +124,7 @@
    :desktop_app:common/developer_manual/coding_style/desktop/coding_style
    :pelicun:common/developer_manual/coding_style/pelicun/coding_style
 
-   :R2D:common/developer_manual/examples/desktop/examples
+   :docTestbeds:common/developer_manual/examples/desktop/examples
    :pelicun:common/developer_manual/examples/pelicun/examples
 
    :pelicun:common/developer_manual/API/pelicun/API

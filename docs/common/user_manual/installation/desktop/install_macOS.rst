@@ -6,15 +6,16 @@ Install on macOS 10
 Install Python 3.8
 ^^^^^^^^^^^^^^^^^^
 
-The Mac comes with Python pre-installed, but the default Python is the outdated version 2.7. As of January 1st, 2020 no new bug reports, fixes, or changes will be made to Python 2, and Python 2 is officially no longer supported. SimCenter tools require Python 3.
-If you have not yet installed Python, we recommend installing Python 3.8 from `Python.org <https://www.python.org/downloads/mac-osx>`_ , using the
-**macOS 64-bit installer**. The installer will place a python3 executable in your /usr/local/bin directory, whose location should be on your system PATH.
+The Mac comes with Python pre-installed, but the default Python is the outdated version 2.7. As of January 1st, 2020 no new bug reports, fixes, or changes will be made to Python 2, and Python 2 is officially no longer supported. SimCenter tools require Python 3.8.
+If you have not yet installed Python, we recommend installing Python 3.8 from |PythonDownload| , using the
+**macOS 64-bit installer**. The installer will place a python3 executable in your **PATH**.
 
 .. warning::
-   The latest version of Python is 3.9. We recommend using the penultimate version to avoid issues with packages that might not have adopted yet to the latest version.
+
+   The latest version of Python is 3.9.1. Certain modules required by SimCenter applications fail in the pip install process detailed below.
 
 .. note::
-   #. We use the python.org installation over others, due to it's simplicity of install.
+   #. We use the python.org installation over others, due to it's simplicity of installation.
    #. The current Python installer leaves two script files in the Python directory at the end of the installation. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal. To execute the files, double click on them. The two files, shown in the image below, are: ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh``.
 
    .. figure:: figures/pythonInstallShell.png
@@ -39,7 +40,7 @@ If you plan to use OpenSeesPy to run finite element analyses, you should also in
 
 .. code-block:: bash
 
-      pip3 install openseespy --upgrade
+      pip3 install openseespymac --upgrade
 
 .. note::
 
@@ -69,6 +70,7 @@ If you plan to use OpenSeesPy to run finite element analyses, you should also in
    If you have not yet installed Java, please download the latest installer from `java.com <https://java.com/en/download/>`_ , run it, and follow the on-screen instructions to install Java.
 
    .. note::
+      
       The Java website should automatically detect your operating system and offer the corresponding installer for you to download. Make sure you see "Mac OS X" at the top of the page before downloading the installer.
 
 
@@ -79,13 +81,14 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
 .. only:: R2D_app
 
-   .. _figDownload:
+   .. _figDownloadR2D:
 
-   .. figure:: figures/pbeDownload.png
+   .. figure:: figures/R2DDownload.png
       :align: center
       :figclass: align-center
 
       R2DTool download page.
+
 
 .. only:: PBE_app
 
@@ -141,7 +144,8 @@ Now test if the application starts properly. Navigate to the location where you 
 
 .. note::
 
-   Since the SimCenter is not recognized as an Apple vendor, our applications are not recognized by the operating system as being signed. Consequently, you may receive a warning message when you start the |short tool name| application for the first time.
+   SimCenter apps are codesigned and notarized, but because they are not downloaded from the operating system's app store, they may not be recognized as such. As a consequence, depending on your security settings, when you start a SimCenter app for the first time, your operating system may bring up a dialog box indicating it is unsafe. If this dialog should appear, hit the cancel button. Restart the app by right clicking on it and selecting open.
+
 
 .. only:: R2D_app
 
