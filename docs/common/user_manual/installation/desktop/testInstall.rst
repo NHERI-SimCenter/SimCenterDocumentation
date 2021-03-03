@@ -3,6 +3,12 @@
 Test the Application
 =====================
 
+.. only:: PBE_app
+
+    Before running any simulations, we recommend testing the application and the simulation environment on your computer by running a test calculation.
+
+    We have prepared a test workflow that you can load from the ``Examples/E0_Test`` folder in the application directory. Open the ``E0_test_input.json`` file with the PBE application. It should automatically populate the settings in the user interface. Without changing anything, click on the **Run** button in the bottom left corner of the application. Running the simulation should not take more than a few minutes and the results should be displayed in the end automatically. If you see a scatter plot of results in the end, your environment is set up appropriately and you are ready to start running your own simulations.
+
 .. only:: R2D_app
 
     Before running any simulations, we recommend testing the R2DTool by running the following example problem: :ref:`lbl_R2D_example_1`.
