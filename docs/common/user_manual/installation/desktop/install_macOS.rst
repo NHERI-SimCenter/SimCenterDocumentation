@@ -6,13 +6,13 @@ Install on macOS 10
 Install Python 3.8
 ^^^^^^^^^^^^^^^^^^
 
-The Mac comes with Python pre-installed, but the default Python is the outdated version 2.7. As of January 1st, 2020 no new bug reports, fixes, or changes will be made to Python 2, and Python 2 is officially no longer supported. SimCenter tools require Python 3.8.
-If you have not yet installed Python, we recommend installing Python 3.8 from `Python.org <https://www.python.org/downloads/mac-osx>`_ , using the
+The Mac comes with Python pre-installed, but the default Python is the outdated version 2.7. Since January 1st, 2020 no new bug reports, fixes, or changes have been made to Python 2, and Python 2 is officially no longer supported. SimCenter tools require Python 3.8.
+If you have not yet installed Python, we recommend installing Python 3.8 from |PythonDownload|, using the
 **macOS 64-bit installer**. The installer will place a python3 executable in your **PATH**.
 
 .. warning::
-   
-   The latest version of Python is 3.9.1. Certain modules required by SimCenter applications fail in the pip install process detailed below. This is typical of python releases, e.g. it was not until 3.8.6 that all modules needed compiled on both Mac and Windows.
+
+   The latest version of Python is 3.9.1. Certain Python modules required by SimCenter applications fail under Python 3.9 in the pip install process detailed below. If you already have Python 3.9, we recommend installing a Python 3.8 as well that you will use only for the SimCenter applications.
 
 .. note::
    #. We use the python.org installation over others, due to it's simplicity of installation.
@@ -25,7 +25,7 @@ If you have not yet installed Python, we recommend installing Python 3.8 from `P
       Python: Folder Displayed at Conclusion of Install
 
 
-Once Python is installed, you need to extend it by installing a few additional packages. To faciliate this phase of the installation, we created a **nheri_simcenter** python package that automatically installs all other dependencies. Start a Terminal window and type the following command:
+Once Python is installed, you need to extend it by installing a few additional packages. To facilitate this phase of the installation, we created a **nheri_simcenter** python package that automatically installs all other dependencies. Start a Terminal window and type the following command:
 
 .. code-block:: bash
 
@@ -35,12 +35,6 @@ Once Python is installed, you need to extend it by installing a few additional p
    You can use the spotlight app (magnifying glass at the top right corner of the desktop) to start a Terminal window. Start the spotlight app and type in terminal. The Terminal application should appear as the top hit.
 
 Make sure you see a message that confirms the successful installation of the nheri-simcenter package before proceeding to the next step.
-
-If you plan to use OpenSeesPy to run finite element analyses, you should also install that package at this point. (If you are not sure, we recommend you to install it.) You can install OpenSeesPy using the terminal window and the following command:
-
-.. code-block:: bash
-
-      pip3 install openseespymac --upgrade
 
 .. note::
 
@@ -81,13 +75,14 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
 .. only:: R2D_app
 
-   .. _figDownload:
+   .. _figDownloadR2D:
 
-   .. figure:: figures/pbeDownload.png
+   .. figure:: figures/R2DDownload.png
       :align: center
       :figclass: align-center
 
       R2DTool download page.
+
 
 .. only:: PBE_app
 
@@ -143,7 +138,8 @@ Now test if the application starts properly. Navigate to the location where you 
 
 .. note::
 
-   Since the SimCenter app is codesigned and nororized, but it is not downloaded from the app store. As a consequence, depending on your security settings, when you start it for the first time macOS may bring up a dialog box indicating it is unsfae. If this dialog should appear, hit the cancel button. Restart the app by right clicking on it and selecting open. our applications are not recognized by the operating system as being signed. Consequently, you may receive a warning message when you start the |short tool name| application for the first time.
+   SimCenter apps are codesigned and notarized, but because they are not downloaded from the operating system's app store, they may not be recognized as such. As a consequence, depending on your security settings, when you start a SimCenter app for the first time, your operating system may bring up a dialog box indicating it is unsafe. If this dialog should appear, hit the cancel button. Restart the app by right clicking on it and selecting open.
+
 
 .. only:: R2D_app
 

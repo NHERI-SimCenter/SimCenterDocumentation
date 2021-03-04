@@ -13,7 +13,7 @@ if app_name in ["R2DTool", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun"]:
 	pass
 else:
 	pass
-	app_name = 'R2D'
+	app_name = 'R2DTool'
 	#app_name = 'PBE'
 	#app_name = 'EE-UQ'
 	#app_name = 'WE-UQ'
@@ -35,13 +35,15 @@ print('app_name = ' + app_name)
 import sys
 sys.path.append(os.path.abspath('./sphinx_ext/'))
 sys.path.append(os.path.abspath('./modules/'))
+sys.path.append(os.path.abspath('./modules/tmpl_0007/'))
 
 if app_name == 'pelicun':
 	sys.path.insert(0, os.path.abspath('.'))
 	sys.path.insert(0, os.path.abspath('../'))
+#-----------------------------------------------------------------------------
 
-app_info = {
-	'github': f'https://github.com/NHERI-SimCenter/{app_name}'
+external_links = {
+	'github': f'https://github.com/NHERI-SimCenter/{app_name}',
 }
 
 exclude_patterns = [
@@ -112,13 +114,20 @@ rst_prolog = """
 .. _user survey: https://docs.google.com/forms/d/e/1FAIpQLSfh20kBxDmvmHgz9uFwhkospGLCeazZzL770A2GuYZ2KgBZBA/viewform?usp=sf_link
 .. |ResearchTools| replace:: `SimCenter Research Tools`_
 .. _SimCenter Research Tools: https://simcenter.designsafe-ci.org/research-tools/overview/
-.. |OpenSees| replace:: **OpenSees**
 .. |userSurveyLink| replace:: `user survey`_
-.. |Tcl| replace:: **Tcl**
+
+.. |OpenSees| replace:: **OpenSees**
 .. |OpenSeesLink| replace:: `OpenSees`_
 .. _OpenSees: https://opensees.berkeley.edu
 .. |OpenSeesDownload| replace:: `OpenSees Download`_
 .. _OpenSees Download: https://opensees.berkeley.edu/OpenSees/user/download.php
+.. |OpenSeesPy| replace:: **OpenSeesPy**
+
+.. |Tcl| replace:: **Tcl**
+
+.. |PythonDownload| replace:: `Python.org`_
+.. _Python.org: https://www.python.org/downloads/release/python-386/
+
 .. |Dakota| replace:: **Dakota**
 .. |DakotaLink| replace:: `Dakota`_
 .. _Dakota: https://dakota.sandia.gov/
@@ -126,13 +135,14 @@ rst_prolog = """
 .. _Dakota Download: https://dakota.sandia.gov/download.html
 .. |Dakota Theory Manual| replace:: `Dakota Theory Manual`_
 .. _Dakota Theory Manual: https://dakota.sandia.gov/sites/default/files/docs/6.11/Theory-6.11.0.pdf
+
+
 .. |FEAPpv| replace:: **FEAPpv**
 .. |FeapLink| replace:: `FEAPpv`_
 .. _FEAPpv: http://projects.ce.berkeley.edu/feap/feappv/
 .. |FEAPpvDownload| replace:: `FEAPpv`_
 .. |FEAPpv Theory Manual| replace:: `FEAPpv Manual`_
 .. _FEAPpv Manual: http://projects.ce.berkeley.edu/feap/feappv/manual_51.pdf
-.. |OpenSeesPy| replace:: **OpenSeesPy**
 
 .. |requirements| replace:: **REQUIREMENTS**
 .. |DesignSafe| replace:: `DesignSafe`_
@@ -147,7 +157,8 @@ rst_prolog = """
 """
 
 extlinks = {
-	'github' : (f'{app_info["github"]}/tree/master/%s', f'Github')
+	'github' : (f'{external_links["github"]}/tree/master/%s', f'Github'),
+	#'download_python' : (f'{external_links["python_download"]}', f'Python.org')
 }
 
 examples_url = f'https://github.com/NHERI-SimCenter/{app_name}/tree/master/Examples/'
@@ -156,7 +167,7 @@ examples_url = f'https://github.com/NHERI-SimCenter/{app_name}/tree/master/Examp
 
 docTestbeds='True'
 
-if app_name == 'R2D':
+if app_name == 'R2DTool':
 
 	project = 'Regional Resilience Determination Tool'
 	copyright = '2019, The Regents of the University of California'
@@ -209,9 +220,10 @@ if app_name == 'R2D':
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0
 .. |githubLink| replace:: `R2D Github page`_
 .. |appLink| replace:: `R2D Download`_
-.. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FRDT
+.. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt
 .. |tool version| replace:: 1.0
 .. |figDownload| replace:: :numref:`figDownloadR2D`
+.. |figDownloadWin| replace:: :numref:`figDownloadR2DWin`
 .. |figUI| replace:: :numref:`figUI-R2D`
 .. |figGenericUI| replace:: :numref:`figGenericUI-R2D`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-R2D`
@@ -382,7 +394,6 @@ elif app_name == 'quoFEM':
 	exclude_patterns.append('**/desktop/FEM.rst')
 	exclude_patterns.append('**/desktop/GI.rst')
 	exclude_patterns.append('**/desktop/SIM.rst')
-	# exclude_patterns.append('**/desktop/qfem-*')
 	exclude_patterns.append('**/desktop/quo-*')
 	exclude_patterns.append('**/testbeds/*')
 	# END TODO
