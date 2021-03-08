@@ -1,0 +1,45 @@
+Occupancy,HazusClass-IN,OccupancyClass
+Single-family home,SF1XA,RES1
+Single-family home,SF1XV,RES1
+Single-family home,SF2XA,RES1
+Single-family home,SF2XV,RES1
+Single-family home,SF2BA,RES1
+Single-family home,SF2BV,RES1
+Single-family home,SF2SA,RES1
+Single-family home,SF2SV,RES1
+Mobile Home,MH,RES2
+Apartment,APT,RES3
+Hotel and Motel,HOT,RES4
+Nursing Home,NURSE,"RES5, RES6"
+Retail,RETAIL,COM1
+Wholesale/warehouse,WHOLE,COM2
+Personal and Repair Services,SERVICE,COM3
+Business and Office,OFFICE,COM4
+Bank,BANK,COM5
+Hospital,HOSP,COM6
+Medical Office / Clinic,MED,COM7
+Entertainment & Recreation,REC,COM8
+Theatre,THEAT,COM9
+Garage,GARAGE,COM10
+Heavy Industry,INDH,IND1
+Light Industry,INDL,IND2
+Food/Drug/Chemical Industry,CHEM,"IND3, IND5"
+Metals/Mineral Processing,PROC,IND4
+Construction,CONST,IND6
+Agricultural,AGRI,AGR1
+Church,RELIG,REL1
+City Hall / Post Office,CITY,GOV1
+Police Station / Fire Station,EMERG,GOV2
+School / Library,SCHOOL,"EDU1, EDU2"
+IND1,USACE - Galveston,"Average heavy industrial, Structure"
+IND2,USACE - Galveston,"Average light industrial, structure"
+IND3,USACE - Galveston,"Average Food/Drug/Chem, Structure"
+IND4,USACE - Galveston,"Average Metals/Minerals processing, structure"
+IND5,USACE - Galveston,"Average High Technology, structure"
+IND6,USACE - Galveston,"Average Construction, structure"
+AGR1,USACE - Galveston,"Average Agriculture, structure"
+REL1,USACE - Galveston,"Church, structure"
+GOV1,USACE - Galveston,"Average government services, structure"
+GOV2,USACE - Galveston,"Average emergency response, Structure"
+EDU1,USACE - Galveston,"Average school, structure"
+EDU2,USACE - Galveston,"Average college/university, structure"

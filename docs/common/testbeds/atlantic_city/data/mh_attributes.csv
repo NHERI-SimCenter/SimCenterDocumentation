@@ -1,4 +1,3 @@
 Attribute,Valid Entries,Basis
-shutters,yes | no,Codes/standards
+shutters,yes | no,Codes/standards/human subjects data
 tie downs,yes | no,Codes/standards
-terrain roughness,open (0.03) | light suburban (0.15) | suburban (0.35) | light trees (0.70) | trees (1.00),Land Use/Land Cover
