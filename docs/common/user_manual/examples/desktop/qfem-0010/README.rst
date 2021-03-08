@@ -1,4 +1,0 @@
-
-Forward Propagation - FEAP
-==========================
-
