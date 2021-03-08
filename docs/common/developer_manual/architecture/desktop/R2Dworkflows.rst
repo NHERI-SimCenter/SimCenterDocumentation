@@ -3,13 +3,7 @@
 R2D Workflows
 ===============
 
-This section is specific to implementations of R2D for quantifying regional risk and resilience to natural hazards. User-defined inputs and expected outputs for R2D are detailed in the following pages.
-
-.. toctree::
-   :maxdepth: 1
-
-   Inputs
-   Outputs
+This section is specific to implementations of R2D for quantifying regional risk and resilience to natural hazards. 
 
 Choosing Component Applications
 -------------------------------
@@ -22,9 +16,7 @@ A user's choice of :ref:`component applications <lblbackendApps>` for R2D depend
    :align: center
    :figclass: align-center
 
-The following flowchart can be used to determine which workflow is suitable for your application.
 
-[flowchart diagram which people can use to determine which workflow to use - will add]
 
 
 **Workflow 1** (EQ, HU, W): This workflow is appropriate for implementations where only intensity measures (IM) of earthquake, hurricane, or wind hazards are known. IM-based fragility functions must be used in the DL application, as no structural response is simulated. The required inputs are shown in the first orange panel.
