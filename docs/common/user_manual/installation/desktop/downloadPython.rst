@@ -19,7 +19,7 @@ If you have not yet installed Python 3.7, we recommend installing Python 3.7 fro
 
 Once Python is installed, you need to extend it by installing the following packages: **numpy**, **scipy**, **tables**, **hdf5** and **pandas**. To install these packages, start a `terminal window as an Admin user <https://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/>`_ and in that window type the following instructions:
 
-.. code-block:: python
+.. code-block:: console
 
       pip install numpy
       pip install scipy
@@ -31,7 +31,7 @@ Once Python is installed, you need to extend it by installing the following pack
    
    As an alternative, you can install the SimCenter's pelicun module, which will include all three of the above:
 
-   .. code-block:: python
+   .. code-block:: console
 
       pip install pelicun
 

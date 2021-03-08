@@ -24,7 +24,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
 .. only:: R2D_app
 
-   .. _figDownloadWin:
+   .. _figDownloadWin-R2D:
 
    .. figure:: figures/R2DDownload.png
       :align: center
@@ -34,7 +34,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
 .. only:: PBE_app
 
-   .. _figDownloadWin:
+   .. _figDownloadWin-PBE:
 
    .. figure:: figures/pbeDownload.png
       :align: center
@@ -44,7 +44,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
 .. only:: EEUQ_app
 
-   .. _figDownloadWin:
+   .. _figDownloadWin-EE:
 
    .. figure:: figures/eeDownload.png
       :align: center
@@ -54,7 +54,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
 .. only:: WEUQ_app
 
-   .. _figDownloadWin:
+   .. _figDownloadWin-WE:
 
    .. figure:: figures/weDownload.png
       :align: center
@@ -65,7 +65,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
 .. only:: quoFEM_app
 
-   .. _figDownloadWin:
+   .. _figDownloadWin-quoFEM:
 
    .. figure:: figures/quoFEMDownload.png
       :align: center
@@ -131,7 +131,7 @@ Now test if the application starts properly. Navigate to the location where you 
 
 .. only:: quoFEM_app
 
-   .. _figQUO_FEM:
+   .. _figUI-quoFEM:
 
    .. figure:: figures/quoFEM.png
     :align: center

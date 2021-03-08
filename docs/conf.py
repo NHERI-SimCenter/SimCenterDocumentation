@@ -23,6 +23,9 @@ else:
 	os.environ['SIMDOC_APP'] = app_name
 	os.environ['SIMCENTER_DEV'] = os.path.normpath('../../')
 
+app_abrev = app_name.split("-")[0].replace("Tool","")
+app_name2 = app_name.replace("Tool","")
+
 print('app_name = ' + app_name)
 
 # -- Path setup --------------------------------------------------------------
@@ -113,7 +116,23 @@ math_number_all = True
 math_eqref_format = '({number})'
 math_numfig = True
 
-rst_prolog = """
+rst_prolog = f"""
+.. |figDownload| replace:: :numref:`figDownload-{app_abrev}`
+.. |figDownloadWin| replace:: :numref:`figDownloadWin-{app_abrev}`
+.. |figGenericUI| replace:: :numref:`figGenericUI-{app_abrev}`
+.. |figUI| replace:: :numref:`figUI-{app_abrev}`
+
+.. |app| replace:: {app_name2} app
+.. |appName| replace:: {app_name2} app
+.. |short tool id| replace:: {app_name2}
+.. |short tool name| replace:: {app_name2} app
+.. |appLink| replace:: `{app_name2} Download`_
+.. |tool github link| replace:: `{app_name2} Github page`_
+.. |githubLink| replace:: `{app_name2} Github page`_
+.. |messageBoard| replace:: `Message Board`_
+
+.. _{app_name2} Github page: https://github.com/NHERI-SimCenter/{app_name}
+
 .. |EE-UQ short name| replace:: EE-UQ app
 .. |EE-UQ app link| replace:: `EE-UQ app`_
 .. _EE-UQ app: https://simcenter.designsafe-ci.org/research-tools/ee-uq-application/
@@ -218,23 +237,10 @@ if app_name == 'R2DTool':
 
 	rst_prolog += """\
 .. |full tool name| replace:: Regional Resilience Determination Tool
-.. |short tool name| replace:: R2D app
-.. |short tool id| replace:: R2D
-.. |tool github link| replace:: `R2D Github page`_
-.. _R2D Github page: https://github.com/NHERI-SimCenter/R2DTool
-.. |app| replace:: R2D app
-.. |appName| replace:: R2D app
-.. |messageBoard| replace:: `Message Board`_
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0
-.. |githubLink| replace:: `R2D Github page`_
-.. |appLink| replace:: `R2D Download`_
 .. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt
 .. |tool version| replace:: 1.0
-.. |figDownload| replace:: :numref:`figDownload`
-.. |figDownloadWin| replace:: :numref:`figDownloadWin`
-.. |figUI| replace:: :numref:`figUI-R2D`
-.. |figGenericUI| replace:: :numref:`figGenericUI-R2D`
-.. |figMissingCRT| replace:: :numref:`figMissingCRT-R2D`
+.. |figMissingCRT| replace:: :numref:`figMissingCRT`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 .. |developers| replace:: Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez
 
@@ -288,21 +294,9 @@ elif app_name == 'PBE':
 
 	rst_prolog += """\
 .. |full tool name| replace:: Performance Based Engineering Application
-.. |short tool name| replace:: PBE app
-.. |short tool id| replace:: PBE
-.. |tool github link| replace:: `PBE Github page`_
-.. _PBE Github page: https://github.com/NHERI-SimCenter/PBE
-.. |app| replace:: PBE app
-.. |appName| replace:: PBE app
-.. |messageBoard| replace:: `Message Board`_
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
-.. |githubLink| replace:: `PBE Github page`_
-.. |appLink| replace:: `PBE Download`_
 .. _PBE Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE
 .. |tool version| replace:: 2.0
-.. |figDownload| replace:: :numref:`figDownloadPBE`
-.. |figUI| replace:: :numref:`figUI-PBE`
-.. |figGenericUI| replace:: :numref:`figGenericUI-PBE`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-PBE`
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
 .. |developers| replace:: **Adam Zsarnóczay**, **Frank McKenna**, **Chaofeng Wang**, **Wael Elhaddad**, **Michael Gardner**
@@ -345,21 +339,9 @@ elif app_name == 'EE-UQ':
 
 	rst_prolog += """
 .. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application (EE-UQ)
-.. |short tool name| replace:: EE-UQ app
-.. |short tool id| replace:: EE-UQ
-.. |tool github link| replace:: `EE-UQ Github page`_
-.. _EE-UQ Github page: https://github.com/NHERI-SimCenter/EE-UQ
 .. |tool version| replace:: 2.0
-.. |app| replace:: EE-UQ app
-.. |appName| replace:: EE-UQ app
-.. |githubLink| replace:: `EE-UQ Github page`_
-.. |appLink| replace:: `EE-UQ Download`_
 .. _EE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/EE_UQ
-.. |messageBoard| replace:: `Message Board`_
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
-.. |figUI| replace:: :numref:`figUI-EE`
-.. |figDownload| replace:: :numref:`figDownloadEE`
-.. |figGenericUI| replace:: :numref:`figGenericUI-EE`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-EE`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 .. |developers| replace:: **Frank McKenna**, **Wael Elhaddad**, **Michael Gardner**, **Chaofeng Wang**, **Adam Zsarnóczay**
@@ -406,22 +388,10 @@ elif app_name == 'quoFEM':
 
 	rst_prolog += f"""
 .. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)
-.. |short tool name| replace:: quoFEM app
-.. |short tool id| replace:: quoFEM
-.. |tool github link| replace:: `quoFEM Github page`_
-.. _quoFEM Github page: https://github.com/NHERI-SimCenter/quoFEM
 .. |tool version| replace:: 2.0
-.. |app| replace:: quoFEM app
-.. |appName| replace:: quoFEM app
-.. |githubLink| replace:: `quoFEM Github page`_
-.. |appLink| replace:: `quoFEM Download`_
 .. _quoFEM Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
-.. |messageBoard| replace:: `Message Board`_
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0
-.. |figUI| replace:: :numref:`figQUO_FEM`
-.. |figDownload| replace:: :numref:`figDownloadQUO_FEM`
-.. |figGenericUI| replace:: :numref:`figGenericUI-QUOFEM`
-.. |figMissingCRT| replace:: :numref:`figMissingCRT-EE`
+.. |figMissingCRT| replace:: :numref:`figMissingCRT`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 .. |developers| replace:: {author}"""
 
@@ -467,21 +437,9 @@ elif app_name == 'WE-UQ':
 
 	rst_prolog += """
 .. |full tool name| replace:: Wind Engineering with Uncertainty Quantification Application (WE-UQ)
-.. |short tool name| replace:: WE-UQ app
-.. |short tool id| replace:: WE-UQ
-.. |tool github link| replace:: `WE-UQ Github page`_
-.. _WE-UQ Github page: https://github.com/NHERI-SimCenter/WE-UQ
 .. |tool version| replace:: 2.0
-.. |app| replace:: WE-UQ app
-.. |appName| replace:: WE-UQ app
-.. |githubLink| replace:: `WE-UQ Github page`_
-.. |appLink| replace:: `WE-UQ Download`_
 .. _WE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ
-.. |messageBoard| replace:: `Message Board`_
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=5.0
-.. |figUI| replace:: :numref:`figUI-WE`
-.. |figDownload| replace:: :numref:`figDownloadWE`
-.. |figGenericUI| replace:: :numref:`figGenericUI-WE`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-WE`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 .. |developers| replace:: **Frank McKenna**, **Peter Mackenzie-Helnwein**, **Wael Elhaddad**, **Jiawei Wan**, **Michael Gardner**, **Dae Kun Kwon**
@@ -521,14 +479,8 @@ elif app_name == 'pelicun':
 	rst_prolog += """\
 .. |pelicun expanded| replace:: Probabilistic Estimation of Losses, Injuries, and Community resilience Under Natural disasters
 .. |full tool name| replace:: pelicun library
-.. |short tool name| replace:: pelicun
-.. |short tool id| replace:: pelicun
-.. |tool github link| replace:: `pelicun Github page`_
-.. _pelicun Github page: https://github.com/NHERI-SimCenter/pelicun
 .. |app| replace:: pelicun library
-.. |messageBoard| replace:: `Message Board`_
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
-.. |githubLink| replace:: `pelicun Github page`_
 .. |tool version| replace:: 2.0.9
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
 .. |developers| replace:: **Adam Zsarnóczay**

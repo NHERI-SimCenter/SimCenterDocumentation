@@ -71,11 +71,11 @@ Make sure you see a message that confirms the successful installation of the nhe
 Download the Application
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-To download the |app|, first navigate to the |appLink| page. As shown in :numref:`figDownload`, to get to the download page, you need to click on the link **Download app and User Manual** in the application page. The download page contains a list of downloadable files and directories.
+To download the |app|, first navigate to the |appLink| page. As shown in |figDownload|, to get to the download page, you need to click on the link **Download app and User Manual** in the application page. The download page contains a list of downloadable files and directories.
 
 .. only:: R2D_app
 
-   .. _figDownload:
+   .. _figDownload-R2D:
 
    .. figure:: figures/R2DDownload.png
       :align: center
@@ -86,7 +86,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in :numref
 
 .. only:: PBE_app
 
-   .. _figDownload:
+   .. _figDownload-PBE:
 
    .. figure:: figures/pbeDownload.png
       :align: center
@@ -96,7 +96,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in :numref
 
 .. only:: EEUQ_app
 
-   .. _figDownload:
+   .. _figDownload-EE:
 
    .. figure:: figures/eeDownload.png
       :align: center
@@ -106,7 +106,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in :numref
 
 .. only:: WEUQ_app
 
-   .. _figDownload:
+   .. _figDownload-WE:
 
    .. figure:: figures/weDownload.png
       :align: center
@@ -117,7 +117,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in :numref
 
 .. only:: quoFEM_app
 
-   .. _figDownload:
+   .. _figDownload-quoFEM:
 
    .. figure:: figures/quoFEMDownload.png
       :align: center
@@ -183,7 +183,7 @@ Now test if the application starts properly. Navigate to the location where you 
 
 .. only:: quoFEM_app
 
-   .. _figQUO_FEM:
+   .. _figUI-quoFEM:
 
    .. figure:: figures/quoFEM.png
     :align: center
