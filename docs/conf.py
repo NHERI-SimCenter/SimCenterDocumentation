@@ -66,12 +66,15 @@ exclude_patterns = [
 		'**/*pelicun*',
 		'**/*old*',
 		'**/*quoFEM*',
-		'**/qfem*'
+		'**/qfem*',
+		# Apparently obsolete pages, consider deleting
+		'**/_downloadApp.rst',
+		'**/downloadPython.rst',
+		'**/install_WindowsOld.rst'
 	]
 
 source_suffix = {
 	".rst": "restructuredtext",
-	# ".md" : "markdown"
 }
 
 toc_filter_exclusions = [
@@ -198,6 +201,11 @@ if app_name == 'R2DTool':
 
                 
 	# TODO: fix these temporary changes
+	exclude_patterns.append('**/user_manual/usage/desktop/FEM.rst')
+	exclude_patterns.append('**/user_manual/usage/desktop/SIM.rst')
+	exclude_patterns.append('**/user_manual/usage/desktop/GI.rst')
+	exclude_patterns.append('**/user_manual/usage/desktop/response/*')
+	exclude_patterns.append('**/user_manual/usage/desktop/earthquake/*')
 	exclude_patterns.append('**/*architectureLevel4.rst*')
 	exclude_patterns.append('**/requirements/index.rst')
 	exclude_patterns.append('**/requirements/bigRequirements.rst')
@@ -206,7 +214,6 @@ if app_name == 'R2DTool':
 	exclude_patterns.append('**/DakotaParameterEstimation.rst')
 	exclude_patterns.append('**/DakotaInverseProblems.rst')
 	exclude_patterns.append('**/resEE.rst')
-
 	# END TODO
 
 	rst_prolog += """\
@@ -276,7 +283,6 @@ elif app_name == 'PBE':
 	exclude_patterns.append('**/DakotaParameterEstimation.rst')
 	exclude_patterns.append('**/DakotaInverseProblems.rst')
 	exclude_patterns.append('**/resEE.rst')
-
 	# END TODO
 
 

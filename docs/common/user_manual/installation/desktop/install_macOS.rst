@@ -71,11 +71,11 @@ Make sure you see a message that confirms the successful installation of the nhe
 Download the Application
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-To download the |app|, first navigate to the |appLink| page. As shown in |figDownload|, to get to the download page, you need to click on the link ``Download app and User Manual`` in the application page. The download page contains a list of downloadable files and directories.
+To download the |app|, first navigate to the |appLink| page. As shown in :numref:`figDownload`, to get to the download page, you need to click on the link **Download app and User Manual** in the application page. The download page contains a list of downloadable files and directories.
 
 .. only:: R2D_app
 
-   .. _figDownloadR2D:
+   .. _figDownload:
 
    .. figure:: figures/R2DDownload.png
       :align: center
