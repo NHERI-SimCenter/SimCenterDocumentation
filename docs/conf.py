@@ -55,8 +55,12 @@ exclude_patterns = [
 		'**/*PBE*',
 		'**/*WEUQ*',
 		'**/*WE[-_]UQ*',
+		'**/weuq-*',
+
 		'**/*EEUQ*',
 		'**/*EE[-_]UQ*',
+		'**/eeuq-*',
+
 		'**/*TinF*',
 		'**/*TInF*',
 		'**/*pelicun*',
@@ -100,7 +104,7 @@ extensions = []
 # shared among all SimCenter docs
 
 numfig = True
-numfig_secnum_depth = 2
+numfig_secnum_depth = 4
 
 math_number_all = True
 math_eqref_format = '({number})'
@@ -135,7 +139,6 @@ rst_prolog = """
 .. _Dakota Download: https://dakota.sandia.gov/download.html
 .. |Dakota Theory Manual| replace:: `Dakota Theory Manual`_
 .. _Dakota Theory Manual: https://dakota.sandia.gov/sites/default/files/docs/6.11/Theory-6.11.0.pdf
-
 
 .. |FEAPpv| replace:: **FEAPpv**
 .. |FeapLink| replace:: `FEAPpv`_
@@ -220,8 +223,8 @@ if app_name == 'R2DTool':
 .. |appLink| replace:: `R2D Download`_
 .. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt
 .. |tool version| replace:: 1.0
-.. |figDownload| replace:: :numref:`figDownloadR2D`
-.. |figDownloadWin| replace:: :numref:`figDownloadR2DWin`
+.. |figDownload| replace:: :numref:`figDownload`
+.. |figDownloadWin| replace:: :numref:`figDownloadWin`
 .. |figUI| replace:: :numref:`figUI-R2D`
 .. |figGenericUI| replace:: :numref:`figGenericUI-R2D`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-R2D`
@@ -233,7 +236,6 @@ if app_name == 'R2DTool':
 	extlinks.update(
 	   {f'r2dt-{i:04}' : (f'{examples_url}/r2dt-{i:04}/%s',f'r2dt-{i:04}') for i in range(1,20)}
 	)
-	# html_logo = 'common/figures/SimCenter_RDT_logo.png'
 	html_logo = 'common/figures/RDT-Logo-grey3.png'
 
 	html_theme_options = {
@@ -301,7 +303,6 @@ elif app_name == 'PBE':
 
 """
 
-	# html_logo = 'common/figures/SimCenter_PBE_logo.png'
 	html_logo = 'common/figures/PBE-Logo-grey3.png'
 
 	html_theme_options = {
@@ -330,6 +331,7 @@ elif app_name == 'EE-UQ':
 	toc_filter_exclude = toc_filter_exclusions
 
 	exclude_patterns.remove('**/*EEUQ*')
+	exclude_patterns.remove('**/eeuq-*')
 	exclude_patterns.remove('**/*desktop*')
 	exclude_patterns.remove('**/*earthquake*')
 	exclude_patterns.remove('**/*response*')
@@ -455,6 +457,7 @@ elif app_name == 'WE-UQ':
 	exclude_patterns.remove('**/*response*')
 	exclude_patterns.remove('**/*TinF*')
 	exclude_patterns.remove('**/*WE[-_]UQ*')
+	exclude_patterns.remove('**/weuq-*')
 
 	rst_prolog += """
 .. |full tool name| replace:: Wind Engineering with Uncertainty Quantification Application (WE-UQ)
@@ -592,18 +595,8 @@ exclude_patterns = (exclude_patterns +
 
 # -- Options for HTML output -------------------------------------------------
 
-# The theme to use for HTML and HTML Help pages.  See the documentation for
-# a list of builtin themes.
-#
+
 html_theme = 'sphinx_rtd_theme'
-
-#html_theme_options = {'body_max_width': '70%'}
-
-#	'style_nav_header_background': '#F2F2F2'
-#	'style_nav_header_background': '#FFFFFF'
-#	'style_nav_header_background': '#d5d5d5'
-#
-#	'style_nav_header_background': '#F2F2F2' #64B5F6 #607D8B
 
 html_css_files = [
 	'css/custom.css'
@@ -615,9 +608,6 @@ html_secnum_suffix = " "
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static','_static/css/']
-
-# For a full list of configuration options see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 #latex_docclass = {
 #	r'manual': 'simcenterdocumentation',
