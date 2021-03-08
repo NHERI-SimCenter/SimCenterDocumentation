@@ -24,6 +24,7 @@ else:
 	os.environ['SIMCENTER_DEV'] = os.path.normpath('../../')
 
 app_abrev = app_name.split("-")[0].replace("Tool","")
+app_abrev2 = app_name.replace("-","").replace("Tool","")
 app_name2 = app_name.replace("Tool","")
 
 print('app_name = ' + app_name)
@@ -116,6 +117,8 @@ math_number_all = True
 math_eqref_format = '({number})'
 math_numfig = True
 
+
+tags.add(f'{app_abrev2}_app')
 rst_prolog = f"""
 .. |figDownload| replace:: :numref:`figDownload-{app_abrev}`
 .. |figDownloadWin| replace:: :numref:`figDownloadWin-{app_abrev}`
@@ -181,6 +184,13 @@ rst_prolog = f"""
 
 """
 
+html_theme_options = {
+	'logo_only': True,
+	'prev_next_buttons_location': None,
+	'style_nav_header_background': '#F2F2F2'
+}
+
+
 extlinks = {
 	'github' : (f'{external_links["github"]}/tree/master/%s', f'Github'),
 	#'download_python' : (f'{external_links["python_download"]}', f'Python.org')
@@ -199,7 +209,6 @@ if app_name == 'R2DTool':
 
 	author = 'Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez'
 
-	tags.add('R2D_app')
 	tags.add('desktop_app')
 	tags.add('earthquake')
 	tags.add('response')
@@ -216,7 +225,6 @@ if app_name == 'R2DTool':
 	exclude_patterns.remove('**/*earthquake*')
 	exclude_patterns.remove('**/*response*')
 	exclude_patterns.remove('**/*R2DTool*')
-
 
                 
 	# TODO: fix these temporary changes
@@ -251,12 +259,9 @@ if app_name == 'R2DTool':
 	)
 	html_logo = 'common/figures/RDT-Logo-grey3.png'
 
-	html_theme_options = {
+	html_theme_options.update({
 		'analytics_id': '...', #TODO: add analytics ID
-		'logo_only': True,
-		'prev_next_buttons_location': None,
-		'style_nav_header_background': '#F2F2F2'
-	}
+	})
 
 elif app_name == 'PBE':
 
@@ -305,19 +310,13 @@ elif app_name == 'PBE':
 
 	html_logo = 'common/figures/PBE-Logo-grey3.png'
 
-	html_theme_options = {
-		'analytics_id': 'UA-158130480-3',
-		'logo_only': True,
-		'prev_next_buttons_location': None,
-		'style_nav_header_background': '#F2F2F2'
-	}
+	html_theme_options.update({'analytics_id': 'UA-158130480-3'})
 
 elif app_name == 'EE-UQ':
 	project = 'Earthquake Engineering with Uncertainty Quantification (EE-UQ)'
 	copyright = '2019, The Regents of the University of California'
 	author = 'Frank McKenna, Wael Elhaddad, Michael Gardner, Chaofeng Wang, Adam Zsarnóczay'
 
-	tags.add('EEUQ_app')
 	tags.add('desktop_app')
 	tags.add('response')
 	tags.add('earthquake')
@@ -350,19 +349,13 @@ elif app_name == 'EE-UQ':
 
 	html_logo = 'common/figures/EE-UQ-Logo-grey3.png'
 
-	html_theme_options = {
-		'analytics_id': 'UA-158130480-1',
-		'logo_only': True,
-		'prev_next_buttons_location': None,
-		'style_nav_header_background': '#F2F2F2'
-	}
+	html_theme_options.update({'analytics_id': 'UA-158130480-1'})
 
 elif app_name == 'quoFEM':
 	project = 'Quantified Uncertainty with Optimization for the FEM'
 	copyright = '2018-2020, The Regents of the University of California'
 	author = 'Frank McKenna, Adam Zsarnóczay, Nikhil Padhye'
 
-	tags.add('quoFEM_app')
 	tags.add('desktop_app')
 
 	toc_filter_exclusions.remove('desktop')
@@ -397,12 +390,7 @@ elif app_name == 'quoFEM':
 
 	html_logo = 'common/figures/quoFEM-LogoImageGrey-app.png'
 
-	html_theme_options = {
-		'analytics_id': 'UA-158130480-4',
-		'logo_only': True,
-		'prev_next_buttons_location': None,
-		'style_nav_header_background': '#F2F2F2'
-	}
+	html_theme_options.update({'analytics_id': 'UA-158130480-4'})
 
 	# Example links
 	extlinks.update(
@@ -414,7 +402,6 @@ elif app_name == 'WE-UQ':
 	copyright = '2019, The Regents of the University of California'
 	author = 'Frank McKenna'
 
-	tags.add('WEUQ_app')
 	tags.add('desktop_app')
 	tags.add('response')
 	tags.add('wind')
@@ -449,13 +436,7 @@ elif app_name == 'WE-UQ':
 
 	html_logo = 'common/figures/WE-UQ-Logo-grey3.png' #TODO: replace with EE-UQ logo!
 
-
-	html_theme_options = {
-		'analytics_id': 'UA-158130480-2',
-		'logo_only': True,
-		'prev_next_buttons_location': None,
-		'style_nav_header_background': '#F2F2F2'
-	}
+	html_theme_options.update({'analytics_id': 'UA-158130480-2'})
 
 	# Example links
 	extlinks.update(
@@ -515,12 +496,7 @@ elif app_name == 'pelicun':
 
 	html_logo = 'common/figures/pelicun-Logo-grey3.png'
 
-	html_theme_options = {
-		'analytics_id': 'UA-158130480-7',
-		'logo_only': True,
-		'prev_next_buttons_location': None,
-		'style_nav_header_background': '#F2F2F2'
-	}
+	html_theme_options.update({'analytics_id': 'UA-158130480-7'})
 
 	htmlhelp_basename = 'pelicundoc'
 
