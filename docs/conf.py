@@ -8,7 +8,7 @@
 
 import os
 app_name = os.path.expandvars("$SIMDOC_APP")
-if app_name in ["R2DTool", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun"]:
+if app_name in ["R2DTool", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun","requirements"]:
     # `make` was invoked from root, all env vars should already be defined.
 	pass
 else:
@@ -240,7 +240,6 @@ if app_name == 'R2DTool':
 	exclude_patterns.append('**/DakotaReliability.rst')
 	exclude_patterns.append('**/DakotaParameterEstimation.rst')
 	exclude_patterns.append('**/DakotaInverseProblems.rst')
-	exclude_patterns.append('**/resEE.rst')
 	# END TODO
 
 	rst_prolog += """\
@@ -499,6 +498,34 @@ elif app_name == 'pelicun':
 	html_theme_options.update({'analytics_id': 'UA-158130480-7'})
 
 	htmlhelp_basename = 'pelicundoc'
+
+elif app_name == 'requirements':
+	master_doc = 'common/requirements/index'
+	#html_logo = 'common/figures/pelicun-Logo-grey3.png'
+	project = 'SimCenter Requirements Traceability Matrix'
+	copyright = '2020, The Regents of the University of California'
+	author = 'NHERI SimCenter'
+	tags.add('requirements')
+	pdf_break_level = 2
+	latex_elements = {
+		'extraclassoptions': 'openany,oneside'
+	}
+
+
+	rst_prolog = """
+.. |floatList| replace:: *list float*
+.. |integerList| replace:: *list integer*
+.. |intList| replace:: *list integer*
+.. |listFloat| replace:: *list float*
+.. |listInteger| replace:: *list integer*
+.. |listInt| replace:: *list integer*
+.. |list| replace:: *list*
+.. |string| replace:: *string*
+.. |float| replace:: *float*
+.. |integer| replace:: *integer*
+.. |fmk| replace:: **fmk**
+
+"""	
 
 
 # -- General configuration ---------------------------------------------------
