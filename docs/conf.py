@@ -370,7 +370,7 @@ elif app_name == 'EE-UQ':
 elif app_name == 'quoFEM':
 	project = 'Quantified Uncertainty with Optimization for the FEM'
 	copyright = '2018-2020, The Regents of the University of California'
-	author = 'Frank McKenna, Adam Zsarnóczay, Nikhil Padhye'
+	author = 'Frank McKenna, Adam Zsarnóczay, Sang-ri Yi, Aakash Bangalore Satish, Nikhil Padhye'
 
 	tags.add('quoFEM_app')
 	tags.add('desktop_app')
