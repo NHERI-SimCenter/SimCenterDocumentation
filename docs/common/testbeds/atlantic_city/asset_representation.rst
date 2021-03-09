@@ -4,191 +4,531 @@
 Asset Representation
 ********************
 
-Level 1
-=======
+This section discusses the translation of asset descriptions into representations 
+of structures suitable for simulation within workflow, in this case consistent with 
+the HAZUS description of building classes and associated attributes, which becomes 
+the default data schema. Thus the description of assets below is organized according 
+to the HAZUS conventions for classifying buildings and organizing damage and loss data 
+according to attributes associated with those building classes.
 
-Following HAZUS building type classification and the diversity of the collected
-data in the building inventory. For wind damage and loss, this testbed groups
-buildings into 5 main types by the major building material
-(wood, masonry, concrete, steel, manufactured home). In specific, this testbed
-adapts the HAZUS building classifications to a catalog of 36 building classes
-are created by the story number or/and footprint size, which
-are summarized in :numref:`bldg_class`. For flood damage and loss, this testbed
-groups buildings based on the building occupancy class as summarized in
-:numref:`flood_bldg_class`.
+The following discussion will reference a number of rulesets developed for this testbed 
+to enable various assignments of these HAZUS building classes and corresponding attributes. 
+Details of these rulesets are available to users in one of two forms: 
 
-.. csv-table:: Building classification for wind loss assessment.
+1. Rulest definition tables (PDFs) curated in DesignSafe that include additional documentation 
+   justifying the proposed rule, with provenance information for any sources engaged in that 
+   rule’s development.
+2. Scripts (in Python) curated in GitHub that implement the ruleset’s logic for this testbed.
+
+Each section provides a table linking the relevant Tables and Scripts. Note that as well 
+that all of the rulesets introduced herein are tiered, initiating by assigning all assets 
+a default value for its building classification or a given attribute based on the primary 
+rule. This ensures that every asset receives a HAZUS building class and related attribute 
+assignments, regardless of data sparsity. 
+
+Building Classifications
+==========================
+
+HAZUS classifies buildings based on a more nuanced interpretation of Occupancy Class 
+(see building inventory field **OccupancyClass**) based on other attributes of relevance 
+for a given hazard type.
+
+For wind losses, HAZUS groups buildings into 5 main types by primary building material/construction 
+mode (wood, masonry, concrete, steel, manufactured home). Buildings must then be sub-classified 
+into one of 55 corresponding HAZUS building classes (**HazusClass-W**) based on characteristics 
+such as occupancy, number of stories and footprint size, using rulesets that call upon various 
+fields in the building inventory. The HAZUS building classifications for wind losses are listed 
+in :numref:`bldg_class`, and the corresponding rulesets (PDFs and Python scripts) are cross-referenced 
+later in :numref:`addinfo_ruleset`. Note that while rulesets were developed for marginally and non-engineered 
+building classes in HAZUS, these classes are not used in the current implementation of this testbed.
+
+.. csv-table:: HAZUS building classification for wind loss assessment.
    :name: bldg_class
-   :file: data/bldg_class.csv
+   :file: data/bldg_class_new.csv
    :header-rows: 1
    :align: center
 
-.. csv-table:: Building classification for flood loss assessment.
+For flood losses, HAZUS groups buildings into one of 32 classifications based on the building use 
+and other features. A separate ruleset was developed to assign buildings into one of these classes 
+associated with inundation by water (**HazusClass-IN**). The HAZUS building classifications for flood 
+losses are listed in :numref:`flood_bldg_class`, and the corresponding rulesets (PDFs and Python scripts) 
+are cross-referenced later in :numref:`addinfo_ruleset`.
+
+.. csv-table:: HAZUS building classification for flood loss assessment.
    :name: flood_bldg_class
-   :file: data/flood_bldg_class.csv
+   :file: data/flood_bldg_class_new.csv
    :header-rows: 1
    :align: center
 
-At the Level 1, for each building class, HAZUS further differentiates buildings
-to subclasses by asset attributes. These asset attributes are used to developed
-the unique damage fragility and loss functions for a class of buildings based on
-data and statistics from previous hurricane and flood events. For instance, the
-wind-induced damage on wood frames are influenced by the roof shape and the
-connection strength between the roof and walls. However, because of the incompleteness
-of the building inventory data, not all asset attributes are directly available,
-and many of them are not easy to be acquired in general. To address this
-lack-of-information issue, this testbed developed and implemented a set of rulesets
-to infer the HAZUS required asset properties based on the available attributes
-in the building inventory. :numref:`flood_attri_rule` lists the major attributes for
-flood loss assessment and their rulesets. And the following sections summarizes the
-attributes for wind loss assessment and presents examples of the rulesets.
+For wave-induced losses, HAZUS groups buildings into one of 10 classifications based on the building 
+use, construction material and number of stories. A separate ruleset was developed to assign buildings 
+into one of these classes associated with losses driven by wave action (**HazusClass-WA**). The HAZUS 
+building classifications for wave-induced losses are listed in :numref:`wave_bldg_class`, and the corresponding 
+rulesets (PDFs and Python scripts) are cross-referenced in :numref:`addinfo_ruleset`.
 
-.. csv-table:: Attributes and rulesets for flood loss assessment.
-   :name: flood_attri_rule
-   :file: data/HazusAttributesRuleset-FLOOD.csv
+.. csv-table:: HAZUS building classification for wave-induced loss assessment.
+   :name: wave_bldg_class
+   :file: data/wave_bldg_class_new.csv
    :header-rows: 1
    :align: center
 
-Wooden buildings
------------------
+.. list-table:: Additional details for rulesets assigning HAZUS building class
+   :name: addinfo_ruleset
+   :header-rows: 1
+   :align: center
 
-The wooden buildings have 5 building classes: two Wood Single Family (WSF1 and WSF2) classes and
-three Wood Multi-Unit Home (WMUH1, WMUH2, and WMUH3). Their key attributes that influence the
-fragility functions are listed in :numref:`wsf_attri` and :numref:`wmuh_attri`.
+   * - Ruleset Name
+     - Ruleset Definition Table
+     - Python script
+   * - Building Class Rulesets - Wind
+     - [DesignSafe DOI with hyperlink]
+     - :download:`WindClassRulesets <data/WindClassRulesets.py>`
+   * - Building Class Rulesets - Flood
+     - [DesignSafe DOI with hyperlink]
+     - :download:`FloodClassRulesets <data/FloodClassRulesets.py>`
+   * - Building Class Rulesets - Wave
+     - [DesignSafe DOI with hyperlink]
+     - :download:`WaveClassRulesets <data/FloodClassRulesets.py>`
 
-.. csv-table:: HAZUS Wood Singe Family (WSF) attributes.
+Building Attributes
+======================
+
+Within each of these building classes, e.g., wood single-family homes 1-2+ stories, the HAZUS Hurricane 
+Technical Manual (HHTM) further differentiates buildings based on asset attributes and the hazard type 
+(e.g., wind vs. flood) for the purpose of loss estimation. These attributes define key features of the 
+load path and components (e.g., roof shape, secondary water resistance, roof deck attachment, roof-wall 
+connection, shutters, garage), and the number of attributes necessary to describe a given building varies. 
+
+As these attributes are beyond what is typically encompassed in a building inventory, this testbed developed 
+and implemented a library of rulesets to infer the HAZUS-required attributes based upon the fields available 
+in the Building Inventory, legacy building codes in New Jersey, local construction practices/norms, surveys 
+capturing owner-driven mitigation actions (e.g., [Javeline19]_) and market/industry data. 
+Where possible, the rulesets are time-evolving, considering the age of construction to determine the governing 
+code edition and availability of specific mitigation measures in the market. Though reliant on engineering 
+judgement and historical data availability, each rule provides detailed notes cross-referencing the various 
+documents and practices that governed that era of construction and thus informed the ruleset formation. 
+In cases where engineering judgement was required, rules were assigned based on what was understood to be 
+the most common construction practice. In cases where that was not clear, the ruleset assigned the most 
+vulnerable configuration for a more conservative approach to loss estimation. :numref:`wind_bldg_attri` 
+and :numref:`flood_bldg_attri` list the attributes for the wind and flood loss assessments. 
+
+.. csv-table:: Building attributes for wind loss assessment.
+   :name: wind_bldg_attri
+   :file: data/wind_bldg_attri.csv
+   :header-rows: 1
+   :align: center
+
+.. csv-table:: Building attributes for flood loss assessment.
+   :name: flood_bldg_attri
+   :file: data/flood_bldg_attri.csv
+   :header-rows: 1
+   :align: center
+
+Note that rulesets for assigning wind loss attributes call upon two meta-variables relevant to wind losses 
+for any building: “Hazard Prone Region” and “Wind Borne Debris,” which are assigned based the design wind 
+speed at the asset location (Building Inventory field “DSWII”) and the flood zone (building inventory field 
+**FloodZone**), per New Jersey code. These rules used to assign these meta-variables are provided in 
+:numref:`addinfo_ruleset_metavar`. Also note that the roof shape (building inventory field **RoofShape**), 
+derived from aerial imagery, and terrain roughness (building inventory field **Terrain**), derived from 
+Land Use Land Cover data, are also attributes required by the HAZUS wind loss model. As these were already 
+assigned in the :ref:`lbl-testbed_AC_asset_description`, they are not discussed again herein.
+
+.. list-table:: Additional details for rulesets for meta-variables in wind loss attribute assignment in HAZUS
+   :name: addinfo_ruleset_metavar
+   :header-rows: 1
+   :align: center
+
+   * - Ruleset Name
+     - Ruleset Definition Table
+     - Python script
+   * - Attribute Assignment - Wind (Meta-Variable)
+     - [DesignSafe DOI with hyperlink]
+     - :download:`WindMetaVarRulesets <data/WindMetaVarRulesets.py>`
+
+Finally, all of the rulesets used to assign attributes include a default value that can be updated based 
+on available data, ensuring that each asset receives all the attribute assignments necessary to identify 
+the appropriate Hazus fragility description. The following sections summarize the rulesets used for 
+attribute assignments for specific classes of buildings. Additional attributes assigned to assets are 
+discussed in the following subsections, organized by hazard and building class, where applicable.
+
+Wind Loss Attributes for Wood Buildings
+------------------------------------------
+
+The wind loss model in HAZUS classifies wooden buildings into five building classes:
+   
+1. two single family homes (WSF1 and WSF2) and
+2. three for multi-unit homes (WMUH1, WMUH2, and WMUH3)
+
+Their required attributes for wind loss modeling, the possible entries (values, terms) that can be 
+assigned for those attributes, and the basis for the ruleset developed to make that assignment are 
+summarized in :numref:`wsf_attri` and :numref:`wmuh_attri`. Note that these rulesets were developed 
+to reflect the likely attributes based on the year of construction and the code editions and 
+construction norms at that time. The corresponding time-evolving rulesets (PDFs and Python scripts) 
+are cross-referenced in :numref:`addinfo_ruleset_wood`.
+
+.. csv-table:: Additional HAZUS attributes assigned for wood single family (WSF) homes: wind losses.
    :name: wsf_attri
    :file: data/wsf_attributes.csv
    :header-rows: 1
    :align: center
 
-.. csv-table:: HAZUS Wood Multi-Unit Home (WMUH) attributes.
+.. csv-table:: Additional HAZUS attributes assigned for wood multi-unit home (WMUH): wind losses.
    :name: wmuh_attri
    :file: data/wmuh_attributes.csv
    :header-rows: 1
    :align: center
 
-Taking the Second Water Resistance (SWR) as an example, the SWR is determined
-by four input variables of the asset from the building inventory including
-the built year, roof shape, roof slope, and average temperature in January.
-:numref:`swr_attri` provides the detailed rules that map these four variables
-to the Second Water Resistance (SWR) attribute. The complete rulesets can be
-found in :download:`HazusAttributesRulesets-WIND.xlsx <data/HazusAttributesRulesets-WIND.xlsx>`.
+.. list-table:: Additional details for rulesets assigning wind loss attributes for wood buildings
+   :name: addinfo_ruleset_wood
+   :header-rows: 1
+   :align: center
 
-.. csv-table:: Ruleset for determining the Second Water Resistance attribute.
+   * - Ruleset Name
+     - Ruleset Definition Table
+     - Python script
+   * - HAZUS Building Attribute Rulesets - Wind (WSF1-2)
+     - [DesignSafe DOI with hyperlink]
+     - :download:`WindWSFRulesets <data/WindWSFRulesets.py>`
+   * - HAZUS Building Attribute Rulesets - Wind (WMUH1-3)
+     - [DesignSafe DOI with hyperlink]
+     - :download:`WindWMUHRulesets <data/WindWMUHRulesets.py>`
+
+Taking the attribute Second Water Resistance (SWR) as an example, the SWR attribute is assigned by 
+a series of time-evolving rules calling upon four fields in the building inventory: year built, 
+roof shape, roof slope, and average temperature in January. :numref:`swr_attri` provides the 
+detailed rules that map these four variables to the Second Water Resistance (SWR) attribute. 
+This example demonstrates an instance where the attribute is assigned as a random variable, 
+based on the fact that secondary water resistance is not required by code, though surveys 
+of homeowners in hurricane-prone areas can be used to infer how many may have voluntarily 
+adopted this mitigation practice. 
+
+.. csv-table:: Ruleset for determining the Second Water Resistance attribute for WSF homes.
    :name: swr_attri
    :file: data/example_wood_ruleset.csv
    :header-rows: 1
    :align: center
 
-Masonry buildings
-------------------
 
-The masonry buildings have 14 building classes: two Masonry Single Family (MSF1 and MSF2) classes,
-three Masonry Multi-Unit Home (MMUH1, MMUH2, and MMUH3), two Masonry Low-Rise Strip Mall
-(MLRM1 and MLRM2) classes, three Masonry Engineered Residential Building (MERBL, MERBM,
-and MERBH) classes, three Masonry Engineered Commercial Building (MECBL, MECBM,
-and MECBH) classes, and one Masonry Low-Rise Industrial Building (MLRI) class.
-Their key attributes that influence the fragility functions are listed in
-:numref:`msf_attri`, :numref:`mmuh_attri`, :numref:`mlrm_attri`,
+Wind Loss Attributes for Masonry Buildings
+------------------------------------------------
+
+The masonry buildings have 14 building classes: Their key attributes that influence the fragility 
+functions are listed in :numref:`msf_attri`, :numref:`mmuh_attri`, :numref:`mlrm_attri`,
 :numref:`merb_attri`, :numref:`mecb_attri`, and :numref:`mlri_attri`.
 
-.. csv-table:: HAZUS Masonry Singe Family (MSF) attributes.
+The wind loss model in HAZUS classifies masonry buildings into 14 building classes: 
+1. two masonry single family home classes (MSF1 and MSF2)
+2. three masonry multi-unit home classes (MMUH1, MMUH2, and MMUH3)
+3. two masonry low-Rise strip mall classes (MLRM1 and MLRM2) classes
+4. three masonry engineered residential building classes (MERBL, MERBM, and MERBH)
+5. three Masonry engineered commercial building classes (MECBL, MECBM, and MECBH) and 
+6. one masonry low-rise industrial building class (MLRI). 
+
+Their required attributes for wind loss modeling, the possible entries (values, terms) that can be 
+assigned for those attributes, and the basis for the ruleset developed to make that assignment 
+are summarized in :numref:`msf_attri`, :numref:`mmuh_attri`, :numref:`mlrm_attri`, :numref:`merb_attri`, 
+:numref:`mecb_attri`, :numref:`mlri_attri`. Note that these rulesets were developed to reflect 
+the likely attributes based on the year of construction and the code editions and construction 
+norms at that time. The corresponding time-evolving rulesets (PDFs and Python scripts) are 
+cross-referenced in :numref:`addinfo_ruleset_masonry`.
+
+.. csv-table:: Additional HAZUS attributes assigned for masonry single family (MSF) homes: wind losses.
    :name: msf_attri
    :file: data/msf_attributes.csv
    :header-rows: 1
    :align: center
 
-.. csv-table:: HAZUS Masonry Multi-Unit Home (MMUH) attributes.
+.. csv-table:: Additional HAZUS attributes assigned for masonry multi-unit homes (MMUH): wind losses.
    :name: mmuh_attri
    :file: data/mmuh_attributes.csv
    :header-rows: 1
    :align: center
 
-.. csv-table:: HAZUS Masonry Low-Rise Strip Mall (MLRM) attributes.
+.. csv-table:: Additional HAZUS attributes assigned for masonry low-rise strip malls (MLRM): wind losses.
    :name: mlrm_attri
    :file: data/mlrm_attributes.csv
    :header-rows: 1
    :align: center
 
-.. csv-table:: HAZUS Masonry Engineered Residential Building (MERB) attributes.
+.. csv-table:: Additional HAZUS attributes assigned for masonry engineered residential buildings (MERB): wind losses.
    :name: merb_attri
    :file: data/merb_attributes.csv
    :header-rows: 1
    :align: center
 
-.. csv-table:: HAZUS Masonry Engineered Commercial Building (MECB) attributes.
+.. csv-table:: Additional HAZUS attributes assigned for HAZUS masonry engineered commercial buildings (MECB): wind losses.
    :name: mecb_attri
    :file: data/mecb_attributes.csv
    :header-rows: 1
    :align: center
 
-.. csv-table:: HAZUS Masonry Low-Rise Industrial Building (MLRI) attributes.
+.. csv-table:: Additional HAZUS attributes assigned for masonry low-rise industrial buildings (MLRI): wind losses.
    :name: mlri_attri
    :file: data/mlri_attributes.csv
    :header-rows: 1
    :align: center
 
-Steel buildings
----------------
+.. list-table:: Additional details for rulesets assigning wind loss attributes for masonry buildings
+   :name: addinfo_ruleset_masonry
+   :header-rows: 1
+   :align: center
 
-The steel buildings have 6 building classes: three Steel Engineered Residential
-Building (SERBL, SERBM, and SERBH) classes and three Steel Engineered Commercial
-Building (SECBL, SECBM, and SECBH) classes. Their key attributes that influence
-the fragility functions are listed in :numref:`serb_attri` and :numref:`secb_attri`.
+   * - Ruleset Name
+     - Ruleset Definition Table
+     - Python script
+   * - HAZUS Building Attribute Rulesets - Wind (MSF1-2)
+     - [DesignSafe DOI with hyperlink]
+     - :download:`WindMSFRulesets <data/WindMSFRulesets.py>`
+   * - HAZUS Building Attribute Rulesets - Wind (MMUH1-3)
+     - [DesignSafe DOI with hyperlink]
+     - :download:`WindMMUHRulesets <data/WindMMUHRulesets.py>`
+   * - HAZUS Building Attribute Rulesets - Wind (MLRM1-2)
+     - [DesignSafe DOI with hyperlink]
+     - :download:`WindMLRMRulesets <data/WindMLRMRulesets.py>`
+   * - HAZUS Building Attribute Rulesets - Wind (MERBL-M-H)
+     - [DesignSafe DOI with hyperlink]
+     - :download:`WindMERBRulesets <data/WindMERBRulesets.py>`
+   * - HAZUS Building Attribute Rulesets - Wind (MECBL-M-H)
+     - [DesignSafe DOI with hyperlink]
+     - :download:`WindMECBRulesets <data/WindMECBRulesets.py>`
+   * - HAZUS Building Attribute Rulesets - Wind (MLRI)
+     - [DesignSafe DOI with hyperlink]
+     - :download:`WindMLRIRulesets <data/WindMLRIRulesets.py>`
 
-.. csv-table:: HAZUS Steel Engineered Residential Building (SERB) attributes.
+Taking the attribute **shutters** as an example, the shutters attribute is assigned based on time-evolving 
+rules calling upon two fields in the building inventory: year built and the site’s exposure to wind borne 
+debris (WBD). :numref:`sht_attri` provides the detailed rules that map these two variables to the shutters 
+attribute. This example demonstrates an instance where the attribute is assigned by a code-based 
+rule for modern construction, but older construction is assigned as a random variable, based on the 
+fact that shutters were not codified before 2000 IBC, but human subjects data suggests potential 
+rates of voluntary shutter use. It is assumed that shutters are used only in areas susceptible to WBD.
+
+.. csv-table:: Ruleset for determining the shutter use for masonry engineered commercial buildings.
+   :name: sht_attri
+   :file: data/example_masonry_ruleset.csv
+   :header-rows: 1
+   :align: center
+
+
+
+Wind Loss Attributes for Steel Buildings
+------------------------------------------------
+
+The wind loss model in HAZUS classifies steel buildings into nine building classes: 
+1. three steel engineered residential building classes (SERBL, SERBM, and SERBH)
+2. three steel engineered commercial building classes (SECBL, SECBM, and SECBH) and
+3. three steel pre-engineered metal building systems (SPMBS, SPMBM, SPMBL). 
+
+Their required attributes for wind loss modeling, the possible entries (values, terms) that 
+can be assigned for those attributes, and the basis for the ruleset developed to make that 
+assignment are summarized in :numref:`serb_attri`, :numref:`secb_attri`, :numref:`spmb_attri`:. 
+Note that these rulesets were developed 
+to reflect the likely attributes based on the year of construction and the code editions and 
+construction norms at that time. The corresponding time-evolving rulesets (PDFs and Python 
+scripts) are cross-referenced in :numref:`addinfo_ruleset_steel`.
+
+.. csv-table:: Additional HAZUS attributes assigned for steel engineered residential buildings (SERB): wind losses.
    :name: serb_attri
    :file: data/serb_attributes.csv
    :header-rows: 1
    :align: center
 
-.. csv-table:: HAZUS Steel Engineered Commercial Building (SECB) attributes.
+.. csv-table:: Additional HAZUS attributes assigned for steel engineered commercial buildings (SECB): wind losses.
    :name: secb_attri
    :file: data/secb_attributes.csv
    :header-rows: 1
    :align: center
 
-Concrete buildings
-------------------
+.. csv-table:: Additional HAZUS attributes assigned for steel pre-engineered metal building systems (SPMB): wind losses.
+   :name: spmb_attri
+   :file: data/spmb_attributes.csv
+   :header-rows: 1
+   :align: center
 
-The concrete buildings have 6 building classes: three Concrete Engineered Residential
-Building (CERBL, CERBM, and CERBH) classes and three Concrete Engineered Commercial
-Building (CECBL, CECBM, and CECBH) classes. Their key attributes that influence
-the fragility functions are listed in :numref:`cerb_attri` and :numref:`cecb_attri`.
+.. list-table:: Additional details for rulesets assigning wind loss attributes for steel buildings
+   :name: addinfo_ruleset_steel
+   :header-rows: 1
+   :align: center
 
-.. csv-table:: HAZUS Concrete Engineered Residential Building (CERB) attributes.
+   * - Ruleset Name
+     - Ruleset Definition Table
+     - Python script
+   * - HAZUS Building Attribute Rulesets - Wind (SERBL-M-H)
+     - [DesignSafe DOI with hyperlink]
+     - :download:`WindSERBRulesets <data/WindSERBRulesets.py>`
+   * - HAZUS Building Attribute Rulesets - Wind (SECBL-M-H)
+     - [DesignSafe DOI with hyperlink]
+     - :download:`WindSECBRulesets <data/WindSECBRulesets.py>`
+   * - HAZUS Building Attribute Rulesets - Wind (SPMBS-M-L)
+     - [DesignSafe DOI with hyperlink]
+     - :download:`WindSPMBRulesets <data/WindSPMBRulesets.py>`
+
+
+Taking the attribute wind to wall ratio (**WWR**) as an example, the WWR attribute is assigned based on a 
+rule that calls upon the window area estimate from the building inventory (field: WindowArea). :numref:`wwr_attri` 
+provides the detailed rule that maps this variable to the WWR attribute. Note that WindowArea is a field 
+that can be estimated from streetview data, but this rule also demonstrates how the value can be estimated 
+based on industry norms (see explanation surrounding default value). This attribute is not assumed to evolve 
+with time.
+
+.. csv-table:: Ruleset for determining the window to wall ratio for steel engineered commercial buildings.
+   :name: wwr_attri
+   :file: data/example_steel_ruleset.csv
+   :header-rows: 1
+   :align: center
+
+
+Wind Loss Attributes for Concrete Buildings
+------------------------------------------------
+
+The wind loss model in HAZUS classifies steel buildings into 6 building classes: 
+1. three concrete engineered residential building classes (CERBL, CERBM, and CERBH) and
+2. three concrete engineered commercial building classes (CECBL, CECBM, and CECBH). 
+
+Their required attributes for wind loss modeling, the possible entries (values, terms) that can be assigned 
+for those attributes, and the basis for the ruleset developed to make that assignment are summarized in 
+:numref:`cerb_attri` and :numref:`cecb_attri`. Note that these rulesets were developed to reflect the likely 
+attributes based on the year of construction and the code editions and construction norms at that time. 
+The corresponding time-evolving rulesets (PDFs and Python scripts) are cross-referenced in :numref:`addinfo_ruleset_concrete`.
+
+.. csv-table:: Additional HAZUS attributes assigned for concrete engineered residential buildings (CERB): wind losses.
    :name: cerb_attri
    :file: data/cerb_attributes.csv
    :header-rows: 1
    :align: center
 
-.. csv-table:: HAZUS Concrete Engineered Commercial Building (CECB) attributes.
+.. csv-table:: Additional HAZUS attributes assigned for concrete engineered commercial buildings (CECB): wind losses.
    :name: cecb_attri
    :file: data/cecb_attributes.csv
    :header-rows: 1
    :align: center
 
-Manufactured homes
-------------------
+.. list-table:: Additional details for rulesets assigning wind loss attributes for concrete buildings.
+   :name: addinfo_ruleset_concrete
+   :header-rows: 1
+   :align: center
 
-The Manufactured Homes (MH) have five building classes (MHPHUD,
-MH76HUD, MH94HUD-I, MH94HUD-II, and MH94HUD-III) classes.
-Their key attributes that influence the fragility functions are listed in
-:numref:`mh_attri`.
+   * - Ruleset Name
+     - Ruleset Definition Table
+     - Python script
+   * - HAZUS Building Attribute Rulesets - Wind (CERBL-M-H)
+     - [DesignSafe DOI with hyperlink]
+     - :download:`WindCERBRulesets <data/WindSERBRulesets.py>`
+   * - HAZUS Building Attribute Rulesets - Wind (CECBL-M-H)
+     - [DesignSafe DOI with hyperlink]
+     - :download:`WindCECBRulesets <data/WindSECBRulesets.py>`
 
-.. csv-table:: HAZUS Manufactured Homes (MH) attributes.
+Taking the attribute roof cover (RoofCvr) as an example, the RoofCvr attribute is assigned based on a 
+ruleset that calls upon the roof shape and year built from the building inventory. :numref:`rc_attri`
+provides the detailed rule that maps these variables to the RoofCvr attribute. This provides an example of an 
+attribute that is inferred from construction practices based on when different roof cover products entered 
+the market. 
+
+.. csv-table:: Ruleset for determining the window to wall ratio for concrete engineered residential buildings.
+   :name: rc_attri
+   :file: data/example_concrete_ruleset.csv
+   :header-rows: 1
+   :align: center
+
+
+Wind Loss Attributes for Manufactured Homes
+------------------------------------------------
+
+The wind loss model in HAZUS classifies manufactured homes (MH) into five building classes that are organized 
+into three groupings, based on phasing of revisions to Housing and Urban Development (HUD) guidelines: 
+1. manufactured homes built before 1976 (MHPHUD)
+2. manufactured homes built after 1976 and before 1995 (MH76HUD)
+3. manufactured homes built after 1994 (MH94HUDI, M94HUDII, MH94HUDIII). 
+
+Their required attributes for wind loss modeling, the possible entries (values, terms) that can be assigned 
+for those attributes, and the basis for the ruleset developed to make that assignment are summarized in 
+:numref:`mh_attri`. ote that these rulesets were developed to reflect the likely 
+attributes based on the year of construction and the code editions and construction norms at that time. 
+The corresponding time-evolving rulesets (PDFs and Python scripts) are cross-referenced in :numref:`addinfo_ruleset_mh`.
+
+.. csv-table:: Additional HAZUS attributes assigned to Manufactured Homes (MH).
    :name: mh_attri
    :file: data/mh_attributes.csv
    :header-rows: 1
    :align: center
 
-Level 2
-=======
+.. list-table:: Additional details for rulesets assigning wind loss attributes for manufactured homes.
+   :name: addinfo_ruleset_mh
+   :header-rows: 1
+   :align: center
 
-To be extended in the future.
+   * - Ruleset Name
+     - Ruleset Definition Table
+     - Python script
+   * - HAZUS Building Attribute Rulesets - Wind (Manufactured Homes)
+     - [DesignSafe DOI with hyperlink]
+     - :download:`WindMHRulesets <data/WindMHRulesets.py>`
 
-Level 3
-=======
+Taking the attribute tie down (TieDown) as an example, the ruleset in :numref:`td_attri` considers 
+the Year Built to determine if tie down use is governed by HUD standards based on the design 
+wind speed or if it is a voluntary action predating code requirements and thus is governed by 
+human subjects data. This provides an example of an attribute that is inferred from construction 
+practices based on when different roof cover products entered the market. 
 
-To be extended in the future.
+.. csv-table:: Ruleset for determining the tie down for manufactured homes.
+   :name: td_attri
+   :file: data/example_mh_ruleset.csv
+   :header-rows: 1
+   :align: center
+
+
+Wind Loss Attributes for Essential Facilities
+------------------------------------------------
+
+The wind loss model in HAZUS futher classifies several groupings of essential facilities:
+1. Fire Staions and Elementary Schools (HUEFFS, HUEFSS)
+2. High Schools: 2-story and 3-story (HUEFSM, HUEFSL)
+3. Hospitials: small, medium, large (HUEFHS, HUEFHM, HUEFHL)
+4. Police Stations and Emergency Operations Centers (HUEFPS, HUEFEO)
+   
+Their required attributes for wind loss modeling, the possible entries (values, terms) that can be
+assigned for those attributes, and the basis for the ruleset developed to make that assignment are summarized 
+in :numref:`hu1_attri`, :numref:`hu2_attri`, :numref:`hu3_attri`, and :numref:`hu4_attri`. 
+Note that these rulesets were developed to reflect the likely attibutes based on the year of construction and
+the code editions and construction norms at that time. The corresponding time-evolving rulesets (PDFs and Python scriots)
+are cross-referenced in :numref:`addinfo_ruleset_ef`.
+
+.. csv-table:: Additional HAZUS attributes assigned for fire stations and elementary schools: wind losses.
+   :name: hu1_attri
+   :file: data/hu1_attributes.csv
+   :header-rows: 1
+   :align: center
+
+.. csv-table:: Additional HAZUS attributes assigned for 2-story and 3-story high schools: wind losses.
+   :name: hu2_attri
+   :file: data/hu2_attributes.csv
+   :header-rows: 1
+   :align: center
+
+.. csv-table:: Additional HAZUS attributes assigned for hospitals: wind losses.
+   :name: hu3_attri
+   :file: data/hu3_attributes.csv
+   :header-rows: 1
+   :align: center
+
+.. csv-table:: Additional HAZUS attributes assigned forpolice stations and emergency operation centers: wind losses.
+   :name: hu4_attri
+   :file: data/hu4_attributes.csv
+   :header-rows: 1
+   :align: center
+
+.. list-table:: Additional details for rulesets assigning wind loss attributes for essential facilities.
+   :name: addinfo_ruleset_ef
+   :header-rows: 1
+   :align: center
+
+   * - Ruleset Name
+     - Ruleset Definition Table
+     - Python script
+   * - HAZUS Building Attribute Rulesets - Wind (Essential Facilities)
+     - [DesignSafe DOI with hyperlink]
+     - :download:`WindEFRulesets <data/WindMHRulesets.py>`
+
+
+.. [Javeline19]
+    Javeline, D., & Kijewski-Correa, T. (2019). Coastal homeowners in a changing climate. Climatic Change, 152(2), 259-274.

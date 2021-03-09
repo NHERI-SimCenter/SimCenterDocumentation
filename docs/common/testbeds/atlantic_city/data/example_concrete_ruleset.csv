@@ -1,12 +1,9 @@
-RoofCvr,Roof Cover,Notes,Possible Extensions
-Valid Entries,"N/A, BUR, SPM",,
-Default,N/A,,
-Input Variable  ,"YearBuiltNJDEP, RoofShape",,
-Input Variable Source,Custom Inventory,,
-Years Ruleset Applies,Ruleset,,
-YearBuiltNJDEP >= 1975,"IF 0.2 <= WindowArea < 0.33, WWR = LowIF RoofShape = (Gable OR Hip), RoofCvr = N/A
+Time Period,YearBuiltNJDEP >= 1975,YearBuiltNJDEP < 1975
+Ruleset,"IF 0.2 <= WindowArea < 0.33, WWR = Low; IF RoofShape = (Gable OR Hip), RoofCvr = N/A;
 IF RoofShape = Flat, RoofCvr = SPM
-","NJ Building Code Section 1507 (in particular 1507.10 and 1507.12) address Built Up Roofs and Single Ply Membranes. However, the NJ Building Code only addresses  installation and material standards of different roof covers, but not in what circumstance each must be used. 
+","IF RoofShape = (Gable OR Hip), RoofCvr = N/A;
+IF RoofShape = Flat, RoofCvr = BUR"
+Note,"NJ Building Code Section 1507 (in particular 1507.10 and 1507.12) address Built Up Roofs and Single Ply Membranes. However, the NJ Building Code only addresses  installation and material standards of different roof covers, but not in what circumstance each must be used. 
 
 SPMs started being used in the 1960s, but different types continued to be developed through the 1980s. Today, single ply membrane roofing is the most popular flat roof option. BURs have been used for over 100 years, and although they are still used today, they are used less than SPMs. Since there is no available ruleset to be taken from the NJ Building Code, the ruleset is based off this information. 
 Sources: 
@@ -14,9 +11,7 @@ https://www.spri.org/2019/01/singe-ply-roofing-101/, https://continuingeducation
 
 Assumptions of the Ruleset:
 All flat roofs built before 1975 are BURs. 
-SPMs were developed in the 1960s, and considering that there is a time lag to start consistently using new methods, SPMs rose in importance through the 1970s, becoming more popular. This ruleset assumes that all roofs built after 1975 are SPMs. ","Any data from NJ on practices around BUR, SPM should be incorporated; trends presently inferred from when a technology entered the market"
-YearBuiltNJDEP < 1975,"IF RoofShape = (Gable OR Hip), RoofCvr = N/A
-IF RoofShape = Flat, RoofCvr = BUR","NJ Building Code Section 1507 (in particular 1507.10 and 1507.12) address Built Up Roofs and Single Ply Membranes. However, the NJ Building Code only addresses  installation and material standards of different roof covers, but not in what circumstance each must be used. 
+SPMs were developed in the 1960s, and considering that there is a time lag to start consistently using new methods, SPMs rose in importance through the 1970s, becoming more popular. This ruleset assumes that all roofs built after 1975 are SPMs. ","NJ Building Code Section 1507 (in particular 1507.10 and 1507.12) address Built Up Roofs and Single Ply Membranes. However, the NJ Building Code only addresses  installation and material standards of different roof covers, but not in what circumstance each must be used. 
 
 SPMs started being used in the 1960s, but different types continued to be developed through the 1980s. Today, single ply membrane roofing is the most popular flat roof option. BURs have been used for over 100 years, and although they are still used today, they are used less than SPMs. Since there is no available ruleset to be taken from the NJ Building Code, the ruleset is based off this information. 
 Sources: 
@@ -24,4 +19,4 @@ https://www.spri.org/2019/01/singe-ply-roofing-101/, https://continuingeducation
 
 Assumptions of the Ruleset:
 All flat roofs built before 1975 are BURs. 
-SPMs were developed in the 1960s, and considering that there is a time lag to start consistently using new methods, SPMs rose in importance through the 1970s, becoming more popular. This ruleset assumes that all roofs built after 1975 are SPMs. ","Any data from NJ on practices around BUR, SPM should be incorporated; trends presently inferred from when a technology entered the market"
+SPMs were developed in the 1960s, and considering that there is a time lag to start consistently using new methods, SPMs rose in importance through the 1970s, becoming more popular. This ruleset assumes that all roofs built after 1975 are SPMs. "
