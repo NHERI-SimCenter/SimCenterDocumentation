@@ -18,15 +18,19 @@ All the attributes required for loss estimation were first identified to develop
 data model, which catalogs each attribute, its purpose, its format (alphanumeric, floating point number, 
 etc.), the data source used to define that attribute and the field(s) needed from that data source, any 
 transformations of that source data necessary to align with the units or conventions used in the Building 
-Inventory, and any relevant details explaining notations, assumptions, or reference documents (:numref:`tab-bldgInventory`). 
+Inventory, and any relevant details explaining notations, assumptions, or reference documents.  These 
+fields are summarized in :numref:`tab-bldgInventory` with full details of each field 
+available on DesignSafe, for both the Atlantic County Inventory and the Flood-Exposed/Exploratory Inventory. 
 The Building Inventory data model should be comprehensive, encompassing all attributes required for loss 
-estimation, although these may be populated in the Building Inventory at different points in the workflow.
+estimation, although these may be populated in the Building Inventory at different points in the workflow, 
+e.g., a number of attributes needed for loss estimation are populated during the Asset Representation stage 
+(see :ref:`lbl-testbed_AC_asset_representation`).
 
 .. _tab-bldgInventory:
 
 .. csv-table:: Building Inventory data model developed in this testbed.
    :name: bldg_inv_dm
-   :file: data/building_inventory_data_model.csv
+   :file: data/building_inventory_data_model_new.csv
    :header-rows: 1
    :align: center
 
