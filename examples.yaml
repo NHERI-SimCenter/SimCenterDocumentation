@@ -8,6 +8,7 @@ quoFEM:
     ? qfem-0009
     ? qfem-0008
     ? qfem-0014    
+    ? qfem-0014
 
 WE-UQ:
   include-item:
@@ -20,8 +21,10 @@ EE-UQ:
 
 R2DTool:
   include-item:
+    - r2dt-0006
     - r2dt-0003
-      #- r2dt-0004
+    - r2dt-0007
     - r2dt-0001
     - r2dt-0002
+
 

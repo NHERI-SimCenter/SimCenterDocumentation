@@ -8,7 +8,6 @@ It determines the EDP type from building properties in the :ref:`BIM file <lblBu
 It writes the type, location, and direction (DOF) of each EDP for a simulation in an ``EDP.json`` file in, located in its corresponding **simulation working directory**.
 Note that in the EDP file, DOF=1,2 are assumed to correspond to perpendicular horizontal directions, and DOF=3 corresponds to the vertical direction.
 
-.. _figContext:
 
 .. figure:: _static/images/backendapps_EDP.png
    :align: center

@@ -42,7 +42,7 @@ Make sure you see a message that confirms the successful installation of the nhe
 
    On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e., there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the **bash** shell, the up and coming one is the **Z** shell. Power MacOS users will write shell scripts to do many many useful things. By default the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the users ``PATH``. Users can modify this path by editing files that the shell program will read from everytime the program is started.
 
-   When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of  some of the external applications that you have installed as **OpenSees** and **dakota** do not provide installers that automatically do this when they are installed. Other applications, like **Tcl** provide scripts that you invoke to do it. In short you have to edit the file appropriate to the shell you are using.
+   When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of  some of the external applications that you have installed as **OpenSees** and **Dakota** do not provide installers that automatically do this when they are installed. Other applications, like **Tcl** provide scripts that you invoke to do it. In short you have to edit the file appropriate to the shell you are using.
 
    To find which shell program you are using when you issue commands inside the terminal window, type the following:
 
@@ -50,7 +50,7 @@ Make sure you see a message that confirms the successful installation of the nhe
 
       env | grep SHELL
 
-   If the result is **/bin/bash** you will need to edit the **.bashrc** file or the **bash_profile** file. If the result is **/bin/zsh** you will need to edit the **.zshrc** or **.zprofile**. Typically, the **.bash_profile** or the **.zprofile** file is the one to edit as by design these will invoke the **.bashrc** or **.zshrc** file. If in doubt, look for these files in your home directory and see which of these other installlers have modified.
+   If the result is ``/bin/bash`` you will need to edit the ``.bashrc`` file or the ``bash_profile`` file. If the result is ``/bin/zsh`` you will need to edit the ``.zshrc`` or ``.zprofile``. Typically, the ``.bash_profile`` or the ``.zprofile`` file is the one to edit as by design these will invoke the ``.bashrc`` or ``.zshrc`` file. If in doubt, look for these files in your home directory and see which of these other installers have modified.
 
 
 .. only:: R2D_app
@@ -71,11 +71,11 @@ Make sure you see a message that confirms the successful installation of the nhe
 Download the Application
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-To download the |app|, first navigate to the |appLink| page. As shown in |figDownload|, to get to the download page, you need to click on the link ``Download app and User Manual`` in the application page. The download page contains a list of downloadable files and directories.
+To download the |app|, first navigate to the |appLink| page. As shown in |figDownload|, to get to the download page, you need to click on the link **Download app and User Manual** in the application page. The download page contains a list of downloadable files and directories.
 
 .. only:: R2D_app
 
-   .. _figDownloadR2D:
+   .. _figDownload-R2D:
 
    .. figure:: figures/R2DDownload.png
       :align: center
@@ -86,7 +86,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
 .. only:: PBE_app
 
-   .. _figDownload:
+   .. _figDownload-PBE:
 
    .. figure:: figures/pbeDownload.png
       :align: center
@@ -96,7 +96,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
 .. only:: EEUQ_app
 
-   .. _figDownload:
+   .. _figDownload-EE:
 
    .. figure:: figures/eeDownload.png
       :align: center
@@ -106,7 +106,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
 .. only:: WEUQ_app
 
-   .. _figDownload:
+   .. _figDownload-WE:
 
    .. figure:: figures/weDownload.png
       :align: center
@@ -117,7 +117,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
 .. only:: quoFEM_app
 
-   .. _figDownload:
+   .. _figDownload-quoFEM:
 
    .. figure:: figures/quoFEMDownload.png
       :align: center
@@ -183,7 +183,7 @@ Now test if the application starts properly. Navigate to the location where you 
 
 .. only:: quoFEM_app
 
-   .. _figQUO_FEM:
+   .. _figUI-quoFEM:
 
    .. figure:: figures/quoFEM.png
     :align: center
