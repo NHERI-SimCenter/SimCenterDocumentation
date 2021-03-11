@@ -26,6 +26,8 @@ a default value for its building classification or a given attribute based on th
 rule. This ensures that every asset receives a HAZUS building class and related attribute 
 assignments, regardless of data sparsity. 
 
+.. _lbl-testbed_AC_asset_representation_building_classification:
+
 Building Classifications
 ==========================
 
@@ -528,6 +530,49 @@ are cross-referenced in :numref:`addinfo_ruleset_ef`.
    * - HAZUS Building Attribute Rulesets - Wind (Essential Facilities)
      - `Hazus Building Attribute Rulesets - Wind - Essential Facilities.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
      - :download:`WindEFRulesets <data/WindMHRulesets.py>`
+
+
+Flood Loss Attributes
+-----------------------
+
+The flood loss model in HAZUS focuses on a collection of attributes, some of which are already defined in 
+the building inventory (number of stories and occupancy type as defined in :ref:`lbl-testbed_AC_asset_representation_building_classification`), 
+while other building inventory fields like first floor elevation require adjustment. The new or adjusted 
+attributes required for the flood model are itemised in :numref:`flood_attri` with their possible 
+assignments (values, terms) and the ruleset developed to make those assignments. Note that these attributes 
+are generally not time evolving, with the exception of considering if the building was constructed after 
+Flood Insurance Rate Maps (FIRMs) were adopted (date varies by municipality). The corresponding 
+rulesets (PDFs and Python scripts) are cross-referenced in :numref:`addinfo_ruleset_flood`.
+
+.. csv-table:: Additional HAZUS attributes assigned for flood losses.
+   :name: flood_attri
+   :file: data/flood_attributes.csv
+   :header-rows: 1
+   :align: center
+
+.. list-table:: Additional details for rulesets assigning flood loss attributes.
+   :name: addinfo_ruleset_flood
+   :header-rows: 1
+   :align: center
+
+   * - Ruleset Name
+     - Ruleset Definition Table
+     - Python script
+   * - HAZUS Building Attribute Rulesets - Wind (Essential Facilities)
+     - `Hazus Building Attribute Rulesets - Flood - All Classes.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - :download:`FloodRulesets <data/FloodRulesets.py>`
+
+Taking the attribute first floor flood elevation (FirstFloorElev) as an example, 
+the FirstFloorElev attribute is assigned by adapting the building inventory field (FirstFloorHt1), 
+defined by computer vision methods (see :ref:`lbl-testbed_AC_asset_description_phase_iv`), 
+and adjusting it based on the conventions used to define this quantity based on the flood zone 
+(A-Zone vs. V-Zone), as summarized in :numref:`ffh_attri`.
+
+.. csv-table:: Ruleset for determining the first floor height for flood loss modeling.
+   :name: ffh_attri
+   :file: data/example_flood_ruleset.csv
+   :header-rows: 1
+   :align: center
 
 
 .. [Javeline19]

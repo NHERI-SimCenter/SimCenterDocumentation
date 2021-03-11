@@ -132,6 +132,8 @@ from the following third-party sources:
 See the Transformation and Detail columns in the PDFs listed in :numref:`tab-bldgInventory` for specifics of how each attribute 
 was assigned using these various third-party data sources.
 
+.. _lbl-testbed_AC_asset_description_phase_iv:
+
 Phase IV: Augmentation Using Image Processing
 ===============================================
 
