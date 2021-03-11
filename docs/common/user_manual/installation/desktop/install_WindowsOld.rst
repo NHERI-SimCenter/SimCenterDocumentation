@@ -158,7 +158,7 @@ Now test if the application starts properly. Navigate to the location where you 
 
 .. only:: quoFEM_app
 
-   .. _figQUO_FEM:
+   .. _figUI-quoFEM:
 
    .. figure:: figures/quoFEM.png
     :align: center

@@ -87,7 +87,7 @@ custom UQ driver.
 
 As an example, **UQpy** has been implemented in the customized
 backend--the source code for the customized *UqRunner* class can be found in the
-quoFEM repository in the *repositoryRoot/applications/performUQ/other*
+quoFEM repository in the ``repositoryRoot/applications/performUQ/other``
 directory.
 
 Lastly, the name of the UQ driver needs to be added to *configureAndRunUQ.py* in

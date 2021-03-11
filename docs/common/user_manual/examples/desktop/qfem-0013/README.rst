@@ -1,4 +1,0 @@
-
-Shear wall calibration
-======================
-

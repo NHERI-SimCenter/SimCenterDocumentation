@@ -50,11 +50,12 @@ def item(rsrc, args:object, config:object, accum:dict)->dict:
         fields = [f for f in iterate_leaves(fields)]
     link = accum["link"].resolve(rsrc)
     try:
-        image_path = relative_uri(
-            config["base_uri"], os.path.join(
-                "_images", rsrc["logo"]
-            )
-        )
+        image_path = "../../../../_images/"+os.path.split(rsrc["logo"])[1]
+        #image_path = relative_uri(
+        #    config["base_uri"], os.path.join(
+        #        "_images", rsrc["logo"]
+        #    )
+        #)
     except:
         image_path = None
 

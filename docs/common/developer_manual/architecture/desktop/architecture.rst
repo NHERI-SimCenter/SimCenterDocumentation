@@ -23,8 +23,7 @@ Documentation of the software architecture is detailed in the following pages:
    backendApplications.rst
    :R2D:workflows
    :R2D:run-manually
-   c4model 
-   :notQuoFEM:architectureLevel4
+   :notQuoFEM:c4model
 
 #. DL: application to determine the damage & loss to the builing/infrastructure given the event.
 
@@ -65,15 +64,13 @@ The following sections present the architecture of SimCenter the SimCenter to le
 
    #. **Scientific Workflow System**: An application or applications to aid a user to set-up, schedule, run, and monitor a user defined scientific workflow. 
 
-      #. **Software Framework**: A collection of software for building applications
-in a specific domain. The framework defines the interfaces between the components of the software,
-provides example applications that can be developed using the provided software, and defines a clear set of interfaces such that the software can be extended to build other applications.
+   #. **Software Framework**: A collection of software for building applications in a specific domain. The framework defines the interfaces between the components of the software, provides example applications that can be developed using the provided software, and defines a clear set of interfaces such that the software can be extended to build other applications.
 
       
 Overview
 ========
 
-A Level 1 diagram showing the system context for the SimCenter applications, i.e. how it fits in the world, is shown in :numref:`figContext`. It shows SimCenter applications (EE-UQ, WE-UQ, PBE, RDT) as a box in the center surrounded by the user and the systems it and the user interact with. The SimCenter applications allows user to create and run scientific workflow applications, the data for the applications may be obtained from the web or DataDepot, the workflow applications are run on either the local desktop or on some HPC at |DesignSafe|.
+A Level 1 diagram showing the system context for the SimCenter applications, i.e. how it fits in the world, is shown in :numref:`figContext`. It shows SimCenter applications (EE-UQ, WE-UQ, PBE, R2D) as a box in the center surrounded by the user and the systems it and the user interact with. The SimCenter applications allows user to create and run scientific workflow applications, the data for the applications may be obtained from the web or DataDepot, the workflow applications are run on either the local desktop or on some HPC at |DesignSafe|.
 
 .. _figContext:
 
@@ -119,21 +116,21 @@ The component diagram for the backend application shown in :numref:`figComponent
 
 .. note::
 
-   ``femUQ.py`` is the backend application for the EE-UQ, WE-UQ, Hydro-UQ, and the PBE applications. For RDT the backend application is ``RDT_Workflow.py``.
+   ``femUQ.py`` is the backend application for the EE-UQ, WE-UQ, Hydro-UQ, and the PBE applications. For R2D the backend application is ``R2D_Workflow.py``.
 
 The interaction between the frontend and the backend is best understood by looking at the sequence of events that occurs when the user presses the ``Run`` button. As shown in the figure below, the UI application will first perform a number of steps:
 
-1. It will create a temporary directory in the Documents folder named ``tmp.SimCenter``, and inside ``tmp.SimCenter`` will create another dircetory ``templatedir``.
+1. It will create a temporary directory in the Documents folder named ``tmp.SimCenter``, and inside ``tmp.SimCenter`` will create another directory ``templatedir``.
 
 2. It will then run through all the currently selected widgets and on each invoke the ``copyFiles()`` method, telling these widgets to copy all files that will be needed during the workflow to the ``templatedir`` directory.
 
-3. It will then create a JSON file and will run through the currenly selected widgets and on each invoke the methods ``outputToJSON()`` and ``outputAppDataToJSON``, these telling the application to augment the JSOIN file with the inputs the user has provided in the widget and also the name of the widget.
+3. It will then create a JSON file and will run through the currently selected widgets and on each invoke the methods ``outputToJSON()`` and ``outputAppDataToJSON``, these telling the application to augment the JSON file with the inputs the user has provided in the widget and also the name of the widget.
 
 4. The UI will now start the backend application and will spin until the backend application returns with a completion signal.
 
 Now that the UI has handed over to the backend application, the backend application will perform the following:
 
-5. Open the output file from the UI and parse it to obtain the name of the application to run and the arguments to run the application with. Open up another file, the ``WorkflowApplications.json`` file, contained with the application, to determine given the application name the full path to the executable to be invoked. It will the create in ``templatedir`` a file named ``workflow_driver``. This file is a script file that when run by the UQ engine will generate a file named ``results.out``. ``results.out`` when the ``workflow_driver`` script has completed will contain a single line of space seperated values, one value for each EDP.
+5. Open the output file from the UI and parse it to obtain the name of the application to run and the arguments to run the application with. Open up another file, the ``WorkflowApplications.json`` file, contained with the application, to determine given the application name the full path to the executable to be invoked. It will the create in ``templatedir`` a file named ``workflow_driver``. This file is a script file that when run by the UQ engine will generate a file named ``results.out``. ``results.out`` when the ``workflow_driver`` script has completed will contain a single line of space separated values, one value for each EDP.
    
 6.  It will invoke each of the applications with supplied arguments and an additional command line argument, ``--getRV``, to inform the application to process the input file, and to create any additional random variables and input files needed before the workflow runs.
 
@@ -178,5 +175,5 @@ That is for the case where the computations are performed on the local computer.
 
 .. only:: R2T_app
 
-   .. include:: R2Tworkflows.rst
+   .. include:: R2Dworkflows.rst
 
