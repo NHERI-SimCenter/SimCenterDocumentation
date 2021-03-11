@@ -6,7 +6,7 @@ Methods in SimCenterUQ Engine
 Nataf transformation
 ====================
 
-Nataf transformation is introduced to convert the samples in the physical space (X-space) into the standard normal samples (U-space), :math:`T:\rm{X} \rightarrow \rm{U}`, and vice versa, during UQ computations [Liu1986]_. Specifically, the latter transformation, called inverse Nataf :math:`T^{-1}`, is performed each time when UQ engine generates sample points and calls external workflow applications, so that the main UQ algorithms would face only the standard normal random variables. Among various standardization transformations, Nataf is one of the most popular methods which exploits **marginal distributions** of each physical variables and their **correlation coefficients**.
+Nataf transformation is introduced to standardize the interface between UQ methods and Simulation models. Nataf converts the samples in the physical space (X-space) into the standard normal samples (U-space), :math:`T:\rm{X} \rightarrow \rm{U}`, and vice versa, during UQ computations [Liu1986]_. Specifically, the latter transformation, called inverse Nataf :math:`T^{-1}`, is performed each time when UQ engine generates sample points and calls external workflow applications, so that the main UQ algorithms would face only the standard normal random variables. Among various standardization transformations, Nataf is one of the most popular methods which exploits **marginal distributions** of each physical variables and their **correlation coefficients**.
 
 .. _figNataf1:
 
@@ -15,6 +15,9 @@ Nataf transformation is introduced to convert the samples in the physical space 
    :figclass: align-center
 
    Standardization of random variables using Nataf transformation
+
+.. Note ::
+(Ongoing implementation) All the custom UQ algorithm need to prepare for the standard Gaussian input while quoFEM intertwines with the simulation model to receive standard normal input u and gives physical y=G(u) back.
 
 For the Nataf trasformation, the SimCenterUQ engine borrows a part of the distribution class structure developed by ERA group in the Technical University of Munich [ERA2019]_ 
 
@@ -166,18 +169,18 @@ Input-Output settings
 +-----------+----------------------------------------------------------+-------------------------------------------+
 |           | Input (RV) type                                          |  Output (QoI) type                        |
 +===========+==========================================================+===========================================+
-| **Case1** | Data set :                                               | Data set :                                |
+| **Case1** | Adaptive Design of Experiments (DoE) :                   | Simulator :                               |
 |           |                                                          |                                           |
-|           | {:math:`\boldsymbol{x_1,x_2, ... ,x_N}`}                 | {:math:`\boldsymbol{y_1,y_2, ... ,y_N}`}  |
-+-----------+----------------------------------------------------------+-------------------------------------------+
+|           | a bounded variable space of :math:`\boldsymbol{x}`       | :math:`\boldsymbol{y}=f(\boldsymbol{x})`  |
++-----------+------------------------------------------+---------------+-------------------------------------------+
 | **Case2** | Data set :                                               | Simulator :                               |
 |           |                                                          |                                           |
 |           | {:math:`\boldsymbol{x_1,x_2, ... ,x_N}`}                 | :math:`\boldsymbol{y}=f(\boldsymbol{x})`  |
 +-----------+----------------------------------------------------------+-------------------------------------------+
-| **Case3** | Design of Experiments :                                  | Simulator :                               |
+| **Case3** | Data set :                                               | Data set :                                |
 |           |                                                          |                                           |
-|           | a bounded variable space of :math:`\boldsymbol{x}`       | :math:`\boldsymbol{y}=f(\boldsymbol{x})`  |
-+-----------+------------------------------------------+---------------+-------------------------------------------+
+|           | {:math:`\boldsymbol{x_1,x_2, ... ,x_N}`}                 | {:math:`\boldsymbol{y_1,y_2, ... ,y_N}`}  |
++-----------+----------------------------------------------------------+-------------------------------------------+
 
 
 User have the following options:
@@ -297,7 +300,7 @@ Adaptive DoE is terminated and the final surrogate model is constructed if one o
 Verification of surrogate model
 -------------------------------
 
-Once the parameters of GP are calibrated, leave-one-out cross validation (LOOCV)-based measure is used verification. Specifically, a test surrogate model :math:`\hat{y}=f^{sur}_{loo,k}(\boldsymbol{x})` is constructed using the samples :math:`\{x_1,x_2,...,x_{k-1},x_{k+1},...,x_N\}` without re-calibration of parameters, and its prediction at point :math:`{x}_k,~\hat{y}_k,` is compared with the exact outcome :math:`y_k=f(\boldsymbol{x}_k)`.
+Once the parameters of GP are calibrated, leave-one-out cross validation (LOOCV)-based measure is used for verification. Specifically, a test surrogate model :math:`\hat{y}=f^{sur}_{loo,k}(\boldsymbol{x})` is constructed using the samples :math:`\{x_1,x_2,...,x_{k-1},x_{k+1},...,x_N\}` without recalibration of parameters, and its prediction at point :math:`{x}_k,~\hat{y}_k,` is compared with the exact outcome :math:`y_k=f(\boldsymbol{x}_k)`.
 
 * **R2 error**
 
@@ -336,6 +339,10 @@ Once the parameters of GP are calibrated, leave-one-out cross validation (LOOCV)
   |      :math:`\mu_{\hat{y}}`: mean of :math:`\{\hat{y}_k\}`
   |      :math:`\sigma_{y}`: standard deviation of :math:`\{y_k\}`
   |      :math:`\sigma_{\hat{y}}`: standard deviation of :math:`\{\hat{y}_k\}`
+
+.. Note:: 
+
+   Since they are calculated from the cross validation predictions, this validation measures can be **biased**, particularly when **highly localized nonlinear range exist in actual response surface** and those regions are not covered by the training samples. However, introduction of DoE helps the user to suppress the bias significantly by targeted selection of simulation points around potentially faulty regions alarmed by high variance or high bias of surrounding samples.
 
 
 Prediction by surrogate model
