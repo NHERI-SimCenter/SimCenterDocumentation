@@ -60,7 +60,7 @@ based on the building class and assigned attributes.
 Available Inventories
 ========================
 
-Three different building inventories have been developed for the Atlantic County testbed.
+Three different building inventories have been developed for the Atlantic County testbed and can be accessed on DesignSafe.
 
 **Atlantic County Inventory**: Full inventory of 100,697 buildings in the 23 municipalities of Atlantic County, 
 described based on a variety of data sources (Figure 2.1.1). The buildings in this inventory are exposed to wind 

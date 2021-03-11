@@ -29,7 +29,7 @@ workflow.
    :name: wind_df
    :align: center
    :figclass: align-center
-   :figwidth: 100%
+   :figwidth: 1200
 
    Fitted HAZUS wind damage functions for example building classes.
 
@@ -58,7 +58,7 @@ ratio curves.
    :name: flood_ddc
    :align: center
    :figclass: align-center
-   :figwidth: 100%
+   :figwidth: 1200
 
    Depth-damage ratio curves for the flood loss assessment.
 

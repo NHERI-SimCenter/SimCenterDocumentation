@@ -11,6 +11,12 @@ is to demonstrate how an inventory could be constructed and not to address poten
 inaccuracies in the source data, i.e., source data are assumed to be accurate and no additional quality 
 assurance was conducted outside of addressing glaring omissions or errors.
 
+In the process of assembling this inventory, a number of scripts were developed to facilitate the actions 
+described in the following sections. While these scripts were not intended to be production-quality 
+software and were written assuming a particular data format/endpoint which may change over time, they 
+do provide an example of the type of operations necessary to assemble a building inventory and thus 
+are made available at GitHub as an illustrative example.
+
 Phase I: Attribute Definition
 ===============================
 
@@ -28,7 +34,7 @@ e.g., a number of attributes needed for loss estimation are populated during the
 
 .. _tab-bldgInventory:
 
-.. csv-table:: Building Inventory data model developed in this testbed.
+.. csv-table:: Building Inventory data model.
    :name: bldg_inv_dm
    :file: data/building_inventory_data_model_new.csv
    :header-rows: 1
@@ -52,8 +58,8 @@ the Flood-Exposed Inventory. This inventory was then extended to include other f
 boundaries. Microsoft (MS) Footprint Database was utilized as the primary source of Non-NJDEP footprint polygons.
 One observed shortcoming of the MS Footprint Database is it incorrectly lumps together the footprints of closely 
 spaced buildings. This issue was resolved by a combination of manual inspections and applying a separate roof 
-segmentation algorithm to the satellite images obtained for the buildings. This resulted in the Atlantic County 
-Inventory.
+segmentation algorithm to the satellite images obtained for the buildings. This resulted in the 
+**Atlantic County Inventory**.
 
 Phase III: Augmentation Using Third-Party Data
 ================================================
@@ -88,8 +94,9 @@ Estimator (SDE) Tool (:numref:`tab-sdeAttri`).
    :align: center
 
 For the Atlantic County Inventory, any buildings not included in the NJDEP footprints had attributes encompassed 
-by NJDEP Basic, UDF or SDE fields assigned by parsing New Jersey Tax Assessor Data (called **MODIV**) as defined in 
-the MODIV User Manual. This notably affected attributes such as OccupancyClass, BuildingType and FoundationType. 
+by NJDEP Basic, UDF or SDE fields assigned by parsing New Jersey Tax Assessor Data (called **MODIV**) ([MODIV]_) as defined in 
+the MODIV User Manual ([MODIV18]_). This notably affected attributes such as OccupancyClass, BuildingType and FoundationType, 
+whose rulesets (PDFs and Python scripts) are cross-referenced in :numref:`addinfo_ruleset_njdep`. 
 In all cases where attributes were derived from MODIV data, whose fields can be sparsely populated, default 
 values were initially assigned to ensure that every footprint would have the attributes required to execute 
 the workflow. These default values were selected using engineering judgement to represent the most common/likely 
@@ -97,14 +104,32 @@ attribute expected or conservatively from the perspective of anticipated losses 
 vulnerable attribute option). These initial assignments are then updated if additional data is available in 
 **MODIV** to make a more faithful attribute assignment.
 
-Some attributes in the Inventory Data Model were not encompassed by NJDEP Basic, UDF or SDE fields, thus 
+.. list-table:: Additional details for rulesets assigning attributes available only in NJDEP dataset
+   :name: addinfo_ruleset_njdep
+   :header-rows: 1
+   :align: center
+
+   * - Ruleset Name
+     - Ruleset Definition Table
+     - Python script
+   * - Building Type Rulesets
+     - `Building Type Rulesets.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/MOD%20IV%20Transformations>`_
+     - :download:`BuildingTypeRulesets <data/BuildingTypeRulesets.py>`
+   * - Foundation Type Rulesets
+     - `Foundation Type Rulesets.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/MOD%20IV%20Transformations>`_
+     - :download:`FoundationTypeRulesets <data/FoundationTypeRulesets.py>`
+   * - Occupancy Type Rulesets
+     - `Occupancy Type Rulesets <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/MOD%20IV%20Transformations>`_
+     - :download:`OccupancyTypeRulesets <data/OccupancyTypeRulesets.py>`
+
+Some attributes in the Building Inventory Data Model were not encompassed by NJDEP Basic, UDF or SDE fields, thus 
 remaining attributes in both the Flood-Exposed and Atlantic County Inventories were assigned using data 
 from the following third-party sources:
 1. **Locations of essential facilities** were sourced from NJ Office of Information Technology (part of NJGIN Open Data [NJGIN20]_)
-2. **ATC Hazards** by Location API ([ATC20]_) is used to query Design Wind Speeds as defined in ASCE 7 
+2. **ATC Hazards** by Location API ([ATC20]_) was used to query Design Wind Speeds as defined in ASCE 7 
 3. **Terrain features** (roughness length associated with different exposure classes) was derived from Land Use Land Cover data (part of NJGIN Open Data [NJGIN20]_)
 
-See the Transformation and Detail columns in (:numref:`tab-bldgInventory`) for specifics of how each attribute 
+See the Transformation and Detail columns in the PDFs listed in :numref:`tab-bldgInventory` for specifics of how each attribute 
 was assigned using these various third-party data sources.
 
 Phase IV: Augmentation Using Image Processing
@@ -120,19 +145,40 @@ The methodology used for each of these attributes is now described.
                            of roof line), elevation of the roof (peak of gable or apex of hip), and height of top of 
                            floor as estimated from base of door’s height, all defined with respect to grade (in feet), 
                            were estimated from streetview imagery. These geometric properties are defined visually 
-                           for common residential coastal typologies in Figure 2.2.1. The mean height of the roof system 
-                           is then derived from the aforementioned roof elevations. 
+                           for common residential coastal typologies in :numref:`building_elevation`. The mean height of the roof system 
+                           is then derived from the aforementioned roof elevations.
+
+                           .. figure:: figure/building_elevation.png
+                              :name: building_elevation
+                              :align: center
+                              :figclass: align-center
+                              :figwidth: 1000
+
+                              Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.
+
 3. **Roof Geometry**: Roof shape and slope are not available in state inventory data and required for wind loss 
                       modeling. The SimCenter developed application Building Recognition using Artificial 
                       Intelligence at Large Scales, BRAILS ([Wang19]_), is used to interpret satellite images 
                       of building roofs, which are collected from Google Maps. The satellite images are labeled 
                       with shape types to form a dataset, upon which a Convolutional Neural Network (CNN) is 
                       trained so that it can give rapid predictions of roof types when given new images of roofs. 
-                      Microsoft Building Footprint data ([Microsoft2018]_) is used as the location index when downloading images 
+                      The footprint centroid (Latitude and Longitude in Building Inventory) is used as the 
+                      location index when downloading images 
                       automatically from Google Maps. While more complex roof shapes could in theory be classified, 
                       the current use of HAZUS damage and loss functions required the use of similitude measures 
-                      to define each roof as an “effective” gable, hip or flat geometry. Using BRAILS, this 
-                      classification was achieved with approximately 85% accuracy based on validation studies.
+                      to define each roof as an “effective” gable, hip or flat geometry (:numref:`roof_shape`). Using BRAILS, this 
+                      classification was achieved with approximately 90.3% accuracy based on validation studies.
+                      The detailed validation process can be found in 
+                      `BRAILS online documentation <https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/roof.html>`_.
+
+                      .. figure:: figure/roof_shape.png
+                              :name: roof_shape
+                              :align: center
+                              :figclass: align-center
+                              :figwidth: 800
+
+                              Roof type classification by BRAILS ([Wang19]_).
+
 4. **Window Area**: The proportion of windows to the overall surface area is not available in state inventory data 
                     and required for wind loss modeling. Generally, window area can be assumed based on the 
                     building occupancy class given Department of Energy industry databases. This property can also 
@@ -170,6 +216,29 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
    :header-rows: 1
    :align: center
 
+.. list-table:: Summary of the three building inventories.
+   :name: access_inventories
+   :header-rows: 1
+   :align: center
+
+   * - Inventory Name
+     - DesignSafe Document
+     - Number of Assets
+     - Typical Run Time
+   * - Atlantic County Inventory
+     - `Atlantic County Inventory.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - 100,697
+     - ~ 1,500 CPU-Hour* (please see more details in **Computational Resources Requirements**)
+   * - Flood-Exposed Inventory
+     - `Flood-Exposed Inventory.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - 32,828
+     - ~ 440 CPU-Hour
+   * - Exploration Inventory
+     - `Exploration Inventory.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - 1,000
+     - ~ 12 CPU-Hour
+
+
 .. [ATC20]
    ATC (2020b), ATC Hazards By Location, https://hazards.atcouncil.org/, Applied Technology Council, Redwood City, CA.
 
@@ -182,4 +251,8 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
 .. [Microsoft2018]
    Microsoft (2018) US Building Footprints. https://github.com/Microsoft/USBuildingFootprints
 
+.. [MODIV]
+   Parcels and MOD-IV of Atlantic County, NJ. NJGIN Open Data, https://njogis-newjersey.opendata.arcgis.com/datasets/680b02ff9b4348409a2f4ccd4c238215.
 
+.. [MODIV18]
+   Department of the Treasury, State of New Jersey (2018), MOD IV User Manual. https://www.state.nj.us/treasury/taxation/pdf/lpt/modIVmanual.pdf

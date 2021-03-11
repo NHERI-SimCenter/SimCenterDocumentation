@@ -68,7 +68,7 @@ slightly higher wind speed than the coastal cities.
    :name: pws
    :align: center
    :figclass: align-center
-   :figwidth: 100%
+   :figwidth: 1200
 
    Interpolated peak wind speed (3s-gust) for each asset in the inventory.
 
@@ -100,7 +100,7 @@ Flood Damage and Loss Assessment.
    :name: pwd
    :align: center
    :figclass: align-center
-   :figwidth: 100%
+   :figwidth: 1200
 
    Interpolated peak water depth for each asset in the inventory.
 
