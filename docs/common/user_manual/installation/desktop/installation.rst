@@ -13,15 +13,16 @@ All SimCenter applications can be downloaded from the |ResearchTools| page. In o
    install_macOS
    testInstall
 
-The following videos demonstrate these installation instructions on brand new Windows 10 and MacOS Catalina systems.
+..
+    The following videos demonstrate these installation instructions on brand new Windows 10 and MacOS Catalina systems.
 
-.. raw:: html
+    .. raw:: html
 
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/fQN1UtjfarY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       <iframe width="560" height="315" src="https://www.youtube.com/embed/fQN1UtjfarY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-.. raw:: html
+    .. raw:: html
 
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/MjYCiFtdCdw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       <iframe width="560" height="315" src="https://www.youtube.com/embed/MjYCiFtdCdw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-.. note::
-   The videos demonstrate the instructions for one of our tools. The instructions for the others are exactly the same with the exception that the download tool page will be different as will the testing for the tool.
+    .. note::
+       The videos demonstrate the instructions for one of our tools. The instructions for the others are exactly the same with the exception that the download tool page will be different as will the testing for the tool.

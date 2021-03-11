@@ -6,13 +6,13 @@ Install on macOS 10
 Install Python 3.8
 ^^^^^^^^^^^^^^^^^^
 
-The Mac comes with Python pre-installed, but the default Python is the outdated version 2.7. As of January 1st, 2020 no new bug reports, fixes, or changes will be made to Python 2, and Python 2 is officially no longer supported. SimCenter tools require Python 3.8.
-If you have not yet installed Python, we recommend installing Python 3.8 from `Python.org <https://www.python.org/downloads/mac-osx>`_ , using the
+The Mac comes with Python pre-installed, but the default Python is the outdated version 2.7. Since January 1st, 2020 no new bug reports, fixes, or changes have been made to Python 2, and Python 2 is officially no longer supported. SimCenter tools require Python 3.8.
+If you have not yet installed Python, we recommend installing Python 3.8 from |PythonDownload|, using the
 **macOS 64-bit installer**. The installer will place a python3 executable in your **PATH**.
 
 .. warning::
-   
-   The latest version of Python is 3.9.1. Certain modules required by SimCenter applications fail in the pip install process detailed below. This is typical of python releases, e.g. it was not until 3.8.6 that all modules needed compiled on both Mac and Windows.
+
+   The latest version of Python is 3.9.1. Certain Python modules required by SimCenter applications fail under Python 3.9 in the pip install process detailed below. If you already have Python 3.9, we recommend installing a Python 3.8 as well that you will use only for the SimCenter applications.
 
 .. note::
    #. We use the python.org installation over others, due to it's simplicity of installation.
@@ -25,7 +25,7 @@ If you have not yet installed Python, we recommend installing Python 3.8 from `P
       Python: Folder Displayed at Conclusion of Install
 
 
-Once Python is installed, you need to extend it by installing a few additional packages. To faciliate this phase of the installation, we created a **nheri_simcenter** python package that automatically installs all other dependencies. Start a Terminal window and type the following command:
+Once Python is installed, you need to extend it by installing a few additional packages. To facilitate this phase of the installation, we created a **nheri_simcenter** python package that automatically installs all other dependencies. Start a Terminal window and type the following command:
 
 .. code-block:: bash
 
@@ -36,19 +36,13 @@ Once Python is installed, you need to extend it by installing a few additional p
 
 Make sure you see a message that confirms the successful installation of the nheri-simcenter package before proceeding to the next step.
 
-If you plan to use OpenSeesPy to run finite element analyses, you should also install that package at this point. (If you are not sure, we recommend you to install it.) You can install OpenSeesPy using the terminal window and the following command:
-
-.. code-block:: bash
-
-      pip3 install openseespymac --upgrade
-
 .. note::
 
    If you forget to invoke the ``UpdateShellProfile.command.sh`` script at the end of the install, you can always edit the correct shell file later to update the ``PATH`` variable to point to the Python application.
 
    On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e., there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the **bash** shell, the up and coming one is the **Z** shell. Power MacOS users will write shell scripts to do many many useful things. By default the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the users ``PATH``. Users can modify this path by editing files that the shell program will read from everytime the program is started.
 
-   When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of  some of the external applications that you have installed as **OpenSees** and **dakota** do not provide installers that automatically do this when they are installed. Other applications, like **Tcl** provide scripts that you invoke to do it. In short you have to edit the file appropriate to the shell you are using.
+   When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of  some of the external applications that you have installed as **OpenSees** and **Dakota** do not provide installers that automatically do this when they are installed. Other applications, like **Tcl** provide scripts that you invoke to do it. In short you have to edit the file appropriate to the shell you are using.
 
    To find which shell program you are using when you issue commands inside the terminal window, type the following:
 
@@ -56,7 +50,7 @@ If you plan to use OpenSeesPy to run finite element analyses, you should also in
 
       env | grep SHELL
 
-   If the result is **/bin/bash** you will need to edit the **.bashrc** file or the **bash_profile** file. If the result is **/bin/zsh** you will need to edit the **.zshrc** or **.zprofile**. Typically, the **.bash_profile** or the **.zprofile** file is the one to edit as by design these will invoke the **.bashrc** or **.zshrc** file. If in doubt, look for these files in your home directory and see which of these other installlers have modified.
+   If the result is ``/bin/bash`` you will need to edit the ``.bashrc`` file or the ``bash_profile`` file. If the result is ``/bin/zsh`` you will need to edit the ``.zshrc`` or ``.zprofile``. Typically, the ``.bash_profile`` or the ``.zprofile`` file is the one to edit as by design these will invoke the ``.bashrc`` or ``.zshrc`` file. If in doubt, look for these files in your home directory and see which of these other installers have modified.
 
 
 .. only:: R2D_app
@@ -77,21 +71,22 @@ If you plan to use OpenSeesPy to run finite element analyses, you should also in
 Download the Application
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-To download the |app|, first navigate to the |appLink| page. As shown in |figDownload|, to get to the download page, you need to click on the link ``Download app and User Manual`` in the application page. The download page contains a list of downloadable files and directories.
+To download the |app|, first navigate to the |appLink| page. As shown in |figDownload|, to get to the download page, you need to click on the link **Download app and User Manual** in the application page. The download page contains a list of downloadable files and directories.
 
 .. only:: R2D_app
 
-   .. _figDownload:
+   .. _figDownload-R2D:
 
-   .. figure:: figures/pbeDownload.png
+   .. figure:: figures/R2DDownload.png
       :align: center
       :figclass: align-center
 
       R2DTool download page.
 
+
 .. only:: PBE_app
 
-   .. _figDownload:
+   .. _figDownload-PBE:
 
    .. figure:: figures/pbeDownload.png
       :align: center
@@ -101,7 +96,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
 .. only:: EEUQ_app
 
-   .. _figDownload:
+   .. _figDownload-EE:
 
    .. figure:: figures/eeDownload.png
       :align: center
@@ -111,7 +106,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
 .. only:: WEUQ_app
 
-   .. _figDownload:
+   .. _figDownload-WE:
 
    .. figure:: figures/weDownload.png
       :align: center
@@ -122,7 +117,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
 .. only:: quoFEM_app
 
-   .. _figDownload:
+   .. _figDownload-quoFEM:
 
    .. figure:: figures/quoFEMDownload.png
       :align: center
@@ -143,7 +138,8 @@ Now test if the application starts properly. Navigate to the location where you 
 
 .. note::
 
-   Since the SimCenter app is codesigned and nororized, but it is not downloaded from the app store. As a consequence, depending on your security settings, when you start it for the first time macOS may bring up a dialog box indicating it is unsfae. If this dialog should appear, hit the cancel button. Restart the app by right clicking on it and selecting open. our applications are not recognized by the operating system as being signed. Consequently, you may receive a warning message when you start the |short tool name| application for the first time.
+   SimCenter apps are codesigned and notarized, but because they are not downloaded from the operating system's app store, they may not be recognized as such. As a consequence, depending on your security settings, when you start a SimCenter app for the first time, your operating system may bring up a dialog box indicating it is unsafe. If this dialog should appear, hit the cancel button. Restart the app by right clicking on it and selecting open.
+
 
 .. only:: R2D_app
 
@@ -187,7 +183,7 @@ Now test if the application starts properly. Navigate to the location where you 
 
 .. only:: quoFEM_app
 
-   .. _figQUO_FEM:
+   .. _figUI-quoFEM:
 
    .. figure:: figures/quoFEM.png
     :align: center

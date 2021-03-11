@@ -1,3 +1,5 @@
+.. _r2d-viz:
+
 VIZ: Visualization
 ==================
 

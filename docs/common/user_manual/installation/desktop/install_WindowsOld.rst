@@ -3,6 +3,35 @@
 Install on Windows 10
 =====================
 
+Install Python 3.8
+^^^^^^^^^^^^^^^^^^
+
+If you have not yet installed Python, we recommend installing Python 3.8 from
+|PythonDownload|, using the
+**Windowsx86 64-bit executable installer**.
+
+.. note::
+
+   Allow the installer to change your system environment variables so that the directory containing the executable will be on your path. This requires checking the small box asking for this when the installer starts. The box is located at bottom of installer application window.
+
+.. warning::
+   The latest version of Python is 3.9.1. We require a previous version, 3.8.6 and above, to avoid issues with packages that have not have been adopted to the latest version and as a consequence fail to install.
+
+Once Python is installed, you need to extend it by installing a few additional packages. To faciliate this phase of the installation, we created a **nheri_simcenter** python package that automatically installs all other dependencies. Start a `terminal window as an Admin user <https://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/>`_ and type the following command:
+
+.. code-block:: winbatch
+
+      pip install nheri_simcenter --upgrade
+
+Make sure you see a message that confirms the successful installation of the nheri-simcenter package before proceeding to the next step.
+
+If you plan to use OpenSeesPy to run finite element analyses, you should also install that package at this point. (If you are not sure, we recommend you to install it.) You can install OpenSeesPy using a terminal window and the following command:
+
+.. code-block:: winbatch
+
+      pip install openseespy --upgrade
+
+
 .. only:: R2D_app
 
    Install Java
@@ -19,12 +48,11 @@ Install on Windows 10
 Download the Application
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-To download the |app|, first navigate to the |appLink| page. As shown in |figDownloadWin|, to get to the download page, you need to click on the link **Download app and User Manual** in the application page. The download page contains a list of downloadable files and directories.
-
+To download the |app|, first navigate to the |appLink| page. As shown in :numref:`figDownload_win`, to get to the download page, you need to click on the link ``Download app and User Manual`` in the application page. The download page contains a list of downloadable files and directories.
 
 .. only:: R2D_app
 
-   .. _figDownloadWin-R2D:
+   .. _figDownload_win:
 
    .. figure:: figures/R2DDownload.png
       :align: center
@@ -34,7 +62,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
 .. only:: PBE_app
 
-   .. _figDownloadWin-PBE:
+   .. _figDownload:
 
    .. figure:: figures/pbeDownload.png
       :align: center
@@ -44,7 +72,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
 .. only:: EEUQ_app
 
-   .. _figDownloadWin-EE:
+   .. _figDownload:
 
    .. figure:: figures/eeDownload.png
       :align: center
@@ -54,7 +82,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
 .. only:: WEUQ_app
 
-   .. _figDownloadWin-WE:
+   .. _figDownload:
 
    .. figure:: figures/weDownload.png
       :align: center
@@ -65,7 +93,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
 .. only:: quoFEM_app
 
-   .. _figDownloadWin-quoFEM:
+   .. _figDownload:
 
    .. figure:: figures/quoFEMDownload.png
       :align: center
@@ -77,8 +105,7 @@ Click on the file with a name ending with **Windows_Download.zip** to download t
 
 .. note::
 
-   We suggest placing the directory in the **C:\\SimCenter** folder. Once here, you can create a shortcut to the application and move this shortcut to your Desktop.
-
+   We suggest placing the directory in the **C:\\SimCenter** folder. Once here, you can create a shorcut to the application and move this shortcut to your Desktop.
 
 Test the Installation
 ^^^^^^^^^^^^^^^^^^^^^
