@@ -159,7 +159,7 @@ The PWS and PWD were scaled to Categories 2, 3, and 4 as summarized in :numref:`
    modeling for peak and time dependent storm surge prediction over an extended coastal region using
    an existing database of synthetic storms," Natural Hazards, V81, 909-938
 
-.. [Nadal‐Caraballo15]
+.. [NadalCaraballo15]
    Nadal‐Caraballo N.C, J. A. Melby, V. M. Gonzalez, and A. T. Cox (2015), North Atlantic Coast
    Comprehensive Study – Coastal Storm Hazards from Virginia to Maine, ERDC/CHL TR-15-5, U.S.
    Army Engineer Research and Development Center, Vicksburg, MS.
