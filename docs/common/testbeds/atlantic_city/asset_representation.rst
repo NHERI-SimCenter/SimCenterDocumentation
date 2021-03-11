@@ -531,6 +531,17 @@ are cross-referenced in :numref:`addinfo_ruleset_ef`.
      - `Hazus Building Attribute Rulesets - Wind - Essential Facilities.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
      - :download:`WindEFRulesets <data/WindMHRulesets.py>`
 
+Taking the attribute wind borne debris source (WindDebris) as an example, the WindDebris attribute is 
+assigned based on assumptions surrounding the zoning in areas where each essential facility class is 
+commonly constructed. These are generally A: Residential/Commercial or C: Residential, as summarized 
+in :numref:`ef_attri`. 
+
+.. csv-table:: Ruleset for determining the wind borne debris for flood essential factilites.
+   :name: ef_attri
+   :file: data/example_ef_ruleset.csv
+   :header-rows: 1
+   :align: center
+
 
 Flood Loss Attributes
 -----------------------
