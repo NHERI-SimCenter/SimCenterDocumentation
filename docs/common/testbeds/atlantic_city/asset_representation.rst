@@ -569,7 +569,7 @@ rulesets (PDFs and Python scripts) are cross-referenced in :numref:`addinfo_rule
    * - Ruleset Name
      - Ruleset Definition Table
      - Python script
-   * - HAZUS Building Attribute Rulesets - Wind (Essential Facilities)
+   * - HAZUS Building Attribute Rulesets - Flood
      - `Hazus Building Attribute Rulesets - Flood - All Classes.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
      - :download:`FloodRulesets <data/FloodRulesets.py>`
 
