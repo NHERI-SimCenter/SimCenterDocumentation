@@ -98,6 +98,7 @@ You now need to make some changes to your environment variables as neither OpenS
 8. For the variable path enter
 
 .. :code-block:: none
+
    C:\\SimCenter\\dakota\\share\\dakota\\Python
 
 9. Press the **OK** button.

@@ -8,7 +8,7 @@ On November 30th 2018 at 8.29am local time, a magnitude 7.1 earthquake occurred 
 
 In the few weeks following the earthquake, the NHERI SimCenter team collected and processed building exposure data from the publicly available parcels tax data from the Municipality of Anchorage tax assessor's website. The tax data for approximately 97,000 parcels was processed, resulting in buildings data in 85,000 parcels. In addition the SimCenter collected a number of recorded motions for the event that were made available online.
 
-Subsequentally the SimCenter created a workflow to estimate the effect of the earthquake using the software created by the center for performing assesment of damage associated with natural events at the regional scale. This section describes the steps involved to collect the data, steps that a user would take to repeat the simulations perfomed by SimCenter, and finally the results obtained.
+Subsequently the SimCenter created a workflow to estimate the effect of the earthquake using the software created by the center for performing assessment of damage associated with natural events at the regional scale. This section describes the steps involved to collect the data, steps that a user would take to repeat the simulations performed by SimCenter, and finally the results obtained.
 
 A video `presenting the work <https://www.youtube.com/watch?v=VH-slcnmTJc>`_ was presented by Wael Elhadded of SimCenter (now with NVIDIA).
 
@@ -23,7 +23,7 @@ The NHERI SimCenter team collected and processed building exposure data from the
 - 73,000 parcels in Anchorage
 - 12,000 parcels in Eagle River
 
-The building data is provided online at DesignSafe `AnchorageBuildings.zip <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Datasets/AnchorageM7>`_. The zip file contains a single comma seperated file. The first line contains the column headings, the subsequent lines the information for each building.
+The building data is provided online at DesignSafe `AnchorageBuildings.zip <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Datasets/AnchorageM7>`_. The zip file contains a single comma separated file. The first line contains the column headings, the subsequent lines the information for each building.
 
 
 #. Id - an integer id
@@ -60,8 +60,6 @@ Ground Motion Data
 ------------------
 
 The testbed used the following workflow:
-
-
 
 
 

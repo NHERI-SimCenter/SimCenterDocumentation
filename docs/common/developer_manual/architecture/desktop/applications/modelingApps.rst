@@ -7,7 +7,6 @@ The **modeling application** consolidates information on the *structural analysi
 It takes as input the :ref:`BIM file <lblBuildingApp>`, the :ref:`EVENT file <lblEventApp>`, and information on the structural model used for response simulation, specified in the :ref:`configuration file <lblUserDefInputs>`.
 The input structural model information is parsed into a "SAM.json" file, located in its corresponding **simulation working directory**.
 
-.. _figContext:
 
 .. figure:: _static/images/backendapps_Modeling.png
    :align: center

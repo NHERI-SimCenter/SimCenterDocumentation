@@ -6,7 +6,6 @@ Earthquake Assessment
 
 This example is a small-scale regional earthquake risk assessment which performs response simulation and damage/loss estimation for a group of 20 buildings. The buildings are modeled as elastic-perfectly plastic single-degree-of-freedom (SDOF) systems defined by three input model parameters: the weight ``W``, yield strength ``f_yield``, and fundamental period ``T1``. The buildings are distributed in space in a 4x5 grid, within a 3x3 grid of event sites. At each event site, 5 ground motion records of similar intensity are assigned.
 
-.. _figContext:
 
 .. figure:: figures/regionalearthquakeexample.png
    :align: center
@@ -36,7 +35,6 @@ The example input files can be downloaded here: :download:`example_eq.zip <files
 
 3. **Regional Mapping Application**: This example uses the :ref:`NearestNeighborEvents <lblregionalMapApp>` regional mapping application. From the parameters set in the configuration file, the algorithm is set to randomly select 5 samples of ground motion records from the 4 nearest neighbors for each building asset.
 
-.. _figContext:
 
 .. figure:: figures/regionalearthquakeexample_annot.png
    :align: center
