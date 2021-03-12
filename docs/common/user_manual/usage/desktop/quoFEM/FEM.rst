@@ -119,3 +119,13 @@ the need to explicitly input each one of these files.
 	:figclass: align-center
 
         Input for Custom Analysis Application
+
+
+SurrogateGP
+^^^^^^^^^^^^
+In place of any pysical simulation models, Gaussian process surrogate model trained in quoFEM can be imported for different UQ/Optimization analysis. When user selects Surrogate GP, the user is requested to provide two files.
+
+1. Surrogate info file: The info file contains meta information about surrogate models. User can open it with text editor to see the information.
+2. Surrogate model file: Surrogate model is saved in a binary file
+
+
