@@ -75,8 +75,8 @@ pelicun pbe requirements:
 r2d qfem we ee:
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
 	# sync example files
-	@# -rsync -Rcv $(addprefix $(EXPSRC)/./,$(EXAMPLES))  $(EXPDIR)
-	-rsync -Rcv $(EXAMPLES) $(EXPDIR)
+	#@# -rsync -Rcv $(addprefix $(EXPSRC)/./,$(EXAMPLES))  $(EXPDIR)
+	#-rsync -Rcv $(EXAMPLES) $(EXPDIR)
 	
 
 

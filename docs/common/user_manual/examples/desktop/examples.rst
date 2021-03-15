@@ -37,7 +37,6 @@ Examples
 
 
 
-
 .. rendre:: filtered-gallery
 	:data-file: $SIMCENTER_DEV/$SIMDOC_APP/Examples/index.json
 	:load-defaults: $SIMCENTER_DEV/SimCenterDocumentation/examples.yaml#/$SIMDOC_APP
