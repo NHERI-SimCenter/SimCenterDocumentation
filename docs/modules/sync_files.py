@@ -29,7 +29,11 @@ def sync_files(src_dir,dst_dir,config):
         dst_file = src.split(DBL_SEP)[1] if DBL_SEP in src else os.path.split(src)[1]
         dst = Path(dst_dir)/dst_file
         srcp = Path(src)
-        if srcp.exists():# and srcp.stat().st_mtime > dst.stat().st_mtime:
+        if srcp.exists():# and :
+            if not dst.exists():
+                dst.parents[0].mkdir(parents=True, exist_ok=True)
+            elif srcp.stat().st_mtime == dst.stat().st_mtime:
+                continue
             with open(src,"rb") as s, open(dst,"wb+") as d:
                 print("Synching:")
                 print(f"  src: {src}")
