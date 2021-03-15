@@ -13,11 +13,20 @@ def sync_files(src_dir,dst_dir,config):
     
 
     opts = ["--sort", "--no-quotes"]
-    with tempfile.NamedTemporaryFile(mode="w+") as tf:
+
+    # with tempfile.NamedTemporaryFile(mode="w+") as tf:
+    #     json.dump(config,tf)
+    #     tf.flush()
+    #     args = parser.parse_args(["-l",tf.name,"-vvv","path",*opts,"--",str(src_dir)+"/./%%:doc"])
+    #     files_to_sync:str  = rendre(args,config).strip()
+
+    tfname =  "temp.doc.file"
+    with open(tfname,"w+") as tf:
         json.dump(config,tf)
-        tf.flush()
-        args = parser.parse_args(["-l",tf.name,"-vvv","path",*opts,"--",str(src_dir)+"/./%%:doc"])
-        files_to_sync:str  = rendre(args,config).strip()
+
+    args = parser.parse_args(["-l",tfname,"-vvv","path",*opts,"--",str(src_dir)+"/./%%:doc"])
+    files_to_sync:str  = rendre(args,config).strip()
+    os.remove(tfname)     
     files_to_sync:list = [
         i.strip() for i in files_to_sync.split(" ")
     ]
