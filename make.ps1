@@ -9,7 +9,7 @@ $SOURCEDIR="./docs"
 
 if ($args[0] -eq "") {goto help}
 
-$env:SIMCENTER_DEV = "../../"
+$env:SIMCENTER_DEV = resolve-path "../"
 
 $app_names = @{}
 $app_names["we"]  = "WE-UQ"
