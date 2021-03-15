@@ -12,7 +12,7 @@ parser = create_parser()
 def sync_files(src_dir,dst_dir,config):
     
 
-    opts = ["--sort", "--no-quotes", "-j" , "\n"]
+    opts = ["--sort", "--no-quotes", "-j" , "<<>>","-s","<<>>"]
 
     # with tempfile.NamedTemporaryFile(mode="w+") as tf:
     #     json.dump(config,tf)
@@ -28,8 +28,9 @@ def sync_files(src_dir,dst_dir,config):
     files_to_sync:str  = rendre(args,config).strip()
     os.remove(tfname)     
     files_to_sync:list = [
-        i.strip() for i in files_to_sync.split("\n")
+        i.strip() for i in files_to_sync.split("<<>>")
     ]
+    print(files_to_sync)
     for src in files_to_sync:
         dst_file = src.split("/./")[1] if "/./" in src else os.path.split(src)[1]
         dst = Path(dst_dir)/dst_file

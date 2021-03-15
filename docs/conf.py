@@ -469,6 +469,11 @@ elif app_name == 'quoFEM':
 
 	html_theme_options.update({'analytics_id': 'UA-158130480-4'})
 
+	example_config.update({
+		"include-item": [
+			"qfem-0001"
+		]
+	})
 	# Example links
 	extlinks.update(
 	   {f'qfem-{i:04}' : (f'{examples_url}/qfem-{i:04}/%s',f'qfem-{i:04}') for i in range(1,99)}
