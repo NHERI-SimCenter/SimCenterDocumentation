@@ -1,6 +1,6 @@
 # Claudio Perez
 
-import json,tempfile
+import json,os #tempfile
 from pathlib import Path
 
 from rendre.__main__ import create_parser
