@@ -207,6 +207,7 @@ rendre_config = {
 	}
 }
 example_config = rendre_config["targets"]["examples"]
+sync_examples = False
 
 # Create inline :github: directive for convenient linking to files on github
 extlinks = {
@@ -282,6 +283,7 @@ if app_name == 'R2DTool':
 	copyright = '2019, The Regents of the University of California'
 
 	author = 'Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez'
+	sync_examples = True
 
 	tags.add('desktop_app')
 	tags.add('earthquake')
@@ -460,6 +462,8 @@ elif app_name == 'quoFEM':
 	exclude_patterns.append('**/testbeds/*')
 	# END TODO
 
+	sync_examples = True
+
 	rst_prolog += f"""
 .. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)
 .. |tool version| replace:: 2.0
@@ -599,6 +603,7 @@ elif app_name == 'requirements':
 	#html_logo = 'common/figures/pelicun-Logo-grey3.png'
 	project = 'SimCenter Requirements Traceability Matrix'
 	copyright = '2021, The Regents of the University of California'
+	exclude_patterns = ['common/user_manual/*','common/developer_manual/*','common/testbeds/*','common/technical_manual/*','_build', 'Thumbs.db', '.DS_Store']
 	author = 'NHERI SimCenter'
 	tags.add('requirements')
 	pdf_break_level = 2
@@ -620,7 +625,7 @@ elif app_name == 'requirements':
 .. |integer| replace:: *integer*
 .. |fmk| replace:: **fmk**
 
-"""	
+"""
 
 
 # -- General configuration ---------------------------------------------------
@@ -686,8 +691,9 @@ latex_logo = 'common/figures/NSF_SimCenter_NO TEXT_SimCenter.png'
 
 # -- sync files for examples ---------------------------------------------------------------
 
-sync_files(
-	src_dir=os.path.abspath(f'../../{app_name}/Examples'),
-	dst_dir="common/user_manual/examples/desktop",
-	config=example_config
-)
+if sync_examples:
+	sync_files(
+		src_dir=os.path.abspath(f'../../{app_name}/Examples'),
+		dst_dir="common/user_manual/examples/desktop",
+		config=example_config
+	)
