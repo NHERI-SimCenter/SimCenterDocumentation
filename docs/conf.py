@@ -219,11 +219,13 @@ examples_url = f'https://github.com/NHERI-SimCenter/{app_name}/tree/master/Examp
 # app-specific settings
 
 docTestbeds='True'
+
 if app_name == 'HydroUQ':
 
-	project = 'Hydro'
-	copyright = '2019, The Regents of the University of California'
-	author = "author"
+	project = 'Hydro-UQ'
+	copyright = '2021, The Regents of the University of California'
+	author = "Ajay B Harish"
+
 	tags.add('desktop_app')
 	tags.add('earthquake')
 	tags.add('response')
@@ -231,7 +233,6 @@ if app_name == 'HydroUQ':
 
 	toc_filter_exclusions.remove('HydroUQ')
 	toc_filter_exclusions.remove('desktop')
-	toc_filter_exclusions.remove('earthquake')
 	toc_filter_exclusions.remove('response')
 	toc_filter_exclusions.remove('notQuoFEM')
 	toc_filter_exclude = toc_filter_exclusions
@@ -239,7 +240,6 @@ if app_name == 'HydroUQ':
 	exclude_patterns.remove('**/*desktop*')
 	exclude_patterns.remove('**/*earthquake*')
 	exclude_patterns.remove('**/*response*')
-	exclude_patterns.remove('**/*R2DTool*')
 
 
 	# TODO: fix these temporary changes
@@ -257,21 +257,18 @@ if app_name == 'HydroUQ':
 	exclude_patterns.append('**/DakotaInverseProblems.rst')
 	# END TODO
 
-	rst_prolog += """\
-.. |full tool name| replace:: Regional Resilience Determination Tool
-.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0
-.. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt
+	rst_prolog += f"""
+.. |full tool name| replace:: Water-borne Hazards Engineering with Uncertainty Quantification
 .. |tool version| replace:: 1.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
-.. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
-.. |developers| replace:: Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez
-
+.. |contact person| replace:: {author}
+.. |developers| replace:: {author}
 """
 
 	extlinks.update(
 	   {f'hdro-{i:04}' : (f'{examples_url}/r2dt-{i:04}/%s',f'r2dt-{i:04}') for i in range(1,20)}
 	)
-	html_logo = 'common/figures/RDT-Logo-grey3.png'
+	html_logo = 'common/figures/HydroUQ-Logo.png'
 
 	html_theme_options.update({
 		'analytics_id': '...', #TODO: add analytics ID

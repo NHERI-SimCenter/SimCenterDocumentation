@@ -46,6 +46,7 @@ we:      export SIMDOC_APP=WE-UQ
 r2d:     export SIMDOC_APP=R2DTool
 
 pbe:     export SIMDOC_APP=PBE
+hydro:   export SIMDOC_APP=HydroUQ
 qfem:    export SIMDOC_APP=quoFEM
 pelicun: export SIMDOC_APP=pelicun
 requirements: export SIMDOC_APP=requirements
@@ -69,7 +70,7 @@ all:
 	make ee html
 
 
-pelicun pbe requirements:
+hydro pelicun pbe requirements:
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
 
 
