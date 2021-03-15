@@ -22,7 +22,7 @@ else:
 	#app_name = 'pelicun'
 
 	os.environ['SIMDOC_APP'] = app_name
-	os.environ['SIMCENTER_DEV'] = os.path.normpath('../../')
+	os.environ['SIMCENTER_DEV'] = os.path.abspath('../../')
 
 app_abrev = app_name.split("-")[0].replace("Tool","")
 app_abrev2 = app_name.replace("-","").replace("Tool","")
@@ -328,7 +328,11 @@ if app_name == 'R2DTool':
 """
 	example_config.update({
 		"include-item": [
-			"r2dt-0006"
+			"r2dt-0006",
+			"r2dt-0003",
+			"r2dt-0007",
+			"r2dt-0001",
+			"r2dt-0002",
 		]
 	})
 	extlinks.update(
@@ -471,7 +475,14 @@ elif app_name == 'quoFEM':
 
 	example_config.update({
 		"include-item": [
-			"qfem-0001"
+			"qfem-0001",
+			"qfem-0002",
+			"qfem-0005",
+			"qfem-0003",
+			"qfem-0004",
+			"qfem-0009",
+			"qfem-0008",
+			"qfem-0014",
 		]
 	})
 	# Example links
