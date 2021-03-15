@@ -19,7 +19,7 @@ def sync_files(src_dir,dst_dir,config):
     with open(tfname,"w+") as tf:
         json.dump(config,tf)
 
-    args = parser.parse_args(["-l",tfname,"-vvv","path",*opts,"--",str(src_dir)+"/./%%:doc"])
+    args = parser.parse_args(["-l",tfname,"path",*opts,"--",str(src_dir)+"/./%%:doc"])
     files_to_sync:str  = rendre(args,config).strip()
     os.remove(tfname)
     files_to_sync:list = [
