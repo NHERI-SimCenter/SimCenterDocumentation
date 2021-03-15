@@ -37,15 +37,11 @@ Examples
 
 
 
-
 .. rendre:: filtered-gallery
 	:data-file: $SIMCENTER_DEV/$SIMDOC_APP/Examples/index.json
-	:load-defaults: $SIMCENTER_DEV/SimCenterDocumentation/examples.yaml#/$SIMDOC_APP
-	
+	:load-defaults: $SIMCENTER_DEV//SimCenterDocumentation//examples.yaml#/$SIMDOC_APP
+	:verbose: 3
+
 	:link: ./%%:base/README
-
-
-..
-    :add-filter: %c/Simulation %c/Difficulty
 
 
