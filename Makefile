@@ -12,7 +12,7 @@ PUBLDIR = $(shell v="$(SIMDOC_APP)"; echo "../$${v%Tool}-Documentation/docs/")
 # Directories to remove when cleaning
 CLEANDIR      = _sources _static _images common
 
-export SIMCENTER_DEV = $(shell readlink -f ../)
+export SIMCENTER_DEV = $(shell pwd | xargs dirname)
 #-Examples-------------------------------------------------
 EXPDIR = ./docs/common/user_manual/examples/desktop
 EXPSRC = ${SIMCENTER_DEV}/$(SIMDOC_APP)/Examples
