@@ -36,17 +36,16 @@ Examples
 ..    :WEUQ:WEUQ/exampleShearBuilding9/README
 
 
-..    :quoFEM:quoFEM/exampleTrussOpenSees/README
-..    :quoFEM:quoFEM/quo-09/README
-..    :quoFEM:quoFEM/exampleFrameConv/README
-..    :quoFEM:quoFEM/exampleFrameBaye/README
 
 
 .. rendre:: filtered-gallery
-	:data-file: $SIMCENTER_DEV/$SIMDOC_APP/examples/examples.json
+	:data-file: $SIMCENTER_DEV/$SIMDOC_APP/Examples/index.json
 	:load-defaults: $SIMCENTER_DEV/SimCenterDocumentation/examples.yaml#/$SIMDOC_APP
 	
-	:link: ./%i/README
+	:link: ./%%:base/README
 
+
+..
+    :add-filter: %c/Simulation %c/Difficulty
 
 

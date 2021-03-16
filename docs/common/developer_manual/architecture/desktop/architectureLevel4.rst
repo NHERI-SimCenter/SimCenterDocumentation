@@ -5,7 +5,7 @@
 Software Architecture
 *********************
 
-The SimCenter is developing a software framework for building scientific workflow applications to perform computational; simulations in field of NHE at both building level scale and regionsl scale. It is releasing a number of applications built using this framework. The |app| is one of those applications which have been released (EE-UQ, WE-UQ, PBE). Other applications are under development (RDT). The applications that the SimCenter are developing are limited scientific workflow systems. This chapter presents the software architecture for the framework and the |app| built using it using the C4 model.
+The SimCenter is developing a software framework for building scientific workflow applications to perform computational; simulations in field of NHE at both building level scale and regionsl scale. It is releasing a number of applications built using this framework. The |app| is one of those applications which have been released (EE-UQ, WE-UQ, PBE). Other applications are under development (R2D). The applications that the SimCenter are developing are limited scientific workflow systems. This chapter presents the software architecture for the framework and the |app| built using it using the C4 model.
 
 .. note:: 
 
@@ -18,7 +18,7 @@ The SimCenter is developing a software framework for building scientific workflo
 Level 1: A Context for SimCenter Applications
 =============================================
 
-A Level 1 diagram showing the system context for the SimCenter applications, i.e. how it fits in the world,  is shown in :numref:`figContext`. It shows SimCenter applications (EE-UQ, WE-UQ, PBE, RDT) as a box in the center surrounded by the user and the systems it and the user interact with. The SimCenter applications allows user to create and run scientific workflow applications, the data for the applications may be obtained from the web or DataDepot, the workflow applications are run on either the local desktop or on some HPC at |DesignSafe|. 
+A Level 1 diagram showing the system context for the SimCenter applications, i.e. how it fits in the world,  is shown in :numref:`figContext`. It shows SimCenter applications (EE-UQ, WE-UQ, PBE, R2D) as a box in the center surrounded by the user and the systems it and the user interact with. The SimCenter applications allows user to create and run scientific workflow applications, the data for the applications may be obtained from the web or DataDepot, the workflow applications are run on either the local desktop or on some HPC at |DesignSafe|. 
 
 .. _figContext:
 
@@ -27,6 +27,7 @@ A Level 1 diagram showing the system context for the SimCenter applications, i.e
    :figclass: align-center
 
    System context diagram for SimCenter Applications.
+
 
 Level 2:  The Components of a SimCenter Application
 ===================================================

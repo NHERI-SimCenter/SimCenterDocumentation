@@ -103,7 +103,7 @@ The backend applications are categorized by function into the following workflow
         applications/DLApps
 
 
-.. only:: RDT_app
+.. only:: R2D_app
 
     #. |createBIM|
     #. |performRegionalMap|

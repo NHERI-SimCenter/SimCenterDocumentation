@@ -17,7 +17,7 @@ R2.1 , Ability of stakeholders to perform simulations of different scenarios tha
 R2.2 ,  Ability to utilize HPC resources in regional simulations that enables repeated simulation for stochastic modeling , GC , 1.3.10 rWhale , M , 1.0 
 R2.3 ,  Provide open-source software for developers to test new data and algorithms , GC , 1.3.10 rWhale , M , 1.0  
 R2.4 , Ability to use a tool created by linking heterogeneous array of simulation tools to provide a toolset for regional simulation , GC , 1.3.10 rWhale , M , 1.0 
-R2.5 ,  Ability to utilize existing open-source software for faster deployment , GC , 1.3.10 RDT , M , 1.0 
+R2.5 ,  Ability to utilize existing open-source software for faster deployment , GC , 1.3.10 R2D , M , 1.0 
 R2.6 ,  Ability to utilize ensemble techniques  , GC , 1.3.10 rWhale , M , 1.0 
 R2.7  , Ability to include multi-scale nonlinear models , GC , 1.3.10 rWhale , M , 1.0 
 R2.8 , Ability to include a formal treatment of uncertainty and randomness , GC , 1.3.10 rWhale , M , 1.0 

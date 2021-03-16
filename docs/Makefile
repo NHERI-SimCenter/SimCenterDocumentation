@@ -13,7 +13,7 @@ BUILDDIR      = ./web
 help:
 	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
 
-RDT:
+R2D:
 	make clean
 	rm -fr ../../RDT-Documentation/docs/_sources
 	rm -fr ../../RDT-Documentation/docs/_static

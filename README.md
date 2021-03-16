@@ -33,10 +33,16 @@ Most of the remaining terminal commands should be run from the root of this repo
 Install the project dependencies by running the following terminal command from the documentation root:
 
 ```shell
-pip3 install -U -r requirements.txt
+pip install -r requirements.txt
 ```
 
-> Note: A Python 3 installation must be available in your terminal environment.
+or
+
+```shell
+pip3 install -r requirements.txt
+```
+
+> Note: A Python 3 installation must be available in your terminal environment. The pip command is used on Windows and pip3 on a Mac. Iy you do not have admin rights, add a -U before the -r.
 
 ### 3a Build with Make
 
@@ -52,13 +58,13 @@ where `<app>` is one of:
 | --------|---------------|
 | `pelicun` |  Pelicun
 | `qfem`    |  quoFEM
-| `rdt`     |  RDT
+| `r2d`     |  R2D
 | `pbe`     |  PBE
 | `we`      |  WE-UQ
 | `ee`      |  EE-UQ
 
 and `<target>` is one of:
-| `<target>` | description | 
+| `<target>` | description |
 |------------|-------------|
 |  `web`    | Generate HTML output in the app publishing repository (i.e., `../<app-name>-Documentation/`).
 |  `html`   | Generate HTML output in `build/<app-name>/html/`.
@@ -93,10 +99,10 @@ The particular application must be selected by un-commenting the appropriate `ap
     ```
     > Note: this will write / modify files that are located outside of the documentation repository!
 
-- The following command will generate **latex** and **pdf** output for the **RDT** application in the directories `build/RDT/latex/`, and `build/RDT/pdf/`, respectively:
+- The following command will generate **latex** and **pdf** output for the **R2D** application in the directories `build/R2D/latex/`, and `build/R2D/pdf/`, respectively:
 
     ```shell
-    make rdt latex pdf
+    make r2d latex pdf
     ```
     Note, however, that in order to achieve a proper build, one may need to run the `make <app> latex` target several times in succession before running `make <app> pdf`.
 

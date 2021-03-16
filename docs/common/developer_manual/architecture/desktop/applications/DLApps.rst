@@ -9,11 +9,11 @@ specified in the :ref:`BIM file <lblBuildingApp>`, as well as the response simul
 It returns damage probabilities in a "DM.csv" file and decision variable estimates in a "DV.csv" for each simulation, saved in its corresponding
 **simulation working directory**.
 
-.. _figContext:
 
 .. figure:: _static/images/backendapps_DL.png
    :align: center
    :figclass: align-center
+
 
 The following options for DL applications vary in the software package used to perform the damage and loss assessment.
 
