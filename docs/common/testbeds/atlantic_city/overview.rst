@@ -63,8 +63,17 @@ Available Inventories
 Three different building inventories have been developed for the Atlantic County testbed and can be accessed on DesignSafe.
 
 **Atlantic County Inventory**: Full inventory of 100,697 buildings in the 23 municipalities of Atlantic County, 
-described based on a variety of data sources (Figure 2.1.1). The buildings in this inventory are exposed to wind 
+described based on a variety of data sources (:numref:`fig-buildingClassACI`). The buildings in this inventory are exposed to wind 
 only OR the combination of wind and floodplain hazards.
+
+.. _fig-buildingClassACI:
+
+.. figure:: figure/BuildingClass_atlanticall.png
+   :align: center
+   :figclass: align-center
+   :width: 800
+
+   Geospatial visualization of subclasses of buildings in Atlantic County Inventory.
 
 **Flood-Exposed Inventory**: This subset of the Atlantic County inventory is confined to 32,828 buildings in 
 FEMA Special Flood Hazard Areas (SFHAs) (:numref:`fig-buildingClassFEI`), as identified by the New Jersey Department of Environmental 
