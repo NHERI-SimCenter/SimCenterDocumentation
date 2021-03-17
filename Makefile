@@ -46,10 +46,10 @@ we:      export SIMDOC_APP=WE-UQ
 r2d:     export SIMDOC_APP=R2DTool
 
 pbe:     export SIMDOC_APP=PBE
-hydro:   export SIMDOC_APP=HydroUQ
+hydro:   export SIMDOC_APP=Hydro
 qfem:    export SIMDOC_APP=quoFEM
 pelicun: export SIMDOC_APP=pelicun
-requirements: export SIMDOC_APP=requirements
+req: export SIMDOC_APP=requirements
 
 
 export SIMDOC_APP
@@ -57,8 +57,8 @@ export SIMDOC_APP
 
 # LaTeX path variables
 export TEXINPUTS:=${SIMCENTER_DEV}/texmf//:./build/${SIMDOC_APP}/latex//:/${TEXINPUTS}
-export TEXINPUTS:=~/texlive/2020//:${TEXINPUTS} 
-export BSTINPUTS:=../texmf//:${BSTINPUTS} 
+export TEXINPUTS:=~/texlive/2020//:${TEXINPUTS}
+export BSTINPUTS:=../texmf//:${BSTINPUTS}
 
 
 all:
@@ -70,7 +70,7 @@ all:
 	make ee html
 
 
-hydro pelicun pbe requirements:
+hydro pelicun pbe req:
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
 
 

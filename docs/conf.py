@@ -9,7 +9,8 @@
 
 import os
 app_name = os.path.expandvars("$SIMDOC_APP")
-if app_name in ["R2DTool", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun","requirements","HydroUQ"]:
+APPS = ["R2DTool", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun","requirements","Hydro"]
+if app_name in APPS:
     # `make` was invoked from root, all env vars should already be defined.
 	pass
 else:
@@ -76,11 +77,14 @@ exclude_patterns = [
 		'**/*old*',
 		'**/*quoFEM*',
 		'**/qfem*',
+                '**/Hydro*',
 		# Apparently obsolete pages, consider deleting
 		'**/_downloadApp.rst',
 		'**/downloadPython.rst',
 		'**/install_WindowsOld.rst'
-	]
+	] + [
+            f'{app}/' for app in APPS if app != app_name
+        ]
 
 source_suffix = {
 	".rst": "restructuredtext",
@@ -94,7 +98,7 @@ toc_filter_exclusions = [
 	'R2D',
 	'PBE',
 	'quoFEM',
-	'HydroUQ',
+	'Hydro',
 	'notQuoFEM',
 	'WEUQ',
 	'EEUQ',
@@ -120,7 +124,9 @@ math_eqref_format = '({number})'
 math_numfig = True
 
 
+copyright = '2021, The Regents of the University of California'
 tags.add(f'{app_abrev2}_app')
+
 rst_prolog = f"""
 .. |figDownload| replace:: :numref:`figDownload-{app_abrev}`
 .. |figDownloadWin| replace:: :numref:`figDownloadWin-{app_abrev}`
@@ -191,6 +197,7 @@ html_theme_options = {
 	'prev_next_buttons_location': None,
 	'style_nav_header_background': '#F2F2F2'
 }
+html_logo = f'common/figures/{app_name2}-Logo.png'
 
 # gallery data sources
 rendre_config = {
@@ -220,18 +227,18 @@ examples_url = f'https://github.com/NHERI-SimCenter/{app_name}/tree/master/Examp
 
 docTestbeds='True'
 
-if app_name == 'HydroUQ':
+if app_name == 'Hydro':
 
 	project = 'Hydro-UQ'
-	copyright = '2021, The Regents of the University of California'
 	author = "Ajay B Harish"
 
-	tags.add('desktop_app')
+	#tags.add('desktop_app')
 	tags.add('earthquake')
 	tags.add('response')
 	tags.add('notQuoFEM')
+	tags.add('Hydro')
 
-	toc_filter_exclusions.remove('HydroUQ')
+	toc_filter_exclusions.remove('Hydro')
 	toc_filter_exclusions.remove('desktop')
 	toc_filter_exclusions.remove('response')
 	toc_filter_exclusions.remove('notQuoFEM')
@@ -240,6 +247,7 @@ if app_name == 'HydroUQ':
 	exclude_patterns.remove('**/*desktop*')
 	exclude_patterns.remove('**/*earthquake*')
 	exclude_patterns.remove('**/*response*')
+	exclude_patterns.remove('**/Hydro*')
 
 
 	# TODO: fix these temporary changes
@@ -260,6 +268,8 @@ if app_name == 'HydroUQ':
 	rst_prolog += f"""
 .. |full tool name| replace:: Water-borne Hazards Engineering with Uncertainty Quantification
 .. |tool version| replace:: 1.0
+.. |appLink| replace:: `{app_name2} Download (Coming soon)`_
+.. _Hydro Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
 .. |contact person| replace:: {author}
 .. |developers| replace:: {author}
@@ -268,7 +278,6 @@ if app_name == 'HydroUQ':
 	extlinks.update(
 	   {f'hdro-{i:04}' : (f'{examples_url}/r2dt-{i:04}/%s',f'r2dt-{i:04}') for i in range(1,20)}
 	)
-	html_logo = 'common/figures/HydroUQ-Logo.png'
 
 	html_theme_options.update({
 		'analytics_id': '...', #TODO: add analytics ID
@@ -277,7 +286,6 @@ if app_name == 'HydroUQ':
 if app_name == 'R2DTool':
 
 	project = 'Regional Resilience Determination Tool'
-	copyright = '2019, The Regents of the University of California'
 
 	author = 'Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez'
 	sync_examples = True
@@ -337,7 +345,6 @@ if app_name == 'R2DTool':
 	extlinks.update(
 	   {f'r2dt-{i:04}' : (f'{examples_url}/r2dt-{i:04}/%s',f'r2dt-{i:04}') for i in range(1,20)}
 	)
-	html_logo = 'common/figures/RDT-Logo-grey3.png'
 
 	html_theme_options.update({
 		'analytics_id': '...', #TODO: add analytics ID
@@ -346,7 +353,6 @@ if app_name == 'R2DTool':
 elif app_name == 'PBE':
 
 	project = 'Performance Based Engineering Application'
-	copyright = '2019, The Regents of the University of California'
 
 	author = 'Adam Zsarnóczay, Frank McKenna, Chaofeng Wang, Wael Elhaddad, Michael Gardner'
 
@@ -388,13 +394,11 @@ elif app_name == 'PBE':
 
 """
 
-	html_logo = 'common/figures/PBE-Logo-grey3.png'
 
 	html_theme_options.update({'analytics_id': 'UA-158130480-3'})
 
 elif app_name == 'EE-UQ':
 	project = 'Earthquake Engineering with Uncertainty Quantification (EE-UQ)'
-	copyright = '2019, The Regents of the University of California'
 	author = 'Frank McKenna, Wael Elhaddad, Michael Gardner, Chaofeng Wang, Adam Zsarnóczay'
 
 	tags.add('desktop_app')
@@ -427,13 +431,11 @@ elif app_name == 'EE-UQ':
 
 """
 
-	html_logo = 'common/figures/EE-UQ-Logo-grey3.png'
 
 	html_theme_options.update({'analytics_id': 'UA-158130480-1'})
 
 elif app_name == 'quoFEM':
 	project = 'Quantified Uncertainty with Optimization for the FEM'
-	copyright = '2018-2021, The Regents of the University of California'
 	author = 'Frank McKenna, Adam Zsarnóczay, Nikhil Padhye'
 
 	tags.add('desktop_app')
@@ -468,9 +470,10 @@ elif app_name == 'quoFEM':
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
-.. |developers| replace:: {author}"""
+.. |developers| replace:: {author}
 
-	html_logo = 'common/figures/quoFEM-LogoImageGrey-app.png'
+"""
+
 
 	html_theme_options.update({'analytics_id': 'UA-158130480-4'})
 
@@ -494,7 +497,6 @@ elif app_name == 'quoFEM':
 
 elif app_name == 'WE-UQ':
 	project = 'Wind Engineering with Uncertainty Quantification'
-	copyright = '2019, The Regents of the University of California'
 	author = 'Frank McKenna'
 
 	tags.add('desktop_app')
@@ -526,10 +528,7 @@ elif app_name == 'WE-UQ':
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 .. |developers| replace:: **Frank McKenna**, **Peter Mackenzie-Helnwein**, **Wael Elhaddad**, **Jiawei Wan**, **Michael Gardner**, **Dae Kun Kwon**
 
-
 """
-
-	html_logo = 'common/figures/WE-UQ-Logo-grey3.png' #TODO: replace with EE-UQ logo!
 
 	html_theme_options.update({'analytics_id': 'UA-158130480-2'})
 
@@ -552,7 +551,7 @@ elif app_name == 'pelicun':
 
 	exclude_patterns.remove('**/*pelicun*')
 
-	rst_prolog += """\
+	rst_prolog += """
 .. |pelicun expanded| replace:: Probabilistic Estimation of Losses, Injuries, and Community resilience Under Natural disasters
 .. |full tool name| replace:: pelicun library
 .. |app| replace:: pelicun library
@@ -589,18 +588,22 @@ elif app_name == 'pelicun':
 
 	pygments_style = 'sphinx'
 
-	html_logo = 'common/figures/pelicun-Logo-grey3.png'
-
 	html_theme_options.update({'analytics_id': 'UA-158130480-7'})
 
 	htmlhelp_basename = 'pelicundoc'
 
 elif app_name == 'requirements':
 	master_doc = 'common/requirements/index'
-	#html_logo = 'common/figures/pelicun-Logo-grey3.png'
 	project = 'SimCenter Requirements Traceability Matrix'
-	copyright = '2021, The Regents of the University of California'
-	exclude_patterns = ['common/user_manual/*','common/developer_manual/*','common/testbeds/*','common/technical_manual/*','_build', 'Thumbs.db', '.DS_Store']
+	exclude_patterns = [
+                'common/user_manual/*',
+                'common/developer_manual/*',
+                'common/testbeds/',
+                'common/technical_manual/*',
+                'Thumbs.db',
+                '.DS_Store',
+                'index.rst',
+                ] + [f'**/{app}/' for app in APPS if app != 'requirements']
 	author = 'NHERI SimCenter'
 	tags.add('requirements')
 	pdf_break_level = 2
@@ -636,10 +639,10 @@ extensions = extensions + [
     'sphinxcontrib.bibtex',
     'toctree_filter',
     'sphinxcontrib.images',
-	'sphinx.ext.extlinks',
-	'sphinxcontrib.images',
-	'rendre.sphinx',
-	'sphinx.ext.autodoc'
+    'sphinx.ext.extlinks',
+    'sphinxcontrib.images',
+    'rendre.sphinx',
+    'sphinx.ext.autodoc'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
