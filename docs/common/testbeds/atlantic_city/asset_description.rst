@@ -5,7 +5,7 @@ Asset Description
 *****************
 
 This section describes how a large-scale building inventory was constructed using a phased approach that 
-augments tax assessor data, using machine learning and image processing to address errors/omissions and 
+augments tax assessor data, using machine learning and computer vision algorithm to address errors/omissions and 
 generate all attributes required for the corresponding loss assessment. It is emphasized that the intent 
 is to demonstrate how an inventory could be constructed and not to address potential errors, omissions or 
 inaccuracies in the source data, i.e., source data are assumed to be accurate and no additional quality 
@@ -101,7 +101,7 @@ In all cases where attributes were derived from MODIV data, whose fields can be 
 values were initially assigned to ensure that every footprint would have the attributes required to execute 
 the workflow. These default values were selected using engineering judgement to represent the most common/likely 
 attribute expected or conservatively from the perspective of anticipated losses (i.e., picking the more 
-vulnerable attribute option). These initial assignments are then updated if additional data is available in 
+vulnerable attribute option). These initial assignments were then updated if additional data is available in 
 **MODIV** to make a more faithful attribute assignment.
 
 .. list-table:: Additional details for rulesets assigning attributes available only in NJDEP dataset
@@ -141,7 +141,13 @@ A number of required attributes pertaining to externally-visible features of the
 included in the NJDEP footprints or MODIV data or were included but warranted cross validation. 
 The methodology used for each of these attributes is now described.
 
-1. **Number of Stories**: This attribute was available in state inventory data but was cross-validated.
+1. **Number of Stories**: This attribute was available for the buildings included in the NJDEP inventory. Therefore, 
+                          in developing the Flood-Exposed Inventory, image-based data augmentations' primary purposes
+                          were to cross-validate the inventory data and have the data compatible with integer floor 
+                          counting notation used by the fragility functions. Information on the building number of 
+                          floors was more sparsely pupulated in the MODIV database. As a result, image-based floor detections
+                          were essential in creating the Atlantic County Inventory. When MODIV did not provide the number of 
+                          stories information for a building, image-based detections were utilized.
 2. **Building Elevations**: Building elevations are not available in state inventory data and required for both 
                            wind and flood loss modeling. The elevation of the bottom plane of the roof (lowest edge 
                            of roof line), elevation of the roof (peak of gable or apex of hip), and height of top of 
@@ -229,7 +235,7 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
      - Typical Run Time
    * - Atlantic County Inventory
      - `Atlantic County Inventory.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
-     - 100,697
+     - 100,721
      - ~ 1,500 CPU-Hour* (please see more details in **Computational Resources Requirements**)
    * - Flood-Exposed Inventory
      - `Flood-Exposed Inventory.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
