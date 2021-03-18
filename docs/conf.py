@@ -5,10 +5,12 @@
 #
 
 # -- SimCenter App selection -------------------------------------------------
+# Selects which app's documentation to build
 
 import os
 app_name = os.path.expandvars("$SIMDOC_APP")
-if app_name in ["R2DTool", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun","requirements"]:
+APPS = ["R2DTool", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun","requirements","Hydro"]
+if app_name in APPS:
     # `make` was invoked from root, all env vars should already be defined.
 	pass
 else:
@@ -21,11 +23,12 @@ else:
 	#app_name = 'pelicun'
 
 	os.environ['SIMDOC_APP'] = app_name
-	os.environ['SIMCENTER_DEV'] = os.path.normpath('../../')
+	os.environ['SIMCENTER_DEV'] = os.path.abspath('../../')
 
 app_abrev = app_name.split("-")[0].replace("Tool","")
 app_abrev2 = app_name.replace("-","").replace("Tool","")
 app_name2 = app_name.replace("Tool","")
+loc_app_dir = os.path.abspath(f'../../{app_name}')
 
 print('app_name = ' + app_name)
 
@@ -39,7 +42,10 @@ print('app_name = ' + app_name)
 import sys
 sys.path.append(os.path.abspath('./sphinx_ext/'))
 sys.path.append(os.path.abspath('./modules/'))
+# Add files for the example page template to path
 sys.path.append(os.path.abspath('./modules/tmpl_0007/'))
+# Load the `sync_files` routine from ./modules/sync_files.py
+from sync_files import sync_files
 
 if app_name == 'pelicun':
 	sys.path.insert(0, os.path.abspath('.'))
@@ -71,11 +77,14 @@ exclude_patterns = [
 		'**/*old*',
 		'**/*quoFEM*',
 		'**/qfem*',
+                '**/Hydro*',
 		# Apparently obsolete pages, consider deleting
 		'**/_downloadApp.rst',
 		'**/downloadPython.rst',
 		'**/install_WindowsOld.rst'
-	]
+	] + [
+            f'{app}/' for app in APPS if app != app_name
+        ]
 
 source_suffix = {
 	".rst": "restructuredtext",
@@ -89,6 +98,7 @@ toc_filter_exclusions = [
 	'R2D',
 	'PBE',
 	'quoFEM',
+	'Hydro',
 	'notQuoFEM',
 	'WEUQ',
 	'EEUQ',
@@ -96,13 +106,9 @@ toc_filter_exclusions = [
 	'TInF',
 	'S3hark',
 	'pelicun',
-	'docTestbeds'        
+	'docTestbeds'
 ]
 
-# gallery data sources
-rendre_config = {
-
-}
 
 extensions = []
 
@@ -118,7 +124,9 @@ math_eqref_format = '({number})'
 math_numfig = True
 
 
+copyright = '2021, The Regents of the University of California'
 tags.add(f'{app_abrev2}_app')
+
 rst_prolog = f"""
 .. |figDownload| replace:: :numref:`figDownload-{app_abrev}`
 .. |figDownloadWin| replace:: :numref:`figDownloadWin-{app_abrev}`
@@ -189,11 +197,28 @@ html_theme_options = {
 	'prev_next_buttons_location': None,
 	'style_nav_header_background': '#F2F2F2'
 }
+html_logo = f'common/figures/{app_name2}-Logo.png'
 
+# gallery data sources
+rendre_config = {
+	"targets": {
+		"examples": {
+			"data-file": os.path.normpath(f'{loc_app_dir}/Examples/index.json'),
+			"defaults": {
+				"link": "./%%:base/README"
+			}
+		},
+		"backend": {
+			# "data-file": os.path.normpath(f'../../{app_name}/Examples/index.json')
+		}
+	}
+}
+example_config = rendre_config["targets"]["examples"]
+sync_examples = False
 
+# Create inline :github: directive for convenient linking to files on github
 extlinks = {
 	'github' : (f'{external_links["github"]}/tree/master/%s', f'Github'),
-	#'download_python' : (f'{external_links["python_download"]}', f'Python.org')
 }
 
 examples_url = f'https://github.com/NHERI-SimCenter/{app_name}/tree/master/Examples/'
@@ -202,12 +227,68 @@ examples_url = f'https://github.com/NHERI-SimCenter/{app_name}/tree/master/Examp
 
 docTestbeds='True'
 
+if app_name == 'Hydro':
+
+	project = 'Hydro-UQ'
+	author = "Ajay B Harish"
+
+	#tags.add('desktop_app')
+	tags.add('earthquake')
+	tags.add('response')
+	tags.add('notQuoFEM')
+	tags.add('Hydro')
+
+	toc_filter_exclusions.remove('Hydro')
+	toc_filter_exclusions.remove('desktop')
+	toc_filter_exclusions.remove('response')
+	toc_filter_exclusions.remove('notQuoFEM')
+	toc_filter_exclude = toc_filter_exclusions
+
+	exclude_patterns.remove('**/*desktop*')
+	exclude_patterns.remove('**/*earthquake*')
+	exclude_patterns.remove('**/*response*')
+	exclude_patterns.remove('**/Hydro*')
+
+
+	# TODO: fix these temporary changes
+	exclude_patterns.append('**/user_manual/usage/desktop/FEM.rst')
+	exclude_patterns.append('**/user_manual/usage/desktop/SIM.rst')
+	exclude_patterns.append('**/user_manual/usage/desktop/GI.rst')
+	exclude_patterns.append('**/user_manual/usage/desktop/response/*')
+	exclude_patterns.append('**/user_manual/usage/desktop/earthquake/*')
+	exclude_patterns.append('**/*architectureLevel4.rst*')
+	exclude_patterns.append('**/requirements/index.rst')
+	exclude_patterns.append('**/requirements/bigRequirements.rst')
+	exclude_patterns.append('**/DakotaSensitivity.rst')
+	exclude_patterns.append('**/DakotaReliability.rst')
+	exclude_patterns.append('**/DakotaParameterEstimation.rst')
+	exclude_patterns.append('**/DakotaInverseProblems.rst')
+	# END TODO
+
+	rst_prolog += f"""
+.. |full tool name| replace:: Water-borne Hazards Engineering with Uncertainty Quantification
+.. |tool version| replace:: 1.0
+.. |appLink| replace:: `{app_name2} Download (Coming soon)`_
+.. _Hydro Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/
+.. |figMissingCRT| replace:: :numref:`figMissingCRT`
+.. |contact person| replace:: {author}
+.. |developers| replace:: {author}
+"""
+
+	extlinks.update(
+	   {f'hdro-{i:04}' : (f'{examples_url}/r2dt-{i:04}/%s',f'r2dt-{i:04}') for i in range(1,20)}
+	)
+
+	html_theme_options.update({
+		'analytics_id': '...', #TODO: add analytics ID
+	})
+
 if app_name == 'R2DTool':
 
 	project = 'Regional Resilience Determination Tool'
-	copyright = '2019, The Regents of the University of California'
 
 	author = 'Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez'
+	sync_examples = True
 
 	tags.add('desktop_app')
 	tags.add('earthquake')
@@ -228,7 +309,7 @@ if app_name == 'R2DTool':
 	exclude_patterns.remove('**/*response*')
 	exclude_patterns.remove('**/*R2DTool*')
 
-                
+
 	# TODO: fix these temporary changes
 	exclude_patterns.append('**/user_manual/usage/desktop/FEM.rst')
 	exclude_patterns.append('**/user_manual/usage/desktop/SIM.rst')
@@ -254,11 +335,18 @@ if app_name == 'R2DTool':
 .. |developers| replace:: Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez
 
 """
-
+	example_config.update({
+		"include-item": [
+			"r2dt-0006",
+			"r2dt-0003",
+			"r2dt-0007",
+			"r2dt-0001",
+			"r2dt-0002",
+		]
+	})
 	extlinks.update(
 	   {f'r2dt-{i:04}' : (f'{examples_url}/r2dt-{i:04}/%s',f'r2dt-{i:04}') for i in range(1,20)}
 	)
-	html_logo = 'common/figures/RDT-Logo-grey3.png'
 
 	html_theme_options.update({
 		'analytics_id': '...', #TODO: add analytics ID
@@ -267,7 +355,6 @@ if app_name == 'R2DTool':
 elif app_name == 'PBE':
 
 	project = 'Performance Based Engineering Application'
-	copyright = '2019, The Regents of the University of California'
 
 	author = 'Adam Zsarnóczay, Frank McKenna, Chaofeng Wang, Wael Elhaddad, Michael Gardner'
 
@@ -309,13 +396,11 @@ elif app_name == 'PBE':
 
 """
 
-	html_logo = 'common/figures/PBE-Logo-grey3.png'
 
 	html_theme_options.update({'analytics_id': 'UA-158130480-3'})
 
 elif app_name == 'EE-UQ':
 	project = 'Earthquake Engineering with Uncertainty Quantification (EE-UQ)'
-	copyright = '2019, The Regents of the University of California'
 	author = 'Frank McKenna, Wael Elhaddad, Michael Gardner, Chaofeng Wang, Adam Zsarnóczay'
 
 	tags.add('desktop_app')
@@ -348,13 +433,11 @@ elif app_name == 'EE-UQ':
 
 """
 
-	html_logo = 'common/figures/EE-UQ-Logo-grey3.png'
 
 	html_theme_options.update({'analytics_id': 'UA-158130480-1'})
 
 elif app_name == 'quoFEM':
 	project = 'Quantified Uncertainty with Optimization for the FEM'
-	copyright = '2018-2020, The Regents of the University of California'
 	author = 'Frank McKenna, Adam Zsarnóczay, Nikhil Padhye'
 
 	tags.add('desktop_app')
@@ -380,6 +463,8 @@ elif app_name == 'quoFEM':
 	exclude_patterns.append('**/testbeds/*')
 	# END TODO
 
+	sync_examples = True
+
 	rst_prolog += f"""
 .. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)
 .. |tool version| replace:: 2.0
@@ -387,12 +472,26 @@ elif app_name == 'quoFEM':
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
-.. |developers| replace:: {author}"""
+.. |developers| replace:: {author}
 
-	html_logo = 'common/figures/quoFEM-LogoImageGrey-app.png'
+"""
+
 
 	html_theme_options.update({'analytics_id': 'UA-158130480-4'})
 
+	example_config.update({
+		"include-item": [
+			"qfem-0001",
+			"qfem-0002",
+			"qfem-0005",
+			"qfem-0003",
+			"qfem-0004",
+			"qfem-0009",
+			"qfem-0008",
+			"qfem-0014",
+			"qfem-0015",
+		]
+	})
 	# Example links
 	extlinks.update(
 	   {f'qfem-{i:04}' : (f'{examples_url}/qfem-{i:04}/%s',f'qfem-{i:04}') for i in range(1,99)}
@@ -400,7 +499,6 @@ elif app_name == 'quoFEM':
 
 elif app_name == 'WE-UQ':
 	project = 'Wind Engineering with Uncertainty Quantification'
-	copyright = '2019, The Regents of the University of California'
 	author = 'Frank McKenna'
 
 	tags.add('desktop_app')
@@ -432,10 +530,7 @@ elif app_name == 'WE-UQ':
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 .. |developers| replace:: **Frank McKenna**, **Peter Mackenzie-Helnwein**, **Wael Elhaddad**, **Jiawei Wan**, **Michael Gardner**, **Dae Kun Kwon**
 
-
 """
-
-	html_logo = 'common/figures/WE-UQ-Logo-grey3.png' #TODO: replace with EE-UQ logo!
 
 	html_theme_options.update({'analytics_id': 'UA-158130480-2'})
 
@@ -448,7 +543,7 @@ elif app_name == 'WE-UQ':
 elif app_name == 'pelicun':
 
 	project = 'pelicun'
-	copyright = '(c) 2018-2020, Leland Stanford Junior University and The Regents of the University of California'
+	copyright = '(c) 2018-2021, Leland Stanford Junior University and The Regents of the University of California'
 	author = 'Adam Zsarnóczay'
 
 	tags.add('pelicun')
@@ -458,7 +553,7 @@ elif app_name == 'pelicun':
 
 	exclude_patterns.remove('**/*pelicun*')
 
-	rst_prolog += """\
+	rst_prolog += """
 .. |pelicun expanded| replace:: Probabilistic Estimation of Losses, Injuries, and Community resilience Under Natural disasters
 .. |full tool name| replace:: pelicun library
 .. |app| replace:: pelicun library
@@ -495,17 +590,22 @@ elif app_name == 'pelicun':
 
 	pygments_style = 'sphinx'
 
-	html_logo = 'common/figures/pelicun-Logo-grey3.png'
-
 	html_theme_options.update({'analytics_id': 'UA-158130480-7'})
 
 	htmlhelp_basename = 'pelicundoc'
 
 elif app_name == 'requirements':
 	master_doc = 'common/requirements/index'
-	#html_logo = 'common/figures/pelicun-Logo-grey3.png'
 	project = 'SimCenter Requirements Traceability Matrix'
-	copyright = '2020, The Regents of the University of California'
+	exclude_patterns = [
+                'common/user_manual/*',
+                'common/developer_manual/*',
+                'common/testbeds/',
+                'common/technical_manual/*',
+                'Thumbs.db',
+                '.DS_Store',
+                'index.rst',
+                ] + [f'**/{app}/' for app in APPS if app != 'requirements']
 	author = 'NHERI SimCenter'
 	tags.add('requirements')
 	pdf_break_level = 2
@@ -527,7 +627,7 @@ elif app_name == 'requirements':
 .. |integer| replace:: *integer*
 .. |fmk| replace:: **fmk**
 
-"""	
+"""
 
 
 # -- General configuration ---------------------------------------------------
@@ -541,10 +641,10 @@ extensions = extensions + [
     'sphinxcontrib.bibtex',
     'toctree_filter',
     'sphinxcontrib.images',
-	'sphinx.ext.extlinks',
-	'sphinxcontrib.images',
-	'rendre.sphinx',
-	'sphinx.ext.autodoc'
+    'sphinx.ext.extlinks',
+    'sphinxcontrib.images',
+    'rendre.sphinx',
+    'sphinx.ext.autodoc'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
@@ -590,3 +690,12 @@ latex_documents = [
 	)
 ]
 latex_logo = 'common/figures/NSF_SimCenter_NO TEXT_SimCenter.png'
+
+# -- sync files for examples ---------------------------------------------------------------
+
+if sync_examples:
+	sync_files(
+		src_dir=os.path.abspath(f'../../{app_name}/Examples'),
+		dst_dir="common/user_manual/examples/desktop",
+		config=example_config
+	)

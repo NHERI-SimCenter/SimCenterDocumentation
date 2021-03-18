@@ -7,7 +7,7 @@
 
    .. only:: R2D_app
 
-	     
+
       The |full tool name| (|app|) is an open-source research application that can be used to simulate the performance of the built environment subjected to natural hazards. Version 1 will allow users to predict the performance of the buildings in the region when subjected to earthquake events. Version 2, due May 2021, will allow researchers to study the effects given a Hurricane event. Future version will allow users to study effects of lifleines and interdependencies. The computations are performed by a simulation workflow that will run on either the user's local machine or on a high performance computer made available by |DesignSafe|.
 
    .. only:: PBE_app
@@ -48,7 +48,7 @@
    :WEUQ:common/user_manual/about/WEUQ/about
    :quoFEM:common/user_manual/about/quoFEM/aboutQUOFEM
    :pelicun:common/user_manual/about/pelicun/about
-      
+
    common/front-matter/ack
    common/front-matter/license
    common/front-matter/glossary.rst
@@ -96,13 +96,22 @@
 
 .. _lbl-technical-manual:
 
+
+
 .. toctree-filt::
    :caption: Technical Manual
    :maxdepth: 1
    :numbered: 2
 
-   :desktop_app:common/technical_manual/desktop/technical_manual
    :pelicun:common/technical_manual/pelicun/technical_manual
+   :Hydro:Hydro/techman/hazards/water
+   :Hydro:Hydro/techman/fvm/fvm
+   :Hydro:Hydro/techman/swsolver/swsolver
+   :Hydro:Hydro/techman/cfdsolver/cfdsolver
+   :Hydro:Hydro/techman/swcfdcoupling/swcfdcoupling
+   :Hydro:Hydro/techman/UQ/uqengine
+   :desktop_app:common/technical_manual/desktop/technical_manual
+
 
 
 .. _lbl-developer-manual:
