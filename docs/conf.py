@@ -20,6 +20,7 @@ else:
 	#app_name = 'WE-UQ'
 	app_name = 'quoFEM'
 	#app_name = 'pelicun'
+	#app_name = 'requirement'
 
 	os.environ['SIMDOC_APP'] = app_name
 	os.environ['SIMCENTER_DEV'] = os.path.abspath('../../')

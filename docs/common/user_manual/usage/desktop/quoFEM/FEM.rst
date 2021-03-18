@@ -123,9 +123,57 @@ the need to explicitly input each one of these files.
 
 SurrogateGP
 ^^^^^^^^^^^^
-In place of any pysical simulation models, Gaussian process surrogate model trained in quoFEM can be imported for different UQ/Optimization analysis. When user selects Surrogate GP, the user is requested to provide two files.
+In place of pysical *simulation models*, Gaussian process *surrogate model* trained in quoFEM can be imported for different UQ/Optimization analysis. When user selects SurrogateGP option, the user is requested to provide following two files obtained in SimCenterUQ engine.
 
-1. Surrogate info file: The info file contains meta information about surrogate models. User can open it with text editor to see the information.
-2. Surrogate model file: Surrogate model is saved in a binary file
+.. _surrogateFEM1:
 
+.. figure:: figures/SurrogateFEM1.png
+  :align: center
+  :figclass: align-center
 
+        Input for Surrogate model FEM Application
+
+1. **Surrogate info file (.json)**. This file contains meta information about the surrogate model. User can open it with text editor to see the information.
+
+2. **Surrogate model file (.pkl)**. Surrogate model saved in a binary format. Python and GPy package is required to use this model outside of quoFEM.
+
+Additionally, if user wants to alternate between the exact *simulation model* and the surrogate model depending on the predicted precision, additional folder that contains *simulation model* is required (See **Run Exact FEM Simulation** option below). Note that this files is not explicitly specified in input panel, but it needs be located in the specific directory (Same location with surrogate info file) with specific name (``templatedir_SIM``).  This folder is automatically when user saves the surrogate model after the training.
+
+3. **Simulation template folder**. It contains required workflowdriver files generated during surrogate training. Note that if the file is not located in the directory, simulation can fail.
+
+.. Note:: 
+
+  All three required files are generated from quoFEM by clicking ``Save GP Model`` button after training in SimCenterUQ engine.
+
+Once your Surrogate files are loaded, user may choose tolerance level of the predictive variance.
+
+* **Maximum Allowable Normalized Variance**. Prediction Variance divided by the variance level of the training dataset. If more than one QoI is introduced, percentage is shown for the maximum value through all QoI. 
+
+.. Warning:: 
+
+   * It is important to note that **predictive variance** does not necessarily imply the error level of the model. Even when predictive variance is small, the model prediction may not be accurate if system is highly nonlinear. Similarly, even when predictive variance is large, prediction can be accurate.
+   * The provided **percentage ratio** of the out-of-tolerance samples is only a rough guideline since it assumed the samples are uniformly populated through the range user provided during the training session. Therefore, if user provides other distribution types and ranges, the percentage estimation will not be correct. 
+
+User may either stop the analysis, continue, or run exact FEM simulations whenever the tolerance limit is exceeded.
+
+* **Stop Analysis**. The analysis is immediately terminated. quoFEM will show the error: **No dakotaTab.out file**.
+
+* **Continue**. The tolerance level is ignored and the analysis is continued. This option is not recommended.
+
+* **Run Exact FEM Simulation**. The program will run the exact FEM simulation user provided in the training session. The information on the original *simulation model* is stored in "**3. Simulation template folder**"
+
+If the user wants to inspect the simulation status or check error/warning messages related to the surrogate model, they can refer to the messages written at: ``{Local Jobs Directory}/tmp.SimCenter/surrogateLog.err``. 
+
+(Note: ``{Local Jobs Directory}`` is set in the file-preference.)
+
+.. _surrogateFEM2:
+
+.. figure:: figures/SurrogateFEM2.png
+  :align: center
+  :figclass: align-center
+
+        Example of surrogateLog.err file
+
+.. Note:: 
+
+  Once surrogate model is imported, RV and QoI tab will be automatically filled. Users need to define all the RVs used for training set. However, **users may exclude some of the QoIs** if they are not interested.
