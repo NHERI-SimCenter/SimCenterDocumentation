@@ -50,11 +50,10 @@ The data was collected by a python program utilizing `selenium <https://www.sele
    :language: py
 
 
-	      
-.. notes::
+.. note::
 
    the code uses a python model named ``geocoder`` to geoencode the latitudes and longitudes from the street addresses. geocoder can be set up to use a `number of provideres <https://github.com/DenisCarriere/geocoder>`_. The code shown above uses Open Street Maps, which is free but might not be efficient. The difference in service providers is in speed of service, some may be rate limited, and all can result in minor differences in lat and long values returned.
-   
+
 
 Ground Motion Data
 ------------------
@@ -66,8 +65,8 @@ The testbed used the following workflow:
 Workflow
 ========
 
-	      
-Preliminary regional loss estimation was carried out using rWHALE v1.1.0, a regional workflow for hazard and loss estimation, developed at NHERI SimCenter. Results for the regional simulation of Anchorage M7.1 earthquake can be summarized as follows:
+
+Preliminary regional loss estimation was carried out using rWHALE, a regional workflow for hazard and loss estimation, developed at NHERI SimCenter. Results for the regional simulation of Anchorage M7.1 earthquake can be summarized as follows:
 
 Results
 =======
