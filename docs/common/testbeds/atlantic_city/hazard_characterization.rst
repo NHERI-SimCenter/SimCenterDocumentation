@@ -4,65 +4,59 @@
 Hazard Characterization
 ***********************
 
-Both the wind and flood hazards affect the building inventory in this testbed.
-As the initial implementation of the regional assessment workflow, the testbed mainly
-adapted the HAZUS Hurricane Damage and Loss Assessment methodology to quantify the
-hazards by two intensity measures: Peak Wind Speed (PWS), and Peak Water Depth (PWD).
-The PWS refers to maximum wind speed average over a 3-second gust and measured at 10m height
-and under the open terrain surface condition (equivalent to the Exposure C in ASCE 7-16).
-The PWD is the maximum depth of flooding during the time period of the hurricane event.
-The following sections will introduce the wind and flood fields used in this testbed.
+Both the wind and flood hazards affect the building inventory in this testbed. As the initial implementation of 
+the regional assessment workflow incorporates the HAZUS Hurricane Damage and Loss Assessment methodology, 
+hazards are quantified by two intensity measures: Peak Wind Speed (PWS) and Peak Water Depth (PWD). 
+The PWS refers to the maximum 3-second gust measured at the reference height of 10m in open terrain 
+(equivalent to Exposure C in ASCE 7-16). The PWD is the maximum depth of flooding (height of storm 
+surge above grade) during the storm.
+
+The following sections will introduce the options for generating these two types of hazard inputs using 
+either a historical scenario or a synthetic storm scenario, as discussed in the following sections. 
+Note that as part of the Asset Representation Process (see :ref:`lbl-testbed_AC_asset_representation`), the design wind speeds from 
+ASCE 7 are already included for each building footprint for reference.
+
+Sythetic Storm Scenario
+========================
+
+An Atlantic City landfall scenario was generated using the Storm Hazard Projection Tool developed in the 
+NJcoast project ([NJCoast20_]). The constructed hazard scenario uses NJcoast’s basic simulation option, 
+which identifies the 25 hurricane tracks from the SHP tool’s surrogate model that match the targeted 
+storm scenario, in this case: a hurricane with Category 5 intensity (central pressure differential 
+of 75-100 mbar, radius of maximum winds of 15.4 to 98 mi) making landfall near the Atlantic City 
+Beach Patrol Station (39.348308° N, -74.452544° W) under average tides. This scenario is sufficient 
+to inundate coastal areas in the testbed geography and generate significant wave run-up in some 
+locales. The SHP Tool generates these through the following underlying computational models.
 
 Wind Modeling
-==============
+--------------
 
-The initial implementation of the testbed utilizes the highly efficient, linear analytical
-model for the boundary layer winds of a moving hurricane developed by ([Snaiki17a_], [Snaiki17b_]) as
-implemented in the NJcoast Storm Hazard Projection (SHP) Tool ([NJCoast20_]). To account for the exposure in each New Jersey county, an
-effective roughness length (weighted average) of the upwind terrain is used based on the Land
-Use/Land Cover data reported by the state’s Bureau of GIS. While the model is fully height-resolving
-and time-evolving, for a given five parameter hurricane scenario, the wind hazard is characterized by
-the maximum 10-minute mean wind speed observed during the entire hurricane track. This is
-reported at the reference height of 10 m over a uniform grid (0.85-mile spacing, 1.37 km), which is
-then accordingly adjusted for compatibility with the averaging interval assumed by the HAZUS
-Hurricane Damage and Loss Model. Note the wind speed (:math:`V(600s, 10m, z_0)`) from the
-NJcoast SHP Tool is averaged over the time window of 1 hour, so the following conversions
-was conducted for parsing the wind speed to the 3-second and open-terrain PWS (i.e., :math:`V(3s, 10m, Exposure C)`):
+The SHP Tool generates its wind fields using a highly efficient, linear analytical model for the boundary 
+layer winds of a moving hurricane developed by Snaiki and Wu ([Snaiki17a_], [Snaiki17b_]). 
+To account for the exposure in each New Jersey county, an effective roughness length (weighted average) 
+of the upwind terrain is used based on the Land Use/Land Cover data reported by the state’s Bureau of 
+GIS. In order to generate a wind field, this model requires the following inputs: . While the model is 
+fully height-resolving and time-evolving, for a given input hurricane scenario, the wind hazard is 
+characterized by the maximum 10-minute mean wind speed observed during the entire hurricane track. 
+This is reported at the reference height of 10 m over a uniform grid (0.85-mile spacing, 1.37 km) 
+across the entire state in miles per hour, which is then accordingly adjusted for compatibility with 
+the averaging interval assumed by the HAZUS Hurricane Damage and Loss Model. Since the wind speed 
+(:math:`V(600s, 10m, z_0)`) from the NJcoast SHP Tool is averaged over the time window of 1 hour, 
+a number of standard conversions (see :ref:`lbl-testbed_AC_wind_speed_conversion`) 
+parse the wind speed to the 3-second and open-terrain PWS 
+(i.e., :math:`V(3s, 10m, Exposure C)`).
 
-1. Computing :math:`\alpha` and :math:`z_g` by ASCE 7-16 ([ASCE16_]) Equation C26.10-3 and C26.10-4
-taking :math:`c_1 = 5.65, c_2 = 450` for units in m):
+As the initial developer of this model has made the underlying code available for this testbed, 
+users have two ways to engage this model to generate wind fields for this testbed:
+1. Users can adopt the aforementioned default sythetic Category 5 scenario striking Atlantic City
+2. Users can generate a custom storm scenario by providing the requied inputs into this linear 
+1. analytical model to generate a customized windfield for use with this testbed.
 
-.. math::
-
-   \alpha_{SHP} = c_1z_0^{-0.133}
-
-   z_{g,SHP} = c2z_0^{0.125}
-
-2. Computing the gradient height :math:`V(600s, z_g, z_0)` using the power law expression:
-
-.. math::
-
-   V(600s, z_g, z_0) = V(600s, 10m, z_0) \times (\frac{z_{g,SHP}}{10m})^{1/\alpha_{SHP}}
-
-3. Computing the Exposure C (open-terrain) wind speed at 10m height :math:`V(600s, 10m, Exposure C)`, with
-:math:`\alpha_C = 9.5` and :math:`z_{g,C} = 274.32 m` ([ASCE16_]):
-
-.. math::
-
-   V(600s, 10m, Exposure C) = V(600s, z_{g,C}, z_0) \times (\frac{10m}{z_g})^{1/\alpha_C}
-
-4. Converting the result to 3s-gust wind speed using the ESDU conversion [ESDU02_]:
-
-.. math::
-
-   V(3s, 10m, Exposure C) = V(600s, 10m, Exposure C) \times \frac{C(3s)}{C(600s)}
-
-where :math:`C(3s) = 1.52` and :math:`C(600s) = 1.05` are the Gust Factor from the ESDU conversion.
-
-Wind fields described by either approach are then locally interpolated to the site of each parcel in the inventory.
-The resulting 3s-gust peak wind speed (PWS) ranges from 178 mph to 191 mph given the simulated Category-5 hurricane event (:numref:`pws`).
-Because the SPH model tracks the maximum wind speed over the entire hurricane time history - so the inland cities are subjected to
-slightly higher wind speed than the coastal cities.
+Wind fields described by either approach are then locally interpolated to the coordiantes associated with each 
+footprint. The resulting 3s-gust peak wind speed (PWS) ranges from 178 mph to 191 mph given the simulated 
+Category-5 hurricane event (:numref:`pws`). Because the SPH model tracks the maximum wind speed over the 
+entire hurricane time history - so the inland cities are subjected to slightly higher wind speed than 
+the coastal cities.
 
 .. figure:: figure/pws.png
    :name: pws
@@ -73,7 +67,7 @@ slightly higher wind speed than the coastal cities.
    Interpolated peak wind speed (3s-gust) for each asset in the inventory.
 
 Storm Surge Modeling
-=====================
+---------------------
 
 Coastal hazard descriptions use the outputs of the aforementioned SHP Tool, which estimates storm
 surge and total run up due to the breaking of near-shore waves for an arbitrary hurricane scenario
@@ -105,14 +99,14 @@ Flood Damage and Loss Assessment.
    Interpolated peak water depth for each asset in the inventory.
 
 Multiple Category Analysis (MCA)
-=================================
+---------------------------------
 
 Note that the resulting 3s-gust PWS values by this Category-5 hurricane is much higher than
 the design wind speed specified by ASCE 7-16 ([ASCE16]_) for the Atlantic County which ranges
 from 105 mph to 115 mph. Since this extreme scenario bears a small likelihood, this testbed
 also scales the wind and flood water field down to lower categories to conduct the so-called
-Multiple Category Analysis to exam the building performance under different intense scenarios.
-The PWS and PWD were scaled to Categories 2, 3, and 4 as summarized in :numref:`hurricane_cat`.
+Multiple Category Analysis to exam the building performance under different intense scenarios 
+(:numref:`hurricane_cat`) and were used later in the Verification Results (see :ref:`lbl-testbed_AC_sample_results`).
 
 .. table:: Scaled peak wind speed and peak water depth for different hurricane categories.
    :name: hurricane_cat
@@ -124,6 +118,28 @@ The PWS and PWD were scaled to Categories 2, 3, and 4 as summarized in :numref:`
    +-----------------------+-----------+-----------+-----------+-----------+
    | Peak Water Depth (ft) |   0 - 7   |   0 - 11  |   0 - 15  |   0 - 18  |
    +-----------------------+-----------+-----------+-----------+-----------+
+
+
+Historical Storm Scenario
+==========================
+
+Hindcast simulations of historical storm events are equally valuable, particularly when they are coupled 
+with observations of damage and loss across an inventory. As such this testbed includes the option to use 
+existing hindcast data from established community providers as input to the loss estimation workflow. 
+New Jersey’s most notable storm event in recent history was Superstorm Sandy (2012). While Atlantic County was 
+designated as a “Sandy-Affected Community” by FEMA and the State of New Jersey, the wind and 
+storm surge intensities in the county were significantly less than those observed in the more 
+northern counties. Nonetheless, these historical inputs are provided to demonstrate the workflow’s 
+ability to support hindcast evaluations of damage and loss in actual storm events.
+
+Wind Modeling
+--------------
+
+
+
+Storm Surge Modeling
+---------------------
+
 
 
 

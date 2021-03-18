@@ -1,8 +1,8 @@
 .. _lbl-testbed_Atlantic_City:
 
-*****************
+*******************
 Atlantic County, NJ
-*****************
+*******************
 
 This documentation is intended to introduce the implementation of the SimCenter’s hurricane 
 regional loss modeling workflow in the context of Atlantic City (Atlantic County), New Jersey. 
@@ -50,10 +50,10 @@ necessary to execute these testbeds and factors influencing the run time.
    asset_representation
    response_simulation
    damage_and_loss
-   uncertainty_quantification
+   .uncertainty_quantification
    sample_results
-   future_refinements
+   .future_refinements
    best_practices
-
+   pws_conversion
 
 Acknowledgements text [...]

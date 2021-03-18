@@ -148,11 +148,36 @@ The methodology used for each of these attributes is now described.
                           floors was more sparsely pupulated in the MODIV database. As a result, image-based floor detections
                           were essential in creating the Atlantic County Inventory. When MODIV did not provide the number of 
                           stories information for a building, image-based detections were utilized.
+                          An object object detection model that can automatically detect rows of building windows was
+                          established to generate the image-based detections. The model was trained on the 
+                          EfficientDet-D7 architecture with a dataset of 60,000 images, using 80% for training, 15% 
+                          for validation, and 5% testing of the model. In order to ensure faster model convergence, 
+                          initial weights of the model were set to model weights of the (pretrained) object detection
+                          model that, at the time, achieved state-of-the-art performance on the 2017 COCO Detection set.
+                          For this specific implementation, the peak model performance was achieved using the Adam optimizer 
+                          at a learning rate of 0.0001 (batch size: 2), after 50 epochs. :numref:`num_stories_detection` shows examples of the 
+                          floor detections performed by the model.
+
+                          .. figure:: figure/number_of_stories_detection.png
+                              :name: num_stories_detection
+                              :align: center
+                              :figclass: align-center
+                              :figwidth: 1000
+
+                              Sample floor detections of the floor detection model (each detection is indicated by a green bounding box). The percentage value shown on the top right corner of a bounding box indicates model confidence level associated with that prediction.
+
+                          For an image, the described floor detection model generates the bounding box output for its 
+                          detections and calculates the confidence level associated with each detection. A post-processor 
+                          that converts stacks of neighboring bounding boxes into floor counts was developed to convert 
+                          this output into floor counts. Recognizing an image may contain multiple buildings at a time, 
+                          this post-processor was designed to perform counts at the individual building-level.
+
 2. **Building Elevations**: Building elevations are not available in state inventory data and required for both 
-                           wind and flood loss modeling. The elevation of the bottom plane of the roof (lowest edge 
-                           of roof line), elevation of the roof (peak of gable or apex of hip), and height of top of 
-                           floor as estimated from base of door’s height, all defined with respect to grade (in feet), 
-                           were estimated from streetview imagery. These geometric properties are defined visually 
+                           wind and flood loss modeling, with the exception of first floor height estimates provided 
+                           in the NJDEP inventory. Hence, the elevation of the bottom plane of the roof (lowest edge 
+                           of roof line), elevation of the roof (peak of gable or apex of hip), and height of first of 
+                           floor as determined from base of door’s height, all defined with respect to grade (in feet), 
+                           were estimated from street-level imagery. These geometric properties are defined visually 
                            for common residential coastal typologies in :numref:`building_elevation`. The mean height of the roof system 
                            is then derived from the aforementioned roof elevations.
 
@@ -163,6 +188,29 @@ The methodology used for each of these attributes is now described.
                               :figwidth: 1000
 
                               Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.
+
+                           As in any single-image metrology application, extracting the building elevations require:
+                           1. Rectification of image perspective distortions, typically introduced during image capture, 
+                           2. Determining the pixel count representing the distance between ends of the objects or surface of interest 
+                           1. (e.g., for first-floor height, the orthogonal distance between the ground and first-floor levels)
+                           3. Converting these pixel counts to real-world dimensions by matching a reference measurement with the corresponding pixel count
+
+                           Given the number of street-level imagery available for a building can be limited and sparsely 
+                           spaced, a single image rectification approach was deemed most applicable for regional-scale 
+                           inventory development. The support vector model implemented for image rectification focuses on 
+                           the street-facing plane of a building in an image and based on the Manhattan World 
+                           assumption, (i.e., all surfaces in the world are aligned with two horizontal and one vertical 
+                           dominant directions) iteratively transforms an image such that horizontal edges on the facade 
+                           plain lie parallel to each other, and its vertical edges are orthogonal to the horizontal edges.
+
+                           In order to automate the process of obtaining the pixel counts for the ground elevations, a 
+                           face segmentation model was trained to auotmatically label ground, facade, door, windwos and roof 
+                           pixels in an image. The segmentation model was trained using DeepLabV3 architecture on a ResNet-101 
+                           backbone, pretrained on PASCAL VOC 2012 segmentation dataset, using a facade segmentation dataset of 
+                           30,000 images. The peak model performance was attained using the Adam optimizer at a learning rate of 
+                           0.001 (batch size: 4), after 40 epochs. The conversion between pixel dimensions and real-world 
+                           dimensions were attained by use of edge detections 
+                           performed on satellite images.
 
 3. **Roof Geometry**: Roof shape and slope are not available in state inventory data and required for wind loss 
                       modeling. The SimCenter developed application Building Recognition using Artificial 
