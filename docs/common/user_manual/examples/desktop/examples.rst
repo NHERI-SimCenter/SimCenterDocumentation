@@ -43,4 +43,3 @@ Examples
 
 	:link: ./%%:base/README
 
-
