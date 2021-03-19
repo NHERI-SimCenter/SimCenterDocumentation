@@ -1,7 +1,12 @@
-H1 , "**Ability to determine response of Building Subject to Wave Loading due to Tsunami and Coastal inundation including formal treatment of randomness and uncertainty uncertainty**", GC, M,   
-H1.1 , "Simulation of overland flow including waves, debris, flood velocity, erosion at building, and channeling effects", GC , M ,  
-H1.2 , "Use CFD to model interface and impact between water loads and buildings", GC , M ,  
-H1.3 , "Ability to quantify effect of flood borne debris", GC , M ,  
-H1.4 , "Ability of Practicing Engineers to use multiple coupled resources (applications, databases, viz tools) in engineering practice", GC , M ,  
-H1.5 , "Ability to utilize resources beyond the desktop including HPC", GC , M ,  
-H1.6 , "Ability to obtain training and education with respect to interaction of structure and water to ensure research is appropriately applied", GC , M ,
+H1, "Ability to simulate overland flow of water by coupling shallow-water and CFD solvers", GC, M, 1.0
+H2, "Ability to simulate overland flow of water considering flood velocity, inundation heights and channeling effects between buildings", GC, M, 1.0
+H3, "Ability to digitally replicate the NHERI experimental facility, i.e. wave flume", SP, M, 1.0
+H4 , "Ability to utilize HPC resources", GC, M, 1.0
+H5, "Use CFD to model interface and impact between water loads and buildings", GC, M, 1.1
+H6, "Ability to formally treat randomness and uncertainty quantification", GC, M, 1.2
+H7, "Develop a CFD example library for users to get started", GC, M, 2.0
+H8, "Ability to quantify the effect of unconstrained and non-colliding floating", GC, M, 2.0
+H9, "Ability to quantify the effect of flood-borne debris", GC, M, 3.0
+H10, "Ability of Practicing Engineers to use multiple coupled resources (applications, databases, viz tools) in engineering practice", GC , M , 4.0
+H11, "Simulation of overland flow including waves, debris, flood velocity, erosion at building, and channeling effects", GC, M, 5.0 
+H12, "Ability to simulate with surrogate models as alternative to full 3D CFD", GC, M, 6.0
