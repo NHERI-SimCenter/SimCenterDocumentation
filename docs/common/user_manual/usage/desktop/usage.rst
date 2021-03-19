@@ -9,7 +9,7 @@ remotely, and finally views the simulation results. The main window of the UI is
 
 .. only:: quoFEM_app
 
-   .. _figGenericUI-QUOFEM:
+   .. _figGenericUI-quoFEM:
 
    .. figure:: figures/quoFEM.png
 	   :align: center
@@ -44,10 +44,12 @@ remotely, and finally views the simulation results. The main window of the UI is
    .. figure:: figures/wePanel.png
 	   :align: center
 	   :figclass: align-center
-	   
+
+
 .. only:: R2D_app
 
    .. _figGenericUI-R2D:
+
    .. figure:: figures/R2DPanel.png
 	   :align: center
 	   :figclass: align-center
@@ -55,7 +57,7 @@ remotely, and finally views the simulation results. The main window of the UI is
 	   The |app| user interface.
 
 
-1. Login Button: 
+1. Login Button:
 
 The **Login** button is at the top right of the user interface. Before the user can launch any jobs on DesignSafe, they must first login to DesignSafe using their DesignSafe login and password. Pressing the login button will open up the login window for users to enter this information. Users can register for an account on the `DesignSafe-CI <https://www.designsafe-ci.org/account/register>`_ website [#]_. 
 

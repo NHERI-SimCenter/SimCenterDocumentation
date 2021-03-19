@@ -12,6 +12,7 @@ PUBLDIR = $(shell v="$(SIMDOC_APP)"; echo "../$${v%Tool}-Documentation/docs/")
 # Directories to remove when cleaning
 CLEANDIR      = _sources _static _images common
 
+export SIMCENTER_DEV = $(shell pwd | xargs dirname)
 #-Examples-------------------------------------------------
 EXPDIR = ./docs/common/user_manual/examples/desktop
 EXPSRC = ${SIMCENTER_DEV}/$(SIMDOC_APP)/Examples
@@ -45,9 +46,10 @@ we:      export SIMDOC_APP=WE-UQ
 r2d:     export SIMDOC_APP=R2DTool
 
 pbe:     export SIMDOC_APP=PBE
+hydro:   export SIMDOC_APP=Hydro
 qfem:    export SIMDOC_APP=quoFEM
 pelicun: export SIMDOC_APP=pelicun
-requirements: export SIMDOC_APP=requirements
+req: export SIMDOC_APP=requirements
 
 
 export SIMDOC_APP
@@ -55,8 +57,8 @@ export SIMDOC_APP
 
 # LaTeX path variables
 export TEXINPUTS:=${SIMCENTER_DEV}/texmf//:./build/${SIMDOC_APP}/latex//:/${TEXINPUTS}
-export TEXINPUTS:=~/texlive/2020//:${TEXINPUTS} 
-export BSTINPUTS:=../texmf//:${BSTINPUTS} 
+export TEXINPUTS:=~/texlive/2020//:${TEXINPUTS}
+export BSTINPUTS:=../texmf//:${BSTINPUTS}
 
 
 all:
@@ -68,17 +70,12 @@ all:
 	make ee html
 
 
-pelicun pbe requirements:
+hydro pelicun pbe req:
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
 
 
 r2d qfem we ee:
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
-	# sync example files
-	@# -rsync -Rcv $(addprefix $(EXPSRC)/./,$(EXAMPLES))  $(EXPDIR)
-	-rsync -Rcv $(EXAMPLES) $(EXPDIR)
-	
-
 
 
 web:
