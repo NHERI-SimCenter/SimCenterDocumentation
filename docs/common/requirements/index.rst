@@ -64,6 +64,15 @@ The following are educational activities obtained that are related to software d
 
    edRequirements
 
+
+
+
+.. toctree::
+   :caption: Gallery
+
+   ../user_manual/examples/desktop/gallery
+
+
 Contact
 =======
 Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
