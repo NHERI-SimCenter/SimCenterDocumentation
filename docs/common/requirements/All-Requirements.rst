@@ -23,7 +23,7 @@ PBE
 WE-UQ Requirements
 ------------------
 
-.. csv-table:: Requirements - WE-UQ
+.. csv-table:: Requirements - WE
   :header: "#", "Description", "Source", "Priority", "Version"
   :widths: 10, 60, 10, 10, 10	   
   :file: generalWE.csv
@@ -31,10 +31,21 @@ WE-UQ Requirements
 .. include:: key.rst	     
 
 
+Hydro-UQ Requirements
+---------------------
+
+.. csv-table:: Requirements - H
+  :header: "#", "Description", "Source", "Priority", "Version"
+  :widths: 10, 60, 10, 10, 10	   
+  :file: generalHydro.csv
+
+.. include:: key.rst	     
+	     
+
 EE-UQ Requirements
 ------------------
 
-.. csv-table:: Requirements - WE-UQ
+.. csv-table:: Requirements - EE
   :header: "#", "Description", "Source", "Priority", "Version"
   :widths: 10, 60, 10, 10, 10	   
   :file: generalEEUQ.csv
@@ -44,7 +55,7 @@ EE-UQ Requirements
 Earthquake Loading Requirements
 -------------------------------
 
-.. csv-table:: EL Requirements - Earthquake Loading
+.. csv-table:: Requirements - EL
   :header: "#", "Description", "Source", "Priority", "Version"
   :widths: 10, 60, 10, 10, 10	   
   :file: EarthquakeLoading.csv
@@ -54,7 +65,7 @@ Earthquake Loading Requirements
 Wind Loading Requirements
 -------------------------
 
-.. csv-table:: Requirements - Wind Loading
+.. csv-table:: Requirements - WL
   :header: "#", "Description", "Source", "Priority", "Version"
   :widths: 10, 60, 10, 10, 10	   
   :file: WindLoading.csv
@@ -64,7 +75,7 @@ Wind Loading Requirements
 Surge/Tsunami Loading Requirements
 ----------------------------------
 
-.. csv-table:: Requirements - Wind Loading
+.. csv-table:: Requirements - HL
   :header: "#", "Description", "Source", "Priority", "Version"
   :widths: 10, 60, 10, 10, 10	   
   :file: HydroLoading.csv
@@ -82,20 +93,10 @@ UQ Requirements
 .. include:: key.rst
 
 
-Damage & Loss Requirements
---------------------------
-
-.. csv-table:: Requirements - Damage & Loss
-  :header: "#", "Description", "Source", "Priority", "Version"
-  :widths: 10, 60, 10, 10, 10	   
-  :file: DL.csv
-
-.. include:: key.rst	 
-	     
 Modeling Requirements
 ---------------------
 
-.. csv-table:: Requirements - Modeling
+.. csv-table:: Requirements - MOD
   :header: "#", "Description", "Source", "Priority", "Version"
   :widths: 10, 60, 10, 10, 10	   
   :file: Modeling.csv
@@ -105,7 +106,7 @@ Modeling Requirements
 Analysis Requirements
 ---------------------
 
-.. csv-table:: Requirements - Analysis
+.. csv-table:: Requirements - ANA
   :header: "#", "Description", "Source", "Priority", "Version"
   :widths: 10, 60, 10, 10, 10	   
   :file: Analysis.csv
@@ -116,7 +117,7 @@ Analysis Requirements
 Damage & Loss Requirements
 --------------------------
 
-.. csv-table:: Requirements - Damage & Loss
+.. csv-table:: Requirements - DL
   :header: "#", "Description", "Source", "Priority", "Version"
   :widths: 10, 60, 10, 10, 10	   
   :file: DL.csv
@@ -127,7 +128,7 @@ Damage & Loss Requirements
 BRAILS
 ------
 
-.. csv-table:: Requirements - BRAILS
+.. csv-table:: Requirements - BR
   :header: "#", "Description", "Source", "Priority", "Version"
   :widths: 10, 60, 10, 10, 10	   
   :file: BRAILS.csv
@@ -138,7 +139,7 @@ BRAILS
 PELICUN
 -------
 
-.. csv-table:: Requirements - General
+.. csv-table:: Requirements - P
   :header: "#", "Description", "Source", "Priority", "Version"
   :widths: 10, 60, 10, 10, 10
   :file: requirements_pelicun_general.csv
@@ -148,7 +149,7 @@ PELICUN
 DL Databases
 ------------
 
-.. csv-table:: Requirements - DL Databases & Files
+.. csv-table:: Requirements - PD
   :header: "#", "Description", "Source", "Priority", "Version"
   :widths: 10, 60, 10, 10, 10	   
   :file: requirements_pelicun_db.csv
