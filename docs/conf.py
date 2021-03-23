@@ -26,7 +26,7 @@ else:
 	os.environ['SIMCENTER_DEV'] = os.path.abspath('../../')
 
 app_abrev = app_name.split("-")[0].replace("Tool","")
-app_abrev2 = app_name.replace("-","").replace("Tool","")
+app_abrev2 = app_name.replace("-","").replace("Tool","").replace("requirements","RTM")
 app_name2 = app_name.replace("Tool","")
 loc_app_dir = os.path.abspath(f'../../{app_name}')
 
@@ -203,7 +203,7 @@ html_logo = f'common/figures/{app_name2}-Logo.png'
 rendre_config = {
 	"targets": {
 		"examples": {
-			"data-file": os.path.normpath(f'{loc_app_dir}/Examples/index.json'),
+			"data-file": [os.path.normpath(f'{loc_app_dir}/Examples/index.json')],
 			"defaults": {
 				"link": "./%%:base/README"
 			}
@@ -421,6 +421,20 @@ elif app_name == 'EE-UQ':
 	exclude_patterns.remove('**/*response*')
 	exclude_patterns.remove('**/*EE[-_]UQ*')
 
+	sync_examples = True
+	example_config.update({
+		"include-item": [
+			"eeuq-0001",
+			"eeuq-0002",
+			"eeuq-0003",
+			"eeuq-0004",
+			"eeuq-0005",
+		]
+	})
+	extlinks.update(
+	   {f'eeuq-{i:04}' : (f'{examples_url}/eeuq-{i:04}/%s',f'eeuq-{i:04}') for i in range(1,99)}
+	)
+
 	rst_prolog += """
 .. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application (EE-UQ)
 .. |tool version| replace:: 2.0
@@ -594,11 +608,12 @@ elif app_name == 'pelicun':
 
 	htmlhelp_basename = 'pelicundoc'
 
+
 elif app_name == 'requirements':
 	master_doc = 'common/requirements/index'
 	project = 'SimCenter Requirements Traceability Matrix'
 	exclude_patterns = [
-                'common/user_manual/*',
+                #'common/user_manual/*',
                 'common/developer_manual/*',
                 'common/testbeds/',
                 'common/technical_manual/*',
