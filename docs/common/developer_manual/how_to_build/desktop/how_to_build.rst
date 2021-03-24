@@ -13,7 +13,7 @@ Install Dependencies
 
 First, ensure the following dependencies are installed:
 
-* **C++11 compliant compiler**: many of the workflow applications included use C++11 features, consequently they may need a newer C++11 compliant compiler. Fow Windows users, MSVC in `Visual Studio (Community edition) <https://visualstudio.microsoft.com/vs/>`_ can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with c++ and Visual Studio extension development; under the Individual components tab, check C++ CMake tools for windows. Then click Modify.
+* **C++17 compliant compiler**: many of the workflow applications included use C++17 features, consequently they may need a newer C++17 compliant compiler. Fow Windows users, MSVC in `Visual Studio (Community edition) <https://visualstudio.microsoft.com/vs/>`_ can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with C++ and Visual Studio extension development; under the Individual components tab, check C++ CMake tools for windows. Then click Modify.
 
 * **OpenSees**: The workflow applications require an installation of `OpenSees <http://opensees.berkeley.edu/>`_ to carry out structural analysis using the finite element method.
 
@@ -41,28 +41,28 @@ Setup the development environment with Conan
 ============================================
 1. Add Conan `SimCenter <https://bintray.com/nheri-simcenter/simcenter>`_ and  `BinCrafters <https://bintray.com/bincrafters/public-conan>`_ repositories to the Conan remotes. You can add these remotes by typing the following commands in the terminal:
 
-    .. code::
-       
+    .. code:: console
+
         conan remote add simcenter https://api.bintray.com/conan/nheri-simcenter/simcenter
 
         conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
 
 2. Create a default Conan profile if this is the first time you use Conan for building packages.
 
-    .. code::
-       
+    .. code:: console
+
         conan profile new default --detect
 
 
 3. Check the default profile of your build environment using:
 
-    .. code::
+    .. code:: console
 
        conan profile show default
 
 4. If the compiler name and compiler version are *not* listed, then you will need to select a specific compiler. For instance, on Windows using Visual Studio 2019, you can specify the compiler as follows:
 
-    .. code::       
+    .. code:: console
 
        conan profile update settings.compiler="Visual Studio" default
 
@@ -74,17 +74,17 @@ Build the applications
 
 .. only:: notQuoFEM
 
-   1. Obtain the code in the SimCenterBackendApplications repository from `Github <https://github.com/NHERI-SimCenter/SimCenterBackendApplications>`_. You can do that by using your preferred Git client/GUI or by using the ``git clone`` command in the terminal:
+   #. Obtain the code in the SimCenterBackendApplications repository from `Github <https://github.com/NHERI-SimCenter/SimCenterBackendApplications>`_. You can do that by using your preferred Git client/GUI or by using the ``git clone`` command in the terminal:
 
       .. code::
 
          git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications
 
 
-2. To build the applications you need to now navigate to the **SimCenterBackendApplications** folder that was created with the **git clone** command. Once there you will issue the following set of commands to create a **build** folder, change director to that folder, install needed software using conan, and finally use **cmake** to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail):
+#. To build the applications you need to now navigate to the **SimCenterBackendApplications** folder that was created with the **git clone** command. Once there you will issue the following set of commands to create a **build** folder, change director to that folder, install needed software using conan, and finally use **cmake** to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail):
 
-       .. code::
-	   
+       .. code:: console
+
           mkdir build
           cd build
           conan install .. --build missing

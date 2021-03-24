@@ -7,7 +7,6 @@ The **simulation application** specifies parameters and executes the script for 
 It takes as input the :ref:`BIM file <lblBuildingApp>`, the :ref:`EVENT file <lblEventApp>`, the :ref:`SAM file <lblModelingApp>`, and the :ref:`EDP file <lblEDPApp>`.
 After response simulation is completed, the "EDP.json" file is populated with the resulting EDPs and saved in the **simulation working directory**. Note that the "SIM.json" file is not saved in the directory.
 
-.. _figContext:
 
 .. figure:: _static/images/backendapps_Simulation.png
    :align: center

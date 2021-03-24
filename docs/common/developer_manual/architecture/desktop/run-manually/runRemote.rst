@@ -28,7 +28,6 @@ Prepare Input Files
 
 On DesignSafe, the files should appear on Data Depot as:
 
-.. _figContext:
 
 .. figure:: figures/DS_data_depot.png
    :align: center
@@ -42,9 +41,8 @@ Run Job Through Jupyter
 This method uses Jupyter notebook to run the job, accessing Tapis CLI in the backend.
 
 
-5. Click on the run_rWHALE.ipynb notebook, then click "Open in Jupyter". You will be taken to a new page for editing the Jupyter notebook.
+5. Click on the ``run_rWHALE.ipynb`` notebook, then click **Open in Jupyter**. You will be taken to a new page for editing the Jupyter notebook.
 
-.. _figContext:
 
 .. figure:: figures/DS_jupyter.png
    :align: center
@@ -58,7 +56,6 @@ This method uses Jupyter notebook to run the job, accessing Tapis CLI in the bac
 
 7. To view the status of the job, navigate to the **Workspace** on DesignSafe. The right bar will list all jobs that have been submitted in order of newest to oldest. Job outputs can be accessed by clicking on "More Info" on the job.
 
-.. _figContext:
 
 .. figure:: figures/DS_workspace.png
    :align: center
@@ -71,7 +68,6 @@ This method uses Jupyter notebook to run the job, accessing Tapis CLI in the bac
       - "launcher.err" contains error messages produced from running the job.
       - "launcher.out" contains the log file.
 
-.. _figContext:
 
 .. figure:: figures/DS_results.png
    :align: center

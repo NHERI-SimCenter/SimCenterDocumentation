@@ -19,11 +19,12 @@ Install on Windows 10
 Download the Application
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-To download the |app|, first navigate to the |appLink| page. As shown in :numref:`figDownload_win`, to get to the download page, you need to click on the link ``Download app and User Manual`` in the application page. The download page contains a list of downloadable files and directories.
+To download the |app|, first navigate to the |appLink| page. As shown in |figDownloadWin|, to get to the download page, you need to click on the link **Download app and User Manual** in the application page. The download page contains a list of downloadable files and directories.
+
 
 .. only:: R2D_app
 
-   .. _figDownload_win:
+   .. _figDownloadWin-R2D:
 
    .. figure:: figures/R2DDownload.png
       :align: center
@@ -33,7 +34,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in :numref
 
 .. only:: PBE_app
 
-   .. _figDownload:
+   .. _figDownloadWin-PBE:
 
    .. figure:: figures/pbeDownload.png
       :align: center
@@ -43,7 +44,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in :numref
 
 .. only:: EEUQ_app
 
-   .. _figDownload:
+   .. _figDownloadWin-EE:
 
    .. figure:: figures/eeDownload.png
       :align: center
@@ -53,7 +54,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in :numref
 
 .. only:: WEUQ_app
 
-   .. _figDownload:
+   .. _figDownloadWin-WE:
 
    .. figure:: figures/weDownload.png
       :align: center
@@ -64,7 +65,7 @@ To download the |app|, first navigate to the |appLink| page. As shown in :numref
 
 .. only:: quoFEM_app
 
-   .. _figDownload:
+   .. _figDownloadWin-quoFEM:
 
    .. figure:: figures/quoFEMDownload.png
       :align: center
@@ -76,7 +77,8 @@ Click on the file with a name ending with **Windows_Download.zip** to download t
 
 .. note::
 
-   We suggest placing the directory in the **C:\\SimCenter** folder. Once here, you can create a shorcut to the application and move this shortcut to your Desktop.
+   We suggest placing the directory in the **C:\\SimCenter** folder. Once here, you can create a shortcut to the application and move this shortcut to your Desktop.
+
 
 Test the Installation
 ^^^^^^^^^^^^^^^^^^^^^
@@ -129,7 +131,7 @@ Now test if the application starts properly. Navigate to the location where you 
 
 .. only:: quoFEM_app
 
-   .. _figQUO_FEM:
+   .. _figUI-quoFEM:
 
    .. figure:: figures/quoFEM.png
     :align: center

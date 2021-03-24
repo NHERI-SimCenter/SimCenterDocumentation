@@ -8,7 +8,7 @@ On November 30th 2018 at 8.29am local time, a magnitude 7.1 earthquake occurred 
 
 In the few weeks following the earthquake, the NHERI SimCenter team collected and processed building exposure data from the publicly available parcels tax data from the Municipality of Anchorage tax assessor's website. The tax data for approximately 97,000 parcels was processed, resulting in buildings data in 85,000 parcels. In addition the SimCenter collected a number of recorded motions for the event that were made available online.
 
-Subsequentally the SimCenter created a workflow to estimate the effect of the earthquake using the software created by the center for performing assesment of damage associated with natural events at the regional scale. This section describes the steps involved to collect the data, steps that a user would take to repeat the simulations perfomed by SimCenter, and finally the results obtained.
+Subsequently the SimCenter created a workflow to estimate the effect of the earthquake using the software created by the center for performing assessment of damage associated with natural events at the regional scale. This section describes the steps involved to collect the data, steps that a user would take to repeat the simulations performed by SimCenter, and finally the results obtained.
 
 A video `presenting the work <https://www.youtube.com/watch?v=VH-slcnmTJc>`_ was presented by Wael Elhadded of SimCenter (now with NVIDIA).
 
@@ -23,7 +23,7 @@ The NHERI SimCenter team collected and processed building exposure data from the
 - 73,000 parcels in Anchorage
 - 12,000 parcels in Eagle River
 
-The building data is provided online at DesignSafe `AnchorageBuildings.zip <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Datasets/AnchorageM7>`_. The zip file contains a single comma seperated file. The first line contains the column headings, the subsequent lines the information for each building.
+The building data is provided online at DesignSafe `AnchorageBuildings.zip <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Datasets/AnchorageM7>`_. The zip file contains a single comma separated file. The first line contains the column headings, the subsequent lines the information for each building.
 
 
 #. Id - an integer id
@@ -50,11 +50,10 @@ The data was collected by a python program utilizing `selenium <https://www.sele
    :language: py
 
 
-	      
-.. notes::
+.. note::
 
    the code uses a python model named ``geocoder`` to geoencode the latitudes and longitudes from the street addresses. geocoder can be set up to use a `number of provideres <https://github.com/DenisCarriere/geocoder>`_. The code shown above uses Open Street Maps, which is free but might not be efficient. The difference in service providers is in speed of service, some may be rate limited, and all can result in minor differences in lat and long values returned.
-   
+
 
 Ground Motion Data
 ------------------
@@ -63,13 +62,11 @@ The testbed used the following workflow:
 
 
 
-
-
 Workflow
 ========
 
-	      
-Preliminary regional loss estimation was carried out using rWHALE v1.1.0, a regional workflow for hazard and loss estimation, developed at NHERI SimCenter. Results for the regional simulation of Anchorage M7.1 earthquake can be summarized as follows:
+
+Preliminary regional loss estimation was carried out using rWHALE, a regional workflow for hazard and loss estimation, developed at NHERI SimCenter. Results for the regional simulation of Anchorage M7.1 earthquake can be summarized as follows:
 
 Results
 =======
