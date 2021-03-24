@@ -8,7 +8,6 @@ Hurricane Assessment
 This example is a small-scale regional hurricane risk assessment which performs damage/loss estimation for a group of 20 wood buildings in Atlantic City under the Sandy Storm. The buildings are subject to two types of hazards: wind, measured by peak wind speed (PWS), and flooding, measured by flood water depth (FWD). This example does not use response simulation; rather, an **IMasEDP** application translates the IMs directly to the DL application and uses IM-based component fragility functions to estimate damage.
 The distribution of the buildings' structural types and stories are illustrated below.
 
-.. _figContext:
 
 .. figure:: figures/SandyWindFlood.png
    :align: center

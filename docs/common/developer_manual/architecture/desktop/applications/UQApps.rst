@@ -7,7 +7,6 @@ The **UQ application** is used to sample *random variables* (RV) specified in an
 It first populates values for the RVs, sampled from specified probability distributions, in the corresponding files (EVENT.json, SAM.json, EDP.json, SIM.json) for each simulation before executing the workflow.
 If no RVs are specified, then the UQ application directly runs commands in the driver file without random sampling.
 
-.. _figContext:
 
 .. figure:: _static/images/backendapps_UQ.png
    :align: center
