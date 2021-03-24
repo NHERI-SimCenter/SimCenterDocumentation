@@ -50,7 +50,18 @@ EE-UQ Requirements
   :file: generalEEUQ.csv
 
 .. include:: key.rst
-   
+
+
+Hazard Modeling
+---------------
+
+.. csv-table:: Requirements - HAZ
+  :header: "#", "Description", "Source", "Priority", "Status"
+  :widths: 10, 60, 10, 10, 10	   
+  :file: HAZ.csv
+
+.. include:: key.rst
+	     
 Earthquake Loading Requirements
 -------------------------------
 
@@ -156,10 +167,20 @@ PELICUN
 
 .. include:: key.rst
 
-DL Databases
-------------
+BE Database
+-----------
 
-.. csv-table:: Requirements - PD
+.. csv-table:: Requirements - BE
+  :header: "#", "Description", "Source", "Priority", "Status"
+  :widths: 10, 60, 10, 10, 10	   
+  :file: BE.csv
+
+.. include:: key.rst	     
+
+DL Database
+-----------
+
+.. csv-table:: Requirements - DLD
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 60, 10, 10, 10	   
   :file: requirements_pelicun_db.csv
