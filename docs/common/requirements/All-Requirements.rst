@@ -52,16 +52,6 @@ EE-UQ Requirements
 .. include:: key.rst
 
 
-Hazard Modeling
----------------
-
-.. csv-table:: Requirements - HAZ
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 60, 10, 10, 10	   
-  :file: HAZ.csv
-
-.. include:: key.rst
-	     
 Earthquake Loading Requirements
 -------------------------------
 
@@ -98,7 +88,7 @@ UQ Requirements
 .. csv-table:: Requirements - Uncertainty Quantification Methods and Variables
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 60, 10, 10, 10	   
-  :file: CommonUQ.csv
+  :file: UQMethods.csv
 
 .. include:: key.rst
 
@@ -109,7 +99,7 @@ RV Requirements
 .. csv-table:: Requirements - Uncertainty Quantification Methods and Variabless
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 60, 10, 10, 10	   
-  :file: CommonUQ.csv
+  :file: UQRV.csv
 
 .. include:: key.rst
 	     
@@ -185,7 +175,17 @@ DL Database
   :widths: 10, 60, 10, 10, 10	   
   :file: requirements_pelicun_db.csv
 
-.. include:: key.rst	     
+.. include:: key.rst
+
+Regional Testbeds
+-----------------
+
+.. csv-table:: Requirements - DLD
+  :header: "#", "Description", "Source", "Priority", "Status"
+  :widths: 10, 60, 10, 10, 10	   
+  :file: testbeds.csv
+
+.. include:: key.rst	     	     
 
 	     
 	     

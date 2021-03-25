@@ -1,8 +1,14 @@
-BE1.0, "National models building inventories", GC , M ,
-BE1.1, "Incorporate Building data from existing datasets published by states, counties and cities", SP, M, 
-BE1.2, "Ingest building data from web-scraping techniques, e.g. from zillow, county websites", SP, M, 
-BE1.3, "Ingest building data using AI/ML techniques and satellite and streetview images", SP, M, 
-BE2.0 , "National models lifeline inventories", GC , M ,
-BE2.1, "Incorporate Lifeline data from existing datasets made avail through www", SP, M, 
-BE2.3, "Ingest lifeline data utilizing AI/ML and satellite and streetview images", SP, M, 
-BE3.0 , "Ability to use cumulative knowledge bases rather than the piecemeal individual approaches", GC , M , 
+BE, "**Establish a National Infrastructure Data Base for characterizing the physical and natural infrastructure**", GC, M,
+BE1 , "Ability to use cumulative knowledge bases rather than the piecemeal individual approaches", GC , M ,
+BE1.1 , "Utilize Federated Databases to maintain individual databases & data sources yet provide central database resource", SP , M ,
+BE2, "Include National building model inventories", GC , M , InProgress
+BE2.1, "Incorporate Building data from existing datasets published by states, counties and cities", SP, M, InProgress
+BE2.2, "Ingest building data from web-scraping techniques, e.g. from zillow, county websites", SP, M, InProgress
+BE2.3, "Ingest building data using AI/ML techniques and satellite and streetview images", SP, M, InProgress
+BE3, "Incorporate transportation newtwork data from existing datasets made avail through www", SP, M, 
+BE3.1, "Ingest additionally needed transportation newtwork data utilizing AI/ML and satellite and streetview images", SP, M,
+BE4 , "Include National Models of Utility Networks", GC , M ,
+BE4.1, "Incorporate utility network data from existing datasets made avail through www", SP, M,
+
+
+
