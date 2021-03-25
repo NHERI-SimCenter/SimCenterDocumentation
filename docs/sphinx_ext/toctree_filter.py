@@ -1,7 +1,7 @@
 # courtesy of David Weber 
 # https://stackoverflow.com/questions/15001888/conditional-toctree-in-sphinx
 
-import re
+import re,os
 from sphinx.directives.other import TocTree
 
 def setup(app):
@@ -33,9 +33,9 @@ class TocTreeFilt(TocTree):
             m = self.hasPat.match(e)
             if m != None:
                 if not m.groups()[0] in excl:
-                    filtered.append(m.groups()[1])
+                    filtered.append(os.path.expandvars(m.groups()[1]))
             else:
-                filtered.append(e)
+                filtered.append(os.path.expandvars(e))
         return filtered
 
     def run(self):
