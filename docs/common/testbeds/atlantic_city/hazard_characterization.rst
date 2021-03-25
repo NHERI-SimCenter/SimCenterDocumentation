@@ -126,21 +126,61 @@ Historical Storm Scenario
 Hindcast simulations of historical storm events are equally valuable, particularly when they are coupled 
 with observations of damage and loss across an inventory. As such this testbed includes the option to use 
 existing hindcast data from established community providers as input to the loss estimation workflow. 
-New Jersey’s most notable storm event in recent history was Superstorm Sandy (2012). While Atlantic County was 
-designated as a “Sandy-Affected Community” by FEMA and the State of New Jersey, the wind and 
-storm surge intensities in the county were significantly less than those observed in the more 
-northern counties. Nonetheless, these historical inputs are provided to demonstrate the workflow’s 
-ability to support hindcast evaluations of damage and loss in actual storm events.
+New Jersey’s most notable storm event in recent history was Superstorm Sandy (2012). According to [NJDEP15]_ 
+and [USDOC13]_, Sandy's devastation included 346,000 homes damaged, more than 1,000 vessels sunked or abandoned, 
+and more than 100 drinking water and wasterwater treatment plans affected, which led to 30 billion for repairing 
+and relacing the damage cased by the storm. While Atlantic County was designated as a “Sandy-Affected Community” 
+by FEMA and the State of New Jersey, the wind and storm surge intensities in the county were significantly 
+less than those observed in the more northern counties. Nonetheless, these historical inputs are provided 
+to demonstrate the workflow’s ability to support hindcast evaluations of damage and loss in actual storm events.
 
 Wind Modeling
 --------------
 
+:numref:`ara_pws` shows the 3-s gust peak wind speed field in Atlantic County during 
+the Hurricane Sandy (simulation data provided by Applied Research Associate hurricane model). The model derives wind 
+speeds based on numerically solving the differential equations of a translating storm and iteratively calibrating the 
+field observations. In general, the model would be refined with the hindcast within a week of the event. And the 
+:download:`ARA_Example.zip <data/ARA_Example.zip>` provides the peak wind speed grid that can be directly used in 
+the presented hurricane workflow.
 
+.. figure:: figure/ARA_PWS.png
+   :name: ara_pws
+   :align: center
+   :figclass: align-center
+   :figwidth: 500
+
+   ARA 3-s gust peak wind speed field of Hurricane Sandy in Atlantic County.
+
+Alternatively, users can also use other available wind field resources. For instance, 
+`RMS Legacy Archive <https://www.rms.com/event-response/hwind/legacy-archive/storms>`_ provides access to 
+historical hurricane events including the `Superstorm Sandy <https://legacy-archive.rms.com/storms/sandy2012.html>`_ 
+for an alternate description of the field. Similar to the ARA peak wind speed field, in order to run the workflow, users 
+would first convert the data from other resources to the format as shown in :download:`ARA_Example.zip <data/ARA_Example.zip>`.
 
 Storm Surge Modeling
 ---------------------
 
+Alternative to the SHP Tool, the historical storm surge data can also be used in the workflow. :numref:`adcirc_pwd` 
+shows the peak storm surge from ADCIRC (simulation data by courtesy of Dr. Westerink's group, University of Notre Dame). 
+The original simulation was focused on the New York region which had finer mesh sizes than the Atlantic County 
+(:numref:`adcirc_waterelev`).
 
+.. figure:: figure/ADCIRC_PWD.png
+   :name: adcirc_pwd
+   :align: center
+   :figclass: align-center
+   :figwidth: 500
+
+   Simulated storm surge field of Hurricane Sandy by ADCIRC (by courtesy of Dr. Westerink).
+
+.. figure:: figure/ADCIRC_waterelev.png
+   :name: adcirc_waterelev
+   :align: center
+   :figclass: align-center
+   :figwidth: 500
+
+   Simulated water elevation of Hurricane Sandy by ADCIRC (Atlantic County).
 
 
 .. [Snaiki17a]
@@ -190,3 +230,11 @@ Storm Surge Modeling
    Smith J.M, A. R. Sherlock, and D. T. Resio (2001) "STWAVE: Steady-state spectral wave model user's
    manual for STWAVE, Version 3.0," Defense Technical Information Center, US Army Corps of
    Engineering, Vicksburg, MS.
+
+.. [USDOC13]
+   U.S. Department of Commerce (2013), Hurricne Sandy: Potential Economic Activity Lost and Gained in New 
+   Jersey and New York.
+
+.. [NJDEP15]
+   New Jersey Department of Environmental Protection (NJDEP) (2015), Damage Assessment 
+   Report on the Effects of Hurricane Sandy on the State of New Jersey's Natural Resources.
