@@ -7,22 +7,21 @@ BR4.2 , "Create workflow application for building inventory from framework modul
 BR4.2 , "Create workflow application for transportation network from framework modules", SP , M ,
 BR5, "**Developing Modules for Asset Inventory Workflows identified in BR4**", "", "", ""
 BR5.1 , "Predicting if building is a soft-story building for earthquake simulations", UF , M , Implemented
-BR5.2 , "Predicting Roof Shape", SP , M , Implemented
-BR5.3 , "Predicting First Floor Height", SP , M , InProgress
-BR5.4 , "Predicting Roof Height", SP , M , InProgress
-BR5.5 , "Predicting Eave Height", SP , M , InProgress
+BR5.2 , "Predicting First Floor Height", SP , M , InProgress
+BR5.3 , "Predicting Roof Height", SP , M , InProgress
+BR5.4 , "Predicting Eave Height", SP , M , InProgress
 BR5.5 , "Predicting Eave Length", SP , M ,
 BR5.6 , "Predicting Roof Shape", SP , M , Implemented
 BR5.7 , "Predicting Roof Pitch", SP , M , InProgress
-BR5.8 , "Predicting Roof Material", SP , M , Implemented
+BR5.8 , "Predicting Roof Material", SP , M , InProgress
 BR5.9 , "Predicting Window Area", SP , M , InProgress
 BR5.10 , "Predicting Building Material", SP , M ,
 BR5.11 , "Classifying Elevated Building", SP , M , Implemented
 BR5.12 , "Predicting Structural Type", SP , M ,
 BR5.13 , "Predicting Occupancy Type", SP , M , Implemented
 BR5.14 , "Predicting Year Built", SP , M , Implemented
-BR5.14 , "Predicting Attached Garage", SP , M ,
-BR5.14 , "Predicting Presence of Masonry Chimney", UF , D , 
+BR5.15 , "Predicting Attached Garage", SP , M ,
+BR5.16 , "Predicting Presence of Masonry Chimney", UF , D , 
 BR6, "**DesignSafe integration to provide access to GPU**", "", "", ""
 BR6.1, "Create JupyterHub notebook at DesignSafe for building asset inventory workflow usage", SP, M, ""
 BR6.2, "For classification done at DesignSafe, store images and meta data for BE Database", SP, M, ""
@@ -30,6 +29,5 @@ BR6.3, "Create JupyterHub notebook at DesignSafe for individual modules to demon
 BR7, "**Work to improve existing performance models through Continous Learning**", "", "", ""
 BR7.1, "Continous Learning for Year Built", SP, M, ""
 BR7.2, "Continous Learning for Roof Material", SP, M, ""
-BR7.3, "Continous Learning for Occupancy Type", SP, M, ""
 BR8, "Work to gather data for Module Validation/Verification/Training", SP, M, InProgress
 
