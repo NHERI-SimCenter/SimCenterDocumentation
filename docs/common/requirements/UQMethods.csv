@@ -1,38 +1,38 @@
-**UF**, "**Forward Propagation Methods**", GC , M,1, "--"
-UF1,"Ability to use basic Monte Carlo and LHS methods", SP, M,1, "1, 2, 5"
-UF2,"Ability to use Multi-Scale Monte Carlo", SP, M, ,
-UF3,"Ability to use Multi-Fidelity Models", SP, M, ,
-**UR**,"**Reliability Methods**", UF, M,2.1, "--"
-UR1,"Ability to use First Order Reliability method", UF, M,2.1, "3"
-UR2,"Ability to use Second Order Reliability method", UF, M,2.1, "3"
-UR3,"Ability to use Surrogate Based Reliability", UF, M, 2.1, "3"
-UR4,"Ability to use Importance Sampling", SP, M,2, "3"
-**UG**,"**Global Sensitivity Methods**", UF, M,1, "--"
-UG1,"Ability to obtain Global Sensitivity Sobol indices", UF, M, 1, "4"
-UG2, "Ability to use probability model-based global sensitivity analysis (PM-GSA)", SP, M, 2.2, "9"
-**US**, "**Surrogate Models**",	UF, M, 2.3, "--"
-US1, "Ability to Construct Gaussian Process (GP) Regression Model from a Simulation Model",	SP,	M, 2.3, "15, 16"
-US2, "Ability to Construct GP Regression Model from Input-output Dataset",	SP,	M, 2.3, "15, 16"
-US3, "Ability to use Surrogate Model for UQ Analysis", SP, M, 2.3,"16"
-US4, "Ability to Save the Surrogate Model", SP, M, 2.3, "15, 16"
-US5, "Ability to Use Adaptive Design of Experiments",	SP,	M, 2.3, "15, 16"
-US6, "Ability to Asses Reliability of Surrogate Model",	SP,	M, 2.3, "15, 16"
-US7, "Ability to Build Surrogate Under Stochastic Excitation",	SP,	M, ,
-US8, "Ability to Use Physics-Informed Machine Learning",	SP,	M, ,
-**UN**, "**Non-linear Least Squares Optimization**", SP, M, 1, "--"
-UN1, "Ability to use Gauss-Newton solvers for parameter estimation", SP, M, 1, "6, 7, 12, 13, 18"
-UN2, "Ability to read calibration data from file", UF, M, 2.3, "18"
-UN3, "Ability to handle non-scalar response quantities", UF, M, 2.3, "18"
-**UB**, "**Bayesian Calibration**", SP, M, 1, "--"
-UB1, "Ability to use DREAM algorithm for Bayesian inference", SP, M, 1, "8, 11, 19"
-UB2, "Ability to use TMCMC algorithm for Bayesian inference", SP, M, 2.2, "14"
-UB3, "Ability to read calibration data from file", UF, M, 2.3, "19"
-UB4, "Ability to handle non-scalar response quantities", UF, M, 2.3, "19"
-UB5, "Ability to calibrate multipliers on error covariance", UF, M, , 
-UB6, "Ability to use a default log-likelihood function", UF, M, , 
-**UH**, "**High Dimensional UQ**", SP, M, 1, "--"
-UH1, "Ability to sample from manifold", SP, M, , 
-UH2, "Ability to build Reduced Order Model", SP, M, ,
-**UO**, "**Other/General Features**", SP , M,1, "--"
-UO1,"Ability to use Own External UQ Engine", SP, M, 2.2, "17"
-UO2,"Ability to use Own External Application to generate Results", UF, M,2.2, "5"
+**UF**, "**Forward Propagation Methods**", GC , M, InProgress
+UF1,"Ability to use basic Monte Carlo and LHS methods", SP, M, Implemented
+UF2,"Ability to use Multi-Scale Monte Carlo", SP, M, 
+UF3,"Ability to use Multi-Fidelity Models", SP, M, 
+**UR**,"**Reliability Methods**", SP, M, Implemented
+UR1,"Ability to use First Order Reliability method", SP, M, Implemented
+UR2,"Ability to use Second Order Reliability method", SP, M, Implemented
+UR3,"Ability to use Surrogate Based Reliability", SP, M, Implemented
+UR4,"Ability to use Importance Sampling", SP, M, Implemented
+**UG**,"**Global Sensitivity Methods**", SP, M, Implemented
+UG1,"Ability to obtain Global Sensitivity Sobol indices", UF, M, Implemented
+UG2, "Ability to use probability model-based global sensitivity analysis (PM-GSA)", SP, M, Implemented
+**US**, "**Surrogate Models**",	UF, M, InProgress
+US1, "Ability to Construct Gaussian Process (GP) Regression Model from a Simulation Model",	SP,	M, InProgress
+US2, "Ability to Construct GP Regression Model from Input-output Dataset", SP, M, InProgress
+US3, "Ability to use Surrogate Model for UQ Analysis", SP, M, InProgress
+US4, "Ability to Save the Surrogate Model", SP, M, InProgress
+US5, "Ability to Use Adaptive Design of Experiments",	SP,	M, InProgress
+US6, "Ability to Asses Reliability of Surrogate Model",	SP,	M, InProgress
+US7, "Ability to Build Surrogate Under Stochastic Excitation",	SP,	M, 
+US8, "Ability to Use Physics-Informed Machine Learning",	SP,	M, 
+**UN**, "**Non-linear Least Squares Optimization**", SP, M, InProgress
+UN1, "Ability to use Gauss-Newton solvers for parameter estimation", SP, M, Implemented
+UN2, "Ability to read calibration data from file", UF, M, InProgress
+UN3, "Ability to handle non-scalar response quantities", UF, M, InProgress
+**UB**, "**Bayesian Calibration**", SP, M, InProgress
+UB1, "Ability to use DREAM algorithm for Bayesian inference", SP, M, InProgress
+UB2, "Ability to use TMCMC algorithm for Bayesian inference", SP, M, Implemented
+UB3, "Ability to read calibration data from file", UF, M, InProgress
+UB4, "Ability to handle non-scalar response quantities", UF, M, InProgress
+UB5, "Ability to calibrate multipliers on error covariance", UF, M, 
+UB6, "Ability to use a default log-likelihood function", UF, M, 
+**UH**, "**High Dimensional UQ**", SP, M, 
+UH1, "Ability to sample from manifold", SP, M,
+UH2, "Ability to build Reduced Order Model", SP, M, 
+**UO**, "**Other/General Features**", SP , M, 
+UO1,"Ability to use Own External UQ Engine", SP, M, Implemented
+UO2,"Ability to use Own External FEM Application", UF, M, Implemented
