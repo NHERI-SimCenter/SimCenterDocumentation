@@ -133,6 +133,15 @@ Therefore the main tasks of surrogate modeling is (1) to find optimal stochastic
 :math:`\boldsymbol{y^*}` and :math:`\boldsymbol{y^{obs}}` are joint Gaussian distribution with known mean and covariances.
 
 
+.. _figSensitivity2_2:
+
+.. figure:: figures/SimCenterSurrogate.png
+	:align: center
+	:figclass: align-center
+
+  	Surrogate model for UQ/Optimization
+
+
 * **Dealing with noisy measurements**
 
   | In natural hazard applications, it is often not feasible to have an exact observation of an outcome :math:`\boldsymbol{y}`, and only a noisy observation :math:`\boldsymbol{y^{obs}}` is available:

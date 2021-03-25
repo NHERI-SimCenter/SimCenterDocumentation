@@ -232,6 +232,9 @@ Once the ``OK`` button is clicked after setting all required entries, the progra
    - When ``constant`` variable is introduced instead of probability distributions, the correlation coefficient corresponding to those variables will be ignored. 
    - When more than one random variable is provided as ``Dataset``, correlations between the data pairs will not be incorporated automatically. If correlations exist, user can define them manually at the correlation matrix window.
 
+.. warning::
+
+    Correlation warping for Nataf variable transformation of **beta** distributions is not currently supported.
 
 .. [ERA19]
    Engineering Risk Analysis Group, Technische Universität München: https://www.bgu.tum.de/era/software/eradist/ (Matlab/python programs and documentations)

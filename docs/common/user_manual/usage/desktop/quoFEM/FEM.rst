@@ -115,15 +115,16 @@ the need to explicitly input each one of these files.
 .. _customFEM:
 
 .. figure:: figures/customFEM.png
-	:align: center
-	:figclass: align-center
+  :align: center
+  :figclass: align-center
 
-        Input for Custom Analysis Application
+  Input for Custom Analysis Application
 
 
 SurrogateGP
 ^^^^^^^^^^^^
-In place of pysical *simulation models*, Gaussian process *surrogate model* trained in quoFEM can be imported for different UQ/Optimization analysis. When user selects SurrogateGP option, the user is requested to provide following two files obtained in SimCenterUQ engine.
+In place of physical *simulation models*, Gaussian process *surrogate model* trained in quoFEM can be imported for different UQ/Optimization analysis. When user selects the SurrogateGP option, the user is requested to provide the following two files obtained in the SimCenterUQ engine.
+
 
 .. _surrogateFEM1:
 
@@ -131,30 +132,32 @@ In place of pysical *simulation models*, Gaussian process *surrogate model* trai
   :align: center
   :figclass: align-center
 
-        Input for Surrogate model FEM Application
+  Input for Surrogate model FEM Application
 
-1. **Surrogate info file (.json)**. This file contains meta information about the surrogate model. User can open it with text editor to see the information.
 
-2. **Surrogate model file (.pkl)**. Surrogate model saved in a binary format. Python and GPy package is required to use this model outside of quoFEM.
 
-Additionally, if user wants to alternate between the exact *simulation model* and the surrogate model depending on the predicted precision, additional folder that contains *simulation model* is required (See **Run Exact FEM Simulation** option below). Note that this files is not explicitly specified in input panel, but it needs be located in the specific directory (Same location with surrogate info file) with specific name (``templatedir_SIM``).  This folder is automatically when user saves the surrogate model after the training.
+1. **Surrogate info file (.json)**. This file contains meta-information about the surrogate model. Users can open it with a text editor to see the contents.
 
-3. **Simulation template folder**. It contains required workflowdriver files generated during surrogate training. Note that if the file is not located in the directory, simulation can fail.
+2. **Surrogate model file (.pkl)**. Surrogate model is saved in a binary format. GPy python package is required to use this model outside of quoFEM.
+
+Additionally, to allow the users to alternate between the exact *simulation model* and the surrogate model depending on the predicted precision, an additional folder that contains the *simulation model* is required (See **Run Exact FEM Simulation** option below). Note that this folder is not explicitly specified in input panel, but it needs to be located in the specific directory (Same location with surrogate info file) under the specific name (``templatedir_SIM``).  This folder is automatically generated when the user saves the surrogate model after the training.
+
+3. **Simulation template folder**. It contains the workflow driver for the original model generated during surrogate training. Note that if the folder is not presented in the directory, the simulation can fail.
 
 .. Note:: 
 
   All three required files are generated from quoFEM by clicking ``Save GP Model`` button after training in SimCenterUQ engine.
 
-Once your Surrogate files are loaded, user may choose tolerance level of the predictive variance.
+Once the Surrogate files are loaded, the user may choose the tolerance level of the predictive variance.
 
 * **Maximum Allowable Normalized Variance**. Prediction Variance divided by the variance level of the training dataset. If more than one QoI is introduced, percentage is shown for the maximum value through all QoI. 
 
 .. Warning:: 
 
-   * It is important to note that **predictive variance** does not necessarily imply the error level of the model. Even when predictive variance is small, the model prediction may not be accurate if system is highly nonlinear. Similarly, even when predictive variance is large, prediction can be accurate.
+   * It is important to note that **predictive variance** does not necessarily imply the error level of the model. Even when predictive variance is small, the model prediction. Similarly, even when predictive variance is large, prediction can be accurate.
    * The provided **percentage ratio** of the out-of-tolerance samples is only a rough guideline since it assumed the samples are uniformly populated through the range user provided during the training session. Therefore, if user provides other distribution types and ranges, the percentage estimation will not be correct. 
 
-User may either stop the analysis, continue, or run exact FEM simulations whenever the tolerance limit is exceeded.
+User may either stop the analysis, continue, or run exact FEM simulationss whenever the tolerance limit is exceeded.
 
 * **Stop Analysis**. The analysis is immediately terminated. quoFEM will show the error: **No dakotaTab.out file**.
 
@@ -172,7 +175,7 @@ If the user wants to inspect the simulation status or check error/warning messag
   :align: center
   :figclass: align-center
 
-        Example of surrogateLog.err file
+  Example of surrogateLog.err file
 
 .. Note:: 
 
