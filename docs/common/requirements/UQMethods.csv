@@ -30,6 +30,8 @@ UB3, "Ability to read calibration data from file", UF, M, InProgress
 UB4, "Ability to handle non-scalar response quantities", UF, M, InProgress
 UB5, "Ability to calibrate multipliers on error covariance", UF, M, 
 UB6, "Ability to use a default log-likelihood function", UF, M, 
+UB7, "Ability to use Kalman Filtering", UF, M, , 
+UB8, "Ability to use Particle Filtering", UF, M, , 
 **UH**, "**High Dimensional UQ**", SP, M, 
 UH1, "Ability to sample from manifold", SP, M,
 UH2, "Ability to build Reduced Order Model", SP, M, 
