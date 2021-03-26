@@ -11,13 +11,24 @@ The Water-borne Natural Hazards with Uncertainty Quantification Application (Hyd
 
 This document covers the features and capabilities of the ``version 1.0`` of the Hydro-UQ tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the `Message Board <https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0>`_.
 
+.. lbl-front-matter::
+
+.. toctree::
+   :maxdepth: 1
+   :numbered: 4
+   :caption: About
+   
+   Hydro/userman/about
+   common/front-matter/ack
+   common/front-matter/license
+
+
+
 .. toctree::
    :maxdepth: 1
    :numbered: 2
    :caption: User manual
 
-   Hydro/userman/acknowledgement
-   Hydro/userman/about
    Hydro/userman/install
    Hydro/userman/userguide/uguide
    Hydro/userman/errors
@@ -25,7 +36,6 @@ This document covers the features and capabilities of the ``version 1.0`` of the
    Hydro/userman/bestpractices
    Hydro/userman/releasenotes
    Hydro/userman/featurereq
-   Hydro/userman/copyright
 
 .. toctree::
    :maxdepth: 1
