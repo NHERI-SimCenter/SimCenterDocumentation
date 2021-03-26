@@ -8,11 +8,11 @@ Probability distribution
 
 .. note::
 
-   To add a new random variable the user presses the ``Add`` button. To remove a random variable, the user must first select it by checking the small circle before the random variable, and then pressing the ``Remove`` button.
+   To add a new random variable the user presses the **Add** button. To remove a random variable, the user must first select it by checking the small circle before the random variable, and then pressing the **Remove** button.
 
 
 Dakota Engine
-++++++++++++
++++++++++++++
 
 The following six distribution classes are supported for Dakota engine.
 
@@ -114,7 +114,7 @@ For each random variable, the user must enter a name and select from the pull do
 SimCeterUQ Engine
 +++++++++++++++++
 
-Additional five distributions are supported in the SimCenter UQ engine. The users can define distributions either by ``Parameters``, ``Moments`` and ``Dataset``. (**Note**: Nataf transform module developed by [ERA19]_ is adopted)
+Five additional distributions are supported in the SimCenter UQ engine. The users can define distributions either by **Parameters**, **Moments** or **Dataset**. (**Note**: Nataf transform module developed by [ERA19]_ is adopted)
 
 1. Exponential
 

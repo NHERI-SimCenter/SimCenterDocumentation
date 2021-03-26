@@ -1,0 +1,31 @@
+quoFEM:
+  include-item:
+    ? qfem-0001
+    ? qfem-0002
+    ? qfem-0005
+    ? qfem-0003
+    ? qfem-0004
+    ? qfem-0009
+    ? qfem-0008
+    ? qfem-0014
+    ? qfem-0015    
+
+WE-UQ:
+  include-item:
+    ? weuq-0001
+
+
+EE-UQ:
+  include-item:
+    ? eeuq-000*
+
+R2DTool:
+  include-item:
+    - r2dt-0006
+    - r2dt-0003
+    - r2dt-0007
+    - r2dt-0001
+    - r2dt-0002
+
+Hydro: {}
+

@@ -13,3 +13,4 @@ Technical Manual
    :WEUQ:WEUQ/scalingWindTunnelData
    :WEUQ:WEUQ/TinF
    :quoFEM:SimCenterUQTechnical
+   :quoFEM:UCSDUQTechnical

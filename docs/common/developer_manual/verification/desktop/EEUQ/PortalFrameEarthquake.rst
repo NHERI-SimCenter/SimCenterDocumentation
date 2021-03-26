@@ -26,88 +26,75 @@ Examples folder in a subfolder called **PortalFrame2D**.
 
 To introduce uncertainty in the model, both mass and young’s modulus
 are assumed to be normally distributed random variables with means and
-standard deviation values shown in :numref:`lblRV`; In this
+standard deviation values shown in :ref:`lblRV`; In this
 example, the model will be sampled with the Latin Hypercube sampling
 method using both |app| and a Python script
 (``PortalFrameSampling.py``) and response statistics from both
 analyses are compared.
 
-.. csv-table:: 
+.. csv-table:: Uncertain parameters defined in the portal frame model
    :header: "Uncertain Parameter", "Distribution", "Mean", "Standard Deviation"
    :widths: 40, 20, 20, 20
 
    Nodal Mass (m [kip])	 , Normal , 	5.18	 , 1.0 
    Young’s Modulus (E [ksi]) , 	Normal	 , 4227.0	 , 500.0 
 
- 
-# \caption{Uncertain parameters defined in the portal frame model}             
+          
 
-Modeling uncertainty using |app| can be done using the
-following steps:
+Modeling uncertainty using |app| can be done using the following steps:
+
+
 #. Start |app|, click on the simulation tab (SIM) in the left bar to open a building simulation model. Click on choose button in the input script row:
 
-.. figure:: figures/portalFrameTcl.png
-   :align: center
-   :figclass: align-center
+   .. figure:: figures/portalFrameTcl.png
+      :align: center
+      :figclass: align-center
 
-   Choose building model
-
-
-#. Choose the model file \texttt{Portal2D-UQ.tcl} from PortalFrame2D example folder.
-
-.. figure:: figures/tclLocation.png
-   :align: center
-   :figclass: align-center
-
-   Choose tcl file
+      Choose building model
 
 
-#. In the list of Clines Nodes edit box, enter “1, 3”. This indicates to |app| that nodes 1 and 3 are the nodes used to obtain EDP at different floor levels (i.e. base and first floor).
+#. Choose the model file ``Portal2D-UQ.tcl`` from the ``PortalFrame2D`` example folder.
 
-.. figure:: figures/cLineNodes.png
-   :align: center
-   :figclass: align-center
+#. In the list of Clines Nodes edit box, enter ``1, 3``. This indicates to |app| that nodes 1 and 3 are the nodes used to obtain EDPs at different floor levels (i.e. base and first floor).
 
-   Select Nodes
+   .. figure:: figures/cLineNodes.png
+      :align: center
+      :figclass: align-center
 
-#. Click on the event tab (EVT) in the left bar to open the earthquake event specification tab, select Multiple Existing for loading Type. Click on the add button to add an earthquake event. 
-Then click on the choose button to select the event file.
+      Node selection.
 
-.. figure:: figures/workEvtTab.png
-   :align: center
-   :figclass: align-center
-    
-   Work on EVT
+#. Click on the event tab (**EVT**) in the left bar to open the earthquake event specification tab, select **Multiple Existing** for loading Type. Click on the **add** button to add an earthquake event. Then click on the **choose** button to select the event file.
 
-#. Choose the event file (\texttt{BM68elc.json}) for El Centro earthquake provided in the portal frame 2D example folder.
+   .. figure:: figures/workEvtTab.png
+      :align: center
+      :figclass: align-center
+      
+      Work on EVT.
 
+#. Choose the event file (``BM68elc.json``) for the El Centro earthquake provided in the portal frame 2D example folder.
 
-.. figure:: figures/evtFileLocation.png
-   :align: center
-   :figclass: align-center
-   
-   Choose event file
+#. Now select the random variables panel (**RV**) from the left bar, change the random variables types to normal and set the mean and standard deviation values of the floor mass and Young’s modulus. Notice that |app| has automatically detected parameters defined in the OpenSees tcl file using the ``pset`` command and defined them as random variables.
 
-#. Now select the random variables tab (RVs) from the left bar, change the random variables types to normal and set the mean and standard deviation values of the floor mass and
-Young’s modulus.  Notice that |app| has automatically
-detected parameters defined in the \texttt{OpenSees} tcl file using the pset
-command and defined them as random variables.
+   .. figure:: figures/workUqTab.png
+      :align: center
+      :figclass: align-center
 
-.. figure:: figures/workUqTab.png
-   :align: center
-   :figclass: align-center
+      Work on **UQ** tab
 
-   Work on **UQ** tab
+#.  Now click on **run**, set the analysis parameters, working directory and applications directory and click submit to run the analysis. 
 
-#.  Now click on run, set the analysis parameters, working directory and applications directory and click submit to run the analysis. 
 If the run is successful the program will automatically open the
-results tab showing the summary of results (\Cref{fig:figure27}).
+results tab showing the summary of results (:numref:`fig-figure27`).
+
+
+.. _fig-figure27:
 
 .. figure:: figures/runAnalysis.png
    :align: center
    :figclass: align-center
     
-   Pop-up shown when clicking **Run**
+   Pop-up shown when clicking **Run**.
+
 
 Verification Script
 -------------------
@@ -115,7 +102,7 @@ Verification Script
 A verification script (Listing 1) for propagating the uncertainty was
 developed in Python and is included in the example folder.  The script
 creates 1000 samples for both the Young’s modulus and mass values
-using Latin Hypercube sampling, then modifies the \texttt{OpenSees}
+using Latin Hypercube sampling, then modifies the OpenSees
 model, runs it and stores the output.  After all the model samples are
 processed, the script will compute and output the mean and standard
 deviation values of the peak floor acceleration and peak drift.

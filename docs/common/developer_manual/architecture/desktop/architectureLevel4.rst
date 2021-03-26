@@ -5,7 +5,7 @@
 Software Architecture
 *********************
 
-The SimCenter is developing a software framework for building scientific workflow applications to perform computational; simulations in field of NHE at both building level scale and regionsl scale. It is releasing a number of applications built using this framework. The |app| is one of those applications which have been released (EE-UQ, WE-UQ, PBE). Other applications are under development (RDT). The applications that the SimCenter are developing are limited scientific workflow systems. This chapter presents the software architecture for the framework and the |app| built using it using the C4 model.
+The SimCenter is developing a software framework for building scientific workflow applications to perform computational; simulations in field of NHE at both building level scale and regionsl scale. It is releasing a number of applications built using this framework. The |app| is one of those applications which have been released (EE-UQ, WE-UQ, PBE). Other applications are under development (R2D). The applications that the SimCenter are developing are limited scientific workflow systems. This chapter presents the software architecture for the framework and the |app| built using it using the C4 model.
 
 .. note:: 
 
@@ -18,7 +18,7 @@ The SimCenter is developing a software framework for building scientific workflo
 Level 1: A Context for SimCenter Applications
 =============================================
 
-A Level 1 diagram showing the system context for the SimCenter applications, i.e. how it fits in the world,  is shown in :numref:`figContext`. It shows SimCenter applications (EE-UQ, WE-UQ, PBE, RDT) as a box in the center surrounded by the user and the systems it and the user interact with. The SimCenter applications allows user to create and run scientific workflow applications, the data for the applications may be obtained from the web or DataDepot, the workflow applications are run on either the local desktop or on some HPC at |DesignSafe|. 
+A Level 1 diagram showing the system context for the SimCenter applications, i.e. how it fits in the world,  is shown in :numref:`figContext`. It shows SimCenter applications (EE-UQ, WE-UQ, PBE, R2D) as a box in the center surrounded by the user and the systems it and the user interact with. The SimCenter applications allows user to create and run scientific workflow applications, the data for the applications may be obtained from the web or DataDepot, the workflow applications are run on either the local desktop or on some HPC at |DesignSafe|. 
 
 .. _figContext:
 
@@ -27,6 +27,7 @@ A Level 1 diagram showing the system context for the SimCenter applications, i.e
    :figclass: align-center
 
    System context diagram for SimCenter Applications.
+
 
 Level 2:  The Components of a SimCenter Application
 ===================================================
@@ -69,7 +70,7 @@ The figure shows the backend application running locally or remotely on a HPC@De
 Level 4 UML Diagrams
 ====================
 
-A number of diagrams are presented for the level 4 diagrams. These are mostly UML diagrams showing how the applications are built. The SimCenter releases a number of front-end applications: EE-UQ shown in \:numref:`figUmlEE`, WE-UQ shown in :numref:`figUmlWE`, and PBE shown in :numref:`figUmlPBE`. These applications share code with each other and other SimCenter applications. As a consequence, the common code is bundled into a number of shared packages: EarthquakeEvents shown in :numref:`figUmlEarthquakeEvents`, WindEvents shown in :numref:`figUmlWindEvents`, and SimCenterCommon shown in :numref:`figUmlCommon`. A number of packages were chosen over placing all common code inside a single package to simplify development efforts for outside programmers (whom it is envisioned will mostly be adding new event components) and to reduce the overhead of package management and compile time for SimCenter programmers. UML diagrams are  presented for these front-end applications and shared packages. THE UML diagrams that are presented are not exhaustive, in that they do not show all classes used, for it was decided not to for example show the myriad of Line edits, labels, spin boxes, etc. that make up the widgets. What is shown is sufficient to present the SimCenter architecture.
+A number of diagrams are presented for the level 4 diagrams. These are mostly UML diagrams showing how the applications are built. The SimCenter releases a number of front-end applications: EE-UQ shown in :numref:`figUmlEE`, WE-UQ shown in :numref:`figUmlWE`, and PBE shown in :numref:`figUmlPBE`. These applications share code with each other and other SimCenter applications. As a consequence, the common code is bundled into a number of shared packages: EarthquakeEvents shown in :numref:`figUmlEarthquakeEvents`, WindEvents shown in :numref:`figUmlWindEvents`, and SimCenterCommon shown in :numref:`figUmlCommon`. A number of packages were chosen over placing all common code inside a single package to simplify development efforts for outside programmers (whom it is envisioned will mostly be adding new event components) and to reduce the overhead of package management and compile time for SimCenter programmers. UML diagrams are  presented for these front-end applications and shared packages. THE UML diagrams that are presented are not exhaustive, in that they do not show all classes used, for it was decided not to for example show the myriad of Line edits, labels, spin boxes, etc. that make up the widgets. What is shown is sufficient to present the SimCenter architecture.
 
 While there are a number of different types of UML diagrams,  those shown in this document will be limited to class diagrams and sequence diagrams. SimCenter applications are object-oriented in nature. An object-oriented program consists of objects interacting with one another,  with each object being of a certain type or class. A class diagram shows the classes, their attributes and methods, and the relationships between the classes. A sequence diagram or event diagram shows the order in which objects interact. To understand the SimCenter framework it is useful to first present the main() function for a SImCenter application, in this case EE-UQ, shown in :numref:`codeMainCode`. The code presented is a stripped down version of the actual code, code for dealing with style sheets, analytics, etc. is not shown as it is not pertinent to understanding of the software architecture.
 

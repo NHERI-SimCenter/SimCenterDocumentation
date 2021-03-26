@@ -3,15 +3,15 @@ CFD Expert Template
 
 This option allows users to obtain wind forces utilizing an existing OpenFoam model that was uploaded to Design-Safe data depot. This is done by coupling the OpenFOAM model and the building model in a weak form, where the CFD analysis is executed first, then building forces are extracted and applied to the building model. This initial version is limited in scope due to the following assumptions:
 
-#. The OpenFOAM model has a patch with the name \textit{building} that represents the building envelope.
+#. The OpenFOAM model has a patch with the name *building* that represents the building envelope.
 
 #. Only horizontal forces are applied to the building model, the vertical force and moments are not considered.
 
 #. The building forces are extracted using the binning feature in OpenFOAM force module and thus, it is assumed that all the floors are of equal heights.
 
-#. OpenFOAM solvers supported are limited to \textit{pisoFOAM}.
+#. OpenFOAM solvers supported are limited to *pisoFOAM*.
 
-#. Meshing is performed using the \textit{blockMesh} tool.
+#. Meshing is performed using the *blockMesh* tool.
 
 #. No uncertainty is considered in the CFD analysis.
 

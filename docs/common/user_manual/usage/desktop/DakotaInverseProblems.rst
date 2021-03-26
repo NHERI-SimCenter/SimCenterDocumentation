@@ -28,8 +28,7 @@ The inverse problem methods, like the parameter estimation methods, are concerne
 DREAM 
 ^^^^^
 
-
-The DiffeRential Evolution Adaptive Metropolis (DREAM) method runs multiple markov chains simultaneously for global exploration of the space, and automatically tunes and scales the orientation of the proposal distributions in randomized subspaces during the search. The inputs for the method are the number of chains, seed, number of markov chain samples and burn in samples. The number of Markov chain samples per chain is number of samples divided by number of chains.
+The Differential Evolution Adaptive Metropolis ([DREAM]_) method runs multiple markov chains simultaneously for global exploration of the space, and automatically tunes and scales the orientation of the proposal distributions in randomized subspaces during the search. The inputs for the method are the number of chains, seed, number of markov chain samples and burn in samples. The number of Markov chain samples per chain is number of samples divided by number of chains.
 
 .. _figDREAM:
 
@@ -39,5 +38,5 @@ The DiffeRential Evolution Adaptive Metropolis (DREAM) method runs multiple mark
 
   	DREAM input panel.
 
-.. [DREAM] 
+.. [DREAM]
    J. A. Vrugt, C. J. F. ter Braak, C. G. H. Diks, B. A. Robinson, J. M. Hyman, and D. Higdon. Accelerating Markov chain Monte Carlo simulation by self-adaptive differential evolution with randomized subspace sampling. International Journal of Nonlinear Scientific Numerical Simulation, 10(3), 2009. 1804, 2550

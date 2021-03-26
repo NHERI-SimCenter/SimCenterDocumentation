@@ -1,18 +1,27 @@
-EL, "Ability to select from different Earthquake Input Motion Options", SP, M, 1.0   
-EL1, "Ability to select from Multiple input motions and view UQ due to all the discrete events ", GC, M, 1.0   
-EL2, "Ability to select from list of SimCenter motions ", SP, M, 1.0  
-EL3, "Ability to select from list of PEER motions ", SP, D, 1.0  
-EL4, "Ability to use OpenSHA and selection methods to generate motions ", UF, D, 1.0  
-EL5, "Ability to Utilize Own Application in Workflow ", SP, M, 1.0  
-EL6, "Ability to use Broadband ", SP, D,   
-EL7, "Ability to include Soil Structure Interaction Effects ", GC, M, 1.1   
-EL7.1, "1D nonlinear site response with effective stress analysis ", SP, M, 1.1   
-EL7.2, "Nonlinear site response with bidirectional loading ", SP, M, 1.2   
-EL7.3, "Nonlinear site response with full stochastic characterization of soil layers ", SP, M,   
-EL7.4, "Nonlinear site response, bidirectional different input motions  ", SP, M,    
-EL7.5, "Ability to couple models from point of rupture through rock and soil into structure, which represents future of professional design practice ", GC, M,    
-EL7.5.1, "Interface using DRM method", SP, M,    
-EL8, "Utilize PEER NGA www ground motion selection tool", UF, D, 2.0  
-EL9, "Ability to select from synthetic ground motions", SP, M, 1.0  
-EL9.1, "per Vlachos, Papakonstantinou, Deodatis (2017)", SP, D, 1.1   
-EL9.2, "per Dabaghi, Der Kiureghian (2017)", UF, D, 2.0   
+EL, "*Loading from Earthquake Hazard on Local and Regional Assets*", GC, M, InProgress
+EL1, "**Regional Scale Earthquake Hazard Simulation Options**", "", "", 
+EL1.1, "Coupling of multi-scale nonlinear models from the point of rupture through rock and soil into structure", GC, M,
+EL1.1.1, "Replacement of empirical linear models with multi-scale nonlinear models as will represent a paradigm shift in engineering science", GC, D,
+EL1.1.1.1, "Interface to regional simulations using DRM method", SP, M,    
+EL1.1.2, "Include both multi-scale and multi-phase (account for liquefaction)", GC, M,
+EL1.2, "Jack Baker Method Description", SP, M, Implemented
+EL1.3, "Use GIS-Specified Matrix of Recorded Motions", SP, M, Implemented
+EL2, "**Select from Multiple Local Scale Earthquake Hazard Options**", "", "",
+EL2.1, "Coupling of multi-scale nonlinear models from the point of rupture through rock and soil into structure", GC, M,
+EL2.1, "Ability to select utilizing PEER NGA_West web service", SP, D, Implemented
+EL2.1.1, "Select using default selection options ", SP, D, Implemented
+EL2.1.1, "Select using all options available at PEER site ", UF, D, Implemented
+EL2.1.2, "Select using user supplied spectrum ", UF, D, Implemented
+EL2.2, "Ability to select from list of user supplied PEER motions ", SP, M, Implemented  
+EL2.3, "Ability to select from list of SimCenter motions ", SP, M, Implemented  
+EL2.4, "Ability to use OpenSHA and selection methods to generate motions ", UF, D, 
+EL2.5, "Ability to Utilize Own Application in Workflow ", SP, M, Implemented  
+EL2.6, "Ability to use Broadband ", SP, D,   
+EL2.7, "Ability to include Soil Structure Interaction Effects ", GC, M, Implemented
+EL2.7.1, "1D nonlinear site response with effective stress analysis ", SP, M, Implemented
+EL2.7.2, "Nonlinear site response with bidirectional loading ", SP, M, Implemented
+EL2.7.3, "Nonlinear site response with full stochastic characterization of soil layers ", SP, M, Implemented
+EL2.7.4, "Nonlinear site response, bidirectional different input motions  ", SP, M,
+EL2.8, "Ability to select from synthetic ground motions", SP, M, Implemented  
+EL2.8.1, "per Vlachos, Papakonstantinou, Deodatis (2017)", SP, D, Implemented   
+EL2.8.2, "per Dabaghi, Der Kiureghian (2017)", UF, D, Implemented   

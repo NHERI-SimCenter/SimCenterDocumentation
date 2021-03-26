@@ -12,8 +12,14 @@ set BUILDDIR=_build
 
 if "%1" == "" goto help
 
+
+
 if "%1" == "RDT" (
 	%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+	rd /s ../../RDT-Documentation/docs/_sources
+	rd /s ../../RDT-Documentation/docs/_static
+	rd /s ../../RDT-Documentation/docs/_images
+	rd /s ../../RDT-Documentation/docs/common
 	robocopy %BUILDDIR%/html ../../RDT-Documentation/docs /E > nul
 	echo.Generating RDT Documentation...
 	goto end
@@ -44,6 +50,13 @@ if "%1" == "WE" (
 	%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
 	robocopy %BUILDDIR%/html ../../WE-UQ-Documentation/docs /E > nul
 	echo.Generating WE-UQ Documentation...
+	goto end
+)
+
+if "%1" == "pelicun" (
+	%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+	robocopy %BUILDDIR%/html ../docs /E > nul
+	echo.Generating pelicun Documentation...
 	goto end
 )
 
