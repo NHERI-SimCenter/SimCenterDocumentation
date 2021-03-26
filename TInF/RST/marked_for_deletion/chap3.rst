@@ -4,7 +4,7 @@ Installation
 ==============
 
 Installing the Turbulence Inflow Tool
----------------
+--------------------------------------
 
 Download the installation package for your operation system from (a single line)
 
@@ -21,7 +21,7 @@ For Linux systems, you will need to clone the source from
     https://github.com/NHERI-SimCenter/TurbulenceInflowTool
 
 and compile it yourself performing the following steps:
-::
+
     $ git clone https://github.com/NHERI-SimCenter/TurbulenceInflowTool
     $ git clone https://github.com/NHERI-SimCenter/SimCenterCommon
     $ cd TurbulenceInflowTool
@@ -31,7 +31,7 @@ and compile it yourself performing the following steps:
 
 
 Compiling the Source Code in OpenFOAM
----------------
+--------------------------------------
 
 Download the source code of the turbulent velocity boundary conditions from
 
@@ -41,16 +41,16 @@ Download the source code of the turbulent velocity boundary conditions from
 The source code files are contained in a directory named \textcolor{blue}{inflowTurbulence}. Note that the code is provided for OpenFOAM version 6 and 7, and is slightly different in this two versions. Please choose the correct package to download according the version of OpenFOAM you have installed on your computer.
 
 Create a project directory named *run* within the *$HOME/OpenFOAM* directory named <USER>-6 (e.g. Jack-6 for user Jack and OpenFOAM version 6) by typing the following script in a terminal prompt:
-::
+
     $ mkdir -p $FOAM_RUN
 
 Copy or move the *inflowTurbulence* directory which has been downloaded earlier and all the
 files in it to the *$HOME/OpenFOAM* directory. Go the relocated *inflowTurbulence* directory by typing:
-::
+
 	$ cd $FOAM_RUN/inflowTurbulence
 
 Compile the codes in the *inflowTurbulence* directory by typing the following in the terminal prompt:
-::
+
 	$ wmake
 
 After the compilation is successfully complete, a library file named

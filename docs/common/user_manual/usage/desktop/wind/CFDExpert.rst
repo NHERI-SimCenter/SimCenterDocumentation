@@ -36,9 +36,22 @@ There are at least 6 input parameters that needs to be provided by the user and 
 
 #. **Start time:** The time in the CFD simulation to start extracting the forces on the buildings. Force values before that time are not used.
 
+#. **Coupling building vibration and CFD:** Choose whether or not you want the deformation/vibration of the building to be coupled with the CFD analysis.  This feature will significantly slow down your simulation for the CFD mesh will be updated frequently during the simulation.
+
 #. **Inflow Conditions:** Whether or not the inflow conditions will be specified for the CFD simulation.  
 
 If the user selects to specify the inflow conditions, the parameters for the inflow condition shown in :numref:`fig-cfd-expert-inflow` will need to be specified. This requires the application to download some of the case files and modify them before the simulation is started, which is done automatically by the tool.
+
+
+.. note::
+   
+   This is the first version of WE-UQ that supports this kind of coupling.  Eventually, the coupling will
+   become a fully outomated process, but for this first release, the user needs to provide an initial set of
+   mode shapes to initialize the procedure.
+
+   Mode shapes need to be prepared as a text file following this 
+   File format for user-provided input of building vibration modes.
+
 
 .. _fig-cfd-expert-inflow:
 .. figure:: figures/cfd_expert_inflow.png
