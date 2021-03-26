@@ -283,6 +283,7 @@ if app_name == 'Hydro':
 	html_theme_options.update({
 		'analytics_id': '...', #TODO: add analytics ID
 	})
+	master_doc = 'hydro'
 
 if app_name == 'R2DTool':
 
