@@ -13,6 +13,7 @@ Nataf transformation is introduced to standardize the interface between UQ metho
 .. figure:: figures/SimCenterNataf1.png
    :align: center
    :figclass: align-center
+   :width: 600
 
    Standardization of random variables using Nataf transformation
 
@@ -40,6 +41,7 @@ Global sensitivity analysis (GSA) is performed to quantify the contribution of e
 .. figure:: figures/SimCenterSensitivity1.png
    :align: center
    :figclass: align-center
+   :width: 600
 
    Concept of global sensitivity analysis
 	
@@ -95,6 +97,7 @@ using expectation-maximization (EM) algorithm. The mean operation Eq. :eq:`Si` i
 .. figure:: figures/SimCenterSensitivity2.png
 	:align: center
 	:figclass: align-center
+	:width: 600
 
   	Data-driven global sensitivity analysis by Hu and Mahadevan (2019)
 
@@ -138,6 +141,7 @@ Therefore the main tasks of surrogate modeling is (1) to find optimal stochastic
 .. figure:: figures/SimCenterSurrogate.png
 	:align: center
 	:figclass: align-center
+	:width: 600
 
   	Surrogate model for UQ/Optimization
 
@@ -152,7 +156,7 @@ Therefore the main tasks of surrogate modeling is (1) to find optimal stochastic
 			\boldsymbol{y^{obs}}=\boldsymbol{y} + \boldsymbol{\varepsilon} =f^{\rm{ex}} (\boldsymbol{x}) + \boldsymbol{\varepsilon}
 
 
-  | in which a common assumption is that :math:`\boldsymbol{\varepsilon}` is a white Gaussian measurement noise, i.e. is unbiased, follows a normal distribution with variance :math:`\tau`, and is independent to the observation noises in other samples. Since the information of the noise level is often unknown, :math:`\tau` is also calibrated along with :math:`\beta` and :math:`K(x_i,x_j)`. In such setting, surrogate model estimation will not interpolate the observation output, but instead make a regression curve passing through the optimal estimation of the true underlying outputs. Additional to measurement noise, a mild amount of inherent uncertainty (mild compared to a global trend) can be accounted for by introducing the same noise parameter.
+  | in which a common assumption is that :math:`\boldsymbol{\varepsilon}` is a white Gaussian measurement noise, i.e. is unbiased, follows a normal distribution with variance :math:`\tau`, and is independent to the observation noises in other samples. Since the noise level is often unknown, :math:`\tau` is also calibrated along with :math:`\beta` and :math:`K(x_i,x_j)`. In such setting, surrogate model estimation will not interpolate the observation output, but instead make a regression curve passing through the optimal estimation of the true underlying outputs. Additional to measurement noise, a mild amount of inherent uncertainty (mild compared to a global trend) can be accounted for by introducing the same noise parameter.
 
 
 * **Nugget effect: artificial noise for numerical stability**
@@ -165,6 +169,7 @@ Therefore the main tasks of surrogate modeling is (1) to find optimal stochastic
 .. figure:: figures/GPnugget.png
 	:align: center
 	:figclass: align-center
+	:width: 600
 
   	Gaussian process regression with and without measurement noise ( or nugget effect)
 
@@ -193,16 +198,15 @@ Input-Output settings
 
 
 User have the following options:
-
-* **Case1** : user can provide pairs of input-output dataset
-* **Case2** : user can provide input data points and a simulation model
-* **Case3** : user can provide a range of input variables (bounds) and a simulation model. After initial space-filling phase using Latin hypercube sampling (LHS), adaptive design of experiment (DoE) is activated. Given current predictions, the next optimal simulation point is optimized such that expected gain is maximized. DoE technique is only activated when the simulation cost (in terms of time) is at least twice greater than a DoE optimization cost. Otherwise, the simulation points are selected solely by LHS.
+* **Case1** : users can provide a range of input variables (bounds) and a simulation model. After initial space-filling phase using Latin hypercube sampling (LHS), **adaptive design of experiment (DoE)** is activated. Given current predictions, the next optimal simulation point is optimized such that expected gain is maximized. 
+* **Case2** : users can provide pairs of input-output dataset
+* **Case3** : users can provide input data points and a simulation model
 
 
 
 Kernel and basis functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The covariance kernel of the outcome process is unknown in most practical applications. Therefore, the mathematical from of the kernel is first chosen by the engineer, and its parameters are calibrated based on the observation data. Followings are some of the most widely implemented stationary covariance kernels. 
+The covariance kernel of the outcome process is unknown in most practical applications. Therefore, the mathematical from of the kernel is first assumed by the engineer, and its parameters are calibrated based on the observation data. Followings are some of the most widely implemented stationary covariance kernels. 
 
 
 * **Radial-basis function (RBF)**
@@ -222,6 +226,7 @@ The covariance kernel of the outcome process is unknown in most practical applic
 .. figure:: figures/GPtmp.png
 	:align: center
 	:figclass: align-center
+	:width: 600
 
   	Gaussian process regression for different correlation length parameters
 
@@ -237,7 +242,7 @@ The covariance kernel of the outcome process is unknown in most practical applic
 
 * **Matern Class** 
 
-  | Matern class of covariance function is another popular choice. It has a positive shape  parameter often denotoed as :math:`\nu` which additionally determines the roughness of the parameters. For kriging regression :math:`\nu=5/2` and :math:`\nu=3/2` is known to be an effective choice considering roughness property and the simplicity of the functional form. [Rasmussen2006]_
+  | Matern class of covariance function is another popular choice. It has a positive shape  parameter often denotoed as :math:`\nu` which additionally determines the roughness of the parameters. For kriging regression :math:`\nu=5/2` and :math:`\nu=3/2` is known to be a generally applicable choice considering roughness property and the simplicity of the functional form. [Rasmussen2006]_
 
 	.. math::
 		:label: Matern1
@@ -263,22 +268,23 @@ When kernel is selected, the parameters are calibrated to maximize the likelihoo
 Adaptive Design of Experiments (DoE)
 -------------------------------------
 
-The case when bounds of input variables and a simulator model is provided (Case3), the point of model evaluation can be selected by space-filling methods, e.g. Latin hyper cube sampling (LHS). This is non-adaptive Design of Experiments (DoE) in a sense that the whole samples can be located before running any simulations. On the other hand, the number of model evaluations can be reduced by selecting evaluation points *adaptively* after each round to get the best model improvements. 
+The case when bounds of input variables and a simulator model is provided (Case 1), the point of model evaluation can be selected by space-filling methods, e.g. Latin hyper cube sampling (LHS). This is non-adaptive Design of Experiments (DoE) in a sense that the whole samples can be located before running any simulations. On the other hand, the number of model evaluations can be reduced by selecting evaluation points *adaptively* after each run to get the best model improvements. 
 
 .. _figGP_DoE1:
 
 .. figure:: figures/GPtmp1.png
 	:align: center
 	:figclass: align-center
+	:width: 600
 
   	Two optimizations in design of experiments
 
 
-However, as shown in the figure, adaptive DoE requires multiple optimization turns to find the optimal surrogate model parameters as well as the next optimal design of experiments. Therefore, it is noted that the adaptive DoE is efficient only when model evaluation time is significantly greater than the optimization time. **In the program, we automatically compare the DoE time and model simulation time, and activates adaptive DoE only when it is more efficient.** Otherwise, the input points are generated in batch by LHS. 
+However, as shown in the figure, adaptive DoE requires multiple optimization turns to find the optimal surrogate model parameters as well as the next optimal design of experiments. Therefore, it is noted that the adaptive DoE is efficient only when model evaluation time is significantly greater than the optimization time. 
 
 **DoE algorithm**
 
-Since we aim for the global surrogate modeling (opposed to a local surrogate which have specific objective functions), a good score function is defined accounting for the reduced amount of both variance and bias. There are many variations of the objective  score function [Fuhg2020]_, and in the program, the modified integrated mean squared error (IMSE) from Kyprioti *et al.* (2020) is introduced as:
+Since we aim for the global surrogate modeling (opposed to a local surrogate which have specific objective functions), a good score function is defined accounting for the reduced amount of predictive variance and bias. There are many variations of the objective  score function [Fuhg2020]_, and in the program, the modified integrated mean squared error (IMSE) from Kyprioti *et al.* (2020) is introduced as:
 
 .. math::
 	:label: IMSE
@@ -295,11 +301,12 @@ where :math:`\phi` is bias measure from leave-one-out cross validation (LOOCV) a
 .. figure:: figures/GPtmp2.png
 	:align: center
 	:figclass: align-center
+	:width: 600
 
   	Adaptive DoE procedure by Kyprioti et al. (2020) [Kyprioti2020]_
 
 
-Adaptive DoE is terminated and the final surrogate model is constructed if one of the three conditions are satisfied:
+Adaptive DoE is terminated and the surrogate modeling is terminated if one of the three conditions are satisfied:
 
 * **Time**: analysis time exceeds a predefined (rough) time constraint
 * **Count**: number of model evaluation exceeds a predefined count constraint 
@@ -309,7 +316,11 @@ Adaptive DoE is terminated and the final surrogate model is constructed if one o
 Verification of surrogate model
 -------------------------------
 
-Once the parameters of GP are calibrated, leave-one-out cross validation (LOOCV)-based measure is used for verification. Specifically, a test surrogate model :math:`\hat{y}=f^{sur}_{loo,k}(\boldsymbol{x})` is constructed using the samples :math:`\{x_1,x_2,...,x_{k-1},x_{k+1},...,x_N\}` without recalibration of parameters, and its prediction at point :math:`{x}_k,~\hat{y}_k,` is compared with the exact outcome :math:`y_k=f(\boldsymbol{x}_k)`.
+Once the training is completed, the following three verification measures are presented based on leave-one-out cross-validation (LOOCV) error estimation.
+
+* **Leave-one-out cross-validation (LOOCV)**
+
+  | LOOCV prediction :math:`\hat{\boldsymbol{y}}_k` at each sample location :math:`\boldsymbol{x}_k` is obatined by the following procedure: A temporary surrogate model :math:`\hat{\boldsymbol{y}}=f^{sur}_{loo,k}(\boldsymbol{\boldsymbol{x}})` is constructed using the samples :math:`\{\boldsymbol{x}_1,\boldsymbol{x}_2,...,\boldsymbol{x}_{k-1},\boldsymbol{x}_{k+1},...,\boldsymbol{x}_N\}` and the calibrated parameters, and the prediction :math:`\hat{\boldsymbol{y}}_k=f^{sur}_{loo,k}(\boldsymbol{x}_k)` is compared with the exact outcome :math:`y_k=f(\boldsymbol{x}_k)`.
 
 * **R2 error**
 
@@ -322,6 +333,9 @@ Once the parameters of GP are calibrated, leave-one-out cross validation (LOOCV)
 			R^2 &= 1 - \frac{\sum^N_{k=1} (\hat{y}_k-\mu_\hat{y})^2}{\sum^N_{k=1} (\hat{y}_k-y_k)^2}
 		\end{align*}	
 
+  | The surrogate model is considered well-trained when the **R2 (<1) approaches 1**
+ 
+
 * **Normalized root-mean-squared-error (NRMSE)**
 
 	.. math::
@@ -331,16 +345,16 @@ Once the parameters of GP are calibrated, leave-one-out cross validation (LOOCV)
 			\rm{NRMSE} ~ &= \frac{\sqrt{\frac{1}{N_t} \sum^{N_t}_{k=1} (y_k-\hat{y}_k)^2}}{\max_{k=1,...,N_t}(y_k)-\min_{k=1,...,N_t}(y_k)}
 		\end{align*}	
 
-
+  | The surrogate model is considered well-trained when the **NRMSE (>0) approaches 0**
 
 * **Correlation coefficient**
 
   | Correlation coefficient is a statistic that measures linear correlation between two variables
 
-	.. math::
-		:label: corr
+  .. math::
+    :label: corr
 
-			\rho_{y,\hat{y}} = \frac{\sum^N_{k=1}(y_k-\mu_{y})(\hat{y}_k-\mu_{\hat{y}})} {\sigma_y \sigma_\hat{y}}
+      \rho_{y,\hat{y}} = \frac{\sum^N_{k=1}(y_k-\mu_{y})(\hat{y}_k-\mu_{\hat{y}})} {\sigma_y \sigma_\hat{y}}
 
 
   |   where 
@@ -349,26 +363,12 @@ Once the parameters of GP are calibrated, leave-one-out cross validation (LOOCV)
   |      :math:`\sigma_{y}`: standard deviation of :math:`\{y_k\}`
   |      :math:`\sigma_{\hat{y}}`: standard deviation of :math:`\{\hat{y}_k\}`
 
+  | The surrogate model is considered well-trained when the **correlation coefficient (** :math:`-1<\rho<1` **) approaches 1**
+
 .. Note:: 
 
-   Since they are calculated from the cross validation predictions, this validation measures can be **biased**, particularly when **highly localized nonlinear range exist in actual response surface** and those regions are not covered by the training samples. However, introduction of DoE helps the user to suppress the bias significantly by targeted selection of simulation points around potentially faulty regions alarmed by high variance or high bias of surrounding samples.
+	Since these measures are calculated from the cross-validation predictions, they can be biased, particularly when a **highly localized nonlinear range exists in the actual response surface** and those regions are not covered by the training samples. 
 
-
-Prediction by surrogate model
----------------------------------
-
-+-----------+-----------------+----------------------+
-|           | Use surrogate   |  Use exact simulator |
-+===========+=================+======================+
-| **Case1** | Yes             | No                   |
-+-----------+-----------------+----------------------+
-| **Case2** | Yes             | Yes                  |
-+-----------+-----------------+----------------------+
-
-User have the following options:
-
-* **Case1** : prediction is always based on the surrogate model prediction. When predictive error is too high at a sampled input point, program will emit error and stop analysis.
-* **Case2** : when predictive R2 error is high at sampled input points, exact simulator is called instead of using surrogate estimates or calling exit. Thus Case2 requires simulator as a input and takes longer time, but guarantees a better precision. Surrogate model is updated each time when simulator is called.
 
 .. [Rasmussen2006]
 	Rasmussen, C.E. and Williams, C.K. (2006). *Gaussian Process for Machine Learning*. Cambridge, MA: The MIT Press, 2006 (available on-line at http://www.gaussianprocess.org/gpml/)
