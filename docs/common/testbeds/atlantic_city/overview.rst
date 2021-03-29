@@ -37,10 +37,12 @@ should consider hurricane risk.
 Capabilities and Supported Hazards
 ====================================
 
-The testbed supports the transition from census-block level loss projections to asset-level projections that 
+The testbed supports the transition from census-block-level loss projections to asset-level projections that 
 assess the damage to individual buildings under multiple hurricane-induced hazards: wind and storm surge. Water 
 penetration due to the breach of building envelopes and/or wind-borne debris impact are also captured in the 
 damage and loss modeling, though the physics of these phenomena themselves are not explicitly modeled. 
+Similarly, other hydrologic hazards related to accumulated rainfall, inland flooding, overland flow and 
+riverline flooding, are not capture.
 Supported building classes include residential, commercial and industrial construction, critical facilities, 
 and manufactured homes, constructed of wood, steel, reinforced concrete and masonry. The adoption of HAZUS 
 loss estimation frameworks constrains the current testbed to buildings 6 stories and under and only the 
