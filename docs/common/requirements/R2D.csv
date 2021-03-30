@@ -8,6 +8,7 @@ R2D1.5 , "Ability to perform multi-hazard simulations: wind + storm surge, rain,
 R2D1.6 , "Ability to utilize machine learning ensemble techniques in hazard simulation", GC, M,
 R2D1.7 , "Ability to incorporate surrogate models in hazard simulation", SP, M,
 R2D1.8 , "Ability to incorporate multi-scale models in hazard simulation", SP, M, 
+R2D1.9 , "Ability to incorporate ground deformation hazards for pipes, roadways, and other infrastructure", SP , M 
 R2D2, "**Include Different Asset Types**", GC , M , InProgress
 R2D2.1 ,"Ability to incorporate building assets", GC , M , Implemented
 R2D2.1.1 ,"Ability to incorporate multi-fidelity building model asset descriptions", GC , M, 
