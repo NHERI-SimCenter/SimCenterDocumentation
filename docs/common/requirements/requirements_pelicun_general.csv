@@ -8,7 +8,7 @@ P1.1.5, "Implement high-resolution assessment of transportation networks", SP, M
 P1.1.6, "Implement high-resolution assessment of buried pipelines", SP, M, 
 P1.2, "*Implement the efficient loss assessment methodologies from HAZUS*", GC, , 
 P1.2.1, "Implement the assessment of buildings under earthquake hazard from HAZUS", SP, M, Implemented
-P1.2.2, "Implement the assessment of buildings under hurricane wind hazard from HAZUS", SP, M, "2.0"
+P1.2.2, "Implement the assessment of buildings under hurricane wind hazard from HAZUS", SP, M, Implemented
 P1.2.3, "Implement the assessment of buildings under storm surge hazard from HAZUS", SP, M, 
 P1.2.4, "Implement the assessment of buried pipelines under earthquake hazard from HAZUS", SP, M,
 P1.2.5, "Implement the assessment of transportation networks under earthquake hazard from HAZUS", SP, M,
@@ -20,10 +20,10 @@ P2.1.1, "Allow users to set the number of realizations", SP, M, Implemented
 P2.1.2, "Allow users to customize fragility and consequence function parameters", SP, D, Implemented
 P2.1.3, "Allow users to specify dependencies between logically similar parts of the stochastic models", SP, D, Implemented
 P2.2, "*Response Model*", , , 
-P2.2.1, "Allow users to specify the added uncertainty to EDPs (increase in log-standard dev.)", SP, M,1
+P2.2.1, "Allow users to specify the added uncertainty to EDPs (increase in log-standard dev.)", SP, M, Implemented
 P2.2.2, "Allow users to specify the EDP ranges that correspond to reliable simulation results", SP, D, Implemented
-P2.2.3, "Allow users to specify the type of distribution they want to fit to the empirical EDP data", UF, D, 1.2
-P2.2.4, "Allow users to choose if they want to fit a distribution only to the non-collapsed EDPs", UF, M, 1.2
+P2.2.3, "Allow users to specify the type of distribution they want to fit to the empirical EDP data", UF, D, Implemented
+P2.2.4, "Allow users to choose if they want to fit a distribution only to the non-collapsed EDPs", UF, M, Implemented
 P2.3, "*Performance Model*", , , 
 P2.3.1, "Allow users to prescribe a different number of inhabitants on each floor", SP, D, Implemented
 P2.3.2, "Allow users to customize the temporal distribution of inhabitants", SP, D, Implemented
@@ -34,7 +34,7 @@ P2.4.1, "Allow users to specify the residual drift limits that determine irrepai
 P2.4.2, "Allow users to specify the yield drift value that is used to estimate residual drifts from peak drifts", SP, D, Implemented
 P2.4.3, "Allow users to specify the EDP limits that are used to determine collapse probability", SP, D, Implemented
 P2.4.4, "Allow users to specify arbitrary collapse modes and their likelihood", SP, D, Implemented
-P2.4.5, "Allow users to prescribe the collapse probability of the structure", UF, M, 1.2
+P2.4.5, "Allow users to prescribe the collapse probability of the structure", UF, M, Implemented
 P2.5, "*Loss Model*", , , 
 P2.5.1, "Allow users to decide which DVs to calculate", SP, D, Implemented
 P2.5.2, "Allow users to specify the likelihood of various injuries in each collapse mode", SP, D, Implemented
