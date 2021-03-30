@@ -1,12 +1,12 @@
-UV1,"**Various Random Variable Probability Distributions**", SP, M,1, "**--**"
-UV1.1,"Normal", SP, M ,1, "1, 2, 3, 4, 9"
-UV1.2,"Lognormal", SP, M,1, "2, 3, 4, 9"
-UV1.3,"Uniform", SP, M,1, "5, 8, 14"
-UV1.4,"Beta", SP, M,1, "2, 3, 4, 9"
-UV1.5,"Weibull",  SP, M ,1, "2, 3, 4, 9"
-UV1.6,"Gumbel",  SP, M,1, "17"
-UV1.7, "Ability to define parameters by moments or data samples", SP, D, 2.2, "4"
-UV2,"**User Defined Distribution**", SP, M, ,   
-UV3,"**Define Correlation Matrix**", SP, M, 2.2, "9"
-UV4,"**Random Fields**", SP, M, , 
-UV5,"**Ability to view graphically the density function when defining the RV**", UF, D,2.1, "17"
+RV1,"**Various Random Variable Probability Distributions**", SP, M,
+RV1.1,"Normal", SP, M , Implemented
+RV1.2,"Lognormal", SP, M, Implemented
+RV1.3,"Uniform", SP, M, Implemented
+RV1.4,"Beta", SP, M, Implemented
+RV1.5,"Weibull",  SP, M , Implemented
+RV1.6,"Gumbel",  SP, M, Implemented
+RV1.7, "Ability to define parameters by moments or data samples", SP, D,  Implemented
+RV2,"User Defined Distribution", SP, M, 
+RV3,"Define Correlation Matrix", SP, M, Implemented
+RV4,"Random Fields", SP, M, , 
+RV5,"Ability to view graphically the density function when defining the RV", UF, D, Implemented
