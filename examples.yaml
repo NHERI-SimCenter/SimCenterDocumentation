@@ -1,4 +1,25 @@
+RTM: 
+  data-file:
+    - ../quoFEM/Examples/index.json
+    - ../R2DTool/Examples/index.json
+    - ../EE-UQ/Examples/index.json
+      #  include-item:
+      #    - qfem-0001
+      #    - qfem-0002
+      #    - qfem-0005
+      #    - qfem-0003
+      #    - qfem-0004
+      #    - qfem-0009
+      #    - qfem-0008
+      #    - qfem-0014
+      #    - qfem-0015
+      #      #- eeuq-000*
+      #    - r2dt-000*
+      #
+
 quoFEM:
+  data-file:
+    - ../quoFEM/Examples/index.json
   include-item:
     ? qfem-0001
     ? qfem-0002
