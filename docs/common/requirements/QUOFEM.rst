@@ -20,23 +20,32 @@ researchers. All requirements in this section are related to work in sections 1.
    The purpose of presenting these requirements is to inform the community on the present capabilities of the |app| and features that could be added. The original set of requirements have come from a set of grand challenge reports, **GC**. These original requirements have been broken into a smaller set of deliverable features by the senior faculty associated with the project, **SP**. Additional requirements have come from users, **U** See section :ref:`features` if you have additional features you would like to see.
 
 
+quoFEM Requirements
+-------------------
+
+.. csv-table:: Requirements - quoFEM
+  :header: "#", "Description", "Source", "Priority", "Status", "Examples"
+  :widths: 10, 60, 10, 10, 10, 10	   
+  :file: quoFEM.csv
+
+   
 UQ Requirements
 ---------------
 
 .. .. csv-table:: Requirements - Uncertainty Quantification Methods and Variables
-..   :header: "#", "Description", "Source", "Priority", "Version"
+..   :header: "#", "Description", "Source", "Priority", "Status"
 ..   :widths: 10, 60, 10, 10, 10
 ..   :file: CommonUQ.csv
 
 .. csv-table:: Requirements - Uncertainty Quantification Methods
-  :header: "#", "Description", "Source", "Priority", "Version", "Examples"
+  :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 60, 10, 10, 10, 10	   
   :file: UQMethods.csv
 
 .. csv-table:: Requirements - Random Variables
-  :header: "#", "Description", "Source", "Priority", "Version", "Examples"
+  :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 60, 10, 10, 10, 10	   
-  :file: UQRVs.csv
+  :file: RV.csv
 
 .. include:: key.rst	 
 
