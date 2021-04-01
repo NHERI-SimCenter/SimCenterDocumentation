@@ -26,7 +26,7 @@ else:
 	os.environ['SIMCENTER_DEV'] = os.path.abspath('../../')
 
 app_abrev = app_name.split("-")[0].replace("Tool","")
-app_abrev2 = app_name.replace("-","").replace("Tool","")
+app_abrev2 = app_name.replace("-","").replace("Tool","").replace("requirements","RTM")
 app_name2 = app_name.replace("Tool","")
 loc_app_dir = os.path.abspath(f'../../{app_name}')
 
@@ -203,7 +203,7 @@ html_logo = f'common/figures/{app_name2}-Logo.png'
 rendre_config = {
 	"targets": {
 		"examples": {
-			"data-file": os.path.normpath(f'{loc_app_dir}/Examples/index.json'),
+			"data-file": [os.path.normpath(f'{loc_app_dir}/Examples/index.json')],
 			"defaults": {
 				"link": "./%%:base/README"
 			}
@@ -230,7 +230,7 @@ docTestbeds='True'
 if app_name == 'Hydro':
 
 	project = 'Hydro-UQ'
-	author = "Ajay B Harish"
+	author = "Ajay B Harish, Frank McKenna"
 
 	#tags.add('desktop_app')
 	tags.add('earthquake')
@@ -241,7 +241,6 @@ if app_name == 'Hydro':
 	toc_filter_exclusions.remove('Hydro')
 	toc_filter_exclusions.remove('desktop')
 	toc_filter_exclusions.remove('response')
-	toc_filter_exclusions.remove('notQuoFEM')
 	toc_filter_exclude = toc_filter_exclusions
 
 	exclude_patterns.remove('**/*desktop*')
@@ -267,12 +266,14 @@ if app_name == 'Hydro':
 
 	rst_prolog += f"""
 .. |full tool name| replace:: Water-borne Hazards Engineering with Uncertainty Quantification
+.. |test example| replace:: :ref:`(Under development)`
 .. |tool version| replace:: 1.0
 .. |appLink| replace:: `{app_name2} Download (Coming soon)`_
+.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0
 .. _Hydro Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
-.. |contact person| replace:: {author}
-.. |developers| replace:: {author}
+.. |contact person| replace:: Ajay B Harish (ajaybh@berkeley.edu), Frank Mckenna (fmk@berkeley.edu), NHERI SimCenter, University of California Berkeley
+
 """
 
 	extlinks.update(
@@ -282,6 +283,7 @@ if app_name == 'Hydro':
 	html_theme_options.update({
 		'analytics_id': '...', #TODO: add analytics ID
 	})
+	master_doc = 'hydro'
 
 if app_name == 'R2DTool':
 
@@ -323,14 +325,14 @@ if app_name == 'R2DTool':
 	exclude_patterns.append('**/DakotaInverseProblems.rst')
 	# END TODO
 
-	rst_prolog += """\
+	rst_prolog += f"""\
 .. |full tool name| replace:: Regional Resilience Determination Tool
+.. |test example| replace:: :ref:`r2dt-0006`
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0
 .. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt
 .. |tool version| replace:: 1.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
-.. |developers| replace:: Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez
 
 """
 	example_config.update({
@@ -420,14 +422,28 @@ elif app_name == 'EE-UQ':
 	exclude_patterns.remove('**/*response*')
 	exclude_patterns.remove('**/*EE[-_]UQ*')
 
+	sync_examples = True
+	example_config.update({
+		"include-item": [
+			"eeuq-0001",
+			"eeuq-0002",
+			"eeuq-0003",
+			"eeuq-0004",
+			"eeuq-0005",
+		]
+	})
+	extlinks.update(
+	   {f'eeuq-{i:04}' : (f'{examples_url}/eeuq-{i:04}/%s',f'eeuq-{i:04}') for i in range(1,99)}
+	)
+
 	rst_prolog += """
 .. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application (EE-UQ)
 .. |tool version| replace:: 2.0
+.. |test example| replace:: :ref:`eeuq-0001`
 .. _EE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/EE_UQ
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-EE`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
-.. |developers| replace:: **Frank McKenna**, **Wael Elhaddad**, **Michael Gardner**, **Chaofeng Wang**, **Adam Zsarnóczay**
 
 """
 
@@ -466,12 +482,12 @@ elif app_name == 'quoFEM':
 
 	rst_prolog += f"""
 .. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)
+.. |test example| replace:: :ref:`qfem-0001`
 .. |tool version| replace:: 2.0
 .. _quoFEM Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
-.. |developers| replace:: {author}
 
 """
 
@@ -498,7 +514,8 @@ elif app_name == 'quoFEM':
 
 elif app_name == 'WE-UQ':
 	project = 'Wind Engineering with Uncertainty Quantification'
-	author = 'Frank McKenna'
+	#author = 'Frank McKenna'
+	author = 'Frank McKenna, Peter Mackenzie-Helnwein, Wael Elhaddad, Jiawei Wan, Michael Gardner, Dae Kun Kwon'
 
 	tags.add('desktop_app')
 	tags.add('response')
@@ -520,14 +537,14 @@ elif app_name == 'WE-UQ':
 	exclude_patterns.remove('**/*WE[-_]UQ*')
 	exclude_patterns.remove('**/weuq-*')
 
-	rst_prolog += """
-.. |full tool name| replace:: Wind Engineering with Uncertainty Quantification Application (WE-UQ)
+	rst_prolog += f"""
+.. |full tool name| replace:: Wind Engineering with Uncertainty Quantification Application
+.. |test example| replace:: :ref:`(Under development)`
 .. |tool version| replace:: 2.0
 .. _WE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=5.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-WE`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
-.. |developers| replace:: **Frank McKenna**, **Peter Mackenzie-Helnwein**, **Wael Elhaddad**, **Jiawei Wan**, **Michael Gardner**, **Dae Kun Kwon**
 
 """
 
@@ -552,14 +569,13 @@ elif app_name == 'pelicun':
 
 	exclude_patterns.remove('**/*pelicun*')
 
-	rst_prolog += """
+	rst_prolog += f"""
 .. |pelicun expanded| replace:: Probabilistic Estimation of Losses, Injuries, and Community resilience Under Natural disasters
 .. |full tool name| replace:: pelicun library
 .. |app| replace:: pelicun library
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
 .. |tool version| replace:: 2.0.9
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
-.. |developers| replace:: **Adam Zsarnóczay**
 """
 
 	extensions = [
@@ -593,11 +609,12 @@ elif app_name == 'pelicun':
 
 	htmlhelp_basename = 'pelicundoc'
 
+
 elif app_name == 'requirements':
 	master_doc = 'common/requirements/index'
 	project = 'SimCenter Requirements Traceability Matrix'
 	exclude_patterns = [
-                'common/user_manual/*',
+                #'common/user_manual/*',
                 'common/developer_manual/*',
                 'common/testbeds/',
                 'common/technical_manual/*',
@@ -613,7 +630,7 @@ elif app_name == 'requirements':
 	}
 
 
-	rst_prolog = """
+	rst_prolog = f"""
 .. |floatList| replace:: *list float*
 .. |integerList| replace:: *list integer*
 .. |intList| replace:: *list integer*
@@ -628,6 +645,9 @@ elif app_name == 'requirements':
 
 """
 
+rst_prolog += f"""
+.. |developers| replace:: {", ".join(f"**{auth}** " for auth in author.split(", "))}
+"""
 
 # -- General configuration ---------------------------------------------------
 
@@ -652,8 +672,7 @@ templates_path = ['_templates']
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
-exclude_patterns = (exclude_patterns +
-					['_build', 'Thumbs.db', '.DS_Store', '_archive'])
+exclude_patterns += ['_build', 'Thumbs.db', '.DS_Store', '_archive']
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -690,7 +709,7 @@ latex_documents = [
 ]
 latex_logo = 'common/figures/NSF_SimCenter_NO TEXT_SimCenter.png'
 
-# -- sync files for examples ---------------------------------------------------------------
+# -- sync files for examples --------------------
 
 if sync_examples:
 	sync_files(

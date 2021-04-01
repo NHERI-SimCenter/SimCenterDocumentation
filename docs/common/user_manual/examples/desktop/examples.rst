@@ -26,14 +26,12 @@ Examples
 	After the initial basic examples, each section focuses on a particular feature of PBE and describes how various settings affect the damage and loss assessment. All examples come with input files that are available in the `PBE Github repository <https://github.com/NHERI-SimCenter/PBE/tree/master/Examples>`_.
 
 
+.. only:: PBE_app
 
-.. toctree-filt::
-   :maxdepth: 1
+    .. toctree-filt::
+       :maxdepth: 1
 
-   :EEUQ:EEUQ/exampleShearBuilding3/README
-   :EEUQ:EEUQ/randomField/randomField
-   :PBE:PBE/exampleShearBuilding3/README
-..    :WEUQ:WEUQ/exampleShearBuilding9/README
+       :PBE:PBE/exampleShearBuilding3/README
 
 
 
@@ -42,5 +40,4 @@ Examples
 	:load-defaults: $SIMCENTER_DEV//SimCenterDocumentation//examples.yaml#/$SIMDOC_APP
 
 	:link: ./%%:base/README
-
 

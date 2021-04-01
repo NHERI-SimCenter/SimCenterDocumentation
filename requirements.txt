@@ -6,5 +6,5 @@ sphinxcontrib-bibtex<2.0.0 # version 2 incompatible
 sphinx-jsonschema
 sphinxcontrib-images
 numpydoc
-rendre>0.0.10
+rendre>0.0.11
 
