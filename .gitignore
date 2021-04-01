@@ -297,3 +297,5 @@ docs/web
 *.pyc
 
 build/
+
+.idea
