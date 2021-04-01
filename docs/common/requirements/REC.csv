@@ -1,0 +1,22 @@
+REC,"*Recovery (REC) Modeling*", , ,
+REC1,"*Building Recovery*",,,
+REC1.1,"Incorporate advanced methods for building recovery time estimation*", SP,M,
+REC2,"*Housing and Community Recovery*",,,
+REC2.1,"Incorporate modeling of the recovery of households and communities",SP,M,
+REC3,"*Infrastructure Recovery*",,,
+REC3.1,"Incorporate modeling of the recovery of transportation networks",SP,M,
+REC3.2,"Incorporate modeling of the recovery of buried pipeline networks",SP,M,
+REC3.3,"Incorporate modeling of the recovery of power networks",SP,M,
+REC4,"*Business Recovery*",,,
+REC4.1,"Incorporate modeling of the recovery of businesses",SP,M,
+REC4.2,"Ability to incorporate improved indirect economic loss estimation models", GC , M ,
+REC4.3,"Ability to include demand surge in determination of losses", GC , M
+REC5,"*Interdependencies*",,,
+REC5.1,"Implement a framework to model interdependencies between the recovery of various systems",SP,M,
+REC5.2,"Ability to include lifeline disruptions", GC , M ,
+REC6,"*Metrics of recovery*",,,
+REC6.1,"Implement metrics to inform recovery and community resilience based on the outputs of the available recovery models",SP,M,
+
+
+
+
