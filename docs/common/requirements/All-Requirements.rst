@@ -1,3 +1,5 @@
+The following is the list of all requirements across all the tools. It is helpful to view an abstract hierarchy of the tools, showing **R2D** at the top and the components at the bottom. Each application pulls in many of the requirements from the others. For Example PBE, builds upon EE-UQ. It has it;'s own requirements, i.e. DL, but includes the loading, modeling and analysis requirements from EE-UQ. It specializes the UQ requirement, in that it only incorporates the sampling option. One set of requirements not shown in the figure is CR, a listing of all the common functionalty required of all the applications.
+
 
 R2D
 ---
@@ -149,7 +151,7 @@ Damage & Loss Requirements
 Recovery Requirements
 ---------------------
 
-.. csv-table:: Requirements - Recovery
+.. csv-table:: Requirements - REC
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 60, 10, 10, 10
   :file: REC.csv
@@ -209,15 +211,6 @@ DL Database
 
 .. include:: key.rst
 
-Regional Testbeds
------------------
-
-.. csv-table:: Requirements - DLD
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 60, 10, 10, 10
-  :file: testbeds.csv
-
-.. include:: key.rst
 
 
 

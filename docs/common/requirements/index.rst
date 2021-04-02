@@ -24,7 +24,7 @@ Each requirement in the RTM has the following entry fields:
 
    #. A source for the requirement indicating were the requirement originated. That can be one of three:
       
-      #. GC: Grand challenges in hazard engineering are the problems, barriers, and bottlenecks that hinder the ideal of a nation resilient from the effects of natural hazards. The vision documents referenced in the solicitation [XX,XX,XXX] outline the grand challenges for wind and earthquake hazards. These documents all present a list of research and educational advances needed that can contribute knowledge and innovation to overcome the grand challenges. The advances summarized in the vision documents were identified through specially formed committees and workshops comprising researchers and practicing engineers. They identified both the grand challenges faced and also identified what was needed to address these challenges. The software needs identified in these reports that are applicable to research in natural hazards as permitted under the NSF NHERI program were identified in these reports. Those tasks that the NHERI SimCenter identified as pertaining to aiding NHERI researchers perform their research and those which would aid practicing engineers utilize this research in their work are identified here.
+      #. GC: Grand challenges in hazard engineering are the problems, barriers, and bottlenecks that hinder the ideal of a nation resilient from the effects of natural hazards. The vision documents referenced in the solicitation ([NSTC2006]_, [NSB2007]_, [NEHRP2008]_, [Fenves2011]_, [NIST2014]_]) outline the grand challenges for wind and earthquake hazards. These documents all present a list of research and educational advances needed that can contribute knowledge and innovation to overcome the grand challenges. The advances summarized in the vision documents were identified through specially formed committees and workshops comprising researchers and practicing engineers. They identified both the grand challenges faced and also identified what was needed to address these challenges. The software needs identified in these reports that are applicable to research in natural hazards as permitted under the NSF NHERI program were identified in these reports. Those tasks that the NHERI SimCenter identified as pertaining to aiding NHERI researchers perform their research and those which would aid practicing engineers utilize this research in their work are identified here.
 	 
       #. SP: From the senior personnel on the SimCenter project. The vision documents outline general needs without going into the specifics. From these general needs the senior personnel on the project identified specific requirements that would provide basic functionality to allow research.
 	 
@@ -77,20 +77,6 @@ For regional scale, the requirements are broken down into four classes. AI relat
    pelicun
    testbeds
 
-++++++++++++++++++++
-Educational Software
-++++++++++++++++++++
-
-The following are educational activities obtained that are related to software development.
-
-.. toctree-filt::
-   :caption: Education
-   :maxdepth: 1
-   :numbered: 4
-
-   edRequirements
-
-
 ++++++++++++++++
 All Requirements
 ++++++++++++++++
@@ -100,7 +86,7 @@ All Requirements
    :maxdepth: 1
    :numbered: 4
 
-   allRequirements
+   All-Requirements
 
 
 .. toctree::
@@ -112,3 +98,21 @@ All Requirements
 Contact
 =======
 Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
+
+References
+==========
+
+.. [Fenves2011]
+   Fenves, G. L., Poland, C. D., Crewe, A. J., Eguchi, R., T., Hajjar, J. F., Lynch, J. P., and Nakashima, M. (2011). Grand Challenges in Earthquake Engineering, National Research Council, National Academies Press, Washington, D.C., 90 pp.
+
+.. [NEHRP2008]
+   Strategic Plan for the National Earthquake Hazards Reduction Program, Fiscal Years 2009-2013, National Earthquake Hazards Reduction Program. http://www.nehrp.gov/pdf/strategic_plan_2008.pdf.
+
+.. [NIST2014] Measurement Science R&D Roadmap for Windstorm and Coastal Inundation Impact Reduction
+NIST GCR 14-973-13 http://www.nist.gov/customcf/get_pdf.cfm?pub_id=915541.
+
+.. [NRC2011] National Earthquake Resilience: Research, Implementation, and Outreach.National Research Council. Washington, DC. The National Academies Press, https://www.nap.edu/catalog/13092/national-earthquake-resilience-research-implementation-and-outreach 
+
+.. [NSB2007] Hurricane Warning-The Critical Need for a National Hurricane Research Initiative. National Science Board. https://www.nsf.gov/nsb/publications/landing/nsb06115.jsp?org=NSF.
+
+.. [NSTC2006] Windstorm Impact Reduction Implementation Plan, National Science and Technology Council. https://www.preventionweb.net/publications/view/1559
