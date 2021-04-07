@@ -90,6 +90,7 @@ The following are educational activities obtained that are related to software d
 
    edRequirements
 
+
 ++++++++++++++++
 All Requirements
 ++++++++++++++++
@@ -100,6 +101,13 @@ All Requirements
    :numbered: 4
 
    allRequirements
+
+
+.. toctree::
+   :caption: Gallery
+
+   ../user_manual/examples/desktop/gallery
+
    
 Contact
 =======

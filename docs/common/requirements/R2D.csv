@@ -1,40 +1,62 @@
 R2D, "*Ability to perform regional simulation allowing communities to evaluate resilience and perform what-if types of analysis for natural hazard events*", GC, M, InProgress
 R2D1, "**Include Various Hazards**", GC, M, InProgress
-R2D1.1, "Perform such simulations for ground shaking due to Earthquake using methods defined in EL1", GC , M , Implemented
-R2D1.2 , "Ability to perform such simulations for wave action due to Earthquake induced Tsunami ", GC , M ,  
-R2D1.3 , "Ability to perform such simulations for wind action due to Hurricane", GC  , M , InProgress
-R2D1.4 ,"Ability to perform such simulations for wave action due to Hurricane Storm Surge", GC , M ,
-R2D1.5 , "Ability to perform such for multi-hazard simulations: wind + storm surge, rain, wind and water borne debris", GC , M ,
-R2D1.6 , "Ability to utilize ensemble techniques in hazard simulation", GC, M,
+R2D1.1, "Ability to perform simulations for ground shaking due to earthquakes using methods defined in EL1", GC , M , Implemented
+R2D1.2 , "Ability to perform simulations for wave action due to earthquake induced tsunami using methods defined in HL1", GC , M ,
+R2D1.3 , "Ability to perform simulations for wind action due to hurricane using methods defined in WL1", GC  , M , InProgress
+R2D1.4 ,"Ability to perform simulations for wave action due to hurricane storm surge using methods defined in HL1", GC , M ,
+R2D1.5 , "Ability to perform multi-hazard simulations: wind + storm surge, rain, wind and water borne debris", GC , M ,
+R2D1.6 , "Ability to utilize machine learning ensemble techniques in hazard simulation", GC, M,
 R2D1.7 , "Ability to incorporate surrogate models in hazard simulation", SP, M,
-R2D1.8 , "Incorporate Multi Scale Models in hazard Simulation", SP, M, 
+R2D1.8 , "Ability to incorporate multi-scale models in hazard simulation", SP, M,
+R2D1.9 , "Ability to incorporate ground deformation hazards for pipes, roadways, and other infrastructure", SP , M
+,,,,
 R2D2, "**Include Different Asset Types**", GC , M , InProgress
 R2D2.1 ,"Ability to incorporate building assets", GC , M , Implemented
-R2D2.1.1 ,"Ability to incorporate multi-fidelity building model asset descriptions", GC , M, 
-R2D2.2 ,"Ability to incorporate transportation network", GC , M ,
+R2D2.1.1 ,"Ability to incorporate multi-fidelity building model asset descriptions", GC , M,
+R2D2.2 ,"Ability to incorporate transportation networks", GC , M ,
 R2D2.3 ,"Ability to incorporate utility networks", GC , M ,
+R2D2.3.1 ,"Methods to overcome  national security issues with certain utility data", SP , M ,
+R2D2.4 , "Ability to incorporate surrogate models in asset modeling", SP, M,
+,,,,
 R2D3, "**Include Different Analysis options**", GC , M , InProgress
 R2D3.1  , "Ability to include multi-scale nonlinear models", GC , M , Implemented
+,,,,
 R2D4, "**Include Different Damage & Loss options**", GC , M , InProgress
-R2D4.1  , "Ability to include multi-scale nonlinear models", GC , M , Implemented
+R2D4.1  , "Ability to include building-level earthquake damage and loss assessment from HAZUS", SP , M , Implemented
+R2D4.2  , "Ability to include high-resolution earthquake damage and loss assessment for buildings from FEMA P58", SP , M , Implemented
+R2D4.3  , "Ability to include building-level wind damage and loss assessment from HAZUS", SP , M ,
+R2D4.4  , "Ability to include building-level water damage and loss assessment from HAZUS", SP , M ,
+R2D4.5  , "Ability to include earthquake damage and loss assessment for transportation networks from HAZUS", SP , M ,
+R2D4.6  , "Ability to include earthquake damage and loss assessment for buried pipelines from HAZUS", SP , M ,
+R2D4.7  , "Ability to include earthquake damage and loss assessment for power lines from HAZUS", SP , M ,
+R2D4.8  , "Ability to include high-resolution wind damage and loss assessment for buildings", SP , M ,
+R2D4.9  , "Ability to include high-resolution water damage and loss assessment for buildings", SP , M ,
+R2D4.10  , "Ability to include high-resolution damage and loss assessment for transportation networks", SP , M ,
+R2D4.11  , "Ability to include high-resolution damage and loss assessment for buried pipelines", SP , M ,
+,,,,
 R2D5, "Include Different Response/Recovery options", GC , M ,
 R2D5.1, "Response/Recovery options for households", SP, M,
 R2D5.2, "Response/Recovery options for infrastructure", SP, M,
 R2D5.3, "Response/Recovery options for business operations", SP, M,
 R2D5.4, "Response/Recovery and Effect on Environment", SP, M,
-R2D5.4.1, "CO2 emmissions from demolition and repair", SP, M,
-R2D6 , "Pressent results using GIS so communities can visualize hazard impacts", GC , M , Implemented
+R2D5.4.1, "CO2 emissions from demolition and repair", SP, M,
+,,,,
+R2D6 , "Present results using GIS so communities can visualize hazard impacts", GC , M , Implemented
 R2D6.1, "Ability to use popular ArcGIS for visualization", SP, M, Implemented
 R2D6.2, "Ability to include open-source ArcGIS alternatives", SP, P,
 R2D6.3, "Ability to capture uncertainty of results in visualization", SP, P,
 R2D6.4, "Features to visualize environmental impact", SP, P,
+,,,,
 R2D7, "**Software Features**", GC, M, InProgress
 R2D7.1 , "Ability to include a formal treatment of uncertainty and randomness", GC , M , Implemented
-R2D7.2 , "Ability to utilize HPC resources in regional simulations that enables repeated simulation for stochastic modeling", GC , M , Implemented 
+R2D7.2 , "Ability to utilize HPC resources in regional simulations that enables repeated simulation for stochastic modeling", GC , M , Implemented
 R2D7.3 , "Ability to use a tool created by linking heterogeneous array of simulation tools to provide a toolset for regional simulation", GC , M , Implemented
 R2D7.4, "Provide open-source software for developers to test new data and algorithms", GC , M , Implemented
 R2D7.5 , "Ability of stakeholders to perform simulations of different scenarios that aid in planning and response after damaging events", GC , M ,
 RDT7.7 , "Ability to explore different strategies in community development, pre-event, early response, and post event, through long term recovery", GC , P ,
-RDT7.8 , "Ability to use system that creates and monitors real-time data, updats models, incorporates crowdsourcing technologies, and informs decision makers", GC , P ,
+RDT7.8 , "Ability to use system that creates and monitors real-time data, updates models, incorporates crowdsourcing technologies, and informs decision makers", GC , P ,
 RDT7.9 , "Ability to use sensor data to update models for simulation and incorporate sensor data into simulation", GC , P ,
 R2D7.10 , "Ability to include latest information and algorithms (i.e. new attenuation models, building fragility curves, demographics, lifeline performance models, network interdependencies, indirect economic loss)", GC , D ,
+R2D7.11, "Incorporate programs that can address lifeline network disruptions and network interdependencies", GC, M
+R2D7.12, "Application to Provide Common SimCenter Research Application Requirements listed in CR (not already listed above)", GC, M, InProgresss
+

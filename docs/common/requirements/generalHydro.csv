@@ -1,33 +1,26 @@
-H1, "Ability to simulate overland flow of water by coupling shallow-water and CFD solvers", GC, M, 1.0
-H2, "Ability to simulate overland flow of water considering flood velocity, inundation heights and channeling effects between buildings", GC, M, 1.0
-H3, "Ability to digitally replicate the NHERI experimental facility, i.e. wave flume", SP, M, 1.0
-H4 , "Ability to utilize HPC resources", GC, M, 1.0
-H5, "Use CFD to model interface and impact between water loads and buildings", GC, M, 1.1
-H6, "Ability to formally treat randomness and uncertainty quantification", GC, M, 1.2
-H7, "Develop a CFD example library for users to get started", GC, M, 2.0
-H8, "Ability to quantify the effect of unconstrained and non-colliding floating", GC, M, 2.0
-H9, "Ability to quantify the effect of colliding flood-borne debris", GC, M, 3.0
-H10, "Ability of Practicing Engineers to use multiple coupled resources (applications, databases, viz tools) in engineering practice", GC , M , 4.0
-H11, "Simulation of overland flow including waves, debris, flood velocity, erosion at building, and channeling effects", GC, M, 5.0 
-H12, "Ability to simulate with surrogate models as alternative to full 3D CFD", GC, M, 6.0
-,,,,
-H13, "Standardize output formats for shallow-water solvers", SP, M, 1.0
-H15, "Interface GeoClaw with SimCenter standard format", GC, M, 1.0
-H17, "Ability to convert the bathymetric data into a STP file for usage in CFD solvers", GC, M, 1.0
-H19, "Test the workflow with test excitation function like harmonic long waves, solitary waves etc.", GC, M, 1.0
-H20, "Add error handling with error messages for possible errors that could occur", GC, M, 1.0
-H14, "Standardize input format for initial conditions to be given to CFD solvers", SP, M, 2.0
-H16, "Interface AdCirc with SimCenter standard format", GC, M, 2.0
-H18, "Ability to convert OpenFOAM i/p files from standard SimCenter format", GC, M, 2.0
-H22, "Develop scripts for creating visualization from the simulations", GC, M, 2.0
-H23, "Develop a simulation library of GeoClaw simulations", SP, M, 2.0
-H23, "Develop a simulation library of AdCirc simulations", SP, M, 2.0
-H24, "Create documentation videos on how to add items to library", UF, M, 2.0
-H25, "Develop end-to-end examples that users can use as template and modify", UF, M, 2.0
-H26, "Explore multiple methods like Material Point Method (MPM), Immersed Boundary Method (IBM), DEM-CFD, particle tracking", SP, M, 3.0
-H27, "Integrate one of the methods for integrating particles with Hydro workflow", GC, M, 3.0
-H28, "Develop thermodynamically consistent methods for clustering of debris", GC, M, 3.0
-H29, "Consider motion of water-borne debris", GC, M, 3.0
-H30, "Development of scripts to calculate the dispersion radii of industrial debris (like barrels)", SP, M, 3.0
-H31, "Development of scripts to calculate the dispersion radii of industrial debris (like oil in water)", SP, M, 3.0
-H32, "Develop abili ty to get fragility curves from CFD simulations", GC, M, 5.0
+H, "*Application to determine response of Building Subject Water Action due to Storm Surge or Tsunami  including formal treatment of randomness and uncertainty*", GC, M , InProgress
+H1, "Quantification of flood-borne debris hazards", GC, M,
+H2, "Effects of over-land flow, including waves, debris, flood velocity, wind-driven influences, erosion effects at buildings and channeling effects of the built environment", GC, D, 
+H3, "**Ability to select from all Loading Options listed in HL2**", SP , M , InProgress
+H4, "**Ability to select from Building Modeling Options listed in MOD under BM**", SP , M , Implemented
+H5, "Include ability to perform nonlinear analysis on the building models listed in ANA", SP, M, Implemented
+H6, "**Ability to use Various UQ Methods and Variable Options**", , ,
+H7.1, "Ability to use Forward Propagtion methods listed in UQ under UF", SP, M, Implemented
+H7.2, "Ability to use Random Variable Distributions defeined in RV", SP, M,
+H7.3, "Ability to use Reliability Methods listed in UQ under UR", SP, M, Implemented
+H7.4, "Ability to use Global Sensitivity Methods listed in UQ under UG ", SP, M, Implemented
+H7.5, "Ability to both use and create surrogates listed in UQ under US", SP, M,
+H7.6, "Ability to use High Dimensional UQ listed in UQ under UH", SP, M,
+H8, "Ability to Visualize the Results", SP, M, Implemented
+H8.1, "Ability to view individual sample results ", SP, M, Implemented
+H8.2, "Ability to graphically view the results to show distribution in respone ", SP, M, Implemented
+H9, "**Misc User Requests**", , ,
+EE9.1, "Ability to quickly model experimental tests perform in OSU wave tank ", UF, M,
+H10, "**General Software Requirements**", , ,
+H10.1, "Application to Provide Common SimCenter Research Application Requirements listed in CR", GC, M, InProgresss
+H11, "Tool should incorporate data from www ", GC, M, 
+H11.1, "Tool should use satelite imagery in aid of determine channeling effect ", SP, D,
+H11.2, "Tool should use satelite imagery in aid of determining amount of debris ", SP, D, 
+H11.3, "Tool should obtain building modelling info from database through www ", SP, D,
+
+
