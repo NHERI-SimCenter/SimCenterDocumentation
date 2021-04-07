@@ -19,7 +19,7 @@ RTM:
 
 quoFEM:
   data-file:
-    - ../quoFEM/Examples/index.json
+    - ../../quoFEM/Examples/index.json
   include-item:
     - qfem-0001
     - qfem-0002

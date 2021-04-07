@@ -197,11 +197,11 @@ where
 
 **FEM tab** will be inactivated in Case 3 as model information is not required.
 
-.. Tips::
+.. Tip::
 	- Surrogate model can be continued after when they are terminated by saving and importing RV and QoI samples.
 
-Random Variables Tab
----------------------
+RV (Random Variables) Tab
+--------------------------
 **Case 1 and 2**: The bounds of RVs need to cover the domain of interest in future applications, while it should not be unnecessarily stretched. **Input type** and **Distribution** should be set to **Parameters** and **Uniform**. When dataset is provided, make sure to match the order of RVs in the **RV tab** to the order of data columns. Any correlation values will be ignored.
 
 .. _figSim7:
