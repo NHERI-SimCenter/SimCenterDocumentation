@@ -1,45 +1,20 @@
-DL1 ,"**Different Assessment Methods**", "", "",
-DL1.1 ,"Ability to perform component-based (FEMA P58) loss assessment for an earthquake hazard. ", SP , M ,1.0
-DL1.2 ,"Ability to perform component-assembly-based (HAZUS MH) loss assessment for an earthquake hazard. ", SP , D ,1.1
-DL1.3 ,"Ability to perform downtime estimation using the REDi methodology. ", UF , D ,  
-DL1.4 ,"Ability to describe building performance with additional decision variables from HAZUS (e.g.business interruption and debris",SP,D, 
-DL1.5 ,"Ability to perform time-based assessment ", GC , M ,   
-DL1.6 ,"Ability to perform damage and loss assessment for hurricane wind ", GC , M ,   
-DL1.7 ,"Ability to perform damage and loss assessment for storm surge ", GC , M ,   
-DL1.8,"Ability to perform response estimation without simulation using HAZUS capacity curves",UF,D,
-DL2 ,"**Control**", "", "", 
-DL2.1 ,"Allow users to set the number of realizations ", SP , M ,1.0
-DL2.2 ,"Allow users to specify the added uncertainty to EDPs ", SP , M ,1.0
-DL2.3 ,"Allow users to decide which decision variables to calculate ", SP , D ,1.0
-DL2.4 ,"Allow users to set the number of inhabitants on each floor and customize their temporal distribution. ", SP , D ,1.0
-DL2.5 ,"Allow users to specify the boundary conditions of repairability. ", SP , D ,1.0
-DL2.6 ,"Allow users to control collapse through EDP limits. ", SP , D ,1.0
-DL2.7 ,"Allow users to specify the replacement cost and time for the building. ", SP , M ,1.0
-DL2.8 ,"Allow users to specify EDP boundaries that correspond to reliable simulation results. ", SP , D ,1.0
-DL2.9 ,"Allow users to specify collapse modes and characterize the corresponding likelihood of injuries. ", SP , D ,1.0
-DL2.10 ,"Allow users to specify the collapse probability of the structure. ", UF , M ,1.2
-DL2.11 ,"Allow users to use empirical EDP data to estimate the collapse probability of the structure. ", UF , M ,1.2
-DL2.12 ,"Allow users to choose the type of distribution they want to estimate the EDPs with. ", UF , D ,1.2
-DL2.13 ,"Allow users to perform the EDP fitting only for non-collapsed cases. ", UF , M ,1.2
-DL2.14 ,"Allow users to couple response estimation with loss assessment. ", UF , M ,  
-DL3 ,"**Component damage and loss information**", "", "", 
-DL3.1 ,"Make the component damage and loss data from FEMA P58 available. ", SP , M ,1.0
-DL3.2 ,"Ability to use custom components for loss assessment. ", SP , D ,1.0
-DL3.3 ,"Allow users to set different component quantities for each floor in each direction. ", SP , D ,1.0
-DL3.4 ,"Allow users to set the number of identical component groups and their quantities within each performance group. ", UF , D ,1.0
-DL3.5 ,"Use a generic JSON data format for building components that can be shared by component-based and component-assembly-based assessments. ", SP , D ,1.1
-DL3.6 ,"Convert FEMA P58 and HAZUS component damage and loss data to the new JSON format and make it available with the tool. ", SP , D ,1.1
-DL3.7 ,"Make component definition easier by providing a list of available components in the given framework (e.g. FEMA P58 or HAZUS) and not requesting inputs that are already available in the data files. ", UF , D ,1.2
-DL3.8 ,"Make the component damage and loss data from FEMA P58 2nd edition available. ", UF , M ,2.0
-DL3.9 ,"Improve component definition by providing complete control over every characteristic on every floor and in every direction ", UF , D ,2.0
-DL3.10 ,"Allow users to view fragility and consequence functions in the application ", UF , D ,   
-DL3.11 ,"Allow users to edit fragility and consequence functions in the application ", UF , D ,   
-DL3.12,"Replace JSON files with a more efficient method to store the damage and loss data for the large number of available Fragility Groups",SP,D,
-DL3.13,"Allow users to export and load component information using CSV files",UF,D,2.0
-DL3.14,"Provide a method to users that automatically populates the performance model for commonly used structures.",UF,D,
-DL4 ,"**Stochastic loss model**", "", "", 
-DL4.1 ,"Allow the user to specify basic dependencies (i.e. independence or perfect correlation) between logically similar parts of the stochastic model (i.e. within component quantities or one type of decision variable, but not between quantities and fragilities) ", SP , D ,1.0
-DL4.2 ,"Allow the user to specify basic dependencies between reconstruction cost and reconstruction time. ", SP , D ,1.0
-DL4.3 ,"Allow the user to specify basic dependencies between different levels of injuries. ", SP , D ,1.0
-DL4.4 ,"Allow the user to specify intermediate levels of correlation (i.e. not limited to 0 or 1) and provide a convenient interface that makes sure the specified correlation structure is valid. ", SP , D ,     
-DL4.5 ,"Allow the user to specify the correlation for EDPs. ", SP , D , 
+DL,"*Damage & Loss (DL) Predictions*", , ,
+DL1,   "Ability to use open-source version of Hazus", GC , M , Implemented
+DL2,  "Ability to incorporate improved damage and fragility models for buildings and lifelines", GC , M , InProgress
+DL3,   "Ability to perform time-based assessment ", GC , M ,
+DL4,   "*Methods for DL Prediction for Buildings for Various Hazards*", SP, M,
+DL4.1, "Incorporate PACT application for earthquake hazard", SP, D
+DL4.2, "Ability to perform downtime estimation using the REDi methodology for earthquakes. ", UF , D ,
+DL4.3, "Incorporate Various Methods from PELICUN", SP, M, InProgress
+DL4.3.1, "Incorporate the scenario-based assessment from FEMA-P58, item P6.1.1", SP, M, Implemented
+DL4.3.2, "Incorporate the time-based assessment from FEMA-P58, item P1.1.2", SP, D,
+DL4.3.3, "Incorporate high-resolution assessment of buildings under wind hazards, item P1.1.3", SP, M,
+DL4.3.4, "Incorporate high-resolution assessment of buildings under water hazards, item P1.1.4", SP, M,
+DL4.3.5, "Incorporate high-resolution assessment of transportation networks, item P1.1.5", SP, M,
+DL4.3.6, "Incorporate high-resolution assessment of buried pipelines, item P1.1.6", SP, M,
+DL4.3.7, "Incorporate the assessment of buildings under earthquake hazard from HAZUS, P1.2.1", SP, M, Implemented
+DL4.3.8, "Incorporate the assessment of buildings under hurricane wind hazard from HAZUS, item P1.2.2", SP, M, Implemented
+DL4.3.9, "Incorporate the assessment of buildings under storm surge hazard from HAZUS, item P1.2.3", SP, M, Implemented
+DL4.3.10, "Incorporate the assessment of buried pipelines under earthquake hazard from HAZUS, item P1.2.4", SP, M,
+DL4.3.11, "Incorporate the assessment of transportation networks under earthquake hazard from HAZUS, item P1.2.5", SP, M,
+DL4.3.12, "Incorporate the assessment of power networks under earthquake hazard from HAZUS, item P1.2.6", SP, M,

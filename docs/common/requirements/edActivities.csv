@@ -6,3 +6,6 @@ TB1.2 , "Provide Tsunami Testbed", SP , M ,
 TB1.3 , "Provide Atlantic City Hurricane Wind Testbed", SP , M , TB2.0
 TB1.4 , "Provide Atlantic City Hurricane Wind and Storm Surge Testbed", SP , M , 
 TB1.5 , "Provide Earthquake and Lifelines Testbed", SP , M ,
+
+ED1, "Interdisciplinary education of the next generation of engineers and scientists", GC, M,
+ED2, "Education and training regarding the interaction of structures with wind and water", GC, M, 

@@ -1,16 +1,25 @@
-WE1 , "Ability to determine response of Building Subject to Wind Loading including formal treatment of randomness and uncertainty uncertainty ", GC , M , 1.0   
-WE2 , "Ability of Practicing Engineers to use multiple coupled resources (applications, databases, viz tools) in engineering practice ", GC , M , 1.0   
-WE3 , "Ability to utilize resources beyond the desktop including HPC ", GC , M , 1.0  
-WE4 , "Tool available for download from web ", GC , M , 1.0  
-WE5 , "Ability to obtain training and education with respect to interaction of structure and wind to ensure research is appropriately applied  ", GC , M ,  
-WE6 , "Ability to obtain Application Outputs ",  , ,  
-WE7 , "Ability to see pressure distribution on building ", GC , M ,    
-WE8 , "Ability to obtain basic building responses ", SP , M ,    
-WE9 , "Ability to Process own Output Parameters ", UF , M , 1.1  
-WE10 , "Ability to obtain training to ensure the research is appropriately applied ", GC , M ,   
-WE11 , "Documentation exists on tool usage ", SP , M , 1.0   
-WE12 , "Video Exists demonstrating usage ", SP , M ,   
-WE13 , "Verification Examples Exist ", SP , M ,    
-WE14 , "Validation Examples Exist, validated against tests or other software ", GC , M ,
-WE15 , "Tool to allow user to load and save user inputs ", SP , M , 1.0  
-WE16 , "Installer which installs application and all needed software ", UF , D ,    
+WE, "*Ability to determine response of Building Subject to Wind Loading including formal treatment of randomness and uncertainty uncertainty*", GC , M , Implemented
+WE1, "Adaptation of non-linear analysis methods used in seismic design", GC, M, Implemented
+WE1.1, "Include ability to create models incorprating options listed in MOD under BM", SP, M, Implemented
+WE1.2, "Include ability to perform nonlinear analysis on the building models listed in ANA", SP, M, Implemented
+WE2, "**Ability to select from Wind Loading Options listed in WL2**", SP , M , Implemented
+WE3, "**Ability to use Various UQ Methods and Variable Options**", , ,
+WE3.1, "Ability to use Forward Propagtion methods listed in UQ under UF", SP, M, Implemented
+WE3.2, "Ability to use Reliability Methods listed in UQ under UR", SP, M, Implemented
+WE3.3, "Ability to use Global Sensitivity Methods listed in UQ under UG ", SP, M, Implemented
+WE3.4, "Ability to both use and create surrogates listed in UQ under US", SP, M,
+WE3.5, "Ability to use High Dimensional UQ listed in UQ under UH", SP, M,
+WE4 , "Ability to see pressure distribution on buildings ", GC , M ,    
+WE5 , "Ability to obtain basic building responses ", SP , M ,
+WE6, "Ability to Visualize the Results", SP, M, Implemented
+WE6.1, "Ability to view individual sample results ", SP, M, Implemented
+WE6.2, "Ability to graphically view the results to show distribution in respone ", SP, M, Implemented
+WE7, "**Misc User Requests**", , ,
+WE7.1 , "Ability to Process own Output Parameters ", UF , M , Implemented
+WE7.2 , "Ability to Remove from Results certain Samples, e.g. ones that failed in analysis ", UF , M , Implemented
+WE7.3 , "Create a digital twin of the Wall of Wind facility to allow researchers to simulate experiments", UF , M , 
+WE8, "Tool should incorporate data from www ", GC, M, Implemented
+WE8.1, "Tool could obtain loading from Vortex Winds over www ", SP, M, Implemented
+WE8.2, "Tool should obtain loading info from TPU wind tunnel tests", SP, D, Implemented
+WE8.3, "Tool should obtain building modelling info from database through  www ", SP, D, 
+
