@@ -1,0 +1,20 @@
+CR, "*Common Requirements of all SimCenter Research Applications*", , ,
+CR1, "Open-source software where developers can test new data and develop algorithms", GC, M, Implemented
+CR1.1, "Provide open-source applications utilizing code hosting platforms, e.g. GitHub", SP, M, Implemented
+CR1.2, "Assign an open-source licensce that allows free use.", SP, M, Implemented
+CR2, "Ability of Practicing Engineers to use multiple coupled resources (applications, databases, viz tools) in engineering practice", GC, M, Implemented
+CR2.1, "Allow users to launch scientifiv workflows", SP, M, Implemented
+CR3, "Ability to utilize resources beyond the desktop including HPC ", GC, M, Implemented
+CR3.1, "Allow users to utilize HPC resources at TACC through DesignSafe", SP, M, Implemented
+CR5, "Tool available for download from web ", GC, M, Implemented  
+CR5.1, "Tool downloadable from DesignSafe website ", GC, M, Implemented
+CR6, "Ability to benefit from programs that move research results into practice and obtain training ", GC, M, 
+CR6.1, "Ability to use educational provisions to gain interdisclipinary education so as to gain expertise in earth sciences and physics, engineering mechanics, geotechnical engineering, and structural engineering in order to be qualified to perform these simulations ", GC, D,  
+CR6.1, "Documentation exists demonstrainting application usage ", SP, M, Implemented   
+CR6.2, "Video Exists demonstrating application usage ", SP, M, Implemented
+CR6.3, "Tool Training through online and in person training events ", SP, M, Implemented   
+CR7, "Verification Examples Exist ", SP, M, Implemented
+CR8, "validation of proposed analytical models against existing empirical datasets", GC, M, 
+CR8.1, "Validation Examples Exist, validated against tests or other software ", GC, M,
+CR9, "Tool to allow user to load and save user inputs ", SP, M, Implemented  
+CR10, "Installer which installs application and all needed software ", UF, D,

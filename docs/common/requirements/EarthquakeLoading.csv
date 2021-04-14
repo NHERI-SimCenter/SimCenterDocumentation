@@ -4,7 +4,7 @@ EL1.1, "Coupling of multi-scale nonlinear models from the point of rupture throu
 EL1.1.1, "Replacement of empirical linear models with multi-scale nonlinear models as will represent a paradigm shift in engineering science", GC, D,
 EL1.1.1.1, "Interface to regional simulations using DRM method", SP, M,    
 EL1.1.2, "Include both multi-scale and multi-phase (account for liquefaction)", GC, M,
-EL1.2, "Jack Baker Method Description", SP, M, Implemented
+EL1.2, "Method to include both the intra-event residual and inter-event residual in simulating spatial correlated ground motion intensity measures with multiple correlation model options. Select site specific grouind motions from PEER to match target intensity", SP, M, Implemented
 EL1.3, "Use GIS-Specified Matrix of Recorded Motions", SP, M, Implemented
 EL2, "**Select from Multiple Local Scale Earthquake Hazard Options**", "", "",
 EL2.1, "Coupling of multi-scale nonlinear models from the point of rupture through rock and soil into structure", GC, M,

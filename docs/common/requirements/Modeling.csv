@@ -1,4 +1,5 @@
-BM,   "*Asset Model Generators for Analysis*", "", "",
+MOD,   "*Asset Model Generators for Analysis*", "", "",
+BM,   "**Asset Model Generators for Buildings**", "", "",
 BM1, "Ability to quickly create a simple nonlinear building model for simple methods of seismic evaluation", GC, D, Implemented  
 BM2, "Ability to use existing OpenSees model scripts ", SP, M, Implemented
 BM3, "Ability to define building and use Expert System to generate FE mesh ", SP, D,   
