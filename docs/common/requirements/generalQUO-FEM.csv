@@ -1,0 +1,25 @@
+QF, "*Application to Promote and aid use of UQ Methods in NHE Research for response estimation, surrogate modeling, and calibration*", GC, M , Implemented
+QF1, "**Ability to use Various UQ Methods and Variable Options**", , ,
+QF1.1, "Ability to use Forward Propagtion methods listed in UQ under UF", SP, M, Implemented
+QF1.2, "Ability to use Random Variable Distributions defeined in RV", SP, M,
+QF1.3, "Ability to use Reliability Methods listed in UQ under UR", SP, M, Implemented
+QF1.4, "Ability to use Global Sensitivity Methods listed in UQ under UG ", SP, M, Implemented
+QF1.5, "Ability to both use and create surrogates listed in UQ under US", SP, M, InProgress
+QF1.6, "Ability to use High Dimensional UQ listed in UQ under UH", SP, M, InProgress
+QF1.7, "Ability to use Bayesian Calibration methods listed in UQ under UB", SP, M,
+QF1.8, "Ability to use Nonlinear Least Squares  methods listed in UQ under UN", SP, M, Implemented
+QF2, "**Ability to use Different Simulation Applications**", , ,
+QF2.1, "Ability to use OpenSees", SP, M, Implemented
+QF2.2, "Ability to use OpenSeesPy", SP, M, Implemented
+QF2.3, "Ability to use OpenSeesPy", UF, M, Implemented
+QF2.3, "Ability to Incorporate User Own Applkications", UF, M, Implemented
+QF2, "Ability to Visualize the Results", SP, M, Implemented
+QF2.1, "Ability to view individual sample results ", SP, M, Implemented
+QF2.2, "Ability to graphically view the results to show distribution in respone ", SP, M, Implemented
+QF2.2, "Ability to view statistical measures of response ", SP, M, Implemented
+QF3, "**Misc User Requests**", , ,
+QF3.1, "Run application from command line, include option to run remotely ", UF, D,  
+QF7, "**General Software Requirements**", , ,
+QF7.1, "Application to Provide Common SimCenter Research Application Requirements listed in CR", GC, M, InProgresss
+
+

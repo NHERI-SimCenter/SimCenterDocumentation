@@ -50,3 +50,13 @@ Analysis Requirements
 
 
 .. include:: key.rst	 
+
+Common Research Application Requirements
+----------------------------------------
+
+.. csv-table:: Requirements - CR
+  :header: "#", "Description", "Source", "Priority", "Status"
+  :widths: 10, 60, 10, 10, 10	   
+  :file: commonR.csv
+
+.. include:: key.rst	 	     
