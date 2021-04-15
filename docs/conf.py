@@ -7,7 +7,9 @@
 # -- SimCenter App selection -------------------------------------------------
 # Selects which app's documentation to build
 
-import os
+import os, sys
+from datetime import datetime
+
 app_name = os.path.expandvars("$SIMDOC_APP")
 APPS = ["R2DTool", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun","requirements","Hydro"]
 if app_name in APPS:
@@ -25,6 +27,8 @@ else:
 	os.environ['SIMDOC_APP'] = app_name
 	os.environ['SIMCENTER_DEV'] = os.path.abspath('../../')
 
+
+
 app_abrev = app_name.split("-")[0].replace("Tool","")
 app_abrev2 = app_name.replace("-","").replace("Tool","").replace("requirements","RTM")
 app_name2 = app_name.replace("Tool","")
@@ -39,7 +43,6 @@ print('app_name = ' + app_name)
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 
-import sys
 sys.path.append(os.path.abspath('./sphinx_ext/'))
 sys.path.append(os.path.abspath('./modules/'))
 # Add files for the example page template to path
@@ -123,11 +126,15 @@ math_number_all = True
 math_eqref_format = '({number})'
 math_numfig = True
 
+today = datetime.today()
 
-copyright = '2021, The Regents of the University of California'
+# Some apps overwrite the copyright to include additional entities
+copyright = f'{str(today.year)}, The Regents of the University of California'
+
 tags.add(f'{app_abrev2}_app')
 
 rst_prolog = f"""
+.. |fmk| replace:: **fmk**
 .. |figDownload| replace:: :numref:`figDownload-{app_abrev}`
 .. |figDownloadWin| replace:: :numref:`figDownloadWin-{app_abrev}`
 .. |figGenericUI| replace:: :numref:`figGenericUI-{app_abrev}`
@@ -392,7 +399,6 @@ elif app_name == 'PBE':
 .. |tool version| replace:: 2.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-PBE`
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
-.. |developers| replace:: **Adam Zsarnóczay**, **Frank McKenna**, **Chaofeng Wang**, **Wael Elhaddad**, **Michael Gardner**
 
 """
 
@@ -452,7 +458,7 @@ elif app_name == 'EE-UQ':
 
 elif app_name == 'quoFEM':
 	project = 'Quantified Uncertainty with Optimization for the FEM'
-	copyright = '2018-2020, The Regents of the University of California'
+	copyright = f'2018-{str(today.year)}, The Regents of the University of California'
 	author = 'Frank McKenna, Adam Zsarnóczay, Sang-ri Yi, Aakash Bangalore Satish, Nikhil Padhye'
 
 	tags.add('desktop_app')
@@ -559,7 +565,7 @@ elif app_name == 'WE-UQ':
 elif app_name == 'pelicun':
 
 	project = 'pelicun'
-	copyright = '(c) 2018-2021, Leland Stanford Junior University and The Regents of the University of California'
+	copyright = f'(c) 2018-{str(today.year)}, Leland Stanford Junior University and The Regents of the University of California'
 	author = 'Adam Zsarnóczay'
 
 	tags.add('pelicun')
@@ -641,15 +647,15 @@ elif app_name == 'requirements':
 .. |string| replace:: *string*
 .. |float| replace:: *float*
 .. |integer| replace:: *integer*
-.. |fmk| replace:: **fmk**
 
 """
+
+
+# -- General configuration ---------------------------------------------------
 
 rst_prolog += f"""
 .. |developers| replace:: {", ".join(f"**{auth}** " for auth in author.split(", "))}
 """
-
-# -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
