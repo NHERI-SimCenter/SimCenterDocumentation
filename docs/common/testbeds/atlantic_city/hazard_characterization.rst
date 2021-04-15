@@ -37,7 +37,9 @@ The SHP Tool generates its wind fields using a highly efficient, linear analytic
 layer winds of a moving hurricane developed by Snaiki and Wu ([Snaiki17a_], [Snaiki17b_]). 
 To account for the exposure in each New Jersey county, an effective roughness length (weighted average) 
 of the upwind terrain is used based on the Land Use/Land Cover data reported by the state’s Bureau of 
-GIS. In order to generate a wind field, this model requires the following inputs: . While the model is 
+GIS. In order to generate a wind field, this model requires the time-evolving hurricane track, 
+characterized by the position (latitude, longitude), the central pressure, the radius of maximum winds, 
+and the forward speed. While the model is 
 fully height-resolving and time-evolving, for a given input hurricane scenario, the wind hazard is 
 characterized by the maximum 10-minute mean wind speed observed during the entire hurricane track. 
 This is reported at the reference height of 10 m over a uniform grid (0.85-mile spacing, 1.37 km) 
@@ -175,8 +177,8 @@ the scope of the hindcast focused on the heavier-impacted regions of New York an
 which were resolved with a finer mesh than more southern counties like Atlantic County, i.e., ~0.5 km (New York and Norther New Jersey)
  vs. ~3 km (Southern counties) between two closest nodes. In futher constrast with the NACCS ADCIRC runs referenced in :ref:`lbl-testbed_AC_hazard_characterization_storm`, 
 the grids adopted for the Sandy hindcast in this region of New Jersey did not extend into the riverine systems. Noting these 
-limits of the simulation, storm surge values in the riverine systems and at any point inland of the grid points shown 
-in :numref:`adcirc_waterelev` are set to zero (:numref:`adcirc_sitepwd`). And the 
+limits of the simulation, peak water depth over land displayed in :numref:`adcirc_sitepwd` assumes zero values in the rivering 
+systems and at any point inland of the grid points shown in :numref:`adcirc_waterelev`. The
 :download:`ADCIRC_Example.zip <data/ADCIRC_Example.zip>` provides the peak water depth grid that can be used in 
 the presented hurricane workflow.
 
