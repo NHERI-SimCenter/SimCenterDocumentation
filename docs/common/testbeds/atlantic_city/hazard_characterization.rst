@@ -203,7 +203,7 @@ the presented hurricane workflow.
    :figclass: align-center
    :figwidth: 500
 
-   Simulated water elevation of Hurricane Sandy by ADCIRC (Atlantic County).
+   Simulated water depth over land for Hurricane Sandy by ADCIRC (Atlantic County).
 
 
 .. [Snaiki17a]
