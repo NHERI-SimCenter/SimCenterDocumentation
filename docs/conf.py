@@ -83,8 +83,8 @@ exclude_patterns = [
 		'**/downloadPython.rst',
 		'**/install_WindowsOld.rst'
 	] + [
-            f'{app}/' for app in APPS if app != app_name
-        ]
+        f'{app}/' for app in APPS if app != app_name
+]
 
 source_suffix = {
 	".rst": "restructuredtext",

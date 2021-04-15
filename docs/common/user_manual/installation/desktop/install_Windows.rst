@@ -19,7 +19,7 @@ Install on Windows 10
 Download the Application
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-To download the |app|, first navigate to the |appLink| page. As shown in |figDownloadWin|, to get to the download page, you need to click on the link **Download app and User Manual** in the application page. The download page contains a list of downloadable files and directories.
+To download the |app|, navigate to the |appLink| page which should resemble |figDownload|. The download page contains a list of downloadable files and directories.
 
 
 .. only:: R2D_app
@@ -91,7 +91,7 @@ Once the installation procedure has been completed, it is a good practice to run
 
    .. _figUI-R2D:
 
-   .. figure:: figures/PBE.png
+   .. figure:: figures/R2D-Startup.png
     :align: center
     :figclass: align-center
 
