@@ -96,7 +96,11 @@ in Atlantic County.
 
 **Exploration Inventory**: A subset of 1000 buildings drawn from the Flood-Exposed Inventory intended to provide 
 a less computationally demanding implementation for new users or for those wishing to test the development of new 
-contributions to the workflow (:numref:`fig-buildingClassEI`). The buildings in this inventory are exposed to the combination of 
+contributions to the workflow (:numref:`fig-buildingClassEI`). This inventory encompasses the five coastal municipalities 
+experiencing the most damage under the synthetic storm scenario described later in :ref:`lbl-testbed_AC_hazard_characterization_synthetic`.
+From each of these municipalities, properties are randomly sampled, proportional to the total number of buildings 
+in that municipalitiy and ensuring that the distribution of construction material of buildings in the sample is 
+representative of the underlying distribution for the full population. The buildings in this inventory are exposed to the combination of 
 wind and floodplain hazards.
 
 .. _fig-buildingClassEI:

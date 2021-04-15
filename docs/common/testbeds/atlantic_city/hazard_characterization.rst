@@ -16,6 +16,8 @@ either a historical scenario or a synthetic storm scenario, as discussed in the 
 Note that as part of the Asset Representation Process (see :ref:`lbl-testbed_AC_asset_representation`), the design wind speeds from 
 ASCE 7 are already included for each building footprint for reference.
 
+.. _lbl-testbed_AC_hazard_characterization_synthetic:
+
 Sythetic Storm Scenario
 ========================
 
