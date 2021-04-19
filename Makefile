@@ -27,7 +27,7 @@ help:
 	@echo '   or: make <all|update>'
 	@printf '\n'
 	@echo 'where <app> is one of:'
-	@printf '    {pelicun, qfem, r2d, pbe, we, ee}\n\n'
+	@printf '    {pelicun, qfem, r2d, pbe, we, ee, rtm}\n\n'
 	@echo 'and <target> is one of:'
 	@echo '    web    Run html target with build directory'
 	@echo '           set to app publishing repository.'
@@ -37,7 +37,7 @@ help:
 	@printf "for all <app> options listed above.\n\n"
 #----------------------------------------------------------
 
-.PHONY: help Makefile pbe r2d qfem we ee html pdf latexpdf latex
+.PHONY: help Makefile pbe r2d qfem we ee rtm hydro html pdf latexpdf latex 
 
 # Export target-specific environment vars
 ee:      export SIMDOC_APP=EE-UQ
