@@ -56,8 +56,8 @@ export SIMDOC_APP
 
 
 # LaTeX path variables
-export TEXINPUTS:=${SIMCENTER_DEV}/texmf//:./build/${SIMDOC_APP}/latex//:/${TEXINPUTS}
-export TEXINPUTS:=~/texlive/2020//:${TEXINPUTS}
+export TEXINPUTS:=${SIMCENTER_DEV}/SimCenterDocumentation/latex//:./build/${SIMDOC_APP}/latex//:${TEXINPUTS}
+#export TEXINPUTS:=/usr/share/texmf-dist//:${TEXINPUTS}
 export BSTINPUTS:=../texmf//:${BSTINPUTS}
 
 
@@ -99,7 +99,7 @@ pdf:
 	mkdir -p $(call BUILDDIR,$(SIMDOC_APP))/pdf/
 	$(PDFLATEX) \
 	-output-directory="$(call BUILDDIR,$(SIMDOC_APP))/pdf/" \
-	"$(call BUILDDIR,$(SIMDOC_APP))/latex/*.tex"
+	$(join $(call BUILDDIR,$(SIMDOC_APP)),/latex/*.tex)
 
 latexpdf:
 	make latex
