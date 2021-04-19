@@ -17,6 +17,10 @@ RTM:
       #    - r2dt-000*
       #
 
+PBE:
+  data-file:
+    - ../PBE/Examples/index.json
+
 quoFEM:
   data-file:
     - ../quoFEM/Examples/index.json
@@ -34,6 +38,7 @@ quoFEM:
 WE-UQ:
   include-item:
     ? weuq-0001
+    ? weuq-0005
 
 
 EE-UQ:
