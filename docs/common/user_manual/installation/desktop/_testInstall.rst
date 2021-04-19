@@ -11,7 +11,7 @@ Test the Application
 
 .. only:: R2D_app
 
-    Before running any simulations, we recommend testing the R2DTool by running the following example problem: :ref:`lbl-r2dt-0006`.
+    Before running any simulations, we recommend testing the R2DTool by running the following example problem: :ref:`r2dt-0006`.
 
 .. only:: quoFEM_app
 
