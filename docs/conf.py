@@ -168,7 +168,7 @@ rst_prolog = f"""
 .. |tool github link| replace:: `{app_name2} Github page`_
 .. |githubLink| replace:: `{app_name2} Github page`_
 .. |messageBoard| replace:: `Message Board`_
-.. |app requirements| replace:: :ref:`lbl{app_name}-Requirements`
+.. |app requirements| replace:: :ref:`lblRequirements`
 
 .. _{app_name2} Github page: https://github.com/NHERI-SimCenter/{app_name}
 
@@ -306,7 +306,7 @@ if app_name == 'Hydro':
 .. |full tool name| replace:: Water-borne Hazards Engineering with Uncertainty Quantification
 .. |test example| replace:: :ref:`(Under development)`
 .. |tool version| replace:: 1.0
-.. |appLink| replace:: `{app_name2} Download (Coming soon)`_
+.. |appLink| replace:: **{app_name2} Download (Link coming soon)**
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0
 .. _Hydro Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
@@ -412,12 +412,25 @@ elif app_name == 'PBE':
     exclude_patterns.append('**/resEE.rst')
     # END TODO
 
+    sync_examples = True
+    example_config.update({
+        "include-item": [
+            "pbdl-0001",
+            "pbdl-0002",
+            "pbdl-0003",
+        ]
+    })
+    extlinks.update(
+       {f'pbdl-{i:04}' : (f'{examples_url}/pbdl-{i:04}/%s',f'pbdl-{i:04}') for i in range(1,99)}
+    )
+
 
     rst_prolog += """\
 .. |full tool name| replace:: Performance Based Engineering Application
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
 .. _PBE Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE
 .. |tool version| replace:: 2.0
+.. |test example| replace:: :ref:`pbdl-0001`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-PBE`
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
 
@@ -427,7 +440,7 @@ elif app_name == 'PBE':
     html_theme_options.update({'analytics_id': 'UA-158130480-3'})
 
 elif app_name == 'EE-UQ':
-    project = 'Earthquake Engineering with Uncertainty Quantification (EE-UQ)'
+    project = 'Earthquake Engineering with Uncertainty Quantification'
     author = 'Frank McKenna, Wael Elhaddad, Michael Gardner, Chaofeng Wang, Adam Zsarnóczay'
 
     tags.add('desktop_app')
