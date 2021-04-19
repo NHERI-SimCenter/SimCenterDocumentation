@@ -57,7 +57,7 @@ Modeling Requirements
   :file: Modeling.csv
 
 .. include:: key.rst
-	 
+
 Analysis Requirements
 ------------------------
 
@@ -67,7 +67,7 @@ Analysis Requirements
   :file: Analysis.csv
 
 
-.. include:: key.rst	 
+.. include:: key.rst
 
 Common Research Application Requirements
 ----------------------------------------
