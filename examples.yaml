@@ -28,12 +28,15 @@ quoFEM:
     ? qfem-0001
     ? qfem-0002
     ? qfem-0005
-    ? qfem-0003
-    ? qfem-0004
+    #? qfem-0003
+    #? qfem-0004
     ? qfem-0009
-    ? qfem-0008
+    #? qfem-0008
     ? qfem-0014
     ? qfem-0015    
+    ? qfem-0016
+    ? qfem-0017
+    
 
 WE-UQ:
   include-item:
