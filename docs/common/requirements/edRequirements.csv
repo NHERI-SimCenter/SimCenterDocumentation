@@ -1,6 +1,6 @@
 ED1 , "Ability to obtain education w.r.t. interaction of structure and wind and water", GC , D , 
-ED2 , "Ability to use reference datasets from experimental tests for analysis comparisons to increase confidence in numerical simulations; ability to gain   understanding of nonlinear response of materials, components, and framing systems using integrated laboratory research and numerical simulation", GC , M , 1.0 
+ED2 , "Ability to use reference datasets from experimental tests for analysis comparisons to increase confidence in numerical simulations; ability to gain   understanding of nonlinear response of materials, components, and framing systems using integrated laboratory research and numerical simulation", GC , M , InProgress
 ED2.1 , "Ability for Braced Frames", SP , D , 1.0 
-ED2.2 , "Ability to gain such for Concrete Shear Walls", SP , D , 1.0 
+ED2.2 , "Ability to gain such for Concrete Shear Walls", SP , D , Implemented
 ED2.3 , "Ability for Columns utilizing PEER database", SP , D ,  
 ED2.4 , "Ability for moment frames using Japanese test data", SP , D ,
