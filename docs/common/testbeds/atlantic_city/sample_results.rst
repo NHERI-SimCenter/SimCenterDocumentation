@@ -27,7 +27,7 @@ roughness, peak wind speed, and peak water depth.
    :name: scatter_matrix
    :align: center
    :figclass: align-center
-   :figwidth: 100%
+   :figwidth: 800
 
    Scatter matrix of sampled buildings.
 
@@ -52,7 +52,7 @@ are due to the random sampling process in estimating the expected loss ratios.
    :name: hand_calc
    :align: center
    :figclass: align-center
-   :figwidth: 100%
+   :figwidth: 800
 
    Hand-calculated results vs. simulated results.
 
@@ -68,7 +68,7 @@ and masonry buildings perform better than wood buildings and manufactured homes 
    :name: wind_loss_bt
    :align: center
    :figclass: align-center
-   :figwidth: 100%
+   :figwidth: 800
 
    Average expected wind losses by building class.
 
@@ -84,6 +84,6 @@ comparison is made for the limited sample size in this verification study.
    :name: wind_loss_yr
    :align: center
    :figclass: align-center
-   :figwidth: 100%
+   :figwidth: 800
 
    Average expected wind losses of wood buildings by built year.
