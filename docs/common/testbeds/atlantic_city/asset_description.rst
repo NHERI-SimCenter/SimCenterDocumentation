@@ -134,22 +134,22 @@ was assigned using these various third-party data sources.
 
 .. _lbl-testbed_AC_asset_description_phase_iv:
 
-Phase IV: Augmentation Using Image Processing
-===============================================
+Phase IV: Augmentation Using Computer Vision Methods
+====================================================
 
 A number of required attributes pertaining to externally-visible features of the building were either not 
 included in the NJDEP footprints or MODIV data or were included but warranted cross validation. 
 The methodology used for each of these attributes is now described.
 
-1. **Number of Stories**: This attribute was available for the buildings included in the NJDEP inventory. Therefore, 
-                          in developing the Flood-Exposed Inventory, image-based data augmentations' primary purposes
-                          were to cross-validate the inventory data and have the data compatible with integer floor 
-                          counting notation used by the fragility functions. Information on the building number of 
-                          floors was more sparsely pupulated in the MODIV database. As a result, image-based floor detections
-                          were essential in creating the Atlantic County Inventory. When MODIV did not provide the number of 
-                          stories information for a building, image-based detections were utilized.
+1. **Number of Stories**: While this attribute was available only for the buildings included in the NJDEP inventory, 
+                          this attribute was sparsely reported in the MOD IV database. Even for the NJDEP inventory, 
+                          non-integer values were often reported, creating incompatibilities with the integer 
+                          defaults used in Hazus. Thus image-based floor detections were used to estimate this 
+                          attribute for the larger Flood-Exposed Inventory, and as a means to cross-validate 
+                          values reported in NJDEP and MOD IV for consistency with Hazus conventions.
+                          
                           An object object detection model that can automatically detect rows of building windows was
-                          established to generate the image-based detections. The model was trained on the 
+                          established to generate the image-based detections from street-level. The model was trained on the 
                           EfficientDet-D7 architecture with a dataset of 60,000 images, using 80% for training, 15% 
                           for validation, and 5% testing of the model. In order to ensure faster model convergence, 
                           initial weights of the model were set to model weights of the (pretrained) object detection
@@ -255,10 +255,16 @@ Populated Inventories
 
 Executing this four-phase process resulted in the assignment of all required attributes at the asset description 
 stage of the workflow for both the **Atlantic County Inventory** and the **Flood-Exposed Inventory**. 
-Table 2.2.6 and :numref:`bldg_inv_fei` provide respective examples of each of these inventories. 
+:numref:`bldg_inv_ac` and :numref:`bldg_inv_fei` provide respective examples of each of these inventories. 
 The Flood-Exposed Inventory then was used to extract out the subset of buildings defining the  
 **Exploration Inventory** (see example in :numref:`bldg_inv_ei`). The full inventories can be downloaded 
 :download:`here <data/full_inventories.zip>`.
+
+.. csv-table:: Illustrative sample of building in Atlantic Inventory.
+   :name: bldg_inv_ac
+   :file: data/example_inventory_ac.csv
+   :header-rows: 1
+   :align: center
 
 .. csv-table:: Illustrative sample of building in Flood-Exposed Inventory.
    :name: bldg_inv_fei

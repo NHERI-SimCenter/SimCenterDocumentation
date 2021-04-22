@@ -130,6 +130,21 @@ Multiple Category Analysis to exam the building performance under different inte
    +-----------------------+-----------+-----------+-----------+-----------+
 
 
+Users can access the synthetic wind field and storm surge inputs for the defined scenario, as well as the suite 
+created for the MCA on DesignSafe (:numref:`synthetic_data`).
+
+.. list-table:: Access points for synthetic storm scenario files
+   :name: synthetic_data
+   :header-rows: 1
+   :align: center
+
+   * - Hazard
+     - Access Point
+   * - Wind Field
+     - :download:`Synthetic wind data <data/SyntheticWind.zip>`
+   * - Storm Surge
+     - :download:`Synthetic storm surge data <data/SyntheticSurge.zip>`
+
 Historical Storm Scenario
 ==========================
 
@@ -147,6 +162,12 @@ to demonstrate the workflow’s ability to support hindcast evaluations of damag
 Wind Modeling
 --------------
 
+Hindcast wind fields for this event were made available by Peter Vickery and Applied Research Associates (ARA). 
+Their hurricane model derives wind speeds based on numerically solving the differential equations of a 
+translating storm and iteratively calibrating based on field observations over the weeks following an event. 
+The ARA_Example.zip provides the peak 3-s gust peak wind speed field of Hurricane Sandy on a grid that can be 
+directly used in the presented hurricane workflow, as visualized in :numref:`ara_pws`.
+
 :numref:`ara_pws` shows the 3-s gust peak wind speed field in Atlantic County during 
 the Hurricane Sandy (simulation data provided by Applied Research Associate hurricane model). The model derives wind 
 speeds based on numerically solving the differential equations of a translating storm and iteratively calibrating the 
@@ -160,7 +181,7 @@ the presented hurricane workflow.
    :figclass: align-center
    :figwidth: 500
 
-   ARA 3-s gust peak wind speed field of Hurricane Sandy in Atlantic County.
+   ARA 3-s gust peak wind speed (3-s gust at 10 m) in Atlantic County during Hurricane Sandy.
 
 Alternatively, users can also use other available wind field resources. For instance, 
 `RMS Legacy Archive <https://www.rms.com/event-response/hwind/legacy-archive/storms>`_ provides access to 

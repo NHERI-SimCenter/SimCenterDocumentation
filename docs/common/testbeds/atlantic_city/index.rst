@@ -50,8 +50,9 @@ necessary to execute these testbeds and factors influencing the run time.
    asset_representation
    response_simulation
    damage_and_loss
-   .uncertainty_quantification
+   uncertainty_quantification
    sample_results
+   example_outputs
    .future_refinements
    best_practices
    pws_conversion
