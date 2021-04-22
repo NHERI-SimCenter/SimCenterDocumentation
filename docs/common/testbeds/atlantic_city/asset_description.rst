@@ -172,6 +172,29 @@ The methodology used for each of these attributes is now described.
                           this output into floor counts. Recognizing an image may contain multiple buildings at a time, 
                           this post-processor was designed to perform counts at the individual building-level.
 
+                          For a random building image dataset, where images were captured using arbitrary camera 
+                          orientations (also termed “in-the-wild” images), the developed floor detection model 
+                          was determined to identify the number of stories with an accuracy of 86%. 
+                          :numref:`num_story_confusion`(a) provides a breakdown of this accuracy measure for different 
+                          prediction classes (i.e., the confusion matrix of model classifications). 
+                          It was also observed that if the image dataset is established such that building 
+                          images are captured with minimal obstructions, the building is at the center of the 
+                          image, and perspective distortions are limited (termed “cleaned” data), the model 
+                          identified the number of stories at an accuracy level of 94.7%. 
+                          :numref:`num_story_confusion`(b)  shows the confusion matrix for the model predicting on the 
+                          “cleaned” image data. In quantifying both accuracy levels, a test set of 3,000 images 
+                          randomly selected across all New Jersey counties, excluding Atlantic County, was utilized.
+
+                          .. figure:: figure/num_story_confusion.png
+                              :name: num_story_confusion
+                              :align: center
+                              :figclass: align-center
+                              :figwidth: 1000
+
+                              Confusion matrices for the number of stories predictor. The maxtrix one the left shows
+                              the model's prediction accuracy when tested on "in-the-wild" images. The matrix on the
+                              right depicts the model accuracy on the "cleaned" imagery.
+
 2. **Building Elevations**: Building elevations are not available in state inventory data and required for both 
                            wind and flood loss modeling, with the exception of first floor height estimates provided 
                            in the NJDEP inventory. Hence, the elevation of the bottom plane of the roof (lowest edge 
@@ -195,13 +218,19 @@ The methodology used for each of these attributes is now described.
                            1. (e.g., for first-floor height, the orthogonal distance between the ground and first-floor levels)
                            3. Converting these pixel counts to real-world dimensions by matching a reference measurement with the corresponding pixel count
 
-                           Given the number of street-level imagery available for a building can be limited and sparsely 
-                           spaced, a single image rectification approach was deemed most applicable for regional-scale 
-                           inventory development. The support vector model implemented for image rectification focuses on 
-                           the street-facing plane of a building in an image and based on the Manhattan World 
-                           assumption, (i.e., all surfaces in the world are aligned with two horizontal and one vertical 
-                           dominant directions) iteratively transforms an image such that horizontal edges on the facade 
-                           plain lie parallel to each other, and its vertical edges are orthogonal to the horizontal edges.
+                           Given that the number of street-level images available for a building can be limited 
+                           and sparsely spaced, this single image rectification approach was deemed most applicable for 
+                           regional-scale inventory development. The first step in image rectification requires 
+                           detecting line segments on the front face of the building. This is performed by using 
+                           the L-CNN end-to-end wireframe parsing method. Once the segments are detected, vertical 
+                           and horizontal lines on the front face of the building are automatically detected using 
+                           RANSAC line fitting based on the assumptions that line segments on this face are the 
+                           predominant source of line segments in the image and the orientation of these line 
+                           segments change linearly with their horizontal or vertical position depending on their 
+                           predominant orientation. Invoking the Manhattan World assumption (i.e., all surfaces in 
+                           the world are aligned with two horizontal and one vertical dominant directions), we 
+                           iteratively transform the image such that horizontal edges on the facade plain lie 
+                           parallel to each other, and its vertical edges are orthogonal to the horizontal edges.
 
                            In order to automate the process of obtaining the pixel counts for the ground elevations, a 
                            face segmentation model was trained to auotmatically label ground, facade, door, windwos and roof 
@@ -211,6 +240,9 @@ The methodology used for each of these attributes is now described.
                            0.001 (batch size: 4), after 40 epochs. The conversion between pixel dimensions and real-world 
                            dimensions were attained by use of edge detections 
                            performed on satellite images.
+
+                           The conversion between pixel dimensions and real-world dimensions were attained by use of 
+                           edge detections performed on satellite images.
 
 3. **Roof Geometry**: Roof shape and slope are not available in state inventory data and required for wind loss 
                       modeling. The SimCenter developed application Building Recognition using Artificial 
@@ -235,14 +267,29 @@ The methodology used for each of these attributes is now described.
 
                               Roof type classification by BRAILS ([Wang19]_).
 
-4. **Window Area**: The proportion of windows to the overall surface area is not available in state inventory data 
-                    and required for wind loss modeling. Generally, window area can be assumed based on the 
-                    building occupancy class given Department of Energy industry databases. This property can also 
-                    be estimated from Google streetview imagery, under the assumption that the proportion of 
-                    surface area occupied by windows at the front of the building is representative of the amount 
-                    of window openings on the sides and rear of the building, an assumption that may hold for 
-                    single family residential buildings, but possibly not for other commercial construction where 
-                    street fronts have higher proportions of glass.
+4. **Window Area**: The proportion of windows to the overall surface area is not available in inventory and 
+                    assessor datasets though required for wind loss modeling. Generally, window area can be 
+                    assumed based on the building occupancy class given Department of Energy industry databases. 
+                    This property can also be estimated from street-level imagery, by taking advantage of the 
+                    window masks generated as part of the segmentation performed when determining building 
+                    elevations. For this application, window area is defined as a percentage of the total 
+                    facade area as the ratio of the area of windows masks to the area of the front facade 
+                    of the building. The underlying assumption is that the proportion of surface area occupied 
+                    by windows at the front of the building is representative of the amount of window openings 
+                    on the sides and rear of the building. This enables the ratio calculated for the front 
+                    face of the building to be used for the whole building. This assumption may hold for single 
+                    family residential buildings, but possibly not for other commercial construction where 
+                    street fronts have higher proportions of glass. In lieu of this computer vision approach, 
+                    users may choose to adopt industry norms for their window areas (see callout box below).
+                    
+                    .. note::
+                       
+                     **Industry Norms on Window Area**: Engineered residential buildings can be assumed to have low window to wall  
+                     area ratios (WWR) based on the information for Reference Buildings in Baltimore, MD from the 
+                     `Office of Energy Efficiency and Renewable Energy <https://www.energy.gov/eere/downloads/reference-buildings-building-type-midrise-apartment>`_. Reference Buildings were created for select cities 
+                     based on climate profile; of the available cities, Baltimore is selected since its climate is most 
+                     similar to Atlantic City, NJ. Office buildings (used as a test case for commercial), have WWR of 
+                     33% and apartments (used as a test case for residential) have WWR of 15%.
 
 .. note::
 
