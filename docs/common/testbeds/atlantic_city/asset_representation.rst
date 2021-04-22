@@ -83,14 +83,14 @@ rulesets (PDFs and Python scripts) are cross-referenced in :numref:`addinfo_rule
      - Ruleset Definition Table
      - Python script
    * - Building Class Rulesets - Wind
-     - [DesignSafe DOI with hyperlink]
+     - `HAZUS Building Class Rulesets - Wind.pdf <https://berkeley.box.com/s/602imclyqm1ohvfqliqro0bzq4v0wdj3>`_
      - :download:`WindClassRulesets <data/WindClassRulesets.py>`
    * - Building Class Rulesets - Flood
-     - [DesignSafe DOI with hyperlink]
+     - `HAZUS Building Class Rulesets - Flood.pdf <https://berkeley.box.com/s/6gqyu66b9d74ctto6x1k74i95q2wksrb>`_
      - :download:`FloodClassRulesets <data/FloodClassRulesets.py>`
    * - Building Class Rulesets - Wave
-     - [DesignSafe DOI with hyperlink]
-     - :download:`WaveClassRulesets <data/FloodClassRulesets.py>`
+     - `HAZUS Building Class Rulesets - Wave.pdf <https://berkeley.box.com/s/sr8p05yp230qwcyodeh1w39wxw6qurp6>`_
+     - To be released.
 
 Building Attributes
 ======================
@@ -144,7 +144,7 @@ assigned in the :ref:`lbl-testbed_AC_asset_description`, they are not discussed 
      - Ruleset Definition Table
      - Python script
    * - Attribute Assignment - Wind (Meta-Variable)
-     - `Hazus Building Attribute Rulesets - Wind - Meta-Variables.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - `Hazus Building Attribute Rulesets - Wind - Meta-Variables.pdf <https://berkeley.box.com/s/l4vdnfoakq8xsv4rmj64x4m2kxqritu7>`_
      - :download:`WindMetaVarRulesets <data/WindMetaVarRulesets.py>`
 
 Finally, all of the rulesets used to assign attributes include a default value that can be updated based 
@@ -189,10 +189,10 @@ are cross-referenced in :numref:`addinfo_ruleset_wood`.
      - Ruleset Definition Table
      - Python script
    * - HAZUS Building Attribute Rulesets - Wind (WSF1-2)
-     - `Hazus Building Attribute Rulesets - Wind - WSF1-2.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - `Hazus Building Attribute Rulesets - Wind - WSF1-2.pdf <https://berkeley.box.com/s/nod73v7shtj9x7ox7xw7b7nvmrs3e8oc>`_
      - :download:`WindWSFRulesets <data/WindWSFRulesets.py>`
    * - HAZUS Building Attribute Rulesets - Wind (WMUH1-3)
-     - `Hazus Building Attribute Rulesets - Wind - WMUH1-3.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - `Hazus Building Attribute Rulesets - Wind - WMUH1-3.pdf <https://berkeley.box.com/s/4v7405rit2u475daorayy9w6ssuezbz9>`_
      - :download:`WindWMUHRulesets <data/WindWMUHRulesets.py>`
 
 Taking the attribute Second Water Resistance (SWR) as an example, the SWR attribute is assigned by 
@@ -279,22 +279,25 @@ cross-referenced in :numref:`addinfo_ruleset_masonry`.
      - Ruleset Definition Table
      - Python script
    * - HAZUS Building Attribute Rulesets - Wind (MSF1-2)
-     - `Hazus Building Attribute Rulesets - Wind - MSF1-2.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - `Hazus Building Attribute Rulesets - Wind - MSF1-2.pdf <https://berkeley.box.com/s/8wayd687fxexa5am1zcig4d8lm37j3yq>`_
      - :download:`WindMSFRulesets <data/WindMSFRulesets.py>`
    * - HAZUS Building Attribute Rulesets - Wind (MMUH1-3)
-     - `Hazus Building Attribute Rulesets - Wind - MMUH1-3.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - `Hazus Building Attribute Rulesets - Wind - MMUH1-3.pdf <https://berkeley.box.com/s/4s8adtuxv09il3tomhi5l8temtvi5h0a>`_
      - :download:`WindMMUHRulesets <data/WindMMUHRulesets.py>`
-   * - HAZUS Building Attribute Rulesets - Wind (MLRM1-2)
-     - `Hazus Building Attribute Rulesets - Wind - MLRM1-2.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+   * - HAZUS Building Attribute Rulesets - Wind (MLRM1)
+     - `Hazus Building Attribute Rulesets - Wind - MLRM1.pdf <https://berkeley.box.com/s/8ml2y60o2foe6vg6myuisuzfqhfu5v23>`_
+     - :download:`WindMLRMRulesets <data/WindMLRMRulesets.py>`
+   * - HAZUS Building Attribute Rulesets - Wind (MLRM1)
+     - `Hazus Building Attribute Rulesets - Wind - MLRM2.pdf <https://berkeley.box.com/s/uqove169jtocgu52okerwuhffgkx8kd0>`_
      - :download:`WindMLRMRulesets <data/WindMLRMRulesets.py>`
    * - HAZUS Building Attribute Rulesets - Wind (MERBL-M-H)
-     - `Hazus Building Attribute Rulesets - Wind - MERBL-M-H.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - `Hazus Building Attribute Rulesets - Wind - MERBL-M-H.pdf <https://berkeley.box.com/s/nzqdg77vamhn75n95kzjmumt0tlgz4zo>`_
      - :download:`WindMERBRulesets <data/WindMERBRulesets.py>`
    * - HAZUS Building Attribute Rulesets - Wind (MECBL-M-H)
-     - `Hazus Building Attribute Rulesets - Wind - MECBL-M-H.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - `Hazus Building Attribute Rulesets - Wind - MECBL-M-H.pdf <https://berkeley.box.com/s/2jgsttwc29gppg8rna35yhwctztn3hwp>`_
      - :download:`WindMECBRulesets <data/WindMECBRulesets.py>`
    * - HAZUS Building Attribute Rulesets - Wind (MLRI)
-     - `Hazus Building Attribute Rulesets - Wind - MLRI.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - `Hazus Building Attribute Rulesets - Wind - MLRI.pdf <https://berkeley.box.com/s/hn377m3o1pcgsi464xuwe4zwz0vhgjwa>`_
      - :download:`WindMLRIRulesets <data/WindMLRIRulesets.py>`
 
 Taking the attribute **shutters** as an example, the shutters attribute is assigned based on time-evolving 
@@ -356,13 +359,13 @@ scripts) are cross-referenced in :numref:`addinfo_ruleset_steel`.
      - Ruleset Definition Table
      - Python script
    * - HAZUS Building Attribute Rulesets - Wind (SERBL-M-H)
-     - `Hazus Building Attribute Rulesets - Wind - SERBL-M-H.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - `Hazus Building Attribute Rulesets - Wind - SERBL-M-H.pdf <https://berkeley.box.com/s/ien050gsa67tlsjrhgvdqjhl3b3thh4f>`_
      - :download:`WindSERBRulesets <data/WindSERBRulesets.py>`
    * - HAZUS Building Attribute Rulesets - Wind (SECBL-M-H)
-     - `Hazus Building Attribute Rulesets - Wind - SECBL-M-H.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - `Hazus Building Attribute Rulesets - Wind - SECBL-M-H.pdf <https://berkeley.box.com/s/7a32df1o9iqx5mzwqqcu94povgabjd8v>`_
      - :download:`WindSECBRulesets <data/WindSECBRulesets.py>`
    * - HAZUS Building Attribute Rulesets - Wind (SPMBS-M-L)
-     - `Hazus Building Attribute Rulesets - Wind - SPMBS-M-L.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - `Hazus Building Attribute Rulesets - Wind - SPMBS-M-L.pdf <https://berkeley.box.com/s/3bgxtrr9t5dh1tn6izksdpjxt62zv3wv>`_
      - :download:`WindSPMBRulesets <data/WindSPMBRulesets.py>`
 
 
@@ -414,10 +417,10 @@ The corresponding time-evolving rulesets (PDFs and Python scripts) are cross-ref
      - Ruleset Definition Table
      - Python script
    * - HAZUS Building Attribute Rulesets - Wind (CERBL-M-H)
-     - `Hazus Building Attribute Rulesets - Wind - CERBL-M-H.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - `Hazus Building Attribute Rulesets - Wind - CERBL-M-H.pdf <https://berkeley.box.com/s/sbcgkw8q4ps1mncu9bu87oz83lr5mga3>`_
      - :download:`WindCERBRulesets <data/WindSERBRulesets.py>`
    * - HAZUS Building Attribute Rulesets - Wind (CECBL-M-H)
-     - `Hazus Building Attribute Rulesets - Wind - CECBL-M-H.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - `Hazus Building Attribute Rulesets - Wind - CECBL-M-H.pdf <https://berkeley.box.com/s/scuv8u64atudekvxpda9mh8aol1wuphk>`_
      - :download:`WindCECBRulesets <data/WindSECBRulesets.py>`
 
 Taking the attribute roof cover (RoofCvr) as an example, the RoofCvr attribute is assigned based on a 
@@ -463,7 +466,9 @@ The corresponding time-evolving rulesets (PDFs and Python scripts) are cross-ref
      - Ruleset Definition Table
      - Python script
    * - HAZUS Building Attribute Rulesets - Wind (Manufactured Homes)
-     - [DesignSafe DOI with hyperlink]
+     - `Hazus Building Attribute Rulesets - Wind - MH76HUD.pdf <https://berkeley.box.com/s/qfde2jo5ry65ev349fu7bkuz5w2c3162>`_, 
+       `Hazus Building Attribute Rulesets - Wind - MH94HUDI-II-III.pdf <https://berkeley.box.com/s/guop1ln5le5rrjqy4l2xk3p3b2b40n55>`_,
+       `Hazus Building Attribute Rulesets - Wind - MHPHUD.pdf <https://berkeley.box.com/s/4vz0a7pirgxaunyvt7ot39d5aty7wtan>`_
      - :download:`WindMHRulesets <data/WindMHRulesets.py>`
 
 Taking the attribute tie down (TieDown) as an example, the ruleset in :numref:`td_attri` considers 
@@ -528,7 +533,10 @@ are cross-referenced in :numref:`addinfo_ruleset_ef`.
      - Ruleset Definition Table
      - Python script
    * - HAZUS Building Attribute Rulesets - Wind (Essential Facilities)
-     - `Hazus Building Attribute Rulesets - Wind - Essential Facilities.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - `Hazus Building Attribute Rulesets - Wind - HUEFFS-HUEFSS.pdf <https://berkeley.box.com/s/jjjjzr6rhyz7a253qcxrnn7n3vdxv6n5>`_,
+       `Hazus Building Attribute Rulesets - Wind - HUEFHS-M-L.pdf <https://berkeley.box.com/s/pumhmup0j60m3skgcdlfthmeg5u3o5pk>`_, 
+       `Hazus Building Attribute Rulesets - Wind - HUEFPS-HUEFEO.pdf <https://berkeley.box.com/s/2s7g2x3iot4bajfdprxwzrxu4m6nbulg>`_, 
+       `Hazus Building Attribute Rulesets - Wind - HUEFSM-L.pdf <https://berkeley.box.com/s/ffs4gj1hf4bji1y0vzvj3hu93kvw00kt>`_
      - :download:`WindEFRulesets <data/WindMHRulesets.py>`
 
 Taking the attribute wind borne debris source (WindDebris) as an example, the WindDebris attribute is 
@@ -570,7 +578,7 @@ rulesets (PDFs and Python scripts) are cross-referenced in :numref:`addinfo_rule
      - Ruleset Definition Table
      - Python script
    * - HAZUS Building Attribute Rulesets - Flood
-     - `Hazus Building Attribute Rulesets - Flood - All Classes.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - `Hazus Building Attribute Rulesets - Flood - All Classes.pdf <https://berkeley.box.com/s/1n75p4c37dtet7kvtj44e422aqjs7woa>`_
      - :download:`FloodRulesets <data/FloodRulesets.py>`
 
 Taking the attribute first floor flood elevation (FirstFloorElev) as an example, 

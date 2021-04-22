@@ -32,7 +32,7 @@ coupled), and the parameterized models allow for more efficient storage and comp
    :name: wind_df
    :align: center
    :figclass: align-center
-   :figwidth: 1200
+   :figwidth: 1000
 
    Fitted HAZUS wind damage functions for example building classes.
 
@@ -44,7 +44,7 @@ coupled), and the parameterized models allow for more efficient storage and comp
    :name: flood_ddc
    :align: center
    :figclass: align-center
-   :figwidth: 1200
+   :figwidth: 1000
 
    Depth-damage ratio curves for the flood loss assessment.
 

@@ -28,9 +28,9 @@ loss models. Use Case 1 generally requires skill sets in :ref:`lbl-testbed_AC_ha
 deeper understanding of the techniques, rulesets and scripts used to generate this building inventory. 
 In addition to the explanations that follow, this documentation is accompanied by detailed rulesets used 
 for building and attribute assignment 
-(`SimCenter Hurricane Testbed: Inventory Documentation <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/>`_), 
-as well as their implementation as 
-Python scripts (linked to GitHub repositories). These provide templates that such users can potentially 
+(`SimCenter Hurricane Testbed: Inventory Documentation <https://berkeley.box.com/s/7acln70veux1ebz2epxmlidn49kyjqgv>`_), 
+as well as their implementation as Python scripts (`auto_HU_NJ.py <https://github.com/kuanshi/pelicun/blob/master/pelicun/resources/auto_population/auto_HU_NJ.py>`_). 
+These provide templates that such users can potentially 
 refine, extend and replicate this testbed’s process for Building Inventory generation beyond the current 
 application in Atlantic County. Use Case 2 generally requires skill sets in :ref:`lbl-testbed_AC_asset_description`, 
 :ref:`lbl-testbed_AC_asset_representation`, and :ref:`lbl-testbed_AC_damage_and_loss`.

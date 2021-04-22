@@ -113,13 +113,13 @@ vulnerable attribute option). These initial assignments were then updated if add
      - Ruleset Definition Table
      - Python script
    * - Building Type Rulesets
-     - `Building Type Rulesets.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/MOD%20IV%20Transformations>`_
+     - `Building Type Rulesets.pdf <https://berkeley.box.com/s/hvsfx308svz7mi8g1sccnchjslsm58b8>`_
      - :download:`BuildingTypeRulesets <data/BuildingTypeRulesets.py>`
    * - Foundation Type Rulesets
-     - `Foundation Type Rulesets.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/MOD%20IV%20Transformations>`_
+     - `Foundation Type Rulesets.pdf <https://berkeley.box.com/s/vz2yxx2bu5uphf9xqbxm9ajdx664ndr5>`_
      - :download:`FoundationTypeRulesets <data/FoundationTypeRulesets.py>`
    * - Occupancy Type Rulesets
-     - `Occupancy Type Rulesets <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/MOD%20IV%20Transformations>`_
+     - `Occupancy Type Rulesets.pdf <https://berkeley.box.com/s/p50txdj9oor7399iesc5lawj7cykj1jb>`_
      - :download:`OccupancyTypeRulesets <data/OccupancyTypeRulesets.py>`
 
 Some attributes in the Building Inventory Data Model were not encompassed by NJDEP Basic, UDF or SDE fields, thus 
@@ -288,15 +288,15 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
      - Number of Assets
      - Typical Run Time
    * - Atlantic County Inventory
-     - `Atlantic County Inventory.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - `Atlantic County Inventory.pdf <https://berkeley.box.com/s/cx4l0f0wnu7gx09supmwu4hzi9xrns2u>`_
      - 100,721
      - ~ 1,500 CPU-Hour* (please see more details in **Computational Resources Requirements**)
    * - Flood-Exposed Inventory
-     - `Flood-Exposed Inventory.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - `Flood-Exposed Inventory.pdf <https://berkeley.box.com/s/ic2q1ru8d7qqkr4uz1ny07h905mqh1bv>`_
      - 32,828
      - ~ 440 CPU-Hour
    * - Exploration Inventory
-     - `Exploration Inventory.pdf <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/HAZUS%20Building%20Attribute%20Rulesets>`_
+     - `Exploration Inventory.pdf <https://berkeley.box.com/s/ic2q1ru8d7qqkr4uz1ny07h905mqh1bv>`_
      - 1,000
      - ~ 12 CPU-Hour
 

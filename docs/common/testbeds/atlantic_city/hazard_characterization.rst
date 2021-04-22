@@ -66,7 +66,7 @@ the coastal cities.
    :name: pws
    :align: center
    :figclass: align-center
-   :figwidth: 1200
+   :figwidth: 1000
 
    Interpolated peak wind speed (3s-gust) for each asset in the inventory.
 
@@ -104,7 +104,7 @@ Flood Damage and Loss Assessment.
    :name: pwd
    :align: center
    :figclass: align-center
-   :figwidth: 1200
+   :figwidth: 1000
 
    Interpolated peak water depth for each asset in the inventory.
 
@@ -131,7 +131,7 @@ Multiple Category Analysis to exam the building performance under different inte
 
 
 Users can access the synthetic wind field and storm surge inputs for the defined scenario, as well as the suite 
-created for the MCA on DesignSafe (:numref:`synthetic_data`).
+created for the MCA (:numref:`synthetic_data`).
 
 .. list-table:: Access points for synthetic storm scenario files
    :name: synthetic_data
@@ -143,7 +143,7 @@ created for the MCA on DesignSafe (:numref:`synthetic_data`).
    * - Wind Field
      - :download:`Synthetic wind data <data/SyntheticWind.zip>`
    * - Storm Surge
-     - :download:`Synthetic storm surge data <data/SyntheticSurge.zip>`
+     - :download:`Synthetic storm surge data <data/SyntheticStormSurge.zip>`
 
 Historical Storm Scenario
 ==========================
