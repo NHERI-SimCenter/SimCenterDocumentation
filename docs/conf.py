@@ -544,6 +544,8 @@ elif app_name == 'quoFEM':
             "qfem-0008",
             "qfem-0014",
             "qfem-0015",
+            "qfem-0016",
+            "qfem-0017",
         ]
     })
     # Example links
