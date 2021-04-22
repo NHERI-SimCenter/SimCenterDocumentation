@@ -152,9 +152,9 @@ Hindcast simulations of historical storm events are equally valuable, particular
 with observations of damage and loss across an inventory. As such this testbed includes the option to use 
 existing hindcast data from established community providers as input to the loss estimation workflow. 
 New Jersey’s most notable storm event in recent history was Superstorm Sandy (2012). According to [NJDEP15]_ 
-and [USDOC13]_, Sandy's devastation included 346,000 homes damaged, more than 1,000 vessels sunked or abandoned, 
-and more than 100 drinking water and wasterwater treatment plans affected, which led to 30 billion for repairing 
-and relacing the damage cased by the storm. While Atlantic County was designated as a “Sandy-Affected Community” 
+and [USDOC13]_, Sandy's devastation included 346,000 homes damaged. The New Jersey State Hazard Mitigation 
+Plan [NJSHMP]_ further notes that storm surge accounts for 90% of the deaths and property damage during 
+hurricanes in this region. While Atlantic County was designated as a “Sandy-Affected Community” 
 by FEMA and the State of New Jersey, the wind and storm surge intensities in the county were significantly 
 less than those observed in the more northern counties. Nonetheless, these historical inputs are provided 
 to demonstrate the workflow’s ability to support hindcast evaluations of damage and loss in actual storm events.
@@ -166,14 +166,7 @@ Hindcast wind fields for this event were made available by Peter Vickery and App
 Their hurricane model derives wind speeds based on numerically solving the differential equations of a 
 translating storm and iteratively calibrating based on field observations over the weeks following an event. 
 The ARA_Example.zip provides the peak 3-s gust peak wind speed field of Hurricane Sandy on a grid that can be 
-directly used in the presented hurricane workflow, as visualized in :numref:`ara_pws`.
-
-:numref:`ara_pws` shows the 3-s gust peak wind speed field in Atlantic County during 
-the Hurricane Sandy (simulation data provided by Applied Research Associate hurricane model). The model derives wind 
-speeds based on numerically solving the differential equations of a translating storm and iteratively calibrating the 
-field observations. In general, the model would be refined with the hindcast within a week of the event. And the 
-:download:`ARA_Example.zip <data/ARA_Example.zip>` provides the peak wind speed grid that can be directly used in 
-the presented hurricane workflow.
+directly used in the presented hurricane workflow, as visualized in :numref:`ara_pws` for Atlantic County.
 
 .. figure:: figure/ARA_PWS.png
    :name: ara_pws
@@ -225,6 +218,18 @@ the presented hurricane workflow.
    :figwidth: 500
 
    Simulated water depth over land for Hurricane Sandy by ADCIRC (Atlantic County).
+
+.. list-table:: Access points for Superstorm Sandy files
+   :name: superstorm_data
+   :header-rows: 1
+   :align: center
+
+   * - Hazard
+     - Access Point
+   * - Wind Field
+     - :download:`ARA_Example.zip <data/ARA_Example.zip>`
+   * - Storm Surge
+     - :download:`ADCIRC_Example.zip <data/ADCIRC_Example.zip>`
 
 
 .. [Snaiki17a]
@@ -282,3 +287,6 @@ the presented hurricane workflow.
 .. [NJDEP15]
    New Jersey Department of Environmental Protection (NJDEP) (2015), Damage Assessment 
    Report on the Effects of Hurricane Sandy on the State of New Jersey's Natural Resources.
+
+.. [NJSHMP]
+   State of New Jersey Office of Emergency Management (2012), The State of New Jersey's Hazard Mitigation Plan, http://ready.nj.gov/mitigation/2012-mitigation-plan.shtml.
