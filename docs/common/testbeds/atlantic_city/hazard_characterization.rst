@@ -18,7 +18,7 @@ ASCE 7 are already included for each building footprint for reference.
 
 .. _lbl-testbed_AC_hazard_characterization_synthetic:
 
-Sythetic Storm Scenario
+Synthetic Storm Scenario
 ========================
 
 An Atlantic City landfall scenario was generated using the Storm Hazard Projection Tool developed in the 
