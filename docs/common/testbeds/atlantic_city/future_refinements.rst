@@ -58,3 +58,9 @@ community is especially welcome:
    structure can be seized to increase the workflow's overall fidelity.
 
 
+.. note::
+
+   Community members who wish to contribute to the hurricane testbed in any of the above (or other) areas can 
+   express their interest by completing this `survey <https://docs.google.com/forms/d/e/1FAIpQLSdVnnqYvDfpYyFunQSbNTkqqWR9WlzL-VjV_Pe9A21o1Iw4Aw/viewform>`_.
+
+
