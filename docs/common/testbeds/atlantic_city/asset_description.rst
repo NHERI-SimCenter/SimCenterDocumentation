@@ -267,6 +267,16 @@ The methodology used for each of these attributes is now described.
 
                               Roof type classification by BRAILS ([Wang19]_).
 
+                     Roof slope is calculated as the ratio between the roof height and half the depth of the 
+                     building, i.e., length of the building orthogonal to the roadline in front of the building. 
+                     Roof height is calculated by determining the difference between the bottom plane and apex 
+                     elevations of the roof as defined in the Building Elevations section. Plan dimensions of 
+                     the building are determined by first obtaining the camera location of the street-level 
+                     image to determine road-parallel and -perpendicular dimensions of the building footprint, 
+                     then setting the average of the road-perpendicular dimensions as the building depth. This 
+                     is deemed a more accurate way of establishing the plan geometry than using the footprints 
+                     themselves. 
+
 4. **Window Area**: The proportion of windows to the overall surface area is not available in inventory and 
                     assessor datasets though required for wind loss modeling. Generally, window area can be 
                     assumed based on the building occupancy class given Department of Energy industry databases. 
@@ -335,15 +345,15 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
      - Number of Assets
      - Typical Run Time
    * - Atlantic County Inventory
-     - `Atlantic County Inventory.pdf <https://berkeley.box.com/s/cx4l0f0wnu7gx09supmwu4hzi9xrns2u>`_
+     - :download:`Atlantic County Inventory <data/AtlanticCountyInventory.csv>`
      - 100,721
      - ~ 1,500 CPU-Hour* (please see more details in **Computational Resources Requirements**)
    * - Flood-Exposed Inventory
-     - `Flood-Exposed Inventory.pdf <https://berkeley.box.com/s/ic2q1ru8d7qqkr4uz1ny07h905mqh1bv>`_
+     - :download:`Flood-Exposed Inventory <data/FloodExposedInventory.csv>`
      - 32,828
      - ~ 440 CPU-Hour
    * - Exploration Inventory
-     - `Exploration Inventory.pdf <https://berkeley.box.com/s/ic2q1ru8d7qqkr4uz1ny07h905mqh1bv>`_
+     - :download:`Exploration Inventory <data/ExplorationInventory.csv>`
      - 1,000
      - ~ 12 CPU-Hour
 

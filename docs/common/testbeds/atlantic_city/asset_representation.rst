@@ -418,10 +418,10 @@ The corresponding time-evolving rulesets (PDFs and Python scripts) are cross-ref
      - Python script
    * - HAZUS Building Attribute Rulesets - Wind (CERBL-M-H)
      - `Hazus Building Attribute Rulesets - Wind - CERBL-M-H.pdf <https://berkeley.box.com/s/sbcgkw8q4ps1mncu9bu87oz83lr5mga3>`_
-     - :download:`WindCERBRulesets <data/WindSERBRulesets.py>`
+     - :download:`WindCERBRulesets <data/WindCERBRulesets.py>`
    * - HAZUS Building Attribute Rulesets - Wind (CECBL-M-H)
      - `Hazus Building Attribute Rulesets - Wind - CECBL-M-H.pdf <https://berkeley.box.com/s/scuv8u64atudekvxpda9mh8aol1wuphk>`_
-     - :download:`WindCECBRulesets <data/WindSECBRulesets.py>`
+     - :download:`WindCECBRulesets <data/WindCECBRulesets.py>`
 
 Taking the attribute roof cover (RoofCvr) as an example, the RoofCvr attribute is assigned based on a 
 ruleset that calls upon the roof shape and year built from the building inventory. :numref:`rc_attri`
