@@ -1,4 +1,4 @@
-PBE, "*Integrate fully coupled multi-model computations from hazard source through structure response, to compute reliable estimates of financial loss, business interruption, and casualties*", GC, M,
+PBE, "*Integrate fully coupled multi-model computations from hazard source through structure response, to compute reliable estimates of financial loss, business interruption, and casualties*", GC, M, InProgress
 PBE1, "**Ability to determine  damage and loss for multiple different hazards**", GC, M, InProgress
 PBE1.1 , "Damage and Loss due to ground shaking from Earthquake ", GC , M , Implemented
 PBE1.2 , "Damage and Loss due to Wind Loading ", GC , M , InProgress

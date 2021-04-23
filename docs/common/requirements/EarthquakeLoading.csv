@@ -26,3 +26,4 @@ EL2.7.4, "Nonlinear site response, bidirectional different input motions  ", SP,
 EL2.8, "Ability to select from synthetic ground motions", SP, M, Implemented  
 EL2.8.1, "per Vlachos, Papakonstantinou, Deodatis (2017)", SP, D, Implemented   
 EL2.8.2, "per Dabaghi, Der Kiureghian (2017)", UF, D, Implemented   
+EL2.9, "Ability to select surrogate modeling events", SP, M, 

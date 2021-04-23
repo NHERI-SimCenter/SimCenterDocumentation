@@ -1,0 +1,75 @@
+{
+  "Name": "rWHALE_",
+  "Author": "Adam Zsarnóczay",
+  "WorkflowType": "Parametric Study",
+  "buildingFile":"buildings.json",
+  "runDir": "...",
+  "units": {
+      "force": "kips",
+      "length": "in",
+      "time": "sec"
+   },
+   "outputs": {
+    "EDP": true,
+    "DM": false,
+    "DV": false,
+    "every_realization": false
+  },
+  "Applications": {
+    "Building": {
+      "Application": "CSV_to_BIM",
+      "ApplicationData": {
+        "Min": "0",
+        "Max": "19",
+        "buildingSourceFile":"input_params_srt.csv"
+      }
+    },
+    "RegionalMapping": {
+      "Application": "NearestNeighborEvents",
+      "ApplicationData": {
+        "filenameEVENTgrid": "records/EventGrid.csv",
+        "samples": 5,
+        "neighbors": 4
+      }
+    },
+    "Events": [{
+      "EventClassification": "Earthquake",
+      "Application": "SimCenterEvent",
+      "ApplicationData": {
+        "pathEventData": "records/"
+      }
+    }],
+    "Modeling": {
+      "Application": "OpenSeesInputSRT",
+      "ApplicationData": {
+        "mainScript": "FreeField3D_Dry.tcl",
+        "modelPath": "model/",
+        "ndm": 3
+      }
+    },
+    "EDP": {
+      "Application": "UserDefinedEDP_R",
+      "ApplicationData": {
+        "EDPspecs": "EDP_specs.json"
+      }
+    },
+    "Simulation": {
+       "Application": "OpenSees-Simulation-SRT",
+       "ApplicationData": {
+       }
+    },
+    "UQ": {
+       "Application": "Dakota-UQ",
+       "ApplicationData": {
+          "method": "LHS",
+          "samples": 5,
+          "type": "UQ",
+          "concurrency": 5,
+          "keepSamples": true
+       }
+    }
+    },
+	"runType": "runningLocal",
+	"runDir": "path_to_runDir",
+	"localAppDir": "path_to_SimCenterBackendApplications"
+}

@@ -34,6 +34,7 @@ def init(args, config)-> dict:
         "link": PathBuilder(args.link),
         "items": {},
         "filters": {},
+        "categories": set(),
         "filter_values": {}
     }
 
@@ -64,12 +65,13 @@ def item(rsrc, args:object, config:object, accum:dict)->dict:
         "url": link,
         "image": image_path
     })
-    try:
-        for k, v in rsrc["categories"].items():
-            accum["filters"][k].update([v])
-    except:
-        for k, v in rsrc["categories"].items():
-            accum["filters"][k] = set([v])
+    if "categories" in rsrc:
+        try:
+            for k, v in rsrc["categories"].items():
+                accum["filters"][k].update([v])
+        except:
+            for k, v in rsrc["categories"].items():
+                accum["filters"][k] = set([v])
     accum['item'] = rsrc
 
     return accum

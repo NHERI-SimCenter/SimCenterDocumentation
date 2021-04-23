@@ -15,7 +15,7 @@ R2D2.1 ,"Ability to incorporate building assets", GC , M , Implemented
 R2D2.1.1 ,"Ability to incorporate multi-fidelity building model asset descriptions", GC , M,
 R2D2.2 ,"Ability to incorporate transportation networks", GC , M ,
 R2D2.3 ,"Ability to incorporate utility networks", GC , M ,
-R2D2.3.1 ,"Methods to overcome  national security issues with certain utility data", SP , M ,
+R2D2.3.1 ,"Methods to overcome  national security issues with certain utility data", GC , M ,
 R2D2.4 , "Ability to incorporate surrogate models in asset modeling", SP, M,
 ,,,,
 R2D3, "**Include Different Analysis options**", GC , M , InProgress

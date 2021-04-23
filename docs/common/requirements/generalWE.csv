@@ -1,4 +1,4 @@
-WE, "*Ability to determine response of Building Subject to Wind Loading including formal treatment of randomness and uncertainty uncertainty*", GC , M , Implemented
+WE, "*Application to determine response of Building Subject to Wind Loading including formal treatment of randomness and uncertainty uncertainty*", , , InProgress
 WE1, "Adaptation of non-linear analysis methods used in seismic design", GC, M, Implemented
 WE1.1, "Include ability to create models incorprating options listed in MOD under BM", SP, M, Implemented
 WE1.2, "Include ability to perform nonlinear analysis on the building models listed in ANA", SP, M, Implemented

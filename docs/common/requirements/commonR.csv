@@ -6,6 +6,11 @@ CR2, "Ability of Practicing Engineers to use multiple coupled resources (applica
 CR2.1, "Allow users to launch scientifiv workflows", SP, M, Implemented
 CR3, "Ability to utilize resources beyond the desktop including HPC ", GC, M, Implemented
 CR3.1, "Allow users to utilize HPC resources at TACC through DesignSafe", SP, M, Implemented
+CR4, "*Efficient use of multiple coupled and linked models requiring sharing and inter-operability of databases, computing environments, networks, visualization tools, and analysis systems*", GC, M, InProgress
+CR4.1, "Identify and include external analysis systems", SP, M, InProgress
+CR4.2, "Identify and include external databases", SP, M, InProgress
+CR4.3, "Identify and include external viz tools", SP, M, InProgress
+CR4.4, "Identify and include external computing env", SP, M, Inprogress
 CR5, "Tool available for download from web ", GC, M, Implemented  
 CR5.1, "Tool downloadable from DesignSafe website ", GC, M, Implemented
 CR6, "Ability to benefit from programs that move research results into practice and obtain training ", GC, M, 

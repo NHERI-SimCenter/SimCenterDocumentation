@@ -32,3 +32,4 @@ Wl2.10, "Joint description for hurricane wind, storm surge, and wave hazards", G
 WL2.11, "Libraries of high resolution hurricane wind/surge/wave simulations", GC, M,
 WL2.11, "Libraries of high resolution hurricane wind/surge/wave simulations", GC, M,
 WL2.12, "Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow", SP, 
+WL2.13, "Ability to select surrogate modeling events", SP, M, 
