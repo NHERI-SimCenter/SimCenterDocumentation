@@ -15,7 +15,7 @@ Building Inventory
 
 From the entire building inventory, 85 buildings (:numref:`sample_table`) are selected from 5 building
 classes and 8 built eras. :numref:`scatter_matrix` shows the data distributions of the built year, surface
-roughness, peak wind speed, and peak water depth.
+roughness (:math:`z_0`), peak wind speed (PWS), and peak water depth (PWD).
 
 .. csv-table:: Sampled building inventory
    :file: data/VerificationSample.csv

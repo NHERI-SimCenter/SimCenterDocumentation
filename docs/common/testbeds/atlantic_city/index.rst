@@ -4,6 +4,44 @@
 Atlantic County, NJ
 *******************
 
+
+**Acknowledgements**
+
+A number of members of the SimCenter Team assisted with this testbed’s development and its documentation: 
+Adam Zsarnoczay, Ajay Harish, Barbaros Cetiner, Charles Wang, Claudio Perez, Joanna Zou, Kuanshi Zhong, Stevan Gavrilovic, and Wael Elhaddad. 
+The testbed conceptualization was guided by Tracy Tracy Kijewski-Correa (University of Notre Dame), 
+with implementation supervised by Frank McKenna (University of California Berkeley). 
+Additional guidance was offered by Greg Deierlein (Stanford University), Andrew Kennedy 
+(University of Notre Dame), and Matt Schoettler (University of California Berkeley). 
+
+The Hazard Characterization leveraged models, software and simulations executed by the following groups, 
+whose collaboration is greatly appreciated:
+
+The NJcoast project, with storm surge surrogate model developed by Alexandros Taflanidis (University of Notre Dame) 
+in collaboration with Andrew Kennedy (University of Notre Dame) and wind field model contributed by Teng Wu (University at Buffalo)
+Superstorm Sandy ADCIRC hindcast results for storm surge provided by Joannes Westerink (University of Notre Dame) 
+and wind fields made available by Peter Vickery (Applied Research Associates).
+
+Additional information required for Asset Description and Asset Representation was made possible through the 
+ongoing collaboration between the University of Notre dame and the New Jersey Department of Community Affairs (NJ DCA) 
+through the NJcoast project. NJ DCA’s Keith Henderson’s sustained support and collaboration is greatly appreciated.
+
+.. list-table:: Documentation Version History
+   :name: doc_version
+   :header-rows: 1
+   :align: center
+
+   * - Version
+     - Release Date
+     - Update
+   * - 1.0
+     - 04/2021
+     - Initial release
+
+
+
+**Preface**
+
 This documentation is intended to introduce the implementation of the SimCenter’s hurricane 
 regional loss modeling workflow in the context of Atlantic City (Atlantic County), New Jersey. 
 While certain aspects of the workflow are unchanged in a given application context, this 
@@ -44,6 +82,7 @@ necessary to execute these testbeds and factors influencing the run time.
 .. toctree-filt::
    :maxdepth: 1
 
+   acknowledgements
    overview
    asset_description
    hazard_characterization
@@ -57,7 +96,4 @@ necessary to execute these testbeds and factors influencing the run time.
    best_practices
    pws_conversion
 
-**Acknowledgements**: 
-This material is based upon work supported by the National Science Foundation under Grant No. 1612843. 
-Any opinions, findings, and conclusions or recommendations expressed in this material are those of the author(s) and do 
-not necessarily reflect the views of the National Science Foundation.
+
