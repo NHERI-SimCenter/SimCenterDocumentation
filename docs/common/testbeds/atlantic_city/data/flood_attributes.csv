@@ -1,0 +1,7 @@
+Attribute,Valid Entries,Basis
+flood type,Riverine/A-Zone | Coastal/A-Zone | Coastal/V-Zone,Flood Insurance Rate Maps (FIRMs)
+first floor elevation,[floating point number],"Dimensional data from building inventory, FIRM standards"
+construction post-FIRM adoption,yes | no,Date of municipality's adoption of FIRMs
+basement type,Basement | split-level | basement | no basement,characteristic from building inventory
+duration,short | long,Observation of storm-surge characetistics in New Jersey
+wave velocity,[floating point number],Established depth-velocity relationship

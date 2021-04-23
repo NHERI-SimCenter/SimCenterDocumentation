@@ -1,0 +1,16 @@
+Time Period,YearBuiltNJDEP <= 2000,YearBuiltNJDEP > 2000
+Ruleset,"IF 0.2 <= WindowArea < 0.33, WWR = Low;
+IF 0.33 <= WindowArea < 0.5, WWR = Medium;
+IF 0.5 <= WindowArea, WWR = High;
+IF RoofShape = Gable OR Hip, SWR = yes (RV = 60%); 
+IF RoofShape = Gable OR Hip, SWR = no (RV = 40%) 
+
+",WWR = medium
+Note,"HAZUS defines these categories on window to wall ratios (WWR) as follows:
+Low:  20% <= WWR < 33%
+Medium:  33% <= WWR < 50%
+High: WWR <= 50%
+
+If WindowArea information available in Custom Inventory from street view data, this should be used to determine the Window Area being low, medium, or high. If this information is not available, all engineered residential buildings are assumed to have low window area. This ruleset was created from the information on the Reference Buildings from the Office of Energy Efficiency and Renewable Energy. Baltimore, MD was used as the test city because the climate was the most similar to Atlantic City of the data available. Office buildings (used as a test case for commercial), have 33% WWR and apartments (used as a test case for residential) have 15% WWR. Therefore, commercial is assumed to have medium window area, whereas residential buildings are assumed to have low window area. 
+
+Source: https://www.energy.gov/eere/downloads/reference-buildings-building-type-midrise-apartment",Default
