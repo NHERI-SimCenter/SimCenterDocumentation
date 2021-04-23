@@ -325,12 +325,14 @@ if app_name == 'R2DTool':
     tags.add('earthquake')
     tags.add('response')
     tags.add('notQuoFEM')
+    tags.add('docTestbeds')    
 
     toc_filter_exclusions.remove('R2D')
     toc_filter_exclusions.remove('desktop')
     toc_filter_exclusions.remove('earthquake')
     toc_filter_exclusions.remove('response')
     toc_filter_exclusions.remove('notQuoFEM')
+    toc_filter_exclusions.remove('docTestbeds')    
     toc_filter_exclude = toc_filter_exclusions
 
     exclude_patterns.remove('**/*desktop*')
