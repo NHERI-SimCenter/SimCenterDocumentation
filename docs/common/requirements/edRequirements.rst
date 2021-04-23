@@ -12,6 +12,3 @@ The following contains the functional requirements for education and outreach re
 
 .. include :: key.rst
 
-
-	 
-	 

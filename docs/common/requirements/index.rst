@@ -11,10 +11,10 @@ The SimCenter has relied on community input to drive application and educational
 .. _figRTM:
 
 .. figure:: figures/RTM.png
-	:align: center
-	:figclass: align-center
+   :align: center
+   :figclass: align-center
 
-	Application & Component Abbreviations for RTM
+   Application & Component Abbreviations for RTM
 
 Each requirement in the RTM has the following entry fields:
 
@@ -25,15 +25,15 @@ Each requirement in the RTM has the following entry fields:
    #. A source for the requirement indicating were the requirement originated. That can be one of three:
       
       #. GC: Grand challenges in hazard engineering are the problems, barriers, and bottlenecks that hinder the ideal of a nation resilient from the effects of natural hazards. The vision documents referenced in the solicitation [XX,XX,XXX] outline the grand challenges for wind and earthquake hazards. These documents all present a list of research and educational advances needed that can contribute knowledge and innovation to overcome the grand challenges. The advances summarized in the vision documents were identified through specially formed committees and workshops comprising researchers and practicing engineers. They identified both the grand challenges faced and also identified what was needed to address these challenges. The software needs identified in these reports that are applicable to research in natural hazards as permitted under the NSF NHERI program were identified in these reports. Those tasks that the NHERI SimCenter identified as pertaining to aiding NHERI researchers perform their research and those which would aid practicing engineers utilize this research in their work are identified here.
-	 
+    
       #. SP: From the senior personnel on the SimCenter project. The vision documents outline general needs without going into the specifics. From these general needs the senior personnel on the project identified specific requirements that would provide basic functionality to allow research.
-	 
+    
       #. UF: SimCenter workshops, boot camps and direct user feedback. As the SimCenter develops and releases tools, feedback from researchers using these tools is obtained at the tool training workshops, programmer boot-camps, in one-on-one discussions, via direct email, and through online user feedback surveys. For the feedback related to what additional functionality to include, entries are added to the RTM. For other feedback, related to simple tasks related to operation of tool and UI, entries are placed in our Jira system.
 
    #. A designation determined by the management group indicating the importance of the requirement, which again has 3 possible values:
-     #.	M - Mandatory: This requirement must be satisfied 
-     #.	D - Desirable: It would be desirable to implement the functionality as it would aid research. If time and resources permit it should be.
-     #.	P - Possible: Such an activity is possible within the SimCenter Framework. SimCenter could work to include it or work with NHERI researchers to do so.
+     #.   M - Mandatory: This requirement must be satisfied 
+     #.   D - Desirable: It would be desirable to implement the functionality as it would aid research. If time and resources permit it should be.
+     #.   P - Possible: Such an activity is possible within the SimCenter Framework. SimCenter could work to include it or work with NHERI researchers to do so.
 
   #. A column indicating whether the requirement has been implemented and available to users.
 
@@ -102,11 +102,11 @@ All Requirements
 
    allRequirements
 
+..
+   .. toctree::
+      :caption: Gallery
 
-.. toctree::
-   :caption: Gallery
-
-   ../user_manual/examples/desktop/gallery
+      ../user_manual/examples/desktop/gallery
 
    
 Contact

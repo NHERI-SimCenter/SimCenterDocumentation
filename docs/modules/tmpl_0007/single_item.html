@@ -1,5 +1,5 @@
 {% macro single_item(card) %}
-<div class="card shadow-sm mb-3 {% for t in card.tags %}{{ t.replace(".","-") }} {% endfor %} gallery-item" style="max-width: 50em; background-color: #f8f9fa;" data-gallery_info='{{ card.categories|tojson }}'>
+<div class="card shadow-sm mb-3 {% for t in card.tags %}{{ t.replace(".","-") }} {% endfor %} gallery-item" style="max-width: 50em; background-color: #f8f9fa;" {# data-gallery_info='{{ card.categories|tojson }}' #}>
   <div class="row g-0 mb-3">
     <div class="card-header">
         <p>
@@ -15,8 +15,7 @@
           {{ card.summary }}
           {%-endif-%}
         </p>
-          {# for f in card.categories.values() %}<span class="btn btn-outline-secondary btn-sm disabled">{{ f }}</span>{% endfor #}
-          {% for f in card.tags %}<span class="btn btn-outline-secondary btn-sm disabled">{{ f }}</span>{% endfor %}
+          {# for f in card.tags %}<span class="btn btn-outline-secondary btn-sm disabled">{{ f }}</span>{% endfor #}
       </div>
     </div>
         {% if card.image %}

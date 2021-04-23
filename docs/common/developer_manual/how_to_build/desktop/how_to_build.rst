@@ -93,25 +93,25 @@ Build the applications
           cmake --install .
           cd ..
 
-	  
+     
     .. note::
 
        #. On Windows it is necessary to specify a compiler for CMake. To do this you need to add additional arguments to line 4, i.e. if you have Visual Studio 2019 you would instead type:
 
           .. code::
-	     
-               cmake .. -G "Visual Studio 16 2019"
+        
+            cmake .. -G "Visual Studio 16 2019"
 
        #. For Mac users running **Big Sur** and version **12** of XCode there are some reported issues. Replace line 3 above with the following two lines:
 
           .. code::       
 
-	      conan install .. --build missing --build=libcurl
-	      mv ./missing/* ./
-	       
-	   
-If building and installation were successful you should find a folder called ``applications`` in the repository with all the applications inside of it.	The name of this folder should not be changed.
-	
+            conan install .. --build missing --build=libcurl
+            mv ./missing/* ./
+          
+      
+If building and installation were successful you should find a folder called ``applications`` in the repository with all the applications inside of it.   The name of this folder should not be changed.
+   
 
 ************************
 Build the User Interface
@@ -121,17 +121,17 @@ To build the interface you first need to download the repo and a companion repo(
 
     .. code::
        
-       git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
-       git clone https://github.com/NHERI-SimCenter/APP_NAME.git
+      git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
+      git clone https://github.com/NHERI-SimCenter/APP_NAME.git
 
 
 .. note::
 
-   Use the above links if you just want to download and build the applications. If you intend to make changes to any of the code in the repo's, you should fork the latter repo and then clone your forked repo. Forking a repo at **githib** is done through your browser.
+   Use the above links if you just want to download and build the applications. If you intend to make changes to any of the code in the repo's, you should fork the latter repo and then clone your forked repo. Forking a repo at **github** is done through your browser.
 
     .. code::
        
-       git clone https://github.com/YOUR_GITHUB_NAME/APP_NAME.git
+      git clone https://github.com/YOUR_GITHUB_NAME/APP_NAME.git
    
 You now have two ways to build the application: (1) using the **Qt Creator** desktop application provided by **Qt** and (2) from terminal application.
 
@@ -152,10 +152,10 @@ Build from the Terminal
 
     .. parsed-literal::
 
-        mkdir build
-        cd build       
-        qmake ../|short tool id|.pro
-	make
+      mkdir build
+      cd build       
+      qmake ../|short tool id|.pro
+	   make
 
 .. note::
 
@@ -194,8 +194,8 @@ Once built the tool **Preferences** needs to be modified. To do this open the |s
 .. _figPreferences:
 
 .. figure:: figures/Preferences.png
-	:align: center
-	:figclass: align-center
+   :align: center
+   :figclass: align-center
 
-	Preferences Dialog
+   Preferences Dialog
      
