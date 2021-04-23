@@ -271,8 +271,9 @@ The methodology used for each of these attributes is now described.
                      building, i.e., length of the building orthogonal to the roadline in front of the building. 
                      Roof height is calculated by determining the difference between the bottom plane and apex 
                      elevations of the roof as defined in the Building Elevations section. Plan dimensions of 
-                     the building are determined by first obtaining the camera location of the street-level 
-                     image to determine road-parallel and -perpendicular dimensions of the building footprint, 
+                     the building, as determined by the dimensions of the footprint, are determined by first 
+                     obtaining the camera location of the street-level 
+                     image to determine road-parallel and road-perpendicular dimensions of the building footprint, 
                      then setting the average of the road-perpendicular dimensions as the building depth. This 
                      is deemed a more accurate way of establishing the plan geometry than using the footprints 
                      themselves. 

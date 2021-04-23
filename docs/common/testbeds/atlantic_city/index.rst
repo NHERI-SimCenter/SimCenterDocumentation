@@ -92,7 +92,7 @@ necessary to execute these testbeds and factors influencing the run time.
    uncertainty_quantification
    sample_results
    example_outputs
-   .future_refinements
+   future_refinements
    best_practices
    pws_conversion
 
