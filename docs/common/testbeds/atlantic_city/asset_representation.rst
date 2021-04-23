@@ -537,7 +537,7 @@ are cross-referenced in :numref:`addinfo_ruleset_ef`.
        `Hazus Building Attribute Rulesets - Wind - HUEFHS-M-L.pdf <https://berkeley.box.com/s/pumhmup0j60m3skgcdlfthmeg5u3o5pk>`_, 
        `Hazus Building Attribute Rulesets - Wind - HUEFPS-HUEFEO.pdf <https://berkeley.box.com/s/2s7g2x3iot4bajfdprxwzrxu4m6nbulg>`_, 
        `Hazus Building Attribute Rulesets - Wind - HUEFSM-L.pdf <https://berkeley.box.com/s/ffs4gj1hf4bji1y0vzvj3hu93kvw00kt>`_
-     - :download:`WindEFRulesets <data/WindMHRulesets.py>`
+     - :download:`WindEFRulesets <data/WindEFRulesets.py>`
 
 Taking the attribute wind borne debris source (WindDebris) as an example, the WindDebris attribute is 
 assigned based on assumptions surrounding the zoning in areas where each essential facility class is 
