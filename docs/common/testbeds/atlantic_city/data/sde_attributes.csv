@@ -1,0 +1,19 @@
+Field,Description
+BldgUniqueID,Building unique ID. The first four characters will be followed by a 9-digit zero-padded number.
+StructureType,Residential or Non-Residential.
+ResidenceType,"Residential Type Only: Single Family Residence, Town or Row House, Manufactured House."
+StructureUse,"Non-Residential Type Only: Apartments, Commercial Retail, Mini-Warehouse, etc."
+FoundationType,Residential Type Only: Select from domain.
+SuperStructure,Residential Type Only: Select from domain.
+ExteriorFinish,Residential Type Only: Select from domain.
+ElevationLowestFloor,Typically assessor attribute.
+NFIPCommunityID,Typically assessor attribute.
+NFIPCommunityName,Typically assessor attribute.
+YearConstruction,Typically assessor attribute.
+Story,Select from domain.
+RoofCovering,Select from domain.
+HVACSystem,Select from domain.
+Quality,Select from domain.
+SDESourceCit,Source citation details.
+FloodZone,From FIRM.
+FIRMPanelID,FIRM Panel number from S_FIRM_PAN

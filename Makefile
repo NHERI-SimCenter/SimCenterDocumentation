@@ -62,12 +62,12 @@ export BSTINPUTS:=../texmf//:${BSTINPUTS}
 
 
 all:
-	make pelicun html
-	make qfem html
-	make r2d html
-	make pbe html
-	make we html
-	make ee html
+	make pelicun html 2>&1 | grep 'build succ'
+	make qfem html 2>&1 | grep 'build succ'
+	make r2d html 2>&1 | grep 'build succ'
+	make pbe html 2>&1 | grep 'build succ'
+	make we html 2>&1 | grep 'build succ'
+	make ee html 2>&1 | grep 'build succ'
 
 
 hydro pelicun pbe rtm:

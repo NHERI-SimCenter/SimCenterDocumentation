@@ -1,3 +1,5 @@
+.. _SIM-user_manual:
+
 SIM: Structural Model
 =====================
 
