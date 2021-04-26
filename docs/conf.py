@@ -544,6 +544,7 @@ elif app_name == 'quoFEM':
             "qfem-0003",
             "qfem-0004",
             "qfem-0009",
+            "qfem-0007",
             "qfem-0008",
             "qfem-0014",
             "qfem-0015",
@@ -591,9 +592,9 @@ elif app_name == 'WE-UQ':
     example_config.update({
         "include-item": [
             "weuq-0001",
-            "weuq-0002",
-            "weuq-0004",
-            "weuq-0005",
+            #"weuq-0002",
+            #"weuq-0004",
+            "weuq-0007",
         ]
     })
     extlinks.update(
