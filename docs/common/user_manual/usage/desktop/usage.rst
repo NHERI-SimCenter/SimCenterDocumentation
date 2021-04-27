@@ -97,10 +97,11 @@ The ribbon on the left side provides the user with a selection of buttons to cho
    :PBE:SIM
    :wind:Assets
    :EEUQ:earthquake/earthquakeEvents.rst
-   :PBE:earthquake/EarthquakeEvents.rst	 	 
+   :PBE:earthquake/earthquakeEvents.rst	 	 
    :wind:wind/WindEvents
    :wind:FEM
    :EEUQ:FEM
+   :PBE:FEM	 
    :quoFEM:quoFEM/FEM
    :EEUQ:response/EDP
    :WEUQ:response/EDP
