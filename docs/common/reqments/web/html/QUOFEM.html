@@ -1,0 +1,289 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>1. quoFEM Requirements &mdash; SimCenter Requirements Traceability Matrix  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/css/custom.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="2. Response of Building to Wind Event" href="WE-UQ.html" />
+    <link rel="prev" title="Requirements Traceability Matrix" href="index.html" />
+<script src="https://cdn.jsdelivr.net/npm/vega@5.12.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@4.13.1"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.8.0"></script>
+<style media="screen">.vega-actions a {margin-right: 5px;}</style>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> SimCenter Requirements Traceability Matrix
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Building Scale</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. quoFEM Requirements</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">1.1. quoFEM Requirements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#uq-requirements">1.2. UQ Requirements</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="WE-UQ.html">2. Response of Building to Wind Event</a></li>
+<li class="toctree-l1"><a class="reference internal" href="EE-UQ.html">3. Response of Building to Earthquake</a></li>
+<li class="toctree-l1"><a class="reference internal" href="HydroUQ.html">4. Response of Building to Hydrodynamic Loading</a></li>
+<li class="toctree-l1"><a class="reference internal" href="PBER.html">5. Performance Based Engineering</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Regional Scale</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="R2D.html">1. R2D Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="BRAILS.html">2. BRAILS Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pelicun.html">3. Pelicun Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="testbeds.html">4. Testbeds</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Education</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="edRequirements.html">1. EOC Requirements</a></li>
+</ul>
+<p class="caption"><span class="caption-text">All Rquirements</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html">1. R2D</a></li>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html#pbe">2. PBE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html#we-uq-requirements">3. WE-UQ Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html#hydro-uq-requirements">4. Hydro-UQ Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html#ee-uq-requirements">5. EE-UQ Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html#quofem-requirements">6. quoFEM Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html#earthquake-loading-requirements">7. Earthquake Loading Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html#wind-loading-requirements">8. Wind Loading Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html#surge-tsunami-loading-requirements">9. Surge/Tsunami Loading Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html#uq-requirements">10. UQ Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html#rv-requirements">11. RV Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html#modeling-requirements">12. Modeling Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html#analysis-requirements">13. Analysis Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html#damage-loss-requirements">14. Damage &amp; Loss Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html#recovery-requirements">15. Recovery Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html#common-research-application-requirements">16. Common Research Application Requirements</a></li>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html#brails">17. BRAILS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html#pelicun">18. PELICUN</a></li>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html#be-database">19. BE Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html#dl-database">20. DL Database</a></li>
+<li class="toctree-l1"><a class="reference internal" href="All-Requirements.html#regional-testbeds">21. Regional Testbeds</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">SimCenter Requirements Traceability Matrix</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li><span class="section-number">1. </span>quoFEM Requirements</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/QUOFEM.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="quofem-requirements">
+<h1><span class="section-number">1. </span>quoFEM Requirements<a class="headerlink" href="#quofem-requirements" title="Permalink to this headline">¶</a></h1>
+<p>application proving UQ and Optimization methods to existing FEM applications. quoFEM
+has a lower level interface to UQ and Optimization methods than the other applications
+(WE-UQ, EE-UQ, and PBE). It is thus a more powerful tool providing more capabilities for
+researchers. All requirements in this section are related to work in sections 1.3.7, 1.3.8, and 1.3.9of the WBS.</p>
+<div class="section" id="id1">
+<h2><span class="section-number">1.1. </span>quoFEM Requirements<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="uq-requirements">
+<h2><span class="section-number">1.2. </span>UQ Requirements<a class="headerlink" href="#uq-requirements" title="Permalink to this headline">¶</a></h2>
+<div class="line-block">
+<div class="line">key:</div>
+<div class="line">Source: GC=Needed for Grand Challenges, SP=Senior Personnel, UF=User Feedback</div>
+<div class="line">Priority: M=Mandatory, D=Desirable, P=Possible Future</div>
+<div class="line">Status: Implements, InProgress and Blank (i.e. not started)</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2020, The Regents of the University of California.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+    <!-- Theme Analytics -->
+    <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-2431545-1', 'auto');
+    
+    ga('send', 'pageview');
+    </script>
+
+    
+    
+
+  <style>
+         .wy-nav-content { max-width: none; }
+  </style>
+
+
+
+</body>
+</html>
