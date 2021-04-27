@@ -1,0 +1,26 @@
+H, "*Application to determine response of Building Subject Water Action due to Storm Surge or Tsunami  including formal treatment of randomness and uncertainty*", , , InProgress
+H1, "Quantification of flood-borne debris hazards", GC, M,
+H2, "Effects of over-land flow, including waves, debris, flood velocity, wind-driven influences, erosion effects at buildings and channeling effects of the built environment", GC, D, 
+H3, "**Ability to select from all Loading Options listed in HL2**", SP , M , InProgress
+H4, "**Ability to select from Building Modeling Options listed in MOD under BM**", SP , M , InProgress
+H5, "Include ability to perform nonlinear analysis on the building models listed in ANA", SP, M, InProgress
+H6, "**Ability to use Various UQ Methods and Variable Options**", , ,
+H7.1, "Ability to use Forward Propagtion methods listed in UQ under UF", SP, M, InProgress
+H7.2, "Ability to use Random Variable Distributions defeined in RV", SP, M,
+H7.3, "Ability to use Reliability Methods listed in UQ under UR", SP, M, InProgress
+H7.4, "Ability to use Global Sensitivity Methods listed in UQ under UG ", SP, M, InProgress
+H7.5, "Ability to both use and create surrogates listed in UQ under US", SP, M,
+H7.6, "Ability to use High Dimensional UQ listed in UQ under UH", SP, M,
+H8, "Ability to Visualize the Results", SP, M, InProgress
+H8.1, "Ability to view individual sample results ", SP, M, InProgress
+H8.2, "Ability to graphically view the results to show distribution in respone ", SP, M, InProgress
+H9, "**Misc User Requests**", , ,
+EE9.1, "Ability to quickly model experimental tests perform in OSU wave tank ", UF, M,
+H10, "**General Software Requirements**", , ,
+H10.1, "Application to Provide Common SimCenter Research Application Requirements listed in CR", GC, M, InProgresss
+H11, "Tool should incorporate data from www ", GC, M, 
+H11.1, "Tool should use satelite imagery in aid of determine channeling effect ", SP, D,
+H11.2, "Tool should use satelite imagery in aid of determining amount of debris ", SP, D, 
+H11.3, "Tool should obtain building modelling info from database through www ", SP, D,
+
+
