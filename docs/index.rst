@@ -74,7 +74,7 @@
    :desktop_app:common/user_manual/examples/desktop/examples
    :pelicun:common/user_manual/examples/pelicun/examples
 
-   :EEUQ:common/requirements/EEUQ
+   :EEUQ:common/reqments/EEUQ		
    :WEUQ:common/requirements/WEUQ
    :PBE:common/requirements/PBE
    :pelicun:common/user_manual/requirements/pelicun/requirements
