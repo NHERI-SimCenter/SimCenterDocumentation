@@ -1,0 +1,8 @@
+Attribute,Valid Entries,Basis
+roof-wall connection,strap | toe-nail,Codes/standards
+secondary water resistance (SWR),yes | no,Codes/standards/human subjects data
+shutters,yes | no,Codes/standards/human subjects data
+garage,"shuttered houses = garage II (SFBC 1994, none) | unshuttered house = garage I (none, weak, standard)",Trends/norms
+masonry reinforcement,yes | no,Trends/norms
+roof deck attachment (wood truss roof only),"6d @ 6""/12"" | 8d @ 6""/12""| 6d/8d mix @ 6""/6"" | 8d @ 6""/6""",Codes/standards
+roof deck attachment (steel joist roof only),sheet metal standard | sheet metal superior | cover shingle stanford | cover shingle superior,Trends/norms

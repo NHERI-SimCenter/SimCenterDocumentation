@@ -19,7 +19,7 @@ Install on Windows 10
 Download the Application
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-To download the |app|, first navigate to the |appLink| page. As shown in |figDownloadWin|, to get to the download page, you need to click on the link **Download app and User Manual** in the application page. The download page contains a list of downloadable files and directories.
+To download the |app|, navigate to the |appLink| page which should resemble |figDownload|. The download page contains a list of downloadable files and directories.
 
 
 .. only:: R2D_app
@@ -75,15 +75,13 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
 Click on the file with a name ending with **Windows_Download.zip** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner. After the download completed, extract the zip archive to a location in your filesystem.
 
-.. note::
-
-   We suggest placing the directory in the **C:\\SimCenter** folder. Once here, you can create a shortcut to the application and move this shortcut to your Desktop.
+We suggest placing the directory in the **C:\\SimCenter** folder. Once here, you can create a shortcut to the application and move this shortcut to your Desktop.
 
 
 Test the Installation
 ^^^^^^^^^^^^^^^^^^^^^
 
-Now test if the application starts properly. Navigate to the location where you placed the application and open it by running the |short tool id|.exe executable. You should see the user interface shown in |figUI|.
+Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by running the |short tool id|.exe executable. You should see the user interface shown in |figWinUI|. The installation can be tested by running the example problem |test example|.
 
 .. note::
 
@@ -91,9 +89,9 @@ Now test if the application starts properly. Navigate to the location where you 
 
 .. only:: R2D_app
 
-   .. _figUI-R2D:
+   .. _figWinUI-R2D:
 
-   .. figure:: figures/PBE.png
+   .. figure:: figures/R2D-Startup.png
     :align: center
     :figclass: align-center
 
@@ -101,7 +99,7 @@ Now test if the application starts properly. Navigate to the location where you 
 
 .. only:: PBE_app
 
-   .. _figUI-PBE:
+   .. _figWinUI-PBE:
 
    .. figure:: figures/PBE.png
     :align: center
@@ -111,7 +109,7 @@ Now test if the application starts properly. Navigate to the location where you 
 
 .. only:: EEUQ_app
 
-   .. _figUI-EE:
+   .. _figWinUI-EE:
 
    .. figure:: figures/EE-UQ.png
     :align: center
@@ -121,7 +119,7 @@ Now test if the application starts properly. Navigate to the location where you 
 
 .. only:: WEUQ_app
 
-   .. _figUI-WE:
+   .. _figWinUI-WE:
 
    .. figure:: figures/WE-UQ.png
     :align: center
@@ -131,7 +129,7 @@ Now test if the application starts properly. Navigate to the location where you 
 
 .. only:: quoFEM_app
 
-   .. _figUI-quoFEM:
+   .. _figWinUI-quoFEM:
 
    .. figure:: figures/quoFEM.png
     :align: center

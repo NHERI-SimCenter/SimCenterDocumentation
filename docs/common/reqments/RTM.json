@@ -1,0 +1,140 @@
+{
+   "UM": {
+      "target": "Ability to use various UQ Methods",
+      "items": [
+         {
+            "target": "Forward Propagation Methods",
+            "fields": ["GC","M","1"],
+            "items": [
+               {
+                  "target": "Ability to use basic Monte Carlo and LHS methods",
+                  "fields": ["SP","M","1"],
+                  "config": "$.UQ_Method.samplingMethodData[?(@.method='LHS')]"
+               },
+               {
+                  "target": "Ability to use Importance Sampling",
+                  "fields": ["SP","M","2"],
+                  "config": "$.UQ_Method.samplingMethodData[?(@.method='Importance Sampling')]"
+               },
+               {
+                  "target": "Ability to use Gaussian Process Regression",
+                  "fields": ["SP","M","2"],
+                  "config": "$.UQ_Method.samplingMethodData[?(@.method='Gaussian Process Regression')]"
+               },
+               {
+                  "target": "Ability to use Own External UQ Engine",
+                  "fields": ["SP","M",null],
+                  "config": null
+               }
+            ]
+         },
+         {
+            "target": "Ability to use various Reliability Methods",
+            "items": [
+               {
+                  "target": "Ability to use First Order Reliability method",
+                  "fields": ["UF","M","2.1"],
+                  "config": "$.UQ_Method.reliabilityMethodData[?(@.method=\"Local Reliability\")]"
+               },
+               {
+                  "target": "Ability to use Second Order Reliability method",
+                  "fields": ["UF","M","2.1"],
+                  "config": []
+               },
+               {
+                  "target": "Ability to use Surrogate Based Reliability",
+                  "fields": ["UF","M",null]
+               },
+               {
+                  "target": "Ability to use Own External Application to generate Results",
+                  "fields": ["UF","M","2.2"]
+               }
+            ]
+         },
+         {
+            "target": "Ability to user various Sensitivity Methods",
+            "items": [
+               {
+                  "target": "Ability to obtain Global Sensitivity Sobol's indices",
+                  "fields": ["UF","M",null]
+               }
+            ]
+         }
+      ]
+   },
+   "UQ": {
+      "target": "Random Variables",
+      "items": [
+         {
+            "target": "Various Random Variable Probability Distributions",
+            "items": [
+               {
+                  "target": "Normal",
+                  "fields": ["SP","M","1"],
+                  "config": "$.randomVariables[*][?(@.distribution=='Normal']"
+               },
+               {
+                  "target": "Lognormal",
+                  "fields": ["SP","M","1"],
+                  "config": "$.randomVariables[*][?(@.distribution=='Lognormal']"
+               },
+               {
+                  "target": "Uniform",
+                  "fields": ["SP","M","1"],
+                  "config": "$.randomVariables[*][?(@.distribution=='Uniform']"
+               },
+               {
+                  "target": "Beta",
+                  "fields": ["SP","M","1"],
+                  "config": "$.randomVariables[*][?(@.distribution=='Beta']"
+               },
+               {
+                  "target": "Weibull",
+                  "fields": ["SP","M","1"],
+                  "config": "$.randomVariables[*][?(@.distribution=='Weibull']"
+               },
+               {
+                  "target": "Gumbel",
+                  "fields": ["SP","M","1"]
+               }
+            ]
+         },
+         {
+            "target": "User defined Distribution",
+            "fields": ["SP","M",null]
+         },
+         {
+            "target": "Define Correlation Matrix",
+            "fields": ["SP","M",null]
+         },
+         {
+            "target": "Random Fields",
+            "fields": [ "SP","M",null]
+         },
+         {
+            "target": "Ability to View Graphically the density function when defining the RV",
+            "fields": ["UF","D","2.1"]
+         }
+      ]
+   },
+   "EL": {
+       "target": "Ability to select from different Earthquake Input Motion Options",
+       "items": [
+           {
+               "target": "Ability to select from Multiple input motions and view UQ due to all the discrete events",
+               "fields": ["GC","M","1.0"],
+               "config": "$.Appications.Events[*][?(@.Application=\"Existing PEER Event\"]"
+           },
+           {
+               "target": "Ability to select from list of PEER motions",
+               "fields": ["UF","D","1.0"],
+               "config": "$.Applications.Events[*][?(@.subtype=\"PEER NGA Records\"]"
+           },
+           {
+               "target": "per Vlachos, Papakonstantinou, Deodatis (2017)",
+               "fields": ["SP","D","1.1"],
+               "config": "$.Appications.Events[*][?(@.ApplicationData.modelName=\"VlachosSiteSpecificEQ\"]"
+           }
+       ]
+   }
+}
