@@ -75,8 +75,9 @@
    :pelicun:common/user_manual/examples/pelicun/examples
 
    :EEUQ:common/reqments/EEUQ		
-   :WEUQ:common/requirements/WEUQ
-   :PBE:common/requirements/PBE
+   :WEUQ:common/reqments/WEUQ
+   :PBE:common/reqments/PBE
+   :quoFEM:common/reqments/reqQUOFEM	
    :pelicun:common/user_manual/requirements/pelicun/requirements
 
    common/user_manual/bugs
