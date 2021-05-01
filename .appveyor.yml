@@ -1,0 +1,14 @@
+image:
+  - Ubuntu
+  - Visual Studio 2019
+  - macOS
+
+install:
+  - python3 -m pip install requirements.txt
+
+for:
+  - matrix: 
+      only: [image: Ubuntu]
+    build_script:
+      - make all
+
