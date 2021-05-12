@@ -17,4 +17,5 @@ a list of events (i.e., typically time-dependent loads that represent natural di
 	multiplePEER
 	multipleExisting
 	usageS3hark
+	userSpecifiedDatabase
 
