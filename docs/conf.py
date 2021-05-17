@@ -91,13 +91,13 @@ exclude_patterns = [
         'common/user_manual/examples/desktop/E*', # R2D examples
         '**/R2D*',
 
-        'common/requirements/index.rst',
-        'common/requirements/testbeds.rst',
-        'common/requirements/rWhale.rst',
-        'common/requirements/allRequirements.rst',
-        'common/requirements/All-Requirements.rst',
-        'common/requirements/edRequirements.rst',
-        'common/requirements/bigRequirements.rst',
+        'common/reqments/index.rst',
+        'common/reqments/testbeds.rst',
+        'common/reqments/rWhale.rst',
+        'common/reqments/allRequirements.rst',
+        'common/reqments/All-Requirements.rst',
+        'common/reqments/edRequirements.rst',
+        'common/reqments/bigRequirements.rst',
         'common/user_manual/examples/desktop/gallery.rst',
 
         # Apparently obsolete pages, consider deleting
