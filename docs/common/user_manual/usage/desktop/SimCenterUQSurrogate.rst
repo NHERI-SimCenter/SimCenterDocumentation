@@ -4,6 +4,9 @@
 Surrogate modeling
 *********************
 
+.. Note:: 
+     Surrogate modeling functionality of quoFEM is built upon `GPy <https://sheffieldml.github.io/GPy/>`_ library (available under BSD 3-clause license), an opensource python framework for Gaussian process modeling developed in the Sheffield machine learning group. 
+
 The ``Train GP Surrogate Model`` module is used to construct a Gaussian process (GP) based **surrogate model** that substitutes expensive computational **simulation models** or physical experiments. Consider a simulation model, with input random variables (or parameters) :math:`\boldsymbol{x}` and output quantity of interests :math:`\boldsymbol{y}`, denoted as :math:`\boldsymbol{y}=f(\boldsymbol{x})`. A surrogate model for the corresponding simulation model can be built by different user-provided information types:
 
 .. list-table:: User-provided information types      
@@ -55,7 +58,6 @@ The ``Train GP Surrogate Model`` module is used to construct a Gaussian process 
 
 **The trained surrogate model can be saved in a file (.pkl format) along with a meta-information (.json format) and later imported in quoFEM** in place of the original simulation model for UQ analysis or optimization purposes. See 2.2.5 for how to import the surrogate model in quoFEM.
 
-
 Input description
 ^^^^^^^^^^^^^^^^^
 
@@ -68,6 +70,7 @@ When the **Training Dataset** option is set to the ``Sampling and Simulation``, 
 .. figure:: figures/Surrogate1_SimUQ.jpg
    :align: center
    :figclass: align-center
+   :width: 800
 
    Input panel for surrogate modeling
 
@@ -96,6 +99,7 @@ User can also activate the **Advanced Options for Gaussian Process Model**
 .. figure:: figures/Surrogate2_SimUQ.jpg
    :align: center
    :figclass: align-center
+   :width: 800
 
    Sampling and Simulation - Case 1
 
@@ -115,6 +119,7 @@ Additionally, users may populate the initial samples directly from data files by
 .. figure:: figures/Surrogate3_SimUQ.jpg
    :align: center
    :figclass: align-center
+   :width: 800
 
    Input panel for surrogate modeling
 
@@ -137,6 +142,7 @@ where
 .. figure:: figures/Surrogate4_SimUQ.jpg
    :align: center
    :figclass: align-center
+   :width: 800
 
    Example of data input files
 
@@ -155,6 +161,7 @@ When the **Training Dataset** option is set to ``Import Data File`` AND **Get re
 .. figure:: figures/Surrogate5_SimUQ.jpg
    :align: center
    :figclass: align-center
+   :width: 800
 
    Import Data File - Case 2
 
@@ -179,6 +186,7 @@ When the **Training Dataset** option is set to ``Import Data File`` AND **Get re
 .. figure:: figures/Surrogate6_SimUQ.jpg
    :align: center
    :figclass: align-center
+   :width: 800
 
    Import Data File - Case 3
 
@@ -209,6 +217,7 @@ RV (Random Variables) Tab
 .. figure:: figures/Surrogate7_SimUQ.jpg
    :align: center
    :figclass: align-center
+   :width: 800
 
    Example of RV tab
 
@@ -277,11 +286,12 @@ Once the training is completed, the following three verification measures are pr
 .. figure:: figures/Surrogate8_SimUQ.jpg
    :align: center
    :figclass: align-center
+   :width: 800
 
    Well-trained surrogate (left) and poorly trained surrogate (right) models
 
 .. Note:: 
-     Since these validation measures are calculated from the cross-validation predictions, they can be **biased**, particularly when highly localized nonlinear range exists in actual response surface and those regions are not covered by the training samples. However, the introduction of adaptive DoE helps to suppress the bias by enabling the targeted selection of simulation points around potentially faulty regions.
+     Since these validation measures are calculated from the cross-validation predictions, they can be **biased**, particularly when highly localized nonlinear range exists in actual response surface and those regions are not covered by the training samples. The introduction of adaptive DoE helps to suppress the bias by enabling the targeted selection of simulation points around potentially faulty regions.
 
 
 .. Warning:: 
@@ -299,6 +309,7 @@ Saving Options
 .. figure:: figures/Surrogate9_SimUQ.jpg
    :align: center
    :figclass: align-center
+   :width: 800
 
    Saving options
 
@@ -308,5 +319,6 @@ Saving Options
 .. figure:: figures/Surrogate10_SimUQ.jpg
    :align: center
    :figclass: align-center
+   :width: 800
 
    Example outputs from saving options
