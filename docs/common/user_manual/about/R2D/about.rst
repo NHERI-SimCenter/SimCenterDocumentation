@@ -23,4 +23,4 @@ facility.
 
 
 This document covers Version |tool version|  of the tool. Users are encouraged to comment on what additional features and capabilities
-they would like to see in this application. These requests and feedback can be submitted through the |messageBoard| we greatly appreciate any input you have. If there are features you want, chances are many of your colleagues also would benefit from them. Users are encouraged to review |requirements| to see what features are planned for this application.
+they would like to see in this application. These requests and feedback can be submitted through the |messageBoard| we greatly appreciate any input you have. If there are features you want, chances are many of your colleagues also would benefit from them. Users are encouraged to review |app requirements| to see what features are planned for this application.

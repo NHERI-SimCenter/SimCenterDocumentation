@@ -74,23 +74,26 @@
    :desktop_app:common/user_manual/examples/desktop/examples
    :pelicun:common/user_manual/examples/pelicun/examples
 
-   :EEUQ:common/requirements/EEUQ
-   :WEUQ:common/requirements/WEUQ
-   :PBE:common/requirements/PBE
+   :EEUQ:common/reqments/EEUQ		
+   :WEUQ:common/reqments/WEUQ
+   :PBE:common/reqments/PBE
+   :quoFEM:common/reqments/reqQUOFEM	
    :pelicun:common/user_manual/requirements/pelicun/requirements
 
    common/user_manual/bugs
+
+.. _lbl-testbeds-manual:
 
 .. toctree-filt::
    :caption: Testbeds
    :maxdepth: 1
    :numbered: 3
 
-   :docTestbeds:common/testbeds/sf_bay_area/index
+   .. :docTestbeds:common/testbeds/sf_bay_area/index
    :docTestbeds:common/testbeds/atlantic_city/index
-   :docTestbeds:common/testbeds/memphis/index
-   :docTestbeds:common/testbeds/anchorage/index
-   :docTestbeds:common/testbeds/lake_charles/index
+   .. :docTestbeds:common/testbeds/memphis/index
+   .. :docTestbeds:common/testbeds/anchorage/index
+   .. :docTestbeds:common/testbeds/lake_charles/index
 
 .. _lbl-technical-manual:
 

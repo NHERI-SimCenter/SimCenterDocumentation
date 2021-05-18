@@ -1,0 +1,18 @@
+Attribute,Description,Format
+HazusClass-IN,Hazus building classes as defined for inundation (flooding),"Choices: SF1XA, SF1XV, SF2XA, SF2XV, SF2BA, SF2BV, SF2SA, SF2SV, MH, APT, HOT, NURSE, RETAIL, WHOLE, SERVICE, OFFICE, BANK, HOSP, MED, REC, THEAT, GARAGE, INDH, INDL, CHEM, PROC, CONST, AGRI, RELIG, CITY, EMERG, SCHOOL"
+HazusClass-WA,Hazus building classes as defined for wave action,"Choices: W1, W2, W3, MC1, MC2, MC3, S1, S2, S3, MH"
+FloodType,Assignment to flood zones as defined for Hazus damage/loss descriptions,"Choices: Riverine/A-Zone, Coastal/A-Zone, 
+Coastal/V-Zone"
+FirstFloorElev,Assignment of first floor height as defined by Hazus,Floating Point Number
+PostFIRM,Assignment of FIRM phasing as defined by Hazus,"Choices: Yes, No"
+NumberofStories,Initalizing number of stories for Hazus analysis,integer
+BasementType,Assignement of basement type for Hazus analysis,"Choices: Basement, Split-Level Basement, No Basement"
+OccupancyType,Assignment of Occupancy type for Hazus analysis ,"Choices: SF1XA, SF1XV, SF2XA, SF2XV, SF2BA, SF2BV, SF2SA, SF2SV, MH, APT, HOT, NURSE, RETAIL, WHOLE, SERVICE, OFFICE, BANK, HOSP, MED, REC, THEAT, GARAGE, INDH, INDL, CHEM, PROC, CONST, AGRI, RELIG, CITY, EMERG, SCHOOL"
+Duration,Assignment of storm suration for Hazus Analysis,"Short, Long"
+Wave Velocity,Definition of wave velocity in ft/s for Hazus Analysis,Floating Point Number
+,,
+,,
+,,
+,,
+,,
+,,
