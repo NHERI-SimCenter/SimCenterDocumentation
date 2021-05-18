@@ -43,9 +43,7 @@ Setup the development environment with Conan
 
     .. code:: console
 
-        conan remote add simcenter https://api.bintray.com/conan/nheri-simcenter/simcenter
-
-        conan remote add bincrafters https://api.bintray.com/conan/bincrafters/public-conan
+        conan remote add simcenter https://nherisimcenter.jfrog.io/artifactory/api/conan/simcenter
 
 2. Create a default Conan profile if this is the first time you use Conan for building packages.
 
@@ -108,6 +106,13 @@ Build the applications
 
             conan install .. --build missing --build=libcurl
             mv ./missing/* ./
+
+       #. For Mac users, add the following command after **cmake --install .** to ensure the binary applications are copied to the applications folder.
+
+          .. code::       
+
+            make install .
+
           
       
 If building and installation were successful you should find a folder called ``applications`` in the repository with all the applications inside of it.   The name of this folder should not be changed.

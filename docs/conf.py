@@ -65,6 +65,7 @@ exclude_patterns = [
         '**/*response*',
 
         '**/*PBE*',
+        '**/pbdl-*',
         '**/*pelicun*',
 
         '**/*WEUQ*',
@@ -108,7 +109,10 @@ exclude_patterns = [
         '**/install_WindowsOld.rst'
     ] + [
         f'**{app}*' for app in APPS if app != app_name
+] + [
+        f'**{app.replace("-","")}*' for app in APPS if app != app_name
 ]
+
 
 source_suffix = {
     ".rst": "restructuredtext",
@@ -316,48 +320,47 @@ if app_name == 'Hydro':
 
 if app_name == 'R2DTool':
 
-	project = 'Regional Resilience Determination Tool'
+    project = 'Regional Resilience Determination Tool'
 
-	author = 'Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez'
-	sync_examples = True
+    author = 'Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez'
+    sync_examples = True
 
-	tags.add('desktop_app')
-	tags.add('earthquake')
-	tags.add('response')
-	tags.add('notQuoFEM')
+    tags.add('desktop_app')
+    tags.add('earthquake')
+    tags.add('response')
+    tags.add('notQuoFEM')
+    tags.add('docTestbeds')    
 
-	toc_filter_exclusions.remove('R2D')
-	toc_filter_exclusions.remove('desktop')
-	toc_filter_exclusions.remove('earthquake')
-	toc_filter_exclusions.remove('response')
-	toc_filter_exclusions.remove('notQuoFEM')
-	if docTestbeds:
-		toc_filter_exclusions.remove('docTestbeds')
-	toc_filter_exclude = toc_filter_exclusions
+    toc_filter_exclusions.remove('R2D')
+    toc_filter_exclusions.remove('desktop')
+    toc_filter_exclusions.remove('earthquake')
+    toc_filter_exclusions.remove('response')
+    toc_filter_exclusions.remove('notQuoFEM')
+    toc_filter_exclusions.remove('docTestbeds')    
+    toc_filter_exclude = toc_filter_exclusions
 
-	exclude_patterns.remove('**/*desktop*')
-	exclude_patterns.remove('**/*earthquake*')
-	exclude_patterns.remove('**/*response*')
-	exclude_patterns.remove('**/*R2DTool*')
+    exclude_patterns.remove('**/*desktop*')
+    exclude_patterns.remove('**/*earthquake*')
+    exclude_patterns.remove('**/*response*')
+    exclude_patterns.remove('**/R2D*')
+    exclude_patterns.remove('common/user_manual/examples/desktop/E*')
 
 
-	# TODO: fix these temporary changes
-	exclude_patterns.append('**/user_manual/usage/desktop/FEM.rst')
-	exclude_patterns.append('**/user_manual/usage/desktop/SIM.rst')
-	exclude_patterns.append('**/user_manual/usage/desktop/GI.rst')
-	exclude_patterns.append('**/user_manual/usage/desktop/response/*')
-	exclude_patterns.append('**/user_manual/usage/desktop/earthquake/*')
-	exclude_patterns.append('**/*architectureLevel4.rst*')
-	exclude_patterns.append('**/requirements/index.rst')
-	exclude_patterns.append('**/requirements/bigRequirements.rst')
-	exclude_patterns.append('**/DakotaSensitivity.rst')
-	exclude_patterns.append('**/DakotaReliability.rst')
-	exclude_patterns.append('**/DakotaParameterEstimation.rst')
-	exclude_patterns.append('**/DakotaInverseProblems.rst')
-	# END TODO
+    # TODO: fix these temporary changes
+    exclude_patterns.append('**/user_manual/usage/desktop/FEM.rst')
+    exclude_patterns.append('**/user_manual/usage/desktop/SIM.rst')
+    exclude_patterns.append('**/user_manual/usage/desktop/GI.rst')
+    exclude_patterns.append('**/user_manual/usage/desktop/response/*')
+    exclude_patterns.append('**/user_manual/usage/desktop/earthquake/*')
+    exclude_patterns.append('**/*architectureLevel4.rst*')
+    exclude_patterns.append('**/requirements/bigRequirements.rst')
+    exclude_patterns.append('**/DakotaSensitivity.rst')
+    exclude_patterns.append('**/DakotaReliability.rst')
+    exclude_patterns.append('**/DakotaParameterEstimation.rst')
+    exclude_patterns.append('**/DakotaInverseProblems.rst')
+    # END TODO
 
-	rst_prolog += f"""\
-
+    rst_prolog += f"""\
 .. |full tool name| replace:: Regional Resilience Determination Tool
 .. |test example| replace:: :ref:`r2dt-0006`
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0
@@ -402,12 +405,12 @@ elif app_name == 'PBE':
     toc_filter_exclude = toc_filter_exclusions
 
     exclude_patterns.remove('**/*desktop*')
+    exclude_patterns.remove('**/pbdl-*')
     exclude_patterns.remove('**/*earthquake*')
     exclude_patterns.remove('**/*PBE*')
 
     # TODO: fix these temporary changes
     exclude_patterns.append('**/*architectureLevel4.rst*')
-    exclude_patterns.append('**/requirements/bigRequirements.rst')
     exclude_patterns.append('**/DakotaSensitivity.rst')
     exclude_patterns.append('**/DakotaReliability.rst')
     exclude_patterns.append('**/DakotaParameterEstimation.rst')
@@ -433,7 +436,7 @@ elif app_name == 'PBE':
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
 .. _PBE Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE
 .. |tool version| replace:: 2.0
-.. |test example| replace:: :ref:`pbdl-0001`
+.. |test example| replace:: :ref:`pbdl-0002`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-PBE`
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
 
@@ -510,7 +513,6 @@ elif app_name == 'quoFEM':
 
     # TODO: fix these temporary changes
     exclude_patterns.append('**/*architectureLevel4.rst*')
-    exclude_patterns.append('**/requirements/bigRequirements.rst')
     exclude_patterns.append('**/resEE.rst')
     exclude_patterns.append('**/damping.rst')
     exclude_patterns.append('**/desktop/FEM.rst')
@@ -544,6 +546,7 @@ elif app_name == 'quoFEM':
             "qfem-0003",
             "qfem-0004",
             "qfem-0009",
+            "qfem-0007",
             "qfem-0008",
             "qfem-0014",
             "qfem-0015",
@@ -591,14 +594,16 @@ elif app_name == 'WE-UQ':
     example_config.update({
         "include-item": [
             "weuq-0001",
-            "weuq-0002",
-            "weuq-0004",
-            "weuq-0005",
+            #"weuq-0002",
+            #"weuq-0004",
+            "weuq-0007",
         ]
     })
     extlinks.update(
        {f'weuq-{i:04}' : (f'{examples_url}/weuq-{i:04}/%s',f'weuq-{i:04}') for i in range(1,99)}
     )
+    
+    html_theme_options.update({'analytics_id': 'UA-158130480-2'})
 
     rst_prolog += f"""
 .. |full tool name| replace:: Wind Engineering with Uncertainty Quantification Application
@@ -611,12 +616,6 @@ elif app_name == 'WE-UQ':
 
 """
 
-    html_theme_options.update({'analytics_id': 'UA-158130480-2'})
-
-    # Example links
-    extlinks.update(
-       {f'weuq-{i:04}' : (f'{examples_url}/weuq-{i:04}/%s',f'weuq-{i:04}') for i in range(1,99)}
-    )
 
 
 elif app_name == 'pelicun':

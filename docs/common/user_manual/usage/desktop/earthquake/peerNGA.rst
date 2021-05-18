@@ -28,4 +28,12 @@ Once the selection criteria has been entered, the user selects the  **Select Rec
 
    It is important to note that this event requires a PEER NGA West 2 account, users will be asked to provide their credentials (user name and password) to log in to the database. Users who do not have an account will be forwarded to the account sign up web [#]_.
 
+.. note::
+
+   The record-to-record uncertainty in assessing the structural responses under earthquakes are taken into account by running 
+   a set of ground motion records. This can be realized by using the **Forward Propagation** method under the **UQ** tab. Once the 
+   ground motion records are selected, users have the control of how many records to be run in the time history analyses by seleting 
+   the Latin Hypercube Sample (**LHS**) and specifying the number of samples (**# Sample**). Note that with the LHS algorithm, when 
+   the number of samples is the total number of selected records, each record will be used once in the time history analyses.  
+
 .. [#] For more help on external services provided by PEER we encourage users to explore their `website <https://peer.berkeley.edu/>`_.
