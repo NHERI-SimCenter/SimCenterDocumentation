@@ -1,5 +1,5 @@
 EL, "*Loading from Earthquake Hazard on Local and Regional Assets*", GC, M, InProgress
-EL.1, "**Regional Scale Earthquake Hazard Simulation Options**", "", "", 
+EL.1, "Regional Scale Earthquake Hazard Simulation Options", "", "", 
 EL.1.1, "Coupling of multi-scale nonlinear models from the point of rupture through rock and soil into structure", GC, M,
 EL.1.1.1, "Replacement of empirical linear models with multi-scale nonlinear models", GC, D,
 EL.1.1.2, "Include both multi-scale and multi-phase (account for liquefaction)", GC, M,
@@ -7,7 +7,7 @@ EL.1.1.3, "Interface between asset and regional simulations using site response 
 EL.1.1.4, "Interface between asset and regional simulations using DRM method", SP, M,
 EL.1.2, "Method to include both the intra-event residual and inter-event residual in simulating spatial correlated ground motion intensity measures with multiple correlation model options. Select site specific grouind motions from PEER to match target intensity", SP, M, Implemented
 EL.1.3, "Use GIS-Specified Matrix of Recorded Motions", SP, M, Implemented
-EL.2, "**Select from Multiple Local Scale Earthquake Hazard Options**", "", "",
+EL.2, "Select from Multiple Local Scale Earthquake Hazard Options", "", "",
 EL.2.1, "Coupling of multi-scale nonlinear models from the point of rupture through rock and soil into structure", GC, M,
 EL.2.1, "Ability to select utilizing PEER NGA_West web service", SP, D, Implemented
 EL.2.1.1, "Select using default selection options ", SP, D, Implemented

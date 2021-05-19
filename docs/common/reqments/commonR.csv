@@ -3,7 +3,7 @@ CR.1, "Open-source software where developers can test new data and develop algor
 CR.1.1, "Provide open-source applications utilizing code hosting platforms, e.g. GitHub", SP, M, Implemented
 CR.1.2, "Assign an open-source licensce that allows free use.", SP, M, Implemented
 CR.2, "Ability of Practicing Engineers to use multiple coupled resources (applications, databases, viz tools) in engineering practice", GC, M, Implemented
-CR.2.1, "Allow users to launch scientifiv workflows", SP, M, Implemented
+CR.2.1, "Allow users to launch scientific workflows", SP, M, Implemented
 CR.3, "Ability to utilize resources beyond the desktop including HPC ", GC, M, Implemented
 CR.3.1, "Allow users to utilize HPC resources at TACC through DesignSafe", SP, M, Implemented
 CR.4, "*Efficient use of multiple coupled and linked models requiring sharing and inter-operability of databases, computing environments, networks, visualization tools, and analysis systems*", GC, M, InProgress

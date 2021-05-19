@@ -1,7 +1,7 @@
 HL, "*Loading from Storm Surge/Tsunami  on Local and Regional Assets*", , , 
-HL.1, "**Regional Loading due to Storm Surge/Tsunami Hazards**", GC, M, InProgress
+HL.1, "Regional Loading due to Storm Surge/Tsunami Hazards", GC, M, InProgress
 HL.1.1, "Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow", SP, D
-HL.2, "**Local Scale Storm Surge/Tsunami Hazard Options**", "", "",
+HL.2, "Local Scale Storm Surge/Tsunami Hazard Options", "", "",
 HL.2.1, "Using computational fluid dynamics to model interface and impact between water loads and buildings", GC, M
 HL.2.1.1, "CFD to model fluid flow around a single rigid structure", SP, M, 
 HL.2.1.2, "Mesh refinement around structures", SP, M, 

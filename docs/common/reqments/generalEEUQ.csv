@@ -1,8 +1,8 @@
 EE, "*Application to determine response of Building Subject to Earthquake hazard including formal treatment of randomness and uncertainty*", GC, M , InProgress
-EE.1, "**Ability to select from Earthquake Loading Options listed in EL2**", SP , M , Implemented
-EE.2, "**Ability to select from Building Modeling Options listed in MOD under BM**", SP , M , Implemented
+EE.1, "Ability to select from Earthquake Loading Options listed in EL2", SP , M , Implemented
+EE.2, "Ability to select from Building Modeling Options listed in MOD under BM", SP , M , Implemented
 EE.3, "Ability to select from nonlinear analysis options listed in ANA", SP, M, Implemented
-EE.4, "**Ability to use Various UQ Methods and Variable Options**", , ,
+EE.4, "Ability to use Various UQ Methods and Variable Options", , ,
 EE.4.1, "Ability to use Forward Propagtion methods listed in UQ under UF", SP, M, Implemented
 EE.4.2, "Ability to use Random Variable Distributions defeined in RV", SP, M,
 EE.4.3, "Ability to use Reliability Methods listed in UQ under UR", SP, M, Implemented
@@ -12,10 +12,10 @@ EE.4.6, "Ability to use High Dimensional UQ listed in UQ under UH", SP, M,
 EE.5, "Ability to Visualize the Results", SP, M, Implemented
 EE.5.1, "Ability to view individual sample results ", SP, M, Implemented
 EE.5.2, "Ability to graphically view the results to show distribution in respone ", SP, M, Implemented
-EE.6, "**Misc User Requests**", , ,
+EE.6, "Misc User Requests", , ,
 EE.6.1, "Add to Standard Earthquake a variable indicating analysis failure ", UF, D,
 EE.6.3, "Run application from command line, include option to run remotely ", UF, D,  
-EE.7, "**General Software Requirements**", , ,
+EE.7, "General Software Requirements", , ,
 EE.7.1, "Application to Provide Common SimCenter Research Application Requirements listed in CR", GC, M, InProgresss
 EE.8, "Tool should incorporate data from www ", GC, M, Implemented
 EE.8.1, "Tool should obtain motion input data from www ", SP, M, Implemented

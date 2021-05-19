@@ -1,4 +1,4 @@
-P.1, "**Existing Assessment Methods**", , ,
+P.1, "Existing Assessment Methods", , ,
 P.1.1, "*Implement the high-resolution loss assessment methodologies*", GC, ,
 P.1.1.1, "Implement the scenario-based assessment from FEMA-P58", SP, M, Implemented
 P.1.1.2, "Implement the time-based assessment from FEMA-P58", SP, D,
@@ -14,7 +14,7 @@ P.1.2.4, "Implement the assessment of buried pipelines under earthquake hazard f
 P.1.2.5, "Implement the assessment of transportation networks under earthquake hazard from HAZUS", SP, M,
 P.1.2.6, "Implement the assessment of power networks under earthquake hazard from HAZUS", SP, M,
 ,,,,
-P.2, "**Control**", , ,
+P.2, "Control", , ,
 P.2.1, "*Analysis & Data*", , ,
 P.2.1.1, "Allow users to set the number of realizations", SP, M, Implemented
 P.2.1.2, "Allow users to customize fragility and consequence function parameters", SP, D, Implemented
@@ -39,26 +39,26 @@ P.2.5, "*Loss Model*", , ,
 P.2.5.1, "Allow users to decide which DVs to calculate", SP, D, Implemented
 P.2.5.2, "Allow users to specify the likelihood of various injuries in each collapse mode", SP, D, Implemented
 ,,,,
-P.3,**Hazard Model**,,,
+P.3,Hazard Model,,,
 P.3.1,"*Hazard Occurrence Rate*",,,
 P.3.1.1,Enable estimation of the likelihood of earthquake events,SP,M,
 P.3.1.2,Enable estimation of the likelihood of wind events,SP,M,
 P.3.1.3,Enable estimation of the likelihood of storm surge events,SP,M,
 P.3.1.4,Enable estimation of the likelihood of tsunami events,SP,M,
 ,,,,
-P.4,**Response Model**,,,
+P.4,Response Model,,,
 P.4.1,"*EDP (re-)sampling*",,,
 P.4.1.1,"Enable coupled assessment by using raw EDP values as-is",UF,M,Implemented
 P.4.1.2,"Enable non-Gaussian EDP distributions",UF,"D",
 P.4.2,"*EDP Identification*",,,
 P.4.2.1,"Implement automatic identification of required EDP types based on the performance model",SP,M,
 ,,,,
-P.5,**Performance Model**,,,
+P.5,Performance Model,,,
 P.5.1,"*Auto-population of performance models*",,,
 P.5.1.1,"Implement framework to enable user-defined auto-population scripts",UF,"D",Implemented
 P.5.1.2,"Prepare script to perform auto-population based on normative quantities in FEMA P58",UF,"D",
 ,,,,
-P.6,**Damage Model**,,,
+P.6,Damage Model,,,
 P.6.1,"*Collapse estimation*",,,
 P.6.1.1,"Estimate collapse probability of the structure using EDP limits and the joint distribution of EDPs",SP,"D",Implemented
 P.6.1.2,"Estimate the collapse probability of the structure using empirical (raw) EDP data",UF,M,Implemented
@@ -79,7 +79,7 @@ P.6.3.5,"Implement high-resolution fragility functions for transportation networ
 P.6.4,"*Cascading Damages*",,,
 P.6.4.1,"Implement fault tree-based cascading damage model",SP,M,
 ,,,,
-P.7,**Loss Model**,,,
+P.7,Loss Model,,,
 P.7.1,"*Consequence functions for buildings*",,,
 P.7.1.1,"Implement functions for repair cost and time as per FEMA P58",SP,M,Implemented
 P.7.1.2,"Implement functions for red tag triggering as per FEMA P58",SP,M,Implemented

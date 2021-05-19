@@ -1,4 +1,4 @@
-RV, "**Random Variables**                                                    ", "", "",   
+RV, "Random Variables                                                    ", "", "",   
 RV.1, "Various Random Variable Probability Distributions", SP, M, Implemented  
 RV.1.1, "Normal", SP, M , Implemented  
 RV.1.2, "Lognormal", SP, M, Implemented  

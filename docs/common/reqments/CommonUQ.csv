@@ -1,4 +1,4 @@
-UQ, "**Ability to use various UQ Methods**", "", "",   
+UQ, "Ability to use various UQ Methods", "", "",   
 UQ.1, "Forward Propagation Methods", GC , M, Implemented
 UQ.1.1, "Ability to use basic Monte Carlo and LHS methods", SP, M, Implemented
 UQ.1.2, "Ability to use Importance Sampling ", SP, M, Implemented
@@ -11,7 +11,7 @@ UQ.2.2, "Ability to use Surrogate Based Reliability", UF, M,
 UQ.2.3, "Ability to use Own External Application to generate Results", UF, M, Implemented
 UQ.3, "Ability to user various Sensitivity Methods", UF, M, Implemented
 UQ.3.1, "Ability to obtain Global Sensitivity Sobol's indices", UF, M,
-RV, "**Random Variables**", "", "",   
+RV, "Random Variables", "", "",   
 RV.1, "Various Random Variable Probability Distributions", SP, M, Implemented  
 RV.1.1, "Normal", SP, M , Implemented  
 RV.1.2, "Lognormal", SP, M, Implemented  

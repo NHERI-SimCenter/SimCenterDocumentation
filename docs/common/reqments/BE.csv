@@ -1,4 +1,4 @@
-BE, "**Establish a National Infrastructure Data Base for characterizing the physical and natural infrastructure**", GC, M,
+BE, "Establish a National Infrastructure Data Base for characterizing the physical and natural infrastructure", GC, M,
 BE.1 , "Ability to use cumulative knowledge bases rather than the piecemeal individual approaches", GC , M ,
 BE.1.1 , "Utilize Federated Databases to maintain individual databases & data sources yet provide central database resource", SP , M ,
 BE.2, "Include National building model inventories", GC , M , InProgress
