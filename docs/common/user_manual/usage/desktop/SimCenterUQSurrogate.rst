@@ -1,7 +1,7 @@
 .. _lblSimSurrogate:
 
 
-Surrogate modeling
+Surrogate Modeling
 *********************
 
 .. Note:: 
