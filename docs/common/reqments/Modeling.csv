@@ -8,5 +8,5 @@ BM.5, "Ability to specify connection details for member ends ", UF, D,
 BM.6, "Ability to define a user-defined moment-rotation response representing the connection details ", UF, D,
 BM.7, "Ability to incoporate AutoSDA Steel Design Application in Local Applications", UF, M, Implemented
 BM.8, "Ability to use user supplied python script to generate mesh", UF, M, Implemented
-.
-.
+
+

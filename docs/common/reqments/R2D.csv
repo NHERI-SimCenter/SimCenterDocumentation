@@ -59,4 +59,4 @@ RDT.7.9 , "Ability to use sensor data to update models for simulation and incorp
 R2D.7.10 , "Ability to include latest information and algorithms (i.e. new attenuation models, building fragility curves, demographics, lifeline performance models, network interdependencies, indirect economic loss)", GC , D ,
 R2D.7.11, "Incorporate programs that can address lifeline network disruptions and network interdependencies", GC, M
 R2D.7.12, "Application to Provide Common SimCenter Research Application Requirements listed in CR (not already listed above)", GC, M, InProgresss
-.
+

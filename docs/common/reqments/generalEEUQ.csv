@@ -20,4 +20,4 @@ EE.7.1, "Application to Provide Common SimCenter Research Application Requiremen
 EE.8, "Tool should incorporate data from www ", GC, M, Implemented
 EE.8.1, "Tool should obtain motion input data from www ", SP, M, Implemented
 EE.8.2, "Tool should obtain building modelling info from database through www ", SP, D, 
-.
+
