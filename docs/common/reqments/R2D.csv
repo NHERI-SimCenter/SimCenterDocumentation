@@ -53,9 +53,9 @@ R2D.7.2 , "Ability to utilize HPC resources in regional simulations that enables
 R2D.7.3 , "Ability to use a tool created by linking heterogeneous array of simulation tools to provide a toolset for regional simulation", GC , M , Implemented
 R2D.7.4, "Provide open-source software for developers to test new data and algorithms", GC , M , Implemented
 R2D.7.5 , "Ability of stakeholders to perform simulations of different scenarios that aid in planning and response after damaging events", GC , M ,
-RDT.7.7 , "Ability to explore different strategies in community development, pre-event, early response, and post event, through long term recovery", GC , P ,
-RDT.7.8 , "Ability to use system that creates and monitors real-time data, updates models, incorporates crowdsourcing technologies, and informs decision makers", GC , P ,
-RDT.7.9 , "Ability to use sensor data to update models for simulation and incorporate sensor data into simulation", GC , P ,
+R2D.7.7 , "Ability to explore different strategies in community development, pre-event, early response, and post event, through long term recovery", GC , P ,
+R2D.7.8 , "Ability to use system that creates and monitors real-time data, updates models, incorporates crowdsourcing technologies, and informs decision makers", GC , P ,
+R2D.7.9 , "Ability to use sensor data to update models for simulation and incorporate sensor data into simulation", GC , P ,
 R2D.7.10 , "Ability to include latest information and algorithms (i.e. new attenuation models, building fragility curves, demographics, lifeline performance models, network interdependencies, indirect economic loss)", GC , D ,
 R2D.7.11, "Incorporate programs that can address lifeline network disruptions and network interdependencies", GC, M
 R2D.7.12, "Application to Provide Common SimCenter Research Application Requirements listed in CR (not already listed above)", GC, M, InProgresss

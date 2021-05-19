@@ -28,7 +28,7 @@ WL.2.7 , "Ability to utilize synthetic wind loading algorithms ", SP , M , Imple
 WL.2.7.1 , "per Wittig and Sinha ", SP , D , Implemented
 WL.2.8, "Hazard modification by terrain, topography, and nearby buildings", GC, D
 WL.2.9, "Probabilistic methods are needed to enable site-specific and storm-type specific characterization of likely debris types, weights, and speeds", GC, D,
-Wl.2.10, "Joint description for hurricane wind, storm surge, and wave hazards", GC, D
+WL.2.10, "Joint description for hurricane wind, storm surge, and wave hazards", GC, D
 WL.2.11, "Libraries of high resolution hurricane wind/surge/wave simulations", GC, M,
 WL.2.11, "Libraries of high resolution hurricane wind/surge/wave simulations", GC, M,
 WL.2.12, "Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow", SP, 
