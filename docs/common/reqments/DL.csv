@@ -1,4 +1,4 @@
-DL,"*Damage & Loss (DL) Predictions*", , ,
+DL, "*Damage & Loss (DL) Predictions*", , ,
 DL.1,   "Ability to use open-source version of Hazus", GC , M , Implemented
 DL.2,  "Ability to incorporate improved damage and fragility models for buildings and lifelines", GC , M , InProgress
 DL.3,   "Ability to perform time-based assessment ", GC , M ,

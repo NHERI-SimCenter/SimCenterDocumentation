@@ -1,8 +1,8 @@
 WL, "*Loading from Wind Hazards (Hurricane, Downbursts, Tornados) on Local and Regional Assets*", GC, M, InProgress
 WL.1, "Regional Loading due to Wind Hazards", GC, M, InProgress
-WL.1.1,"Regional Hurricane Wind Options", GC, M, InProgress
+WL.1.1, "Regional Hurricane Wind Options", GC, M, InProgress
 WL.1.1.1, "Utilize GIS and online to account for wind speed given local terrain, topography and nearby buildings ", GC , D ,
-WL.1.1.2, "MultiScale Wind Models,", SP , D ,
+WL.1.1.2, "MultiScale Wind Models", SP , D ,
 WL.1.1.3, "Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow", SP, D, 
 WL.1.2, "Modeling and simulation for determination of wind loads due to non-synoptic winds, including tornadoes", GC, D
 WL.1.3, "Interface with Open-Source Applications that can provide Hazard loading", GC, D

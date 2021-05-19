@@ -1,14 +1,14 @@
 UF, "Forward Propagation Methods", GC , M, InProgress
-UF.1,"Ability to use basic Monte Carlo and LHS methods", SP, M, Implemented
-UF.2,"Ability to use Multi-Scale Monte Carlo", SP, M, 
-UF.3,"Ability to use Multi-Fidelity Models", SP, M, 
-UR,"Reliability Methods", SP, M, Implemented
-UR.1,"Ability to use First Order Reliability method", SP, M, Implemented
-UR.2,"Ability to use Second Order Reliability method", SP, M, Implemented
-UR.3,"Ability to use Surrogate Based Reliability", SP, M, Implemented
-UR.4,"Ability to use Importance Sampling", SP, M, Implemented
-UG,"Global Sensitivity Methods", SP, M, Implemented
-UG.1,"Ability to obtain Global Sensitivity Sobol indices", UF, M, Implemented
+UF.1, "Ability to use basic Monte Carlo and LHS methods", SP, M, Implemented
+UF.2, "Ability to use Multi-Scale Monte Carlo", SP, M, 
+UF.3, "Ability to use Multi-Fidelity Models", SP, M, 
+UR, "Reliability Methods", SP, M, Implemented
+UR.1, "Ability to use First Order Reliability method", SP, M, Implemented
+UR.2, "Ability to use Second Order Reliability method", SP, M, Implemented
+UR.3, "Ability to use Surrogate Based Reliability", SP, M, Implemented
+UR.4, "Ability to use Importance Sampling", SP, M, Implemented
+UG, "Global Sensitivity Methods", SP, M, Implemented
+UG.1, "Ability to obtain Global Sensitivity Sobol indices", UF, M, Implemented
 UG.2, "Ability to use probability model-based global sensitivity analysis (PM-GSA)", SP, M, Implemented
 US, "Surrogate Models",	UF, M, InProgress
 US.1, "Ability to Construct Gaussian Process (GP) Regression Model from a Simulation Model",	SP,	M, InProgress
@@ -36,5 +36,5 @@ UH, "High Dimensional UQ", SP, M,
 UH.1, "Ability to sample from manifold", SP, M,
 UH.2, "Ability to build Reduced Order Model", SP, M, 
 UO, "Other/General Features", SP , M, 
-UO.1,"Ability to use Own External UQ Engine", SP, M, Implemented
-UO.2,"Ability to use Own External FEM Application", UF, M, Implemented
+UO.1, "Ability to use Own External UQ Engine", SP, M, Implemented
+UO.2, "Ability to use Own External FEM Application", UF, M, Implemented
