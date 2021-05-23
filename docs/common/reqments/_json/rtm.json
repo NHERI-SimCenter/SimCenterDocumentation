@@ -1,0 +1,2980 @@
+{
+  "ANA": {
+    "target": "Ability to select from different Nonlinear Analysis options",
+    "config_paths": "$.Simulation.Application",
+    "items": [
+      {
+        "target": "Ability to select from different Nonlinear Analysis options",
+        "items": [
+          {
+            "target": "Ability to specify OpenSees as FEM engine and to specify different analysis options",
+            "fields": ["SP","M","Implemented"],
+	    "config_values":  ["OpenSees-Simulation"]
+          },
+          {
+            "target": "Ability to provide own OpenSees Analysis script to OpenSees engine.",
+            "fields": ["SP","D","Implemented"],
+	    "config_values":  ["OpenSees-Simulation"]
+          },
+          {
+            "target": "Ability to provide own Python script and use OpenSeesPy engine.",
+            "fields": ["SP", "D", ""],
+	    "config_values":  ["OpenSeesPy-Simulation"]
+          },
+          {
+            "target": "Ability to use alternative FEM engines.",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Ability to know if an analysis run fails.",
+        "items": [
+          {
+            "target": "Ability to specify damping ratio as a random variable",
+            "fields": ["UF", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "When using Rayleigh Damping, ability to specify the two modes used to calculate damping parameters",
+            "fields": ["UF", "M", "Implemented"],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Ability to specify Modal Damping.",
+        "fields": ["UF", "M", "Implemented"],
+        "items": []
+      },
+      {
+        "target": "Ability to run for more than 60hours at DesignSafe",
+        "fields": ["UF", "D", ""],
+        "items": []
+      },
+      {
+        "target": "Ability to specify number of iterations in convergence test",
+        "fields": ["UF", "M", "Implemented"],
+        "items": []
+      }
+    ]
+  },
+  "BE": {
+    "items": [
+      {
+        "target": "Ability to use cumulative knowledge bases rather than the piecemeal individual approaches",
+        "items": [
+          {
+            "target": "Utilize Federated Databases to maintain individual databases & data sources yet provide central database resource",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Include National building model inventories",
+        "items": [
+          {
+            "target": "Incorporate Building data from existing datasets published by states, counties and cities",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Ingest building data from web-scraping techniques, e.g. from zillow, county websites",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Ingest building data using AI/ML techniques and satellite and streetview images",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Incorporate transportation newtwork data from existing datasets made avail through www",
+        "items": [
+          {
+            "target": "Ingest additionally needed transportation newtwork data utilizing AI/ML and satellite and streetview images",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Include National Models of Utility Networks",
+        "items": [
+          {
+            "target": "Incorporate utility network data from existing datasets made avail through www",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "target": "Establish a National Infrastructure Data Base for characterizing the physical and natural infrastructure"
+  },
+  "BR": {
+    "items": [
+      {
+        "target": "Need for scalable tools that autonomously create an accurate database of all infrastructure components, including points of inter- dependency with other infrastructure components",
+        "fields": ["GC", "M", "InProgress"],
+        "items": []
+      },
+      {
+        "target": "Promote living community risk models utilizing local inventory data from various sources",
+        "fields": ["GC", "M", "InProgress"],
+        "items": []
+      },
+      {
+        "target": "Developing and sharing standardized definitions, measurement protocols and strategies for data collection",
+        "fields": ["GC", "M", ""],
+        "items": []
+      },
+      {
+        "target": "Developing tools that utilize GIS information and online images, e.g. google maps, for data collection for gathering Building Information",
+        "items": [
+          {
+            "target": "Develop Framework for creating asset inventories",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Create workflow application for building inventory from framework modules",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Create workflow application for transportation network from framework modules",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Developing Modules for Asset Inventory Workflows identified in BR.4",
+        "items": [
+          {
+            "target": "Predicting if building is a soft-story building for earthquake simulations",
+            "fields": ["UF", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Predicting First Floor Height",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Predicting Roof Height",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Predicting Eave Height",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Predicting Eave Length",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Predicting Roof Shape",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Predicting Roof Pitch",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Predicting Roof Material",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Predicting Window Area",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Predicting Building Material",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Classifying Elevated Building",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Predicting Structural Type",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Predicting Occupancy Type",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Predicting Year Built",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Predicting Attached Garage",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Predicting Presence of Masonry Chimney",
+            "fields": ["UF", "D", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "DesignSafe integration to provide access to GPU",
+        "items": [
+          {
+            "target": "Create JupyterHub notebook at DesignSafe for building asset inventory workflow usage",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "For classification done at DesignSafe, store images and meta data for BE Database",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Create JupyterHub notebook at DesignSafe for individual modules to demonstrate immediate results",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Work to improve existing performance models through Continous Learning",
+        "items": [
+          {
+            "target": "Continous Learning for Year Built",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Continous Learning for Roof Material",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Work to gather data for Module Validation/Verification/Training",
+        "fields": ["SP", "M", "InProgress"],
+        "items": []
+      }
+    ],
+    "target": "Need for scalable tools that autonomously create an accurate database of all infrastructure components, including points of inter- dependency with other infrastructure components"
+  },
+  "CR": {
+    "items": [
+      {
+        "target": "Open-source software where developers can test new data and develop algorithms",
+        "items": [
+          {
+            "target": "Provide open-source applications utilizing code hosting platforms, e.g. GitHub",
+            "fields": ["SP", "M", "Implemented"],
+            "implementation": {
+		 "qfem": "https://github.com/NHERI-SimCenter/quoFEM",
+		 "weuq": "https://github.com/NHERI-SimCenter/WE-UQ",
+		 "eeuq": "https://github.com/NHERI-SimCenter/EE-UQ",
+		 "pbdl": "https://github.com/NHERI-SimCenter/PBE",
+		 "r2dt": "https://github.com/NHERI-SimCenter/R2DTool"
+	    }
+          },
+          {
+            "target": "Assign an open-source licensce that allows free use.",
+            "fields": ["SP", "M", "Implemented"],
+            "implementation": {
+		 "qfem": "https://github.com/NHERI-SimCenter/quoFEM/blob/master/LICENSE",
+		 "weuq": "https://github.com/NHERI-SimCenter/WE-UQ/blob/master/LICENSE",
+		 "eeuq": "https://github.com/NHERI-SimCenter/EE-UQ/blob/master/LICENSE",
+		 "r2dt": "https://github.com/NHERI-SimCenter/R2DTool/blob/master/LICENSE",
+		 "pbdl": "https://github.com/NHERI-SimCenter/PBE/blob/master/LICENSE"
+	    }
+          }
+        ]
+      },
+      {
+        "target": "Ability of Practicing Engineers to use multiple coupled resources (applications, databases, viz tools) in engineering practice",
+        "items": [
+          {
+            "target": "Allow users to launch scientific workflows",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Ability to utilize resources beyond the desktop including HPC",
+        "items": [
+          {
+            "target": "Allow users to utilize HPC resources at TACC through DesignSafe",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Efficient use of multiple coupled and linked models requiring sharing and inter-operability of databases, computing environments, networks, visualization tools, and analysis systems",
+        "items": [
+          {
+            "target": "Identify and include external analysis systems",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Identify and include external databases",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Identify and include external viz tools",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Identify and include external computing env",
+            "fields": ["SP", "M", "Inprogress"],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Tool available for download from web",
+        "items": [
+          {
+            "target": "Tool downloadable from DesignSafe website",
+            "fields": ["GC", "M", "Implemented"],
+            "implementation": {
+		 "qfem": "https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM",
+		 "weuq": "https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ",
+		 "eeuq": "https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/EE_UQ",
+		 "pbdl": "https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE",
+		 "r2dt": "https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt"
+	    }
+          }
+        ]
+      },
+      {
+        "target": "Ability to benefit from programs that move research results into practice and obtain training",
+        "items": [
+          {
+            "target": "Ability to use educational provisions to gain interdisclipinary education so as to gain expertise in earth sciences and physics, engineering mechanics, geotechnical engineering, and structural engineering in order to be qualified to perform these simulations",
+            "fields": ["GC", "D", ""],
+            "items": []
+          },
+          {
+            "target": "Documentation exists demonstrainting application usage",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Video Exists demonstrating application usage",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Tool Training through online and in person training events",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Verification Examples Exist",
+        "fields": ["SP", "M", "Implemented"],
+        "items": []
+      },
+      {
+        "target": "validation of proposed analytical models against existing empirical datasets",
+        "items": [
+          {
+            "target": "Validation Examples Exist, validated against tests or other software",
+            "fields": ["GC", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Tool to allow user to load and save user inputs",
+        "fields": ["SP", "M", "Implemented"],
+        "implementation": "Undocumented"
+      },
+      {
+        "target": "Installer which installs application and all needed software",
+        "fields": ["UF", "D", ""],
+	"implementation": {
+	     "qfem": "https://NHERI-SimCenter.github.io/quoFEM-Documentation/common/user_manual/installation/desktop/installation.html",
+	     "weuq": "https://NHERI-SimCenter.github.io/WE-UQ-Documentation/common/user_manual/installation/desktop/installation.html",
+	     "eeuq": "https://NHERI-SimCenter.github.io/EE-UQ-Documentation/common/user_manual/installation/desktop/installation.html",
+	     "r2dt": "https://NHERI-SimCenter.github.io/R2D-Documentation/common/user_manual/installation/desktop/installation.html",
+	     "pbdl": "https://NHERI-SimCenter.github.io/PBE-Documentation/common/user_manual/installation/desktop/installation.html"
+	}
+      }
+    ],
+    "target": "Common Requirements of all SimCenter Research Applications"
+  },
+  "RV": {
+    "target": "Random Variables",
+    "items": [
+      {
+        "target": "Various Random Variable Probability Distributions",
+        "items": [
+          {
+            "target": "Normal",
+            "fields": ["SP", "M", "1"],
+            "config": "$.randomVariables[*][?(@.distribution=\"Normal\")]"
+          },
+          {
+            "target": "Lognormal",
+            "fields": ["SP", "M", "1"],
+            "config": "$.randomVariables[*][?(@.distribution=\"Lognormal\")]"
+          },
+          {
+            "target": "Uniform",
+            "fields": ["SP", "M", "1"],
+            "config": "$.randomVariables[*][?(@.distribution=\"Uniform\")]"
+          },
+          {
+            "target": "Beta",
+            "fields": ["SP", "M", "1"],
+            "config": "$.randomVariables[*][?(@.distribution=\"Beta\")]"
+          },
+          {
+            "target": "Weibull",
+            "fields": ["SP", "M", "1"],
+            "config": "$.randomVariables[*][?(@.distribution=\"Weibull\")]"
+          },
+          {
+            "target": "Gumbel",
+            "fields": ["SP", "M", "1"],
+            "config": "$.randomVariables[*][?(@.distribution=\"Gumbel\")]"
+          }
+        ]
+      },
+      {
+        "target": "User defined Distribution",
+        "fields": ["SP", "M", ""]
+      },
+      {
+        "target": "Define Correlation Matrix",
+        "fields": ["SP", "M", ""]
+      },
+      {
+        "target": "Random Fields",
+        "fields": ["SP", "M", ""]
+      },
+      {
+        "target": "Ability to View Graphically the density function when defining the RV",
+        "fields": ["UF", "D", "Implemented"],
+	"implementation": {
+	    "qfem": "quoFEM-Documentation/common/user_manual/usage/desktop/RV.html",
+	    "eeuq": "EE-UQ-Documentation/common/user_manual/usage/desktop/RV.html",
+	    "weuq": "WE-UQ-Documentation/common/user_manual/usage/desktop/RV.html",
+	    "pbdl": "PBE-Documentation/common/user_manual/usage/desktop/RV.html"
+
+	}
+      }
+    ]
+  },
+  "DL": {
+    "items": [
+      {
+        "target": "Ability to use open-source version of Hazus",
+        "fields": ["GC", "M", "Implemented"],
+        "items": []
+      },
+      {
+        "target": "Ability to incorporate improved damage and fragility models for buildings and lifelines",
+        "fields": ["GC", "M", "InProgress"],
+        "items": []
+      },
+      {
+        "target": "Ability to perform time-based assessment",
+        "fields": ["GC", "M", ""],
+        "items": []
+      },
+      {
+        "target": "Methods for DL Prediction for Buildings for Various Hazards",
+        "items": [
+          {
+            "target": "Incorporate PACT application for earthquake hazard",
+            "fields": ["SP", "D", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to perform downtime estimation using the REDi methodology for earthquakes.",
+            "fields": ["UF", "D", ""],
+            "items": []
+          },
+          {
+            "target": "Incorporate Various Methods from PELICUN",
+            "items": [
+              {
+                "target": "Incorporate the scenario-based assessment from FEMA-P58, item P6.1.1",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Incorporate the time-based assessment from FEMA-P58, item P1.1.2",
+                "fields": ["SP", "D", ""],
+                "items": []
+              },
+              {
+                "target": "Incorporate high-resolution assessment of buildings under wind hazards, item P1.1.3",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Incorporate high-resolution assessment of buildings under water hazards, item P1.1.4",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Incorporate high-resolution assessment of transportation networks, item P1.1.5",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Incorporate high-resolution assessment of buried pipelines, item P1.1.6",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Incorporate the assessment of buildings under earthquake hazard from HAZUS, P1.2.1",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Incorporate the assessment of buildings under hurricane wind hazard from HAZUS, item P1.2.2",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Incorporate the assessment of buildings under storm surge hazard from HAZUS, item P1.2.3",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Incorporate the assessment of buried pipelines under earthquake hazard from HAZUS, item P1.2.4",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Incorporate the assessment of transportation networks under earthquake hazard from HAZUS, item P1.2.5",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Incorporate the assessment of power networks under earthquake hazard from HAZUS, item P1.2.6",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "target": "Damage & Loss (DL) Predictions"
+  },
+  "EL": {
+    "target": "Ability to select from different Earthquake Input Motion Options",
+    "apps": ["eeuq"],
+    "items": [
+      {
+        "target": "Ability to select from Multiple input motions and view UQ due to all the discrete events",
+        "fields": ["GC", "M", "1.0"],
+        "config": "$.Appications.Events[*][?(@.Application=\"Existing PEER Event\")]"
+      },
+      {
+        "target": "Ability to select from list of PEER motions",
+        "fields": ["UF", "D", "1.0"],
+        "config": "$.Applications.Events[*][?(@.subtype=\"PEER NGA Records\")]"
+      },
+      {
+        "target": "per Vlachos, Papakonstantinou, Deodatis (2017)",
+        "fields": ["SP", "D", "1.1"],
+        "config": "$.Appications.Events[*][?(@.ApplicationData.modelName=\"VlachosSiteSpecificEQ\")]"
+      }
+    ]
+  },
+  "ED": {
+    "target": "Ability to obtain education w.r.t. interaction of structure and wind and water",
+    "items": [
+      {
+        "target": "Ability to obtain education w.r.t. interaction of structure and wind and water",
+        "fields": ["GC", "D", ""],
+        "items": []
+      },
+      {
+        "target": "Ability to use reference datasets from experimental tests for analysis comparisons to increase confidence in numerical simulations; ability to gain   understanding of nonlinear response of materials, components, and framing systems using integrated laboratory research and numerical simulation",
+        "items": [
+          {
+            "target": "Ability for Braced Frames",
+            "fields": ["SP", "D", "1.0"],
+            "items": []
+          },
+          {
+            "target": "Ability to gain such for Concrete Shear Walls",
+            "fields": ["SP", "D", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability for Columns utilizing PEER database",
+            "fields": ["SP", "D", ""],
+            "items": []
+          },
+          {
+            "target": "Ability for moment frames using Japanese test data",
+            "fields": ["SP", "D", ""],
+            "items": []
+          }
+        ]
+      }
+    ]
+  },
+  "EE": {
+    "items": [
+      {
+        "target": "Ability to select from Earthquake Loading Options listed in EL2",
+        "fields": ["SP", "M", "Implemented"],
+        "items": []
+      },
+      {
+        "target": "Ability to select from Building Modeling Options listed in MOD under BM",
+        "fields": ["SP", "M", "Implemented"],
+        "items": []
+      },
+      {
+        "target": "Ability to select from nonlinear analysis options listed in ANA",
+        "fields": ["SP", "M", "Implemented"],
+        "items": []
+      },
+      {
+        "target": "Ability to use Various UQ Methods and Variable Options",
+        "items": [
+          {
+            "target": "Ability to use Forward Propagtion methods listed in UQ under UF",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to use Random Variable Distributions defeined in RV",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to use Reliability Methods listed in UQ under UR",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to use Global Sensitivity Methods listed in UQ under UG",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to both use and create surrogates listed in UQ under US",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to use High Dimensional UQ listed in UQ under UH",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Ability to Visualize the Results",
+        "items": [
+          {
+            "target": "Ability to view individual sample results",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to graphically view the results to show distribution in respone",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Misc User Requests",
+        "items": [
+          {
+            "target": "Add to Standard Earthquake a variable indicating analysis failure",
+            "fields": ["UF", "D", ""],
+            "items": []
+          },
+          {
+            "target": null
+          },
+          {
+            "target": "Run application from command line, include option to run remotely",
+            "fields": ["UF", "D", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "General Software Requirements",
+        "items": [
+          {
+            "target": "Application to Provide Common SimCenter Research Application Requirements listed in CR",
+            "fields": ["GC", "M", "InProgresss"],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Tool should incorporate data from www",
+        "items": [
+          {
+            "target": "Tool should obtain motion input data from www",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Tool should obtain building modelling info from database through www",
+            "fields": ["SP", "D", ""],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "target": "Application to determine response of Building Subject to Earthquake hazard including formal treatment of randomness and uncertainty"
+  },
+  "H": {
+    "items": [
+      {
+        "target": "Quantification of flood-borne debris hazards",
+        "fields": ["GC", "M", ""],
+        "items": []
+      },
+      {
+        "target": "Effects of over-land flow, including waves, debris, flood velocity, wind-driven influences, erosion effects at buildings and channeling effects of the built environment",
+        "fields": ["GC", "D", ""],
+        "items": []
+      },
+      {
+        "target": "Ability to select from all Loading Options listed in HL2",
+        "fields": ["SP", "M", "InProgress"],
+        "items": []
+      },
+      {
+        "target": "Ability to select from Building Modeling Options listed in MOD under BM",
+        "fields": ["SP", "M", "InProgress"],
+        "items": []
+      },
+      {
+        "target": "Include ability to perform nonlinear analysis on the building models listed in ANA",
+        "fields": ["SP", "M", "InProgress"],
+        "items": []
+      },
+      {
+        "target": "Ability to use Various UQ Methods and Variable Options",
+        "items": [
+          {
+            "target": "Ability to use Forward Propagtion methods listed in UQ under UF",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Ability to use Random Variable Distributions defeined in RV",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to use Reliability Methods listed in UQ under UR",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Ability to use Global Sensitivity Methods listed in UQ under UG",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Ability to both use and create surrogates listed in UQ under US",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to use High Dimensional UQ listed in UQ under UH",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Ability to Visualize the Results",
+        "items": [
+          {
+            "target": "Ability to view individual sample results",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Ability to graphically view the results to show distribution in respone",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Misc User Requests",
+        "items": [
+          {
+            "target": "Ability to quickly model experimental tests perform in OSU wave tank",
+            "fields": ["UF", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "General Software Requirements",
+        "items": [
+          {
+            "target": "Application to Provide Common SimCenter Research Application Requirements listed in CR",
+            "fields": ["GC", "M", "InProgresss"
+            ],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Tool should incorporate data from www",
+        "items": [
+          {
+            "target": "Tool should use satelite imagery in aid of determine channeling effect",
+            "fields": ["SP", "D", ""],
+            "items": []
+          },
+          {
+            "target": "Tool should use satelite imagery in aid of determining amount of debris",
+            "fields": ["SP", "D", ""],
+            "items": []
+          },
+          {
+            "target": "Tool should obtain building modelling info from database through www",
+            "fields": ["SP", "D", ""],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "target": "Application to determine response of Building Subject Water Action due to Storm Surge or Tsunami  including formal treatment of randomness and uncertainty"
+  },
+  "PBE": {
+    "items": [
+      {
+        "target": "Ability to determine  damage and loss for multiple different hazards",
+        "items": [
+          {
+            "target": "Damage and Loss due to ground shaking from Earthquake",
+            "fields": ["GC", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Damage and Loss due to Wind Loading",
+            "fields": ["GC", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Damage and Loss due to water damage from Tsunami or Coastal Inundation",
+            "fields": ["GC", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Ability to Select from Different Hazard Options",
+        "items": [
+          {
+            "target": "Ability to select from all EE-UQ Event Options listed in EE-UQ",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to select from all WE-UQ Event Options listed in WE-UQ",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to select from all HydroUQ Event Options listed in Hydro-UQ",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Ability to use different Model Generation Tools",
+        "items": [
+          {
+            "target": "Ability to Select All Building Model Generators in EE-UQ",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to Select All Building Model Generators in WE-UQ",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to Select All Building Model Generators in HydroUQ",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Ability to use Various UQ Methods and Variable Options",
+        "items": [
+          {
+            "target": "Ability to use all forward propagation methods available in EE-UQ, WE-UQ and HydroUQ",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to use all random variable distributions in EE-UQ, WE-UQ and HydroUQ",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to use train surrogate models using the methods from quoFEM",
+            "fields": ["SP", "D", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Ability to determine damage and loss utilizing different methods",
+        "items": [
+          {
+            "target": "Interface with pelicun to make available its suite of methods for damage and loss assessment for buildings",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Misc User Requests",
+        "items": [
+          {
+            "target": "Ability to Process own Output Parameters",
+            "fields": ["UF", "D", ""],
+            "items": []
+          },
+          {
+            "target": "Add to Standard Earthquake a variable indicating analysis failure",
+            "fields": ["UF", "D", ""],
+            "items": []
+          },
+          {
+            "target": "Allow users to provide their own set of EDPs for the analysis.",
+            "fields": ["UF", "D", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Simplify run local and run remote by removing workdir locations. Move to preferences",
+            "fields": ["UF", "D", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Add to EDP a variable indicating analysis failure",
+            "fields": ["UF", "D", ""],
+            "items": []
+          },
+          {
+            "target": "Enable saving and loading Performance Models in CSV files",
+            "fields": ["UF", "D", "Implemented"],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "General Software Requirements",
+        "items": [
+          {
+            "target": "Application to Provide Common SimCenter Research Application Requirements listed in CR",
+            "fields": ["GC", "M", "InProgresss"
+            ],
+            "items": []
+          },
+          {
+            "target": "Ability to use new vizualization tools for viewing large datasets generated by PBE",
+            "fields": ["GC", "M", "Implemented"],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "target": "Integrate fully coupled multi-model computations from hazard source through structure response, to compute reliable estimates of financial loss, business interruption, and casualties"
+  },
+  "QF": {
+    "items": [
+      {
+        "target": "Ability to use Various UQ Methods and Variable Options",
+        "items": [
+          {
+            "target": "Ability to use Forward Propagtion methods listed in UQ under UF",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to use Random Variable Distributions defeined in RV",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to use Reliability Methods listed in UQ under UR",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to use Global Sensitivity Methods listed in UQ under UG",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to both use and create surrogates listed in UQ under US",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Ability to use High Dimensional UQ listed in UQ under UH",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Ability to use Bayesian Calibration methods listed in UQ under UB",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to use Nonlinear Least Squares  methods listed in UQ under UN",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Ability to use Different Simulation Applications",
+        "config_paths": "$.fem.program",
+        "items": [
+          {
+            "target": "Ability to use OpenSees",
+            "fields": ["SP", "M", "Implemented"],
+	    "config_values":  ["OpenSees"]
+          },
+          {
+            "target": "Ability to use OpenSeesPy",
+            "fields": ["SP", "M", "Implemented"],
+	    "config_values":  ["OpenSeesPy"]
+          },
+          {
+            "target": "Ability to Incorporate User Own Applications",
+            "fields": ["UF", "M", "Implemented"],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Ability to Visualize the Results",
+	"items": [
+          {
+            "target": "Ability to view individual sample results",
+            "fields": ["SP", "M", "Implemented"],
+            "implementation": "standard"
+          },
+          {
+            "target": "Ability to graphically view the results to show distribution in response",
+            "fields": ["SP", "M", "Implemented"],
+            "implementation": "standard"
+          },
+          {
+            "target": "Ability to view statistical measures of response",
+            "fields": ["SP", "M", "Implemented"],
+            "implementation": "standard"
+          }
+	]
+      },
+      {
+        "target": "Misc User Requests",
+        "fields": ["", "", ""],
+        "items": [
+          {
+            "target": "Run application from command line, include option to run remotely",
+            "fields": ["UF", "D", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": null
+      },
+      {
+        "target": null
+      },
+      {
+        "target": "General Software Requirements",
+        "items": [
+          {
+            "target": "Application to Provide Common SimCenter Research Application Requirements listed in CR",
+            "fields": ["GC", "M", "InProgresss"]
+          }
+        ]
+      }
+    ],
+    "target": "Application to Promote and aid use of UQ Methods in NHE Research for response estimation, surrogate modeling, and calibration"
+  },
+  "WE": {
+    "items": [
+      {
+        "target": "Adaptation of non-linear analysis methods used in seismic design",
+        "items": [
+          {
+            "target": "Include ability to create models incorprating options listed in MOD under BM",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Include ability to perform nonlinear analysis on the building models listed in ANA",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Ability to select from Wind Loading Options listed in WL2",
+        "fields": ["SP", "M", "Implemented"],
+        "items": []
+      },
+      {
+        "target": "Ability to use Various UQ Methods and Variable Options",
+        "items": [
+          {
+            "target": "Ability to use Forward Propagtion methods listed in UQ under UF",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to use Reliability Methods listed in UQ under UR",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to use Global Sensitivity Methods listed in UQ under UG",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to both use and create surrogates listed in UQ under US",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to use High Dimensional UQ listed in UQ under UH",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Ability to see pressure distribution on buildings",
+        "fields": ["GC", "M", ""],
+        "items": []
+      },
+      {
+        "target": "Ability to obtain basic building responses",
+        "fields": ["SP", "M", ""],
+        "items": []
+      },
+      {
+        "target": "Ability to Visualize the Results",
+        "items": [
+          {
+            "target": "Ability to view individual sample results",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to graphically view the results to show distribution in respone",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Misc User Requests",
+        "items": [
+          {
+            "target": "Ability to Process own Output Parameters",
+            "fields": ["UF", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to Remove from Results certain Samples, e.g. ones that failed in analysis",
+            "fields": ["UF", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Create a digital twin of the Wall of Wind facility to allow researchers to simulate experiments",
+            "fields": ["UF", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Tool should incorporate data from www",
+        "items": [
+          {
+            "target": "Tool could obtain loading from Vortex Winds over www",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Tool should obtain loading info from TPU wind tunnel tests",
+            "fields": ["SP", "D", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Tool should obtain building modelling info from database through  www",
+            "fields": ["SP", "D", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "General Software Requirements",
+        "items": [
+          {
+            "target": "Application to Provide Common SimCenter Research Application Requirements listed in CR",
+            "fields": ["GC", "M", "InProgresss"
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "target": "Application to determine response of Building Subject to Wind Loading including formal treatment of randomness and uncertainty uncertainty"
+  },
+  "HL": {
+    "items": [
+      {
+        "target": "Regional Loading due to Storm Surge/Tsunami Hazards",
+        "items": [
+          {
+            "target": "Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow",
+            "fields": ["SP", "D", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Local Scale Storm Surge/Tsunami Hazard Options",
+        "items": [
+          {
+            "target": "",
+            "items": [
+              {
+                "target": "CFD to model fluid flow around a single rigid structure",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Mesh refinement around structures",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "CFD to model fluid flow around a single deformable structure",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "CFD to model fluid flow considering inflow and accumulation of fluid inside a rigid structure",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "CFD to model fluid flow considering inflow, accumulation, and possible outflow of fluid across a deformable structure",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "",
+            "items": [
+              {
+                "target": "Ability to quantify the effect of unconstrained and non-colliding floating",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Ability to quantify the effect of colliding flood-borne debris",
+                "fields": ["SSP","M",""],
+                "items": []
+              },
+              {
+                "target": "Explore multiple methods like Material Point Method (MPM), Immersed Boundary Method (IBM), DEM-CFD, particle tracking",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Integrate one of the methods for integrating particles with Hydro workflow",
+                "fields": ["GC", "M", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "load combinations need to be developed to account for the simultaneous impacts of various flood forces, such as those generated by breaking waves, moving water and flood-borne debris",
+            "fields": ["GC", "", ""],
+            "items": []
+          },
+          {
+            "target": null
+          },
+          {
+            "target": "",
+            "items": [
+              {
+                "target": "Interface GeoClaw and OpenFOAM",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Interface AdCirc and OpenFOAM",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Libraries of high resolution hurricane wind/surge/wave simulations",
+            "items": [
+              {
+                "target": "Develop a simulation library of GeoClaw simulations",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Develop a simulation library of AdCirc simulations",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Develop a simulation library of OpenFOAM simulations",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Ability to simulate with surrogate models as alternative to full 3D CFD",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Develop digital twin with OSU wave Tank Facility",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "target": "Loading from Storm Surge/Tsunami  on Local and Regional Assets"
+  },
+  "MOD": {
+    "items": [],
+    "target": "Asset Model Generators for Analysis"
+  },
+  "BM": {
+    "items": [
+      {
+        "target": "Ability to quickly create a simple nonlinear building model for simple methods of seismic evaluation",
+        "fields": ["GC", "D", "Implemented"],
+        "items": []
+      },
+      {
+        "target": "Ability to use existing OpenSees model scripts",
+        "fields": ["SP", "M", "Implemented"],
+        "items": []
+      },
+      {
+        "target": "Ability to define building and use Expert System to generate FE mesh",
+        "fields": ["SP", "D", ""],
+        "items": []
+      },
+      {
+        "target": "Ability to define building and use Machine Learning applications to generate FE",
+        "fields": ["GC", "D", ""],
+        "items": []
+      },
+      {
+        "target": "Ability to specify connection details for member ends",
+        "fields": ["UF", "D", ""],
+        "items": []
+      },
+      {
+        "target": "Ability to define a user-defined moment-rotation response representing the connection details",
+        "fields": ["UF", "D", ""],
+        "items": []
+      },
+      {
+        "target": "Ability to incoporate AutoSDA Steel Design Application in Local Applications",
+        "fields": ["UF", "M", "Implemented"],
+        "items": []
+      },
+      {
+        "target": "Ability to use user supplied python script to generate mesh",
+        "fields": ["UF", "M", "Implemented"],
+        "items": []
+      }
+    ],
+    "target": "Asset Model Generators for Buildings"
+  },
+  "Q": {
+    "items": [
+      {
+        "target": "A tool that facilitates civil engineers performing UQ methods and provides a platform for those in UQ to promote their research to a broader audience",
+        "items": [
+          {
+            "target": null
+          },
+          {
+            "target": "Ability to extend to multiple UQ engines”,  SP,  M, 2.2\nQ.1.3, Ability to utilize resources beyond the desktop,e.g. HPC,for computations",
+            "fields": ["SP", "M", "1.0"],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Ability to utilize existing open-source software for faster deployment",
+        "fields": ["SP", "M", "1.0"],
+        "items": []
+      }
+    ],
+    "target": "A tool that facilitates civil engineers performing UQ methods and provides a platform for those in UQ to promote their research to a broader audience"
+  },
+  "R2D": {
+    "items": [
+      {
+        "target": "Include Various Hazards",
+        "items": [
+          {
+            "target": "Ability to perform simulations for ground shaking due to earthquakes using methods defined in EL1",
+            "fields": ["GC", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to perform simulations for wave action due to earthquake induced tsunami using methods defined in HL1",
+            "fields": ["GC", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to perform simulations for wind action due to hurricane using methods defined in WL1",
+            "fields": ["GC", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Ability to perform simulations for wave action due to hurricane storm surge using methods defined in HL1",
+            "fields": ["GC", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to perform multi-hazard simulations: wind + storm surge, rain, wind and water borne debris",
+            "fields": ["GC", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to utilize machine learning ensemble techniques in hazard simulation",
+            "fields": ["GC", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to incorporate surrogate models in hazard simulation",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to incorporate multi-scale models in hazard simulation",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "",
+            "fields": ["Ability to incorporate ground deformation hazards for pipes, roadways, and other infrastructure",
+              "SP",
+              "M"
+            ],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Include Different Asset Types",
+        "items": [
+          {
+            "target": "Ability to incorporate building assets",
+            "items": [
+              {
+                "target": "Ability to incorporate multi-fidelity building model asset descriptions",
+                "fields": ["GC", "M", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Ability to incorporate transportation networks",
+            "fields": ["GC", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to incorporate utility networks",
+            "items": [
+              {
+                "target": "Methods to overcome  national security issues with certain utility data",
+                "fields": ["GC", "M", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Ability to incorporate surrogate models in asset modeling",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Include Different Analysis options",
+        "items": [
+          {
+            "target": "Ability to include multi-scale nonlinear models",
+            "fields": ["GC", "M", "Implemented"],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Include Different Damage & Loss options",
+        "items": [
+          {
+            "target": "Ability to include building-level earthquake damage and loss assessment from HAZUS",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to include high-resolution earthquake damage and loss assessment for buildings from FEMA P58",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to include building-level wind damage and loss assessment from HAZUS",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to include building-level water damage and loss assessment from HAZUS",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to include earthquake damage and loss assessment for transportation networks from HAZUS",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to include earthquake damage and loss assessment for buried pipelines from HAZUS",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to include earthquake damage and loss assessment for power lines from HAZUS",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to include high-resolution wind damage and loss assessment for buildings",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to include high-resolution water damage and loss assessment for buildings",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to include high-resolution damage and loss assessment for transportation networks",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to include high-resolution damage and loss assessment for buried pipelines",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Include Different Response/Recovery options",
+        "items": [
+          {
+            "target": "Response/Recovery options for households",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Response/Recovery options for infrastructure",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Response/Recovery options for business operations",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Response/Recovery and Effect on Environment",
+            "items": [
+              {
+                "target": "CO2 emissions from demolition and repair",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "target": "Present results using GIS so communities can visualize hazard impacts",
+        "items": [
+          {
+            "target": "Ability to use popular ArcGIS for visualization",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to include open-source ArcGIS alternatives",
+            "fields": ["SP", "P", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to capture uncertainty of results in visualization",
+            "fields": ["SP", "P", ""],
+            "items": []
+          },
+          {
+            "target": "Features to visualize environmental impact",
+            "fields": ["SP", "P", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Software Features",
+        "items": [
+          {
+            "target": "Ability to include a formal treatment of uncertainty and randomness",
+            "fields": ["GC", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to utilize HPC resources in regional simulations that enables repeated simulation for stochastic modeling",
+            "fields": ["GC", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability to use a tool created by linking heterogeneous array of simulation tools to provide a toolset for regional simulation",
+            "fields": ["GC", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Provide open-source software for developers to test new data and algorithms",
+            "fields": ["GC", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Ability of stakeholders to perform simulations of different scenarios that aid in planning and response after damaging events",
+            "fields": ["GC", "M", ""],
+            "items": []
+          },
+          {
+            "target": null
+          },
+          {
+            "target": "Ability to explore different strategies in community development, pre-event, early response, and post event, through long term recovery",
+            "fields": ["GC", "P", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to use system that creates and monitors real-time data, updates models, incorporates crowdsourcing technologies, and informs decision makers",
+            "fields": ["GC", "P", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to use sensor data to update models for simulation and incorporate sensor data into simulation",
+            "fields": ["GC", "P", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to include latest information and algorithms (i.e. new attenuation models, building fragility curves, demographics, lifeline performance models, network interdependencies, indirect economic loss)",
+            "fields": ["GC", "D", ""],
+            "items": []
+          },
+          {
+            "target": "",
+            "fields": ["Incorporate programs that can address lifeline network disruptions and network interdependencies",
+              "GC",
+              "M"
+            ],
+            "items": []
+          },
+          {
+            "target": "Application to Provide Common SimCenter Research Application Requirements listed in CR (not already listed above)",
+            "fields": ["GC", "M", "InProgresss"
+            ],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "target": "Ability to perform regional simulation allowing communities to evaluate resilience and perform what-if types of analysis for natural hazard events"
+  },
+  "REC": {
+    "items": [
+      {
+        "target": "Building Recovery",
+        "items": [
+          {
+            "target": "Incorporate advanced methods for building recovery time estimation",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Housing and Community Recovery",
+        "items": [
+          {
+            "target": "Incorporate modeling of the recovery of households and communities",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Infrastructure Recovery",
+        "items": [
+          {
+            "target": "Incorporate modeling of the recovery of transportation networks",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Incorporate modeling of the recovery of buried pipeline networks",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Incorporate modeling of the recovery of power networks",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Business Recovery",
+        "items": [
+          {
+            "target": "Incorporate modeling of the recovery of businesses",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to incorporate improved indirect economic loss estimation models",
+            "fields": ["GC", "M", ""],
+            "items": []
+          },
+          {
+            "target": "",
+            "fields": ["Ability to include demand surge in determination of losses",
+              "GC",
+              "M"
+            ],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Interdependencies",
+        "items": [
+          {
+            "target": "Implement a framework to model interdependencies between the recovery of various systems",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to include lifeline disruptions",
+            "fields": ["GC", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Metrics of recovery",
+        "items": [
+          {
+            "target": "Implement metrics to inform recovery and community resilience based on the outputs of the available recovery models",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "target": "Recovery (REC) Modeling"
+  },
+  "DLD": {
+    "items": [
+      {
+        "target": "Data Sources",
+        "items": [
+          {
+            "target": "Make the component fragility and consequence functions from FEMA P58 available",
+            "items": [
+              {
+                "target": "FEMA P58 First Edition",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "FEMA P58 Second Edition",
+                "fields": ["UF", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Extend FEMA P58 Second Edition consequence functions with environmental impact parameters",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Make the building fragility and consequence functions from HAZUS available",
+            "items": [
+              {
+                "target": "HAZUS earthquake damage and reconstruction cost and time",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "HAZUS hurricane wind damage and reconstruction cost and time",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "HAZUS storm surge damage and reconstruction cost and time",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Make the lifeline fragility and consequence functions from HAZUS available",
+            "items": [
+              {
+                "target": "HAZUS bridge damage and reconstruction cost and time",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "HAZUS buried pipeline damage and reconstruction cost and time",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "HAZUS power network damage and reconstruction cost and time",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Extend available high-resolution building damage and loss model parameters",
+            "items": [
+              {
+                "target": "Building damage and loss model parameters under wind hazards",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Building damage and loss model parameters under water hazards",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Make high-resolution damage and loss model parameters available for lifelines",
+            "items": [
+              {
+                "target": "Transportation network damage and loss model parameters",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Buried pipeline network damage and loss model parameters",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "target": "Data Storage",
+        "items": [
+          {
+            "target": "Generic JSON format",
+            "items": [
+              {
+                "target": "Develop a generic JSON data format for component fragility and consequence functions",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Store FEMA P58 and HAZUS component data in the new JSON format and make them available",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "HDF5 Data Storage",
+            "items": [
+              {
+                "target": "Store the JSON files in an HDF5 data structure for each data source",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Online Database",
+            "items": [
+              {
+                "target": "Create an online database for storing parameters of damage and loss models for buildings",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Extend online database to store parameters of damage and loss models for transportation networks",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Extend online database to store parameters of damage and loss models for buried pipeline networks",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Populate building database with high-resolution model parameters from researchers",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Populate lifeline database with high-resolution model parameters from researchers",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "target": "Database for Damage and Loss Fragilities and Consequence Functions: Loss computations use fragility and consequence functions for modern and archaic structural and nonstructural components and assem- blies in structures. The database of such functions for components and assemblies is small and must be expanded through coordinated numerical and experimental simulations"
+  },
+  "P": {
+    "items": [
+      {
+        "target": "Existing Assessment Methods",
+        "items": [
+          {
+            "target": "Implement the high-resolution loss assessment methodologies",
+            "items": [
+              {
+                "target": "Implement the scenario-based assessment from FEMA-P58",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement the time-based assessment from FEMA-P58",
+                "fields": ["SP", "D", ""],
+                "items": []
+              },
+              {
+                "target": "Implement high-resolution assessment of buildings under wind hazards",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement high-resolution assessment of buildings under water hazards",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement high-resolution assessment of transportation networks",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement high-resolution assessment of buried pipelines",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Implement the efficient loss assessment methodologies from HAZUS",
+            "items": [
+              {
+                "target": "Implement the assessment of buildings under earthquake hazard from HAZUS",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement the assessment of buildings under hurricane wind hazard from HAZUS",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement the assessment of buildings under storm surge hazard from HAZUS",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement the assessment of buried pipelines under earthquake hazard from HAZUS",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement the assessment of transportation networks under earthquake hazard from HAZUS",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement the assessment of power networks under earthquake hazard from HAZUS",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "target": "Control",
+        "items": [
+          {
+            "target": "Analysis & Data",
+            "items": [
+              {
+                "target": "Allow users to set the number of realizations",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to customize fragility and consequence function parameters",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to specify dependencies between logically similar parts of the stochastic models",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Response Model",
+            "items": [
+              {
+                "target": "Allow users to specify the added uncertainty to EDPs (increase in log-standard dev.)",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to specify the EDP ranges that correspond to reliable simulation results",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to specify the type of distribution they want to fit to the empirical EDP data",
+                "fields": ["UF", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to choose if they want to fit a distribution only to the non-collapsed EDPs",
+                "fields": ["UF", "M", "Implemented"],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Performance Model",
+            "items": [
+              {
+                "target": "Allow users to prescribe a different number of inhabitants on each floor",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to customize the temporal distribution of inhabitants",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to prescribe different component quantities for each floor in each direction",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to specify the number of component groups and their quantities in each performance group",
+                "fields": ["UF", "D", "Implemented"],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Damage Model",
+            "items": [
+              {
+                "target": "Allow users to specify the residual drift limits that determine irrepairability",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to specify the yield drift value that is used to estimate residual drifts from peak drifts",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to specify the EDP limits that are used to determine collapse probability",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to specify arbitrary collapse modes and their likelihood",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to prescribe the collapse probability of the structure",
+                "fields": ["UF", "M", "Implemented"],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Loss Model",
+            "items": [
+              {
+                "target": "Allow users to decide which DVs to calculate",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to specify the likelihood of various injuries in each collapse mode",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "target": "Hazard Model",
+        "items": [
+          {
+            "target": "Hazard Occurrence Rate",
+            "items": [
+              {
+                "target": "Enable estimation of the likelihood of earthquake events",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Enable estimation of the likelihood of wind events",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Enable estimation of the likelihood of storm surge events",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Enable estimation of the likelihood of tsunami events",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "target": "Response Model",
+        "items": [
+          {
+            "target": "EDP (re-)sampling",
+            "items": [
+              {
+                "target": "Enable coupled assessment by using raw EDP values as-is",
+                "fields": ["UF", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Enable non-Gaussian EDP distributions",
+                "fields": ["UF", "D", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "EDP Identification",
+            "items": [
+              {
+                "target": "Implement automatic identification of required EDP types based on the performance model",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "target": "Performance Model",
+        "items": [
+          {
+            "target": "Auto-population of performance models",
+            "items": [
+              {
+                "target": "Implement framework to enable user-defined auto-population scripts",
+                "fields": ["UF", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Prepare script to perform auto-population based on normative quantities in FEMA P58",
+                "fields": ["UF", "D", ""],
+                "items": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "target": "Damage Model",
+        "items": [
+          {
+            "target": "Collapse estimation",
+            "items": [
+              {
+                "target": "Estimate collapse probability of the structure using EDP limits and the joint distribution of EDPs",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Estimate the collapse probability of the structure using empirical (raw) EDP data",
+                "fields": ["UF", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Enable user-defined collapse probability",
+                "fields": ["UF", "M", "Implemented"],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Building Damage",
+            "items": [
+              {
+                "target": "Implement earthquake fragility functions for building components from FEMA P58",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement earthquake fragility functions for buildings from HAZUS",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement wind fragility functions for buildings from HAZUS",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement inundation fragility functions for buildings from HAZUS",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement high-resolution wind fragility functions for building components",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement high-resolution inundation fragility functions for building components",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Lifeline Damage",
+            "items": [
+              {
+                "target": "Implement earthquake fragility functions for buried pipelines from HAZUS",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement earthquake fragility functions for bridges from HAZUS",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement earthquake fragility functions for power networks from HAZUS",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement high-resolution fragility functions for buried pipelines",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement high-resolution fragility functions for transportation networks",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Cascading Damages",
+            "items": [
+              {
+                "target": "Implement fault tree-based cascading damage model",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "target": "Loss Model",
+        "items": [
+          {
+            "target": "Consequence functions for buildings",
+            "items": [
+              {
+                "target": "Implement functions for repair cost and time as per FEMA P58",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement functions for red tag triggering as per FEMA P58",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement functions for injuries and fatalities as per FEMA P58",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement functions for repair cost and time as per HAZUS earthquake",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement functions for debris as per HAZUS earthquake",
+                "fields": ["SP", "D", ""],
+                "items": []
+              },
+              {
+                "target": "Implement functions for business interruption as per HAZUS earthquake",
+                "fields": ["SP", "D", ""],
+                "items": []
+              },
+              {
+                "target": "Implement functions for repair cost and time as per HAZUS wind",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement functions for repair cost and time as per HAZUS inundation",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement functions for environmental impact estimation as per FEMA P58 2nd edition",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement functions for high-resolution repair cost and time assessment for wind hazards",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement functions for high-resolution repair cost and time assessment for water hazards",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Consequence functions for other assets",
+            "items": [
+              {
+                "target": "Implement functions for repair cost and time for buried pipelines as per HAZUS earthquake",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement functions for repair cost and time for bridges as per HAZUS earthquake",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement functions for repair cost and time for power networks as per HAZUS earthquake",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement high-resolution functions for repair cost and time for transportation networks",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement high-resolution functions for repair cost and time for buried pipelines",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "target": "Existing Assessment Methods"
+  },
+  "TB": {
+    "items": [
+      {
+        "target": "Provide Earthquake Testbeds",
+        "items": [
+          {
+            "target": "Provide Bay Area Earthquake Testbed",
+            "fields": ["SP", "M", "TB1.0"
+            ],
+            "items": []
+          },
+          {
+            "target": "Provide Anchorage Earthquake Testbed",
+            "fields": ["SP", "M", "TB1.1"
+            ],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Provide Tsunami Testbed",
+        "fields": ["SP", "M", ""],
+        "items": []
+      },
+      {
+        "target": "Provide Hurricane Testbed",
+        "items": [
+          {
+            "target": "Provide Atlantic City Hurricane Wind Testbed",
+            "fields": ["SP", "M", "TB2.0"
+            ],
+            "items": []
+          },
+          {
+            "target": "Provide Atlantic City Hurricane Wind and Storm Surge Testbed",
+            "fields": ["SP", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Provide Hurricane Laura Testbed looking at Lake Charles",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Provide Earthquake and Lifelines Testbed",
+        "fields": ["SP", "M", ""],
+        "items": []
+      }
+    ],
+    "target": "Identify knowledge gaps and promote NSF generated knowledge through regional demonstration projects that help generate linkages to operational entities and decision makers"
+  },
+  "UF": {
+    "items": [
+      {
+        "target": "Ability to use basic Monte Carlo and LHS methods",
+        "fields": ["SP", "M", "Implemented"],
+        "items": []
+      },
+      {
+        "target": "Ability to use Multi-Scale Monte Carlo",
+        "fields": ["SP", "M", ""],
+        "items": []
+      },
+      {
+        "target": "Ability to use Multi-Fidelity Models",
+        "fields": ["SP", "M", ""],
+        "items": []
+      }
+    ],
+    "target": "Forward Propagation Methods"
+  },
+  "UR": {
+    "items": [
+      {
+        "target": "Ability to use First Order Reliability method",
+        "fields": ["SP", "M", "Implemented"],
+        "items": []
+      },
+      {
+        "target": "Ability to use Second Order Reliability method",
+        "fields": ["SP", "M", "Implemented"],
+        "items": []
+      },
+      {
+        "target": "Ability to use Surrogate Based Reliability",
+        "fields": ["SP", "M", "Implemented"],
+        "items": []
+      },
+      {
+        "target": "Ability to use Importance Sampling",
+        "fields": ["SP", "M", "Implemented"],
+        "items": []
+      }
+    ],
+    "target": "Reliability Methods"
+  },
+  "UG": {
+    "items": [
+      {
+        "target": "Ability to obtain Global Sensitivity Sobol indices",
+        "fields": ["UF", "M", "Implemented"],
+        "items": []
+      },
+      {
+        "target": "Ability to use probability model-based global sensitivity analysis (PM-GSA)",
+        "fields": ["SP", "M", "Implemented"],
+        "items": []
+      }
+    ],
+    "target": "Global Sensitivity Methods"
+  },
+  "US": {
+    "items": [
+      {
+        "target": "Ability to Construct Gaussian Process (GP) Regression Model from a Simulation Model",
+        "fields": ["SP", "M", "InProgress"],
+        "items": []
+      },
+      {
+        "target": "Ability to Construct GP Regression Model from Input-output Dataset",
+        "fields": ["SP", "M", "InProgress"],
+        "items": []
+      },
+      {
+        "target": "Ability to use Surrogate Model for UQ Analysis",
+        "fields": ["SP", "M", "InProgress"],
+        "config": "$.UQ_Method.surrogateMethodInfo"
+      },
+      {
+        "target": "Ability to Save the Surrogate Model",
+        "fields": ["SP", "M", "InProgress"],
+        "items": []
+      },
+      {
+        "target": "Ability to Use Adaptive Design of Experiments",
+        "fields": ["SP", "M", "InProgress"],
+        "items": []
+      },
+      {
+        "target": "Ability to Asses Reliability of Surrogate Model",
+        "fields": ["SP", "M", "InProgress"],
+        "items": []
+      },
+      {
+        "target": "Ability to Build Surrogate Under Stochastic Excitation",
+        "fields": ["SP", "M", ""],
+        "items": []
+      },
+      {
+        "target": "Ability to Use Physics-Informed Machine Learning",
+        "fields": ["SP", "M", ""],
+        "items": []
+      }
+    ],
+    "target": "Surrogate Models"
+  },
+  "UN": {
+    "items": [
+      {
+        "target": "Ability to use Gauss-Newton solvers for parameter estimation",
+        "fields": ["SP", "M", "Implemented"],
+        "items": []
+      },
+      {
+        "target": "Ability to read calibration data from file",
+        "fields": ["UF", "M", "InProgress"],
+        "items": []
+      },
+      {
+        "target": "Ability to handle non-scalar response quantities",
+        "fields": ["UF", "M", "InProgress"],
+        "items": []
+      }
+    ],
+    "target": "Non-linear Least Squares Optimization"
+  },
+  "UB": {
+    "items": [
+      {
+        "target": "Ability to use DREAM algorithm for Bayesian inference",
+        "fields": ["SP", "M", "InProgress"],
+        "items": []
+      },
+      {
+        "target": "Ability to use TMCMC algorithm for Bayesian inference",
+        "fields": ["SP", "M", "Implemented"],
+        "items": []
+      },
+      {
+        "target": "Ability to read calibration data from file",
+        "fields": ["UF", "M", "InProgress"],
+        "items": []
+      },
+      {
+        "target": "Ability to handle non-scalar response quantities",
+        "fields": ["UF", "M", "InProgress"],
+        "items": []
+      },
+      {
+        "target": "Ability to calibrate multipliers on error covariance",
+        "fields": ["UF", "M", ""],
+        "items": []
+      },
+      {
+        "target": "Ability to use a default log-likelihood function",
+        "fields": ["UF", "M", ""],
+        "items": []
+      },
+      {
+        "target": "Ability to use Kalman Filtering",
+        "fields": ["UF", "M", ""],
+        "items": []
+      },
+      {
+        "target": "Ability to use Particle Filtering",
+        "fields": ["UF", "M", ""],
+        "items": []
+      }
+    ],
+    "target": "Bayesian Calibration"
+  },
+  "UH": {
+    "items": [
+      {
+        "target": "Ability to sample from manifold",
+        "fields": ["SP", "M", ""],
+        "items": []
+      },
+      {
+        "target": "Ability to build Reduced Order Model",
+        "fields": ["SP", "M", ""],
+        "items": []
+      }
+    ],
+    "target": "High Dimensional UQ"
+  },
+  "UO": {
+    "items": [
+      {
+        "target": "Ability to use Own External UQ Engine",
+        "fields": ["SP", "M", "Implemented"],
+        "items": []
+      },
+      {
+        "target": "Ability to use Own External FEM Application",
+        "fields": ["UF", "M", "Implemented"],
+        "items": []
+      }
+    ],
+    "target": "Other/General Features"
+  },
+  "WL": {
+    "items": [
+      {
+        "target": "Regional Loading due to Wind Hazards",
+        "items": [
+          {
+            "target": "Regional Hurricane Wind Options",
+            "items": [
+              {
+                "target": "Utilize GIS and online to account for wind speed given local terrain, topography and nearby buildings",
+                "fields": ["GC", "D", ""],
+                "items": []
+              },
+              {
+                "target": "MultiScale Wind Models",
+                "fields": ["SP", "D", ""],
+                "items": []
+              },
+              {
+                "target": "Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow",
+                "fields": ["SP", "D", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "",
+            "fields": ["Modeling and simulation for determination of wind loads due to non-synoptic winds, including tornadoes",
+              "GC",
+              "D"
+            ],
+            "items": []
+          },
+          {
+            "target": "",
+            "items": [
+              {
+                "target": "",
+                "fields": ["Interface with NOAA",
+                  "SP",
+                  "D"
+                ],
+                "items": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "target": "Local Scale Wind Hazard Options",
+        "items": [
+          {
+            "target": "Utilize Extensive wind tunnel datasets in industry and academia for wide range of building shapes",
+            "items": [
+              {
+                "target": "Accommodate Range of Low Rise building shapes",
+                "items": [
+                  {
+                    "target": "Flat Shaped Roof - TPU dataset",
+                    "fields": ["SP", "M", "Implemented"],
+                    "items": []
+                  },
+                  {
+                    "target": "Gable Shaped Roof - TPU dataset",
+                    "fields": ["SP", "M", ""],
+                    "items": []
+                  },
+                  {
+                    "target": "Hipped Shaped Roof - TPU dataset",
+                    "fields": ["SP", "M", ""],
+                    "items": []
+                  }
+                ]
+              },
+              {
+                "target": "Accommodate Range of High Rise building",
+                "fields": ["SP", "M", "InProgress"],
+                "items": []
+              },
+              {
+                "target": "Non Isolated Low Rise Buildings - TPU dataset",
+                "fields": ["SP", "M", "InProgress"],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Interface with data driven Interface with Vortex Winds DEDM-HRP Web service",
+	    "fields": ["SP", "M", "Implemented"],
+	    "items": []
+          },
+          {
+            "target": "Accommodate Data from Wind Tunnel Experiment",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Simple CFD model generation and turbulence modeling",
+            "fields": ["GC", "M", "Implemented"],
+            "items": []
+          },
+          {
+            "target": "Computational Fluid Dynamics tool for utilizing open source CFD software for practitioners",
+            "items": [
+              {
+                "target": "Uncoupled OpenFOAM CFD model with nonlinear FEM code for building response",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Coupled OpenFOAM CFD model with linear FEM code for building response",
+                "fields": ["SP", "M", "InProgress"],
+                "items": []
+              },
+              {
+                "target": "Inflow Conditions for non-synoptic winds",
+                "fields": ["GC", "M", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Quantification of Effects of Wind Borne Debris",
+            "fields": ["GC", "D", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to utilize synthetic wind loading algorithms per Wittig and Sinha",
+	    "fields": ["SP", "D", "Implemented"],
+	    "items": []
+          },
+          {
+            "target": "Hazard modification by terrain, topography, and nearby buildings",
+            "fields": ["GC", "D", ""],
+            "items": []
+          },
+          {
+            "target": "Probabilistic methods are needed to enable site-specific and storm-type specific characterization of likely debris types, weights, and speeds",
+            "fields": ["GC", "D", ""],
+            "items": []
+          },
+          {
+            "target": "Joint description for hurricane wind, storm surge, and wave hazards",
+            "fields": ["GC", "D", ""],
+            "items": []
+          },
+          {
+            "target": "Libraries of high resolution hurricane wind/surge/wave simulations",
+            "fields": ["GC", "M", ""],
+            "items": []
+          },
+          {
+            "target": "Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow",
+            "fields": ["SP", "", ""],
+            "items": []
+          },
+          {
+            "target": "Ability to select surrogate modeling events",
+            "fields": ["SP", "M", ""],
+            "items": []
+          }
+        ]
+      }
+    ],
+    "target": "Loading from Wind Hazards (Hurricane, Downbursts, Tornados) on Local and Regional Assets"
+  },
+  "UM": {
+    "target": "Ability to use various UQ Methods",
+    "apps": ["qfem"],
+    "items": [
+      {
+        "target": "Forward Propagation Methods",
+        "fields": ["GC", "M", "1"],
+        "apps": ["qfem","eeuq"],
+        "config_paths": "$.UQ_Method.samplingMethodData.method",
+        "items": [
+          {
+            "target": "Ability to use basic Monte Carlo and LHS methods",
+            "fields": ["SP", "M", "Implemented"],
+            "config_values": ["LHS"]
+          },
+          {
+            "target": "Ability to use Importance Sampling",
+            "fields": ["SP", "M", "Implemented"],
+            "config_values": ["Importance Sampling"]
+          },
+          {
+            "target": "Ability to use Gaussian Process Regression",
+            "fields": ["SP", "M", "Implemented"],
+            "config_values": ["Gaussian Process Regression"]
+          },
+          {
+            "target": "Ability to use Own External UQ Engine",
+            "fields": ["SP", "M", null]
+          }
+        ]
+      },
+      {
+        "target": "Ability to use various Reliability Methods",
+        "apps": ["eeuq"],
+        "config_paths": "$.UQ_Method.reliabilityMethodData.method",
+        "items": [
+          {
+            "target": "Ability to use First Order Reliability method",
+            "fields": ["UF", "M", "2.1"],
+            "config": ["Local Reliability"]
+          },
+          {
+            "target": "Ability to use Second Order Reliability method",
+            "fields": ["UF", "M", "2.1"]
+          },
+          {
+            "target": "Ability to use Surrogate Based Reliability",
+            "fields": ["UF", "M", ""]
+          },
+          {
+            "target": "Ability to use Own External Application to generate Results",
+            "fields": ["UF", "M", "2.2"]
+          }
+        ]
+      },
+      {
+        "target": "Ability to user various Sensitivity Methods",
+        "apps": ["qfem", "eeuq"],
+	"config_paths": "$.UQ_Method.uqType",
+        "items": [
+          {
+            "target": "Ability to obtain Global Sensitivity Sobol's indices",
+            "fields": ["UF", "M", null],
+	    "config_values": ["Sampling Analysis"]
+          }
+        ]
+      }
+    ]
+  }
+}

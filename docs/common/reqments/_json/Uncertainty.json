@@ -1,0 +1,233 @@
+{
+  "UF": {
+    "target": "Forward Propagation Methods",
+    "config_paths": "$.UQ_Method.samplingMethodData.method",
+    "items": [
+      {
+        "target": "Ability to use basic Monte Carlo and LHS methods",
+        "fields": ["SP", "M", "Implemented"],
+        "config_values": ["LHS"]
+      },
+      {
+        "target": "Ability to use Importance Sampling",
+        "fields": ["SP", "M", "Implemented"],
+        "config_values": ["Importance Sampling"]
+      },
+      {
+        "target": "Ability to use Gaussian Process Regression",
+        "fields": ["SP", "M", "Implemented"],
+        "config_values": ["Gaussian Process Regression"]
+      },
+      {
+        "target": "Ability to use Own External UQ Engine",
+        "fields": ["SP", "M", null]
+      },
+      {
+        "target": "Ability to use Multi-Scale Monte Carlo",
+        "fields": ["SP", "M", null],
+	"apps": ["qfem"]
+      },
+      {
+        "target": "Ability to use Multi-Fidelity Models",
+        "fields": ["SP", "M", null],
+	"apps": ["qfem"]
+      }
+    ]
+  },
+  "UR": {
+    "target": "Reliability Methods",
+    "config_paths": "$.UQ_Method.reliabilityMethodData.method",
+    "items": [
+      {
+        "target": "Ability to use First Order Reliability method",
+        "fields": ["SP", "M", "Implemented"],
+        "config": ["Local Reliability"]
+      },
+      {
+        "target": "Ability to use Second Order Reliability method",
+        "fields": ["SP", "M", "Implemented"],
+        "apps": ["qfem","eeuq"]
+      },
+      {
+        "target": "Ability to use Surrogate Based Reliability",
+        "fields": ["SP", "M", "Implemented"],
+        "apps": ["qfem", "eeuq"]
+      }
+    ]
+  },
+  "UG": {
+    "target": "Global Sensitivity Methods",
+    "items": [
+      {
+        "target": "Ability to obtain Global Sensitivity Sobol indices",
+        "fields": ["UF", "M", "Implemented"]
+      },
+      {
+        "target": "Ability to use probability model-based global sensitivity analysis (PM-GSA)",
+        "fields": ["SP", "M", "Implemented"]
+      }
+    ]
+  },
+  "US": {
+    "target": "Surrogate Models",
+    "items": [
+      {
+        "target": "Ability to Construct Gaussian Process (GP) Regression Model from a Simulation Model",
+        "fields": ["SP", "M", "InProgress"]
+      },
+      {
+        "target": "Ability to Construct GP Regression Model from Input-output Dataset",
+        "fields": ["SP", "M", "InProgress"],
+        "items": []
+      },
+      {
+        "target": "Ability to use Surrogate Model for UQ Analysis",
+        "fields": ["SP", "M", "InProgress"],
+        "config": "$.UQ_Method.surrogateMethodInfo"
+      },
+      {
+        "target": "Ability to Save the Surrogate Model",
+        "fields": ["SP", "M", "InProgress"],
+        "items": []
+      },
+      {
+        "target": "Ability to Use Adaptive Design of Experiments",
+        "fields": ["SP", "M", "InProgress"],
+        "items": []
+      },
+      {
+        "target": "Ability to Asses Reliability of Surrogate Model",
+        "fields": ["SP", "M", "InProgress"]
+      },
+      {
+        "target": "Ability to Build Surrogate Under Stochastic Excitation",
+        "fields": ["SP", "M", ""]
+      },
+      {
+        "target": "Ability to Use Physics-Informed Machine Learning",
+        "fields": ["SP", "M", ""]
+      }
+    ]
+  },
+  "UN": {
+    "target": "Non-linear Least Squares Optimization",
+    "items": [
+      {
+        "target": "Ability to use Gauss-Newton solvers for parameter estimation",
+        "fields": ["SP", "M", "Implemented"]
+      },
+      {
+        "target": "Ability to read calibration data from file",
+        "fields": ["UF", "M", "InProgress"]
+      },
+      {
+        "target": "Ability to handle non-scalar response quantities",
+        "fields": ["UF", "M", "InProgress"]
+      }
+    ]
+  },
+  "UB": {
+    "target": "Bayesian Calibration",
+    "items": [
+      {
+        "target": "Ability to use DREAM algorithm for Bayesian inference",
+        "fields": ["SP", "M", "InProgress"]
+      },
+      {
+        "target": "Ability to use TMCMC algorithm for Bayesian inference",
+        "fields": ["SP", "M", "Implemented"]
+      },
+      {
+        "target": "Ability to read calibration data from file",
+        "fields": ["UF", "M", "InProgress"]
+      },
+      {
+        "target": "Ability to handle non-scalar response quantities",
+        "fields": ["UF", "M", "InProgress"]
+      },
+      {
+        "target": "Ability to calibrate multipliers on error covariance",
+        "fields": ["UF", "M", ""]
+      },
+      {
+        "target": "Ability to use a default log-likelihood function",
+        "fields": ["UF", "M", ""]
+      },
+      {
+        "target": "Ability to use Kalman Filtering",
+        "fields": ["UF", "M", ""]
+      },
+      {
+        "target": "Ability to use Particle Filtering",
+        "fields": ["UF", "M", ""]
+      }
+    ]
+  },
+  "UH": {
+    "target": "High Dimensional UQ",
+    "items": [
+      {
+        "target": "Ability to sample from manifold",
+        "fields": ["SP", "M", ""],
+        "items": []
+      },
+      {
+        "target": "Ability to build Reduced Order Model",
+        "fields": ["SP", "M", ""],
+        "items": []
+      }
+    ]
+  },
+  "UO": {
+    "target": "Other/General Features",
+    "items": [
+      {
+        "target": "Ability to use User-Specified External UQ Engine",
+        "fields": ["SP", "M", "Implemented"],
+        "items": []
+      },
+      {
+        "target": "Ability to use Own External FEM Application",
+        "fields": ["UF", "M", "Implemented"]
+      }
+    ]
+  },
+  "UM": {
+    "target": "Ability to use various UQ Methods",
+    "apps": ["qfem"],
+    "items": [
+      {
+        "target": "Ability to use various Reliability Methods",
+        "apps": ["eeuq"],
+        "config_paths": "$.UQ_Method.reliabilityMethodData.method",
+        "items": [
+          {
+            "target": "Ability to use First Order Reliability method",
+            "fields": ["UF", "M", "2.1"],
+            "config": ["Local Reliability"]
+          },
+          {
+            "target": "Ability to use Surrogate Based Reliability",
+            "fields": ["UF", "M", ""]
+          },
+          {
+            "target": "Ability to use Own External Application to generate Results",
+            "fields": ["UF", "M", "2.2"]
+          }
+        ]
+      },
+      {
+        "target": "Ability to user various Sensitivity Methods",
+        "apps": ["qfem", "eeuq"],
+	"config_paths": "$.UQ_Method.uqType",
+        "items": [
+          {
+            "target": "Ability to obtain Global Sensitivity Sobol's indices",
+            "fields": ["UF", "M", null],
+	    "config_values": ["Sampling Analysis"]
+          }
+        ]
+      }
+    ]
+  }
+}
