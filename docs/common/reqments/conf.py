@@ -67,7 +67,8 @@ rst_prolog = """
 # ones.
 extensions = [
     'toctree_filter',
-    'docxbuilder'
+    'docxbuilder',
+    'crate.sphinx.csv'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

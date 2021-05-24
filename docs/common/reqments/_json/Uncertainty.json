@@ -41,7 +41,7 @@
       {
         "target": "Ability to use First Order Reliability method",
         "fields": ["SP", "M", "Implemented"],
-        "config": ["Local Reliability"]
+        "config_values": ["Local Reliability"]
       },
       {
         "target": "Ability to use Second Order Reliability method",
@@ -111,6 +111,7 @@
   },
   "UN": {
     "target": "Non-linear Least Squares Optimization",
+    "apps": ["qfem"],
     "items": [
       {
         "target": "Ability to use Gauss-Newton solvers for parameter estimation",
@@ -128,6 +129,7 @@
   },
   "UB": {
     "target": "Bayesian Calibration",
+    "apps": ["qfem"],
     "items": [
       {
         "target": "Ability to use DREAM algorithm for Bayesian inference",
@@ -165,6 +167,7 @@
   },
   "UH": {
     "target": "High Dimensional UQ",
+    "apps": ["qfem"],
     "items": [
       {
         "target": "Ability to sample from manifold",
@@ -198,13 +201,12 @@
     "items": [
       {
         "target": "Ability to use various Reliability Methods",
-        "apps": ["eeuq"],
         "config_paths": "$.UQ_Method.reliabilityMethodData.method",
         "items": [
           {
             "target": "Ability to use First Order Reliability method",
             "fields": ["UF", "M", "2.1"],
-            "config": ["Local Reliability"]
+            "config_values": ["Local Reliability"]
           },
           {
             "target": "Ability to use Surrogate Based Reliability",

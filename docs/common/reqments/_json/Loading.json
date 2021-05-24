@@ -235,12 +235,13 @@
       },
       {
         "target": "per Vlachos, Papakonstantinou, Deodatis (2017)",
-        "fields": ["SP", "D", "1.1"],
-        "config": "$.Appications.Events[*][?(@.ApplicationData.modelName=\"VlachosSiteSpecificEQ\")]"
+        "fields": ["SP", "D", "1.1"]
       }
     ]
   },
   "HL": {
+    "apps": ["hydro"],
+    "target": "Loading from Storm Surge/Tsunami  on Local and Regional Assets",
     "items": [
       {
         "target": "Regional Loading due to Storm Surge/Tsunami Hazards",
@@ -365,8 +366,7 @@
           }
         ]
       }
-    ],
-    "target": "Loading from Storm Surge/Tsunami  on Local and Regional Assets"
+    ]
   },
   "P": {
     "items": [
@@ -1061,5 +1061,5 @@
       }
     ],
     "target": "Loading from Wind Hazards (Hurricane, Downbursts, Tornados) on Local and Regional Assets"
-  },
+  }
 }

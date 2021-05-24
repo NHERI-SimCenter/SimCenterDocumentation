@@ -1,23 +1,38 @@
 # About
 
+## Schema
+
+leafs:
+
+1. `implementation`
+	1. `"standard"`
+	2. dictionary with keys `qfem`, `eeuq`, `weuq`, `r2dt`, `pbdl`
 
 
 Columns:
 
 ```
-1:  #
-2:  Description
+0:  #
+1:  Description
 
-3:  Source
-4:  Priority
-5:  Status (Previously "Version")
+2:  Source
+3:  Priority
+4:  Status (Previously "Version")
 
-6:  quoFEM reference
-7:  EE-UQ
-8:  WE-UQ
-9:  PBE
-10: R2D
+5:  quoFEM reference
+6:  EE-UQ
+7:  WE-UQ
+8:  PBE
+9:  R2D
+10: HydroUQ
 ```
+
+## TODO
+
+- Filter table columns
+- Latex version - footnotes
+
+- Link formatting
 
 ## Questions
 

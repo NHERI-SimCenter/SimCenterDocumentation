@@ -1,0 +1,52 @@
+{
+  "MOD": {
+    "items": [],
+    "target": "Asset Model Generators for Analysis"
+  },
+  "BM": {
+    "target": "Asset Model Generators for Buildings",
+    "config_paths": "$.Applications.Modeling.Application",
+    "items": [
+      {
+        "target": "Ability to quickly create a simple nonlinear building model for simple methods of seismic evaluation",
+        "fields": ["GC", "D", "Implemented"],
+        "config_values": ["MDOF_BuildingModel"]
+      },
+      {
+        "target": "Ability to use existing OpenSees model scripts",
+        "fields": ["SP", "M", "Implemented"],
+        "config_values": ["OpenSeesInput"]
+      },
+      {
+        "target": "Ability to define building and use Expert System to generate FE mesh",
+        "fields": ["SP", "D", ""],
+        "items": []
+      },
+      {
+        "target": "Ability to define building and use Machine Learning applications to generate FE",
+        "fields": ["GC", "D", ""],
+        "items": []
+      },
+      {
+        "target": "Ability to specify connection details for member ends",
+        "fields": ["UF", "D", ""],
+        "items": []
+      },
+      {
+        "target": "Ability to define a user-defined moment-rotation response representing the connection details",
+        "fields": ["UF", "D", ""],
+        "items": []
+      },
+      {
+        "target": "Ability to incoporate AutoSDA Steel Design Application in Local Applications",
+        "fields": ["UF", "M", "Implemented"],
+        "config_values": ["SteelBuildingModel"]
+      },
+      {
+        "target": "Ability to use user supplied python script to generate mesh",
+        "fields": ["UF", "M", "Implemented"],
+        "items": []
+      }
+    ]
+  }
+}

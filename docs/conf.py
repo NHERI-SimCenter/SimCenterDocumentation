@@ -650,7 +650,7 @@ elif app_name == 'pelicun':
         'sphinx.ext.autosummary',
         'sphinx.ext.intersphinx',
         'sphinx.ext.coverage',
-        'sphinx.ext.doctest'
+        'sphinx.ext.doctest',
     ]
 
     numpydoc_show_class_members = True
@@ -725,7 +725,8 @@ extensions = extensions + [
     'sphinx.ext.extlinks',
     'sphinxcontrib.images',
     'rendre.sphinx',
-    'sphinx.ext.autodoc'
+    'sphinx.ext.autodoc',
+    'crate.sphinx.csv'
 ]
 
 # Add any paths that contain templates here, relative to this directory.

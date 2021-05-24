@@ -1,0 +1,65 @@
+{
+  "RV": {
+    "target": "Random Variables",
+    "items": [
+      {
+        "target": "Various Random Variable Probability Distributions",
+        "items": [
+          {
+            "target": "Normal",
+            "fields": ["SP", "M", "1"],
+            "config": "$.randomVariables[*][?(@.distribution=\"Normal\")]"
+          },
+          {
+            "target": "Lognormal",
+            "fields": ["SP", "M", "1"],
+            "config": "$.randomVariables[*][?(@.distribution=\"Lognormal\")]"
+          },
+          {
+            "target": "Uniform",
+            "fields": ["SP", "M", "1"],
+            "config": "$.randomVariables[*][?(@.distribution=\"Uniform\")]"
+          },
+          {
+            "target": "Beta",
+            "fields": ["SP", "M", "1"],
+            "config": "$.randomVariables[*][?(@.distribution=\"Beta\")]"
+          },
+          {
+            "target": "Weibull",
+            "fields": ["SP", "M", "1"],
+            "config": "$.randomVariables[*][?(@.distribution=\"Weibull\")]"
+          },
+          {
+            "target": "Gumbel",
+            "fields": ["SP", "M", "1"],
+            "config": "$.randomVariables[*][?(@.distribution=\"Gumbel\")]"
+          }
+        ]
+      },
+      {
+        "target": "User defined Distribution",
+        "fields": ["SP", "M", ""]
+      },
+      {
+        "target": "Define Correlation Matrix",
+        "fields": ["SP", "M", ""]
+      },
+      {
+        "target": "Random Fields",
+        "fields": ["SP", "M", ""]
+      },
+      {
+        "target": "Ability to View Graphically the density function when defining the RV",
+        "fields": ["UF", "D", "Implemented"],
+	"implementation": {
+	    "qfem": "https://NHERI-SimCenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/RV.html",
+	    "eeuq": "https://NHERI-SimCenter.github.io/EE-UQ-Documentation/common/user_manual/usage/desktop/RV.html",
+	    "weuq": "https://NHERI-SimCenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/RV.html",
+	    "pbdl": "https://NHERI-SimCenter.github.io/PBE-Documentation/common/user_manual/usage/desktop/RV.html"
+
+	}
+      }
+    ]
+  }
+}

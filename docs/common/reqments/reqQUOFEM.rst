@@ -10,10 +10,16 @@ The purpose of presenting these requirements is to inform the community on the p
 quoFEM Requirements
 -------------------
 
-.. csv-table:: Requirements - QF
+.. csv-filter:: Requirements - QF
   :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 60, 10, 10, 10
-  :file: generalQUO-FEM.csv
+  :file: _json/out/Applications.csv
+  :include: {0: 'QF.*'}
+
+..
+        .. csv-table:: Requirements - QF
+          :header: "#", "Description", "Source", "Priority", "Status"
+          :widths: 10, 60, 10, 10, 10
+          :file: generalQUO-FEM.csv
 
 .. include:: key.rst
 
@@ -21,10 +27,15 @@ quoFEM Requirements
 UQ Requirements
 ---------------
 
-.. csv-table:: Requirements - Uncertainty Quantification Methods and Variables
+.. csv-filter:: Requirements - Uncertainty Quantification Methods and Variables
   :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 60, 10, 10, 10
-  :file: UQMethods.csv
+  :file: _json/out/Uncertainty.csv
+
+..
+        .. csv-table:: Requirements - Uncertainty Quantification Methods and Variables
+          :header: "#", "Description", "Source", "Priority", "Status"
+          :widths: 10, 60, 10, 10, 10
+          :file: UQMethods.csv
 
 .. include:: key.rst
 
@@ -32,20 +43,30 @@ UQ Requirements
 RV Requirements
 ---------------
 
-.. csv-table:: Requirements - Random Variables
+.. csv-filter:: Requirements - CR
   :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 60, 10, 10, 10
-  :file: RV.csv
+  :file: _json/out/RandomVariables.csv
+
+..
+        .. csv-table:: Requirements - Random Variables
+          :header: "#", "Description", "Source", "Priority", "Status"
+          :widths: 10, 60, 10, 10, 10
+          :file: RV.csv
 
 .. include:: key.rst
 
 Common Research Application Requirements
 ----------------------------------------
 
-.. csv-table:: Requirements - CR
+.. csv-filter:: Requirements - CR
   :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 60, 10, 10, 10
-  :file: commonR.csv
+  :file: _json/out/Common.csv
+
+..
+        .. csv-table:: Requirements - CR
+          :header: "#", "Description", "Source", "Priority", "Status"
+          :widths: 10, 60, 10, 10, 10
+          :file: commonR.csv
 
 .. include:: key.rst
 
