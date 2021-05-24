@@ -80,8 +80,8 @@
 "QF.1.7", "Ability to use Bayesian Calibration methods listed in UQ under UB","SP", "M", "-", "-", NA, NA
 "QF.1.8", "Ability to use Nonlinear Least Squares  methods listed in UQ under UN","SP", "M", "Implemented", "-", NA, NA
 "QF.2", "Ability to use Different Simulation Applications", "-", "-", "-", "-", "-", "-"
-"QF.2.1", "Ability to use OpenSees","SP", "M", "Implemented", "qfem-0001", NA, NA
-"QF.2.2", "Ability to use OpenSeesPy","SP", "M", "Implemented", "qfem-0002", NA, NA
+"QF.2.1", "Ability to use OpenSees","SP", "M", "Implemented", ":qfem-0001:`/`", NA, NA
+"QF.2.2", "Ability to use OpenSeesPy","SP", "M", "Implemented", ":qfem-0002:`/`", NA, NA
 "QF.2.3", "Ability to Incorporate User Own Applications","UF", "M", "Implemented", ":qfem-0005:`/`"
 "QF.3", "Ability to Visualize the Results", "-", "-", "-", "-", "-", "-"
 "QF.3.1", "Ability to view individual sample results","SP", "M", "Implemented", **core**, NA, NA

@@ -77,20 +77,25 @@ def find_first(key, dct):
             return k
     return None
 
-def create_link(v:str,app:str)->str:
-    if v:
+def create_link(v:str,app:str=None)->str:
+    if v and app is None:
+        if v[:4] == "http":
+            return f'"`link {v}`_"'
+        else:
+            return v
+    elif v:
         match = re.search(f"({EXAMPLE_DIRS[app]})",v)
-        return f'"{match.group(0)}"' if match else '"-"'
+        return f'":{match.group(0)}:`/`"' if match else '"-"'
     else:
         return '"-"'
 
 def find_implementation(key:str,item:dict, examples:dict)->list:
     if "implementation" in item:
         if isinstance(item["implementation"],str):
-            if item["implementation"] == "standard":
+            if item["implementation"] == "core" or item["implementation"] == "standard":
                 return {app: "**core**" if v else "NA" for app,v in examples.items()}
         else:
-            return {k: f'"{v}"' for k,v in item["implementation"].items()}
+            return {k: f'"{create_link(v)}"' for k,v in item["implementation"].items()}
     else:
         return {app: create_link(find_first(key,v),app) if v else "NA"
                 for app,v in examples.items()}

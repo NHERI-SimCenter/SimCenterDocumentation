@@ -289,7 +289,7 @@ if app_name == 'Hydro':
     exclude_patterns.append('**/user_manual/usage/desktop/response/*')
     exclude_patterns.append('**/user_manual/usage/desktop/earthquake/*')
     exclude_patterns.append('**/*architectureLevel4.rst*')
-    exclude_patterns.append('**/requirements/index.rst')
+    exclude_patterns.append('**/reqments/index.rst')
     exclude_patterns.append('**/requirements/bigRequirements.rst')
     exclude_patterns.append('**/DakotaSensitivity.rst')
     exclude_patterns.append('**/DakotaReliability.rst')
@@ -673,7 +673,8 @@ elif app_name == 'pelicun':
 
 
 elif app_name == 'requirements':
-    master_doc = 'common/requirements/index'
+    #master_doc = 'common/reqments/index'
+    master_doc = 'reqments'
     project = 'SimCenter Requirements Traceability Matrix'
     exclude_patterns = [
                 #'common/user_manual/*',

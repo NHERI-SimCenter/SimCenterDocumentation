@@ -37,15 +37,16 @@ quoFEM Requirements
 UQ Requirements
 ---------------
 
-.. .. csv-table:: Requirements - Uncertainty Quantification Methods and Variables
-..   :header: "#", "Description", "Source", "Priority", "Status"
-..   :widths: 10, 60, 10, 10, 10
-..   :file: CommonUQ.csv
-
 .. csv-table:: Requirements - Uncertainty Quantification Methods
   :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 60, 10, 10, 10, 10	   
-  :file: UQMethods.csv
+  :widths: 10, 60, 10, 10, 10, 10, 10, 10
+  :file: _json/out/Uncertainty.csv
+
+..
+        .. csv-table:: Requirements - Uncertainty Quantification Methods
+          :header: "#", "Description", "Source", "Priority", "Status"
+          :widths: 10, 60, 10, 10, 10, 10	   
+          :file: UQMethods.csv
 
 .. csv-table:: Requirements - Random Variables
   :header: "#", "Description", "Source", "Priority", "Status"
