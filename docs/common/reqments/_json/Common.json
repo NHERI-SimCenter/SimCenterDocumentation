@@ -128,8 +128,7 @@
       },
       {
         "target": "Tool to allow user to load and save user inputs",
-        "fields": ["SP", "M", "Implemented"],
-        "implementation": "Undocumented"
+        "fields": ["SP", "M", "Implemented"]
       },
       {
         "target": "Installer which installs application and all needed software",
