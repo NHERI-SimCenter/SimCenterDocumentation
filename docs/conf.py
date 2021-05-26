@@ -297,9 +297,6 @@ if app_name == 'Hydro':
     exclude_patterns.append('**/DakotaInverseProblems.rst')
     # END TODO
 
-    extlinks.update(
-       {f'hdro-{i:04}' : (f'{examples_url}/hydro-{i:04}/%s',f'hydro-{i:04}') for i in range(1,20)}
-    )
 
     html_theme_options.update({
         'analytics_id': '...', #TODO: add analytics ID
@@ -379,10 +376,6 @@ if app_name == 'R2DTool':
             "r2dt-0002",
         ]
     })
-    extlinks.update(
-       {f'r2dt-{i:04}' : (f'{examples_url}/r2dt-{i:04}/%s',f'r2dt-{i:04}') for i in range(1,20)}
-    )
-
     html_theme_options.update({
         'analytics_id': '...', #TODO: add analytics ID
     })
@@ -426,9 +419,6 @@ elif app_name == 'PBE':
             "pbdl-0003",
         ]
     })
-    extlinks.update(
-       {f'pbdl-{i:04}' : (f'{examples_url}/pbdl-{i:04}/%s',f'pbdl-{i:04}') for i in range(1,99)}
-    )
 
 
     rst_prolog += """\
@@ -478,9 +468,6 @@ elif app_name == 'EE-UQ':
             "eeuq-0005",
         ]
     })
-    extlinks.update(
-       {f'eeuq-{i:04}' : (f'{examples_url}/eeuq-{i:04}/%s',f'eeuq-{i:04}') for i in range(1,99)}
-    )
 
     rst_prolog += """
 .. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application (EE-UQ)
@@ -554,10 +541,6 @@ elif app_name == 'quoFEM':
             "qfem-0017",
         ]
     })
-    # Example links
-    extlinks.update(
-       {f'qfem-{i:04}' : (f'{examples_url}/qfem-{i:04}/%s',f'qfem-{i:04}') for i in range(1,99)}
-    )
 
 elif app_name == 'WE-UQ':
     project = 'Wind Engineering with Uncertainty Quantification'
@@ -599,10 +582,6 @@ elif app_name == 'WE-UQ':
             "weuq-0007",
         ]
     })
-    extlinks.update(
-       {f'weuq-{i:04}' : (f'{examples_url}/weuq-{i:04}/%s',f'weuq-{i:04}') for i in range(1,99)}
-    )
-    
     html_theme_options.update({'analytics_id': 'UA-158130480-2'})
 
     rst_prolog += f"""
@@ -773,8 +752,28 @@ latex_documents = [
 ]
 latex_logo = 'common/figures/NSF_SimCenter_NO TEXT_SimCenter.png'
 
-# -- sync files for examples --------------------
+# Example links
+extlinks.update(
+   {f'qfem-{i:04}' : (f'{examples_url}/qfem-{i:04}/%s',f'qfem-{i:04}') for i in range(1,99)}
+)
+extlinks.update(
+   {f'weuq-{i:04}' : (f'{examples_url}/weuq-{i:04}/%s',f'weuq-{i:04}') for i in range(1,99)}
+)
+extlinks.update(
+   {f'eeuq-{i:04}' : (f'{examples_url}/eeuq-{i:04}/%s',f'eeuq-{i:04}') for i in range(1,99)}
+)
+extlinks.update(
+   {f'pbdl-{i:04}' : (f'{examples_url}/pbdl-{i:04}/%s',f'pbdl-{i:04}') for i in range(1,99)}
+)
+extlinks.update(
+   {f'r2dt-{i:04}' : (f'{examples_url}/r2dt-{i:04}/%s',f'r2dt-{i:04}') for i in range(1,20)}
+)
+extlinks.update(
+   {f'hdro-{i:04}' : (f'{examples_url}/hydro-{i:04}/%s',f'hydro-{i:04}') for i in range(1,20)}
+)
 
+
+# -- sync files for examples --------------------
 if sync_examples:
     sync_files(
         src_dir=os.path.abspath(f'../../{app_name}/Examples'),
