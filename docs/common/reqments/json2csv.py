@@ -16,7 +16,7 @@ EXAMPLE_DIRS = {
 
 def print_help():
     """
-    ./csv2json -Aqfem 
+    ./csv2json -Eqfem ~/quoFEM/Examples/*/src/input.json
     """
     print(f"usage: {EXENAME} [OPTIONS]... [FILES...] < INPUT")
 
@@ -54,7 +54,7 @@ def apply_filter(specs:dict, *files)->dict:
     return results
 
 
-def proc_reqs(items:list,parent,level=0,conf_path=None)->dict:
+def proc_reqs(items:list,parent,level:int=0,conf_path:str=None)->dict:
     """
     """
     output = {}
@@ -66,7 +66,9 @@ def proc_reqs(items:list,parent,level=0,conf_path=None)->dict:
         if "items" in item and item["items"]:
             output.update(proc_reqs(item["items"],key,level+1,conf_path))
         elif conf_path and "config_values" in item:
-            output.update({key: {"config_paths": conf_path,"config_values": item["config_values"]}})
+            output.update({
+                key: {"config_paths": conf_path,"config_values": item["config_values"]}
+            })
         elif "config" in item:
             output.update({key: {"config": item["config"]}})
     return output
@@ -80,7 +82,7 @@ def find_first(key, dct):
 def create_link(v:str,app:str=None)->str:
     if v and app is None:
         if v[:4] == "http":
-            return f'"`link {v}`_"'
+            return f'`link <{v}>`_'
         else:
             return v
     elif v:
@@ -93,13 +95,17 @@ def find_implementation(key:str,item:dict, examples:dict)->list:
     if "implementation" in item:
         if isinstance(item["implementation"],str):
             if item["implementation"] == "core" or item["implementation"] == "standard":
-                return {app: "**core**" if v else "NA" for app,v in examples.items()}
+                return {
+                    app: "**core**" if v else "NA" for app,v in examples.items()
+                }
         else:
-            return {k: f'"{create_link(v)}"' for k,v in item["implementation"].items()}
+            return {
+                k: f'"{create_link(v)}"'
+                  for k,v in item["implementation"].items()
+            }
     else:
         return {app: create_link(find_first(key,v),app) if v else "NA"
                 for app,v in examples.items()}
-
 
 
 def print_reqs(items:list,parent,level:int,examples:dict,options=None)->dict:
@@ -113,9 +119,11 @@ def print_reqs(items:list,parent,level:int,examples:dict,options=None)->dict:
 
         key = f"{parent}.{j+1}"
         if "items" in item and item["items"]:
-            print(f'"{key}", "{item["target"]}", "-", "-", "-", ' + ", ".join(['"-"']*len(examples)))
+            print(f'"{key}", "{item["target"]}", "-", "-", "-", ' + \
+                    ", ".join(['"-"']*len(examples)))
             print_reqs(item["items"],key,level+1,examples)
         else:
+            print(key,item,file=sys.stderr)
             fields = [f'"{f}"' if f else '"-"' for f in item["fields"]]
             refs = list(find_implementation(key,item, examples).values())
             print(f'"{key}", "{item["target"]}",' + ", ".join(fields + refs))
