@@ -18,11 +18,11 @@ This document covers the features and capabilities of the ``version 1.0`` of the
    :numbered: 4
    :caption: About
    
-   Hydro/userman/about
+   Hydro/front-matter/about
    common/front-matter/ack
    common/front-matter/license
-
-
+   Hydro/front-matter/glossary
+   Hydro/front-matter/abbreviations
 
 .. toctree::
    :maxdepth: 1
@@ -31,6 +31,7 @@ This document covers the features and capabilities of the ``version 1.0`` of the
 
    Hydro/userman/install
    Hydro/userman/userguide/uguide
+   Hydro/userman/resguide/resguide
    Hydro/userman/errors
    Hydro/userman/examples/examples
    Hydro/userman/bestpractices
@@ -48,16 +49,6 @@ This document covers the features and capabilities of the ``version 1.0`` of the
    Hydro/techman/cfdsolver/cfdsolver
    Hydro/techman/swcfdcoupling/swcfdcoupling
    Hydro/techman/UQ/uqengine
-
-.. toctree::
-   :maxdepth: 1
-   :numbered: 2
-   :caption: Researcher manual
-
-   Hydro/resman/swsolvers
-   Hydro/resman/swcfdinter
-   Hydro/resman/cfdsolvers
-   Hydro/resman/flumetwin
 
 .. toctree::
    :maxdepth: 1
