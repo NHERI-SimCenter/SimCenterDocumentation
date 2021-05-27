@@ -18,13 +18,51 @@ with lumped masses.
 Each of the 1.84 M building models is analyzed for 25 pairs
 of 2D ground motions, where the peak story drift ratios and 
 peak floor accelerations are recorded for subsequent damage
-and loss analyses. The approximations and uncertainties in the
+and loss analyses. :numref:`fig-acc` shows one example pair of 
+2D ground motion acceleration histories. It is used for analyzing 
+a 2-story wood frame multi-unit residential building in Berkeley 
+(initially build in 1972 and tagged as a Moderate-Code design). 
+:numref:`fig-srd` shows the resulting story drift ratio and 
+peak floor acceleration demands under the example ground motion 
+pair. The vibration in Y direction (North-South) is intenser 
+(peak story drift ratio is around 1.9\% in the first story, and 
+peak floor acceleration is around 4 g in the second story.
+
+.. _fig-acc:
+
+.. figure:: figure/acc.png
+   :align: center
+   :figclass: align-center
+   :figwidth: 900
+
+   Example ground motion acceleration histories of simulated SW4 seismograms.
+
+.. _fig-srd:
+
+.. figure:: figure/srd.png
+   :align: center
+   :figclass: align-center
+   :figwidth: 1200
+
+   Structural responses of the wood frame under the example ground motion pair.
+
+The approximations and uncertainties in the
 structural model and behavior are considered by treating the
 initial stiffness and the damping ratio as random variables with
 a 0.1 coefficient of variation. These uncertainties are propagated
 through the analysis using different realizations of the stiffness
 and damping parameters for each of the 25 non-linear dynamic
-analyses for each building.
+analyses for each building. :numref:`fig-srd` shows the distributions 
+of the simulated structural responses of the example wood frame.
+
+.. _fig-edp_dist:
+
+.. figure:: figure/edp_dist.png
+   :align: center
+   :figclass: align-center
+   :figwidth: 700
+
+   Simulated structural response distribution of the wood frame with modeling uncertainty under the 25 ground motion pairs.
 
 
 .. [OpenSees20]
