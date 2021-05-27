@@ -12,7 +12,7 @@ HydroUQ is an open-source research application available at `HydroUQ Github page
 * Determine velocity and flow conditions around buildings and communities
 * Obtain building response through coupling with OpenSees
 
-.. figure:: images/Hydro_UQ_01.png
+.. figure:: figures/Hydro_UQ_01.png
     :width: 400px
     :align: center
     :alt: alternate text
