@@ -7,23 +7,60 @@ Example Outputs
 Damage State
 ==============
 
+This section summarizes the resulting expected damage states of the building 
+assets from the Hayward Earthquake. The expected damage state is computed as 
+the weighted average over the 20,000 PELICUN realizations each of which has a predicted 
+damage state metric, i.e., 0 (None), 1 (Slight), 2 (Moderate) , 3 (Extensive), 
+and 4 (Complete). :numref:`fig-s-ds` shows expected structural damages which have a 
+wide spectrum from nearly none damaged (in the South Bay regions) to Moderate/Extensive 
+damage (in the East Bay region). Recalling the example 2-story wood frame residential 
+building in :ref:`lbl-testbed_SF_response_simulation`, it has an expected damge state of 
+about 1.6 with a breakdown statics: 2.3\% in None (DS0), 40.6\% in Slight (DS1), 54.4\% in 
+Moderate (DS3), and 2.7\% in Extensive (DS4). And the building is very unlikely to collapse. 
+Referring to :ref:`lbl-testbed_SF_damage_and_loss`, this building is likely to experience plaster or gypsum-board 
+cracks at corners of door and window openings; small diagonal cracks across shear wall 
+panels; or/and cracks in brick chimneys or toppling of tall masonry chimneys.
+
 .. _fig-s-ds:
 
 .. figure:: figure/ExpectedDSStruct.png
    :align: center
    :figclass: align-center
-   :width: 1000
+   :width: 800
 
    Expected structural damage states from San Francisco testbed.
+
+:numref:`fig-ns-ds` shows expected non-structural damages which tend to be 
+server if compared to the structural damage. For the building assets in the 
+South Bay regions, Slight to Moderate non-structural damages are likely. Buildings 
+located near the Hayward fault are likely to experience Moderate to Extensive 
+non-structural damages. The example wood frame building is expected to have a 
+Moderate damage state (DS = 2.0 with a probability of 64\%). Detailed breakdown 
+statistics are plotted in :numref:`fig-ds`. THe building is likely to experience 
+the following potential damages: (1) cracks requiring repair and
+repainting; some partitions may require replacement of gypsum board or other finishes, 
+(2) falling of tiles, (3) connections of exterior wall panels to structural frame 
+are damaged requiring further inspection and repairs, and (4) piping leaks occur at a few locations, 
+elevator machinery and rails may require realignment.
+
 
 .. _fig-ns-ds:
 
 .. figure:: figure/ExpectedDSNonStruct.png
    :align: center
    :figclass: align-center
-   :width: 1000
+   :width: 800
 
    Expected non-structural damage states from San Francisco testbed.
+
+.. _fig-ds:
+
+.. figure:: figure/ds.png
+   :align: center
+   :figclass: align-center
+   :width: 700
+
+   Structural and non-structural damage states of the example wood frame.
 
 
 Expected Loss Ratio
