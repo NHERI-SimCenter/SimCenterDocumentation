@@ -9,8 +9,7 @@ respectively, within which the community can explore different scenarios and dev
 new capabilities. The following list itemizes some areas where contribution from the 
 community is especially welcome: 
 
-1. A number of approximations and assumptions were made in the generation of the building inventory 
-   (see :ref:`lbl-testbed_SF_asset_description`). There is considerable opportunity to expand, enrich and improve upon 
+1. A number of approximations and assumptions were made in the generation of the building inventory. There is considerable opportunity to expand, enrich and improve upon 
    methodologies for automated inventory generation, particularly to generate other attributes necessary 
    as the workflow advances toward component level damage quantification.
    
@@ -23,7 +22,7 @@ community is especially welcome:
    expansion of the workflow to reliable and efficient methods that support multi-fidelity analysis with both 
    detailed finite element tall building models and MDOF models.
 
-4. Currently the workflow calculates damage and monetary loss; coupling the workflow with other 
+3. Currently the workflow calculates damage and monetary loss; coupling the workflow with other 
    social, societal or economic models, will provide opportunities to more robustly explore the 
    impacts of hazard events, mitigation investments and development decisions on community resilience. 
    The creation of techniques to automatically scrape and fuse data from the social, human and behavioral 
