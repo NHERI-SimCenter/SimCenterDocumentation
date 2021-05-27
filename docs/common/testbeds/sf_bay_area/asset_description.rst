@@ -1,4 +1,4 @@
-.. _lbl-testbed_AC_asset_description:
+.. _lbl-testbed_SF_asset_description:
 
 *****************
 Asset Description

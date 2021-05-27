@@ -38,7 +38,7 @@ based on the 25 ground motions at each site.
     :name: pgaX
     :align: center
     :figclass: align-center
-    :figwidth: 900
+    :figwidth: 800
 
     Peak ground acceleration (East-West direction) for the Mw 7.0 Hayward earthquake.
 
@@ -46,7 +46,7 @@ based on the 25 ground motions at each site.
     :name: pgaY
     :align: center
     :figclass: align-center
-    :figwidth: 900
+    :figwidth: 800
 
     Peak ground acceleration (North-South direction) for the Mw 7.0 Hayward earthquake.
 
