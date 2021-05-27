@@ -310,9 +310,8 @@ if app_name == 'Hydro':
 .. |full tool name| replace:: Water-borne Hazards Engineering with Uncertainty Quantification
 .. |test example| replace:: :ref:`(Under development)`
 .. |tool version| replace:: 1.0
-.. |appLink| replace:: **{app_name2} Download (Link coming soon)**
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0
-.. _Hydro Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/
+.. _Hydro Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
 .. |contact person| replace:: Ajay B Harish (ajaybh@berkeley.edu), Frank Mckenna (fmk@berkeley.edu), NHERI SimCenter, University of California Berkeley
 
