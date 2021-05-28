@@ -119,6 +119,7 @@ $(CSVDIR)/%.csv: $(JSONDIR)/%.json
 	python3 ./scripts/json2csv.py \
 		-Eqfem $(SIMCENTER_DEV)/quoFEM/Examples/qfem*/src/input.json \
 		-Eeeuq $(SIMCENTER_DEV)/EE-UQ/Examples/eeuq-*/src/input.json \
+		-Eweuq $(SIMCENTER_DEV)/WE-UQ/Examples/weuq-*/src/input.json \
 		-Epbdl $(SIMCENTER_DEV)/PBE/Examples/pbdl-*/src/input.json \
 		< '$<' > '$@'
 

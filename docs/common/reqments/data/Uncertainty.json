@@ -9,11 +9,6 @@
         "config_values": ["LHS"]
       },
       {
-        "target": "Ability to use Importance Sampling",
-        "fields": ["SP", "M", "Implemented"],
-        "config_values": ["Importance Sampling"]
-      },
-      {
         "target": "Ability to use Gaussian Process Regression",
         "fields": ["SP", "M", "Implemented"],
         "config_values": ["Gaussian Process Regression"]
@@ -52,6 +47,11 @@
         "target": "Ability to use Surrogate Based Reliability",
         "fields": ["SP", "M", "Implemented"],
         "apps": ["qfem", "eeuq"]
+      },
+      {
+        "target": "Ability to use Importance Sampling",
+        "fields": ["SP", "M", "Implemented"],
+        "config_values": ["Importance Sampling"]
       }
     ]
   },

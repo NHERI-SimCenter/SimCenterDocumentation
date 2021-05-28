@@ -656,9 +656,10 @@ elif app_name == 'requirements':
     master_doc = 'reqments'
     project = 'SimCenter Requirements Traceability Matrix'
     exclude_patterns = [
-                #'common/user_manual/*',
+                'common/user_manual/*',
                 'common/developer_manual/*',
-                'common/testbeds/',
+                'common/testbeds/*',
+                'common/Hydro/*',
                 'common/technical_manual/*',
                 'Thumbs.db',
                 '.DS_Store',

@@ -164,8 +164,8 @@ Common Research Application Requirements
 ----------------------------------------
 
 .. csv-table:: Requirements - CR
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "WE-UQ", "EE-UQ", "PBE", "R2D"
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10
   :file: _out/Common.csv
 
 .. include:: key.rst
@@ -205,10 +205,11 @@ BE Database
 DL Database
 -----------
 
-.. csv-table:: Requirements - DLD
+.. csv-filter:: Requirements - DLD
   :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10
-  :file: requirements_pelicun_db.csv
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10
+  :file: _out/Damage.csv
+  :include: {0: 'DLD.*'}
 
 .. include:: key.rst
 
