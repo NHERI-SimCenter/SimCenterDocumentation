@@ -97,12 +97,6 @@ Surge/Tsunami Loading Requirements
 UQ Requirements
 ---------------
 
-..
-        .. csv-table:: Requirements - Uncertainty Quantification Methods and Variables
-          :header: "#", "Description", "Source", "Priority", "Status"
-          :widths: 10, 50, 10, 10, 10
-          :file: UQMethods.csv
-
 .. csv-filter:: Requirements - Uncertainty Quantification Methods and Variables
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10
@@ -125,13 +119,6 @@ RV Requirements
 
 Modeling Requirements
 ---------------------
-
-..
-        .. csv-table:: Requirements - MOD
-          :header: "#", "Description", "Source", "Priority", "Status"
-          :widths: 10, 50, 10, 10, 10
-          :file: Modeling.csv
-
 
 .. csv-filter:: Requirements - MOD
   :header: "#", "Description", "Source", "Priority", "Status"
