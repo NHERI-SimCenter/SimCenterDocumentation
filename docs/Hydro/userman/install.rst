@@ -8,7 +8,7 @@ All SimCenter applications can be downloaded from the `SimCenter Research Tools 
 
 Download HydroUQ
 ===================
-To download the |app|, navigate to the |appLink| page which should resemble |figDownload|. The download page contains a list of downloadable files and directories.
+To download the |app|, navigate to the |appLink| page which should resemble :numref:`figDownload-Hydro`. The download page contains a list of downloadable files and directories.
 
 .. _figDownload-Hydro:
 
