@@ -1,5 +1,3 @@
-#!/home/claudio/miniconda3/envs/simdoc/bin/python
-
 import os, sys, re, json
 from dataclasses import dataclass
 import jsonpath2
@@ -15,10 +13,8 @@ EXAMPLE_DIRS = {
 }
 
 def print_help():
-    """
-    ./csv2json -Eqfem ~/quoFEM/Examples/*/src/input.json
-    """
     print(f"usage: {EXENAME} [OPTIONS]... [FILES...] < INPUT")
+    print("Example:\n  ./json2csv -Eqfem ~/quoFEM/Examples/*/src/input.json < Requirements.json > Requirements.csv")
 
 
 def apply_filter(specs:dict, *files)->dict:
@@ -123,7 +119,6 @@ def print_reqs(items:list,parent,level:int,examples:dict,options=None)->dict:
                     ", ".join(['"-"']*len(examples)))
             print_reqs(item["items"],key,level+1,examples)
         else:
-            print(key,item,file=sys.stderr)
             fields = [f'"{f}"' if f else '"-"' for f in item["fields"]]
             refs = list(find_implementation(key,item, examples).values())
             print(f'"{key}", "{item["target"]}",' + ", ".join(fields + refs))
@@ -156,9 +151,7 @@ if __name__ == "__main__":
 
     reqs = json.load(sys.stdin)
     specs = {
-        k: proc_reqs(
-            v["items"],
-            k,
+        k: proc_reqs(v["items"],k,
             conf_path=v["config_paths"] if "config_paths" in v else None)
         for k,v in reqs.items()
     }
@@ -168,7 +161,10 @@ if __name__ == "__main__":
     }
     for k,item in reqs.items():
         if "apps" in item:
-            examples = {app: v if app in item["apps"] else False for app,v in filtered_examples.items()}
+            examples = {
+                app: v if app in item["apps"] else False
+                    for app,v in filtered_examples.items()
+            }
         else:
             examples = filtered_examples
         print_reqs(item["items"],k,0,examples)

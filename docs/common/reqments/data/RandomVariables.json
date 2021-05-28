@@ -7,32 +7,32 @@
         "items": [
           {
             "target": "Normal",
-            "fields": ["SP", "M", "1"],
+            "fields": ["SP", "M", "Implemented"],
             "config": "$.randomVariables[*][?(@.distribution=\"Normal\")]"
           },
           {
             "target": "Lognormal",
-            "fields": ["SP", "M", "1"],
+            "fields": ["SP", "M", "Implemented"],
             "config": "$.randomVariables[*][?(@.distribution=\"Lognormal\")]"
           },
           {
             "target": "Uniform",
-            "fields": ["SP", "M", "1"],
+            "fields": ["SP", "M", "Implemented"],
             "config": "$.randomVariables[*][?(@.distribution=\"Uniform\")]"
           },
           {
             "target": "Beta",
-            "fields": ["SP", "M", "1"],
+            "fields": ["SP", "M", "Implemented"],
             "config": "$.randomVariables[*][?(@.distribution=\"Beta\")]"
           },
           {
             "target": "Weibull",
-            "fields": ["SP", "M", "1"],
+            "fields": ["SP", "M", "Implemented"],
             "config": "$.randomVariables[*][?(@.distribution=\"Weibull\")]"
           },
           {
             "target": "Gumbel",
-            "fields": ["SP", "M", "1"],
+            "fields": ["SP", "M", "Implemented"],
             "config": "$.randomVariables[*][?(@.distribution=\"Gumbel\")]"
           }
         ]

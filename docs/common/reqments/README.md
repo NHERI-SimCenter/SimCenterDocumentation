@@ -37,4 +37,7 @@ Columns:
 ## Questions
 
 - "Ability to use Importance Sampling": listed under "reliability" for quoFEM and "Forward prop" for EE-UQ
+- BM.1 - is this MDOF?
+
+
 

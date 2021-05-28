@@ -116,7 +116,7 @@ update:
 	pip install -U -r requirements.txt
 
 $(CSVDIR)/%.csv: $(JSONDIR)/%.json
-	./scripts/json2csv.py \
+	python3 ./scripts/json2csv.py \
 		-Eqfem $(SIMCENTER_DEV)/quoFEM/Examples/qfem*/src/input.json \
 		-Eeeuq $(SIMCENTER_DEV)/EE-UQ/Examples/eeuq-*/src/input.json \
 		-Epbdl $(SIMCENTER_DEV)/PBE/Examples/pbdl-*/src/input.json \
