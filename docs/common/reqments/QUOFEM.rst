@@ -28,31 +28,27 @@
 quoFEM Requirements
 -------------------
 
-.. csv-table:: Requirements - quoFEM
+.. csv-filter:: Requirements - quoFEM
   :header: "#", "Description", "Source", "Priority", "Status", "Examples"
-  :widths: 10, 60, 10, 10, 10, 10	   
+  :widths: 10, 60, 10, 10, 10, 10
+  :included_cols: 0,1,2,3,4,5
   :file: quoFEM.csv
 
-   
+
 UQ Requirements
 ---------------
 
-.. csv-table:: Requirements - Uncertainty Quantification Methods
+.. csv-filter:: Requirements - Uncertainty Quantification Methods
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 60, 10, 10, 10, 10, 10, 10
   :file: _out/Uncertainty.csv
 
-..
-        .. csv-table:: Requirements - Uncertainty Quantification Methods
-          :header: "#", "Description", "Source", "Priority", "Status"
-          :widths: 10, 60, 10, 10, 10, 10	   
-          :file: UQMethods.csv
 
 .. csv-table:: Requirements - Random Variables
   :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 60, 10, 10, 10, 10	   
+  :widths: 10, 60, 10, 10, 10, 10
   :file: RV.csv
 
-.. include:: key.rst	 
+.. include:: key.rst
 
 
