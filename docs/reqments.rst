@@ -56,8 +56,8 @@ Applications to allow researchers to improve on methods related to determining o
 
    common/reqments/QUOFEM
    common/reqments/WE-UQ
-   common/reqments/EE-UQ
-   common/reqments/HydroUQ
+   common/reqments/EE-UQ.rst
+   common/reqments/HydroUQ.rst
    common/reqments/PBER
 
 
