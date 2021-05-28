@@ -663,7 +663,7 @@ elif app_name == 'requirements':
                 'Thumbs.db',
                 '.DS_Store',
                 'index.rst',
-                ] + [f'**/{app}*' for app in APPS if app != 'requirements']
+                ] #+ [f'**/{app}*' for app in APPS if app != 'requirements']
     author = 'NHERI SimCenter'
     tags.add('requirements')
     pdf_break_level = 2
