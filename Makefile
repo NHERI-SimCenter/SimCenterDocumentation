@@ -12,6 +12,9 @@ PUBLDIR = $(shell v="$(SIMDOC_APP)"; echo "../$${v%Tool}-Documentation/docs/")
 # Directories to remove when cleaning
 CLEANDIR      = _sources _static _images common
 
+CSVDIR  = docs/common/reqments/_out/
+JSONDIR = docs/common/reqments/data/
+
 export SIMCENTER_DEV = $(shell pwd | xargs dirname)
 #-Examples-------------------------------------------------
 EXPDIR = ./docs/common/user_manual/examples/desktop
@@ -88,6 +91,10 @@ web:
 
 
 html:
+	for i in $(JSONDIR)/*.json; do \
+	    file_name="$${i##*/}"; \
+	    make $(CSVDIR)/$${file_name%.*}.csv; \
+	done
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(call BUILDDIR,$(SIMDOC_APP))/html" $(O)
 
 
@@ -106,5 +113,13 @@ latexpdf:
 	make pdf
 
 update:
-	pip install -U -r requirements.txt 
+	pip install -U -r requirements.txt
+
+$(CSVDIR)/%.csv: $(JSONDIR)/%.json
+	./scripts/json2csv.py \
+		-Eqfem $(SIMCENTER_DEV)/quoFEM/Examples/qfem*/src/input.json \
+		-Eeeuq $(SIMCENTER_DEV)/EE-UQ/Examples/eeuq-*/src/input.json \
+		-Epbdl $(SIMCENTER_DEV)/PBE/Examples/pbdl-*/src/input.json \
+		< '$<' > '$@'
+
 

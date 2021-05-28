@@ -19,8 +19,10 @@ Loading Requirements
           :file: EarthquakeLoading.csv
 
 .. csv-filter:: Requirements - Earthquake Loading
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :file: _json/out/Loading.csv
+  :file: _out/Loading.csv
+  :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
+  :widths: 10, 50, 10, 10, 10, 10
+  :included_cols: 0,1,2,3,4,6
   :include: {0: 'EL.*'}
   :exclude: {6: 'NA'}
 
@@ -31,8 +33,10 @@ UQ Requirements
 ---------------
 
 .. csv-filter:: Requirements - Uncertainty Quantification Methods and Variables
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :file: _json/out/Uncertainty.csv
+  :file: _out/Uncertainty.csv
+  :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
+  :widths: 10, 50, 10, 10, 10, 10
+  :included_cols: 0,1,2,3,4,6
   :exclude: {6: 'NA'}
 
 .. include:: key.rst
@@ -46,8 +50,10 @@ Modeling Requirements
           :file: Modeling.csv
 
 .. csv-filter:: Requirements - Modeling
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :file: _json/out/Modeling.csv
+  :file: _out/Modeling.csv
+  :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
+  :widths: 10, 50, 10, 10, 10, 10
+  :included_cols: 0,1,2,3,4,6
   :exclude: {6: 'NA'}
 
 .. include:: key.rst
@@ -60,9 +66,12 @@ Analysis Requirements
           :header: "#", "Description", "Source", "Priority", "Status"
           :file: Analysis.csv
 
+
 .. csv-filter:: Requirements - Analysis
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :file: _json/out/Analysis.csv
+  :file: _out/Analysis.csv
+  :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
+  :widths: 10, 50, 10, 10, 10, 10
+  :included_cols: 0,1,2,3,4,6
   :exclude: {6: 'NA'}
 
 .. include:: key.rst
@@ -77,8 +86,10 @@ RV Requirements
           :file: RV.csv
 
 .. csv-filter:: Requirements - Random Variables
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :file: _json/out/RandomVariables.csv
+  :file: _out/RandomVariables.csv
+  :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
+  :widths: 10, 50, 10, 10, 10, 10
+  :included_cols: 0,1,2,3,4,6
   :exclude: {6: 'NA'}
 
 .. include:: key.rst
@@ -87,7 +98,10 @@ Common Research Application Requirements
 ----------------------------------------
 
 .. csv-filter:: Requirements - CR
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :file: _json/out/Common.csv
+  :file: _out/Common.csv
+  :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
+  :widths: 10, 50, 10, 10, 10, 10
+  :included_cols: 0,1,2,3,4,6
 
 .. include:: key.rst
+

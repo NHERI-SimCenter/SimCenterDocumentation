@@ -40,7 +40,7 @@ UQ Requirements
 .. csv-table:: Requirements - Uncertainty Quantification Methods
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 60, 10, 10, 10, 10, 10, 10
-  :file: _json/out/Uncertainty.csv
+  :file: _out/Uncertainty.csv
 
 ..
         .. csv-table:: Requirements - Uncertainty Quantification Methods
