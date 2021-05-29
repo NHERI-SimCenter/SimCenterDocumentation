@@ -46,7 +46,7 @@ The ribbon on the left side provides the user with a selection of buttons to cho
     RV
     RES
 
-5. Event parameter pPanel: 
+5. Event parameter panel: 
 
 The input panel is the large central area of the UI where the user provides input for the application chosen and where they can view the results. For example, if the user had selected **RV** in the input panel selection, it is in this panel that the user would provide details on the distributions associated with each random variable. In the following sections each of the panels that is presented to the user when the buttons in the input panel selection are reviewed:
 

@@ -43,7 +43,7 @@ As shown in fig userEDP, this panel allows the user to determine their own outpu
 	User Defined EDP panel.
 
 
-#. Additional Input: These are additional commands that are invoked by the analysis application
+1. Additional Input: These are additional commands that are invoked by the analysis application
    before the transient analysis is performed. For example, for OpenSees this would be a script
    containing a series of recorder commands. 
 
@@ -54,7 +54,7 @@ As shown in fig userEDP, this panel allows the user to determine their own outpu
      recorder EnvelopeNode -file node.out -node 1 2 3 4 -dof 1 disp
      recorder EnvelopeElement -file ele.out -ele 1 2 3 forces
 
-#. Postprocess Script: This is a python or tcl script that will be invoked
+2. Postprocess Script: This is a python or tcl script that will be invoked
   after the finite element application has run. It must be provided by
   the user. It's purpose is to process the output files and create a
   single file, results.out. This file must contain a single line with
@@ -100,7 +100,7 @@ A Tcl file might look like the following:
 
    The name of the output file must be **results.out**.
        
-#.  Response Parameters. This is an area in which the user
+3.  Response Parameters. This is an area in which the user
   associates a variable name with the column of the results output
   file. If the process script has an array of strings named named
   EDP's the script, the Response Parameters will be initially set with
