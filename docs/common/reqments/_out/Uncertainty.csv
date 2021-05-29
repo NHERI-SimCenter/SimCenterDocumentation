@@ -32,9 +32,9 @@
 "UH.2", "Ability to build Reduced Order Model","SP", "M", "-", "-", NA, NA, NA
 "UO.1", "Ability to use User-Specified External UQ Engine","SP", "M", "Implemented", "-", "-", "-", "-"
 "UO.2", "Ability to use Own External FEM Application","UF", "M", "Implemented", "-", "-", "-", "-"
-"UM.1", "Ability to use various Reliability Methods", "-", "-", "-", "-", "-", "-", "-"
+**UM.1**, **Ability to use various Reliability Methods**, **-**, **-**, **-**, **-**, **-**, **-**, **-**
 "UM.1.1", "Ability to use First Order Reliability method","UF", "M", "2.1", ":qfem-0003:`/`", NA, NA, NA
 "UM.1.2", "Ability to use Surrogate Based Reliability","UF", "M", "-", "-", NA, NA, NA
 "UM.1.3", "Ability to use Own External Application to generate Results","UF", "M", "2.2", "-", NA, NA, NA
-"UM.2", "Ability to user various Sensitivity Methods", "-", "-", "-", "-", "-", "-", "-"
+**UM.2**, **Ability to user various Sensitivity Methods**, **-**, **-**, **-**, **-**, **-**, **-**, **-**
 "UM.2.1", "Ability to obtain Global Sensitivity Sobol's indices","UF", "M", "-", "-", NA, NA, NA

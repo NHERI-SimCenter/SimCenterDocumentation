@@ -122,7 +122,7 @@ Modeling Requirements
 
 .. csv-filter:: Requirements - MOD
   :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10, 10, 10, 10
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10
   :file: _out/Modeling.csv
 
 .. include:: key.rst
@@ -132,7 +132,7 @@ Analysis Requirements
 
 .. csv-table:: Requirements - ANA
   :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10, 10, 10, 10
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10
   :file: _out/Analysis.csv
 
 .. include:: key.rst
@@ -165,7 +165,7 @@ Common Research Application Requirements
 
 .. csv-table:: Requirements - CR
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "WE-UQ", "EE-UQ", "PBE", "R2D"
-  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10 , 10, 10
   :file: _out/Common.csv
 
 .. include:: key.rst
@@ -207,7 +207,7 @@ DL Database
 
 .. csv-filter:: Requirements - DLD
   :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10, 10, 10, 10
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10
   :file: _out/Damage.csv
   :include: {0: 'DLD.*'}
 

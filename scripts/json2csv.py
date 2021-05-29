@@ -2,8 +2,7 @@ import os, sys, re, json
 from dataclasses import dataclass
 import jsonpath2
 
-
-EXENAME = "csv2json.py"
+EXENAME = "json2csv.py"
 
 EXAMPLE_DIRS = {
     "qfem": "qfem-[0-9]{4}",
@@ -13,8 +12,14 @@ EXAMPLE_DIRS = {
 }
 
 def print_help():
-    print(f"usage: {EXENAME} [OPTIONS]... [FILES...] < INPUT")
-    print("Example:\n  ./json2csv -Eqfem ~/quoFEM/Examples/*/src/input.json < Requirements.json > Requirements.csv")
+    print(f"""
+usage: {EXENAME} [OPTIONS]... < INPUT
+
+Example:
+\t./{EXENAME} \\
+    -Eqfem ~/quoFEM/Examples/*/src/input.json
+    < Requirements.json > Requirements.csv
+""")
 
 
 def apply_filter(specs:dict, *files)->dict:
@@ -45,14 +50,12 @@ def apply_filter(specs:dict, *files)->dict:
                                 if cval in matches:
                                     results[file].append(key)
                                     break;
-        except:
-            pass
+        except Exception as e:
+            print(e,file=sys.stderr)
     return results
 
 
-def proc_reqs(items:list,parent,level:int=0,conf_path:str=None)->dict:
-    """
-    """
+def proc_reqs(items:list, parent, level:int=0, conf_path:str=None)->dict:
     output = {}
     for j,item in enumerate(items):
         if "config_paths" in item:
@@ -69,7 +72,7 @@ def proc_reqs(items:list,parent,level:int=0,conf_path:str=None)->dict:
             output.update({key: {"config": item["config"]}})
     return output
 
-def find_first(key, dct):
+def find_first(key:str, dct:dict):
     for k,v in dct.items():
         if key in v:
             return k
@@ -105,8 +108,6 @@ def find_implementation(key:str,item:dict, examples:dict)->list:
 
 
 def print_reqs(items:list,parent,level:int,examples:dict,options=None)->dict:
-    """
-    """
     for j,item in enumerate(items):
         if not item["target"]:
             continue
@@ -115,18 +116,22 @@ def print_reqs(items:list,parent,level:int,examples:dict,options=None)->dict:
 
         key = f"{parent}.{j+1}"
         if "items" in item and item["items"]:
-            print(f'"{key}", "{item["target"]}", "-", "-", "-", ' + \
-                    ", ".join(['"-"']*len(examples)))
-            print_reqs(item["items"],key,level+1,examples)
+            field_template = "**{}**"
+            print(", ".join(
+                map(field_template.format,
+                    [key, item["target"], "-", "-", "-"] + ["-"]*len(examples)
+            )))
+            print_reqs(item["items"],key,level+1,examples,options)
         else:
             fields = [f'"{f}"' if f else '"-"' for f in item["fields"]]
             refs = list(find_implementation(key,item, examples).values())
             print(f'"{key}", "{item["target"]}",' + ", ".join(fields + refs))
 
 
+
 @dataclass
 class Options:
-    fmt_bold:int = 0
+    field_template:str = '"{}"'
 
 if __name__ == "__main__":
     argnum = 1
@@ -167,8 +172,6 @@ if __name__ == "__main__":
             }
         else:
             examples = filtered_examples
-        print_reqs(item["items"],k,0,examples)
-
-
+        print_reqs(item["items"],k,0,examples,options)
 
 

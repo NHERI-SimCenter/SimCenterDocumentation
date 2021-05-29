@@ -909,5 +909,481 @@
       }
     ],
     "target": "Ability to perform regional simulation allowing communities to evaluate resilience and perform what-if types of analysis for natural hazard events"
+  },
+  "P": {
+    "target": "Existing Assessment Methods",
+    "items": [
+      {
+        "target": "Existing Assessment Methods",
+        "items": [
+          {
+            "target": "Implement the high-resolution loss assessment methodologies",
+            "items": [
+              {
+                "target": "Implement the scenario-based assessment from FEMA-P58",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement the time-based assessment from FEMA-P58",
+                "fields": ["SP", "D", ""],
+                "items": []
+              },
+              {
+                "target": "Implement high-resolution assessment of buildings under wind hazards",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement high-resolution assessment of buildings under water hazards",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement high-resolution assessment of transportation networks",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement high-resolution assessment of buried pipelines",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Implement the efficient loss assessment methodologies from HAZUS",
+            "items": [
+              {
+                "target": "Implement the assessment of buildings under earthquake hazard from HAZUS",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement the assessment of buildings under hurricane wind hazard from HAZUS",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement the assessment of buildings under storm surge hazard from HAZUS",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement the assessment of buried pipelines under earthquake hazard from HAZUS",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement the assessment of transportation networks under earthquake hazard from HAZUS",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement the assessment of power networks under earthquake hazard from HAZUS",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "target": "Control",
+        "items": [
+          {
+            "target": "Analysis & Data",
+            "items": [
+              {
+                "target": "Allow users to set the number of realizations",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to customize fragility and consequence function parameters",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to specify dependencies between logically similar parts of the stochastic models",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Response Model",
+            "items": [
+              {
+                "target": "Allow users to specify the added uncertainty to EDPs (increase in log-standard dev.)",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to specify the EDP ranges that correspond to reliable simulation results",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to specify the type of distribution they want to fit to the empirical EDP data",
+                "fields": ["UF", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to choose if they want to fit a distribution only to the non-collapsed EDPs",
+                "fields": ["UF", "M", "Implemented"],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Performance Model",
+            "items": [
+              {
+                "target": "Allow users to prescribe a different number of inhabitants on each floor",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to customize the temporal distribution of inhabitants",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to prescribe different component quantities for each floor in each direction",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to specify the number of component groups and their quantities in each performance group",
+                "fields": ["UF", "D", "Implemented"],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Damage Model",
+            "items": [
+              {
+                "target": "Allow users to specify the residual drift limits that determine irrepairability",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to specify the yield drift value that is used to estimate residual drifts from peak drifts",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to specify the EDP limits that are used to determine collapse probability",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to specify arbitrary collapse modes and their likelihood",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to prescribe the collapse probability of the structure",
+                "fields": ["UF", "M", "Implemented"],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Loss Model",
+            "items": [
+              {
+                "target": "Allow users to decide which DVs to calculate",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Allow users to specify the likelihood of various injuries in each collapse mode",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "target": "Hazard Model",
+        "items": [
+          {
+            "target": "Hazard Occurrence Rate",
+            "items": [
+              {
+                "target": "Enable estimation of the likelihood of earthquake events",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Enable estimation of the likelihood of wind events",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Enable estimation of the likelihood of storm surge events",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Enable estimation of the likelihood of tsunami events",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "target": "Response Model",
+        "items": [
+          {
+            "target": "EDP (re-)sampling",
+            "items": [
+              {
+                "target": "Enable coupled assessment by using raw EDP values as-is",
+                "fields": ["UF", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Enable non-Gaussian EDP distributions",
+                "fields": ["UF", "D", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "EDP Identification",
+            "items": [
+              {
+                "target": "Implement automatic identification of required EDP types based on the performance model",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "target": "Performance Model",
+        "items": [
+          {
+            "target": "Auto-population of performance models",
+            "items": [
+              {
+                "target": "Implement framework to enable user-defined auto-population scripts",
+                "fields": ["UF", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Prepare script to perform auto-population based on normative quantities in FEMA P58",
+                "fields": ["UF", "D", ""],
+                "items": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "target": "Damage Model",
+        "items": [
+          {
+            "target": "Collapse estimation",
+            "items": [
+              {
+                "target": "Estimate collapse probability of the structure using EDP limits and the joint distribution of EDPs",
+                "fields": ["SP", "D", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Estimate the collapse probability of the structure using empirical (raw) EDP data",
+                "fields": ["UF", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Enable user-defined collapse probability",
+                "fields": ["UF", "M", "Implemented"],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Building Damage",
+            "items": [
+              {
+                "target": "Implement earthquake fragility functions for building components from FEMA P58",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement earthquake fragility functions for buildings from HAZUS",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement wind fragility functions for buildings from HAZUS",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement inundation fragility functions for buildings from HAZUS",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement high-resolution wind fragility functions for building components",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement high-resolution inundation fragility functions for building components",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Lifeline Damage",
+            "items": [
+              {
+                "target": "Implement earthquake fragility functions for buried pipelines from HAZUS",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement earthquake fragility functions for bridges from HAZUS",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement earthquake fragility functions for power networks from HAZUS",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement high-resolution fragility functions for buried pipelines",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement high-resolution fragility functions for transportation networks",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Cascading Damages",
+            "items": [
+              {
+                "target": "Implement fault tree-based cascading damage model",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "target": "Loss Model",
+        "items": [
+          {
+            "target": "Consequence functions for buildings",
+            "items": [
+              {
+                "target": "Implement functions for repair cost and time as per FEMA P58",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement functions for red tag triggering as per FEMA P58",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement functions for injuries and fatalities as per FEMA P58",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement functions for repair cost and time as per HAZUS earthquake",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement functions for debris as per HAZUS earthquake",
+                "fields": ["SP", "D", ""],
+                "items": []
+              },
+              {
+                "target": "Implement functions for business interruption as per HAZUS earthquake",
+                "fields": ["SP", "D", ""],
+                "items": []
+              },
+              {
+                "target": "Implement functions for repair cost and time as per HAZUS wind",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement functions for repair cost and time as per HAZUS inundation",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement functions for environmental impact estimation as per FEMA P58 2nd edition",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement functions for high-resolution repair cost and time assessment for wind hazards",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement functions for high-resolution repair cost and time assessment for water hazards",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          },
+          {
+            "target": "Consequence functions for other assets",
+            "items": [
+              {
+                "target": "Implement functions for repair cost and time for buried pipelines as per HAZUS earthquake",
+                "fields": ["SP", "M", "Implemented"],
+                "items": []
+              },
+              {
+                "target": "Implement functions for repair cost and time for bridges as per HAZUS earthquake",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement functions for repair cost and time for power networks as per HAZUS earthquake",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement high-resolution functions for repair cost and time for transportation networks",
+                "fields": ["SP", "M", ""],
+                "items": []
+              },
+              {
+                "target": "Implement high-resolution functions for repair cost and time for buried pipelines",
+                "fields": ["SP", "M", ""],
+                "items": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
   }
 }
+
