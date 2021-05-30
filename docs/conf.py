@@ -138,7 +138,7 @@ toc_filter_exclusions = [
 ]
 
 
-extensions = []
+extensions = ['sphinx_panels']
 
 # -- Project information -----------------------------------------------------
 
