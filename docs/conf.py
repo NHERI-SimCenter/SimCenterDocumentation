@@ -53,13 +53,10 @@ print(f"app_name =  {app_name} ({app_abrev}, {app_abrev2})")
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-
 sys.path.append(os.path.abspath("./sphinx_ext/"))
 sys.path.append(os.path.abspath("./modules/"))
 # Add files for the example page template to path
 sys.path.append(os.path.abspath("./modules/tmpl_0007/"))
-# Load the `sync_files` routine from ./modules/sync_files.py
-from sync_files import sync_files
 
 if app_name == "pelicun":
     sys.path.insert(0, os.path.abspath("."))
@@ -69,6 +66,10 @@ if app_name == "pelicun":
 external_links = {
     "github": f"https://github.com/NHERI-SimCenter/{app_name}",
 }
+
+# List of patterns, relative to source directory, that match files and
+# directories to ignore when looking for source files.
+# This pattern also affects html_static_path and html_extra_path.
 
 # TODO: try to consolodate this to have no more than two exclude patterns per app
 exclude_patterns = (
@@ -146,7 +147,6 @@ extensions = []
 # -- Project information -----------------------------------------------------
 
 # shared among all SimCenter docs
-
 numfig = True
 numfig_secnum_depth = 4
 
@@ -700,16 +700,13 @@ elif app_name == "requirements":
 """
 
 
-# -- General configuration ---------------------------------------------------
+# -- General configuration ----------------------------------------------
 
 rst_prolog += f"""
 .. |developers| replace:: {", ".join(f"**{auth}** " for auth in author.split(", "))}
 """
 
-# Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-# ones.
-
+# Add any Sphinx extension modules 
 extensions = extensions + [
     "sphinx-jsonschema",
     "sphinxcontrib.bibtex",
@@ -722,16 +719,14 @@ extensions = extensions + [
     "crate.sphinx.csv",
 ]
 
+bibtex_bibfiles = ["common/references.bib"]
+
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
 
-# List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
-# This pattern also affects html_static_path and html_extra_path.
 exclude_patterns += ["_build/*", "Thumbs.db", ".DS_Store", "**/_archive/*"]
 
-# -- Options for HTML output -------------------------------------------------
-
+# -- Options for HTML output ---------------------------------------------
 
 html_theme = "sphinx_rtd_theme"
 
@@ -744,24 +739,25 @@ html_secnum_suffix = " "
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ["_static", "_static/css/"]
 
+# -- Options for LATEX output -------------------------------------------
+
 # latex_docclass = {
 #    r'manual': 'simcenterdocumentation',
 #    r'howto': 'simcenterdocumentation'
 # }
-
 latex_elements = {"extraclassoptions": "openany,oneside"}
 latex_documents = [
     (
         "index",
-        app_name + ".tex",  # tex output file
-        project,  # Document title
+        app_name + ".tex",                # tex output file
+        project,                          # Document title
         author.replace(", ", " \\and "),  # authors
-        "manual",  # latex theme
+        "manual",                         # latex theme
     )
 ]
 latex_logo = "common/figures/NSF_SimCenter_NO TEXT_SimCenter.png"
 
-# Example links
+#- Example links ----------------
 extlinks.update(
     {
         f"qfem-{i:04}": (f"{examples_url}/qfem-{i:04}/%s", f"qfem-{i:04}")
@@ -800,10 +796,13 @@ extlinks.update(
 )
 
 
-# -- sync files for examples --------------------
+# sync files for examples
 if sync_examples:
+    # Load the `sync_files` routine from ./modules/sync_files.py
+    from sync_files import sync_files
     sync_files(
         src_dir=os.path.abspath(f"../../{app_name}/Examples"),
         dst_dir="common/user_manual/examples/desktop",
         config=example_config,
     )
+
