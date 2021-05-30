@@ -9,6 +9,7 @@ EXAMPLE_DIRS = {
     "weuq": "weuq-[0-9]{4}",
     "eeuq": "eeuq-[0-9]{4}",
     "pbdl": "pbdl-[0-9]{4}",
+    "r2dt": "E[0-9].*",
 }
 
 def print_help():
@@ -51,7 +52,7 @@ def apply_filter(specs:dict, *files)->dict:
                                     results[file].append(key)
                                     break;
         except Exception as e:
-            print(e,file=sys.stderr)
+            print(file,e,file=sys.stderr)
     return results
 
 
@@ -100,7 +101,7 @@ def find_implementation(key:str,item:dict, examples:dict)->list:
         else:
             return {
                 k: f'"{create_link(v)}"'
-                  for k,v in item["implementation"].items()
+                    for k,v in item["implementation"].items()
             }
     else:
         return {app: create_link(find_first(key,v),app) if v else "NA"
@@ -116,7 +117,7 @@ def print_reqs(items:list,parent,level:int,examples:dict,options=None)->dict:
 
         key = f"{parent}.{j+1}"
         if "items" in item and item["items"]:
-            field_template = "**{}**"
+            field_template = '"**{}**"'
             print(", ".join(
                 map(field_template.format,
                     [key, item["target"], "-", "-", "-"] + ["-"]*len(examples)
