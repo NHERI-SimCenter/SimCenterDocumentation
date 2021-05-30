@@ -33,6 +33,7 @@ This document covers the features and capabilities of the |tool version| of the 
    Hydro/userman/install
    Hydro/userman/userguide/uguide
    Hydro/userman/resguide/resguide
+   Hydro/userman/helpvideo
    Hydro/userman/errors
    Hydro/userman/examples/examples
    Hydro/userman/bestpractices
