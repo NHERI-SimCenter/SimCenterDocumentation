@@ -3,7 +3,7 @@
 write-host "0" $args[0] "1" $args[1] "2" $args[2]
 
 if ($env:SPHINXBUILD -eq "") {
-	$env:SPHINXBUILD="sphinx-build"
+    $env:SPHINXBUILD="sphinx-build"
 }
 $SOURCEDIR="./docs"
 
@@ -19,7 +19,7 @@ $app_names["pbe"]  = "PBE"
 $app_names["hydro"]  = "Hydro"
 $app_names["qfem"] = "quoFEM"
 $app_names["pelicun"]  = "pelicun"
-$app_names["req"] = "requirements"
+$app_names["rtm"] = "requirements"
 
 $formats = @{"html" = ""}
 

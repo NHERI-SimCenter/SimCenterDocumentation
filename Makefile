@@ -121,6 +121,7 @@ $(CSVDIR)/%.csv: $(JSONDIR)/%.json
 		-Eeeuq $(SIMCENTER_DEV)/EE-UQ/Examples/eeuq-*/src/input.json \
 		-Eweuq $(SIMCENTER_DEV)/WE-UQ/Examples/weuq-*/src/input.json \
 		-Epbdl $(SIMCENTER_DEV)/PBE/Examples/pbdl-*/src/input.json \
+		-Er2dt $(SIMCENTER_DEV)/R2DTool/Examples/E*/input.json \
 		< '$<' > '$@'
 
 

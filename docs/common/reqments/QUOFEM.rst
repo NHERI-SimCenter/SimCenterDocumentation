@@ -39,14 +39,14 @@ UQ Requirements
 ---------------
 
 .. csv-filter:: Requirements - Uncertainty Quantification Methods
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 60, 10, 10, 10, 10, 10, 10
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2DTool"
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10
   :file: _out/Uncertainty.csv
 
 
-.. csv-table:: Requirements - Random Variables
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10
+.. csv-filter:: Requirements - Random Variables
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2DTool"
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10
   :file: _out/RandomVariables.csv
 
 .. include:: key.rst
