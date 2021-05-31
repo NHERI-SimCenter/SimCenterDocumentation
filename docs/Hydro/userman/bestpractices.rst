@@ -16,12 +16,18 @@ Froude number
 Meshing
 ==========
 
-#. Mesh checking is always important. ``Hydro-UQ`` performs a mesh check and the log is available for review after the simulation is complete. It is much recommended to review this.
+#. Mesh checking is always important. |app| performs a mesh check and the log is available for review after the simulation is complete. It is much recommended to review this.
 
 #. Mesh convergence study is critical to ensuring good and reliable results using CFD simulations. 
 
 Boundary conditions
 ======================
+
+#. The ``EVT`` requires one to provide six boundary conditions for the six standard patches ``Entry``, ``Exit``, ``Right``, ``Left``, ``Bottom`` and ``Top``
+
+#. If no boundary condition is specified for a particular patch, it is assumed to be ``type: empty`` by default. 
+
+#. Presently, |app| only allows specification of the velocity and pressure boundary conditions. If you would like to specify other parameters, please write to us at :ref:`lbl-featurereq`.
 
 SW-CFD domain sizes
 =======================
@@ -41,10 +47,10 @@ Turbulence modeling
 
 #. Estimate the y+ and the thickness of the first cell layer. The ideal distance of the first node from the wall :math:`\Delta y` can be estimated to be
 
-    .. math::
-        \Delta y = L \cdot y^{+} \cdot \sqrt{74} \cdot {Re}_{L}^{-13/14}
+        .. math::
+            \Delta y = L \cdot y^{+} \cdot \sqrt{74} \cdot {Re}_{L}^{-13/14}
 
-    where :math:`L` is the characteristic length scale, :math:`y^{+}` is the desired values, :math:`{Re}_{L}` is the Reynolds number. The non-dimensionalised velocity (:math:`u^{+}`) and distance from the wall (:math:`y^{+}`), the velocity profile of the boundary layers takes on the form, as shown below by the red line in  :numref:`yplusform`.
+where :math:`L` is the characteristic length scale, :math:`y^{+}` is the desired values, :math:`{Re}_{L}` is the Reynolds number. The non-dimensionalised velocity (:math:`u^{+}`) and distance from the wall (:math:`y^{+}`), the velocity profile of the boundary layers takes on the form, as shown below by the red line in  :numref:`yplusform`.
 
     .. _yplusform:
 
@@ -70,6 +76,6 @@ Turbulence modeling
 
 #. High Reynolds number flows (like aircraft, ships etc.) will experience boundary layers that extends to several thousand :math:`y^{+}` units. However, for flows with low Reynolds numbers, the upper limit can be as little as 100 :math:`y^{+}` units. Thus, it is necessary to ensure that the first node does not fall outside this range. 
 
-#. ``Hydro-UQ v1.0.0`` supports :math:`k-\epsilon` and :math:`k-\omega` SST models. These are both good choices for general applications. The :math:`k-\epsilon` model is very reliable and can often be used to get initial values for more sophisticated models.
+#. |app| |tool version| supports :math:`k-\epsilon` and :math:`k-\omega` SST models. These are both good choices for general applications. The :math:`k-\epsilon` model is very reliable and can often be used to get initial values for more sophisticated models.
 
-#. ``Hydro-UQ v1.0.0`` presently supports only RANS simulations for turbulent modeling. In the future versions, LES simulation will also be supported.
+#. |app| |tool version| presently supports only RANS simulations for turbulent modeling. In the future versions, LES simulation will also be supported.
