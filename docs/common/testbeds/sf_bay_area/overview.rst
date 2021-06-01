@@ -16,20 +16,15 @@ the Mw 6.7 event that occurred in 1868.
 Rationale
 ===========
 
-This testbed for regional earthquake risk assessment of San Francisco Bay Area under Hayward Earthquake. 
+This testbed for regional earthquake risk assessment of San Francisco Bay Area under Hayward Earthquake:
 
-1. One of its intents is to demonstrate the computational scaffolding upon which community developers can progressively 
-contribute refinements that increase the fidelity and capacities of the backend regional resilience assessment workflow. 
+1. One of its intents is to demonstrate the computational scaffolding upon which community developers can progressively contribute refinements that increase the fidelity and capacities of the backend regional resilience assessment workflow. 
 
-2. The computational demand of this testbed is on the order over :math:`10^5` core hours (involving more 
-than 40 M nonlinear time history analyses), which could help to test the scalability of the workflow and investigate potential optimizations.
+2. The computational demand of this testbed is on the order over :math:`10^5` core hours (involving more than 40 M nonlinear time history analyses), which could help to test the scalability of the workflow and investigate potential optimizations.
 
 3. In addition, this testbed exercises collecting and concatenate building information from various data sources. 
-   
-4. During the course of developing this testbed, the USGS completed an earthquake scenario 
-study for a Mw 7 event on the Hayward fault. Hence, this testbed also provides an opportunity to contrast existing regional assessment methods 
-with the SimCenter’s computational workflow, based on which key limitations and future improvemnets could be 
-identified.
+
+4. During the course of developing this testbed, the USGS completed an earthquake scenario study for a Mw 7 event on the Hayward fault. Hence, this testbed also provides an opportunity to contrast existing regional assessment methods with the SimCenter’s computational workflow, based on which key limitations and future improvemnets could be identified.
 
 Capabilities and Supported Hazards
 ====================================
