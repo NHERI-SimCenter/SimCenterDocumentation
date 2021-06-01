@@ -23,16 +23,16 @@ $app_names["rtm"] = "requirements"
 
 $formats = @{"html" = ""}
 
-function json-to-csv{ 
-    Get-ChildItem -File -Filter "docs/common/reqments/data/*.json" | ForEach-Object {
-        Get-Content $_.name | \
-        start-process python -ArgumentList @("scripts/json2csv.py", `
-            "-Eqfem $env:SIMCENTER_DEV/quoFEM/Examples/qfem*/src/input.json", `
-    	    "-Eeeuq $env:SIMCENTER_DEV/EE-UQ/Examples/eeuq-*/src/input.json", `
-    	    "-Eweuq $env:SIMCENTER_DEV/WE-UQ/Examples/weuq-*/src/input.json", `
-    	    "-Epbdl $env:SIMCENTER_DEV/PBE/Examples/pbdl-*/src/input.json", `
-    	    "-Er2dt $env:SIMCENTER_DEV/R2DTool/Examples/E*/src/input.json", `
-	    ) >  "docs\common\reqments\_out\" + $_.basename + ".csv"
+function json-to-csv{
+    $QF_Examples = @("-Eqfem") + (gci "$env:SIMCENTER_DEV\quoFEM\Examples\qfem*\src\input.json")
+    $EE_Examples = @("-Eeeuq") + (gci "$env:SIMCENTER_DEV\EE-UQ\Examples\eeuq-*\src\input.json")
+    $WE_Examples = @("-Eweuq") + (gci "$env:SIMCENTER_DEV\WE-UQ\Examples\weuq-*\src\input.json")
+    $PB_Examples = @("-Epbdl") + (gci "$env:SIMCENTER_DEV\PBE\Examples\pbdl-*\src\input.json")
+    $R2_Examples = @("-Er2dt") + (gci "$env:SIMCENTER_DEV\R2DTool\Examples\E[0-9]*\input.json")
+    $arglist = @("scripts/json2csv.py") + $QF_Examples + $EE_Examples + $WE_Examples + $PB_Examples + $R2_Examples
+    write-host $arglist
+    Get-ChildItem -File -Filter ".\docs\common\reqments\data\*.json" | ForEach-Object {
+        start-process python -ArgumentList $arglist -RedirectStandardOutput ("docs\common\reqments\_out\" + $_.basename + ".csv") -Wait -NoNewWindow -RedirectStandardInput (".\docs\common\reqments\data\" + $_.name)
     }
 }
 
