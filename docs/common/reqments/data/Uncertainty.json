@@ -130,6 +130,7 @@
   "UB": {
     "target": "Bayesian Calibration",
     "apps": ["qfem"],
+    "config_paths": "$.UQ_Method.uqType",
     "items": [
       {
         "target": "Ability to use DREAM algorithm for Bayesian inference",
@@ -137,7 +138,8 @@
       },
       {
         "target": "Ability to use TMCMC algorithm for Bayesian inference",
-        "fields": ["SP", "M", "Implemented"]
+        "fields": ["SP", "M", "Implemented"],
+	"config_values": ["Transitional Markov chain Monte Carlo"]
       },
       {
         "target": "Ability to read calibration data from file",

@@ -6,4 +6,5 @@ sphinx-jsonschema
 sphinxcontrib-images
 numpydoc
 rendre>0.0.11
+sphinx_panels
 
