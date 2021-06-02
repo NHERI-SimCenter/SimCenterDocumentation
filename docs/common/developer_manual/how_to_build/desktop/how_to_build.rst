@@ -17,7 +17,7 @@ First, ensure the following dependencies are installed:
 
 * **OpenSees**: The workflow applications require an installation of `OpenSees <http://opensees.berkeley.edu/>`_ to carry out structural analysis using the finite element method.
 
-* **DAKOTA**: The workflow applications require an installation of `DAKOTA <https://dakota.sandia.gov/>`_ to handle and propogate the uncertainties defined in the input files for the workflow applications.
+* **DAKOTA**: The workflow applications require an installation of `DAKOTA <https://dakota.sandia.gov/>`_ to handle and propagate the uncertainties defined in the input files for the workflow applications.
 
 * **Python**: The workflow requires at least Python 3.7.
 

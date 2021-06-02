@@ -48,7 +48,7 @@ for the boundary layer winds ([Snaiki17a_], [Snaiki17b_]) can be performed with 
 These multiple realizations are then randomly sampled and used as the EDP in simulating the damage and loss 
 assessment (more details in the next section).
 
-For the aleatory uncertainty, this workflow adapts a nearest-neighbors method to propogate uncertainty through the workflow, as 
+For the aleatory uncertainty, this workflow adapts a nearest-neighbors method to propagate uncertainty through the workflow, as 
 illustrated in :numref:`nearestneighbors`. The peak wind speed and storm surge values are simulated 
 on a prescribed grid (wind fields) or pre-selected save points (storm surge) (blue round dots), and for each selected asset location (red square dot),
 the workflow  randomly selects 5 samples of 
