@@ -15,9 +15,9 @@ Pelicun Damage and Loss
 	
 	#. **Analysis Summary Dock:** A high-level summary of the aggregated losses, repair times, and casualties over a region. 
 	
-	#. **Charts Dock:** Graphical respresentation of the results in three charts:
+	#. **Charts Dock:** Graphical representation of the results in three charts:
 		
-		#. *Casualties:* Bar chart showing the casualites in a region accross four casualty severity levels; with 1 being the least severe and 4 being the most severe level. 
+		#. *Casualties:* Bar chart showing the casualties in a region accross four casualty severity levels; with 1 being the least severe and 4 being the most severe level. 
 		
 		#. *Economic Losses:* Bar chart providing the losses in a region according to damage states, *DS*, where *DS* = 1..4, and where *DS* =1 is the least severe and *DS* = 4 is the most severe damage state. Moreover, the losses are grouped into losses resulting from damage to structural components, damage to non-structural drift sensitive components, and damage to non-structural acceleration sensitive components.
 		

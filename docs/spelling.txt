@@ -1,3 +1,6 @@
+SimCenter
+SimCenterCommon
+SimCenterBackendApplications
 quoFEM
 R2D
 R2DTool
@@ -8,7 +11,10 @@ pelicun
 Tcl
 tcl
 Github
+Tapis
+Jupyter
 CMake
+conan
 repo
 qmake
 nmake
@@ -16,6 +22,9 @@ HU
 EQ
 IM
 UQ
+UQengine
+UQwrapper
+UQpreprocessor
 QoI
 EVT
 BIM
@@ -37,12 +46,22 @@ Kriging
 Armen
 Der
 Kiureghian
+Abrahamson
+Borja
+Kamai
+Loth
+Boore
+Seyhan
+Bozorgnia
+Chiou
+Youngs
 Deodatis
 Vlachos
 Elhadded
 Caferino
 Jayaram
-et al
+et
+al
 postprocessing
 .hdf
 .hd5

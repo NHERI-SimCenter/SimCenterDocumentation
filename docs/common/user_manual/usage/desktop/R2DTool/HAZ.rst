@@ -110,7 +110,7 @@ The **Earthquake Scenario Simulation** is an application that selects earthquake
 
 #. **Earthquake Rupture Definition**
 
-	This is where the user defines the earthquake rupture characteristics. Point source and earthquake rupture forecast models are availble.
+	This is where the user defines the earthquake rupture characteristics. Point source and earthquake rupture forecast models are available.
 
 		#. **Earthquake Rupture Forecast**
 
@@ -204,7 +204,7 @@ The **Earthquake Scenario Simulation** is an application that selects earthquake
 User-defined Earthquakes
 ------------------------
 
-The **User-defined Earthquakes** application loads the results of an **Earthquake Scenario Simulation** that has been run previously. The **User-defined Earthquakes** application input pane is given in :numref:`fig-UserSelectEQ`. As seen in the figure, the user is required to input the file path to the ``EventGrid.csv`` file. If the gournd motions are not in the same folder as the ``EventGrid.csv`` file, then the user needs to input the directory path to the folder containing the ground motions.
+The **User-defined Earthquakes** application loads the results of an **Earthquake Scenario Simulation** that has been run previously. The **User-defined Earthquakes** application input pane is given in :numref:`fig-UserSelectEQ`. As seen in the figure, the user is required to input the file path to the ``EventGrid.csv`` file. If the ground motions are not in the same folder as the ``EventGrid.csv`` file, then the user needs to input the directory path to the folder containing the ground motions.
 
 .. _fig-UserSelectEQ:
 

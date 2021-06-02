@@ -5,7 +5,7 @@
 How to Build
 ============
 
-SimCenter tools all comprise a frontend UI and some backend applications. They are kept in seperate github repositories and are also built seperately. The following3 sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI and the backend.
+SimCenter tools all comprise a frontend UI and some backend applications. They are kept in separate github repositories and are also built separately. The following3 sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI and the backend.
 
 ********************
 Install Dependencies
@@ -17,7 +17,7 @@ First, ensure the following dependencies are installed:
 
 * **OpenSees**: The workflow applications require an installation of `OpenSees <http://opensees.berkeley.edu/>`_ to carry out structural analysis using the finite element method.
 
-* **DAKOTA**: The workflow applications require an installation of `DAKOTA <https://dakota.sandia.gov/>`_ to handle and propagate the uncertainties defined in the input files for the workflow applications.
+* **DAKOTA**: The workflow applications require an installation of `DAKOTA <https://dakota.sandia.gov/>`_ to handle and propogate the uncertainties defined in the input files for the workflow applications.
 
 * **Python**: The workflow requires at least Python 3.7.
 
