@@ -60,6 +60,7 @@ assessment of response, damage, repair costs, and repair times for all 1.84 M bu
    sample_results
    example_outputs
    future_refinements
+   feedback_request
 
 .. [Elhadded19]
    Elhaddad, W., McKenna, F., Rynge, M., Lowe, J. B., Wang, C., and Zsarnoczay, A. (2019). 
