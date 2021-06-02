@@ -241,20 +241,12 @@
                             },
                             {
                                 "target": "Interface between asset and regional simulations using site response  method",
-                                "fields": [
-                                    "SP",
-                                    "M",
-                                    ""
-                                ],
+                                "fields": ["SP","M",""],
                                 "items": []
                             },
                             {
                                 "target": "Interface between asset and regional simulations using DRM method",
-                                "fields": [
-                                    "SP",
-                                    "M",
-                                    ""
-                                ],
+                                "fields": ["SP","M",""],
                                 "items": []
                             }
                         ]
@@ -279,76 +271,44 @@
                         "items": [
                             {
                                 "target": "Select using default selection options",
-                                "fields": [
-                                    "SP",
-                                    "D",
-                                    "Implemented"
-                                ],
+                                "fields": ["SP","D","Implemented"],
                                 "items": []
                             },
                             {
                                 "target": "Select using all options available at PEER site",
-                                "fields": [
-                                    "UF",
-                                    "D",
-                                    "Implemented"
-                                ],
+                                "fields": ["UF","D","Implemented"],
                                 "items": []
                             },
                             {
                                 "target": "Select using user supplied spectrum",
-                                "fields": [
-                                    "UF",
-                                    "D",
-                                    "Implemented"
-                                ],
+                                "fields": ["UF","D","Implemented"],
                                 "items": []
                             }
                         ]
                     },
                     {
                         "target": "Ability to select utilizing PEER NGA_West web service",
-                        "fields": [
-                            "SP",
-                            "D",
-                            "Implemented"
-                        ],
+                        "fields": ["SP","D","Implemented"],
                         "items": []
                     },
                     {
                         "target": "Ability to select from list of user supplied PEER motions",
-                        "fields": [
-                            "SP",
-                            "M",
-                            "Implemented"
-                        ],
+                        "fields": ["SP","M","Implemented"],
                         "items": []
                     },
                     {
                         "target": "Ability to select from list of SimCenter motions",
-                        "fields": [
-                            "SP",
-                            "M",
-                            "Implemented"
-                        ],
+                        "fields": ["SP","M","Implemented"],
                         "items": []
                     },
                     {
                         "target": "Ability to use OpenSHA and selection methods to generate motions",
-                        "fields": [
-                            "UF",
-                            "D",
-                            ""
-                        ],
+                        "fields": ["UF","D",""],
                         "items": []
                     },
                     {
                         "target": "Ability to Utilize Own Application in Workflow",
-                        "fields": [
-                            "SP",
-                            "M",
-                            "Implemented"
-                        ],
+                        "fields": ["SP","M","Implemented"],
                         "items": []
                     },
                     {
@@ -356,20 +316,12 @@
                         "items": [
                             {
                                 "target": "1D nonlinear site response with effective stress analysis",
-                                "fields": [
-                                    "SP",
-                                    "M",
-                                    "Implemented"
-                                ],
+                                "fields": ["SP","M","Implemented"],
                                 "items": []
                             },
                             {
                                 "target": "Nonlinear site response with bidirectional loading",
-                                "fields": [
-                                    "SP",
-                                    "M",
-                                    "Implemented"
-                                ],
+                                "fields": ["SP","M","Implemented"],
                                 "items": []
                             },
                             {
