@@ -97,7 +97,7 @@
    :maxdepth: 1
    :numbered: 3
 
-   .. :docTestbeds:common/testbeds/sf_bay_area/index
+   :docTestbeds:common/testbeds/sf_bay_area/index
    :docTestbeds:common/testbeds/atlantic_city/index
    .. :docTestbeds:common/testbeds/memphis/index
    .. :docTestbeds:common/testbeds/anchorage/index
