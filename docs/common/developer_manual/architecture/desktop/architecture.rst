@@ -33,7 +33,7 @@ Documentation of the software architecture is detailed in the following pages:
 
 #. Databases containing information on building inventories for regional simulatioons, consequence functions for the DL applications, and experimental and corresponding simulation models for future machine learning based AI algorithms.
 
- Within the natural hazards engineering community, there exists a number of widely used open-source applications, e.g. OpenFOAM, and online datasets, e.g. PEER NGA, that researchers are currently using. As a consequence, and to avoid duplication, SimCenter applications incorprate many of the widely used appliecations, e.g. OpenFOAM. To do this SimCenter develops pre- and post-processors to these existing applications and utilize web-technologies for accessing online services.
+ Within the natural hazards engineering community, there exists a number of widely used open-source applications, e.g. OpenFOAM, and online datasets, e.g. PEER NGA, that researchers are currently using. As a consequence, and to avoid duplication, SimCenter applications incorprate many of the widely used applications, e.g. OpenFOAM. To do this SimCenter develops pre- and post-processors to these existing applications and utilize web-technologies for accessing online services.
 
    
 .. _figFramework:
@@ -49,7 +49,7 @@ The SimCenter scientific workflow systems are aimed at facilitating the use, reu
 
 - Level 1: The level one diagram is a system diagram that shows how the software system fits in the real world in terms of people who use it and other software systems it intercat with.
 - Level 2: The level two is a container diagram show the the containers (applications, databases, etc.) that  make up the software system.
-- Level 3: Level three diagram are component diagrams, showing how the componets pf the individual containers.
+- Level 3: Level three diagram are component diagrams, showing how the components pf the individual containers.
 - Level 4: The level four diagrams show how the individual components are implemented. They are typically UML class diagrams.
 
 The following sections present the architecture of SimCenter the SimCenter to level 3:

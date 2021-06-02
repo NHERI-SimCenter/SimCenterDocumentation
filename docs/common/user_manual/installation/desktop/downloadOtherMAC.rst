@@ -93,7 +93,7 @@ If the results is **/bin/bash** you will need to edit the **.bashrc** file or th
    env | grep SHELL
 
 
-Finally you want to edit that file so that the applications will find |OpenSees| and |Dakota|. The format depends on the shell, just copy the fomat that Python used, e.g. my **.bash_profile** file has the lines:
+Finally you want to edit that file so that the applications will find |OpenSees| and |Dakota|. The format depends on the shell, just copy the format that Python used, e.g. my **.bash_profile** file has the lines:
 
 .. code:: none
    
@@ -144,7 +144,7 @@ Steps to Test the Installation of the Applications:
 
 .. warning:: 
 
-   **Dakota** has even more troubles installing on Catalina. Not only is the develoepr not know, the application relies on code from other unsigned developers. As a consequence the above workaround for most terminal applications fails. For dakota, in the terminal we have to turn off gatekeeper even after we have o.k.'d the application for running. Issue the following commands inside the terminal window:
+   **Dakota** has even more troubles installing on Catalina. Not only is the developer not know, the application relies on code from other unsigned developers. As a consequence the above workaround for most terminal applications fails. For dakota, in the terminal we have to turn off gatekeeper even after we have o.k.'d the application for running. Issue the following commands inside the terminal window:
 
    .. code:: none
 

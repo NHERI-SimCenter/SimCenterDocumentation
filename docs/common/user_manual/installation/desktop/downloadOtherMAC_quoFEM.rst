@@ -119,7 +119,7 @@ If the results is **/bin/bash** you will need to edit the **.bashrc** file or th
    env | grep SHELL
 
 
-Finally you want to edit that file so that the applications will find |OpenSees| and |Dakota|. The format depends on the shell, just copy the fomat that Python used, e.g. my **.bash_profile** file has the lines:
+Finally you want to edit that file so that the applications will find |OpenSees| and |Dakota|. The format depends on the shell, just copy the format that Python used, e.g. my **.bash_profile** file has the lines:
 
 .. code:: none
    
