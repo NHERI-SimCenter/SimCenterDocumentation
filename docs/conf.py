@@ -309,7 +309,8 @@ if app_name == "Hydro":
             "analytics_id": "...",  # TODO: add analytics ID
         }
     )
-    master_doc = "Hydro"
+    #master_doc = "Hydro"
+    master_doc = "index"
 
     rst_prolog += f"""
 .. |full tool name| replace:: Water-borne Hazards Engineering with Uncertainty Quantification
@@ -766,36 +767,48 @@ latex_documents = [
 latex_logo = "common/figures/NSF_SimCenter_NO TEXT_SimCenter.png"
 
 #- Example links ----------------
+
+examples_url = f"https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples/"
 extlinks.update(
     {
         f"qfem-{i:04}": (f"{examples_url}/qfem-{i:04}/%s", f"qfem-{i:04}")
         for i in range(1, 99)
     }
 )
+
+examples_url = f"https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples/"
 extlinks.update(
     {
         f"weuq-{i:04}": (f"{examples_url}/weuq-{i:04}/%s", f"weuq-{i:04}")
         for i in range(1, 99)
     }
 )
+
+examples_url = f"https://github.com/NHERI-SimCenter/EE-UQ/tree/master/Examples/"
 extlinks.update(
     {
         f"eeuq-{i:04}": (f"{examples_url}/eeuq-{i:04}/%s", f"eeuq-{i:04}")
         for i in range(1, 99)
     }
 )
+
+examples_url = f"https://github.com/NHERI-SimCenter/PBE/tree/master/Examples/"
 extlinks.update(
     {
         f"pbdl-{i:04}": (f"{examples_url}/pbdl-{i:04}/%s", f"pbdl-{i:04}")
         for i in range(1, 99)
     }
 )
+
+examples_url = f"https://github.com/NHERI-SimCenter/R2DTool/tree/master/Examples/"
 extlinks.update(
     {
         f"r2dt-{i:04}": (f"{examples_url}/r2dt-{i:04}/%s", f"r2dt-{i:04}")
         for i in range(1, 20)
     }
 )
+
+examples_url = f"https://github.com/NHERI-SimCenter/HydroUQ/tree/master/Examples/"
 extlinks.update(
     {
         f"hdro-{i:04}": (f"{examples_url}/hydro-{i:04}/%s", f"hydro-{i:04}")
