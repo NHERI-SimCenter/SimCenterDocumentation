@@ -60,7 +60,7 @@ elevator machinery and rails may require realignment.
    :figclass: align-center
    :width: 700
 
-   Structural and non-structural damage states of the example wood frame.
+   Structural and non-structural damage states of the example wood frame (as introduced in :ref:`lbl-testbed_SF_response_simulation`).
 
 
 Expected Loss Ratio
