@@ -74,6 +74,21 @@ external_links = {
     "github": f"https://github.com/NHERI-SimCenter/{app_name}",
 }
 
+# Add any Sphinx extension modules 
+extensions =  [
+    "sphinx-jsonschema",
+    "sphinxcontrib.bibtex",
+    "toctree_filter",
+    "sphinxcontrib.images",
+    "sphinx.ext.extlinks",
+    "sphinxcontrib.images",
+    "rendre.sphinx",
+    "sphinx.ext.autodoc",
+    "crate.sphinx.csv",
+    "sphinx_panels",
+    "sphinxcontrib.spelling",
+]
+
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
@@ -149,7 +164,6 @@ toc_filter_exclusions = [
 ]
 
 
-extensions = ['sphinx_panels']
 
 # -- Project information -----------------------------------------------------
 
@@ -639,7 +653,7 @@ elif app_name == "pelicun":
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
 """
 
-    extensions = [
+    extensions = extensions + [
         "sphinx.ext.autodoc",
         "sphinx.ext.todo",
         "sphinx.ext.mathjax",
@@ -715,18 +729,6 @@ rst_prolog += f"""
 .. |developers| replace:: {", ".join(f"**{auth}** " for auth in author.split(", "))}
 """
 
-# Add any Sphinx extension modules 
-extensions = extensions + [
-    "sphinx-jsonschema",
-    "sphinxcontrib.bibtex",
-    "toctree_filter",
-    "sphinxcontrib.images",
-    "sphinx.ext.extlinks",
-    "sphinxcontrib.images",
-    "rendre.sphinx",
-    "sphinx.ext.autodoc",
-    "crate.sphinx.csv",
-]
 
 bibtex_bibfiles = ["common/references.bib"]
 
@@ -816,6 +818,7 @@ extlinks.update(
     }
 )
 
+spelling_word_list_filename = ["spelling.txt"]
 
 # sync files for examples
 if sync_examples:
