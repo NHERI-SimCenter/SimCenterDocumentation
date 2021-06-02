@@ -99,7 +99,7 @@ the MODIV User Manual ([MODIV18]_). This notably affected attributes such as Occ
 whose rulesets (PDFs and Python scripts) are cross-referenced in :numref:`addinfo_ruleset_njdep`. 
 In all cases where attributes were derived from MODIV data, whose fields can be sparsely populated, default 
 values were initially assigned to ensure that every footprint would have the attributes required to execute 
-the workflow. These default values were selected using engineering judgement to represent the most common/likely 
+the workflow. These default values were selected using engineering judgment to represent the most common/likely 
 attribute expected or conservatively from the perspective of anticipated losses (i.e., picking the more 
 vulnerable attribute option). These initial assignments were then updated if additional data is available in 
 **MODIV** to make a more faithful attribute assignment.

@@ -122,7 +122,7 @@ If building and installation were successful you should find a folder called ``a
 Build the User Interface
 ************************
 
-To build the interface you first need to download the repo and a companion repo(SimCenterCommon) from github using our `github repos <https://github.com/NHERI-SimCenter>`_. In a folder in which you wish to build the application, issue the following two commands.
+To build the interface you first need to download the repo and a companion repo(SimCenterCommon) from Github using our `github repos <https://github.com/NHERI-SimCenter>`_. In a folder in which you wish to build the application, issue the following two commands.
 
     .. code::
        

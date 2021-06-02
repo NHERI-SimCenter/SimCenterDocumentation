@@ -29,7 +29,7 @@ in a location with sparse inventory data. Recommended best practices are summari
    it receives the parcel information for the parcel with the highest overlapping area. If a footprint falls 
    outside a parcel, it is assigned the attributes of the nearest parcel.
 5. Once footprints are identified, assign default values for each required attribute in the Building Inventory. 
-   These default values should be selected using engineering judgement to represent the most common/likely 
+   These default values should be selected using engineering judgment to represent the most common/likely 
    attribute expected or conservatively from the perspective of anticipated losses (i.e., picking the more 
    vulnerable attribute option). These initial assignments are then updated if additional data is available 
    to make a more faithful attribute assignment. As part of the default assignment class, pick a building 

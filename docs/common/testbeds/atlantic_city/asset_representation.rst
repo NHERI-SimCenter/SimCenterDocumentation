@@ -109,7 +109,7 @@ Where possible, the rulesets are time-evolving, considering the age of construct
 code edition and availability of specific mitigation measures in the market. Though reliant on engineering 
 judgement and historical data availability, each rule provides detailed notes cross-referencing the various 
 documents and practices that governed that era of construction and thus informed the ruleset formation. 
-In cases where engineering judgement was required, rules were assigned based on what was understood to be 
+In cases where engineering judgment was required, rules were assigned based on what was understood to be 
 the most common construction practice. In cases where that was not clear, the ruleset assigned the most 
 vulnerable configuration for a more conservative approach to loss estimation. :numref:`wind_bldg_attri` 
 and :numref:`flood_bldg_attri` list the attributes for the wind and flood loss assessments. 
@@ -557,7 +557,7 @@ Flood Loss Attributes
 The flood loss model in HAZUS focuses on a collection of attributes, some of which are already defined in 
 the building inventory (number of stories and occupancy type as defined in :ref:`lbl-testbed_AC_asset_representation_building_classification`), 
 while other building inventory fields like first floor elevation require adjustment. The new or adjusted 
-attributes required for the flood model are itemised in :numref:`flood_attri` with their possible 
+attributes required for the flood model are itemized in :numref:`flood_attri` with their possible 
 assignments (values, terms) and the ruleset developed to make those assignments. Note that these attributes 
 are generally not time evolving, with the exception of considering if the building was constructed after 
 Flood Insurance Rate Maps (FIRMs) were adopted (date varies by municipality). The corresponding 

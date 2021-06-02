@@ -62,7 +62,7 @@ area you should now only have a single option, click on the link to download |Da
 OpenSees
 ^^^^^^^^
 
-|OpenSeesLink| is the default FEM engine used by the |app| that is publicly available from the |OpenSeesDownload| page. To download the **OpenSees** you have to enter your email address, which may also require you to register (that requirement is going away and may be gone by time you read this). At the bottom of the page undet the section **Mac Version** is a table with two links: one for the **OpenSees** and also a link to |Tcl|, whose libraries OpenSees needs on your computer to run. You will need to follow both links to download both applications.
+|OpenSeesLink| is the default FEM engine used by the |app| that is publicly available from the |OpenSeesDownload| page. To download the **OpenSees** you have to enter your email address, which may also require you to register (that requirement is going away and may be gone by time you read this). At the bottom of the page under the section **Mac Version** is a table with two links: one for the **OpenSees** and also a link to |Tcl|, whose libraries OpenSees needs on your computer to run. You will need to follow both links to download both applications.
 
 Steps to Install OpenSees on a Mac:
       1. Follow the OpenSees link and download the OpenSees.zip file. Uncompress the file and you will have an **OpenSees-3.2.2** folder. Move that folder to the **bin/OpenSees** folder. 
@@ -80,7 +80,7 @@ On Linux systems, the shell is the program that takes commands from the keyboard
 
 When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of  some of the external applications that you have installed as **OpenSees** and **dakota** do not provide installers that automatically do this when they are installed. Other applications, like **Tcl** provide scripts that you invoke to do it. In short you have to edit the file appropriate to the shell you are using.
 
-To find which shell prgram you are using when you issue commands inside the terminal window, type the following in a terminal window:
+To find which shell program you are using when you issue commands inside the terminal window, type the following in a terminal window:
 
 .. code:: none
    
@@ -152,5 +152,5 @@ Steps to Test the Installation of the Applications:
       	     dakota
       	     sudo spctl --master-enable
 
-   This will temporarily disable gatekeeper (basically setting Gatekeeper options to Anywhere), allow the Dakota application and it's .dylib files to be registered as safe, and then turn Gatekeeper options back to default.
+   This will temporarily disable gatekeeper (basically setting Gatekeeper options to Anywhere), allow the Dakota application and it's ``.dylib`` files to be registered as safe, and then turn Gatekeeper options back to default.
 
