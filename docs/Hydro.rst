@@ -1,4 +1,3 @@
-
 |full tool name|
 ====================================================================================================
 
@@ -9,20 +8,22 @@
 
 The Water-borne Natural Hazards with Uncertainty Quantification Application (Hydro-UQ app) is an open-source research application that can be used to predict the response of a building / a community subjected to events like tsunami and storm-surge. The application is focused on quantifying the uncertainties in the predicted response, given the that the uncertainties in models, loads, and analysis. The computations are performed in a workflow application that will run on a high performance computer made available by |DesignSafe|.
 
-This document covers the features and capabilities of the ``version 1.0`` of the Hydro-UQ tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the `Message Board <https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0>`_.
+This document covers the features and capabilities of the |tool version| of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the |messageBoard|.
 
-.. lbl-front-matter::
+.. _lbl-front-matter:
 
 .. toctree::
    :maxdepth: 1
    :numbered: 4
    :caption: About
    
-   Hydro/userman/about
+   Hydro/front-matter/about
    common/front-matter/ack
    common/front-matter/license
+   Hydro/front-matter/glossary
+   Hydro/front-matter/abbreviations
 
-
+.. _lbl-user-manual:
 
 .. toctree::
    :maxdepth: 1
@@ -31,11 +32,15 @@ This document covers the features and capabilities of the ``version 1.0`` of the
 
    Hydro/userman/install
    Hydro/userman/userguide/uguide
+   Hydro/userman/resguide/resguide
+   Hydro/userman/helpvideo
    Hydro/userman/errors
    Hydro/userman/examples/examples
    Hydro/userman/bestpractices
    Hydro/userman/releasenotes
    Hydro/userman/featurereq
+
+.. _lbl-technical-manual:
 
 .. toctree::
    :maxdepth: 1
@@ -49,15 +54,7 @@ This document covers the features and capabilities of the ``version 1.0`` of the
    Hydro/techman/swcfdcoupling/swcfdcoupling
    Hydro/techman/UQ/uqengine
 
-.. toctree::
-   :maxdepth: 1
-   :numbered: 2
-   :caption: Researcher manual
-
-   Hydro/resman/swsolvers
-   Hydro/resman/swcfdinter
-   Hydro/resman/cfdsolvers
-   Hydro/resman/flumetwin
+.. _lbl-developer-manual:
 
 .. toctree::
    :maxdepth: 1
