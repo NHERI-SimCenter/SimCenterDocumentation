@@ -23,7 +23,21 @@ $app_names["rtm"] = "requirements"
 
 $formats = @{"html" = ""}
 
+function json-to-csv{ 
+    Get-ChildItem -File -Filter "docs/common/reqments/data/*.json" | ForEach-Object {
+        Get-Content $_.name | \
+        start-process python -ArgumentList @("scripts/json2csv.py", `
+            "-Eqfem $env:SIMCENTER_DEV/quoFEM/Examples/qfem*/src/input.json", `
+    	    "-Eeeuq $env:SIMCENTER_DEV/EE-UQ/Examples/eeuq-*/src/input.json", `
+    	    "-Eweuq $env:SIMCENTER_DEV/WE-UQ/Examples/weuq-*/src/input.json", `
+    	    "-Epbdl $env:SIMCENTER_DEV/PBE/Examples/pbdl-*/src/input.json", `
+    	    "-Er2dt $env:SIMCENTER_DEV/R2DTool/Examples/E*/src/input.json", `
+	    ) >  "docs\common\reqments\_out\" + $_.basename + ".csv"
+    }
+}
+
 if ($args.count -eq 0){
+    # Run old-style build using app from conf.py
     start-process sphinx-build -ArgumentList @("-M","help",$SOURCEDIR,$BUILDDIR)  -Wait -NoNewWindow
     #iex $command
     return
@@ -37,6 +51,7 @@ if ($app_names.ContainsKey($args[0])){
         write-host "Format unsupported"
         return
     }
+    json-to-csv 
     $app_name = $app_names[$args[0]]
     $format = $args[1]
     $env:SIMDOC_APP = $app_name

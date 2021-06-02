@@ -21,7 +21,7 @@
 "UN.2", "Ability to read calibration data from file","UF", "M", "InProgress", "-", NA, NA, NA, NA
 "UN.3", "Ability to handle non-scalar response quantities","UF", "M", "InProgress", "-", NA, NA, NA, NA
 "UB.1", "Ability to use DREAM algorithm for Bayesian inference","SP", "M", "InProgress", "-", NA, NA, NA, NA
-"UB.2", "Ability to use TMCMC algorithm for Bayesian inference","SP", "M", "Implemented", "-", NA, NA, NA, NA
+"UB.2", "Ability to use TMCMC algorithm for Bayesian inference","SP", "M", "Implemented", ":qfem-0014:`/`", NA, NA, NA, NA
 "UB.3", "Ability to read calibration data from file","UF", "M", "InProgress", "-", NA, NA, NA, NA
 "UB.4", "Ability to handle non-scalar response quantities","UF", "M", "InProgress", "-", NA, NA, NA, NA
 "UB.5", "Ability to calibrate multipliers on error covariance","UF", "M", "-", "-", NA, NA, NA, NA
