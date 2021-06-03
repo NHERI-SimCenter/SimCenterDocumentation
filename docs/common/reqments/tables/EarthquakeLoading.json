@@ -1,0 +1,138 @@
+{
+    "EL": {
+        "items": [
+            {
+                "target": "Regional Scale Earthquake Hazard Simulation Options",
+                "items": [
+                    {
+                        "target": "Coupling of multi-scale nonlinear models from the point of rupture through rock and soil into structure",
+                        "items": [
+                            {
+                                "target": "Replacement of empirical linear models with multi-scale nonlinear models",
+                                "fields": ["GC","D",""]
+                            },
+                            {
+                                "target": "Include both multi-scale and multi-phase (account for liquefaction)",
+                                "fields": ["GC","M", ""],
+                                "items": []
+                            },
+                            {
+                                "target": "Interface between asset and regional simulations using site response  method",
+                                "fields": ["SP", "M", ""],
+                                "items": []
+                            },
+                            {
+                                "target": "Interface between asset and regional simulations using DRM method",
+                                "fields": ["SP","M",""],
+                                "items": []
+                            }
+                        ]
+                    },
+                    {
+                        "target": "Method to include both the intra-event residual and inter-event residual in simulating spatial correlated ground motion intensity measures with multiple correlation model options. Select site specific grouind motions from PEER to match target intensity",
+                        "fields": ["SP","M","Implemented"]
+                    },
+                    {
+                        "target": "Use GIS-Specified Matrix of Recorded Motions",
+                        "fields": ["SP","M","Implemented"],
+                        "items": []
+                    }
+                ]
+            },
+            {
+                "target": "Select from Multiple Local Scale Earthquake Hazard Options",
+                "items": [
+                    {
+                        "target": "Coupling of multi-scale nonlinear models from the point of rupture through rock and soil into structure",
+                        "items": [
+                            {
+                                "target": "Select using default selection options",
+                                "fields": ["SP", "D", "Implemented"]
+                            },
+                            {
+                                "target": "Select using all options available at PEER site",
+                                "fields": ["UF","D","Implemented"]
+                            },
+                            {
+                                "target": "Select using user supplied spectrum",
+                                "fields": ["UF","D","Implemented"]
+                            }
+                        ]
+                    },
+                    {
+                        "target": "Ability to select utilizing PEER NGA_West web service",
+                        "fields": ["SP", "D", "Implemented"]
+                    },
+                    {
+                        "target": "Ability to select from list of user supplied PEER motions",
+                        "fields": ["SP","M", "Implemented"],
+			"config": "$.Applications.Events[*][?(@.subtype=\"PEER NGA Records\")]"
+                    },
+                    {
+                        "target": "Ability to select from list of SimCenter motions",
+                        "fields": ["SP","M", "Implemented"]
+                    },
+                    {
+                        "target": "Ability to use OpenSHA and selection methods to generate motions",
+                        "fields": ["UF","D", ""]
+                    },
+                    {
+                        "target": "Ability to Utilize Own Application in Workflow",
+                        "fields": ["SP","M","Implemented"],
+                        "items": []
+                    },
+                    {
+                        "target": "Ability to use Broadband",
+                        "items": [
+                            {
+                                "target": "1D nonlinear site response with effective stress analysis",
+                                "fields": ["SP","M","Implemented"],
+                                "items": []
+                            },
+                            {
+                                "target": "Nonlinear site response with bidirectional loading",
+                                "fields": ["SP","M","Implemented"],
+                                "items": []
+                            },
+                            {
+                                "target": "Nonlinear site response with full stochastic characterization of soil layers",
+                                "fields": ["SP","M","Implemented"],
+                                "items": []
+                            },
+                            {
+                                "target": "Nonlinear site response, bidirectional different input motions",
+                                "fields": ["SP","M",""]
+                            }
+                        ]
+                    },
+                    {
+                        "target": "Ability to include Soil Structure Interaction Effects",
+                        "items": [
+                            {
+                                "target": "per Vlachos, Papakonstantinou, Deodatis (2017)",
+                                "fields": ["SP","D","Implemented"],
+				"config": "$.Appications.Events[*][?(@.ApplicationData.modelName=\"VlachosSiteSpecificEQ\")]"
+                            },
+                            {
+                                "target": "per Dabaghi, Der Kiureghian (2017)",
+                                "fields": ["UF","D","Implemented"],
+                                "items": []
+                            }
+                        ]
+                    },
+                    {
+                        "target": "Ability to select from synthetic ground motions",
+                        "fields": ["SP","M","Implemented"],
+                        "items": []
+                    },
+                    {
+                        "target": "Ability to select surrogate modeling events",
+                        "fields": ["SP","M",""],
+                        "items": []
+                    }
+                ]
+            }
+        ],
+        "target": "Loading from Earthquake Hazard on Local and Regional Assets"
+    }
+}

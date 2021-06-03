@@ -12,6 +12,9 @@ PUBLDIR = $(shell v="$(SIMDOC_APP)"; echo "../$${v%Tool}-Documentation/docs/")
 # Directories to remove when cleaning
 CLEANDIR      = _sources _static _images common
 
+CSVDIR  = docs/common/reqments/_out/
+JSONDIR = docs/common/reqments/data/
+
 export SIMCENTER_DEV = $(shell pwd | xargs dirname)
 #-Examples-------------------------------------------------
 EXPDIR = ./docs/common/user_manual/examples/desktop
@@ -56,8 +59,8 @@ export SIMDOC_APP
 
 
 # LaTeX path variables
-export TEXINPUTS:=${SIMCENTER_DEV}/texmf//:./build/${SIMDOC_APP}/latex//:/${TEXINPUTS}
-export TEXINPUTS:=~/texlive/2020//:${TEXINPUTS}
+export TEXINPUTS:=${SIMCENTER_DEV}/SimCenterDocumentation/latex//:./build/${SIMDOC_APP}/latex//:${TEXINPUTS}
+#export TEXINPUTS:=/usr/share/texmf-dist//:${TEXINPUTS}
 export BSTINPUTS:=../texmf//:${BSTINPUTS}
 
 
@@ -88,6 +91,10 @@ web:
 
 
 html:
+	for i in $(JSONDIR)/*.json; do \
+	    file_name="$${i##*/}"; \
+	    make $(CSVDIR)/$${file_name%.*}.csv; \
+	done
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(call BUILDDIR,$(SIMDOC_APP))/html" $(O)
 
 
@@ -99,12 +106,22 @@ pdf:
 	mkdir -p $(call BUILDDIR,$(SIMDOC_APP))/pdf/
 	$(PDFLATEX) \
 	-output-directory="$(call BUILDDIR,$(SIMDOC_APP))/pdf/" \
-	"$(call BUILDDIR,$(SIMDOC_APP))/latex/*.tex"
+	$(join $(call BUILDDIR,$(SIMDOC_APP)),/latex/*.tex)
 
 latexpdf:
 	make latex
 	make pdf
 
 update:
-	pip install -U -r requirements.txt 
+	pip install -U -r requirements.txt
+
+$(CSVDIR)/%.csv: $(JSONDIR)/%.json
+	python3 ./scripts/json2csv.py \
+		-Eqfem $(SIMCENTER_DEV)/quoFEM/Examples/qfem*/src/input.json \
+		-Eeeuq $(SIMCENTER_DEV)/EE-UQ/Examples/eeuq-*/src/input.json \
+		-Eweuq $(SIMCENTER_DEV)/WE-UQ/Examples/weuq-*/src/input.json \
+		-Epbdl $(SIMCENTER_DEV)/PBE/Examples/pbdl-*/src/input.json \
+		-Er2dt $(SIMCENTER_DEV)/R2DTool/Examples/E*/input.json \
+		< '$<' > '$@'
+
 

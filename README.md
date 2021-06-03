@@ -62,8 +62,10 @@ where `<app>` is one of:
 | `pbe`     |  PBE
 | `we`      |  WE-UQ
 | `ee`      |  EE-UQ
+| `rtm`     |  Requirements matrix
 
 and `<target>` is one of:
+
 | `<target>` | description |
 |------------|-------------|
 |  `web`    | Generate HTML output in the app publishing repository (i.e., `../<app-name>-Documentation/`).
@@ -107,3 +109,4 @@ The particular application must be selected by un-commenting the appropriate `ap
     Note, however, that in order to achieve a proper build, one may need to run the `make <app> latex` target several times in succession before running `make <app> pdf`.
 
 > Note: Legacy build scripts in the `docs` directory do not sync example files from their source repositories.
+
