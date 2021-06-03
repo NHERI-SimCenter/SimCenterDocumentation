@@ -25,6 +25,7 @@ rulesets
 Rulesets
 runFEM
 InProgress
+params
 
 Tcl
 tcl
@@ -44,6 +45,7 @@ csv
 dmg
 exe
 nav
+sev
 macOS
 XCode
 
