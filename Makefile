@@ -35,6 +35,7 @@ help:
 	@echo '    web    Run html target with build directory'
 	@echo '           set to app publishing repository.'
 	@echo '    html   Run html target in dev build directory.'
+	@echo '    spell  Run spell checker.'
 	@echo '    latex  Run latex target in dev build directory.'
 	@printf "\nRunning 'make all' will run 'make <app> html'\n"
 	@printf "for all <app> options listed above.\n\n"
