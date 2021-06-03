@@ -50,7 +50,7 @@ we:      export SIMDOC_APP=WE-UQ
 r2d:     export SIMDOC_APP=R2DTool
 
 pbe:     export SIMDOC_APP=PBE
-hydro:   export SIMDOC_APP=Hydro
+hydro:   export SIMDOC_APP=HydroUQ
 qfem:    export SIMDOC_APP=quoFEM
 pelicun: export SIMDOC_APP=pelicun
 rtm: export SIMDOC_APP=requirements
