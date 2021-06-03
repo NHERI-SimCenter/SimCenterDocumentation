@@ -325,6 +325,7 @@ if app_name == "HydroUQ":
     )
     #master_doc = "Hydro"
     master_doc = "index"
+    sync_examples = True
 
     rst_prolog += f"""
 .. |full tool name| replace:: Water-borne Hazards Engineering with Uncertainty Quantification
