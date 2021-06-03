@@ -5,7 +5,7 @@
 How to Build
 ============
 
-SimCenter tools all comprise a frontend UI and some backend applications. They are kept in seperate github repositories and are also built seperately. The following3 sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI and the backend.
+SimCenter tools all comprise a frontend UI and some backend applications. They are kept in separate github repositories and are also built separately. The following3 sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI and the backend.
 
 ********************
 Install Dependencies
@@ -122,7 +122,7 @@ If building and installation were successful you should find a folder called ``a
 Build the User Interface
 ************************
 
-To build the interface you first need to download the repo and a companion repo(SimCenterCommon) from github using our `github repos <https://github.com/NHERI-SimCenter>`_. In a folder in which you wish to build the application, issue the following two commands.
+To build the interface you first need to download the repo and a companion repo(SimCenterCommon) from Github using our `github repos <https://github.com/NHERI-SimCenter>`_. In a folder in which you wish to build the application, issue the following two commands.
 
     .. code::
        

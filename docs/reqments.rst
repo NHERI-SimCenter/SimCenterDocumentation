@@ -6,7 +6,7 @@ Requirements Traceability Matrix
 Introduction
 ++++++++++++
 
-The SimCenter has relied on community input to drive application and educational activities. We track these inputs as requirements in our Requirements Traceability Matrix (RTM). This is a living document, which is updated at least yearly. In this document is listed the general requirements for each tool and for each tool there is also listed the requirements for each component that is used to build up the tool. The components are as shown in the figure below, for example EE-UQ has components of Cloud (CLD), Reliability (UQR), Sensitivity (UQS), Sampling (UQF), Modelling (MOD), Earthquake Loading (EL), and  Analysis (ANA).
+The SimCenter has relied on community input to drive application and educational activities. We track these inputs as requirements in our Requirements Traceability Matrix (RTM). This is a living document, which is updated at least yearly. In this document is listed the general requirements for each tool and for each tool there is also listed the requirements for each component that is used to build up the tool. The components are as shown in the figure below, for example EE-UQ has components of Cloud (CLD), Reliability (UQR), Sensitivity (UQS), Sampling (UQF), Modeling (MOD), Earthquake Loading (EL), and  Analysis (ANA).
 
 .. _figRTM:
 
@@ -48,7 +48,7 @@ The software requirements are many. For ease of presentation they are broken int
 Building Scale Applications
 +++++++++++++++++++++++++++
 
-Applications to allow researchers to improve on methods related to determining on the response assessment and performance based design of individual buildings subject to the impact of a natural hazard. For building scale simulations, the requirements are broken down by SimCenter application. There are a number of applications under development for each of the hazards. Many of the requirements related to UQ and nonlinear analysis are repeated amongst the different applications under the assumption that if they are beneficial to engineers dealing with one hazard, they will be beneficial to engineers dealing with other hazards.
+Applications to allow researchers to improve on methods related to determining on the response assessment and performance based design of individual buildings subject to the impact of a natural hazard. For building scale simulations, the requirements are broken down by SimCenter application. There are a number of applications under development for each of the hazards. Many of the requirements related to UQ and nonlinear analysis are repeated among the different applications under the assumption that if they are beneficial to engineers dealing with one hazard, they will be beneficial to engineers dealing with other hazards.
 
 .. toctree-filt::
    :caption: Building Scale
@@ -83,7 +83,7 @@ All Requirements
 ++++++++++++++++
 
 .. toctree-filt::
-   :caption: All Rquirements
+   :caption: All Requirements
    :maxdepth: 1
    :numbered: 4
 

@@ -31,7 +31,7 @@ You will need to clone each dependency from its GitHub repository and place it i
 Build the Backend
 --------------------
 
-SimCenterBackendApplications contains a number of applications written in C++, C and Python that are needed by all SimCenter User Interfaces. To build the backend you will need to follow tht follwoting steps:
+SimCenterBackendApplications contains a number of applications written in C++, C and Python that are needed by all SimCenter User Interfaces. To build the backend you will need to follow the following steps:
 
 1. Clone the SimCenterBackendApplications repository.
 2. Build SimCenterBackendApplications using the following steps:
