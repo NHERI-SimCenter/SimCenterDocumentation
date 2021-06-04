@@ -20,7 +20,7 @@ APPS = [
     "BRAILS",
     "pelicun",
     "requirements",
-    "Hydro",
+    "HydroUQ",
 ]
 if app_name in APPS:
     # `make` was invoked from root, all env vars should already be defined.
@@ -281,7 +281,7 @@ examples_url = f"https://github.com/NHERI-SimCenter/{app_name}/tree/master/Examp
 
 docTestbeds = "True"
 
-if app_name == "Hydro":
+if app_name == "HydroUQ":
 
     project = "Hydro-UQ"
     author = "Ajay B Harish, Frank McKenna"
@@ -325,6 +325,7 @@ if app_name == "Hydro":
     )
     #master_doc = "Hydro"
     master_doc = "index"
+    sync_examples = True
 
     rst_prolog += f"""
 .. |full tool name| replace:: Water-borne Hazards Engineering with Uncertainty Quantification
@@ -822,6 +823,11 @@ spelling_word_list_filename = ["spelling.txt"]
 
 # sync files for examples
 if sync_examples:
+    # TODO: Temporary fix
+    if not example_config:
+        import yaml
+        with open("../examples.yaml","r") as f:
+            example_config = yaml.load(f,Loader=yaml.Loader)["HydroUQ"]
     # Load the `sync_files` routine from ./modules/sync_files.py
     from sync_files import sync_files
     sync_files(
