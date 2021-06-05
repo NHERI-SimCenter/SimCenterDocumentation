@@ -1,7 +1,7 @@
 .. _lbl-helpvideos:
 
 *********************
-Help videos
+Help Videos
 *********************
 
 A walk-through video of the ``HydroUQ`` is given below
