@@ -4,6 +4,15 @@
 Best Practices
 *********************
 
+Errors and uncertainities
+===============================
+
+There are several sources of errors that are often observed in CFD simulations. These include:
+
+#. The model is described by the Navier-Stokes equations. The exact N-S equations are solved when Direct Numerical Simulations (DNS) are employed. However, when RANS approach is involved, as in HydroUQ, this involves approximations that could lead to errors and uncertainities. Thus, selecting the right parameters is paramount.
+
+#. A discretization is used to solve 
+
 Froude number
 =================
 

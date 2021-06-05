@@ -8,19 +8,19 @@ All SimCenter applications can be downloaded from the `SimCenter Research Tools 
 
 Download HydroUQ
 ===================
-To download the |app|, navigate to the |appLink| page which should resemble :numref:`figDownload-Hydro`. The download page contains a list of downloadable files and directories.
+To download the |app|, navigate to the `HydroUQ download page <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ>`_ which should resemble :numref:`figDownload`. The download page contains a list of downloadable files and directories.
 
-.. _figDownload-Hydro:
+.. _figDownload:
 
-   .. figure:: figures/H20Download.png
-      :align: center
-      :figclass: align-center
+.. figure:: figures/H20Download.png      
+   :alt: HydroUQ tool download page
+   :align: center
 
-      HydroUQ tool download page.
+   HydroUQ tool download page.
 
 Install on Windows 10
 =========================
-Click on the file with a name ending with **Windows_Download.zip** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner. After the download completed, extract the zip archive to a location in your filesystem.
+On the `HydroUQ download page <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ>`_, click on the file with a name ending with **Windows_Download.zip** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner. After the download completed, extract the zip archive to a location in your filesystem.
 
 We suggest placing the directory in the **C:\\SimCenter** folder. Once here, you can create a shortcut to the application (Hydro_UQ.exe) and move this shortcut to your Desktop. 
 
@@ -32,11 +32,11 @@ Once the installation procedure has been completed, it is a good practice to run
 
 .. _figUI-HydroWindows:
 
-   .. figure:: figures/HydroWin.png
-      :align: center
-      :figclass: align-center
+.. figure:: figures/HydroWin.png
+   :alt: HydroUQ tool on startup in Windows 10
+   :align: center
 
-      HydroUQ tool on startup in Windows 10
+   HydroUQ tool on startup in Windows 10
 
 Install on macOS 10
 ===================
@@ -57,8 +57,8 @@ If you have not yet installed Python, we recommend installing Python 3.8 from |P
    #. The current Python installer leaves two script files in the Python directory at the end of the installation. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal. To execute the files, double click on them. The two files, shown in the image below, are: ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh``.
 
    .. figure:: figures/pythonInstallShell.png
+      :alt: Python: Folder Displayed at Conclusion of Install
       :align: center
-      :figclass: align-center
 
       Python: Folder Displayed at Conclusion of Install
 
@@ -99,11 +99,11 @@ Once the installation procedure has been completed, it is a good practice to run
 
 .. _figUI-HydroMac:
 
-   .. figure:: figures/HydroMac.png
-      :align: center
-      :figclass: align-center
+.. figure:: figures/HydroMac.png
+   :alt: HydroUQ tool on startup in the mac OS.
+   :align: center
 
-      HydroUQ tool on startup in the mac OS.
+   HydroUQ tool on startup in the mac OS.
 
 Testing 
 ===========

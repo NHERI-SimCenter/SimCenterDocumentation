@@ -286,8 +286,8 @@ if app_name == "HydroUQ":
     project = "Hydro-UQ"
     author = "Ajay B Harish, Frank McKenna"
 
-    # tags.add('desktop_app')
-    tags.add("earthquake")
+    tags.add("tsunami")
+    tags.add("stormsurge")
     tags.add("response")
     tags.add("notQuoFEM")
     tags.add("Hydro")

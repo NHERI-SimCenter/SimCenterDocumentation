@@ -1,0 +1,1 @@
+cp docs/common/user_manual/examples/desktop/hdro-0001 docs/Hydro/userman/examples/hdro-0001
