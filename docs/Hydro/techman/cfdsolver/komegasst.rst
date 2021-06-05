@@ -27,6 +27,11 @@ The turbulence viscosity is obtained as
 
     \nu_t = a_1 \frac{k}{\text{max} \left( a_1, \omega, b_1, F_{23} \right)}
 
+A more comprehensive overview on the k-Epsilon model is discussed in the below video
+
+.. raw:: html
+
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/myv-ityFnS4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 References
 ------------
