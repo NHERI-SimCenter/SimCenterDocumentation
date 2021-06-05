@@ -17,4 +17,4 @@ A walk-through video of the ``Hydro EVT`` is given below
    <iframe width="560" height="315" src="https://www.youtube.com/embed/b3ZXjlAoQbk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 
-If you would like more help videos on any particular topic, please write to us at :ref:`lbl-featurereq`.
+If you would like more help videos on any particular topic, please write to us through the |messageBoard|.
