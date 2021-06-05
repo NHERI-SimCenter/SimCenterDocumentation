@@ -35,6 +35,7 @@ help:
 	@echo '    web    Run html target with build directory'
 	@echo '           set to app publishing repository.'
 	@echo '    html   Run html target in dev build directory.'
+	@echo '    spell  Run spell checker.'
 	@echo '    latex  Run latex target in dev build directory.'
 	@printf "\nRunning 'make all' will run 'make <app> html'\n"
 	@printf "for all <app> options listed above.\n\n"
@@ -49,7 +50,7 @@ we:      export SIMDOC_APP=WE-UQ
 r2d:     export SIMDOC_APP=R2DTool
 
 pbe:     export SIMDOC_APP=PBE
-hydro:   export SIMDOC_APP=Hydro
+hydro:   export SIMDOC_APP=HydroUQ
 qfem:    export SIMDOC_APP=quoFEM
 pelicun: export SIMDOC_APP=pelicun
 rtm: export SIMDOC_APP=requirements
