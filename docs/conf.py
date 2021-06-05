@@ -154,6 +154,7 @@ toc_filter_exclusions = [
     "quoFEM",
     "Hydro",
     "notQuoFEM",
+    "notR2D",    
     "WEUQ",
     "EEUQ",
     "TinF",
@@ -290,6 +291,7 @@ if app_name == "Hydro":
     tags.add("earthquake")
     tags.add("response")
     tags.add("notQuoFEM")
+    tags.add("notR2D")    
     tags.add("Hydro")
 
     toc_filter_exclusions.remove("Hydro")
@@ -417,11 +419,14 @@ elif app_name == "PBE":
     tags.add("desktop_app")
     tags.add("earthquake")
     tags.add("notQuoFEM")
+    tags.add("notR2D")        
+    
 
     toc_filter_exclusions.remove("PBE")
     toc_filter_exclusions.remove("desktop")
     toc_filter_exclusions.remove("earthquake")
     toc_filter_exclusions.remove("notQuoFEM")
+    toc_filter_exclusions.remove("notR2D")    
     toc_filter_exclude = toc_filter_exclusions
 
     exclude_patterns.remove("**/*desktop*")
@@ -472,12 +477,14 @@ elif app_name == "EE-UQ":
     tags.add("response")
     tags.add("earthquake")
     tags.add("notQuoFEM")
+    tags.add("notR2D")    
 
     toc_filter_exclusions.remove("EEUQ")
     toc_filter_exclusions.remove("desktop")
     toc_filter_exclusions.remove("earthquake")
     toc_filter_exclusions.remove("response")
     toc_filter_exclusions.remove("notQuoFEM")
+    toc_filter_exclusions.remove("notR2D")    
     toc_filter_exclude = toc_filter_exclusions
 
     exclude_patterns.remove("**/*EEUQ*")
@@ -584,12 +591,14 @@ elif app_name == "WE-UQ":
     tags.add("response")
     tags.add("wind")
     tags.add("notQuoFEM")
+    tags.add("notR2D")    
 
     toc_filter_exclusions.remove("WEUQ")
     toc_filter_exclusions.remove("desktop")
     toc_filter_exclusions.remove("wind")
     toc_filter_exclusions.remove("response")
     toc_filter_exclusions.remove("notQuoFEM")
+    toc_filter_exclusions.remove("notR2D")    
     toc_filter_exclude = toc_filter_exclusions
 
     exclude_patterns.remove("**/*WEUQ*")
