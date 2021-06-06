@@ -169,8 +169,13 @@
    :R2D:common/developer_manual/how_to_extend/desktop/how_to_extend
    :pelicun:common/developer_manual/how_to_extend/pelicun/how_to_extend
 
-   :desktop_app:common/developer_manual/verification/desktop/verification
-   :pelicun:common/developer_manual/verification/pelicun/verification
+   :EEUQ:common/developer_manual/verification/desktop/verification
+   :WEUQ:common/developer_manual/verification/desktop/verification
+   :PBE:common/developer_manual/verification/desktop/verification
+   :quoFEM:common/developer_manual/verification/desktop/verification
+   :R2D:common/developer_manual/verification/desktop/verification
+   :pelican:common/developer_manual/verification/pelicun/verification
+   :Hydro:Hydro/devman/verify
 
    :desktop_app:common/developer_manual/coding_style/desktop/coding_style
    :pelicun:common/developer_manual/coding_style/pelicun/coding_style
