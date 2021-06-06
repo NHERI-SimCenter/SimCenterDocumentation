@@ -8,7 +8,7 @@ The **RV** tab allows the user to specify the probabilistic distribution for the
 
 .. note::
 
-   To add a new random variable the user presses the **Add** button. To remove a random variable, the user must first select it by checking the small circle before the random variable, and then pressing the **Remove** button.
+   To add a new random variable, the user presses the **Add** button. To remove a random variable, the user must first select it by checking the small circle before the random variable and pressing the **Remove** button.
 
 1. `Normal (Gaussian) <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-normal_uncertain.html>`_
 
@@ -45,7 +45,7 @@ The **RV** tab allows the user to specify the probabilistic distribution for the
 4. `Uniform <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-uniform_uncertain.html>`_
 
 
-   User provides the lower bound (:math:`L_B`), and an upper bound (:math:`U_B`) for the uniform distribution. The density function of the normal distribution, as a function of these quantities is:
+   The user provides the lower bound (:math:`L_B`) and an upper bound (:math:`U_B`) for the uniform distribution. The density function of the normal distribution, as a function of these quantities, is:
 
    .. math::
 
@@ -72,9 +72,9 @@ The **RV** tab allows the user to specify the probabilistic distribution for the
 
    .. math::
    
-	f(x) = \alpha e^{-\alpha(x-\beta)} \exp(-e^{-\alpha(x-\beta)})
+   f(x) = \alpha e^{-\alpha(x-\beta)} \exp(-e^{-\alpha(x-\beta)})
 
-For each random variable, the user must enter a name and select from the pull down menu the distribution associated with the random variable. For the distribution selected, the user must then provide the input arguments, which are as described above. :numref:`figRV` shows the panel for a problem with four Random Variables with all random input following Gaussian distributions. 
+For each random variable, the user must enter a name and select from the pull-down menu the distribution associated with the random variable. The user must then provide the input arguments for the chosen distribution, which are as described above. :numref:`figRV` shows the panel for a problem with four Random Variables with all random input following Gaussian distributions. 
 
 .. _figRV:
 
@@ -86,7 +86,7 @@ For each random variable, the user must enter a name and select from the pull do
 
 .. note::
 
-   To add a new random variable the user presses the **Add** button. To remove a random variable, the user must first select it by checking the small circle before the random variable, and then pressing the **Remove** button.
+   To add a new random variable, the user presses the **Add** button. To remove a random variable, the user must first select it by checking the small circle before the random variable and pressing the **Remove** button.
 
 .. warning::
 
@@ -97,4 +97,4 @@ For each random variable, the user must enter a name and select from the pull do
    :width: 800
    :figclass: align-center
 
-   Various distributions offered by the |app| .
+   Various distributions offered by the |app|.

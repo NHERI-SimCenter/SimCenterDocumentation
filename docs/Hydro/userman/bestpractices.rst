@@ -52,7 +52,7 @@ Boundary conditions
 
 #. The ``EVT`` requires one to provide six boundary conditions for the six standard patches ``Entry``, ``Exit``, ``Right``, ``Left``, ``Bottom`` and ``Top``.
 
-#. If no boundary condition is specified for a particular patch, it is assumed to be ``type: empty`` by default. Presently, |app| only allows specification of the velocity and pressure boundary conditions. If you would like to specify other parameters, please write to us at :ref:`lbl-featurereq`.
+#. If no boundary condition is specified for a particular patch, it is assumed to be ``type: empty`` by default. Presently, |app| only allows specification of the velocity and pressure boundary conditions. If you would like to specify other parameters, please write to us at :ref:`lblBugs`.
 
 #. The inlet boundary condition should be used for patches where it has a weak influence on the downstream flow. Perform a sensitivity analysis on the inlet flow direction, magnitude, and profile. The exact inlet turbulence conditions are usually unknown. Thus, 1% turbulent intensity can be assumed for external flows.
 

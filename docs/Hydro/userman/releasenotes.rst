@@ -20,13 +20,13 @@ Version 1.0.0
 
 #. **Simulation types**:
     a. CFD to resolve SW (Using SW results), CFD using bathymetry data, CFD of wave flume is supported.
-    c. For simulation type with SW-CFD coupling, ``v1.0.0`` considers one point on the interface. However, if you would like more flexibility, please let us know using the :ref:`lbl-featurereq`.
+    c. For simulation type with SW-CFD coupling, ``v1.0.0`` considers one point on the interface. However, if you would like more flexibility, please let us know using the :ref:`lblBugs`.
 
 #. **Geometry**: 
     a. Geometry can be imported as Bathymetry files (GeoClaw format - type 1), STL files, or the Hydro flume digital twin. 
     b. Shallow-water to CFD interface can be imported as a ``.csv`` file only.
-    c. Buildings of cuboid shapes are supported in ``v1.0.0``. For other shapes, the user can upload them as an STL file. The buildings need to be specified in the table or can be generated parametrically. Importing buildings as a ``.csv`` file is not currently supported in ``v1.0.0`` but can be requested using the :ref:`lbl-featurereq`. 
-    d. Floating bodies and debris modeling are not supported in ``v1.0.0``. Support will be added in upcoming versions. If you are interested in this feature, please write to us at :ref:`lbl-featurereq`.
+    c. Buildings of cuboid shapes are supported in ``v1.0.0``. For other shapes, the user can upload them as an STL file. The buildings need to be specified in the table or can be generated parametrically. Importing buildings as a ``.csv`` file is not currently supported in ``v1.0.0`` but can be requested using the :ref:`lblBugs`. 
+    d. Floating bodies and debris modeling are not supported in ``v1.0.0``. Support will be added in upcoming versions. If you are interested in this feature, please write to us at :ref:`lblBugs`.
 
 #. **Meshing**: 
     a. Supports blockMesh and snappyHexMesh for internal meshing.
@@ -55,4 +55,4 @@ Version 1.0.0
 
 #. **Turbulence**:
     a. Presently, only RANS is supported for turbulence modeling.
-    b. If you would like to use LES, please let us know about it using :ref:`lbl-featurereq`.
+    b. If you would like to use LES, please let us know about it using :ref:`lblBugs`.
