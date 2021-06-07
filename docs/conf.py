@@ -12,18 +12,18 @@ app_name = os.path.expandvars("$SIMDOC_APP")
 APPS = ["R2DTool", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "pelicun","requirements","Hydro"]
 if app_name in APPS:
     # `make` was invoked from root, all env vars should already be defined.
-	pass
+    pass
 else:
-	pass
-	app_name = 'R2DTool'
-	#app_name = 'PBE'
-	#app_name = 'EE-UQ'
-	#app_name = 'WE-UQ'
-	#app_name = 'quoFEM'
-	#app_name = 'pelicun'
+    pass
+    #app_name = 'R2DTool'
+    #app_name = 'PBE'
+    #app_name = 'EE-UQ'
+    app_name = 'WE-UQ'
+    #app_name = 'quoFEM'
+    #app_name = 'pelicun'
 
-	os.environ['SIMDOC_APP'] = app_name
-	os.environ['SIMCENTER_DEV'] = os.path.abspath('../../')
+    os.environ['SIMDOC_APP'] = app_name
+    os.environ['SIMCENTER_DEV'] = os.path.abspath('../../')
 
 app_abrev = app_name.split("-")[0].replace("Tool","")
 app_abrev2 = app_name.replace("-","").replace("Tool","")
@@ -48,67 +48,67 @@ sys.path.append(os.path.abspath('./modules/tmpl_0007/'))
 from sync_files import sync_files
 
 if app_name == 'pelicun':
-	sys.path.insert(0, os.path.abspath('.'))
-	sys.path.insert(0, os.path.abspath('../'))
+    sys.path.insert(0, os.path.abspath('.'))
+    sys.path.insert(0, os.path.abspath('../'))
 #-----------------------------------------------------------------------------
 
 external_links = {
-	'github': f'https://github.com/NHERI-SimCenter/{app_name}',
+    'github': f'https://github.com/NHERI-SimCenter/{app_name}',
 }
 
 exclude_patterns = [
-		'**/*desktop*',
-		'**/*response*',
-		'**/*earthquake*',
-		'**/*wind*',
-		'**/*R2DTool*',
-		'**/*PBE*',
-		'**/*WEUQ*',
-		'**/*WE[-_]UQ*',
-		'**/weuq-*',
+        '**/*desktop*',
+        '**/*response*',
+        '**/*earthquake*',
+        '**/*wind*',
+        '**/*R2DTool*',
+        '**/*PBE*',
+        '**/*WEUQ*',
+        '**/*WE[-_]UQ*',
+        '**/weuq-*',
 
-		'**/*EEUQ*',
-		'**/*EE[-_]UQ*',
-		'**/eeuq-*',
+        '**/*EEUQ*',
+        '**/*EE[-_]UQ*',
+        '**/eeuq-*',
 
-		'**/*TinF*',
-		'**/*TInF*',
-		'**/*pelicun*',
-		'**/*old*',
-		'**/*quoFEM*',
-		'**/*Bootcamp*'
-		'**/qfem*',
+        '**/*TinF*',
+        '**/*TInF*',
+        '**/*pelicun*',
+        '**/*old*',
+        '**/*quoFEM*',
+        '**/*Bootcamp*'
+        '**/qfem*',
                 '**/Hydro*',
-		# Apparently obsolete pages, consider deleting
-		'**/_downloadApp.rst',
-		'**/downloadPython.rst',
-		'**/install_WindowsOld.rst'
-	] + [
+        # Apparently obsolete pages, consider deleting
+        '**/_downloadApp.rst',
+        '**/downloadPython.rst',
+        '**/install_WindowsOld.rst'
+    ] + [
             f'{app}/' for app in APPS if app != app_name
         ]
 
 source_suffix = {
-	".rst": "restructuredtext",
+    ".rst": "restructuredtext",
 }
 
 toc_filter_exclusions = [
-	'desktop',
-	'response',
-	'earthquake',
-	'wind',
-	'R2D',
-	'PBE',
-	'quoFEM',
-	'Hydro',
-	'notQuoFEM',
-	'WEUQ',
-	'EEUQ',
-	'TinF',
-	'TInF',
-	'S3hark',
-	'pelicun',
-	'bootcamp'
-	'docTestbeds'
+    'desktop',
+    'response',
+    'earthquake',
+    'wind',
+    'R2D',
+    'PBE',
+    'quoFEM',
+    'Hydro',
+    'notQuoFEM',
+    'WEUQ',
+    'EEUQ',
+    'TinF',
+    'TInF',
+    'S3hark',
+    'pelicun',
+    'bootcamp'
+    'docTestbeds'
 ]
 
 
@@ -129,7 +129,7 @@ math_numfig = True
 copyright = '2021, The Regents of the University of California'
 tags.add(f'{app_abrev2}_app')
 
-rst_prolog = f"""
+rst_prolog = f"""\
 .. |figDownload| replace:: :numref:`figDownload-{app_abrev}`
 .. |figDownloadWin| replace:: :numref:`figDownloadWin-{app_abrev}`
 .. |figGenericUI| replace:: :numref:`figGenericUI-{app_abrev}`
@@ -195,32 +195,32 @@ rst_prolog = f"""
 """
 
 html_theme_options = {
-	'logo_only': True,
-	'prev_next_buttons_location': None,
-	'style_nav_header_background': '#F2F2F2'
+    'logo_only': True,
+    'prev_next_buttons_location': None,
+    'style_nav_header_background': '#F2F2F2'
 }
 html_logo = f'common/figures/{app_name2}-Logo.png'
 
 # gallery data sources
 rendre_config = {
-	"targets": {
-		"examples": {
-			"data-file": os.path.normpath(f'{loc_app_dir}/Examples/index.json'),
-			"defaults": {
-				"link": "./%%:base/README"
-			}
-		},
-		"backend": {
-			# "data-file": os.path.normpath(f'../../{app_name}/Examples/index.json')
-		}
-	}
+    "targets": {
+        "examples": {
+            "data-file": os.path.normpath(f'{loc_app_dir}/Examples/index.json'),
+            "defaults": {
+                "link": "./%%:base/README"
+            }
+        },
+        "backend": {
+            # "data-file": os.path.normpath(f'../../{app_name}/Examples/index.json')
+        }
+    }
 }
 example_config = rendre_config["targets"]["examples"]
 sync_examples = False
 
 # Create inline :github: directive for convenient linking to files on github
 extlinks = {
-	'github' : (f'{external_links["github"]}/tree/master/%s', f'Github'),
+    'github' : (f'{external_links["github"]}/tree/master/%s', f'Github'),
 }
 
 examples_url = f'https://github.com/NHERI-SimCenter/{app_name}/tree/master/Examples/'
@@ -231,43 +231,43 @@ docTestbeds='True'
 
 if app_name == 'Hydro':
 
-	project = 'Hydro-UQ'
-	author = "Ajay B Harish"
+    project = 'Hydro-UQ'
+    author = "Ajay B Harish"
 
-	#tags.add('desktop_app')
-	tags.add('earthquake')
-	tags.add('response')
-	tags.add('notQuoFEM')
-	tags.add('Hydro')
+    #tags.add('desktop_app')
+    tags.add('earthquake')
+    tags.add('response')
+    tags.add('notQuoFEM')
+    tags.add('Hydro')
 
-	toc_filter_exclusions.remove('Hydro')
-	toc_filter_exclusions.remove('desktop')
-	toc_filter_exclusions.remove('response')
-	toc_filter_exclusions.remove('notQuoFEM')
-	toc_filter_exclude = toc_filter_exclusions
+    toc_filter_exclusions.remove('Hydro')
+    toc_filter_exclusions.remove('desktop')
+    toc_filter_exclusions.remove('response')
+    toc_filter_exclusions.remove('notQuoFEM')
+    toc_filter_exclude = toc_filter_exclusions
 
-	exclude_patterns.remove('**/*desktop*')
-	exclude_patterns.remove('**/*earthquake*')
-	exclude_patterns.remove('**/*response*')
-	exclude_patterns.remove('**/Hydro*')
+    exclude_patterns.remove('**/*desktop*')
+    exclude_patterns.remove('**/*earthquake*')
+    exclude_patterns.remove('**/*response*')
+    exclude_patterns.remove('**/Hydro*')
 
 
-	# TODO: fix these temporary changes
-	exclude_patterns.append('**/user_manual/usage/desktop/FEM.rst')
-	exclude_patterns.append('**/user_manual/usage/desktop/SIM.rst')
-	exclude_patterns.append('**/user_manual/usage/desktop/GI.rst')
-	exclude_patterns.append('**/user_manual/usage/desktop/response/*')
-	exclude_patterns.append('**/user_manual/usage/desktop/earthquake/*')
-	exclude_patterns.append('**/*architectureLevel4.rst*')
-	exclude_patterns.append('**/requirements/index.rst')
-	exclude_patterns.append('**/requirements/bigRequirements.rst')
-	exclude_patterns.append('**/DakotaSensitivity.rst')
-	exclude_patterns.append('**/DakotaReliability.rst')
-	exclude_patterns.append('**/DakotaParameterEstimation.rst')
-	exclude_patterns.append('**/DakotaInverseProblems.rst')
-	# END TODO
+    # TODO: fix these temporary changes
+    exclude_patterns.append('**/user_manual/usage/desktop/FEM.rst')
+    exclude_patterns.append('**/user_manual/usage/desktop/SIM.rst')
+    exclude_patterns.append('**/user_manual/usage/desktop/GI.rst')
+    exclude_patterns.append('**/user_manual/usage/desktop/response/*')
+    exclude_patterns.append('**/user_manual/usage/desktop/earthquake/*')
+    exclude_patterns.append('**/*architectureLevel4.rst*')
+    exclude_patterns.append('**/requirements/index.rst')
+    exclude_patterns.append('**/requirements/bigRequirements.rst')
+    exclude_patterns.append('**/DakotaSensitivity.rst')
+    exclude_patterns.append('**/DakotaReliability.rst')
+    exclude_patterns.append('**/DakotaParameterEstimation.rst')
+    exclude_patterns.append('**/DakotaInverseProblems.rst')
+    # END TODO
 
-	rst_prolog += f"""
+    rst_prolog += f"""\
 .. |full tool name| replace:: Water-borne Hazards Engineering with Uncertainty Quantification
 .. |tool version| replace:: 1.0
 .. |appLink| replace:: `{app_name2} Download (Coming soon)`_
@@ -277,55 +277,55 @@ if app_name == 'Hydro':
 .. |developers| replace:: {author}
 """
 
-	extlinks.update(
-	   {f'hdro-{i:04}' : (f'{examples_url}/r2dt-{i:04}/%s',f'r2dt-{i:04}') for i in range(1,20)}
-	)
+    extlinks.update(
+       {f'hdro-{i:04}' : (f'{examples_url}/r2dt-{i:04}/%s',f'r2dt-{i:04}') for i in range(1,20)}
+    )
 
-	html_theme_options.update({
-		'analytics_id': '...', #TODO: add analytics ID
-	})
+    html_theme_options.update({
+        'analytics_id': '...', #TODO: add analytics ID
+    })
 
 if app_name == 'R2DTool':
 
-	project = 'Regional Resilience Determination Tool'
+    project = 'Regional Resilience Determination Tool'
 
-	author = 'Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez'
-	sync_examples = True
+    author = 'Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez'
+    sync_examples = True
 
-	tags.add('desktop_app')
-	tags.add('earthquake')
-	tags.add('response')
-	tags.add('notQuoFEM')
+    tags.add('desktop_app')
+    tags.add('earthquake')
+    tags.add('response')
+    tags.add('notQuoFEM')
 
-	toc_filter_exclusions.remove('R2D')
-	toc_filter_exclusions.remove('desktop')
-	toc_filter_exclusions.remove('earthquake')
-	toc_filter_exclusions.remove('response')
-	toc_filter_exclusions.remove('notQuoFEM')
-	toc_filter_exclude = toc_filter_exclusions
+    toc_filter_exclusions.remove('R2D')
+    toc_filter_exclusions.remove('desktop')
+    toc_filter_exclusions.remove('earthquake')
+    toc_filter_exclusions.remove('response')
+    toc_filter_exclusions.remove('notQuoFEM')
+    toc_filter_exclude = toc_filter_exclusions
 
-	exclude_patterns.remove('**/*desktop*')
-	exclude_patterns.remove('**/*earthquake*')
-	exclude_patterns.remove('**/*response*')
-	exclude_patterns.remove('**/*R2DTool*')
+    exclude_patterns.remove('**/*desktop*')
+    exclude_patterns.remove('**/*earthquake*')
+    exclude_patterns.remove('**/*response*')
+    exclude_patterns.remove('**/*R2DTool*')
 
 
-	# TODO: fix these temporary changes
-	exclude_patterns.append('**/user_manual/usage/desktop/FEM.rst')
-	exclude_patterns.append('**/user_manual/usage/desktop/SIM.rst')
-	exclude_patterns.append('**/user_manual/usage/desktop/GI.rst')
-	exclude_patterns.append('**/user_manual/usage/desktop/response/*')
-	exclude_patterns.append('**/user_manual/usage/desktop/earthquake/*')
-	exclude_patterns.append('**/*architectureLevel4.rst*')
-	exclude_patterns.append('**/requirements/index.rst')
-	exclude_patterns.append('**/requirements/bigRequirements.rst')
-	exclude_patterns.append('**/DakotaSensitivity.rst')
-	exclude_patterns.append('**/DakotaReliability.rst')
-	exclude_patterns.append('**/DakotaParameterEstimation.rst')
-	exclude_patterns.append('**/DakotaInverseProblems.rst')
-	# END TODO
+    # TODO: fix these temporary changes
+    exclude_patterns.append('**/user_manual/usage/desktop/FEM.rst')
+    exclude_patterns.append('**/user_manual/usage/desktop/SIM.rst')
+    exclude_patterns.append('**/user_manual/usage/desktop/GI.rst')
+    exclude_patterns.append('**/user_manual/usage/desktop/response/*')
+    exclude_patterns.append('**/user_manual/usage/desktop/earthquake/*')
+    exclude_patterns.append('**/*architectureLevel4.rst*')
+    exclude_patterns.append('**/requirements/index.rst')
+    exclude_patterns.append('**/requirements/bigRequirements.rst')
+    exclude_patterns.append('**/DakotaSensitivity.rst')
+    exclude_patterns.append('**/DakotaReliability.rst')
+    exclude_patterns.append('**/DakotaParameterEstimation.rst')
+    exclude_patterns.append('**/DakotaInverseProblems.rst')
+    # END TODO
 
-	rst_prolog += """\
+    rst_prolog += """\
 .. |full tool name| replace:: Regional Resilience Determination Tool
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0
 .. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt
@@ -335,57 +335,57 @@ if app_name == 'R2DTool':
 .. |developers| replace:: Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez
 
 """
-	example_config.update({
-		"include-item": [
-			"r2dt-0006",
-			"r2dt-0003",
-			"r2dt-0007",
-			"r2dt-0001",
-			"r2dt-0002",
-		]
-	})
-	extlinks.update(
-	   {f'r2dt-{i:04}' : (f'{examples_url}/r2dt-{i:04}/%s',f'r2dt-{i:04}') for i in range(1,20)}
-	)
+    example_config.update({
+        "include-item": [
+            "r2dt-0006",
+            "r2dt-0003",
+            "r2dt-0007",
+            "r2dt-0001",
+            "r2dt-0002",
+        ]
+    })
+    extlinks.update(
+       {f'r2dt-{i:04}' : (f'{examples_url}/r2dt-{i:04}/%s',f'r2dt-{i:04}') for i in range(1,20)}
+    )
 
-	html_theme_options.update({
-		'analytics_id': '...', #TODO: add analytics ID
-	})
+    html_theme_options.update({
+        'analytics_id': '...', #TODO: add analytics ID
+    })
 
 elif app_name == 'PBE':
 
-	project = 'Performance Based Engineering Application'
+    project = 'Performance Based Engineering Application'
 
-	author = 'Adam Zsarnóczay, Frank McKenna, Chaofeng Wang, Wael Elhaddad, Michael Gardner'
+    author = 'Adam Zsarnóczay, Frank McKenna, Chaofeng Wang, Wael Elhaddad, Michael Gardner'
 
-	tags.add('PBE_app')
-	tags.add('desktop_app')
-	tags.add('earthquake')
-	tags.add('notQuoFEM')
+    tags.add('PBE_app')
+    tags.add('desktop_app')
+    tags.add('earthquake')
+    tags.add('notQuoFEM')
 
-	toc_filter_exclusions.remove('PBE')
-	toc_filter_exclusions.remove('desktop')
-	toc_filter_exclusions.remove('earthquake')
-	toc_filter_exclusions.remove('notQuoFEM')
-	toc_filter_exclude = toc_filter_exclusions
+    toc_filter_exclusions.remove('PBE')
+    toc_filter_exclusions.remove('desktop')
+    toc_filter_exclusions.remove('earthquake')
+    toc_filter_exclusions.remove('notQuoFEM')
+    toc_filter_exclude = toc_filter_exclusions
 
-	exclude_patterns.remove('**/*desktop*')
-	exclude_patterns.remove('**/*earthquake*')
-	exclude_patterns.remove('**/*PBE*')
+    exclude_patterns.remove('**/*desktop*')
+    exclude_patterns.remove('**/*earthquake*')
+    exclude_patterns.remove('**/*PBE*')
 
-	# TODO: fix these temporary changes
-	exclude_patterns.append('**/*architectureLevel4.rst*')
-	exclude_patterns.append('**/requirements/index.rst')
-	exclude_patterns.append('**/requirements/bigRequirements.rst')
-	exclude_patterns.append('**/DakotaSensitivity.rst')
-	exclude_patterns.append('**/DakotaReliability.rst')
-	exclude_patterns.append('**/DakotaParameterEstimation.rst')
-	exclude_patterns.append('**/DakotaInverseProblems.rst')
-	exclude_patterns.append('**/resEE.rst')
-	# END TODO
+    # TODO: fix these temporary changes
+    exclude_patterns.append('**/*architectureLevel4.rst*')
+    exclude_patterns.append('**/requirements/index.rst')
+    exclude_patterns.append('**/requirements/bigRequirements.rst')
+    exclude_patterns.append('**/DakotaSensitivity.rst')
+    exclude_patterns.append('**/DakotaReliability.rst')
+    exclude_patterns.append('**/DakotaParameterEstimation.rst')
+    exclude_patterns.append('**/DakotaInverseProblems.rst')
+    exclude_patterns.append('**/resEE.rst')
+    # END TODO
 
 
-	rst_prolog += """\
+    rst_prolog += """\
 .. |full tool name| replace:: Performance Based Engineering Application
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
 .. _PBE Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE
@@ -397,32 +397,32 @@ elif app_name == 'PBE':
 """
 
 
-	html_theme_options.update({'analytics_id': 'UA-158130480-3'})
+    html_theme_options.update({'analytics_id': 'UA-158130480-3'})
 
 elif app_name == 'EE-UQ':
-	project = 'Earthquake Engineering with Uncertainty Quantification (EE-UQ)'
-	author = 'Frank McKenna, Wael Elhaddad, Michael Gardner, Chaofeng Wang, Adam Zsarnóczay'
+    project = 'Earthquake Engineering with Uncertainty Quantification (EE-UQ)'
+    author = 'Frank McKenna, Wael Elhaddad, Michael Gardner, Chaofeng Wang, Adam Zsarnóczay'
 
-	tags.add('desktop_app')
-	tags.add('response')
-	tags.add('earthquake')
-	tags.add('notQuoFEM')
+    tags.add('desktop_app')
+    tags.add('response')
+    tags.add('earthquake')
+    tags.add('notQuoFEM')
 
-	toc_filter_exclusions.remove('EEUQ')
-	toc_filter_exclusions.remove('desktop')
-	toc_filter_exclusions.remove('earthquake')
-	toc_filter_exclusions.remove('response')
-	toc_filter_exclusions.remove('notQuoFEM')
-	toc_filter_exclude = toc_filter_exclusions
+    toc_filter_exclusions.remove('EEUQ')
+    toc_filter_exclusions.remove('desktop')
+    toc_filter_exclusions.remove('earthquake')
+    toc_filter_exclusions.remove('response')
+    toc_filter_exclusions.remove('notQuoFEM')
+    toc_filter_exclude = toc_filter_exclusions
 
-	exclude_patterns.remove('**/*EEUQ*')
-	exclude_patterns.remove('**/eeuq-*')
-	exclude_patterns.remove('**/*desktop*')
-	exclude_patterns.remove('**/*earthquake*')
-	exclude_patterns.remove('**/*response*')
-	exclude_patterns.remove('**/*EE[-_]UQ*')
+    exclude_patterns.remove('**/*EEUQ*')
+    exclude_patterns.remove('**/eeuq-*')
+    exclude_patterns.remove('**/*desktop*')
+    exclude_patterns.remove('**/*earthquake*')
+    exclude_patterns.remove('**/*response*')
+    exclude_patterns.remove('**/*EE[-_]UQ*')
 
-	rst_prolog += """
+    rst_prolog += """\
 .. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application (EE-UQ)
 .. |tool version| replace:: 2.0
 .. _EE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/EE_UQ
@@ -434,39 +434,39 @@ elif app_name == 'EE-UQ':
 """
 
 
-	html_theme_options.update({'analytics_id': 'UA-158130480-1'})
+    html_theme_options.update({'analytics_id': 'UA-158130480-1'})
 
 elif app_name == 'quoFEM':
-	project = 'Quantified Uncertainty with Optimization for the FEM'
-	copyright = '2018-2020, The Regents of the University of California'
-	author = 'Frank McKenna, Adam Zsarnóczay, Sang-ri Yi, Aakash Bangalore Satish, Nikhil Padhye'
+    project = 'Quantified Uncertainty with Optimization for the FEM'
+    copyright = '2018-2020, The Regents of the University of California'
+    author = 'Frank McKenna, Adam Zsarnóczay, Sang-ri Yi, Aakash Bangalore Satish, Nikhil Padhye'
 
-	tags.add('desktop_app')
+    tags.add('desktop_app')
 
-	toc_filter_exclusions.remove('desktop')
-	toc_filter_exclusions.remove('quoFEM')
-	toc_filter_exclude = toc_filter_exclusions
+    toc_filter_exclusions.remove('desktop')
+    toc_filter_exclusions.remove('quoFEM')
+    toc_filter_exclude = toc_filter_exclusions
 
-	exclude_patterns.remove('**/*desktop*')
-	exclude_patterns.remove('**/*quoFEM*')
-	exclude_patterns.remove('**/qfem*')
+    exclude_patterns.remove('**/*desktop*')
+    exclude_patterns.remove('**/*quoFEM*')
+    exclude_patterns.remove('**/qfem*')
 
-	# TODO: fix these temporary changes
-	exclude_patterns.append('**/*architectureLevel4.rst*')
-	exclude_patterns.append('**/requirements/index.rst')
-	exclude_patterns.append('**/requirements/bigRequirements.rst')
-	exclude_patterns.append('**/resEE.rst')
-	exclude_patterns.append('**/damping.rst')
-	exclude_patterns.append('**/desktop/FEM.rst')
-	exclude_patterns.append('**/desktop/GI.rst')
-	exclude_patterns.append('**/desktop/SIM.rst')
-	exclude_patterns.append('**/desktop/quo-*')
-	exclude_patterns.append('**/testbeds/*')
-	# END TODO
+    # TODO: fix these temporary changes
+    exclude_patterns.append('**/*architectureLevel4.rst*')
+    exclude_patterns.append('**/requirements/index.rst')
+    exclude_patterns.append('**/requirements/bigRequirements.rst')
+    exclude_patterns.append('**/resEE.rst')
+    exclude_patterns.append('**/damping.rst')
+    exclude_patterns.append('**/desktop/FEM.rst')
+    exclude_patterns.append('**/desktop/GI.rst')
+    exclude_patterns.append('**/desktop/SIM.rst')
+    exclude_patterns.append('**/desktop/quo-*')
+    exclude_patterns.append('**/testbeds/*')
+    # END TODO
 
-	sync_examples = True
+    sync_examples = True
 
-	rst_prolog += f"""
+    rst_prolog += f"""\
 .. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)
 .. |tool version| replace:: 2.0
 .. _quoFEM Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
@@ -478,51 +478,51 @@ elif app_name == 'quoFEM':
 """
 
 
-	html_theme_options.update({'analytics_id': 'UA-158130480-4'})
+    html_theme_options.update({'analytics_id': 'UA-158130480-4'})
 
-	example_config.update({
-		"include-item": [
-			"qfem-0001",
-			"qfem-0002",
-			"qfem-0005",
-			"qfem-0003",
-			"qfem-0004",
-			"qfem-0009",
-			"qfem-0008",
-			"qfem-0014",
-			"qfem-0015",
-		]
-	})
-	# Example links
-	extlinks.update(
-	   {f'qfem-{i:04}' : (f'{examples_url}/qfem-{i:04}/%s',f'qfem-{i:04}') for i in range(1,99)}
-	)
+    example_config.update({
+        "include-item": [
+            "qfem-0001",
+            "qfem-0002",
+            "qfem-0005",
+            "qfem-0003",
+            "qfem-0004",
+            "qfem-0009",
+            "qfem-0008",
+            "qfem-0014",
+            "qfem-0015",
+        ]
+    })
+    # Example links
+    extlinks.update(
+       {f'qfem-{i:04}' : (f'{examples_url}/qfem-{i:04}/%s',f'qfem-{i:04}') for i in range(1,99)}
+    )
 
 elif app_name == 'WE-UQ':
-	project = 'Wind Engineering with Uncertainty Quantification'
-	author = 'Frank McKenna'
+    project = 'Wind Engineering with Uncertainty Quantification'
+    author = 'Frank McKenna'
 
-	tags.add('desktop_app')
-	tags.add('response')
-	tags.add('wind')
-	tags.add('notQuoFEM')
+    tags.add('desktop_app')
+    tags.add('response')
+    tags.add('wind')
+    tags.add('notQuoFEM')
 
-	toc_filter_exclusions.remove('WEUQ')
-	toc_filter_exclusions.remove('desktop')
-	toc_filter_exclusions.remove('wind')
-	toc_filter_exclusions.remove('response')
-	toc_filter_exclusions.remove('notQuoFEM')
-	toc_filter_exclude = toc_filter_exclusions
+    toc_filter_exclusions.remove('WEUQ')
+    toc_filter_exclusions.remove('desktop')
+    toc_filter_exclusions.remove('wind')
+    toc_filter_exclusions.remove('response')
+    toc_filter_exclusions.remove('notQuoFEM')
+    toc_filter_exclude = toc_filter_exclusions
 
-	exclude_patterns.remove('**/*WEUQ*')
-	exclude_patterns.remove('**/*desktop*')
-	exclude_patterns.remove('**/*wind*')
-	exclude_patterns.remove('**/*response*')
-	exclude_patterns.remove('**/*TinF*')
-	exclude_patterns.remove('**/*WE[-_]UQ*')
-	exclude_patterns.remove('**/weuq-*')
+    exclude_patterns.remove('**/*WEUQ*')
+    exclude_patterns.remove('**/*desktop*')
+    exclude_patterns.remove('**/*wind*')
+    exclude_patterns.remove('**/*response*')
+    exclude_patterns.remove('**/*TinF*')
+    exclude_patterns.remove('**/*WE[-_]UQ*')
+    exclude_patterns.remove('**/weuq-*')
 
-	rst_prolog += """
+    rst_prolog += """\
 .. |full tool name| replace:: Wind Engineering with Uncertainty Quantification Application (WE-UQ)
 .. |tool version| replace:: 2.0
 .. _WE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ
@@ -533,28 +533,28 @@ elif app_name == 'WE-UQ':
 
 """
 
-	html_theme_options.update({'analytics_id': 'UA-158130480-2'})
+    html_theme_options.update({'analytics_id': 'UA-158130480-2'})
 
-	# Example links
-	extlinks.update(
-	   {f'weuq-{i:04}' : (f'{examples_url}/weuq-{i:04}/%s',f'weuq-{i:04}') for i in range(1,99)}
-	)
+    # Example links
+    extlinks.update(
+       {f'weuq-{i:04}' : (f'{examples_url}/weuq-{i:04}/%s',f'weuq-{i:04}') for i in range(1,99)}
+    )
 
 
 elif app_name == 'pelicun':
 
-	project = 'pelicun'
-	copyright = '(c) 2018-2021, Leland Stanford Junior University and The Regents of the University of California'
-	author = 'Adam Zsarnóczay'
+    project = 'pelicun'
+    copyright = '(c) 2018-2021, Leland Stanford Junior University and The Regents of the University of California'
+    author = 'Adam Zsarnóczay'
 
-	tags.add('pelicun')
+    tags.add('pelicun')
 
-	toc_filter_exclusions.remove('pelicun')
-	toc_filter_exclude = toc_filter_exclusions
+    toc_filter_exclusions.remove('pelicun')
+    toc_filter_exclude = toc_filter_exclusions
 
-	exclude_patterns.remove('**/*pelicun*')
+    exclude_patterns.remove('**/*pelicun*')
 
-	rst_prolog += """
+    rst_prolog += """\
 .. |pelicun expanded| replace:: Probabilistic Estimation of Losses, Injuries, and Community resilience Under Natural disasters
 .. |full tool name| replace:: pelicun library
 .. |app| replace:: pelicun library
@@ -564,41 +564,41 @@ elif app_name == 'pelicun':
 .. |developers| replace:: **Adam Zsarnóczay**
 """
 
-	extensions = [
-	    'sphinx.ext.autodoc',
-	    'sphinx.ext.todo',
-	    'sphinx.ext.mathjax',
-	    'sphinx.ext.viewcode',
-	    'sphinx.ext.githubpages',
-	    'numpydoc',
-	    'sphinx.ext.autosummary',
-	    'sphinx.ext.intersphinx',
-	    'sphinx.ext.coverage',
-	    'sphinx.ext.doctest'
-	]
+    extensions = [
+        'sphinx.ext.autodoc',
+        'sphinx.ext.todo',
+        'sphinx.ext.mathjax',
+        'sphinx.ext.viewcode',
+        'sphinx.ext.githubpages',
+        'numpydoc',
+        'sphinx.ext.autosummary',
+        'sphinx.ext.intersphinx',
+        'sphinx.ext.coverage',
+        'sphinx.ext.doctest'
+    ]
 
-	numpydoc_show_class_members = True
-	numpydoc_class_members_toctree = False
-	autodoc_member_order = 'bysource'
-	autoclass_content = 'both'
+    numpydoc_show_class_members = True
+    numpydoc_class_members_toctree = False
+    autodoc_member_order = 'bysource'
+    autoclass_content = 'both'
 
-	import glob
-	autosummary_generate = glob.glob("source/*.rst")
+    import glob
+    autosummary_generate = glob.glob("source/*.rst")
 
-	master_doc = 'index'
+    master_doc = 'index'
 
-	language = None
+    language = None
 
-	pygments_style = 'sphinx'
+    pygments_style = 'sphinx'
 
-	html_theme_options.update({'analytics_id': 'UA-158130480-7'})
+    html_theme_options.update({'analytics_id': 'UA-158130480-7'})
 
-	htmlhelp_basename = 'pelicundoc'
+    htmlhelp_basename = 'pelicundoc'
 
 elif app_name == 'requirements':
-	master_doc = 'common/requirements/index'
-	project = 'SimCenter Requirements Traceability Matrix'
-	exclude_patterns = [
+    master_doc = 'common/requirements/index'
+    project = 'SimCenter Requirements Traceability Matrix'
+    exclude_patterns = [
                 'common/user_manual/*',
                 'common/developer_manual/*',
                 'common/testbeds/',
@@ -607,15 +607,15 @@ elif app_name == 'requirements':
                 '.DS_Store',
                 'index.rst',
                 ] + [f'**/{app}/' for app in APPS if app != 'requirements']
-	author = 'NHERI SimCenter'
-	tags.add('requirements')
-	pdf_break_level = 2
-	latex_elements = {
-		'extraclassoptions': 'openany,oneside'
-	}
+    author = 'NHERI SimCenter'
+    tags.add('requirements')
+    pdf_break_level = 2
+    latex_elements = {
+        'extraclassoptions': 'openany,oneside'
+    }
 
 
-	rst_prolog = """
+    rst_prolog = """\
 .. |floatList| replace:: *list float*
 .. |integerList| replace:: *list integer*
 .. |intList| replace:: *list integer*
@@ -627,21 +627,22 @@ elif app_name == 'requirements':
 .. |float| replace:: *float*
 .. |integer| replace:: *integer*
 .. |fmk| replace:: **fmk**
+"""
 
 elif app_name == 'Bootcamp':
-	project = 'SimCenter Programming Bootcamp'
-	copyright = '2020'
-	author = 'Peter Mackenzie-Helnwein, Frank McKenna'
+    project = 'SimCenter Programming Bootcamp'
+    copyright = '2020'
+    author = 'Peter Mackenzie-Helnwein, Frank McKenna'
 
-	tags.add('Bootcamp')
-	#tags.remove('desktop_app')
+    tags.add('Bootcamp')
+    #tags.remove('desktop_app')
 
-	toc_filter_exclusions.remove('Bootcamp')
-	toc_filter_exclude = toc_filter_exclusions
+    toc_filter_exclusions.remove('Bootcamp')
+    toc_filter_exclude = toc_filter_exclusions
 
-	exclude_patterns.remove('**/*Bootcamp*')
+    exclude_patterns.remove('**/*Bootcamp*')
 
-	rst_prolog += """
+    rst_prolog += """\
 .. |full tool name| replace:: SimCenter Programming Bootcamp 2020
 .. |short tool name| replace:: Bootcamp 2020
 .. |short tool id| replace:: Bootcamp
@@ -660,21 +661,19 @@ elif app_name == 'Bootcamp':
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-WE`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 .. |developers| replace:: **Peter Mackenzie-Helnwein**, **Frank McKenna**
-                          
 
-"""	
+""" 
 
-	html_logo = 'common/figures/SimCenter_Programming_Bootcamp2020.png'
+    html_logo = 'common/figures/SimCenter_Programming_Bootcamp2020.png'
 
 
-	html_theme_options = {
-		'analytics_id': 'UA-158130480-2',
-		'logo_only': True,
-		'prev_next_buttons_location': None,
-		'style_nav_header_background': '#F2F2F2'
-	}
+    html_theme_options = {
+        'analytics_id': 'UA-158130480-2',
+        'logo_only': True,
+        'prev_next_buttons_location': None,
+        'style_nav_header_background': '#F2F2F2'
+    }
 
-"""
 
 
 # -- General configuration ---------------------------------------------------
@@ -701,7 +700,7 @@ templates_path = ['_templates']
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 exclude_patterns = (exclude_patterns +
-					['_build', 'Thumbs.db', '.DS_Store', '_archive'])
+                    ['_build', 'Thumbs.db', '.DS_Store', '_archive'])
 
 # -- Options for HTML output -------------------------------------------------
 
@@ -709,7 +708,7 @@ exclude_patterns = (exclude_patterns +
 html_theme = 'sphinx_rtd_theme'
 
 html_css_files = [
-	'css/custom.css'
+    'css/custom.css'
 ]
 
 html_secnum_suffix = " "
@@ -720,29 +719,29 @@ html_secnum_suffix = " "
 html_static_path = ['_static','_static/css/']
 
 #latex_docclass = {
-#	r'manual': 'simcenterdocumentation',
-#	r'howto': 'simcenterdocumentation'
+#   r'manual': 'simcenterdocumentation',
+#   r'howto': 'simcenterdocumentation'
 #}
 
 latex_elements = {
   'extraclassoptions': 'openany,oneside'
 }
 latex_documents = [
-	(
-		'index',
-		app_name + ".tex", # tex output file
-		project,          # Document title
-		author.replace(', ',' \\and '), # authors
-		'manual'           # latex theme
-	)
+    (
+        'index',
+        app_name + ".tex", # tex output file
+        project,          # Document title
+        author.replace(', ',' \\and '), # authors
+        'manual'           # latex theme
+    )
 ]
 latex_logo = 'common/figures/NSF_SimCenter_NO TEXT_SimCenter.png'
 
 # -- sync files for examples ---------------------------------------------------------------
 
 if sync_examples:
-	sync_files(
-		src_dir=os.path.abspath(f'../../{app_name}/Examples'),
-		dst_dir="common/user_manual/examples/desktop",
-		config=example_config
-	)
+    sync_files(
+        src_dir=os.path.abspath(f'../../{app_name}/Examples'),
+        dst_dir="common/user_manual/examples/desktop",
+        config=example_config
+    )

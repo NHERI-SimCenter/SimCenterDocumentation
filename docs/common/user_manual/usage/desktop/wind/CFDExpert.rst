@@ -9,7 +9,13 @@ This option allows users to obtain wind forces utilizing an existing OpenFoam mo
 
 #. The building forces are extracted using the binning feature in OpenFOAM force module and thus, it is assumed that all the floors are of equal heights.
 
-#. OpenFOAM solvers supported are limited to *pisoFOAM*.
+#. OpenFOAM solvers supported thus far are
+   
+   * *pisoFOAM*
+
+   * *picoFOAM*
+
+   * *pimpleFOAM*
 
 #. Meshing is performed using the *blockMesh* tool.
 
@@ -24,7 +30,7 @@ It is important to note that this type of event is only supported when running t
 
 	CFD expert event.
 
-There are at least 6 input parameters that needs to be provided by the user and can be summarized as follows:
+There are at least 6 input parameters and two advanced option switches that needs to be provided by the user and can be summarized as follows:
 
 #. **Case:** The remote path of the OpenFOAM case that was uploaded in advance to DesignSafe data depot. By default, this is set to an example case that is provided by the SimCenter in the community directory.
 
@@ -39,6 +45,15 @@ There are at least 6 input parameters that needs to be provided by the user and 
 #. **Coupling building vibration and CFD:** Choose whether or not you want the deformation/vibration of the building to be coupled with the CFD analysis.  This feature will significantly slow down your simulation for the CFD mesh will be updated frequently during the simulation.
 
 #. **Inflow Conditions:** Whether or not the inflow conditions will be specified for the CFD simulation.  
+
+.. warning::
+
+   This is an advanced option and needs to be treated with special caution.  The tool does not
+   provide a universal set of input parameters but rather expects the user to be familiar with
+   turbulence modeling and to select sensible parameters.  
+
+   Calibration runs agains experimental data or reference simulations are highly recommended.
+
 
 If the user selects to specify the inflow conditions, the parameters for the inflow condition shown in :numref:`fig-cfd-expert-inflow` will need to be specified. This requires the application to download some of the case files and modify them before the simulation is started, which is done automatically by the tool.
 
@@ -59,3 +74,54 @@ If the user selects to specify the inflow conditions, the parameters for the inf
 	:figclass: align-center
 
 	Inflow condition parameters.
+
+#. **Consider building motion for CFD analysis (FSI):** This enables fluid-structure interaction between
+air and a deformable building.
+
+This feature is new in version 2.1 and remains under development to provide additional support to
+the user.
+
+.. warning::
+
+   This is an advanced option and needs to be treated with special caution.  The tool does not
+   provide a universal set of input parameters but rather expects the user to be familiar with
+   turbulence modeling and to select sensible parameters.  
+
+   Calibration runs agains experimental data or reference simulations are highly recommended.
+
+
+If the user selects to use the fluid-structure-interaction (FSI) through this tool ( box :numref:`fig-cfd-expert-FSI` (a) ), the following items need to be provided:
+
+* An OpenFOAM model that includes a named boundary along which the interaction with the structure
+  will be implemented.  That name boundary must be selected in
+  box :numref:`fig-cfd-expert-FSI` (b) such that necessary adjustments to configuration files can
+  be made by the tool before uploading the workflow. 
+
+* FSI is implemented in the frequency domain.  As such, the provided OpenFOAM extension requires
+  the user to provide representative mode shapes for the building, as well as specify respective
+  surface patches for force extraction.  The tool provides two templates for the user's
+  convenience:
+
+  1. For building models using only displacement degrees of freedom per node (3dof template: box
+  :numref:`fig-cfd-expert-FSI` (c) ), or
+
+  2.  For building models using displacements and rotational degrees of freedom per node (6dof template: box
+  :numref:`fig-cfd-expert-FSI` d) )
+
+  The user has to update those templates and upload the file through the tool ( box
+  :numref:`fig-cfd-expert-FSI` (e) ).
+  The tool will do a basic data check on the uploaded file and provide a summary in box
+  :numref:`fig-cfd-expert-FSI` (f).
+
+.. _fig-cfd-expert-FSI:
+.. figure:: figures/cfd_expert_FSI.png
+	:align: center
+	:figclass: align-center
+
+	Inflow condition parameters.
+	
+.. note::
+
+    The FSI module require the *pimpleFOAM* solver and the FSI solver provided by SimCenter.
+
+
