@@ -102,7 +102,6 @@
    :quoFEM:common/user_manual/examples/desktop/examples
    :R2D:common/user_manual/examples/desktop/examples
    :pelicun:common/user_manual/examples/pelicun/examples
-   :Hydro:Hydro/userman/examples/examples
 
    :Hydro:Hydro/userman/bestpractices
    :Hydro:Hydro/userman/releasenotes
@@ -147,8 +146,6 @@
    :Hydro:Hydro/techman/fvm/fvm
    :Hydro:Hydro/techman/swsolver/swsolver
    :Hydro:Hydro/techman/cfdsolver/cfdsolver
-   :Hydro:Hydro/techman/swcfdcoupling/swcfdcoupling
-   :Hydro:Hydro/techman/UQ/uqengine
 
 .. _lbl-developer-manual:
 
@@ -175,7 +172,6 @@
    :quoFEM:common/developer_manual/verification/desktop/verification
    :R2D:common/developer_manual/verification/desktop/verification
    :pelican:common/developer_manual/verification/pelicun/verification
-   :Hydro:Hydro/devman/verify
 
    :desktop_app:common/developer_manual/coding_style/desktop/coding_style
    :pelicun:common/developer_manual/coding_style/pelicun/coding_style
