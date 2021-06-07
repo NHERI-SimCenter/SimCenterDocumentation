@@ -34,8 +34,8 @@
 
    .. only:: Hydro
 
-      The Water-borne Natural Hazards with Uncertainty Quantification Application (Hydro-UQ app) is an open-source research application that can be used to predict the response of a building / a community subjected to events like tsunami and storm-surge. The application is focused on quantifying the uncertainties in the predicted response, given the that the uncertainties in models, loads, and analysis. The computations are performed in a workflow application that will run on a high performance computer made available by |DesignSafe|.
-
+      The Water-borne Natural Hazards with Uncertainty Quantification Application (Hydro-UQ app) is an open-source research application that can be used to predict the response of a building a community subjected to events like tsunami and storm-surge. The application is focused on quantifying the uncertainties in the predicted response, given the that the
+ uncertainties in models, loads, and analysis. The computations are performed in a workflow application that will run on a high performance computer made available by |DesignSafe|.
 
 
    This document covers the features and capabilities of Version |tool version| of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the |messageBoard|.
@@ -85,6 +85,7 @@
    :EEUQ:common/reqments/EEUQ		
    :WEUQ:common/reqments/WEUQ
    :PBE:common/reqments/PBE
+   :R2D:common/reqments/R2D
    :quoFEM:common/reqments/reqQUOFEM	
    :pelicun:common/user_manual/requirements/pelicun/requirements
 
@@ -135,7 +136,6 @@
    :desktop_app:common/developer_manual/architecture/desktop/architecture
    :pelicun:common/developer_manual/architecture/pelicun/architecture
 
-   :desktop_app:common/developer_manual/how_to_extend/desktop/how_to_extend
    :pelicun:common/developer_manual/how_to_extend/pelicun/how_to_extend
 
    :desktop_app:common/developer_manual/verification/desktop/verification
