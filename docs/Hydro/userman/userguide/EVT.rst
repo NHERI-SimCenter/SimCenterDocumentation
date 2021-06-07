@@ -25,11 +25,4 @@ Each of the above steps in the setup process differs depending on the type of si
     Meshing
     Materials
     Initial
-    Boundary
     Solver
-
-A walk-through video of the ``Hydro EVT`` is given below
-
-.. raw:: html
-
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/MjYCiFtdCdw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>

@@ -42,8 +42,5 @@ Input file formats
 
 The first important aspect is to understand the input file structure. The input file is in the form of three directories / folders, namely (a) ``time`` or ``0`` (b) ``system`` (c) ``constant``
 
-Mesh topology
-----------------
-
-Mesh topology in openFOAM.
+For more information, check out the educational app on OpenFOAM - i.e. `CFD-Notebooks <https://nheri-simcenter.github.io/CFD-Notebooks>`_
 

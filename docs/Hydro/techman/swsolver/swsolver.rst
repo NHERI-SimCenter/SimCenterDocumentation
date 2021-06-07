@@ -24,7 +24,7 @@ In this documentation, we will discuss aspects of particular importance to the H
 AdCirc 
 --------
 
-AdCirc is often used for modeling storm surges.
+At present, AdCirc is not supported. Please contact us if you would like to use AdCirc.
 
 SimCenter formats
 --------------------
