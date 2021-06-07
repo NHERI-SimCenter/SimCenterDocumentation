@@ -34,8 +34,7 @@
 
    .. only:: Hydro
 
-      The Water-borne Natural Hazards with Uncertainty Quantification Application (Hydro-UQ app) is an open-source research application that can be used to predict the response of a building a community subjected to events like tsunami and storm-surge. The application is focused on quantifying the uncertainties in the predicted response, given the that the
- uncertainties in models, loads, and analysis. The computations are performed in a workflow application that will run on a high performance computer made available by |DesignSafe|.
+      The Water-borne Natural Hazards with Uncertainty Quantification Application (Hydro-UQ app) is an open-source research application that can be used to predict the response of a building a community subjected to events like tsunami and storm-surge. The application is focused on quantifying the uncertainties in the predicted response, given the that the uncertainties in models, loads, and analysis. The computations are performed in a workflow application that will run on a high performance computer made available by |DesignSafe|.
 
 
    This document covers the features and capabilities of Version |tool version| of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the |messageBoard|.
