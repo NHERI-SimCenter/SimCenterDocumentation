@@ -5,7 +5,7 @@ EDP: Demand Parameters
 ******************************************
 
 This panel is where the user selects which outputs will be displayed when
-the simulation runs. There are a number of options available in the pull-down
+the simulation runs. There are several options available in the pull-down.
 
 #. Standard
 #. User Defined
@@ -13,9 +13,9 @@ the simulation runs. There are a number of options available in the pull-down
 Standard
 --------
 
-When the user selects there are no additional
+When the user selects this option, there are no additional
 inputs required. The standard EDP generator will ensure the
-the max absolute value of the following are obtained:
+max absolute value of the following is obtained:
 
 
 #. Relative Floor displacements:
@@ -34,68 +34,62 @@ The results will contain results for these in abbreviated form:
 
 User Defined
 ------------
-As shown in fig userEDP, this panel allows the user to determine their own output and process it. When using this option the user provides additional data:
+As shown in :numref:`userEDP`, this panel allows users to determine their own output and process it. When using this option, the user provides additional data:
+
+.. _userEDP:
 
 .. figure:: figures/userDefinedEDP.png
-	:align: center
-	:figclass: align-center
+    :align: center
+    :figclass: align-center
 
-	User Defined EDP panel.
+    User Defined EDP panel.
 
 
-1. Additional Input: These are additional commands that are invoked by the analysis application
-   before the transient analysis is performed. For example, for OpenSees this would be a script
-   containing a series of recorder commands. 
-
-  A recorder file passed to OpenSees might look like the following:
+1. Additional Input: These are additional commands invoked by the analysis application before the transient analysis is performed. For example, for OpenSees, this would be a script containing a series of recorder commands. A recorder file passed to OpenSees might look like the following:
 
   .. code:: tcl
 
      recorder EnvelopeNode -file node.out -node 1 2 3 4 -dof 1 disp
      recorder EnvelopeElement -file ele.out -ele 1 2 3 forces
 
-2. Postprocess Script: This is a python or tcl script that will be invoked
-  after the finite element application has run. It must be provided by
-  the user. It's purpose is to process the output files and create a
-  single file, results.out. This file must contain a single line with
-  as many entries as EDP's specified.
+2. Postprocess Script: This is a python or Tcl script invoked after the finite element application has run. It must be provided by the user. Its purpose is to process the output files and create a single file, namely results.out. This file must contain a single line with as many entries as EDP's specified. 
 
-  For example, a python postprocessing file that would take the outputs from the recorder commands of the pervious code block to create the results file needed vy the applications might look like the following:
+For example, a python postprocessing file that would take the outputs from the recorder commands of the previous code block to create the results file needed by the applications might look like the following:
 
     .. literalinclude:: postprocess.py
-			:language: python
-	       
+            :language: python
+           
 A Tcl file might look like the following:
 
 .. code:: tcl
-	  
-	  set nodeIn [open node.out r]
-	  while { [gets $nodeIn data] >= 0 } {
-	     set maxDisplacement $data
-	  }
-	  puts $maxDisplacement
+      
+      set nodeIn [open node.out r]
+      while { [gets $nodeIn data] >= 0 } {
+         set maxDisplacement $data
+      }
+      puts $maxDisplacement
 
-	  # create file handler to write results to output & list into which we will put results
-	  set resultFile [open results.out w]
-	  set results []
+      # create file handler to write results to output & list into which we will put results
+      set resultFile [open results.out w]
+      set results []
 
-	  # for each quanity in list of QoI passed
-	  #  - get nodeTag
-	  #  - get nodal displacement if valid node, output 0.0 if not
-	  #  - for valid node output displacement, note if dof not provided output 1'st dof
-	  
-	  foreach edp $listQoI {
-	     set splitEDP [split $edp "_"]	
-	     set nodeTag [lindex $splitEDP 1]
+      # for each quanity in list of QoI passed
+      #  - get nodeTag
+      #  - get nodal displacement if valid node, output 0.0 if not
+      #  - for valid node output displacement, note if dof not provided output 1'st dof
+      
+      foreach edp $listQoI {
+         set splitEDP [split $edp "_"]  
+         set nodeTag [lindex $splitEDP 1]
              if {[llength $splitEDP] == 3} {
                 set dof 1
-	     } else {
+         } else {
                 set dof [lindex $splitEDP 3]
-	     } 
-	     set nodeDisp [lindex $maxDisplacement [expr (($nodeTag-1)*2)+$dof-1]]
-	     lappend results $nodeDisp
-	  }
-	  
+         } 
+         set nodeDisp [lindex $maxDisplacement [expr (($nodeTag-1)*2)+$dof-1]]
+         lappend results $nodeDisp
+      }
+      
 .. warning::
 
    The name of the output file must be **results.out**.

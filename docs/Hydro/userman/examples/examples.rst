@@ -7,36 +7,8 @@ Here, we will discuss various examples for the HydroUQ. The examples are based o
 
 .. dropdown:: Wave flume digital twin - 1
 
-    Click the links to see the documentation built with:
-
-    - `alabaster <https://sphinx-panels.readthedocs.io/en/alabaster-theme/>`_
-    - `sphinx-rtd-theme <https://sphinx-panels.readthedocs.io>`_
-    - `sphinx-pydata-theme <https://sphinx-panels.readthedocs.io/en/pydata-theme/>`_
-    - `sphinx-book-theme <https://sphinx-panels.readthedocs.io/en/sphinx-book-theme/>`_
-
-    .. _yplusform2:
-
-    .. figure:: figures/yplus.png
-        :align: center
-        :height: 400px
-        :figclass: align-center
-
-        The variation of non-dimensional velocity and distance
+    .. include:: ../../../common/user_manual/examples/desktop/hdro-0001/README.rst
 
 .. dropdown:: Shallow-water to CFD coupling
 
-    Click the links to see the documentation built with:
-
-    - `alabaster <https://sphinx-panels.readthedocs.io/en/alabaster-theme/>`_
-    - `sphinx-rtd-theme <https://sphinx-panels.readthedocs.io>`_
-    - `sphinx-pydata-theme <https://sphinx-panels.readthedocs.io/en/pydata-theme/>`_
-    - `sphinx-book-theme <https://sphinx-panels.readthedocs.io/en/sphinx-book-theme/>`_
-
-    .. _yplusform2:
-
-    .. figure:: figures/yplus.png
-        :align: center
-        :height: 400px
-        :figclass: align-center
-
-        The variation of non-dimensional velocity and distance
+    .. include:: ../../../common/user_manual/examples/desktop/hdro-0001/README.rst

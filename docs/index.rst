@@ -55,7 +55,6 @@
    :WEUQ:common/user_manual/about/WEUQ/about
    :quoFEM:common/user_manual/about/quoFEM/aboutQUOFEM
    :pelicun:common/user_manual/about/pelicun/about
-   :Hydro:Hydro/front-matter/about
 
    common/front-matter/ack
    common/front-matter/license
@@ -70,17 +69,43 @@
    :maxdepth: 1
    :numbered: 4
 
-   :desktop_app:common/user_manual/installation/desktop/installation
    :pelicun:common/user_manual/installation/pelicun/installation
+   :EEUQ:common/user_manual/installation/desktop/installation
+   :WEUQ:common/user_manual/installation/desktop/installation
+   :PBE:common/user_manual/installation/desktop/installation
+   :quoFEM:common/user_manual/installation/desktop/installation
+   :R2D:common/user_manual/installation/desktop/installation
+   :Hydro:Hydro/userman/install
 
-   :desktop_app:common/user_manual/usage/desktop/usage
-   :pelicun:common/user_manual/usage/pelicun/usage
+   :EEUQ:common/user_manual/usage/desktop/usage
+   :WEUQ:common/user_manual/usage/desktop/usage
+   :PBE:common/user_manual/usage/desktop/usage
+   :quoFEM:common/user_manual/usage/desktop/usage
+   :R2D:common/user_manual/usage/desktop/usage
+   :pelican:common/user_manual/usage/pelicun/usage
+   :Hydro:Hydro/userman/userguide/uguide
 
-   :desktop_app:common/user_manual/troubleshooting/desktop/troubleshooting
-   :pelicun:common/user_manual/troubleshooting/pelicun/troubleshooting
+   :Hydro:Hydro/userman/resguide/resguide
+   :Hydro:Hydro/userman/helpvideo
 
-   :desktop_app:common/user_manual/examples/desktop/examples
+   :EEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
+   :WEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
+   :PBE:common/user_manual/troubleshooting/desktop/troubleshooting
+   :quoFEM:common/user_manual/troubleshooting/desktop/troubleshooting
+   :R2D:common/user_manual/troubleshooting/desktop/troubleshooting
+   :pelican:common/user_manual/troubleshooting/pelicun/troubleshooting
+   :Hydro:Hydro/userman/errors
+
+   :EEUQ:common/user_manual/examples/desktop/examples
+   :WEUQ:common/user_manual/examples/desktop/examples
+   :PBE:common/user_manual/examples/desktop/examples
+   :quoFEM:common/user_manual/examples/desktop/examples
+   :R2D:common/user_manual/examples/desktop/examples
    :pelicun:common/user_manual/examples/pelicun/examples
+   :Hydro:Hydro/userman/examples/examples
+
+   :Hydro:Hydro/userman/bestpractices
+   :Hydro:Hydro/userman/releasenotes
 
    :EEUQ:common/reqments/EEUQ		
    :WEUQ:common/reqments/WEUQ
@@ -113,6 +138,11 @@
    :maxdepth: 1
    :numbered: 2
 
+   :EEUQ:common/technical_manual/desktop/technical_manual
+   :WEUQ:common/technical_manual/desktop/technical_manual
+   :PBE:common/technical_manual/desktop/technical_manual
+   :quoFEM:common/technical_manual/desktop/technical_manual
+   :R2D:common/technical_manual/desktop/technical_manual
    :pelicun:common/technical_manual/pelicun/technical_manual
    :Hydro:Hydro/techman/hazards/water
    :Hydro:Hydro/techman/fvm/fvm
@@ -120,9 +150,6 @@
    :Hydro:Hydro/techman/cfdsolver/cfdsolver
    :Hydro:Hydro/techman/swcfdcoupling/swcfdcoupling
    :Hydro:Hydro/techman/UQ/uqengine
-   :desktop_app:common/technical_manual/desktop/technical_manual
-
-
 
 .. _lbl-developer-manual:
 
@@ -136,10 +163,21 @@
    :desktop_app:common/developer_manual/architecture/desktop/architecture
    :pelicun:common/developer_manual/architecture/pelicun/architecture
 
+   :EEUQ:common/developer_manual/how_to_extend/desktop/how_to_extend
+   :WEUQ:common/developer_manual/how_to_extend/desktop/how_to_extend
+   :PBE:common/developer_manual/how_to_extend/desktop/how_to_extend
+   :quoFEM:common/developer_manual/how_to_extend/desktop/how_to_extend
+   :R2D:common/developer_manual/how_to_extend/desktop/how_to_extend
+
    :pelicun:common/developer_manual/how_to_extend/pelicun/how_to_extend
 
-   :desktop_app:common/developer_manual/verification/desktop/verification
-   :pelicun:common/developer_manual/verification/pelicun/verification
+   :EEUQ:common/developer_manual/verification/desktop/verification
+   :WEUQ:common/developer_manual/verification/desktop/verification
+   :PBE:common/developer_manual/verification/desktop/verification
+   :quoFEM:common/developer_manual/verification/desktop/verification
+   :R2D:common/developer_manual/verification/desktop/verification
+   :pelican:common/developer_manual/verification/pelicun/verification
+   :Hydro:Hydro/devman/verify
 
    :desktop_app:common/developer_manual/coding_style/desktop/coding_style
    :pelicun:common/developer_manual/coding_style/pelicun/coding_style
@@ -148,7 +186,6 @@
    :pelicun:common/developer_manual/examples/pelicun/examples
 
    :pelicun:common/developer_manual/API/pelicun/API
-
 
 
 Contact

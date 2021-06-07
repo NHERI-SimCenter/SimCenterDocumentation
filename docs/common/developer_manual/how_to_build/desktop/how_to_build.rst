@@ -1,11 +1,10 @@
 .. _lblHowToBuild:
 
-
 ============
 How to Build
 ============
 
-SimCenter tools all comprise a frontend UI and some backend applications. They are kept in separate github repositories and are also built separately. The following3 sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI and the backend.
+SimCenter tools all comprise a frontend UI and some backend applications. They are kept in separate GitHub repositories and are also built separately. The following3 sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI and the backend.
 
 
 .. note::
@@ -18,9 +17,9 @@ Install Dependencies
 
 First, ensure the following dependencies are installed:
 
-* **C++17 compliant compiler**: many of the workflow applications included use C++17 features, consequently they may need a newer C++17 compliant compiler. Fow Windows users, MSVC in `Visual Studio (Community edition) <https://visualstudio.microsoft.com/vs/>`_ can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with C++ and Visual Studio extension development; under the Individual components tab, check C++ CMake tools for windows. Then click Modify.
+* **C++17 compliant compiler**: many of the workflow applications included use C++17 features; consequently, they may need a newer C++17 compliant compiler. For Windows users, MSVC in `Visual Studio (Community Edition) <https://visualstudio.microsoft.com/vs/>`_ can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with C++ and Visual Studio extension development; under the Individual components tab, check C++ CMake tools for windows. Then click Modify.
 
-* **OpenSees**: The workflow applications require an installation of `OpenSees <http://opensees.berkeley.edu/>`_ to carry out structural analysis using the finite element method.
+* **OpenSees**: The workflow applications require an installation of `OpenSees <http://opensees.berkeley.edu/>`_ to carry out a structural analysis using the finite element method.
 
 * **DAKOTA**: The workflow applications require an installation of `DAKOTA <https://dakota.sandia.gov/>`_ to handle and propagate the uncertainties defined in the input files for the workflow applications.
 
@@ -63,7 +62,7 @@ Setup the development environment with Conan
 
        conan profile show default
 
-4. If the compiler name and compiler version are *not* listed, then you will need to select a specific compiler. For instance, on Windows using Visual Studio 2019, you can specify the compiler as follows:
+4. If the compiler name and compiler version are *not* listed, you will need to select a specific compiler. For instance, on Windows using Visual Studio 2019, you can specify the compiler as follows:
 
     .. code:: console
 
@@ -86,6 +85,7 @@ Build the applications
 
 #. To build the applications you need to now navigate to the **SimCenterBackendApplications** folder that was created with the **git clone** command. Once there you will issue the following set of commands to create a **build** folder, change director to that folder, install needed software using conan, and finally use **cmake** to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail).
 
+
 For those developers using the Windows operating system, in a terminal or powershell window you need to type the following:
 
        .. code:: console
@@ -100,6 +100,7 @@ For those developers using the Windows operating system, in a terminal or powers
 
 For those developers using a Mac or Luinux operating system, in a terminal window type the following:
 
+       #. On Windows, it is necessary to specify a compiler for CMake. To do this, you need to add additional arguments to line 4, i.e., if you have Visual Studio 2019, you would instead type:
 
        .. code:: console
 
@@ -121,14 +122,22 @@ For those developers using a Mac or Luinux operating system, in a terminal windo
             conan install .. --build missing --build=libcurl
             mv ./missing/* ./
 
-If building and installation were successful you should find a folder called ``applications`` in the repository with all the applications inside of it.   The name of this folder should not be changed.
+       #. For Mac users, add the following command after **cmake --install .** to ensure the binary applications are copied to the applications folder.
+
+          .. code::       
+
+            make install .
+
+          
+      
+If building and installation were successful, you should find a folder called ``applications`` in the repository with all the applications inside of it.   The name of this folder should not be changed.
    
 
 ************************
 Build the User Interface
 ************************
 
-To build the interface you first need to download the repo and a companion repo(SimCenterCommon) from Github using our `github repos <https://github.com/NHERI-SimCenter>`_. In a folder in which you wish to build the application, issue the following two commands.
+To build the interface, you first need to download the repo and a companion repo(SimCenterCommon) from Github using our `github repos <https://github.com/NHERI-SimCenter>`_. In a folder in which you wish to build the application, issue the following two commands.
 
 .. only:: quoFEM_app
 
@@ -173,6 +182,7 @@ To build the interface you first need to download the repo and a companion repo(
 
 .. note::
 
+
    Use the above links if you just want to download and build the applications. If you intend to make changes to any of the code in the repo's, you should fork that repo and then clone your forked repo. Forking a repo at **github** is done through your browser as shown on the following `github guides page <https://guides.github.com/activities/forking/>`_
 
 You now have two ways to build the application: (1) using the **Qt Creator** desktop application provided by **Qt** and (2) from terminal application.
@@ -182,8 +192,8 @@ Build using Qt Creator
 ----------------------
 
 1. Start Qt Creator, then open the |short tool id|.pro file located in the |short tool id| directory that was downloaded in the previous step.
-2. Setup the development kit in Qt Creator. This is usually done by selecting the Qt version, compiler and configuration and following the onscreen dialog.
-3. Build the application and run it in Qt Creator IDE by using the **Run** button. This can be done using the keyboard shortcut ``F5`` to build and start the tool.
+2. Setup the development kit in Qt Creator. This is usually done by selecting the Qt version, compiler, and configuration and following the onscreen dialog.
+3. Build the application and run it in Qt Creator IDE using the **Run** button. This can be done using the keyboard shortcut ``F5`` to build and start the tool.
 
 
 Build from the Terminal
@@ -213,11 +223,12 @@ Linux or Mac users will type the following in a terminal window from inside the 
 
 .. note::
 
-   #. qmake is an application installed with Qt. To be able to run the command as whown, the path to the Qt bin folder needs to be added to your **PATH** environment variable. Alternativily you need to specify the full path to qmake, i.e. on my desktop (if I had not set my PATH variable) I would replace line 3 with the following:
+   #. qmake is an application installed with Qt. To be able to run the command as known, the path to the Qt bin folder needs to be added to your **PATH** environment variable. Alternatively, you need to specify the full path to qmake, i.e., on my desktop (if I had not set my PATH variable). I would replace line 3 with the following:
 
       .. parsed-literal::
 
         /Users/fmckenna/Qt/5.15.2/clang_64/bin/qmake ../|short tool id|.pro
+
 
    #. On a Windows 10 with Visual Studio, the above commands need to be performed using a `Visual Studio x64 command prompt <https://docs.microsoft.com/en-us/cpp/build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line?view=msvc-160>`_ . 
 
@@ -231,15 +242,15 @@ Once built, you can now run the tool executable.
 Modify the User Interface Preferences
 *************************************
 
-Once built the tool **Preferences** needs to be modified. To do this open the |short tool id| tool, then click on File -> Preferences in the main menu if on Windows or |short tool id| -> Preferences if on a Mac. This will bring up a dialog window shown below. You need to modify certain values:
+Once built, the tool **Preferences** needs to be modified. To do this, open the |short tool id| tool, then click on File -> Preferences in the main menu if on Windows or |short tool id| -> Preferences if on a Mac. This will bring up a dialog window shown below. You need to modify specific values:
 
-  #. Python: provide the full path to the python intertpreter.
+  #. Python: provide the full path to the python interpreter.
    
   #. OpenSees: provide the full path to the OpenSees executable
 
-  #. Dakota: provide full path to the dakota executable.
+  #. Dakota: provide the full path to the Dakota executable.
 
-  #. Custom Local Application: Here select the checkbox to the left, and then provide the path to the SimCenterBackendApplications directory. The code assumes that the folder **applications**, which you created when building the backend applications, exists.
+  #. Custom Local Application: Here, select the checkbox to the left, and then provide the path to the SimCenterBackendApplications directory. The code assumes that the folder **applications**, which you created when building the backend applications, exists.
 
 .. _figPreferences:
 
