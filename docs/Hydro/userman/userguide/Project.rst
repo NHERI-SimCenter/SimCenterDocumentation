@@ -17,8 +17,6 @@ The first step is to setup the project as shown in :numref:`EVTSettings`. All of
 
 1. **Project name and description**: This is an *optional* parameter primarily meant for the user to identify and differentiate between projects.
 
-
-
 2. **Simulation type**: This is *mandatory* and without a selection of the type, no other options can be set. The various simulation types available in ``Hydro`` event are as shown in :numref:`SimType`. The differences between different simulation types are as given below.
 
    .. _SimType:
@@ -57,4 +55,4 @@ The first step is to setup the project as shown in :numref:`EVTSettings`. All of
 
    c. k-Omega SST
 
-   By default, the flow is assumed to be laminar if no turbulence model is selected. More information about the turbulence wall models is available in the technical manual (CFD solvers / Turbulence models). 
+   By default, the flow is assumed to be laminar if no turbulence model is selected. More information about the turbulence wall models is available in the technical manual (:ref:`lbl-openfoam`). 
