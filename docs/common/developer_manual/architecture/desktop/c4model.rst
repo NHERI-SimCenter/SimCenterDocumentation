@@ -95,7 +95,7 @@ To facilitate the development of the different SimCenter applications and to enc
 
 The interaction between the frontend and the backend is best understood by looking at the sequence of events that occurs when the user presses the ``Run`` button. As shown in the figure below, the UI application will first perform a number of steps:
 
-1. It will create a temporary directory in the Documents folder named ``tmp.SimCenter``, and inside ``tmp.SimCenter`` will create another dircetory ``templatedir``.
+1. It will create a temporary directory in the Documents folder named ``tmp.SimCenter``, and inside ``tmp.SimCenter`` will create another directory ``templatedir``.
 
 2. It will then run through all the currently selected widgets and on each invoke the ``copyFiles()`` method, telling these widgets to copy all files that will be needed during the workflow to the ``templatedir`` directory.
 
@@ -123,7 +123,7 @@ Now that the UI has handed over to the backend application, the backend applicat
 
 13. The femUQ application will notify the UI that it is done.
 
-14. The UI will read in the reuslts and present them to the user.
+14. The UI will read in the results and present them to the user.
 
 
 
@@ -136,7 +136,7 @@ Now that the UI has handed over to the backend application, the backend applicat
    Sequence diagram showing what happens when a workflow runs locally.
 
 
-That is for the case where the computations are performed on the local computer. When the somputations are performed remotely the steps are different. The first 8 steps are the same. But now the UQwrapper will not start the UQ engine. Instead, control is returned to the UI. The UI will, as shown in the following: (111) Compress the temporary folder. (12) Send the compressed folder to the remote HPC, shown in the figure DesignSafe. (13) Start an application to perform the computations. All the remote data transfer and application invocation is down through a cloud service, in the figure presented the `TACC tapis <https://tapis-project.org/>`_ interface is being used and provides SimCenter users with access to the TACC HPC resources through DesignSafe portal.
+That is for the case where the computations are performed on the local computer. When the computations are performed remotely the steps are different. The first 8 steps are the same. But now the UQwrapper will not start the UQ engine. Instead, control is returned to the UI. The UI will, as shown in the following: (111) Compress the temporary folder. (12) Send the compressed folder to the remote HPC, shown in the figure DesignSafe. (13) Start an application to perform the computations. All the remote data transfer and application invocation is down through a cloud service, in the figure presented the `TACC tapis <https://tapis-project.org/>`_ interface is being used and provides SimCenter users with access to the TACC HPC resources through DesignSafe portal.
 
 
 .. figure:: figures/sequenceRemote.png

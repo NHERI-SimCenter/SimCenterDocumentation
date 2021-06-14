@@ -83,7 +83,7 @@ The **Earthquake Scenario Simulation** is an application that selects earthquake
 		- Jayaram & Baker (2009)
 		- Loth & Baker (2013)
 
-	The **Ground Motion Record Scaling Bounds**, shown at the bottom of :numref:`fig-R2DEQSSCorrScalePane`, are the minimum and maximum scaling factors that intensity measures can be scaled by during the gound motion selection process.
+	The **Ground Motion Record Scaling Bounds**, shown at the bottom of :numref:`fig-R2DEQSSCorrScalePane`, are the minimum and maximum scaling factors that intensity measures can be scaled by during the ground motion selection process.
 
   	.. _fig-R2DEQSSCorrScalePane:
 
@@ -110,7 +110,7 @@ The **Earthquake Scenario Simulation** is an application that selects earthquake
 
 #. **Earthquake Rupture Definition**
 
-	This is where the user defines the earthquake rupture characteristics. Point source and earthquake rupture forecast models are availble.
+	This is where the user defines the earthquake rupture characteristics. Point source and earthquake rupture forecast models are available.
 
 		#. **Earthquake Rupture Forecast**
 
@@ -157,7 +157,7 @@ The **Earthquake Scenario Simulation** is an application that selects earthquake
 
 	The **Intensity Measure and Period Points** pane, shown in :numref:`fig-R2DEQSSIMPane`, requires the following:
 
-		- **Intensity Measure Type:** Type of intensity measure. The Spectral Acceleration (SA) and Peak Ground Acceleration (PGA) intenisty measures are available.
+		- **Intensity Measure Type:** Type of intensity measure. The Spectral Acceleration (SA) and Peak Ground Acceleration (PGA) intensity measures are available.
 		- **Period Points:** List of periods, in seconds. The period points are used in searching and ground motion scaling.
 
   	.. _fig-R2DEQSSIMPane:
@@ -204,7 +204,7 @@ The **Earthquake Scenario Simulation** is an application that selects earthquake
 User-defined Earthquakes
 ------------------------
 
-The **User-defined Earthquakes** application loads the results of an **Earthquake Scenario Simulation** that has been run previously. The **User-defined Earthquakes** application input pane is given in :numref:`fig-UserSelectEQ`. As seen in the figure, the user is required to input the file path to the ``EventGrid.csv`` file. If the gournd motions are not in the same folder as the ``EventGrid.csv`` file, then the user needs to input the directory path to the folder containing the ground motions.
+The **User-defined Earthquakes** application loads the results of an **Earthquake Scenario Simulation** that has been run previously. The **User-defined Earthquakes** application input pane is given in :numref:`fig-UserSelectEQ`. As seen in the figure, the user is required to input the file path to the ``EventGrid.csv`` file. If the ground motions are not in the same folder as the ``EventGrid.csv`` file, then the user needs to input the directory path to the folder containing the ground motions.
 
 .. _fig-UserSelectEQ:
 

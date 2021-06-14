@@ -107,7 +107,7 @@ required by the application by increasing the number of input slots, as shown in
 :numref:`CustomFEM`. By specifying these files here, they will be copied to the
 correct location for quoFEM to access them during analyses. Users also have the
 option to simply place all the required files in the same location as the
-provided workflow driver scipt--quoFEM will automatically copy any files in this
+provided workflow driver script -- quoFEM will automatically copy any files in this
 directory. This is particularly helpful if several different applications with
 numerous inputs are all being called by the workflow driver script and avoids
 the need to explicitly input each one of these files.

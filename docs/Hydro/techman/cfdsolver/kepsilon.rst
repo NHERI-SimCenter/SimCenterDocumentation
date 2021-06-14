@@ -37,7 +37,11 @@ The physical interpretation of the various terms in the above equation are as fo
 
 - **T5**: Rate of destruction of :math:`k/\epsilon`
 
+A more comprehensive overview on the k-Epsilon model is discussed in the below video
 
+.. raw:: html
+
+   <iframe width="560" height="315" src="https://www.youtube.com/embed/fOB91zQ7HJU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 References
 ------------

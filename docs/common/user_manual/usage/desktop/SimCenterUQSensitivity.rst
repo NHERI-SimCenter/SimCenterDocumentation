@@ -58,7 +58,7 @@ In the SimCenterUQ engine, Sensitivity indices are estimated by Gaussian mixture
    - The numerical results of Eq. :eq:`Sbound` for uncorrelated inputs may not hold due to the sampling variability and approximation errors. If this error is very high, the sensitivity index may not be reliable. However, the sensitivity rank between variables is relatively robust.
    - When a constant variable is defined, the sensitivity analysis algorithm will ignore the variable.
 
-Group-wise Sobol indecies
+Group-wise Sobol indices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 By default, the analysis results are first-order sensitivity indices of each random variable. User may activate the option to specify advanced outputs at the bottom of the **QoI** tab. Using this option, the user can manually provide groups of relevant random variables to get so-called group-wise Sobol indices.

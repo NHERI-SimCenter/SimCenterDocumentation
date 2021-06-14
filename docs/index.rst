@@ -33,11 +33,14 @@
       The |full tool name| is an open-source implementation of the |short tool name| framework in a Python package. It provides tools for assessment of damage and losses due to natural disasters. Its basis is the stochastic damage and loss model described in FEMA P58. While FEMA P58 aims to assess the seismic performance of a building, with the |app| we provide a more versatile, hazard agnostic tool that can estimate losses for several types of assets in the built environment.
 
    .. only:: Hydro
+
       The Water-borne Natural Hazards with Uncertainty Quantification Application (Hydro-UQ app) is an open-source research application that can be used to predict the response of a building / a community subjected to events like tsunami and storm-surge. The application is focused on quantifying the uncertainties in the predicted response, given the that the uncertainties in models, loads, and analysis. The computations are performed in a workflow application that will run on a high performance computer made available by |DesignSafe|.
 
 
 
    This document covers the features and capabilities of Version |tool version| of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the |messageBoard|.
+
+
 
 .. _lbl-front-matter:
 
@@ -66,17 +69,42 @@
    :maxdepth: 1
    :numbered: 4
 
-   :desktop_app:common/user_manual/installation/desktop/installation
    :pelicun:common/user_manual/installation/pelicun/installation
+   :EEUQ:common/user_manual/installation/desktop/installation
+   :WEUQ:common/user_manual/installation/desktop/installation
+   :PBE:common/user_manual/installation/desktop/installation
+   :quoFEM:common/user_manual/installation/desktop/installation
+   :R2D:common/user_manual/installation/desktop/installation
+   :Hydro:Hydro/userman/install
 
-   :desktop_app:common/user_manual/usage/desktop/usage
-   :pelicun:common/user_manual/usage/pelicun/usage
+   :EEUQ:common/user_manual/usage/desktop/usage
+   :WEUQ:common/user_manual/usage/desktop/usage
+   :PBE:common/user_manual/usage/desktop/usage
+   :quoFEM:common/user_manual/usage/desktop/usage
+   :R2D:common/user_manual/usage/desktop/usage
+   :pelican:common/user_manual/usage/pelicun/usage
+   :Hydro:Hydro/userman/userguide/uguide
 
-   :desktop_app:common/user_manual/troubleshooting/desktop/troubleshooting
-   :pelicun:common/user_manual/troubleshooting/pelicun/troubleshooting
+   :Hydro:Hydro/userman/resguide/resguide
+   :Hydro:Hydro/userman/helpvideo
 
-   :desktop_app:common/user_manual/examples/desktop/examples
+   :EEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
+   :WEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
+   :PBE:common/user_manual/troubleshooting/desktop/troubleshooting
+   :quoFEM:common/user_manual/troubleshooting/desktop/troubleshooting
+   :R2D:common/user_manual/troubleshooting/desktop/troubleshooting
+   :pelican:common/user_manual/troubleshooting/pelicun/troubleshooting
+   :Hydro:Hydro/userman/errors
+
+   :EEUQ:common/user_manual/examples/desktop/examples
+   :WEUQ:common/user_manual/examples/desktop/examples
+   :PBE:common/user_manual/examples/desktop/examples
+   :quoFEM:common/user_manual/examples/desktop/examples
+   :R2D:common/user_manual/examples/desktop/examples
    :pelicun:common/user_manual/examples/pelicun/examples
+
+   :Hydro:Hydro/userman/bestpractices
+   :Hydro:Hydro/userman/releasenotes
 
    :EEUQ:common/reqments/EEUQ		
    :WEUQ:common/reqments/WEUQ
@@ -93,7 +121,7 @@
    :maxdepth: 1
    :numbered: 3
 
-   .. :docTestbeds:common/testbeds/sf_bay_area/index
+   :docTestbeds:common/testbeds/sf_bay_area/index
    :docTestbeds:common/testbeds/atlantic_city/index
    .. :docTestbeds:common/testbeds/memphis/index
    .. :docTestbeds:common/testbeds/anchorage/index
@@ -108,16 +136,16 @@
    :maxdepth: 1
    :numbered: 2
 
+   :EEUQ:common/technical_manual/desktop/technical_manual
+   :WEUQ:common/technical_manual/desktop/technical_manual
+   :PBE:common/technical_manual/desktop/technical_manual
+   :quoFEM:common/technical_manual/desktop/technical_manual
+   :R2D:common/technical_manual/desktop/technical_manual
    :pelicun:common/technical_manual/pelicun/technical_manual
    :Hydro:Hydro/techman/hazards/water
    :Hydro:Hydro/techman/fvm/fvm
    :Hydro:Hydro/techman/swsolver/swsolver
    :Hydro:Hydro/techman/cfdsolver/cfdsolver
-   :Hydro:Hydro/techman/swcfdcoupling/swcfdcoupling
-   :Hydro:Hydro/techman/UQ/uqengine
-   :desktop_app:common/technical_manual/desktop/technical_manual
-
-
 
 .. _lbl-developer-manual:
 
@@ -131,11 +159,19 @@
    :desktop_app:common/developer_manual/architecture/desktop/architecture
    :pelicun:common/developer_manual/architecture/pelicun/architecture
 
-   :desktop_app:common/developer_manual/how_to_extend/desktop/how_to_extend
+   :EEUQ:common/developer_manual/how_to_extend/desktop/how_to_extend
+   :WEUQ:common/developer_manual/how_to_extend/desktop/how_to_extend
+   :PBE:common/developer_manual/how_to_extend/desktop/how_to_extend
+   :quoFEM:common/developer_manual/how_to_extend/desktop/how_to_extend
+   :R2D:common/developer_manual/how_to_extend/desktop/how_to_extend
    :pelicun:common/developer_manual/how_to_extend/pelicun/how_to_extend
 
-   :desktop_app:common/developer_manual/verification/desktop/verification
-   :pelicun:common/developer_manual/verification/pelicun/verification
+   :EEUQ:common/developer_manual/verification/desktop/verification
+   :WEUQ:common/developer_manual/verification/desktop/verification
+   :PBE:common/developer_manual/verification/desktop/verification
+   :quoFEM:common/developer_manual/verification/desktop/verification
+   :R2D:common/developer_manual/verification/desktop/verification
+   :pelican:common/developer_manual/verification/pelicun/verification
 
    :desktop_app:common/developer_manual/coding_style/desktop/coding_style
    :pelicun:common/developer_manual/coding_style/pelicun/coding_style
@@ -144,7 +180,6 @@
    :pelicun:common/developer_manual/examples/pelicun/examples
 
    :pelicun:common/developer_manual/API/pelicun/API
-
 
 
 Contact

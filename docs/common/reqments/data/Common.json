@@ -1,0 +1,153 @@
+{
+  "CR": {
+    "target": "Common Requirements of all SimCenter Research Applications",
+    "items": [
+      {
+        "target": "Open-source software where developers can test new data and develop algorithms",
+        "items": [
+          {
+            "target": "Provide open-source applications utilizing code hosting platforms, e.g. GitHub",
+            "fields": ["SP", "M", "Implemented"],
+            "implementation": {
+		 "qfem": "https://github.com/NHERI-SimCenter/quoFEM",
+		 "weuq": "https://github.com/NHERI-SimCenter/WE-UQ",
+		 "eeuq": "https://github.com/NHERI-SimCenter/EE-UQ",
+		 "pbdl": "https://github.com/NHERI-SimCenter/PBE",
+		 "r2dt": "https://github.com/NHERI-SimCenter/R2DTool"
+	    }
+          },
+          {
+            "target": "Assign an open-source licensce that allows free use.",
+            "fields": ["SP", "M", "Implemented"],
+            "implementation": {
+		 "qfem": "https://github.com/NHERI-SimCenter/quoFEM/blob/master/LICENSE",
+		 "weuq": "https://github.com/NHERI-SimCenter/WE-UQ/blob/master/LICENSE",
+		 "eeuq": "https://github.com/NHERI-SimCenter/EE-UQ/blob/master/LICENSE",
+		 "r2dt": "https://github.com/NHERI-SimCenter/R2DTool/blob/master/LICENSE",
+		 "pbdl": "https://github.com/NHERI-SimCenter/PBE/blob/master/LICENSE"
+	    }
+          }
+        ]
+      },
+      {
+        "target": "Ability of Practicing Engineers to use multiple coupled resources (applications, databases, viz tools) in engineering practice",
+        "items": [
+          {
+            "target": "Allow users to launch scientific workflows",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Ability to utilize resources beyond the desktop including HPC",
+        "items": [
+          {
+            "target": "Allow users to utilize HPC resources at TACC through DesignSafe",
+            "fields": ["SP", "M", "Implemented"],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Efficient use of multiple coupled and linked models requiring sharing and inter-operability of databases, computing environments, networks, visualization tools, and analysis systems",
+        "items": [
+          {
+            "target": "Identify and include external analysis systems",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Identify and include external databases",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Identify and include external viz tools",
+            "fields": ["SP", "M", "InProgress"],
+            "items": []
+          },
+          {
+            "target": "Identify and include external computing env",
+            "fields": ["SP", "M", "Inprogress"],
+            "items": []
+          }
+        ]
+      },
+      {
+        "target": "Tool available for download from web",
+        "items": [
+          {
+            "target": "Tool downloadable from DesignSafe website",
+            "fields": ["GC", "M", "Implemented"],
+            "implementation": {
+		 "qfem": "https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM",
+		 "weuq": "https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ",
+		 "eeuq": "https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/EE_UQ",
+		 "pbdl": "https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE",
+		 "r2dt": "https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt"
+	    }
+          }
+        ]
+      },
+      {
+        "target": "Ability to benefit from programs that move research results into practice and obtain training",
+        "items": [
+          {
+            "target": "Ability to use educational provisions to gain interdisclipinary education so as to gain expertise in earth sciences and physics, engineering mechanics, geotechnical engineering, and structural engineering in order to be qualified to perform these simulations",
+            "fields": ["GC", "D", ""]
+          },
+          {
+            "target": "Documentation exists demonstrainting application usage",
+            "fields": ["SP", "M", "Implemented"]
+          },
+          {
+            "target": "Video Exists demonstrating application usage",
+            "fields": ["SP", "M", "Implemented"]
+          },
+          {
+            "target": "Tool Training through online and in person training events",
+            "fields": ["SP", "M", "Implemented"]
+          }
+        ]
+      },
+      {
+        "target": "Verification Examples Exist",
+        "fields": ["SP", "M", "Implemented"],
+        "items": []
+      },
+      {
+        "target": "validation of proposed analytical models against existing empirical datasets",
+        "items": [
+          {
+            "target": "Validation Examples Exist, validated against tests or other software",
+            "fields": ["GC", "M", ""],
+	    "implementation": {
+	         "qfem": "https://NHERI-SimCenter.github.io/quoFEM-Documentation/common/developer_manual/verification/desktop/verification.html",
+	         "weuq": "https://NHERI-SimCenter.github.io/WE-UQ-Documentation/common/developer_manual/verification/desktop/verification.html",
+	         "eeuq": "https://NHERI-SimCenter.github.io/EE-UQ-Documentation/common/developer_manual/verification/desktop/verification.html",
+	         "r2dt": "https://NHERI-SimCenter.github.io/R2D-Documentation/common/developer_manual/verification/desktop/verification.html",
+	         "pbdl": "https://NHERI-SimCenter.github.io/PBE-Documentation/common/developer_manual/verification/desktop/verification.html"
+	    }
+          }
+        ]
+      },
+      {
+        "target": "Tool to allow user to load and save user inputs",
+        "fields": ["SP", "M", "Implemented"],
+	"implementation": "core"
+      },
+      {
+        "target": "Installer which installs application and all needed software",
+        "fields": ["UF", "D", ""],
+	"implementation": {
+	     "qfem": "https://NHERI-SimCenter.github.io/quoFEM-Documentation/common/user_manual/installation/desktop/installation.html",
+	     "weuq": "https://NHERI-SimCenter.github.io/WE-UQ-Documentation/common/user_manual/installation/desktop/installation.html",
+	     "eeuq": "https://NHERI-SimCenter.github.io/EE-UQ-Documentation/common/user_manual/installation/desktop/installation.html",
+	     "r2dt": "https://NHERI-SimCenter.github.io/R2D-Documentation/common/user_manual/installation/desktop/installation.html",
+	     "pbdl": "https://NHERI-SimCenter.github.io/PBE-Documentation/common/user_manual/installation/desktop/installation.html"
+	}
+      }
+    ]
+  }
+}

@@ -1,32 +1,32 @@
-DLD, "*Database for Damage and Loss Fragilities and Consequence Functions: Loss computations use fragility and consequence functions for modern and archaic structural and nonstructural components and assem- blies in structures. The database of such functions for components and assemblies is small and must be expanded through coordinated numerical and experimental simulations*", GC , M,
-DLD1, "**Data Sources**", , ,
-DLD1.1, "*Make the component fragility and consequence functions from FEMA P58 available*", SP, M,
-DLD1.1.1, "FEMA P58 First Edition", SP, M, Implemented
-DLD1.1.2, "FEMA P58 Second Edition", "UF", M, Implemented
-DLD1.1.3,"Extend FEMA P58 Second Edition consequence functions with environmental impact parameters", SP, M,
-DLD1.2, "*Make the building fragility and consequence functions from HAZUS available*", SP, M,
-DLD1.2.1, "HAZUS earthquake damage and reconstruction cost and time", SP, M, Implemented
-DLD1.2.2, "HAZUS hurricane wind damage and reconstruction cost and time", SP, M, Implemented
-DLD1.2.3, "HAZUS storm surge damage and reconstruction cost and time", SP, M,
-DLD1.3,"*Make the lifeline fragility and consequence functions from HAZUS available*", SP, M,
-DLD1.3.1, "HAZUS bridge damage and reconstruction cost and time", SP, M,
-DLD1.3.2, "HAZUS buried pipeline damage and reconstruction cost and time", SP, M,
-DLD1.3.3, "HAZUS power network damage and reconstruction cost and time", SP, M,
-DLD1.4,"*Extend available high-resolution building damage and loss model parameters*", SP, M,
-DLD1.4.1,"Building damage and loss model parameters under wind hazards", SP, M,
-DLD1.4.2,"Building damage and loss model parameters under water hazards", SP, M,
-DLD1.5,"*Make high-resolution damage and loss model parameters available for lifelines*", SP, M,
-DLD1.5.1,"Transportation network damage and loss model parameters", SP, M,
-DLD1.5.2,"Buried pipeline network damage and loss model parameters", SP, M,
-DLD2, "**Data Storage**", , ,
-DLD2.1, "*Generic JSON format*", SP, M,
-DLD2.1.1, "Develop a generic JSON data format for component fragility and consequence functions", SP, D, Implemented
-DLD2.1.2, "Store FEMA P58 and HAZUS component data in the new JSON format and make them available", SP, D, Implemented
-DLD2.2, "*HDF5 Data Storage*", SP, M,
-DLD2.2.1, "Store the JSON files in an HDF5 data structure for each data source", SP, M, Implemented
-DLD2.3,"*Online Database*", SP, M,
-DLD2.3.1,"Create an online database for storing parameters of damage and loss models for buildings", SP, M,
-DLD2.3.2,"Extend online database to store parameters of damage and loss models for transportation networks", SP, M,
-DLD2.3.3,"Extend online database to store parameters of damage and loss models for buried pipeline networks", SP, M,
-DLD2.3.4,"Populate building database with high-resolution model parameters from researchers", SP, M,
-DLD2.3.5,"Populate lifeline database with high-resolution model parameters from researchers", SP, M,
+DLD, "Database for Damage and Loss Fragilities and Consequence Functions: Loss computations use fragility and consequence functions for modern and archaic structural and nonstructural components and assem- blies in structures. The database of such functions for components and assemblies is small and must be expanded through coordinated numerical and experimental simulations", GC , M,
+DLD.1, "Data Sources", , ,
+DLD.1.1, "Make the component fragility and consequence functions from FEMA P58 available", SP, M,
+DLD.1.1.1, "FEMA P58 First Edition", SP, M, Implemented
+DLD.1.1.2, "FEMA P58 Second Edition", "UF", M, Implemented
+DLD.1.1.3, "Extend FEMA P58 Second Edition consequence functions with environmental impact parameters", SP, M,
+DLD.1.2, "Make the building fragility and consequence functions from HAZUS available", SP, M,
+DLD.1.2.1, "HAZUS earthquake damage and reconstruction cost and time", SP, M, Implemented
+DLD.1.2.2, "HAZUS hurricane wind damage and reconstruction cost and time", SP, M, Implemented
+DLD.1.2.3, "HAZUS storm surge damage and reconstruction cost and time", SP, M,
+DLD.1.3, "Make the lifeline fragility and consequence functions from HAZUS available", SP, M,
+DLD.1.3.1, "HAZUS bridge damage and reconstruction cost and time", SP, M,
+DLD.1.3.2, "HAZUS buried pipeline damage and reconstruction cost and time", SP, M,
+DLD.1.3.3, "HAZUS power network damage and reconstruction cost and time", SP, M,
+DLD.1.4, "Extend available high-resolution building damage and loss model parameters", SP, M,
+DLD.1.4.1, "Building damage and loss model parameters under wind hazards", SP, M,
+DLD.1.4.2, "Building damage and loss model parameters under water hazards", SP, M,
+DLD.1.5, "Make high-resolution damage and loss model parameters available for lifelines", SP, M,
+DLD.1.5.1, "Transportation network damage and loss model parameters", SP, M,
+DLD.1.5.2, "Buried pipeline network damage and loss model parameters", SP, M,
+DLD.2, "Data Storage", , ,
+DLD.2.1, "Generic JSON format", SP, M,
+DLD.2.1.1, "Develop a generic JSON data format for component fragility and consequence functions", SP, D, Implemented
+DLD.2.1.2, "Store FEMA P58 and HAZUS component data in the new JSON format and make them available", SP, D, Implemented
+DLD.2.2, "HDF5 Data Storage", SP, M,
+DLD.2.2.1, "Store the JSON files in an HDF5 data structure for each data source", SP, M, Implemented
+DLD.2.3, "Online Database", SP, M,
+DLD.2.3.1, "Create an online database for storing parameters of damage and loss models for buildings", SP, M,
+DLD.2.3.2, "Extend online database to store parameters of damage and loss models for transportation networks", SP, M,
+DLD.2.3.3, "Extend online database to store parameters of damage and loss models for buried pipeline networks", SP, M,
+DLD.2.3.4, "Populate building database with high-resolution model parameters from researchers", SP, M,
+DLD.2.3.5, "Populate lifeline database with high-resolution model parameters from researchers", SP, M,
