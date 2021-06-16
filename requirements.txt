@@ -8,4 +8,5 @@ numpydoc
 rendre>0.0.13
 sphinx_panels
 jsonpath2
+sphinxcontrib.spelling
 
