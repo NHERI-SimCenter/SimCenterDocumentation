@@ -1,4 +1,4 @@
-EL, "*Loading from Earthquake Hazard on Local and Regional Assets*", GC, M, InProgress
+EL, "Loading from Earthquake Hazard on Local and Regional Assets", GC, M, InProgress
 EL.1, "Regional Scale Earthquake Hazard Simulation Options", "", "", 
 EL.1.1, "Coupling of multi-scale nonlinear models from the point of rupture through rock and soil into structure", GC, M,
 EL.1.1.1, "Replacement of empirical linear models with multi-scale nonlinear models", GC, D,

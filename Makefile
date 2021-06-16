@@ -12,6 +12,9 @@ PUBLDIR = $(shell v="$(SIMDOC_APP)"; echo "../$${v%Tool}-Documentation/docs/")
 # Directories to remove when cleaning
 CLEANDIR      = _sources _static _images common
 
+CSVDIR  = docs/common/reqments/_out/
+JSONDIR = docs/common/reqments/data/
+
 export SIMCENTER_DEV = $(shell pwd | xargs dirname)
 #-Examples-------------------------------------------------
 EXPDIR = ./docs/common/user_manual/examples/desktop
@@ -32,6 +35,7 @@ help:
 	@echo '    web    Run html target with build directory'
 	@echo '           set to app publishing repository.'
 	@echo '    html   Run html target in dev build directory.'
+	@echo '    spell  Run spell checker.'
 	@echo '    latex  Run latex target in dev build directory.'
 	@printf "\nRunning 'make all' will run 'make <app> html'\n"
 	@printf "for all <app> options listed above.\n\n"
@@ -46,7 +50,7 @@ we:      export SIMDOC_APP=WE-UQ
 r2d:     export SIMDOC_APP=R2DTool
 
 pbe:     export SIMDOC_APP=PBE
-hydro:   export SIMDOC_APP=Hydro
+hydro:   export SIMDOC_APP=HydroUQ
 qfem:    export SIMDOC_APP=quoFEM
 pelicun: export SIMDOC_APP=pelicun
 rtm: export SIMDOC_APP=requirements
@@ -86,8 +90,14 @@ web:
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(PUBLDIR)" $(O)
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(PUBLDIR)" $(O)
 
+spell:
+	@$(SPHINXBUILD) -b spelling "$(SOURCEDIR)" "$(call BUILDDIR,$(SIMDOC_APP))/html" $(O)
 
 html:
+	for i in $(JSONDIR)/*.json; do \
+	    file_name="$${i##*/}"; \
+	    make $(CSVDIR)/$${file_name%.*}.csv; \
+	done
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(call BUILDDIR,$(SIMDOC_APP))/html" $(O)
 
 
@@ -106,5 +116,15 @@ latexpdf:
 	make pdf
 
 update:
-	pip install -U -r requirements.txt 
+	pip install -U -r requirements.txt
+
+$(CSVDIR)/%.csv: $(JSONDIR)/%.json
+	python3 ./scripts/json2csv.py \
+		-Eqfem $(SIMCENTER_DEV)/quoFEM/Examples/qfem*/src/input.json \
+		-Eeeuq $(SIMCENTER_DEV)/EE-UQ/Examples/eeuq-*/src/input.json \
+		-Eweuq $(SIMCENTER_DEV)/WE-UQ/Examples/weuq-*/src/input.json \
+		-Epbdl $(SIMCENTER_DEV)/PBE/Examples/pbdl-*/src/input.json \
+		-Er2dt $(SIMCENTER_DEV)/R2DTool/Examples/E*/input.json \
+		< '$<' > '$@'
+
 

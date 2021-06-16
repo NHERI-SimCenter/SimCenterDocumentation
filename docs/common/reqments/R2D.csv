@@ -1,9 +1,9 @@
-R2D, "*Ability to perform regional simulation allowing communities to evaluate resilience and perform what-if types of analysis for natural hazard events*", GC, M, InProgress
+R2D, "Ability to perform regional simulation allowing communities to evaluate resilience and perform what-if types of analysis for natural hazard events", GC, M, InProgress
 R2D.1, "Include Various Hazards", GC, M, InProgress
 R2D.1.1, "Ability to perform simulations for ground shaking due to earthquakes using methods defined in EL1", GC , M , Implemented
 R2D.1.2 , "Ability to perform simulations for wave action due to earthquake induced tsunami using methods defined in HL1", GC , M ,
 R2D.1.3 , "Ability to perform simulations for wind action due to hurricane using methods defined in WL1", GC  , M , InProgress
-R2D.1.4 ,"Ability to perform simulations for wave action due to hurricane storm surge using methods defined in HL1", GC , M ,
+R2D.1.4 , "Ability to perform simulations for wave action due to hurricane storm surge using methods defined in HL1", GC , M ,
 R2D.1.5 , "Ability to perform multi-hazard simulations: wind + storm surge, rain, wind and water borne debris", GC , M ,
 R2D.1.6 , "Ability to utilize machine learning ensemble techniques in hazard simulation", GC, M,
 R2D.1.7 , "Ability to incorporate surrogate models in hazard simulation", SP, M,
@@ -11,11 +11,11 @@ R2D.1.8 , "Ability to incorporate multi-scale models in hazard simulation", SP, 
 R2D.1.9 , "Ability to incorporate ground deformation hazards for pipes, roadways, and other infrastructure", SP , M
 ,,,,
 R2D.2, "Include Different Asset Types", GC , M , InProgress
-R2D.2.1 ,"Ability to incorporate building assets", GC , M , Implemented
-R2D.2.1.1 ,"Ability to incorporate multi-fidelity building model asset descriptions", GC , M,
-R2D.2.2 ,"Ability to incorporate transportation networks", GC , M ,
-R2D.2.3 ,"Ability to incorporate utility networks", GC , M ,
-R2D.2.3.1 ,"Methods to overcome  national security issues with certain utility data", GC , M ,
+R2D.2.1 , "Ability to incorporate building assets", GC , M , Implemented
+R2D.2.1.1 , "Ability to incorporate multi-fidelity building model asset descriptions", GC , M,
+R2D.2.2 , "Ability to incorporate transportation networks", GC , M ,
+R2D.2.3 , "Ability to incorporate utility networks", GC , M ,
+R2D.2.3.1 , "Methods to overcome  national security issues with certain utility data", GC , M ,
 R2D.2.4 , "Ability to incorporate surrogate models in asset modeling", SP, M,
 ,,,,
 R2D.3, "Include Different Analysis options", GC , M , InProgress

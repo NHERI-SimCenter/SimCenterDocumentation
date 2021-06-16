@@ -1,4 +1,4 @@
-QF, "*Application to Promote and aid use of UQ Methods in NHE Research for response estimation, surrogate modeling, and calibration*", GC, M , Implemented
+QF, "Application to Promote and aid use of UQ Methods in NHE Research for response estimation, surrogate modeling, and calibration", GC, M , Implemented
 QF.1, "Ability to use Various UQ Methods and Variable Options", , ,
 QF.1.1, "Ability to use Forward Propagtion methods listed in UQ under UF", SP, M, Implemented
 QF.1.2, "Ability to use Random Variable Distributions defeined in RV", SP, M,

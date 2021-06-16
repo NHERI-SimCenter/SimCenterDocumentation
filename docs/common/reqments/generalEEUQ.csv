@@ -1,4 +1,4 @@
-EE, "*Application to determine response of Building Subject to Earthquake hazard including formal treatment of randomness and uncertainty*", GC, M , InProgress
+EE, "Application to determine response of Building Subject to Earthquake hazard including formal treatment of randomness and uncertainty", GC, M , InProgress
 EE.1, "Ability to select from Earthquake Loading Options listed in EL2", SP , M , Implemented
 EE.2, "Ability to select from Building Modeling Options listed in MOD under BM", SP , M , Implemented
 EE.3, "Ability to select from nonlinear analysis options listed in ANA", SP, M, Implemented

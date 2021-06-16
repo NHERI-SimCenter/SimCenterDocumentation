@@ -13,7 +13,7 @@ as will be discussed in the :ref:`lbl-technical-manual`, by an application calle
 the default applications we provide and will be enthused to provide
 their own applications for others to use.
 
-As the computations can be prohibitively expensive to perform on a user's local computer, especially considering uncertaintanty quantification is involved,
+As the computations can be prohibitively expensive to perform on a user's local computer, especially considering uncertainty quantification is involved,
 the user has the option to perform the computations remotely on the
 Stampede2 supercomputer. Stampede2 is located at the Texas Advanced
 Computing Center (TACC) and made available to the user through NHERI

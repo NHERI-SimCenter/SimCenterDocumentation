@@ -11,30 +11,48 @@ import os, sys
 from datetime import datetime
 
 app_name = os.path.expandvars("$SIMDOC_APP")
-APPS = ["R2DTool", "PBE", "EE-UQ", "WE-UQ", "quoFEM", "BRAILS", "pelicun","requirements","Hydro"]
+APPS = [
+    "R2DTool",
+    "PBE",
+    "EE-UQ",
+    "WE-UQ",
+    "quoFEM",
+    "BRAILS",
+    "pelicun",
+    "requirements",
+    "HydroUQ",
+]
 if app_name in APPS:
     # `make` was invoked from root, all env vars should already be defined.
     pass
 else:
     pass
-    app_name = 'R2DTool'
-    #app_name = 'PBE'
-    #app_name = 'EE-UQ'
-    #app_name = 'WE-UQ'
-    #app_name = 'quoFEM'
-    #app_name = 'pelicun'
+    app_name = "R2DTool"
+    # app_name = 'PBE'
+    # app_name = 'EE-UQ'
+    # app_name = 'WE-UQ'
+    # app_name = 'quoFEM'
+    # app_name = 'pelicun'
 
-    os.environ['SIMDOC_APP'] = app_name
-    os.environ['SIMCENTER_DEV'] = os.path.abspath('../../')
+    os.environ["SIMDOC_APP"] = app_name
+    os.environ["SIMCENTER_DEV"] = os.path.abspath("../../")
 
 
+app_abrev = app_name.split("-")[0].replace("Tool", "")
+app_abrev2 = (
+    app_name.replace("-", "").replace("Tool", "").replace("requirements", "RTM")
+)
+app_name2 = app_name.replace("Tool", "")
+loc_app_dir = os.path.abspath(f"../../{app_name}")
 
-app_abrev = app_name.split("-")[0].replace("Tool","")
-app_abrev2 = app_name.replace("-","").replace("Tool","").replace("requirements","RTM")
-app_name2 = app_name.replace("Tool","")
-loc_app_dir = os.path.abspath(f'../../{app_name}')
+print(f"app_name =  {app_name} ({app_abrev}, {app_abrev2})")
 
-print(f'app_name =  {app_name} ({app_abrev}, {app_abrev2})')
+# automatically update dependencies
+try:
+    from pip import main as run_pip
+except:
+    from pip._internal import main as run_pip
+run_pip(["install", "-Ur", "../requirements.txt"])
 
 # -- Path setup --------------------------------------------------------------
 
@@ -42,76 +60,84 @@ print(f'app_name =  {app_name} ({app_abrev}, {app_abrev2})')
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
-
-sys.path.append(os.path.abspath('./sphinx_ext/'))
-sys.path.append(os.path.abspath('./modules/'))
+sys.path.append(os.path.abspath("./sphinx_ext/"))
+sys.path.append(os.path.abspath("./modules/"))
 # Add files for the example page template to path
-sys.path.append(os.path.abspath('./modules/tmpl_0007/'))
-# Load the `sync_files` routine from ./modules/sync_files.py
-from sync_files import sync_files
+sys.path.append(os.path.abspath("./modules/tmpl_0007/"))
 
-if app_name == 'pelicun':
-    sys.path.insert(0, os.path.abspath('.'))
-    sys.path.insert(0, os.path.abspath('../'))
-#-----------------------------------------------------------------------------
+if app_name == "pelicun":
+    sys.path.insert(0, os.path.abspath("."))
+    sys.path.insert(0, os.path.abspath("../"))
+# -----------------------------------------------------------------------------
 
 external_links = {
-    'github': f'https://github.com/NHERI-SimCenter/{app_name}',
+    "github": f"https://github.com/NHERI-SimCenter/{app_name}",
 }
 
-# TODO: try to consolodate this to have no more than two exclude patterns per app
-exclude_patterns = [
-        '**/*desktop*',
-        '**/*response*',
-
-        '**/*PBE*',
-        '**/pbdl-*',
-        '**/*pelicun*',
-
-        '**/*WEUQ*',
-        '**/*WE[-_]UQ*',
-        '**/weuq-*',
-        '**/*wind*',
-
-        '**/*EEUQ*',
-        '**/*EE[-_]UQ*',
-        '**/eeuq-*',
-        '**/*earthquake*',
-
-        '**/*TinF*',
-        '**/*TInF*',
-
-        '**/*quoFEM*',
-        '**/QUOFEM*',
-        '**/qfem*',
-
-        '**/Hydro*',
-        'Hydro*',
-
-        'common/user_manual/examples/desktop/E*', # R2D examples
-        '**/R2D*',
-
-        'common/reqments/index.rst',
-        'common/reqments/testbeds.rst',
-        'common/reqments/rWhale.rst',
-        'common/reqments/allRequirements.rst',
-        'common/reqments/All-Requirements.rst',
-        'common/reqments/edRequirements.rst',
-        'common/reqments/bigRequirements.rst',
-        'common/user_manual/examples/desktop/gallery.rst',
-
-        # Apparently obsolete pages, consider deleting
-        '**/*old*',
-        '**/_*', # consider files beginning with underscore as marked for eventual removal
-        '**/_downloadApp.rst',
-        '**/_testInstall.rst',
-        '**/downloadPython.rst',
-        '**/install_WindowsOld.rst'
-    ] + [
-        f'**{app}*' for app in APPS if app != app_name
-] + [
-        f'**{app.replace("-","")}*' for app in APPS if app != app_name
+# Add any Sphinx extension modules 
+extensions =  [
+    "sphinx-jsonschema",
+    "sphinxcontrib.bibtex",
+    "toctree_filter",
+    "sphinxcontrib.images",
+    "sphinx.ext.extlinks",
+    "sphinxcontrib.images",
+    "rendre.sphinx",
+    "sphinx.ext.autodoc",
+    "crate.sphinx.csv",
+    "sphinx_panels",
+    "sphinxcontrib.spelling",
 ]
+
+# List of patterns, relative to source directory, that match files and
+# directories to ignore when looking for source files.
+# This pattern also affects html_static_path and html_extra_path.
+
+# TODO: try to consolodate this to have no more than two exclude patterns per app
+exclude_patterns = (
+    [
+        "**/*desktop*",
+        "**/*response*",
+        "**/*PBE*",
+        "**/pbdl-*",
+        "**/*pelicun*",
+        "**/*WEUQ*",
+        "**/*WE[-_]UQ*",
+        "**/weuq-*",
+        "**/*wind*",
+        "**/*EEUQ*",
+        "**/*EE[-_]UQ*",
+        "**/eeuq-*",
+        "**/*earthquake*",
+        "**/*TinF*",
+        "**/*TInF*",
+        "**/*quoFEM*",
+        "**/QUOFEM*",
+        "**/qfem*",
+        "**/Hydro*",
+        "Hydro*",
+        "common/user_manual/examples/desktop/E*",  # R2D examples
+        "**/R2D*",
+        "reqments.rst",
+        "common/reqments/index.rst",
+        "common/reqments/testbeds.rst",
+        "common/reqments/rWhale.rst",
+        "common/reqments/allRequirements.rst",
+        "common/reqments/All-Requirements.rst",
+        "common/reqments/edRequirements.rst",
+        "common/reqments/bigRequirements.rst",
+        "common/user_manual/examples/desktop/gallery.rst",
+        # Apparently obsolete pages, consider deleting
+        "**/*old*",
+        "**/_*",  # consider files beginning with underscore as marked for eventual removal
+        "**/_downloadApp.rst",
+        "**/_testInstall.rst",
+        "**/downloadPython.rst",
+        "**/install_WindowsOld.rst",
+    ]
+    + [f"**{app}*" for app in APPS if app != app_name]
+    + [f'**{app.replace("-","")}*' for app in APPS if app != app_name]
+)
 
 
 source_suffix = {
@@ -119,42 +145,40 @@ source_suffix = {
 }
 
 toc_filter_exclusions = [
-    'desktop',
-    'response',
-    'earthquake',
-    'wind',
-    'R2D',
-    'PBE',
-    'quoFEM',
-    'Hydro',
-    'notQuoFEM',
-    'WEUQ',
-    'EEUQ',
-    'TinF',
-    'TInF',
-    'S3hark',
-    'pelicun',
-    'docTestbeds'
+    "desktop",
+    "response",
+    "earthquake",
+    "wind",
+    "R2D",
+    "PBE",
+    "quoFEM",
+    "Hydro",
+    "notQuoFEM",
+    "WEUQ",
+    "EEUQ",
+    "TinF",
+    "TInF",
+    "S3hark",
+    "pelicun",
+    "docTestbeds",
 ]
 
 
-extensions = ['sphinx_panels']
 
 # -- Project information -----------------------------------------------------
 
 # shared among all SimCenter docs
-
 numfig = True
 numfig_secnum_depth = 4
 
 math_number_all = True
-math_eqref_format = '({number})'
+math_eqref_format = "({number})"
 math_numfig = True
 
 # Some apps overwrite the copyright to include additional entities
-copyright = f'{str(datetime.today().year)}, The Regents of the University of California'
+copyright = f"{str(datetime.today().year)}, The Regents of the University of California"
 
-tags.add(f'{app_abrev2}_app')
+tags.add(f"{app_abrev2}_app")
 
 rst_prolog = f"""
 .. |fmk| replace:: **fmk**
@@ -225,24 +249,22 @@ rst_prolog = f"""
 """
 
 html_theme_options = {
-    'logo_only': True,
-    'prev_next_buttons_location': None,
-    'style_nav_header_background': '#F2F2F2'
+    "logo_only": True,
+    "prev_next_buttons_location": None,
+    "style_nav_header_background": "#F2F2F2",
 }
-html_logo = f'common/figures/{app_name2}-Logo.png'
+html_logo = f"common/figures/{app_name2}-Logo.png"
 
 # gallery data sources
 rendre_config = {
     "targets": {
         "examples": {
-            "data-file": [os.path.normpath(f'{loc_app_dir}/Examples/index.json')],
-            "defaults": {
-                "link": "./%%:base/README"
-            }
+            "data-file": [os.path.normpath(f"{loc_app_dir}/Examples/index.json")],
+            "defaults": {"link": "./%%:base/README"},
         },
         "backend": {
             # "data-file": os.path.normpath(f'../../{app_name}/Examples/index.json')
-        }
+        },
     }
 }
 example_config = rendre_config["targets"]["examples"]
@@ -250,61 +272,60 @@ sync_examples = False
 
 # Create inline :github: directive for convenient linking to files on github
 extlinks = {
-    'github' : (f'{external_links["github"]}/tree/master/%s', f'Github'),
+    "github": (f'{external_links["github"]}/tree/master/%s', f"Github"),
 }
 
-examples_url = f'https://github.com/NHERI-SimCenter/{app_name}/tree/master/Examples/'
+examples_url = f"https://github.com/NHERI-SimCenter/{app_name}/tree/master/Examples/"
 
 # app-specific settings
 
-docTestbeds='True'
+docTestbeds = "True"
 
-if app_name == 'Hydro':
+if app_name == "HydroUQ":
 
-    project = 'Hydro-UQ'
+    project = "Hydro-UQ"
     author = "Ajay B Harish, Frank McKenna"
 
-    #tags.add('desktop_app')
-    tags.add('earthquake')
-    tags.add('response')
-    tags.add('notQuoFEM')
-    tags.add('Hydro')
+    # tags.add('desktop_app')
+    tags.add("earthquake")
+    tags.add("response")
+    tags.add("notQuoFEM")
+    tags.add("Hydro")
 
-    toc_filter_exclusions.remove('Hydro')
-    toc_filter_exclusions.remove('desktop')
-    toc_filter_exclusions.remove('response')
+    toc_filter_exclusions.remove("Hydro")
+    toc_filter_exclusions.remove("desktop")
+    toc_filter_exclusions.remove("response")
     toc_filter_exclude = toc_filter_exclusions
 
-    exclude_patterns.remove('**/*desktop*')
-    exclude_patterns.remove('**/*earthquake*')
-    exclude_patterns.remove('**/*response*')
-    exclude_patterns.remove('**/Hydro*')
-    exclude_patterns.remove('Hydro*')
-
+    exclude_patterns.remove("**/*desktop*")
+    exclude_patterns.remove("**/*earthquake*")
+    exclude_patterns.remove("**/*response*")
+    exclude_patterns.remove("**/Hydro*")
+    exclude_patterns.remove("Hydro*")
 
     # TODO: fix these temporary changes
-    exclude_patterns.append('**/user_manual/usage/desktop/FEM.rst')
-    exclude_patterns.append('**/user_manual/usage/desktop/SIM.rst')
-    exclude_patterns.append('**/user_manual/usage/desktop/GI.rst')
-    exclude_patterns.append('**/user_manual/usage/desktop/response/*')
-    exclude_patterns.append('**/user_manual/usage/desktop/earthquake/*')
-    exclude_patterns.append('**/*architectureLevel4.rst*')
-    exclude_patterns.append('**/requirements/index.rst')
-    exclude_patterns.append('**/requirements/bigRequirements.rst')
-    exclude_patterns.append('**/DakotaSensitivity.rst')
-    exclude_patterns.append('**/DakotaReliability.rst')
-    exclude_patterns.append('**/DakotaParameterEstimation.rst')
-    exclude_patterns.append('**/DakotaInverseProblems.rst')
+    exclude_patterns.append("**/user_manual/usage/desktop/FEM.rst")
+    exclude_patterns.append("**/user_manual/usage/desktop/SIM.rst")
+    exclude_patterns.append("**/user_manual/usage/desktop/GI.rst")
+    exclude_patterns.append("**/user_manual/usage/desktop/response/*")
+    exclude_patterns.append("**/user_manual/usage/desktop/earthquake/*")
+    exclude_patterns.append("**/*architectureLevel4.rst*")
+    exclude_patterns.append("**/reqments/index.rst")
+    exclude_patterns.append("**/requirements/bigRequirements.rst")
+    exclude_patterns.append("**/DakotaSensitivity.rst")
+    exclude_patterns.append("**/DakotaReliability.rst")
+    exclude_patterns.append("**/DakotaParameterEstimation.rst")
+    exclude_patterns.append("**/DakotaInverseProblems.rst")
     # END TODO
 
-    extlinks.update(
-       {f'hdro-{i:04}' : (f'{examples_url}/hydro-{i:04}/%s',f'hydro-{i:04}') for i in range(1,20)}
+    html_theme_options.update(
+        {
+            "analytics_id": "...",  # TODO: add analytics ID
+        }
     )
-
-    html_theme_options.update({
-        'analytics_id': '...', #TODO: add analytics ID
-    })
-    master_doc = 'Hydro'
+    #master_doc = "Hydro"
+    master_doc = "index"
+    sync_examples = True
 
     rst_prolog += f"""
 .. |full tool name| replace:: Water-borne Hazards Engineering with Uncertainty Quantification
@@ -317,46 +338,45 @@ if app_name == 'Hydro':
 
 """
 
-if app_name == 'R2DTool':
+if app_name == "R2DTool":
 
-    project = 'Regional Resilience Determination Tool'
+    project = "Regional Resilience Determination Tool"
 
-    author = 'Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez'
+    author = "Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez"
     sync_examples = True
 
-    tags.add('desktop_app')
-    tags.add('earthquake')
-    tags.add('response')
-    tags.add('notQuoFEM')
-    tags.add('docTestbeds')    
+    tags.add("desktop_app")
+    tags.add("earthquake")
+    tags.add("response")
+    tags.add("notQuoFEM")
+    tags.add("docTestbeds")
 
-    toc_filter_exclusions.remove('R2D')
-    toc_filter_exclusions.remove('desktop')
-    toc_filter_exclusions.remove('earthquake')
-    toc_filter_exclusions.remove('response')
-    toc_filter_exclusions.remove('notQuoFEM')
-    toc_filter_exclusions.remove('docTestbeds')    
+    toc_filter_exclusions.remove("R2D")
+    toc_filter_exclusions.remove("desktop")
+    toc_filter_exclusions.remove("earthquake")
+    toc_filter_exclusions.remove("response")
+    toc_filter_exclusions.remove("notQuoFEM")
+    toc_filter_exclusions.remove("docTestbeds")
     toc_filter_exclude = toc_filter_exclusions
 
-    exclude_patterns.remove('**/*desktop*')
-    exclude_patterns.remove('**/*earthquake*')
-    exclude_patterns.remove('**/*response*')
-    exclude_patterns.remove('**/R2D*')
-    exclude_patterns.remove('common/user_manual/examples/desktop/E*')
-
+    exclude_patterns.remove("**/*desktop*")
+    exclude_patterns.remove("**/*earthquake*")
+    exclude_patterns.remove("**/*response*")
+    exclude_patterns.remove("**/R2D*")
+    exclude_patterns.remove("common/user_manual/examples/desktop/E*")
 
     # TODO: fix these temporary changes
-    exclude_patterns.append('**/user_manual/usage/desktop/FEM.rst')
-    exclude_patterns.append('**/user_manual/usage/desktop/SIM.rst')
-    exclude_patterns.append('**/user_manual/usage/desktop/GI.rst')
-    exclude_patterns.append('**/user_manual/usage/desktop/response/*')
-    exclude_patterns.append('**/user_manual/usage/desktop/earthquake/*')
-    exclude_patterns.append('**/*architectureLevel4.rst*')
-    exclude_patterns.append('**/requirements/bigRequirements.rst')
-    exclude_patterns.append('**/DakotaSensitivity.rst')
-    exclude_patterns.append('**/DakotaReliability.rst')
-    exclude_patterns.append('**/DakotaParameterEstimation.rst')
-    exclude_patterns.append('**/DakotaInverseProblems.rst')
+    exclude_patterns.append("**/user_manual/usage/desktop/FEM.rst")
+    exclude_patterns.append("**/user_manual/usage/desktop/SIM.rst")
+    exclude_patterns.append("**/user_manual/usage/desktop/GI.rst")
+    exclude_patterns.append("**/user_manual/usage/desktop/response/*")
+    exclude_patterns.append("**/user_manual/usage/desktop/earthquake/*")
+    exclude_patterns.append("**/*architectureLevel4.rst*")
+    exclude_patterns.append("**/requirements/bigRequirements.rst")
+    exclude_patterns.append("**/DakotaSensitivity.rst")
+    exclude_patterns.append("**/DakotaReliability.rst")
+    exclude_patterns.append("**/DakotaParameterEstimation.rst")
+    exclude_patterns.append("**/DakotaInverseProblems.rst")
     # END TODO
 
     rst_prolog += f"""\
@@ -369,66 +389,66 @@ if app_name == 'R2DTool':
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 
 """
-    example_config.update({
-        "include-item": [
-            "r2dt-0006",
-            "r2dt-0003",
-            "r2dt-0007",
-            "r2dt-0001",
-            "r2dt-0002",
-        ]
-    })
-    extlinks.update(
-       {f'r2dt-{i:04}' : (f'{examples_url}/r2dt-{i:04}/%s',f'r2dt-{i:04}') for i in range(1,20)}
+    example_config.update(
+        {
+            "include-item": [
+                "r2dt-0006",
+                "r2dt-0003",
+                "r2dt-0007",
+                "r2dt-0001",
+                "r2dt-0002",
+            ]
+        }
+    )
+    html_theme_options.update(
+        {
+            "analytics_id": "...",  # TODO: add analytics ID
+        }
     )
 
-    html_theme_options.update({
-        'analytics_id': '...', #TODO: add analytics ID
-    })
+elif app_name == "PBE":
 
-elif app_name == 'PBE':
+    project = "Performance Based Engineering Application"
 
-    project = 'Performance Based Engineering Application'
+    author = (
+        "Adam Zsarnóczay, Frank McKenna, Chaofeng Wang, Wael Elhaddad, Michael Gardner"
+    )
 
-    author = 'Adam Zsarnóczay, Frank McKenna, Chaofeng Wang, Wael Elhaddad, Michael Gardner'
+    tags.add("PBE_app")
+    tags.add("desktop_app")
+    tags.add("earthquake")
+    tags.add("notQuoFEM")
 
-    tags.add('PBE_app')
-    tags.add('desktop_app')
-    tags.add('earthquake')
-    tags.add('notQuoFEM')
-
-    toc_filter_exclusions.remove('PBE')
-    toc_filter_exclusions.remove('desktop')
-    toc_filter_exclusions.remove('earthquake')
-    toc_filter_exclusions.remove('notQuoFEM')
+    toc_filter_exclusions.remove("PBE")
+    toc_filter_exclusions.remove("desktop")
+    toc_filter_exclusions.remove("earthquake")
+    toc_filter_exclusions.remove("notQuoFEM")
     toc_filter_exclude = toc_filter_exclusions
 
-    exclude_patterns.remove('**/*desktop*')
-    exclude_patterns.remove('**/pbdl-*')
-    exclude_patterns.remove('**/*earthquake*')
-    exclude_patterns.remove('**/*PBE*')
+    exclude_patterns.remove("**/*desktop*")
+    exclude_patterns.remove("**/pbdl-*")
+    exclude_patterns.remove("**/*earthquake*")
+    exclude_patterns.remove("**/*PBE*")
 
     # TODO: fix these temporary changes
-    exclude_patterns.append('**/*architectureLevel4.rst*')
-    exclude_patterns.append('**/DakotaSensitivity.rst')
-    exclude_patterns.append('**/DakotaReliability.rst')
-    exclude_patterns.append('**/DakotaParameterEstimation.rst')
-    exclude_patterns.append('**/DakotaInverseProblems.rst')
-    exclude_patterns.append('**/resEE.rst')
+    exclude_patterns.append("**/*architectureLevel4.rst*")
+    exclude_patterns.append("**/DakotaSensitivity.rst")
+    exclude_patterns.append("**/DakotaReliability.rst")
+    exclude_patterns.append("**/DakotaParameterEstimation.rst")
+    exclude_patterns.append("**/DakotaInverseProblems.rst")
+    exclude_patterns.append("**/resEE.rst")
     # END TODO
 
     sync_examples = True
-    example_config.update({
-        "include-item": [
-            "pbdl-0001",
-            "pbdl-0002",
-            "pbdl-0003",
-        ]
-    })
-    extlinks.update(
-       {f'pbdl-{i:04}' : (f'{examples_url}/pbdl-{i:04}/%s',f'pbdl-{i:04}') for i in range(1,99)}
+    example_config.update(
+        {
+            "include-item": [
+                "pbdl-0001",
+                "pbdl-0002",
+                "pbdl-0003",
+            ]
+        }
     )
-
 
     rst_prolog += """\
 .. |full tool name| replace:: Performance Based Engineering Application
@@ -441,44 +461,44 @@ elif app_name == 'PBE':
 
 """
 
+    html_theme_options.update({"analytics_id": "UA-158130480-3"})
 
-    html_theme_options.update({'analytics_id': 'UA-158130480-3'})
+elif app_name == "EE-UQ":
+    project = "Earthquake Engineering with Uncertainty Quantification"
+    author = (
+        "Frank McKenna, Wael Elhaddad, Michael Gardner, Chaofeng Wang, Adam Zsarnóczay"
+    )
 
-elif app_name == 'EE-UQ':
-    project = 'Earthquake Engineering with Uncertainty Quantification'
-    author = 'Frank McKenna, Wael Elhaddad, Michael Gardner, Chaofeng Wang, Adam Zsarnóczay'
+    tags.add("desktop_app")
+    tags.add("response")
+    tags.add("earthquake")
+    tags.add("notQuoFEM")
 
-    tags.add('desktop_app')
-    tags.add('response')
-    tags.add('earthquake')
-    tags.add('notQuoFEM')
-
-    toc_filter_exclusions.remove('EEUQ')
-    toc_filter_exclusions.remove('desktop')
-    toc_filter_exclusions.remove('earthquake')
-    toc_filter_exclusions.remove('response')
-    toc_filter_exclusions.remove('notQuoFEM')
+    toc_filter_exclusions.remove("EEUQ")
+    toc_filter_exclusions.remove("desktop")
+    toc_filter_exclusions.remove("earthquake")
+    toc_filter_exclusions.remove("response")
+    toc_filter_exclusions.remove("notQuoFEM")
     toc_filter_exclude = toc_filter_exclusions
 
-    exclude_patterns.remove('**/*EEUQ*')
-    exclude_patterns.remove('**/eeuq-*')
-    exclude_patterns.remove('**/*desktop*')
-    exclude_patterns.remove('**/*earthquake*')
-    exclude_patterns.remove('**/*response*')
-    exclude_patterns.remove('**/*EE[-_]UQ*')
+    exclude_patterns.remove("**/*EEUQ*")
+    exclude_patterns.remove("**/eeuq-*")
+    exclude_patterns.remove("**/*desktop*")
+    exclude_patterns.remove("**/*earthquake*")
+    exclude_patterns.remove("**/*response*")
+    exclude_patterns.remove("**/*EE[-_]UQ*")
 
     sync_examples = True
-    example_config.update({
-        "include-item": [
-            "eeuq-0001",
-            "eeuq-0002",
-            "eeuq-0003",
-            "eeuq-0004",
-            "eeuq-0005",
-        ]
-    })
-    extlinks.update(
-       {f'eeuq-{i:04}' : (f'{examples_url}/eeuq-{i:04}/%s',f'eeuq-{i:04}') for i in range(1,99)}
+    example_config.update(
+        {
+            "include-item": [
+                "eeuq-0001",
+                "eeuq-0002",
+                "eeuq-0003",
+                "eeuq-0004",
+                "eeuq-0005",
+            ]
+        }
     )
 
     rst_prolog += """
@@ -492,33 +512,32 @@ elif app_name == 'EE-UQ':
 
 """
 
+    html_theme_options.update({"analytics_id": "UA-158130480-1"})
 
-    html_theme_options.update({'analytics_id': 'UA-158130480-1'})
+elif app_name == "quoFEM":
+    project = "Quantified Uncertainty with Optimization for the FEM"
+    copyright = f"2018-{str(datetime.today().year)}, The Regents of the University of California"
+    author = "Frank McKenna, Adam Zsarnóczay, Sang-ri Yi, Aakash Bangalore Satish, Nikhil Padhye"
 
-elif app_name == 'quoFEM':
-    project = 'Quantified Uncertainty with Optimization for the FEM'
-    copyright = f'2018-{str(datetime.today().year)}, The Regents of the University of California'
-    author = 'Frank McKenna, Adam Zsarnóczay, Sang-ri Yi, Aakash Bangalore Satish, Nikhil Padhye'
+    tags.add("desktop_app")
 
-    tags.add('desktop_app')
-
-    toc_filter_exclusions.remove('desktop')
-    toc_filter_exclusions.remove('quoFEM')
+    toc_filter_exclusions.remove("desktop")
+    toc_filter_exclusions.remove("quoFEM")
     toc_filter_exclude = toc_filter_exclusions
 
-    exclude_patterns.remove('**/*desktop*')
-    exclude_patterns.remove('**/*quoFEM*')
-    exclude_patterns.remove('**/qfem*')
+    exclude_patterns.remove("**/*desktop*")
+    exclude_patterns.remove("**/*quoFEM*")
+    exclude_patterns.remove("**/qfem*")
 
     # TODO: fix these temporary changes
-    exclude_patterns.append('**/*architectureLevel4.rst*')
-    exclude_patterns.append('**/resEE.rst')
-    exclude_patterns.append('**/damping.rst')
-    exclude_patterns.append('**/desktop/FEM.rst')
-    exclude_patterns.append('**/desktop/GI.rst')
-    exclude_patterns.append('**/desktop/SIM.rst')
-    exclude_patterns.append('**/desktop/quo-*')
-    exclude_patterns.append('**/testbeds/*')
+    exclude_patterns.append("**/*architectureLevel4.rst*")
+    exclude_patterns.append("**/resEE.rst")
+    exclude_patterns.append("**/damping.rst")
+    exclude_patterns.append("**/desktop/FEM.rst")
+    exclude_patterns.append("**/desktop/GI.rst")
+    exclude_patterns.append("**/desktop/SIM.rst")
+    exclude_patterns.append("**/desktop/quo-*")
+    exclude_patterns.append("**/testbeds/*")
     # END TODO
 
     sync_examples = True
@@ -534,75 +553,72 @@ elif app_name == 'quoFEM':
 
 """
 
+    html_theme_options.update({"analytics_id": "UA-158130480-4"})
 
-    html_theme_options.update({'analytics_id': 'UA-158130480-4'})
-
-    example_config.update({
-        "include-item": [
-            "qfem-0001",
-            "qfem-0002",
-            "qfem-0005",
-            "qfem-0003",
-            "qfem-0004",
-            "qfem-0009",
-            "qfem-0007",
-            "qfem-0008",
-            "qfem-0014",
-            "qfem-0015",
-            "qfem-0016",
-            "qfem-0017",
-        ]
-    })
-    # Example links
-    extlinks.update(
-       {f'qfem-{i:04}' : (f'{examples_url}/qfem-{i:04}/%s',f'qfem-{i:04}') for i in range(1,99)}
+    example_config.update(
+        {
+            "include-item": [
+                "qfem-0001",
+                "qfem-0002",
+                "qfem-0005",
+                "qfem-0003",
+                "qfem-0004",
+                "qfem-0009",
+                "qfem-0007",
+                "qfem-0008",
+                "qfem-0014",
+                "qfem-0015",
+                "qfem-0016",
+                "qfem-0017",
+                "qfem-0018",
+                "qfem-0019",
+            ]
+        }
     )
 
-elif app_name == 'WE-UQ':
-    project = 'Wind Engineering with Uncertainty Quantification'
-    #author = 'Frank McKenna'
-    author = 'Frank McKenna, Peter Mackenzie-Helnwein, Wael Elhaddad, Jiawei Wan, Michael Gardner, Dae Kun Kwon'
+elif app_name == "WE-UQ":
+    project = "Wind Engineering with Uncertainty Quantification"
+    # author = 'Frank McKenna'
+    author = "Frank McKenna, Peter Mackenzie-Helnwein, Wael Elhaddad, Jiawei Wan, Michael Gardner, Dae Kun Kwon"
 
-    tags.add('desktop_app')
-    tags.add('response')
-    tags.add('wind')
-    tags.add('notQuoFEM')
+    tags.add("desktop_app")
+    tags.add("response")
+    tags.add("wind")
+    tags.add("notQuoFEM")
 
-    toc_filter_exclusions.remove('WEUQ')
-    toc_filter_exclusions.remove('desktop')
-    toc_filter_exclusions.remove('wind')
-    toc_filter_exclusions.remove('response')
-    toc_filter_exclusions.remove('notQuoFEM')
+    toc_filter_exclusions.remove("WEUQ")
+    toc_filter_exclusions.remove("desktop")
+    toc_filter_exclusions.remove("wind")
+    toc_filter_exclusions.remove("response")
+    toc_filter_exclusions.remove("notQuoFEM")
     toc_filter_exclude = toc_filter_exclusions
 
-    exclude_patterns.remove('**/*WEUQ*')
-    exclude_patterns.remove('**/*desktop*')
-    exclude_patterns.remove('**/*wind*')
-    exclude_patterns.remove('**/*response*')
-    exclude_patterns.remove('**/*TinF*')
-    exclude_patterns.remove('**/*WE[-_]UQ*')
-    exclude_patterns.remove('**/weuq-*')
-    
-    exclude_patterns.append('**/testbeds/*')
-    exclude_patterns.append('**/DakotaSensitivity.rst')
-    exclude_patterns.append('**/DakotaReliability.rst')
-    exclude_patterns.append('**/DakotaParameterEstimation.rst')
-    exclude_patterns.append('**/DakotaInverseProblems.rst')
+    exclude_patterns.remove("**/*WEUQ*")
+    exclude_patterns.remove("**/*desktop*")
+    exclude_patterns.remove("**/*wind*")
+    exclude_patterns.remove("**/*response*")
+    exclude_patterns.remove("**/*TinF*")
+    exclude_patterns.remove("**/*WE[-_]UQ*")
+    exclude_patterns.remove("**/weuq-*")
+
+    exclude_patterns.append("**/testbeds/*")
+    exclude_patterns.append("**/DakotaSensitivity.rst")
+    exclude_patterns.append("**/DakotaReliability.rst")
+    exclude_patterns.append("**/DakotaParameterEstimation.rst")
+    exclude_patterns.append("**/DakotaInverseProblems.rst")
 
     sync_examples = True
-    example_config.update({
-        "include-item": [
-            "weuq-0001",
-            #"weuq-0002",
-            #"weuq-0004",
-            "weuq-0007",
-        ]
-    })
-    extlinks.update(
-       {f'weuq-{i:04}' : (f'{examples_url}/weuq-{i:04}/%s',f'weuq-{i:04}') for i in range(1,99)}
+    example_config.update(
+        {
+            "include-item": [
+                "weuq-0001",
+                # "weuq-0002",
+                # "weuq-0004",
+                "weuq-0007",
+            ]
+        }
     )
-    
-    html_theme_options.update({'analytics_id': 'UA-158130480-2'})
+    html_theme_options.update({"analytics_id": "UA-158130480-2"})
 
     rst_prolog += f"""
 .. |full tool name| replace:: Wind Engineering with Uncertainty Quantification Application
@@ -616,19 +632,18 @@ elif app_name == 'WE-UQ':
 """
 
 
+elif app_name == "pelicun":
 
-elif app_name == 'pelicun':
+    project = "pelicun"
+    copyright = f"(c) 2018-{str(datetime.today().year)}, Leland Stanford Junior University and The Regents of the University of California"
+    author = "Adam Zsarnóczay"
 
-    project = 'pelicun'
-    copyright = f'(c) 2018-{str(datetime.today().year)}, Leland Stanford Junior University and The Regents of the University of California'
-    author = 'Adam Zsarnóczay'
+    tags.add("pelicun")
 
-    tags.add('pelicun')
-
-    toc_filter_exclusions.remove('pelicun')
+    toc_filter_exclusions.remove("pelicun")
     toc_filter_exclude = toc_filter_exclusions
 
-    exclude_patterns.remove('**/*pelicun*')
+    exclude_patterns.remove("**/*pelicun*")
 
     rst_prolog += f"""
 .. |pelicun expanded| replace:: Probabilistic Estimation of Losses, Injuries, and Community resilience Under Natural disasters
@@ -639,57 +654,60 @@ elif app_name == 'pelicun':
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
 """
 
-    extensions = [
-        'sphinx.ext.autodoc',
-        'sphinx.ext.todo',
-        'sphinx.ext.mathjax',
-        'sphinx.ext.viewcode',
-        'sphinx.ext.githubpages',
-        'numpydoc',
-        'sphinx.ext.autosummary',
-        'sphinx.ext.intersphinx',
-        'sphinx.ext.coverage',
-        'sphinx.ext.doctest'
+    extensions = extensions + [
+        "sphinx.ext.autodoc",
+        "sphinx.ext.todo",
+        "sphinx.ext.mathjax",
+        "sphinx.ext.viewcode",
+        "sphinx.ext.githubpages",
+        "numpydoc",
+        "sphinx.ext.autosummary",
+        "sphinx.ext.intersphinx",
+        "sphinx.ext.coverage",
+        "sphinx.ext.doctest",
     ]
 
     numpydoc_show_class_members = True
     numpydoc_class_members_toctree = False
-    autodoc_member_order = 'bysource'
-    autoclass_content = 'both'
+    autodoc_member_order = "bysource"
+    autoclass_content = "both"
 
     import glob
+
     autosummary_generate = glob.glob("source/*.rst")
 
-    master_doc = 'index'
+    master_doc = "index"
 
     language = None
 
-    pygments_style = 'sphinx'
+    pygments_style = "sphinx"
 
-    html_theme_options.update({'analytics_id': 'UA-158130480-7'})
+    html_theme_options.update({"analytics_id": "UA-158130480-7"})
 
-    htmlhelp_basename = 'pelicundoc'
+    htmlhelp_basename = "pelicundoc"
 
 
-elif app_name == 'requirements':
-    master_doc = 'common/requirements/index'
-    project = 'SimCenter Requirements Traceability Matrix'
+elif app_name == "requirements":
+    # master_doc = 'common/reqments/index'
+    master_doc = "reqments"
+    project = "SimCenter Requirements Traceability Matrix"
     exclude_patterns = [
-                #'common/user_manual/*',
-                'common/developer_manual/*',
-                'common/testbeds/',
-                'common/technical_manual/*',
-                'Thumbs.db',
-                '.DS_Store',
-                'index.rst',
-                ] + [f'**/{app}*' for app in APPS if app != 'requirements']
-    author = 'NHERI SimCenter'
-    tags.add('requirements')
+        "common/user_manual/*",
+        "common/front-matter/*",
+        "common/developer_manual/*",
+        "common/testbeds/*",
+        "common/Hydro/*",
+        "common/technical_manual/*",
+        ".DS_Store",
+        "common/reqments/index.rst",
+        "index.rst",
+        "Hydro.rst",
+        "Hydro/*",
+    ]  # + [f'**/{app}*' for app in APPS if app != 'requirements']
+    author = "NHERI SimCenter"
+    tags.add("requirements")
     pdf_break_level = 2
-    latex_elements = {
-        'extraclassoptions': 'openany,oneside'
-    }
-
+    latex_elements = {"extraclassoptions": "openany,oneside"}
 
     rst_prolog = f"""
 .. |floatList| replace:: *list float*
@@ -706,75 +724,115 @@ elif app_name == 'requirements':
 """
 
 
-# -- General configuration ---------------------------------------------------
+# -- General configuration ----------------------------------------------
 
 rst_prolog += f"""
 .. |developers| replace:: {", ".join(f"**{auth}** " for auth in author.split(", "))}
 """
 
-# Add any Sphinx extension module names here, as strings. They can be
-# extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
-# ones.
 
-extensions = extensions + [
-    'sphinx-jsonschema',
-    'sphinxcontrib.bibtex',
-    'toctree_filter',
-    'sphinxcontrib.images',
-    'sphinx.ext.extlinks',
-    'sphinxcontrib.images',
-    'rendre.sphinx',
-    'sphinx.ext.autodoc'
-]
+bibtex_bibfiles = ["common/references.bib"]
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ["_templates"]
 
-# List of patterns, relative to source directory, that match files and
-# directories to ignore when looking for source files.
-# This pattern also affects html_static_path and html_extra_path.
-exclude_patterns += ['_build', 'Thumbs.db', '.DS_Store', '_archive']
+exclude_patterns += ["_build/*", "Thumbs.db", ".DS_Store", "**/_archive/*"]
 
-# -- Options for HTML output -------------------------------------------------
+# -- Options for HTML output ---------------------------------------------
 
+html_theme = "sphinx_rtd_theme"
 
-html_theme = 'sphinx_rtd_theme'
-
-html_css_files = [
-    'css/custom.css'
-]
+html_css_files = ["css/custom.css"]
 
 html_secnum_suffix = " "
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static','_static/css/']
+html_static_path = ["_static", "_static/css/"]
 
-#latex_docclass = {
+# -- Options for LATEX output -------------------------------------------
+
+# latex_docclass = {
 #    r'manual': 'simcenterdocumentation',
 #    r'howto': 'simcenterdocumentation'
-#}
-
-latex_elements = {
-  'extraclassoptions': 'openany,oneside'
-}
+# }
+latex_elements = {"extraclassoptions": "openany,oneside"}
 latex_documents = [
     (
-        'index',
-        app_name + ".tex", # tex output file
-        project,          # Document title
-        author.replace(', ',' \\and '), # authors
-        'manual'           # latex theme
+        "index",
+        app_name + ".tex",                # tex output file
+        project,                          # Document title
+        author.replace(", ", " \\and "),  # authors
+        "manual",                         # latex theme
     )
 ]
-latex_logo = 'common/figures/NSF_SimCenter_NO TEXT_SimCenter.png'
+latex_logo = "common/figures/NSF_SimCenter_NO TEXT_SimCenter.png"
 
-# -- sync files for examples --------------------
+#- Example links ----------------
 
+examples_url = f"https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples/"
+extlinks.update(
+    {
+        f"qfem-{i:04}": (f"{examples_url}/qfem-{i:04}/%s", f"qfem-{i:04}")
+        for i in range(1, 99)
+    }
+)
+
+examples_url = f"https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples/"
+extlinks.update(
+    {
+        f"weuq-{i:04}": (f"{examples_url}/weuq-{i:04}/%s", f"weuq-{i:04}")
+        for i in range(1, 99)
+    }
+)
+
+examples_url = f"https://github.com/NHERI-SimCenter/EE-UQ/tree/master/Examples/"
+extlinks.update(
+    {
+        f"eeuq-{i:04}": (f"{examples_url}/eeuq-{i:04}/%s", f"eeuq-{i:04}")
+        for i in range(1, 99)
+    }
+)
+
+examples_url = f"https://github.com/NHERI-SimCenter/PBE/tree/master/Examples/"
+extlinks.update(
+    {
+        f"pbdl-{i:04}": (f"{examples_url}/pbdl-{i:04}/%s", f"pbdl-{i:04}")
+        for i in range(1, 99)
+    }
+)
+
+examples_url = f"https://github.com/NHERI-SimCenter/R2DTool/tree/master/Examples/"
+extlinks.update(
+    {
+        f"r2dt-{i:04}": (f"{examples_url}/r2dt-{i:04}/%s", f"r2dt-{i:04}")
+        for i in range(1, 20)
+    }
+)
+
+examples_url = f"https://github.com/NHERI-SimCenter/HydroUQ/tree/master/Examples/"
+extlinks.update(
+    {
+        f"hdro-{i:04}": (f"{examples_url}/hydro-{i:04}/%s", f"hydro-{i:04}")
+        for i in range(1, 20)
+    }
+)
+
+spelling_word_list_filename = ["spelling.txt"]
+
+# sync files for examples
 if sync_examples:
+    # TODO: Temporary fix
+    if not example_config:
+        import yaml
+        with open("../examples.yaml","r") as f:
+            example_config = yaml.load(f,Loader=yaml.Loader)["HydroUQ"]
+    # Load the `sync_files` routine from ./modules/sync_files.py
+    from sync_files import sync_files
     sync_files(
-        src_dir=os.path.abspath(f'../../{app_name}/Examples'),
+        src_dir=os.path.abspath(f"../../{app_name}/Examples"),
         dst_dir="common/user_manual/examples/desktop",
-        config=example_config
+        config=example_config,
     )
+

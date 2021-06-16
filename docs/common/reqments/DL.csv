@@ -1,8 +1,8 @@
-DL,"*Damage & Loss (DL) Predictions*", , ,
+DL, "Damage & Loss (DL) Predictions", , ,
 DL.1,   "Ability to use open-source version of Hazus", GC , M , Implemented
 DL.2,  "Ability to incorporate improved damage and fragility models for buildings and lifelines", GC , M , InProgress
 DL.3,   "Ability to perform time-based assessment ", GC , M ,
-DL.4,   "*Methods for DL Prediction for Buildings for Various Hazards*", SP, M,
+DL.4,   "Methods for DL Prediction for Buildings for Various Hazards", SP, M,
 DL.4.1, "Incorporate PACT application for earthquake hazard", SP, D
 DL.4.2, "Ability to perform downtime estimation using the REDi methodology for earthquakes. ", UF , D ,
 DL.4.3, "Incorporate Various Methods from PELICUN", SP, M, InProgress

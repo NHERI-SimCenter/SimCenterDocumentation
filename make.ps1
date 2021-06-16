@@ -3,7 +3,7 @@
 write-host "0" $args[0] "1" $args[1] "2" $args[2]
 
 if ($env:SPHINXBUILD -eq "") {
-	$env:SPHINXBUILD="sphinx-build"
+    $env:SPHINXBUILD="sphinx-build"
 }
 $SOURCEDIR="./docs"
 
@@ -19,11 +19,25 @@ $app_names["pbe"]  = "PBE"
 $app_names["hydro"]  = "Hydro"
 $app_names["qfem"] = "quoFEM"
 $app_names["pelicun"]  = "pelicun"
-$app_names["req"] = "requirements"
+$app_names["rtm"] = "requirements"
 
-$formats = @{"html" = ""}
+$formats = @{"html" = "","spell" = ""}
+
+function json-to-csv{
+    $QF_Examples = @("-Eqfem") + (gci "$env:SIMCENTER_DEV\quoFEM\Examples\qfem*\src\input.json")
+    $EE_Examples = @("-Eeeuq") + (gci "$env:SIMCENTER_DEV\EE-UQ\Examples\eeuq-*\src\input.json")
+    $WE_Examples = @("-Eweuq") + (gci "$env:SIMCENTER_DEV\WE-UQ\Examples\weuq-*\src\input.json")
+    $PB_Examples = @("-Epbdl") + (gci "$env:SIMCENTER_DEV\PBE\Examples\pbdl-*\src\input.json")
+    $R2_Examples = @("-Er2dt") + (gci "$env:SIMCENTER_DEV\R2DTool\Examples\E[0-9]*\input.json")
+    $arglist = @("scripts/json2csv.py") + $QF_Examples + $EE_Examples + $WE_Examples + $PB_Examples + $R2_Examples
+    write-host $arglist
+    Get-ChildItem -File -Filter ".\docs\common\reqments\data\*.json" | ForEach-Object {
+        start-process python -ArgumentList $arglist -RedirectStandardOutput ("docs\common\reqments\_out\" + $_.basename + ".csv") -Wait -NoNewWindow -RedirectStandardInput (".\docs\common\reqments\data\" + $_.name)
+    }
+}
 
 if ($args.count -eq 0){
+    # Run old-style build using app from conf.py
     start-process sphinx-build -ArgumentList @("-M","help",$SOURCEDIR,$BUILDDIR)  -Wait -NoNewWindow
     #iex $command
     return
@@ -37,6 +51,7 @@ if ($app_names.ContainsKey($args[0])){
         write-host "Format unsupported"
         return
     }
+    json-to-csv 
     $app_name = $app_names[$args[0]]
     $format = $args[1]
     $env:SIMDOC_APP = $app_name
