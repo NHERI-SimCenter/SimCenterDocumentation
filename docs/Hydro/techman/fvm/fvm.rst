@@ -119,14 +119,6 @@ Similarly, the volume integration of the source term can be achieved using the G
 
 Once the PDE's have been converted to a summation form above, it is necessary to express the face and volume fluxes in terms of the values of the variable at the neighboring cell centers or in otherwods, we need to linearize the fluxes.
 
-Boundary conditions
-----------------------
-
-
-
-Mesh topology
----------------
-
 Volume of fluid method
 --------------------------
 
