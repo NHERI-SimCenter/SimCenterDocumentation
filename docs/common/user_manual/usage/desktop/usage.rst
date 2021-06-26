@@ -66,15 +66,11 @@ remotely, and finally views the simulation results. The main window of the UI is
 
 The **Login** button is at the top right of the user interface. Before the user can launch any jobs on DesignSafe, they must first login to DesignSafe using their DesignSafe login and password. Pressing the login button will open up the login window for users to enter this information. Users can register for an account on the `DesignSafe-CI <https://www.designsafe-ci.org/account/register>`_ website [#]_. 
 
-2. Message Area: 
-
-The message area is located in the top center of the UI and displays status and error messages for a running background application. 
-
-3. Input Panel: 
+2. Input Panel: 
 
 The input panel is the large central area of the user-interface where the user provides input for the various applications, and also where they can view the results. 
 
-4. Input Panel Selection Ribbon: 
+3. Input Panel Selection Ribbon: 
 
 The ribbon on the left side provides the user with a selection of buttons to choose from (e.g. **RV: Random Variables**, **RES: Results**). Selecting any of these buttons will change what is displayed in the central input panel. Each panel will present the user with an option for which application to choose for that part of the workflow, and will then allow a user to provide inputs for that application. In the following sections, each of the panels in the input panel selection ribbon are reviewed:
 
@@ -115,7 +111,7 @@ The ribbon on the left side provides the user with a selection of buttons to cho
    :R2D:R2DTool/RES
 	
 
-5. Push Buttons:
+4. Push Buttons:
 
 This is the area near the bottom of the UI in which 4 buttons are contained:
 
@@ -124,5 +120,8 @@ This is the area near the bottom of the UI in which 4 buttons are contained:
      * **GET from DesignSafe**: Obtain the list of jobs for the user from DesignSafe and select a job to download from that list.
      * **Exit**: Exit the application.
 
+5. Message Area: 
+
+The message area is located in the bottom of the UI and displays the status and error messages for a running background application. The message area is a dockable dialog which can be resized, moved, and closed as needed. The dialog visibility can be toggled by clicking on the menu item **View** -> **Program Output**. If moved from its default location, the status dialog can be restored to the bottom of the UI by dragging the dialog back to the bottom of the UI and hovering over the area. 
 
 .. [#] For more help on external services provided by DesignSafe-CI, such as creating an account, we encourage users to explore their `documentation <https://www.designsafe-ci.org/rw/user-guides/>`_ or consider `submitting a ticket <https://www.designsafe-ci.org/help/new-ticket/>`_.
