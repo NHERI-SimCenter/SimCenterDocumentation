@@ -58,7 +58,7 @@
    common/front-matter/license
    common/front-matter/glossary.rst
    common/front-matter/abbreviations.rst
-
+   :R2D:common/user_manual/usage/desktop/releasenotes
 
 .. _lbl-user-manual:
 
