@@ -53,6 +53,7 @@ remotely, and finally views the simulation results. The main window of the UI is
 
 .. only:: R2D_app
 
+	  
    .. _figGenericUI-R2D:
 
    .. figure:: figures/R2DPanel.png
@@ -92,19 +93,24 @@ The ribbon on the left side provides the user with a selection of buttons to cho
    UQ
    :EEUQ:GI
    :WEUQ:GI
+   :Hydro:GI	 
    :EEUQ:SIM
    :WEUQ:SIM
+   :Hydro:SIM	 
    :PBE:SIM
    :wind:Assets
    :EEUQ:earthquake/earthquakeEvents.rst
    :PBE:earthquake/earthquakeEvents.rst	 	 
    :wind:wind/WindEvents
+   :Hydro:hydro/EVT.rst
    :wind:FEM
    :EEUQ:FEM
+   :Hydro:FEM	 
    :PBE:FEM	 
    :quoFEM:quoFEM/FEM
    :EEUQ:response/EDP
    :WEUQ:response/EDP
+   :Hydro:response/EDP
    :quoFEM:quoFEM/QuantitiesOfInterest
    RV
    :PBE:PBE/DL
