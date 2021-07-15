@@ -276,6 +276,12 @@ extlinks = {
     "github": (f'{external_links["github"]}/tree/master/%s', f"Github"),
 }
 
+
+if app_name == "R2DTool":
+    external_links["examplesgithub"] = f"https://github.com/NHERI-SimCenter/R2DExamples"
+    extlinks["examplesgithub"] = f'{external_links["examplesgithub"]}/tree/master/%s', f"examplesgithub"
+
+
 examples_url = f"https://github.com/NHERI-SimCenter/{app_name}/tree/master/Examples/"
 
 # app-specific settings
@@ -386,7 +392,7 @@ if app_name == "R2DTool":
 .. |test example| replace:: :ref:`r2dt-0006`
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0
 .. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt
-.. |tool version| replace:: 1.0
+.. |tool version| replace:: 1.1
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 
@@ -394,11 +400,13 @@ if app_name == "R2DTool":
     example_config.update(
         {
             "include-item": [
-                "r2dt-0006",
-                "r2dt-0003",
-                "r2dt-0007",
                 "r2dt-0001",
                 "r2dt-0002",
+                "r2dt-0003",
+                "r2dt-0004",
+                "r2dt-0005",
+                "r2dt-0006",
+                "r2dt-0007"
             ]
         }
     )
@@ -812,7 +820,7 @@ extlinks.update(
     }
 )
 
-examples_url = f"https://github.com/NHERI-SimCenter/R2DTool/tree/master/Examples/"
+examples_url = f"https://github.com/NHERI-SimCenter/R2DExamples/tree/master/"
 extlinks.update(
     {
         f"r2dt-{i:04}": (f"{examples_url}/r2dt-{i:04}/%s", f"r2dt-{i:04}")
