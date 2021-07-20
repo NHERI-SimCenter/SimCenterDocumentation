@@ -11,7 +11,6 @@ The ``Hydro EVT`` is used to setup the flow parameters related to the water-born
 .. figure:: figures/HydroSteps.png
    :align: center
    :figclass: align-center
-   :height: 300px
 
    The steps involved in setup of the ``Hydro`` event
 
