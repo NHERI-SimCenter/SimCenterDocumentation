@@ -4,6 +4,7 @@
 User Guide
 **********
 
+
 The |app|, as will be discussed in :ref:`lblArchitecture`, is a scientific workflow application that creates workflows and runs them in the background. These workflows can involve multiple different backend applications. Once the |app| is started, the user is presented with the user interface shown in |figGenericUI|. It is in this UI where the user selects the applications to run in a workflow, inputs the necessary parameters for each of these applications, starts the workflow either locally or
 remotely, and finally views the simulation results. The main window of the UI is divided into several separate areas:
 
@@ -50,6 +51,17 @@ remotely, and finally views the simulation results. The main window of the UI is
       The |app| user interface.
 
 
+.. only:: Hydro
+
+	  
+   .. _figGenericUI-Hydro:
+
+   .. figure:: figures/HydroPanel.png
+	   :align: center
+	   :figclass: align-center
+
+	   The |app| user interface.
+   
 
 .. only:: R2D_app
 
@@ -89,35 +101,36 @@ The ribbon on the left side provides the user with a selection of buttons to cho
    UQ
    :EEUQ:GI
    :WEUQ:GI
-   :Hydro:GI	 
+   :Hydro:GI 
    :EEUQ:SIM
    :WEUQ:SIM
-   :Hydro:SIM	 
+   :Hydro:SIM
    :PBE:SIM
    :wind:Assets
    :EEUQ:earthquake/earthquakeEvents.rst
    :PBE:earthquake/earthquakeEvents.rst	 	 
    :wind:wind/WindEvents
-   :Hydro:hydro/EVT.rst
    :wind:FEM
+   :Hydro:hydro/EVT.rst
    :EEUQ:FEM
-   :Hydro:FEM	 
+   :Hydro:FEM
    :PBE:FEM	 
    :quoFEM:quoFEM/FEM
    :EEUQ:response/EDP
    :WEUQ:response/EDP
    :Hydro:response/EDP
    :quoFEM:quoFEM/QuantitiesOfInterest
-   RV
+   :Hydro:RV
    :PBE:PBE/DL
    :EEUQ:response/resEE
    :WEUQ:response/resEE
    :quoFEM:quoFEM/resQUO
    :PBE:PBE/resPBE
    :R2D:R2DTool/RES
-	
+   :Hydro:hydro/resHydro
 
 4. Push Buttons:
+
 
 This is the area near the bottom of the UI in which 4 buttons are contained:
 

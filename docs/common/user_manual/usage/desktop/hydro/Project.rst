@@ -11,7 +11,6 @@ The first step is to setup the project as shown in :numref:`EVTSettings`. All of
 .. figure:: figures/Project/ProjSett01.png
    :align: center
    :figclass: align-center
-   :height: 400px
 
    Project settings for ``Hydro`` event
 
@@ -23,7 +22,6 @@ The first step is to setup the project as shown in :numref:`EVTSettings`. All of
 
    .. figure:: figures/Project/SimulationType.png
       :align: center
-      :height: 200px
       :figclass: align-center
 
       Simulation types available in ``Hydro`` event
@@ -42,7 +40,6 @@ The first step is to setup the project as shown in :numref:`EVTSettings`. All of
 
    .. figure:: figures/Project/TurbSett.png
       :align: center
-      :height: 100px
       :figclass: align-center
 
       Turbulence settings available for ``Hydro`` event

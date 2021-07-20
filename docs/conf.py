@@ -312,10 +312,6 @@ if app_name == "HydroUQ":
     exclude_patterns.remove("Hydro*")
 
     # TODO: fix these temporary changes
-    exclude_patterns.append("**/user_manual/usage/desktop/FEM.rst")
-    exclude_patterns.append("**/user_manual/usage/desktop/SIM.rst")
-    exclude_patterns.append("**/user_manual/usage/desktop/GI.rst")
-    exclude_patterns.append("**/user_manual/usage/desktop/response/*")
     exclude_patterns.append("**/user_manual/usage/desktop/earthquake/*")
     exclude_patterns.append("**/*architectureLevel4.rst*")
     exclude_patterns.append("**/reqments/index.rst")
