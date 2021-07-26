@@ -73,6 +73,19 @@ To download the |app|, navigate to the |appLink| page which should resemble |fig
 
       quoFEM download page.
 
+
+.. only:: Hydro
+
+   .. _figDownload-HydroUQ:
+
+   .. figure:: figures/H20Download.png      
+      :alt: HydroUQ tool download page
+      :align: center
+      :figclass: align-center		 
+
+      HydroUQ tool download page.
+
+
 Click on the file with a name ending with **Windows_Download.zip** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner. After the download completed, extract the zip archive to a location in your filesystem.
 
 We suggest placing the directory in the **C:\\SimCenter** folder. Once here, you can create a shortcut to the application and move this shortcut to your Desktop.
@@ -137,3 +150,14 @@ Once the installation procedure has been completed, it is a good practice to run
 
     quoFEM application on startup.
 
+.. only:: Hydro
+
+    .. _figWinUI-HydroUQ:
+
+   .. figure:: figures/HydroWIN.png
+    :align: center
+    :figclass: align-center
+
+    HydroUQ tool on startup in Windows 10    
+
+    

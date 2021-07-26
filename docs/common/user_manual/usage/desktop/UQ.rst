@@ -34,6 +34,8 @@ The following categories are available:
    DakotaSampling
    :EEUQ:DakotaSensitivity
    :EEUQ:DakotaReliability
+   :Hydro:DakotaSensitivity
+   :Hydro:DakotaReliability	 
    :quoFEM:DakotaSensitivity
    :quoFEM:DakotaReliability
    :quoFEM:DakotaParameterEstimation
