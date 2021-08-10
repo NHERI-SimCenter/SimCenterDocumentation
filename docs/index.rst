@@ -32,14 +32,12 @@
 
       The |full tool name| is an open-source implementation of the |short tool name| framework in a Python package. It provides tools for assessment of damage and losses due to natural disasters. Its basis is the stochastic damage and loss model described in FEMA P58. While FEMA P58 aims to assess the seismic performance of a building, with the |app| we provide a more versatile, hazard agnostic tool that can estimate losses for several types of assets in the built environment.
 
-   .. only:: Hydro
+      .. only:: Hydro
 
-      The Water-borne Natural Hazards with Uncertainty Quantification Application (Hydro-UQ app) is an open-source research application that can be used to predict the response of a building / a community subjected to events like tsunami and storm-surge. The application is focused on quantifying the uncertainties in the predicted response, given the that the uncertainties in models, loads, and analysis. The computations are performed in a workflow application that will run on a high performance computer made available by |DesignSafe|.
-
+      The Water-borne Natural Hazards with Uncertainty Quantification Application (Hydro-UQ app) is an open-source research application that can be used to predict the response of a building a community subjected to events like tsunami and storm-surge. The application is focused on quantifying the uncertainties in the predicted response, given the that the uncertainties in models, loads, and analysis. The computations are performed in a workflow application that will run on a high performance computer made available by |DesignSafe|.
 
 
    This document covers the features and capabilities of Version |tool version| of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the |messageBoard|.
-
 
 
 .. _lbl-front-matter:
@@ -60,8 +58,10 @@
    common/front-matter/license
    common/front-matter/glossary.rst
    common/front-matter/abbreviations.rst
+   :R2D:common/user_manual/usage/desktop/releasenotes
+   :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
 
-
+	  
 .. _lbl-user-manual:
 
 .. toctree-filt::
@@ -75,18 +75,18 @@
    :PBE:common/user_manual/installation/desktop/installation
    :quoFEM:common/user_manual/installation/desktop/installation
    :R2D:common/user_manual/installation/desktop/installation
-   :Hydro:Hydro/userman/install
+   :Hydro:common/user_manual/installation/desktop/installation
 
    :EEUQ:common/user_manual/usage/desktop/usage
    :WEUQ:common/user_manual/usage/desktop/usage
+   :Hydro:common/user_manual/usage/desktop/usage	 
    :PBE:common/user_manual/usage/desktop/usage
    :quoFEM:common/user_manual/usage/desktop/usage
    :R2D:common/user_manual/usage/desktop/usage
    :pelican:common/user_manual/usage/pelicun/usage
-   :Hydro:Hydro/userman/userguide/uguide
 
-   :Hydro:Hydro/userman/resguide/resguide
-   :Hydro:Hydro/userman/helpvideo
+   :Hydro:common/user_manual/usage/desktop/hydro/resguide
+   :Hydro:common/user_manual/usage/desktop/hydro/helpvideo
 
    :EEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
    :WEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
@@ -94,7 +94,7 @@
    :quoFEM:common/user_manual/troubleshooting/desktop/troubleshooting
    :R2D:common/user_manual/troubleshooting/desktop/troubleshooting
    :pelican:common/user_manual/troubleshooting/pelicun/troubleshooting
-   :Hydro:Hydro/userman/errors
+   :Hydro:common/user_manual/troubleshooting/pelicun/errors
 
    :EEUQ:common/user_manual/examples/desktop/examples
    :WEUQ:common/user_manual/examples/desktop/examples
@@ -103,12 +103,13 @@
    :R2D:common/user_manual/examples/desktop/examples
    :pelicun:common/user_manual/examples/pelicun/examples
 
-   :Hydro:Hydro/userman/bestpractices
-   :Hydro:Hydro/userman/releasenotes
+
+   :Hydro:common/user_manual/usage/desktop/hydro/bestpractices
 
    :EEUQ:common/reqments/EEUQ		
    :WEUQ:common/reqments/WEUQ
    :PBE:common/reqments/PBE
+   :R2D:common/reqments/R2D
    :quoFEM:common/reqments/reqQUOFEM	
    :pelicun:common/user_manual/requirements/pelicun/requirements
 
@@ -142,10 +143,10 @@
    :quoFEM:common/technical_manual/desktop/technical_manual
    :R2D:common/technical_manual/desktop/technical_manual
    :pelicun:common/technical_manual/pelicun/technical_manual
-   :Hydro:Hydro/techman/hazards/water
-   :Hydro:Hydro/techman/fvm/fvm
-   :Hydro:Hydro/techman/swsolver/swsolver
-   :Hydro:Hydro/techman/cfdsolver/cfdsolver
+   :Hydro:common/technical_manual/desktop/hydro/hazards/water
+   :Hydro:common/technical_manual/desktop/hydro/fvm/fvm
+   :Hydro:common/technical_manual/desktop/hydro/swsolver/swsolver
+   :Hydro:common/technical_manual/desktop/hydro/cfdsolver/cfdsolver
 
 .. _lbl-developer-manual:
 
@@ -164,6 +165,7 @@
    :PBE:common/developer_manual/how_to_extend/desktop/how_to_extend
    :quoFEM:common/developer_manual/how_to_extend/desktop/how_to_extend
    :R2D:common/developer_manual/how_to_extend/desktop/how_to_extend
+
    :pelicun:common/developer_manual/how_to_extend/pelicun/how_to_extend
 
    :EEUQ:common/developer_manual/verification/desktop/verification

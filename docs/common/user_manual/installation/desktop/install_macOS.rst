@@ -125,6 +125,17 @@ To download the |app|, navigate to the |appLink| page which should resemble |fig
 
       quoFEM download page.
 
+
+.. only:: Hydro
+
+   .. _figDownload-HydroUQ:
+
+   .. figure:: figures/H20Download.png
+      :align: center
+      :figclass: align-center
+
+      HydroUQ tool download page.
+
 Click on the file with a name ending with **Mac_Download.dmg** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner. After the download has completed, open the dmg file and copy the |short tool name| application to a location in your filesystem.
 
 .. note::
@@ -190,6 +201,17 @@ Once the installation procedure has been completed, it is a good practice to run
     :figclass: align-center
 
     quoFEM application on startup.
+
+
+.. only:: Hydro
+
+   .. _figUI-HydroUQ:
+
+   .. figure:: figures/HydroMac.png
+    :align: center
+    :figclass: align-center
+
+    HydroUQ application on startup.    
 
 .. note::
 
