@@ -531,9 +531,12 @@ elif app_name == "quoFEM":
     author = "Frank McKenna, Adam Zsarnóczay, Sang-ri Yi, Aakash Bangalore Satish, Nikhil Padhye"
 
     tags.add("desktop_app")
+    tags.add("notR2D") 
+    tags.add("quoFEM_app")
 
     toc_filter_exclusions.remove("desktop")
     toc_filter_exclusions.remove("quoFEM")
+    toc_filter_exclusions.remove("notR2D") 
     toc_filter_exclude = toc_filter_exclusions
 
     exclude_patterns.remove("**/*desktop*")
