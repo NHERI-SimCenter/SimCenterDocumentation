@@ -49,29 +49,6 @@ Latin hypercube sampling (LHS) is a pseudo-random, stratified sampling approach.
 	Latin Hypercube Sampling input panel.
 
 
-Importance Sampling (IS)
-^^^^^^^^^^^^^^^^^^^^^^^^
-
-For problems where one is interested in the rare events rather than the whole distribution of output, such as earthquake or storm surge events, conventional sampling methods may require an excessively large number of simulations to obtain an accurate estimation of tail distribution. For such problems, importance sampling (IS) provides a bypass to conventional sampling methods (MCS or LHS), whereby an alternative sampling distribution is introduced around the tail part of the original distribution so that the generated samples have a better resolution at the domain of interest.
-
-:numref:`figIS` shows the input panel for IS scheme. Similar to MCS and LHS, IS requires both the number of samples to be executed and the corresponding seed for generating such random samples. In addition, IS algorithm can be performed via three different approaches, as specified by the third input method:
-
-1.  **Basic Sampling**: A sampling density is constructed in the failure region based on an initial LHS sampling, followed by generation of importance samples and weights and evaluation of the Cumulative Distribution Function.  
-2. **Adaptive Sampling**: The basic sampling procedure is repeated iteratively until a convergence in failure probability is achieved. 
-3. **Multimodal Adaptive Sampling**: A multimodal sampling density is constructed based on samples in the failure and the adaptive sampling procedure is used.
-
-
-.. _figIS:
-
-.. figure:: figures/fwIS.png
-	:align: center
-	:figclass: align-center
-
-	Importance Sampling input panel.
-
-
-For more information on each, please refer to the Dakota manual. 
-
 
 Gaussian Process Regression (GPR)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

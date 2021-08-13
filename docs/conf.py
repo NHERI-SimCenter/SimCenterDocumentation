@@ -27,12 +27,12 @@ if app_name in APPS:
     pass
 else:
     pass
-    app_name = "R2DTool"
-    # app_name = 'PBE'
-    # app_name = 'EE-UQ'
-    # app_name = 'WE-UQ'
-    # app_name = 'quoFEM'
-    # app_name = 'pelicun'
+    #app_name = 'R2DTool'
+    #app_name = 'PBE'
+    #app_name = 'EE-UQ'
+    #app_name = 'WE-UQ'
+    app_name = 'quoFEM'
+    #app_name = 'pelicun'
 
     os.environ["SIMDOC_APP"] = app_name
     os.environ["SIMCENTER_DEV"] = os.path.abspath("../../")

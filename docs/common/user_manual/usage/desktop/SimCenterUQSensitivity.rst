@@ -1,4 +1,4 @@
-.. _lblDakotaSensitivity:
+.. _lblSimSensitivity:
 
 
 Global Sensitivity Analysis

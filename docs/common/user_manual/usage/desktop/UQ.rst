@@ -61,7 +61,9 @@ The following categories are available:
 	  .. toctree-filt::
 	     :maxdepth: 1
 
+             SimCenterUQSampling
              SimCenterUQSensitivity
+
 
 	  UCSD UQ Engine
 	  --------------
