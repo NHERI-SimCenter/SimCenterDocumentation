@@ -56,7 +56,7 @@ The following categories are available:
 		
 		SimCenterUQ engine and category selection.
 	  
-	  Currently the category option is limited to global sensitivity analysis:
+	  Currently the following category options are available:
 
 	  .. toctree-filt::
 	     :maxdepth: 1
