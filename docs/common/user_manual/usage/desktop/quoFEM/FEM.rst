@@ -137,7 +137,7 @@ When users select the SurrogateGP option, they are requested to provide the foll
 
 .. Note:: 
 
-  All files are generated in **SimCenterUQ Engine - Train GP Surrogate Model** module. See Section 2.1.2.2 Surrogate modeling.
+  All the required input files described below can be generated from the quoFEM. See Section 2.1.2.2 Surrogate modeling.
 
 
 1. **Surrogate info file (.json)**: This file contains the meta-information about the surrogate model. Users can open it with a text editor to see the contents.

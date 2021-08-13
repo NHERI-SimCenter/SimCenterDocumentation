@@ -63,6 +63,7 @@ The following categories are available:
 
              SimCenterUQSampling
              SimCenterUQSensitivity
+             SimCenterUQSurrogate
 
 
 	  UCSD UQ Engine
