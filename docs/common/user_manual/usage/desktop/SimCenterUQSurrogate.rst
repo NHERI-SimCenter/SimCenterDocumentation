@@ -7,7 +7,7 @@ Surrogate Modeling
 .. Note:: 
      Surrogate modeling functionality of quoFEM is built upon `GPy <https://sheffieldml.github.io/GPy/>`_ library (available under BSD 3-clause license), an opensource python framework for Gaussian process modeling developed in the Sheffield machine learning group. 
 
-The ``Train GP Surrogate Model`` module is used to construct a Gaussian process (GP) based **surrogate model** that substitutes expensive computational **simulation models** or physical experiments. Consider a simulation model, with input random variables (or parameters) :math:`\boldsymbol{x}` and output quantity of interests :math:`\boldsymbol{y}`, denoted as :math:`\boldsymbol{y}=f(\boldsymbol{x})`. A surrogate model for the corresponding simulation model can be built by different user-provided information types:
+The ``Train GP Surrogate Model`` module is used to construct a Gaussian process (GP) based **surrogate model** that substitutes expensive computational **simulation models** or physical experiments. Consider a simulation model, with input random variables (or parameters) :math:`\boldsymbol{x}` and output quantity of interests, denoted as :math:`\boldsymbol{y}=f(\boldsymbol{x})`. A surrogate model for the corresponding simulation model can be built by different user-provided information types:
 
 .. list-table:: User-provided information types      
    :widths: 3 10 10
@@ -105,7 +105,7 @@ User can also activate the **Advanced Options for Gaussian Process Model**
 
 * **Kernel function**: Correlation function for Gaussian process regression. Matern5/2 function is the default, and Matern3/2, Radial Basis, and Exponential functions are additionally supported.
 * **Linear trend function**: When increasing or decreasing trend is expected over the variables domain, a linear trend function may be introduced. The default is unchecked, ie. no trend function.
-* **Responses are always positive**: When the user can guarantee that the response quantities are always greater than 0, user may want to introduce a surrogate model in log-transformed space. The default is unchecked, ie. original physical coordinate.
+* **Responses are always positive**: When the user can guarantee that the response quantities are always greater than 0, user may want to introduce a surrogate model in log-transformed space of QoI. The default is unchecked, ie. original physical coordinate.
 * **Number of Initial Samples (Design of Experiments)**: User may set the number of the initial design of experiments (DoE) manually, while the default is 4 times the number of random variables.
 
 .. Tip:: 
@@ -132,7 +132,7 @@ where
 
 * Each text file is a numeric table with the columns separated by a tab, space, or comma. Multiple headers can be presented following the symbol %. 
 * The number of rows corresponds to the number of training data samples.
-* Train Points (Input): The number of columns should match the number of RVs presented in the **RV tab** and also match with required inputs of the simulation model provided in the **FEM tab**. **The order of the columns should match the random variables presented in the RV tab** (See :numref:`figSim4` and :numref:`figSim7` for example.)
+* Train Points (Input): The number of columns should match the number of RVs presented in the **RV tab** and also match with required inputs of the simulation model provided in the **FEM tab**. **The order of the columns should match thoses of the random variables presented in the RV tab** (See :numref:`figSim4` and :numref:`figSim7` for example.)
 * System Responses (Output): The number of columns  and the order of columns should match the QoI quantities presented in **QoI tab**.
 * Both files need to be provided, and the number of columns for the two files should be the same.
 * See :numref:`figSim4` for example input data sheets.
@@ -301,7 +301,7 @@ Once the training is completed, the following three verification measures are pr
 Saving Options
 --------------
 * **Save GP Model**: The constructed surrogate model is saved. Two files and a folder will be saved, which are the **SurroateGP Info File** (default name: ``SimGpModel.json``), **SurroateGP model file** (default name: ``SimGpModel.pkl``), and **Simulation template directory** that contains the simulation model information (``templatedir_SIM``). **IMPORTANT**: User may NOT change the name of the template directory ``templatedir_SIM``.
-* **Save GP Info**: This is a report file generated for user reference. It contains the GP model parameter and other information. The default file name is ``GPresults.out``.
+* **Save GP Info**: This is a report generated for user reference. It contains the GP model parameter and other information. The default file name is ``GPresults.out``.
 * **RV Data**, **QoI Data**:It saves the samples of RV and QoI. The default file names are ``X.txt`` and ``Y.txt``, respectively. **IMPORTANT**: To continue surrogate modeling with additional simulations, save the RV and QoI sample files using this button and import them as initial points. Refer to the 'Start with Existing Dataset' option in Case 1.
 
 .. _figSim9:

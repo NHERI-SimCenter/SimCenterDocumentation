@@ -21,7 +21,7 @@ $app_names["qfem"] = "quoFEM"
 $app_names["pelicun"]  = "pelicun"
 $app_names["rtm"] = "requirements"
 
-$formats = @{"html" = "","spell" = ""}
+$formats = @{"html" = "";"spell" = ""}
 
 function json-to-csv{
     $QF_Examples = @("-Eqfem") + (gci "$env:SIMCENTER_DEV\quoFEM\Examples\qfem*\src\input.json")
