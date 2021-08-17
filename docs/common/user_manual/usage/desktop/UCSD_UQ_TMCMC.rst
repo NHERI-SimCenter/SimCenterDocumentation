@@ -6,7 +6,7 @@ Transitional Markov chain Monte Carlo (TMCMC) algorithm
 
 This is an algorithm which is used to draw samples from the posterior probability distribution of random variables when performing Bayesian estimation. To use the TMCMC algorithm, select the **UCSD_UQ** engine in the **UQ** panel. Currently, only the TMCMC method is available with the **UCSD_UQ** engine. In the **Log Likelihood Script** field, the user needs to provide the path to a Python script which contains a function called ``log_likelihood`` that returns the log-likelihood value. The user also needs to specify the number of samples that is desired to be drawn from the posterior probability distribution of the unknown parameters. 
 
-.. figure:: figures/TMCMC_UQ_Engine.png
+.. figure:: figures/UCSD_UQ_Engine.png
 	:align: center
 	:figclass: align-center
 

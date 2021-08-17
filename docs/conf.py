@@ -563,7 +563,6 @@ elif app_name == "quoFEM":
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 
 """
-
     html_theme_options.update({"analytics_id": "UA-158130480-4"})
 
     example_config.update(
