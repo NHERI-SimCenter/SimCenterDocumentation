@@ -4,6 +4,11 @@
 Examples
 ********
 
+
+.. only:: R2D_app
+
+   The following examples highlight the usage of R2D. The files for the examples are available on `Github <https://github.com/NHERI-SimCenter/R2DExamples>`_. The examples can also be downloaded and installed within the tool by going to the menu **Examples -> Manage Examples** and by checking the boxes of the examples that are desired. 
+
 .. only:: quoFEM_app
 
    The following are a few examples showing the usage of quoFEM. Video companions showing these examples are also provided for selected problems. The files for the examples are available on Github.

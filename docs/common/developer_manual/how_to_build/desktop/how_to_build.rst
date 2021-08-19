@@ -6,6 +6,11 @@ How to Build
 
 SimCenter tools all comprise a frontend UI and some backend applications. They are kept in separate GitHub repositories and are also built separately. The following3 sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI and the backend.
 
+
+.. note::
+
+   As part of our continuous integration process, |app| is built evrey time we check code into the NHERI-SimCenter repositories. To do this we make use of a CI service. That current service is `appveyor <https://www.appveyor.com/>`_. As a consequence in the |app| repo that you will clone as part of this build process there is a file **appveyor.yml**. This file contains shell commands that are issued to set-up the operating system, download the software and build it. If the following commands fail for you, look at the appveyor.yml file to see what commands are currently beeing called as these may be more up to date than what is presented below.
+
 ********************
 Install Dependencies
 ********************
@@ -34,11 +39,11 @@ First, ensure the following dependencies are installed:
 Build the Backend Applications
 ******************************
 
-Instructions to build the workflow applications on your local desktop depend on your operating system.
+Instructions to build the backend workflow applications on your local desktop depend on your operating system, but is a 2 step process involving some initial setup and finally the build.
 
 Setup the development environment with Conan
 ============================================
-1. Add Conan `SimCenter <https://bintray.com/nheri-simcenter/simcenter>`_ and  `BinCrafters <https://bintray.com/bincrafters/public-conan>`_ repositories to the Conan remotes. You can add these remotes by typing the following commands in the terminal:
+1. Add Conan `SimCenter <https://bintray.com/nheri-simcenter/simcenter>`_ to the Conan remotes. You can add these remotes by typing the following commands in the terminal:
 
     .. code:: console
 
@@ -62,12 +67,11 @@ Setup the development environment with Conan
     .. code:: console
 
        conan profile update settings.compiler="Visual Studio" default
-
        conan profile update settings.compiler.version="16" default
 
 
 Build the applications
-============================================
+======================
 
 .. only:: notQuoFEM
 
@@ -77,8 +81,26 @@ Build the applications
 
          git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications
 
+	 
 
-#. To build the applications, you need to navigate the **SimCenterBackendApplications** folder created with the **git clone** command. Once there, you will issue the following set of commands to create a **build** folder, change directory to that folder, install needed software using Conan, and finally use **cmake** to build and install the applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail):
+#. To build the applications you need to now navigate to the **SimCenterBackendApplications** folder that was created with the **git clone** command. Once there you will issue the following set of commands to create a **build** folder, change director to that folder, install needed software using conan, and finally use **cmake** to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail).
+
+
+For those developers using the Windows operating system, in a terminal or powershell window you need to type the following:
+
+       .. code:: console
+
+          mkdir build
+          cd build
+          conan install .. --build missing
+          cmake .. -G "Visual Studio 16 2019"
+          cmake --build . --config Release
+          cmake --install .
+          cd ..
+
+For those developers using a Mac or Luinux operating system, in a terminal window type the following:
+
+       #. On Windows, it is necessary to specify a compiler for CMake. To do this, you need to add additional arguments to line 4, i.e., if you have Visual Studio 2019, you would instead type:
 
        .. code:: console
 
@@ -88,16 +110,10 @@ Build the applications
           cmake ..
           cmake --build . --config Release
           cmake --install .
-          cd ..
+	  make install .
+          cd ..	  
 
-     
     .. note::
-
-       #. On Windows, it is necessary to specify a compiler for CMake. To do this, you need to add additional arguments to line 4, i.e., if you have Visual Studio 2019, you would instead type:
-
-          .. code::
-        
-            cmake .. -G "Visual Studio 16 2019"
 
        #. For Mac users running **Big Sur** and version **12** of XCode there are some reported issues. Replace line 3 above with the following two lines:
 
@@ -123,22 +139,53 @@ Build the User Interface
 
 To build the interface, you first need to download the repo and a companion repo(SimCenterCommon) from Github using our `github repos <https://github.com/NHERI-SimCenter>`_. In a folder in which you wish to build the application, issue the following two commands.
 
+.. only:: quoFEM_app
+
     .. code::
        
       git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
-      git clone https://github.com/NHERI-SimCenter/APP_NAME.git
+      git clone https://github.com/NHERI-SimCenter/quoFEM.git
+
+.. only:: R2D_app
+
+	  
+   .. code::
+      
+      git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
+      git clone https://github.com/NHERI-SimCenter/R2DTool.git      
+
+
+.. only:: PBE_app
+
+   .. code::	  
+
+       git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
+       git clone https://github.com/NHERI-SimCenter/QS3hark.git	  
+       git clone https://github.com/NHERI-SimCenter/EE-UQ.git
+       git clone https://github.com/NHERI-SimCenter/PBE.git       
+
+.. only:: EEUQ_app
+
+   .. code::
+      
+       git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
+       git clone https://github.com/NHERI-SimCenter/QS3hark.git	  
+       git clone https://github.com/NHERI-SimCenter/EE-UQ.git	  
+
+.. only:: WEUQ_app	  
+
+   .. code::
+
+       git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
+       git clone https://github.com/NHERI-SimCenter/WE-UQ.git	  
 
 
 .. note::
 
-   Use the above links if you just want to download and build the applications. If you intend to make changes to any of the code in the repo's, you should fork the latter repo and then clone your forked repo. Forking a repo at **GitHub** is done through your browser.
 
-    .. code::
-       
-      git clone https://github.com/YOUR_GITHUB_NAME/APP_NAME.git
-   
+   Use the above links if you just want to download and build the applications. If you intend to make changes to any of the code in the repo's, you should fork that repo and then clone your forked repo. Forking a repo at **github** is done through your browser as shown on the following `github guides page <https://guides.github.com/activities/forking/>`_
+
 You now have two ways to build the application: (1) using the **Qt Creator** desktop application provided by **Qt** and (2) from terminal application.
-
 
 
 Build using Qt Creator
@@ -152,12 +199,25 @@ Build using Qt Creator
 Build from the Terminal
 -----------------------
 
-1. The operations are similar to what was done when building the backend applications. In the terminal application, starting inside the directory of the cloned application again, you will create a build directory, cd into that build directory, run **qmake**, and finally, make (or on Windows nmake)
+1. The operations are similar to what was done when building the backend applications. In the terminal application, starting inside the directory of the cloned application again, you will create a build directory, cd into that build directory, run **qmake**, and finally make (or on Windows nmake) to create the application.
+
+Windows developers will type the following in a terminal or a powershell window:
 
     .. parsed-literal::
 
       mkdir build
-      cd build       
+      cd build
+      conan install .. --build missing
+      qmake ..\|short tool id|.pro
+      nmake
+
+Linux or Mac users will type the following in a terminal window from inside the |app| directory:
+
+    .. parsed-literal::
+
+      mkdir build
+      cd build
+      conan install .. --build missing
       qmake ../|short tool id|.pro
       make
 
@@ -169,11 +229,8 @@ Build from the Terminal
 
         /Users/fmckenna/Qt/5.15.2/clang_64/bin/qmake ../|short tool id|.pro
 
-   #. On a Windows 10 with Visual Studio, the above commands need to be performed using a `Visual Studio x64 command prompt <https://docs.microsoft.com/en-us/cpp/build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line?view=msvc-160>`_ . As a consequence, you also need to replace line 4 with the following:
 
-      .. parsed-literal::
-    
-         nmake
+   #. On a Windows 10 with Visual Studio, the above commands need to be performed using a `Visual Studio x64 command prompt <https://docs.microsoft.com/en-us/cpp/build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line?view=msvc-160>`_ . 
 
    #. If installed, jom can also be used to build in parallel.
 
