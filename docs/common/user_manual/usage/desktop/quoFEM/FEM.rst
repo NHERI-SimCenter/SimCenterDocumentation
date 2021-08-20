@@ -41,6 +41,8 @@ When the choice of FEM application is OpenSees (the default application), the us
 FEAPpv
 ^^^^^^
 
+|FEAPpv| is another FEM engine used by the |app| that is publicly available from the |FEAPpvDownload| page. FEAPpv is a general purpose finite element analysis program which is designed for research and educational use. To install |FEAPpv| you must download the source code and follow the build instructions on the **Source Code Download and Compile Instructions** section of the |FEAPpvDownload| page.
+
 Similar to the OpenSees application, when the user selects FEAPpv the user is requested to provide two files.
 
 .. figure:: figures/feapFEM.png

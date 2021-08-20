@@ -299,3 +299,4 @@ docs/web
 build/
 
 .idea
+.DS_Store
