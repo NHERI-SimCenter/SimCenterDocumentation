@@ -300,3 +300,5 @@ build/
 
 .idea
 fmkExamples
+.DS_Store
+web/
