@@ -24,7 +24,9 @@ illustrated in :numref:`nearestneighbors`. The ground motions are processed from
 on a prescribed grid, and for each selected asset location (red square dot), the workflow  randomly selects 25 samples of 
 the ground motions from the 4 nearest neighbors (yellow circles). Note this random 
 sampling is performed along with the multiple realizations from the epistemic uncertainty quantification, so the 
-two uncertainty sources are considered simultaneously. 
+two uncertainty sources are considered simultaneously.  Note the ground motions at one building site from nearest 
+grid points can be repeated as these 25 samples are also intended for considering the structural modeling uncertainty 
+(i.e., stiffness and damping parameters in the next section). 
 
 .. figure:: figure/nn.png
    :name: nearestneighbors
