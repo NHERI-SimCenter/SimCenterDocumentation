@@ -15,7 +15,7 @@ The following discussion will reference a number of rulesets initially developed
 :ref:`lbl-testbed_Atlantic_City` testbed to enable various assignments of these HAZUS building classes 
 and corresponding attributes.Details of these rulesets are available to users in one of two forms: 
 
-1. Rulest definition tables (PDFs) curated in DesignSafe that include additional documentation 
+1. Ruleset definition tables (PDFs) curated in DesignSafe that include additional documentation 
    justifying the proposed rule, with provenance information for any sources engaged in that 
    rule’s development.
 2. Scripts (in Python) curated in GitHub that implement the ruleset’s logic for this testbed.
@@ -58,8 +58,8 @@ later in :numref:`addinfo_ruleset`.
      - Ruleset Definition Table
      - Python script
    * - Building Class Rulesets - Wind
-     - `HAZUS Building Class Rulesets - Wind.pdf <https://berkeley.box.com/s/602imclyqm1ohvfqliqro0bzq4v0wdj3>`_
-     - :download:`WindClassRulesets <data/WindClassRulesets.py>`
+     - `HAZUS Building Class Rulesets - Wind.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingClassRulesets/HAZUS%20Building%20Class%20Rulesets%20-%20Wind.pdf>`_
+     - `WindClassRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindClassRulesets.py>`_
 
 Building Attributes
 ======================
@@ -111,8 +111,8 @@ assigned in the Atlantic County, NJ testbed :ref:`lbl-testbed_AC_asset_descripti
      - Ruleset Definition Table
      - Python script
    * - Attribute Assignment - Wind (Meta-Variable)
-     - `Hazus Building Attribute Rulesets - Wind - Meta-Variables.pdf <https://berkeley.box.com/s/l4vdnfoakq8xsv4rmj64x4m2kxqritu7>`_
-     - :download:`WindMetaVarRulesets <data/WindMetaVarRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Wind - Meta-Variables.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20Meta-Variables.pdf>`_
+     - `WindMetaVarRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindMetaVarRulesets.py>`_
 
 The following sections summarize the rulesets used for wind loss  attribute assignments for WSF and WMUH 
 in this testbed. See the Atlantic County, NJ testbed :ref:`lbl-testbed_AC_asset_representation_building_classification`, the source of these rulesets, 
@@ -155,11 +155,11 @@ cross-referenced in :numref:`addinfo_ruleset_wood`.
      - Ruleset Definition Table
      - Python script
    * - HAZUS Building Attribute Rulesets - Wind (WSF1-2)
-     - `Hazus Building Attribute Rulesets - Wind - WSF1-2.pdf <https://berkeley.box.com/s/nod73v7shtj9x7ox7xw7b7nvmrs3e8oc>`_
-     - :download:`WindWSFRulesets <data/WindWSFRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Wind - WSF1-2.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20WSF1-2.pdf>`_
+     - `WindWSFRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindWSFRulesets.py>`_
    * - HAZUS Building Attribute Rulesets - Wind (WMUH1-3)
-     - `Hazus Building Attribute Rulesets - Wind - WMUH1-3.pdf <https://berkeley.box.com/s/4v7405rit2u475daorayy9w6ssuezbz9>`_
-     - :download:`WindWMUHRulesets <data/WindWMUHRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Wind - WMUH1-3.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20WMUH1-3.pdf>`_
+     - `WindWMUHRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindWMUHRulesets.py>`_
 
 Taking the attribute Second Water Resistance (SWR) as an example, the SWR attribute is assigned by 
 a series of time-evolving rules calling upon four fields in the building inventory: year built, 
