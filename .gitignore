@@ -299,4 +299,6 @@ docs/web
 build/
 
 .idea
+fmkExamples
 .DS_Store
+web/
