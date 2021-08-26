@@ -1,4 +1,4 @@
-Time Period,YearBuilt > 2000,1983 < YearBuilt < 2000,YearBuilt <= 1983
+Time Period,YearBuiltNJDEP > 2000,1983 < YearBuiltNJDEP < 2000,YearBuilt <= 1983
 Ruleset,"Assign as a Random Variable (RV)
 IF RoofShape = Gable OR Hip, SWR = yes (RV = 60%) 
 IF RoofShape = Gable OR Hip, SWR = no (RV = 40%) 
