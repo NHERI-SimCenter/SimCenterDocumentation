@@ -1,0 +1,5 @@
+Garage type,Percentage,Description
+None,61%,No garage observed in the image
+AG-open,24%,Attached garage with openings
+AG-standard,8%,Standard attached garage
+Carport,7%,Carports
