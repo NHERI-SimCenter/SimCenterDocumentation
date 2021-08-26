@@ -126,7 +126,7 @@
    :docTestbeds:common/testbeds/atlantic_city/index
    .. :docTestbeds:common/testbeds/memphis/index
    .. :docTestbeds:common/testbeds/anchorage/index
-   :docTestbeds:common/testbeds/lake_charles/index
+   .. :docTestbeds:common/testbeds/lake_charles/index
 
 .. _lbl-technical-manual:
 
