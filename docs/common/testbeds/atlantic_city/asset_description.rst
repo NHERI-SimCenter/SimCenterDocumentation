@@ -113,14 +113,14 @@ vulnerable attribute option). These initial assignments were then updated if add
      - Ruleset Definition Table
      - Python script
    * - Building Type Rulesets
-     - `Building Type Rulesets.pdf <https://berkeley.box.com/s/hvsfx308svz7mi8g1sccnchjslsm58b8>`_
-     - :download:`BuildingTypeRulesets <data/BuildingTypeRulesets.py>`
+     - `Building Type Rulesets.pdf <https://github.com/kuanshi/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/MODIVTransformations/Building%20Type%20Rulesets.pdf>`_
+     - To be released
    * - Foundation Type Rulesets
-     - `Foundation Type Rulesets.pdf <https://berkeley.box.com/s/vz2yxx2bu5uphf9xqbxm9ajdx664ndr5>`_
-     - :download:`FoundationTypeRulesets <data/FoundationTypeRulesets.py>`
+     - `Foundation Type Rulesets.pdf <https://github.com/kuanshi/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/MODIVTransformations/Foundation%20Type%20Rulesets.pdf>`_
+     - To be released
    * - Occupancy Type Rulesets
-     - `Occupancy Type Rulesets.pdf <https://berkeley.box.com/s/p50txdj9oor7399iesc5lawj7cykj1jb>`_
-     - :download:`OccupancyTypeRulesets <data/OccupancyTypeRulesets.py>`
+     - `Occupancy Type Rulesets.pdf <https://github.com/kuanshi/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/MODIVTransformations/Occupancy%20Class%20Rulesets.pdf>`_
+     - To be released
 
 Some attributes in the Building Inventory Data Model were not encompassed by NJDEP Basic, UDF or SDE fields, thus 
 remaining attributes in both the Flood-Exposed and Atlantic County Inventories were assigned using data 
@@ -312,11 +312,11 @@ Populated Inventories
 ========================
 
 Executing this four-phase process resulted in the assignment of all required attributes at the asset description 
-stage of the workflow for both the **Atlantic County Inventory** and the **Flood-Exposed Inventory**. 
-:numref:`bldg_inv_ac` and :numref:`bldg_inv_fei` provide respective examples of each of these inventories. 
+stage of the workflow for both the **Atlantic County Inventory** and the **Flood-Exposed Inventory**. :numref:`bldg_inv_ac` 
+and :numref:`bldg_inv_fei` provide respective examples of each of these inventories. 
 The Flood-Exposed Inventory then was used to extract out the subset of buildings defining the  
-**Exploration Inventory** (see example in :numref:`bldg_inv_ei`). The full inventories can be downloaded 
-:download:`here <data/full_inventories.zip>`.
+**Exploration Inventory** (see example in :numref:`bldg_inv_ei`). The full inventories can be found 
+`here <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/atlantic_city/data/full_inventories.zip>`_.
 
 .. csv-table:: Illustrative sample of building in Atlantic Inventory.
    :name: bldg_inv_ac
@@ -346,15 +346,15 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
      - Number of Assets
      - Typical Run Time
    * - Atlantic County Inventory
-     - :download:`Atlantic County Inventory <data/AtlanticCountyInventory.csv>`
+     - `Atlantic County Inventory <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/atlantic_city/data/AtlanticCountyInventory.csv>`_
      - 100,721
      - ~ 1,500 CPU-Hour* (please see more details in **Computational Resources Requirements**)
    * - Flood-Exposed Inventory
-     - :download:`Flood-Exposed Inventory <data/FloodExposedInventory.csv>`
+     - `Flood-Exposed Inventory <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/atlantic_city/data/FloodExposedInventory.csv>`_
      - 32,828
      - ~ 440 CPU-Hour
    * - Exploration Inventory
-     - :download:`Exploration Inventory <data/ExplorationInventory.csv>`
+     - `Exploration Inventory <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/atlantic_city/data/ExplorationInventory.csv>`_
      - 1,000
      - ~ 12 CPU-Hour
 
