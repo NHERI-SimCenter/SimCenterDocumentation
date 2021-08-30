@@ -20,12 +20,12 @@ serving as input to the workflow. For each attribute a
 row in the table is provided. Each row has a number of columns: the attribute name, description, 
 format (alphanumeric, floating point number, etc.), the data source used to define that attribute.
 
-.. _tab-bldg_inv_data_model_lc:
-
 .. csv-table:: Building inventory data model, detailed for Lake Charles Inventory.
+   :name: tab-bldg_inv_data_model_lc
    :file: table/building_inventory_data_model_new.csv
    :header-rows: 1
    :align: center
+   :widths: 15, 40, 25, 20
 
 Phase II: Inventory Generation
 ===============================
@@ -98,7 +98,7 @@ The trained classifier was employed here to classify the roof information for La
    :name: roof_shape
    :align: center
    :figclass: align-center
-   :figwidth: 600
+   :width: 500
    
    Roof type classification with examples of aerial images (a-f) and simplified archetypes (d-f) used by Hazus.
 
@@ -117,7 +117,7 @@ if the classification is perfect, affirming the accuracy of the classification b
    :name: roof_shape_vali
    :align: center
    :figclass: align-center
-   :figwidth: 600
+   :width: 600
 
    Validation of BRAILS predicted roof shapes to roof shapes from OpenStreetMap and StEER.
 
@@ -144,7 +144,7 @@ Lake Charles for a selected region.
    :name: occ_class_vali
    :align: center
    :figclass: align-center
-   :figwidth: 600
+   :width: 600
 
    Validation of BRAILS predicted occupancy classes to OpenStreetMap and NJDEP.
 
@@ -152,7 +152,7 @@ Lake Charles for a selected region.
    :name: occ_class_pred
    :align: center
    :figclass: align-center
-   :figwidth: 600
+   :width: 600
 
    AI predicted occupancy types from street view images in Lake Charles.
 
@@ -175,7 +175,7 @@ floor detections performed by the model.
    :name: num_stories_detection
    :align: center
    :figclass: align-center
-   :figwidth: 1000
+   :width: 600
 
    Sample floor detections of the floor detection model (each detection is indicated by a green bounding box). The percentage value shown on the top right corner of a bounding box indicates model confidence level associated with that prediction.
 
@@ -204,7 +204,7 @@ testbed), was utilized.
    :name: num_stories_vali
    :align: center
    :figclass: align-center
-   :figwidth: 1000
+   :width: 600
 
    Confusion matrices for the number of floors predictor used in this study.
 
@@ -221,7 +221,7 @@ the average of these dimensions.
    :name: building_elevation
    :align: center
    :figclass: align-center
-   :figwidth: 900
+   :width: 600
    
    Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.
 
@@ -239,7 +239,7 @@ shows the comparison between these two approaches.
    :name: mean_roof_ht_app
    :align: center
    :figclass: align-center
-   :figwidth: 600
+   :width: 600
 
    Comparison of MeanRoofHt between the two approaches.
 
@@ -290,7 +290,7 @@ the dimensions of the building footprint. :numref:`mean_slope_app` shows the com
    :name: mean_slope_app
    :align: center
    :figclass: align-center
-   :figwidth: 600
+   :width: 600
 
    Comparison of RoofSlope between the two approaches.
 
@@ -326,7 +326,7 @@ as shown in :numref:`year_built_nsi`.
    :name: year_built_nsi
    :align: center
    :figclass: align-center
-   :figwidth: 600
+   :width: 600
 
    National Structure Inventory data points.
 
@@ -385,7 +385,7 @@ provided by the pandas module of python. The locations of these random buildings
    :name: garage_loc
    :align: center
    :figclass: align-center
-   :figwidth: 600
+   :width: 600
 
    Locations of 100 randomly selected single-family residential buildings.
 
@@ -410,7 +410,7 @@ A csv file of coordinates and classifications of each building can be found
    :name: garage_eg
    :align: center
    :figclass: align-center
-   :figwidth: 600
+   :width: 500
 
    Examples of different types garages.
 
@@ -446,9 +446,8 @@ The entire inventory can be downloaded `here <https://github.com/kuanshi/SimCent
 .. csv-table:: Illustrative sample of building in Lake Charles Inventory.
    :name: bldg_inv_lc
    :file: data/example_inventory_lc.csv
-   :header-rows: 1
    :align: center
-
+   :widths: 5, 7, 5, 6, 9, 7, 6, 7, 7, 7, 7, 9, 7, 6, 6, 9
 
 .. [ATC20]
    ATC (2020b), ATC Hazards By Location, https://hazards.atcouncil.org/, Applied Technology Council, Redwood City, CA.

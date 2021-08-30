@@ -59,7 +59,7 @@ later in :numref:`addinfo_ruleset`.
      - Python script
    * - Building Class Rulesets - Wind
      - `HAZUS Building Class Rulesets - Wind.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingClassRulesets/HAZUS%20Building%20Class%20Rulesets%20-%20Wind.pdf>`_
-     - `WindClassRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindClassRulesets.py>`_
+     - `WindClassRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindClassRulesets.py>`_
 
 Building Attributes
 ======================
@@ -92,6 +92,7 @@ as part of the community’s use and adaptation of this workflow in its research
    :file: table/wind_bldg_attri.csv
    :header-rows: 1
    :align: center
+   :widths: 15, 65, 20
 
 Note that rulesets for assigning wind loss attributes call upon two meta-variables relevant to wind losses 
 for any building: “Hazard Prone Region” and “Wind Borne Debris,” which are assigned based the design wind 
@@ -175,7 +176,6 @@ to these rulesets by users
 .. csv-table:: Ruleset for determining the Second Water Resistance attribute for WSF homes.
    :name: swr_attri
    :file: table/example_wood_ruleset.csv
-   :header-rows: 1
    :align: center
 
 

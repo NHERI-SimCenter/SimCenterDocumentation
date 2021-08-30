@@ -110,7 +110,15 @@ html_static_path = ['_static']
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 latex_elements = {
-  'extraclassoptions': 'openany,oneside'
+	'papersize': 'letterpaper',
+	'pointsize': '6pt',
+	'fontpkg': r"""\usepackage{tgtermes}
+\usepackage{tgheros}
+\renewcommand\ttdefault{txtt}
+""",
+	'figure_align': 'htbp',
+	'extraclassoptions': 'openany,oneside',
+	'sphinxsetup': 'hmargin={0.75in,0.75in}, vmargin={0.75in,0.75in}, marginpar=0.75in'
 }
 
 pdf_break_level = 2

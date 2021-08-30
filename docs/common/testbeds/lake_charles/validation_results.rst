@@ -22,7 +22,7 @@ southwest of the city where the Zillow set predicts relatively lower damage stat
    :name: ds_zillow_COM1p
    :align: center
    :figclass: align-center
-   :figwidth: 1000
+   :width: 700
 
    SURF-NSI vs. SURF-Zillow: expected damage state.
 
@@ -30,7 +30,7 @@ southwest of the city where the Zillow set predicts relatively lower damage stat
    :name: pds_cdf
    :align: center
    :figclass: align-center
-   :figwidth: 700
+   :width: 500
 
    SURF-NSI vs. SURF-Zillow: CDFs of probability of exceeding DS-2 and DS-3.
 
@@ -86,7 +86,7 @@ to influence the resulting damage state under the hurricane wind hazard. Major o
    :name: influential_var
    :align: center
    :figclass: align-center
-   :figwidth: 900
+   :width: 700
 
    Influential building attributes on the wind-induced damage state.
 
@@ -107,7 +107,7 @@ vulnerable structures than was the case in practice).
    :name: ds_uq
    :align: center
    :figclass: align-center
-   :figwidth: 600
+   :width: 400
 
    Uncertainty in the estimated damage state.
 
@@ -121,7 +121,7 @@ distribution with a standard deviation of 20 mph.
    :name: ds_uq_yb
    :align: center
    :figclass: align-center
-   :figwidth: 400
+   :width: 400
 
    Influence of uncertainty in year built on the estimated damage state.
 
@@ -130,7 +130,7 @@ distribution with a standard deviation of 20 mph.
    :name: ds_uq_pws
    :align: center
    :figclass: align-center
-   :figwidth: 600
+   :width: 350
 
    Influence of uncertainty in PWS on the estimated damage state.
 
@@ -139,39 +139,41 @@ Validation: FEMA Historical Geospatial Damage Assessment
 ========================================================
 
 FEMA and the Department of Interior lead the development of the 
-`Geospatial Platform <https://COM1munities.geoplatform.gov/disasters/>`_, an internet-based service environment that 
+`Geospatial Platform <https://communities.geoplatform.gov/disasters/>`_, an internet-based service environment that 
 provides a suite of well-manged geospatial data, services, applications, and tools. The 
-`FEMA Historical Damage Assessment Database <https://COM1munities.geoplatform.gov/disasters/historical-damage-assessment-database/>`_ 
+`FEMA Historical Damage Assessment Database <https://communities.geoplatform.gov/disasters/historical-damage-assessment-database/>`_ 
 is a repository of geospatial damage assessments from past National Disaster events where 
 damage assessments were conducted either using high-resolution imagery or by means of geospatial modeling. 
 
 For Hurricane Laura, the damage categories of 112,571 buildings in the Louisiana were modeled from flood depths at the 
 structure as characterized based on modeled wind, flood or surge data. Five damage categories are 
-used: No Damage, Affected, Minor, Major, and Destroyed. Out of the 112,571 buildings, 573 buildings, located in 
+used: No Damage (NOD), Affected (AFF), Minor (MIN), Major (MAJ), and Destroyed (DES). Out of the 112,571 buildings, 573 buildings, located in 
 the west bound of the Lake Charles city at the waterfront of the Prein Lake, are also investigated 
 in this testbed. :numref:`fema_damage_subset` is a subset of data obtained from 
 `FEMA Public Data <http://disasters.geoplatform.gov/publicdata/National/Data/HistoricalDamageAssessmentDatabase/PublicRelease_20210622/>`_.
-:numref:`fema_damage_bim` is the building inventory for this subset.
+:numref:`fema_damage_bim` is the building inventory for this subset. The full inventory and FEMA damage assessment 
+results can be accessed by `FEMA Damage Assessment of the 573 buildings <https://github.com/kuanshi/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/data/FEMA_DamageDatabase_LakeCharles_Sample.csv>`_ and 
+`BIM inventory of the 573 buildings <https://github.com/kuanshi/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/data/BIM_LakeCharles_FEMA.csv>`_.
 
 .. figure:: figure/fema_damage_webpage.png
    :name: fema_ds_webpage
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 600
 
    FEMA Historical Geospatial Damage Assessment Database (2020 Hurricane Laura).
 
-.. csv-table:: FEMA Damage Assessment of 573 buildings in Lake Charles (available in this testbed).
+.. csv-table:: FEMA Damage Assessment example buildings in Lake Charles.
    :name: fema_damage_subset
-   :file: data/FEMA_DamageDatabase_LakeCharles_Sample.csv
+   :file: data/FEMA_DamageDatabase_LakeCharles_Sample_example.csv
    :header-rows: 1
    :align: center
 
-.. csv-table:: BIM inventory of 573 buildings in this testbed overlapped with the FEMA Damage Assessment Database.
+.. csv-table:: BIM inventory of example buildings in this testbed overlapped with the FEMA Damage Assessment Database.
    :name: fema_damage_bim
-   :file: data/BIM_LakeCharles_FEMA.csv
-   :header-rows: 1
+   :file: data/BIM_LakeCharles_FEMA_example.csv
    :align: center
+   :widths: 5, 7, 5, 6, 9, 7, 6, 7, 7, 7, 7, 9, 7, 6, 6, 9
 
 :numref:`fema_dc` shows the damage categories collected from the FEMA Damage Assessment Database, where most buildings 
 are assessed as having No Damage or Affected. Also noted from :numref:`fema_damage_subset` is that all these 
@@ -195,7 +197,7 @@ needed to consider other possible factors causing this mismatch in predicted DS-
    :name: fema_dc
    :align: center
    :figclass: align-center
-   :figwidth: 700
+   :width: 500
 
    FEMA Damage Category in the Geospatial Damage Assessment Database (for the 573 buildings).
 
@@ -203,9 +205,9 @@ needed to consider other possible factors causing this mismatch in predicted DS-
    :name: fema_ds_COM1p
    :align: center
    :figclass: align-center
-   :figwidth: 1200
+   :width: 700
 
-   COM1parison: FEMA Damage Category vs. expected damage state by the workflow (for the 573 buildings).
+   Comparison: FEMA Damage Category vs. expected damage state by the workflow (for the 573 buildings).
 
 
 .. [Roueche21]

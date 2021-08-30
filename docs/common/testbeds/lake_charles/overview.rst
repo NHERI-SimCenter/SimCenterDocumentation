@@ -10,7 +10,7 @@ of using advanced machine learning and artificial intelligence techniques to pop
 building features that are limited by the tax assessor and open inventory data, (2) further validate the developed 
 workflow with a recent hurricane event with field investigation data, and (3) identifying potential research 
 needs for refining/upgrading/extending damage assessment methods and models at parcel levels. Similar to the general 
-idea of other testbeds, COM1munity developers can progressively contribute refinements that increase the fidelity and capacities 
+idea of other testbeds, community developers can progressively contribute refinements that increase the fidelity and capacities 
 of the backend regional resilience assessment workflow. This documentation specifically demonstrates the process of: 
 (1) asset description, (2) hazard characterization, (3) asset representation, (4) damage and loss modeling for 
 the Lake Charles inventory. Sample results are presented to verify the workflow and validate its different aspects 
@@ -26,9 +26,9 @@ Category II buildings and other structures, as defined in ASCE 7-16 ([ASCE16]_) 
 Code (MRI = 700 years) ([ICC18]_), by as much as :math:`8 km/h` (:math:`5 mph`) near Lake Charles, LA (specifically, 
 northeastern Calcasieu Parish and the eastern half of Beauregard Parish) ([ARA20]_). Meanwhile, storm surge 
 resulted in high water marks of over :math:`5 m` (:math:`17 ft`) above ground in Oak Grove, LA in Cameron Parish 
-([Pasch21]_). These COM1bined hazards resulted in substantial impacts to port and industrial facilities serving the 
+([Pasch21]_). These combined hazards resulted in substantial impacts to port and industrial facilities serving the 
 oil and gas sector, widespread damages in the residential sector, and sustained outages of water and power impacting 
-the operation of hospitals providing critical care during a pandemic. Notable damage was reported to COM1mercial 
+the operation of hospitals providing critical care during a pandemic. Notable damage was reported to commercial 
 facilities, particularly to hotels, including high-rise buildings in Lake Charles associated with casinos and 
 resorts. As the storm's well-predicted track facilitated coordinated, multi-entity surface measurements of wind 
 fields (surface observation networks and mobile radar) and storm surge, Laura is one of the best documented storm 
@@ -61,11 +61,11 @@ envelopes and/or wind-borne debris impact are also captured in the damage and lo
 these phenomena themselves are not explicitly modeled. Storm surge, flood and other rainfall-induced hazards are 
 not included in the current implementation. Moreover, the inventory focuses only on wood-frame 
 residential construction. These intentional focuses of the current implementation leave ample room for further 
-COM1munity-led development. The adoption of HAZUS loss estimation frameworks [FEMA18]_ takes advantage of a process developed 
+community-led development. The adoption of HAZUS loss estimation frameworks [FEMA18]_ takes advantage of a process developed 
 in Atlantic County, NJ for assigning attributes to specific building footprints using time-evolving heuristic 
 rulesets grounded in local codes/standards and normative practice. As this testbed demonstrates a quick 
 “spin-up” after a hurricane, the rulesets from New Jersey are directly applied; while many of the practices 
-are COM1mon, further refinements of the workflow should revise these rulesets to reflect the phasing of 
+are common, further refinements of the workflow should revise these rulesets to reflect the phasing of 
 specific regulations and mitigation measures in Lake Charles.
 
 Current Implementation
@@ -82,7 +82,7 @@ Available Inventories
 ========================
 
 The constructed building inventory developed for Lake Charles is accessible via DesignSafe. 
-This testbed includes 30,078 buildings including 26,517 residential buildings and 3,561 COM1mercial buildings 
+This testbed includes 30,078 buildings including 26,517 residential buildings and 3,561 commercial buildings 
 (classified by BRAILS, more details will be introduced in :ref:`lbl-testbed_LC_asset_description`) 
 in the city of Lake Charles. :numref:`fig-yearBuilt` visualizes the 
 Year Built of the buildings in the inventory.  :numref:`fig-occupancyClass` shows the geospatial distribution 
@@ -93,7 +93,7 @@ of the occupancy classes in the inventory.
 .. figure:: figure/YearBuilt.png
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 500
 
    Geospatial visualization of the building inventory by year built.
 
@@ -102,7 +102,7 @@ of the occupancy classes in the inventory.
 .. figure:: figure/OccupancyClass.png
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 500
 
    Geospatial visualization of the building inventory by occupancy class.
 
@@ -117,7 +117,7 @@ before 1980), with a dominance of low-rise (1-2 stories) buildings (approximatel
 .. figure:: figure/InventoryPineChart.png
    :align: center
    :figclass: align-center
-   :figwidth: 900
+   :width: 600
 
    Distribution of building characteristics of the building inventory.
 
@@ -137,4 +137,4 @@ before 1980), with a dominance of low-rise (1-2 stories) buildings (approximatel
    FEMA (2018), HAZUS – Multi-hazard Loss Estimation Methodology 2.1, Hurricane Model Technical Manual, Federal Emergency Management Agency, Washington D.C., 718p.
 
 .. [ARA20]
-   ARA. (2020). Hurricane Laura Rapid Response Windfield Estimate, Preliminary Windfield Release 3, National Institutes of Standards and Testing & Applied Research Associates, September 4, https://www.designsafe-ci.org/data/browser/public/designsafe.storage.COM1munity/Recon%20Portal/2020%20Hurricane%20Laura%20Cameron%20Louisiana%20USA.
+   ARA. (2020). Hurricane Laura Rapid Response Windfield Estimate, Preliminary Windfield Release 3, National Institutes of Standards and Testing & Applied Research Associates, September 4, https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/Recon%20Portal/2020%20Hurricane%20Laura%20Cameron%20Louisiana%20USA.

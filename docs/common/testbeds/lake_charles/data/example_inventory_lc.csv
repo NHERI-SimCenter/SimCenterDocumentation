@@ -4,8 +4,8 @@ ID,RoofShape,FloodZone,Area,Longitude,Latitude,Terrain,DSWII,BuildingType,AvgJan
 3,Gable,X,170,-93.19,30.26,11,129,Wood,Above,1,1,1955,0.27,16.9,RES1
 4,Gable,X,142,-93.18,30.26,11,129,Wood,Above,0,2,2010,0.25,16.5,RES1
 5,Gable,X,270,-93.18,30.26,11,128.9,Wood,Above,0,1,1992,0.31,29.6,RES1
-6,Gable,X,160,-93.18,30.27,11,128.8,Wood,Above,1,1,2020,0,12.0,RES1
-7,Flat,X,776,-93.22,30.24,14,129.9,Wood,Above,0,1,1948,0.17,15.0,COM1
+6,Gable,X,160,-93.18,30.27,11,128.8,Wood,Above,1,1,2020,0,12,RES1
+7,Flat,X,776,-93.22,30.24,14,129.9,Wood,Above,0,1,1948,0.17,15,COM1
 8,Hip,X,257,-93.21,30.22,11,130.2,Wood,Above,2,1,1992,0.1,13.8,RES1
 9,Hip,X,143,-93.21,30.22,11,130.2,Wood,Above,2,2,1967,0.23,16.2,RES1
 10,Flat,X,3796,-93.21,30.23,12,130.1,Wood,Above,0,1,1917,0.15,14.7,COM1
@@ -14,7 +14,7 @@ ID,RoofShape,FloodZone,Area,Longitude,Latitude,Terrain,DSWII,BuildingType,AvgJan
 13,Gable,X,229,-93.21,30.23,12,130,Wood,Above,0,2,1925,0.2,15.7,RES3
 14,Gable,X,213,-93.2,30.25,11,129.3,Wood,Above,0,1,1940,0.02,12.4,RES3
 15,Gable,X,125,-93.19,30.25,11,129.3,Wood,Above,0,1,1928,0.24,16.4,RES1
-16,Gable,X,128,-93.19,30.25,11,129.3,Wood,Above,0,2,1930,0.16,15.0,RES1
+16,Gable,X,128,-93.19,30.25,11,129.3,Wood,Above,0,2,1930,0.16,15,RES1
 17,Gable,X,202,-93.19,30.25,11,129.3,Wood,Above,0,1,1960,0.12,14.2,RES1
 18,Flat,X,98,-93.19,30.25,11,129.3,Wood,Above,0,1,1935,0.12,26.2,RES1
 19,Hip,X,193,-93.2,30.25,11,129.3,Wood,Above,0,2,1917,0.03,12.6,RES1
