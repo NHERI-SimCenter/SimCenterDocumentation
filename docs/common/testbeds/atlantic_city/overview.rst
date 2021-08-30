@@ -90,7 +90,7 @@ in Atlantic County.
 .. figure:: figure/new_inventory_map.png
    :align: center
    :figclass: align-center
-   :width: 1200
+   :width: 800
 
    Geospatial visualization of subclasses of buildings in Flood-Exposed Inventory.
 
@@ -125,7 +125,7 @@ Atlantic City.
 .. figure:: figure/num_building_city_allset.png
    :align: center
    :figclass: align-center
-   :width: 1000
+   :width: 800
 
    Distribution of number of buildings by municipality.
 
@@ -134,7 +134,7 @@ Atlantic City.
 .. figure:: figure/built_year_allset.png
    :align: center
    :figclass: align-center
-   :figwidth: 1200
+   :width: 800
 
    Distribution of year built for buildings.
 
@@ -143,7 +143,7 @@ Atlantic City.
 .. figure:: figure/occupancy_type_allset.png
    :align: center
    :figclass: align-center
-   :figwidth: 1200
+   :width: 800
 
    Distribution of occupancy types.
 
@@ -152,7 +152,7 @@ Atlantic City.
 .. figure:: figure/story_number_allset.png
    :align: center
    :figclass: align-center
-   :figwidth: 1200
+   :width: 800
 
    Distribution of total story numbers for buildings.
 
@@ -161,7 +161,7 @@ Atlantic City.
 .. figure:: figure/building_type_allset.png
    :align: center
    :figclass: align-center
-   :figwidth: 1200
+   :width: 800
 
    Distribution of primary construction material types.
 

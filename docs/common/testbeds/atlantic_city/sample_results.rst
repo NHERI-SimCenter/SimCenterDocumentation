@@ -13,21 +13,15 @@ This page summarizes sample results from the testbed runs with three major focus
 Building Inventory
 ===================
 
-From the entire building inventory, 85 buildings (:numref:`sample_table`) are selected from 5 building
+From the entire building inventory, `85 buildings <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/atlantic_city/data/VerificationSample.csv>`_ are selected from 5 building
 classes and 8 built eras. :numref:`scatter_matrix` shows the data distributions of the built year, surface
 roughness (:math:`z_0`), peak wind speed (PWS), and peak water depth (PWD).
-
-.. csv-table:: Sampled building inventory
-   :file: data/VerificationSample.csv
-   :name: sample_table
-   :header-rows: 1
-   :align: center
 
 .. figure:: figure/ScatterMatrix.png
    :name: scatter_matrix
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 700
 
    Scatter matrix of sampled buildings.
 
@@ -52,7 +46,7 @@ are due to the random sampling process in estimating the expected loss ratios.
    :name: hand_calc
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 600
 
    Hand-calculated results vs. simulated results.
 
@@ -68,7 +62,7 @@ and masonry buildings perform better than wood buildings and manufactured homes 
    :name: wind_loss_bt
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 600
 
    Average expected wind losses by building class.
 
@@ -84,6 +78,6 @@ comparison is made for the limited sample size in this verification study.
    :name: wind_loss_yr
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 600
 
    Average expected wind losses of wood buildings by built year.
