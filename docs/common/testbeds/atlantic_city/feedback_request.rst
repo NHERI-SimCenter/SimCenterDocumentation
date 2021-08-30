@@ -1,4 +1,4 @@
-.. _lbl-testbed_LC_feedback_request:
+.. _lbl-testbed_AC_feedback_request:
 
 ******************************
 Feedback
