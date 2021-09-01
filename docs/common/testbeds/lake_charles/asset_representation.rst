@@ -12,7 +12,7 @@ to the HAZUS conventions for classifying buildings and organizing damage and los
 according to attributes associated with those building classes.
 
 The following discussion will reference a number of rulesets initially developed for the 
-:ref:`lbl-testbed_Atlantic_City` testbed to enable various assignments of these HAZUS building classes 
+`Atlantic County, NJ <https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html>`_ testbed to enable various assignments of these HAZUS building classes 
 and corresponding attributes.Details of these rulesets are available to users in one of two forms: 
 
 1. Ruleset definition tables (PDFs) curated in DesignSafe that include additional documentation 
@@ -35,7 +35,6 @@ HAZUS classifies buildings based on a more nuanced interpretation of Occupancy C
 (see building inventory field **OccupancyClass**) based on other attributes of relevance 
 for a given hazard type.
 
-As detailed in the :ref:`lbl-testbed_LC_asset_representation_building_classification` section, 
 HAZUS groups buildings into five main types by primary building material/construction 
 mode for projecting wind losses. Given the focus of this testbed on residential, wood 
 construction, the only relevant HAZUS classes are Wood Single Family (WSF) homes and 
@@ -71,7 +70,7 @@ load path and components (e.g., roof shape, secondary water resistance, roof dec
 connection, shutters, garage), and the number of attributes necessary to describe a given building varies. 
 
 As these attributes are beyond what is typically encompassed in a building inventory, a library of rulesets 
-to infer the HAZUS-required attributes was developed and implemented for the :ref:`lbl-testbed_Atlantic_City` testbed, 
+to infer the HAZUS-required attributes was developed and implemented for the `Atlantic County, NJ <https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html>`_ testbed, 
 based upon the fields available in the building inventory, legacy building codes in New Jersey, local 
 construction practices/norms, surveys capturing owner-driven mitigation actions (e.g., [Javeline19]_) 
 and market/industry data. Where possible, the rulesets are time-evolving, considering the age of 
@@ -81,7 +80,7 @@ detailed notes cross-referencing the various documents and practices that govern
 and thus informed the ruleset formation. In cases where engineering judgment was required, rules were assigned 
 based on what was understood to be the most common construction practice. In cases where that was not clear, 
 the ruleset assigned the most vulnerable configuration for a more conservative approach to loss estimation. 
-The rulesets from the :ref:`lbl-testbed_Atlantic_City` testbed are applied here, without modification as the purpose 
+The rulesets from the `Atlantic County, NJ <https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html>`_ testbed are applied here, without modification as the purpose 
 herein is solely to demonstrate the workflow. It is acknowledged that, while also grounded in the 
 International Residential Code and International Building Code, Louisiana has a different regulatory 
 framework and code eras that would require adaptation of the rulesets. Such adaptations are encouraged 
@@ -101,7 +100,7 @@ speed at the asset location (Building Inventory field “DSWII”) and the flood
 :numref:`addinfo_ruleset_metavar`. Also note that the roof shape (building inventory field **RoofShape**), 
 derived from aerial imagery, and terrain roughness (building inventory field **Terrain**), derived from 
 Land Use Land Cover data, are also attributes required by the HAZUS wind loss model. As these were already 
-assigned in the Atlantic County, NJ testbed :ref:`lbl-testbed_AC_asset_description`, they are not discussed again herein.
+assigned in the `Atlantic County, NJ testbed Asset Representation <https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/asset_representation.html>`_, they are not discussed again herein.
 
 .. list-table:: Additional details for rulesets for meta-variables in wind loss attribute assignment in HAZUS
    :name: addinfo_ruleset_metavar
@@ -116,7 +115,7 @@ assigned in the Atlantic County, NJ testbed :ref:`lbl-testbed_AC_asset_descripti
      - `WindMetaVarRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindMetaVarRulesets.py>`_
 
 The following sections summarize the rulesets used for wind loss  attribute assignments for WSF and WMUH 
-in this testbed. See the Atlantic County, NJ testbed :ref:`lbl-testbed_AC_asset_representation_building_classification`, the source of these rulesets, 
+in this testbed. See the `Atlantic County, NJ testbed Asset Representation <https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/asset_representation.html>`_, the source of these rulesets, 
 for additional rulesets guiding attribute assignments for other building classes and hazards.
 
 Wind Loss Attributes for Wood Buildings

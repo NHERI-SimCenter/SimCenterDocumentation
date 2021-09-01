@@ -127,7 +127,7 @@ Attribute: OccupancyClass
 The occupancy class attribute is also determined by CityBuilder using the occupancy class classifier 
 module in BRAILS. The occupancy classifier is also a convolutional neural network. This network trained 
 using 15,743 google street view images with labels derived from OpenStreetMaps and the NJDEP dataset in 
-the Atlantic County Testbed (see :ref:`lbl-testbed_AC_asset_description`).
+the `Atlantic County, NJ testbed Asset Description <https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/asset_description.html>`_.
 This classifier labels buildings as one of: RES1 (single family building), RES3 
 (multi-family building), COM1 (Commercial building). More details of the classifier can be found 
 `here <https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/occupancyClassifier.html>`_.

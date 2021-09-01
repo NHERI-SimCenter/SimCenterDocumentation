@@ -35,9 +35,6 @@ Recommended best practices are summarized as follows:
    Family Dwelling/Residence, made of Wood (stud-framed) with Slab-on-Grade foundation, shingles as its roof 
    covering, and siding as its wall covering (specific material types may be specified, e.g., asphalt shingle 
    or vinyl siding, depending on the granularity of the damage/loss models). 
-#. Flood Insurance Rate Maps (FIRMs) are used to define the FEMA-designated flood zone for the building site. 
-   In some locations, the most updated FIRMs may not be officially released, in which case preliminary FIRMs 
-   should be used as they offer the best contemporary flood hazard data.
 #. Elevation certificates may be available from local authorities and can be consulted to establish the 
    elevation of the lowest horizontal structural member for food risk assessments. Most risk assessments will 
    require the top of the bottom occupied floor, which will be defined relative to the lowest adjacent (finished) 
