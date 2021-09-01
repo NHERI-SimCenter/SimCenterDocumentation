@@ -152,8 +152,8 @@ the west bound of the Lake Charles city at the waterfront of the Prein Lake, are
 in this testbed. :numref:`fema_damage_subset` is a subset of data obtained from 
 `FEMA Public Data <http://disasters.geoplatform.gov/publicdata/National/Data/HistoricalDamageAssessmentDatabase/PublicRelease_20210622/>`_.
 :numref:`fema_damage_bim` is the building inventory for this subset. The full inventory and FEMA damage assessment 
-results can be accessed by `FEMA Damage Assessment of the 573 buildings <https://github.com/kuanshi/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/data/FEMA_DamageDatabase_LakeCharles_Sample.csv>`_ and 
-`BIM inventory of the 573 buildings <https://github.com/kuanshi/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/data/BIM_LakeCharles_FEMA.csv>`_.
+results can be accessed by `FEMA Damage Assessment of the 573 buildings <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/data/FEMA_DamageDatabase_LakeCharles_Sample.csv>`_ and 
+`BIM inventory of the 573 buildings <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/data/BIM_LakeCharles_FEMA.csv>`_.
 
 .. figure:: figure/fema_damage_webpage.png
    :name: fema_ds_webpage
