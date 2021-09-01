@@ -177,13 +177,13 @@ The methodology used for each of these attributes is now described.
                           For a random building image dataset, where images were captured using arbitrary camera 
                           orientations (also termed “in-the-wild” images), the developed floor detection model 
                           was determined to identify the number of stories with an accuracy of 86%. 
-                          :numref:`num_story_confusion`(a) provides a breakdown of this accuracy measure for different 
+                          :numref:`num_story_confusion` (a) provides a breakdown of this accuracy measure for different 
                           prediction classes (i.e., the confusion matrix of model classifications). 
                           It was also observed that if the image dataset is established such that building 
                           images are captured with minimal obstructions, the building is at the center of the 
                           image, and perspective distortions are limited (termed “cleaned” data), the model 
                           identified the number of stories at an accuracy level of 94.7%. 
-                          :numref:`num_story_confusion`(b)  shows the confusion matrix for the model predicting on the 
+                          :numref:`num_story_confusion` (b)  shows the confusion matrix for the model predicting on the 
                           “cleaned” image data. In quantifying both accuracy levels, a test set of 3,000 images 
                           randomly selected across all New Jersey counties, excluding Atlantic County, was utilized.
 
