@@ -84,11 +84,11 @@ damage and loss. This can include taking advantage of the data published by the 
 
 #. Update the heuristic rulesets used for building and attribute assignment to capture the specific regulatory 
    environment and construction practices in this region. These detailed rulesets were introduced in the testbed of 
-   :ref:`lbl-testbed_Atlantic_City` and are linked as DOIs in DesignSafe; their implementation as Python scripts are 
+   `Atlantic County, NJ <https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html>`_ and are linked as DOIs in DesignSafe; their implementation as Python scripts are 
    available in corresponding links embedded in the documentation.
 #. Expand the provided inventory beyond residential construction to encompass other diverse classes of buildings and 
    infrastructure affected by the hurricane (see :ref:`lbl-testbed_LC_asset_description`).
-#. Incorporate coastal hazards into the workflow, borrowing the approach developed in the :ref:`lbl-testbed_Atlantic_City` 
+#. Incorporate coastal hazards into the workflow, borrowing the approach developed in the `Atlantic County, NJ <https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html>`_
    and extend the inventory down into Cameron Parish and other areas significantly impacted by the storm surge.
 
 The revised damage and loss models or extensions to the heuristic rulesets can be contributed back to the SimCenter 

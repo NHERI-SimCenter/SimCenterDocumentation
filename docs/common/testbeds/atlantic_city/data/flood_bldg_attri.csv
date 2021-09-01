@@ -10,9 +10,3 @@ BasementType,Assignement of basement type for Hazus analysis,"Choices: Basement,
 OccupancyType,Assignment of Occupancy type for Hazus analysis ,"Choices: SF1XA, SF1XV, SF2XA, SF2XV, SF2BA, SF2BV, SF2SA, SF2SV, MH, APT, HOT, NURSE, RETAIL, WHOLE, SERVICE, OFFICE, BANK, HOSP, MED, REC, THEAT, GARAGE, INDH, INDL, CHEM, PROC, CONST, AGRI, RELIG, CITY, EMERG, SCHOOL"
 Duration,Assignment of storm suration for Hazus Analysis,"Short, Long"
 Wave Velocity,Definition of wave velocity in ft/s for Hazus Analysis,Floating Point Number
-,,
-,,
-,,
-,,
-,,
-,,

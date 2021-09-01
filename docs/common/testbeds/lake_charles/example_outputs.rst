@@ -20,6 +20,6 @@ reconstruction cost.
    :name: dl_and_cdf_lc
    :align: center
    :figclass: align-center
-   :figwidth: 1500
+   :width: 700
 
    Estimated regional damage states and loss ratios.

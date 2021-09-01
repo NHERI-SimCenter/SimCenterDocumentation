@@ -46,4 +46,4 @@ Users can access the the interpolated wind field inputs for the defined scenario
    * - Hazard
      - Access Point
    * - Wind Field
-     - `Interpolated Hurricane Laura wind data <https://github.com/kuanshi/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/data/IMs.zip>`_
+     - `Interpolated Hurricane Laura wind data <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/data/IMs.zip>`_

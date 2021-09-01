@@ -32,7 +32,7 @@ coupled), and the parameterized models allow for more efficient storage and comp
    :name: wind_df
    :align: center
    :figclass: align-center
-   :figwidth: 1000
+   :width: 600
 
    Fitted HAZUS wind damage functions for example building classes.
 
@@ -44,7 +44,7 @@ coupled), and the parameterized models allow for more efficient storage and comp
    :name: flood_ddc
    :align: center
    :figclass: align-center
-   :figwidth: 1000
+   :width: 600
 
    Depth-damage ratio curves for the flood loss assessment.
 
@@ -111,12 +111,14 @@ loss ratios are computed as a percent of the total building loss ratio. The perc
    :file: data/wind_sub.csv
    :header-rows: 1
    :align: center
+   :widths: 10, 10, 10, 10, 10, 10, 10, 10, 10, 10
 
 .. csv-table:: Sub-assembly flood-only loss contribution ratio table.
    :name: flood_comp
    :file: data/flood_sub.csv
    :header-rows: 1
    :align: center
+   :widths: 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10
 
 
 .. [FEMA18a]

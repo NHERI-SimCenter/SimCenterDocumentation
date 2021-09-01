@@ -10,21 +10,23 @@ testbed runs with the emphasis on verifying the estimated loss ratios by hand-ca
 Building Inventory
 ===================
 
-From the entire building inventory, 109 buildings (:numref:`sample_table`) are randomly selected.
+From the entire building inventory, 109 buildings are randomly selected
+(examples are shown in :numref:`sample_table` and the full inventory can be accessed 
+`here <https://github.com/kuanshi/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/table/veri_sample.csv>`_).
 :numref:`scatter_matrix` shows the data distributions of the built year, surface
 roughness (i.e., Terrain), roof shape, number of stories, and occupancy class.
 
-.. csv-table:: Sampled building inventory
-   :file: table/veri_sample.csv
+.. csv-table:: Example sampled building inventory
+   :file: table/veri_sample_example.csv
    :name: sample_table
-   :header-rows: 1
    :align: center
+   :widths: 5, 7, 5, 6, 9, 7, 6, 7, 7, 7, 7, 9, 7, 6, 6, 9
 
 .. figure:: figure/ScatterMatrix.png
    :name: scatter_matrix
    :align: center
    :figclass: align-center
-   :figwidth: 700
+   :width: 500
 
    Scatter matrix of sampled buildings.
 
@@ -40,6 +42,6 @@ results, which are in good agreement.
    :name: hand_calc
    :align: center
    :figclass: align-center
-   :figwidth: 400
+   :width: 300
 
    Hand-calculated results vs. simulated results.

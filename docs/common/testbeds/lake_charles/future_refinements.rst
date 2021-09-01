@@ -30,18 +30,19 @@ community is especially welcome:
    building inventory itself. 
 
 #. A number of approximations and assumptions were made in the generation of the building inventory 
-   (see :ref:`lbl-testbed_AC_asset_description`). There is considerable opportunity to expand, enrich and improve upon 
+   (see :ref:`lbl-testbed_LC_asset_description`)
+   There is considerable opportunity to expand, enrich and improve upon 
    methodologies for automated inventory generation, particularly to generate other attributes necessary 
    as the workflow advances to include other classes of construction and eventually component-level 
    damage quantification.
 
 #. The current implementation considers only wind hazards and thus will warrant extension to include flood 
-   losses similar to the approach adopted in the :ref:`bl-testbed_Atlantic_City` testbed. This will also enable a
-   more faithful comparison with the multi-hazard assessments conducted by StEER and FEMA (see :ref:`lbl-testbed_AC_example_outputs`).
+   losses similar to the approach adopted in the `Atlantic County, NJ <https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html>`_ testbed. This will also enable a
+   more faithful comparison with the multi-hazard assessments conducted by StEER and FEMA (see :ref:`lbl-testbed_LC_example_outputs`).
 
 #. The current implementation considers only wood residential construction and thus would benefit from 
    extension to other building classes in a manner similar to that exercised in the 
-   :ref:`bl-testbed_Atlantic_City` testbed.
+   `Atlantic County, NJ <https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html>`_ testbed.
 
 #. The current pre-trained BRAILS models could be extended to new regions where construction practices may differ. 
    Please refer to the discussion on the `generalization of BRAILS models <https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/understand.html>`_
