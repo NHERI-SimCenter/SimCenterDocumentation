@@ -224,24 +224,8 @@ the average of these dimensions.
    :width: 600
    
    Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.
-
-Two different approaches were explored in this testbed for populating the mean roof height for the inventory. 
-First method is built on the closed-form equation:
-
-.. math::
-
-   MeanRoofHt (ft) = NumberOfStories \times 12.0 + RoofSlope / 0.33 \times 6.0
-
-And the second method is based on the following AI technique. :numref:`mean_roof_ht_app` 
-shows the comparison between these two approaches.
-
-.. figure:: figure/MeanRoofHtApp.png
-   :name: mean_roof_ht_app
-   :align: center
-   :figclass: align-center
-   :width: 600
-
-   Comparison of MeanRoofHt between the two approaches.
+The MeanRoofHt is based on the following AI technique. :numref:`mean_roof_ht_app` 
+plots the predicted roof height versus the number of floors of the inventory.
 
 As in any single-image metrology application, extracting the building elevations from imagery requires:
 
@@ -275,6 +259,14 @@ facade segmentation dataset of 30,000 images supplemented with relevant portions
 dataset. The peak model performance was attained using the Adam optimizer at a learning rate of 0.001 
 (batch size: 4), after 40 epochs. The conversion between pixel dimensions and real-world dimensions were 
 attained by use of edge detections performed on satellite images.
+
+.. figure:: figure/MeanRoofHtApp.png
+   :name: mean_roof_ht_app
+   :align: center
+   :figclass: align-center
+   :width: 400
+
+   Predicted MeanRoofHt versus number of floors.
 
 Attribute: RoofSlope
 `````````````````````
