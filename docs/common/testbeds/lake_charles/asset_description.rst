@@ -270,21 +270,19 @@ attained by use of edge detections performed on satellite images.
 
 Attribute: RoofSlope
 `````````````````````
-First, RoofSlope is assigned based on RoofShape: if the RoofShape is "flat", a slope of 0.0 is assigned; 
-if RoofShape is "hip" or "gable", the roof slope is drawn from a uniform distribution between 1/12 and 1/3.
-
-Second, RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained 
+RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained 
 by determining the difference between the bottom plane and apex elevations of the roof as defined in the "Attribute: MeanRoofHt" 
 section. Roof run is determined as half the smaller dimension of the building, as determined from 
-the dimensions of the building footprint. :numref:`mean_slope_app` shows the comparison between these two approaches.
+the dimensions of the building footprint. :numref:`mean_slope_app` shows the comparison between the 
+predicted roof slope and mean roof height.
 
 .. figure:: figure/RoofSlopeApp.png
    :name: mean_slope_app
    :align: center
    :figclass: align-center
-   :width: 600
+   :width: 400
 
-   Comparison of RoofSlope between the two approaches.
+   Predicted RoofSlope versus mean roof height.
 
 
 Phase III: Augmentation Using Third-Party Data, Site-specific Observations, and Existing Knowledge
