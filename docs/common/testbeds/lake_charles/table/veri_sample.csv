@@ -1,4 +1,4 @@
-ID,RoofShape,FloodZone,Area,Longitude,Latitude,Terrain,DSWII,BuildingType,OccupancyClass,AvgJanTemp,Garage,RoofSlope,NumberofStories,MeanRoofHt,YearBuilt
+ID,RoofShape,FloodZone,Area,Longitude,Latitude,Terrain,DWSII,BuildingType,OccupancyClass,AvgJanTemp,Garage,RoofSlope,NumberofStories,MeanRoofHt,YearBuilt
 1,Gable,X,478,-93.24,30.14,76,133.1,Wood,RES1,Above,1,0.03,1,12.6,1991
 2,Gable,X,358,-93.24,30.14,24,133.1,Wood,RES1,Above,1,0.07,1,13.3,1992
 3,Gable,X,292,-93.24,30.13,76,133.3,Wood,RES1,Above,1,0.31,2,29.6,1987

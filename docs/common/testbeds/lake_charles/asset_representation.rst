@@ -57,7 +57,7 @@ later in :numref:`addinfo_ruleset`.
      - Ruleset Definition Table
      - Python script
    * - Building Class Rulesets - Wind
-     - `HAZUS Building Class Rulesets - Wind.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingClassRulesets/HAZUS%20Building%20Class%20Rulesets%20-%20Wind.pdf>`_
+     - `HAZUS Building Class Rulesets - Wind.pdf <https://doi.org/10.17603/ds2-jpj2-zx14>`_
      - `WindClassRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindClassRulesets.py>`_
 
 Building Attributes
@@ -95,7 +95,7 @@ as part of the community’s use and adaptation of this workflow in its research
 
 Note that rulesets for assigning wind loss attributes call upon two meta-variables relevant to wind losses 
 for any building: “Hazard Prone Region” and “Wind Borne Debris,” which are assigned based the design wind 
-speed at the asset location (Building Inventory field “DSWII”) and the flood zone (building inventory field 
+speed at the asset location (Building Inventory field “DWSII”) and the flood zone (building inventory field 
 **FloodZone**). These rules used to assign these meta-variables are provided in 
 :numref:`addinfo_ruleset_metavar`. Also note that the roof shape (building inventory field **RoofShape**), 
 derived from aerial imagery, and terrain roughness (building inventory field **Terrain**), derived from 
@@ -111,7 +111,7 @@ assigned in the `Atlantic County, NJ testbed Asset Representation <https://nheri
      - Ruleset Definition Table
      - Python script
    * - Attribute Assignment - Wind (Meta-Variable)
-     - `Hazus Building Attribute Rulesets - Wind - Meta-Variables.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20Meta-Variables.pdf>`_
+     - `Hazus Building Attribute Rulesets - Wind - Meta-Variables.pdf <https://doi.org/10.17603/ds2-jpj2-zx14>`_
      - `WindMetaVarRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindMetaVarRulesets.py>`_
 
 The following sections summarize the rulesets used for wind loss  attribute assignments for WSF and WMUH 
@@ -155,10 +155,10 @@ cross-referenced in :numref:`addinfo_ruleset_wood`.
      - Ruleset Definition Table
      - Python script
    * - HAZUS Building Attribute Rulesets - Wind (WSF1-2)
-     - `Hazus Building Attribute Rulesets - Wind - WSF1-2.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20WSF1-2.pdf>`_
+     - `Hazus Building Attribute Rulesets - Wind - WSF1-2.pdf <https://doi.org/10.17603/ds2-jpj2-zx14>`_
      - `WindWSFRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindWSFRulesets.py>`_
    * - HAZUS Building Attribute Rulesets - Wind (WMUH1-3)
-     - `Hazus Building Attribute Rulesets - Wind - WMUH1-3.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20WMUH1-3.pdf>`_
+     - `Hazus Building Attribute Rulesets - Wind - WMUH1-3.pdf <https://doi.org/10.17603/ds2-jpj2-zx14>`_
      - `WindWMUHRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindWMUHRulesets.py>`_
 
 Taking the attribute Second Water Resistance (SWR) as an example, the SWR attribute is assigned by 
