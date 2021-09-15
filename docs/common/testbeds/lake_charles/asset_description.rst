@@ -34,7 +34,7 @@ Phase II: Inventory Generation
 
 This section describes how the large-scale building inventory was constructed for Lake Charles using 
 a phased approach that used machine learning, computer vision algorithm and data distributions to 
-generate all attributes (attributes in bold letters in :numref:`tab-bldg_inv_data_model_lc`) required for 
+generate all attributes required for 
 the corresponding loss assessment. It is emphasized that the intent is to demonstrate how an 
 inventory could be constructed and not to address potential errors, omissions or inaccuracies in 
 the source data, i.e., source data are assumed to be accurate and no additional quality assurance 
@@ -430,7 +430,7 @@ Populated Inventories
 
 Executing this three-phase process resulted in the assignment of all required attributes at the asset description 
 stage of the workflow for the Lake Charles building inventory, and :numref:`bldg_inv_lc` shows example data samples. 
-The entire inventory can be downloaded `here <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/data/BIM_LakeCharles_Full.zip>`_.
+The entire inventory can be accessed `here <https://doi.org/10.17603/ds2-jpj2-zx14>`_.
 
 .. csv-table:: Illustrative sample of building in Lake Charles Inventory.
    :name: bldg_inv_lc
