@@ -52,18 +52,19 @@ probability of exceeding DS-2 and DS-3.
 
    CDFs of expected DS and probability of exceeding DS-2 and DS-3.
 
-In order to investigate the cause and rationalize the observed influence from year built, a parametric study is conducted for 
+In order to investigate the cause and rationalize the observed influence of year built, a parametric study is conducted for 
 a single-family house (ID = 2 in :numref:`bldg_inv_lc`). The original building record is expanded to 51 different buildings 
 by varying the year built only (i.e., from 1970 to 2020). For each building, expected loss ratio is estimated with 50 
 realizations to consider the uncertainty from the random sampling in the rulesets. The black curves in :numref:`year_built_infl` 
 plot the individual realizations of expected loss ratio against different year built values. The red curve shows the mean value 
 based on the 50 realizations at each year built. It is clear to see that the building 
-performance gets improved following major code revisions. For example, labeled by the yellow dashed line at 2000, the IRC 2000-2009 
-requires 8d nails (with spacing 6"/6") for sheating thickness of 1" (as default in this testbed) for basic wind speeds greater than 
-100 mph which enhances the building performance (reducing the loss ratio); while this ultimate wind speed is lifted to 130 mph (just 
+performance improves following major code revisions. For example, labeled by the yellow dashed line at 2000, the IRC 2000-2009 
+requires 8d nails (with spacing 6"/6") for sheathing thickness of 1" (as default in this testbed) for basic wind speeds greater than 
+100 mph which enhances the building performance (reducing the loss ratio); while this ultimate wind speed is increased to 130 mph (just 
 above the DWSII of the building) after 2016 accepting the use of spacing to 6"/12" which in turns slightly degrades the 
 building performance. Similarly, the other year built divisions also reflected by the rulesets would influence the damage and loss 
-assessments. In general, we see improved building performance (low damage states) as code revisions by years (:numref:`year_built_infl_bin`).
+assessments. In general, we see improved building performance (low damage states) as code revisions by years (:numref:`year_built_infl_bin`) 
+and the particular importance of nail spacing requirements for sheathing in reducing wind-induced losses for this class of building.
 
 .. figure:: figure/WSF1_LossRatio_HazusClass.png
    :name: year_built_infl

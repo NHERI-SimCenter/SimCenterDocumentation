@@ -37,8 +37,9 @@ Since this documentation will continue to evolve when features are added and as 
 associated input files, results, and rulesets will be updated over time. The applications are hosted in NHERI-SimCenter 
 DesignSafe and the versioned source codes are archived via Zenodo. Other related files are maintained in two types of repositories:
 
-#. The DesignSafe Project PRJ-3207 contains inputs (inventories, hazard data) and outputs (results) along with PDFs that 
-   provide more details of the inventory data model as well as the basis for the rulesets used to assign various attributes.
+#. The DesignSafe Project PRJ-3207 contains inputs (inventories, rulesets, and hazard data) and outputs (results) along with PDFs that 
+   provide more details of the inventory data model as well as the basis for the rulesets used to assign various attributes. This will 
+   enable ongoing refinement and extension of these products by the SimCenter and its users over time.
 #. GitHub is used as the home for all software, scripts, and applications engaged by the testbed, including Python implementations 
    of the rulesets. A dedicated GitHub repository has been created for the rulesets used in this testbed. See :numref:`software_version_LC`.
 
@@ -87,7 +88,7 @@ of this application and associated SimCenter software as listed in :numref:`soft
           :target: https://doi.org/10.5281/zenodo.5496056
    * - DesignSafe Project PRJ-3207
      - v1.0
-     - `DesignSafe Depot <https://doi.org/10.17603/ds2-jpj2-zx14>`_
+     - `Data Depot <https://doi.org/10.17603/ds2-jpj2-zx14>`_
 
 .. list-table:: Versions of AI application (`BRAILS <https://doi.org/10.5281/zenodo.4570554>`_) and models Used in the Current Version of Testbed
    :name: brails_version_LC
