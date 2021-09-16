@@ -11,8 +11,8 @@ R2D Interface
 ---------------
 
 One approach to run the testbed simulation is via the 
-`R2D application <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt>`_
-After successfully download and launch, the major steps for setting up the run are listed as follows:
+`R2D application <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt>`_.
+After successfully downloading and launching, the major steps for setting up the run are listed as follows:
 
 #. Setting the **Units** in the **GI** panel as shown in :numref:`r2d_gi` and checking interested output files.
 
