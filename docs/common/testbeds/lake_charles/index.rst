@@ -75,13 +75,9 @@ of this application and associated SimCenter software as listed in :numref:`soft
      - `v1.1.0 <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt>`_
      - .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.5033626.svg
           :target: https://doi.org/10.5281/zenodo.5033626
-   * - SimCenterBackendApplications
-     - `v2.3.0 <https://github.com/NHERI-SimCenter/SimCenterBackendApplications/releases/tag/V2.3.0>`_
+   * - rWhale
+     - `v2.3.0 <https://www.designsafe-ci.org/rw/workspace/#!/rWhale-stampede-2.4.0u3>`_
      - `Github Release <https://github.com/NHERI-SimCenter/SimCenterBackendApplications/releases/tag/V2.3.0>`_
-   * - pelicun
-     - `v2.5 <https://github.com/NHERI-SimCenter/pelicun/releases/tag/v2.5>`_
-     - .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.4408588.svg
-          :target: https://doi.org/10.5281/zenodo.4408588
    * - AssetRepresentationRulesets
      - `v1.0.0 <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/releases/tag/v1.0.0>`_
      - .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.5496056.svg
@@ -122,7 +118,7 @@ Such individuals may not wish to generate their own inventories, but require som
 interpret results. This documentation will enhance their understanding of the various assumptions made in generating 
 these inventories and assigning the attributes required for the adopted loss models.
 
-**Case 2** Users who wish to use this testbed as a validation event can compare the damage/loss estimates from this 
+**Case 2**: Users who wish to use this testbed as a validation event can compare the damage/loss estimates from this 
 workflow to direct observations in the field for the purposes of improving/refining the underlying descriptions of 
 damage and loss. This can include taking advantage of the data published by the Structural Extreme Event Reconnaissance 
 (StEER) Network, as well as FEMA. Those doing so are advised to:

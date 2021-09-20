@@ -10,7 +10,8 @@ This section discusses damage and loss results from three comparative and valida
    (NSI and Zillow). As discussed in :ref:`lbl-testbed_LC_asset_description`, the Zillow-based model tends to predict 
    higher year predictions (more recent constructions) than the NSI-based model, especially for the southern edge on the 
    city. This is reflected by the fact that Zillow-based damage and loss in that region is lower than the NSI-based results.
-   A parametric study is also conducted to further illustrate and rationalize the influence from year built in the testbed.
+   Following the parametric study in :ref:`lbl-testbed_LC_verification_rulesets`, 
+   the observed trend in damage and loss with respect to year built is discussed.
 #. The :ref:`lbl-testbed_LC_validation_steer` contrasts the testbeds damage estimates versus the visually-assigned damage 
    states from StEER members and explores influence of uncertainty in building attributes and peak wind speed. Several notable 
    trends between building damage and building attribute type will be discussed and reasoned.
@@ -34,7 +35,12 @@ contrast map that depicts the difference between the damage state projected by S
 by Zillow. Note that the difference is not prominent in downtown Lake Charles, although divergence is noted 
 southwest of the city where the Zillow set predicts relatively lower damage states. Compared in 
 :numref:`PDS_cdf` are the the CDF distributions of expected damage states (NSI vs. Zillow) as well as the 
-probability of exceeding DS-2 and DS-3.  
+probability of exceeding DS-2 and DS-3.  :numref:`year_built_infl_bin` plots the cumulative distributions of
+expected damage states for four different year built bins: Pre 1960, 1960-1979, 1980-1999, and Post 2000.  
+In general, we see improved building performance (low damage states) as code revisions by years 
+as recalling the parametric study in :ref:`lbl-testbed_LC_verification_rulesets`, the dominate building type is 
+WSF1 (:numref:`fig-inventoryPineChart`) whose wind-induced loss is particularly sensitive to nail spacing requirements
+varied by years.
 
 .. figure:: figure/DS_Zillow_Comp.png
    :name: ds_zillow_comp
@@ -52,28 +58,6 @@ probability of exceeding DS-2 and DS-3.
 
    CDFs of expected DS and probability of exceeding DS-2 and DS-3.
 
-In order to investigate the cause and rationalize the observed influence of year built, a parametric study is conducted for 
-a single-family house (ID = 2 in :numref:`bldg_inv_lc`). The original building record is expanded to 51 different buildings 
-by varying the year built only (i.e., from 1970 to 2020). For each building, expected loss ratio is estimated with 50 
-realizations to consider the uncertainty from the random sampling in the rulesets. The black curves in :numref:`year_built_infl` 
-plot the individual realizations of expected loss ratio against different year built values. The red curve shows the mean value 
-based on the 50 realizations at each year built. It is clear to see that the building 
-performance improves following major code revisions. For example, labeled by the yellow dashed line at 2000, the IRC 2000-2009 
-requires 8d nails (with spacing 6"/6") for sheathing thickness of 1" (as default in this testbed) for basic wind speeds greater than 
-100 mph which enhances the building performance (reducing the loss ratio); while this ultimate wind speed is increased to 130 mph (just 
-above the DWSII of the building) after 2016 accepting the use of spacing to 6"/12" which in turns slightly degrades the 
-building performance. Similarly, the other year built divisions also reflected by the rulesets would influence the damage and loss 
-assessments. In general, we see improved building performance (low damage states) as code revisions by years (:numref:`year_built_infl_bin`) 
-and the particular importance of nail spacing requirements for sheathing in reducing wind-induced losses for this class of building.
-
-.. figure:: figure/WSF1_LossRatio_HazusClass.png
-   :name: year_built_infl
-   :align: center
-   :figclass: align-center
-   :width: 700
-
-   Expected loss ratio vs. year built (WSF1, Gable Roof, Roof Slope=0.21)
-
 .. figure:: figure/ExpectedDS_yearbin_CDFs.png
    :name: year_built_infl_bin
    :align: center
@@ -81,7 +65,6 @@ and the particular importance of nail spacing requirements for sheathing in redu
    :width: 400
 
    CDFs of expected DS by year bins (NSI results).
-
 
 
 .. _lbl-testbed_LC_validation_steer:
