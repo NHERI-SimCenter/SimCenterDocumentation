@@ -382,7 +382,7 @@ provided by the pandas module of python. The locations of these random buildings
 We downloaded the street view images for each building from Google Maps and manually classified the images 
 into the following attached garage (AG) features: None, AG-open, AG-standard, Carport. We didn’t find any detached garages in 
 the 100 samples. Examples of different types can be found in :numref:`garage_eg`. 
-All street view images can be found `here <https://github.com/kuanshi/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/table/garage100_lakecharles.csv>`_ 
+All street view images can be found `here <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/table/garage100_lakecharles.csv>`_ 
 Note that AG-open assumes that the garage shares the same primary roof as the home, 
 whereas a carport has its own roof system.
 Detailed statistics can be found in :numref:`tab-garage_statistics`. 
@@ -431,7 +431,7 @@ Populated Inventories
 
 Executing this three-phase process resulted in the assignment of all required attributes at the asset description 
 stage of the workflow for the Lake Charles building inventory, and :numref:`bldg_inv_lc` shows example data samples. 
-The entire inventory can be downloaded `here <https://github.com/kuanshi/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/data/BIM_LakeCharles_Full.zip>`_.
+The entire inventory can be downloaded `here <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/data/BIM_LakeCharles_Full.zip>`_.
 
 .. csv-table:: Illustrative sample of building in Lake Charles Inventory.
    :name: bldg_inv_lc

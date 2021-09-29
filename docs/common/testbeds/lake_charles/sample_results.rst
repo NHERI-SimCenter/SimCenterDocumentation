@@ -12,7 +12,7 @@ Building Inventory
 
 From the entire building inventory, 109 buildings are randomly selected
 (examples are shown in :numref:`sample_table` and the full inventory can be accessed 
-`here <https://github.com/kuanshi/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/table/veri_sample.csv>`_).
+`here <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/table/veri_sample.csv>`_).
 :numref:`scatter_matrix` shows the data distributions of the built year, surface
 roughness (i.e., Terrain), roof shape, number of stories, and occupancy class.
 
