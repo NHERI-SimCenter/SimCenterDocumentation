@@ -12,19 +12,20 @@ to the HAZUS conventions for classifying buildings and organizing damage and los
 according to attributes associated with those building classes.
 
 The following discussion will reference a number of rulesets initially developed for the 
-`Atlantic County, NJ <https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html>`_ testbed to enable various assignments of these HAZUS building classes 
-and corresponding attributes.Details of these rulesets are available to users in one of two forms: 
+`Atlantic County, NJ <https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html>`_ 
+testbed to enable various assignments of these HAZUS building classes 
+and corresponding attributes. Details of these rulesets are available to users in one of two forms: 
 
-1. Ruleset definition tables (PDFs) curated in DesignSafe that include additional documentation 
-   justifying the proposed rule, with provenance information for any sources engaged in that 
-   rule’s development.
-2. Scripts (in Python) curated in GitHub that implement the ruleset’s logic for this testbed.
+1. Ruleset definition tables (PDFs) curated in DesignSafe that include additional documentation justifying the proposed rule, with provenance information for any sources engaged in that rule’s development.
+2. Scripts (in Python) that implement the ruleset’s logic for this testbed. Users wishing to execute the testbed in its current form are recommended to download the Python rulesets from DesignSafe. Users wishing to adapt the rulesets to potentially change the way attributes are assigned to buildings, are encouraged to access the Python implementation of the rulesets in GitHub.
 
-Each section provides a table linking the relevant PDFs and Scripts. Note that 
-all of the rulesets introduced herein are tiered, initiating by assigning all assets 
-a default value for its building classification or a given attribute based on the primary 
-rule. This ensures that every asset receives a HAZUS building class and related attribute 
-assignments, regardless of data sparsity. 
+Both of these repositories also include additional documentation (PDFs) justifying the proposed rule, 
+with provenance information for any sources engaged in that rule’s development.
+Note that all of the rulesets introduced herein are tiered, initiating by assigning all assets a 
+default value for its building classification or a given attribute based on the primary rule. 
+This ensures that every asset receives a HAZUS building class and related attribute assignments, 
+regardless of data sparsity. The sections below detail the ruleset development, 
+closing with a table linking the relevant PDFs from DesignSafe and Python scripts from GitHub.
 
 .. _lbl-testbed_LC_asset_representation_building_classification:
 
