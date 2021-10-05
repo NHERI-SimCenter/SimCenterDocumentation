@@ -54,3 +54,19 @@ Version 2.2.5
     #. Resolving load configuration json file for PEER NGA Records
     #. Relaxing the tolerance in the example eeuq-0004
     #. Correcting the input ground motion file in the example eeuq-0002
+    #. Fixing the bug of exporting ground motion names in the "Save Data"
+
+
+Version 2.2.6
+----------------
+
+**Release plan**: Dec. 2021
+
+*Planned features*
+
+#. SAM: Invoking the iterative seismic design and pushover analysis in AutoSDA as a pre-processing step
+#. RES: Retrieving the periods.out file in AutoSDA runs from DesignSafe from EE-UQ interface
+#. EVT: Invoking OpenQuake to generate scenario-based or classical PSHA ground motion spectral targets
+#. ...\*
+
+\*: Users are welcome to contact us on `forum <http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0>`_ for new feature requests.
