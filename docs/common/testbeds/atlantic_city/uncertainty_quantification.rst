@@ -43,7 +43,7 @@ uncertainty). Both these two uncertainty sources can be taken into account for i
 
 For the epistemic uncertainty, multiple scenarios can be simulated using the synthetic simulation methods as 
 introduced in :ref:`lbl-testbed_AC_hazard_characterization_synthetic`. For instance, the linear analytical simulation 
-for the boundary layer winds ([Snaiki17a_], [Snaiki17b_]) can be performed with randomly sampled storm properties 
+for the boundary layer winds ([Snaiki17a]_, [Snaiki17b]_) can be performed with randomly sampled storm properties 
 (e.g., central pressure) to generate multiple realizations of peak wind speed that are possible at the given site. 
 These multiple realizations are then randomly sampled and used as the EDP in simulating the damage and loss 
 assessment (more details in the next section).
@@ -60,7 +60,7 @@ two uncertainty sources are considered simultaneously.
    :name: nearestneighbors
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 700
 
    Nearest-neighbors method for sampling site hazard uncertainty.
 

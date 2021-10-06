@@ -11,7 +11,7 @@ scenarios (:numref:`hurricane_cat`) are shown in :numref:`dl_c2` to :numref:`dl_
    :name: dl_c2
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 700
 
    Estimated regional loss maps for the **Category 2** hurricane.
 
@@ -19,7 +19,7 @@ scenarios (:numref:`hurricane_cat`) are shown in :numref:`dl_c2` to :numref:`dl_
    :name: dl_c3
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 700
 
    Estimated regional loss maps for the **Category 3** hurricane.
 
@@ -27,7 +27,7 @@ scenarios (:numref:`hurricane_cat`) are shown in :numref:`dl_c2` to :numref:`dl_
    :name: dl_c4
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 700
 
    Estimated regional loss maps for the **Category 4** hurricane.
 
@@ -35,7 +35,7 @@ scenarios (:numref:`hurricane_cat`) are shown in :numref:`dl_c2` to :numref:`dl_
    :name: dl_c5
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 700
 
    Estimated regional loss maps for the **Category 5** hurricane.
 
@@ -46,7 +46,7 @@ summarized in :numref:`cl_c2` to :numref:`cl_c5`
    :name: cl_c2
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 800
 
    City-wise average expected loss ratios (**Category 2** hurricane).
 
@@ -54,7 +54,7 @@ summarized in :numref:`cl_c2` to :numref:`cl_c5`
    :name: cl_c3
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 800
 
    City-wise average expected loss ratios (**Category 3** hurricane).
 
@@ -62,7 +62,7 @@ summarized in :numref:`cl_c2` to :numref:`cl_c5`
    :name: cl_c4
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 800
 
    City-wise average expected loss ratios (**Category 4** hurricane).
 
@@ -70,7 +70,7 @@ summarized in :numref:`cl_c2` to :numref:`cl_c5`
    :name: cl_c5
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 800
 
    City-wise average expected loss ratios (**Category 5** hurricane).
 
@@ -84,7 +84,7 @@ where the post-2000 buildings are found to behave much better than buildings in 
    :name: wl_atlantic
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 800
 
    Average expected wind loss ratios (Atlantic City).
 
@@ -92,7 +92,7 @@ where the post-2000 buildings are found to behave much better than buildings in 
    :name: wl_brigantine
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 800
 
    Average expected wind loss ratios (Brigantine).
 
@@ -100,7 +100,7 @@ where the post-2000 buildings are found to behave much better than buildings in 
    :name: wl_galloway
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 800
 
    Average expected wind loss ratios (Galloway).
 
@@ -108,7 +108,7 @@ where the post-2000 buildings are found to behave much better than buildings in 
    :name: wl_margate
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 800
 
    Average expected wind loss ratios (Margate City).
 
@@ -116,7 +116,7 @@ where the post-2000 buildings are found to behave much better than buildings in 
    :name: wl_ventor
    :align: center
    :figclass: align-center
-   :figwidth: 800
+   :width: 800
 
    Average expected wind loss ratios (Ventor City).
 
@@ -134,13 +134,13 @@ can be accessed (:numref:`example_results`).
      - Location
    * - Scaled Category 2
      - Flood-Exposed Inventory, Exploration Inventory
-     - :download:`Category2.zip <data/Category2.zip>`
+     - `Category2.zip <https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/testbeds/atlantic_city/data/Category2.zip>`_
    * - Scaled Category 3
      - Flood-Exposed Inventory, Exploration Inventory
-     - :download:`Category2.zip <data/Category3.zip>`
+     - `Category2.zip <https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/testbeds/atlantic_city/data/Category3.zip>`_
    * - Scaled Category 4
      - Flood-Exposed Inventory, Exploration Inventory
-     - :download:`Category2.zip <data/Category4.zip>`
+     - `Category2.zip <https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/testbeds/atlantic_city/data/Category4.zip>`_
    * - Category 5
      - Flood-Exposed Inventory, Exploration Inventory
-     - :download:`Category2.zip <data/Category5.zip>`
+     - `Category2.zip <https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/testbeds/atlantic_city/data/Category5.zip>`_

@@ -39,6 +39,7 @@ e.g., a number of attributes needed for loss estimation are populated during the
    :file: data/building_inventory_data_model_new.csv
    :header-rows: 1
    :align: center
+   :widths: 15, 60, 25
 
 Phase II: Footprint Selection
 ===============================
@@ -84,6 +85,7 @@ Estimator (SDE) Tool (:numref:`tab-sdeAttri`).
    :file: data/udf_attributes.csv
    :header-rows: 1
    :align: center
+   :widths: 15, 85
 
 .. _tab-sdeAttri:
 
@@ -113,14 +115,14 @@ vulnerable attribute option). These initial assignments were then updated if add
      - Ruleset Definition Table
      - Python script
    * - Building Type Rulesets
-     - `Building Type Rulesets.pdf <https://berkeley.box.com/s/hvsfx308svz7mi8g1sccnchjslsm58b8>`_
-     - :download:`BuildingTypeRulesets <data/BuildingTypeRulesets.py>`
+     - `Building Type Rulesets.pdf <https://github.com/kuanshi/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/MODIVTransformations/Building%20Type%20Rulesets.pdf>`_
+     - To be released
    * - Foundation Type Rulesets
-     - `Foundation Type Rulesets.pdf <https://berkeley.box.com/s/vz2yxx2bu5uphf9xqbxm9ajdx664ndr5>`_
-     - :download:`FoundationTypeRulesets <data/FoundationTypeRulesets.py>`
+     - `Foundation Type Rulesets.pdf <https://github.com/kuanshi/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/MODIVTransformations/Foundation%20Type%20Rulesets.pdf>`_
+     - To be released
    * - Occupancy Type Rulesets
-     - `Occupancy Type Rulesets.pdf <https://berkeley.box.com/s/p50txdj9oor7399iesc5lawj7cykj1jb>`_
-     - :download:`OccupancyTypeRulesets <data/OccupancyTypeRulesets.py>`
+     - `Occupancy Type Rulesets.pdf <https://github.com/kuanshi/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/MODIVTransformations/Occupancy%20Class%20Rulesets.pdf>`_
+     - To be released
 
 Some attributes in the Building Inventory Data Model were not encompassed by NJDEP Basic, UDF or SDE fields, thus 
 remaining attributes in both the Flood-Exposed and Atlantic County Inventories were assigned using data 
@@ -162,7 +164,7 @@ The methodology used for each of these attributes is now described.
                               :name: num_stories_detection
                               :align: center
                               :figclass: align-center
-                              :figwidth: 1000
+                              :width: 600
 
                               Sample floor detections of the floor detection model (each detection is indicated by a green bounding box). The percentage value shown on the top right corner of a bounding box indicates model confidence level associated with that prediction.
 
@@ -175,13 +177,13 @@ The methodology used for each of these attributes is now described.
                           For a random building image dataset, where images were captured using arbitrary camera 
                           orientations (also termed “in-the-wild” images), the developed floor detection model 
                           was determined to identify the number of stories with an accuracy of 86%. 
-                          :numref:`num_story_confusion`(a) provides a breakdown of this accuracy measure for different 
+                          :numref:`num_story_confusion` (a) provides a breakdown of this accuracy measure for different 
                           prediction classes (i.e., the confusion matrix of model classifications). 
                           It was also observed that if the image dataset is established such that building 
                           images are captured with minimal obstructions, the building is at the center of the 
                           image, and perspective distortions are limited (termed “cleaned” data), the model 
                           identified the number of stories at an accuracy level of 94.7%. 
-                          :numref:`num_story_confusion`(b)  shows the confusion matrix for the model predicting on the 
+                          :numref:`num_story_confusion` (b)  shows the confusion matrix for the model predicting on the 
                           “cleaned” image data. In quantifying both accuracy levels, a test set of 3,000 images 
                           randomly selected across all New Jersey counties, excluding Atlantic County, was utilized.
 
@@ -189,7 +191,7 @@ The methodology used for each of these attributes is now described.
                               :name: num_story_confusion
                               :align: center
                               :figclass: align-center
-                              :figwidth: 1000
+                              :width: 600
 
                               Confusion matrices for the number of stories predictor. The maxtrix one the left shows
                               the model's prediction accuracy when tested on "in-the-wild" images. The matrix on the
@@ -208,7 +210,7 @@ The methodology used for each of these attributes is now described.
                               :name: building_elevation
                               :align: center
                               :figclass: align-center
-                              :figwidth: 1000
+                              :width: 600
 
                               Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.
 
@@ -263,7 +265,7 @@ The methodology used for each of these attributes is now described.
                               :name: roof_shape
                               :align: center
                               :figclass: align-center
-                              :figwidth: 800
+                              :width: 500
 
                               Roof type classification by BRAILS ([Wang19]_).
 
@@ -316,25 +318,33 @@ stage of the workflow for both the **Atlantic County Inventory** and the **Flood
 :numref:`bldg_inv_ac` and :numref:`bldg_inv_fei` provide respective examples of each of these inventories. 
 The Flood-Exposed Inventory then was used to extract out the subset of buildings defining the  
 **Exploration Inventory** (see example in :numref:`bldg_inv_ei`). The full inventories can be downloaded 
-:download:`here <data/full_inventories.zip>`.
+`here <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/atlantic_city/data/full_inventories.zip>`_.
 
 .. csv-table:: Illustrative sample of building in Atlantic Inventory.
    :name: bldg_inv_ac
    :file: data/example_inventory_ac.csv
-   :header-rows: 1
    :align: center
+   :widths: 8, 8, 10, 10, 8, 10, 10, 10, 10
+
+.. raw:: latex
+
+    \begin{landscape}
+    \begin{tiny}
 
 .. csv-table:: Illustrative sample of building in Flood-Exposed Inventory.
    :name: bldg_inv_fei
    :file: data/example_inventory.csv
-   :header-rows: 1
    :align: center
 
 .. csv-table:: Illustrative sample of building in Exploration Inventory.
    :name: bldg_inv_ei
    :file: data/example_inventory_exploration.csv
-   :header-rows: 1
    :align: center
+
+.. raw:: latex
+
+    \end{tiny}
+    \end{landscape}
 
 .. list-table:: Summary of the three building inventories.
    :name: access_inventories
@@ -346,15 +356,15 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
      - Number of Assets
      - Typical Run Time
    * - Atlantic County Inventory
-     - :download:`Atlantic County Inventory <data/AtlanticCountyInventory.csv>`
+     - `Atlantic County Inventory <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/atlantic_city/data/AtlanticCountyInventory.csv>`_
      - 100,721
-     - ~ 1,500 CPU-Hour* (please see more details in **Computational Resources Requirements**)
+     - ~ 1,500 CPU-Hour
    * - Flood-Exposed Inventory
-     - :download:`Flood-Exposed Inventory <data/FloodExposedInventory.csv>`
+     - `Flood-Exposed Inventory <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/atlantic_city/data/FloodExposedInventory.csv>`_
      - 32,828
      - ~ 440 CPU-Hour
    * - Exploration Inventory
-     - :download:`Exploration Inventory <data/ExplorationInventory.csv>`
+     - `Exploration Inventory <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/atlantic_city/data/ExplorationInventory.csv>`_
      - 1,000
      - ~ 12 CPU-Hour
 
