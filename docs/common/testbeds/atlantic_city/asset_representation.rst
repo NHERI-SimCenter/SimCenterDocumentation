@@ -49,6 +49,7 @@ building classes in HAZUS, these classes are not used in the current implementat
    :file: data/bldg_class_new.csv
    :header-rows: 1
    :align: center
+   :widths: 40, 20, 40
 
 For flood losses, HAZUS groups buildings into one of 32 classifications based on the building use 
 and other features. A separate ruleset was developed to assign buildings into one of these classes 
@@ -83,13 +84,13 @@ rulesets (PDFs and Python scripts) are cross-referenced in :numref:`addinfo_rule
      - Ruleset Definition Table
      - Python script
    * - Building Class Rulesets - Wind
-     - `HAZUS Building Class Rulesets - Wind.pdf <https://berkeley.box.com/s/602imclyqm1ohvfqliqro0bzq4v0wdj3>`_
-     - :download:`WindClassRulesets <data/WindClassRulesets.py>`
+     - `HAZUS Building Class Rulesets - Wind.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingClassRulesets/HAZUS%20Building%20Class%20Rulesets%20-%20Wind.pdf>`_
+     - `WindClassRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindClassRulesets.py>`_
    * - Building Class Rulesets - Flood
-     - `HAZUS Building Class Rulesets - Flood.pdf <https://berkeley.box.com/s/6gqyu66b9d74ctto6x1k74i95q2wksrb>`_
-     - :download:`FloodClassRulesets <data/FloodClassRulesets.py>`
+     - `HAZUS Building Class Rulesets - Flood.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingClassRulesets/HAZUS%20Building%20Class%20Rulesets%20-%20Flood.pdf>`_
+     - `FloodClassRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/FloodClassRulesets.py>`_
    * - Building Class Rulesets - Wave
-     - `HAZUS Building Class Rulesets - Wave.pdf <https://berkeley.box.com/s/sr8p05yp230qwcyodeh1w39wxw6qurp6>`_
+     - `HAZUS Building Class Rulesets - Wave.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingClassRulesets/HAZUS%20Building%20Class%20Rulesets%20-%20Wave.pdf>`_
      - To be released.
 
 Building Attributes
@@ -119,12 +120,14 @@ and :numref:`flood_bldg_attri` list the attributes for the wind and flood loss a
    :file: data/wind_bldg_attri.csv
    :header-rows: 1
    :align: center
+   :widths: 10, 70, 20
 
 .. csv-table:: Building attributes for flood loss assessment.
    :name: flood_bldg_attri
    :file: data/flood_bldg_attri.csv
    :header-rows: 1
    :align: center
+   :widths: 15, 20, 65
 
 Note that rulesets for assigning wind loss attributes call upon two meta-variables relevant to wind losses 
 for any building: “Hazard Prone Region” and “Wind Borne Debris,” which are assigned based the design wind 
@@ -144,8 +147,8 @@ assigned in the :ref:`lbl-testbed_AC_asset_description`, they are not discussed 
      - Ruleset Definition Table
      - Python script
    * - Attribute Assignment - Wind (Meta-Variable)
-     - `Hazus Building Attribute Rulesets - Wind - Meta-Variables.pdf <https://berkeley.box.com/s/l4vdnfoakq8xsv4rmj64x4m2kxqritu7>`_
-     - :download:`WindMetaVarRulesets <data/WindMetaVarRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Wind - Meta-Variables.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20Meta-Variables.pdf>`_
+     - `WindMetaVarRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/scripts/WindMetaVarRulesets.py>`_
 
 Finally, all of the rulesets used to assign attributes include a default value that can be updated based 
 on available data, ensuring that each asset receives all the attribute assignments necessary to identify 
@@ -189,11 +192,11 @@ are cross-referenced in :numref:`addinfo_ruleset_wood`.
      - Ruleset Definition Table
      - Python script
    * - HAZUS Building Attribute Rulesets - Wind (WSF1-2)
-     - `Hazus Building Attribute Rulesets - Wind - WSF1-2.pdf <https://berkeley.box.com/s/nod73v7shtj9x7ox7xw7b7nvmrs3e8oc>`_
-     - :download:`WindWSFRulesets <data/WindWSFRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Wind - WSF1-2.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20WSF1-2.pdf>`_
+     - `WindWSFRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindWSFRulesets.py>`_
    * - HAZUS Building Attribute Rulesets - Wind (WMUH1-3)
-     - `Hazus Building Attribute Rulesets - Wind - WMUH1-3.pdf <https://berkeley.box.com/s/4v7405rit2u475daorayy9w6ssuezbz9>`_
-     - :download:`WindWMUHRulesets <data/WindWMUHRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Wind - WMUH1-3.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20WMUH1-3.pdf>`_
+     - `WindWMUHRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindWMUHRulesets.py>`_
 
 Taking the attribute Second Water Resistance (SWR) as an example, the SWR attribute is assigned by 
 a series of time-evolving rules calling upon four fields in the building inventory: year built, 
@@ -207,8 +210,8 @@ adopted this mitigation practice.
 .. csv-table:: Ruleset for determining the Second Water Resistance attribute for WSF homes.
    :name: swr_attri
    :file: data/example_wood_ruleset.csv
-   :header-rows: 1
    :align: center
+   :widths: 10, 20, 60, 10
 
 
 Wind Loss Attributes for Masonry Buildings
@@ -279,26 +282,26 @@ cross-referenced in :numref:`addinfo_ruleset_masonry`.
      - Ruleset Definition Table
      - Python script
    * - HAZUS Building Attribute Rulesets - Wind (MSF1-2)
-     - `Hazus Building Attribute Rulesets - Wind - MSF1-2.pdf <https://berkeley.box.com/s/8wayd687fxexa5am1zcig4d8lm37j3yq>`_
-     - :download:`WindMSFRulesets <data/WindMSFRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Wind - MSF1-2.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MSF1-2.pdf>`_
+     - `WindMSFRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindMSFRulesets.py>`_
    * - HAZUS Building Attribute Rulesets - Wind (MMUH1-3)
-     - `Hazus Building Attribute Rulesets - Wind - MMUH1-3.pdf <https://berkeley.box.com/s/4s8adtuxv09il3tomhi5l8temtvi5h0a>`_
-     - :download:`WindMMUHRulesets <data/WindMMUHRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Wind - MMUH1-3.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MMUH1-3.pdf>`_
+     - `WindMMUHRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindMMUHRulesets.py>`_
    * - HAZUS Building Attribute Rulesets - Wind (MLRM1)
-     - `Hazus Building Attribute Rulesets - Wind - MLRM1.pdf <https://berkeley.box.com/s/8ml2y60o2foe6vg6myuisuzfqhfu5v23>`_
-     - :download:`WindMLRMRulesets <data/WindMLRMRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Wind - MLRM1.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MLRM1.pdf>`_
+     - `WindMLRMRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindMLRMRulesets.py>`_
    * - HAZUS Building Attribute Rulesets - Wind (MLRM1)
-     - `Hazus Building Attribute Rulesets - Wind - MLRM2.pdf <https://berkeley.box.com/s/uqove169jtocgu52okerwuhffgkx8kd0>`_
-     - :download:`WindMLRMRulesets <data/WindMLRMRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Wind - MLRM2.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MLRM2.pdf>`_
+     - `WindMLRMRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindMLRMRulesets.py>`_
    * - HAZUS Building Attribute Rulesets - Wind (MERBL-M-H)
-     - `Hazus Building Attribute Rulesets - Wind - MERBL-M-H.pdf <https://berkeley.box.com/s/nzqdg77vamhn75n95kzjmumt0tlgz4zo>`_
-     - :download:`WindMERBRulesets <data/WindMERBRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Wind - MERBL-M-H.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MERBL-M-H.pdf>`_
+     - `WindMERBRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindMERBRulesets.py>`_
    * - HAZUS Building Attribute Rulesets - Wind (MECBL-M-H)
-     - `Hazus Building Attribute Rulesets - Wind - MECBL-M-H.pdf <https://berkeley.box.com/s/2jgsttwc29gppg8rna35yhwctztn3hwp>`_
-     - :download:`WindMECBRulesets <data/WindMECBRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Wind - MECBL-M-H.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MECBL-M-H.pdf>`_
+     - `WindMECBRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindMECBRulesets.py>`_
    * - HAZUS Building Attribute Rulesets - Wind (MLRI)
-     - `Hazus Building Attribute Rulesets - Wind - MLRI.pdf <https://berkeley.box.com/s/hn377m3o1pcgsi464xuwe4zwz0vhgjwa>`_
-     - :download:`WindMLRIRulesets <data/WindMLRIRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Wind - MLRI.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MLRI.pdf>`_
+     - `WindMLRIRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindMLRIRulesets.py>`_
 
 Taking the attribute **shutters** as an example, the shutters attribute is assigned based on time-evolving 
 rules calling upon two fields in the building inventory: year built and the site’s exposure to wind borne 
@@ -359,14 +362,14 @@ scripts) are cross-referenced in :numref:`addinfo_ruleset_steel`.
      - Ruleset Definition Table
      - Python script
    * - HAZUS Building Attribute Rulesets - Wind (SERBL-M-H)
-     - `Hazus Building Attribute Rulesets - Wind - SERBL-M-H.pdf <https://berkeley.box.com/s/ien050gsa67tlsjrhgvdqjhl3b3thh4f>`_
-     - :download:`WindSERBRulesets <data/WindSERBRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Wind - SERBL-M-H.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20SERBL-M-H.pdf>`_
+     - `WindSERBRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindSERBRulesets.py>`_
    * - HAZUS Building Attribute Rulesets - Wind (SECBL-M-H)
-     - `Hazus Building Attribute Rulesets - Wind - SECBL-M-H.pdf <https://berkeley.box.com/s/7a32df1o9iqx5mzwqqcu94povgabjd8v>`_
-     - :download:`WindSECBRulesets <data/WindSECBRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Wind - SECBL-M-H.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20SECBL-M-H.pdf>`_
+     - `WindSECBRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindSECBRulesets.py>`_
    * - HAZUS Building Attribute Rulesets - Wind (SPMBS-M-L)
-     - `Hazus Building Attribute Rulesets - Wind - SPMBS-M-L.pdf <https://berkeley.box.com/s/3bgxtrr9t5dh1tn6izksdpjxt62zv3wv>`_
-     - :download:`WindSPMBRulesets <data/WindSPMBRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Wind - SPMBS-M-L.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20SPMBS-M-L.pdf>`_
+     - `WindSPMBRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindSPMBRulesets.py>`_
 
 
 Taking the attribute wind to wall ratio (**WWR**) as an example, the WWR attribute is assigned based on a 
@@ -381,6 +384,7 @@ with time.
    :file: data/example_steel_ruleset.csv
    :header-rows: 1
    :align: center
+   :widths: 15, 70, 15
 
 
 Wind Loss Attributes for Concrete Buildings
@@ -417,11 +421,11 @@ The corresponding time-evolving rulesets (PDFs and Python scripts) are cross-ref
      - Ruleset Definition Table
      - Python script
    * - HAZUS Building Attribute Rulesets - Wind (CERBL-M-H)
-     - `Hazus Building Attribute Rulesets - Wind - CERBL-M-H.pdf <https://berkeley.box.com/s/sbcgkw8q4ps1mncu9bu87oz83lr5mga3>`_
-     - :download:`WindCERBRulesets <data/WindCERBRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Wind - CERBL-M-H.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20CERBL-M-H.pdf>`_
+     - `WindCERBRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindCERBRulesets.py>`_
    * - HAZUS Building Attribute Rulesets - Wind (CECBL-M-H)
-     - `Hazus Building Attribute Rulesets - Wind - CECBL-M-H.pdf <https://berkeley.box.com/s/scuv8u64atudekvxpda9mh8aol1wuphk>`_
-     - :download:`WindCECBRulesets <data/WindCECBRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Wind - CECBL-M-H.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20CECBL-M-H.pdf>`_
+     - `WindCECBRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindCECBRulesets.py>`_
 
 Taking the attribute roof cover (RoofCvr) as an example, the RoofCvr attribute is assigned based on a 
 ruleset that calls upon the roof shape and year built from the building inventory. :numref:`rc_attri`
@@ -434,6 +438,7 @@ the market.
    :file: data/example_concrete_ruleset.csv
    :header-rows: 1
    :align: center
+   :widths: 15, 42, 42
 
 
 Wind Loss Attributes for Manufactured Homes
@@ -461,15 +466,16 @@ The corresponding time-evolving rulesets (PDFs and Python scripts) are cross-ref
    :name: addinfo_ruleset_mh
    :header-rows: 1
    :align: center
+   :widths: 20, 60, 20
 
    * - Ruleset Name
      - Ruleset Definition Table
      - Python script
    * - HAZUS Building Attribute Rulesets - Wind (Manufactured Homes)
-     - `Hazus Building Attribute Rulesets - Wind - MH76HUD.pdf <https://berkeley.box.com/s/qfde2jo5ry65ev349fu7bkuz5w2c3162>`_, 
-       `Hazus Building Attribute Rulesets - Wind - MH94HUDI-II-III.pdf <https://berkeley.box.com/s/guop1ln5le5rrjqy4l2xk3p3b2b40n55>`_,
-       `Hazus Building Attribute Rulesets - Wind - MHPHUD.pdf <https://berkeley.box.com/s/4vz0a7pirgxaunyvt7ot39d5aty7wtan>`_
-     - :download:`WindMHRulesets <data/WindMHRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Wind - MH76HUD.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20WIND%20-%20MH76HUD.pdf>`_, 
+       `Hazus Building Attribute Rulesets - Wind - MH94HUDI-II-III.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20MH94HUDI-II-III.pdf>`_,
+       `Hazus Building Attribute Rulesets - Wind - MHPHUD.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20WIND%20-%20MHPHUD.pdf>`_
+     - `WindMHRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindMHRulesets.py>`_
 
 Taking the attribute tie down (TieDown) as an example, the ruleset in :numref:`td_attri` considers 
 the Year Built to determine if tie down use is governed by HUD standards based on the design 
@@ -528,16 +534,17 @@ are cross-referenced in :numref:`addinfo_ruleset_ef`.
    :name: addinfo_ruleset_ef
    :header-rows: 1
    :align: center
+   :widths: 20, 60, 20
 
    * - Ruleset Name
      - Ruleset Definition Table
      - Python script
    * - HAZUS Building Attribute Rulesets - Wind (Essential Facilities)
-     - `Hazus Building Attribute Rulesets - Wind - HUEFFS-HUEFSS.pdf <https://berkeley.box.com/s/jjjjzr6rhyz7a253qcxrnn7n3vdxv6n5>`_,
-       `Hazus Building Attribute Rulesets - Wind - HUEFHS-M-L.pdf <https://berkeley.box.com/s/pumhmup0j60m3skgcdlfthmeg5u3o5pk>`_, 
-       `Hazus Building Attribute Rulesets - Wind - HUEFPS-HUEFEO.pdf <https://berkeley.box.com/s/2s7g2x3iot4bajfdprxwzrxu4m6nbulg>`_, 
-       `Hazus Building Attribute Rulesets - Wind - HUEFSM-L.pdf <https://berkeley.box.com/s/ffs4gj1hf4bji1y0vzvj3hu93kvw00kt>`_
-     - :download:`WindEFRulesets <data/WindEFRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Wind - HUEFFS-HUEFSS.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20HUEFFS-HUEFSS.pdf>`_,
+       `Hazus Building Attribute Rulesets - Wind - HUEFHS-M-L.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20HUEFHS-M-L.pdf>`_, 
+       `Hazus Building Attribute Rulesets - Wind - HUEFPS-HUEFEO.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20HUEFPS-HUEFEO.pdf>`_, 
+       `Hazus Building Attribute Rulesets - Wind - HUEFSM-L.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20HUEFSM-L.pdf>`_
+     - `WindEFRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/WindEFRulesets.py>`_
 
 Taking the attribute wind borne debris source (WindDebris) as an example, the WindDebris attribute is 
 assigned based on assumptions surrounding the zoning in areas where each essential facility class is 
@@ -549,6 +556,7 @@ in :numref:`ef_attri`.
    :file: data/example_ef_ruleset.csv
    :header-rows: 1
    :align: center
+   :widths: 20, 20, 60
 
 
 Flood Loss Attributes
@@ -578,8 +586,8 @@ rulesets (PDFs and Python scripts) are cross-referenced in :numref:`addinfo_rule
      - Ruleset Definition Table
      - Python script
    * - HAZUS Building Attribute Rulesets - Flood
-     - `Hazus Building Attribute Rulesets - Flood - All Classes.pdf <https://berkeley.box.com/s/1n75p4c37dtet7kvtj44e422aqjs7woa>`_
-     - :download:`FloodRulesets <data/FloodRulesets.py>`
+     - `Hazus Building Attribute Rulesets - Flood - All Classes.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/NJ/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Flood%20-%20All%20Classes.pdf>`_
+     - `FloodRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/tree/main/rulesets/NJ/scripts/FloodRulesets.py>`_
 
 Taking the attribute first floor flood elevation (FirstFloorElev) as an example, 
 the FirstFloorElev attribute is assigned by adapting the building inventory field (FirstFloorHt1), 

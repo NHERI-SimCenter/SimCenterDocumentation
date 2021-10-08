@@ -1,0 +1,21 @@
+Time Period,YearBuilt > 2000,1983 < YearBuilt < 2000,YearBuilt <= 1983
+Ruleset,"Assign as a Random Variable (RV)
+IF RoofShape = Gable OR Hip, SWR = yes (RV = 60%) 
+IF RoofShape = Gable OR Hip, SWR = no (RV = 40%) 
+
+","IF RoofShape=Flat, SWR=yes
+ELSEIF RoofShape=(Gable or Hip) & RoofSlope <= 0.17, SWR=yes
+ELSEIF RoofShape=(Gable or Hip) & RoofSlope (> 0.17 & < 0.33) & AvgJanTemp=Below, SWR=yes
+ELSEIF RoofShape=(Gable or Hip) & RoofSlope (> 0.17 & < 0.33) & AvgJanTemp=Above, SWR=no
+ELSEIF RoofShape=(Gable or Hip) & RoofSlope >= 0.33, SWR=no",SWR = no
+Note,"Minimum drainage recommendations are in place in NJ (See below). However, SWR indicates a code-plus practice. Use homeowner compliance data from NC Coastal Homeowner Survey (2017) to capture potential human behavior (% of sealed roofs in NC dataset). Minimum Code Requirements: R903.4 Roof Drainage. Unless roofs are sloped to drain over roof edges, roof drains shall be installed at each low point of the roof: R903.4.1 Secondary (Emergency Overflow) Drains or Scuppers: Where roof drains are required, secondary emergency overflow roof drains or scuppers shall be provided where the roof perimeter construction extends above the roof in such a manner that water will be entrapped if the primary drains allow buildup for any reason. 
+","This rule applies until 1984, for anything from 1983 or earlier, there is no information available so this rule will continue to be applied.
+
+According to 903.2 in the 1995 CABO, for roofs with slopes between 2:12 and 4:12, an underlayment consisting of two layers of No. 15 felt must be applied. In severe climates (less than or equal to 25 degrees average in January), these two layers must be cemented together. According to 903.3 in the 1995 CABO, roofs with slopes greater than or equal to 4:12 shall have an underlayment of not less than one ply of No. 15 felt. Two layers of felt cemented together is considered to be secondary water resistance. This ruleset is for asphalt shingles. Almost all other roof types require underlayment of some sort, but the ruleset is based on asphalt shingles because it is most conservative. 
+
+According to table No. R-803.4 in 1992 CABO, for roofs with slopes between 2:12 and 4:12 in severe climates (less than or equal to 25 degrees average in January), one layer no 40 coated roofing or coated glass base sheet from the eves to 12 inches inside the exterior wall line is required. The rule used for asphalt shingles is assumed to apply to every roof because more specific requirements based on roofing type were not specified. 
+
+According to R-803.3  in the 1989 CABO, for roofs with slopes between 2:12 and 4:12, an underlayment consisting of two layers of No. 15 felt must be applied. In severe climates (less than or equal to 25 degrees average in January), these two layers must be cemented together. According to R803.2  in the 1989 CABO, roofs with slopes greater than or equal to 4:12 shall have an underlayment of not less than one ply of No. 15 felt. Two layers of felt cemented together is considered to be secondary water resistance. This ruleset is for asphalt shingles. Almost all other roof types require underlayment of some sort, but the ruleset is based on asphalt shingles because it is most conservative. 
+
+According to R-803.3 in 1986 CABO, for roofs with slopes between 2:12 and 4:12 in severe climates (less than or equal to 25 degrees average in January), one layer no 40 coated roofing or coated glass base sheet from the eves to 12 inches inside the exterior wall line is required. The rule used for asphalt shingles is assumed to apply to every roof because more specific requirements based on roofing type were not specified. According to R-803.1 and R-803.2 in 1983 CABO, for roofs with slopes between 2:12 and 4:12 in severe climates (less than or equal to 25 degrees average in January), two layers of Type 15 felt must be applied and cemented together from the eaves up the roof to overlie a point twenty four inches inside the interior of the building.
+",Default

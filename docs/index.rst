@@ -60,6 +60,7 @@
    common/front-matter/abbreviations.rst
    :R2D:common/user_manual/usage/desktop/releasenotes
    :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
+   :EEUQ:common/user_manual/usage/desktop/earthquake/releasenotes
 
 	  
 .. _lbl-user-manual:
@@ -126,7 +127,7 @@
    :docTestbeds:common/testbeds/atlantic_city/index
    .. :docTestbeds:common/testbeds/memphis/index
    .. :docTestbeds:common/testbeds/anchorage/index
-   .. :docTestbeds:common/testbeds/lake_charles/index
+   :docTestbeds:common/testbeds/lake_charles/index
 
 .. _lbl-technical-manual:
 

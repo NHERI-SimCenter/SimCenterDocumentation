@@ -66,7 +66,7 @@ the coastal cities.
    :name: pws
    :align: center
    :figclass: align-center
-   :figwidth: 1000
+   :width: 800
 
    Interpolated peak wind speed (3s-gust) for each asset in the inventory.
 
@@ -104,7 +104,7 @@ Flood Damage and Loss Assessment.
    :name: pwd
    :align: center
    :figclass: align-center
-   :figwidth: 1000
+   :width: 800
 
    Interpolated peak water depth for each asset in the inventory.
 
@@ -141,9 +141,9 @@ created for the MCA (:numref:`synthetic_data`).
    * - Hazard
      - Access Point
    * - Wind Field
-     - :download:`Synthetic wind data <data/SyntheticWind.zip>`
+     - `Synthetic wind data <https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/testbeds/atlantic_city/data/SyntheticWind.zip>`_
    * - Storm Surge
-     - :download:`Synthetic storm surge data <data/SyntheticStormSurge.zip>`
+     - `Synthetic storm surge data <https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/testbeds/atlantic_city/data/SyntheticStormSurge.zip>`_
 
 Historical Storm Scenario
 ==========================
@@ -172,7 +172,7 @@ directly used in the presented hurricane workflow, as visualized in :numref:`ara
    :name: ara_pws
    :align: center
    :figclass: align-center
-   :figwidth: 500
+   :width: 500
 
    ARA 3-s gust peak wind speed (3-s gust at 10 m) in Atlantic County during Hurricane Sandy.
 
@@ -180,7 +180,7 @@ Alternatively, users can also use other available wind field resources. For inst
 `RMS Legacy Archive <https://www.rms.com/event-response/hwind/legacy-archive/storms>`_ provides access to 
 historical hurricane events including the `Superstorm Sandy <https://legacy-archive.rms.com/storms/sandy2012.html>`_ 
 for an alternate description of the field. Similar to the ARA peak wind speed field, in order to run the workflow, users 
-would first convert the data from other resources to the format as shown in :download:`ARA_Example.zip <data/ARA_Example.zip>`.
+would first convert the data from other resources to the format as shown in `ARA_Example.zip <https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/testbeds/atlantic_city/data/ARA_Example.zip>`_.
 
 Storm Surge Modeling
 ---------------------
@@ -192,14 +192,14 @@ which were resolved with a finer mesh than more southern counties like Atlantic 
 the grids adopted for the Sandy hindcast in this region of New Jersey did not extend into the riverine systems. Noting these 
 limits of the simulation, peak water depth over land displayed in :numref:`adcirc_sitepwd` assumes zero values in the rivering 
 systems and at any point inland of the grid points shown in :numref:`adcirc_waterelev`. The
-:download:`ADCIRC_Example.zip <data/ADCIRC_Example.zip>` provides the peak water depth grid that can be used in 
+`ADCIRC_Example.zip <https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/testbeds/atlantic_city/data/ADCIRC_Example.zip>`_ provides the peak water depth grid that can be used in 
 the presented hurricane workflow.
 
 .. figure:: figure/ADCIRC_PWD.png
    :name: adcirc_pwd
    :align: center
    :figclass: align-center
-   :figwidth: 500
+   :width: 500
 
    Simulated storm surge field of Hurricane Sandy by ADCIRC (by courtesy of Dr. Westerink).
 
@@ -207,7 +207,7 @@ the presented hurricane workflow.
    :name: adcirc_waterelev
    :align: center
    :figclass: align-center
-   :figwidth: 500
+   :width: 500
 
    Simulated water elevation of Hurricane Sandy by ADCIRC (Atlantic County).
 
@@ -215,7 +215,7 @@ the presented hurricane workflow.
    :name: adcirc_sitepwd
    :align: center
    :figclass: align-center
-   :figwidth: 500
+   :width: 500
 
    Simulated water depth over land for Hurricane Sandy by ADCIRC (Atlantic County).
 
@@ -227,9 +227,9 @@ the presented hurricane workflow.
    * - Hazard
      - Access Point
    * - Wind Field
-     - :download:`ARA_Example.zip <data/ARA_Example.zip>`
+     - `ARA_Example.zip <https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/testbeds/atlantic_city/data/ARA_Example.zip>`_
    * - Storm Surge
-     - :download:`ADCIRC_Example.zip <data/ADCIRC_Example.zip>`
+     - `ADCIRC_Example.zip <https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/testbeds/atlantic_city/data/ADCIRC_Example.zip>`_
 
 
 .. [Snaiki17a]
