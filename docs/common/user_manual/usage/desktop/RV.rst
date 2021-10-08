@@ -112,8 +112,7 @@ For each random variable, the user must enter a name and select from the pull do
 
 .. only:: quoFEM_app
 
-
-   SimCeterUQ Engine
+   SimCenterUQ Engine
    +++++++++++++++++
 
    Five additional distributions are supported in the SimCenter UQ engine. The users can define distributions either by **Parameters**, **Moments** or **Dataset**. (**Note**: Nataf transform module developed by [ERA19]_ is adopted)
@@ -209,7 +208,6 @@ For each random variable, the user must enter a name and select from the pull do
 
        Example of input dataset file
 
-
    .. note::
 
       - Clicking the ``Show PDF`` or ``Show PMF`` button will display probability distribution (or mass) function of each random variable with the specified parameters/moments. If the PDF or PMF is not displayed, we recommend the users to double-check the parameters/moments if they are in a valid range. The plotting button is not activated for the ``Dataset`` input type. 
@@ -217,26 +215,25 @@ For each random variable, the user must enter a name and select from the pull do
    .. [ERA19]
       Engineering Risk Analysis Group, Technische Universität München: https://www.bgu.tum.de/era/software/eradist/ (Matlab/python programs and documentations)
 
-Correlation matrix
-------------------------
+	Correlation matrix
+	------------------------
 
-Correlation coefficients between each variable can be defined by clicking the ``Correlation Matrix`` button. Default correlations between variables are set to be zero. The diagonal element of the matrix is fixed as one, and symmetricity of the correlation matrix is enforced once the entries of the lower triangular part of the matrix are modified. 
+	Correlation coefficients between each variable can be defined by clicking the ``Correlation Matrix`` button. Default correlations between variables are set to be zero. The diagonal element of the matrix is fixed as one, and symmetry of the correlation matrix is enforced once the entries of the lower triangular part of the matrix are modified. 
 
-.. figure:: figures/rv4.png
-   :align: center
-   :width: 800
-   :figclass: align-center
+	.. figure:: figures/rv4.png
+	   :align: center
+	   :width: 800
+	   :figclass: align-center
 
-   Example of a valid correlation matrix
+	   Example of a valid correlation matrix
 
-Once the ``OK`` button is clicked after setting all required entries, the program will automatically check the validity of the matrix before closing the correlation matrix window. If the matrix is not **positively defined**, an error message will be displayed and the window will not be closed. In such case, user should adjust the correlation coefficients to be positive definite.
+	Once the ``OK`` button is clicked after setting all required entries, the program will automatically check the validity of the matrix before closing the correlation matrix window. If the matrix is not **positive definite**, an error message will be displayed and the window will not be closed. In such case, user should adjust the correlation coefficients to be positive definite.
 
-.. note::
+	.. note::
 
-   - When ``constant`` variable is introduced instead of probability distributions, the correlation coefficient corresponding to those variables will be ignored. 
-   - When more than one random variable is provided as ``Dataset``, correlations between the data pairs will not be incorporated automatically. If correlations exist, user can define them manually at the correlation matrix window.
+	   - When ``constant`` variable is introduced instead of probability distributions, the correlation coefficient corresponding to those variables will be ignored. 
+	   - When more than one random variable is provided as ``Dataset``, correlations between the data pairs will not be incorporated automatically. If correlations exist, user can define them manually at the correlation matrix window.
 
-.. warning::
+	.. warning::
 
-    Correlation warping for Nataf variable transformation of **beta** distributions is not currently supported.
-
+	    Correlation warping for Nataf variable transformation of **beta** distributions is not currently supported.

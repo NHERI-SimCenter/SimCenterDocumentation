@@ -2,11 +2,11 @@
 UQ: Uncertainty Quantification
 ==============================
 
-The first selection panel the user must select from and enter data into is the **UQ** tab. It is in this panel where the user selects the **UQ Engine** to use for performing the uncertainty quantification calculations.
+The first selection panel the user must select from and enter data into is the **UQ** tab. It is in this panel that the user selects the **UQ Engine** to use for performing the uncertainty quantification calculations. The **UQ Engine** provides algorithms for solving various types of uncertainty analysis and optimization problems. 
 
 .. only:: quoFEM_app
 	  
-	  Presently the **UQ Engine** option supports Dakota, SimCenterUQ, UCSD-UQ and users' own custom UQ engines.
+	  The **UQ Engine** options currently available are Dakota, SimCenterUQ, and UCSD-UQ. Users can also configure quoFEM to use their own UQ methods and algorithms in the quoFEM workflow by selecting the CustomUQ option.
 
 .. only:: notQuoFEM
 	  
@@ -16,7 +16,7 @@ The first selection panel the user must select from and enter data into is the *
 Dakota UQ Engine
 ----------------
 
-This UQ engine utilizes the `Dakota Software <https://dakota.sandia.gov/>`_, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. **Dakota** provides the user with a large number of different methods. For this reason we have divided the methods into categories though a pull-down menu, as shown in :numref:`figDakota`. Once the category has been selected, a number of different methods are made available to the user.
+This UQ engine utilizes the `Dakota Software <https://dakota.sandia.gov/>`_, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. **Dakota** provides the user with a large number of methods for different kinds of analyses. For this reason we have divided the methods into categories though a pull-down menu, as shown in :numref:`figDakota`. Once the category has been selected, a number of different methods are made available to the user.
 
 .. _figDakota:
 
@@ -56,7 +56,7 @@ The following categories are available:
 		
 		SimCenterUQ engine and category selection.
 	  
-	  Currently the category option is limited to global sensitivity analysis:
+	  Currently the following category options are available:
 
 	  .. toctree-filt::
 	     :maxdepth: 1
@@ -69,7 +69,7 @@ The following categories are available:
 	  UCSD UQ Engine
 	  --------------
 
-	  The **UCSD-UQ** engine is a module developed at the SimCenter in collaboration with UCSD. It provides algrithms for Bayesian estimation, which can be accessed through a pull-down menu, as shown in figure :numref:`figUCSDUQ`.
+	  The **UCSD-UQ** engine is a module developed at the SimCenter in collaboration with UCSD. It provides algorithms for Bayesian estimation, which can be accessed through a pull-down menu, as shown in figure :numref:`figUCSDUQ`.
 	  
 	  .. _figUCSDUQ:
 	  
@@ -79,7 +79,7 @@ The following categories are available:
 		
 		UCSD-UQ engine and category selection.
 		
-	  This module currently offers support for Bayesian estimation using the Transitional Markov chain Monte Carlo (TMCMC) algorithm, which is also known as the Sequential Monte Carlo algorithm:
+	  This module currently offers support for Bayesian estimation using the Transitional Markov chain Monte Carlo (TMCMC) algorithm:
 
 	  .. toctree-filt::
 	     :maxdepth: 1
