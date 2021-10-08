@@ -39,7 +39,11 @@ WE-UQ:
 
 EE-UQ:
   include-item:
-    ? eeuq-00*
+    - eeuq-0001
+    - eeuq-0002
+    - eeuq-0003
+    - eeuq-0004
+    - eeuq-0005
 
 R2DTool:
   include-item:
