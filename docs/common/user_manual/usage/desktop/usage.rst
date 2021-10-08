@@ -120,7 +120,7 @@ The ribbon on the left side provides the user with a selection of buttons to cho
    :WEUQ:response/EDP
    :Hydro:response/EDP
    :quoFEM:quoFEM/QuantitiesOfInterest
-   :Hydro:RV
+   RV
    :PBE:PBE/DL
    :EEUQ:response/resEE
    :WEUQ:response/resEE

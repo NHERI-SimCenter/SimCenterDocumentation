@@ -23,7 +23,7 @@ and a custom user-specified application.
 OpenSees
 ^^^^^^^^
 
-When the choice of FEM application is OpenSees (the default application), the user is presented with the input panel shown in figure above and their are two entry fields for filenames:
+When the choice of FEM application is OpenSees (the default application), the user is presented with the input panel shown in figure above and there are two entry fields for filenames:
 
 1. **Input Script**: The user must specify a main input script. When entered the application will parse this file looking for variables set with the ``pset`` option (a unique set command to the OpenSees interpreter that is used to identify parameter values). For each variable whose value is set with ``pset``, the program will auto populate the variable in the **RV** tab.
 
@@ -117,7 +117,69 @@ the need to explicitly input each one of these files.
 .. _customFEM:
 
 .. figure:: figures/customFEM.png
-	:align: center
-	:figclass: align-center
+  :align: center
+  :figclass: align-center
 
-        Input for Custom Analysis Application
+  Input for Custom Analysis Application
+
+
+SurrogateGP
+^^^^^^^^^^^^
+In place of the physical simulation models, the Gaussian process surrogate model trained in quoFEM can be imported for UQ/Optimization analyses. 
+
+.. _surrogateFEM1:
+
+.. figure:: figures/SurrogateFEM1.png
+  :align: center
+  :figclass: align-center
+
+  Input for Surrogate model FEM Application
+
+When users select the SurrogateGP option, they are requested to provide the following files:
+
+.. Note:: 
+
+  All the required input files described below can be generated from the quoFEM. See Section 2.1.2.2 Surrogate modeling.
+
+
+1. **Surrogate info file (.json)**: This file contains the meta-information about the surrogate model. Users can open it with a text editor to see the contents.
+
+2. **Surrogate model file (.pkl)**: Surrogate model is saved in a binary format. GPy python package is required to view or use this model outside of quoFEM.
+
+Additionally, if users want to allow alternation between the exact simulation model and surrogate model depending on the predicted error rate, an additional folder that contains the simulation information is required (See **Run Exact FEM Simulation** option below). Note that this folder is not explicitly specified in the input panel, but it needs to be located in the specific directory under the specific name (``templatedir_SIM``).  
+
+3. **Simulation template folder (templatedir_SIM)**: This folder contains the simulator scripts (workflow driver) and required files to run the original simulation model. **Note that the folder should be located in the same directory as the Surrogate info file**. If the folder is not presented in the right directory, the analysis can fail. The name of the folder should not be modified.
+
+Once the files are loaded, users may choose the tolerance level of the predictive variance.
+
+* **Maximum Allowable Normalized Variance**: Prediction variance divided by the variance level of the training dataset. If more than one QoIs is introduced, only the highest normalized variance value will be considered.
+
+.. Warning:: 
+   * It is important to understand that the predictive variance does not necessarily imply the error level of the model.
+   * The provided percentage ratio of the out-of-tolerance samples is only a rough guideline since it assumed that the samples are uniformly populated throughout the range user provided during the training session. Therefore, if user selects other distribution types and ranges, the percentage estimation will not be correct anymore. 
+
+Users may either stop the analysis, continue, or run exact FEM simulations whenever the tolerance limit is exceeded.
+
+* **Stop Analysis**: The analysis is immediately terminated. quoFEM will show the error (eg. dakota engine gives "No dakotaTab.out file" error)
+
+* **Continue**: The tolerance level is ignored and the analysis is continued. This option is not recommended.
+
+* **Run Exact FEM Simulation**: The program will run the exact FEM simulation user provided in the training session. In case the surrogate model is constructed purely based on the data and without any model information (case 3 in section 2.1.2.2), this option will be disabled.
+
+
+Additionally, **GP output** can be set as either the *median prediction* or a *random sample* generated from the normal distribution (or lognormal distribution if the user used log-transform when training) with the predictive median and variance. **NOTE:** the random generator does not account for the Gaussian process correlation, and each realization of QoI given RVs is independent of each other. Only users familiar with GP modeling and who understand the limitation are recommended to use the *random sample* option.
+
+If the user wants to inspect the simulation status or check error/warning messages related to the surrogate model, they can refer to the messages written at: ``{Local Jobs Directory}/tmp.SimCenter/surrogateLog.err``. (Note: ``{Local Jobs Directory}`` is specified from the file-preference in the menu bar.)
+
+.. _surrogateFEM2:
+
+.. figure:: figures/SurrogateFEM2.png
+  :align: center
+  :figclass: align-center
+  :width: 800
+
+  Example of surrogateLog.err file
+
+.. Note:: 
+
+  Once the surrogate model is imported, RV and QoI tab will be auto-populated. Users are allowed to remove some of the QoIs if not interested but may not add new QoIs or modify the names of existing QoIs.
