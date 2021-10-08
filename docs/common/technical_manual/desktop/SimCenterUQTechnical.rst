@@ -284,7 +284,7 @@ In the case where bounds of input variables and a simulator model is provided (C
 
 However, as shown in the figure, adaptive DoE requires multiple optimization turns to find the optimal surrogate model parameters as well as the next optimal DoE. Therefore, it is noted that the adaptive DoE is efficient only when model evaluation time is significantly greater than the optimization time. 
 
-**Adaptive DoE algorithm**
+**Adaptive DoE algorithm: IMSEw, MMSEw [Kyprioti2020]_**
 
 The optimal design points can be selected by finding arguments that maximize (or minimize) the so-called score function. The score function in global surrogate modeling is often designed to predict the amount of reduced (or remaining) variance and bias after adding the new sample points. While there are many variations of the score function [Fuhg2020]_, in quoFEM, the modified integrated mean squared error (IMSE) from Kyprioti *et al.* (2020) is introduced as:
 
@@ -306,6 +306,19 @@ where :math:`\phi` is bias measure from leave-one-out cross validation (LOOCV) a
 	:width: 600
 
   	Adaptive DoE procedure by Kyprioti et al. (2020) [Kyprioti2020]_
+
+
+**Adaptive DoE algorithm: Pareto**
+
+Alternatively, multiple design points can be selected by multi-objective optimization scheme. The variance mesure and bias measure defined by
+
+
+.. math::
+	:label: Pareto
+
+	\begin{align*}
+		\rm{IMSE}_w(\boldsymbol{X},\boldsymbol{x_{new}}) &= \int_{\boldsymbol{X_d}} \phi^\rho\boldsymbol{\sigma_n}^2(\boldsymbol{x}|\boldsymbol{X,x_{new}})dx
+	\end{align*}
 
 
 Adaptive DoE is terminated when one of the three conditions is met:
