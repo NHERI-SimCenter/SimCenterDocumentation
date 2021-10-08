@@ -14,4 +14,7 @@ Technical Manual
    :WEUQ:WEUQ/TinF
    :quoFEM:SimCenterUQTechnical
    :quoFEM:UCSDUQTechnical
-   :HazardSimulation:spatial_correlation
+   
+   :EEUQ:spatial_correlation
+   :PBE:spatial_correlation
+   :R2D:spatial_correlation

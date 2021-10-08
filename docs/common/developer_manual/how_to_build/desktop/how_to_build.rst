@@ -75,20 +75,22 @@ Build the applications
 
 .. only:: notQuoFEM
 
-   #. Obtain the code in the SimCenterBackendApplications repository from `Github <https://github.com/NHERI-SimCenter/SimCenterBackendApplications>`_. You can do that by using your preferred Git client/GUI or by using the ``git clone`` command in the terminal:
+    #. Obtain the code in the SimCenterBackendApplications repository from `Github <https://github.com/NHERI-SimCenter/SimCenterBackendApplications>`_. You can do that by using your preferred Git client/GUI or by using the ``git clone`` command in the terminal:
 
       .. code::
 
-         git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications
+         git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications	 
 
-	 
+    #. To build the applications you need to now navigate to the **SimCenterBackendApplications** folder that was created with the **git clone** command. Once there you will issue the following set of commands to create a **build** folder, change director to that folder, install needed software using conan, and finally use **cmake** to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail).
 
-#. To build the applications you need to now navigate to the **SimCenterBackendApplications** folder that was created with the **git clone** command. Once there you will issue the following set of commands to create a **build** folder, change director to that folder, install needed software using conan, and finally use **cmake** to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail).
+.. only:: quoFEM_app
+
+    To build the applications you need to now navigate to the **backend** folder in the quoFEM repo. Once there you will issue the following set of commands to create a **build** folder, change director to that folder, install needed software using conan, and finally use **cmake** to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail).
 
 
 For those developers using the Windows operating system, in a terminal or powershell window you need to type the following:
 
-       .. code:: console
+        .. code:: console
 
           mkdir build
           cd build
@@ -98,11 +100,9 @@ For those developers using the Windows operating system, in a terminal or powers
           cmake --install .
           cd ..
 
-For those developers using a Mac or Luinux operating system, in a terminal window type the following:
+On Windows, it is necessary to specify a compiler for CMake. To do this, you need to add additional arguments to line 4, i.e., if you have Visual Studio 2019, you would instead type:
 
-       #. On Windows, it is necessary to specify a compiler for CMake. To do this, you need to add additional arguments to line 4, i.e., if you have Visual Studio 2019, you would instead type:
-
-       .. code:: console
+        .. code:: console
 
           mkdir build
           cd build
@@ -110,23 +110,23 @@ For those developers using a Mac or Luinux operating system, in a terminal windo
           cmake ..
           cmake --build . --config Release
           cmake --install .
-	  make install .
+          make install .
           cd ..	  
 
-    .. note::
+.. note::
 
-       #. For Mac users running **Big Sur** and version **12** of XCode there are some reported issues. Replace line 3 above with the following two lines:
+   #. For Mac users running **Big Sur** and version **12** of XCode there are some reported issues. Replace line 3 above with the following two lines:
 
-          .. code::       
+      .. code::       
 
-            conan install .. --build missing --build=libcurl
-            mv ./missing/* ./
+        conan install .. --build missing --build=libcurl
+        mv ./missing/* ./
 
-       #. For Mac users, add the following command after **cmake --install .** to ensure the binary applications are copied to the applications folder.
+   #. For Mac users, add the following command after **cmake --install .** to ensure the binary applications are copied to the applications folder.
 
-          .. code::       
+      .. code::       
 
-            make install .
+        make install .
 
           
       
@@ -199,7 +199,7 @@ Build using Qt Creator
 Build from the Terminal
 -----------------------
 
-1. The operations are similar to what was done when building the backend applications. In the terminal application, starting inside the directory of the cloned application again, you will create a build directory, cd into that build directory, run **qmake**, and finally make (or on Windows nmake) to create the application.
+The operations are similar to what was done when building the backend applications. In the terminal application, starting inside the directory of the cloned application again, you will create a build directory, cd into that build directory, run **qmake**, and finally make (or on Windows nmake) to create the application.
 
 Windows developers will type the following in a terminal or a powershell window:
 
@@ -252,11 +252,26 @@ Once built, the tool **Preferences** needs to be modified. To do this, open the 
 
   #. Custom Local Application: Here, select the checkbox to the left, and then provide the path to the SimCenterBackendApplications directory. The code assumes that the folder **applications**, which you created when building the backend applications, exists.
 
-.. _figPreferences:
-
-.. figure:: figures/Preferences.png
-   :align: center
-   :figclass: align-center
-
-   Preferences Dialog
      
+
+.. only:: notQuoFEM
+
+    
+    .. _figPreferences:
+
+    .. figure:: figures/Preferences.png
+       :align: center
+       :figclass: align-center
+
+       Preferences Dialog
+
+.. only:: quoFEM_app
+
+
+    .. _figPreferences:
+
+    .. figure:: figures/Preferences_qfem.png
+       :align: center
+       :figclass: align-center
+
+       Preferences Dialog

@@ -74,7 +74,8 @@ When the **Training Dataset** option is set to the ``Sampling and Simulation``, 
 
    Input panel for surrogate modeling
 
-* **Random Seed**: Seed of the random number generator
+* **Maximum Number of Model Runs**: When the number of simulation runs reaches the limit, the analysis will be terminated.
+* **Maximum Computation Time (in minutes)**: When the tolerance limit of the computation time is reached, the analysis will be terminated. There will be a few minutes of error.
 * **Target Accuracy (Normalized Error)**: The target accuracy is defined in terms of normalized root-mean squared error (NRMSE) estimated by leave-out-one cross-validation (LOOCV).
 
 	.. math::
@@ -89,8 +90,9 @@ When the **Training Dataset** option is set to the ``Sampling and Simulation``, 
    |      :math:`\hat{y}_k`: estimated response by LOOCV surrogate model prediction
    |      :math:`N`: number of samples used to train the surrogate model
 
-* **Maximum Number of Model Runs**: When the number of simulation runs reaches the limit, the analysis will be terminated.
-* **Maximum Computation Time (in minutes)**: When the tolerance limit of the computation time is reached, the analysis will be terminated. There will be a few minutes of error.
+* **Random Seed**: Seed of the random number generator
+* **Parallel excution**: This engine implemented multiprocessing (local) or mpi4py (remote) python packages to run parallel execution.
+Note that the results from the parallel and serial run may not be exactly the same because parallel execution sets the number of batch DoE in order to maximize the use of resources (Default DoE interval: 5)
 
 User can also activate the **Advanced Options for Gaussian Process Model**
 
@@ -104,13 +106,10 @@ User can also activate the **Advanced Options for Gaussian Process Model**
    Sampling and Simulation - Case 1
 
 * **Kernel function**: Correlation function for Gaussian process regression. Matern5/2 function is the default, and Matern3/2, Radial Basis, and Exponential functions are additionally supported.
-* **Linear trend function**: When increasing or decreasing trend is expected over the variables domain, a linear trend function may be introduced. The default is unchecked, ie. no trend function.
-* **Responses are always positive**: When the user can guarantee that the response quantities are always greater than 0, user may want to introduce a surrogate model in log-transformed space of QoI. The default is unchecked, ie. original physical coordinate.
-* **Number of Initial Samples (Design of Experiments)**: User may set the number of the initial design of experiments (DoE) manually, while the default is 4 times the number of random variables.
-
-.. Tip:: 
-
-   If the user wants to inactivate the adaptive DoE feature, one can set **Number of Initial Samples** equal to the **Maximum Number of Model Runs**. In this case, all the training samples will be generated at once by Latin hypercube sampling. The computation may be faster, but caution should be taken since the resulting verification measures are more likely to overestimate the level of accuracy and underestimate the error size.
+* **Add Linear Trend Function**: When increasing or decreasing trend is expected over the variables domain, a linear trend function may be introduced. The default is unchecked, ie. no trend function.
+* **Log-space Transform of QoI**: When the user can guarantee that the response quantities are always greater than 0, user may want to introduce a surrogate model in log-transformed space of QoI. The default is unchecked, ie. original physical coordinate.
+* **Design of Experiments options**: User may select the Adaptive DoE method and the number of the initial design of experiments (DoE) manually. The default method is "pareto" and the default number of DoE is 4 times the number of random variables.
+* **Nugget Variances**: User may define nugget variances or bounds of the nugget variances if needed. The default is "optimize".
 
 Additionally, users may populate the initial samples directly from data files by activating **Start with Existing Dataset**
 
@@ -206,7 +205,55 @@ where
 **FEM tab** will be inactivated in Case 3 as model information is not required.
 
 .. Tip::
-	- Surrogate model can be continued after when they are terminated by saving and importing RV and QoI samples.
+	- Surrogate model training can be continued after termination by reusing RV and QoI samples obtained by the previous training.
+
+
+Multi-Fidelity Modeling
+-----------------------
+
+When a user provides two different models, i.e. high and low fidelity models, the surrogate model for the high fidelity can be constructed with better performance in assisted by the low fidelity simulation results. The two models should share the same input RVs and output QoIs pools. Ideally, combined model should have the best prediction better than each individual ones, however, the benefit from low fidelity model differs depending on the correlation between the two model outputs [Patsialis2021]_. Currently, adaptive design of experiments capacity of the multi-fidelity surrogate modeling is NOT supported. 
+
+.. Note:: 
+     Multi-fidelity surrogate modeling functionality of quoFEM is built upon `emukit <https://emukit.github.io/>`_ library (available under Apache-2.0 license), an opensource python toolkit for emulation (surrogate modeling) and decision making under uncertainty. 
+
+.. _figSimMF1:
+
+.. figure:: figures/SimUQ_surrogate_MF1.png
+   :align: center
+   :figclass: align-center
+   :width: 800
+
+   Multi-fidelity modeling panel
+
+For each fidelity models, either model, data, or both can be provided for each fidelity level.
+
+.. _figSimMF2:
+
+.. figure:: figures/SimUQ_surrogate_MF2.png
+   :align: center
+   :figclass: align-center
+   :width: 800
+
+   An option to define high-fidelity simulation model
+
+.. _figSimMF3:
+
+.. figure:: figures/SimUQ_surrogate_MF2.png
+   :align: center
+   :figclass: align-center
+   :width: 800
+
+   An option to define high-fidelity simulation model
+
+.. _figSimMF4:
+
+.. figure:: figures/SimUQ_surrogate_MF3.png
+   :align: center
+   :figclass: align-center
+   :width: 800
+
+   An option to define high-fidelity simulation model and datafile. The datafile format is same as those used for Case 3.
+
 
 RV (Random Variables) Tab
 --------------------------
@@ -295,7 +342,7 @@ Once the training is completed, the following three verification measures are pr
 
 
 .. Warning:: 
-     Note that GP-based surrogate models are essentially developed to fit smooth, continuous functions. When the surrogate model is poorly trained, a parametric study is highly recommended to check any possible discontinuity presented in the simulation model.
+     Note that GP-based surrogate models can be used to fit only smooth, continuous functions. When the surrogate model is poorly trained, a parametric study is highly recommended to check any possible discontinuity presented in the simulation model.
 
 
 Saving Options
@@ -322,3 +369,9 @@ Saving Options
    :width: 800
 
    Example outputs from saving options
+
+
+
+
+.. [Patsialis2021]
+    Patsialis, D., and A. A. Taflanidis. (2021). Multi-fidelity Monte Carlo for seismic risk assessment applications. *Structural Safety* 93: 102129.
