@@ -41,7 +41,7 @@ The Differential Evolution Adaptive Metropolis ([DREAM]_) method runs multiple M
 
 	Calibration data file requirements
 	==================================
-	The data are provided in the calibration data file, which must fulfil the following requirements:
+	The data are provided in the calibration data file, which must fulfill the following requirements:
 
 	1. Each row of the calibration data file contains data from one experiment. The individual entries in every row of this file can be separated by spaces, tabs, or commas.
 	2. The number of entries in each row must equal the sum of the length of all outputs defined in the **QoI** panel.
