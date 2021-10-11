@@ -1,4 +1,4 @@
-.. _lblDakotaSensitivity:
+.. _lblSimSensitivity:
 
 
 Global Sensitivity Analysis
@@ -49,6 +49,7 @@ In the SimCenterUQ engine, Sensitivity indices are estimated by Gaussian mixture
 .. figure:: figures/SensitivityAnalysisSimUQ.png
 	:align: center
 	:figclass: align-center
+	:width: 1200
 
   	Sensitivity analysis input panel.
 
@@ -66,10 +67,11 @@ By default, the analysis results are first-order sensitivity indices of each ran
 .. _figSimSensitivity2:
 
 .. figure:: figures/SensitivityAnalysis2SimUQ.png
-   :align: center
-   :figclass: align-center
+	:align: center
+	:figclass: align-center
+	:width: 1200
 
-   Group-wise Sobol indicies
+  	Group-wise Sobol indicies
 	
 The group-wise Sobol indices are useful when the user wants to obtain a sensitivity measure corresponding to a categorical group of input variables, for example, to compare the relative sensitivity between structural parameters and excitation parameters. In particular, when there are non-causal correlations between some random variables or when the user expects interactive contributions of the random variables that are in nature inseparable, one can introduce the group index. The group-wise Sobol index for joint variables :math:`x_i` and :math:`x_j` is defined as
 

@@ -27,12 +27,12 @@ if app_name in APPS:
     pass
 else:
     pass
-    app_name = "R2DTool"
-    # app_name = 'PBE'
-    # app_name = 'EE-UQ'
-    # app_name = 'WE-UQ'
-    # app_name = 'quoFEM'
-    # app_name = 'pelicun'
+    #app_name = 'R2DTool'
+    #app_name = 'PBE'
+    #app_name = 'EE-UQ'
+    #app_name = 'WE-UQ'
+    app_name = 'quoFEM'
+    #app_name = 'pelicun'
 
     os.environ["SIMDOC_APP"] = app_name
     os.environ["SIMCENTER_DEV"] = os.path.abspath("../../")
@@ -46,13 +46,6 @@ app_name2 = app_name.replace("Tool", "")
 loc_app_dir = os.path.abspath(f"../../{app_name}")
 
 print(f"app_name =  {app_name} ({app_abrev}, {app_abrev2})")
-
-# automatically update dependencies
-try:
-    from pip import main as run_pip
-except:
-    from pip._internal import main as run_pip
-run_pip(["install", "-Ur", "../requirements.txt"])
 
 # -- Path setup --------------------------------------------------------------
 
@@ -531,9 +524,12 @@ elif app_name == "quoFEM":
     author = "Frank McKenna, Adam Zsarnóczay, Sang-ri Yi, Aakash Bangalore Satish, Nikhil Padhye"
 
     tags.add("desktop_app")
+    tags.add("notR2D") 
+    tags.add("quoFEM_app")
 
     toc_filter_exclusions.remove("desktop")
     toc_filter_exclusions.remove("quoFEM")
+    toc_filter_exclusions.remove("notR2D") 
     toc_filter_exclude = toc_filter_exclusions
 
     exclude_patterns.remove("**/*desktop*")
@@ -563,7 +559,6 @@ elif app_name == "quoFEM":
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 
 """
-
     html_theme_options.update({"analytics_id": "UA-158130480-4"})
 
     example_config.update(

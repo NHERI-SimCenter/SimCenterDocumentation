@@ -12,7 +12,7 @@ remotely, and finally views the simulation results. The main window of the UI is
 
    .. _figGenericUI-quoFEM:
 
-   .. figure:: figures/quoFEM.png
+   .. figure:: figures/quoFEMPanel.png
 	   :align: center
 	   :figclass: align-center
 
@@ -116,11 +116,11 @@ The ribbon on the left side provides the user with a selection of buttons to cho
    :Hydro:FEM
    :PBE:FEM	 
    :quoFEM:quoFEM/FEM
+   RV
    :EEUQ:response/EDP
    :WEUQ:response/EDP
    :Hydro:response/EDP
    :quoFEM:quoFEM/QuantitiesOfInterest
-   :Hydro:RV
    :PBE:PBE/DL
    :EEUQ:response/resEE
    :WEUQ:response/resEE
@@ -141,6 +141,8 @@ This is the area near the bottom of the UI in which 4 buttons are contained:
 
 5. Message Area: 
 
+
 The message area is located in the bottom of the UI and displays the status and error messages for a running background application. The message area is a dockable dialog which can be resized, moved, and closed as needed. The dialog visibility can be toggled by clicking on the menu item **View** -> **Program Output**. If moved from its default location, the status dialog can be restored to the bottom of the UI by dragging the dialog back to the bottom of the UI and hovering over the area. 
+
 
 .. [#] For more help on external services provided by DesignSafe-CI, such as creating an account, we encourage users to explore their `documentation <https://www.designsafe-ci.org/rw/user-guides/>`_ or consider `submitting a ticket <https://www.designsafe-ci.org/help/new-ticket/>`_.

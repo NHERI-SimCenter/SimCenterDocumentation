@@ -6,7 +6,7 @@ Reliability Analysis
 
 Reliability methods are another class of probabilistic algorithms used for quantifying the effect of uncertainties in simulation input on response metrics of interest. These methods, unlike forward methods, provide PDFs and CDFs about user specified response and probability levels, i.e. given a set of uncertain input variables, they model the probability that the response output is below or above a certain level.  As a consequence of concentrating on only certain response outputs, these models are often more efficient when calculating responses in the tails of the response distributions (events with low probability) since the number of samples required by a forward method to resolve a low probability can be prohibitive.
 
-Reliability methods can be split into local and global methods, as elaborated in the following sections. 
+Reliability methods can be split into local and global reliability methods and importance sampling-based method, as elaborated in the following sections. 
 
 Local Reliability Methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -42,7 +42,7 @@ The default local reliability method is the most probable point (MPP) method. Fo
 
 .. warning::
    
-   Only a single quantity of interest may be specified when using MPP
+   Only a single quantity of interest (QoI) is allowed to be specified when using most probable point searching. Mean Value search method works for multiple QoIs.
 
 .. [EldredBichonAdams2006]:
 
@@ -65,6 +65,8 @@ As shown in the figure below the user selects either to use response levels or p
    A. Haldar and S. Mahadevan. Probability, Reliability, and Statistical Methods in Engineering Design. Wiley, New York, 2000
 
 
+
+
 Global Reliability Methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -85,3 +87,32 @@ The user specifies if the gaussian process is to be created in x-space (original
    
    Only a single quantity of interest may be specified when using global reliability
    
+
+
+Importance Sampling (IS)
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+For problems where one is interested in the rare events rather than the whole distribution of output, such as earthquake or storm surge events, conventional sampling methods may require an excessively large number of simulations to obtain an accurate estimation of tail distribution. For such problems, importance sampling (IS) provides a bypass to conventional sampling methods (MCS or LHS), whereby an alternative sampling distribution is introduced around the tail part of the original distribution so that the generated samples have a better resolution at the domain of interest.
+
+:numref:`figIS` shows the input panel for IS scheme. Similar to MCS and LHS, IS requires both the number of samples to be executed and the corresponding seed for generating such random samples. In addition, IS algorithm can be performed via three different approaches, as specified by the third input method:
+
+1.  **Basic Sampling**: A sampling density is constructed in the failure region based on an initial LHS sampling, followed by generation of importance samples and weights and evaluation of the Cumulative Distribution Function.  
+2. **Adaptive Sampling**: The basic sampling procedure is repeated iteratively until a convergence in failure probability is achieved. 
+3. **Multimodal Adaptive Sampling**: A multimodal sampling density is constructed based on samples in the failure and the adaptive sampling procedure is used.
+
+
+.. _figIS:
+
+.. figure:: figures/fwIS.png
+	:align: center
+	:figclass: align-center
+
+	Importance Sampling input panel.
+
+
+.. warning::
+   
+   Only a single quantity of interest may be specified when using importance sampling
+
+
+For more information on each, please refer to the Dakota manual. 
