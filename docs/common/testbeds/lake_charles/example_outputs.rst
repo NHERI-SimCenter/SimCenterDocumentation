@@ -105,20 +105,58 @@ the app would direct you to the **RES** panel (:numref:`r2d_res`) where you coul
 
    R2D RES panel.
 
+For simulating the damage and loss for a large region of interest, it would be efficient to submit and run the job 
+to `DesignSafe <https://www.designsafe-ci.org/>`_ on `Stampede2 <https://www.tacc.utexas.edu/systems/stampede2>`_. 
+This can be done in R2D by clicking **RUN at DesignSafe** (one would need to have a valid 
+`DesignSafe account <https://www.designsafe-ci.org/account/register/>`_ for login and access the computing resource). 
+The individual building simulations are paralleled when being conducted on Stampede2 which accelerate the process, e.g., 
+for the entire building inventory in this testbed, it takes about 10 minutes using 240 Skylake (SKX) cores to complete 
+the simulation and result post-processing.
+
+Users could monitor the job status and retrieve result data by **GET from DesignSafe** button (:numref:`r2d_get_ds`). The retrieved data include
+four major result files, i.e., *BIM.hdf*, *EDP.hdf*, *DM.hdf*, and *DV.hdf*. While R2D provides basic visualization 
+functionalities (:numref:`r2d_res`), users could access the data which are downloaded under the remote work directory, e.g., 
+*/Documents/R2D/RemoteWorkDir* (this directory is machine specific and can be found in **File->Preferences->Remote Jobs Directory**).
+Once having these result files, users could extract and process interested information - the next section will use 
+the results from this testbed as an example to discuss more details.
+
+.. figure:: figure/get_from_designsafe.png
+   :name: r2d_get_ds
+   :align: center
+   :figclass: align-center
+   :width: 400
+
+   R2D GET from DesignSafe.
+
 
 Regional Results (NSI-Based Year Built)
 ========================================
 
+The *BIM.hdf* file saves the building information models with populated building attributes as described in 
+:ref:`lbl-testbed_LC_asset_representation`. The *EDP.hdf* summarizes the EDP realizations. The *DM.hdf* and 
+*DV.hdf* files summarizes the statistics of damage states and estimated loss metrics. These results of this testbed
+can be accessed in the `DesignSafe project <https://doi.org/10.17603/ds2-jpj2-zx14>`_, along with the Jupyter 
+notebook used to visualize them, which will be also discussed here.
+
+:numref:`terrain_swr` (a) and (b) show the sample figures for the geospatial distribution of populated 
+terrain type and second water resistance of the building inventory. The influence of different building 
+attributes on the damage and loss results will be investigated in :ref:`lbl-testbed_LC_validation_results`
 The geospatial distribution of estimated wind damage states and losses under Hurricane Laura
 are shown in :numref:`dl_and_cdf_lc` (a) and (b), respectively. Referring to :numref:`dl_and_cdf_lc` (c), most of the buildings 
-in the studied region (85%) have relatively low to moderate damage (expected Damage State less than 2.0) 
-due to the wind hazard. Referring to :numref:`dl_and_cdf_lc` (c), about 20% buildings would expected damage states lower than 
+in the studied region (75%) have relatively low to moderate damage (expected Damage State less than 2.0) 
+due to the wind hazard. Referring to :numref:`dl_and_cdf_lc` (c), about 5% buildings would expected damage states lower than 
 DS-1 and only about 5% buildings would expect to have damage states exceeding DS-3. 
-The CDF of resulting loss ratios is shown in :numref:`dl_and_cdf_lc` (d) where about 40% buildings would expect 
-a loss less than 10% of the total reconstruction cost, and about 30% buildings could see a loss more than 20% of the total 
+The CDF of resulting loss ratios is shown in :numref:`dl_and_cdf_lc` (d) where about 20% buildings would expect 
+a loss less than 10% of the total reconstruction cost, and about 30% buildings could see a loss more than 35% of the total 
 reconstruction cost. 
-These results can be accessed in the `DesignSafe project <https://doi.org/10.17603/ds2-jpj2-zx14>`_, along with the Jupyter 
-notebook used to visualize the results.
+
+.. figure:: figure/BIM_data.png
+   :name: terrain_swr
+   :align: center
+   :figclass: align-center
+   :width: 600
+
+   Terrain and second water resistance features populated and used in the simulation.
 
 .. figure:: figure/DS_LS_CDF.png
    :name: dl_and_cdf_lc
