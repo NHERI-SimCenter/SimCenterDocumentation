@@ -34,7 +34,7 @@ After successfully downloading and launching, the major steps for setting up the
       :width: 500
 
       R2D HAZ setup.
-#. Downloading the `BIM_LakeCharles_Full.csv <https://doi.org/10.17603/ds2-jpj2-zx14>`_. 
+#. Downloading the `BIM_LakeCharles_Full.csv <https://doi.org/10.17603/ds2-jpj2-zx14>`_ (under **01. Input: BIM - Building Inventory Data** folder). 
    Selecting **CSV to BIM** in the **ASD** panel and setting the **Import Path** to "BIM_LakeCharles_Full.csv" (:numref:`r2d_asd`). 
    Specifying the building IDs that you would like to include in the simulation.
 
@@ -74,7 +74,7 @@ After successfully downloading and launching, the major steps for setting up the
 
       R2D ANA setup.
 #. Setting the "Damage and Loss Method" in **DL** panel to "HAZUS MH HU". Downloading the rulset script from 
-   `DesignSafe PRJ-3207 <https://doi.org/10.17603/ds2-jpj2-zx14>`_ and setting the **Auto populate script** to 
+   `DesignSafe PRJ-3207 <https://doi.org/10.17603/ds2-jpj2-zx14>`_ (under **03. Input: DL - Rulesets for Asset Representation/scripts** folder) and setting the **Auto populate script** to 
    "auto_HU_LA.py" (:numref:`r2d_dl`).
 
    .. figure:: figure/R2D_DL.png
