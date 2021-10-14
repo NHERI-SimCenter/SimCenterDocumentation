@@ -64,49 +64,25 @@ of this application and associated SimCenter software as listed in :numref:`soft
 :numref:`brails_version_LC`. With the software versions listed, the testbed is currently estimated 
 to execute in 10 minutes using five Skylake (SKX) nodes (240 cores) on `Stampede2 <https://www.tacc.utexas.edu/systems/stampede2>`_.
 
-.. only:: html
+.. list-table:: Software and Supporting Files
+   :name: software_version_LC
+   :header-rows: 1
+   :align: center
 
-   .. list-table:: Software and Supporting Files
-      :name: software_version_LC
-      :header-rows: 1
-      :align: center
-
-      * - Files
-        - Version
-        - DOI/Release
-      * - R2D
-        - `v1.1.1 <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt>`_
-        - .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.5033626.svg
-             :target: https://doi.org/10.5281/zenodo.5033626
-      * - AssetRepresentationRulesets
-        - `v1.0.0 <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/releases/tag/v1.0.0>`_
-        - .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.5496056.svg
-             :target: https://doi.org/10.5281/zenodo.5496056
-          .. only:: latex
-              `Zenodo Release <https://doi.org/10.5281/zenodo.5496056>`_
-      * - DesignSafe Project PRJ-3207
-        - v1.0
-        - `Data Depot <https://doi.org/10.17603/ds2-jpj2-zx14>`_
-
-.. only:: latex
-
-   .. list-table:: Software and Supporting Files
-      :name: software_version_LC
-      :header-rows: 1
-      :align: center
-
-      * - Files
-        - Version
-        - DOI/Release
-      * - R2D
-        - `v1.1.1 <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt>`_
-        - `Zenodo Release <https://doi.org/10.5281/zenodo.5033626>`_
-      * - AssetRepresentationRulesets
-        - `v1.0.0 <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/releases/tag/v1.0.0>`_
-        - `Zenodo Release <https://doi.org/10.5281/zenodo.5496056>`_
-      * - DesignSafe Project PRJ-3207
-        - v1.0
-        - `Data Depot <https://doi.org/10.17603/ds2-jpj2-zx14>`_
+   * - Files
+     - Version
+     - DOI/Release
+   * - R2D
+     - `v1.1.1 <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt>`_
+     - .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.5033626.svg
+          :target: https://doi.org/10.5281/zenodo.5033626
+   * - AssetRepresentationRulesets
+     - `v1.0.0 <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/releases/tag/v1.0.0>`_
+     - .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.5496056.svg
+          :target: https://doi.org/10.5281/zenodo.5496056
+   * - DesignSafe Project PRJ-3207
+     - v1.0
+     - `Data Depot <https://doi.org/10.17603/ds2-jpj2-zx14>`_
 
 .. list-table:: Versions of AI application (`BRAILS <https://doi.org/10.5281/zenodo.4570554>`_) and models Used in the Current Version of Testbed
    :name: brails_version_LC
