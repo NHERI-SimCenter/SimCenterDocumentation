@@ -1,5 +1,5 @@
 ID,RoofShape,FloodZone,Area,Longitude,Latitude,Terrain,DSWII,BuildingType,AvgJanTemp,Garage,NumberOfStories,YearBuilt,RoofSlope,MeanRoofHt,OccupancyClass
-1,Hip,X,745,-93.19,30.27,43,128.7,Wood,Above,-1,1,1962,0.25,15,RES3
+1,Hip,X,745,-93.19,30.27,43,128.7,Wood,Above,0,1,1962,0.25,15,RES3
 2,Gable,X,250,-93.19,30.26,11,129,Wood,Above,0,1,1970,0.21,13,RES1
 3,Gable,X,170,-93.19,30.26,11,129,Wood,Above,0,1,1969,0.22,16.3,RES1
 4,Gable,X,142,-93.18,30.26,11,129,Wood,Above,1,2,1974,0.12,34.6,RES1
@@ -18,4 +18,4 @@ ID,RoofShape,FloodZone,Area,Longitude,Latitude,Terrain,DSWII,BuildingType,AvgJan
 17,Gable,X,202,-93.19,30.25,11,129.3,Wood,Above,0,1,1959,0.69,16,RES1
 18,Flat,X,98,-93.19,30.25,11,129.3,Wood,Above,0,1,1955,0.65,16.9,RES1
 19,Hip,X,193,-93.2,30.25,11,129.3,Wood,Above,1,2,1958,1.28,30.1,RES1
-20,Hip,X,303,-93.19,30.25,11,129.2,Wood,Above,-1,1,1959,0.25,15,RES3
+20,Hip,X,303,-93.19,30.25,11,129.2,Wood,Above,0,1,1959,0.25,15,RES3

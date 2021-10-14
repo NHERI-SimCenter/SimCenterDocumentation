@@ -40,7 +40,10 @@ Recommended best practices are summarized as follows:
    require the top of the bottom occupied floor, which will be defined relative to the lowest adjacent (finished) 
    grade (LAG). Digital Elevation Models (DEMs) can also be consulted to establish building elevations. Note that 
    the SimCenter’s image processing tools minimize the need for these data sources.
-#. Extend the trained models to new regions where construction practices may differ.
+#. When applying pre-trained models to new regions/inventories, it is important to consider whether the new 
+   region/inventory has characteristics comparable to the training data. The more they deviate, the less likely the 
+   pre-trained model can be generalized to the new application. Please find more 
+   `discussions <https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/understand.html>`_.
 
 
 
