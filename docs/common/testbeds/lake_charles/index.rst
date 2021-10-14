@@ -75,12 +75,9 @@ to execute in 10 minutes using five Skylake (SKX) nodes (240 cores) on `Stampede
         - Version
         - DOI/Release
       * - R2D
-        - `v1.1.0 <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt>`_
+        - `v1.1.1 <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt>`_
         - .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.5033626.svg
              :target: https://doi.org/10.5281/zenodo.5033626
-      * - rWhale
-        - `v2.3.0 <https://www.designsafe-ci.org/rw/workspace/#!/rWhale-stampede-2.4.0u3>`_
-        - `Github Release <https://github.com/NHERI-SimCenter/SimCenterBackendApplications/releases/tag/V2.3.0>`_
       * - AssetRepresentationRulesets
         - `v1.0.0 <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/releases/tag/v1.0.0>`_
         - .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.5496056.svg
@@ -102,11 +99,8 @@ to execute in 10 minutes using five Skylake (SKX) nodes (240 cores) on `Stampede
         - Version
         - DOI/Release
       * - R2D
-        - `v1.1.0 <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt>`_
+        - `v1.1.1 <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt>`_
         - `Zenodo Release <https://doi.org/10.5281/zenodo.5033626>`_
-      * - rWhale
-        - `v2.3.0 <https://www.designsafe-ci.org/rw/workspace/#!/rWhale-stampede-2.4.0u3>`_
-        - `Github Release <https://github.com/NHERI-SimCenter/SimCenterBackendApplications/releases/tag/V2.3.0>`_
       * - AssetRepresentationRulesets
         - `v1.0.0 <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/releases/tag/v1.0.0>`_
         - `Zenodo Release <https://doi.org/10.5281/zenodo.5496056>`_
