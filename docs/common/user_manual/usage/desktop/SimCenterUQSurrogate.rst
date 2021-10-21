@@ -108,7 +108,7 @@ User can also activate the **Advanced Options for Gaussian Process Model**
 * **Kernel function**: Correlation function for Gaussian process regression. Matern5/2 function is the default, and Matern3/2, Radial Basis, and Exponential functions are additionally supported.
 * **Add Linear Trend Function**: When increasing or decreasing trend is expected over the variables domain, a linear trend function may be introduced. The default is unchecked, ie. no trend function.
 * **Log-space Transform of QoI**: When the user can guarantee that the response quantities are always greater than 0, user may want to introduce a surrogate model in log-transformed space of QoI. The default is unchecked, ie. original physical coordinate.
-* **Design of Experiments options**: User may select the Adaptive DoE method and the number of the initial design of experiments (DoE) manually. The default method is "pareto" and the default number of DoE is 4 times the number of random variables.
+* **Design of Experiments options**: User may select the Adaptive DoE method and the number of the initial design of experiments (DoE) manually. The default is "none" and the default number of DoE is 4 times the number of random variables.
 * **Nugget Variances**: User may define nugget variances or bounds of the nugget variances if needed. The default is "optimize".
 
 Additionally, users may populate the initial samples directly from data files by activating **Start with Existing Dataset**
@@ -234,25 +234,16 @@ For each fidelity models, either model, data, or both can be provided for each f
    :figclass: align-center
    :width: 800
 
-   An option to define high-fidelity simulation model
+   Providing a simulation model for the high-fidelity response
 
 .. _figSimMF3:
-
-.. figure:: figures/SimUQ_surrogate_MF2.png
-   :align: center
-   :figclass: align-center
-   :width: 800
-
-   An option to define high-fidelity simulation model
-
-.. _figSimMF4:
 
 .. figure:: figures/SimUQ_surrogate_MF3.png
    :align: center
    :figclass: align-center
    :width: 800
 
-   An option to define high-fidelity simulation model and datafile. The datafile format is same as those used for Case 3.
+   Directly providing input(RV)-response(QoI) data pair of high-fidelity model
 
 
 RV (Random Variables) Tab
