@@ -150,15 +150,7 @@ The methodology used for each of these attributes is now described.
                           attribute for the larger Flood-Exposed Inventory, and as a means to cross-validate 
                           values reported in NJDEP and MOD IV for consistency with Hazus conventions.
                           
-                          An object object detection model that can automatically detect rows of building windows was
-                          established to generate the image-based detections from street-level. The model was trained on the 
-                          EfficientDet-D7 architecture with a dataset of 60,000 images, using 80% for training, 15% 
-                          for validation, and 5% testing of the model. In order to ensure faster model convergence, 
-                          initial weights of the model were set to model weights of the (pretrained) object detection
-                          model that, at the time, achieved state-of-the-art performance on the 2017 COCO Detection set.
-                          For this specific implementation, the peak model performance was achieved using the Adam optimizer 
-                          at a learning rate of 0.0001 (batch size: 2), after 50 epochs. :numref:`num_stories_detection` shows examples of the 
-                          floor detections performed by the model.
+                          A detection model that can automatically detect rows of building windows was established to generate the image-based detections of visible floor locations from street-level images. The model was trained on the `EfficientDet-D7 architecture <https://arxiv.org/abs/1911.09070>`_ with a dataset of 60,000 images, using 80% for training, 15% for validation, and 5% testing of the model. In order to ensure faster model convergence, initial weights of the model were set to model weights of the (pretrained) object detection model that, at the time, achieved state-of-the-art performance on the `2017 COCO Detection set <https://cocodataset.org/#download>`_. For this specific implementation, the peak model performance was achieved using the `Adam optimizer <https://arxiv.org/abs/1412.6980>`_ at a learning rate of 0.0001 (batch size: 2), after 50 epochs. :numref:`num_stories_detection` shows examples of the floor detections performed by the model.
 
                           .. figure:: figure/number_of_stories_detection.png
                               :name: num_stories_detection
@@ -168,32 +160,17 @@ The methodology used for each of these attributes is now described.
 
                               Sample floor detections of the floor detection model (each detection is indicated by a green bounding box). The percentage value shown on the top right corner of a bounding box indicates model confidence level associated with that prediction.
 
-                          For an image, the described floor detection model generates the bounding box output for its 
-                          detections and calculates the confidence level associated with each detection. A post-processor 
-                          that converts stacks of neighboring bounding boxes into floor counts was developed to convert 
-                          this output into floor counts. Recognizing an image may contain multiple buildings at a time, 
-                          this post-processor was designed to perform counts at the individual building-level.
+                          For an image, the described floor detection model generates the bounding box output for its  detections and calculates the confidence level associated with each detection (see :numref:`num_stories_detection`). A post-processor that converts stacks of neighboring bounding boxes into floor counts was developed to convert this output into floor counts. Recognizing an image may contain multiple buildings at a time, this post-processor was designed to perform counts at the individual building level. 
 
-                          For a random building image dataset, where images were captured using arbitrary camera 
-                          orientations (also termed “in-the-wild” images), the developed floor detection model 
-                          was determined to identify the number of stories with an accuracy of 86%. 
-                          :numref:`num_story_confusion` (a) provides a breakdown of this accuracy measure for different 
-                          prediction classes (i.e., the confusion matrix of model classifications). 
-                          It was also observed that if the image dataset is established such that building 
-                          images are captured with minimal obstructions, the building is at the center of the 
-                          image, and perspective distortions are limited (termed “cleaned” data), the model 
-                          identified the number of stories at an accuracy level of 94.7%. 
-                          :numref:`num_story_confusion` (b)  shows the confusion matrix for the model predicting on the 
-                          “cleaned” image data. In quantifying both accuracy levels, a test set of 3,000 images 
-                          randomly selected across all New Jersey counties, excluding Atlantic County, was utilized.
+                          For a random image dataset of buildings captured using arbitrary camera orientations (also termed in the wild images), the developed floor detection model was determined to capture the number of floors information of buildings with an accuracy of 86%. :numref:`num_stories_vali` (a) provides a breakdown of this accuracy measure for different prediction classes (i.e. the confusion matrix of model classifications). It was also observed that if the image dataset is established such that building images are captured with minimal obstructions, the building is at the center of the image, and perspective distortions are limited, the number of floors detections were performed at an accuracy level of 94.7% by the model. :numref:`num_stories_vali` (b) shows the confusion matrix for the model predicting on the “cleaned” image data. In quantifying both accuracy levels, a test set of 3,000 images randomly selected across all counties of a companion testbed in New Jersey, excluding Atlantic County (site of that testbed), was utilized.
 
-                          .. figure:: figure/num_story_confusion.png
-                              :name: num_story_confusion
-                              :align: center
-                              :figclass: align-center
-                              :width: 600
+.. figure:: figure/NumOfStoriesVali.png
+   :name: num_stories_vali
+   :align: center
+   :figclass: align-center
+   :width: 600
 
-                              Confusion matrices for the number of stories predictor. The maxtrix one the left shows
+                              Confusion matrices for the number of stories predictor. The matrix on the left shows
                               the model's prediction accuracy when tested on "in-the-wild" images. The matrix on the
                               right depicts the model accuracy on the "cleaned" imagery.
 
