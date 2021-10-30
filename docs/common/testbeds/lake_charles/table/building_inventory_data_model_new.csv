@@ -1,4 +1,4 @@
-Attribute,Description,Format,Source
+Assigned Attribute,Description,Format,Source
 **ID**,Building unique ID.,,User defined
 **Latitude**,Latitude of the Building Centroid (inside polygon).,Floating point number (Decimal Degrees),`Microsoft Maps <https://github.com/microsoft/USBuildingFootprints>`_
 **Longitude**,Longitude of the Building Centroid (inside polygon).,Floating point number (Decimal Degrees),`Microsoft Maps <https://github.com/microsoft/USBuildingFootprints>`_
@@ -6,7 +6,7 @@ Attribute,Description,Format,Source
 ",StreetView
 **BuildingType**,Core construction material type,Choices: Wood,Assume all in wood
 **YearBuilt**,Year of Construction,Integer (4-digit),StreetView
-**NumberofStories**,Number of stories estimated via image processing,Integer (4-digit),StreetView
+**NumberOfStories**,Number of stories estimated via image processing,Integer,StreetView
 **DWSII**,DesignWindSpeed II in mph,Floating point number  ,ATC API (ASCE 7)
 **FloodZone**,FEMA FloodZone designation as defined by Flood Insurance Rate Maps,`FEMA designation <https://snmapmod.snco.us/fmm/document/fema-flood-zone-definitions.pdf>`_,User specified
 **AvgJanTemp**,Average temperature in January below or above critial value of 25F.,"Choices: Above, Below",User specified
@@ -15,14 +15,21 @@ Attribute,Description,Format,Source
 **MeanRoofHt**,Mean height of roof system in ft,Floating point number  ,Aerial + StreetView Imagery
 **Garage**,Assessor-provided type of garage.,"Choices: 0, 1",StreetView
 **LULC**,Land Use Land Cover class,`LULC conversion <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/data/LULC.json>`_,`WebGIS <http://www.webgis.com/terr_pages/LA/lulcutm/calcasieu.html>`_
-**AnalysisDefault**,Defines the default level of fidelity for analysis,"Choices: 1, 2, 3",User defined
-**HazusClass-W**,Hazus building classes as defined for wind hazards,"CHOICES: WSF1-2, WMUH1-3",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
-**HPR**,Hazard Prone Regions for Hazus wind vulnerability assignments for WSF1-2,"Choices: yes, no",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
-**WBD**,Wind Borne Debris for Hazus wind vulnerability assignments for WSF1-2,"Choices: yes, no",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
-**SWR**,"Secondary Water Resistance for Hazus wind vulnerability assignments for WSF1-2, WMUH1-3","Choices: yes, no",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
-**RoofCvr**,Roof cover for Hazus wind vulnerability assignments for WMUH1-3,"Choices: N/A, BUR, SPM",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
-**RoofQual**,Roof cover quality for Hazus wind vulnerability assignments for WMUH1-3,"Choices: N/A, poor, good",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
-**RDA-Wood**,"Roof Deck Attachment for wood for Hazus wind vulnerability assignments for WSF1-2, WMUH1-3","Choices: A, B, C, D",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
-**R2WC**,"Roof to Wall Connection for Hazus wind vulnerability assignments for WSF1-2, WMUH1-3","Choices: strap, toe-nail",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
-**shutters**,"Window opening protection for Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MMUH1-3","Choices: yes, no",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
-**Agarage**,Attached garage for Hazus wind vulnerability assignments for WSF1-2,"Choices: none, SFBC 1994, standard, weak",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
+**PlanArea**,Plan area (optional),Floating point number (optional),User defined or estimated from polygon
+**AnalysisDefault**,Defines the default level of fidelity for analysis,"Choices: 1, 2, 3 (optional)",User defined
+**WindowArea**,Window area ratio,"Floating point number (optional, default 0.2)",User defined
+**WindZone**,Rating of the amount of wind pressure a manufactured home,"Choice: I, II, III, IV (optional, default I)",User defined
+**RoofSystem**,Roof system,"Choices: Wood, OWSJ (optional, default Wood)",User defined
+**SheatingTickness**,Thickness of sheathing,"Floating point number (optional, default 1.0)",User defined
+**Augmented Attribute**,**Description**,**Format**,**Source**
+**HazusClassW**,Hazus building classes as defined for wind hazards,"Choices: WSF1-2, WMUH1-3",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
+**HazardProneRegion**,Hazard Prone Regions for Hazus wind vulnerability assignments for WSF1-2,"Choices: yes, no",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
+**WindBorneDebris**,Wind Borne Debris for Hazus wind vulnerability assignments for WSF1-2,"Choices: yes, no",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
+**SecondaryWaterResistance**,"Secondary Water Resistance for Hazus wind vulnerability assignments for WSF1-2, WMUH1-3","Choices: yes, no",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
+**RoofCover**,Roof cover for Hazus wind vulnerability assignments for WMUH1-3,"Choices: N/A, BUR, SPM",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
+**RoofQuality**,Roof cover quality for Hazus wind vulnerability assignments for WMUH1-3,"Choices: N/A, poor, good",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
+**RoofDeckAttachmentW**,"Roof Deck Attachment for wood for Hazus wind vulnerability assignments for WSF1-2, WMUH1-3","Choices: A, B, C, D",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
+**RoofToWallConnection**,"Roof to Wall Connection for Hazus wind vulnerability assignments for WSF1-2, WMUH1-3","Choices: strap, toe-nail",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
+**Shutters**,"Window opening protection for Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MMUH1-3","Choices: yes, no",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
+**AugmentedGarage**,Attached garage for Hazus wind vulnerability assignments for WSF1-2,"Choices: none, SFBC 1994, standard, weak",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
+**TerrainRoughness**,HAZUS-defined terrain classification (x100( based on LULC data,"Choices: 3, 15, 35, 70, 100",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
