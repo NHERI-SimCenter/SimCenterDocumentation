@@ -1,4 +1,4 @@
-Assigned Attribute,Description,Format,Source
+Description Attribute,Description,Format,Source
 **ID**,Building unique ID.,,User defined
 **Latitude**,Latitude of the Building Centroid (inside polygon).,Floating point number (Decimal Degrees),`Microsoft Maps <https://github.com/microsoft/USBuildingFootprints>`_
 **Longitude**,Longitude of the Building Centroid (inside polygon).,Floating point number (Decimal Degrees),`Microsoft Maps <https://github.com/microsoft/USBuildingFootprints>`_
@@ -21,7 +21,7 @@ Assigned Attribute,Description,Format,Source
 **WindZone**,Rating of the amount of wind pressure a manufactured home,"Choice: I, II, III, IV (optional, default I)",User defined
 **RoofSystem**,Roof system,"Choices: Wood, OWSJ (optional, default Wood)",User defined
 **SheatingTickness**,Thickness of sheathing,"Floating point number (optional, default 1.0)",User defined
-**Augmented Attribute**,**Description**,**Format**,**Source**
+**Representation Attribute**,**Description**,**Format**,**Source**
 **HazusClassW**,Hazus building classes as defined for wind hazards,"Choices: WSF1-2, WMUH1-3",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
 **HazardProneRegion**,Hazard Prone Regions for Hazus wind vulnerability assignments for WSF1-2,"Choices: yes, no",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)
 **WindBorneDebris**,Wind Borne Debris for Hazus wind vulnerability assignments for WSF1-2,"Choices: yes, no",Rulesets (see :ref:`lbl-testbed_LC_asset_representation`)

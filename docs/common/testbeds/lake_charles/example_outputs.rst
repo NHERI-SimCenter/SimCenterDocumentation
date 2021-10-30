@@ -25,7 +25,8 @@ After successfully downloading and launching, the major steps for setting up the
       R2D GI setup.
 #. Downloading and unzipping the `HurricaneLaura_MappedPWS <https://doi.org/10.17603/ds2-jpj2-zx14>`_. 
    Setting the **Event File Listing Wind Field** in the **HAZ** panel to the "EventGrid.csv" in the unzipped "IMs" folder.
-   The app would automatically load the directory (:numref:`r2d_haz`).
+   The app would automatically load the directory (:numref:`r2d_haz`). And the **Units of Event Input File** should be 
+   "Miles per hour".
 
    .. figure:: figure/R2D_HAZ.png
       :name: r2d_haz
@@ -45,8 +46,7 @@ After successfully downloading and launching, the major steps for setting up the
       :width: 500
 
       R2D ASD setup.
-#. Setting the **Regional Mapping** and **SimCenterEvent** in the **HTA** panel (e.g., :numref:`r2d_hta`) where the **Event Units** should be 
-   "Feet" and the **Event Type** should be "Hurricane". 
+#. Setting the **Regional Mapping** and **SimCenterEvent** in the **HTA** panel (e.g., :numref:`r2d_hta`).
 
    .. figure:: figure/R2D_HTA.png
       :name: r2d_hta
