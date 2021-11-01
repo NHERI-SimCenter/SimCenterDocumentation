@@ -114,8 +114,8 @@ for the entire building inventory in this testbed, it takes about 10 minutes usi
 the simulation and result post-processing.
 
 Users could monitor the job status and retrieve result data by **GET from DesignSafe** button (:numref:`r2d_get_ds`). The retrieved data include
-four major result files, i.e., *BIM.hdf*, *EDP.hdf*, *DM.hdf*, and *DV.hdf*. While R2D provides basic visualization 
-functionalities (:numref:`r2d_res`), users could access the data which are downloaded under the remote work directory, e.g., 
+four major result files, i.e., *BIM.hdf*, *EDP.hdf*, *DM.hdf*, and *DV.hdf*. R2D also automatically converts the hdf files to csv files that are easier to work with.
+While R2D provides basic visualization functionalities (:numref:`r2d_res`), users could access the data which are downloaded under the remote work directory, e.g., 
 */Documents/R2D/RemoteWorkDir* (this directory is machine specific and can be found in **File->Preferences->Remote Jobs Directory**).
 Once having these result files, users could extract and process interested information - the next section will use 
 the results from this testbed as an example to discuss more details.
