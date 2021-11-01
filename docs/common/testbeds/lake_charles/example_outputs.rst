@@ -112,7 +112,7 @@ This can be done in R2D by clicking **RUN at DesignSafe** (one would need to hav
 `DesignSafe account <https://www.designsafe-ci.org/account/register/>`_ for login and access the computing resource). 
 :numref:`r2d_run_ds` provides an example configuration to run the analysis.
 The individual building simulations are paralleled when being conducted on Stampede2 which accelerate the process, e.g., 
-for the entire building inventory in this testbed, it takes about 10 minutes using 240 Skylake (SKX) cores to complete 
+for the entire building inventory in this testbed, it takes about 15 minutes using 96 Skylake (SKX) cores to complete 
 the simulation and result post-processing.
 
 .. figure:: figure/R2D_RUN.png
