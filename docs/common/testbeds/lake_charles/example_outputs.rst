@@ -109,9 +109,18 @@ For simulating the damage and loss for a large region of interest (please rememb
 to `DesignSafe <https://www.designsafe-ci.org/>`_ on `Stampede2 <https://www.tacc.utexas.edu/systems/stampede2>`_. 
 This can be done in R2D by clicking **RUN at DesignSafe** (one would need to have a valid 
 `DesignSafe account <https://www.designsafe-ci.org/account/register/>`_ for login and access the computing resource). 
+:numref:`r2d_run_ds` provides an example configuration to run the analysis.
 The individual building simulations are paralleled when being conducted on Stampede2 which accelerate the process, e.g., 
 for the entire building inventory in this testbed, it takes about 10 minutes using 240 Skylake (SKX) cores to complete 
 the simulation and result post-processing.
+
+.. figure:: figure/R2D_RUN.png
+   :name: r2d_run_ds
+   :align: center
+   :figclass: align-center
+   :width: 300
+
+   R2D - Run at DesignSafe (configuration).
 
 Users could monitor the job status and retrieve result data by **GET from DesignSafe** button (:numref:`r2d_get_ds`). The retrieved data include
 four major result files, i.e., *BIM.hdf*, *EDP.hdf*, *DM.hdf*, and *DV.hdf*. R2D also automatically converts the hdf files to csv files that are easier to work with.
