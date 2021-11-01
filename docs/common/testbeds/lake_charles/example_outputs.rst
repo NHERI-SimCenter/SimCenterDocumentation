@@ -37,7 +37,7 @@ After successfully downloading and launching, the major steps for setting up the
       R2D HAZ setup.
 #. Download the `BIM_LakeCharles_Full.csv <https://doi.org/10.17603/ds2-jpj2-zx14>`_ (under **01. Input: BIM - Building Inventory Data** folder). 
    Select **CSV to BIM** in the **ASD** panel and set the **Import Path** to "BIM_LakeCharles_Full.csv" (:numref:`r2d_asd`). 
-   Specify the building IDs that you would like to include in the simulation.
+   Specify the building IDs that you would like to include in the simulation (e.g., 1-100).
 
    .. figure:: figure/R2D_ASD.png
       :name: r2d_asd
@@ -105,7 +105,7 @@ the app would direct you to the **RES** panel (:numref:`r2d_res`) where you coul
 
    R2D RES panel.
 
-For simulating the damage and loss for a large region of interest, it would be efficient to submit and run the job 
+For simulating the damage and loss for a large region of interest (please remember to reset the building IDs in **ASD**), it would be efficient to submit and run the job 
 to `DesignSafe <https://www.designsafe-ci.org/>`_ on `Stampede2 <https://www.tacc.utexas.edu/systems/stampede2>`_. 
 This can be done in R2D by clicking **RUN at DesignSafe** (one would need to have a valid 
 `DesignSafe account <https://www.designsafe-ci.org/account/register/>`_ for login and access the computing resource). 
