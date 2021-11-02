@@ -46,4 +46,4 @@ Users can access the the interpolated wind field inputs for the defined scenario
    * - Hazard
      - Access Point
    * - Wind Field
-     - `Interpolated Hurricane Laura wind data <https://doi.org/10.17603/ds2-jpj2-zx14>`_
+     - `Interpolated Hurricane Laura wind data <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v3/02.%20Input:%20HAZ%20-%20Hazard%20Characterization>`_
