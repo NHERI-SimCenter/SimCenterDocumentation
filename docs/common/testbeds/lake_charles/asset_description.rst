@@ -20,7 +20,7 @@ serving as input to the workflow. For each attribute a
 row in the table is provided. Each row has a number of columns: the attribute name, description, 
 format (alphanumeric, floating point number, etc.), the data source used to define that attribute.
 An expanded version of :numref:`tab-bldg_inv_data_model_lc` with the full details of this data
-model are available on `DesignSafe PRJ-3207 <https://doi.org/10.17603/ds2-jpj2-zx14>`_.
+model are available on `DesignSafe PRJ-3207 <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v3/01.%20Input:%20BIM%20-%20Building%20Inventory%20Data>`_.
 
 .. csv-table:: Building inventory data model, detailed for Lake Charles Inventory.
    :name: tab-bldg_inv_data_model_lc

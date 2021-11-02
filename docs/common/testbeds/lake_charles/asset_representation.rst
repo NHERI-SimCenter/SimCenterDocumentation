@@ -58,7 +58,7 @@ later in :numref:`addinfo_ruleset`.
      - Ruleset Definition Table
      - Python script
    * - Building Class Rulesets - Wind
-     - `HAZUS Building Class Rulesets - Wind.pdf <https://doi.org/10.17603/ds2-jpj2-zx14>`_
+     - `HAZUS Building Class Rulesets - Wind.pdf <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v3/03.%20Input:%20DL%20-%20Rulesets%20for%20Asset%20Representation>`_
      - `WindClassRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindClassRulesets.py>`_
 
 Building Attributes
@@ -112,7 +112,7 @@ assigned in the `Atlantic County, NJ testbed Asset Representation <https://nheri
      - Ruleset Definition Table
      - Python script
    * - Attribute Assignment - Wind (Meta-Variable)
-     - `Hazus Building Attribute Rulesets - Wind - Meta-Variables.pdf <https://doi.org/10.17603/ds2-jpj2-zx14>`_
+     - `Hazus Building Attribute Rulesets - Wind - Meta-Variables.pdf <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v3/03.%20Input:%20DL%20-%20Rulesets%20for%20Asset%20Representation>`_
      - `WindMetaVarRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindMetaVarRulesets.py>`_
 
 The following sections summarize the rulesets used for wind loss  attribute assignments for WSF and WMUH 
@@ -156,10 +156,10 @@ cross-referenced in :numref:`addinfo_ruleset_wood`.
      - Ruleset Definition Table
      - Python script
    * - HAZUS Building Attribute Rulesets - Wind (WSF1-2)
-     - `Hazus Building Attribute Rulesets - Wind - WSF1-2.pdf <https://doi.org/10.17603/ds2-jpj2-zx14>`_
+     - `Hazus Building Attribute Rulesets - Wind - WSF1-2.pdf <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v3/03.%20Input:%20DL%20-%20Rulesets%20for%20Asset%20Representation>`_
      - `WindWSFRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindWSFRulesets.py>`_
    * - HAZUS Building Attribute Rulesets - Wind (WMUH1-3)
-     - `Hazus Building Attribute Rulesets - Wind - WMUH1-3.pdf <https://doi.org/10.17603/ds2-jpj2-zx14>`_
+     - `Hazus Building Attribute Rulesets - Wind - WMUH1-3.pdf <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v3/03.%20Input:%20DL%20-%20Rulesets%20for%20Asset%20Representation>`_
      - `WindWMUHRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindWMUHRulesets.py>`_
 
 Taking the attribute Second Water Resistance (SWR) as an example, the SWR attribute is assigned by 

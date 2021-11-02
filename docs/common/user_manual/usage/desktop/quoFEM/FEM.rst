@@ -30,7 +30,7 @@ When the choice of FEM application is OpenSees (the default application), the us
 .. literalinclude:: ../../../examples/desktop/quoFEM/quo-01/src/TrussModel.tcl
    :language: tcl
 
-2. **Postprocess Script**: This is an optional entry where the user has the option of specifying either a tcl script or a Python script that will be used to postprocess the results and create a ``results.out`` file after the main script runs. 
+2. **Postprocess Script** (optional): This is an optional entry where the user has the option of specifying either a tcl script or a Python script that will be used to postprocess the results and create a ``results.out`` file after the main script runs. 
 
 .. note::
    The postprocess file can be either a tcl script or a Python script and the file extensions must be either ``.py`` or ``.tcl``.
@@ -51,9 +51,9 @@ Similar to the OpenSees application, when the user selects FEAPpv the user is re
 
 1. **Input File**: The user must specify a main input file.  A part of this file may contain variables set in the ``PARA`` section. The variables in this section will be read by the UI when the file is entered and will be autopopulated in the **RV** tab. For example if a file containing the following code was specified:
 
-.. literalinclude:: ../../../examples/desktop/quoFEM/quo-10/src/TrussModel.txt
+.. literalinclude:: ../../../../../../../quoFEM/Examples/qfem-0010/src/TrussModel.txt
 
-then the parameters ``E``, ``P``, ``Ao``, ``Au`` would be read by the application and placed in the **RV** tab.
+  then the parameters ``E``, ``P``, ``Ao``, ``Au`` would be read by the application and placed in the **RV** tab.
 
 2. **Postprocess Script**: The user must provide the name of the Python script that will run when FEAPpv has finished executing. This Python script must load the output file from FEAPpv and create the ``results.out`` file. Currently the user has no control over the name of the output file created by FEAPpv, ``SimCenterOut.txt``. It is this file the post-process script must open and use to create the ``results.out`` file.
 
@@ -66,9 +66,9 @@ For the OpenSeesPy application, the user provides a main script and has the opti
 	:align: center
 	:figclass: align-center
 
-1. **Postprocess Script**. This must be a Python script which is provided the QoI variable names when started. This entry can be left blank if the main script creates a ``results.out`` file with a single line as described for the OpenSees application.
+1. **Postprocess Script** (Optional): This must be a Python script which is provided the QoI variable names when started. This entry can be left blank if the main script creates a ``results.out`` file with a single line as described for the OpenSees application.
 
-2. **Parameters File** (Optional). This file allows for the automatic population of the **RV** tab with any variables found in the file. For example if the file contained the following:
+2. **Parameters File**: This file allows for the automatic population of the **RV** tab with any variables found in the file. For example if the file contained the following:
 
 .. literalinclude:: ../../../examples/desktop/quoFEM/quo-02/src/TrussParams.py
    :language: py

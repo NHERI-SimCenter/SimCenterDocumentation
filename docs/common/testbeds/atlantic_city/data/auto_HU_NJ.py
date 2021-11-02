@@ -177,8 +177,25 @@ def parse_BIM(BIM_in):
                 area = BIM_in[i]
                 break
 
-    # if getting RES3 only (without subclass) then converting it to default RES3A
-    oc = BIM_in.get('occupancy','RES1')
+    # Design Wind Speed
+    alname_dws = ['DSWII', 'DWSII', 'DesignWindSpeed']
+    try:
+        dws = BIM_in['DSWII']
+    except:
+        for alname in alname_dws:
+            if alname in BIM_in.keys():
+                dws = BIM_in[alname]
+                break
+
+    # if getting RES3 then converting it to default RES3A
+    alname_occupancy = ['OccupancyClass', 'occupancy']
+    try:
+        oc = BIM_in['occupancy']
+    except:
+        for alname in alname_occupancy:
+            if alname in BIM_in.keys():
+                oc = BIM_in[alname]
+                break
     if oc == 'RES3':
         oc = 'RES3A'
 
@@ -210,17 +227,34 @@ def parse_BIM(BIM_in):
         # standard input should follow the FEMA flood zone designations
         floodzone_fema = BIM_in['FloodZone']
 
+    # maps for BuildingType
+    ap_BuildingType = {
+        # Coastal areas with a 1% or greater chance of flooding and an
+        # additional hazard associated with storm waves.
+        'Wood': 3001,
+        'Steel': 3002,
+        'Concrete': 3003,
+        'Masonry': 3004,
+        'Manufactured': 3005
+    }
+    if type(BIM_in['FloodZone']) == str:
+        # NJDEP code for flood zone (conversion to the FEMA designations)
+        buildingtype = ap_BuildingType[BIM_in['BuildingType']]
+    else:
+        # standard input should follow the FEMA flood zone designations
+        buildingtype = BIM_in['BuildingType']
+
     # first, pull in the provided data
     BIM = dict(
         occupancy_class=str(oc),
-        bldg_type=BIM_in['BuildingType'],
+        bldg_type=buildingtype,
         year_built=int(yearbuilt),
         # double check with Tracey for format - (NumberStories0 is 4-digit code)
         # (NumberStories1 is image-processed story number)
         stories=int(nstories),
         area=float(area),
         flood_zone=floodzone_fema,
-        V_ult=float(BIM_in['DesignWindSpeed']),
+        V_ult=float(dws),
         avg_jan_temp=ap_ajt[BIM_in.get('AverageJanuaryTemperature','Below')],
         roof_shape=ap_RoofType[BIM_in['RoofShape']],
         roof_slope=float(BIM_in.get('RoofSlope',0.25)), # default 0.25
@@ -279,7 +313,7 @@ def parse_BIM(BIM_in):
     if not HPR:
         WBD = False
     else:
-        WBD = ((((BIM['flood_zone'] >= 6101) and (BIM['flood_zone'] <= 6109)) and
+        WBD = (((BIM['flood_zone'].startswith('A') or BIM['flood_zone'].startswith('V')) and
                 BIM['V_ult'] >= flood_lim) or (BIM['V_ult'] >= general_lim))
 
     # Terrain
@@ -684,6 +718,15 @@ def WSF_config(BIM):
                 garage = 'wkd' # Weak
                 shutters = 0 # HAZUS ties weak garage to w/o shutters
 
+    # extend the BIM dictionary
+    BIM.update(dict(
+        SWR = SWR,
+        RDA = RDA,
+        RWC = RWC,
+        shutters = shutters,
+        garage = garage
+        ))
+
     # building configuration tag
     bldg_config = f"WSF" \
                   f"{int(min(BIM['stories'],2))}_" \
@@ -899,6 +942,16 @@ def WMUH_config(BIM):
     # Buildings with more than 3 stories are mapped to the 3-story configuration
     stories = min(BIM['stories'], 3)
 
+    # extend the BIM dictionary
+    BIM.update(dict(
+        SWR = SWR,
+        roof_cover = roof_cover,
+        roof_quality = roof_quality,
+        RDA = RDA,
+        RWC = RWC,
+        shutters = shutters
+        ))
+
     bldg_config = f"WMUH" \
                   f"{int(stories)}_" \
                   f"{BIM['roof_shape']}_" \
@@ -1038,6 +1091,15 @@ def MSF_config(BIM):
         # However, SWR indicates a code-plus practice.
         SWR = random.random() < 0.6
 
+        BIM.update(dict(
+            SWR = SWR,
+            RDA = RDA,
+            RWC = RWC,
+            shutters = shutters,
+            garage = garage,
+            MR = MR
+            ))
+
         stories = min(BIM['stories'], 2)
         bldg_config = f"MSF" \
                       f"{int(stories)}_" \
@@ -1080,6 +1142,15 @@ def MSF_config(BIM):
             SWR = True
         elif BIM['roof_shape'] in ['hip', 'gab']:
             SWR = random.random() < 0.6
+
+        BIM.update(dict(
+            SWR = SWR,
+            RDA = RDA,
+            RWC = RWC,
+            shutters = shutters,
+            garage = garage,
+            MR = MR
+            ))
 
         stories = min(BIM['stories'], 2)
         bldg_config = f"MSF" \
@@ -1228,6 +1299,16 @@ def MMUH_config(BIM):
     # into consideration.
     MR = True
 
+    BIM.update(dict(
+        SWR = SWR,
+        RDA = RDA,
+        RWC = RWC,
+        shutters = shutters,
+        roof_cover = roof_cover,
+        roof_quality = roof_quality,
+        MR = MR
+        ))
+
     stories = min(BIM['stories'], 3)
     bldg_config = f"MMUH" \
                   f"{int(stories)}_" \
@@ -1373,6 +1454,17 @@ def MLRM_config(BIM):
             shutters = False
 
     if BIM['mean_roof_height'] < 15.0:
+        BIM.update(dict(
+            RDA = RDA,
+            DQ = DQ,
+            RWC = RWC,
+            shutters = shutters,
+            roof_cover = roof_cover,
+            WIDD = WIDD,
+            MR = MR,
+            MRDA = MRDA
+            ))
+
         # if it's MLRM1, configure outputs
         bldg_config = f"MLRM1_" \
                       f"{roof_cover}_" \
@@ -1398,6 +1490,19 @@ def MLRM_config(BIM):
             else:
                 JSPA = 4
                 unit_tag = 'mlt'
+
+        BIM.update(dict(
+            RDA = RDA,
+            DQ = DQ,
+            RWC = RWC,
+            shutters = shutters,
+            roof_cover = roof_cover,
+            WIDD = WIDD,
+            MR = MR,
+            MRDA = MRDA,
+            JSPA = JSPA,
+            unit_tag = unit_tag
+            ))
 
         bldg_config = f"MLRM2_" \
                       f"{roof_cover}_" \
@@ -1468,6 +1573,13 @@ def MLRI_config(BIM):
                 roof_quality = 'god'
             else:
                 roof_quality = 'por'
+
+    BIM.update(dict(
+        shutters = shutters,
+        roof_cover = roof_cover,
+        MR = MR,
+        MRDA = MRDA
+        ))
 
     bldg_config = f"MLRI_" \
                   f"{roof_quality}_" \
@@ -1553,6 +1665,14 @@ def MERB_config(BIM):
         bldg_tag = 'MERBM'
     else:
         bldg_tag = 'MERBH'
+
+    BIM.update(dict(
+        shutters = shutters,
+        roof_cover = roof_cover,
+        WWR = WWR,
+        MRDA = MRDA,
+        WIDD = WIDD
+        ))
 
     bldg_config = f"{bldg_tag}_" \
                   f"{roof_cover}_" \
@@ -1640,6 +1760,14 @@ def MECB_config(BIM):
     else:
         bldg_tag = 'MECBH'
 
+    BIM.update(dict(
+        shutters = shutters,
+        roof_cover = roof_cover,
+        WWR = WWR,
+        MRDA = MRDA,
+        WIDD = WIDD
+        ))
+
     bldg_config = f"{bldg_tag}_" \
                   f"{roof_cover}_" \
                   f"{WWR}_" \
@@ -1723,6 +1851,13 @@ def CECB_config(BIM):
     else:
         bldg_tag = 'CECBH'
 
+    BIM.update(dict(
+        shutters = shutters,
+        roof_cover = roof_cover,
+        WWR = WWR,
+        WIDD = WIDD
+        ))
+
     bldg_config = f"{bldg_tag}_" \
                   f"{roof_cover}_" \
                   f"{WWR}_" \
@@ -1805,6 +1940,13 @@ def CERB_config(BIM):
     else:
         bldg_tag = 'CERBH'
 
+    BIM.update(dict(
+        shutters = shutters,
+        roof_cover = roof_cover,
+        WWR = WWR,
+        WIDD = WIDD
+        ))
+
     bldg_config = f"{bldg_tag}_" \
                   f"{roof_cover}_" \
                   f"{WWR}_" \
@@ -1874,6 +2016,12 @@ def SPMB_config(BIM):
         bldg_tag = 'SPMBM'
     else:
         bldg_tag = 'SPMBL'
+
+    BIM.update(dict(
+        shutters = shutters,
+        MRDA = MRDA,
+        roof_quality = roof_quality
+        ))
 
     bldg_config = f"{bldg_tag}_" \
                   f"{roof_quality}_" \
@@ -1967,6 +2115,14 @@ def SECB_config(BIM):
         bldg_tag = 'SECBM'
     else:
         bldg_tag = 'SECBH'
+
+    BIM.update(dict(
+        shutters = shutters,
+        roof_cover = roof_cover,
+        WWR = WWR,
+        MRDA = MRDA,
+        WIDD = WIDD
+        ))
 
     bldg_config = f"{bldg_tag}_" \
                   f"{roof_cover}_" \
@@ -2063,6 +2219,14 @@ def SERB_config(BIM):
     else:
         bldg_tag = 'SERBH'
 
+    BIM.update(dict(
+        shutters = shutters,
+        roof_cover = roof_cover,
+        WWR = WWR,
+        MRDA = MRDA,
+        WIDD = WIDD
+        ))
+
     bldg_config = f"{bldg_tag}_" \
                   f"{roof_cover}_" \
                   f"{WWR}_" \
@@ -2122,6 +2286,11 @@ def MH_config(BIM):
         else:
             TD = False
         bldg_tag = 'MH94HUD' + BIM['wind_zone']
+
+    BIM.update(dict(
+        shutters = shutters,
+        tie_downs = TD
+        ))
 
     bldg_config = f"{bldg_tag}_" \
                   f"{int(shutters)}_" \
@@ -2192,6 +2361,7 @@ def FL_config(BIM):
     dur = 'short'
 
     # Occupancy Type
+    OT = None
     if BIM['occupancy_class'] == 'RES1':
         if BIM['stories'] == 1:
             if flood_type == 'raz':
@@ -2245,7 +2415,18 @@ def FL_config(BIM):
             'EDU1': 'SCHOOL',
             'EDU2': 'SCHOOL'
         }
-        ap_OT[BIM['occupancy_class']]
+        print(BIM['occupancy_class'])
+        OT = ap_OT[BIM['occupancy_class']]
+    
+    # extend the BIM dictionary
+    BIM.update(dict(
+        flood_type = flood_type,
+        FFE = FFE,
+        PostFIRM = PostFIRM,
+        bmt_type = bmt_type,
+        dur = dur,
+        OT = OT
+        ))
 
 
     if not (BIM['occupancy_class'] in ['RES1', 'RES2']):
