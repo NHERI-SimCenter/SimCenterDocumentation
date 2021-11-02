@@ -23,7 +23,7 @@ After successfully downloading and launching, the major steps for setting up the
       :width: 500
 
       R2D GI setup.
-#. Download and unzip the `HurricaneLaura_MappedPWS <https://doi.org/10.17603/ds2-jpj2-zx14>`_. 
+#. Download and unzip the `HurricaneLaura_MappedPWS <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v3/02.%20Input:%20HAZ%20-%20Hazard%20Characterization>`_. 
    Set the **Event File Listing Wind Field** in the **HAZ** panel to the "EventGrid.csv" in the unzipped "IMs" folder.
    The app would automatically load the directory (:numref:`r2d_haz`). And the **Units of Event Input File** should be 
    "Miles per hour".
@@ -35,7 +35,7 @@ After successfully downloading and launching, the major steps for setting up the
       :width: 500
 
       R2D HAZ setup.
-#. Download the `BIM_LakeCharles_Full.csv <https://doi.org/10.17603/ds2-jpj2-zx14>`_ (under **01. Input: BIM - Building Inventory Data** folder). 
+#. Download the `BIM_LakeCharles_Full.csv <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v3/01.%20Input:%20BIM%20-%20Building%20Inventory%20Data>`_ (under **01. Input: BIM - Building Inventory Data** folder). 
    Select **CSV to BIM** in the **ASD** panel and set the **Import Path** to "BIM_LakeCharles_Full.csv" (:numref:`r2d_asd`). 
    Specify the building IDs that you would like to include in the simulation (e.g., 1-30078 for the entire inventory - note this may take very long time to run 
    on a local machine, so it is suggested to first test with a small sample like 1-100 locally and then submit the entire run to DesignSafe - see more details in :numref:`r2d_run_ds`).
@@ -75,7 +75,7 @@ After successfully downloading and launching, the major steps for setting up the
 
       R2D ANA setup.
 #. Set the "Damage and Loss Method" in **DL** panel to "HAZUS MH HU". Download the rulset scripts from 
-   `DesignSafe PRJ-3207 <https://doi.org/10.17603/ds2-jpj2-zx14>`_ 
+   `DesignSafe PRJ-3207 <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v3/03.%20Input:%20DL%20-%20Rulesets%20for%20Asset%20Representation/scripts>`_ 
    (under **03. Input: DL - Rulesets for Asset Representation/scripts** folder) and 
    set the **Auto populate script** to "auto_HU_LA.py" (:numref:`r2d_dl`). Note please place the rulset scripts 
    in an individual folder so that the application could copy and load them later. 
@@ -147,7 +147,7 @@ Regional Results (NSI-Based Year Built)
 The *BIM.hdf* file saves the building information models with populated building attributes as described in 
 :ref:`lbl-testbed_LC_asset_representation`. The *EDP.hdf* summarizes the EDP realizations. The *DM.hdf* and 
 *DV.hdf* files summarizes the statistics of damage states and estimated loss metrics. These results of this testbed
-can be accessed in the `DesignSafe project <https://doi.org/10.17603/ds2-jpj2-zx14>`_, along with the Jupyter 
+can be accessed in the `DesignSafe project <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v3/04.%20Output:%20Results>`_, along with the Jupyter 
 notebook used to visualize them, which will be also discussed here.
 
 :numref:`terrain_swr` (a) and (b) show the sample figures for the geospatial distribution of populated 

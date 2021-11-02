@@ -73,7 +73,7 @@ to execute in 15 minutes using five Skylake (SKX) nodes (96 cores) on `Stampede2
      - Version
      - DOI/Release
    * - R2D
-     - `v1.1.1 <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt>`_
+     - `v1.1.2 <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt>`_
      - .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.5033626.svg
           :target: https://doi.org/10.5281/zenodo.5033626
    * - AssetRepresentationRulesets
@@ -81,8 +81,8 @@ to execute in 15 minutes using five Skylake (SKX) nodes (96 cores) on `Stampede2
      - .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.5496056.svg
           :target: https://doi.org/10.5281/zenodo.5496056
    * - DesignSafe Project PRJ-3207
-     - v1.0
-     - `Data Depot <https://doi.org/10.17603/ds2-jpj2-zx14>`_
+     - v3.0
+     - `Data Depot <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published/PRJ-3207v3>`_
 
 .. list-table:: Versions of AI application (`BRAILS <https://doi.org/10.5281/zenodo.4570554>`_) and models Used in the Current Version of Testbed
    :name: brails_version_LC
