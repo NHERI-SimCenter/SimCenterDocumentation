@@ -74,9 +74,11 @@ After successfully downloading and launching, the major steps for setting up the
       :width: 500
 
       R2D ANA setup.
-#. Set the "Damage and Loss Method" in **DL** panel to "HAZUS MH HU". Download the rulset script from 
-   `DesignSafe PRJ-3207 <https://doi.org/10.17603/ds2-jpj2-zx14>`_ (under **03. Input: DL - Rulesets for Asset Representation/scripts** folder) and set the **Auto populate script** to 
-   "auto_HU_LA.py" (:numref:`r2d_dl`).
+#. Set the "Damage and Loss Method" in **DL** panel to "HAZUS MH HU". Download the rulset scripts from 
+   `DesignSafe PRJ-3207 <https://doi.org/10.17603/ds2-jpj2-zx14>`_ 
+   (under **03. Input: DL - Rulesets for Asset Representation/scripts** folder) and 
+   set the **Auto populate script** to "auto_HU_LA.py" (:numref:`r2d_dl`). Note please place the rulset scripts 
+   in an individual folder so that the application could copy and load them later. 
 
    .. figure:: figure/R2D_DL.png
       :name: r2d_dl
