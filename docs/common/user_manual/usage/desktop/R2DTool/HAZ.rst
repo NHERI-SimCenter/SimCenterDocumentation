@@ -256,7 +256,7 @@ The **User-specified Earthquakes** application loads the results of an **Earthqu
 Hurricane Scenario Simulation
 -----------------------------
 
-The **Hurricane Scenario Simulation**, seen in :numref:`fig-R2DHurricaneMainPanel`, is an application that calculates a wind field over a user defined grid. The GIS visualization window, seen at the bottom of :numref:`fig-R2DHurricaneMainPanel`, is used to interactively define hurricane inputs. At a minimum, a user needs to specify a set of hurricane track points, landfall location and parameters, and a wind field grid. The individual input panes are discussed below.
+The **Hurricane Scenario Simulation**, seen in :numref:`fig-R2DHurricaneMainPanel`, is an application that calculates a wind field over a user defined grid. The application is implemented based on the method proposed by [SnaikiWu2017a]_ and [SnaikiWu2017b]_. The GIS visualization window, seen at the bottom of :numref:`fig-R2DHurricaneMainPanel`, is used to interactively define hurricane inputs. At a minimum, a user needs to specify a set of hurricane track points, landfall location and parameters, and a wind field grid. The individual input panes are discussed below.
 
 .. _fig-R2DHurricaneMainPanel:
 
@@ -427,3 +427,8 @@ After a ShakeMap is loaded, it will appear in the list of ShakeMaps shown above 
 
   ShakeMap visualization.
   
+.. [SnaikiWu2017a]
+   Snaiki, R. and Wu, T. (2017a). Modeling tropical cyclone boundary layer: Height-resolving pressure and wind fields. Journal of Wind Engineering and Industrial Aerodynamics, 170, pp. 18-27.
+
+.. [SnaikiWu2017b]
+   Snaiki, R. and Wu, T. (2017b). A linear height-resolving wind field model for tropical cyclone boundary layer. Journal of Wind Engineering and Industrial Aerodynamics, 171, pp. 248-260.
