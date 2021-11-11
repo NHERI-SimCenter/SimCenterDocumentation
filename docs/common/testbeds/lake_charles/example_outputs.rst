@@ -148,7 +148,10 @@ The *BIM.hdf* file saves the building information models with populated building
 :ref:`lbl-testbed_LC_asset_representation`. The *EDP.hdf* summarizes the EDP realizations. The *DM.hdf* and 
 *DV.hdf* files summarizes the statistics of damage states and estimated loss metrics. These results of this testbed
 can be accessed in the `DesignSafe project <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v3/04.%20Output:%20Results>`_, along with the Jupyter 
-notebook used to visualize them, which will be also discussed here.
+notebook used to visualize them. The zip file consists of (1) four result hdf files (*BIM.hdf*, *EDP.hdf*, *DM.hdf*, and *DV.hdf*), (2) 
+four parsed result files (in .csv), (3) Input inventory csv file, (4) two jupyter notebook scripts, and (5) a requirement txt file listing the 
+dependencies. *post-process.ipynb* can be run locally and first-time users are suggested to run the first cell to install necessary packages, and 
+*post-processing_designsafe.ipynb* can be run on DesignSafe Jupyter Notebook if one uploads the entire folder to the Data Depot.
 
 :numref:`terrain_swr` (a) and (b) show the sample figures for the geospatial distribution of populated 
 terrain type and second water resistance of the building inventory. The influence of different building 
