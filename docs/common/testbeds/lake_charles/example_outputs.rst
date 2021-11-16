@@ -1,7 +1,7 @@
 .. _lbl-testbed_LC_example_outputs:
 
 **************************
-Example Outputs
+Get Started
 **************************
 
 Running Testbed

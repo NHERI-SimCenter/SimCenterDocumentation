@@ -1,7 +1,7 @@
 .. _lbl-testbed_LC_future_refinements:
 
 ****************************************
-Opportunity Areas for Future Refinements
+Research Opportunities
 ****************************************
 
 This testbed and its backing workflows should be viewed as a sandbox and scaffold, 
