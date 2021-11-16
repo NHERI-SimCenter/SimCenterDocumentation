@@ -113,9 +113,9 @@ to `DesignSafe <https://www.designsafe-ci.org/>`_ on `Stampede2 <https://www.tac
 This can be done in R2D by clicking **RUN at DesignSafe** (one would need to have a valid 
 `DesignSafe account <https://www.designsafe-ci.org/account/register/>`_ for login and access the computing resource). 
 :numref:`r2d_run_ds` provides an example configuration to run the analysis.
-The individual building simulations are paralleled when being conducted on Stampede2 which accelerate the process, e.g., 
-for the entire building inventory in this testbed, it takes about 15 minutes using 96 Skylake (SKX) cores to complete 
-the simulation and result post-processing.
+The individual building simulations are paralleled when being conducted on Stampede2 which accelerate the process. It is suggested for the entire building 
+inventory in this testbed to use at least 15 minutes with 96 Skylake (SKX) cores (e.g., 2 nodes with 48 processors per node) to complete 
+the simulation. Note that one would receive a job failure message if the specified CPU hours are not sufficient to complete the run.
 
 .. figure:: figure/R2D_RUN.png
    :name: r2d_run_ds
@@ -152,6 +152,8 @@ notebook used to visualize them. The zip file consists of (1) four result hdf fi
 four parsed result files (in .csv), (3) Input inventory csv file, (4) two jupyter notebook scripts, and (5) a requirement txt file listing the 
 dependencies. *post-process.ipynb* can be run locally and first-time users are suggested to run the first cell to install necessary packages, and 
 *post-processing_designsafe.ipynb* can be run on DesignSafe Jupyter Notebook if one uploads the entire folder to the Data Depot.
+Note users are suggested to find more detailed descriptions about the data attributes in the *DV.csv* in the 
+`pelicun documentation <https://nheri-simcenter.github.io/pelicun/common/user_manual/usage/pelicun/outputs.html>`_.
 
 :numref:`terrain_swr` (a) and (b) show the sample figures for the geospatial distribution of populated 
 terrain type and second water resistance of the building inventory. The influence of different building 

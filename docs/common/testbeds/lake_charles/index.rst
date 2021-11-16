@@ -81,7 +81,7 @@ to execute in 15 minutes using five Skylake (SKX) nodes (96 cores) on `Stampede2
      - .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.5496056.svg
           :target: https://doi.org/10.5281/zenodo.5496056
    * - DesignSafe Project PRJ-3207
-     - v3.0
+     - v4.0
      - `Data Depot <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published/PRJ-3207v3>`_
 
 .. list-table:: Versions of AI application (`BRAILS <https://doi.org/10.5281/zenodo.4570554>`_) and models Used in the Current Version of Testbed
@@ -114,7 +114,8 @@ two primary audiences/use cases:
 
 Such individuals may not wish to generate their own inventories, but require some background in order to meaningfully 
 interpret results. This documentation will enhance their understanding of the various assumptions made in generating 
-these inventories and assigning the attributes required for the adopted loss models.
+these inventories and assigning the attributes required for the adopted loss models. Please see :ref:`lbl-testbed_LC_example_outputs`
+for a detailed description about how to conduct the run of this testbed. 
 
 **Case 2**: Users who wish to use this testbed as a validation event can compare the damage/loss estimates from this 
 workflow to direct observations in the field for the purposes of improving/refining the underlying descriptions of 
@@ -131,7 +132,9 @@ damage and loss. This can include taking advantage of the data published by the 
    and extend the inventory down into Cameron Parish and other areas significantly impacted by the storm surge.
 
 The revised damage and loss models or extensions to the heuristic rulesets can be contributed back to the SimCenter 
-to expand the capabilities of this community software.
+to expand the capabilities of this community software. 
+
+If you have any feedback or questions, please check out the `SimCenter Regional Testbeds <http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=22.0>`_ and please also use the forum to post your comments and suggestions. 
 
 .. _lbl-testbeds-manual:
 
