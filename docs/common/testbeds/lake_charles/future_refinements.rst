@@ -1,7 +1,7 @@
 .. _lbl-testbed_LC_future_refinements:
 
 ****************************************
-Opportunity Areas for Future Refinements
+Research Opportunities
 ****************************************
 
 This testbed and its backing workflows should be viewed as a sandbox and scaffold, 
@@ -38,7 +38,7 @@ community is especially welcome:
 
 #. The current implementation considers only wind hazards and thus will warrant extension to include flood 
    losses similar to the approach adopted in the `Atlantic County, NJ <https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html>`_ testbed. This will also enable a
-   more faithful comparison with the multi-hazard assessments conducted by StEER and FEMA (see :ref:`lbl-testbed_LC_example_outputs`).
+   more faithful comparison with the multi-hazard assessments conducted by StEER and FEMA (see :ref:`lbl-testbed_LC_getting_started`).
 
 #. The current implementation considers only wood residential construction and thus would benefit from 
    extension to other building classes in a manner similar to that exercised in the 
