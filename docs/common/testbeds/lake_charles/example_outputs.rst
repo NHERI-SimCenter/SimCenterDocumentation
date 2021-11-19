@@ -1,7 +1,7 @@
-.. _lbl-testbed_LC_example_outputs:
+.. _lbl-testbed_LC_getting_started:
 
 **************************
-Get Started
+Getting Started
 **************************
 
 Running Testbed
@@ -144,8 +144,15 @@ the results from this testbed as an example to discuss more details.
 Regional Results (NSI-Based Year Built)
 ========================================
 
-The *BIM.hdf* file saves the building information models with populated building attributes as described in 
-:ref:`lbl-testbed_LC_asset_representation`. The *EDP.hdf* summarizes the EDP realizations. The *DM.hdf* and 
+The specific entries included in the *BIM.hdf* file are explained in Asset Description and specifically 
+:numref:`tab-bldg_inv_data_model_lc`. It is important to note that this *BIM.hdf* file is an enhanced version of 
+the input BIM file, including additional information necessary for the loss estimation (fields added through 
+rulesets explained in :ref:`lbl-testbed_LC_asset_representation`). Additionally, the *BIM.hdf* file includes 
+only the buildings in the original inventory file that could be successfully executed by the workflow, e.g., 
+satisfied conditions in the rulesets necessary to assign requisite attributes. If there are errors in the 
+assignment process, the output *BIM.hdf* file will have fewer buildings than the original input BIM file. 
+As such, this expanded inventory file output by R2D should be used for subsequent analyses, rather than 
+the original inventory used to run the simulation in Step 3 above. The *EDP.hdf* summarizes the EDP realizations. The *DM.hdf* and 
 *DV.hdf* files summarizes the statistics of damage states and estimated loss metrics. These results of this testbed
 can be accessed in the `DesignSafe project <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v3/04.%20Output:%20Results>`_, along with the Jupyter 
 notebook used to visualize them. The zip file consists of (1) four result hdf files (*BIM.hdf*, *EDP.hdf*, *DM.hdf*, and *DV.hdf*), (2) 
