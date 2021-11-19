@@ -1,7 +1,7 @@
-.. _lbl-testbed_LC_example_outputs:
+.. _lbl-testbed_LC_getting_started:
 
 **************************
-Example Outputs
+Getting Started
 **************************
 
 Running Testbed
@@ -113,9 +113,9 @@ to `DesignSafe <https://www.designsafe-ci.org/>`_ on `Stampede2 <https://www.tac
 This can be done in R2D by clicking **RUN at DesignSafe** (one would need to have a valid 
 `DesignSafe account <https://www.designsafe-ci.org/account/register/>`_ for login and access the computing resource). 
 :numref:`r2d_run_ds` provides an example configuration to run the analysis.
-The individual building simulations are paralleled when being conducted on Stampede2 which accelerate the process, e.g., 
-for the entire building inventory in this testbed, it takes about 15 minutes using 96 Skylake (SKX) cores to complete 
-the simulation and result post-processing.
+The individual building simulations are paralleled when being conducted on Stampede2 which accelerate the process. It is suggested for the entire building 
+inventory in this testbed to use at least 15 minutes with 96 Skylake (SKX) cores (e.g., 2 nodes with 48 processors per node) to complete 
+the simulation. Note that one would receive a job failure message if the specified CPU hours are not sufficient to complete the run.
 
 .. figure:: figure/R2D_RUN.png
    :name: r2d_run_ds
@@ -144,11 +144,23 @@ the results from this testbed as an example to discuss more details.
 Regional Results (NSI-Based Year Built)
 ========================================
 
-The *BIM.hdf* file saves the building information models with populated building attributes as described in 
-:ref:`lbl-testbed_LC_asset_representation`. The *EDP.hdf* summarizes the EDP realizations. The *DM.hdf* and 
+The specific entries included in the *BIM.hdf* file are explained in Asset Description and specifically 
+:numref:`tab-bldg_inv_data_model_lc`. It is important to note that this *BIM.hdf* file is an enhanced version of 
+the input BIM file, including additional information necessary for the loss estimation (fields added through 
+rulesets explained in :ref:`lbl-testbed_LC_asset_representation`). Additionally, the *BIM.hdf* file includes 
+only the buildings in the original inventory file that could be successfully executed by the workflow, e.g., 
+satisfied conditions in the rulesets necessary to assign requisite attributes. If there are errors in the 
+assignment process, the output *BIM.hdf* file will have fewer buildings than the original input BIM file. 
+As such, this expanded inventory file output by R2D should be used for subsequent analyses, rather than 
+the original inventory used to run the simulation in Step 3 above. The *EDP.hdf* summarizes the EDP realizations. The *DM.hdf* and 
 *DV.hdf* files summarizes the statistics of damage states and estimated loss metrics. These results of this testbed
 can be accessed in the `DesignSafe project <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v3/04.%20Output:%20Results>`_, along with the Jupyter 
-notebook used to visualize them, which will be also discussed here.
+notebook used to visualize them. The zip file consists of (1) four result hdf files (*BIM.hdf*, *EDP.hdf*, *DM.hdf*, and *DV.hdf*), (2) 
+four parsed result files (in .csv), (3) Input inventory csv file, (4) two jupyter notebook scripts, and (5) a requirement txt file listing the 
+dependencies. *post-process.ipynb* can be run locally and first-time users are suggested to run the first cell to install necessary packages, and 
+*post-processing_designsafe.ipynb* can be run on DesignSafe Jupyter Notebook if one uploads the entire folder to the Data Depot.
+Note users are suggested to find more detailed descriptions about the data attributes in the *DV.csv* in the 
+`pelicun documentation <https://nheri-simcenter.github.io/pelicun/common/user_manual/usage/pelicun/outputs.html>`_.
 
 :numref:`terrain_swr` (a) and (b) show the sample figures for the geospatial distribution of populated 
 terrain type and second water resistance of the building inventory. The influence of different building 
