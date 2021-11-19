@@ -131,14 +131,41 @@ remotely, and finally views the simulation results. The main window of the UI is
 
 4. Push Buttons:
 
-
+   
    This is the area near the bottom of the UI in which 4 buttons are contained:
 
      * **RUN**: Run the simulation locally on the user’s desktop machine.
      * **RUN at DesignSafe**: Process the information, and send to DesignSafe. The simulation will be run there on a supercomputer, and results will be stored in the user's DesignSafe jobs folder.
      * **GET from DesignSafe**: Obtain the list of jobs for the user from DesignSafe and select a job to download from that list.
      * **Exit**: Exit the application.
+   
+   Clicking on the **RUN at DesignSafe** button will show the remote job submission dialog, given in :numref:`figRemJobPanel`.
+   
+   .. _figRemJobPanel:
 
+   .. figure:: figures/RemoteJobPanel.png
+	   :align: center
+	   :figclass: align-center
+
+	   Remote job submission dialog.
+
+   Descriptions and guidelines for each input are given below: 
+   
+   	* **Job Name**: An easy to remember and meaningful name to differentiate this job from others.
+   	* **Number of Nodes**: Number of compute nodes requested. Each node has many cores, and each core typically contains several processors/threads.
+	
+	.. note:: If a large number of nodes are requested (e.g., more than 10), the job may stay longer in the queue before it starts.
+	
+   	* **Number of processors per Node**: Number of processors that will be utilized on each node. Typically, it is advantageous to use all available processors of a node when the memory demand of a job is small. When a job is memory intensive, e.g., large finite element models, utilizing all available processors may overwhelm the memory cache of a core and the computation will slow down. Currently, the maximum number of processors is 48 and the minimum is 1.
+   	* **Number of Buildings per Task**: Number of buildings per task.
+	
+	.. note:: Each task will run in parallel on its own processor. The number of tasks is equal to the number of nodes multiplied by the number of processors per node. Since it takes time to assign buildings to a task and spool up the computation, it may be advantageous to assign a batch of buildings to a task when the individual building analyses are expected to have a short runtime. A good approach is to estimate the total number of buildings to be analyzed and then select the **Number of Nodes**, **Number of processors per Node**, and **Number of Buildings per Task** so that the buildings can be strategically distributed across all processors. This is so that all processors are effectively utilized and do not sit idle. 
+	
+   	* **Save Intermediate Results**: Save intermediate results to a compressed folder. This is typically not recommended as this as this will use up disk space.
+   	* **Max Run Time**: The maximum time a job will run on the DesignSafe computer, in the format of Hours:Min:Sec. Job will stop if the run time exceeds this threshold. 
+
+   .. note:: A user can check the status of a remote run by clicking on the **GET from DesignSafe** button. If the analysis status shows FAILED, users are encouraged to log into their DesignSafe account to view the detailed output of the run. To view the detailed output of a run go to the `DesignSafe <https://www.designsafe-ci.org/help/new-ticket/>`_ webpage and log in with your credentials. Next, click on the menus **Workspace** -> **Tools & Applications** -> **Job Status** and then select **More info** to view the status of a job.
+	
 5. Message Area: 
 
 
