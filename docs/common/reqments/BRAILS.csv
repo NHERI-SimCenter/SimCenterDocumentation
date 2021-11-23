@@ -11,7 +11,7 @@ BR.5.2 , "Predicting First Floor Height", SP , M , InProgress
 BR.5.3 , "Predicting Roof Height", SP , M , InProgress
 BR.5.4 , "Predicting Eave Height", SP , M , InProgress
 BR.5.5 , "Predicting Eave Length", SP , M ,
-BR.5.6 , "Predicting Roof Shape", SP , M , Implemented
+BR.5.6 , "Predicting Roof Shape", SP , M , `Implemented <https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/roofClassifier.html>`_
 BR.5.7 , "Predicting Roof Pitch", SP , M , InProgress
 BR.5.8 , "Predicting Roof Material", SP , M , InProgress
 BR.5.9 , "Predicting Window Area", SP , M , InProgress
