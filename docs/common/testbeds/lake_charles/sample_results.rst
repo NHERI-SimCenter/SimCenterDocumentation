@@ -10,7 +10,7 @@ testbed runs with the emphasis on verifying the estimated loss ratios by hand-ca
 Building Inventory
 ===================
 
-From the entire building inventory, 109 buildings are randomly selected
+From the entire building inventory, 98 buildings are randomly selected
 (examples are shown in :numref:`sample_table` and the full inventory can be accessed 
 `here <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/table/veri_sample.csv>`_).
 :numref:`scatter_matrix` shows the data distributions of the built year, surface

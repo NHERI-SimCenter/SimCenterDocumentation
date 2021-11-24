@@ -16,7 +16,7 @@ This section discusses damage and loss results from three comparative and valida
    states from StEER members and explores influence of uncertainty in building attributes and peak wind speed. Several notable 
    trends between building damage and building attribute type will be discussed and reasoned.
 #. The :ref:`lbl-testbed_LC_validation_fema` focuses on validating the testbed damage estimates against the FEMA
-   Historical Damage Assessment Database (573 records associated with this testbed). The testbed results are found to
+   Historical Damage Assessment Database (535 records associated with this testbed). The testbed results are found to
    slightly overestimate the damage for the undamaged state (DS-0) which suggests that future investigations are still 
    needed given uncertainties around the methodology used to generate the FEMA data.
 
@@ -182,13 +182,13 @@ damage assessments were conducted either using high-resolution imagery or by mea
 
 For Hurricane Laura, the damage categories of 112,571 buildings in the Louisiana were modeled from flood depths at the 
 structure as characterized based on modeled wind, flood or surge data. Five damage categories are 
-used: No Damage (NOD), Affected (AFF), Minor (MIN), Major (MAJ), and Destroyed (DES). Out of the 112,571 buildings, 573 buildings, located in 
+used: No Damage (NOD), Affected (AFF), Minor (MIN), Major (MAJ), and Destroyed (DES). Out of the 112,571 buildings, 535 buildings, located in 
 the west bound of the Lake Charles city at the waterfront of the Prein Lake, are also investigated 
 in this testbed. :numref:`fema_damage_subset` is a subset of data obtained from 
 `FEMA Public Data <http://disasters.geoplatform.gov/publicdata/National/Data/HistoricalDamageAssessmentDatabase/PublicRelease_20210622/>`_.
 :numref:`fema_damage_bim` is the building inventory for this subset. The full inventory and FEMA damage assessment 
-results can be accessed by `FEMA Damage Assessment of the 573 buildings <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/data/FEMA_DamageDatabase_LakeCharles_Sample.csv>`_ and 
-`BIM inventory of the 573 buildings <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/data/BIM_LakeCharles_FEMA.csv>`_.
+results can be accessed by `FEMA Damage Assessment of the 535 buildings <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/data/FEMA_DamageDatabase_LakeCharles_Sample.csv>`_ and 
+`BIM inventory of the 535 buildings <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/lake_charles/data/BIM_LakeCharles_FEMA.csv>`_.
 
 .. figure:: figure/fema_damage_webpage.png
    :name: fema_ds_webpage
@@ -218,7 +218,7 @@ wind speed is about 130 :math:`mph` (please see :ref:`lbl-testbed_LC_hazard_char
 To compare these damage categories with the estimated damage states by the workflow in this testbed, we assume that the 
 five damage categories are mapped to the five damage states in the HAZUS wind damage functions, assuming the inundation does 
 not cause prominent flood-induced damage to the buildings. While this assumption will be the subject of future validation, 
-:numref:`fema_ds_comp` summarizes (1) the expected damage states of the 573 buildings, (2) the spatial distribution of difference between the FEMA 
+:numref:`fema_ds_comp` summarizes (1) the expected damage states of the 535 buildings, (2) the spatial distribution of difference between the FEMA 
 Damage Categories and estimated damage states, and (3) the statistical distribution of the difference between the two.
 Given the FEMA set is based on a discrete (category-based) description while the testbed set is based on probabilistic 
 estimates, the two results have fairly good agreement except the FEMA set has buildings predicted as no damage (DS-0). 
@@ -234,7 +234,7 @@ needed to consider other possible factors causing this mismatch in predicted DS-
    :figclass: align-center
    :width: 500
 
-   FEMA Damage Category in the Geospatial Damage Assessment Database (for the 573 buildings).
+   FEMA Damage Category in the Geospatial Damage Assessment Database (for the 535 buildings).
 
 .. figure:: figure/FEMA_DS_comp.png
    :name: fema_ds_comp
@@ -242,7 +242,7 @@ needed to consider other possible factors causing this mismatch in predicted DS-
    :figclass: align-center
    :width: 700
 
-   Comparison: FEMA Damage Category vs. expected damage state by the workflow (for the 573 buildings).
+   Comparison: FEMA Damage Category vs. expected damage state by the workflow (for the 535 buildings).
 
 
 .. [Roueche21]
