@@ -39,3 +39,5 @@ Shown in :numref:`fig-R2DPelicunDLPanel`, the **Pelicun Damage and Loss** applic
 	:figclass: align-center
 
 	Pelicun Damage and Loss Input panel.
+
+Additional information on Pelicun and descriptions of its output are available at `Pelicun Documentation <https://nheri-simcenter.github.io/pelicun/common/user_manual/usage/pelicun/outputs.html>`_.
