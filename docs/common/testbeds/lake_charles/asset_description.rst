@@ -436,7 +436,7 @@ The entire inventory can be accessed `here <https://www.designsafe-ci.org/data/b
    :name: bldg_inv_lc
    :file: data/example_inventory_lc.csv
    :align: center
-   :widths: 5, 7, 5, 6, 9, 7, 6, 7, 7, 7, 7, 9, 7, 6, 6, 9
+   :widths: 5, 7, 5, 6, 9, 7, 6, 7, 7, 7, 7, 9, 7, 6, 6
 
 .. [ATC20]
    ATC (2020b), ATC Hazards By Location, https://hazards.atcouncil.org/, Applied Technology Council, Redwood City, CA.

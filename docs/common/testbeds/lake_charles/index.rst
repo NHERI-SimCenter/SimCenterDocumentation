@@ -152,6 +152,7 @@ This forum can also be browsed for additional updates, answers to Frequently Ask
 .. _lbl-testbeds-manual:
 
 .. toctree-filt::
+   :maxdepth: 1
 
    overview
    asset_description
