@@ -25,12 +25,6 @@ Validation benefitted from special access to ZTRAX data provided by the Universi
 
 **Preface**
 
-This documentation is intended to introduce the implementation of the SimCenter's hurricane regional loss modeling 
-workflow in the context of Lake Charles, Louisiana under Hurricane Laura. While certain aspects of the workflow 
-are unchanged in a given application context, this testbed specifically demonstrates how inventory generation 
-capacities and existing heuristic rulesets grounded in codes/standards and normative construction practices in coastal 
-communities can be engaged to rapidly generate these loss estimations following a major hurricane.
-
 This documentation is intended to introduce the implementation of the SimCenter hurricane regional loss 
 modeling workflow in the context of Lake Charles, Louisiana under Hurricane Laura. While certain aspects of 
 the workflow are unchanged in a given application context, this testbed specifically demonstrates how 
