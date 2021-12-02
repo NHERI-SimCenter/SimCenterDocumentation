@@ -88,7 +88,7 @@ to execute in 15 minutes using five Skylake (SKX) nodes (96 cores) on `Stampede2
           :target: https://doi.org/10.5281/zenodo.5496056
    * - DesignSafe Project PRJ-3207
      - v4
-     - `Data Depot <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published/PRJ-3207v3>`_
+     - `Data Depot <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published/PRJ-3207v4>`_
 
 .. list-table:: Versions of AI application (`BRAILS <https://doi.org/10.5281/zenodo.4570554>`_) and models Used in the Current Version of Testbed
    :name: brails_version_LC
