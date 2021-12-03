@@ -10,7 +10,7 @@ BR.5.1 , "Predicting if building is a soft-story building for earthquake simulat
 BR.5.2 , "Predicting First Floor Height", SP , M , `Implemented <https://github.com/NHERI-SimCenter/BRAILS/tree/master/brails/modules/FacadeParser>`_
 BR.5.3 , "Predicting Roof Height", SP , M , `Implemented <https://github.com/NHERI-SimCenter/BRAILS/tree/master/brails/modules/FacadeParser>`_
 BR.5.4 , "Predicting Eave Height", SP , M, `Implemented <https://github.com/NHERI-SimCenter/BRAILS/tree/master/brails/modules/FacadeParser>`_
-BR.5.5 , "Predicting Eave Length", SP , D,`Implemented <https://github.com/NHERI-SimCenter/BRAILS/tree/master/brails/modules/FacadeParser>`_
+BR.5.5 , "Predicting Eave Length", SP , D, `Implemented <https://github.com/NHERI-SimCenter/BRAILS/tree/master/brails/modules/FacadeParser>`_
 BR.5.6 , "Predicting Roof Shape", SP , M , `Implemented <https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/roofClassifier.html>`_
 BR.5.7 , "Predicting Roof Pitch", SP , M , `Implemented <https://github.com/NHERI-SimCenter/BRAILS/tree/master/brails/modules/FacadeParser>`_
 BR.5.8 , "Predicting Roof Cover Material", SP , M , `Implemented <https://github.com/NHERI-SimCenter/BRAILS/tree/master/brails/modules/RoofCoverClassifier>`_
@@ -19,7 +19,7 @@ BR.5.10 , "Predicting Number of Floors", SP , M , `Implemented <https://nheri-si
 BR.5.11 , "Classifying Elevated Building", SP , M , `Implemented <https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/foundationElevationClassifier.html>`_
 BR.5.12 , "Predicting Occupancy Type", SP , M , `Implemented <https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/occupancyClassifier.html>`_
 BR.5.13 , "Predicting Year Built", SP , M , `Implemented <https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/yearClassifier.html>`_
-BR.5.14 , "Predicting Attached Garage", SP , M ,`Implemented <https://github.com/NHERI-SimCenter/BRAILS/tree/master/brails/modules/GarageDetector>`_
+BR.5.14 , "Predicting Attached Garage", SP , M , `Implemented <https://github.com/NHERI-SimCenter/BRAILS/tree/master/brails/modules/GarageDetector>`_
 BR.5.15 , "Predicting Presence of Masonry Chimney", UF , D , `Implemented <https://github.com/NHERI-SimCenter/BRAILS/tree/master/brails/modules/ChimneyDetector/>`_
 BR.5.16 , "Predicting Building Material", SP , M , ""
 BR.5.17 , "Predicting Structural Type", SP , M , ""
