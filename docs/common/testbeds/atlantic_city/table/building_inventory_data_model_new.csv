@@ -1,0 +1,77 @@
+Attribute,Description,Format
+BldgID,"Building unique ID. The first four characters will be “NJBF,” followed by a 9-digit zero-padded number.",NJBF#########
+Address,Typically assessor field for property location. This is distinct from Street Address in MODIV which is associated with the billing address,Alphanumeric
+City,Typically assessor field for property location – city.,Alphanumeric
+State,Typically assessor field for property location - state abbreviation.,Alphanumeric
+Latitude,Latitude of the Building Centroid (inside polygon).,Floating point number (Decimal Degrees)
+Longitude,Longitude of the Building Centroid (inside polygon).,Floating point number (Decimal Degrees)
+OccupancyClass,"Subclassifications of buildings across various categories of Residential (RES), Commercial (COM), Industrial (IND), Agriculture (AGR), Government (GOV), Education (EDU), Religious/Non-Profit (REL).","Choices: RES1, RES2, RES3A, RES3B, RES3C, RES3D, RES3E, RES3F, RES4, RES5, RES6, COM1, COM2, COM3, COM4, COM5, COM6, COM7, COM8, COM9, COM10, IND1, IND2, IND3, IND4, IND5, IND6, AGR1, REL1, GOV1, GOV2, EDU1, EDU2
+"
+BuildingType,"Core construction material type; Wood, Concrete, Steel, Masonry, Manufactured Housing.","Choices: 3001, 3002, 3003, 3004, 3005"
+UseCode,"Class 4 Use Codes (Field 67) applicable to commercial buildings only, describing specific use of commercial properties.",Integer (3-digit)
+BldgClass,Building class according to NJ Appraisal Manual (see Vol 2),Integer (3-digit)
+EssentialClass,Designates several classes of essential facilities in the region based on open data to ensure they are properly modeled.,"Choices: PS, EOC, HO, HS, SCH "
+DesignLevel,"Classification of level of engineering used in design process: Choices: Engineered (E), Pre-Engineered, (PE) Marginally Engineered (ME), Non-Engineered (NE)","Choices: E, PE, ME, NE"
+YearBuiltNJDEP,Assessor-provided Year of Construction from NJDEP Footprints,Integer (4-digit)
+YearBuiltMODIV,Assessor-provided Year of Construction from MODIV,Integer (4-digit)
+NumberofStories0,Assessor-provided number of stories,Integer (4-digit)
+NumberofStories1,Number of stories estimated via image processing,Integer
+NoUnits,Number of units in the property (commercial or residential),Integer
+PlanArea0,Plan area in square feet from assessor databases,Floating point number  
+PlanArea1,Plan area in square feet from footprint data,Floating point Number  
+FoundationType,Classification using 7 types referenced by flood model,Integer (4-digit)
+SplitLevel,Specifies if residential construction is split-level,"Choices: Yes, No"
+ElevationR0,Elevation of the bottom plane of the roof (lowest edge of roof line) relative to grade (ft),Floating point number  
+ElevationR1,Elevation of highest point of the roof (peak of gable or apex of hip) relative to grade (ft),Floating point Number  
+FirstFloorHt0,Height above grade estimated from elevation certificate or inferred from foundation type (in feet): Defined as top of lowest/bottom floor,Floating point Number  
+FirstFloorHt1,"Height of top of floor as estimated from base of door height above grade, based on streetview imagery (in feet)",Floating point Number  
+FloodZone,Flood zone specified on FEMA FIRM based on building location,"Choices: 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109, 6110, 6111, 6112, 6113, 6114, 6115, 6199"
+DSWI,DesignWindSpeed I in mph,Floating point number  
+DSWII,DesignWindSpeed II in mph,Floating point number  
+DSWIII,DesignWindSpeed III in mph,Floating point number  
+DSWIV,DesignWindSpeed IV in mph,Floating point number  
+WindZone,"HAZUS-defined Wind Zone (For Manuactured homes, based on HUD Designation)","Choices: I, II, III"
+AvgJanTemp,Average temperature in January below or above critial value of 25F.,"Choices: Above, Below"
+RoofShape,"Roof classified into equivalent hip, gable or flat","Choices: Hip, Gable, Flat"
+RoofSlope,Slope of roof covering the majority of the dwelling,Floating point number  
+RoofCover,"Roof covering, specified only for residential construction.","Choices: 5701, 5702, 5703, 5704"
+MeanRoofHt,Mean height of roof system in ft,Floating point number  
+WindowArea,Percentage of walls defined by window openings,Floating point number (decimal<1)
+Garage,Assessor-provided type of garage.,Floating point number  
+Terrain,HAZUS-defined terrain classifications (x100) based on LULC data,"Choices: 3, 15, 35, 70, 100"
+AnalysisDefault,Defines the default level of fidelity for analysis,"Choices: 1, 2, 3"
+AnalysisAdopted,Defines the adopted level of fidelity for analysis,"Choices: 1, 2, 3"
+Modifications,"Record of manual updates, corrections or modifications to record",Alphanumeric (freeform)
+HazusClass-W,Hazus building classes as defined for wind hazards,"CHOICES: WSF1, WSF2, WMUH1, WMUH2, WMUH3, WMUH1NE, WMUH2NE, WMUH3NE, WMUH4NE, MSF1, MSF2, MMUH1, MMUH2, MMUH3, MLRM1, MLRM2, MLRI, MERBL, MERBM, MERBH, MECBL, MECBM, MECBH, MMUH1NE, MMUH2NE, MMUH3NE, CERBL, CERBM, CERBH, CECBL, CECBM, CECBH, SPMBS, SPMBM, SPMBL, SERBL, SERBM, SERBH, SECBL, SECBM, SECBH, MHPHUD, MH76HUD, MH94HUD-I, MH94HUD-II, MH94HUD-III, HUEFFS, HUEFSS, HUEFSM, HUEFSL, HUEFHS, HUEFHM, HUEFHL, HUEFPS, HUEFEO"
+RoofSystem,"Underlying roof structure, applies only to masonry buildings","Choices: Wood, OWSJ"
+HPR,Defines Hazard Prone Regions (HPR) for the purposes of Hazus wind vulnerability assignments for WSF1-2,"Choices: yes, no"
+WBD,Defines Wind Borne Debris (WBD) for the purposes of Hazus wind vulnerability assignments for WSF1-2,"Choices: yes, no"
+SWR,"Defines Secondary Water Resistance (SWR) for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MSF1-2, MMUH1-3","Choices: yes, no"
+RoofCvr,"Defines roof cover for the purposes of Hazus wind vulnerability assignments for WMUH1-3, MMUH1-3, MERBL-M-H, MECBL-M-H, MLRI, MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Fire Stations (HUEFFS), Elementary Schools (HUEFSS), 2-story High School (HUEFSM) and 3-story High School (HUEFSL) and Hospitals (small - HUEFHS, medium - HUEFHM, large - HUEFHL)  and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)      ","Choices: N/A, BUR, SPM"
+RoofQual,"Defines roof cover quality for the purposes of Hazus wind vulnerability assignments for WMUH1-3, MMUH1-3, MLRI","Choices: N/A, poor, good"
+RDA-Wood,"Defines Roof Deck Attachment (RDA) for wood for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MLRM1, MLRM2","Choices: A, B, C, D"
+RDA-OWSJ,Defines Roof Deck Attachment (RDA) for OWSJ for the purposes of Hazus wind vulnerability assignments for MSF1-2,"Choices: smtl standard, smtl superior, cshl standard, cshl superior"
+R2WC,"Defines Roof to Wall Connection (R2WC) for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MLRM1, MLRM2","Choices: strap, toe-nail"
+shutters,"Defines use of window opening protection for the purposes of Hazus wind vulnerability assignments for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MERBL-M-H, MECBL-M-H, MMUH1-3,MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H, SPMBS-M-L, MH94HUDI-II-III, MH76HUD, MHPHUD and Fire Stations (HUEFFS), Elementary Schools (HUEFSS), 2-story High School (HUEFSM) and 3-story High School (HUEFSL) and Hospitals (small - HUEFHS, medium - HUEFHM, large - HUEFHL)  and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)       ","Choices: yes, no"
+Agarage,"Defines presence of attached garage for the purposes of Hazus wind vulnerability assignments for WSF1-2, MSF1-2","Choices: none, SFBC 1994, standard, weak"
+Mreinf,"Defines presence of reinforcement in masonry walls for the purposes of Hazus wind vulnerability assignments for MSF1-2, MLRI, MLRM1, MLRM2, MMUH1-3","Choices: yes, no"
+OWSJ-r,Defines property of OWSJ required for Hazus wind vulnerability assignments for MSF1-2,"Choices: cshl, smtl"
+Metal-RDA,"Defines Metal Roof Deck Attachment (RDA) for purposes of Hazus wind vulnerability assessments for MLRI, MERBL-M-H, MECBL-M-H, MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, SPMBS-M-L and Fire Stations (HUEFFS), Elementary Schools (HUEFSS), 2-story High School (HUEFSM) and 3-story High School (HUEFSL) and Hospitals (small - HUEFHS, medium - HUEFHM, large - HUEFHL) and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)        ","Choices: standard, superior"
+RDage,"Defines roof deck age for the purposes of Hazus wind vulnerability assessments for MLRM1, MLRM2, SPMBS-M-L and Fire Stations (HUEFFS), Elementary Schools (HUEFSS)
+","Choices: new/avg, old"
+UnitClass,Defines number of units in strip mall for purposes of Hazus wind vulnerability assessments for MLRM2,"Choices: single, multi"
+JoistSpace,Defines joist spacing for multi-unit strip malls for purposes of Hazus wind vulnerability assessments for MLRM2,"Choices: N/A, 4, 6"
+WindDebris,"Defines likely sources of wind debris for purpose of Hazus wind vulnerability assessments for MERBL-M-H, MECBL-M-H, MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Fire Stations (HUEFFS), Elementary Schools (HUEFSS), 2-story High School (HUEFSM) and 3-story High School (HUEFSL) and Hospitals (small - HUEFHS, medium - HUEFHM, large - HUEFHL) and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)       ","Choices: Res/Comm, Varies by Direction, Residential, None, A, B, C, D"
+WWR,"Defines window to wall ratio (WWR) for purpose of Hazus wind vulnerability assessments for MERBL-M-H, MECBL-M-H, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)","Choices: low, medium, high"
+TieDowns,"Defines use of ties to connect mobile homes to foundations per HUD guidelnes for purpose of Hazus wind vulnerability assessments for MH94HUDI-II-III, MH76HUD, MHPHUD","Choices: yes, no"
+HazusClass-IN,Hazus building classes as defined for inundation (flooding),"Choices: SF1XA, SF1XV, SF2XA, SF2XV, SF2BA, SF2BV, SF2SA, SF2SV, MH, APT, HOT, NURSE, RETAIL, WHOLE, SERVICE, OFFICE, BANK, HOSP, MED, REC, THEAT, GARAGE, INDH, INDL, CHEM, PROC, CONST, AGRI, RELIG, CITY, EMERG, SCHOOL"
+HazusClass-WA,Hazus building classes as defined for wave action,"Choices: W1, W2, W3, MC1, MC2, MC3, S1, S2, S3, MH"
+FloodType,Assignment to flood zones as defined for Hazus damage/loss descriptions,"Choices: Riverine/A-Zone, Coastal/A-Zone, 
+Coastal/V-Zone"
+FirstFloorElev,Assignment of first floor height as defined by Hazus,Floating Point Number
+PostFIRM,Assignment of FIRM phasing as defined by Hazus,"Choices: Yes, No"
+NumberofStories,Initalizing number of stories for Hazus analysis,integer
+BasementType,Assignement of basement type for Hazus analysis,"Choices: Basement, Split-Level Basement, No Basement"
+OccupancyType,Assignment of Occupancy type for Hazus analysis ,"Choices: SF1XA, SF1XV, SF2XA, SF2XV, SF2BA, SF2BV, SF2SA, SF2SV, MH, APT, HOT, NURSE, RETAIL, WHOLE, SERVICE, OFFICE, BANK, HOSP, MED, REC, THEAT, GARAGE, INDH, INDL, CHEM, PROC, CONST, AGRI, RELIG, CITY, EMERG, SCHOOL"
+Duration,Assignment of storm suration for Hazus Analysis,"Short, Long"
+Wave Velocity,Definition of wave velocity in ft/s for Hazus Analysis,Floating Point Number
