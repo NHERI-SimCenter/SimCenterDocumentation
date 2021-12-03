@@ -2,7 +2,7 @@ BR.1, "Need for scalable tools that autonomously create an accurate database of 
 BR.2 , "Promote living community risk models utilizing local inventory data from various sources", GC , M , InProgress
 BR.3 , "Developing and sharing standardized definitions, measurement protocols and strategies for data collection", GC , M ,  ""
 BR.4, "Developing tools that utilize GIS information and online images, e.g. google maps, for data collection for gathering Building Information", GC, M, ""
-BR.4.1, " Develop Framework for creating asset inventories", SP, M,`Implemented <https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/workflow.html>`_
+BR.4.1, "Develop Framework for creating asset inventories", SP, M,`Implemented <https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/workflow.html>`_
 BR.4.2 , "Create workflow application for building inventory from framework modules", SP , M ,`Implemented <https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/workflow.html>`_
 BR.4.2 , "Create workflow application for transportation network from framework modules", SP , M , InProgress
 BR.5, "Developing Modules for Asset Inventory Workflows identified in BR4", "", "", ""
