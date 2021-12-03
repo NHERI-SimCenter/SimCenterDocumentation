@@ -82,10 +82,10 @@ Available Inventories
 ========================
 
 The constructed building inventory developed for Lake Charles is accessible via DesignSafe. 
-This testbed includes 30,078 buildings including 26,517 residential buildings and 3,561 commercial buildings 
-(classified by BRAILS, more details will be introduced in :ref:`lbl-testbed_LC_asset_description`) 
-in the city of Lake Charles. :numref:`fig-yearBuilt` visualizes the 
-Year Built of the buildings in the inventory.  :numref:`fig-occupancyClass` shows the geospatial distribution 
+Among the total 30,072 collected buildings in the city of Lake Charles, 26,516 are classified as residential buildings and 
+3,556 are commercial buildings (classified by BRAILS, more details will be introduced in :ref:`lbl-testbed_LC_asset_description`). 
+This testbed creates and focuses on an inventory of the 26,516 residential buildings. :numref:`fig-yearBuilt` visualizes the 
+Year Built of the buildings in the inventory. :numref:`fig-occupancyClass` shows the geospatial distribution 
 of the occupancy classes in the inventory.
 
 .. _fig-yearBuilt:
