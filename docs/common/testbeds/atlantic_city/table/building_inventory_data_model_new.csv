@@ -12,12 +12,12 @@ UseCode,"Class 4 Use Codes (Field 67) applicable to commercial buildings only, d
 BldgClass,Building class according to NJ Appraisal Manual (see Vol 2),Integer (3-digit)
 EssentialClass,Designates several classes of essential facilities in the region based on open data to ensure they are properly modeled.,"Choices: PS, EOC, HO, HS, SCH "
 DesignLevel,"Classification of level of engineering used in design process: Choices: Engineered (E), Pre-Engineered, (PE) Marginally Engineered (ME), Non-Engineered (NE)","Choices: E, PE, ME, NE"
-YearBuilt,Assessor-provided Year of Construction from NJDEP Footprints,Integer (4-digit)
+YearBuiltNJDEP,Assessor-provided Year of Construction from NJDEP Footprints,Integer (4-digit)
 YearBuiltMODIV,Assessor-provided Year of Construction from MODIV,Integer (4-digit)
-NumberofStories,Assessor-provided number of stories,Integer
+NumberofStories0,Assessor-provided number of stories,Integer
 NumberofStories1,Number of stories estimated via image processing,Integer
 NoUnits,Number of units in the property (commercial or residential),Integer
-PlanArea,Plan area in square feet from assessor databases,Floating point number  
+PlanArea0,Plan area in square feet from assessor databases,Floating point number  
 PlanArea1,Plan area in square feet from footprint data,Floating point Number  
 FoundationType,Classification using 7 types referenced by flood model,Integer (4-digit)
 SplitLevel,Specifies if residential construction is split-level,"Choices: Yes, No"
@@ -62,7 +62,7 @@ RoofDeckAge,"Defines roof deck age for the purposes of Hazus wind vulnerability 
 UnitClass,Defines number of units in strip mall for purposes of Hazus wind vulnerability assessments for MLRM2,"Choices: single, multi"
 JoistSpace,Defines joist spacing for multi-unit strip malls for purposes of Hazus wind vulnerability assessments for MLRM2,"Choices: N/A, 4, 6"
 WindDebris,"Defines likely sources of wind debris for purpose of Hazus wind vulnerability assessments for MERBL-M-H, MECBL-M-H, MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Fire Stations (HUEFFS), Elementary Schools (HUEFSS), 2-story High School (HUEFSM) and 3-story High School (HUEFSL) and Hospitals (small - HUEFHS, medium - HUEFHM, large - HUEFHL) and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)       ","Choices: Res/Comm, Varies by Direction, Residential, None, A, B, C, D"
-WindowWallRatio,"Defines window to wall ratio (WWR) for purpose of Hazus wind vulnerability assessments for MERBL-M-H, MECBL-M-H, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)","Choices: low, medium, high"
+WindowAreaRatio,"Defines window to wall ratio (WWR) for purpose of Hazus wind vulnerability assessments for MERBL-M-H, MECBL-M-H, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Police Stations (HUEFPS), Emergency Operation Centers (HUEFEO)","Choices: low, medium, high"
 TieDowns,"Defines use of ties to connect mobile homes to foundations per HUD guidelnes for purpose of Hazus wind vulnerability assessments for MH94HUDI-II-III, MH76HUD, MHPHUD","Choices: yes, no"
 HazusClass-IN,Hazus building classes as defined for inundation (flooding),"Choices: SF1XA, SF1XV, SF2XA, SF2XV, SF2BA, SF2BV, SF2SA, SF2SV, MH, APT, HOT, NURSE, RETAIL, WHOLE, SERVICE, OFFICE, BANK, HOSP, MED, REC, THEAT, GARAGE, INDH, INDL, CHEM, PROC, CONST, AGRI, RELIG, CITY, EMERG, SCHOOL"
 HazusClass-WA,Hazus building classes as defined for wave action,"Choices: W1, W2, W3, MC1, MC2, MC3, S1, S2, S3, MH"
@@ -74,4 +74,4 @@ NumberofStories,Initalizing number of stories for Hazus analysis,integer
 BasementType,Assignement of basement type for Hazus analysis,"Choices: Basement, Split-Level Basement, No Basement"
 OccupancyType,Assignment of Occupancy type for Hazus analysis ,"Choices: SF1XA, SF1XV, SF2XA, SF2XV, SF2BA, SF2BV, SF2SA, SF2SV, MH, APT, HOT, NURSE, RETAIL, WHOLE, SERVICE, OFFICE, BANK, HOSP, MED, REC, THEAT, GARAGE, INDH, INDL, CHEM, PROC, CONST, AGRI, RELIG, CITY, EMERG, SCHOOL"
 Duration,Assignment of storm suration for Hazus Analysis,"Short, Long"
-Wave Velocity,Definition of wave velocity in ft/s for Hazus Analysis,Floating Point Number
+WaveVelocity,Definition of wave velocity in ft/s for Hazus Analysis,Floating Point Number
