@@ -26,7 +26,7 @@ model is available on DesignSafe PRJ-3314.
    :file: table/building_inventory_data_model_new.csv
    :header-rows: 1
    :align: center
-   :widths: 15, 40, 25, 20
+   :widths: 15, 60, 25
 
 
 Phase II: Inventory Generation
@@ -68,7 +68,7 @@ AI/ML Techniques combined with Computer Vision
 
 Most of the key building attributes were generated using SimCenter’s 
 `BRAILS <https://nheri-simcenter.github.io/BRAILS-Documentation/index.html>`_. The following
- is a brief description of how these attributes were obtained and the utilized methods were validated.
+is a brief description of how these attributes were obtained and the utilized methods were validated.
 
 Attribute: NumberOfStories
 ```````````````````````````
