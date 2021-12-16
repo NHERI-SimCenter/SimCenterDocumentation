@@ -14,11 +14,11 @@ Phase I: Attribute Definition
 ===============================
 
 All the attributes required for loss estimation were first identified to develop the Building Inventory 
-data model. This Building Inventory data model presented in :numref:`tab-bldg_inv_data_model_lc`
+data model. This Building Inventory data model presented in :numref:`tab-bldg_inv_data_model_ac`
 provides a set of attributes that are assigned to each asset to form the building inventory file 
 serving as input to the workflow. For each attribute a row in the table is provided. Each row has a number 
 of columns: the attribute name, description, format (such as alphanumeric, floating-point number), the data source used to define that attribute.
-An expanded version of :numref:`tab-bldg_inv_data_model_lc` with the full details of this data
+An expanded version of :numref:`tab-bldg_inv_data_model_ac` with the full details of this data
 model is available on DesignSafe PRJ-3314.
 
 .. csv-table:: Building Inventory data model for Atlantic County Inventory.
@@ -122,7 +122,7 @@ testbed), was utilized.
 
    Confusion matrices for the number of floors predictor used in this study.
 
-.. _lbl-testbed_LC_asset_description_meanroofht:
+.. _lbl-testbed_AC_asset_description_meanroofht:
 
 Attribute: MeanRoofHt
 ``````````````````````
@@ -193,7 +193,7 @@ Attribute: RoofSlope
 `````````````````````
 RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained 
 by determining the difference between the bottom plane and apex elevations of the roof as defined in the 
-:ref:`lbl-testbed_LC_asset_description_meanroofht` 
+:ref:`lbl-testbed_AC_asset_description_meanroofht` 
 section. Roof run is determined as half the smaller dimension of the building, as determined from 
 the dimensions of the building footprint. :numref:`mean_slope_app` displays the AI-predicted mean roof height versus the 
 AI-precited roof pitch ratios. As expected, very little correlation between these two parameters are observed.
