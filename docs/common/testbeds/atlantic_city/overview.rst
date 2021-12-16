@@ -9,7 +9,7 @@ an approach consistent with that developed for earthquake hazards. Its intent is
 scaffolding upon which community developers can progressively contribute refinements that increase the fidelity 
 and capacities of the backend regional resilience assessment workflow. This documentation specifically demonstrates 
 the process of: (1) asset description, (2) hazard characterization, (3) asset representation, (4) damage and loss 
-modeling for the Atlantic County inventory. This inventory is partitioned into three different versions to provide 
+modeling for the Atlantic County inventory. This inventory is partitioned into two different versions to provide 
 users greater flexibility in balancing computational demands with their research interests. Sample results are 
 presented to verify the workflow and demonstrate its usage.
 
@@ -62,7 +62,7 @@ based on the building class and assigned attributes.
 Available Inventories
 ========================
 
-Three different building inventories have been developed for the Atlantic County testbed and can be accessed on DesignSafe.
+Two different building inventories have been developed for the Atlantic County testbed and can be accessed on DesignSafe.
 
 **Atlantic County Inventory**: Full inventory of 100,721 buildings in the 23 municipalities of Atlantic County, 
 described based on a variety of data sources (:numref:`fig-buildingClassACI`). The buildings in this inventory are exposed to wind 
@@ -94,23 +94,23 @@ in Atlantic County.
 
    Geospatial visualization of subclasses of buildings in Flood-Exposed Inventory.
 
-**Exploration Inventory**: A subset of 1000 buildings drawn from the Flood-Exposed Inventory intended to provide 
-a less computationally demanding implementation for new users or for those wishing to test the development of new 
-contributions to the workflow (:numref:`fig-buildingClassEI`). This inventory encompasses the five coastal municipalities 
-experiencing the most damage under the synthetic storm scenario described later in :ref:`lbl-testbed_AC_hazard_characterization_synthetic`.
-From each of these municipalities, properties are randomly sampled, proportional to the total number of buildings 
-in that municipalitiy and ensuring that the distribution of construction material of buildings in the sample is 
-representative of the underlying distribution for the full population. The buildings in this inventory are exposed to the combination of 
-wind and floodplain hazards.
+.. **Exploration Inventory**: A subset of 1000 buildings drawn from the Flood-Exposed Inventory intended to provide 
+   a less computationally demanding implementation for new users or for those wishing to test the development of new 
+   contributions to the workflow (:numref:`fig-buildingClassEI`). This inventory encompasses the five coastal municipalities 
+   experiencing the most damage under the synthetic storm scenario described later in :ref:`lbl-testbed_AC_hazard_characterization_synthetic`.
+   From each of these municipalities, properties are randomly sampled, proportional to the total number of buildings 
+   in that municipalitiy and ensuring that the distribution of construction material of buildings in the sample is 
+   representative of the underlying distribution for the full population. The buildings in this inventory are exposed to the combination of 
+   wind and floodplain hazards.
 
-.. _fig-buildingClassEI:
+   .. _fig-buildingClassEI:
 
-.. figure:: figure/new_inventory_map_expl.png
-   :align: center
-   :figclass: align-center
-   :width: 700
+   .. figure:: figure/new_inventory_map_expl.png
+      :align: center
+      :figclass: align-center
+      :width: 700
 
-   Geospatial visualization of subclasses of buildings in Flood-Exposed Inventory.
+      Geospatial visualization of subclasses of buildings in Flood-Exposed Inventory.
 
 The following figures summarize characteristics of these inventories, including distribution by municipality 
 (:numref:`fig-distAssetMunicipality`), by year built (:numref:`fig-distBuiltYear`), by occupancy (:numref:`fig-occupancyType`), 
@@ -122,7 +122,7 @@ Atlantic City.
 
 .. _fig-distAssetMunicipality:
 
-.. figure:: figure/num_building_city_allset.png
+.. figure:: figure/num_building_city_twoset.png
    :align: center
    :figclass: align-center
    :width: 800
