@@ -26,10 +26,10 @@ ElevationR1,Elevation of highest point of the roof (peak of gable or apex of hip
 FirstFloorHt0,Height above grade estimated from elevation certificate or inferred from foundation type (in feet): Defined as top of lowest/bottom floor,Floating point Number  
 FirstFloorHt1,"Height of top of floor as estimated from base of door height above grade, based on streetview imagery (in feet)",Floating point Number  
 FloodZone,Flood zone specified on FEMA FIRM based on building location,"Choices: 6101, 6102, 6103, 6104, 6105, 6106, 6107, 6108, 6109, 6110, 6111, 6112, 6113, 6114, 6115, 6199"
-DSWI,DesignWindSpeed I in mph,Floating point number  
-DSWII,DesignWindSpeed II in mph,Floating point number  
-DSWIII,DesignWindSpeed III in mph,Floating point number  
-DSWIV,DesignWindSpeed IV in mph,Floating point number  
+DWSI,DesignWindSpeed I in mph,Floating point number  
+DWSII,DesignWindSpeed II in mph,Floating point number  
+DWSIII,DesignWindSpeed III in mph,Floating point number  
+DWSIV,DesignWindSpeed IV in mph,Floating point number  
 WindZone,"HAZUS-defined Wind Zone (For Manuactured homes, based on HUD Designation)","Choices: I, II, III"
 AvgJanTemp,Average temperature in January below or above critial value of 25F.,"Choices: Above, Below"
 RoofShape,"Roof classified into equivalent hip, gable or flat","Choices: Hip, Gable, Flat"
