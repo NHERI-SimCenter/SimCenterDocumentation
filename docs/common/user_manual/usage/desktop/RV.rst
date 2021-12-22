@@ -215,25 +215,27 @@ For each random variable, the user must enter a name and select from the pull do
    .. [ERA19]
       Engineering Risk Analysis Group, Technische Universität München: https://www.bgu.tum.de/era/software/eradist/ (Matlab/python programs and documentations)
 
-	Correlation matrix
-	------------------------
+.. only:: quoFEM_app
 
-	Correlation coefficients between each variable can be defined by clicking the ``Correlation Matrix`` button. Default correlations between variables are set to be zero. The diagonal element of the matrix is fixed as one, and symmetry of the correlation matrix is enforced once the entries of the lower triangular part of the matrix are modified. 
+   Correlation matrix
+   ------------------------
 
-	.. figure:: figures/rv4.png
-	   :align: center
-	   :width: 800
-	   :figclass: align-center
+   Correlation coefficients between each variable can be defined by clicking the ``Correlation Matrix`` button. Default correlations between variables are set to be zero. The diagonal element of the matrix is fixed as one, and symmetry of the correlation matrix is enforced once the entries of the lower triangular part of the matrix are modified. 
 
-	   Example of a valid correlation matrix
+   .. figure:: figures/rv4.png
+      :align: center
+      :width: 800
+      :figclass: align-center
 
-	Once the ``OK`` button is clicked after setting all required entries, the program will automatically check the validity of the matrix before closing the correlation matrix window. If the matrix is not **positive definite**, an error message will be displayed and the window will not be closed. In such case, user should adjust the correlation coefficients to be positive definite.
+      Example of a valid correlation matrix
 
-	.. note::
+   Once the ``OK`` button is clicked after setting all required entries, the program will automatically check the validity of the matrix before closing the correlation matrix window. If the matrix is not **positive definite**, an error message will be displayed and the window will not be closed. In such case, user should adjust the correlation coefficients to be positive definite.
 
-	   - When ``constant`` variable is introduced instead of probability distributions, the correlation coefficient corresponding to those variables will be ignored. 
-	   - When more than one random variable is provided as ``Dataset``, correlations between the data pairs will not be incorporated automatically. If correlations exist, user can define them manually at the correlation matrix window.
+   .. note::
 
-	.. warning::
+      - When ``constant`` variable is introduced instead of probability distributions, the correlation coefficient corresponding to those variables will be ignored. 
+      - When more than one random variable is provided as ``Dataset``, correlations between the data pairs will not be incorporated automatically. If correlations exist, user can define them manually at the correlation matrix window.
 
-	    Correlation warping for Nataf variable transformation of **beta** distributions is not currently supported.
+   .. warning::
+
+       Correlation warping for Nataf variable transformation of **beta** distributions is not currently supported.

@@ -12,19 +12,20 @@ to the HAZUS conventions for classifying buildings and organizing damage and los
 according to attributes associated with those building classes.
 
 The following discussion will reference a number of rulesets initially developed for the 
-`Atlantic County, NJ <https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html>`_ testbed to enable various assignments of these HAZUS building classes 
-and corresponding attributes.Details of these rulesets are available to users in one of two forms: 
+`Atlantic County, NJ <https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html>`_ 
+testbed to enable various assignments of these HAZUS building classes 
+and corresponding attributes. Details of these rulesets are available to users in one of two forms: 
 
-1. Ruleset definition tables (PDFs) curated in DesignSafe that include additional documentation 
-   justifying the proposed rule, with provenance information for any sources engaged in that 
-   rule’s development.
-2. Scripts (in Python) curated in GitHub that implement the ruleset’s logic for this testbed.
+1. Ruleset definition tables (PDFs) curated in DesignSafe that include additional documentation justifying the proposed rule, with provenance information for any sources engaged in that rule’s development.
+2. Scripts (in Python) that implement the ruleset’s logic for this testbed. Users wishing to execute the testbed in its current form are recommended to download the Python rulesets from DesignSafe. Users wishing to adapt the rulesets to potentially change the way attributes are assigned to buildings, are encouraged to access the Python implementation of the rulesets in GitHub.
 
-Each section provides a table linking the relevant PDFs and Scripts. Note that 
-all of the rulesets introduced herein are tiered, initiating by assigning all assets 
-a default value for its building classification or a given attribute based on the primary 
-rule. This ensures that every asset receives a HAZUS building class and related attribute 
-assignments, regardless of data sparsity. 
+Both of these repositories also include additional documentation (PDFs) justifying the proposed rule, 
+with provenance information for any sources engaged in that rule’s development.
+Note that all of the rulesets introduced herein are tiered, initiating by assigning all assets a 
+default value for its building classification or a given attribute based on the primary rule. 
+This ensures that every asset receives a HAZUS building class and related attribute assignments, 
+regardless of data sparsity. The sections below detail the ruleset development, 
+closing with a table linking the relevant PDFs from DesignSafe and Python scripts from GitHub.
 
 .. _lbl-testbed_LC_asset_representation_building_classification:
 
@@ -57,7 +58,7 @@ later in :numref:`addinfo_ruleset`.
      - Ruleset Definition Table
      - Python script
    * - Building Class Rulesets - Wind
-     - `HAZUS Building Class Rulesets - Wind.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingClassRulesets/HAZUS%20Building%20Class%20Rulesets%20-%20Wind.pdf>`_
+     - `HAZUS Building Class Rulesets - Wind.pdf <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/03.%20Input:%20DL%20-%20Rulesets%20for%20Asset%20Representation>`_
      - `WindClassRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindClassRulesets.py>`_
 
 Building Attributes
@@ -95,7 +96,7 @@ as part of the community’s use and adaptation of this workflow in its research
 
 Note that rulesets for assigning wind loss attributes call upon two meta-variables relevant to wind losses 
 for any building: “Hazard Prone Region” and “Wind Borne Debris,” which are assigned based the design wind 
-speed at the asset location (Building Inventory field “DSWII”) and the flood zone (building inventory field 
+speed at the asset location (Building Inventory field “DWSII”) and the flood zone (building inventory field 
 **FloodZone**). These rules used to assign these meta-variables are provided in 
 :numref:`addinfo_ruleset_metavar`. Also note that the roof shape (building inventory field **RoofShape**), 
 derived from aerial imagery, and terrain roughness (building inventory field **Terrain**), derived from 
@@ -111,7 +112,7 @@ assigned in the `Atlantic County, NJ testbed Asset Representation <https://nheri
      - Ruleset Definition Table
      - Python script
    * - Attribute Assignment - Wind (Meta-Variable)
-     - `Hazus Building Attribute Rulesets - Wind - Meta-Variables.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20Meta-Variables.pdf>`_
+     - `Hazus Building Attribute Rulesets - Wind - Meta-Variables.pdf <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/03.%20Input:%20DL%20-%20Rulesets%20for%20Asset%20Representation>`_
      - `WindMetaVarRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindMetaVarRulesets.py>`_
 
 The following sections summarize the rulesets used for wind loss  attribute assignments for WSF and WMUH 
@@ -155,10 +156,10 @@ cross-referenced in :numref:`addinfo_ruleset_wood`.
      - Ruleset Definition Table
      - Python script
    * - HAZUS Building Attribute Rulesets - Wind (WSF1-2)
-     - `Hazus Building Attribute Rulesets - Wind - WSF1-2.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20WSF1-2.pdf>`_
+     - `Hazus Building Attribute Rulesets - Wind - WSF1-2.pdf <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/03.%20Input:%20DL%20-%20Rulesets%20for%20Asset%20Representation>`_
      - `WindWSFRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindWSFRulesets.py>`_
    * - HAZUS Building Attribute Rulesets - Wind (WMUH1-3)
-     - `Hazus Building Attribute Rulesets - Wind - WMUH1-3.pdf <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/pdf/BuildingAttributeRulesets/Hazus%20Building%20Attribute%20Rulesets%20-%20Wind%20-%20WMUH1-3.pdf>`_
+     - `Hazus Building Attribute Rulesets - Wind - WMUH1-3.pdf <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/03.%20Input:%20DL%20-%20Rulesets%20for%20Asset%20Representation>`_
      - `WindWMUHRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/WindWMUHRulesets.py>`_
 
 Taking the attribute Second Water Resistance (SWR) as an example, the SWR attribute is assigned by 

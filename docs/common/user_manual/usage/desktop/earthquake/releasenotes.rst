@@ -9,7 +9,7 @@ This section is initialized at EE-UQ v2.2.5 and would focus on archive new featu
 Version 2.2
 =================
 
-Version 2.2.5
+Version 2.2.6
 ----------------
 
 **Release date:** Oct. 4th, 2021
@@ -45,28 +45,25 @@ Version 2.2.5
 *Major Updates in this Version*
 
 #. **Features**:
-    #. Uploading a text file to define "User Specified" target spectrum in ground motion selection (:download:`example spectrum file <figures/UserSpecificSpectrum.csv>`)
     #. Specifying the fault type, pulse-like feature, and duration filter in ground motion selection
     #. Adding the option of "Geometric" suite average for the PEER NGA West2 ground motion selection
-    #. New message board UI
 
 #. **Fixes and Patches**: 
-    #. Resolving load configuration json file for PEER NGA Records
-    #. Relaxing the tolerance in the example eeuq-0004
-    #. Correcting the input ground motion file in the example eeuq-0002
     #. Fixing the bug of exporting ground motion names in the "Save Data"
+    #. Fixing the bug of using user-specified EDP names
 
 
-Version 2.2.6
+Version 2.3.0
 ----------------
 
-**Release plan**: Dec. 2021
+**Release plan**: Mar. 2022
 
 *Planned features*
 
-#. SAM: Invoking the iterative seismic design and pushover analysis in AutoSDA as a pre-processing step
-#. RES: Retrieving the periods.out file in AutoSDA runs from DesignSafe from EE-UQ interface
+#. UQ: New surrogate modeling methods (e.g., PLoM, SAF-IDA)
+#. EVT: New feature to use USGS deaggregation information and ground motion prediction equation to generate target spectrum
 #. EVT: Invoking OpenQuake to generate scenario-based or classical PSHA ground motion spectral targets
+#. SAM: Invoking the iterative seismic design and pushover analysis in AutoSDA as a pre-processing step
 #. ...\*
 
 \*: Users are welcome to contact us on `forum <http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0>`_ for new feature requests.
