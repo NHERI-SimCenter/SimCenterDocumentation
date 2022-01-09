@@ -4,7 +4,7 @@
 Inverse Problem
 ***************
 
-The inverse problem methods, like the parameter estimation methods, are concerned with estimation of input parameters given observational measurements. Unlike parameter estimation methods, in which the user provides a range and an initial starting point for the input random variables, when using an inverse method the user has some idea of the distributions associated with these parameters. This information is known as the prior distributions. The Inverse  methods take this prior information and combines it with observational data (e.g. from experiments) to infer posterior distributions on the parameter values. For the Inverse problem, a Bayesian updating paradigm is followed, the prior distribution on a parameter is updated through a Bayesian framework involving experimental data and a likelihood function. For the likelihood function, that function that specifies the likelihood of observing a particular observation given the model and its associated parameterization, Dakota uses a Gaussian likelihood function. The algorithms that generate the samples to produce the posterior distributions are typically based on some Markov Chain Monte Carlo (MCMC) algorithm. For |appName| two families of algorithms are provided for the MCMC: DREAM, and the algorithms provided by the QUESO library.
+The methods in the inverse problem category are concerned with estimation of the probability distribution of the parameter values given observational measurements. Unlike parameter estimation methods, in which the user provides a range and an initial starting point for the input random variables, when using the methods in this category, the user has some idea about the probability distribution of the parameter values. This information is provided in the form of the prior distributions in the **RV** panel. The Inverse methods take this prior information and combine it with information from the observed data provided in the **UQ** panel, to infer posterior distributions of the parameter values. For the Inverse problem, a Bayesian updating paradigm is followed, the prior distribution on a parameter is updated through a Bayesian framework involving experimental data and a likelihood function. The likelihood function  specifies the likelihood that a particular parameter value of the model produced the observed data. Dakota uses a Gaussian likelihood function. The algorithms that generate the samples to characterize the posterior distributions are typically based on some Markov Chain Monte Carlo (MCMC) methods. Currently, |appName| provides access to the DREAM algorithm implemented in Dakota.
 
 
 ..
@@ -28,7 +28,27 @@ The inverse problem methods, like the parameter estimation methods, are concerne
 DREAM 
 ^^^^^
 
-The Differential Evolution Adaptive Metropolis ([DREAM]_) method runs multiple markov chains simultaneously for global exploration of the space, and automatically tunes and scales the orientation of the proposal distributions in randomized subspaces during the search. The inputs for the method are the number of chains, seed, number of markov chain samples and burn in samples. The number of Markov chain samples per chain is number of samples divided by number of chains.
+The Differential Evolution Adaptive Metropolis ([DREAM]_) method runs multiple Markov chains simultaneously for global exploration of the space, and automatically tunes and scales the orientation of the proposal distributions in randomized subspaces during the search. :numref:`figDREAM` shows the input panel corresponding to the DREAM method. The required inputs for this method are:
+
+1. # Chains: number of chains in the DREAM algorithm
+2. # Chain Samples: number of sample values to be drawn from the posterior probability distribution of the parameters
+3. # Burn in Samples: the number of samples at the beginning of the chain that are discarded
+4. Jump Step: a long step in forced every Jump Step number of samples in the DREAM algorithm
+5. Seed: seed of the random number generator, this option is provided for repeatability. If the same analysis is run multiple times with the same seed, the results will be identical from all the runs. If the same analysis is run with differing seed values, the results from all the runs will not be identical. 
+6. Calibration data file: the path to the file which contains the calibration data (i.e., the measured values of the reponses).
+
+.. note::
+
+	Calibration data file requirements
+	==================================
+	The data are provided in the calibration data file, which must fulfill the following requirements:
+
+	1. Each row of the calibration data file contains data from one experiment. The individual entries in every row of this file can be separated by spaces, tabs, or commas.
+	2. The number of entries in each row must equal the sum of the length of all outputs defined in the **QoI** panel.
+	3. The order of the entries in each row of the calibration data file must match the order in which the outputs are defined in the **QoI** panel, and must correspond to the output from the computational model in the ``results.out`` file.
+
+	For example, if there are data from two experiments, and there are 2 response quantities, of length 2 and 1 respectively, then, there must be two rows of values in the calibration data file, the length of each row must be 3, the first two values in each row correspond to the first response quantity and the third value in each row corresponds to the second response quantity. 
+
 
 .. _figDREAM:
 

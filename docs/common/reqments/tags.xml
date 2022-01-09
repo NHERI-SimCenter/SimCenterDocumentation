@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tag-scheme id="root" key="root">
+      <tag-scheme id="UR" key="UR">
+          <tag key="1" src="./src/input.json#$.UQ_Method.reliabilityMethodData[?(@.method=&#34;Local Reliability&#34;)]">Local</tag>
+      </tag-scheme>
+      <tag-scheme id="UM" key="UM">
+          <tag-scheme key="1">
+              <tag-scheme key="1">
+                  <tag key="1" src="./src/input.json#$.UQ_Method.samplingMethodData[?(@.method=&#34;LHS&#34;)]">LHS</tag>
+                  <tag key="2" src="./src/input.json#$.UQ_Method.samplingMethodData[?(@.method=&#34;Importance Sampling&#34;)]">IS</tag>
+                  <tag key="3" src="./src/input.json#$.UQ_Method.samplingMethodData[?(@.method=&#34;Gaussian Process Regression&#34;)]">Gaussian</tag>
+              </tag-scheme>
+          </tag-scheme>
+      </tag-scheme>
+      <tag-scheme id="UV" key="UV">
+          <tag-scheme key="1">
+              <tag key="1" src="./src/input.json#$.randomVariables[*][?(@.distribution=&#34;Normal&#34;)]">Normal</tag>
+              <tag key="2" src="./src/input.json#$.randomVariables[*][?(@.distribution=&#34;Lognormal&#34;)]">Lognormal</tag>
+              <tag key="3" src="./src/input.json#$.randomVariables[*][?(@.distribution=&#34;Uniform&#34;)]">Uniform</tag>
+              <tag key="4" src="./src/input.json#$.randomVariables[*][?(@.distribution=&#34;Beta&#34;)]">Beta</tag>
+          </tag-scheme>
+      </tag-scheme>
+      <tag-scheme id="EL" key="EL">
+          <tag key="3" src="./src/input.json#$.Applications.Events[*][?(@.Application=&#34;ExistingPEER_Events&#34;)]">Existing PEER Event</tag>
+          <tag key="8" src="./src/input.json#$.Applications.Events[*][?(@.subtype=&#34;PEER NGA Records&#34;)]">PEER NGA Event</tag>
+          <tag-scheme key="9">
+              <tag key="1" src="./src/input.json#$.Applications.Events[*][?(@.ApplicationData.modelName=&#34;VlachosSiteSpecificEQ&#34;)]">Vlachos</tag>
+          </tag-scheme>
+      </tag-scheme>
+</tag-scheme>

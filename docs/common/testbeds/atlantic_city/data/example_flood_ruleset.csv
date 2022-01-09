@@ -1,0 +1,3 @@
+Ruleset,Notes
+"IF FloodType = (Riverine/A-Zone or Coastal/A-Zone), FirstFloorElev=FirstFloorHt1; If FloodType = Coastal/V-Zone, FirstFloorElev = FirstFloorHt1 - 1","Units of feet. For A Zone, top of finished floor; for V Zone, bottom of floor beam of lowest floor; define X based on typical depth of girders assuming bottom of door is used to estimate first floor height (https://www.apawood.org/Data/Sites/1/documents/raised-wood-floor-foundations-guide.pdf) -- take X = 1ft as avaerage value of different options"
+FirstFloorElev = 1,If no information available

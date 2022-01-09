@@ -1,0 +1,4 @@
+Building Attribute,Basic Attributes,Example sampling law
+Second Water Resistance (SWR),"YearBuilt, RoofShape","IF YearBuiltNJDEP > 2000, RoofShape = Gable or Hip, SWR = yes (60%) and no (40%)"
+Roof Deck Attachment (RDA),YearBuilt,"IF YearBuilt <= 2000, RDA = A (50%) and B (50%)"
+Shutters,"YearBuilt, Wind Bore Debris (WBD)","IF YearBuilt <= 2000, WBD = yes, shutters = yes (45%) and no (55%)"

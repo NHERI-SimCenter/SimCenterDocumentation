@@ -1,0 +1,23 @@
+Attribute,Description,Format
+HazusClass-W,Hazus building classes as defined for wind hazards,Choices: HazusClass-W in :numref:`bldg_class`
+RoofSystem,"Underlying roof structure, applies only to masonry buildings","Choices: Wood, OWSJ"
+HPR,Hazard Prone Regions for WSF1-2,"Choices: yes, no"
+WBD,Wind Borne Debris for WSF1-2,"Choices: yes, no"
+SWR,"Secondary Water Resistance for WSF1-2, WMUH1-3, MSF1-2, MMUH1-3","Choices: yes, no"
+RoofCvr,"Roof cover for WMUH1-3, MMUH1-3, MERBL-M-H, MECBL-M-H, MLRI, MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Fire Stations, Elementary Schools, 2-story High School and 3-story High School and Hospitals and Police Stations, Emergency Operation Centers","Choices: N/A, BUR, SPM"
+RoofQual,"Roof cover quality for WMUH1-3, MMUH1-3, MLRI","Choices: N/A, poor, good"
+RDA-Wood,"Roof Deck Attachment for wood for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MLRM1, MLRM2","Choices: A, B, C, D"
+RDA-OWSJ,Roof Deck Attachment for OWSJ for MSF1-2,"Choices: smtl standard, smtl superior, cshl standard, cshl superior"
+R2WC,"Roof to Wall Connection for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MLRM1, MLRM2","Choices: strap, toe-nail"
+shutters,"Use of window opening protection for WSF1-2, WMUH1-3, MMUH1-3, MSF1-2, MERBL-M-H, MECBL-M-H, MMUH1-3,MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H, SPMBS-M-L, MH94HUDI-II-III, MH76HUD, MHPHUD and Fire Stations, Elementary Schools, 2-story High School and 3-story High School and Hospitals and Police Stations, Emergency Operation Centers","Choices: yes, no"
+Agarage,"Attached garage for WSF1-2, MSF1-2","Choices: none, SFBC 1994, standard, weak"
+Mreinf,"Reinforcement in masonry walls for MSF1-2, MLRI, MLRM1, MLRM2, MMUH1-3","Choices: yes, no"
+OWSJ-r,OWSJ required for MSF1-2,"Choices: cshl, smtl"
+Metal-RDA,"Metal Roof Deck Attachment  for MLRI, MERBL-M-H, MECBL-M-H, MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, SPMBS-M-L and Fire Stations, Elementary Schools, 2-story High School and 3-story High School and Hospitals and Police Stations, Emergency Operation Centers    ","Choices: standard, superior"
+RDage,"Defines roof deck age  for MLRM1, MLRM2, SPMBS-M-L and Fire Stations (HUEFFS), Elementary Schools (HUEFSS)
+","Choices: new/avg, old"
+UnitClass,Number of units in strip mall  for MLRM2,"Choices: single, multi"
+JoistSpace,Joist spacing for multi-unit strip malls  for MLRM2,"Choices: N/A, 4, 6"
+WindDebris,"Likely sources of wind debris  for MERBL-M-H, MECBL-M-H, MLRM1, MLRM2, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Fire Stations, Elementary Schools , 2-story High School and 3-story High School and Hospitals and Police Stations, Emergency Operation Centers    ","Choices: Res/Comm, Varies by Direction, Residential, None, A, B, C, D"
+WWR,"Window to wall ratio (WWR)  for MERBL-M-H, MECBL-M-H, SERBL-M-H, SECBL-M-H, CECBL-M-H, CERBL-M-H and Police Stations, Emergency Operation Centers","Choices: low, medium, high"
+TieDowns,"Use of ties to connect mobile homes to foundations per HUD guidelnes  for MH94HUDI-II-III, MH76HUD, MHPHUD","Choices: yes, no"
