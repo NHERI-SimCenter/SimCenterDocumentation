@@ -11,7 +11,7 @@ Version 2.2
 Version 2.2.6 (Current)
 -----------------------
 
-**Release date:** Dec. 22nd, 2021
+**Release date:** Jan. 2021
 
 *Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
 
