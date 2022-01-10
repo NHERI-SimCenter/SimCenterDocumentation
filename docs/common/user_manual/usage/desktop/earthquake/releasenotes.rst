@@ -25,6 +25,8 @@ Version 2.2.6 (Current)
     b. PEER NGA Records: selecting and scaling PEER NGA West2 ground motions
         * :blue:`Specifying the fault type, pulse-like feature, and duration filter in ground motion selection`
         * :blue:`Adding the option of "Geometric" suite average for the PEER NGA West2 ground motion selection`
+        * :blue:`Adding a new feature to obtain USGS seismic disaggregation data and compute CMS for the target spectrum`
+        * :blue:`Supporting to load 2D existing PEER records`
     c. Site Response: propagating rock motions to the surface
     d. Multiple PEER: using multiple PEER recordings
     e. Multiple SimCenter: using multiple SimCenter-format recordings
@@ -91,7 +93,6 @@ Version 2.3.0
 *Planned features*
 
 #. UQ: New surrogate modeling methods (e.g., PLoM, SAF-IDA)
-#. EVT: New feature to use USGS deaggregation information and ground motion prediction equation to generate target spectrum
 #. EVT: Invoking OpenQuake to generate scenario-based or classical PSHA ground motion spectral targets
 #. SAM: Invoking the iterative seismic design and pushover analysis in AutoSDA as a pre-processing step
 #. ...\*
