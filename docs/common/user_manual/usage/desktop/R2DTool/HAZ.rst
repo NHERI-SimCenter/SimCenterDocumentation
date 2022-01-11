@@ -151,7 +151,7 @@ Ground motion prediction equations estimate the intensity of ground shaking that
 
   Ground motion prediction equations.
 
-**Earthquake Rupture Definition**
+**Earthquake Source**
 
 This is where the user defines the earthquake rupture characteristics. In the **Rupture Type** combo box, shown in :numref:`fig-R2DEQSSSEQRupPointPane`, point source and UCERF earthquake rupture forecast models are available.
 
@@ -193,6 +193,49 @@ This is where the user defines the earthquake rupture characteristics. In the **
 	  :figclass: align-center
 
 	  Earthquake rupture forecast.
+
+	#. **OpenQuake Scenario-Based**
+
+	The **OpenQuake Scenario-Based** pane, shown in :numref:`fig-R2DOpenQuakeScenarioBased`, requires the following inputs:
+
+		- **OpenQuake Version:** Version of OpenQuake (currently available 3.10, 3.11, 3.12, and latest minor version is supported).
+		- **Rupture File:** A xml file (NRML format) defining an earthquake source.
+		- **Rupture Meshsize:** Mesh size for line sources.
+		- **Area Meshsize:** Mesh size for area sources.
+		- **Maximum Distance:** Maximum considered distance from source to site.
+
+	.. _fig-R2DOpenQuakeScenarioBased:
+
+	.. figure:: figures/R2DOpenQuakeScenarioBased.png
+	  :align: center
+	  :figclass: align-center
+
+	  OpenQuake Scenario-Based Input.
+
+	#. **OpenQuake Classcial PSHA**
+
+	The **OpenQuake Classcial PSHA** pane, shown in :numref:`fig-R2DOpenQuakeClassicalPSHA`, requires the following inputs:
+
+		- **OpenQuake Version:** Version of OpenQuake (currently available 3.10, 3.11, 3.12, and latest minor version is supported).
+		- **Source Logic Tree:** A xml file (NRML format) defining a logic tree model for seismic sources.
+		- **Source Model Folder:** A directory hosting the seismic sources defined in the source logic tree.
+		- **Rupture Meshsize:** Mesh size for line sources.
+		- **Area Meshsize:** Mesh size for area sources.
+		- **Maximum Distance:** Maximum considered distance from source to site.
+		- **GMPE Logic Tree:** A xml file (NRML format) defining a logic tree model for ground motion prediction equations.
+		- **Return Period:** Return period of the PSHA.
+		- **Seed:** Seed in generating ground motion maps.
+		- **Quantiles:** Quantile levels of ground motion intensity measures in the output (e.g., uniform hazard spectra).
+		- **Investigation Time:** time period for computing the probability of exceedance
+		- **Output:** Checkboxes for *Individual hazard curve*, *Mean hazard curve*, *Hazard map*, and *Uniform hazard spectra*
+
+	.. _fig-R2DOpenQuakeClassicalPSHA:
+
+	.. figure:: figures/R2DOpenQuakeClassicalPSHA.png
+	  :align: center
+	  :figclass: align-center
+
+	  OpenQuake Classical PSHA Input.
 
 **Intensity Measure and Period Points**
 
