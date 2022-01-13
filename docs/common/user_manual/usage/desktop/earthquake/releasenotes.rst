@@ -8,10 +8,49 @@ Release Notes
 Version 2.2
 =================
 
-Version 2.2.6 (Current)
+Version 2.2.7 (Current)
 -----------------------
 
-**Release date:** Jan. 2021
+**Release date:** Jan. 2022
+
+*Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
+
+#. **Structural Information Model**
+    a. MDOF: creating idealized multi-degree-of-freedom models
+    b. OpenSees: user-defined OpenSees models
+    c. Steel Building Model: automating steel frame design and modeling
+
+#. **Ground Motion Event**
+    a. Stochastic Ground Motion: simulating stochastic ground motion recordings
+    b. PEER NGA Records: selecting and scaling PEER NGA West2 ground motions
+        * :blue:`Adding a new feature to obtain USGS seismic disaggregation data and compute CMS for the target spectrum`
+        * :blue:`Supporting to load 2D existing PEER records`
+    c. Site Response: propagating rock motions to the surface
+    d. Multiple PEER: using multiple PEER recordings
+    e. Multiple SimCenter: using multiple SimCenter-format recordings
+    f. User Specified Database: selecting and scaling ground motions from the user-specified flatfile
+
+#. **Finite Element Application**
+    a. OpenSees: Open System for Earthquake Engineering Simulation
+
+#. **Engineering Demand Parameter Generator**
+    a. Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration
+    b. User Defined: user-specified EDP
+
+#. **Uncertainty Quantification**
+    a. Dakota
+        - Forward Propagation
+        - Sensitivity Analysis
+        - Reliability Analysis
+
+#. **Results**
+    a. Summary Data
+    b. Data Values
+
+Version 2.2.6
+--------------
+
+**Release date:** Dec. 22nd, 2021
 
 *Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
 
@@ -25,8 +64,6 @@ Version 2.2.6 (Current)
     b. PEER NGA Records: selecting and scaling PEER NGA West2 ground motions
         * :blue:`Specifying the fault type, pulse-like feature, and duration filter in ground motion selection`
         * :blue:`Adding the option of "Geometric" suite average for the PEER NGA West2 ground motion selection`
-        * :blue:`Adding a new feature to obtain USGS seismic disaggregation data and compute CMS for the target spectrum`
-        * :blue:`Supporting to load 2D existing PEER records`
     c. Site Response: propagating rock motions to the surface
     d. Multiple PEER: using multiple PEER recordings
     e. Multiple SimCenter: using multiple SimCenter-format recordings
