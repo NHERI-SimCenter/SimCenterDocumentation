@@ -30,6 +30,15 @@ Initially, every event will be given a load factor of 1.0. Load factors can be a
    Rinaldi228.AT2,2.0
    Rinaldi318.AT2,2.0
 
+Alternatively, users can load a ground motion package directly downloaded from PEER with its default information csv file (*_SearchResults.csv*). The ground motion information including event name, direction, and scaling factor are parsed.
+
+.. _fig-peer-event-searchresult:
+
+.. figure:: figures/multiplePEER_searchresults.png
+	:align: center
+	:figclass: align-center
+
+	Load ground motions from *_SearchResults.csv*.
 
 .. note::
    **Random Variables**: Scale factors can be defined as being random variables by entering a string in the factor field. The variable name entered will appear as a Random Variable in the **UQ** tab and the user must specify its distribution there. If multiple events are specified, the event itself will be also be treated as a random variable, with each event being part of the discrete set of possible events. For this discrete set the user does not define a distribution as this is done automatically.
