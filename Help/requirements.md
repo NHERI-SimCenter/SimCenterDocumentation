@@ -1,15 +1,10 @@
-# About
+# Requirements
 
-## Schema
+The requirement traceability matrix for each tool is generated from a common
+set of JSON files located [here](../docs/common/reqments/data)
 
-leafs:
+CSV files are automatically generated and placed in the `_out/` folder. These files have the following columns:
 
-1. `implementation`
-	1. `"standard"`
-	2. dictionary with keys `qfem`, `eeuq`, `weuq`, `r2dt`, `pbdl`
-
-
-Columns:
 
 ```
 0:  #
@@ -26,6 +21,17 @@ Columns:
 9:  R2D
 10: HydroUQ
 ```
+
+
+## Schema
+
+leafs:
+
+1. `implementation`
+	1. `"standard"`
+	2. dictionary with keys `qfem`, `eeuq`, `weuq`, `r2dt`, `pbdl`
+
+
 
 ## TODO
 
