@@ -10,6 +10,7 @@ EXAMPLE_DIRS = {
     "eeuq": "eeuq-[0-9]{4}",
     "pbdl": "pbdl-[0-9]{4}",
     "r2dt": "E[0-9].*",
+    "hydr": None,
 }
 
 def print_help():
@@ -85,47 +86,58 @@ def create_link(v:str,app:str=None)->str:
             return f'`link <{v}>`_'
         else:
             return v
-    elif v:
+    elif v and EXAMPLE_DIRS[app] is not None:
         match = re.search(f"({EXAMPLE_DIRS[app]})",v)
         return f'":{match.group(0)}:`/`"' if match else '"-"'
     else:
         return '"-"'
 
-def find_implementation(key:str,item:dict, examples:dict)->list:
+def find_implementation(key:str,item:dict, examples:dict, options=None)->list:
     if "implementation" in item:
         if isinstance(item["implementation"],str):
             if item["implementation"] == "core" or item["implementation"] == "standard":
                 return {
-                    app: "**core**" if v else "NA" for app,v in examples.items()
+                    #app: "**core**" if v else "NA" for app,v in examples.items()
+                    app: "**core**" if examples[app] else "NA" for app in EXAMPLE_DIRS.keys()
                 }
         else:
+            implementations = {
+               k: item["implementation"][k] if k in item["implementation"] else  "NA"
+               for k in EXAMPLE_DIRS.keys()
+            }
             return {
                 k: f'"{create_link(v)}"'
-                    for k,v in item["implementation"].items()
+                    for k,v in implementations.items()
             }
     else:
-        return {app: create_link(find_first(key,v),app) if v else "NA"
-                for app,v in examples.items()}
+        return {app: create_link(find_first(key,examples[app]),app) if examples[app] else "NA"
+                for app in EXAMPLE_DIRS.keys()}
 
 
 def print_reqs(items:list,parent,level:int,examples:dict,options=None)->dict:
+    """Print requirements in CSV format"""
     for j,item in enumerate(items):
         if not item["target"]:
             continue
         if "apps" in item:
-            examples = {app: v if app in item["apps"] else False for app,v in examples.items()}
+            examples = {
+                app: v if app in item["apps"] else False
+                for app,v in examples.items()
+            }
 
         key = f"{parent}.{j+1}"
         if "items" in item and item["items"]:
             field_template = '"**{}**"'
             print(", ".join(
                 map(field_template.format,
-                    [key, item["target"], "-", "-", "-"] + ["-"]*len(examples)
+                    #[key, item["target"], "-", "-", "-"] + ["-"]*len(examples)
+                    [key, item["target"], "-", "-", "-"] + ["-"]*len(EXAMPLE_DIRS)
             )))
             print_reqs(item["items"],key,level+1,examples,options)
+
         else:
             fields = [f'"{f}"' if f else '"-"' for f in item["fields"]]
-            refs = list(find_implementation(key,item, examples).values())
+            refs = list(find_implementation(key, item, examples,options).values())
             print(f'"{key}", "{item["target"]}",' + ", ".join(fields + refs))
 
 
@@ -139,22 +151,26 @@ if __name__ == "__main__":
     apps = {}
     argc = len(sys.argv)
     options = Options()
+    verbose = False
     while argnum < argc:
         arg = sys.argv[argnum]
         if sys.argv[argnum][:2] == "-E":
             apps.update({arg[2:]: []})
             argnum += 1
-            ex = sys.argv[argnum]
-            while ex[0] != "-":
-                apps[arg[2:]].append(ex)
+            expl_input = sys.argv[argnum]
+            while expl_input[0] != "-":
+                apps[arg[2:]].append(expl_input)
                 argnum += 1
                 if argnum == argc: break
-                ex = sys.argv[argnum]
-        elif sys.argv[argnum] == "-b":
-            pass
+                expl_input = sys.argv[argnum]
+            if expl_input == "-": argnum += 1
+        elif sys.argv[argnum] == "-v":
+            verbose=True
+            argnum += 1
         else:
             break
 
+    if verbose: print(f"apps: {list(apps.keys())}",file=sys.stderr)
     reqs = json.load(sys.stdin)
     specs = {
         k: proc_reqs(v["items"],k,
@@ -163,9 +179,10 @@ if __name__ == "__main__":
     }
     apps_included = {k: True for k in apps}
     filtered_examples = {
-            app: apply_filter(specs,*apps[app]) for app in apps
+        app: apply_filter(specs,*apps[app]) for app in apps
     }
     for k,item in reqs.items():
+
         if "apps" in item:
             examples = {
                 app: v if app in item["apps"] else False
@@ -173,6 +190,7 @@ if __name__ == "__main__":
             }
         else:
             examples = filtered_examples
+
         print_reqs(item["items"],k,0,examples,options)
 
 
