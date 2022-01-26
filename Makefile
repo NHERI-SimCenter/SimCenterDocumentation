@@ -17,11 +17,11 @@ JSONDIR = docs/common/reqments/data/
 
 export SIMCENTER_DEV = $(shell pwd | xargs dirname)
 #-Examples-------------------------------------------------
-EXPDIR = ./docs/common/user_manual/examples/desktop
-EXPSRC = ${SIMCENTER_DEV}/$(SIMDOC_APP)/Examples
-RENDRE = rendre -v -D '$(EXPSRC)/index.json'
-# Create list of files
-EXAMPLES = $(shell $(RENDRE) -l examples.yaml\#/$(SIMDOC_APP) path -j ' ' -- $(EXPSRC)/./\%%:doc)
+#EXPDIR = ./docs/common/user_manual/examples/desktop
+#EXPSRC = ${SIMCENTER_DEV}/$(SIMDOC_APP)/Examples
+#RENDRE = rendre -v -D '$(EXPSRC)/index.json'
+## Create list of files
+#EXAMPLES = $(shell $(RENDRE) -l examples.yaml\#/$(SIMDOC_APP) path -j ' ' -- $(EXPSRC)/./\%%:doc)
 
 
 #-Help-----------------------------------------------------
@@ -122,9 +122,9 @@ $(CSVDIR)/%.csv: $(JSONDIR)/%.json
 	python3 ./scripts/json2csv.py \
 		-Eqfem $(SIMCENTER_DEV)/quoFEM/Examples/qfem*/src/input.json \
 		-Eeeuq $(SIMCENTER_DEV)/EE-UQ/Examples/eeuq-*/src/input.json \
-		-Eweuq $(SIMCENTER_DEV)/WE-UQ/Examples/weuq-*/src/input.json \
 		-Epbdl $(SIMCENTER_DEV)/PBE/Examples/pbdl-*/src/input.json \
 		-Er2dt $(SIMCENTER_DEV)/R2DTool/Examples/E*/input.json \
 		< '$<' > '$@'
 
+#-Eweuq $(SIMCENTER_DEV)/WE-UQ/Examples/weuq-*/src/input.json \
 

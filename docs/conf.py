@@ -609,6 +609,7 @@ elif app_name == "WE-UQ":
     exclude_patterns.remove("**/*WE[-_]UQ*")
     exclude_patterns.remove("**/weuq-*")
 
+    exclude_patterns.append("**/hydro/*")
     exclude_patterns.append("**/testbeds/*")
     exclude_patterns.append("**/DakotaSensitivity.rst")
     exclude_patterns.append("**/DakotaReliability.rst")
