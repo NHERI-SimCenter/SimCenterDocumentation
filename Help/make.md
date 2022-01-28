@@ -8,6 +8,8 @@ are carried out from make::
    name of the application.
 
 2. The `html` target is invoked, executing the following steps:
-   1. Build requirement CSV files from JSON (read more [here](requirements.md).
+   1. Build CSV files for the requirement matrix from JSON (read more [here](requirements.md).
    2. Invoke Sphinx. At this point, control is passed from the Makefile to `conf.py`.
+
+
 

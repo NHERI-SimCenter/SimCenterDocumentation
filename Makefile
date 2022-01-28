@@ -94,9 +94,10 @@ spell:
 	@$(SPHINXBUILD) -b spelling "$(SOURCEDIR)" "$(call BUILDDIR,$(SIMDOC_APP))/html" $(O)
 
 html:
+	make build/$(SIMDOC_APP)_Examples.json
 	for i in $(JSONDIR)/*.json; do \
-	    file_name="$${i##*/}"; \
-	    make $(CSVDIR)/$${file_name%.*}.csv; \
+	    json_file="$${i##*/}"; \
+	    make $(CSVDIR)/$${json_file%.*}.csv; \
 	done
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(call BUILDDIR,$(SIMDOC_APP))/html" $(O)
 
@@ -118,13 +119,38 @@ latexpdf:
 update:
 	pip install -U -r requirements.txt
 
-$(CSVDIR)/%.csv: $(JSONDIR)/%.json
+build/%.json: examples.yaml
+	python scripts/index_examples.py $(SIMDOC_APP) \
+    | aurore -D- -B ../$(SIMDOC_APP)/Examples/ -C scripts/config.yml get \
+    > $(call BUILDDIR,$(SIMDOC_APP))_Examples.json
+
+
+$(CSVDIR)/%.csv: $(JSONDIR)/%.json ./scripts/json2csv.py
 	python3 ./scripts/json2csv.py \
 		-Eqfem $(SIMCENTER_DEV)/quoFEM/Examples/qfem*/src/input.json \
 		-Eeeuq $(SIMCENTER_DEV)/EE-UQ/Examples/eeuq-*/src/input.json \
+		-Eweuq -  \
 		-Epbdl $(SIMCENTER_DEV)/PBE/Examples/pbdl-*/src/input.json \
 		-Er2dt $(SIMCENTER_DEV)/R2DTool/Examples/E*/input.json \
+		-Ehydr - \
 		< '$<' > '$@'
 
 #-Eweuq $(SIMCENTER_DEV)/WE-UQ/Examples/weuq-*/src/input.json \
+
+csv-debug: FORCE
+	for i in $(JSONDIR)/*.json; do \
+	    json_file="$${i##*/}"; \
+        echo $$json_file; \
+        python3 ./scripts/json2csv.py -v \
+            -Eqfem $(SIMCENTER_DEV)/quoFEM/Examples/qfem*/src/input.json \
+            -Eeeuq $(SIMCENTER_DEV)/EE-UQ/Examples/eeuq-*/src/input.json \
+            -Eweuq -  \
+            -Epbdl $(SIMCENTER_DEV)/PBE/Examples/pbdl-*/src/input.json \
+            -Er2dt $(SIMCENTER_DEV)/R2DTool/Examples/E*/input.json \
+            -Ehydr - \
+            < "$(JSONDIR)/$$json_file"; \
+	done
+
+FORCE:
+.PHONY: csv-debug
 
