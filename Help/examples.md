@@ -2,7 +2,13 @@
 
 This page summarizes the examples provided for all of the tools.
 
-<!-- # Claudio Perez -->
+Adding a new example to the documentation consists of two steps:
+
+1. add the directory name for the example to `examples.yaml`
+2. rebuild the index by running `make <app-name> examples`
+
+
+<!--
 
 ## quoFEM Examples
 
@@ -85,4 +91,4 @@ WEUQ:
   - id: weuq-08
     title: "30-Story Frame - Sensitivity"
 ```
-
+-->
