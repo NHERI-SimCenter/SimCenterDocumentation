@@ -94,6 +94,7 @@ spell:
 	@$(SPHINXBUILD) -b spelling "$(SOURCEDIR)" "$(call BUILDDIR,$(SIMDOC_APP))/html" $(O)
 
 html:
+	make build/$(SIMDOC_APP)_Examples.json
 	for i in $(JSONDIR)/*.json; do \
 	    json_file="$${i##*/}"; \
 	    make $(CSVDIR)/$${json_file%.*}.csv; \
@@ -117,6 +118,12 @@ latexpdf:
 
 update:
 	pip install -U -r requirements.txt
+
+build/%.json: examples.yaml
+	python scripts/index_examples.py $(SIMDOC_APP) \
+    | aurore -D- -B ../$(SIMDOC_APP)/Examples/ -C scripts/config.yml get \
+    > $(call BUILDDIR,$(SIMDOC_APP))_Examples.json
+
 
 $(CSVDIR)/%.csv: $(JSONDIR)/%.json ./scripts/json2csv.py
 	python3 ./scripts/json2csv.py \
