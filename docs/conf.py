@@ -63,10 +63,6 @@ if app_name == "pelicun":
     sys.path.insert(0, os.path.abspath("../"))
 # -----------------------------------------------------------------------------
 
-external_links = {
-    "github": f"https://github.com/NHERI-SimCenter/{app_name}",
-}
-
 # Add any Sphinx extension modules 
 extensions =  [
     "sphinx-jsonschema",
@@ -81,6 +77,29 @@ extensions =  [
     "sphinx_panels",
     "sphinxcontrib.spelling",
 ]
+
+source_suffix = {
+    ".rst": "restructuredtext",
+}
+
+numfig = True
+numfig_secnum_depth = 4
+
+math_number_all = True
+math_eqref_format = "({number})"
+math_numfig = True
+
+html_theme_options = {
+    "logo_only": True,
+    "prev_next_buttons_location": None,
+    "style_nav_header_background": "#F2F2F2",
+}
+html_logo = f"common/figures/{app_name2}-Logo.png"
+
+# Some apps overwrite the copyright to include additional entities
+copyright = f"{str(datetime.today().year)}, The Regents of the University of California"
+
+tags.add(f"{app_abrev2}_app")
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -132,11 +151,6 @@ exclude_patterns = (
     + [f'**{app.replace("-","")}*' for app in APPS if app != app_name]
 )
 
-
-source_suffix = {
-    ".rst": "restructuredtext",
-}
-
 toc_filter_exclusions = [
     "desktop",
     "response",
@@ -161,18 +175,10 @@ toc_filter_exclusions = [
 
 # -- Project information -----------------------------------------------------
 
-# shared among all SimCenter docs
-numfig = True
-numfig_secnum_depth = 4
+#
+# Basic app-specific links and data
+#---------------------------------------
 
-math_number_all = True
-math_eqref_format = "({number})"
-math_numfig = True
-
-# Some apps overwrite the copyright to include additional entities
-copyright = f"{str(datetime.today().year)}, The Regents of the University of California"
-
-tags.add(f"{app_abrev2}_app")
 
 rst_prolog = f"""
 .. |fmk| replace:: **fmk**
@@ -242,12 +248,25 @@ rst_prolog = f"""
 
 """
 
-html_theme_options = {
-    "logo_only": True,
-    "prev_next_buttons_location": None,
-    "style_nav_header_background": "#F2F2F2",
+external_links = {
+    "github": f"https://github.com/NHERI-SimCenter/{app_name}",
 }
-html_logo = f"common/figures/{app_name2}-Logo.png"
+# Create inline :github: directive for convenient linking to files on github
+extlinks = {
+    "github": (f'{external_links["github"]}/tree/master/%s', f"Github"),
+}
+
+
+if app_name == "R2DTool":
+    external_links["examplesgithub"] = f"https://github.com/NHERI-SimCenter/R2DExamples"
+    extlinks["examplesgithub"] = f'{external_links["examplesgithub"]}/tree/master/%s', f"examplesgithub"
+
+
+examples_url = f"https://github.com/NHERI-SimCenter/{app_name}/tree/master/Examples/"
+
+#
+# Examples
+#---------------------------------------------------
 
 # gallery data sources
 rendre_config = {
@@ -264,21 +283,9 @@ rendre_config = {
 example_config = rendre_config["targets"]["examples"]
 sync_examples = False
 
-# Create inline :github: directive for convenient linking to files on github
-extlinks = {
-    "github": (f'{external_links["github"]}/tree/master/%s', f"Github"),
-}
-
-
-if app_name == "R2DTool":
-    external_links["examplesgithub"] = f"https://github.com/NHERI-SimCenter/R2DExamples"
-    extlinks["examplesgithub"] = f'{external_links["examplesgithub"]}/tree/master/%s', f"examplesgithub"
-
-
-examples_url = f"https://github.com/NHERI-SimCenter/{app_name}/tree/master/Examples/"
-
+#
 # app-specific settings
-
+#------------------------------------------------------
 docTestbeds = "True"
 
 if app_name == "HydroUQ":
@@ -560,7 +567,6 @@ elif app_name == "quoFEM":
 
 """
     html_theme_options.update({"analytics_id": "UA-158130480-4"})
-
     example_config.update(
         {
             "include-item": [
