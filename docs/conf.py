@@ -477,6 +477,7 @@ elif app_name == "PBE":
     author = (
         "Adam Zsarnóczay, Frank McKenna, Chaofeng Wang, Wael Elhaddad, Michael Gardner"
     )
+    sync_examples = True
 
     tags.add("PBE_app")
     tags.add("desktop_app")
@@ -506,16 +507,6 @@ elif app_name == "PBE":
     exclude_patterns.append("**/resEE.rst")
     # END TODO
 
-    sync_examples = True
-    example_config.update(
-        {
-            "include-item": [
-                "pbdl-0001",
-                "pbdl-0002",
-                "pbdl-0003",
-            ]
-        }
-    )
 
     rst_prolog += """\
 .. |full tool name| replace:: Performance Based Engineering Application

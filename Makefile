@@ -15,14 +15,10 @@ CLEANDIR      = _sources _static _images common
 CSVDIR  = docs/common/reqments/_out/
 JSONDIR = docs/common/reqments/data/
 
+# This environment variable should specify a directory
+# that contains both the SimCenterDocumentation/ and
+# application source repositories.
 export SIMCENTER_DEV = $(shell pwd | xargs dirname)
-#-Examples-------------------------------------------------
-#EXPDIR = ./docs/common/user_manual/examples/desktop
-#EXPSRC = ${SIMCENTER_DEV}/$(SIMDOC_APP)/Examples
-#RENDRE = rendre -v -D '$(EXPSRC)/index.json'
-## Create list of files
-#EXAMPLES = $(shell $(RENDRE) -l examples.yaml\#/$(SIMDOC_APP) path -j ' ' -- $(EXPSRC)/./\%%:doc)
-
 
 #-Help-----------------------------------------------------
 help:
@@ -69,9 +65,9 @@ all:
 	make pelicun html 2>&1 | grep 'build succ'
 	make qfem html 2>&1 | grep 'build succ'
 	make r2d html 2>&1 | grep 'build succ'
-	make pbe html 2>&1 | grep 'build succ'
 	make we html 2>&1 | grep 'build succ'
 	make ee html 2>&1 | grep 'build succ'
+	make pbe html 2>&1 | grep 'build succ'
 
 
 hydro pelicun pbe rtm:
@@ -94,7 +90,6 @@ spell:
 	@$(SPHINXBUILD) -b spelling "$(SOURCEDIR)" "$(call BUILDDIR,$(SIMDOC_APP))/html" $(O)
 
 html:
-	make build/$(SIMDOC_APP)_Examples.json
 	for i in $(JSONDIR)/*.json; do \
 	    json_file="$${i##*/}"; \
 	    make $(CSVDIR)/$${json_file%.*}.csv; \
@@ -119,6 +114,9 @@ latexpdf:
 update:
 	pip install -U -r requirements.txt
 
+examples:
+	make build/$(SIMDOC_APP)_Examples.json
+
 build/%.json: examples.yaml
 	python scripts/index_examples.py $(SIMDOC_APP) \
     | aurore -D- -B ../$(SIMDOC_APP)/Examples/ -C scripts/config.yml get \
@@ -134,8 +132,6 @@ $(CSVDIR)/%.csv: $(JSONDIR)/%.json ./scripts/json2csv.py
 		-Er2dt $(SIMCENTER_DEV)/R2DTool/Examples/E*/input.json \
 		-Ehydr - \
 		< '$<' > '$@'
-
-#-Eweuq $(SIMCENTER_DEV)/WE-UQ/Examples/weuq-*/src/input.json \
 
 csv-debug: FORCE
 	for i in $(JSONDIR)/*.json; do \

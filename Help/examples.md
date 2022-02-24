@@ -2,7 +2,23 @@
 
 This page summarizes the examples provided for all of the tools.
 
-<!-- # Claudio Perez -->
+Adding a new example to the documentation consists of two steps:
+
+1. add the directory name for the example to `examples.yaml`. An
+   example should contain the following files at the root of its
+   directory:
+   - `input.json` - This is an input file that defines the app's
+     configuration when running the example.
+   - `README.rst` - This file is what will be rendered in the
+     documentation.
+   - `meta.yaml` - This file provides extra metadata about the
+     example. This should at least have a `summary` field, which
+     will be displayed on the example gallery page.
+
+2. rebuild the example index by running `make <app-name> examples`
+
+
+<!--
 
 ## quoFEM Examples
 
@@ -85,4 +101,4 @@ WEUQ:
   - id: weuq-08
     title: "30-Story Frame - Sensitivity"
 ```
-
+-->

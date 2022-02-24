@@ -4,6 +4,7 @@
 #    - ../R2DTool/Examples/index.json
 #    - ../EE-UQ/Examples/index.json
 #
+pelicun: {}
 PBE:
   include-item:
     - pbdl-0002
@@ -52,13 +53,6 @@ R2DTool:
   - E6ShakemapScenario
   - E7HurricaneWindWater
   - E8HurricaneWind
-  # - r2dt-0001
-  # - r2dt-0002
-  # - r2dt-0003
-  # - r2dt-0004
-  # - r2dt-0005
-  # - r2dt-0006
-  # - r2dt-0007
 
 HydroUQ:
   include-item:
