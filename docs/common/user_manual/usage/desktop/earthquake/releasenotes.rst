@@ -5,10 +5,61 @@
 Release Notes
 ***************************
 
+Version 3.0
+=================
+
+Version 3.0.0 (Current)
+-----------------------
+
+**Release date:** Apr. 2022
+
+*Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
+
+#. **Structural Information Model**
+    a. MDOF: creating idealized multi-degree-of-freedom models
+    b. OpenSees: user-defined OpenSees models
+    c. Steel Building Model: automating steel frame design and modeling
+
+#. **Ground Motion Event**
+    a. Stochastic Ground Motion: simulating stochastic ground motion recordings
+    b. PEER NGA Records: selecting and scaling PEER NGA West2 ground motions
+        * :blue:`Adding a USGS seismic disaggregation feature for given return periods and user-defined IM`
+        * :blue:`Computing conditional mean spectrum target (ASCE 7) based on disaggregated mean magnitude and distance`
+        * :blue:`Selecting and scaling records to the disaggregation-based target spectrum`
+    c. Site Response: propagating rock motions to the surface
+    d. Multiple PEER: using multiple PEER recordings
+    e. Multiple SimCenter: using multiple SimCenter-format recordings
+    f. User Specified Database: selecting and scaling ground motions from the user-specified flatfile
+
+#. **Finite Element Application**
+    a. OpenSees: Open System for Earthquake Engineering Simulation
+
+#. **Engineering Demand Parameter Generator**
+    a. Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration
+    b. User Defined: user-specified EDP
+
+#. **Uncertainty Quantification**
+    a. Dakota
+        - Forward Propagation
+        - Sensitivity Analysis
+        - Reliability Analysis
+    b. :blue:`SimCenterUQ`
+        * :blue:`New UQ engine: PLoM - training surrogate model for defined structural model or user-supplied response data matrix`
+        * :blue:`Generating new realizations of structural responses from trained surrogate model`
+        * :blue:`Including user-defined ground motion intensity measure in the model training`
+
+#. **Results**
+    a. Summary Data
+    b. Data Values
+        * :blue:`New data visualization panel`
+        * :blue:`Highlighting data points in the result table`
+
+#. **Others**: Improvements to the message area, and minor bug fixes
+
 Version 2.2
 =================
 
-Version 2.2.7 (Current)
+Version 2.2.7
 -----------------------
 
 **Release date:** Jan. 2022
@@ -23,8 +74,6 @@ Version 2.2.7 (Current)
 #. **Ground Motion Event**
     a. Stochastic Ground Motion: simulating stochastic ground motion recordings
     b. PEER NGA Records: selecting and scaling PEER NGA West2 ground motions
-        * :blue:`Adding a new feature to obtain USGS seismic disaggregation data and compute CMS for the target spectrum`
-        * :blue:`Supporting to load 2D existing PEER records`
     c. Site Response: propagating rock motions to the surface
     d. Multiple PEER: using multiple PEER recordings
     e. Multiple SimCenter: using multiple SimCenter-format recordings
@@ -122,16 +171,16 @@ Version 2.2.5
         - Sensitivity Analysis
         - Reliability Analysis
 
-Version 2.3.0
+Version 3.1.0
 ----------------
 
-**Release plan**: Mar. 2022
+**Release plan**: June 2022
 
 *Planned features*
 
-#. UQ: New surrogate modeling methods (e.g., PLoM, SAF-IDA)
+#. UQ: New surrogate modeling methods (e.g., SAF-IDA)
 #. EVT: Invoking OpenQuake to generate scenario-based or classical PSHA ground motion spectral targets
-#. SAM: Invoking the iterative seismic design and pushover analysis in AutoSDA as a pre-processing step
+#. FEM: invoking OpenSeesPy
 #. ...\*
 
 \*: Users are welcome to contact us on `forum <http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0>`_ for new feature requests.
