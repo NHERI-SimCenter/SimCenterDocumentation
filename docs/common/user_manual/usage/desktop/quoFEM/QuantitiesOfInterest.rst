@@ -13,7 +13,7 @@ The **QoI** tab is where the user specifies the variable names associated with t
 
 	Input for the **QoI** tab.
 
-In :numref:`figQoI`, the user has defined three response quantities, ``Node_2_Disp_2``, ``Node_4_Disp_1`` and ``stress``. If a postprocessing Python script has been provided, it will be passed these three names as arguments.
+In :numref:`figQoI`, the user has defined three response quantities, ``Node_2_Disp_2``, ``Node_4_Disp_1`` and ``stress_time_history``. If a postprocessing Python script has been provided, it will be passed these three names as arguments.
 
 .. warning::
 
