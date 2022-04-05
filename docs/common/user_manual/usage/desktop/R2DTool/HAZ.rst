@@ -29,7 +29,7 @@ The **Earthquake Scenario Simulation** is an application that provides a selecti
   :align: center
   :figclass: align-center
 
-  Earthquake Scenerio Simulation Input panel.
+  Earthquake Scenario Simulation Input panel.
 
 **Site Definition Parameters**
 
@@ -151,7 +151,7 @@ Ground motion prediction equations estimate the intensity of ground shaking that
 
   Ground motion prediction equations.
 
-**Earthquake Rupture Definition**
+**Earthquake Source**
 
 This is where the user defines the earthquake rupture characteristics. In the **Rupture Type** combo box, shown in :numref:`fig-R2DEQSSSEQRupPointPane`, point source and UCERF earthquake rupture forecast models are available.
 
@@ -193,6 +193,49 @@ This is where the user defines the earthquake rupture characteristics. In the **
 	  :figclass: align-center
 
 	  Earthquake rupture forecast.
+
+	#. **OpenQuake Scenario-Based**
+
+	The **OpenQuake Scenario-Based** pane, shown in :numref:`fig-R2DOpenQuakeScenarioBased`, requires the following inputs:
+
+		- **OpenQuake Version:** Version of OpenQuake (currently available 3.10, 3.11, 3.12, and latest minor version is supported).
+		- **Rupture File:** A xml file (NRML format) defining an earthquake source.
+		- **Rupture Meshsize:** Mesh size for line sources.
+		- **Area Meshsize:** Mesh size for area sources.
+		- **Maximum Distance:** Maximum considered distance from source to site.
+
+	.. _fig-R2DOpenQuakeScenarioBased:
+
+	.. figure:: figures/R2DOpenQuakeScenarioBased.png
+	  :align: center
+	  :figclass: align-center
+
+	  OpenQuake Scenario-Based Input.
+
+	#. **OpenQuake Classcial PSHA**
+
+	The **OpenQuake Classcial PSHA** pane, shown in :numref:`fig-R2DOpenQuakeClassicalPSHA`, requires the following inputs:
+
+		- **OpenQuake Version:** Version of OpenQuake (currently available 3.10, 3.11, 3.12, and latest minor version is supported).
+		- **Source Logic Tree:** A xml file (NRML format) defining a logic tree model for seismic sources.
+		- **Source Model Folder:** A directory hosting the seismic sources defined in the source logic tree.
+		- **Rupture Meshsize:** Mesh size for line sources.
+		- **Area Meshsize:** Mesh size for area sources.
+		- **Maximum Distance:** Maximum considered distance from source to site.
+		- **GMPE Logic Tree:** A xml file (NRML format) defining a logic tree model for ground motion prediction equations.
+		- **Return Period:** Return period of the PSHA.
+		- **Seed:** Seed in generating ground motion maps.
+		- **Quantiles:** Quantile levels of ground motion intensity measures in the output (e.g., uniform hazard spectra).
+		- **Investigation Time:** time period for computing the probability of exceedance
+		- **Output:** Checkboxes for *Individual hazard curve*, *Mean hazard curve*, *Hazard map*, and *Uniform hazard spectra*
+
+	.. _fig-R2DOpenQuakeClassicalPSHA:
+
+	.. figure:: figures/R2DOpenQuakeClassicalPSHA.png
+	  :align: center
+	  :figclass: align-center
+
+	  OpenQuake Classical PSHA Input.
 
 **Intensity Measure and Period Points**
 
@@ -298,7 +341,7 @@ A user has the option to specify a hurricane track and associated landfall param
 		  
     #. **Select Hurricane from Database**
 
-	The panel to select a historical hurricane is shown in :numref:`fig-R2DHurricaneTrackDB`. Clicking on the **Load Hurricane Database** button will load the database and all of the hurricanes in the database will appear in the GIS window, as shown at the bottom of :numref:`fig-R2DHurricaneTrackDB`. The database that is pre-bundled with the application is the International Best Track Archive for Climate Stewardship (IBTrACS) v04r00 database, listing storms that have occurred in the last three years. Users can modify the ``.csv`` database file, e.g., update it or add their own storm information, if the same header format and file name (ibtracs.last3years.list.v04r00.csv) is retained. Users can find this file in the ``Databases`` folder that is in the |app| installation directory. 
+	The panel to select a historical hurricane is shown in :numref:`fig-R2DHurricaneTrackDB`. Clicking on the **Load Hurricane Database** button will load the database and all of the hurricanes in the database will appear in the GIS window, as shown at the bottom of :numref:`fig-R2DHurricaneTrackDB`. The database that is pre-bundled with the application is the International Best Track Archive for Climate Stewardship (IBTrACS) v04r00 database, listing storms that have occurred in the last three years. Users can modify the ``.csv`` database file, e.g., update it or add their own storm information, if the same header format and file name (ibtracs.last3years.list.v04r00.csv) is retained. Users can find this file in the ``Databases`` folder that is in the R2D installation directory. 
 
 	.. _fig-R2DHurricaneTrackDB:
 
@@ -308,7 +351,7 @@ A user has the option to specify a hurricane track and associated landfall param
 
 	  Hurricane selection from database.
 			  
-	To load a specific hurricane, a user needs to navigate to a hurricane of their choice in the GIS window, and click on the hurricane to select it. The selected hurricane will be highlighted, as shown in :numref:`fig-R2DHurricaneTrackDB2`, and a dialog will appear providing the hurricane track metadata. Clicking on the **Select Hurricane Button** in :numref:`fig-R2DHurricaneTrackDB2` will finalize the selection. The selected hurricane's metadata will appear in the box that is given in the middle of :numref:`fig-R2DHurricaneTrackDB`.
+	To load a specific hurricane, a user needs to navigate to a hurricane of their choice in the GIS window and click on the hurricane to select it. The selected hurricane will be highlighted, as shown in :numref:`fig-R2DHurricaneTrackDB2`, and a dialog will appear providing the hurricane track metadata. Clicking on the **Select Hurricane Button** in :numref:`fig-R2DHurricaneTrackDB2` will finalize the selection. The selected hurricane's metadata will appear in the box that is given in the middle of :numref:`fig-R2DHurricaneTrackDB`.
 			
   	.. _fig-R2DHurricaneTrackDB2:
 
@@ -318,7 +361,7 @@ A user has the option to specify a hurricane track and associated landfall param
 
   	  Selecting a hurricane from the map.
 			
-	After selecting a hurricane, a user will see the final hurricane track, similar to what is shown in :numref:`fig-R2DHurricaneTrackDB3`. The circles represent a measurement point along the track. Clicking on a circle will produce a dialog with the available information at that point. The blue diamond respresents the first point of hurricane landfall, i.e., the first point at which the distance to land is equal to zero. If a landfall location is found, the landfall parameters are programmatically filled in with the measurements at the landfall location. In the case where a hurricane makes landfall more than once, the user has the option to clear the intial landfall point, and select another landfall point, the procedure of which is described below. Note that if a new landfall location is selected by the user, with the exception of the latitude and longitude which is updated programmatically, users should manually update the landfall parameters to agree with the expected parameter values at new location.
+	After selecting a hurricane, a user will see the final hurricane track, similar to what is shown in :numref:`fig-R2DHurricaneTrackDB3`. The circles represent a measurement point along the track. Clicking on a circle will produce a dialog with the available information at that point. The blue diamond represents the first point of hurricane landfall, i.e., the first point at which the distance to land is equal to zero. If a landfall location is found, the landfall parameters are programmatically filled in with the measurements at the landfall location. In the case where a hurricane makes landfall more than once, the user has the option to clear the initial landfall point, and select another landfall point, the procedure of which is described below. Note that if a new landfall location is selected by the user, except for the latitude and longitude which is updated programmatically, users should manually update the landfall parameters to agree with the expected parameter values at new location.
 	
   	.. _fig-R2DHurricaneTrackDB3:
 
@@ -330,7 +373,7 @@ A user has the option to specify a hurricane track and associated landfall param
 
 **Hurricane Landfall Parameters**
 
-This is where the user inputs the hurricane landfall parameters. Hurricane landfall occurs when the center of the storm moves across a coastline after traversing open water. Shown in :numref:`fig-R2DHurricaneLandfallParams`, the user must suppply the following parameter values:
+This is where the user inputs the hurricane landfall parameters. Hurricane landfall occurs when the center of the storm moves across a coastline after traversing open water. Shown in :numref:`fig-R2DHurricaneLandfallParams`, the user must supply the following parameter values:
 
 	- Latitude in degrees North
 	- Longitude in degrees East
@@ -354,7 +397,7 @@ Note that if a track is selected from the database, the landfall parameters will
 	  
 **Specify Landfall Location**
 
-The hurricane landfall location is manually defined using the buttons in :numref:`fig-R2DHurricaneLandfallSelect`. Clicking on the **Define Landfall on Map** button causes a blue circle to appear in the GIS window, as seen in the righthand side of the window in :numref:`fig-R2DHurricaneLandfallParams`. A user can click on and drag this circle to any location on the map. When the user is satisfied with their new landfall location, they need to click on the **Select Landfall** button to finalize the selection. The landfall will then appear as a blue diamond symbol in its own layer in the GIS window. If a user wants to erase an exsiting landfall location, they need to click on the **Clear Landfall** button and start over. 
+The hurricane landfall location is manually defined using the buttons in :numref:`fig-R2DHurricaneLandfallSelect`. Clicking on the **Define Landfall on Map** button causes a blue circle to appear in the GIS window, as seen in the righthand side of the window in :numref:`fig-R2DHurricaneLandfallParams`. A user can click on and drag this circle to any location on the map. When the user is satisfied with their new landfall location, they need to click on the **Select Landfall** button to finalize the selection. The landfall will then appear as a blue diamond symbol in its own layer in the GIS window. If a user wants to erase an existing landfall location, they need to click on the **Clear Landfall** button and start over. 
 
 .. _fig-R2DHurricaneLandfallSelect:
 
@@ -366,7 +409,7 @@ The hurricane landfall location is manually defined using the buttons in :numref
 
 **Truncate Hurricane Track**
 
-|app| allows users to truncate hurricane tracks to save time in the wind field computations. This is also useful when a user requires only a portion of a hurricane track in their region of interest. The buttons for truncating a hurricane track are shown in :numref:`fig-R2DHurricaneTruncateTrack`. Clicking on the **Select Area on Map** button in the figure will turn on the selection procedure. Clicking on any point in the GIS window will create a selection point, shown as a red dot in the GIS window of the figure. Continuing the point selection procedure will form the boundary of the selection polygon, an example of which is provided in :numref:`fig-R2DHurricaneTruncateTrack`. The selection polygon can be cleared at any point by pressing the **Clear** button. Clicking on the **Apply** button will finalize the selection. The track points that fall within the selection polygon will be kept and all other points will be discarded. Note that once the **Apply** button is pressed, the procedure cannot be undone. An example truncated track is given in the lefthand side of the GIS window in :numref:`fig-R2DHurricaneTruncateTrack`.
+R2D allows users to truncate hurricane tracks to save time in the wind field computations. This is also useful when a user requires only a portion of a hurricane track in their region of interest. The buttons for truncating a hurricane track are shown in :numref:`fig-R2DHurricaneTruncateTrack`. Clicking on the **Select Area on Map** button in the figure will turn on the selection procedure. Clicking on any point in the GIS window will create a selection point, shown as a red dot in the GIS window of the figure. Continuing the point selection procedure will form the boundary of the selection polygon, an example of which is provided in :numref:`fig-R2DHurricaneTruncateTrack`. The selection polygon can be cleared at any point by pressing the **Clear** button. Clicking on the **Apply** button will finalize the selection. The track points that fall within the selection polygon will be kept and all other points will be discarded. Note that once the **Apply** button is pressed, the procedure cannot be undone. An example truncated track is given in the left-hand side of the GIS window in :numref:`fig-R2DHurricaneTruncateTrack`.
 	
 .. _fig-R2DHurricaneTruncateTrack:
 
@@ -390,7 +433,7 @@ To select the wind field grid on a map, the user needs to click on the **Define 
 
 **Run Simulation Button**
 
-Shown on the right-hand side of :numref:`fig-R2DHurricaneMainPanel`, the **Run Simulation** button starts the hurricane simulation application. The results from the simulation are in the **Output Directory** folder specified in |app| preferences. The final output is a ``.csv`` file called ``EventGrid.csv``. The ``EventGrid.csv`` file contains the grid point locations and file names. Each grid point is assigned a ``.csv`` file containing a list of the peak wind speeds at the grid point. The ``EventGrid.csv`` is post-processed and the grid points created in the **Specify Wind Field Grid** step will be updated with the Peak Wind Speed values that are calculated in the simulation. Clicking on a grid point will produce a popup listing the wind speeds at that point. 
+Shown on the right-hand side of :numref:`fig-R2DHurricaneMainPanel`, the **Run Simulation** button starts the hurricane simulation application. The results from the simulation are in the **Output Directory** folder specified in R2D preferences. The final output is a ``.csv`` file called ``EventGrid.csv``. The ``EventGrid.csv`` file contains the grid point locations and file names. Each grid point is assigned a ``.csv`` file containing a list of the peak wind speeds at the grid point. The ``EventGrid.csv`` is post-processed and the grid points created in the **Specify Wind Field Grid** step will be updated with the Peak Wind Speed values that are calculated in the simulation. Clicking on a grid point will produce a popup listing the wind speeds at that point. 
 
 User-specified Wind Fields
 --------------------------
@@ -399,17 +442,13 @@ The **User-specified Wind Field** application loads the results of a **Hurricane
 
 .. _fig-R2DUserSelectWindField:
 
-.. figure:: figures/R2DUserSelectWindField.png
-  :align: center
-  :figclass: align-center
-
-  User-specified wind field input panel.
-  
+.. figure:: figures/R2DU                      serSelectWindField.png
+  :align: cent                        
 
 ShakeMap Earthquake Scenarios
 -----------------------------
 
-The **ShakeMap Earthquake Scenario** application provides the functionality to import a USGS ShakeMap earthquake hazard. The **ShakeMap Earthquake Scenario** application input pane is given in :numref:`fig-R2DShakeMapPane`. As seen in the figure, the user is required to input a path to a folder on the user's computer that contains the ShakeMap data. At a minimum, the folder must contain a ``grid.xml`` file that provides the ground motion intensity measures, e.g., PGA, PGV, over a geographical grid. To visualize the PGA contours or rupture in the GIS window, a user can also provide the ``cont_pga.json`` file, or ``rupture.json`` file, respectively. Note that more than one ShakeMap can be input. However, the ShakeMap that is selected in the **List of ShakeMaps** tree in :numref:`fig-R2DShakeMapPane`, is the one that is employed in the subsquent analysis.
+The **ShakeMap Earthquake Scenario** application provides the functionality to import a USGS ShakeMap earthquake hazard. The **ShakeMap Earthquake Scenario** application input pane is given in :numref:`fig-R2DShakeMapPane`. As seen in the figure, the user is required to input a path to a folder on the user's computer that contains the ShakeMap data. At a minimum, the folder must contain a ``grid.xml`` file that provides the ground motion intensity measures, e.g., PGA, PGV, over a geographical grid. To visualize the PGA contours or rupture in the GIS window, a user can also provide the ``cont_pga.json`` file, or ``rupture.json`` file, respectively. Note that more than one ShakeMap can be input. However, the ShakeMap that is selected in the **List of ShakeMaps** tree in :numref:`fig-R2DShakeMapPane`, is the one that is employed in the subsequent analysis.
 
 .. _fig-R2DShakeMapPane:
 
@@ -434,3 +473,56 @@ After a ShakeMap is loaded, it will appear in the list of ShakeMaps shown above 
 
 .. [SnaikiWu2017b]
    Snaiki, R. and Wu, T. (2017b). A linear height-resolving wind field model for tropical cyclone boundary layer. Journal of Wind Engineering and Industrial Aerodynamics, 171, pp. 248-260.
+   
+  
+OpenQuake Selection Widget
+--------------------------
+   
+The **OpenQuake Selection Widget** allows for the selection of OpenQuake seismic sources in a GIS window and exporting only the selected sources into a new .xml file for use in OpenQuake. The **OpenQuake Selection Widget** input pane is given in :numref:`fig-R2DOpenQuakePane`. 
+
+#. To load an OpenQuake file (only .xml files supported), click on the **Browse** button next to the input file box, and then select the input file in the dialog that will appear.
+
+#. Next, select a subset of sources in the GIS window that you wish to keep. To be able to select the OpenQuake sources in the map, you first need to select a layer in the layer tree, shown on the left-hand side of :numref:`fig-R2DOpenQuakePane`. There are three layers that correspond to the different source geometries in OpenQuake; namely point, line, and area sources. 
+
+There are several methods available to select the sources on the GIS map. Clicking on one of the **Selection Method** buttons, shown in :numref:`fig-R2DOpenQuakePane`, will change the selection tool to that corresponding method. 
+
+.. note:: Only features that are in the current layer can be selected on the map. The current layer is the layer that is selected (highlighted) in the layer tree. 
+	
+Some tips for selecting features are:   
+
+	- To select multiple features, hold down the shift key.
+	- The selected features are highlighted in yellow.
+	- A layer needs to be visible to enable asset selection on that layer.
+	- To clear everything and start over again, click on the **Clear** button. 
+	- To clear the selected features on the current layer, click anywhere on the map where there are no features. Alternatively, you can clear all the selected features from all layers by clicking on the **Clear Selection** button.
+
+#. Once you are done with the selection process, you can export the selected sources (highlighted in yellow) by first providing a file path and name. Clicking on the **Browse** button next to the export file box will open a dialog where you can input a directory path and file name, i.e., the name and location where the .xml file containing the selected sources will be saved. Once you have entered a file name and path, clicking on the **Export** button will generate the new .xml file that can be used in OpenQuake. The name and path of the exported file will appear in the program output pane. 
+
+.. _fig-R2DOpenQuakePane:
+
+.. figure:: figures/R2DOpenQuakePane.png
+  :align: center
+  :figclass: align-center
+
+  OpenQuake selection pane.
+
+
+Raster Defined Hazard
+---------------------
+   
+The **Raster Defined Hazard Widget** allows for the import of raster files to represent hazard intensities. The **Raster Defined Hazard Widget** input pane is given in :numref:`fig-R2DRasterHazardPane`. 
+
+#. To load a raster file, click on the **Browse** button next to the input file box, and then select the raster file in the dialog that will appear. 
+#. Next, select the event type in the **Event Type Dropdown**, shown in the :numref:`fig-R2DRasterHazardPane`, e.g., Hurricane or Earthquake. 
+#. You then need to specify the coordinate reference system (CRS) that was used to create the raster so that the raster will appear in the correct geographic location. Upon import, a default CRS will be assigned, which will be the CRS that is currently used by the main map.
+#. Depending on the number of bands in your raster, the equivalent number of **Unit Selection Dropdowns** will appear. For each raster band, you need to provide the corresponding units. 
+
+.. _fig-R2DRasterHazardPane:
+
+.. figure:: figures/R2DRasterHazardPane.png
+  :align: center
+  :figclass: align-center
+
+  Raster hazard input pane.
+  
+.. note:: When the **Raster Defined Hazard Widget** is employed in an analysis, for each asset, the raster will be sampled at the asset location to determine the hazard intensity level. A set of .csv files in the SimCenter event format (EventGrid.csv) will be created where each grid point corresponds to the location of an asset. As a result, the corresponding **Mapping Application** in **HTA** (Hazard to Asset Mapping) should be set to **Site Specified**. 

@@ -5,7 +5,7 @@ sphinxcontrib-bibtex==2.3.0
 sphinx-jsonschema
 sphinxcontrib-images
 numpydoc
-rendre>0.0.13
+rendre>0.0.14
 sphinx_panels
 jsonpath2
 sphinxcontrib.spelling==7.2.1

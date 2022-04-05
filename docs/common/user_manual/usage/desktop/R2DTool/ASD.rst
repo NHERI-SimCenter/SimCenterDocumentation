@@ -14,13 +14,26 @@ The buildings input panel, as shown in :numref:`fig-buildingInputPanel`, allows 
 CSV to BIM
 **********
 
-The **CSV to BIM** application imports a building inventory database from a user-provided .csv file. 
+The **CSV to BIM** application imports a building inventory database from a user provided .csv file. 
 
 #. The **Path to Buildings Database** box is where the user supplies the file path to the .csv file that contains the building inventory. At a minimum, the .csv file must contain columns providing the building identification numbers (ID), in sequential order, and the latitudes and the longitudes of the locations of the buildings. Any number of columns can be added to the file to provide information required by other applications in the workflow.  
 
-#. The **Building Selection** box is where the user can select a subset of buildings to be analyzed. A range of buildings is specified with a dash, and multiple buildings are separated with a comma, e.g., 2-8, 9, 13, 15, 21, 34-38. When the **Select** button is pressed, the buildings that are specified in the **Building Selection** box are added to the list of buildings that will be analysed.
+#. The **Building Selection Filtering** box is where the user can select a subset of buildings for analysis. There are two ways to select and filter buildings:
 
-#. The **Building Information** table provides a user-editable spreadsheet containing the information provided by the building inventory database file. When a subset of buildings are selected for analysis, only the selected buildings will appear in the **Building Information** table. Pressing the **Clear Selection** button will clear the list of buildings that will be analysed and show all buildings in the **Building Information** table again. 
+	#. Input a string of numbers that correspond to the building IDs that you want to analyze. A range of buildings is specified with a dash, and multiple buildings are separated with a comma, e.g., 2-8, 9, 13, 15, 21, 34-38.
+	#. Employ the Advanced Filtering capabilities by clicking on the **Advanced Filter** button. The **Query Builder** dialog will appear, as seen in :numref:`fig-R2DQueryBuilderDialog`. You can create a custom filter expression (SQL format) using operators, e.g., ``<, =, OR``, and fields available in the imported building inventory, e.g., ``BuildingType``. Operators and fields can be combined to perform complex filtering expressions such as ``"YearBuilt" < 1970  AND  "BuildingType"  =  'Wood'``
+	
+	.. _fig-R2DQueryBuilderDialog:
+
+	.. figure:: figures/R2DQueryBuilderDialog.png
+	  :align: center
+	  :figclass: align-center
+
+	  Query Builder Dialog.
+
+When the **Select** button is pressed, the buildings that are specified in the **Building Selection** box are added to the list of buildings that will be analyzed. Pressing the **Clear Selection** button will clear the list of buildings that will be analyzed.
+
+The **Building Information** table, shown in :numref:`fig-buildingInputPanel`, provides a user-editable spreadsheet containing the information provided by the building inventory database file. When a subset of buildings is selected for analysis, only the selected buildings will appear in the **Building Information** table. Pressing the **Clear Selection** button will clear the list of buildings that will be analysed and show all buildings in the **Building Information** table again. 
 
 .. _fig-buildingInputPanel:
 
@@ -30,6 +43,25 @@ The **CSV to BIM** application imports a building inventory database from a user
 
   CSV to BIM input panel.
 
+GIS to BIM
+**********
 
+The **GIS to BIM** application imports a building inventory database from a user-provided GIS file (e.g., shapefile, geodatabase). The input panel is shown in :numref:`fig-R2DGISBuildingsInputPanel`.
 
+#. The **GIS Input File** box is where the user supplies the file path to the GIS file that contains the building inventory. Clicking on the **Browse** button will open a dialog where you can select the appropriate file. 
+
+#. The **Building Selection Filtering** box is where the user can select a subset of buildings for analysis. There are two ways to select and filter buildings:
+
+	#. Input a string of numbers that correspond to the building IDs that you want to analyze. A range of buildings is specified with a dash, and multiple buildings are separated with a comma, e.g., 2-8, 9, 13, 15, 21, 34-38.
+	#. Employ the Advanced Filtering capabilities by clicking on the **Advanced Filter** button. The **Query Builder** dialog will appear, as seen in :numref:`fig-R2DQueryBuilderDialog`. You can create a custom filter expression (SQL format) using operators, e.g., ``<, =, OR``, and fields available in the imported building inventory, e.g., ``BuildingType``. Operators and fields can be combined to perform complex filtering expressions such as ``"YearBuilt" < 1970  AND  "BuildingType"  =  'Wood'``. When the **Select** button is pressed, the buildings that are specified in the **Building Selection** box are added to the list of buildings that will be analyzed. Pressing the **Clear Selection** button will clear the list of buildings that will be analyzed.
+
+#. The **Building Information** table provides a user-editable spreadsheet containing the information provided by the building inventory database file. When a subset of buildings is selected for analysis, only the selected buildings will appear in the **Building Information** table. 
+
+.. _fig-R2DGISBuildingsInputPanel:
+
+.. figure:: figures/R2DGISBuildingsInputPanel.png
+  :align: center
+  :figclass: align-center
+
+  GIS to BIM input panel.
 
