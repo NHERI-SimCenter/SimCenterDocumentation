@@ -58,6 +58,7 @@
    common/front-matter/license
    common/front-matter/glossary.rst
    common/front-matter/abbreviations.rst
+   :quoFEM:common/user_manual/usage/desktop/quoFEM/releasenotes   
    :R2D:common/user_manual/usage/desktop/releasenotes
    :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
    :EEUQ:common/user_manual/usage/desktop/earthquake/releasenotes
