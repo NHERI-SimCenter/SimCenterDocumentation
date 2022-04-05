@@ -1,17 +1,17 @@
 .. _lbl-release_eeuq:
 .. role:: blue
 
-***************************
+*************
 Release Notes
-***************************
+*************
 
 Version 3.0
-=================
+===========
 
 Version 3.0.0 (Current)
 -----------------------
 
-**Release date:** Apr. 2022
+**Release date:** March. 2022
 
 *Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
 
