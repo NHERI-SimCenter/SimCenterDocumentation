@@ -19,8 +19,10 @@ Shown in :numref:`fig-R2DPelicunDLPanel`, the **Pelicun Damage and Loss** applic
 			The **Hazus MH EQ IM** option is more rudimentary, and only expects an intensity measure (IM) as an input, e.g., peak ground acceleration (PGA). Use this option if you are NOT performing a building response analysis, i.e., the Building Modeling type is set to **None** in the **MOD** tab. Also, in the **ANA** tab, the Building Analysis Engine type should be **IMasEDP** when using this option. 
 		- Hazus MH HU
 			The **Hazus MH HU** option is for the prediction of damage and loss to buildings subjected to hurricanes. This option expects a wind intensity measure (IM) as an input, e.g., peak wind speed (PWS).
+		- User-provided Fragilities
+			The **User-provided Fragilities** option allows users to employ their own custom fragility functions in the damage and loss workflow. This option expects the user to provide an auto-populate script and the path to a folder containing the user-defined fragility functions, as seen below in :numref:`fig-R2DPelicunDLPanel`.
 		
-		All of the HAZUS options employ data from the *Hazards U.S. Multi-Hazard project* (HAZUS-MH). The **Hazus MH EQ** and the **Hazus MH EQ IM** options are intended for damage and loss analysis of buildings subjected to earthquakes. The **Hazus MH HU** option is intended for damage and loss analysis of buildings subjected to hurricanes.
+		The HAZUS options employ data from the *Hazards U.S. Multi-Hazard project* (HAZUS-MH). The **Hazus MH EQ** and the **Hazus MH EQ IM** options are intended for damage and loss analysis of buildings subjected to earthquakes. The **Hazus MH HU** option is intended for damage and loss analysis of buildings subjected to hurricanes.
 	
 	#. **Event Time:** Select event time 'on' or 'off'. Selecting the event time to 'on' defines the time of the event in YYYY-MM-DD:HH format. ‘off’ turns all time-effects off.
 	
@@ -29,8 +31,13 @@ Shown in :numref:`fig-R2DPelicunDLPanel`, the **Pelicun Damage and Loss** applic
 	#. **Output Detailed Results:** Checking this box will output detailed results.
 	
 	#. **Create Log File:** Checking this box will create a log file of the analysis.
-	
+		
 	#. **Include Ground Failure:** Checking this box will include ground failure in the analysis. If ground failure is included, fragility groups associated with ground failure are added in the auto-population phase. Note that such analysis requires peak ground displacement (PGD) values as inputs.
+	
+	#. **Auto-populate Script:** A path to a Python script that is user-provided. The auto-populate script is employed to link or map assets to their respective fragility functions.
+	
+	#. **User-defined Fragility Function Folder:** A path to a folder that contains any user-defined fragility functions. 
+
 
 .. _fig-R2DPelicunDLPanel:
 
