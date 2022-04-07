@@ -5,6 +5,7 @@ SPHINXOPTS    ?=
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = ./docs
 BUILDDIR      = ./build/$(1)
+PYTHON 		= python3
 
 # use shell pattern expansion to remove 'Tool' from R2DTool-Documentation
 PUBLDIR = $(shell v="$(SIMDOC_APP)"; echo "../$${v%Tool}-Documentation/docs/")
@@ -118,7 +119,7 @@ examples:
 	make build/$(SIMDOC_APP)_Examples.json
 
 build/%.json: examples.yaml
-	python scripts/index_examples.py $(SIMDOC_APP) \
+	$(PYTHON) scripts/index_examples.py $(SIMDOC_APP) \
     | aurore -D- -B ../$(SIMDOC_APP)/Examples/ -C scripts/config.yml get \
     > $(call BUILDDIR,$(SIMDOC_APP))_Examples.json
 
