@@ -10,3 +10,4 @@ This is an in-house developed UQ engine of SimCenter that accommodates different
    SimCenterUQSampling
    SimCenterUQSensitivity
    SimCenterUQSurrogate
+   SimCenterUQPLoM

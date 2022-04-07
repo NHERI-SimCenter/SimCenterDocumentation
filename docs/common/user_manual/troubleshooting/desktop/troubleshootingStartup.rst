@@ -49,4 +49,15 @@ On Windows operating systems, if you receive an error when starting the applicat
       Error message for missing Visual C/C++ runtime library.
 
 
+
+
+.. only:: quoFEM_app
+
+   .. _figMissingCRT:
+
+   .. figure:: figures/MissingCRT.png
+      :align: center
+      :figclass: align-center
+
+      Error message for missing Visual C/C++ runtime library.
    
