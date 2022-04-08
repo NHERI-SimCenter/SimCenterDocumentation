@@ -65,3 +65,29 @@ The **GIS to BIM** application imports a building inventory database from a user
 
   GIS to BIM input panel.
 
+Housing Unit Allocation
+***********************
+
+The **Housing Unit Allocation** application can be employed to augment an existing building inventory (supplied in a GIS format, e.g., shapefile, geodatabase) with census demographic information. The input panel is shown in :numref:`fig-R2DHUAPanel`. Given a building inventory, the **Housing Unit Allocation** application will download demographic data from the US Census website. First, the application cross-references the building inventory with a US counties map (2021), generating a set of unique US county codes that overlap with the building inventory. Next, the US census API is queried and the population demographic information within each county is downloaded at the block level and saved locally as GIS files to the output folder. The download of census data employs a modified version of the ``censusutil.py`` script from the `pyincore-data <https://github.com/IN-CORE/pyincore-data>`_ module, a component of IN-CORE. Lastly, the demographic information from the downloaded GIS files can be extracted and saved to a new layer that is a copy of the original building inventory. Each building within the new building inventory layer will contain the population demographics (percent inhabitants that are of black, hispanic, white, and other races), extracted from the downloaded census block level layer.
+
+#. The **Building GIS File** box is where the file path to the GIS file that contains the building inventory is specified. Clicking on the **Browse** button will open a dialog where you can select the appropriate file. When a building GIS file is loaded, a copy of the original building inventory layer is automatically created. Going forward, the copied building inventory layer is employed, as to keep the original building inventory file intact. 
+
+#. The **Coordinate Reference System (CRS)** dropdown is where the coordinate reference system for a particular GIS file is specified. Each GIS file should have an accompanying CRS that will need to be specified. 
+
+#. The **Census Date** dropdown is where the census vintage is provided. Currently, the 2000 and 2010 census dates are supported. 
+
+#. The **Output Folder** is where the program will save the GIS files that are downloaded from the US Census API. 
+
+#. The **Download Census Data Button** runs the process that extracts counties from the building inventory, calls the US Census API to download demographic data for the extracted counties, and saves the data as GIS files to the output folder. 
+
+#. The **Census Block-level GIS File** box provides the file path to the GIS file that should contain the block-level census data. This will be populated automatically if the **Download Census Data** process from above is run. Otherwise, users can supply their own data.  Clicking on the **Browse** button will open a dialog where you can select the appropriate file. 
+
+#. The **Extract Census Data Button** runs the process that extracts the demographics data from the block-level GIS file and appends that information to each building in the building inventory layer copy. Users can now save the newly augmented layer by right-clicking on the layer in the layer tree and selecting the ``Export->Save As`` option.
+
+.. _fig-R2DHUAPanel:
+
+.. figure:: figures/R2DHUAPanel.png
+  :align: center
+  :figclass: align-center
+
+  Housing Unit Allocation input panel.
