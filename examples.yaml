@@ -49,10 +49,10 @@ R2DTool:
   - E3PhysicsBasedGroundMotions
   - E4OpenSeesPyFEM
   - E5GroundShakingAndLiquefaction
-  - E6Shakemap
   - E6ShakemapScenario
   - E7HurricaneWindWater
   - E8HurricaneWind
+  - E9Tsunami
 
 HydroUQ:
   include-item:

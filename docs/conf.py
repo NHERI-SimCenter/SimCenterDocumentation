@@ -608,7 +608,7 @@ elif app_name == "quoFEM":
     rst_prolog += f"""
 .. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)
 .. |test example| replace:: :ref:`qfem-0001`
-.. |tool version| replace:: 2.4
+.. |tool version| replace:: 3.0
 .. _quoFEM Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
