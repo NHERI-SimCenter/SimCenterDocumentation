@@ -45,8 +45,8 @@ Major Version 3.0
 
       d. Reliability:
 
-         #. FORM
-         #. SORM
+         #. Local Reliability
+         #. Global Reliability
          #. Importance Sampling
 
       e. Sensitivity Analysis:
@@ -60,10 +60,13 @@ Major Version 3.0
 
          #. Probability Model-based Global Sensitivity Analysis (PM-GSA)
 
+            a. First-order Sobol indices
+            b. Group-wise Sobol indices
+
       b. Sampling
 
          #. Monte Carlo Sampling (MCS)
-            a. Use existing dataset of samples for forward propagation
+            a. Resample from existing correlated dataset of samples
 
       c. Train Gaussian Process (GP) Surrogate Model
 
@@ -175,6 +178,13 @@ Major Version 3.0
 
    * Visualization of surrogate modeling results
 
+      #. Goodness-of-fit measures
+
+   * :blue:`Visualization of PLoM training results`
+
+      #. :blue:`PCA representation error plot`
+      #. :blue:`Diffusion maps eigenvalue plot`
+
 
 #. **Remote (Support for Analysis on DesignSafe's high performance super computer)**:
 
@@ -184,14 +194,14 @@ Major Version 3.0
 
          #. Monte Carlo Sampling (MCS)
          #. Latin Hypercube Sampling (LHS)
-         #. Importance Sampling
          #. Gaussian Process Regression
          #. Polynomial Chaos Expansion
 
       b. Reliability:
 
-         #. FORM
-         #. SORM
+         #. Local Reliability
+         #. Global Reliability
+         #. Importance Sampling
 
       c. Sensitivity Analysis:
 
@@ -240,8 +250,8 @@ Major Version 2.0
 
       d. Reliability:
 
-         #. FORM
-         #. SORM
+         #. Local Reliability
+         #. Global Reliability
          #. Importance Sampling
 
       e. Sensitivity Analysis:
@@ -258,7 +268,7 @@ Major Version 2.0
       b. Sampling
 
          #. Monte Carlo Sampling (MCS)
-            a. Use existing dataset of samples for forward propagation
+            a. Resample from existing correlated dataset of samples
 
       c. Train Gaussian Process (GP) Surrogate Model
 
@@ -362,6 +372,8 @@ Major Version 2.0
 
    * Visualization of surrogate modeling results
 
+      #. Goodness-of-fit measures
+
 
 #. **Remote (Support for Analysis on DesignSafe's high performance super computer)**:
 
@@ -371,14 +383,14 @@ Major Version 2.0
 
          #. Monte Carlo Sampling (MCS)
          #. Latin Hypercube Sampling (LHS)
-         #. Importance Sampling
          #. Gaussian Process Regression
          #. Polynomial Chaos Expansion
 
       b. Reliability:
 
-         #. FORM
-         #. SORM
+         #. Local Reliability
+         #. Global Reliability
+         #. Importance Sampling
 
       c. Sensitivity Analysis:
 
@@ -427,8 +439,8 @@ Major Version 2.0
 
       d. Reliability:
 
-         #. FORM
-         #. SORM
+         #. Local Reliability
+         #. Global Reliability
 
       e. Sensitivity Analysis:
 
@@ -445,7 +457,7 @@ Major Version 2.0
 
          #. Monte Carlo Sampling (MCS)
          
-            a. :blue:`Use existing dataset of samples for forward propagation`
+            a. :blue:`Resample from existing correlated dataset of samples`
 
       c. :blue:`Train Gaussian Process (GP) Surrogate Model`
 
@@ -564,8 +576,8 @@ Major Version 2.0
 
       b. Reliability:
 
-         #. FORM
-         #. SORM
+         #. Local Reliability
+         #. Global Reliability
 
       c. Sensitivity Analysis:
 
@@ -610,8 +622,8 @@ Major Version 2.0
 
       d. Reliability:
 
-         #. FORM
-         #. SORM
+         #. Local Reliability
+         #. Global Reliability
 
       e. Sensitivity Analysis:
 
@@ -736,8 +748,8 @@ Major Version 2.0
 
       b. Reliability:
 
-         #. FORM
-         #. SORM
+         #. Local Reliability
+         #. Global Reliability
 
       c. Sensitivity Analysis:
 
@@ -775,8 +787,8 @@ Major Version 2.0
 
       d. Reliability:
 
-         #. FORM
-         #. SORM
+         #. Local Reliability
+         #. Global Reliability
 
       e. Sensitivity Analysis:
 
@@ -897,8 +909,8 @@ Major Version 2.0
 
       b. Reliability:
 
-         #. FORM
-         #. SORM
+         #. Local Reliability
+         #. Global Reliability
 
       c. Sensitivity Analysis:
 
