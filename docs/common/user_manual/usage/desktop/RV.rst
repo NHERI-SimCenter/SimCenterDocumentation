@@ -239,3 +239,32 @@ For each random variable, the user must enter a name and select from the pull do
    .. warning::
 
        Correlation warping for Nataf variable transformation of **beta** distributions is not currently supported.
+
+
+.. only:: quoFEM_app
+
+   UCSD-UQ Engine
+   ++++++++++++++
+
+   The same set of distributions that are supported by the SimCenterUQ engine are supported in the UCSD-UQ engine. Currently, the distributions can only be defined through their **Parameters**. Correlation between the random variables is not supported in the UCSD-UQ engine. 
+
+
+.. only:: quoFEM_app
+
+   CustomUQ Engine
+   +++++++++++++++
+
+   The same set of distributions and correlation options as that supported by the SimCenterUQ engine can also be selected when the CustomUQ engine is used. Additionally, two options - **User defined** and **User defined vector** are also available. 
+
+   When the **User defined** option is chosen, the user must provide the path to a script file that makes the desired functionality for the CustomUQ engine available, such as methods to draw samples from the user-defined distribution, or to evaluate the probability density of the user-defined distribution at specified sample points, etc. 
+
+   When the **User defined vector** option is chosen, in addition to the path to the script file, the user must also enter the number of components in the random vector.
+
+   .. _figUserDefinedDists
+
+   .. figure:: figures/userDefinedDists.png
+       :align: center
+       :width: 800
+       :figclass: align-center
+
+       Specifying user-defined distributions under CustomUQ engine
