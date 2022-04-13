@@ -526,3 +526,57 @@ The **Raster Defined Hazard Widget** allows for the import of raster files to re
   Raster hazard input pane.
   
 .. note:: When the **Raster Defined Hazard Widget** is employed in an analysis, for each asset, the raster will be sampled at the asset location to determine the hazard intensity level. A set of .csv files in the SimCenter event format (EventGrid.csv) will be created where each grid point corresponds to the location of an asset. As a result, the corresponding **Mapping Application** in **HTA** (Hazard to Asset Mapping) should be set to **Site Specified**. 
+
+
+Regional Site Response
+--------------------------
+
+Site response analysis is commonly performed to analyze the propagation of seismic wave through soil. As shown in :numref:`fig_siteResponse`, 
+one-dimensional response analyses, as a simplified method, assume that all boundaries are horizontal and that the response of a soil deposit is
+predominately caused by SH-waves propagating vertically from the underlying bedrock. Ground surface response is usually the major output from
+these analyses, together with profile plots such as peak horizontal acceleration along the soil profile. When liquefiable soils are presenting,
+maximum shear strain and excess pore pressure ratio plots are also important.
+
+.. _fig_siteResponse:
+.. figure:: figures/siteResponse.png
+   :align: center
+   :figclass: align-center
+
+   Schematic figure for site response analysis (courtesy of Pedro Arduino)
+
+**Regional Site Response** consists of four major functionalities for site response analysis, each of which is encapsulated in a specific widget:
+
+.. _fig_siteResponsePane:
+.. figure:: figures/R2DSiteResponsePane.png
+   :align: center
+   :figclass: align-center
+
+   Graphic user interface of Regional Site Response
+
+#. **Site information widget**: three options for defining a set of sites for soil response analysis: (1) ``Single Location``, (2) ``Grid of Locations``, and (3) ``Scattering Locations``.
+   Users can manually define or select a rectangular grid on map using the ``Grid of Locations``.
+   In addition, users can upload a csv site file using the ``Scattering Locations``. 
+   The minimum attributes are: ``Station`` ID column, ``Longitude`` and ``Latitude`` columns.
+   Users can add extra columns for soil properties or modeling paramters; alternatively, users could use the **Site Data tool widget**
+   to generate needed attributes.
+#. **Site data toolbox widget**: three Vs30 data sources are available: (1) Wills et al., 2015 ([Wills2015]_), (2) Thompson et al., 2018 ([Thompson2018]_), and (3) Heath et al., 2020 ([Heath2020]_). 
+   There are two data sources of bedrock depth: (1) SoilGrid250 ([Hengl2017]_) and (2) National Crustal Model ([Boyd2020]_). Three soil model types will be available: (1) Elastic isotropic, (2) Multiaxial Cyclic plasticity, and (3) User.
+   After selecting the desired data sources and model type, a new site information csv site file will be generated and loaded by clicking the ``Fetch Site Data`` button.
+#. **Soil model widget**: a soil modeling script is expected, which will be used to create numerical models from the site information csv and run simulations.
+#. **Input motion widget**: a ``EventGrid.csv`` csv file along with a directory including ground motion acceleration time history files are expected.  
+   Note that the units of the time history and scaling factor should also be provided by users.
+
+.. [Wills2015]
+   Wills, C. J., Gutierrez, C. I., Perez, F. G., & Branum, D. M. (2015). A next generation VS 30 map for California based on geology and topography. Bulletin of the Seismological Society of America, 105(6), 3083-3091.
+
+.. [Thompson2018]
+   Thompson, E.M., 2018, An Updated Vs30 Map for California with Geologic and Topographic Constraints: U.S. Geological Survey data release.
+
+.. [Heath2020]
+   Heath, D. C., Wald, D. J., Worden, C. B., Thompson, E. M., & Smoczyk, G. M. (2020). A global hybrid VS30 map with a topographic slope–based default and regional map insets. Earthquake Spectra, 36(3), 1570–1584.
+
+.. [Hengl2017]
+   Hengl T, Mendes de Jesus J, Heuvelink GBM, Ruiperez Gonzalez M, Kilibarda M, Blagotić A, et al. (2017) SoilGrids250m: Global gridded soil information based on machine learning. PLoS ONE 12(2): e0169748.
+
+.. [Boyd2020]
+   Boyd, O.S., 2020, Calibration of the U.S. Geological Survey National Crustal Model: U.S. Geological Survey Open-File Report 2020–1052, 23 p., https://doi.org/10.3133/ofr20201052.
