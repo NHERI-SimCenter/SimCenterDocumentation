@@ -42,7 +42,7 @@ Since this documentation will continue to evolve when features are added and as 
 associated input files, results, and rulesets will be updated over time. The applications are hosted in NHERI-SimCenter 
 DesignSafe and the versioned source codes are archived via Zenodo. Other related files are maintained in two types of repositories:
 
-#. The DesignSafe Project PRJ-3065 contains inputs (inventories, rulesets, and hazard data) and outputs (results) along with PDFs that 
+#. The DesignSafe Project PRJ-3314 contains inputs (inventories, rulesets, and hazard data) and outputs (results) along with PDFs that 
    provide more details of the inventory data model as well as the basis for the rulesets used to assign various attributes. This will 
    enable ongoing refinement and extension of these products by the SimCenter and its users over time.
 #. GitHub is used as the home for all software, scripts, and applications engaged by the testbed, including Python implementations 
@@ -88,9 +88,9 @@ to execute in 40 minutes using five Skylake (SKX) nodes (240 cores) on `Stampede
      - `v1.0.0 <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/releases/tag/v1.0.0>`_
      - .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.5496056.svg
           :target: https://doi.org/10.5281/zenodo.5496056
-   * - DesignSafe Project PRJ-3065
+   * - DesignSafe Project PRJ-3314
      - v1.0
-     - `Data Depot <https://www.designsafe-ci.org/data/browser/projects/362517025966264811-242ac118-0001-012/>`_
+     - `Data Depot <https://www.designsafe-ci.org/data/browser/projects/6469761920420942316-242ac114-0001-012/>`_
 
 .. list-table:: Versions of AI application (`BRAILS <https://doi.org/10.5281/zenodo.4570554>`_) and models Used in the Current Version of Testbed
    :name: brails_version_AC
@@ -136,6 +136,12 @@ refine, extend and replicate this testbed’s process for Building Inventory gen
 application in Atlantic County. Use Case 2 generally requires skill sets in :ref:`lbl-testbed_AC_asset_description`, 
 :ref:`lbl-testbed_AC_asset_representation`, and :ref:`lbl-testbed_AC_damage_and_loss`.
 
+The revised damage and loss models or extensions to the heuristic rulesets can be contributed back to the SimCenter 
+to expand the capabilities of this community software. 
+
+If you have any feedback or questions, please check out the `SimCenter Regional Testbeds <http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=22.0>`_. 
+This forum can also be browsed for additional updates, answers to Frequently Asked Questions, and suggestions from the SimCenter team and user community.
+
 .. _lbl-testbeds-manual:
 
 .. toctree-filt::
@@ -149,8 +155,8 @@ application in Atlantic County. Use Case 2 generally requires skill sets in :ref
    response_simulation
    damage_and_loss
    uncertainty_quantification
-   sample_results
    example_outputs
+   sample_results
    future_refinements
    best_practices
    pws_conversion

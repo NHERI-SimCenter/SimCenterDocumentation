@@ -63,10 +63,6 @@ if app_name == "pelicun":
     sys.path.insert(0, os.path.abspath("../"))
 # -----------------------------------------------------------------------------
 
-external_links = {
-    "github": f"https://github.com/NHERI-SimCenter/{app_name}",
-}
-
 # Add any Sphinx extension modules 
 extensions =  [
     "sphinx-jsonschema",
@@ -81,6 +77,29 @@ extensions =  [
     "sphinx_panels",
     "sphinxcontrib.spelling",
 ]
+
+source_suffix = {
+    ".rst": "restructuredtext",
+}
+
+numfig = True
+numfig_secnum_depth = 4
+
+math_number_all = True
+math_eqref_format = "({number})"
+math_numfig = True
+
+html_theme_options = {
+    "logo_only": True,
+    "prev_next_buttons_location": None,
+    "style_nav_header_background": "#F2F2F2",
+}
+html_logo = f"common/figures/{app_name2}-Logo.png"
+
+# Some apps overwrite the copyright to include additional entities
+copyright = f"{str(datetime.today().year)}, The Regents of the University of California"
+
+tags.add(f"{app_abrev2}_app")
 
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
@@ -109,6 +128,8 @@ exclude_patterns = (
         "**/qfem*",
         "**/Hydro*",
         "Hydro*",
+        "**/hydro/*",
+
         "common/user_manual/examples/desktop/E*",  # R2D examples
         "**/R2D*",
         "reqments.rst",
@@ -132,11 +153,6 @@ exclude_patterns = (
     + [f'**{app.replace("-","")}*' for app in APPS if app != app_name]
 )
 
-
-source_suffix = {
-    ".rst": "restructuredtext",
-}
-
 toc_filter_exclusions = [
     "desktop",
     "response",
@@ -147,7 +163,7 @@ toc_filter_exclusions = [
     "quoFEM",
     "Hydro",
     "notQuoFEM",
-    "notR2D",    
+    "notR2D",
     "WEUQ",
     "EEUQ",
     "TinF",
@@ -161,18 +177,10 @@ toc_filter_exclusions = [
 
 # -- Project information -----------------------------------------------------
 
-# shared among all SimCenter docs
-numfig = True
-numfig_secnum_depth = 4
+#
+# Basic app-specific links and data
+#---------------------------------------
 
-math_number_all = True
-math_eqref_format = "({number})"
-math_numfig = True
-
-# Some apps overwrite the copyright to include additional entities
-copyright = f"{str(datetime.today().year)}, The Regents of the University of California"
-
-tags.add(f"{app_abrev2}_app")
 
 rst_prolog = f"""
 .. |fmk| replace:: **fmk**
@@ -242,28 +250,9 @@ rst_prolog = f"""
 
 """
 
-html_theme_options = {
-    "logo_only": True,
-    "prev_next_buttons_location": None,
-    "style_nav_header_background": "#F2F2F2",
+external_links = {
+    "github": f"https://github.com/NHERI-SimCenter/{app_name}",
 }
-html_logo = f"common/figures/{app_name2}-Logo.png"
-
-# gallery data sources
-rendre_config = {
-    "targets": {
-        "examples": {
-            "data-file": [os.path.normpath(f"{loc_app_dir}/Examples/index.json")],
-            "defaults": {"link": "./%%:base/README"},
-        },
-        "backend": {
-            # "data-file": os.path.normpath(f'../../{app_name}/Examples/index.json')
-        },
-    }
-}
-example_config = rendre_config["targets"]["examples"]
-sync_examples = False
-
 # Create inline :github: directive for convenient linking to files on github
 extlinks = {
     "github": (f'{external_links["github"]}/tree/master/%s', f"Github"),
@@ -277,8 +266,83 @@ if app_name == "R2DTool":
 
 examples_url = f"https://github.com/NHERI-SimCenter/{app_name}/tree/master/Examples/"
 
-# app-specific settings
+#
+# Examples
+#---------------------------------------------------
 
+# gallery data sources
+rendre_config = {
+    "targets": {
+        "examples": {
+            #"data-file": [os.path.normpath(f"{loc_app_dir}/Examples/index.json")],
+            "data-file": [os.path.normpath(f"../build/{app_name}_Examples.json")],
+            "defaults": {"link": "./%%:base/README"},
+        },
+        "backend": {
+            # "data-file": os.path.normpath(f'../../{app_name}/Examples/index.json')
+        },
+    }
+}
+example_config = rendre_config["targets"]["examples"]
+sync_examples = False
+
+#- Example links ----------------
+import yaml
+with open("../examples.yaml","r") as f:
+    example_yaml = yaml.load(f,Loader=yaml.Loader)
+example_config.update(example_yaml[app_name])
+
+examples_url = f"https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples/"
+extlinks.update(
+    {
+        f"qfem-{i:04}": (f"{examples_url}/qfem-{i:04}/%s", f"qfem-{i:04}")
+        for i in range(1, 99)
+    }
+)
+
+examples_url = f"https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples/"
+extlinks.update(
+    {
+        f"weuq-{i:04}": (f"{examples_url}/weuq-{i:04}/%s", f"weuq-{i:04}")
+        for i in range(1, 99)
+    }
+)
+
+examples_url = f"https://github.com/NHERI-SimCenter/EE-UQ/tree/master/Examples/"
+extlinks.update(
+    {
+        f"eeuq-{i:04}": (f"{examples_url}/eeuq-{i:04}/%s", f"eeuq-{i:04}")
+        for i in range(1, 99)
+    }
+)
+
+examples_url = f"https://github.com/NHERI-SimCenter/PBE/tree/master/Examples/"
+extlinks.update(
+    {
+        f"pbdl-{i:04}": (f"{examples_url}/pbdl-{i:04}/%s", f"pbdl-{i:04}")
+        for i in range(1, 99)
+    }
+)
+
+examples_url = f"https://github.com/NHERI-SimCenter/R2DExamples/tree/master/"
+extlinks.update(
+    {
+        f"r2dt-{i:04}": (f"{examples_url}/r2dt-{i:04}/%s", f"r2dt-{i:04}")
+        for i in range(1, 20)
+    }
+)
+
+examples_url = f"https://github.com/NHERI-SimCenter/HydroUQ/tree/master/Examples/"
+extlinks.update(
+    {
+        f"hdro-{i:04}": (f"{examples_url}/hydro-{i:04}/%s", f"hydro-{i:04}")
+        for i in range(1, 20)
+    }
+)
+
+#
+# App-specific settings
+#------------------------------------------------------
 docTestbeds = "True"
 
 if app_name == "HydroUQ":
@@ -290,7 +354,7 @@ if app_name == "HydroUQ":
     tags.add("stormsurge")
     tags.add("response")
     tags.add("notQuoFEM")
-    tags.add("notR2D")    
+    tags.add("notR2D")
     tags.add("Hydro")
 
     toc_filter_exclusions.remove("Hydro")
@@ -303,6 +367,7 @@ if app_name == "HydroUQ":
     exclude_patterns.remove("**/*response*")
     exclude_patterns.remove("**/Hydro*")
     exclude_patterns.remove("Hydro*")
+    exclude_patterns.remove("**/hydro/*")
 
     # TODO: fix these temporary changes
     exclude_patterns.append("**/user_manual/usage/desktop/earthquake/*")
@@ -386,19 +451,19 @@ if app_name == "R2DTool":
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 
 """
-    example_config.update(
-        {
-            "include-item": [
-                "r2dt-0001",
-                "r2dt-0002",
-                "r2dt-0003",
-                "r2dt-0004",
-                "r2dt-0005",
-                "r2dt-0006",
-                "r2dt-0007"
-            ]
-        }
-    )
+    #example_config.update(
+    #    {
+    #        "include-item": [
+    #            "r2dt-0001",
+    #            "r2dt-0002",
+    #            "r2dt-0003",
+    #            "r2dt-0004",
+    #            "r2dt-0005",
+    #            "r2dt-0006",
+    #            "r2dt-0007"
+    #        ]
+    #    }
+    #)
     html_theme_options.update(
         {
             "analytics_id": "...",  # TODO: add analytics ID
@@ -412,6 +477,7 @@ elif app_name == "PBE":
     author = (
         "Adam Zsarnóczay, Frank McKenna, Chaofeng Wang, Wael Elhaddad, Michael Gardner"
     )
+    sync_examples = True
 
     tags.add("PBE_app")
     tags.add("desktop_app")
@@ -441,16 +507,6 @@ elif app_name == "PBE":
     exclude_patterns.append("**/resEE.rst")
     # END TODO
 
-    sync_examples = True
-    example_config.update(
-        {
-            "include-item": [
-                "pbdl-0001",
-                "pbdl-0002",
-                "pbdl-0003",
-            ]
-        }
-    )
 
     rst_prolog += """\
 .. |full tool name| replace:: Performance Based Engineering Application
@@ -552,7 +608,7 @@ elif app_name == "quoFEM":
     rst_prolog += f"""
 .. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)
 .. |test example| replace:: :ref:`qfem-0001`
-.. |tool version| replace:: 2.4
+.. |tool version| replace:: 3.0
 .. _quoFEM Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
@@ -560,27 +616,26 @@ elif app_name == "quoFEM":
 
 """
     html_theme_options.update({"analytics_id": "UA-158130480-4"})
-
-    example_config.update(
-        {
-            "include-item": [
-                "qfem-0001",
-                "qfem-0002",
-                "qfem-0005",
-                "qfem-0003",
-                "qfem-0004",
-                "qfem-0009",
-                "qfem-0007",
-                "qfem-0008",
-                "qfem-0014",
-                "qfem-0015",
-                "qfem-0016",
-                "qfem-0017",
-                "qfem-0018",
-                "qfem-0019",
-            ]
-        }
-    )
+    #example_config.update(
+    #    {
+    #        "include-item": [
+    #            "qfem-0001",
+    #            "qfem-0002",
+    #            "qfem-0005",
+    #            "qfem-0003",
+    #            "qfem-0004",
+    #            "qfem-0009",
+    #            "qfem-0007",
+    #            "qfem-0008",
+    #            "qfem-0014",
+    #            "qfem-0015",
+    #            "qfem-0016",
+    #            "qfem-0017",
+    #            "qfem-0018",
+    #            "qfem-0019",
+    #        ]
+    #    }
+    #)
 
 elif app_name == "WE-UQ":
     project = "Wind Engineering with Uncertainty Quantification"
@@ -598,7 +653,7 @@ elif app_name == "WE-UQ":
     toc_filter_exclusions.remove("wind")
     toc_filter_exclusions.remove("response")
     toc_filter_exclusions.remove("notQuoFEM")
-    toc_filter_exclusions.remove("notR2D")    
+    toc_filter_exclusions.remove("notR2D")
     toc_filter_exclude = toc_filter_exclusions
 
     exclude_patterns.remove("**/*WEUQ*")
@@ -777,55 +832,6 @@ latex_documents = [
 ]
 latex_logo = "common/figures/NSF_SimCenter_NO TEXT_SimCenter.png"
 
-#- Example links ----------------
-
-examples_url = f"https://github.com/NHERI-SimCenter/quoFEM/tree/master/Examples/"
-extlinks.update(
-    {
-        f"qfem-{i:04}": (f"{examples_url}/qfem-{i:04}/%s", f"qfem-{i:04}")
-        for i in range(1, 99)
-    }
-)
-
-examples_url = f"https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples/"
-extlinks.update(
-    {
-        f"weuq-{i:04}": (f"{examples_url}/weuq-{i:04}/%s", f"weuq-{i:04}")
-        for i in range(1, 99)
-    }
-)
-
-examples_url = f"https://github.com/NHERI-SimCenter/EE-UQ/tree/master/Examples/"
-extlinks.update(
-    {
-        f"eeuq-{i:04}": (f"{examples_url}/eeuq-{i:04}/%s", f"eeuq-{i:04}")
-        for i in range(1, 99)
-    }
-)
-
-examples_url = f"https://github.com/NHERI-SimCenter/PBE/tree/master/Examples/"
-extlinks.update(
-    {
-        f"pbdl-{i:04}": (f"{examples_url}/pbdl-{i:04}/%s", f"pbdl-{i:04}")
-        for i in range(1, 99)
-    }
-)
-
-examples_url = f"https://github.com/NHERI-SimCenter/R2DExamples/tree/master/"
-extlinks.update(
-    {
-        f"r2dt-{i:04}": (f"{examples_url}/r2dt-{i:04}/%s", f"r2dt-{i:04}")
-        for i in range(1, 20)
-    }
-)
-
-examples_url = f"https://github.com/NHERI-SimCenter/HydroUQ/tree/master/Examples/"
-extlinks.update(
-    {
-        f"hdro-{i:04}": (f"{examples_url}/hydro-{i:04}/%s", f"hydro-{i:04}")
-        for i in range(1, 20)
-    }
-)
 
 spelling_word_list_filename = ["spelling.txt"]
 

@@ -14,11 +14,11 @@ Phase I: Attribute Definition
 ===============================
 
 All the attributes required for loss estimation were first identified to develop the Building Inventory 
-data model. This Building Inventory data model presented in :numref:`tab-bldg_inv_data_model_lc`
+data model. This Building Inventory data model presented in :numref:`tab-bldg_inv_data_model_ac`
 provides a set of attributes that are assigned to each asset to form the building inventory file 
 serving as input to the workflow. For each attribute a row in the table is provided. Each row has a number 
 of columns: the attribute name, description, format (such as alphanumeric, floating-point number), the data source used to define that attribute.
-An expanded version of :numref:`tab-bldg_inv_data_model_lc` with the full details of this data
+An expanded version of :numref:`tab-bldg_inv_data_model_ac` with the full details of this data
 model is available on DesignSafe PRJ-3314.
 
 .. csv-table:: Building Inventory data model for Atlantic County Inventory.
@@ -26,7 +26,7 @@ model is available on DesignSafe PRJ-3314.
    :file: table/building_inventory_data_model_new.csv
    :header-rows: 1
    :align: center
-   :widths: 15, 40, 25, 20
+   :widths: 15, 60, 25
 
 
 Phase II: Inventory Generation
@@ -68,7 +68,7 @@ AI/ML Techniques combined with Computer Vision
 
 Most of the key building attributes were generated using SimCenter’s 
 `BRAILS <https://nheri-simcenter.github.io/BRAILS-Documentation/index.html>`_. The following
- is a brief description of how these attributes were obtained and the utilized methods were validated.
+is a brief description of how these attributes were obtained and the utilized methods were validated.
 
 Attribute: NumberOfStories
 ```````````````````````````
@@ -122,7 +122,7 @@ testbed), was utilized.
 
    Confusion matrices for the number of floors predictor used in this study.
 
-.. _lbl-testbed_LC_asset_description_meanroofht:
+.. _lbl-testbed_AC_asset_description_meanroofht:
 
 Attribute: MeanRoofHt
 ``````````````````````
@@ -193,7 +193,7 @@ Attribute: RoofSlope
 `````````````````````
 RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained 
 by determining the difference between the bottom plane and apex elevations of the roof as defined in the 
-:ref:`lbl-testbed_LC_asset_description_meanroofht` 
+:ref:`lbl-testbed_AC_asset_description_meanroofht` 
 section. Roof run is determined as half the smaller dimension of the building, as determined from 
 the dimensions of the building footprint. :numref:`mean_slope_app` displays the AI-predicted mean roof height versus the 
 AI-precited roof pitch ratios. As expected, very little correlation between these two parameters are observed.
@@ -214,7 +214,7 @@ determines roof shape based on a satellite image obtained for the building. The 
 learning, specifically it utilizes a convolutional neural network that has been trained on satellite 
 images. In AI/ML terminology the Roof Shape module is an image classifier: it takes an image and 
 classifies it into one of three categories used in HAZUS: gable, hip, or flat as shown in 
-:numref:`roof_shape`. The original training of the AI model utilized 6,000 images obtained from google 
+:numref:`roof_shape_ac`. The original training of the AI model utilized 6,000 images obtained from google 
 satellite imagery in conjunction with roof labels obtained from 
 `Open Street Maps <https://www.openstreetmap.org/>`_. As many roofs have more complex shapes, a 
 similitude measure is used to determine which of these roof geometries is the best match to a given roof. 
@@ -223,7 +223,7 @@ More details of the classifier can be found
 The trained classifier was employed here to classify the roof information for Lake Charles.
 
 .. figure:: figure/RoofShape.png
-   :name: roof_shape
+   :name: roof_shape_Ac
    :align: center
    :figclass: align-center
    :width: 500
@@ -237,12 +237,12 @@ The second is 56 residences assessed by StEER for which roof types were one of t
 e.g., removing all roofs labeled as "Complex" according to StEER's distinct image labeling standards. 
 The validation process is documented
 `here <https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/roof.html>`_. 
-The confusion matrices are presented in :numref:`roof_shape_vali`. These matrices visually present 
+The confusion matrices are presented in :numref:`roof_shape_vali_ac`. These matrices visually present 
 the comparison between the predictions and actual data and should have values of 1.0 along the diagonal 
 if the classification is perfect, affirming the accuracy of the classification by the roof shape classifier.
 
 .. figure:: figure/RoofShapeVali.png
-   :name: roof_shape_vali
+   :name: roof_shape_vali_ac
    :align: center
    :figclass: align-center
    :width: 600
@@ -253,13 +253,13 @@ Attribute: RoofSlope
 `````````````````````
 RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained 
 by determining the difference between the bottom plane and apex elevations of the roof as defined in the 
-:ref:`lbl-testbed_LC_asset_description_meanroofht` 
+:ref:`lbl-testbed_AC_asset_description_meanroofht` 
 section. Roof run is determined as half the smaller dimension of the building, as determined from 
-the dimensions of the building footprint. :numref:`mean_slope_app` displays the AI-predicted mean roof height versus the 
+the dimensions of the building footprint. :numref:`mean_slope_app_ac` displays the AI-predicted mean roof height versus the 
 AI-precited roof pitch ratios. As expected, very little correlation between these two parameters are observed.
 
 .. figure:: figure/RoofSlopeApp.png
-   :name: mean_slope_app
+   :name: mean_slope_app_ac
    :align: center
    :figclass: align-center
    :width: 400
