@@ -1,0 +1,11 @@
+"**ANA.1**", "**Ability to select from different Nonlinear Analysis options**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
+"ANA.1.1", "Ability to specify OpenSees as FEM engine and to specify different analysis options","SP", "M", "Implemented", -, ":eeuq-0001:`/`", -, -, -, -
+"ANA.1.2", "Ability to provide own OpenSees Analysis script to OpenSees engine.","SP", "D", "Implemented", -, ":eeuq-0001:`/`", -, -, -, -
+"ANA.1.3", "Ability to provide own Python script and use OpenSeesPy engine.","SP", "D", -, -, -, -, -, -, -
+"ANA.1.4", "Ability to use alternative FEM engines.","SP", "M", -, -, -, -, -, -, -
+"ANA.2", "Ability to know if an analysis run fails.","UF", "M", -, -, **core**, -, -, **core**, -
+"**ANA.3**", "**Ability to specify Modal Damping.**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
+"ANA.3.1", "Ability to specify damping ratio as a random variable","UF", "M", "Implemented", -, -, -, -, -, -
+"ANA.3.2", "When using Rayleigh Damping, ability to specify the two modes used to calculate damping parameters","UF", "M", "Implemented", -, -, -, -, -, -
+"ANA.4", "Ability to run for more than 60hours at DesignSafe","UF", "D", -, -, -, -, -, -, -
+"ANA.5", "Ability to specify number of iterations in convergence test","UF", "M", "Implemented", -, -, -, -, -, -

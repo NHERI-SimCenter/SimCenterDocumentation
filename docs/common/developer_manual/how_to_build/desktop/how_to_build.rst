@@ -73,60 +73,54 @@ Setup the development environment with Conan
 Build the applications
 ======================
 
-.. only:: notQuoFEM
+#. Obtain the code in the SimCenterBackendApplications repository from `Github <https://github.com/NHERI-SimCenter/SimCenterBackendApplications>`_. You can do that by using your preferred Git client/GUI or by using the ``git clone`` command in the terminal:
 
-    #. Obtain the code in the SimCenterBackendApplications repository from `Github <https://github.com/NHERI-SimCenter/SimCenterBackendApplications>`_. You can do that by using your preferred Git client/GUI or by using the ``git clone`` command in the terminal:
+    .. code::
 
-      .. code::
+        git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications	 
 
-         git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications	 
-
-    #. To build the applications you need to now navigate to the **SimCenterBackendApplications** folder that was created with the **git clone** command. Once there you will issue the following set of commands to create a **build** folder, change director to that folder, install needed software using conan, and finally use **cmake** to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail).
-
-.. only:: quoFEM_app
-
-    To build the applications you need to now navigate to the **backend** folder in the quoFEM repo. Once there you will issue the following set of commands to create a **build** folder, change director to that folder, install needed software using conan, and finally use **cmake** to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail).
+#. To build the applications you need to now navigate to the **SimCenterBackendApplications** folder that was created with the **git clone** command. Once there you will issue the following set of commands to create a **build** folder, change director to that folder, install needed software using conan, and finally use **cmake** to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail).
 
 
-For those developers using the Windows operating system, in a terminal or powershell window you need to type the following:
+    For those developers using the Windows operating system, in a terminal or powershell window you need to type the following:
 
-        .. code:: console
+            .. code:: console
 
-          mkdir build
-          cd build
-          conan install .. --build missing
-          cmake .. -G "Visual Studio 16 2019"
-          cmake --build . --config Release
-          cmake --install .
-          cd ..
+              mkdir build
+              cd build
+              conan install .. --build missing
+              cmake .. -G "Visual Studio 16 2019"
+              cmake --build . --config Release
+              cmake --install .
+              cd ..
 
-On Windows, it is necessary to specify a compiler for CMake. To do this, you need to add additional arguments to line 4, i.e., if you have Visual Studio 2019, you would instead type:
+    On Windows, it is necessary to specify a compiler for CMake. To do this, you need to add additional arguments to line 4, i.e., if you have Visual Studio 2019, you would instead type:
 
-        .. code:: console
+            .. code:: console
 
-          mkdir build
-          cd build
-          conan install .. --build missing
-          cmake ..
-          cmake --build . --config Release
-          cmake --install .
-          make install .
-          cd ..	  
+              mkdir build
+              cd build
+              conan install .. --build missing
+              cmake ..
+              cmake --build . --config Release
+              cmake --install .
+              make install .
+              cd ..	  
 
-.. note::
+    .. note::
 
-   #. For Mac users running **Big Sur** and version **12** of XCode there are some reported issues. Replace line 3 above with the following two lines:
+       #. For Mac users running **Big Sur** and version **12** of XCode there are some reported issues. Replace line 3 above with the following two lines:
 
-      .. code::       
+          .. code::       
 
-        conan install .. --build missing --build=libcurl
-        mv ./missing/* ./
+            conan install .. --build missing --build=libcurl
+            mv ./missing/* ./
 
-   #. For Mac users, add the following command after **cmake --install .** to ensure the binary applications are copied to the applications folder.
+       #. For Mac users, add the following command after **cmake --install .** to ensure the binary applications are copied to the applications folder.
 
-      .. code::       
+          .. code::       
 
-        make install .
+            make install .
 
           
       
@@ -208,7 +202,7 @@ Windows developers will type the following in a terminal or a powershell window:
       mkdir build
       cd build
       conan install .. --build missing
-      qmake ..\|short tool id|.pro
+      qmake ../|short tool id|.pro
       nmake
 
 Linux or Mac users will type the following in a terminal window from inside the |app| directory:

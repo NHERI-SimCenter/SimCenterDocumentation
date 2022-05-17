@@ -41,6 +41,30 @@ The following categories are available:
    :quoFEM:DakotaParameterEstimation
    :quoFEM:DakotaInverseProblems
 
+.. only:: EEUQ_app
+	   
+	  SimCenter UQ Engine
+	  -------------------
+	  
+	  The **SimCenterUQ** engine is a UQ engine developed in-house at the SimCenter that accommodates different UQ methods, which are organized into categories that can be accessed through a pull-down menu, as shown in :numref:`figSimCenterUQ`.
+	  
+	  .. _figSimCenterUQ:
+	  
+	  .. figure:: figures/SimCenterUQ.png
+	  	:align: center
+		:figclass: align-center
+		
+		SimCenterUQ engine and category selection.
+	  
+	  Currently the following category options are available:
+
+	  .. toctree-filt::
+	     :maxdepth: 1
+
+             SimCenterUQSampling
+             SimCenterUQSensitivity
+             SimCenterUQPLoM
+
 .. only:: quoFEM_app
 	   
 	  SimCenter UQ Engine
@@ -64,6 +88,7 @@ The following categories are available:
              SimCenterUQSampling
              SimCenterUQSensitivity
              SimCenterUQSurrogate
+             SimCenterUQPLoM
 
 
 	  UCSD UQ Engine

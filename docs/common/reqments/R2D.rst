@@ -33,7 +33,7 @@ Wind Loading Requirements
 -------------------------
 
 .. csv-filter:: Requirements - WL
-  :header: "#", "Description", "Source", "Priority", "Status", "Implementation"
+  :header: "#", "Description", "Source", "Priority", "Status", _, _, _, _, "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0,1,2,3,4,9
   :file: _out/Loading.csv
