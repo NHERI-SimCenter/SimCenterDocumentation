@@ -56,13 +56,13 @@
 
    common/front-matter/ack
    common/front-matter/license
+   common/front-matter/cite.rst	    
    common/front-matter/glossary.rst
    common/front-matter/abbreviations.rst
    :quoFEM:common/user_manual/usage/desktop/quoFEM/releasenotes   
    :R2D:common/user_manual/usage/desktop/releasenotes
    :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
    :EEUQ:common/user_manual/usage/desktop/earthquake/releasenotes
-
 	  
 .. _lbl-user-manual:
 
@@ -105,7 +105,6 @@
    :R2D:common/user_manual/examples/desktop/examples
    :pelicun:common/user_manual/examples/pelicun/examples
 
-
    :Hydro:common/user_manual/usage/desktop/hydro/bestpractices
 
    :EEUQ:common/reqments/EEUQ		
@@ -115,7 +114,9 @@
    :quoFEM:common/reqments/reqQUOFEM	
    :pelicun:common/user_manual/requirements/pelicun/requirements
 
+
    common/user_manual/bugs
+   :quoFEM:common/user_manual/dcv/quoFEM/quoFEM
 
 .. _lbl-testbeds-manual:
 
