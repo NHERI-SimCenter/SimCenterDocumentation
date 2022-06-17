@@ -1,8 +1,8 @@
-.. _lblSimSurrogate:
+.. _lblSimForward:
 
 
 Forward Propagation Methods
-***************************
+**********************************************
 
 The forward propagation provides a probabilistic understanding of output variables by producing sample realizations and statistical moments (mean, standard deviation, skewness, and kurtosis). Currently, only the Monte Carlo Sampling (MCS) method is available in the SimCenterUQ engine and the other sampling methods (Latin hypercube sampling, Surrogate model-based efficient sampling) are available in the Dakota engine.
 

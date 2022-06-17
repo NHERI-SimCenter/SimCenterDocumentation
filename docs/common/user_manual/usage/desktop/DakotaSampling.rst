@@ -2,7 +2,7 @@
 .. _lblDakotaForward:
 
 Forward Propagation Methods
-***************************
+**********************************************
  
 The forward propagation analysis provides probabilistic understanding of output variables by producing sample realizations and statistical moments (mean, standard deviation, skewness, and kurtosis) of the quantities of interest. Currently four sampling methods are available: 
 

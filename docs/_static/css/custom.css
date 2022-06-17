@@ -46,3 +46,15 @@ td{
 .blue{
 	color: blue;
 }
+
+table.tight-table {
+    white-space: normal !important;
+    max-height: none;
+    overflow-y: auto;
+    vertical-align: top;
+}
+
+.blue {
+    color:#0B619C;
+    font-size: 130%;
+}

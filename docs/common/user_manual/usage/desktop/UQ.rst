@@ -6,11 +6,70 @@ The first selection panel the user must select from and enter data into is the *
 
 .. only:: quoFEM_app
 	  
-	  The **UQ Engine** options currently available are Dakota, SimCenterUQ, and UCSD-UQ. Users can also configure quoFEM to use their own UQ methods and algorithms in the quoFEM workflow by selecting the CustomUQ option.
+	The **UQ Engine** options currently available are Dakota, SimCenterUQ, and UCSD-UQ. Users can also configure quoFEM to use their own UQ methods and algorithms in the quoFEM workflow by selecting the CustomUQ option.
+
+	**UQ features at-a-glance**:
+
+	.. role:: blue
+
+	.. list-table:: 
+	   :class: tight-table
+	   :widths: 30 10 
+
+	   * - :blue:`Forward Propagation`
+	         | Forward propagation generates sample realizations of input random variables (RVs) and output quantity of interests (QoIs) to provide statistics such as mean, variance, skewness, and kurtosis. 
+
+			   | * :ref:`lblDakotaForward` in Dakota (:ref:`Example1<qfem-0001>`, :ref:`Example2<qfem-0002>`, :ref:`Example3<qfem-0003>`)
+			   | * :ref:`lblSimForward` in SimCenterUQ (:ref:`Example<qfem-0015>`)
+
+	     - .. thumbnail:: figures/UQtab/method_forward.png
+
+	   * - :blue:`Global Sensitivity Analysis`
+	         | Global sensitivity analysis is used to quantify contribution of each input RV to the uncertainty in an output QoI. Dakota engine provides classical non-parametric estimation based on smart sampling approach and SimCenterUQ engine provides probabilistic model-based approximation. See Dakota user manual and :ref:`here<lbluqSimTechnical>` for theory details.
+
+			   | * :ref:`lblDakotaSensitivity` in Dakota (:ref:`Example<qfem-0001>`)
+			   | * :ref:`lblSimSensitivity` in SimCenterUQ (:ref:`Example<qfem-0009>`)
+	     - .. thumbnail:: figures/UQtab/method_sensitivity.png
+
+	   * - :blue:`Reliability Analysis`
+	         | Reliability Analysis is performed to estimate the probability of failure, i.e. the probability that a system response (QoI) exceeds a certain threshold level. 
+
+			   | * :ref:`lblDakotaReliability` in Dakota (:ref:`Example<qfem-0001>`)
+	     - .. thumbnail:: figures/UQtab/method_reliability.png
+
+	   * - :blue:`Inverse Problem (Bayesian Calibration)`
+	         | Inverse Problem (Bayesian Calibration) is used to calibrate model parameters probabilistically based on Bayesian inference. The probability distributions of the input parameters (RVs) are updated by experimental data. Theory details can be found in Dakota user manual and :ref:`here<lbluqUCSDSimTechnical>`
+
+			   | * :ref:`lblInverseProblem` in Dakota
+			   | * :ref:`lblUCSDTMCMC` in UCSD-UQ (:ref:`Example1<qfem-0014>`, :ref:`Example2<qfem-0019>`)
+	     - .. thumbnail:: figures/UQtab/method_Bayesian.png
+
+	   * - :blue:`Parameter Estimation (Deterministic Calibration)` 
+	         | Parameter Estimation (Deterministic Calibration) estimate the best parameter values of a simulation model that best fit the experimental data, using deterministic optimization algorithms, e.g. Gauss-Newton least squares
+
+			   | * :ref:`lblDakotaParameterEstimation` in Dakota (:ref:`Example1<qfem-0008>`, :ref:`Example2<qfem-0019>`)
+	     - .. thumbnail:: figures/UQtab/method_deterministic.png
+
+	   * - :blue:`Surrogate Modeling`
+	         | |app| can be used to train a surrogate model model that substitutes expensive computational simulation models or physical experiments. Theory details can be found in :ref:`here<lbluqSimTechnical>`.
+
+			   | * :ref:`lblSimSurrogate` in SimCenterUQ (:ref:`Example1<qfem-0015>`, :ref:`Example2<qfem-0016>`)
+			   | * :ref:`lblSimCenterUQPLoM` in SimCenterUQ
+
+	     - .. thumbnail:: figures/UQtab/method_surrogate.png
+
+	   * - :blue:`Custom UQ`
+	         | Custom UQ helps user to plug-in an user-defined UQ algorithm in SimCenter workflow.
+
+			   | * :ref:`lblCustomUQ` in CustomUQ engine (:ref:`Example<qfem-0017>`)
+
+	     - .. thumbnail:: figures/UQtab/method_custom.png
+
+
 
 .. only:: notQuoFEM
 	  
-	  Presently the only **UQ Engine** option is Dakota.
+	The **UQ Engine** options currently available are Dakota and SimCenterUQ
 
 
 Dakota UQ Engine
