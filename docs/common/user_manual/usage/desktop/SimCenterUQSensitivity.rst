@@ -6,7 +6,7 @@ Global Sensitivity Analysis
 
 Global sensitivity analysis is used to quantify contribution of each input variable to the uncertainty in QoI. Using the global sensitivity indices, users can set preferences between random variables considering both inherent randomness and its propagation through the model. Global sensitivity analysis helps users to understand the overall impact of different sources of uncertainties and their intersections, as well as to accelerate UQ computations by focusing on dominant dimensions or screening out trivial input variables. This can also be useful identifying the input variables for which extra experimentation/research may be useful in reducing the uncertainty in the initial specification.
 
-**Sobol indices** are widely used variance-based global sensitivity measures which has two types: main effect and total effect sensitivity indices. The **main effect index** quantifies the fraction of variance in QoI that can be attributed to specific input random variable(s) but without considering interactive effect with other input variables. The **total effect index**, on the other hand, additionally takes the interactions into account.
+**Sobol indices** are widely used variance-based global sensitivity measures which has two types: main effect and total effect sensitivity indices. The **main effect index** quantifies the fraction of variance in QoI that can be attributed to specific input random variable(s) but without considering interactive effect with other input variables. The **total effect index**, on the other hand, additionally takes the interactions into account. **Please read** :ref:`**HERE**<lbluqSimTechnical>` **for more details on the equations and implemented algorithms**.
 
 Given an output of a model :math:`y=g(\boldsymbol{x})` and input random variables :math:`\boldsymbol{x}=\{x_1,x_2, \cdots ,x_d\}`, the first-order main and total effect indices of each input variable :math:`x_i` is defined as
 
@@ -46,7 +46,7 @@ In the SimCenterUQ engine, Sensitivity indices are estimated by Gaussian mixture
 
 .. _figSimSensitivity:
 
-.. figure:: figures/SensitivityAnalysisSimUQ.png
+.. figure:: figures/SimCenterUQ/Sensitivity1.png
 	:align: center
 	:figclass: align-center
 	:width: 1200
@@ -58,6 +58,7 @@ In the SimCenterUQ engine, Sensitivity indices are estimated by Gaussian mixture
    - The numerical results of global sensitivity analysis may show negative values due to the sampling variability.
    - The numerical results of Eq. :eq:`Sbound` for uncorrelated inputs may not hold due to the sampling variability and approximation errors. If this error is very high, the sensitivity index may not be reliable. However, the sensitivity rank between variables is relatively robust.
    - When a constant variable is defined, the sensitivity analysis algorithm will ignore the variable.
+   - If "NaN" is written in the FEM output script (`results.out`) instead of a number SimCenterUQ engine will exclude this samples from the sensitivity analysis. This may be useful when one wants to get 'condition' sensitivity indices, i.e. conditional to non-NaN cases.
 
 Group-wise Sobol indices
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -66,7 +67,7 @@ By default, the analysis results are first-order sensitivity indices of each ran
 
 .. _figSimSensitivity2:
 
-.. figure:: figures/SensitivityAnalysis2SimUQ.png
+.. figure:: figures/SimCenterUQ/Sensitivity2.png
 	:align: center
 	:figclass: align-center
 	:width: 1200
@@ -87,6 +88,47 @@ In order to associate more input variables, the set {:math:`x_i,x_j`} can be sim
 
    - When multiple outputs are considered, global sensitivity analysis is performed separately for each QoI, but the base Monte Carlo samples are can be re-used for different QoIs. 
    - When random variables defined in **RV** tab is not exhaustive, i.e. if the model contains *unexplained* randomness, total Sobol index value may be underestimated by omitting the interaction with the missing variables.
+
+
+Principal Component Analysis (PCA) with QoI
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When the number of the quantity of interests (QoI) exceeds 15, quoFEM, by default, performs 'principal component analysis and probability model-based global sensitivity analysis (PCA-PSA)'. The user can otherwise manually specify the option by selecting either ``Yes`` or ``No``. If ``Yes`` is selected, the user can also provide the ``potion of variance explained`` in range of 0 and 1.0. As this value gets close to 1, the accuracy of the approximation improves while the computational demand also increases. Note that when 1.0 is selected, dimension will not be reduced. The default value is 0.99. We do not recommend using a value lower than 0.99 unless the user thoroughly understands its consequence.
+
+.. _figSimSensitivity4:
+
+.. figure:: figures/SimCenterUQ/Sensitivity3.png
+	:align: center
+	:figclass: align-center
+	:width: 1200
+
+  	Principal Component Analysis
+
+
+Results Display
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The main and total effect indices are displayed for each random variable (or group of random variables if the user specifies the group in the UQ tab) and quantity of interest (QoI) pair.
+
+.. _figSimSensitivity4:
+
+.. figure:: figures/SimCenterUQ/Sensitivity4.png
+	:align: center
+	:figclass: align-center
+	:width: 1200
+
+  	Results from :ref:`an example<qfem-0009>`
+
+Only when the quantities of interest (QoI) are defined as a **field variable**, i.e. by setting a length greater than 1 in the EDP tab, the aggregated sensitivity indices will also be displayed. 
+
+.. _figSimSensitivity4:
+
+.. figure:: figures/SimCenterUQ/Sensitivity5.png
+	:align: center
+	:figclass: align-center
+	:width: 1200
+
+  	Results from :ref:`an example<qfem-0023>`
 
 
 .. [Hu19]
