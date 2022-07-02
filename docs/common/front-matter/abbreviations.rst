@@ -15,6 +15,8 @@ The following abbreviations may be found throughout this document:
 :SAM: Structural Analysis Model (i. e. finite element model)
 :SIM: Simulation
 :UQ: Uncertainty Quantification
+:RV: Random Variables
+:QoI: Quantities of Interest
 
 
 
