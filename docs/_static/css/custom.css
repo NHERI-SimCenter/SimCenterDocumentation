@@ -46,3 +46,28 @@ td{
 .blue{
 	color: blue;
 }
+
+table.tight-table {
+    white-space: normal !important;
+    max-height: none;
+    overflow-y: auto;
+    vertical-align: top;
+}
+
+.uqblue {
+    color:#0B619C;
+    font-size: 130%;
+}
+
+div.leftside {
+  width: 75%;
+  padding: 0px 3px 0px 0px;
+  float: left;
+  font-size: 90%;
+}
+
+div.rightside {
+  margin-left: 72%;
+  vertical-align: text-bottom;
+  /* float: right; */
+}
