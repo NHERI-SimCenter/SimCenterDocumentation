@@ -17,6 +17,7 @@ The **GI** tab allows the user to provide information about the building and the
 
 .. figure:: figures/gi_new.png
 	:align: center
+	:width: 800
 	:figclass: align-center
 
 	General information input panel.
