@@ -559,6 +559,7 @@ elif app_name == "EE-UQ":
                 "eeuq-0004",
                 "eeuq-0005",
                 "eeuq-0006",
+                "eeuq-0007",
             ]
         }
     )
