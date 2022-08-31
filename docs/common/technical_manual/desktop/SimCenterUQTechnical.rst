@@ -28,6 +28,8 @@ For the Nataf trasformation, the SimCenterUQ engine borrows a part of the distri
 .. [ERA2019]
    Engineering Risk Analysis Group, Technische Universität München: https://www.bgu.tum.de/era/software/eradist/ (Matlab, python programs and documentations)
 
+.. _lbluqSimTechnical_Sensitivity:
+
 
 Global sensitivity analysis
 ===========================
@@ -73,11 +75,18 @@ respectively, where :math:`\boldsymbol{x}_{\sim i}` indicates the set of all inp
 where :math:`\boldsymbol{x}_{\sim ij}` indicates the set of all input variables except :math:`x_i` and :math:`x_j`. The higher-order indices are derived likewise. Theoretically, When all the input variables are uncorrelated to each other, the following equality holds.
 
 .. math::
+	:label: Sbound
 
 	\sum^d_{i=1} S_i + \sum^d_{i<j} S_{ij} + \cdots + S_{12 \cdots d} = 1 
 
 
-Estimation of Sobol indices
+.. note::
+
+   - The numerical results of global sensitivity analysis may show negative values due to the sampling variability
+   - The numerical results of Eq. :eq:`Sbound` for uncorrelated inputs may not hold due to the sampling variability and approximation errors. If this error is very high, the sensitivity index may not be reliable. However, the sensitivity rank between variables is relatively robust.
+
+
+Estimation of Sobol indices using Probablistic model-based global sensitivity analysis (PM-GSA)
 ----------------------------
 
 GSA is typically computationally expensive. High computation cost attributes to the multiple integrations (:math:`d`-dimensional) associated with the variance and expectation operations shown in Eqs. :eq:`Si` and :eq:`SiT`. To reduce the computational cost, efficient Monte Carlo methods, stochastic expansion methods, or meta model-based methods can be employed. Among different approaches, the SimCenterUQ engine supports the probability model-based GSA (PM-GSA) framework developed by [Hu2019]_. 

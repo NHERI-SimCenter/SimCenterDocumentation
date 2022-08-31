@@ -11,9 +11,9 @@ Reliability methods can be split into local and global reliability methods and i
 Local Reliability Methods
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Local reliability methods include the Mean Value method and a family of most probable point (MPP) search methods. Each of these methods is gradient-based, employing local approximations and/or local optimization methods. The user selects the local method using the pull down menu.
+Local reliability methods introduces first/second-order local approximation of the response around either "Mean Value" or "Design point (also known as the most probable point, MPP)". Each of these methods involves gradient-based local optimization. The local reliability methods can also be used for "inverse reliability problems" which aims to idenitify the unknown parameter (random variables) combination that produces prescribed probability levels. The user selects the local method using the pull down menu.
 
-The default local reliability method is the most probable point (MPP) method. For the MPP method the user provides the following inputs:
+The default local reliability method is inverse reliability using the first-order reliability approximation (FORM) method. For the FORM method the user provides the following inputs:
 
 .. _figLocalMPP:
 
@@ -38,7 +38,7 @@ The default local reliability method is the most probable point (MPP) method. Fo
 
 2. The second input involves the user selecting the integration approach for computing probabilities at the MPP. These can be selected to be first-order or second-order integration. 
 
-3. Finally the user selects either response levels or probability level from a drop down menu. The user then provides these levels in the line edit to the right of the pull down menu.
+3. Finally the user selects either response levels (for forward reliability analysis) or probability level (for inverse reliability analysis) from a drop down menu. The user then provides these levels in the line edit to the right of the pull down menu.
 
 .. warning::
    

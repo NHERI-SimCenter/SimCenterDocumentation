@@ -27,13 +27,13 @@ The ``Train GP Surrogate Model`` module is used to construct a Gaussian process 
      - dataset: :math:`\{\boldsymbol{y^{(1)},y^{(2)}, ... ,y^{(N)}}\}`
 
 
-**Case 1 (Sampling and Simulation)**: User provides lower and upper bounds of each random variable (RV) and a simulation model. quoFEM will find the best training points sequentially by the adaptive **design of experiments** (Adaptive DoE) strategies until the model converges or reaches a user-specified computational tolerance. 
+**Case 1 (Sampling and Simulation)**: User provides lower and upper bounds of each random variable (RV) and a simulation model. quoFEM will find the best training points sequentially by the adaptive **design of experiments** (DoE) strategies until the model converges or reaches a user-specified computational tolerance. 
 
 **Case 2 (Import RV Dataset and run Simulation)**: User provides sample population of RVs as a separate text file. quoFEM will run simulations to get QoI values and build a surrogate model. 
 
 **Case 3 (Import both RV and QoI Dataset)**:  User provides sample population of RVs and QoIs. quoFEM will not run any simulations and build a surrogate model purely based on the provided dataset.
 
-.. list-table:: quoFEM workflow       
+.. list-table:: quoFEM workflow (DoE: Design of experiments)      
    :widths: 2 5 5 5
    :header-rows: 1
    :align: center
@@ -92,7 +92,7 @@ When the **Training Dataset** option is set to the ``Sampling and Simulation``, 
 
 * **Random Seed**: Seed of the random number generator
 * **Parallel excution**: This engine implemented multiprocessing (local) or mpi4py (remote) python packages to run parallel execution.
-Note that the results from the parallel and serial run may not be exactly the same because parallel execution sets the number of batch DoE in order to maximize the use of resources (Default DoE interval: 5)
+Note that the results from the parallel and serial run may not be exactly the same because parallel execution sets the number of batch design of experiments (DoE) in order to maximize the use of resources (Default DoE interval: 5)
 
 User can also activate the **Advanced Options for Gaussian Process Model**
 
@@ -105,10 +105,10 @@ User can also activate the **Advanced Options for Gaussian Process Model**
 
    Sampling and Simulation - Case 1
 
-* **Kernel function**: Correlation function for Gaussian process regression. Matern5/2 function is the default, and Matern3/2, Radial Basis, and Exponential functions are additionally supported.
+* **Kernel function**: Correlation function for Gaussian process regression. Matern5/2 function is the default, and Matern3/2, Radial Basis, and Exponential functions (exponent :math:`\gamma=1`) are additionally supported. (For details, please refer to `chapter 4 <http://gaussianprocess.org/gpml/chapters/RW4.pdf>`_ of the book Gaussian Processes for Machine Learning)
 * **Add Linear Trend Function**: When increasing or decreasing trend is expected over the variables domain, a linear trend function may be introduced. The default is unchecked, ie. no trend function.
 * **Log-space Transform of QoI**: When the user can guarantee that the response quantities are always greater than 0, user may want to introduce a surrogate model in log-transformed space of QoI. The default is unchecked, ie. original physical coordinate.
-* **Design of Experiments options**: User may select the Adaptive DoE method and the number of the initial design of experiments (DoE) manually. The default is "none" and the default number of DoE is 4 times the number of random variables.
+* **Design of Experiments options**: User may manually select the design of experiments (DoE) method and the number of the initial DoE. The default is "none" and the default number of DoE is 4 times the number of random variables.
 * **Nugget Variances**: User may define nugget variances or bounds of the nugget variances if needed. The default is "optimize".
 
 Additionally, users may populate the initial samples directly from data files by activating **Start with Existing Dataset**
@@ -329,7 +329,7 @@ Once the training is completed, the following three verification measures are pr
    Well-trained surrogate (left) and poorly trained surrogate (right) models
 
 .. Note:: 
-     Since these validation measures are calculated from the cross-validation predictions, they can be **biased**, particularly when highly localized nonlinear range exists in actual response surface and those regions are not covered by the training samples. The introduction of adaptive DoE helps to suppress the bias by enabling the targeted selection of simulation points around potentially faulty regions.
+     Since these validation measures are calculated from the cross-validation predictions, they can be **biased**, particularly when highly localized nonlinear range exists in actual response surface and those regions are not covered by the training samples. The introduction of adaptive design of experiments helps to suppress the bias by enabling the targeted selection of simulation points around potentially faulty regions.
 
 
 .. Warning:: 
@@ -339,6 +339,11 @@ Once the training is completed, the following three verification measures are pr
 Saving Options
 --------------
 * **Save GP Model**: The constructed surrogate model is saved. Two files and a folder will be saved, which are the **SurroateGP Info File** (default name: ``SimGpModel.json``), **SurroateGP model file** (default name: ``SimGpModel.pkl``), and **Simulation template directory** that contains the simulation model information (``templatedir_SIM``). **IMPORTANT**: User may NOT change the name of the template directory ``templatedir_SIM``.
+
+.. warning::
+
+   Do not place above surrogate model files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!
+
 * **Save GP Info**: This is a report generated for user reference. It contains the GP model parameter and other information. The default file name is ``GPresults.out``.
 * **RV Data**, **QoI Data**:It saves the samples of RV and QoI. The default file names are ``X.txt`` and ``Y.txt``, respectively. **IMPORTANT**: To continue surrogate modeling with additional simulations, save the RV and QoI sample files using this button and import them as initial points. Refer to the 'Start with Existing Dataset' option in Case 1.
 

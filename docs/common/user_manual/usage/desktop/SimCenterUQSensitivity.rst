@@ -24,8 +24,6 @@ In the SimCenterUQ engine, sensitivity indices are estimated by Gaussian mixture
 
 .. note::
 
-   - The numerical results of global sensitivity analysis may show negative values due to the sampling variability.
-   - The numerical results of Eq. :eq:`Sbound` for uncorrelated inputs may not hold due to the sampling variability and approximation errors. If this error is very high, the sensitivity index may not be reliable. However, the sensitivity rank between variables is relatively robust.
    - When a constant variable is defined, the sensitivity analysis algorithm will ignore the variable.
    - If "NaN" is written in the FEM output script (`results.out`) instead of a number SimCenterUQ engine will exclude this samples from the sensitivity analysis. This may be useful when one wants to get 'condition' sensitivity indices, i.e. conditional to non-NaN cases.
 
