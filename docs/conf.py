@@ -75,7 +75,8 @@ extensions =  [
     "sphinx.ext.autodoc",
     "crate.sphinx.csv",
     "sphinx_panels",
-    "sphinxcontrib.spelling",
+    #"sphinxcontrib.spelling",
+    'sphinx_toolbox.collapse',
 ]
 
 source_suffix = {
@@ -557,6 +558,8 @@ elif app_name == "EE-UQ":
                 "eeuq-0003",
                 "eeuq-0004",
                 "eeuq-0005",
+                "eeuq-0006",
+                "eeuq-0007",
             ]
         }
     )

@@ -7,7 +7,7 @@ Surrogate Modeling
 .. Note:: 
      Surrogate modeling functionality of quoFEM is built upon `GPy <https://sheffieldml.github.io/GPy/>`_ library (available under BSD 3-clause license), an opensource python framework for Gaussian process modeling developed in the Sheffield machine learning group. 
 
-The ``Train GP Surrogate Model`` module is used to construct a Gaussian process (GP) based **surrogate model** that substitutes expensive computational **simulation models** or physical experiments. Consider a simulation model, with input random variables (or parameters) :math:`\boldsymbol{x}` and output quantity of interests, denoted as :math:`\boldsymbol{y}=f(\boldsymbol{x})`. A surrogate model for the corresponding simulation model can be built by different user-provided information types:
+The ``Train GP Surrogate Model`` module is used to construct a Gaussian process (GP) based **surrogate model** that substitutes expensive computational **simulation models** or physical experiments. Consider a simulation model, with input random variables (or parameters) :math:`\boldsymbol{x}` and output quantity of interests, denoted as :math:`\boldsymbol{y}=f(\boldsymbol{x})`. A surrogate model for the corresponding simulation model can be built by different user-provided information types (RV-random variables, QoI-quantities of interest):
 
 .. list-table:: User-provided information types      
    :widths: 3 10 10
@@ -27,7 +27,7 @@ The ``Train GP Surrogate Model`` module is used to construct a Gaussian process 
      - dataset: :math:`\{\boldsymbol{y^{(1)},y^{(2)}, ... ,y^{(N)}}\}`
 
 
-**Case 1 (Sampling and Simulation)**: User provides lower and upper bounds of each random variable (RV) and a simulation model. quoFEM will find the best training points sequentially by the adaptive **design of experiments** strategies until the model converges or reaches a user-specified computational tolerance. 
+**Case 1 (Sampling and Simulation)**: User provides lower and upper bounds of each random variable (RV) and a simulation model. quoFEM will find the best training points sequentially by the adaptive **design of experiments** (Adaptive DoE) strategies until the model converges or reaches a user-specified computational tolerance. 
 
 **Case 2 (Import RV Dataset and run Simulation)**: User provides sample population of RVs as a separate text file. quoFEM will run simulations to get QoI values and build a surrogate model. 
 
@@ -153,7 +153,7 @@ where
 
 Case 2: Import RV Dataset and run Simulation
 ----------------------------------------------
-When the **Training Dataset** option is set to ``Import Data File`` AND **Get results from datafile** check box is unchecked, quoFEM will run simulations to get result (QoI)  values for imported RV locations and build a surrogate model.
+When the **Training Dataset** option is set to ``Import Data File`` AND **Get results from datafile** check box is unchecked, quoFEM will run simulations to get result (QoI) values for imported RV locations and build a surrogate model.
 
 .. _figSim5:
 
