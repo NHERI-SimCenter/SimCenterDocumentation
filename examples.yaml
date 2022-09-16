@@ -1,52 +1,63 @@
-RTM: 
-  data-file:
-    - ../quoFEM/Examples/index.json
-    - ../R2DTool/Examples/index.json
-    - ../EE-UQ/Examples/index.json
-      #  include-item:
-      #    - qfem-0001
-      #    - qfem-0002
-      #    - qfem-0005
-      #    - qfem-0003
-      #    - qfem-0004
-      #    - qfem-0009
-      #    - qfem-0008
-      #    - qfem-0014
-      #    - qfem-0015
-      #      #- eeuq-000*
-      #    - r2dt-000*
-      #
+#RTM: 
+#  data-file:
+#    - ../quoFEM/Examples/index.json
+#    - ../R2DTool/Examples/index.json
+#    - ../EE-UQ/Examples/index.json
+#
+pelicun: {}
+PBE:
+  include-item:
+    - pbdl-0002
+    - pbdl-0003
 
 quoFEM:
-  data-file:
-    - ../quoFEM/Examples/index.json
   include-item:
-    ? qfem-0001
-    ? qfem-0002
-    ? qfem-0005
-    ? qfem-0003
-    ? qfem-0004
-    ? qfem-0009
-    ? qfem-0008
-    ? qfem-0014
-    ? qfem-0015    
+    - qfem-0001
+    - qfem-0002
+    - qfem-0005
+    #- qfem-0003
+    #- qfem-0004
+    - qfem-0007
+    - qfem-0009
+    #- qfem-0008
+    - qfem-0014
+    - qfem-0015    
+    - qfem-0016
+    - qfem-0017
+    # - qfem-0018
+    - qfem-0019
+    - qfem-0023
 
 WE-UQ:
   include-item:
-    ? weuq-0001
+    - weuq-0001
+    - weuq-0007
 
 
 EE-UQ:
   include-item:
-    ? eeuq-000*
+    - eeuq-0001
+    - eeuq-0002
+    - eeuq-0003
+    - eeuq-0004
+    - eeuq-0005
+    - eeuq-0006
+    - eeuq-0007
 
 R2DTool:
   include-item:
-    - r2dt-0006
-    - r2dt-0003
-    - r2dt-0007
-    - r2dt-0001
-    - r2dt-0002
+  - E1BasicHAZUS
+  - E2MDOFBuildingResponse
+  - E3PhysicsBasedGroundMotions
+  - E4OpenSeesPyFEM
+  - E5GroundShakingAndLiquefaction
+  - E6ShakemapScenario
+  - E7HurricaneWindWater
+  - E8HurricaneWind
+  - E9Tsunami
 
-Hydro: {}
+HydroUQ:
+  include-item:
+    - hdro-0001
+
 

@@ -1,0 +1,11 @@
+{
+    "type": "object",
+    "properties": {
+        "target": {"type": "string"},
+	"items": {"type": "array"},
+	"implementation": {}
+    },
+    "required": [
+	"target"
+    ]
+}

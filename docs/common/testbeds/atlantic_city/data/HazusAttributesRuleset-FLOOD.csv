@@ -1,0 +1,37 @@
+Attribute,Valid Entries,Input Variable,Input Variable Source,Ruleset,,
+FloodType,"Riverine/A-Zone, Coastal/A-Zone, 
+Coastal/V-Zone",FloodZone,Custom Building Inventory,"IF FloodZone=(6105 or 6108), FloodType = Riverine/A-Zone
+ELSEIF FloodZone (6103 or 6104 or 6106 or 6107 or 6109), FloodType = Coastal/A-Zone
+ELSEIF FloodZone= (6101 or 6102), FloodType = Coastal/V-Zone",,
+FirstFloorElev,Floating Point Number,"FloodType, FirstFloorHt1",Custom Building Inventory,"IF FloodType = (Riverine/A-Zone or Coastal/A-Zone), FirstFloorElev=FirstFloorHt1
+IF FloodType = Coastal/V-Zone, FirstFloorHt1 - 1",,
+PostFIRM,"Yes, No","YearBuiltNJDEP, City",Custom Building Inventory,"IF City=Absecon & YearBuilt>1976, PostFIRM=yes
+IF City=Atlantic City & YearBuilt>1971, PostFIRM=yes
+IF City=Brigantine & YearBuilt>1971, PostFIRM=yes
+IF City=Buena & YearBuilt>1983, PostFIRM=yes
+IF City=Buena Vista & YearBuilt>1979, PostFIRM=yes
+IF City=Corbin City & YearBuilt>1981, PostFIRM=yes
+IF City=Egg Harbor City & YearBuilt>1982, PostFIRM=yes
+IF City=Egg Harbor & YearBuilt>1983, PostFIRM=yes
+IF City=Estell Manor & YearBuilt>1978, PostFIRM=yes
+IF City=Folsom & YearBuilt>1982, PostFIRM=yes
+IF City=Galloway & YearBuilt>1983, PostFIRM=yes
+IF City=Hamilton & YearBuilt>1977, PostFIRM=yes
+IF City=Hammonton & YearBuilt>1982, PostFIRM=yes
+IF City=Linwood & YearBuilt>1983, PostFIRM=yes
+IF City=Longport & YearBuilt>1974, PostFIRM=yes
+IF City=Margate City & YearBuilt>1974, PostFIRM=yes
+IF City=Mullica & YearBuilt>1982, PostFIRM=yes
+IF City=Northfield & YearBuilt>1979, PostFIRM=yes
+IF City=Pleasantville & YearBuilt>1983, PostFIRM=yes
+IF City=Port Republic & YearBuilt>1983, PostFIRM=yes
+IF City=Somers Point & YearBuilt>1982, PostFIRM=yes
+IF City=Ventnor City & YearBuilt>1971, PostFIRM=yes
+IF City=Weymouth & YearBuilt>1979, PostFIRM=yes",,
+NumberofStories,Integer,NumberofStories1,Custom Building Inventory,N/A,,
+BasementType,"Basement, Split-Level Basement, No Basement","FoundationType, SplitLevel",Custom Building Inventory,"IF SplitLevel=Yes & FoundationType=3504 , FoundationType=Split-Level Basement 
+ELSEIF FoundationType =(3501 or 3502 or 3503 or 3505 or 3506 or 3507), BasementType=No Basement
+ELSEIF SplitLevel=No & FoundationType=3504, FoundationType=Basement",,
+OccupancyType,"SF1XA, SF1XV, SF2XA, SF2XV, SF2BA, SF2BV, SF2SA, SF2SV, MH, APT, HOT, NURSE, RETAIL, WHOLE, SERVICE, OFFICE, BANK, HOSP, MED, REC, THEAT, GARAGE, INDH, INDL, CHEM, PROC, CONST, AGRI, RELIG, CITY, EMERG, SCHOOL",HazusClass-IN,Custom Building Inventory,N/A,,
+Duration,"Short, Long",None,None,Short,,
+Wave Velocity,Floating Point Number,SurgeDepth,Hazard Module,WaveVel=(32.2*SurgeDepth)^0.5,,

@@ -1,0 +1,6 @@
+BuildingDescription,HazusClass-W,OccupancyClass
+"Wood, Single-Family Homes 1 story",WSF1,RES1
+"Wood, Single-Family Homes 2+ stories",WSF2,RES1
+"Wood, Multi-Unit/Hotel/Motel 1 story",WMUH1,"RES3, COM1"
+"Wood, Multi-Unit/Hotel/Motel 2 stories",WMUH2,"RES3, COM1"
+"Wood, Multi-Unit/Hotel/Motel 3+ stories",WMUH3,"RES3, COM1"

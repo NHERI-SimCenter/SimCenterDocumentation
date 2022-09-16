@@ -2,7 +2,9 @@
 
 This is the repository where documentation for SimCenter software is maintained. The current documentation is in restructred text format and is built using the sphinx python module.
 
-Contributors should follow the [style reference](docstyle.md) for guidelines on documentation formatting.
+Contributors should follow the [style reference](Help/docstyle.md) for guidelines on documentation formatting.
+
+Build instructions are outlined below, with further details provided [here](Help/make.md).
 
 ## Directory Structure
 
@@ -62,8 +64,10 @@ where `<app>` is one of:
 | `pbe`     |  PBE
 | `we`      |  WE-UQ
 | `ee`      |  EE-UQ
+| `rtm`     |  Requirements matrix
 
 and `<target>` is one of:
+
 | `<target>` | description |
 |------------|-------------|
 |  `web`    | Generate HTML output in the app publishing repository (i.e., `../<app-name>-Documentation/`).
@@ -107,3 +111,4 @@ The particular application must be selected by un-commenting the appropriate `ap
     Note, however, that in order to achieve a proper build, one may need to run the `make <app> latex` target several times in succession before running `make <app> pdf`.
 
 > Note: Legacy build scripts in the `docs` directory do not sync example files from their source repositories.
+

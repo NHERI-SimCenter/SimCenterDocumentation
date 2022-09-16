@@ -36,7 +36,8 @@ The UI of |s3harkName| consists of the following components:
 .. _profileColumn:
 
 Soil Column Graphic
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^
+
 The first graphic on the left of the panel shows a visualization of the soil column created. 
 Each layer has a different randomly generated color.
 When the user add or delete a soil layer, this graphic will refresh. 
@@ -44,13 +45,13 @@ When the user add or delete a soil layer, this graphic will refresh.
 .. _mesh:
 
 FE Mesh Graphic
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 The second graphic on the left shows the finite element mesh and profile plots. 
 Upon the finish of the analysis, selecting any of the tabs on the right inside this graphic (i.e., PGA, :math:`\gamma max`, maxDisp, maxRu, maxRuPWP) 
 will show various results from the simulation at the mesh points.
 
 Operations Area
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^
 The right side of this area shows some information of the created soil column, such as the total height and number of soil layers.
 The user also finds the Ground Water Table (GWT) input field, plus and minus buttons in this area.
 If the user pressed the plus button, a layer will be added below a currently selected layer. 
@@ -62,7 +63,7 @@ The GWT input field allows the user to specify the level of the ground water tab
    - Variables are assumed to have m, kPa, and kN units in |s3harkName|.
 
 Soil Layer Table
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^
 This table is where the user provides the characteristics of soil layers, such as layer thickness, density, Vs30, material type, and element size in the finite element mesh.
 
 Single click at a cell will make a soil layer selected, which will highlight the layer using green color in the table.
@@ -76,11 +77,11 @@ Double click a cell to edit it in the table.
 If you change the ``Material`` cell of a layer, the :ref:`Layer Properties Tab <layerPropertiesTab>` will change correspondingly.
 
 Tabbed Area
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^
 This area contains the three tabbed widgets described below.
 
 Configure Tab
-""""""""""""""""
+"""""""""""""
 This tab allows the user to specify the paths to the OpenSees executable and a ground motion file that represent the ground shaking at the
 bedrock. The rock motion file must follow the SimCenter event format. 
 Examples of SimCenter event files are available in the :download:`motion demos <https://nheri-simcenter.github.io/s3hark-Documentation/_downloads/4aad74c55afc9d112aa4bb1963afa7f7/DemoGM.zip>`. 
@@ -95,7 +96,7 @@ More details about this tab can be found in :ref:`configure`.
 .. _layerPropertiesTab:
 
 Layer Properties Tab
-""""""""""""""""""""""""""""""""
+""""""""""""""""""""
 This tab allows the user to enter additional material properties for the selected soil layer :numref:`layerEditing`.
 
 .. _layerEditing:
@@ -109,7 +110,7 @@ This tab allows the user to enter additional material properties for the selecte
 .. _responseTab:
 
 Response Tab
-""""""""""""""""
+""""""""""""
 Once the site response analysis has been performed, this tab provides information about element and nodal time varying response quantities. See :numref:`response`.
 
 .. _response:
@@ -122,7 +123,7 @@ Once the site response analysis has been performed, this tab provides informatio
 
 
 Analyze Button
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^
 This **Analyze** button is located at the top-right corner of the UI and shall be used to run the simulation locally on your computer. 
 A progress bar will show up at the bottom of the application indicating the status of the analysis. 
 Upon the finish of the simulation, a message will be displayed (:numref:`done`). 
@@ -136,7 +137,7 @@ Upon the finish of the simulation, a message will be displayed (:numref:`done`).
 	Analysis is done
 
 View Results
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^
 Click the button to dismiss the message window, the response tab will be activated.
 
 The user can click on any element in the mesh graphic, the selected element will be highlighted in red and the selected nodes will be pointed out by blue arrows. 
@@ -165,7 +166,7 @@ This allows the user to review the ground motion predicted at selected nodes :nu
 .. _configure:
 
 Configure
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^
 
 
 
@@ -231,12 +232,14 @@ For flat ground :math:`\alpha` and :math:`\beta` should be set as 0.
 
 
 Modeling Spatial Variability Uncertainty of Soil
------------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 The most recent version of |s3harkName| allows user to include spatial variability in the definition of soil profile.
 This functionality is achieved using several newly added SimCenter backend python scripts.
 
 Generating Gaussian Random field
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""
+
 Physical properties of soils vary from place to place within a soil deposit due to varying geologic formation
 and loading histories such as sedimentation, erosion, transportation, and weathering processes.
 This spatial variability in the soil properties cannot be simply described by a mean and variance since
@@ -296,7 +299,8 @@ Enumerated lists:
    - A reasonable mesh resolution is recommended. Selection of element size should consider several factors, including but not limited to, layer shear wave velocity (for frequency resolution), corelation length (for random field resolution), and computation efficiency.
 
 Calibration of Constitutive Model
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+"""""""""""""""""""""""""""""""""
+
 Since soil properties, instead of material input parameters, are randomized, it is imperative to choose representative input parameters for constitutive models based on the random variable chosen by user.
 An independent calibration process of constitutive model should be carried out carefully. Currently, a couple of pre-calibrated correlations are included in |s3harkName|, including PM4Sand and PDMY03 based on relative
 density (:math:`D_R`). The detailed corelation can be found in *calibration.py*. The user is also encouraged to modify the script to include their own calibration of constitutive models.
@@ -313,7 +317,7 @@ the analysis will be carried out using SimCenter workflow. As a result, profile 
    - Currently only **2D** plain-strain materials (including PDMY03 and ElasticIsotropic) are supported when using random field. Therefore, 1-component motion is required.
 
 Elastic Isotropic
-""""""""""""""""""""""""""""""""
+"""""""""""""""""
 Shear wave velocity (Vs) can be selected to be randomized for this material. Subsequently, Young's modulus is calculated based the stochastic shear velocity profile at the center of each element. No special calibration is required.
 
 .. figure:: ./figures/s3harkFigures/Elastic_Random.png
@@ -326,7 +330,7 @@ Shear wave velocity (Vs) can be selected to be randomized for this material. Sub
 
 
 PM4Sand
-""""""""""""""""""""""""""""""""
+"""""""
 .. figure:: ./figures/s3harkFigures/PM4Sand_Random.png
     :scale: 60 %
     :align: center
@@ -412,7 +416,7 @@ CRR in a calibration process. The predictive equation can be used to provide goo
 
 
 PressureDenpendentMultiYield03
-""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""
 .. figure:: ./figures/s3harkFigures/PDMY03_Random.png
     :scale: 60 %
     :align: center

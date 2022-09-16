@@ -81,7 +81,7 @@ Once Python is installed, you need to extend it by installing the following pack
 
   When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of  some of the external applications that you have installed as **OpenSees** and **dakota** do not provide installers that automatically do this when they are installed. Other applications, like **Tcl** provide scripts that you invoke to do it. In short you have to edit the file appropriate to the shell you are using.
 
-  To find which shell prgram you are using when you issue commands inside the terminal window, type the following in a terminal window:
+  To find which shell program you are using when you issue commands inside the terminal window, type the following in a terminal window:
 
   .. code:: none
    

@@ -293,9 +293,12 @@ TInF/validation/ExampleInput/building/constant/.DS_Store
 TInF/validation/ExampleInput/building/system/.DS_Store
 TInF/RST/build
 docs/web
-.DS_STORE
+*.DS_STORE
 *.pyc
 
 build/
 
 .idea
+fmkExamples
+.DS_Store
+web/
