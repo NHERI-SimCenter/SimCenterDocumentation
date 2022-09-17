@@ -698,11 +698,12 @@ elif app_name == "WE-UQ":
 """
 
 
-elif app_name == "pelicun":
 
-    project = "pelicun"
-    copyright = f"(c) 2018-{str(datetime.today().year)}, Leland Stanford Junior University and The Regents of the University of California"
-    author = "Adam Zsarnóczay"
+elif app_name == 'pelicun':
+
+    project = 'pelicun'
+    copyright = f'(c) 2018-{str(datetime.today().year)}, Leland Stanford Junior University and The Regents of the University of California'
+    author = 'Adam Zsarnóczay, Kuanshi Zhong'
 
     tags.add("pelicun")
 
