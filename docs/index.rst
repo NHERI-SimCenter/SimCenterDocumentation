@@ -12,7 +12,7 @@
 
    .. only:: PBE_app
 
-      The |full tool name| (|app|) is an open-source research application that can be used to predict the performance of a building subjected to earthquake events. The application is focused on quantifying building performance given the uncertainties in models, earthquake loads, and analysis. The computations are performed in a workflow application that will run on either the users local machine or on a high performance computer made available by |DesignSafe|.
+      The |full tool name| (|app|) is an open-source research application that can be used to characterize the performance of a building subjected to excitation from a natural hazard event. The application quantifies building performance in a probabilistic approach allowing researchers to consider uncertainties in event intensity, structural behavior, component quantities and their limit state capacities as well as the consequences of exceeding their limit states. The application automatically prepares a simulation workflow description and runs the corresponding computations on SimCenter's simulation engine using sWHALE. The structural response estimation part of the workflow can run on a high performance computer made available by |DesignSafe|. The performance assessment part always runs locally.
 
    .. only:: EEUQ_app
 
@@ -70,6 +70,7 @@
    :R2D:common/user_manual/usage/desktop/releasenotes
    :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
    :EEUQ:common/user_manual/usage/desktop/earthquake/releasenotes
+   :PBE:common/user_manual/usage/desktop/PBE/releasenotes
 	  
 .. _lbl-user-manual:
 
