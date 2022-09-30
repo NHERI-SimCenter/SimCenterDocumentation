@@ -1,8 +1,8 @@
 UF.1," ""Ability to use basic Monte Carlo and LHS methods""",SP," ""M"""," ""Implemented"""," "":qfem-0001:`/`"""," "":eeuq-0001:`/`""", -," "":pbdl-0001:`/`""", -, -
 UF.2," ""Ability to use Gaussian Process Regression""",SP," ""M"""," ""Implemented""", -, -, -, -, -, -
-UF.3," ""Ability to use Own External UQ Engine""",SP," ""M""", -, -, -, -, -, -, -
+UF.3," ""Ability to use Own External UQ Engine""",SP," ""M"""," ""Implemented""", -, -, -, -, -, -
 UF.4," ""Ability to use Multi-Scale Monte Carlo""",SP," ""M""", -, -, -, -, -, -, -
-UF.5," ""Ability to use Multi-Fidelity Models""",SP," ""M""", -, -, -, -, -, -, -
+UF.5," ""Ability to use Multi-Fidelity Models""",SP," ""M""","""In Progress""", -, -, -, -, -, -
 UR.1," ""Ability to use First Order Reliability method""",SP," ""M"""," ""Implemented"""," "":qfem-0003:`/`""", -, -, -, -, -
 UR.2," ""Ability to use Second Order Reliability method""",SP," ""M"""," ""Implemented""", -, -, -, -, -, -
 UR.3," ""Ability to use Surrogate Based Reliability""",SP," ""M"""," ""Implemented""", -, -, -, -, -, -
