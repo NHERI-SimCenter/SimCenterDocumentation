@@ -18,3 +18,4 @@ Technical Manual
    :EEUQ:spatial_correlation
    :PBE:spatial_correlation
    :R2D:spatial_correlation
+   :R2D:hazard_occurrence
