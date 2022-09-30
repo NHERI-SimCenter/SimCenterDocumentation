@@ -1,6 +1,6 @@
 # SimCenterDocumentation
 
-This is the repository where documentation for SimCenter software is maintained. The current documentation is in restructred text format and is built using the sphinx python module.
+This is the repository where documentation for SimCenter software is maintained. The current documentation is in reStructuredText format and is built using the Sphinx Python module.
 
 Contributors should follow the [style reference](Help/docstyle.md) for guidelines on documentation formatting.
 
@@ -44,7 +44,7 @@ or
 pip3 install -r requirements.txt
 ```
 
-> Note: A Python 3 installation must be available in your terminal environment. The pip command is used on Windows and pip3 on a Mac. Iy you do not have admin rights, add a -U before the -r.
+> Note: A Python 3 installation must be available in your terminal environment. The pip command is used on Windows and pip3 on a Mac. If you do not have admin rights, add a -U before the -r.
 
 ### 3a Build with Make
 
