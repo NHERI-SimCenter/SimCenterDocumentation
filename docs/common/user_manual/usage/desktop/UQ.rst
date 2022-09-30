@@ -4,13 +4,132 @@ UQ: Uncertainty Quantification
 
 The first selection panel the user must select from and enter data into is the **UQ** tab. It is in this panel that the user selects the **UQ Engine** to use for performing the uncertainty quantification calculations. The **UQ Engine** provides algorithms for solving various types of uncertainty analysis and optimization problems. 
 
+.. role:: uqblue
+
 .. only:: quoFEM_app
 	  
-	  The **UQ Engine** options currently available are Dakota, SimCenterUQ, and UCSD-UQ. Users can also configure quoFEM to use their own UQ methods and algorithms in the quoFEM workflow by selecting the CustomUQ option.
+	The **UQ Engine** options currently available are Dakota, SimCenterUQ, and UCSD-UQ. Users can also configure quoFEM to use their own UQ methods and algorithms in the quoFEM workflow by selecting the CustomUQ option.
+
+	**UQ features at-a-glance**:
+
+	.. panels::
+	    :container: container-lg pb-3
+	    :column: col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2
+
+	    ---
+
+	    .. container:: twocol
+
+	        .. container:: leftside
+
+	         :uqblue:`Forward propagation` 
+	            | Forward propagation generates sample realizations of input random variables (RVs) and output quantity of interests (QoIs) to provide statistics such as mean, variance, skewness, and kurtosis. 
+
+	            | * :ref:`lblDakotaForward` in Dakota   :link-badge:`../../examples/desktop/qfem-0001/README.html,Example1, cls=badge-primary text-white` :link-badge:`../../examples/desktop/qfem-0002/README.html,Example2, cls=badge-primary text-white`
+	            | * :ref:`lblSimForward` in SimCenterUQ   :link-badge:`../../examples/desktop/qfem-0015/README.html,Example, cls=badge-success text-white`
+
+	        .. container:: rightside
+
+		      .. thumbnail:: figures/UQtab/method_forward.png
+	                :width: 25%
+
+	    ---
+
+	    .. container:: twocol
+
+	        .. container:: leftside
+
+	         :uqblue:`Global Sensitivity Analysis`            
+	            | Global sensitivity analysis is used to quantify contribution of each input RV to the uncertainty in an output QoI. Dakota engine provides classical non-parametric estimation based on smart sampling approach and SimCenterUQ engine provides probabilistic model-based approximation. See Dakota user manual and :ref:`here<lbluqSimTechnical>` for theory details.
+
+	            | * :ref:`lblDakotaSensitivity` in Dakota   :link-badge:`../../examples/desktop/qfem-0001/README.html,Example, cls=badge-primary text-white`
+	            | * :ref:`lblSimSensitivity` in SimCenterUQ   :link-badge:`../../examples/desktop/qfem-0009/README.html,Example1, cls=badge-success text-white` :link-badge:`../../examples/desktop/qfem-0023/README.html,Example2, cls=badge-success text-white`
+
+	        .. container:: rightside
+
+	            .. thumbnail:: figures/UQtab/method_sensitivity.png
+	                :width: 25%
+
+	    ---
+	    .. container:: twocol
+
+	        .. container:: leftside
+
+	         :uqblue:`Reliability Analysis`
+	            | Reliability Analysis is performed to estimate the probability of failure, i.e. the probability that a system response (QoI) exceeds a certain threshold level. 
+
+	    	      | * :ref:`lblDakotaReliability` in Dakota   :link-badge:`../../examples/desktop/qfem-0001/README.html,Example, cls=badge-primary text-white`
+
+	        .. container:: rightside
+
+	         .. thumbnail:: figures/UQtab/method_reliability.png
+	                :width: 25%
+
+	    ---
+	    .. container:: twocol
+
+	        .. container:: leftside
+
+	          :uqblue:`Inverse Problem (Bayesian Calibration)`
+	            | Inverse Problem (Bayesian Calibration) is used to calibrate model parameters probabilistically based on Bayesian inference. The probability distributions of the input parameters (RVs) are updated by experimental data. Theory details can be found in Dakota user manual and :ref:`here<lbluqUCSDSimTechnical>`
+
+	    	      | * :ref:`lblInverseProblem` in Dakota
+	    	      | * :ref:`lblUCSDTMCMC` in UCSD-UQ   :link-badge:`../../examples/desktop/qfem-0014/README.html,Example1, cls=badge-danger text-white` :link-badge:`../../examples/desktop/qfem-0019/README.html,Example2, cls=badge-danger text-white`
+
+	        .. container:: rightside
+
+	          .. thumbnail:: figures/UQtab/method_Bayesian.png
+	                :width: 25%
+	    ---
+	    .. container:: twocol
+
+	        .. container:: leftside
+
+	          :uqblue:`Parameter Estimation (Deterministic Calibration)` 
+	            | Parameter Estimation (Deterministic Calibration) estimate the best parameter values of a simulation model that best fit the experimental data, using deterministic optimization algorithms, e.g. Gauss-Newton least squares
+
+	    	      | * :ref:`lblDakotaParameterEstimation` in Dakota   :link-badge:`../../examples/desktop/qfem-0007/README.html,Example1, cls=badge-primary text-white` :link-badge:`../../examples/desktop/qfem-0019/README.html,Example2, cls=badge-primary text-white`
+
+	        .. container:: rightside
+	        
+	          .. thumbnail:: figures/UQtab/method_deterministic.png
+	                :width: 25%
+
+	    ---
+	    .. container:: twocol
+
+	        .. container:: leftside
+
+	         :uqblue:`Surrogate Modeling`
+	            | |app| can be used to train a surrogate model model that substitutes expensive computational simulation models or physical experiments. Theory details can be found in :ref:`here<lbluqSimTechnical>`.
+
+	    	      | * :ref:`lblSimSurrogate` in SimCenterUQ   :link-badge:`../../examples/desktop/qfem-0015/README.html,Example1, cls=badge-success text-white` :link-badge:`../../examples/desktop/qfem-0016/README.html,Example2, cls=badge-success text-white`
+	    	      | * :ref:`lblSimCenterUQPLoM` in SimCenterUQ
+
+	        .. container:: rightside
+	        
+	           .. thumbnail:: figures/UQtab/method_surrogate.png
+	                :width: 25%
+
+	    ---
+	    .. container:: twocol
+
+	        .. container:: leftside 
+
+	         :uqblue:`Custom UQ`
+	           | Custom UQ helps user to plug-in an user-defined UQ algorithm in SimCenter workflow.
+
+	    	     | * :ref:`lblCustomUQ` in CustomUQ engine   :link-badge:`../../examples/desktop/qfem-0017/README.html,Example, cls=badge-success text-white`
+
+	        .. container:: rightside
+	        
+	         .. thumbnail:: figures/UQtab/method_custom.png
+	                :width: 25%
+
 
 .. only:: notQuoFEM
 	  
-	  Presently the only **UQ Engine** option is Dakota.
+	The **UQ Engine** options currently available are Dakota and SimCenterUQ
 
 
 Dakota UQ Engine

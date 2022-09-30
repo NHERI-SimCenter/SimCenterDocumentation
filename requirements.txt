@@ -9,4 +9,5 @@ rendre>0.0.14
 sphinx_panels
 jsonpath2
 sphinxcontrib.spelling==7.2.1
+sphinx_toolbox
 

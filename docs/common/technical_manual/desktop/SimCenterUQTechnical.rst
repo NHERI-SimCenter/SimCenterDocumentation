@@ -1,4 +1,4 @@
-
+.. _lbluqSimTechnical:
 
 Methods in SimCenterUQ Engine 
 *****************************
@@ -105,6 +105,27 @@ using expectation-maximization (EM) algorithm. The mean operation Eq. :eq:`Si` i
    Hu, Z. and Mahadevan, S. (2019). Probability models for data-driven global sensitivity analysis. *Reliability Engineering & System Safety*, 187, 40-57.
 
 
+
+
+Dealing with high-dimensional responses with PCA-PSA
+---------------------------------------------------
+
+When the number of the quantities of interest (QoI) is very large, it is computationally cumbersome to perform above Gaussian fitting independently for each QoI. To promote efficient global sensitivity analysis for such cases, SimCenterUQ provides the 'principal component analysis-based PM-GSA' module, which is referred to as PCA-PSA [Jung2022]_. In this method, the dimension of QoI is first reduced by principal component analysis (PCA), and the conditional variance required to calculate the Sobol indices (the numerators in :eq:`Si` and :eq:`SiT`) is approximately reconstructed from those of the conditional variance/covariance information of the reduced dimension variables. If the high-dimensional QoI has a linear data structure that be reconstructed with a small number of principal components, the computational gain of this approach can be significant. For example, suppose QoI can be reconstructed using 10 principal components. In that case, the Gaussian mixture fitting, which is the most time-consuming step of PM-GSA apart from FEM analysis, needs to be repeated only 10 times per random variable or group of random variables regardless of the actual dimension of QoI. :ref:`This example<qfem-0023>` shows how PCA-PSA can facilitate efficient global sensitivity analysis for a field (time series) QoI.
+
+.. [Jung2022]
+   To be added
+
+
+Aggregated sensitivity index
+-----------------------------
+
+When the quantities of interest (QoI) are given as a vector or field variable, aggregated sensitivity index can provide insight into the system's overall sensitivity characteristics. The aggregated sensitivity index achieves this by calculating the weighted average of the sensitivity indices of each QoI component, where the weights are proportional to the variances of the components [Jung2022]_. Component sensitivity indices are useful for visualization, while the aggregated sensitivity index gives instant intuition on how much each variable influences the system response overall. See :ref:`this example<qfem-0023>`.
+
+
+.. [Jung2022]
+   To be added
+
+
 Global surrogate modeling 
 ============================
 
@@ -148,7 +169,7 @@ Therefore the main tasks of surrogate modeling is (1) to find optimal stochastic
 
 * **Dealing with noisy measurements**
 
-  | In natural hazard applications, often the exact observations of :math:`\boldsymbol{y}` are not available and only the noisy observations :math:`\boldsymbol{y^{obs}}` are available:
+	| In natural hazard applications, often the exact observations of :math:`\boldsymbol{y}` are not available and only the noisy observations :math:`\boldsymbol{y^{obs}}` are available:
 
 	.. math::
 		:label: GP
@@ -156,7 +177,7 @@ Therefore the main tasks of surrogate modeling is (1) to find optimal stochastic
 			\boldsymbol{y^{obs}}=\boldsymbol{y} + \boldsymbol{\varepsilon} =f^{\rm{ex}} (\boldsymbol{x}) + \boldsymbol{\varepsilon}
 
 
-  | where a common assumption is that the measurement noise, :math:`\boldsymbol{\varepsilon}`, follows a white Gaussian distribution (i.e. :math:`\varepsilon` is unbiased, follows a normal distribution with variance :math:`\tau`, and is independent of other observation noises). Additionally since the noise level is often unknown, :math:`\tau` is also calibrated along with :math:`\beta` and :math:`K(x_i,x_j)`. In such settings, surrogate model estimation will not interpolate the observation outputs :math:`\boldsymbol{y^{obs}}`, but instead make a regression curve passing through the optimal estimation of the true underlying outputs :math:`\boldsymbol{y}`. Additional to the measurement noise, a mild amount of inherent uncertainty in the simulation model (mild compared to a global trend) can be accounted for in terms of the same noise parameter :math:`\varepsilon`.
+	| where a common assumption is that the measurement noise, :math:`\boldsymbol{\varepsilon}`, follows a white Gaussian distribution (i.e. :math:`\varepsilon` is unbiased, follows a normal distribution with variance :math:`\tau`, and is independent of other observation noises). Additionally since the noise level is often unknown, :math:`\tau` is also calibrated along with :math:`\beta` and :math:`K(x_i,x_j)`. In such settings, surrogate model estimation will not interpolate the observation outputs :math:`\boldsymbol{y^{obs}}`, but instead make a regression curve passing through the optimal estimation of the true underlying outputs :math:`\boldsymbol{y}`. Additional to the measurement noise, a mild amount of inherent uncertainty in the simulation model (mild compared to a global trend) can be accounted for in terms of the same noise parameter :math:`\varepsilon`.
 
 
 * **Nugget effect: artificial noise for numerical stability**
@@ -284,7 +305,7 @@ In the case where bounds of input variables and a simulator model is provided (C
 
 However, as shown in the figure, adaptive DoE requires multiple optimization turns to find the optimal surrogate model parameters as well as the next optimal DoE. Therefore, it is noted that the adaptive DoE is efficient only when model evaluation time is significantly greater than the optimization time. 
 
-**Adaptive DoE algorithm: IMSEw, MMSEw [Kyprioti2020]_**
+**Adaptive DoE algorithm: IMSEw, MMSEw** ([Kyprioti2020]_)
 
 The optimal design points can be selected by finding arguments that maximize (or minimize) the so-called score function. The score function in global surrogate modeling is often designed to predict the amount of reduced (or remaining) variance and bias after adding the new sample points. While there are many variations of the score function [Fuhg2020]_, in quoFEM, the modified integrated mean squared error (IMSE) from Kyprioti *et al.* (2020) is introduced as:
 

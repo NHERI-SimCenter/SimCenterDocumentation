@@ -4,7 +4,7 @@
 Reliability Analysis
 ********************
 
-Reliability methods are another class of probabilistic algorithms used for quantifying the effect of uncertainties in simulation input on response metrics of interest. These methods, unlike forward methods, provide PDFs and CDFs about user specified response and probability levels, i.e. given a set of uncertain input variables, they model the probability that the response output is below or above a certain level.  As a consequence of concentrating on only certain response outputs, these models are often more efficient when calculating responses in the tails of the response distributions (events with low probability) since the number of samples required by a forward method to resolve a low probability can be prohibitive.
+Reliability methods are another class of probabilistic algorithms used for quantifying the effect of uncertainties in simulation input on response metrics of interest. These methods, unlike forward propagation analysis, provide the probability of response exceeding the user-provided threshold levels, i.e. given a set of uncertain input variables, it estimates the probability of system 'failure' defined as an excessive response. For reliability analysis, it is often more efficient to concentrate samples around the tail region of the response distributions, i.e. generating more events having low occurrence probability but high consequence, since often the number of samples required by naive sampling approach to resolve a low probability can be prohibitive.
 
 Reliability methods can be split into local and global reliability methods and importance sampling-based method, as elaborated in the following sections. 
 

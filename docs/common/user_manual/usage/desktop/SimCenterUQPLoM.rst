@@ -37,7 +37,11 @@ Option 1: Import Data File
 
 Under ``Import Data File`` option, UQ Engine expects users to directly provide the 
 training data matrices. For instance, users can upload tabulated data files for input variables 
-and corresponding output responses, by using the ``Raw Data`` mode.
+and corresponding output responses, by using the ``Raw Data`` mode. Example input and output variables 
+(:download:`PLoM_variables.csv <earthquake/src/plom/PLoM_variables.csv>` and 
+:download:`PLoM_responses.csv <earthquake/src/plom/PLoM_responses.csv>`) are 
+provided for demonstrating the format: (1) the first row describes the variable names, (2) the first 
+variable name starts with "%", and (3) data are tabulated from the second row.
 
 .. figure:: figures/plomImportData.png
    :align: center
