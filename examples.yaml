@@ -15,18 +15,15 @@ quoFEM:
     - qfem-0001
     - qfem-0002
     - qfem-0005
-    #- qfem-0003
-    #- qfem-0004
     - qfem-0007
     - qfem-0009
-    #- qfem-0008
     - qfem-0014
     - qfem-0015    
     - qfem-0016
     - qfem-0017
-    # - qfem-0018
     - qfem-0019
-    - qfem-0023
+    - qfem-0022    
+    - qfem-0023    
 
 WE-UQ:
   include-item:
@@ -55,6 +52,8 @@ R2DTool:
   - E7HurricaneWindWater
   - E8HurricaneWind
   - E9Tsunami
+  - E9Tsunami
+  - E10SiteResponse
 
 HydroUQ:
   include-item:

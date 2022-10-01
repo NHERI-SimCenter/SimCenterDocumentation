@@ -5,10 +5,10 @@
 Release Notes
 *************
 
-Version 4.0
+Version 3.2
 ===========
 
-Version 4.0.0 (Current)
+Version 3.2.0 (Current)
 -----------------------
 
 **Release date:** Sept. 2022
