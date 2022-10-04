@@ -70,7 +70,7 @@ When the **Training Dataset** option is set to the ``Sampling and Simulation``, 
 .. figure:: figures/Surrogate1_SimUQ.jpg
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Input panel for surrogate modeling
 
@@ -101,7 +101,7 @@ User can also activate the **Advanced Options for Gaussian Process Model**
 .. figure:: figures/Surrogate2_SimUQ.jpg
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Sampling and Simulation - Case 1
 
@@ -118,7 +118,7 @@ Additionally, users may populate the initial samples directly from data files by
 .. figure:: figures/Surrogate3_SimUQ.jpg
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Input panel for surrogate modeling
 
@@ -141,7 +141,7 @@ where
 .. figure:: figures/Surrogate4_SimUQ.jpg
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Example of data input files
 
@@ -160,7 +160,7 @@ When the **Training Dataset** option is set to ``Import Data File`` AND **Get re
 .. figure:: figures/Surrogate5_SimUQ.jpg
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Import Data File - Case 2
 
@@ -185,7 +185,7 @@ When the **Training Dataset** option is set to ``Import Data File`` AND **Get re
 .. figure:: figures/Surrogate6_SimUQ.jpg
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Import Data File - Case 3
 
@@ -221,7 +221,7 @@ When a user provides two different models, i.e. high and low fidelity models, th
 .. figure:: figures/SimUQ_surrogate_MF1.png
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Multi-fidelity modeling panel
 
@@ -232,7 +232,7 @@ For each fidelity models, either model, data, or both can be provided for each f
 .. figure:: figures/SimUQ_surrogate_MF2.png
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Providing a simulation model for the high-fidelity response
 
@@ -241,9 +241,28 @@ For each fidelity models, either model, data, or both can be provided for each f
 .. figure:: figures/SimUQ_surrogate_MF3.png
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Directly providing input(RV)-response(QoI) data pair of high-fidelity model
+
+Heteroscedastic Gaussian Process
+------------------------------------
+When the noise in the response surface is expected to vary across the domains, heteroscedastic measurement noise model should be introduced. See the :ref:`theory manual<lbluqSimTechnical>` for more.
+ 
+.. _figSimStoch1:
+
+.. figure:: figures/SimCenterUQ/Surrogate_Hetero.png
+   :align: center
+   :figclass: align-center
+   :width: 1200
+
+   Input fields for heteroscedastic GP
+
+Heteroscedastic Gaussian Process can be trained by selecting ``Heteroscedastic`` option in the ``Nugget Variance`` field. The following two parameters are are requested:
+
+* **Number of samples to be replicated (A)** : Among number of unique samples specified in the ``Number of Samples`` field, decide how many of them will have its replications. 
+* **Number of replications per sample (B)** : Specify how many replications will be generated for the number of samples specified in A. 
+* Without DoE, the total number of simulations required is then ``Number of Samples``:math:`+A(B-1)`.
 
 
 RV (Random Variables) Tab
@@ -255,7 +274,7 @@ RV (Random Variables) Tab
 .. figure:: figures/Surrogate7_SimUQ.jpg
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Example of RV tab
 
@@ -324,7 +343,7 @@ Once the training is completed, the following three verification measures are pr
 .. figure:: figures/Surrogate8_SimUQ.jpg
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Well-trained surrogate (left) and poorly trained surrogate (right) models
 
@@ -352,7 +371,7 @@ Saving Options
 .. figure:: figures/Surrogate9_SimUQ.jpg
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Saving options
 
@@ -362,7 +381,7 @@ Saving Options
 .. figure:: figures/Surrogate10_SimUQ.jpg
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Example outputs from saving options
 
