@@ -74,7 +74,7 @@ The first selection panel the user must select from and enter data into is the *
 	          :uqblue:`Bayesian Calibration`
 	            | Inverse Problem (Bayesian Calibration) is used to calibrate model parameters probabilistically based on Bayesian inference. The probability distributions of the input parameters (RVs) are updated by experimental data. Theory details can be found in Dakota user manual and :ref:`here<lbluqUCSDSimTechnical>`
 
-	    	      | * :ref:`lblInverseProblem` in Dakota
+	    	      | * :ref:`lblDakotaBayesianCalibration` in Dakota
 	    	      | * :ref:`lblUCSDTMCMC` in UCSD-UQ   :link-badge:`../../examples/desktop/qfem-0014/README.html,Example1, cls=badge-danger text-white` :link-badge:`../../examples/desktop/qfem-0019/README.html,Example2, cls=badge-danger text-white`
 
 	        .. container:: rightside
@@ -89,7 +89,7 @@ The first selection panel the user must select from and enter data into is the *
 	          :uqblue:`Deterministic Calibration` 
 	            | Parameter Estimation (Deterministic Calibration) estimate the best parameter values of a simulation model that best fit the experimental data, using deterministic optimization algorithms, e.g. Gauss-Newton least squares
 
-	    	      | * :ref:`lblDakotaParameterEstimation` in Dakota   :link-badge:`../../examples/desktop/qfem-0007/README.html,Example1, cls=badge-primary text-white` :link-badge:`../../examples/desktop/qfem-0019/README.html,Example2, cls=badge-primary text-white`
+	    	      | * :ref:`lblDakotaDeterministicCalibration` in Dakota   :link-badge:`../../examples/desktop/qfem-0007/README.html,Example1, cls=badge-primary text-white` :link-badge:`../../examples/desktop/qfem-0019/README.html,Example2, cls=badge-primary text-white`
 
 	        .. container:: rightside
 	        
@@ -163,8 +163,8 @@ The following categories are available:
    :Hydro:DakotaReliability	 
    :quoFEM:DakotaSensitivity
    :quoFEM:DakotaReliability
-   :quoFEM:DakotaParameterEstimation
-   :quoFEM:DakotaInverseProblems
+   :quoFEM:DakotaDeterministicCalibration
+   :quoFEM:DakotaBayesianCalibration
 
 .. only:: quoFEM_app
 
