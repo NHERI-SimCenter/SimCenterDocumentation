@@ -87,9 +87,10 @@ The first selection panel the user must select from and enter data into is the *
 	        .. container:: leftside
 
 	          :uqblue:`Deterministic Calibration` 
-	            | Parameter Estimation (Deterministic Calibration) estimate the best parameter values of a simulation model that best fit the experimental data, using deterministic optimization algorithms, e.g. Gauss-Newton least squares
+	            | Parameter Estimation (Deterministic Calibration) estimate the best parameter values of a simulation model that best fit the experimental data, using deterministic optimization algorithms, e.g. Gauss-Newton least squares, pattern search, etc.
 
 	    	      | * :ref:`lblDakotaDeterministicCalibration` in Dakota   :link-badge:`../../examples/desktop/qfem-0007/README.html,Example1, cls=badge-primary text-white` :link-badge:`../../examples/desktop/qfem-0019/README.html,Example2, cls=badge-primary text-white`
+	    	      | * :ref:`lblDakotaGradientFreeEstimation` in Dakota
 
 	        .. container:: rightside
 	        
@@ -165,6 +166,7 @@ The following categories are available:
    :quoFEM:DakotaReliability
    :quoFEM:DakotaDeterministicCalibration
    :quoFEM:DakotaBayesianCalibration
+   :quoFEM:DakotaGradientFreeOptimization
 
 .. only:: quoFEM_app
 
