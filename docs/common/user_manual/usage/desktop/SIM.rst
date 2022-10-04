@@ -134,6 +134,23 @@ The input panel for this module is shown in :numref:`fig-EEUQRCFIAPSIM`. Users n
 	:figclass: align-center
 	
 	Concrete Building Model.
+
+
+MDOF-LU Building Model
+---------------------------
+
+The **MDOF-LU** building modeling application creates a hysteretic, multi-degree of freedom (MDOF) model based on the Lu method. As seen in :numref:`fig-MDOFLUModelingPanel`, the following inputs are required:
+
+	#. **stdStiffness:** The lateral stiffness of the building model.
+	#. **stdDamping:** The damping of the building model.
+
+.. _fig-MDOFLUModelingPanel:
+
+.. figure:: figures/MDOFLUBuildingModel.png
+  :align: center
+  :figclass: align-center
+
+  MDOF-LU Building model input panel.
 	
 .. .. bibliography:: ../../../../references.bib
 
