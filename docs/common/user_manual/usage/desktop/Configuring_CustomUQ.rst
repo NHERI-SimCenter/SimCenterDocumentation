@@ -67,7 +67,7 @@ that creates an instance of this class. The *runUQ* method is where the
 customized inputs from the user interface can be accessed and passed to the
 custom UQ driver.
 
-As an example, **UQpy** has been implemented in the customized backend--the source code for the customized *UqRunner* class can be found in the SimCenterBackendApplications repository, linked `here <https://github.com/NHERI-SimCenter/SimCenterBackendApplications/blob/refactorUQ/modules/performUQ/other/UQpyRunner.py>`_, and is also availble in the ``{Path to quoFEM app contents}/applications/performUQ/other`` directory.
+As an example, **UQpy** has been implemented in the customized backend--the source code for the customized *UqRunner* class can be found in the SimCenterBackendApplications repository, linked `here <https://github.com/NHERI-SimCenter/SimCenterBackendApplications/blob/master/modules/performUQ/other/UQpyRunner.py>`_, and is also availble in the ``{Path to quoFEM app contents}/applications/performUQ/other`` directory.
 
 .. note::
 
