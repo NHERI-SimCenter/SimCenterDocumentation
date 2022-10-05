@@ -9,7 +9,15 @@ This tab is designed to collect settings for various loss models. Currently, it 
 Repair consequences
 -------------------
 
-Repair cost and time in pelicun are calculated as a function of the quantity and severity of damage experienced by structural components. There are three settings in this panel that influence these calculations:
+Repair cost and time in pelicun are calculated as a function of the quantity and severity of damage experienced by structural components (:numref:`fig-dl-pelicun-loss-repairs`). There are three settings in this panel that influence these calculations:
+
+.. _fig-dl-pelicun-loss-repairs:
+
+.. figure:: figures/dl_pelicun_loss_repairs.png
+   :align: center
+   :figclass: align-center
+
+   The Repair Consequence model inputs.
 
 
 Global consequences

@@ -3,7 +3,15 @@
 Demand Model
 ============
 
-This tab collects information about the demands that control the performance model of the building. There are multiple ways to define the demands using the information provided in the following areas:
+This tab collects information about the demands that control the performance model of the building (:numref:`fig-dl-pelicun-demands`). There are multiple ways to define the demands using the information provided in the following areas:
+
+.. _fig-dl-pelicun-demands:
+
+.. figure:: figures/dl_pelicun_demands.png
+   :align: center
+   :figclass: align-center
+
+   The Demand model inputs.
 
 Data Source
 -----------

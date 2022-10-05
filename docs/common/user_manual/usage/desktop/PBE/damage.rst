@@ -3,7 +3,16 @@
 Damage Model
 ============
 
-This tab provides settings related to modeling damages. The vulnerability of individual components is already described by the parameters in the database that you selected in the Asset model. This tab provides a convenient way for you to create additional components that represent global vulnerabilities and allows you to specify a damage process that describes the interdependencies in component damages.
+This tab provides settings related to modeling damages (:numref:`fig-dl-pelicun-damage`). The vulnerability of individual components is already described by the parameters in the database that you selected in the Asset model. This tab provides a convenient way for you to create additional components that represent global vulnerabilities and allows you to specify a damage process that describes the interdependencies in component damages.
+
+.. _fig-dl-pelicun-damage:
+
+.. figure:: figures/dl_pelicun_damage.png
+   :align: center
+   :figclass: align-center
+
+   The Damage model inputs.
+
 
 Global Vulnerabilities
 ----------------------

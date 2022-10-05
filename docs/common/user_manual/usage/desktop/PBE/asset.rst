@@ -3,11 +3,11 @@
 Asset Model
 ===========
 
-This tab collects information about the asset model (:numref:`fig-dl-p58-general`). The panel allows the user to define the general building features and assign components to the asset. In an efficienct, low-resolution analysis, only a few components are used to characterize the entire asset (e.g., building-level components in Hazus); while in a high-resolution analysis, such as FEMA P-58, a large number of components are assigned to various parts of the building to provide a more granular description of the consequences of the event.
+This tab collects information about the asset model (:numref:`fig-dl-pelicun-asset`). The panel allows the user to define the general building features and assign components to the asset. In an efficienct, low-resolution analysis, only a few components are used to characterize the entire asset (e.g., building-level components in Hazus); while in a high-resolution analysis, such as FEMA P-58, a large number of components are assigned to various parts of the building to provide a more granular description of the consequences of the event.
 
-.. _fig-dl-p58-general:
+.. _fig-dl-pelicun-asset:
 
-.. figure:: figures/dl_p58_general.png
+.. figure:: figures/dl_pelicun_asset.png
    :align: center
    :figclass: align-center
 
@@ -19,14 +19,6 @@ General Information
 -------------------
 
 This area collects the following general features of the building:
-
-
-.. figure:: figures/dl_p58_general_response.png
-    :align: right
-    :figwidth: 300px
-
-    General information settings.
-
 
 :Number of Stories:
    The number of stories is used to parse the component assignment descriptions when convenience keywords, such as "all" and "roof" are used.
@@ -53,13 +45,6 @@ This area is used to specify the component vulnerability database (i.e., typical
 
 :User Defined:
    Allows you to Choose a file that provides your own set of vulnerability parameters. The |PelicunDocs| explains how to prepare a compatible component vulnerability data file.
-
-
-.. figure:: figures/dl_p58_general.png
-   :align: center
-   :figclass: align-center
-
-   Database settings
 
 
 The **Export DB** button allows you to export the selected built-in database to a file. This is helpful when you plan to make only minor edits to a built-in database and then use it as a User Defined one.
