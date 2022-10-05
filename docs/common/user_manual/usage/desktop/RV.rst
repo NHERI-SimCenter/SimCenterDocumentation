@@ -202,7 +202,7 @@ For each random variable, the user must enter a name and select from the pull do
 
    **Input Type - Dataset**
 
-   User can also define the random variables by providing sample realization data set as shown in the below figure, by selecting ``Dataset`` input type. The data will be fitted to the specified probability distribution model. Note that for some of the bounded distributions, such as beta and truncated exponential, the bounds should additionally be provided.  
+   User can also define the random variables by providing sample realization data set as shown in the below figure, by selecting ``Dataset`` input type. The data will be fitted to the specified probability distribution model. Note that for some of the bounded distributions, such as beta and truncated exponential, the bounds should additionally be provided through the user interface.  
 
    .. _figRVdata
 
