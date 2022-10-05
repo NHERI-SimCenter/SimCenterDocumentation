@@ -175,13 +175,11 @@
 
    :EEUQ:common/developer_manual/how_to_extend/desktop/how_to_extend
    :WEUQ:common/developer_manual/how_to_extend/desktop/how_to_extend
-   :PBE:common/developer_manual/how_to_extend/desktop/how_to_extend
    :quoFEM:common/developer_manual/how_to_extend/desktop/how_to_extend
    :R2D:common/developer_manual/how_to_extend/desktop/how_to_extend
 
    :EEUQ:common/developer_manual/verification/desktop/verification
    :WEUQ:common/developer_manual/verification/desktop/verification
-   :PBE:common/developer_manual/verification/desktop/verification
    :quoFEM:common/developer_manual/verification/desktop/verification
    :R2D:common/developer_manual/verification/desktop/verification
 
