@@ -14,10 +14,9 @@ How To Cite
 	     
 .. only:: PBE_app
 
-   1. Adam Zsarnoczay, Frank McKenna, Charles Wang, Wael Elhaddad, &
-      Michael Gardner. (2019).
-      NHERI-SimCenter/PBE: Release v2.0.0.
-      Zenodo. `DOI: 10.5281/zenodo.3491145 <https://doi.org/10.5281/zenodo.3491145>`_
+   1. Adam Zsarnoczay, Frank McKenna, Charles Wang, Wael Elhaddad, & Michael Gardner. (2022).
+      NHERI-SimCenter/PBE: Release v3.0.0.
+      Zenodo. `DOI: 10.5281/zenodo.1472503 <https://doi.org/10.5281/zenodo.1472503>`_
   
 .. only:: EEUQ_app
 
