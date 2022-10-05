@@ -12,7 +12,7 @@
 
    .. only:: PBE_app
 
-      The |full tool name| (|app|) is an open-source research application that can be used to predict the performance of a building subjected to earthquake events. The application is focused on quantifying building performance given the uncertainties in models, earthquake loads, and analysis. The computations are performed in a workflow application that will run on either the users local machine or on a high performance computer made available by |DesignSafe|.
+      The |full tool name| (|app|) is an open-source desktop application designed to support the assessment of building performance under natural hazard events. The application quantifies performance in a probabilistic approach. Users can consider uncertainties in event intensity, structural behavior, component quantities and their limit state capacities, as well as the consequences of exceeding their limit states (i.e., experiencing damage). The |app| provides a convenient user interface and automatically prepares a simulation workflow description based on the settings provided by the user. This workflow description is used to run the corresponding computations on SimCenter's backend engine using sWHALE. The structural response estimation part of the workflow can run on the high performance computing cluster made available through |DesignSafe|. The performance assessment part runs locally using SimCenter's Pelicun performance assessment engine.
 
    .. only:: EEUQ_app
 
@@ -30,7 +30,7 @@
 
    .. only:: pelicun
 
-      The |full tool name| is an open-source implementation of the |short tool name| framework in a Python package. It provides tools for assessment of damage and losses due to natural disasters. Its basis is the stochastic damage and loss model described in FEMA P58. While FEMA P58 aims to assess the seismic performance of a building, with the |app| we provide a more versatile, hazard agnostic tool that can estimate losses for several types of assets in the built environment.
+      The |full tool name| is an open-source implementation of the PELICUN framework in a Python package. PELICUN is developed as an integrated multi-hazard framework to assess the performance of buildings and other assets in the built environment under natural hazards. Its foundation is the FEMA P58 performance assessment methodology that is extended beyond the seismic performance assessment of buildings to also handle wind and water hazards, bridges and buried pipelines, and performance assessment using vulnerability functions and  damage models based on intensity measures (e.g., Hazus).
 
       .. only:: Hydro
 
@@ -54,7 +54,14 @@
    :quoFEM:common/user_manual/about/quoFEM/aboutQUOFEM
    :pelicun:common/user_manual/about/pelicun/about
 
-   common/front-matter/ack
+   :R2D:common/front-matter/desktop/ack
+   :PBE:common/front-matter/desktop/ack
+   :EEUQ:common/front-matter/desktop/ack
+   :WEUQ:common/front-matter/desktop/ack
+   :Hydro:common/front-matter/desktop/ack
+   :quoFEM:common/front-matter/desktop/ack
+   :pelicun:common/front-matter/pelicun/ack
+
    common/front-matter/license
    common/front-matter/cite.rst	    
    common/front-matter/glossary.rst
@@ -63,6 +70,7 @@
    :R2D:common/user_manual/usage/desktop/releasenotes
    :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
    :EEUQ:common/user_manual/usage/desktop/earthquake/releasenotes
+   :PBE:common/user_manual/usage/desktop/PBE/releasenotes
 	  
 .. _lbl-user-manual:
 
@@ -71,21 +79,21 @@
    :maxdepth: 1
    :numbered: 4
 
-   :pelicun:common/user_manual/installation/pelicun/installation
    :EEUQ:common/user_manual/installation/desktop/installation
    :WEUQ:common/user_manual/installation/desktop/installation
    :PBE:common/user_manual/installation/desktop/installation
    :quoFEM:common/user_manual/installation/desktop/installation
    :R2D:common/user_manual/installation/desktop/installation
    :Hydro:common/user_manual/installation/desktop/installation
+   :pelicun:common/user_manual/installation/pelicun/installation
 
    :EEUQ:common/user_manual/usage/desktop/usage
    :WEUQ:common/user_manual/usage/desktop/usage
-   :Hydro:common/user_manual/usage/desktop/usage	 
+   :Hydro:common/user_manual/usage/desktop/usage
    :PBE:common/user_manual/usage/desktop/usage
    :quoFEM:common/user_manual/usage/desktop/usage
    :R2D:common/user_manual/usage/desktop/usage
-   :pelican:common/user_manual/usage/pelicun/usage
+   :pelicun:common/user_manual/usage/pelicun/usage
 
    :Hydro:common/user_manual/usage/desktop/hydro/resguide
    :Hydro:common/user_manual/usage/desktop/hydro/helpvideo
@@ -95,7 +103,7 @@
    :PBE:common/user_manual/troubleshooting/desktop/troubleshooting
    :quoFEM:common/user_manual/troubleshooting/desktop/troubleshooting
    :R2D:common/user_manual/troubleshooting/desktop/troubleshooting
-   :pelican:common/user_manual/troubleshooting/pelicun/troubleshooting
+   :pelicun:common/user_manual/troubleshooting/pelicun/troubleshooting
    :Hydro:common/user_manual/troubleshooting/pelicun/errors
 
    :EEUQ:common/user_manual/examples/desktop/examples
@@ -107,12 +115,12 @@
 
    :Hydro:common/user_manual/usage/desktop/hydro/bestpractices
 
-   :EEUQ:common/reqments/EEUQ		
+   :EEUQ:common/reqments/EEUQ
    :WEUQ:common/reqments/WEUQ
    :PBE:common/reqments/PBE
    :R2D:common/reqments/R2D
-   :quoFEM:common/reqments/reqQUOFEM	
-   :pelicun:common/user_manual/requirements/pelicun/requirements
+   :quoFEM:common/reqments/reqQUOFEM
+   :pelicun:common/reqments/reqPelicun
 
 
    common/user_manual/bugs
@@ -145,11 +153,14 @@
    :PBE:common/technical_manual/desktop/technical_manual
    :quoFEM:common/technical_manual/desktop/technical_manual
    :R2D:common/technical_manual/desktop/technical_manual
-   :pelicun:common/technical_manual/pelicun/technical_manual
    :Hydro:common/technical_manual/desktop/hydro/hazards/water
    :Hydro:common/technical_manual/desktop/hydro/fvm/fvm
    :Hydro:common/technical_manual/desktop/hydro/swsolver/swsolver
    :Hydro:common/technical_manual/desktop/hydro/cfdsolver/cfdsolver
+
+   :pelicun:common/technical_manual/pelicun/background/background
+   :pelicun:common/technical_manual/pelicun/verification/verification
+
 
 .. _lbl-developer-manual:
 
@@ -161,28 +172,21 @@
    :desktop_app:common/developer_manual/how_to_build/desktop/how_to_build
 
    :desktop_app:common/developer_manual/architecture/desktop/architecture
-   :pelicun:common/developer_manual/architecture/pelicun/architecture
 
    :EEUQ:common/developer_manual/how_to_extend/desktop/how_to_extend
    :WEUQ:common/developer_manual/how_to_extend/desktop/how_to_extend
-   :PBE:common/developer_manual/how_to_extend/desktop/how_to_extend
    :quoFEM:common/developer_manual/how_to_extend/desktop/how_to_extend
    :R2D:common/developer_manual/how_to_extend/desktop/how_to_extend
 
-   :pelicun:common/developer_manual/how_to_extend/pelicun/how_to_extend
-
    :EEUQ:common/developer_manual/verification/desktop/verification
    :WEUQ:common/developer_manual/verification/desktop/verification
-   :PBE:common/developer_manual/verification/desktop/verification
    :quoFEM:common/developer_manual/verification/desktop/verification
    :R2D:common/developer_manual/verification/desktop/verification
-   :pelican:common/developer_manual/verification/pelicun/verification
 
    :desktop_app:common/developer_manual/coding_style/desktop/coding_style
    :pelicun:common/developer_manual/coding_style/pelicun/coding_style
 
    :docTestbeds:common/developer_manual/examples/desktop/examples
-   :pelicun:common/developer_manual/examples/pelicun/examples
 
    :pelicun:common/developer_manual/API/pelicun/API
 
