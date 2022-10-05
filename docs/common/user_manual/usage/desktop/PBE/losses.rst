@@ -36,7 +36,7 @@ Consequence data is decoupled from damage data (i.e., component vulnerabilities)
     Provides the repair consequence data published in the Hazus Earthquake Technical Manual (2011)
 
 :User Defined:
-    Allows you to Choose a file that provides your own set of consequence functions. The Pelicun user manual explains how to prepare a compatible consequence data file.
+    Allows you to Choose a file that provides your own set of consequence functions. The |PelicunDocs| explains how to prepare a compatible consequence data file.
 
 
 Mapping
@@ -50,4 +50,4 @@ Mapping is responsible for linking damaged components with consequence models. T
 :HAZUS:
     For each component, uses the damageable component IDs to extract the relevant information and adds the occupancy type (set in the Asset model panel) to arrive at a corresponding consequence component ID.
 
-You can select the **User Defined** option if you prefer to provide your own mapping. This option allows you to Choose a CSV file that lists the damaged component IDs and the corresponding consequence IDs. The Pelicun user manual provides more information on the standard structure of these CSV files.
+You can select the **User Defined** option if you prefer to provide your own mapping. This option allows you to Choose a CSV file that lists the damaged component IDs and the corresponding consequence IDs. The |PelicunDocs| provides more information on the standard structure of these CSV files.

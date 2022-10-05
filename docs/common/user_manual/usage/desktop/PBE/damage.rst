@@ -76,4 +76,4 @@ Two damage processes are provided by the PBE app for the sake of convenience:
     #. If any of the residual interstory drifts exceeds the assigned capacity, trigger an irreparable damage state. This last task extends the concept of irreparable damage to the Hazus methodology. It is removed from the damage process if there are no irreparable damage vulnerabilities assigned to the model.
 
 
-You can use a custom damage process for the calculation by selecting **User Defined** from the drop-down list and providing the process in a JSON file. The Pelicun user manual provides more information on preparing damage processes.
+You can use a custom damage process for the calculation by selecting **User Defined** from the drop-down list and providing the process in a JSON file. The |PelicunDocs| provides more information on preparing damage processes.

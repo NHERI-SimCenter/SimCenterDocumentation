@@ -52,7 +52,7 @@ This area is used to specify the component vulnerability database (i.e., typical
    Provides the fragility function parameters published in the Hazus Earthquake Technical Manual (2011)
 
 :User Defined:
-   Allows you to Choose a file that provides your own set of vulnerability parameters. The Pelicun user manual explains how to prepare a compatible component vulnerability data file.
+   Allows you to Choose a file that provides your own set of vulnerability parameters. The |PelicunDocs| explains how to prepare a compatible component vulnerability data file.
 
 
 .. figure:: figures/dl_p58_general.png
@@ -68,7 +68,7 @@ The **Export DB** button allows you to export the selected built-in database to 
 Component Assignment
 --------------------
 
-This area is used to define the types of components in the building and assign quantities of each component to locations and directions in the building. Although PBE provides a convenient interface to prepare such an assignment, the information is eventually stored in a CSV file. If you want to preserve an assignment or share it with others, the **Save** button allows you to prepare such a CSV file, while you can use the **Load** button to import an assignment from such a file. You can find more information about the structure of these CSV files in the Pelicun user manual.
+This area is used to define the types of components in the building and assign quantities of each component to locations and directions in the building. Although PBE provides a convenient interface to prepare such an assignment, the information is eventually stored in a CSV file. If you want to preserve an assignment or share it with others, the **Save** button allows you to prepare such a CSV file, while you can use the **Load** button to import an assignment from such a file. You can find more information about the structure of these CSV files in the |PelicunDocs|.
 
 The components available in the selected component vulnerability database are listed in the **Available in DB:** drop-down list. Use the **Add** button to assign the selected component or the **Add All** to assign all components from the list to the Asset Model. The assigned components are listed in the **Assigned** drop-down list. Use the **Remove** button to remove the selected component or the **Remove All** button to remove all components from the assigned set.
 

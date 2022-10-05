@@ -11,10 +11,10 @@ Data Source
 The drop-down list in this area identifies how the demands are calculated:
 
 :from Workflow:
-    Select this option if the PBE app is used to perform the entire performance assessment workflow, that is, the structural response estimation is also set up an performed by this application. In this case, make sure the workflow you set up provides all of the demand types required by the performance assessment. The demand file will be automatically created in the appropriate format by the backend engine and passed on to Pelicun in the backgroun.
+    Select this option if the PBE app is used to perform the entire performance assessment workflow, that is, the structural response estimation is also set up an performed by this application. In this case, make sure the workflow you set up provides all of the demand types required by the performance assessment. The demand file will be automatically created in the appropriate format by the backend engine and passed on to Pelicun in the background.
 
 :from File:
-    Select this option if the PBE app is only used for the performance assessment step, that is, the structural response estimation is performed outside of the application. In this case, you will need to perform the demand calculations and provide demand data in the standard CSV format used by SimCenter applications, including Pelicun. See the Pelicun user manual for more information on the corresponding data format.
+    Select this option if the PBE app is only used for the performance assessment step, that is, the structural response estimation is performed outside of the application. In this case, you will need to perform the demand calculations and provide demand data in the standard CSV format used by SimCenter applications, including Pelicun. See the |PelicunDocs| for more information on the corresponding data format.
 
     When this option is selected, use the **Choose** button to select a file on your computer that contains the demand data.
 
@@ -43,7 +43,7 @@ This area controls the characteristics of the stochastic demand model that is pr
     This option is only available if the truncated lognormal distribution is selected. The **\+** and **\-** buttons can be used to add or remove definitions to the list. The following information defines each truncation limit:
 
     :Demand:
-        Identifies the demand type using the standard SimCenter demand naming convention. The Pelicun user manual provides a list of supported demand types that can be easily expanded if needed.
+        Identifies the demand type using the standard SimCenter demand naming convention. The |PelicunDocs| provides a list of supported demand types that can be easily expanded if needed.
 
         Currently, all demands of the selected type will be truncated at the provided limits. Let us know if location-specific demand truncation would be helpful for your work.
 
@@ -63,7 +63,7 @@ This area controls the characteristics of the stochastic demand model that is pr
 :Remove collapses:
     This option allows you to filter collapsed results from the raw demand data. The filtered data is removed from the raw demands before any other calculation would take place. For example, only the filtered data is passed on to the engine to fit a distribution to the demands. This allows you to remove collapsed cases and prepare a stochastic demand model only for the non-collapsed realizations.
 
-    Use the **\+** and **\-** buttons to prepare a list of demand types and corresponding collapse limits. The Pelicun user manual provides a list of supported demand types that can be easily expanded if needed.
+    Use the **\+** and **\-** buttons to prepare a list of demand types and corresponding collapse limits. The |PelicunDocs| provides a list of supported demand types that can be easily expanded if needed.
 
     Currently, if any of the demands of the selected type exceeds the collapse limit, the building in the given realization will be considered collapsed. Let us know if location-specific collapse limits would be helpful for your work.
 

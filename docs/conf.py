@@ -212,6 +212,9 @@ rst_prolog = f"""
 .. _SimCenter Research Tools: https://simcenter.designsafe-ci.org/research-tools/overview/
 .. |userSurveyLink| replace:: `user survey`_
 
+.. |PelicunDocs| replace:: `Pelicun Documentation`_
+.. _Pelicun Documentation: https://nheri-simcenter.github.io/pelicun/
+
 .. |OpenSees| replace:: **OpenSees**
 .. |OpenSeesLink| replace:: `OpenSees`_
 .. _OpenSees: https://opensees.berkeley.edu
