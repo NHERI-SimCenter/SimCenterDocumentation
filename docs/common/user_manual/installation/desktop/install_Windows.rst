@@ -116,7 +116,7 @@ Once the application started, you should see the user interface shown in |figWin
 
    .. _figWinUI-PBE:
 
-   .. figure:: figures/PBE.png
+   .. figure:: figures/PBE_startup.png
     :align: center
     :figclass: align-center
 

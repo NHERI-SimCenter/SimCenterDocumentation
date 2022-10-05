@@ -203,7 +203,7 @@ Once the application started, you should see the user interface shown in |figUI|
 
    .. _figUI-PBE:
 
-   .. figure:: figures/PBE.png
+   .. figure:: figures/PBE_startup.png
     :align: center
     :figclass: align-center
 
