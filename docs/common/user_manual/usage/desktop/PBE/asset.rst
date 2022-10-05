@@ -52,7 +52,7 @@ This area is used to specify the component vulnerability database (i.e., typical
    Provides the fragility function parameters published in the Hazus Earthquake Technical Manual (2011)
 
 :User Defined:
-   Allows you to Choose a file that provides your own set of vulnerability parameters. See the Pelicun user manual for details on how to prepare a compatible component vulnerability data file.
+   Allows you to Choose a file that provides your own set of vulnerability parameters. The Pelicun user manual explains how to prepare a compatible component vulnerability data file.
 
 
 .. figure:: figures/dl_p58_general.png
