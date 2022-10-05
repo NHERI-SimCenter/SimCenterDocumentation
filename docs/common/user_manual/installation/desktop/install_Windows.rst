@@ -86,19 +86,21 @@ To download the |app|, navigate to the |appLink| page which should resemble |fig
       HydroUQ tool download page.
 
 
-Click on the file with a name ending with **Windows_Download.zip** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner. After the download completed, extract the zip archive to a location in your filesystem.
+Click on the file with a name ending with **Windows_Download.zip** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner.
 
-We suggest placing the directory in the **C:\\SimCenter** folder. Once here, you can create a shortcut to the application and move this shortcut to your Desktop.
+After the download completed, extract the zip archive to a location in your filesystem. We suggest extracting to the **C:\\SimCenter\** folder. You can create a shortcut that points to the |short tool id|.exe executable of the application and move this shortcut to your Desktop for easy access.
 
 
 Test the Installation
 ^^^^^^^^^^^^^^^^^^^^^
 
-Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by running the |short tool id|.exe executable. You should see the user interface shown in |figWinUI|. The installation can be tested by running the example problem |test example|.
+Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by running the |short tool id|.exe executable.
 
 .. note::
 
-   Since the SimCenter is not recognized as a Windows vendor, our applications are not recognized by the operating system as being signed. Consequently, you may receive a warning message when you start the |short tool name| application for the first time.
+   Since the SimCenter is not registered as a Windows vendor, our apps are not recognized by the operating system as signed applications. You may receive a warning message that lets you know about risks involved in running unsigned applications from unkown sources when you start the |short tool name| application for the first time. It is safe to bypass that warning when running SimCenter applications.
+
+Once the application started, you should see the user interface shown in |figWinUI|. We recommend running the example problem |test example| to test the application.
 
 .. only:: R2D_app
 
@@ -114,7 +116,7 @@ Once the installation procedure has been completed, it is a good practice to run
 
    .. _figWinUI-PBE:
 
-   .. figure:: figures/PBE.png
+   .. figure:: figures/PBE_startup.png
     :align: center
     :figclass: align-center
 

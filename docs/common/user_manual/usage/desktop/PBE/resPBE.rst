@@ -27,9 +27,9 @@ The second panel presents results for each realization in a plot and in tabular 
 	:align: center
 	:figclass: align-center
 
-	Results presented graphically and in tabular form.
+	Main results presented graphically and in tabular form.
 
-The columns in the table typically identify the Decision Variable category (e.g. reconstruction, injuries, etc.) and a variable within that category preceded by a forward slash (e.g., injuries/fatalities). Boolean variables (e.g,. collapsed?, red_tagged?) are used to describe the occurrence of events. The reconstruction/time_impractical? and cost_impractical? variables identify realizations where reconstruction time or cost would exceed the replacement time or cost, respectively. In such cases, replacement is assumed instead of reconstruction. The minimum (i.e., based on parallel work) reconstruction time is used when making this decision.
+The columns in the table typically identify the Decision Variable category (e.g. repair cost, repair time, etc.) and, if applicable, a variable within that category preceded by a dash (e.g., repair time - parallel). Boolean variables (e.g,. collapsed?, irreparable?) are used to describe the occurrence of events.
 
-Besides the results displayed in the application, advanced users can find detailed information about EDPs, damage, and decision variables in **csv** files in the Working directory in the **tmp.SimCenter/templatedir** folder. 
+Besides the results displayed in the application, advanced users can find detailed information about EDPs, damage, and decision variables in **csv** files in the Working directory in the **tmp.SimCenter/** folder.
 
