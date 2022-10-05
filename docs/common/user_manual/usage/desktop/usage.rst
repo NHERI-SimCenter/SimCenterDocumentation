@@ -161,6 +161,7 @@ The following sections of the user guide describe in detail each of the steps pr
 
    .. figure:: figures/RemoteJobPanel_sWHALE.png
       :align: center
+      :scale: 25%
       :figclass: align-center
 
       Remote job submission dialog.
