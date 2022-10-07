@@ -106,7 +106,7 @@ tags.add(f"{app_abrev2}_app")
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path.
 
-# TODO: try to consolodate this to have no more than two exclude patterns per app
+# TODO: try to consolidate this to have no more than two exclude patterns per app
 exclude_patterns = (
     [
         "**/*desktop*",
@@ -125,7 +125,7 @@ exclude_patterns = (
         "**/*TinF*",
         "**/*TInF*",
         "**/*quoFEM*",
-        "**/QUOFEM*",
+        "**/*QUOFEM*",
         "**/qfem*",
         "**/Hydro*",
         "Hydro*",
@@ -211,6 +211,9 @@ rst_prolog = f"""
 .. |ResearchTools| replace:: `SimCenter Research Tools`_
 .. _SimCenter Research Tools: https://simcenter.designsafe-ci.org/research-tools/overview/
 .. |userSurveyLink| replace:: `user survey`_
+
+.. |PelicunDocs| replace:: `Pelicun Documentation`_
+.. _Pelicun Documentation: https://nheri-simcenter.github.io/pelicun/
 
 .. |OpenSees| replace:: **OpenSees**
 .. |OpenSeesLink| replace:: `OpenSees`_
@@ -401,7 +404,7 @@ if app_name == "HydroUQ":
 
 """
 
-if app_name == "R2DTool":
+elif app_name == "R2DTool":
 
     project = "Regional Resilience Determination Tool"
 
@@ -478,20 +481,20 @@ elif app_name == "PBE":
     author = (
         "Adam Zsarnóczay, Frank McKenna, Chaofeng Wang, Wael Elhaddad, Michael Gardner"
     )
-    sync_examples = True
+    sync_examples = False
 
     tags.add("PBE_app")
     tags.add("desktop_app")
     tags.add("earthquake")
     tags.add("notQuoFEM")
-    tags.add("notR2D")        
-    
+    tags.add("notR2D")
+
 
     toc_filter_exclusions.remove("PBE")
     toc_filter_exclusions.remove("desktop")
     toc_filter_exclusions.remove("earthquake")
     toc_filter_exclusions.remove("notQuoFEM")
-    toc_filter_exclusions.remove("notR2D")    
+    toc_filter_exclusions.remove("notR2D")
     toc_filter_exclude = toc_filter_exclusions
 
     exclude_patterns.remove("**/*desktop*")
@@ -513,8 +516,8 @@ elif app_name == "PBE":
 .. |full tool name| replace:: Performance Based Engineering Application
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
 .. _PBE Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE
-.. |tool version| replace:: 2.0
-.. |test example| replace:: :ref:`pbdl-0002`
+.. |tool version| replace:: 3.0
+.. |test example| replace:: :ref:`pbdl-0001`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-PBE`
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
 
@@ -532,14 +535,14 @@ elif app_name == "EE-UQ":
     tags.add("response")
     tags.add("earthquake")
     tags.add("notQuoFEM")
-    tags.add("notR2D")    
+    tags.add("notR2D")
 
     toc_filter_exclusions.remove("EEUQ")
     toc_filter_exclusions.remove("desktop")
     toc_filter_exclusions.remove("earthquake")
     toc_filter_exclusions.remove("response")
     toc_filter_exclusions.remove("notQuoFEM")
-    toc_filter_exclusions.remove("notR2D")    
+    toc_filter_exclusions.remove("notR2D")
     toc_filter_exclude = toc_filter_exclusions
 
     exclude_patterns.remove("**/*EEUQ*")
@@ -566,7 +569,7 @@ elif app_name == "EE-UQ":
 
     rst_prolog += """
 .. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application (EE-UQ)
-.. |tool version| replace:: 2.0
+.. |tool version| replace:: 3.2
 .. |test example| replace:: :ref:`eeuq-0001`
 .. _EE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/EE_UQ
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
@@ -583,12 +586,12 @@ elif app_name == "quoFEM":
     author = "Frank McKenna, Adam Zsarnóczay, Sang-ri Yi, Aakash Bangalore Satish, Nikhil Padhye"
 
     tags.add("desktop_app")
-    tags.add("notR2D") 
+    tags.add("notR2D")
     tags.add("quoFEM_app")
 
     toc_filter_exclusions.remove("desktop")
     toc_filter_exclusions.remove("quoFEM")
-    toc_filter_exclusions.remove("notR2D") 
+    toc_filter_exclusions.remove("notR2D")
     toc_filter_exclude = toc_filter_exclusions
 
     exclude_patterns.remove("**/*desktop*")
@@ -611,7 +614,7 @@ elif app_name == "quoFEM":
     rst_prolog += f"""
 .. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)
 .. |test example| replace:: :ref:`qfem-0001`
-.. |tool version| replace:: 3.0
+.. |tool version| replace:: 3.2
 .. _quoFEM Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
@@ -649,7 +652,7 @@ elif app_name == "WE-UQ":
     tags.add("response")
     tags.add("wind")
     tags.add("notQuoFEM")
-    tags.add("notR2D")    
+    tags.add("notR2D")
 
     toc_filter_exclusions.remove("WEUQ")
     toc_filter_exclusions.remove("desktop")
@@ -698,11 +701,12 @@ elif app_name == "WE-UQ":
 """
 
 
-elif app_name == "pelicun":
 
-    project = "pelicun"
-    copyright = f"(c) 2018-{str(datetime.today().year)}, Leland Stanford Junior University and The Regents of the University of California"
-    author = "Adam Zsarnóczay"
+elif app_name == 'pelicun':
+
+    project = 'pelicun'
+    copyright = f'(c) 2018-{str(datetime.today().year)}, Leland Stanford Junior University and The Regents of the University of California'
+    author = 'Adam Zsarnóczay, Kuanshi Zhong'
 
     tags.add("pelicun")
 
@@ -711,13 +715,51 @@ elif app_name == "pelicun":
 
     exclude_patterns.remove("**/*pelicun*")
 
-    rst_prolog += f"""
-.. |pelicun expanded| replace:: Probabilistic Estimation of Losses, Injuries, and Community resilience Under Natural disasters
+    # Note that we redefines rst_prolog here for pelicun because it is so different from other apps that there is not much to keep from above
+    rst_prolog = f"""
+.. |fmk| replace:: **fmk**
+
+.. |pelicun expanded| replace:: Probabilistic Estimation of Losses, Injuries, and Community resilience Under Natural hazard events
 .. |full tool name| replace:: pelicun library
+.. |tool version| replace:: 3.0.0
+
 .. |app| replace:: pelicun library
-.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
-.. |tool version| replace:: 2.0.9
+.. |appName| replace:: pelicun library
+.. |short tool id| replace:: pelicun
+.. |short tool name| replace:: pelicun
+
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
+
+.. |appLink| replace:: `pelicun Download`_
+.. _pelicun Download: https://github.com/NHERI-SimCenter/pelicun
+
+.. |tool github link| replace:: `pelicun Github page`_
+.. |githubLink| replace:: `pelicun Github page`_
+.. _pelicun Github page: https://github.com/NHERI-SimCenter/pelicun
+
+.. |messageBoard| replace:: `Message Board`_
+.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
+
+.. |app requirements| replace:: :ref:`lblRequirements`
+
+.. |userSurveyLink| replace:: `user survey`_
+.. |user survey link| replace:: `user survey`_
+.. _user survey: https://docs.google.com/forms/d/e/1FAIpQLSfh20kBxDmvmHgz9uFwhkospGLCeazZzL770A2GuYZ2KgBZBA/viewform?usp=sf_link
+
+.. |ResearchTools| replace:: `SimCenter Research Tools`_
+.. _SimCenter Research Tools: https://simcenter.designsafe-ci.org/research-tools/overview/
+
+.. |PythonDownload| replace:: `Python.org`_
+.. _Python.org: https://www.python.org/downloads/release/python-386/
+
+.. |requirements| replace:: **REQUIREMENTS**
+.. |DesignSafe| replace:: `DesignSafe`_
+.. _DesignSafe: https://designsafe-ci.org
+
+.. |br| raw:: html
+
+    <br>
+
 """
 
     extensions = extensions + [

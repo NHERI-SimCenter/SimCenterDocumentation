@@ -5,10 +5,58 @@
 Release Notes
 *************
 
+Version 3.2
+===========
+
+Version 3.2.0 (Current)
+-----------------------
+
+**Release date:** Sept. 2022
+
+*Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
+
+#. **Structural Information Model**
+    a. MDOF: creating idealized multi-degree-of-freedom models
+    b. OpenSees: user-defined OpenSees models
+    c. Steel Building Model: automating steel frame design and modeling
+    d. :blue:`Concrete Building Model: automating concrete moment frame design and modeling`
+    e. :blue:`MDOF-LU: MDOF shear building model`
+
+#. **Ground Motion Event**
+    a. Stochastic Ground Motion: simulating stochastic ground motion recordings
+    b. PEER NGA Records: selecting and scaling PEER NGA West2 ground motions
+    c. Site Response: propagating rock motions to the surface
+    d. Multiple PEER: using multiple PEER recordings
+    e. Multiple SimCenter: using multiple SimCenter-format recordings
+    f. User Specified Database: selecting and scaling ground motions from the user-specified flatfile
+
+#. **Finite Element Application**
+    a. OpenSees: Open System for Earthquake Engineering Simulation
+
+#. **Engineering Demand Parameter Generator**
+    a. Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration
+    b. User Defined: user-specified EDP
+
+#. **Uncertainty Quantification**
+    a. Dakota
+        - Forward Propagation
+        - Sensitivity Analysis
+        - Reliability Analysis
+    b. SimCenterUQ
+
+#. **Results**
+    a. Summary Data
+    b. Data Values
+
+#. **Others**: Improvements to the message area, and minor bug fixes
+    * :blue:`Decoupling the output units defined in GI with the units used in the simulation.`
+    * :blue:`Decoupling the Rayleigh damping ratio with the FEM configuration.`
+
+
 Version 3.1
 ===========
 
-Version 3.1.0 (Current)
+Version 3.1.0
 -----------------------
 
 **Release date:** July 2022

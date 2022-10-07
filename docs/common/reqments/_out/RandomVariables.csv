@@ -1,11 +1,11 @@
-"**RV.1**", "**Various Random Variable Probability Distributions**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"RV.1.1", "Normal","SP", "M", "Implemented", ":qfem-0001:`/`", ":eeuq-0001:`/`", -, ":pbdl-0001:`/`", -, -
-"RV.1.2", "Lognormal","SP", "M", "Implemented", ":qfem-0001:`/`", -, -, ":pbdl-0002:`/`", -, -
-"RV.1.3", "Uniform","SP", "M", "Implemented", ":qfem-0005:`/`", ":eeuq-0001:`/`", -, -, -, -
-"RV.1.4", "Beta","SP", "M", "Implemented", ":qfem-0002:`/`", -, -, -, -, -
-"RV.1.5", "Weibull","SP", "M", "Implemented", ":qfem-0002:`/`", -, -, -, -, -
-"RV.1.6", "Gumbel","SP", "M", "Implemented", -, -, -, -, -, -
-"RV.2", "User defined Distribution","SP", "M", -, -, -, -, -, -, -
-"RV.3", "Define Correlation Matrix","SP", "M", -, -, -, -, -, -, -
-"RV.4", "Random Fields","SP", "M", -, -, -, -, -, -, -
-"RV.5", "Ability to View Graphically the density function when defining the RV","UF", "D", "Implemented", "`link <https://NHERI-SimCenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/RV.html>`_", "`link <https://NHERI-SimCenter.github.io/EE-UQ-Documentation/common/user_manual/usage/desktop/RV.html>`_", "`link <https://NHERI-SimCenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/RV.html>`_", "`link <https://NHERI-SimCenter.github.io/PBE-Documentation/common/user_manual/usage/desktop/RV.html>`_", "-", "-"
+**RV.1**," ""**Various Random Variable Probability Distributions**"""," ""**-**"""," ""**-**"""," ""**-**"""," ""**-**"""," ""**-**"""," ""**-**"""," ""**-**"""," ""**-**"""," ""**-**"""
+RV.1.1," ""Normal""",SP," ""M"""," ""Implemented"""," "":qfem-0001:`/`"""," "":eeuq-0001:`/`""", -," "":pbdl-0001:`/`""", -, -
+RV.1.2," ""Lognormal""",SP," ""M"""," ""Implemented"""," "":qfem-0001:`/`""", -, -," "":pbdl-0002:`/`""", -, -
+RV.1.3," ""Uniform""",SP," ""M"""," ""Implemented"""," "":qfem-0005:`/`"""," "":eeuq-0001:`/`""", -, -, -, -
+RV.1.4," ""Beta""",SP," ""M"""," ""Implemented"""," "":qfem-0002:`/`""", -, -, -, -, -
+RV.1.5," ""Weibull""",SP," ""M"""," ""Implemented"""," "":qfem-0002:`/`""", -, -, -, -, -
+RV.1.6," ""Gumbel""",SP," ""M"""," ""Implemented""", -, -, -, -, -, -
+RV.2," ""User defined Distribution""",SP," ""M""", -, -, -, -, -, -, -
+RV.3," ""Define Correlation Matrix""",SP," ""M"""," ""Implemented""", -, -, -, -, -, -
+RV.4," ""Random Fields""",SP," ""M""", -, -, -, -, -, -, -
+RV.5," ""Ability to View Graphically the density function when defining the RV""",UF," ""D"""," ""Implemented"""," ""`link <https://NHERI-SimCenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/RV.html>`_"""," ""`link <https://NHERI-SimCenter.github.io/EE-UQ-Documentation/common/user_manual/usage/desktop/RV.html>`_"""," ""`link <https://NHERI-SimCenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/RV.html>`_"""," ""`link <https://NHERI-SimCenter.github.io/PBE-Documentation/common/user_manual/usage/desktop/RV.html>`_"""," ""-"""," ""-"""

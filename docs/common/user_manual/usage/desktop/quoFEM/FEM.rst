@@ -4,7 +4,7 @@ FEM: Finite Element Method
 ==========================
 
 The **FEM** tab will present users with a selection of FEM
-applications. Currently, there are four options: OpenSees, FEAPpv, OpenSeesPy,
+applications. Currently, there are four options: OpenSees, Python, FEAPpv, 
 and a custom user-specified application.
 
 .. _figFEM:
@@ -27,10 +27,10 @@ When the choice of FEM application is OpenSees (the default application), the us
 
 1. **Input Script**: The user must specify a main input script. When entered the application will parse this file looking for variables set with the ``pset`` option (a unique set command to the OpenSees interpreter that is used to identify parameter values). For each variable whose value is set with ``pset``, the program will auto populate the variable in the **RV** tab.
 
-.. literalinclude:: ../../../examples/desktop/quoFEM/quo-01/src/TrussModel.tcl
+.. literalinclude:: TrussModel.tcl
    :language: tcl
 
-2. **Postprocess Script** (optional): This is an optional entry where the user has the option of specifying either a tcl script or a Python script that will be used to postprocess the results and create a ``results.out`` file after the main script runs. 
+2. **Postprocess Script** (optional): This is an optional entry where the user has the option of specifying either a tcl script or a Python script that will be used to postprocess the results and create a ``results.out`` file after the main script runs. See for instance, :ref:`example 1<qfem-0001>`.
 
 .. note::
    The postprocess file can be either a tcl script or a Python script and the file extensions must be either ``.py`` or ``.tcl``.
@@ -38,29 +38,11 @@ When the choice of FEM application is OpenSees (the default application), the us
 .. warning::
    If a tcl script file and the user is reading results from files created with OpenSees recorder commands, the user must ensure there is a ``wipe recorders`` command at the end of the main script or at the start of the postprocessing script.
 
-FEAPpv
-^^^^^^
 
-|FEAPpv| is another FEM engine used by the |app| that is publicly available from the |FEAPpvDownload| page. FEAPpv is a general purpose finite element analysis program which is designed for research and educational use. To install |FEAPpv| you must download the source code and follow the build instructions on the **Source Code Download and Compile Instructions** section of the |FEAPpvDownload| page.
+Python
+^^^^^^^
 
-Similar to the OpenSees application, when the user selects FEAPpv the user is requested to provide two files.
-
-.. figure:: figures/feapFEM.png
-	:align: center
-	:figclass: align-center
-
-1. **Input File**: The user must specify a main input file.  A part of this file may contain variables set in the ``PARA`` section. The variables in this section will be read by the UI when the file is entered and will be autopopulated in the **RV** tab. For example if a file containing the following code was specified:
-
-.. literalinclude:: ../../../../../../../quoFEM/Examples/qfem-0010/src/TrussModel.txt
-
-  then the parameters ``E``, ``P``, ``Ao``, ``Au`` would be read by the application and placed in the **RV** tab.
-
-2. **Postprocess Script**: The user must provide the name of the Python script that will run when FEAPpv has finished executing. This Python script must load the output file from FEAPpv and create the ``results.out`` file. Currently the user has no control over the name of the output file created by FEAPpv, ``SimCenterOut.txt``. It is this file the post-process script must open and use to create the ``results.out`` file.
-
-OpenSeesPy
-^^^^^^^^^^
-
-For the OpenSeesPy application, the user provides a main script and has the option to provide 2 other scripts: 
+The user provides a main script and has the option to provide 2 other scripts: 
 
 .. figure:: figures/openseespyFEM.png
 	:align: center
@@ -70,14 +52,43 @@ For the OpenSeesPy application, the user provides a main script and has the opti
 
 2. **Parameters File**: This file allows for the automatic population of the **RV** tab with any variables found in the file. For example if the file contained the following:
 
-.. literalinclude:: ../../../examples/desktop/quoFEM/quo-02/src/TrussParams.py
+.. literalinclude:: TrussParams.py
    :language: py
 
-The **RV** tab would be populated with the ``E``, ``P``, ``Ao``, and ``Au`` random variables.
+The **RV** tab would be populated with the ``E``, ``P``, ``Ao``, and ``Au`` random variables. See :ref:`example 2<qfem-0002>` for more.
 
-.. note:
-   
-   If a **Parameters File** is not supplied, the Python script must specify the random variables in the main script in the following form
+.. warning::
+  The windows version of |app| is shipped with its own python executable (which can be found and modified in ``File``-``Preference`` in the Menu bar.) Therefore, before running |app|, one should check carefully if the python packages required in the main model script are fully installed in the correct python exe that quoFEM runs. For example, if one wants to import seaborn in the main script, make sure to install it in the terminal using something like
+
+  .. code:: console
+
+    {$PathToPythonExe} -m pip install seaborn
+
+  where ``{$PathToPythonExe}`` should be replaced with the python exe path defined in the Preference.
+
+
+
+
+FEAPpv
+^^^^^^
+
+|FEAPpv| is another FEM engine used by the |app| that is publicly available from the |FEAPpvDownload| page. FEAPpv is a general purpose finite element analysis program which is designed for research and educational use. To install |FEAPpv| you must download the source code and follow the build instructions on the **Source Code Download and Compile Instructions** section of the |FEAPpvDownload| page.
+
+Similar to the OpenSees application, when the user selects FEAPpv the user is requested to provide two files.
+
+.. figure:: figures/feapFEM.png
+  :align: center
+  :figclass: align-center
+
+1. **Input File**: The user must specify a main input file.  A part of this file may contain variables set in the ``PARA`` section. The variables in this section will be read by the UI when the file is entered and will be autopopulated in the **RV** tab. For example if a file containing the following code was specified:
+
+.. literalinclude:: TrussTemplate.txt
+
+
+  then the parameters ``E``, ``P``, ``Ao``, ``Au`` would be read by the application and placed in the **RV** tab.
+
+2. **Postprocess Script**: The user must provide the name of the Python script that will run when FEAPpv has finished executing. This Python script must load the output file from FEAPpv and create the ``results.out`` file. Currently the user has no control over the name of the output file created by FEAPpv, ``SimCenterOut.txt``. It is this file the post-process script must open and use to create the ``results.out`` file.
+
 
 Custom
 ^^^^^^
