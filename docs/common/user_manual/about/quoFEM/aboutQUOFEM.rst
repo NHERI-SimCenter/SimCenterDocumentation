@@ -17,3 +17,13 @@ Depending on the type of numerical simulation being performed, the additional si
 This is Version |tool version| of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in this application. These requests and feedback can be submitted through an anonymous |user survey link|. We greatly appreciate any input you have. If there are features you want, chances are many of your colleagues also would benefit from them. Users are encouraged to review the :ref:`lbl-requirements` to see what features are planned for this application.
 
 
+Getting started
+---------------------
+
+* :ref:`Install quoFEM<lblInstallation>`
+* :ref:`Run quoFEM without installation<lblquoFEM_DCV>`
+
+
+Tutorial
+---------------------
+* :ref:`Running UQ using an opensees model<lbltutorialQUOFEM>`
