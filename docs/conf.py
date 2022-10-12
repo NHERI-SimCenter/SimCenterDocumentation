@@ -77,6 +77,7 @@ extensions =  [
     "sphinx_panels",
     #"sphinxcontrib.spelling",
     'sphinx_toolbox.collapse',
+    'sphinx_tabs.tabs',
 ]
 
 source_suffix = {
