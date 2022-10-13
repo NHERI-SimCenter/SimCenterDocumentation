@@ -55,7 +55,7 @@ if "%1" == "WE" (
 
 if "%1" == "pelicun" (
 	%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
-	robocopy %BUILDDIR%/html ../docs /E > nul
+	robocopy %BUILDDIR%/html ../../pelicun-Documentation/docs /E > nul
 	echo.Generating pelicun Documentation...
 	goto end
 )

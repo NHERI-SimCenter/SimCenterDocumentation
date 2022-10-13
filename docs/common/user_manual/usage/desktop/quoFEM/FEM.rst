@@ -10,8 +10,9 @@ and a custom user-specified application.
 .. _figFEM:
 
 .. figure:: figures/FEM.png
-	:align: center
-	:figclass: align-center
+  :align: center
+  :figclass: align-center
+  :width: 1200
 
 	Input for the **FEM** tab.
 
@@ -45,27 +46,58 @@ Python
 The user provides a main script and has the option to provide 2 other scripts: 
 
 .. figure:: figures/openseespyFEM.png
-	:align: center
-	:figclass: align-center
+  :align: center
+  :figclass: align-center
+  :width: 1200
 
 1. **Postprocess Script** (Optional): This must be a Python script which is provided the QoI variable names when started. This entry can be left blank if the main script creates a ``results.out`` file with a single line as described for the OpenSees application.
 
 2. **Parameters File**: This file allows for the automatic population of the **RV** tab with any variables found in the file. For example if the file contained the following:
 
-.. literalinclude:: TrussParams.py
-   :language: py
+  .. literalinclude:: TrussParams.py
+     :language: py
 
-The **RV** tab would be populated with the ``E``, ``P``, ``Ao``, and ``Au`` random variables. See :ref:`example 2<qfem-0002>` for more.
+  The **RV** tab would be populated with the ``E``, ``P``, ``Ao``, and ``Au`` random variables. See :ref:`example 2<qfem-0002>` for more. For the Windows users, see the below important warning.
 
-.. warning::
-  The windows version of |app| is shipped with its own python executable (which can be found and modified in ``File``-``Preference`` in the Menu bar.) Therefore, before running |app|, one should check carefully if the python packages required in the main model script are fully installed in the correct python exe that quoFEM runs. For example, if one wants to import seaborn in the main script, make sure to install it in the terminal using something like
+.. Caution::
 
-  .. code:: console
+    **Python on Windows.** On Windows, quoFEM is bundled with its own ``python.exe``, with the essential packages (including numpy, scipy, openseespy) already installed. By default, this ``python.exe`` is used to (1) run SimCenter workflow; and (2) run the user-provided python model. Therefore, please make sure to test your model using the "correct" ``python.exe`` before running passing it to quoFEM. 
 
-    {$PathToPythonExe} -m pip install seaborn
+    .. figure:: figures/step1_preference_default.svg
+        :align: center
+        :figclass: align-center
+        :width: 500
 
-  where ``{$PathToPythonExe}`` should be replaced with the python exe path defined in the Preference.
+        Windows Default Python Path found in ``File``-``Preference``
 
+    * **"Pip install" Python packages**
+
+      If your model requires additional python packages, use the following command to install them.
+
+      .. code-block:: bash
+
+           {$PythonExePath} -m pip install {$PackageName}
+
+      where ``{$PythonExePath}`` is the (default) python path shown in the preference window and ``{$PackageName}`` is the name of the python package. 
+
+    * **Use custom Python**
+
+      
+      .. figure:: figures/step1_preference_custom.svg
+         :align: center
+         :figclass: align-center
+         :width: 500
+
+
+         Custom Python Path
+
+      If you would like to use other version of python in quoFEM, use the custom option in ``File``-``Preference``. Then you will need to **manually install** the packages required to run SimCenter workflow using.
+
+      .. code-block:: bash
+
+           {$NewPythonExePath} -m pip install nheri_simcenter --upgrade
+
+      where ``{$NewPythonExePath}`` is the new python path specified in the preference window. 
 
 
 
@@ -79,6 +111,8 @@ Similar to the OpenSees application, when the user selects FEAPpv the user is re
 .. figure:: figures/feapFEM.png
   :align: center
   :figclass: align-center
+  :width: 1200
+
 
 1. **Input File**: The user must specify a main input file.  A part of this file may contain variables set in the ``PARA`` section. The variables in this section will be read by the UI when the file is entered and will be autopopulated in the **RV** tab. For example if a file containing the following code was specified:
 
@@ -130,6 +164,8 @@ the need to explicitly input each one of these files.
 .. figure:: figures/customFEM.png
   :align: center
   :figclass: align-center
+  :width: 1200
+
 
   Input for Custom Analysis Application
 
@@ -143,6 +179,7 @@ In place of the physical simulation models, the Gaussian process surrogate model
 .. figure:: figures/SurrogateFEM1.png
   :align: center
   :figclass: align-center
+  :width: 1200
 
   Input for Surrogate model FEM Application
 
@@ -150,7 +187,7 @@ When users select the SurrogateGP option, they are requested to provide the foll
 
 .. Note:: 
 
-  All the required input files described below can be generated from the quoFEM. See Section 2.1.2.2 Surrogate modeling.
+  All the required input files described below can be generated from the quoFEM. See :ref:`lblSimSurrogate`.
 
 
 1. **Surrogate info file (.json)**: This file contains the meta-information about the surrogate model. Users can open it with a text editor to see the contents.
