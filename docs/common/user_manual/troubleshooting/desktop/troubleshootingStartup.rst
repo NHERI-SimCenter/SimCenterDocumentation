@@ -3,7 +3,7 @@
 Startup Issues
 --------------
 
-On Windows operating systems, if you receive an error when starting the application with the message that MSVCP140.dll is missing as shown in |figMissingCRT|, it is caused by a missing Visual C/C++ runtime library. You can fix this error by running the installer for the Visual C/C++ redistributable package **vc_redist.x64.exe** which is included with the application.
+On Windows operating systems, you might receive the error shown in |figMissingCRT| when starting the application. This error is caused by a missing Visual C/C++ runtime library. You can fix this by running the installer for the Visual C/C++ redistributable package **vc_redist.x64.exe** which is included in the folder of every SimCenter desktop application.
 
 
 .. only:: PBE_app

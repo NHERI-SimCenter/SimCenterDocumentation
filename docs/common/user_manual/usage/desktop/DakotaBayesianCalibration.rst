@@ -1,10 +1,10 @@
-.. _lblInverseProblem:
+.. _lblDakotaBayesianCalibration:
 
 
-Inverse Problem
-***************
+Bayesian Calibration
+********************
 
-The methods in the inverse problem category are concerned with estimation of the probability distribution of the parameter values given observational measurements. Unlike parameter estimation methods, in which the user provides a range and an initial starting point for the input random variables, when using the methods in this category, the user has some idea about the probability distribution of the parameter values. This information is provided in the form of the prior distributions in the **RV** panel. The Inverse methods take this prior information and combine it with information from the observed data provided in the **UQ** panel, to infer posterior distributions of the parameter values. For the Inverse problem, a Bayesian updating paradigm is followed, the prior distribution on a parameter is updated through a Bayesian framework involving experimental data and a likelihood function. The likelihood function  specifies the likelihood that a particular parameter value of the model produced the observed data. Dakota uses a Gaussian likelihood function. The algorithms that generate the samples to characterize the posterior distributions are typically based on some Markov Chain Monte Carlo (MCMC) methods. Currently, |appName| provides access to the DREAM algorithm implemented in Dakota.
+The methods in the Bayesian calibration category are concerned with estimation of the probability distribution of the parameter values given observational measurements. Unlike deterministic parameter estimation methods, in which the user provides a range and an initial starting point for the input random variables, when using the methods in this category, the user has some idea about the probability distribution of the parameter values. This information is provided in the form of the prior distributions in the **RV** panel. The Bayesian calibration methods take this prior information and combine it with information from the observed data provided in the **UQ** panel, to infer posterior distributions of the parameter values. A Bayesian updating paradigm is followed, the prior distribution on a parameter is updated through a Bayesian framework involving experimental data and a likelihood function. The likelihood function  specifies the likelihood that a particular parameter value of the model produced the observed data. Dakota uses a Gaussian likelihood function. The algorithms that generate the samples to characterize the posterior distributions are typically based on some Markov Chain Monte Carlo (MCMC) methods. Currently, |appName| provides access to the DREAM algorithm implemented in Dakota.
 
 
 ..
@@ -52,7 +52,7 @@ The Differential Evolution Adaptive Metropolis ([DREAM]_) method runs multiple M
 
 .. _figDREAM:
 
-.. figure:: figures/DREAM.png
+.. figure:: figures/BayesianCalibration.png
 	:align: center
 	:figclass: align-center
 

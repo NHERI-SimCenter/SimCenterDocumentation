@@ -1,7 +1,7 @@
-pelicun.control module
+pelicun.auto module
 ======================
 
-.. automodule:: pelicun.control
+.. automodule:: pelicun.auto
     :members:
     :no-undoc-members:
     :show-inheritance:
