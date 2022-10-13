@@ -37,8 +37,8 @@ If you have not yet installed quoFEM, please see
 
 .. role:: uqblue
 
-unning quoFEM Using a Python Script
-----------------------------------------
+quoFEM for a Python Model Interface
+-------------------------------------------------
 This tutorial will show how a **deterministic** model written/interfaced in python script can be used for **Uncertainty Quantification** analysis, using an example of global sensitivity analysis. 
 
 * **Step 0**. Prepare a Python Model
@@ -311,7 +311,7 @@ This tutorial will show how a **deterministic** model written/interfaced in pyth
 
      .. warning::
        
-       Currently (October 2022) the OpenSeespy package on DesignSafe is going through an update. Until it is done, this tutorial will give an error. This Warning will be removed when updated is done. The examples that does not use OpenSeespy should run fine.
+       Currently (October 2022) the OpenSeespy package on DesignSafe is going through an update. Until it is done, this tutorial will give an error. This Warning will be removed when the update is done. The examples that do not use OpenSeespy should run fine.
 
 
      .. panels::
@@ -390,8 +390,41 @@ This tutorial will show how a **deterministic** model written/interfaced in pyth
 
     * **Installing additional Python packages**
 
-        On Windows, it is important to install python packages to the right python executable. Please read :ref:`here<lblFEM>` about pip-installing python packages / changing the python version.
+        On Windows, it is important to install python packages to the correct python executable. Please read :ref:`here<lblFEM>` about pip-installing python packages and changing the python version.
+
+        .. note::
+           **When running at DesingSafe (e.g. Step 3)**, SimCenter workflow uses its own python executable installed on the cloud computer. Currently, the only supported python packages are those installed through 'nheri_simcenter' package. The available list of packages include - numpy, scipy, sklearn, pandas, tables, pydoe, gpy, emukit, plotly, matplotlib. If your model uses a package beyond this list, quoFEM analysis will fail.
+
+           An option to allow user-defined python packages on DesignSafe is under implementation. Meanwhile, if you need to request to use additional python packages, please contact us through `user forum <https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0>`_.
+
 
     * **When your model consists of more than one script**
 
-        Import only one main python file in the FEM tab, and put all (and only) the files required to run the analysis in the same folder. quoFEM will automatically copy all the files/subfolders in the same directory of the **main input script** to the working directory.
+        You can import only one main python file in the FEM tab, and put all (and only) the files required to run the analysis in the same folder. quoFEM will automatically copy all the files/subfolders in the same directory of the **main input script** to the working directory.
+
+
+    * **Debugging**
+
+        When quoFEM analysis fails and the error message points you to a working directory, often the detailed error messages are written in ``ops.out`` file in the directory. Other ``.log`` and ``.err`` files can have information to help you identify the cause of the failure. Please feel free ask us through `user forum <https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0>`_.
+
+
+    * **When "RUN at DesignSafe" fails**
+
+        When the remote analysis fails while the local analysis is successful, there can be many reasons. Some of the common cases are python compatibility issue and missing python packages as discussed earlier this page. Anther common cause is related cross-platform compatibility (Windows/mac verses Linux). This is usually observed in the relative file paths. For example, below works on mac and Windows,
+         
+        .. code-block:: python
+
+            getDisp=pd.read_csv(r'TestResult\disp.out', delimiter= ' ')
+
+        but will throw an error on Linux. Below will work also on Linux.
+
+        .. code-block:: python
+
+            getDisp=pd.read_csv(os.path.join('TestResult', "disp.out"), delimiter= ' ')
+         
+
+    * **Questions, bug report, and feature request**
+
+        We have an active `user forum <https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0>`_, for any users who has questions or feature requests. The response is mostly within 24 hours and usually much less.
+
+
