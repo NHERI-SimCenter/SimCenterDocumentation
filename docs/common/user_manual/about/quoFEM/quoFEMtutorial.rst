@@ -1,9 +1,9 @@
 .. _lbltutorialQUOFEM:
 
 
-*****
-Running quoFEM Using a Python Script
-*****
+*************************
+Getting Started Tutorial
+*************************
 
 Before We Start
 ----------------
@@ -11,6 +11,9 @@ If you have not yet installed quoFEM, please see
 
    * :ref:`Install quoFEM<lblInstallation>`
    * :ref:`Run quoFEM without installation<lblquoFEM_DCV>`
+
+.. important::
+     If you just downloaded quoFEM, but have previously used older version of it or other SimCneter tools, it is recommended to reset the cached path values by pressing ``reset`` button in ``File``-``Preference``.
 
 
 
@@ -27,41 +30,52 @@ If you have not yet installed quoFEM, please see
 
           <a href="https://openseespydoc.readthedocs.io/en/latest/src/examples.html" target="_blank">OpenSeesPy example manual</a>
 
-.. |14.1.1. Elastic Truss Analysis| raw:: html
+.. |Elastic Truss Analysis| raw:: html
 
-          <a href="https://openseespydoc.readthedocs.io/en/latest/src/truss.html" target="_blank">14.1.1. Elastic Truss Analysis</a>
+          <a href="https://openseespydoc.readthedocs.io/en/latest/src/truss.html" target="_blank">Elastic Truss Analysis</a>
 
 
 .. role:: uqblue
 
-Running an Analysis
-----------------
-This tutorial will show how a model written/interfaced in python script can be used for global sensitivity analysis. 
+unning quoFEM Using a Python Script
+----------------------------------------
+This tutorial will show how a **deterministic** model written/interfaced in python script can be used for **Uncertainty Quantification** analysis, using an example of global sensitivity analysis. 
+
+* **Step 0**. Prepare a Python Model
+* **Step 1**. Modify the Model Script to Define Random Variables and Quantities of Interest
+* **Step 2**. Run quoFEM
+* **Step 3**. Run quoFEM at DesignSafe
 
 .. tabbed:: Step 0 
 
+  :uqblue:`Step 0. Prepare a Python Model`
 
-  :uqblue:`Step 0. Preparing a python model`
+     .. panels::
+       :column: col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2
 
-     Let us grab **a python script** from |OpenSeesPy example manual|.
-
-
-       .. figure:: figures/step2_openseesPy.svg
+       .. figure:: figures/step0_main.png
            :align: center
            :figclass: align-center
+           :width: 1200
 
-           Download OpenSeespy Elastic Truss Analysis
 
-     Please follow the steps:
+     Let us grab **a python script** from |OpenSeesPy example manual| for this tutorial. Please follow the steps:
+
 
         1. In |OpenSeesPy example manual|, navigate to **Structural Example - Elastic Truss Analysis**
-        2. In |14.1.1. Elastic Truss Analysis| page, click download button. Create a **new folder** named ``TrussExample`` and save ``ElasticTruss.py`` in the folder.
+        2. In the |Elastic Truss Analysis| page, click download button. Create a **new folder** named ``TrussExample`` and save ``ElasticTruss.py`` in the folder.
+
+          .. figure:: figures/step2_openseesPy.svg
+             :align: center
+             :figclass: align-center
+
+             Download OpenSeespy Elastic Truss Analysis
 
           .. important::
 
                It is important to save the model in a **new folder** instead of root, desktop or downloads
 
-        3. :badge:`Test,badge-primary` if the input script ``ElasticTruss.py`` runs successfully using commend prompt (Windows) or terminal (Mac). To do this,  navigate into ``TrussExample`` folder using 'cd' command and type the following. 
+        3. :badge:`Test Your Model,badge-primary` Test if the input script ``ElasticTruss.py`` runs successfully using commend prompt (Windows) or terminal (Mac). To do this,  navigate into ``TrussExample`` folder using 'cd' command and type the following. 
 
           .. code:: console
 
@@ -84,9 +98,9 @@ This tutorial will show how a model written/interfaced in python script can be u
 
              Testing ``ElasticTruss.py``
 
-          Now we are ready to run probabilistic analysis using this model.
+          Now we are ready to run a probabilistic analysis using this model.
 
-          .. important::
+          .. note::
                openseespy, numpy and matplotlib libraries are readily available in quoFEM because:
 
                * Windows 
@@ -99,25 +113,42 @@ This tutorial will show how a model written/interfaced in python script can be u
 
 .. tabbed:: Step 1
 
+  :uqblue:`Step 1. Modify the Model Script to Define Random Variables and Quantities of Interest`
 
-  :uqblue:`Step 1. Modifying the model script`
+     .. panels::
+       :column: col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2
+
+       .. figure:: figures/step1_main.png
+           :align: center
+           :figclass: align-center
+           :width: 1200
 
 
      We now need to indicate quoFEM what are the input **random variables (RVs)** and output **Quantities of Interest (QoIs)**. Let us consider the following setup:
 
-       * **Four RVs**: height (:math:`H`), elastic modulus (:math:`E`), horizontal node (:math:`P_x`), vertical load (:math:`P_y`)
+       * **Four RVs**: height (:math:`H`), elastic modulus (:math:`E`), horizontal load (:math:`P_x`), vertical load (:math:`P_y`)
        * **Two QoIs**: horizontal and vertical displacements of node 4 (:math:`u_x` and :math:`u_y`)
 
      To convey this information to quoFEM, the following steps are needed.
 
-     1. Create ``params.py`` that contains the below four lines, in the folder ``TrussExample``:
+     1. Create :download:`params.py <params.py>` that contains the below four lines, in the folder ``TrussExample``:
 
        .. literalinclude:: params.py
           :language: py
 
        This indicates quoFEM the list RVs
 
-     2. Modify the main script ``ElasticTruss.py`` as follows (the modified parts are highlighted)
+       .. Note::
+
+          The specified values are not actually used in the quoFEM analysis, because they will be overwritten according to the probability distribution specified in Step 2.
+
+     2. Modify the main script :download:`ElasticTruss.py <ElasticTruss_quo.py>` as follows (the modified parts are highlighted in the code)
+
+
+        * Import ``params.py`` on top of the main script
+        * Replace the hard-coded values of RVs with the variables ``H``, ``E``, ``Px``, and ``Py``
+        * Write QoI values (``ux`` and ``uy``) to ``results.out``
+
 
        .. tabs::
 
@@ -134,14 +165,7 @@ This tutorial will show how a model written/interfaced in python script can be u
                   :language: py
                   :emphasize-lines: 5,20,28,42, 76,77     
 
-
-       In particular,
-
-        * Import ``params.py`` on top of the main script
-        * Replace the hard-coded values of RVs with the variables ``H``, ``E``, ``Px``, and ``Py``
-        * Write QoI values (``ux`` and ``uy``) to ``results.out``
-
-     3. :badge:`Test,badge-primary` your new python script using the same command used in Step 0. 
+     3. :badge:`Test Your Model,badge-primary` Test your new python script using the same command used in Step 0. 
 
         .. code:: console
 
@@ -163,18 +187,25 @@ This tutorial will show how a model written/interfaced in python script can be u
 
           It is important to remove ``results.out`` file after testing.
 
+
 .. tabbed:: Step 2
 
+  :uqblue:`Step 2. Run quoFEM`
 
-  :uqblue:`Step 2. Running quoFEM`
+     .. panels::
+       :column: col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2
 
+       .. figure:: figures/step2_main.png
+           :align: center
+           :figclass: align-center
+           :width: 1200
 
-     quoFEM has four input taps - UQ, FEM, RV, EDP(QoI)- that guide user to provide the required inputs for the UQ analysis
+     quoFEM has four input taps - UQ, FEM, RV, EDP(QoI)- that guide users to provide the required inputs for the UQ analysis
 
 
      1. **UQ (Uncertainty Quantification)**
 
-        We define the UQ method of interest. We will use ``dakota``-``Sensitivity Analysis`` for this example, but once the user prepares the input script according to Step 1, they can use it for any :ref:`UQ analysis supported in quoFEM<lblUQ>` without additional modifications.
+        We will use ``dakota``-``Sensitivity Analysis`` for this example.
 
         .. figure:: figures/step2_UQ.PNG
             :align: center
@@ -182,6 +213,9 @@ This tutorial will show how a model written/interfaced in python script can be u
             :width: 1200
 
             UQ Panel
+
+        .. Tip::
+          Once the user prepares the input script according to Step 1, they can use it for any :ref:`UQ analysis supported in quoFEM<lblUQ>` without additional modifications.
 
      2. **FEM (Finite Element Model or any simulation model)**
 
@@ -208,7 +242,7 @@ This tutorial will show how a model written/interfaced in python script can be u
 
             RV Panel
 
-        Then one can modify their distribution types and parameters. Further, if you believe the some variables are correlated, use correlation button to specify the values.
+        Then one can modify their distribution types and parameters. Further, if you believe the some variables are correlated, use the correlation button to specify the values.
 
 
         .. figure:: figures/step2_RV_corr.PNG
@@ -232,7 +266,7 @@ This tutorial will show how a model written/interfaced in python script can be u
         The order should match that written in the ``results.out`` file, and the specified name of QoIs are used only for the display in this example. Please see :ref:`here<lblQUO_QOI>` to learn about vector QoIs which have length greater than 1 
 
 
-     When all the fields are filled in, click the the **Run** button, and the analysis will be performed. The program will go into "not responding", but that means analysis is running. You can check the progress status in your **Local Working directory** which can be found in the preference window. The number attached to 'workdir.' indicates the simulation index, and each folder contains the details for each simulation run.
+     When all the fields are filled in, click the the **Run** button, and the analysis will be performed. The program will go into "not responding", but that means quoFEM is busy running the analysis. You can check the progress status in your **Local Working directory** which can be found in the preference window. The number attached to 'workdir.' indicates the simulation index, and each folder contains the details for each simulation run.
 
         .. figure:: figures/step2_RES1.PNG
             :align: center
@@ -246,7 +280,7 @@ This tutorial will show how a model written/interfaced in python script can be u
 
      **RES (Results)**
 
-        The results indicate that the horizontal displacement is most sensitive to the height while vertical displacement is more sensitive to elastic modulus and vertical force. 
+        The results indicate that the horizontal displacement is most affected by the height while vertical displacement is dominated by the elastic modulus and vertical force. 
 
         .. figure:: figures/step2_RES2.PNG
             :align: center
@@ -255,7 +289,7 @@ This tutorial will show how a model written/interfaced in python script can be u
 
             RES - Summary
 
-        And this can be confirmed by the strong trend observed in the scatter plots.
+        And this can be confirmed by the strong/weak trends observed in the scatter plots.
 
         .. figure:: figures/step2_RES3.PNG
             :align: center
@@ -264,13 +298,31 @@ This tutorial will show how a model written/interfaced in python script can be u
 
             RES - Data Values - Scatter plot of ``H`` and ``disp_x`` 
 
-        The right/left mouse buttons (fn-clink, option-click, and command-click replaces the left click on Mac) will allow the users to draw various scatter plots, histograms, and cumulative mass plots from the sample points.
+        The **right/left mouse buttons** (fn-clink, option-click, and command-click replaces the left click on Mac) will allow the users to draw various scatter plots, histograms, and cumulative mass plots from the sample points.
 
-        See :ref:`Dakota<lbluqTechnical>` or :ref:`SimCenterUQ<lbluqSimTechnical>` theory manual to learn more about the sensitivity analysis and the difference between main and total indices. Note that the results will be different when probability distribution changes (i.e. when amount of uncertainty in each input variable changes), and users can test different conditions simply by changing distribution in the UQ tab.
+        See :ref:`Dakota<lbluqTechnical>` or :ref:`SimCenterUQ<lbluqSimTechnical>` theory manual to learn more about the sensitivity analysis and the difference between main and total indices. 
+
+        .. Tip::
+           The global sensitivity analysis results will be different when probability distribution changes (i.e. when amount of uncertainty in each input variable changes), and users can test different conditions simply by changing the distributions in the RV tab.
 
 .. tabbed:: Step 3
 
-  :uqblue:`Step 3. Running at DesignSafe`
+  :uqblue:`Step 3. Run quoFEM at DesignSafe`
+
+     .. warning::
+       
+       Currently (October 2022) the OpenSeespy package on DesignSafe is going through an update. Until it is done, this tutorial will give an error. This Warning will be removed when updated is done. The examples that does not use OpenSeespy should run fine.
+
+
+     .. panels::
+       :column: col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2
+
+       .. figure:: figures/step3_main.png
+           :align: center
+           :figclass: align-center
+           :width: 1200
+
+
 
      Users can run the same analysis using high-performance computer at |DesignSafe| at |Texas Super Computing Center (TACC)|. For this, login to DesignSafe by clicking **Login** on the right upper corner of quoFEM, or by clicking **RUN at DesignSafe** Button
 
@@ -281,9 +333,9 @@ This tutorial will show how a model written/interfaced in python script can be u
 
             Login window
 
-     If you don't have the DesignSafe account, sign up at |DesignSafe|.
+     If you don't have the DesignSafe account, you can easily sign up at |DesignSafe|.
 
-     Then by clicking **RUN at DesignSafe**, one can specify the options. Please see :ref:`here<lbl-usage>` for more details.
+     Then by clicking **RUN at DesignSafe**, one can specify the job details. Please see :ref:`here<lbl-usage>` for more details on the number of nodes and processors.
 
 
         .. figure:: figures/step3_Run.PNG
@@ -294,7 +346,7 @@ This tutorial will show how a model written/interfaced in python script can be u
             Run at DesignSafe
 
 
-     By clicking **Submit**, the jobs will be automatically submitted to DeisgnSafe. (See :ref:`here<lblArchitecture>` to learn more about "What happens when **RUN at DesignSafe** button is clicked"). Depending how busy the **Frontera** at TACC is, your job may start within 30 sec or it may take longer. By clicking **GET from DesignSafe**, one can check the status. The major stages are **Queued**, **Running**, and **Finished**. 
+     If one sets 32 processors, quoFEM will run 32 model evaluations simultaneously in parallel. By clicking **Submit**, the jobs will be automatically submitted to DeisgnSafe. (See :ref:`here<lblArchitecture>` to learn more about "What happens when **RUN at DesignSafe** button is clicked"). Depending how busy the **Frontera** at TACC is, your job may start within 30 sec or it may take longer. By clicking **GET from DesignSafe**, one can check the status. The major stages are **Queued**, **Running**, and **Finished**. 
 
 
         .. figure:: figures/step3_Jobs.PNG
@@ -304,7 +356,17 @@ This tutorial will show how a model written/interfaced in python script can be u
 
             Run at DesignSafe
 
-     Once the status is changed to **Finished**, select the job name and click **Retrieve Data**. The quoFEM will load the data. The created results files can be found in your **Remote working directory** which can be found in the preference window. Further, by signing in to DesignSafe and navigating to **Workspace - Tools & Applications - Jobs Status** (at the right-hand side edge). click **More info** and **View** button.
+     Once the status is changed to **Finished**, select the job name and click **Retrieve Data**. The quoFEM will load the data. The results should be same as the local analysis results.
+
+        .. figure:: figures/step2_RES2.PNG
+            :align: center
+            :figclass: align-center
+            :width: 1200
+
+            Sensitivity Analysis Results from DesignSafe
+
+
+     The created results files can be found in your **Remote working directory** which can be found in the preference window. Furthermore, one can access all the output files and logs created by quoFEM by signing in to |DesignSafe| and navigating in the manu bar to **Workspace - Tools & Applications - Jobs Status** (at the right-hand side edge), and clicking **More info** and **View** button (See below figures).
 
 
         .. figure:: figures/step3_DesignSafe1.svg
@@ -321,7 +383,6 @@ This tutorial will show how a model written/interfaced in python script can be u
 
             DesignSafe - See results files
 
-     It will show the results files and logs created by quoFEM.
 
 .. tabbed:: Moving forward..
 
@@ -329,8 +390,8 @@ This tutorial will show how a model written/interfaced in python script can be u
 
     * **Installing additional Python packages**
 
-        Please read :ref:`here<lblFEM>` about pip-installing python packages / changing the python version.
+        On Windows, it is important to install python packages to the right python executable. Please read :ref:`here<lblFEM>` about pip-installing python packages / changing the python version.
 
     * **When your model consists of more than one script**
 
-        Import only one main python file in the FEM tab, and put all (and only) the files required to run the analysis in the same folder. quoFEM will automatically copy all the files/subfolders in the same directory of the main **Input Script** to the working directory.
+        Import only one main python file in the FEM tab, and put all (and only) the files required to run the analysis in the same folder. quoFEM will automatically copy all the files/subfolders in the same directory of the **main input script** to the working directory.
