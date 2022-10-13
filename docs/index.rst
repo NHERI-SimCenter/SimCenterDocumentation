@@ -87,6 +87,8 @@
    :Hydro:common/user_manual/installation/desktop/installation
    :pelicun:common/user_manual/installation/pelicun/installation
 
+   :quoFEM:common/user_manual/about/quoFEM/quoFEMtutorial
+
    :EEUQ:common/user_manual/usage/desktop/usage
    :WEUQ:common/user_manual/usage/desktop/usage
    :Hydro:common/user_manual/usage/desktop/usage
