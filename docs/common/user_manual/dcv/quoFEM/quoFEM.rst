@@ -1,4 +1,4 @@
-.. _quoFEM_DCV
+.. _lblquoFEM_DCV:
 
 Running in Your Browser
 -----------------------

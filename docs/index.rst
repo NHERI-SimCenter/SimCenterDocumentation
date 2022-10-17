@@ -51,7 +51,7 @@
    :R2D:common/user_manual/about/R2D/about
    :EEUQ:common/user_manual/about/EEUQ/about
    :WEUQ:common/user_manual/about/WEUQ/about
-   :quoFEM:common/user_manual/about/quoFEM/aboutQUOFEM
+   :quoFEM:common/user_manual/about/quoFEM/about  
    :pelicun:common/user_manual/about/pelicun/about
 
    :R2D:common/front-matter/desktop/ack
@@ -87,6 +87,8 @@
    :Hydro:common/user_manual/installation/desktop/installation
    :pelicun:common/user_manual/installation/pelicun/installation
 
+   :quoFEM:common/user_manual/about/quoFEM/quoFEMtutorial
+
    :EEUQ:common/user_manual/usage/desktop/usage
    :WEUQ:common/user_manual/usage/desktop/usage
    :Hydro:common/user_manual/usage/desktop/usage
@@ -119,7 +121,7 @@
    :WEUQ:common/reqments/WEUQ
    :PBE:common/reqments/PBE
    :R2D:common/reqments/R2D
-   :quoFEM:common/reqments/reqQUOFEM
+   :quoFEM:common/reqments/reqQUOFE
    :pelicun:common/reqments/reqPelicun
 
 

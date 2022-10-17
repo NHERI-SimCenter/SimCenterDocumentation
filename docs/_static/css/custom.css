@@ -1,5 +1,5 @@
-wy-nav-content {
-    max-width: none;
+.wy-nav-content {
+    max-width: 1200px !important;
 }
 
 
@@ -57,6 +57,7 @@ table.tight-table {
 .uqblue {
     color:#0B619C;
     font-size: 130%;
+    font-weight: bold;
 }
 
 div.leftside {
