@@ -78,6 +78,24 @@ Target Spectrum
       :figclass: align-center
       :width: 400
 
+6. **Spectrum from Hazard Surrogate**: Target spectrum is evaluated via a user-provided Gaussian Process (GP) surrogate model that follows the default format produced by `quoFEM 
+   GP surrogate modeling <https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html>`_. Users will provide two input files 
+   for the pretrained GP model (the default names are `SimGpModel.json` and `SimGPModel.pkl`, 
+   please see more descriptions in `quoFEM documentation <https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html#saving-options>`_).
+   Once the model is successfully loaded, the intensity measure names in the trained GP model will be displayed in the `Options` panel.  Users need to provide the periods correspond to the
+   spectral accelerations in the GP model.  Along with the `Options` panel, the input random variables in the pretrained model will also be displayed with text edit box(es) for evaluating 
+   the GP model. For instance, :numref:`figSurrogateHazard` shows one example that the surrogate GP model is trained for Hayward earthquake scenarios at San Francisco Bay Area in which the 
+   Latitude and Longitude (`RV_column1` and `RV_column2`) are input variables to predict response spectral acceleration at various periods from 0.01 to 10 sec.
+
+.. _figSurrogateHazard:
+
+.. figure:: figures/surrogateHazard.png
+   :align: center
+   :figclass: align-center
+   :width: 600
+   
+   Target spectrum from hazard surrogate 
+
 .. lblPEER-NGA-SelectionCriteria
 
 Configure Selection

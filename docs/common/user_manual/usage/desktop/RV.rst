@@ -1,3 +1,6 @@
+.. _rv:
+
+
 RV: Random Variables
 ====================
 
@@ -83,7 +86,6 @@ The following six distribution classes are supported for Dakota engine.
    .. math::
    
 	f(x) = \alpha e^{-\alpha(x-\beta)} \exp(-e^{-\alpha(x-\beta)})
-
 
 For each random variable, the user must enter a name and select from the pull down menu the distribution associated with the random variable. For the distribution selected, the user must then provide the input arguments, which are as described above. :numref:`figRV` shows the panel for a problem with four Random Variables with all random input following Gaussian distributions. 
 
@@ -197,7 +199,10 @@ For each random variable, the user must enter a name and select from the pull do
 
        Extended random variable specification
       
-      User can also define the random variables by providing sample realization data set as shown in the below figure, by selecting ``Dataset`` input type. The data will be fitted to the specified probability distribution model. Note that for some of the bounded distributions, such as beta and truncated exponential, the bounds should additionally be provided.  
+
+   **Input Type - Dataset**
+
+   User can also define the random variables by providing sample realization data set as shown in the below figure, by selecting ``Dataset`` input type. The data will be fitted to the specified probability distribution model. Note that for some of the bounded distributions, such as beta and truncated exponential, the bounds should additionally be provided through the user interface.  
 
    .. _figRVdata
 

@@ -4,14 +4,15 @@ FEM: Finite Element Method
 ==========================
 
 The **FEM** tab will present users with a selection of FEM
-applications. Currently, there are four options: OpenSees, FEAPpv, OpenSeesPy,
+applications. Currently, there are four options: OpenSees, Python, FEAPpv, 
 and a custom user-specified application.
 
 .. _figFEM:
 
 .. figure:: figures/FEM.png
-	:align: center
-	:figclass: align-center
+  :align: center
+  :figclass: align-center
+  :width: 1200
 
 	Input for the **FEM** tab.
 
@@ -27,16 +28,78 @@ When the choice of FEM application is OpenSees (the default application), the us
 
 1. **Input Script**: The user must specify a main input script. When entered the application will parse this file looking for variables set with the ``pset`` option (a unique set command to the OpenSees interpreter that is used to identify parameter values). For each variable whose value is set with ``pset``, the program will auto populate the variable in the **RV** tab.
 
-.. literalinclude:: ../../../examples/desktop/quoFEM/quo-01/src/TrussModel.tcl
+.. literalinclude:: TrussModel.tcl
    :language: tcl
 
-2. **Postprocess Script** (optional): This is an optional entry where the user has the option of specifying either a tcl script or a Python script that will be used to postprocess the results and create a ``results.out`` file after the main script runs. 
+2. **Postprocess Script** (optional): This is an optional entry where the user has the option of specifying either a tcl script or a Python script that will be used to postprocess the results and create a ``results.out`` file after the main script runs. See for instance, :ref:`example 1<qfem-0001>`.
 
 .. note::
    The postprocess file can be either a tcl script or a Python script and the file extensions must be either ``.py`` or ``.tcl``.
 
 .. warning::
    If a tcl script file and the user is reading results from files created with OpenSees recorder commands, the user must ensure there is a ``wipe recorders`` command at the end of the main script or at the start of the postprocessing script.
+
+
+Python
+^^^^^^^
+
+The user provides a main script and has the option to provide 2 other scripts: 
+
+.. figure:: figures/openseespyFEM.png
+  :align: center
+  :figclass: align-center
+  :width: 1200
+
+1. **Postprocess Script** (Optional): This must be a Python script which is provided the QoI variable names when started. This entry can be left blank if the main script creates a ``results.out`` file with a single line as described for the OpenSees application.
+
+2. **Parameters File**: This file allows for the automatic population of the **RV** tab with any variables found in the file. For example if the file contained the following:
+
+  .. literalinclude:: TrussParams.py
+     :language: py
+
+  The **RV** tab would be populated with the ``E``, ``P``, ``Ao``, and ``Au`` random variables. See :ref:`example 2<qfem-0002>` for more. For the Windows users, see the below important warning.
+
+.. Caution::
+
+    **Python on Windows.** On Windows, quoFEM is bundled with its own ``python.exe``, with the essential packages (including numpy, scipy, openseespy) already installed. By default, this ``python.exe`` is used to (1) run SimCenter workflow; and (2) run the user-provided python model. Therefore, please make sure to test your model using the "correct" ``python.exe`` before running passing it to quoFEM. 
+
+    .. figure:: figures/step1_preference_default.svg
+        :align: center
+        :figclass: align-center
+        :width: 500
+
+        Windows Default Python Path found in ``File``-``Preference``
+
+    * **"Pip install" Python packages**
+
+      If your model requires additional python packages, use the following command to install them.
+
+      .. code-block:: bash
+
+           {$PythonExePath} -m pip install {$PackageName}
+
+      where ``{$PythonExePath}`` is the (default) python path shown in the preference window and ``{$PackageName}`` is the name of the python package. 
+
+    * **Use custom Python**
+
+      
+      .. figure:: figures/step1_preference_custom.svg
+         :align: center
+         :figclass: align-center
+         :width: 500
+
+
+         Custom Python Path
+
+      If you would like to use other version of python in quoFEM, use the custom option in ``File``-``Preference``. Then you will need to **manually install** the packages required to run SimCenter workflow using.
+
+      .. code-block:: bash
+
+           {$NewPythonExePath} -m pip install nheri_simcenter --upgrade
+
+      where ``{$NewPythonExePath}`` is the new python path specified in the preference window. 
+
+
 
 FEAPpv
 ^^^^^^
@@ -46,38 +109,20 @@ FEAPpv
 Similar to the OpenSees application, when the user selects FEAPpv the user is requested to provide two files.
 
 .. figure:: figures/feapFEM.png
-	:align: center
-	:figclass: align-center
+  :align: center
+  :figclass: align-center
+  :width: 1200
+
 
 1. **Input File**: The user must specify a main input file.  A part of this file may contain variables set in the ``PARA`` section. The variables in this section will be read by the UI when the file is entered and will be autopopulated in the **RV** tab. For example if a file containing the following code was specified:
 
-.. literalinclude:: ../../../../../../../quoFEM/Examples/qfem-0010/src/TrussModel.txt
+.. literalinclude:: TrussTemplate.txt
+
 
   then the parameters ``E``, ``P``, ``Ao``, ``Au`` would be read by the application and placed in the **RV** tab.
 
 2. **Postprocess Script**: The user must provide the name of the Python script that will run when FEAPpv has finished executing. This Python script must load the output file from FEAPpv and create the ``results.out`` file. Currently the user has no control over the name of the output file created by FEAPpv, ``SimCenterOut.txt``. It is this file the post-process script must open and use to create the ``results.out`` file.
 
-OpenSeesPy
-^^^^^^^^^^
-
-For the OpenSeesPy application, the user provides a main script and has the option to provide 2 other scripts: 
-
-.. figure:: figures/openseespyFEM.png
-	:align: center
-	:figclass: align-center
-
-1. **Postprocess Script** (Optional): This must be a Python script which is provided the QoI variable names when started. This entry can be left blank if the main script creates a ``results.out`` file with a single line as described for the OpenSees application.
-
-2. **Parameters File**: This file allows for the automatic population of the **RV** tab with any variables found in the file. For example if the file contained the following:
-
-.. literalinclude:: ../../../examples/desktop/quoFEM/quo-02/src/TrussParams.py
-   :language: py
-
-The **RV** tab would be populated with the ``E``, ``P``, ``Ao``, and ``Au`` random variables.
-
-.. note:
-   
-   If a **Parameters File** is not supplied, the Python script must specify the random variables in the main script in the following form
 
 Custom
 ^^^^^^
@@ -119,6 +164,8 @@ the need to explicitly input each one of these files.
 .. figure:: figures/customFEM.png
   :align: center
   :figclass: align-center
+  :width: 1200
+
 
   Input for Custom Analysis Application
 
@@ -132,6 +179,7 @@ In place of the physical simulation models, the Gaussian process surrogate model
 .. figure:: figures/SurrogateFEM1.png
   :align: center
   :figclass: align-center
+  :width: 1200
 
   Input for Surrogate model FEM Application
 
@@ -139,7 +187,7 @@ When users select the SurrogateGP option, they are requested to provide the foll
 
 .. Note:: 
 
-  All the required input files described below can be generated from the quoFEM. See Section 2.1.2.2 Surrogate modeling.
+  All the required input files described below can be generated from the quoFEM. See :ref:`lblSimSurrogate`.
 
 
 1. **Surrogate info file (.json)**: This file contains the meta-information about the surrogate model. Users can open it with a text editor to see the contents.

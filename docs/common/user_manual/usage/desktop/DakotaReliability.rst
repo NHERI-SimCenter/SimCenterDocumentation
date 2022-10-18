@@ -4,16 +4,40 @@
 Reliability Analysis
 ********************
 
-Reliability methods are another class of probabilistic algorithms used for quantifying the effect of uncertainties in simulation input on response metrics of interest. These methods, unlike forward methods, provide PDFs and CDFs about user specified response and probability levels, i.e. given a set of uncertain input variables, they model the probability that the response output is below or above a certain level.  As a consequence of concentrating on only certain response outputs, these models are often more efficient when calculating responses in the tails of the response distributions (events with low probability) since the number of samples required by a forward method to resolve a low probability can be prohibitive.
+Reliability methods are another class of probabilistic algorithms used for quantifying the effect of uncertainties in simulation input on response metrics of interest. These methods, unlike forward propagation analysis, provide the probability of response exceeding the user-provided threshold levels, i.e. given a set of uncertain input variables, it estimates the probability of system 'failure' defined as an excessive response. For reliability analysis, it is often more efficient to concentrate samples around the tail region of the response distributions, i.e. generating more events having low occurrence probability but high consequence, since often the number of samples required by naive sampling approach to resolve a low probability can be prohibitive.
 
 Reliability methods can be split into local and global reliability methods and importance sampling-based method, as elaborated in the following sections. 
 
+
+Problem Formulation
+-------------------
+The probability of failure :math:`P_f` is computed by the following integration:
+
+   .. math::
+
+      P_{f} = Pr \left[g(\mathbf{x}) \leq 0 \right] = \int_{g(\mathbf{x})\leq 0} f_\mathbf{X}(\mathbf{x})d\mathbf{x}
+
+where :math:`f_\mathbf{X}(\mathbf{x})` is the joint probability distribution of random variables (RVs), and :math:`g(\mathbf{x})` is so-called the limit state function that indicates the system performance status: if :math:`g(\mathbf{x})\leq 0` is true, then the system is regarded failed. For each quantity of interest (QoI), Dakota uses the following failure limit state function to compute :math:`P_{f}`:
+
+   .. math::
+
+      g(\mathbf{x}) = q_{tr} - q(\mathbf{x})
+
+where :math:`q(\mathbf{x})` is the computed value of QoI for given :math:`\mathbf{x}` and :math:`q_{tr}` is some response threshold value. So the failure probability here is equivalent to the probability of a response exceeding a certain threshold level. In the |app|, we use the following terminologies:
+
+
+	* **Probability Level** indicates :math:`P_{f}`
+	* **Response Level** indicates :math:`q_{tr}`
+	* **Reliability Analysis** computes :math:`P_{f}` corresponding to :math:`q_{tr}`
+	* **Inverse Reliability Analysis** computes :math:`q_{tr}` corresponding to :math:`P_{f}`
+
+
 Local Reliability Methods
-^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
 
-Local reliability methods include the Mean Value method and a family of most probable point (MPP) search methods. Each of these methods is gradient-based, employing local approximations and/or local optimization methods. The user selects the local method using the pull down menu.
+Local reliability methods introduces first/second-order local approximation of the response or :math:`g(\mathbf{x})` around either "Mean Value" or "Design point (also known as the most probable point, MPP)". Each of these methods involves gradient-based local optimization. The local reliability methods can also be used for "inverse reliability problems" which aims to idenitify the unknown parameter (random variables) combination that produces prescribed probability levels. The user selects the local method using the pull down menu.
 
-The default local reliability method is the most probable point (MPP) method. For the MPP method the user provides the following inputs:
+The default local reliability method is inverse reliability using the first-order reliability approximation (FORM) method. For the FORM method the user provides the following inputs:
 
 .. _figLocalMPP:
 
@@ -38,7 +62,7 @@ The default local reliability method is the most probable point (MPP) method. Fo
 
 2. The second input involves the user selecting the integration approach for computing probabilities at the MPP. These can be selected to be first-order or second-order integration. 
 
-3. Finally the user selects either response levels or probability level from a drop down menu. The user then provides these levels in the line edit to the right of the pull down menu.
+3. Finally the user selects either response levels (for forward reliability analysis) or probability level (for inverse reliability analysis) from a drop down menu. The user then provides these levels in the line edit to the right of the pull down menu.
 
 .. warning::
    
@@ -68,11 +92,12 @@ As shown in the figure below the user selects either to use response levels or p
 
 
 Global Reliability Methods
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
 
-Local reliability methods, while computationally efficient, do not always work. When confronted with a limit state function that is nonsmooth, local gradient-based optimizers may stall due to gradient inaccuracy and fail to converge to an MPP. Moreover, if the limit state is multimodal (multiple MPPs), then a gradient-based local method can, at best, locate only one local MPP solution. Finally, an approximation to the limit state at this MPP may fail to adequately capture the contour of a highly nonlinear limit state. Global reliability methods are designed to handle nonsmooth and multimodal failure surfaces. They do this by creating global approximations based on Gaussian process models. They accurately resolve a particular contour of a response function and then estimate probabilities using multimodal adaptive importance sampling. 
 
-The user specifies if the gaussian process is to be created in x-space (original) or u-space (transformed). The user also specifies the response quantity levels (there is no option available for probability levels) and a seed.
+Local reliability methods, while computationally efficient, do not always work. When confronted with a limit state function that is nonsmooth, local gradient-based optimizers may stall due to gradient inaccuracy and fail to converge to an MPP. Moreover, if the limit state is multimodal (multiple MPPs), then a gradient-based local method can, at best, locate only one local MPP solution. Finally, an approximation to the limit state at this MPP may fail to adequately capture the contour of a highly nonlinear limit state. Global reliability methods are designed to handle nonsmooth and multimodal failure surfaces. They do this by creating global approximations of :math:`g(\mathbf{x})`, say :math:`\tilde{g}(\mathbf{x})`, based on Gaussian process models. They accurately resolve a particular contour of a response function and then estimate probabilities using multimodal adaptive importance sampling. 
+
+The user specifies if the gaussian process is to be created in x-space (original) or u-space (transformed) [Read :ref:`HERE<lbluqSimTechnical>` for more about the transformation]. The user also specifies the response quantity levels (there is no option to define probability levels) and a seed.
 
 
 .. _figGlobalReliability:
@@ -90,7 +115,8 @@ The user specifies if the gaussian process is to be created in x-space (original
 
 
 Importance Sampling (IS)
-^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
+
 
 For problems where one is interested in the rare events rather than the whole distribution of output, such as earthquake or storm surge events, conventional sampling methods may require an excessively large number of simulations to obtain an accurate estimation of tail distribution. For such problems, importance sampling (IS) provides a bypass to conventional sampling methods (MCS or LHS), whereby an alternative sampling distribution is introduced around the tail part of the original distribution so that the generated samples have a better resolution at the domain of interest.
 

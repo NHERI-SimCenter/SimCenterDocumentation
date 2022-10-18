@@ -1,8 +1,8 @@
 
 .. _lblDakotaForward:
 
-Forward Propagation Methods
-***************************
+Forward Propagation
+**********************************************
  
 The forward propagation analysis provides probabilistic understanding of output variables by producing sample realizations and statistical moments (mean, standard deviation, skewness, and kurtosis) of the quantities of interest. Currently four sampling methods are available: 
 
@@ -14,7 +14,7 @@ and sampling based on surrogate models, including:
 3. **Gaussian Process Regression (GPR)**
 4. **Polynomial Chaos Expansion (PCE)**
 
-Depending on the option selected, the user must specify the appropriate input parameters. For instance, for MCS, the number of samples specifies the number of simulations to be performed, and providing a seed value for the pseudo-random number generator allows the user to reproduce the sampling results multiple times. The user selects the sampling method from the dropdown ``Dakota Method Category`` menu. Additional information regarding sampling techniques offered in Dakota can be found `here <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/method-sampling.html>`_. 
+Depending on the option selected, the user must specify the appropriate input parameters. For instance, for MCS, the number of samples specifies the number of simulations to be performed, and providing a seed value for the pseudo-random number generator will produce the same sequence of random numbers allowing the user to reproduce the sampling results multiple times. The user selects the sampling method from the dropdown ``Dakota Method Category`` menu. Additional information regarding sampling techniques offered in Dakota can be found `here <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/method-sampling.html>`_. 
 
 Monte Carlo Sampling (MCS) 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -35,12 +35,22 @@ MCS is among the most robust and universally applicable sampling methods. Moreov
 Latin Hypercube Sampling (LHS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Latin hypercube sampling (LHS) is a type of stratified sampling approach. To achieve a better convergence, LHS evenly spreads out the samples to cover the whole range of the input domain. Each sample from LHS effectively represents each of N equal probability intervals of a cumulative density function.  
-
-:numref:`figLHS` shows the input panel corresponding to the Latin hypercube sampling (LHS) scheme. Two input parameters need to be specified: (1) the number of samples of the output to be produced, which is equal to the number of times the model is evaluated, and (2) the seed for the pseudo-random number generator.
+Conventional Monte Carlo method generates each sample independently, which may produce undesired clusters and gaps between the samples arising from the sampling variability. On the other hand, Latin hypercube sampling (LHS) aims to prevent those gaps and clusters by 'evenly' spreading out the samples throughout the whole input domain. This can significantly reduce the sampling variability and facilitate faster convergence of the probabilistic statistics. In particular, LHS divides the input domain of each variable into N intervals with equal probability and locates the samples such that only one sample lies on each interval. This strategy enforces the samples to be more uniformly spread across the domain. In general, LHS encouraged over MCS as it provides unbiased estimation with smaller standard error. For example, `this article <https://old.analytica.com/blog/latin-hypercube-vs.-monte-carlo-sampling>`_ suggests that the convergence rate of a sample mean is about quadratically faster with LHS than with Monte Carlo simulation. However, it is noted that one drawback of LHS is that there is no closed-form expression to quantify the error level of the estimators. This means that the user may need to perform the multiple batch samplings to quantify the error from the sample variability
 
 
-.. _figLHS:
+.. _figLHS1:
+
+.. figure:: figures/dakota/Sampling_LHS1.png
+	:align: center
+	:width: 600px
+	:figclass: align-center
+
+	Monte Carlo sampling vs. Latin hypercube sampling
+
+:numref:`figLHS2` shows the input panel corresponding to the Latin hypercube sampling (LHS) scheme. Two input parameters need to be specified: (1) the number of samples of the output to be produced, which is equal to the number of times the model is evaluated, and (2) the seed for the pseudo-random number generator.
+
+
+.. _figLHS2:
 
 .. figure:: figures/fwLHS.png
 	:align: center
@@ -53,7 +63,7 @@ Latin hypercube sampling (LHS) is a type of stratified sampling approach. To ach
 Gaussian Process Regression (GPR)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For the problems in which computationally expensive models are involved, conventional sampling schemes such as LHS and MCS can be extremely time-consuming. In such case, a surrogate model can be constructed based on a smaller number of simulation runs, and then the surrogate model can be used to efficiently generate the required number of samples replacing the expensive simulations.
+For the problems in which computationally expensive models are involved, conventional sampling schemes such as LHS and MCS can be extremely time-consuming. In such case, a surrogate model can be constructed based on a smaller number of simulation runs, and then the surrogate model can be used to efficiently generate a larger number of samples replacing the expensive simulations.
 
 Gaussian Process Regression (GPR), also known as Kriging is one of the well-established surrogate techniques, which constructs an approximated response surface based on Gaussian process modeling and covariance matrix optimizations. :numref:`figGPR` shows the input panel for the GPR model that consists of training and sampling panels. 
 
@@ -74,7 +84,7 @@ Other surrogate models, different from Gaussian process regression are also avai
 Polynomial Chaos Expansion (PCE)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Response surface can be approximated using Polynomial Chaos Expansion (PCE) model as well. Similar to the input GPR panel, input panel for PCE model shown in :numref:`figPCE` consists of training and sampling parts. The input parameters in the *surrogate training data* set specify the dataset used for training the surrogate model, while the parameters in the *surrogate sampling data* are related to the samples generated using the surrogate. Extreme care must be taken in specifying the parameters of the training dataset to results in an accurate response surface approximation. 
+Polynomial Chaos Expansion (PCE) is another surrogate model that can replace the expensive simulation model. Similar to the input GPR panel, the input panel for PCE model shown in :numref:`figPCE` consists of training and sampling parts. The input parameters in the *surrogate training data* set specify the dataset used for training the surrogate model, while the parameters in the *surrogate sampling data* are related to the samples generated using the surrogate. Extreme care must be taken in specifying the parameters of the training dataset to result in an accurate approximation. 
 
 
 .. _figPCE:
@@ -86,6 +96,6 @@ Response surface can be approximated using Polynomial Chaos Expansion (PCE) mode
 	PCE forward propagation input panel.
 
 
-If the user is not familiar with the training parameters of the surrogates, it is recommended to refrain from using the surrogates (PCE in particular) and instead use conventional sampling such as MCS and LHS, even at a higher computational cost. 
+If the user is not familiar with the training parameters of the surrogates, it is recommended to refrain from using the surrogates (PCE in particular) and instead use conventional sampling approaches such as MCS and LHS, despite a higher computational cost. 
 
 

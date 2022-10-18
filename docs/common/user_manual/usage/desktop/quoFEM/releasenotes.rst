@@ -4,1034 +4,1478 @@
 *************
 Release Notes
 *************
-
-Major Version 3.0
+Major Version 3
 =================
 
-|app| Version 3.0.0 (Current)
------------------------------
+   .. warning::
 
-**Release date:** March. 2022
+      The major version number was increased from 2 to 3 as changes were made to input and output formats of |app|. This means old examples will not be loaded in this version of the tool.
 
-#. Major restructuring of the backend
-#. Updated example files
 
+   .. dropdown::    Version 3.2.0 (:blue:`Current`)
+      :open:
 
-.. warning::
+      **Release date:** September. 2022
 
-   The version # was increased as changes were made to input and output formats. This means old examples will not load in this version of the tool.
+      **Highlights**
+         #. Support for **a gradient-free optimization** and **stochastic Kriging**
+         #. Fast global sensitivity analysis for **very high dimensional** output (tested on 2 million QoIs)
+         #. New option to **discard working directories** after each model simulation
+         #. Support for **PLoM on DesignSafe**
+         #. Significantly **enhanced speed** of surrogate validation and prediction 
+         #. **None** option for FEM
+         #. Improved user interface including error bounds of the surrogate prediction
+         #. Major renaming: 
 
-*Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
+            * OpenseesPy → **python**
+            * Parameters estimation → **deterministic calibration** 
+            * Inverse problem → **Bayesian calibration** 
 
-#. **UQ (Uncertainty Quantification and Optimization Options)**:
 
-   * Dakota:
+      **Current Availability** 
+            New features and fixes in this release are marked :blue:`blue` in the following list of features.
 
-      a. Forward Uncertainty Propagation: 
+         #. **UQ (Uncertainty Quantification and Optimization Options)**:
 
-         #. Monte Carlo Sampling (MCS)
-         #. Latin Hypercube Sampling (LHS)
-         #. Gaussian Process Regression
-         #. Polynomial Chaos Expansion
+            * Dakota: :blue:`[← New option to discard working directories after each model evaluation]`
 
-      b. Parameter Estimation: 
+               a. Forward Uncertainty Propagation: 
 
-         #. NL2SOL
-         #. OPT++GaussNewton
+                  #. Monte Carlo Sampling (MCS)
+                  #. Latin Hypercube Sampling (LHS)
+                  #. Gaussian Process Regression
+                  #. Polynomial Chaos Expansion
 
-      c. Inverse Problem:
+               b. Deterministic Calibration :blue:`[← formerly Parameter Estimation]`: 
 
-         #. DREAM
+                  #. NL2SOL
+                  #. OPT++GaussNewton
 
-      d. Reliability:
+               c. Bayesian Calibration :blue:`[← formerly Inverse Problem]`:
 
-         #. Local Reliability
-         #. Global Reliability
-         #. Importance Sampling
+                  #. DREAM
 
-      e. Sensitivity Analysis:
+               d. Reliability:
 
-         #. MCS
-         #. LHS
+                  #. Local Reliability
+                  #. Global Reliability
+                  #. Importance Sampling
 
-   * SimCenterUQ:
+               e. Sensitivity Analysis:
 
-      a. Sensitivity Analysis
+                  #. MCS
+                  #. LHS
 
-         #. Probability Model-based Global Sensitivity Analysis (PM-GSA)
+            * SimCenterUQ:
 
-            a. First-order Sobol indices
-            b. Group-wise Sobol indices
+               a. Sensitivity Analysis
 
-      b. Sampling
+                  #. Probability Model-based Global Sensitivity Analysis (PM-GSA)
 
-         #. Monte Carlo Sampling (MCS)
-            a. Resample from existing correlated dataset of samples
+                     a. First-order Sobol indices
+                     b. Total-effect Sobol indices
+                     c. Group-wise Sobol indices
+                     d. Principal component analysis and probabilistic model-based GSA (PCA-PSA) for high-dimensional QoIs
+                     e. Aggregated Sobol indices for field QoIs
+                     f. :blue:`Import input/output samples from data files`
 
-      c. Train Gaussian Process (GP) Surrogate Model
 
-         #. Multifidelity surrogate modeling
-         #. Adaptive design of experiments options for surrogate modeling
-         #. Nugget optimization options for surrogate modeling
+               b. Sampling
 
-      d. :blue:`Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)`
+                  #. Monte Carlo Sampling (MCS)
+                     a. Resample from existing correlated dataset of samples
 
-   * UCSD_UQ:
+               c. Train Gaussian Process (GP) Surrogate Model :blue:`[← Enhanced speed and stability]`
 
-      a. Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation
+                  #. Multifidelity surrogate modeling
+                  #. Adaptive design of experiments options for surrogate modeling
+                  #. Nugget optimization options for surrogate modeling
+                  #. :blue:`Stochastic Kriging`
 
-         #. Override default log-likelihood function
-         #. Override default error covariance structure
-         #. Calibrate multipliers on error covariance structure
+               d. Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)
 
-   * CustomUQ:
+            * UCSD_UQ:
 
-      a. Configure UQ analysis using JSON file
+               a. Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation
 
+                  #. Override default log-likelihood function
+                  #. Override default error covariance structure
+                  #. Calibrate multipliers on error covariance structure
 
-#. **FEM (Computational Model Specification)**:
-   
-   * OpenSees
-   * FEAPpv
-   * OpenSeesPy
-   * Custom
-   * SurrogateGP
+            * CustomUQ:
 
-#. **RV (Inputs to Computational Models)**:
+               a. Configure UQ analysis using JSON file
 
-   * Inspect PDF of RV
 
-   * Dakota:
+         #. **FEM (Computational Model Specification)**:
+            
+            * OpenSees
+            * FEAPpv
+            * Python :blue:`[← formerly OpenSeesPy]`:
+            * Custom
+            * SurrogateGP
+            * :blue:`None`
 
-      a. Random variables (UQ):
+         #. **RV (Inputs to Computational Models)**:
 
-         #. Normal
-         #. Lognormal
-         #. Beta
-         #. Uniform
-         #. Weibull
-         #. Gumbel
+            * Inspect PDF of RV
 
+            * Dakota:
 
-      b. Design variables (Optimization):
+               a. Random variables (UQ):
 
-         #. Continuous
+                  #. Normal
+                  #. Lognormal
+                  #. Beta
+                  #. Uniform
+                  #. Weibull
+                  #. Gumbel
 
-   * SimCenterUQ:
 
-      a. Random variables (UQ): RVs can be defined by any of parameters, moments, or dataset.
+               b. Design variables (Optimization):
 
-         #. Normal
-         #. Lognormal
-         #. Beta
-         #. Uniform
-         #. Weibull
-         #. Gumbel
-         #. Exponential
-         #. Discrete
-         #. Gamma
-         #. Chi-squared
-         #. Truncated exponential
-   
+                  #. Continuous
 
-   * UCSD_UQ:
+            * SimCenterUQ:
 
-      a. Random variables (Priors):
+               a. Random variables (UQ): RVs can be defined by any of parameters, moments, or dataset.
 
-         #. Normal
-         #. Lognormal
-         #. Beta
-         #. Uniform
-         #. Weibull
-         #. Gumbel
-         #. :blue:`Exponential`
-         #. :blue:`Discrete`
-         #. :blue:`Gamma`
-         #. :blue:`Chi-squared`
-         #. :blue:`Truncated exponential`
+                  #. Normal
+                  #. Lognormal
+                  #. Beta
+                  #. Uniform
+                  #. Weibull
+                  #. Gumbel
+                  #. Exponential
+                  #. Discrete
+                  #. Gamma
+                  #. Chi-squared
+                  #. Truncated exponential
+            
 
+            * UCSD_UQ:
 
-#. **EDP (Outputs from Computational Models)**:
-   
-   * Scalar quantities of interest
-   * Vector quantities of interest
+               a. Random variables (Priors):
 
+                  #. Normal
+                  #. Lognormal
+                  #. Beta
+                  #. Uniform
+                  #. Weibull
+                  #. Gumbel
+                  #. Exponential
+                  #. Discrete
+                  #. Gamma
+                  #. Chi-squared
+                  #. Truncated exponential
 
 
-#. **RES (Summary and Visualization of UQ Analysis Results)**:
+         #. **EDP (Outputs from Computational Models)**:
+            
+            * Scalar quantities of interest
+            * Vector quantities of interest
 
-   * Summary statistics of outputs displayed
 
-      #. Mean
-      #. Standard deviation
 
-   * All output values presented in spreadsheet
+         #. **RES (Summary and Visualization of UQ Analysis Results)**:
 
-      #. Update chart by clicking on spreadsheet columns
+            * Summary statistics of outputs displayed
 
-   * Output values visualized in interactive chart
+               #. Mean
+               #. Standard deviation
 
-      #. Scatter plot
-      #. Histogram
-      #. Cumulative distribution
-      #. :blue:`Inspect points on chart`
+            * All output values presented in spreadsheet
 
-   * Visualization of surrogate modeling results
+               #. Update chart by clicking on spreadsheet columns
 
-      #. Goodness-of-fit measures
+            * Output values visualized in interactive chart
 
-   * :blue:`Visualization of PLoM training results`
+               #. Scatter plot
+               #. Histogram
+               #. Cumulative distribution
+               #. Inspect points on chart
 
-      #. :blue:`PCA representation error plot`
-      #. :blue:`Diffusion maps eigenvalue plot`
+            * Spreadsheet save options
 
+               #. Save Table
+               #. Save Columns Separately (Useful after Bayesian updating, the posterior samples can later be directly loaded in quoFEM)
+               #. Save RVs (Useful for surrogate model training)
+               #. Save QoIs (Useful for surrogate model training)
+               #. Save Surrogate Predictions (Only for the surrogate model results)
 
-#. **Remote (Support for Analysis on DesignSafe's high performance super computer)**:
+            * Visualization of surrogate modeling results
 
-   * Dakota
+               #. Goodness-of-fit measures            
+               #. 90% confidence interval and :blue:`prediction interval`
 
-      a. Forward Uncertainty Propagation: 
+            * Visualization of PLoM training results
 
-         #. Monte Carlo Sampling (MCS)
-         #. Latin Hypercube Sampling (LHS)
-         #. Gaussian Process Regression
-         #. Polynomial Chaos Expansion
+               #. PCA representation error plot
+               #. Diffusion maps eigenvalue plot
 
-      b. Reliability:
 
-         #. Local Reliability
-         #. Global Reliability
-         #. Importance Sampling
+         #. **Remote (Support for Analysis on DesignSafe's high performance super computer)**:
 
-      c. Sensitivity Analysis:
+            * Dakota
 
-         #. MCS
-         #. LHS
+               a. Forward Uncertainty Propagation: 
 
-   * SimCenterUQ
+                  #. Monte Carlo Sampling (MCS)
+                  #. Latin Hypercube Sampling (LHS)
+                  #. Gaussian Process Regression
+                  #. Polynomial Chaos Expansion
 
-      a. Forward Uncertainty Propagation
-      b. PM-GSA
-      c. Train GP Surrogate Model
+               b. Reliability:
 
-   * UCSD_UQ
+                  #. Local Reliability
+                  #. Global Reliability
+                  #. Importance Sampling
 
-      a. TMCMC
+               c. Sensitivity Analysis:
 
+                  #. MCS
+                  #. LHS
 
-Major Version 2.0
-=================
+            * SimCenterUQ
 
-|app| Version 2.4.1
--------------------
-**Release date:** Dec. 2021
+               a. Forward Uncertainty Propagation
+               b. Global Sensitivity Analysis (PM-GSA)
+               c. Train GP Surrogate Model
+               d. :blue:`PLoM`
 
-*Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
+            * UCSD_UQ
 
-#. **UQ (Uncertainty Quantification and Optimization Options)**:
+               a. TMCMC
 
-   * Dakota:
 
-      a. Forward Uncertainty Propagation: 
+   .. dropdown::    Version 3.1.0 
 
-         #. Monte Carlo Sampling (MCS)
-         #. Latin Hypercube Sampling (LHS)
-         #. Gaussian Process Regression
-         #. Polynomial Chaos Expansion
+      **Release date:** June. 2022
 
-      b. Parameter Estimation: 
+      #. New algorithm: Principal component analysis and probabilistic model-based GSA
+      #. "NaN" handling improved in SimCenterUQ engine
 
-         #. NL2SOL
-         #. OPT++GaussNewton
+      *Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
 
-      c. Inverse Problem:
+      #. **UQ (Uncertainty Quantification and Optimization Options)**:
 
-         #. DREAM
+         * Dakota:
 
-      d. Reliability:
+            a. Forward Uncertainty Propagation: 
 
-         #. Local Reliability
-         #. Global Reliability
-         #. Importance Sampling
+               #. Monte Carlo Sampling (MCS)
+               #. Latin Hypercube Sampling (LHS)
+               #. Gaussian Process Regression
+               #. Polynomial Chaos Expansion
 
-      e. Sensitivity Analysis:
+            b. Parameter Estimation: 
 
-         #. MCS
-         #. LHS
+               #. NL2SOL
+               #. OPT++GaussNewton
 
-   * SimCenterUQ:
+            c. Inverse Problem:
 
-      a. Sensitivity Analysis
+               #. DREAM
 
-         #. Probability Model-based Global Sensitivity Analysis (PM-GSA)
+            d. Reliability:
 
-      b. Sampling
+               #. :blue:`Local Reliability (terminology and expressions revised)`
+               #. Global Reliability
+               #. Importance Sampling
 
-         #. Monte Carlo Sampling (MCS)
-            a. Resample from existing correlated dataset of samples
+            e. Sensitivity Analysis:
 
-      c. Train Gaussian Process (GP) Surrogate Model
+               #. MCS
+               #. LHS
 
-         #. Multifidelity surrogate modeling
-         #. Adaptive design of experiments options for surrogate modeling
-         #. Nugget optimization options for surrogate modeling
+         * SimCenterUQ:
 
-   * UCSD_UQ:
+            a. Sensitivity Analysis
 
-      a. Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation
+               #. Probability Model-based Global Sensitivity Analysis (PM-GSA)
 
-         #. Override default log-likelihood function
-         #. Override default error covariance structure
-         #. Calibrate multipliers on error covariance structure
+                  a. First-order Sobol indices
+                  b. Total-effect Sobol indices
+                  c. Group-wise Sobol indices
+                  d. :blue:`Principal component analysis and probabilistic model-based GSA (PCA-PSA) for high-dimensional QoIs`
+                  e. :blue:`Aggregated Sobol indices for field QoIs`
 
-   * CustomUQ:
+            b. Sampling
 
-      a. Configure UQ analysis using JSON file
+               #. Monte Carlo Sampling (MCS)
+                  a. Resample from existing correlated dataset of samples
 
+            c. Train Gaussian Process (GP) Surrogate Model
 
-#. **FEM (Computational Model Specification)**:
-   
-   * OpenSees
-   * FEAPpv
-   * OpenSeesPy
-   * Custom
-   * SurrogateGP
+               #. Multifidelity surrogate modeling
+               #. Adaptive design of experiments options for surrogate modeling
+               #. Nugget optimization options for surrogate modeling
 
-#. **RV (Inputs to Computational Models)**:
+            d. Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)
 
-   * Inspect PDF of RV
+         * UCSD_UQ:
 
-   * Dakota:
+            a. Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation
 
-      a. Random variables (UQ):
+               #. Override default log-likelihood function
+               #. Override default error covariance structure
+               #. Calibrate multipliers on error covariance structure
 
-         #. Normal
-         #. Lognormal
-         #. Beta
-         #. Uniform
-         #. Weibull
-         #. Gumbel
+         * CustomUQ:
 
+            a. Configure UQ analysis using JSON file
 
-      b. Design variables (Optimization):
 
-         #. Continuous
-
-   * SimCenterUQ:
-
-      a. Random variables (UQ): RVs can be defined by any of parameters, moments, or dataset.
-
-         #. Normal
-         #. Lognormal
-         #. Beta
-         #. Uniform
-         #. Weibull
-         #. Gumbel
-         #. Exponential
-         #. Discrete
-         #. Gamma
-         #. Chi-squared
-         #. Truncated exponential
-   
-
-   * UCSD_UQ:
-
-      a. Random variables (Priors):
-
-         #. Normal
-         #. Lognormal
-         #. Beta
-         #. Uniform
-         #. Weibull
-         #. Gumbel
-
-
-#. **EDP (Outputs from Computational Models)**:
-   
-   * Scalar quantities of interest
-   * Vector quantities of interest
-
-
-
-#. **RES (Summary and Visualization of UQ Analysis Results)**:
-
-   * Summary statistics of outputs displayed
-
-      #. Mean
-      #. Standard deviation
-
-   * All output values presented in spreadsheet
-
-      #. Update chart by clicking on spreadsheet columns
-
-   * Output values visualized in interactive chart
-
-      #. Scatter plot
-      #. Histogram
-      #. Cumulative distribution
-
-   * Visualization of surrogate modeling results
-
-      #. Goodness-of-fit measures
-
-
-#. **Remote (Support for Analysis on DesignSafe's high performance super computer)**:
-
-   * Dakota
-
-      a. Forward Uncertainty Propagation: 
-
-         #. Monte Carlo Sampling (MCS)
-         #. Latin Hypercube Sampling (LHS)
-         #. Gaussian Process Regression
-         #. Polynomial Chaos Expansion
-
-      b. Reliability:
-
-         #. Local Reliability
-         #. Global Reliability
-         #. Importance Sampling
-
-      c. Sensitivity Analysis:
-
-         #. MCS
-         #. LHS
-
-   * SimCenterUQ
-
-      a. Forward Uncertainty Propagation
-      b. PM-GSA
-      c. Train GP Surrogate Model
-
-   * :blue:`UCSD_UQ`
-
-      a. :blue:`TMCMC`
-
-
-
-|app| Version 2.4.0
--------------------
-
-**Release date:** Oct. 2021
-
-*Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
-
-#. **UQ (Uncertainty Quantification and Optimization Options)**:
-
-   * Dakota:
-
-      a. Forward Uncertainty Propagation: 
-
-         #. Monte Carlo Sampling (MCS)
-         #. Latin Hypercube Sampling (LHS)
-         #. Importance Sampling
-         #. Gaussian Process Regression
-         #. Polynomial Chaos Expansion
-
-      b. Parameter Estimation: 
-
-         #. NL2SOL
-         #. OPT++GaussNewton
-
-      c. Inverse Problem:
-
-         #. DREAM
-
-      d. Reliability:
-
-         #. Local Reliability
-         #. Global Reliability
-
-      e. Sensitivity Analysis:
-
-         #. MCS
-         #. LHS
-
-   * SimCenterUQ:
-
-      a. Sensitivity Analysis
-
-         #. Probability Model-based Global Sensitivity Analysis (PM-GSA)
-
-      b. Sampling
-
-         #. Monte Carlo Sampling (MCS)
+      #. **FEM (Computational Model Specification)**:
          
-            a. :blue:`Resample from existing correlated dataset of samples`
+         * OpenSees
+         * FEAPpv
+         * OpenSeesPy
+         * Custom
+         * SurrogateGP
 
-      c. :blue:`Train Gaussian Process (GP) Surrogate Model`
+      #. **RV (Inputs to Computational Models)**:
 
-         #. :blue:`Multifidelity surrogate modeling`
-         #. :blue:`Adaptive design of experiments options for surrogate modeling`
-         #. :blue:`Nugget optimization options for surrogate modeling`
+         * Inspect PDF of RV
 
-   * UCSD_UQ:
+         * Dakota:
 
-      a. Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation
+            a. Random variables (UQ):
 
-         #. Override default log-likelihood function
-         #. Override default error covariance structure
-         #. Calibrate multipliers on error covariance structure
+               #. Normal
+               #. Lognormal
+               #. Beta
+               #. Uniform
+               #. Weibull
+               #. Gumbel
 
-   * CustomUQ:
 
-      a. Configure UQ analysis using JSON file
+            b. Design variables (Optimization):
 
+               #. Continuous
 
-#. **FEM (Computational Model Specification)**:
-   
-   * OpenSees
-   * FEAPpv
-   * OpenSeesPy
-   * Custom
-   * :blue:`SurrogateGP`
+         * SimCenterUQ:
 
-#. **RV (Inputs to Computational Models)**:
+            a. Random variables (UQ): RVs can be defined by any of parameters, moments, or dataset.
 
-   * Inspect PDF of RV
+               #. Normal
+               #. Lognormal
+               #. Beta
+               #. Uniform
+               #. Weibull
+               #. Gumbel
+               #. Exponential
+               #. Discrete
+               #. Gamma
+               #. Chi-squared
+               #. Truncated exponential
+         
 
-   * Dakota:
+         * UCSD_UQ:
 
-      a. Random variables (UQ):
+            a. Random variables (Priors):
 
-         #. Normal
-         #. Lognormal
-         #. Beta
-         #. Uniform
-         #. Weibull
-         #. Gumbel
+               #. Normal
+               #. Lognormal
+               #. Beta
+               #. Uniform
+               #. Weibull
+               #. Gumbel
+               #. Exponential
+               #. Discrete
+               #. Gamma
+               #. Chi-squared
+               #. Truncated exponential
 
 
-      b. Design variables (Optimization):
+      #. **EDP (Outputs from Computational Models)**:
+         
+         * Scalar quantities of interest
+         * Vector quantities of interest
 
-         #. Continuous
 
-   * SimCenterUQ:
 
-      a. Random variables (UQ): RVs can be defined by any of parameters, moments, or dataset.
+      #. **RES (Summary and Visualization of UQ Analysis Results)**:
 
-         #. Normal
-         #. Lognormal
-         #. Beta
-         #. Uniform
-         #. Weibull
-         #. Gumbel
-         #. Exponential
-         #. Discrete
-         #. Gamma
-         #. Chi-squared
-         #. Truncated exponential
-   
+         * Summary statistics of outputs displayed
 
-   * UCSD_UQ:
+            #. Mean
+            #. Standard deviation
 
-      a. Random variables (Priors):
+         * All output values presented in spreadsheet
 
-         #. Normal
-         #. Lognormal
-         #. Beta
-         #. Uniform
-         #. Weibull
-         #. Gumbel
+            #. Update chart by clicking on spreadsheet columns
 
+         * Output values visualized in interactive chart
 
-#. **EDP (Outputs from Computational Models)**:
-   
-   * Scalar quantities of interest
-   * Vector quantities of interest
+            #. Scatter plot
+            #. Histogram
+            #. Cumulative distribution
+            #. `Inspect points on chart`
 
+         * Spreadsheet save options
 
+            #. Save Table
+            #. Save Columns Separately (Useful after Bayesian updating, the posterior samples can later be directly loaded in quoFEM)
+            #. :blue:`Save RVs` (Useful for surrogate model training)
+            #. :blue:`Save QoIs` (Useful for surrogate model training)
+            #. Save Surrogate Predictions (Only for the surrogate model results)
 
-#. **RES (Summary and Visualization of UQ Analysis Results)**:
+         * Visualization of surrogate modeling results
 
-   * Summary statistics of outputs displayed
+            #. Goodness-of-fit measures
 
-      #. Mean
-      #. Standard deviation
+         * Visualization of PLoM training results
 
-   * All output values presented in spreadsheet
+            #. PCA representation error plot
+            #. Diffusion maps eigenvalue plot
 
-      #. Update chart by clicking on spreadsheet columns
 
-   * Output values visualized in interactive chart
+      #. **Remote (Support for Analysis on DesignSafe's high performance super computer)**:
 
-      #. Scatter plot
-      #. Histogram
-      #. Cumulative distribution
+         * Dakota
 
-   * :blue:`Visualization of surrogate modeling results`
+            a. Forward Uncertainty Propagation: 
 
+               #. Monte Carlo Sampling (MCS)
+               #. Latin Hypercube Sampling (LHS)
+               #. Gaussian Process Regression
+               #. Polynomial Chaos Expansion
 
-#. **Remote (Support for Analysis on DesignSafe's high performance super computer)**:
+            b. Reliability:
 
-   * Dakota
+               #. Local Reliability
+               #. Global Reliability
+               #. Importance Sampling
 
-      a. Forward Uncertainty Propagation: 
+            c. Sensitivity Analysis:
 
-         #. Monte Carlo Sampling (MCS)
-         #. Latin Hypercube Sampling (LHS)
-         #. Importance Sampling
-         #. Gaussian Process Regression
-         #. Polynomial Chaos Expansion
+               #. MCS
+               #. LHS
 
-      b. Reliability:
+         * SimCenterUQ
 
-         #. Local Reliability
-         #. Global Reliability
+            a. Forward Uncertainty Propagation
+            b. PM-GSA
+            c. Train GP Surrogate Model
 
-      c. Sensitivity Analysis:
+         * UCSD_UQ
 
-         #. MCS
-         #. LHS
+            a. TMCMC
 
-   * :blue:`SimCenterUQ`
 
-      a. :blue:`Forward Uncertainty Propagation`
-      b. :blue:`PM-GSA`
-      c. :blue:`Train GP Surrogate Model`
+   .. dropdown::    Version 3.0.0
 
+      **Release date:** March. 2022
 
+      #. Major restructuring of the backend
+      #. Updated example files
 
-|app| Version 2.3
------------------
+      *Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
 
-**Release date:** May 2021
+      #. **UQ (Uncertainty Quantification and Optimization Options)**:
 
-*Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
+         * Dakota:
 
-#. **UQ (Uncertainty Quantification and Optimization Options)**:
+            a. Forward Uncertainty Propagation: 
 
-   * Dakota:
+               #. Monte Carlo Sampling (MCS)
+               #. Latin Hypercube Sampling (LHS)
+               #. Gaussian Process Regression
+               #. Polynomial Chaos Expansion
 
-      a. Forward Uncertainty Propagation: 
+         b. Parameter Estimation: 
 
-         #. Monte Carlo Sampling (MCS)
-         #. Latin Hypercube Sampling (LHS)
-         #. Importance Sampling
-         #. Gaussian Process Regression
-         #. Polynomial Chaos Expansion
+            #. NL2SOL
+            #. OPT++GaussNewton
 
-      b. Parameter Estimation: 
+         c. Inverse Problem:
 
-         #. NL2SOL
-         #. OPT++GaussNewton
+            #. DREAM
 
-      c. Inverse Problem:
+         d. Reliability:
 
-         #. DREAM
+            #. Local Reliability
+            #. Global Reliability
+            #. Importance Sampling
 
-      d. Reliability:
+         e. Sensitivity Analysis:
 
-         #. Local Reliability
-         #. Global Reliability
+            #. MCS
+            #. LHS
 
-      e. Sensitivity Analysis:
+      * SimCenterUQ:
 
-         #. MCS
-         #. LHS
+         a. Sensitivity Analysis
 
-   * SimCenterUQ:
+            #. Probability Model-based Global Sensitivity Analysis (PM-GSA)
 
-      a. Sensitivity Analysis
+               a. First-order Sobol indices
+               b. Group-wise Sobol indices
 
-         #. Probability Model-based Global Sensitivity Analysis (PM-GSA)
+         b. Sampling
 
-      b. Sampling
+            #. Monte Carlo Sampling (MCS)
+               a. Resample from existing correlated dataset of samples
 
-         #. Monte Carlo Sampling (MCS)
+         c. Train Gaussian Process (GP) Surrogate Model
 
-   * UCSD_UQ:
+            #. Multifidelity surrogate modeling
+            #. Adaptive design of experiments options for surrogate modeling
+            #. Nugget optimization options for surrogate modeling
 
-      a. Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation
+         d. :blue:`Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)`
 
-         #. :blue:`Override default log-likelihood function`
-         #. :blue:`Override default error covariance structure`
-         #. :blue:`Calibrate multipliers on error covariance structure`
+      * UCSD_UQ:
 
-   * CustomUQ:
+         a. Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation
 
-      a. Configure UQ analysis using JSON file
+            #. Override default log-likelihood function
+            #. Override default error covariance structure
+            #. Calibrate multipliers on error covariance structure
 
+      * CustomUQ:
 
-#. **FEM (Computational Model Specification)**:
-   
-   * OpenSees
-   * FEAPpv
-   * OpenSeesPy
-   * Custom
+         a. Configure UQ analysis using JSON file
 
-#. **RV (Inputs to Computational Models)**:
 
-   * Inspect PDF of RV
+      #. **FEM (Computational Model Specification)**:
+         
+         * OpenSees
+         * FEAPpv
+         * OpenSeesPy
+         * Custom
+         * SurrogateGP
 
-   * Dakota:
+      #. **RV (Inputs to Computational Models)**:
 
-      a. Random variables (UQ):
+         * Inspect PDF of RV
 
-         #. Normal
-         #. Lognormal
-         #. Beta
-         #. Uniform
-         #. Weibull
-         #. Gumbel
+         * Dakota:
 
+            a. Random variables (UQ):
 
-      b. Design variables (Optimization):
+               #. Normal
+               #. Lognormal
+               #. Beta
+               #. Uniform
+               #. Weibull
+               #. Gumbel
 
-         #. Continuous
 
-   * SimCenterUQ:
+            b. Design variables (Optimization):
 
-      a. Random variables (UQ): RVs can be defined by any of parameters, moments, or dataset.
+               #. Continuous
 
-         #. Normal
-         #. Lognormal
-         #. Beta
-         #. Uniform
-         #. Weibull
-         #. Gumbel
-         #. Exponential
-         #. Discrete
-         #. Gamma
-         #. Chi-squared
-         #. Truncated exponential
-   
+         * SimCenterUQ:
 
-   * UCSD_UQ:
+            a. Random variables (UQ): RVs can be defined by any of parameters, moments, or dataset.
 
-      a. Random variables (Priors):
+               #. Normal
+               #. Lognormal
+               #. Beta
+               #. Uniform
+               #. Weibull
+               #. Gumbel
+               #. Exponential
+               #. Discrete
+               #. Gamma
+               #. Chi-squared
+               #. Truncated exponential
+         
 
-         #. Normal
-         #. Lognormal
-         #. Beta
-         #. Uniform
-         #. Weibull
-         #. Gumbel
+         * UCSD_UQ:
 
+            a. Random variables (Priors):
 
-#. **EDP (Outputs from Computational Models)**:
-   
-   * Scalar quantities of interest
-   * :blue:`Vector quantities of interest`
+               #. Normal
+               #. Lognormal
+               #. Beta
+               #. Uniform
+               #. Weibull
+               #. Gumbel
+               #. :blue:`Exponential`
+               #. :blue:`Discrete`
+               #. :blue:`Gamma`
+               #. :blue:`Chi-squared`
+               #. :blue:`Truncated exponential`
 
 
+      #. **EDP (Outputs from Computational Models)**:
+         
+         * Scalar quantities of interest
+         * Vector quantities of interest
 
-#. **RES (Summary and Visualization of UQ Analysis Results)**:
 
-   * Summary statistics of outputs displayed
 
-      #. Mean
-      #. Standard deviation
+      #. **RES (Summary and Visualization of UQ Analysis Results)**:
 
-   * All output values presented in spreadsheet
+         * Summary statistics of outputs displayed
 
-      #. Update chart by clicking on spreadsheet columns
+            #. Mean
+            #. Standard deviation
 
-   * Output values visualized in interactive chart
+         * All output values presented in spreadsheet
 
-      #. Scatter plot
-      #. Histogram
-      #. Cumulative distribution
+            #. Update chart by clicking on spreadsheet columns
 
+         * Output values visualized in interactive chart
 
-#. **Remote (Support for Analysis on DesignSafe's high performance super computer)**:
+            #. Scatter plot
+            #. Histogram
+            #. Cumulative distribution
+            #. :blue:`Inspect points on chart`
 
-   * Dakota
+         * Visualization of surrogate modeling results
 
-      a. Forward Uncertainty Propagation: 
+            #. Goodness-of-fit measures
 
-         #. Monte Carlo Sampling (MCS)
-         #. Latin Hypercube Sampling (LHS)
-         #. Importance Sampling
-         #. Gaussian Process Regression
-         #. Polynomial Chaos Expansion
+         * :blue:`Visualization of PLoM training results`
 
-      b. Reliability:
+            #. :blue:`PCA representation error plot`
+            #. :blue:`Diffusion maps eigenvalue plot`
 
-         #. Local Reliability
-         #. Global Reliability
 
-      c. Sensitivity Analysis:
+      #. **Remote (Support for Analysis on DesignSafe's high performance super computer)**:
 
-         #. MCS
-         #. LHS
+         * Dakota
 
+            a. Forward Uncertainty Propagation: 
 
-|app| Version 2.2
------------------
+               #. Monte Carlo Sampling (MCS)
+               #. Latin Hypercube Sampling (LHS)
+               #. Gaussian Process Regression
+               #. Polynomial Chaos Expansion
 
-**Release date:** Oct. 2020
+            b. Reliability:
 
-*Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
+               #. Local Reliability
+               #. Global Reliability
+               #. Importance Sampling
 
-#. **UQ (Uncertainty Quantification and Optimization Options)**:
+            c. Sensitivity Analysis:
 
-   * Dakota:
+               #. MCS
+               #. LHS
 
-      a. Forward Uncertainty Propagation: 
+         * SimCenterUQ
 
-         #. Monte Carlo Sampling (MCS)
-         #. Latin Hypercube Sampling (LHS)
-         #. Importance Sampling
-         #. Gaussian Process Regression
-         #. Polynomial Chaos Expansion
+            a. Forward Uncertainty Propagation
+            b. PM-GSA
+            c. Train GP Surrogate Model
 
-      b. Parameter Estimation: 
+         * UCSD_UQ
 
-         #. NL2SOL
-         #. OPT++GaussNewton
+            a. TMCMC
 
-      c. Inverse Problem:
 
-         #. DREAM
+Major Version 2
+=================
+   .. dropdown::    Version 2.4.1
 
-      d. Reliability:
+      **Release date:** Dec. 2021
 
-         #. Local Reliability
-         #. Global Reliability
+      *Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
 
-      e. Sensitivity Analysis:
+      #. **UQ (Uncertainty Quantification and Optimization Options)**:
 
-         #. MCS
-         #. LHS
+         * Dakota:
 
-   * :blue:`SimCenterUQ`:
+            a. Forward Uncertainty Propagation: 
 
-      a. :blue:`Sensitivity Analysis`
+               #. Monte Carlo Sampling (MCS)
+               #. Latin Hypercube Sampling (LHS)
+               #. Gaussian Process Regression
+               #. Polynomial Chaos Expansion
 
-         #. :blue:`Probability Model-based Global Sensitivity Analysis (PM-GSA)`
+            b. Parameter Estimation: 
 
-      b. :blue:`Sampling`
+               #. NL2SOL
+               #. OPT++GaussNewton
 
-         #. :blue:`Monte Carlo Sampling (MCS)`
+            c. Inverse Problem:
 
-   * :blue:`UCSD_UQ`:
+               #. DREAM
 
-      a. :blue:`Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation`
+            d. Reliability:
 
-   * :blue:`CustomUQ`:
+               #. Local Reliability
+               #. Global Reliability
+               #. Importance Sampling
 
-      a. :blue:`Configure UQ analysis using JSON file`
+            e. Sensitivity Analysis:
 
+               #. MCS
+               #. LHS
 
-#. **FEM (Computational Model Specification)**:
-   
-   * OpenSees
-   * FEAPpv
-   * :blue:`OpenSeesPy`
-   * :blue:`Custom`
+         * SimCenterUQ:
 
-#. **RV (Inputs to Computational Models)**:
+            a. Sensitivity Analysis
 
-   * :blue:`Inspect PDF of RV`
+               #. Probability Model-based Global Sensitivity Analysis (PM-GSA)
 
-   * Dakota:
+            b. Sampling
 
-      a. Random variables (UQ):
+               #. Monte Carlo Sampling (MCS)
+                  a. Resample from existing correlated dataset of samples
 
-         #. Normal
-         #. Lognormal
-         #. Beta
-         #. Uniform
-         #. Weibull
-         #. Gumbel
+            c. Train Gaussian Process (GP) Surrogate Model
 
+               #. Multifidelity surrogate modeling
+               #. Adaptive design of experiments options for surrogate modeling
+               #. Nugget optimization options for surrogate modeling
 
-      b. Design variables (Optimization):
+         * UCSD_UQ:
 
-         #. Continuous
+            a. Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation
 
-   * :blue:`SimCenterUQ`:
+               #. Override default log-likelihood function
+               #. Override default error covariance structure
+               #. Calibrate multipliers on error covariance structure
 
-      a. :blue:`Random variables (UQ): RVs can be defined by any of parameters, moments, or dataset.`
+         * CustomUQ:
 
-         #. :blue:`Normal`
-         #. :blue:`Lognormal`
-         #. :blue:`Beta`
-         #. :blue:`Uniform`
-         #. :blue:`Weibull`
-         #. :blue:`Gumbel`
-         #. :blue:`Exponential`
-         #. :blue:`Discrete`
-         #. :blue:`Gamma`
-         #. :blue:`Chi-squared`
-         #. :blue:`Truncated exponential`
-   
+            a. Configure UQ analysis using JSON file
 
-   * :blue:`UCSD_UQ`:
 
-      a. :blue:`Random variables (Priors)`:
+      #. **FEM (Computational Model Specification)**:
+         
+         * OpenSees
+         * FEAPpv
+         * OpenSeesPy
+         * Custom
+         * SurrogateGP
 
-         #. :blue:`Normal`
-         #. :blue:`Lognormal`
-         #. :blue:`Beta`
-         #. :blue:`Uniform`
-         #. :blue:`Weibull`
-         #. :blue:`Gumbel`
+      #. **RV (Inputs to Computational Models)**:
 
+         * Inspect PDF of RV
 
+         * Dakota:
 
-#. **EDP (Outputs from Computational Models)**:
-   
-   * Scalar quantities of interest
+            a. Random variables (UQ):
 
+               #. Normal
+               #. Lognormal
+               #. Beta
+               #. Uniform
+               #. Weibull
+               #. Gumbel
 
 
-#. **RES (Summary and Visualization of UQ Analysis Results)**:
+            b. Design variables (Optimization):
 
-   * Summary statistics of outputs displayed
+               #. Continuous
 
-      #. Mean
-      #. Standard deviation
+         * SimCenterUQ:
 
-   * All output values presented in spreadsheet
+            a. Random variables (UQ): RVs can be defined by any of parameters, moments, or dataset.
 
-      #. Update chart by clicking on spreadsheet columns
+               #. Normal
+               #. Lognormal
+               #. Beta
+               #. Uniform
+               #. Weibull
+               #. Gumbel
+               #. Exponential
+               #. Discrete
+               #. Gamma
+               #. Chi-squared
+               #. Truncated exponential
+         
 
-   * Output values visualized in interactive chart
+         * UCSD_UQ:
 
-      #. Scatter plot
-      #. Histogram
-      #. Cumulative distribution
+            a. Random variables (Priors):
 
+               #. Normal
+               #. Lognormal
+               #. Beta
+               #. Uniform
+               #. Weibull
+               #. Gumbel
 
-#. **Remote (Support for Analysis on DesignSafe's high performance super computer)**:
 
-   * Dakota
+      #. **EDP (Outputs from Computational Models)**:
+         
+         * Scalar quantities of interest
+         * Vector quantities of interest
 
-      a. Forward Uncertainty Propagation: 
 
-         #. Monte Carlo Sampling (MCS)
-         #. Latin Hypercube Sampling (LHS)
-         #. Importance Sampling
-         #. Gaussian Process Regression
-         #. Polynomial Chaos Expansion
 
-      b. Reliability:
+      #. **RES (Summary and Visualization of UQ Analysis Results)**:
 
-         #. Local Reliability
-         #. Global Reliability
+         * Summary statistics of outputs displayed
 
-      c. Sensitivity Analysis:
+            #. Mean
+            #. Standard deviation
 
-         #. MCS
-         #. LHS
+         * All output values presented in spreadsheet
 
+            #. Update chart by clicking on spreadsheet columns
 
-|app| Version 2.0
------------------
+         * Output values visualized in interactive chart
 
-**Release date:** Sept. 2019
+            #. Scatter plot
+            #. Histogram
+            #. Cumulative distribution
 
-This is a SimCenter research application whose purpose is to allow users to perform uncertainty quantification and optimization utilizing existing finite element applictions. 
+         * Visualization of surrogate modeling results
 
-It will run the computations locally utilizing laptop/desktop or remotely utilizing the computational resources at TACC made available through DesignSafe-CI.
+            #. Goodness-of-fit measures
 
-*Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
 
-#. **UQ (Uncertainty Quantification and Optimization Options)**:
+      #. **Remote (Support for Analysis on DesignSafe's high performance super computer)**:
 
-   * Dakota:
+         * Dakota
 
-      a. Forward Uncertainty Propagation: 
+            a. Forward Uncertainty Propagation: 
 
-         #. Monte Carlo Sampling (MCS)
-         #. Latin Hypercube Sampling (LHS)
-         #. :blue:`Importance Sampling`
-         #. :blue:`Gaussian Process Regression`
-         #. :blue:`Polynomial Chaos Expansion`
+               #. Monte Carlo Sampling (MCS)
+               #. Latin Hypercube Sampling (LHS)
+               #. Gaussian Process Regression
+               #. Polynomial Chaos Expansion
 
-      b. Parameter Estimation: 
+            b. Reliability:
 
-         #. NL2SOL
-         #. OPT++GaussNewton
+               #. Local Reliability
+               #. Global Reliability
+               #. Importance Sampling
 
-      c. Inverse Problem:
+            c. Sensitivity Analysis:
 
-         #. DREAM
+               #. MCS
+               #. LHS
 
-      d. :blue:`Reliability`:
+         * SimCenterUQ
 
-         #. :blue:`FORM`
-         #. :blue:`SORM`
+            a. Forward Uncertainty Propagation
+            b. PM-GSA
+            c. Train GP Surrogate Model
 
-      e. :blue:`Sensitivity Analysis`:
+         * :blue:`UCSD_UQ`
 
-         #. :blue:`MCS`
-         #. :blue:`LHS`
+            a. :blue:`TMCMC`
 
 
-#. **FEM (Computational Model Specification)**:
-   
-   * OpenSees
-   * FEAPpv
 
-#. **RV (Inputs to Computational Models)**:
+   .. dropdown::    Version 2.4.0
 
-   * Dakota:
+      **Release date:** Oct. 2021
 
-      a. Random variables (UQ):
+      *Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
 
-         #. Normal
-         #. Lognormal
-         #. Beta
-         #. Uniform
-         #. Weibull
-         #. Gumbel
+      #. **UQ (Uncertainty Quantification and Optimization Options)**:
 
+         * Dakota:
 
-      b. Design variables (Optimization):
+            a. Forward Uncertainty Propagation: 
 
-         #. Continuous
-   
+               #. Monte Carlo Sampling (MCS)
+               #. Latin Hypercube Sampling (LHS)
+               #. Importance Sampling
+               #. Gaussian Process Regression
+               #. Polynomial Chaos Expansion
 
+            b. Parameter Estimation: 
 
-#. **EDP (Outputs from Computational Models)**:
-   
-   * Scalar quantities of interest
+               #. NL2SOL
+               #. OPT++GaussNewton
 
+            c. Inverse Problem:
 
+               #. DREAM
 
-#. **RES (Summary and Visualization of UQ Analysis Results)**:
+            d. Reliability:
 
-   * Summary statistics of outputs displayed
+               #. Local Reliability
+               #. Global Reliability
 
-      #. Mean
-      #. Standard deviation
+            e. Sensitivity Analysis:
 
-   * All output values presented in spreadsheet
+               #. MCS
+               #. LHS
 
-      #. Update chart by clicking on spreadsheet columns
+         * SimCenterUQ:
 
-   * Output values visualized in interactive chart
+            a. Sensitivity Analysis
 
-      #. Scatter plot
-      #. Histogram
-      #. Cumulative distribution
+               #. Probability Model-based Global Sensitivity Analysis (PM-GSA)
 
+            b. Sampling
 
-#. **Remote (Support for Analysis on DesignSafe's high performance super computer)**:
+               #. Monte Carlo Sampling (MCS)
+               
+                  a. :blue:`Resample from existing correlated dataset of samples`
 
-   * Dakota
+            c. :blue:`Train Gaussian Process (GP) Surrogate Model`
 
-      a. Forward Uncertainty Propagation: 
+               #. :blue:`Multifidelity surrogate modeling`
+               #. :blue:`Adaptive design of experiments options for surrogate modeling`
+               #. :blue:`Nugget optimization options for surrogate modeling`
 
-         #. Monte Carlo Sampling (MCS)
-         #. Latin Hypercube Sampling (LHS)
-         #. :blue:`Importance Sampling`
-         #. :blue:`Gaussian Process Regression`
-         #. :blue:`Polynomial Chaos Expansion`
+         * UCSD_UQ:
 
-      b. :blue:`Reliability`:
+            a. Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation
 
-         #. :blue:`FORM`
-         #. :blue:`SORM`
+               #. Override default log-likelihood function
+               #. Override default error covariance structure
+               #. Calibrate multipliers on error covariance structure
 
-      c. :blue:`Sensitivity Analysis`:
+         * CustomUQ:
 
-         #. :blue:`MCS`
-         #. :blue:`LHS`
+            a. Configure UQ analysis using JSON file
 
 
+      #. **FEM (Computational Model Specification)**:
+         
+         * OpenSees
+         * FEAPpv
+         * OpenSeesPy
+         * Custom
+         * :blue:`SurrogateGP`
 
-We encourage new feature suggestions, please write to us at :ref:`lblBugs`.
+      #. **RV (Inputs to Computational Models)**:
+
+         * Inspect PDF of RV
+
+         * Dakota:
+
+            a. Random variables (UQ):
+
+               #. Normal
+               #. Lognormal
+               #. Beta
+               #. Uniform
+               #. Weibull
+               #. Gumbel
+
+
+            b. Design variables (Optimization):
+
+               #. Continuous
+
+         * SimCenterUQ:
+
+            a. Random variables (UQ): RVs can be defined by any of parameters, moments, or dataset.
+
+               #. Normal
+               #. Lognormal
+               #. Beta
+               #. Uniform
+               #. Weibull
+               #. Gumbel
+               #. Exponential
+               #. Discrete
+               #. Gamma
+               #. Chi-squared
+               #. Truncated exponential
+         
+
+         * UCSD_UQ:
+
+            a. Random variables (Priors):
+
+               #. Normal
+               #. Lognormal
+               #. Beta
+               #. Uniform
+               #. Weibull
+               #. Gumbel
+
+
+      #. **EDP (Outputs from Computational Models)**:
+         
+         * Scalar quantities of interest
+         * Vector quantities of interest
+
+
+
+      #. **RES (Summary and Visualization of UQ Analysis Results)**:
+
+         * Summary statistics of outputs displayed
+
+            #. Mean
+            #. Standard deviation
+
+         * All output values presented in spreadsheet
+
+            #. Update chart by clicking on spreadsheet columns
+
+         * Output values visualized in interactive chart
+
+            #. Scatter plot
+            #. Histogram
+            #. Cumulative distribution
+
+         * :blue:`Visualization of surrogate modeling results`
+
+
+      #. **Remote (Support for Analysis on DesignSafe's high performance super computer)**:
+
+         * Dakota
+
+            a. Forward Uncertainty Propagation: 
+
+               #. Monte Carlo Sampling (MCS)
+               #. Latin Hypercube Sampling (LHS)
+               #. Importance Sampling
+               #. Gaussian Process Regression
+               #. Polynomial Chaos Expansion
+
+            b. Reliability:
+
+               #. Local Reliability
+               #. Global Reliability
+
+            c. Sensitivity Analysis:
+
+               #. MCS
+               #. LHS
+
+         * :blue:`SimCenterUQ`
+
+            a. :blue:`Forward Uncertainty Propagation`
+            b. :blue:`PM-GSA`
+            c. :blue:`Train GP Surrogate Model`
+
+
+
+   .. dropdown::    Version 2.3
+
+      **Release date:** May 2021
+
+      *Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
+
+      #. **UQ (Uncertainty Quantification and Optimization Options)**:
+
+         * Dakota:
+
+            a. Forward Uncertainty Propagation: 
+
+               #. Monte Carlo Sampling (MCS)
+               #. Latin Hypercube Sampling (LHS)
+               #. Importance Sampling
+               #. Gaussian Process Regression
+               #. Polynomial Chaos Expansion
+
+            b. Parameter Estimation: 
+
+               #. NL2SOL
+               #. OPT++GaussNewton
+
+            c. Inverse Problem:
+
+               #. DREAM
+
+            d. Reliability:
+
+               #. Local Reliability
+               #. Global Reliability
+
+            e. Sensitivity Analysis:
+
+               #. MCS
+               #. LHS
+
+         * SimCenterUQ:
+
+            a. Sensitivity Analysis
+
+               #. Probability Model-based Global Sensitivity Analysis (PM-GSA)
+
+            b. Sampling
+
+               #. Monte Carlo Sampling (MCS)
+
+         * UCSD_UQ:
+
+            a. Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation
+
+               #. :blue:`Override default log-likelihood function`
+               #. :blue:`Override default error covariance structure`
+               #. :blue:`Calibrate multipliers on error covariance structure`
+
+         * CustomUQ:
+
+            a. Configure UQ analysis using JSON file
+
+
+      #. **FEM (Computational Model Specification)**:
+         
+         * OpenSees
+         * FEAPpv
+         * OpenSeesPy
+         * Custom
+
+      #. **RV (Inputs to Computational Models)**:
+
+         * Inspect PDF of RV
+
+         * Dakota:
+
+            a. Random variables (UQ):
+
+               #. Normal
+               #. Lognormal
+               #. Beta
+               #. Uniform
+               #. Weibull
+               #. Gumbel
+
+
+            b. Design variables (Optimization):
+
+               #. Continuous
+
+         * SimCenterUQ:
+
+            a. Random variables (UQ): RVs can be defined by any of parameters, moments, or dataset.
+
+               #. Normal
+               #. Lognormal
+               #. Beta
+               #. Uniform
+               #. Weibull
+               #. Gumbel
+               #. Exponential
+               #. Discrete
+               #. Gamma
+               #. Chi-squared
+               #. Truncated exponential
+         
+
+         * UCSD_UQ:
+
+            a. Random variables (Priors):
+
+               #. Normal
+               #. Lognormal
+               #. Beta
+               #. Uniform
+               #. Weibull
+               #. Gumbel
+
+
+      #. **EDP (Outputs from Computational Models)**:
+         
+         * Scalar quantities of interest
+         * :blue:`Vector quantities of interest`
+
+
+
+      #. **RES (Summary and Visualization of UQ Analysis Results)**:
+
+         * Summary statistics of outputs displayed
+
+            #. Mean
+            #. Standard deviation
+
+         * All output values presented in spreadsheet
+
+            #. Update chart by clicking on spreadsheet columns
+
+         * Output values visualized in interactive chart
+
+            #. Scatter plot
+            #. Histogram
+            #. Cumulative distribution
+
+
+      #. **Remote (Support for Analysis on DesignSafe's high performance super computer)**:
+
+         * Dakota
+
+            a. Forward Uncertainty Propagation: 
+
+               #. Monte Carlo Sampling (MCS)
+               #. Latin Hypercube Sampling (LHS)
+               #. Importance Sampling
+               #. Gaussian Process Regression
+               #. Polynomial Chaos Expansion
+
+            b. Reliability:
+
+               #. Local Reliability
+               #. Global Reliability
+
+            c. Sensitivity Analysis:
+
+               #. MCS
+               #. LHS
+
+
+   .. dropdown::    Version 2.2
+
+      **Release date:** Oct. 2020
+
+      *Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
+
+      #. **UQ (Uncertainty Quantification and Optimization Options)**:
+
+         * Dakota:
+
+            a. Forward Uncertainty Propagation: 
+
+               #. Monte Carlo Sampling (MCS)
+               #. Latin Hypercube Sampling (LHS)
+               #. Importance Sampling
+               #. Gaussian Process Regression
+               #. Polynomial Chaos Expansion
+
+            b. Parameter Estimation: 
+
+               #. NL2SOL
+               #. OPT++GaussNewton
+
+            c. Inverse Problem:
+
+               #. DREAM
+
+            d. Reliability:
+
+               #. Local Reliability
+               #. Global Reliability
+
+            e. Sensitivity Analysis:
+
+               #. MCS
+               #. LHS
+
+         * :blue:`SimCenterUQ`:
+
+            a. :blue:`Sensitivity Analysis`
+
+               #. :blue:`Probability Model-based Global Sensitivity Analysis (PM-GSA)`
+
+            b. :blue:`Sampling`
+
+               #. :blue:`Monte Carlo Sampling (MCS)`
+
+         * :blue:`UCSD_UQ`:
+
+            a. :blue:`Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation`
+
+         * :blue:`CustomUQ`:
+
+            a. :blue:`Configure UQ analysis using JSON file`
+
+
+      #. **FEM (Computational Model Specification)**:
+         
+         * OpenSees
+         * FEAPpv
+         * :blue:`OpenSeesPy`
+         * :blue:`Custom`
+
+      #. **RV (Inputs to Computational Models)**:
+
+         * :blue:`Inspect PDF of RV`
+
+         * Dakota:
+
+            a. Random variables (UQ):
+
+               #. Normal
+               #. Lognormal
+               #. Beta
+               #. Uniform
+               #. Weibull
+               #. Gumbel
+
+
+            b. Design variables (Optimization):
+
+               #. Continuous
+
+         * :blue:`SimCenterUQ`:
+
+            a. :blue:`Random variables (UQ): RVs can be defined by any of parameters, moments, or dataset.`
+
+               #. :blue:`Normal`
+               #. :blue:`Lognormal`
+               #. :blue:`Beta`
+               #. :blue:`Uniform`
+               #. :blue:`Weibull`
+               #. :blue:`Gumbel`
+               #. :blue:`Exponential`
+               #. :blue:`Discrete`
+               #. :blue:`Gamma`
+               #. :blue:`Chi-squared`
+               #. :blue:`Truncated exponential`
+         
+
+         * :blue:`UCSD_UQ`:
+
+            a. :blue:`Random variables (Priors)`:
+
+               #. :blue:`Normal`
+               #. :blue:`Lognormal`
+               #. :blue:`Beta`
+               #. :blue:`Uniform`
+               #. :blue:`Weibull`
+               #. :blue:`Gumbel`
+
+
+
+      #. **EDP (Outputs from Computational Models)**:
+         
+         * Scalar quantities of interest
+
+
+
+      #. **RES (Summary and Visualization of UQ Analysis Results)**:
+
+         * Summary statistics of outputs displayed
+
+            #. Mean
+            #. Standard deviation
+
+         * All output values presented in spreadsheet
+
+            #. Update chart by clicking on spreadsheet columns
+
+         * Output values visualized in interactive chart
+
+            #. Scatter plot
+            #. Histogram
+            #. Cumulative distribution
+
+
+      #. **Remote (Support for Analysis on DesignSafe's high performance super computer)**:
+
+         * Dakota
+
+            a. Forward Uncertainty Propagation: 
+
+               #. Monte Carlo Sampling (MCS)
+               #. Latin Hypercube Sampling (LHS)
+               #. Importance Sampling
+               #. Gaussian Process Regression
+               #. Polynomial Chaos Expansion
+
+            b. Reliability:
+
+               #. Local Reliability
+               #. Global Reliability
+
+            c. Sensitivity Analysis:
+
+               #. MCS
+               #. LHS
+
+   .. dropdown::    Version 2.0
+
+      **Release date:** Sept. 2019
+
+      This is a SimCenter research application whose purpose is to allow users to perform uncertainty quantification and optimization utilizing existing finite element applictions. 
+
+      It will run the computations locally utilizing laptop/desktop or remotely utilizing the computational resources at TACC made available through DesignSafe-CI.
+
+      *Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
+
+      #. **UQ (Uncertainty Quantification and Optimization Options)**:
+
+         * Dakota:
+
+            a. Forward Uncertainty Propagation: 
+
+               #. Monte Carlo Sampling (MCS)
+               #. Latin Hypercube Sampling (LHS)
+               #. :blue:`Importance Sampling`
+               #. :blue:`Gaussian Process Regression`
+               #. :blue:`Polynomial Chaos Expansion`
+
+            b. Parameter Estimation: 
+
+               #. NL2SOL
+               #. OPT++GaussNewton
+
+            c. Inverse Problem:
+
+               #. DREAM
+
+            d. :blue:`Reliability`:
+
+               #. :blue:`FORM`
+               #. :blue:`SORM`
+
+            e. :blue:`Sensitivity Analysis`:
+
+               #. :blue:`MCS`
+               #. :blue:`LHS`
+
+
+      #. **FEM (Computational Model Specification)**:
+         
+         * OpenSees
+         * FEAPpv
+
+      #. **RV (Inputs to Computational Models)**:
+
+         * Dakota:
+
+            a. Random variables (UQ):
+
+               #. Normal
+               #. Lognormal
+               #. Beta
+               #. Uniform
+               #. Weibull
+               #. Gumbel
+
+
+            b. Design variables (Optimization):
+
+               #. Continuous
+         
+
+
+      #. **EDP (Outputs from Computational Models)**:
+         
+         * Scalar quantities of interest
+
+
+
+      #. **RES (Summary and Visualization of UQ Analysis Results)**:
+
+         * Summary statistics of outputs displayed
+
+            #. Mean
+            #. Standard deviation
+
+         * All output values presented in spreadsheet
+
+            #. Update chart by clicking on spreadsheet columns
+
+         * Output values visualized in interactive chart
+
+            #. Scatter plot
+            #. Histogram
+            #. Cumulative distribution
+
+
+      #. **Remote (Support for Analysis on DesignSafe's high performance super computer)**:
+
+         * Dakota
+
+            a. Forward Uncertainty Propagation: 
+
+               #. Monte Carlo Sampling (MCS)
+               #. Latin Hypercube Sampling (LHS)
+               #. :blue:`Importance Sampling`
+               #. :blue:`Gaussian Process Regression`
+               #. :blue:`Polynomial Chaos Expansion`
+
+            b. :blue:`Reliability`:
+
+               #. :blue:`FORM`
+               #. :blue:`SORM`
+
+            c. :blue:`Sensitivity Analysis`:
+
+               #. :blue:`MCS`
+               #. :blue:`LHS`
+
+
+
+      We encourage new feature suggestions, please write to us at :ref:`lblBugs`.

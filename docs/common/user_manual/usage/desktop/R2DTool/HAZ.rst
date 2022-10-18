@@ -194,10 +194,10 @@ This is where the user defines the earthquake rupture characteristics. In the **
 
 	  Earthquake rupture forecast.
 
-	#. **OpenQuake Scenario-Based**
-
+    #. **OpenQuake Scenario-Based**
+    
 	The **OpenQuake Scenario-Based** pane, shown in :numref:`fig-R2DOpenQuakeScenarioBased`, requires the following inputs:
-
+		
 		- **OpenQuake Version:** Version of OpenQuake (currently available 3.10, 3.11, 3.12, and latest minor version is supported).
 		- **Rupture File:** A xml file (NRML format) defining an earthquake source.
 		- **Rupture Meshsize:** Mesh size for line sources.
@@ -212,7 +212,7 @@ This is where the user defines the earthquake rupture characteristics. In the **
 
 	  OpenQuake Scenario-Based Input.
 
-	#. **OpenQuake Classcial PSHA**
+    #. **OpenQuake Classcial PSHA**
 
 	The **OpenQuake Classcial PSHA** pane, shown in :numref:`fig-R2DOpenQuakeClassicalPSHA`, requires the following inputs:
 
@@ -236,6 +236,34 @@ This is where the user defines the earthquake rupture characteristics. In the **
 	  :figclass: align-center
 
 	  OpenQuake Classical PSHA Input.
+
+    #. **Hazard Occurrence**
+
+	The **Hazard Occurrence** pane, shown in :numref:`fig-R2DHazardOccurrence`, requires the following inputs:
+
+		- **Hazard occurrence model:** Currently Manzour and Davidson (2016) ([Manzour2016]_) is available.
+		- **Forecast model:** Type of earthquake forecast model where the candidate earthquake scenarios are collected from. 
+			- WGCEP (2007) UCERF2 - Single Branch
+			- Mean UCERF3
+			- Mean UCERF3 FM3.1
+			- Mean UCERF3 FM3.2
+		- **Candidate earthquake number:** Number of earthquakes used as candidates to select from.
+		- **Reduced earthquake number:** Maximum number of selected (reduced) earthquakes to recover the hazard curves.
+		- **Reduced motion number:** Maximum number of selected (reduced) ground motions per individual site to recover the site hazard curve.
+		- **Hazard curve input:** Types of reference hazard curves: (1) Inferred and (2) User-defined. Inferred hazard curves are fetched from National seismic hazar map project ([Peterson2020]_). User-defined hazard curves should be summarized in a csv file following the :download:`template <src/HazardCurves.csv>`.
+		- **National seismic hazard map:** Version of national seismic hazard map used to infer reference site-specific hazard curves.
+		- **Hazard curve file:** User-defined hazard curve file.
+		- **Intensity measure:** The intensity measure type used in reference hazard curves.
+		- **Hazard curve Sa period:** Period of the response acceleration Sa if the intensity measure type is Sa.
+		- **Return periods (yr):** A list of return periods in year used in minimizing the difference between recovered and reference hazard curves (seperated by ",").
+
+	.. _fig-R2DHazardOccurrence:
+
+	.. figure:: figures/R2DHazardOccurrence.png
+	  :align: center
+	  :figclass: align-center
+
+	  Hazard Occurrence Input.
 
 **Intensity Measure and Period Points**
 
@@ -580,3 +608,9 @@ maximum shear strain and excess pore pressure ratio plots are also important.
 
 .. [Boyd2020]
    Boyd, O.S., 2020, Calibration of the U.S. Geological Survey National Crustal Model: U.S. Geological Survey Open-File Report 2020–1052, 23 p., https://doi.org/10.3133/ofr20201052.
+
+.. [Manzour2016]
+   Manzour, H., Davidson, R. A., Horspool, N., & Nozick, L. K. (2016). Seismic hazard and loss analysis for spatially distributed infrastructure in Christchurch, New Zealand. Earthquake Spectra, 32(2), 697-712.
+
+.. [Peterson2020]
+   Petersen, M. D., Shumway, A. M., Powers, P. M., Mueller, C. S., Moschetti, M. P., Frankel, A. D., ... & Zeng, Y. (2020). The 2018 update of the US National Seismic Hazard Model: Overview of model and implications. Earthquake Spectra, 36(1), 5-41.

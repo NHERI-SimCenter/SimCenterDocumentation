@@ -7,7 +7,7 @@ Surrogate Modeling
 .. Note:: 
      Surrogate modeling functionality of quoFEM is built upon `GPy <https://sheffieldml.github.io/GPy/>`_ library (available under BSD 3-clause license), an opensource python framework for Gaussian process modeling developed in the Sheffield machine learning group. 
 
-The ``Train GP Surrogate Model`` module is used to construct a Gaussian process (GP) based **surrogate model** that substitutes expensive computational **simulation models** or physical experiments. Consider a simulation model, with input random variables (or parameters) :math:`\boldsymbol{x}` and output quantity of interests, denoted as :math:`\boldsymbol{y}=f(\boldsymbol{x})`. A surrogate model for the corresponding simulation model can be built by different user-provided information types:
+The ``Train GP Surrogate Model`` module is used to construct a Gaussian process (GP) based **surrogate model** that substitutes expensive computational **simulation models** or physical experiments. Consider a simulation model, with input random variables (or parameters) :math:`\boldsymbol{x}` and output quantity of interests, denoted as :math:`\boldsymbol{y}=f(\boldsymbol{x})`. A surrogate model for the corresponding simulation model can be built by different user-provided information types (RV-random variables, QoI-quantities of interest):
 
 .. list-table:: User-provided information types      
    :widths: 3 10 10
@@ -27,13 +27,13 @@ The ``Train GP Surrogate Model`` module is used to construct a Gaussian process 
      - dataset: :math:`\{\boldsymbol{y^{(1)},y^{(2)}, ... ,y^{(N)}}\}`
 
 
-**Case 1 (Sampling and Simulation)**: User provides lower and upper bounds of each random variable (RV) and a simulation model. quoFEM will find the best training points sequentially by the adaptive **design of experiments** strategies until the model converges or reaches a user-specified computational tolerance. 
+**Case 1 (Sampling and Simulation)**: User provides lower and upper bounds of each random variable (RV) and a simulation model. quoFEM will find the best training points sequentially by the adaptive **design of experiments** (DoE) strategies until the model converges or reaches a user-specified computational tolerance. 
 
 **Case 2 (Import RV Dataset and run Simulation)**: User provides sample population of RVs as a separate text file. quoFEM will run simulations to get QoI values and build a surrogate model. 
 
 **Case 3 (Import both RV and QoI Dataset)**:  User provides sample population of RVs and QoIs. quoFEM will not run any simulations and build a surrogate model purely based on the provided dataset.
 
-.. list-table:: quoFEM workflow       
+.. list-table:: quoFEM workflow (DoE: Design of experiments)      
    :widths: 2 5 5 5
    :header-rows: 1
    :align: center
@@ -70,7 +70,7 @@ When the **Training Dataset** option is set to the ``Sampling and Simulation``, 
 .. figure:: figures/Surrogate1_SimUQ.jpg
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Input panel for surrogate modeling
 
@@ -92,7 +92,7 @@ When the **Training Dataset** option is set to the ``Sampling and Simulation``, 
 
 * **Random Seed**: Seed of the random number generator
 * **Parallel excution**: This engine implemented multiprocessing (local) or mpi4py (remote) python packages to run parallel execution.
-Note that the results from the parallel and serial run may not be exactly the same because parallel execution sets the number of batch DoE in order to maximize the use of resources (Default DoE interval: 5)
+Note that the results from the parallel and serial run may not be exactly the same because parallel execution sets the number of batch design of experiments (DoE) in order to maximize the use of resources (Default DoE interval: 5)
 
 User can also activate the **Advanced Options for Gaussian Process Model**
 
@@ -101,14 +101,14 @@ User can also activate the **Advanced Options for Gaussian Process Model**
 .. figure:: figures/Surrogate2_SimUQ.jpg
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Sampling and Simulation - Case 1
 
-* **Kernel function**: Correlation function for Gaussian process regression. Matern5/2 function is the default, and Matern3/2, Radial Basis, and Exponential functions are additionally supported.
+* **Kernel function**: Correlation function for Gaussian process regression. Matern5/2 function is the default, and Matern3/2, Radial Basis, and Exponential functions (exponent :math:`\gamma=1`) are additionally supported. (For details, please refer to `chapter 4 <http://gaussianprocess.org/gpml/chapters/RW4.pdf>`_ of the book Gaussian Processes for Machine Learning)
 * **Add Linear Trend Function**: When increasing or decreasing trend is expected over the variables domain, a linear trend function may be introduced. The default is unchecked, ie. no trend function.
 * **Log-space Transform of QoI**: When the user can guarantee that the response quantities are always greater than 0, user may want to introduce a surrogate model in log-transformed space of QoI. The default is unchecked, ie. original physical coordinate.
-* **Design of Experiments options**: User may select the Adaptive DoE method and the number of the initial design of experiments (DoE) manually. The default is "none" and the default number of DoE is 4 times the number of random variables.
+* **Design of Experiments options**: User may manually select the design of experiments (DoE) method and the number of the initial DoE. The default is "none" and the default number of DoE is 4 times the number of random variables.
 * **Nugget Variances**: User may define nugget variances or bounds of the nugget variances if needed. The default is "optimize".
 
 Additionally, users may populate the initial samples directly from data files by activating **Start with Existing Dataset**
@@ -118,7 +118,7 @@ Additionally, users may populate the initial samples directly from data files by
 .. figure:: figures/Surrogate3_SimUQ.jpg
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Input panel for surrogate modeling
 
@@ -141,7 +141,7 @@ where
 .. figure:: figures/Surrogate4_SimUQ.jpg
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Example of data input files
 
@@ -153,14 +153,14 @@ where
 
 Case 2: Import RV Dataset and run Simulation
 ----------------------------------------------
-When the **Training Dataset** option is set to ``Import Data File`` AND **Get results from datafile** check box is unchecked, quoFEM will run simulations to get result (QoI)  values for imported RV locations and build a surrogate model.
+When the **Training Dataset** option is set to ``Import Data File`` AND **Get results from datafile** check box is unchecked, quoFEM will run simulations to get result (QoI) values for imported RV locations and build a surrogate model.
 
 .. _figSim5:
 
 .. figure:: figures/Surrogate5_SimUQ.jpg
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Import Data File - Case 2
 
@@ -185,7 +185,7 @@ When the **Training Dataset** option is set to ``Import Data File`` AND **Get re
 .. figure:: figures/Surrogate6_SimUQ.jpg
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Import Data File - Case 3
 
@@ -221,7 +221,7 @@ When a user provides two different models, i.e. high and low fidelity models, th
 .. figure:: figures/SimUQ_surrogate_MF1.png
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Multi-fidelity modeling panel
 
@@ -232,7 +232,7 @@ For each fidelity models, either model, data, or both can be provided for each f
 .. figure:: figures/SimUQ_surrogate_MF2.png
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Providing a simulation model for the high-fidelity response
 
@@ -241,9 +241,28 @@ For each fidelity models, either model, data, or both can be provided for each f
 .. figure:: figures/SimUQ_surrogate_MF3.png
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Directly providing input(RV)-response(QoI) data pair of high-fidelity model
+
+Heteroscedastic Gaussian Process
+------------------------------------
+When the noise in the response surface is expected to vary across the domains, heteroscedastic measurement noise model should be introduced. See the :ref:`theory manual<lbluqSimTechnical>` for more.
+ 
+.. _figSimStoch1:
+
+.. figure:: figures/SimCenterUQ/Surrogate_Hetero.png
+   :align: center
+   :figclass: align-center
+   :width: 1200
+
+   Input fields for heteroscedastic GP
+
+Heteroscedastic Gaussian Process can be trained by selecting ``Heteroscedastic`` option in the ``Nugget Variance`` field. The following two parameters are are requested:
+
+* **Number of samples to be replicated (A)** : Among number of unique samples specified in the ``Number of Samples`` field, decide how many of them will have its replications. 
+* **Number of replications per sample (B)** : Specify how many replications will be generated for the number of samples specified in A. 
+* Without DoE, the total number of simulations required is then ``Number of Samples``:math:`+A(B-1)`.
 
 
 RV (Random Variables) Tab
@@ -255,7 +274,7 @@ RV (Random Variables) Tab
 .. figure:: figures/Surrogate7_SimUQ.jpg
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Example of RV tab
 
@@ -324,12 +343,12 @@ Once the training is completed, the following three verification measures are pr
 .. figure:: figures/Surrogate8_SimUQ.jpg
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Well-trained surrogate (left) and poorly trained surrogate (right) models
 
 .. Note:: 
-     Since these validation measures are calculated from the cross-validation predictions, they can be **biased**, particularly when highly localized nonlinear range exists in actual response surface and those regions are not covered by the training samples. The introduction of adaptive DoE helps to suppress the bias by enabling the targeted selection of simulation points around potentially faulty regions.
+     Since these validation measures are calculated from the cross-validation predictions, they can be **biased**, particularly when highly localized nonlinear range exists in actual response surface and those regions are not covered by the training samples. The introduction of adaptive design of experiments helps to suppress the bias by enabling the targeted selection of simulation points around potentially faulty regions.
 
 
 .. Warning:: 
@@ -339,6 +358,11 @@ Once the training is completed, the following three verification measures are pr
 Saving Options
 --------------
 * **Save GP Model**: The constructed surrogate model is saved. Two files and a folder will be saved, which are the **SurroateGP Info File** (default name: ``SimGpModel.json``), **SurroateGP model file** (default name: ``SimGpModel.pkl``), and **Simulation template directory** that contains the simulation model information (``templatedir_SIM``). **IMPORTANT**: User may NOT change the name of the template directory ``templatedir_SIM``.
+
+.. warning::
+
+   Do not place above surrogate model files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!
+
 * **Save GP Info**: This is a report generated for user reference. It contains the GP model parameter and other information. The default file name is ``GPresults.out``.
 * **RV Data**, **QoI Data**:It saves the samples of RV and QoI. The default file names are ``X.txt`` and ``Y.txt``, respectively. **IMPORTANT**: To continue surrogate modeling with additional simulations, save the RV and QoI sample files using this button and import them as initial points. Refer to the 'Start with Existing Dataset' option in Case 1.
 
@@ -347,7 +371,7 @@ Saving Options
 .. figure:: figures/Surrogate9_SimUQ.jpg
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Saving options
 
@@ -357,7 +381,7 @@ Saving Options
 .. figure:: figures/Surrogate10_SimUQ.jpg
    :align: center
    :figclass: align-center
-   :width: 800
+   :width: 1200
 
    Example outputs from saving options
 
