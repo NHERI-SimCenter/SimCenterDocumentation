@@ -1199,7 +1199,15 @@ It is noted that each element in *R* defines a six-component symmetric tensor of
 :math:`(R_{11} \ R_{21} \ R_{31} \ R_{22} \ R_{32} \ R_{33})`.
 For the *turbulentDFMInlet* and *turbulentSEMInlet* boundary conditions, each element in *L* defines a
 general (i.e., nine-components) tensor to be entered as
-:math:`(L_{11} \ L_{12} \ L_{13} \ L_{21} \ L_{22} \ L_{23} \ L_{31} \ L_{32} \ L_{33})`. 
+(:math:`L_{11}`
+ :math:`L_{12}` 
+ :math:`L_{13}` 
+ :math:`L_{21}`
+ :math:`L_{22}` 
+ :math:`L_{23}` 
+ :math:`L_{31}` 
+ :math:`L_{32}` 
+ :math:`L_{33}`). 
 For the *turbulentATSMInlet* boundary condition, each element in *L* defines a three-component vector of the form 
 :math:`(L_{11} L_{22} L_{33})`.
 For the *turbulentDFSEMInlet* boundary condition, each element in *L* is a scalar. The main difficultly in specifying the entries *U*,
@@ -1358,19 +1366,7 @@ Now, the remaining issue is the determination of the origin of the local coordin
 
         // ************************************************************************* //
 
-In addition to the entries mentioned above, there are a total of three sub-dictionaries need to be specified in the *inflowProperties*
-file, i.e. *UDict*, *RDict* and *LDict*, which are responsible for the specifications of the mean velocity magnitude, the Reynolds
-stress tensor
-:math:`(R_{11} \ R_{21} \ R_{31} \ R_{22} \ R_{32} \ R_{33})`
-and the integral length scales. For the *turbulentDFMInlet*
-and *turbulentSEMInlet* boundary conditions, the integral length scales should be defined in the form of
-:math:`(L_{11} \ L_{12} \ L_{13} \ L_{21} \ L_{22} \ L_{23} \ L_{31} \ L_{32} \ L_{33})`.
-For the *turbulentATSMInlet* boundary condition, the integral length scales should be
-defined in the form of :math:`(L_{11} L_{22} L_{33})`.
-Note that :math:`L_{11}` refers to the integral
-length scale obtained by integrating the two-point correlation function :math:`\rho_{11}(\mathbf{x})` with respect to the local
-:math:`x_1`-direction (i.e., the stream-wise direction) and similarly for :math:`L_{22}` and :math:`L_{33}`. 
-
+In addition to the entries mentioned above, there are a total of three sub-dictionaries need to be specified in the *inflowProperties* file, i.e. *UDict*, *RDict* and *LDict*, which are responsible for the specifications of the mean velocity magnitude, the Reynolds stress tensor :math:`(R_{11} \ R_{21} \ R_{31} \ R_{22} \ R_{32} \ R_{33})` and the integral length scales. For the *turbulentDFMInlet* and *turbulentSEMInlet* boundary conditions, the integral length scales should be defined in the form of (:math:`L_{11}^{x_1}` :math:`L_{11}^{x_2}` :math:`L_{11}^{x_3}` :math:`L_{22}^{x_1}` :math:`L_{22}^{x_2}` :math:`L_{22}^{x_3}` :math:`L_{33}^{x_1}` :math:`L_{33}^{x_2}` :math:`L_{33}^{x_3})`. For the *turbulentATSMInlet* boundary condition, the integral length scales should be defined in the form of :math:`(L_{11}^{x_1} \ L_{22}^{x_2} \ L_{33}^{x_3})`. Note that :math:`L_{11}^{x_1}` refers to the integral length scale obtained by integrating the two-point correlation function :math:`R_{11}(\mathbf{x})` with respect to the local :math:`x_1`-direction (i.e., the stream-wise direction) and similarly for :math:`L_{22}^{x_2}` and :math:`L_{33}^{x_3}`.
 
 Each sub-dictionary contains the entries required for the computation of the values of the corresponding variable on the inlet boundary which are almost identical to each other. In all sub-dictionaries mentioned above, the two basic entries need to be specified are the *referenceValue* and the *profile*. For the *UDict* sub-dictionary, the *referenceValue* entry requires a scalar value for input, while a symmetric tensor is required for the *RDict* sub-dictionary. Finally, the *referenceValue* entry of the *LDict* sub-dictionary demands a vector.
 
