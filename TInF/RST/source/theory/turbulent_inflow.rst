@@ -20,17 +20,20 @@ where :math:`\mathbf{U}(\mathbf{x},t)` and :math:`\mathbf{u}'(\mathbf{x},t)` are
 
 * :math:`\mathbf{u}'` needs to have prescribed Reynolds stresses tensor :math:`R_{ij}(\mathbf{x}) = \langle u_i'u_j'\rangle(\mathbf{x})` where :math:`u_i'` (:math:`i=1,2,3`) is the :math:`i`-th component of :math:`\mathbf{u}'`  and the angles denote the time average.
 
-* :math:`\mathbf{u}'` needs to have prescribed integral length scales :math:`L_{ij}(\mathbf{x},\mathbf{e})`
+* :math:`\mathbf{u}'` needs to have prescribed integral length scales, :math:`L_{ij}^{\mathbf{e}}(\mathbf{x})`, with respect to a direction :math:`\mathbf{e}` as
 
 .. math::
 
-        L_{ij}(\mathbf{x},\mathbf{e}) = \int_{0}^{\infty} \rho_{ij}(\mathbf{x},r\mathbf{e})\ \mathrm{d}r,
+        L_{ij}^{\mathbf{e}}(\mathbf{x}) :=
+        L_{ij}(\mathbf{x},\mathbf{e}) =
+	\int_{0}^{\infty} \rho_{ij}(\mathbf{x},r\mathbf{e})\ \mathrm{d}r,
 
 
 where :math:`\rho_{ij}(\mathbf{x},\mathbf{e})` is the correlation function given by
 
 .. math::
 
+        \rho_{ij}^{\mathbf{e}}(\mathbf{x}) :=
         \rho_{ij}(\mathbf{x},\mathbf{e}) = \frac{\langle u_i'(\mathbf{x},t)u_j'(\mathbf{x}+\mathbf{e},t)\rangle}{\langle u_i'(\mathbf{x},t)u_j'(\mathbf{x},t) \rangle}.
 
 
@@ -1195,28 +1198,7 @@ The three entries displayed in the *inlet* dictionary are *U*, *R* and *L* which
             }
         }
 
-<<<<<<< HEAD
-It is noted that each element in *R* defines a six-component symmetric tensor of the form
-:math:`(R_{11} \ R_{21} \ R_{31} \ R_{22} \ R_{32} \ R_{33})`.
-For the *turbulentDFMInlet* and *turbulentSEMInlet* boundary conditions, each element in *L* defines a
-general (i.e., nine-components) tensor to be entered as
-(:math:`L_{11}`
- :math:`L_{12}` 
- :math:`L_{13}` 
- :math:`L_{21}`
- :math:`L_{22}` 
- :math:`L_{23}` 
- :math:`L_{31}` 
- :math:`L_{32}` 
- :math:`L_{33}`). 
-For the *turbulentATSMInlet* boundary condition, each element in *L* defines a three-component vector of the form 
-:math:`(L_{11} L_{22} L_{33})`.
-For the *turbulentDFSEMInlet* boundary condition, each element in *L* is a scalar. The main difficultly in specifying the entries *U*,
-*R* and *L* directly is to make sure that the sequence of the elements in each entry is properly sorted coping with the corresponding
-faces on the inflow plane. 
-=======
 It is noted that each element in *R* defines a six-component symmetric tensor of the form :math:`(R_{11} \ R_{21} \ R_{31} \ R_{22} \ R_{32} \ R_{33})`. For the *turbulentDFMInlet* and *turbulentSEMInlet* boundary conditions, each element in *L* defines a nine-component tensor of the form (:math:`L_{11}^{x_1}` :math:`L_{11}^{x_2}` :math:`L_{11}^{x_3}` :math:`L_{22}^{x_1}` :math:`L_{22}^{x_2}` :math:`L_{22}^{x_3}` :math:`L_{33}^{x_1}` :math:`L_{33}^{x_2}` :math:`L_{33}^{x_3})`. For the *turbulentATSMInlet* boundary condition, each element in *L* defines a three-component vector of the form :math:`(L_{11}^{x_1} L_{22}^{x_2} L_{33}^{x_3})`.  For the *turbulentDFSEMInlet* boundary condition, each element in *L* is a scalar. The main difficultly in specifying the entries *U*, *R* and *L* directly is to make sure that the sequence of the elements in each entry is properly sorted coping with the corresponding faces on the inflow plane.
->>>>>>> parent of 10104a6... updating documentation on how length scale tensor needs to be entered
 
 Specification via interpolation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
