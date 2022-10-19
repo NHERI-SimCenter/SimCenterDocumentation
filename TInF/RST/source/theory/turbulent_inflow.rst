@@ -1195,7 +1195,24 @@ The three entries displayed in the *inlet* dictionary are *U*, *R* and *L* which
             }
         }
 
-It is noted that each element in *R* defines a six-component symmetric tensor of the form :math:`(R_{11} \ R_{21} \ R_{31} \ R_{22} \ R_{32} \ R_{33})`. For the *turbulentDFMInlet* and *turbulentSEMInlet* boundary conditions, each element in *L* defines a nine-component tensor of the form (:math:`L_{11}^{x_1}` :math:`L_{11}^{x_2}` :math:`L_{11}^{x_3}` :math:`L_{22}^{x_1}` :math:`L_{22}^{x_2}` :math:`L_{22}^{x_3}` :math:`L_{33}^{x_1}` :math:`L_{33}^{x_2}` :math:`L_{33}^{x_3})`. For the *turbulentATSMInlet* boundary condition, each element in *L* defines a three-component vector of the form :math:`(L_{11}^{x_1} L_{22}^{x_2} L_{33}^{x_3})`.  For the *turbulentDFSEMInlet* boundary condition, each element in *L* is a scalar. The main difficultly in specifying the entries *U*, *R* and *L* directly is to make sure that the sequence of the elements in each entry is properly sorted coping with the corresponding faces on the inflow plane.
+It is noted that each element in *R* defines a six-component symmetric tensor of the form
+:math:`(R_{11} \ R_{21} \ R_{31} \ R_{22} \ R_{32} \ R_{33})`.
+For the *turbulentDFMInlet* and *turbulentSEMInlet* boundary conditions, each element in *L* defines a
+general (i.e., nine-components) tensor to be entered as
+(:math:`L_{11}`
+ :math:`L_{12}` 
+ :math:`L_{13}` 
+ :math:`L_{21}`
+ :math:`L_{22}` 
+ :math:`L_{23}` 
+ :math:`L_{31}` 
+ :math:`L_{32}` 
+ :math:`L_{33}`). 
+For the *turbulentATSMInlet* boundary condition, each element in *L* defines a three-component vector of the form 
+:math:`(L_{11} L_{22} L_{33})`.
+For the *turbulentDFSEMInlet* boundary condition, each element in *L* is a scalar. The main difficultly in specifying the entries *U*,
+*R* and *L* directly is to make sure that the sequence of the elements in each entry is properly sorted coping with the corresponding
+faces on the inflow plane. 
 
 Specification via interpolation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
