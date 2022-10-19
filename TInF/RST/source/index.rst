@@ -1,3 +1,5 @@
+.. _Turbulence Inflow Tool:
+
 Turbulence Inflow Tool
 ======================
 
@@ -40,7 +42,8 @@ Turbulence Inflow Tool
    bugs
    copyright
 
-#   common/user_manual/requirements/requirements
+..
+   common/user_manual/requirements/requirements
 
 .. _lblTechnicalManual:
 
@@ -60,10 +63,12 @@ Turbulence Inflow Tool
    :numbered: 4
 
    building
-   architecture
-   howToExtend
    validation/TinFverification
    codingStyle
+..   
+   architecture
+   howToExtend
+
 
 
 Contact

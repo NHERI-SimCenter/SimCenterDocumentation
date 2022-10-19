@@ -843,6 +843,10 @@ elif app_name == "requirements":
 
 """
 
+elif app_name == 'Bootcamp':
+    project = 'SimCenter Programming Bootcamp'
+    copyright = '2020'
+    author = 'Peter Mackenzie-Helnwein, Frank McKenna'
 
 # -- General configuration ----------------------------------------------
 

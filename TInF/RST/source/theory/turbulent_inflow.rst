@@ -154,7 +154,7 @@ where the coefficients :math:`a_{ij}` are given by :eq:`LundCoefficients`. This 
 
 (f) Discard the first :math:`(x_2,x_3)`-plane of :math:`\Psi_{\alpha}` and shift the whole data: :math:`\Psi_{\alpha}(i,j,k) = R_{\alpha}(i+1,j,k)`. Fill the plane :math:`R_{\alpha}(N_1,j,k)` with new random numbers.
 
-(g) Repeat the steps (d):math:`\sim`(g) for each time step.
+(g) Repeat the steps (d):math:`\sim` (g) for each time step.
 
 If the target correlation function is an exponential function, an alternative approach by :cite:`xie2008` can be adopted for generating inflow turbulence which turns out to be much more efficient than the method of :cite:`klein2003`. Instead of using the filtering operation discussed above, the method of :cite:`xie2008` obtain the temporal correlation with the expression
 
@@ -1297,7 +1297,7 @@ Finally, the specification of the mean velocities, Reynolds stresses and integra
 
 .. _fig_TInF_theory_03:
 
-.. figure:: figures/TInF-theory-03.eps
+.. figure:: figures/TInF-theory-03.png
    :align: center
    :figclass: align-center
    :width: 250px

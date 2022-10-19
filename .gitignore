@@ -298,6 +298,8 @@ docs/web
 
 build/
 
+*.swp
+
 .idea
 fmkExamples
 .DS_Store
