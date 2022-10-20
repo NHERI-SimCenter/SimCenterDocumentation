@@ -77,6 +77,7 @@ extensions =  [
     "sphinx_panels",
     #"sphinxcontrib.spelling",
     'sphinx_toolbox.collapse',
+    'sphinx_tabs.tabs',
 ]
 
 source_suffix = {
@@ -804,6 +805,17 @@ elif app_name == "requirements":
         "common/front-matter/*",
         "common/developer_manual/*",
         "common/testbeds/*",
+        "common/reqments/reqQUOFEM.rst",
+        "common/reqments/Common.rst",
+        "common/reqments/EEUQ.rst",
+        "common/reqments/PBE.rst",
+        #"common/reqments/WEUQ.rst",
+        "common/reqments/WE-UQ-Requirements.rst",
+        "common/reqments/allRequirements.rst",
+        "common/reqments/bigRequirements.rst",
+        "common/reqments/edRequirements.rst",
+        "common/reqments/reqPelicun.rst",
+        "common/reqments/reqQUOFEM.rst",
         "common/Hydro/*",
         "common/technical_manual/*",
         ".DS_Store",
