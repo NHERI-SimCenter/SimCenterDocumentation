@@ -175,6 +175,7 @@ This is where the user defines the earthquake rupture characteristics. In the **
 
 	The **UCERF Earthquake Rupture Forecast** pane, shown in :numref:`fig-R2DEQSSSEQRupForecastPane`, requires the following inputs:
 
+		- **Number of scenarios:** The number of rupture scenarios considered.
 		- **Magnitude and Distance:** Magnitude of the earthquake and the maximum distance, in km, from a site.
 		- **Name:** Users can specify keywords here to search for specific earthquakes.
 		- **Earthquake Forecast Model:** Type of earthquake forecast model.
@@ -280,29 +281,20 @@ The **Intensity Measure and Period Points** pane, shown in :numref:`fig-R2DEQSSI
 
   Intensity measure and period.
 
-**Settings and Run Buttons**
+**Output Directory and Run Button**
 
-Shown at the bottom of :numref:`fig-EQSSPanel`, the **Settings** and **Run** buttons bring up the settings pane and start the ground motion selection application, respectively. The settings pane is provided in :numref:`fig-R2DEQSSSettingsPane`, showing the user-selectable directories containing the input and output files of the earthquake scenario simulation.
+Shown at the bottom of :numref:`fig-R2DEQSSOutputDirPane`, the **Run Hazard Simulation** button starts the ground motion selection application. The **Output Directory** box, provided in :numref:`fig-R2DEQSSOutputDirPane`, allows the user to select a directory that will contain the input and output files of the earthquake scenario simulation.
 
-.. _fig-R2DEQSSSettingsPane:
+.. _fig-R2DEQSSOutputDirPane:
 
-.. figure:: figures/R2DEQSSSettingsPane.png
+.. figure:: figures/R2DEQSSOutputDirPane.png
   :align: center
   :figclass: align-center
 
-  Earthquake Scenario Simulation settings.
+  Earthquake Scenario Simulation Output Directory.
 
-The earthquake scenario simulation is run via a Python script. When the **Run** button is pressed, a console window will appear, given in :numref:`fig-R2DEQSSConsole`, showing text output from the script.
-
-.. _fig-R2DEQSSConsole:
-
-.. figure:: figures/R2DEQSSConsole.png
-  :align: center
-  :figclass: align-center
-
-  Earthquake selection output console.
-
-Upon successful completion of the earthquake scenario simulation, the user will see output similar to that shown in the left-hand side of :numref:`fig-R2DEQSSOutput`. The results from the simulation are in the **Output Directory** folder that is specified in the settings, shown in :numref:`fig-R2DEQSSSettingsPane`. The final output is a ``.csv`` file called ``EventGrid.csv``. The ``EventGrid.csv`` file contains the grid points and their locations and file names. Each grid point is assigned a ``.csv`` file containing a list of the ground motions at the grid point and their scaling factors. If applicable, the corresponding ground motion records, in ``JSON`` format, are also in the **Output Directory** directoy. Next, the ``EventGrid.csv`` is post-processed, and a new layer containing the ground motions is added to the GIS widget. Shown on the right-hand side of :numref:`fig-R2DEQSSOutput`, the grid points are represented with a cross symbol. Clicking on a grid point will produce a popup with information about the ground motions at that point.
+The earthquake scenario simulation is run via a Python script. When the **Run Hazard Simulation** button is pressed, text output from the script will appear in the **Program Output** console at the bottom of the application.
+	Upon successful completion of the earthquake scenario simulation, results from the simulation are in the **Output Directory** folder that is specified above, as shown in :numref:`fig-R2DEQSSOutputDirPane`. The final output is a ``.csv`` file called ``EventGrid.csv``. The ``EventGrid.csv`` file contains the grid points and their locations and file names. Each grid point is assigned a ``.csv`` file containing a list of the ground motions at the grid point and their scaling factors. If applicable, the corresponding ground motion records, in ``JSON`` format, are also in the **Output Directory** directoy. Next, the ``EventGrid.csv`` is post-processed, and a new layer containing the ground motions is added to the GIS widget. Shown on the right-hand side of :numref:`fig-R2DEQSSOutput`, the grid points are represented with a cross symbol. Clicking on a grid point will produce a popup with information about the ground motions at that point.
 
 .. _fig-R2DEQSSOutput:
 
@@ -312,10 +304,10 @@ Upon successful completion of the earthquake scenario simulation, the user will 
 
   Post-processing output and grid visualization.
 
-User-specified Earthquakes
----------------------------
+User-specified Ground Motions
+-----------------------------
 
-The **User-specified Earthquakes** application loads the results of an **Earthquake Scenario Simulation** that was run previously. The **User-specified Earthquakes** application input pane is given in :numref:`fig-UserSelectEQ`. As seen in the figure, the user is required to input the file path to the ``EventGrid.csv`` file. If the ground motions are not in the same folder as the ``EventGrid.csv`` file, then the user needs to input the directory path to the folder containing the ground motions.
+The **User-specified Ground Motion** application loads the results of an **Earthquake Scenario Simulation** that was run previously. The **User-specified Earthquakes** application input pane is given in :numref:`fig-UserSelectEQ`. As seen in the figure, the user is required to input the file path to the ``EventGrid.csv`` file in the `Event File Listing Motions Field`. If the ground motions are not in the same folder as the ``EventGrid.csv`` file, then the user needs to input the directory path to the folder containing the ground motions. Users also need to specify the units of the ground motion field.
 
 .. _fig-UserSelectEQ:
 
@@ -411,7 +403,7 @@ This is where the user inputs the hurricane landfall parameters. Hurricane landf
 	- Radius in nautical miles (nmile)
 	- Exposure category to classify terrain roughness
 	- Gust duration in seconds (s)
-	- Reference height in meters (m). The reference height 
+	- Reference height in meters (m). 
 	
 Note that if a track is selected from the database, the landfall parameters will be automatically filled in based on the first encountered landfall. The **Perturbation** input boxes allow the user to specify uncertainty in the parameter values.  
 
@@ -437,7 +429,7 @@ The hurricane landfall location is manually defined using the buttons in :numref
 
 **Truncate Hurricane Track**
 
-R2D allows users to truncate hurricane tracks to save time in the wind field computations. This is also useful when a user requires only a portion of a hurricane track in their region of interest. The buttons for truncating a hurricane track are shown in :numref:`fig-R2DHurricaneTruncateTrack`. Clicking on the **Select Area on Map** button in the figure will turn on the selection procedure. Clicking on any point in the GIS window will create a selection point, shown as a red dot in the GIS window of the figure. Continuing the point selection procedure will form the boundary of the selection polygon, an example of which is provided in :numref:`fig-R2DHurricaneTruncateTrack`. The selection polygon can be cleared at any point by pressing the **Clear** button. Clicking on the **Apply** button will finalize the selection. The track points that fall within the selection polygon will be kept and all other points will be discarded. Note that once the **Apply** button is pressed, the procedure cannot be undone. An example truncated track is given in the left-hand side of the GIS window in :numref:`fig-R2DHurricaneTruncateTrack`.
+R2D allows users to truncate hurricane tracks to save time in the wind field computations. This is also useful when a user requires only a portion of a hurricane track in their region of interest. The buttons for truncating a hurricane track are shown in :numref:`fig-R2DHurricaneTruncateTrack`. Clicking on the **Select Area on Map** button in the figure will turn on the selection procedure. Clicking on any point in the GIS window will start the selection process. Continuing the point selection procedure by clicking elsewhere on the map will form the boundary of the selection polygon, an example of which is provided in :numref:`fig-R2DHurricaneTruncateTrack`. Right-clicking anywhere on the map, or my pressing the escape key, will clear the polygon and select the points within the polygon. The selected points will be highlighted in yellow.The selection points can be cleared at any time by pressing the **Clear** button. Clicking on the **Apply** button will finalize the selection. The yellow-highlighted track points that are selected will be kept and all other points will be discarded. Note that once the **Apply** button is pressed, the procedure cannot be undone. An example truncated track is given in the left-hand side of the GIS window in :numref:`fig-R2DHurricaneTruncateTrack`.
 	
 .. _fig-R2DHurricaneTruncateTrack:
 
@@ -463,20 +455,21 @@ To select the wind field grid on a map, the user needs to click on the **Define 
 
 Shown on the right-hand side of :numref:`fig-R2DHurricaneMainPanel`, the **Run Simulation** button starts the hurricane simulation application. The results from the simulation are in the **Output Directory** folder specified in R2D preferences. The final output is a ``.csv`` file called ``EventGrid.csv``. The ``EventGrid.csv`` file contains the grid point locations and file names. Each grid point is assigned a ``.csv`` file containing a list of the peak wind speeds at the grid point. The ``EventGrid.csv`` is post-processed and the grid points created in the **Specify Wind Field Grid** step will be updated with the Peak Wind Speed values that are calculated in the simulation. Clicking on a grid point will produce a popup listing the wind speeds at that point. 
 
-User-specified Wind Fields
+User-specified Hurricane
 --------------------------
 
-The **User-specified Wind Field** application loads the results of a **Hurricane Scenario Simulation** that was run previously. The **User-specified Hurricanes** application input pane is given in :numref:`fig-R2DUserSelectWindField`. As seen in the figure, the user is required to input the file path to the ``EventGrid.csv`` file. If the wind field stations are not in the same folder as the ``EventGrid.csv`` file, then the user needs to input the directory path to the folder containing the wind field station files.
+The **User-specified Hurricane** application loads the results of a **Hurricane Scenario Simulation** that was shown previously. The **User-specified Hurricanes** application input pane is given in :numref:`fig-R2DUserSelectWindField`. As seen in the figure, the user is required to input the file path to the ``EventGrid.csv`` file. If the wind and/or inundation field stations are not in the same folder as the ``EventGrid.csv`` file, then the user needs to input the directory path to the folder containing the wind and/or inundation field station files. The user also needs to specify the units of the intensity measure field. 
 
 .. _fig-R2DUserSelectWindField:
 
-.. figure:: figures/R2DU                      serSelectWindField.png
-  :align: cent                        
+.. figure:: figures/R2DUserSelectWindField.png
+  :align: center
+  :figclass: align-center                     
 
 ShakeMap Earthquake Scenarios
 -----------------------------
 
-The **ShakeMap Earthquake Scenario** application provides the functionality to import a USGS ShakeMap earthquake hazard. The **ShakeMap Earthquake Scenario** application input pane is given in :numref:`fig-R2DShakeMapPane`. As seen in the figure, the user is required to input a path to a folder on the user's computer that contains the ShakeMap data. At a minimum, the folder must contain a ``grid.xml`` file that provides the ground motion intensity measures, e.g., PGA, PGV, over a geographical grid. To visualize the PGA contours or rupture in the GIS window, a user can also provide the ``cont_pga.json`` file, or ``rupture.json`` file, respectively. Note that more than one ShakeMap can be input. However, the ShakeMap that is selected in the **List of ShakeMaps** tree in :numref:`fig-R2DShakeMapPane`, is the one that is employed in the subsequent analysis.
+The **ShakeMap Earthquake Scenario** application provides the functionality to import a USGS ShakeMap earthquake hazard. The **ShakeMap Earthquake Scenario** application input pane is given in :numref:`fig-R2DShakeMapPane`. As seen in the figure, the user is required to input a path to a folder on the user's computer that contains the ShakeMap data. At a minimum, the folder must contain a ``grid.xml`` file that provides the ground motion intensity measures, e.g., PGA, PGV, over a geographical grid. To visualize the PGA contours or rupture in the GIS window, a user can also provide the ``cont_pga.json`` file, or ``rupture.json`` file, respectively. Note that more than one ShakeMap can be input. However, the ShakeMap that is selected in the **List of ShakeMaps** tree in :numref:`fig-R2DShakeMapPane`, is the one that is employed in the subsequent analysis. The user also has the option to select the type of intensity measure they want from the ShakeMap grid. 
 
 .. _fig-R2DShakeMapPane:
 
