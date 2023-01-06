@@ -64,15 +64,17 @@
 
    common/front-matter/license
    common/front-matter/cite.rst
-   
-   common/front-matter/glossary.rst
-   common/front-matter/abbreviations.rst
+
+   :quoFEM:common/user_manual/releases/quoCapabilities   
    :quoFEM:common/user_manual/releases/quoReleaseNotes
    :quoFEM:common/user_manual/releases/quoPlans	   
    :R2D:common/user_manual/usage/desktop/R2DTool/releasenotes
    :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
    :EEUQ:common/user_manual/usage/desktop/earthquake/releasenotes
    :PBE:common/user_manual/usage/desktop/PBE/releasenotes
+	    
+   common/front-matter/glossary.rst
+   common/front-matter/abbreviations.rst
 	  
 .. _lbl-user-manual:
 
