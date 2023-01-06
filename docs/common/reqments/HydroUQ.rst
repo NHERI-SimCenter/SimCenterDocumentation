@@ -42,11 +42,13 @@ RV Requirements
 ---------------
 
 .. csv-table:: Requirements - Random Variables
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 60, 10, 10, 10	   
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2DTool", "HydroUQ"
+  :widths: 10, 60, 10, 10, 10, 10, 10, 10, 10, 10, 10
+  :included_cols: 0,1,2,3,4,11
   :file: _out/RandomVariables.csv
 
 .. include:: key.rst
+
 
 Modeling Requirements
 ------------------------

@@ -35,7 +35,7 @@ Sphinx directive. Columns generally correspond to the following fields:
 The JSON format consists of two object types which can be nested
 indefinitely to create layered requirement trees.
 
-The **Implementation** column of the CSV is generated either from
+The **implementation** columns of the CSV (one for each application) are generated either from
 the `"implementation"` JSON field, or a pair of `"config_path"` and
 `"config_values"` fields. 
 
@@ -65,6 +65,5 @@ find a link to an example implementing the requirement.
 - Latex version - footnotes
 
 - Link formatting
-
 
 

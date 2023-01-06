@@ -14,6 +14,7 @@ The **Nearest Neighbor Event** application draws samples of hazard intensities f
 
 	#. **Number of samples:** Controls the number of samples considered at each grid point.
 	#. **Number of neighbors:** Number of neighboring grid points that samples will be drawn from.
+	#. **Seed:** A number used to initilize the random number generator. If the same seed is used again, it will result in the same sequence of numbers that are sampled by the generator.
 
 .. _fig-R2DHTAPanel:
 
