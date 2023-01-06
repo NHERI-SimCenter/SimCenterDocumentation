@@ -63,11 +63,13 @@
    :pelicun:common/front-matter/pelicun/ack
 
    common/front-matter/license
-   common/front-matter/cite.rst	    
+   common/front-matter/cite.rst
+   
    common/front-matter/glossary.rst
    common/front-matter/abbreviations.rst
-   :quoFEM:common/user_manual/usage/desktop/quoFEM/releasenotes   
-   :R2D:common/user_manual/usage/desktop/releasenotes
+   :quoFEM:common/user_manual/releases/quoReleaseNotes
+   :quoFEM:common/user_manual/releases/quoPlans	   
+   :R2D:common/user_manual/usage/desktop/R2DTool/releasenotes
    :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
    :EEUQ:common/user_manual/usage/desktop/earthquake/releasenotes
    :PBE:common/user_manual/usage/desktop/PBE/releasenotes
