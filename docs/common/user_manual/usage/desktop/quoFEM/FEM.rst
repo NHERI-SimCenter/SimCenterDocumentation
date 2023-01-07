@@ -144,7 +144,7 @@ space.
 For the custom simulation application, the user provides at least two inputs:
 
 * The script that drives the simulations which must be named
-  ``workflow_driver.bat`` on Windows and ``workflow_driver`` on MacOS and Linux
+  ``driver.bat`` on Windows and ``driver`` on MacOS and Linux
  
 * The script that post-processes the simulation results and writes them to
   ``results.out`` in the required format
