@@ -146,12 +146,7 @@ Major Version 2
 
       **Release date:** Sept. 2019
 
-      This is a SimCenter research application whose purpose is to allow users to perform uncertainty quantification and optimization utilizing existing finite element applictions. 
-
-      It will run the computations locally utilizing laptop/desktop or remotely utilizing the computational resources at TACC made available through DesignSafe-CI.
-
-
-      New UI layout & new options added for:
+      Highlights
 
          #. Forward uncertainty: Importance Sampling, Gaussian Process Regression
 
@@ -160,7 +155,3 @@ Major Version 2
          #. Sensitivity with Monte Carlo or LHS
 
          #. Parameter Estimation
-
-
-
-      We encourage new feature suggestions, please write to us at :ref:`lblBugs`.
