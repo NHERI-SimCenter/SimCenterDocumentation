@@ -72,6 +72,9 @@
    :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
    :EEUQ:common/user_manual/usage/desktop/earthquake/releasenotes
    :PBE:common/user_manual/usage/desktop/PBE/releasenotes
+   :R2D:common/user_manual/releases/r2dPlans
+   :EEUQ:common/user_manual/releases/eePlans
+   :PBE:common/user_manual/releases/pbePlans	 
 	    
    common/front-matter/glossary.rst
    common/front-matter/abbreviations.rst
