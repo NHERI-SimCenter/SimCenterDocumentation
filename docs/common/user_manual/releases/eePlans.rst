@@ -21,9 +21,8 @@ Sept 2023
       
 2024
 ----
-   #.  Launch physics based ground rupture scenarios(1.1.1.3)
+   #.  Interface with physics based ground rupture scenarios(1.1.1.3)
    #.  Ability to save & utilize surrogate models using advanced Surrogate-Modeling  algorithms (1.2.2.2) 
-
 
  .. note::
 
