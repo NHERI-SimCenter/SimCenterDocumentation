@@ -51,7 +51,7 @@
    :R2D:common/user_manual/about/R2D/about
    :EEUQ:common/user_manual/about/EEUQ/about
    :WEUQ:common/user_manual/about/WEUQ/about
-   :quoFEM:common/user_manual/about/quoFEM/aboutQUOFEM
+   :quoFEM:common/user_manual/about/quoFEM/about  
    :pelicun:common/user_manual/about/pelicun/about
 
    :R2D:common/front-matter/desktop/ack
@@ -63,14 +63,21 @@
    :pelicun:common/front-matter/pelicun/ack
 
    common/front-matter/license
-   common/front-matter/cite.rst	    
-   common/front-matter/glossary.rst
-   common/front-matter/abbreviations.rst
-   :quoFEM:common/user_manual/usage/desktop/quoFEM/releasenotes   
-   :R2D:common/user_manual/usage/desktop/releasenotes
+   common/front-matter/cite.rst
+
+   :quoFEM:common/user_manual/releases/quoCapabilities   
+   :quoFEM:common/user_manual/releases/quoReleaseNotes
+   :quoFEM:common/user_manual/releases/quoPlans	   
+   :R2D:common/user_manual/usage/desktop/R2DTool/releasenotes
    :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
    :EEUQ:common/user_manual/usage/desktop/earthquake/releasenotes
    :PBE:common/user_manual/usage/desktop/PBE/releasenotes
+   :R2D:common/user_manual/releases/r2dPlans
+   :EEUQ:common/user_manual/releases/eePlans
+   :PBE:common/user_manual/releases/pbePlans	 
+	    
+   common/front-matter/glossary.rst
+   common/front-matter/abbreviations.rst
 	  
 .. _lbl-user-manual:
 
@@ -86,6 +93,8 @@
    :R2D:common/user_manual/installation/desktop/installation
    :Hydro:common/user_manual/installation/desktop/installation
    :pelicun:common/user_manual/installation/pelicun/installation
+
+   :quoFEM:common/user_manual/about/quoFEM/quoFEMtutorial
 
    :EEUQ:common/user_manual/usage/desktop/usage
    :WEUQ:common/user_manual/usage/desktop/usage
@@ -119,7 +128,7 @@
    :WEUQ:common/reqments/WEUQ
    :PBE:common/reqments/PBE
    :R2D:common/reqments/R2D
-   :quoFEM:common/reqments/reqQUOFEM
+   :quoFEM:common/reqments/reqQUOFE
    :pelicun:common/reqments/reqPelicun
 
 

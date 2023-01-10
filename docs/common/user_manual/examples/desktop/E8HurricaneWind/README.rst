@@ -8,7 +8,7 @@ E8 - Hurricane Wind
 
 Hurricane Laura made landfall as a strong Category 4 storm near Cameron, LA in the early hours of 27 August 2020, tying the Last Island Hurricane of 1856 as the strongest land-falling hurricane in Louisiana history.
 This example presents a wind-induced damage assessment for Lake Charles, LA. Peak wind speed data of Hurricane Laura from Applied Research Associates, Inc. is used as intensity measure, inventory data of about 26,000 wood residential buildings
-is used along with the rulesets developed tp map the inventory to HAZUS-type damage assessment. Final results include the damage and loss estimations along with the building information models based on the rulesets.
+is used along with the rulesets developed to map the inventory to HAZUS-type damage assessment. Final results include the damage and loss estimations along with the building information models based on the rulesets.
 
 .. figure:: r2dt-0008.png
    :width: 400px

@@ -33,11 +33,11 @@ Examples
 
 
 .. rendre:: filtered-gallery
-   :data-file: $SIMCENTER_DEV/SimCenterDocumentation/build/${SIMDOC_APP}_Examples.json
+   :data-file: $SIMCENTER_DEV/SimCenterDocumentation/build/${SIMDOC_APP}_Examples.json	    
    :load-defaults: $SIMCENTER_DEV//SimCenterDocumentation//examples.yaml#/$SIMDOC_APP
 
    :link: ./%%:base/README
 
 
 ..
-   :data-file: $SIMCENTER_DEV/$SIMDOC_APP/Examples/index.json
+   :data-file: $SIMCENTER_DEV/$SIMDOC_APP/Examples/index.json	       
