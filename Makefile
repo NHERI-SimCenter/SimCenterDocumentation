@@ -27,7 +27,7 @@ help:
 	@echo '   or: make <all|update>'
 	@printf '\n'
 	@echo 'where <app> is one of:'
-	@printf '    {pelicun, qfem, r2d, pbe, we, ee, rtm}\n\n'
+	@printf '    {pelicun, qfem, r2d, pbe, we, hydro, ee, rtm}\n\n'
 	@echo 'and <target> is one of:'
 	@echo '    web    Run html target with build directory'
 	@echo '           set to app publishing repository.'
@@ -43,9 +43,7 @@ help:
 # Export target-specific environment vars
 ee:      export SIMDOC_APP=EE-UQ
 we:      export SIMDOC_APP=WE-UQ
-
 r2d:     export SIMDOC_APP=R2DTool
-
 pbe:     export SIMDOC_APP=PBE
 hydro:   export SIMDOC_APP=HydroUQ
 qfem:    export SIMDOC_APP=quoFEM
