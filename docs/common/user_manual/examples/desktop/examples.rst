@@ -18,6 +18,10 @@ Examples
 
    The following are a few examples showing the usage of EE-UQ. Video companions showing these examples are also provided. The files for the examples are available in Github.
 
+ .. only:: Hydro
+
+   The following are a few examples showing the usage of Hydro-UQ. The files for the examples are available on Github.
+   
 
 .. only:: WEUQ_app
 
