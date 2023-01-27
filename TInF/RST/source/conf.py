@@ -28,10 +28,10 @@ release = '0.2'
 rst_prolog = """
 .. |appName| replace:: Turbulence Inflow Tool
 .. |app| replace:: Turbulence Inflow Tool
-.. |githubLink| replace:: `Turbulance Inflow Tool Github page`_
-.. _Turbulance Inflow Tool Github page: https://github.com/NHERI-SimCenter/TurbulenceInflowTool
-.. |appLink| replace:: `Turbulance Inflow Tool`_
-.. _Turbulance Inflow Tool page: https://simcenter.designsafe-ci.org/research-tools/tinf/
+.. |githubLink| replace:: `Turbulence Inflow Tool Github page`_
+.. _Turbulence Inflow Tool Github page: https://github.com/NHERI-SimCenter/TurbulenceInflowTool
+.. |appLink| replace:: `Turbulence Inflow Tool`_
+.. _Turbulence Inflow Tool page: https://simcenter.designsafe-ci.org/research-tools/tinf/
 .. |messageBoard| replace:: `Message Board`_
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=5.0
 .. |toolVersion| replace:: '1.0.2'
@@ -96,3 +96,5 @@ math_numfig = True
 latex_elements = {
   'extraclassoptions': 'openany,oneside'
 }
+
+bibtex_bibfiles = ['theory/references.bib']
