@@ -122,7 +122,7 @@ Dealing with high-dimensional responses with PCA-PSA
 When the number of the quantities of interest (QoI) is very large, it is computationally cumbersome to perform above Gaussian fitting independently for each QoI. To promote efficient global sensitivity analysis for such cases, SimCenterUQ provides the 'principal component analysis-based PM-GSA' module, which is referred to as PCA-PSA [Jung2022]_. In this method, the dimension of QoI is first reduced by principal component analysis (PCA), and the conditional variance required to calculate the Sobol indices (the numerators in :eq:`Si` and :eq:`SiT`) is approximately reconstructed from those of the conditional variance/covariance information of the reduced dimension variables. If the high-dimensional QoI has a linear data structure that be reconstructed with a small number of principal components, the computational gain of this approach can be significant. For example, suppose QoI can be reconstructed using 10 principal components. In that case, the Gaussian mixture fitting, which is the most time-consuming step of PM-GSA apart from FEM analysis, needs to be repeated only 10 times per random variable or group of random variables regardless of the actual dimension of QoI. :ref:`This example<qfem-0023>` shows how PCA-PSA can facilitate efficient global sensitivity analysis for a field (time series) QoI.
 
 .. [Jung2022]
-   To be added
+   Jung, W., & Taflanidis, A. A. (2023). Efficient global sensitivity analysis for high-dimensional outputs combining data-driven probability models and dimensionality reduction. *Reliability Engineering & System Safety*, 231, 108805.
 
 
 Aggregated sensitivity index

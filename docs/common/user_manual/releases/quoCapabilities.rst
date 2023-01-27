@@ -10,39 +10,30 @@ Capabilities
 
 UQ (Uncertainty Quantification and Optimization Options)
 ========================================================
-   
-#. Dakota: :blue:`[← New option to discard working directories after each model evaluation]`
 
-     a. Forward Uncertainty Propagation: 
+#. Forward Uncertainty Propagation
+
+     A. Dakota :blue:`[← New option to discard working directories after each model evaluation]` 
 
         #. Monte Carlo Sampling (MCS)
         #. Latin Hypercube Sampling (LHS)
         #. Gaussian Process Regression
         #. Polynomial Chaos Expansion
 
-     b. Deterministic Calibration :blue:`[← formerly Parameter Estimation]`: 
-     
-        #. NL2SOL
-        #. OPT++GaussNewton
+     B. SimCenterUQ
 
-     c. Bayesian Calibration :blue:`[← formerly Inverse Problem]`:
+        #. Monte Carlo Sampling (MCS)
 
-        #. DREAM
+           a. Resample from existing correlated dataset of samples
 
-     d. Reliability:
+#. Global Sensitivity Analysis
 
-        #. Local Reliability
-        #. Global Reliability
-        #. Importance Sampling
-		 
-     e. Sensitivity Analysis:
+     A. Dakota
 
         #. MCS
         #. LHS
 
-#. SimCenterUQ:
-
-     a. Sensitivity Analysis
+     B. SimCenterUQ
 
         #. Probability Model-based Global Sensitivity Analysis (PM-GSA)
 
@@ -53,43 +44,64 @@ UQ (Uncertainty Quantification and Optimization Options)
            e. Aggregated Sobol indices for field QoIs
            f. :blue:`Import input/output samples from data files`
 
+#. Reliability Analysis
 
-     b. Sampling
+     A. Dakota 
 
-        #. Monte Carlo Sampling (MCS)
-           a. Resample from existing correlated dataset of samples
-	   c. Train Gaussian Process (GP) Surrogate Model :blue:`[← Enhanced speed and stability]`
+        #. Local Reliability
+        #. Global Reliability
+        #. Importance Sampling
 
-        #. Multifidelity surrogate modeling
-        #. Adaptive design of experiments options for surrogate modeling
-        #. Nugget optimization options for surrogate modeling
-        #. :blue:`Stochastic Kriging`
+#. Bayesian Calibration :blue:`[← formerly Inverse Problem]`
 
-           d. Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)
+     A. Dakota
 
-#.  UCSD_UQ:
+        #. DREAM
 
-     a. Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation
-	
-        #. Override default log-likelihood function
-        #. Override default error covariance structure
-        #. Calibrate multipliers on error covariance structure
+     B. UCSD_UQ
 
-#.  CustomUQ:
+        #. Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation
+        
+           a. Override default log-likelihood function
+           b. Override default error covariance structure
+           c. Calibrate multipliers on error covariance structure
 
-     a. Configure UQ analysis using JSON file
+#. Deterministic Calibration :blue:`[← formerly Parameter Estimation]`
+
+     A. Dakota 
+
+        #. NL2SOL
+        #. OPT++GaussNewton
+        
+#. Surrogate Modeling 
+
+     A. SimCenterUQ
+
+        #. Train Gaussian Process (GP) Surrogate Model :blue:`[← Enhanced speed and stability]`
+
+           a. Multifidelity surrogate modeling
+           b. Adaptive design of experiments options for surrogate modeling
+           c. Nugget optimization options for surrogate modeling
+           d. :blue:`Stochastic Kriging`
+
+        #. Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)*
+
+#.  CustomUQ
+
+        #. Configure UQ analysis using JSON file
 
 
 .. note::
    
-   Support for the running computation to be preformed on TACC's high performance computer, Frontera, is provided through DesignSafe for all but the methods indicated with a star.	
+   Support for the running computation to be preformed on TACC's high performance computer, Frontera, is provided through DesignSafe for all but the methods indicated with a star (*).	 
+
 
 FEM (Computational Model Specification)
 =======================================
             
 #. OpenSees
 #. FEAPpv
-#. Python :blue:`[← formerly OpenSeesPy]`:
+#. Python :blue:`[← formerly OpenSeesPy]`
 #. Custom
 #. SurrogateGP
 #. :blue:`None`
@@ -131,37 +143,37 @@ RES (Summary and Visualization of UQ Analysis Results)
 
 #. Summary statistics of outputs displayed
 
-     #. Mean
-     #. Standard deviation
+     A. Mean
+     B. Standard deviation
 	   
 #. All output values presented in spreadsheet
 
-     #. Update chart by clicking on spreadsheet columns
+     A. Update chart by clicking on spreadsheet columns
 	
 #. Output values visualized in interactive chart
 
-     #. Scatter plot
-     #. Histogram
-     #. Cumulative distribution
-     #. Inspect points on chart
+     A. Scatter plot
+     B. Histogram
+     C. Cumulative distribution
+     D. Inspect points on chart
 
 #. Spreadsheet save options
 
-     #. Save Table
-     #. Save Columns Separately (Useful after Bayesian updating, the posterior samples can later be directly loaded in quoFEM)
-     #. Save RVs (Useful for surrogate model training)
-     #. Save QoIs (Useful for surrogate model training)
-     #. Save Surrogate Predictions (Only for the surrogate model results)
+     A. Save Table
+     B. Save Columns Separately (Useful after Bayesian updating, the posterior samples can later be directly loaded in quoFEM)
+     C. Save RVs (Useful for surrogate model training)
+     D. Save QoIs (Useful for surrogate model training)
+     E. Save Surrogate Predictions (Only for the surrogate model results)
 
 #. Visualization of surrogate modeling results
 
-     #. Goodness-of-fit measures            
-     #. 90% confidence interval and :blue:`prediction interval`
+     A. Goodness-of-fit measures            
+     B. 90% confidence interval and :blue:`prediction interval`
 
 #. Visualization of PLoM training results
 
-     #. PCA representation error plot
-     #. Diffusion maps eigenvalue plot
+     A. PCA representation error plot
+     B. Diffusion maps eigenvalue plot
 
 
 
