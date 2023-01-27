@@ -61,7 +61,7 @@ The user provides a main script and has the option to provide 2 other scripts:
 
 .. Caution::
 
-    **Python on Windows.** On Windows, quoFEM is bundled with its own ``python.exe``, with the essential packages (including numpy, scipy, openseespy) already installed. By default, this ``python.exe`` is used to (1) run SimCenter workflow; and (2) run the user-provided python model. Therefore, please make sure to test your model using the "correct" ``python.exe`` before running passing it to quoFEM. 
+    **Python on Windows.** On Windows, quoFEM is bundled with its own ``python.exe``, with the essential packages (including numpy, scipy, openseespy) already installed. By default, this ``python.exe`` is used to (1) run SimCenter workflow; and (2) run the user-provided python model. Therefore, please make sure to test your model using the "correct" ``python.exe`` before running in quoFEM. 
 
     .. figure:: figures/step1_preference_default.svg
         :align: center
