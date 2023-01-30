@@ -261,8 +261,9 @@ The following categories are available:
 
    The following category options are available:
 
+
    .. toctree-filt::
-     :maxdepth: 1
+      :maxdepth: 1
 
       SimCenterUQSampling
       SimCenterUQSensitivity

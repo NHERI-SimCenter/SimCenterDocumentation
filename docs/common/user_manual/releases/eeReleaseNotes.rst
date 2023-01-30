@@ -5,231 +5,79 @@
 Release Notes
 *************
 
-Version 3.2
-===========
-
 Version 3.2.0 (Current)
 -----------------------
 
 **Release date:** Sept. 2022
 
-*Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
+**Highlights**
 
-#. **Structural Information Model**
-    a. MDOF: creating idealized multi-degree-of-freedom models
-    b. OpenSees: user-defined OpenSees models
-    c. Steel Building Model: automating steel frame design and modeling
-    d. :blue:`Concrete Building Model: automating concrete moment frame design and modeling`
-    e. :blue:`MDOF-LU: MDOF shear building model`
+#. **New Structural Information Model Generators**
+    a. Concrete Building Model: automatic concrete building design and model generation
+    b. MDOF-LU: MDOF shear building model built using user supplied Hazus data
+#. Moving damping ratio specification from FEM to SIM panels.
+#. Improvements to the message area
+#. Decoupling the output units defined in GI with the units used in the simulation.
 
-#. **Ground Motion Event**
-    a. Stochastic Ground Motion: simulating stochastic ground motion recordings
-    b. PEER NGA Records: selecting and scaling PEER NGA West2 ground motions
-    c. Site Response: propagating rock motions to the surface
-    d. Multiple PEER: using multiple PEER recordings
-    e. Multiple SimCenter: using multiple SimCenter-format recordings
-    f. User Specified Database: selecting and scaling ground motions from the user-specified flatfile
-
-#. **Finite Element Application**
-    a. OpenSees: Open System for Earthquake Engineering Simulation
-
-#. **Engineering Demand Parameter Generator**
-    a. Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration
-    b. User Defined: user-specified EDP
-
-#. **Uncertainty Quantification**
-    a. Dakota
-        - Forward Propagation
-        - Sensitivity Analysis
-        - Reliability Analysis
-    b. SimCenterUQ
-
-#. **Results**
-    a. Summary Data
-    b. Data Values
-
-#. **Others**: Improvements to the message area, and minor bug fixes
-    * :blue:`Decoupling the output units defined in GI with the units used in the simulation.`
-    * :blue:`Decoupling the Rayleigh damping ratio with the FEM configuration.`
-
-
-Version 3.1
-===========
 
 Version 3.1.0
 -----------------------
 
 **Release date:** July 2022
 
-*Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
+** Highlights**
 
-#. **Structural Information Model**
-    a. MDOF: creating idealized multi-degree-of-freedom models
-    b. OpenSees: user-defined OpenSees models
-    c. Steel Building Model: automating steel frame design and modeling
+#. New Surrogate option in defining spectrum in PEER event
+#. Fixing the radio button in Multiple Event (uncheck is now enabled)
+#. Improvements to the message area, and minor bug fixes
 
-#. **Ground Motion Event**
-    a. Stochastic Ground Motion: simulating stochastic ground motion recordings
-    b. PEER NGA Records: selecting and scaling PEER NGA West2 ground motions
-        * :blue:`Adding a surrogate hazard model feature to get target response spectrum from Gaussian Process model`
-        * :blue:`A new example is provided for evaluating target response spectrum from GP surrogate for Hayward earthquake in Bay Area`
-    c. Site Response: propagating rock motions to the surface
-    d. Multiple PEER: using multiple PEER recordings
-    e. Multiple SimCenter: using multiple SimCenter-format recordings
-    f. User Specified Database: selecting and scaling ground motions from the user-specified flatfile
-
-#. **Finite Element Application**
-    a. OpenSees: Open System for Earthquake Engineering Simulation
-
-#. **Engineering Demand Parameter Generator**
-    a. Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration
-    b. User Defined: user-specified EDP
-
-#. **Uncertainty Quantification**
-    a. Dakota
-        - Forward Propagation
-        - Sensitivity Analysis
-        - Reliability Analysis
-    b. SimCenterUQ
-
-#. **Results**
-    a. Summary Data
-    b. Data Values
-
-#. **Others**: Improvements to the message area, and minor bug fixes
-    * :blue:`Fixing the radio button in Multiple Event (uncheck is now enabled)`
-
-Version 3.0
-===========
 
 Version 3.0.0
------------------------
+-------------
 
 **Release date:** March. 2022
 
-*Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
+**Highlights**
 
-#. **Structural Information Model**
-    a. MDOF: creating idealized multi-degree-of-freedom models
-    b. OpenSees: user-defined OpenSees models
-    c. Steel Building Model: automating steel frame design and modeling
+#. New UQ engine: PLoM
+  a. Training surrogate model for defined structural model
+  b.  Training surrogate using user-supplied response data metric
+  c. Generating new realizations of structural responses from trained surrogate
+  d. Including user-defined ground motion intensity measures in the modeling training
+#. Site-specific seismic disaggregation
+  a. Seismic hazard disaggregation at given return period and user-defined IM
+  b. Target conditional mean spectrum (ASCE7) calculation based on disaggregated mean magnitude and distance
+  c. Ground motion selection and scaling to the disaggregation-based target spectrum     
+#. Refactored results panel synced from new SimCenterCommon
+  a. New data visualization panel
+  b. Highlighting data points
 
-#. **Ground Motion Event**
-    a. Stochastic Ground Motion: simulating stochastic ground motion recordings
-    b. PEER NGA Records: selecting and scaling PEER NGA West2 ground motions
-        * :blue:`Adding a USGS seismic disaggregation feature for given return periods and user-defined IM`
-        * :blue:`Computing conditional mean spectrum target (ASCE 7) based on disaggregated mean magnitude and distance`
-        * :blue:`Selecting and scaling records to the disaggregation-based target spectrum`
-    c. Site Response: propagating rock motions to the surface
-    d. Multiple PEER: using multiple PEER recordings
-    e. Multiple SimCenter: using multiple SimCenter-format recordings
-    f. User Specified Database: selecting and scaling ground motions from the user-specified flatfile
-
-#. **Finite Element Application**
-    a. OpenSees: Open System for Earthquake Engineering Simulation
-
-#. **Engineering Demand Parameter Generator**
-    a. Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration
-    b. User Defined: user-specified EDP
-
-#. **Uncertainty Quantification**
-    a. Dakota
-        - Forward Propagation
-        - Sensitivity Analysis
-        - Reliability Analysis
-    b. :blue:`SimCenterUQ`
-        * :blue:`New UQ engine: PLoM - training surrogate model for defined structural model or user-supplied response data matrix`
-        * :blue:`Generating new realizations of structural responses from trained surrogate model`
-        * :blue:`Including user-defined ground motion intensity measure in the model training`
-
-#. **Results**
-    a. Summary Data
-    b. Data Values
-        * :blue:`New data visualization panel`
-        * :blue:`Highlighting data points in the result table`
-
-#. **Others**: Improvements to the message area, and minor bug fixes
-
-Version 2.2
-=================
 
 Version 2.2.7
------------------------
+-------------
 
 **Release date:** Jan. 2022
 
-*Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
+**Highlights**
 
-#. **Structural Information Model**
-    a. MDOF: creating idealized multi-degree-of-freedom models
-    b. OpenSees: user-defined OpenSees models
-    c. Steel Building Model: automating steel frame design and modeling
+#. New Options added for PEER NGA Event:
+Specifying the fault type, pulse-like feature, and duration filter in ground motion selection
+Adding the option of "Geometric" suite average for the PEER NGA West2 ground motion selection
+#. In User Defined EDP fixed a bug of using user-specified EDP names
 
-#. **Ground Motion Event**
-    a. Stochastic Ground Motion: simulating stochastic ground motion recordings
-    b. PEER NGA Records: selecting and scaling PEER NGA West2 ground motions
-    c. Site Response: propagating rock motions to the surface
-    d. Multiple PEER: using multiple PEER recordings
-    e. Multiple SimCenter: using multiple SimCenter-format recordings
-    f. User Specified Database: selecting and scaling ground motions from the user-specified flatfile
-
-#. **Finite Element Application**
-    a. OpenSees: Open System for Earthquake Engineering Simulation
-
-#. **Engineering Demand Parameter Generator**
-    a. Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration
-    b. User Defined: user-specified EDP
-
-#. **Uncertainty Quantification**
-    a. Dakota
-        - Forward Propagation
-        - Sensitivity Analysis
-        - Reliability Analysis
-
-#. **Results**
-    a. Summary Data
-    b. Data Values
 
 Version 2.2.6
 --------------
 
 **Release date:** Dec. 22nd, 2021
 
-*Current Availability* (New features and fixes in this release are denoted with a blue font color in the following list of features.)
+**Highlights**
 
-#. **Structural Information Model**
-    a. MDOF: creating idealized multi-degree-of-freedom models
-    b. OpenSees: user-defined OpenSees models
-    c. Steel Building Model: automating steel frame design and modeling
-
-#. **Ground Motion Event**
-    a. Stochastic Ground Motion: simulating stochastic ground motion recordings
-    b. PEER NGA Records: selecting and scaling PEER NGA West2 ground motions
-        * :blue:`Specifying the fault type, pulse-like feature, and duration filter in ground motion selection`
-        * :blue:`Adding the option of "Geometric" suite average for the PEER NGA West2 ground motion selection`
-    c. Site Response: propagating rock motions to the surface
-    d. Multiple PEER: using multiple PEER recordings
-    e. Multiple SimCenter: using multiple SimCenter-format recordings
-    f. User Specified Database: selecting and scaling ground motions from the user-specified flatfile
-
-#. **Finite Element Application**
-    a. OpenSees: Open System for Earthquake Engineering Simulation
-
-#. **Engineering Demand Parameter Generator**
-    a. Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration
-    b. User Defined: user-specified EDP
-        * :blue:`Fixing the bug of using user-specified EDP names`
-
-#. **Uncertainty Quantification**
-    a. Dakota
-        - Forward Propagation
-        - Sensitivity Analysis
-        - Reliability Analysis
-
-#. **Results**
-    a. Summary Data
-    b. Data Values
-        * :blue:`Fixing the bug of exporting ground motion names in the "Save Data"`
+#. Specifying the fault type, pulse-like feature, and duration filter in ground motion selection
+#. Adding the option of "Geometric" suite average for the PEER NGA West2 ground motion selection
+#. Bug fixes:
+     a.  exporting ground motion names in the "Save Data
+     b. using user-specified EDP name
 
 
 Version 2.2.5
@@ -237,44 +85,44 @@ Version 2.2.5
 
 **Release date:** Oct. 4th, 2021
 
-*Current Availability*
+**Highlights**
+#. new options for NGA selection
+#. option to select motions from user flat file
+#. changing look and feel for message box location
 
-#. **Structural Information Model**
-    a. MDOF: creating idealized multi-degree-of-freedom models
-    b. OpenSees: user-defined OpenSees models
-    c. Steel Building Model: automating steel frame design and modeling
+Version 2.2.0
+-------------
 
-#. **Ground Motion Event**
-    a. Stochastic Ground Motion: simulating stochastic ground motion recordings
-    b. PEER NGA Records: selecting and scaling PEER NGA West2 ground motions
-    c. Site Response: propagating rock motions to the surface
-    d. Multiple PEER: using multiple PEER recordings
-    e. Multiple SimCenter: using multiple SimCenter-format recordings
-    f. User Specified Database: selecting and scaling ground motions from the user-specified flatfile
+**Release date:** Nov 6, 2020
 
-#. **Finite Element Application**
-    a. OpenSees: Open System for Earthquake Engineering Simulation
+**Highlights**
 
-#. **Engineering Demand Parameter Generator**
-    a. Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration
-    b. User Defined: user-specified EDP
+#. Site response now allows for random fields in soil layers for soil properties
+#. Steel building model generator (designs and creates a model for steel buildiung)
+#. PEER NGA scaling options added
 
-#. **Uncertainty Quantification**
-    a. Dakota
-        - Forward Propagation
-        - Sensitivity Analysis
-        - Reliability Analysis
+Version 2.1.0
+-------------
 
-Version 3.1.0
-----------------
+**Release date:** June, 2020
 
-**Release plan**: June 2022
+**Highlights**
 
-*Planned features*
+#. Added Sensitivity and Reliability
+#. Added new spectrum options for peerNGA
+#. Modified FEM interface provides different damping options and more analysis options to user
 
-#. UQ: New surrogate modeling methods (e.g., SAF-IDA)
-#. EVT: Invoking OpenQuake to generate scenario-based or classical PSHA ground motion spectral targets
-#. FEM: invoking OpenSeesPy
-#. ...\*
+Version 2.0.0
+-------------
 
-\*: Users are welcome to contact us on `forum <http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0>`_ for new feature requests.
+**Release date:** October, 2019
+
+**Highlights**
+
+#. More UQ Sampling capabilities,
+#. another stocahstic loading module
+#. calling PEER NGA to select and download files
+
+
+
+   
