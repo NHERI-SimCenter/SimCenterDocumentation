@@ -13,14 +13,14 @@ UQ (Uncertainty Quantification and Optimization Options)
 
 #. Forward Uncertainty Propagation
 
-     A. Dakota :blue:`[← New option to discard working directories after each model evaluation]` 
+     A. :ref:`Dakota<lblDakotaForward>` :blue:`[← New option to discard working directories after each model evaluation]` 
 
         #. Monte Carlo Sampling (MCS)
         #. Latin Hypercube Sampling (LHS)
         #. Gaussian Process Regression
         #. Polynomial Chaos Expansion
 
-     B. SimCenterUQ
+     B. :ref:`SimCenterUQ<lblSimForward>`
 
         #. Monte Carlo Sampling (MCS)
 
@@ -28,12 +28,12 @@ UQ (Uncertainty Quantification and Optimization Options)
 
 #. Global Sensitivity Analysis
 
-     A. Dakota
+     A. :ref:`Dakota<lblDakotaSensitivity>`
 
         #. MCS
         #. LHS
 
-     B. SimCenterUQ
+     B. :ref:`SimCenterUQ<lblSimSensitivity>`
 
         #. Probability Model-based Global Sensitivity Analysis (PM-GSA)
 
@@ -46,7 +46,7 @@ UQ (Uncertainty Quantification and Optimization Options)
 
 #. Reliability Analysis
 
-     A. Dakota 
+     A. :ref:`Dakota<lblDakotaReliability>` 
 
         #. Local Reliability
         #. Global Reliability
@@ -54,11 +54,11 @@ UQ (Uncertainty Quantification and Optimization Options)
 
 #. Bayesian Calibration :blue:`[← formerly Inverse Problem]`
 
-     A. Dakota
+     A. :ref:`Dakota<lblDakotaBayesianCalibration>`
 
         #. DREAM
 
-     B. UCSD_UQ
+     B. :ref:`UCSD_UQ<lblUCSDTMCMC>`
 
         #. Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation
         
@@ -68,25 +68,26 @@ UQ (Uncertainty Quantification and Optimization Options)
 
 #. Deterministic Calibration :blue:`[← formerly Parameter Estimation]`
 
-     A. Dakota 
+     A. :ref:`Dakota<lblDakotaDeterministicCalibration>`
 
         #. NL2SOL
         #. OPT++GaussNewton
+        #. Gradient-free optimization
         
 #. Surrogate Modeling 
 
      A. SimCenterUQ
 
-        #. Train Gaussian Process (GP) Surrogate Model :blue:`[← Enhanced speed and stability]`
+        #. :ref:`Train Gaussian Process (GP) Surrogate Model<lblSimSurrogate>` :blue:`[← Enhanced speed and stability]`
 
            a. Multifidelity surrogate modeling
            b. Adaptive design of experiments options for surrogate modeling
            c. Nugget optimization options for surrogate modeling
            d. :blue:`Stochastic Kriging`
 
-        #. Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)*
+        #. :ref:`Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)<lblSimCenterUQPLoM>` *
 
-#.  CustomUQ
+#.  :ref:`CustomUQ<lblCustomUQ>`
 
         #. Configure UQ analysis using JSON file
 
