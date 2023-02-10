@@ -97,7 +97,7 @@ Make sure you see a message that confirms the successful installation of the nhe
    .. note::
       Java is needed to use OpenSHA to characterize the regional seismic hazard (see :ref:`ground_motion_tool`). If you do not plan to use that feature, you can skip this step of the installation.
 
-   If you have not yet installed Java, please download the latest installer from `java.com <https://java.com/en/download/>`_ , run it, and follow the on-screen instructions to install Java.
+   If you have not yet installed Java, please download the installer from java website. The version `16.0.2 <https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html>`_ has been tested to be working with the latest |app|. Follow the on-screen instructions to install Java.
 
    .. note::
       
