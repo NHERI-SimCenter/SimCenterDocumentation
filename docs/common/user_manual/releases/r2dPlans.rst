@@ -9,12 +9,16 @@ Release Plans
 The following features are planned to be developed for upcoming releases of |app|. We are actively working on the features in the next release. Farther development priorities may change depending on feedback from the community. If you have any suggestions, we encourage you to contribute and contact us through the SimCenter Forum.
 
 
-January 2023
-------------
+February 2023
+-------------
 #. Use hazard quantization to select a set of ground motions that efficiently represent the seismic hazard in a grid (1.3.3.4) - Select ground motions and assign occurrence rates so that they collectively yield a hazard curve that is a good approximation of the theoretical hazard curves at each grid point. This method allows to run a reasonably small number of scenarios isntead of a comprehensive rupture forecast in a regional study.
 #. Automatically access and assign demographic data from Census to assets (1.4.2.1) - Import census-block level demographic data from Census and assign it automatically to every asset in the inventory based on their location.
 
 
+March 2023
+----------
+#. Water Distribution Network, buried pipelines.
+   
 Sept 2023
 ----------
 

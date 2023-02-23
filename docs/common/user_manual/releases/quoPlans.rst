@@ -8,8 +8,8 @@ Release Plans
 
 The following features are planned to be developed for upcoming releases of |app|. We are actively working on the features in the next release. Farther development priorities may change depending on feedback from the community. If you have any suggestions, we encourage you to contribute and contact us through the SimCenter Forum.
 
-January 2023
-------------
+February 2023
+-------------
    #. Quantify epistemic uncertainty by considering multiple models to represent behavior (1.2.4.1) - Define weights for each model candidate and propagate epistemic uncertainty by randomly selecting a model for each realization according to these weights.
 
       
