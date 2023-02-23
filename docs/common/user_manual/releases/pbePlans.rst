@@ -12,7 +12,11 @@ The following features are planned to be developed for upcoming releases of |app
 March 2023
 ----------
    #. Quantify epistemic uncertainty in structural response by considering multiple models to represent various candidates for events, structural models, or simulation methods (1.2.4.1) - Define weights for each model candidate and propagate epistemic uncertainty by randomly selecting a model for each realization according to these weights.
+
+May 2023
+--------
    #. Add datasets to simulate injuries and environmental impacts (1.4.3.1) - Data from Hazus Earthquake and FEMA P58 methodologies will be made available to support these calculations.
+   
 
 Sept 2023
 ----------
