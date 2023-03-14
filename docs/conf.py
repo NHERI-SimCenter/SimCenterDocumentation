@@ -682,9 +682,8 @@ elif app_name == "WE-UQ":
         {
             "include-item": [
                 "weuq-0001",
-                # "weuq-0002",
-                # "weuq-0004",
                 "weuq-0007",
+                "weuq-0011",
             ]
         }
     )

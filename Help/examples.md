@@ -17,6 +17,8 @@ Adding a new example to the documentation consists of two steps:
 
 2. rebuild the example index by running `make <app-name> examples`
 
+3. edit  ./docs/conf.py
+
 
 <!--
 

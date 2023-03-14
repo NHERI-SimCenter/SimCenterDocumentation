@@ -63,14 +63,28 @@
    :pelicun:common/front-matter/pelicun/ack
 
    common/front-matter/license
-   common/front-matter/cite.rst	    
+   common/front-matter/cite.rst
+
+   :quoFEM:common/user_manual/releases/quoCapabilities   
+   :quoFEM:common/user_manual/releases/quoReleaseNotes
+   :quoFEM:common/user_manual/releases/quoPlans
+
+   :EEUQ:common/user_manual/releases/eeCapabilities   
+   :EEUQ:common/user_manual/releases/eeReleaseNotes
+   :EEUQ:common/user_manual/releases/eePlans	   
+
+   :WEUQ:common/user_manual/releases/wePlans
+      
+   :R2D:common/user_manual/usage/desktop/R2DTool/releasenotes
+   :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
+   :PBE:common/user_manual/usage/desktop/PBE/releasenotes
+   :R2D:common/user_manual/releases/r2dPlans
+
+   :PBE:common/user_manual/releases/pbePlans
+
+	    
    common/front-matter/glossary.rst
    common/front-matter/abbreviations.rst
-   :quoFEM:common/user_manual/usage/desktop/quoFEM/releasenotes   
-   :R2D:common/user_manual/usage/desktop/releasenotes
-   :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
-   :EEUQ:common/user_manual/usage/desktop/earthquake/releasenotes
-   :PBE:common/user_manual/usage/desktop/PBE/releasenotes
 	  
 .. _lbl-user-manual:
 
@@ -111,6 +125,7 @@
    :EEUQ:common/user_manual/examples/desktop/examples
    :WEUQ:common/user_manual/examples/desktop/examples
    :PBE:common/user_manual/examples/desktop/examples
+   :Hydro:common/user_manual/examples/desktop/examples	
    :quoFEM:common/user_manual/examples/desktop/examples
    :R2D:common/user_manual/examples/desktop/examples
    :pelicun:common/user_manual/examples/pelicun/examples
