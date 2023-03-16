@@ -30,8 +30,8 @@ WE-UQ:
   include-item:
     - weuq-0001
     - weuq-0007
-    - weuq-0011    
-    
+    - weuq-0011
+
 EE-UQ:
   include-item:
     - eeuq-0001
