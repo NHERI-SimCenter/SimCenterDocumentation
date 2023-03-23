@@ -11,7 +11,7 @@ The following features are intended to be included in |app|  in upcoming release
 
 February 2023
 -------------
-#. Digital Twin of Wall of Wind Facility (1.2.5.2) - Allow users to run CFD simulations of Boundary Layer Wind Tunnel at University of Florida with TinF and their models
+#. Digital Wind Tunnel (1.2.5.2) - Allow users to run CFD simulations of Boundary Layer Wind Tunnel at University of Florida with TinF and their models
 
 March 2023
 ------------
@@ -21,13 +21,13 @@ March 2023
 
 May 2023
 --------
-#. Digital Twin of Wall of Wind Facility (1.2.5.2) - Auto  Generated Models for Rectangular Buildings  
+#. Digital Wind Tunnel (1.2.5.2) - Auto  Generated Models for Rectangular Buildings  
 
       
 Sept 2023
 ----------
    #. Multi-Fidelity Monte-Carlo (1.2.3.1) - - utilizing low fidelity models to predict the response of high fidelity model efficiently
-   #. Digital Twin of Wall of Wind Facility (1.2.5.2) - Auto  Generated Models for Buildings given STL files
+   #. Digital Wind Tunnel (1.2.5.2) - Auto  Generated Models for Buildings given STL files
    #. Surrogate support for regional assesment (1.3.6.1) - allow surrogates to developed in EE_UQ that can be utilized in R2D for earthquake hazard.
 
       
