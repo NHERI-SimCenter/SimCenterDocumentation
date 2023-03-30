@@ -311,11 +311,6 @@ This tutorial will show how a **deterministic** model written/interfaced in pyth
 
   :uqblue:`Step 3. Run quoFEM at DesignSafe`
 
-     .. warning::
-       
-       Currently (October 2022), the OpenSeespy package on DesignSafe is going through an update. Until it is done, this tutorial will give an error. This Warning will be removed when the update is done. The examples that do not use OpenSeespy should run fine.
-
-
      .. panels::
        :column: col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2
 
