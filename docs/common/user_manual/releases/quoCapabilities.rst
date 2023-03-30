@@ -5,7 +5,7 @@
 Capabilities
 ************
 
-**Version 3.3** of the |app| was released in **March 30**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+Version |tool version| of the |app| was released in **March 30**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 UQ (Uncertainty Quantification and Optimization Options)
