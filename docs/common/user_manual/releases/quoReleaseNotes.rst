@@ -14,8 +14,18 @@ Major Version 3
       The major version number was increased from 2 to 3 as changes were made to input and output formats of |app|. This means old examples will not be loaded in this version of the tool.
 
 
-   .. dropdown::    Version 3.2.0 (:blue:`Current`)
+   .. dropdown::    Version 3.3 (:blue:`Current`)
       :open:
+
+      **Release date:** March. 2023
+
+      **Highlights**
+         #. **Multimodel** uncertainty propagation
+         #. Stochastic kriging **without replications**
+         #. Display of correlation coefficients within the input/output dataset
+         #. Switching the display order of the UQ method and UQ engine
+
+   .. dropdown::    Version 3.2
 
       **Release date:** September. 2022
 
@@ -34,7 +44,7 @@ Major Version 3
             * Inverse problem → **Bayesian calibration** 
 
 
-   .. dropdown::    Version 3.1.0 
+   .. dropdown::    Version 3.1
 
       **Release date:** June. 2022
 
@@ -51,7 +61,7 @@ Major Version 3
          #. Minor bug fixes in the user interface, surrogate modeling, and sensitivity analysis scripts
 
 
-   .. dropdown::    Version 3.0.0
+   .. dropdown::    Version 3.0
 
       **Release date:** March. 2022
 

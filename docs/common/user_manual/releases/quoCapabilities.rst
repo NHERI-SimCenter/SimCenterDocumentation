@@ -5,7 +5,7 @@
 Capabilities
 ************
 
-**Version 3.2** of the |app| was released in **September 22**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+Version |tool version| of the |app| was released in **March 30**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 UQ (Uncertainty Quantification and Optimization Options)
@@ -13,7 +13,7 @@ UQ (Uncertainty Quantification and Optimization Options)
 
 #. Forward Uncertainty Propagation
 
-     A. :ref:`Dakota<lblDakotaForward>` :blue:`[← New option to discard working directories after each model evaluation]` 
+     A. :ref:`Dakota<lblDakotaForward>`
 
         #. Monte Carlo Sampling (MCS)
         #. Latin Hypercube Sampling (LHS)
@@ -42,17 +42,17 @@ UQ (Uncertainty Quantification and Optimization Options)
            c. Group-wise Sobol indices
            d. Principal component analysis and probabilistic model-based GSA (PCA-PSA) for high-dimensional QoIs
            e. Aggregated Sobol indices for field QoIs
-           f. :blue:`Import input/output samples from data files`
+           f. Import input/output samples from data files
 
 #. Reliability Analysis
 
      A. :ref:`Dakota<lblDakotaReliability>` 
 
-        #. Local Reliability
+        #. Local Reliability :blue:`[← minor bug fix]`
         #. Global Reliability
         #. Importance Sampling
 
-#. Bayesian Calibration :blue:`[← formerly Inverse Problem]`
+#. Bayesian Calibration :blue:`[← minor bug fix]`
 
      A. :ref:`Dakota<lblDakotaBayesianCalibration>`
 
@@ -66,7 +66,7 @@ UQ (Uncertainty Quantification and Optimization Options)
            b. Override default error covariance structure
            c. Calibrate multipliers on error covariance structure
 
-#. Deterministic Calibration :blue:`[← formerly Parameter Estimation]`
+#. Deterministic Calibration
 
      A. :ref:`Dakota<lblDakotaDeterministicCalibration>`
 
@@ -78,12 +78,12 @@ UQ (Uncertainty Quantification and Optimization Options)
 
      A. SimCenterUQ
 
-        #. :ref:`Train Gaussian Process (GP) Surrogate Model<lblSimSurrogate>` :blue:`[← Enhanced speed and stability]`
+        #. :ref:`Train Gaussian Process (GP) Surrogate Model<lblSimSurrogate>`
 
            a. Multifidelity surrogate modeling
            b. Adaptive design of experiments options for surrogate modeling
            c. Nugget optimization options for surrogate modeling
-           d. :blue:`Stochastic Kriging`
+           d. Stochastic Kriging :blue:`[← new option for 'no replications']`
 
         #. :ref:`Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)<lblSimCenterUQPLoM>` *
 
@@ -102,10 +102,11 @@ FEM (Computational Model Specification)
             
 #. OpenSees
 #. FEAPpv
-#. Python :blue:`[← formerly OpenSeesPy]`
+#. Python
 #. Custom
-#. SurrogateGP
-#. :blue:`None`
+#. SurrogateGP  :blue:`[← simplified user interface]`
+#. None
+#. :blue:`Multi model`
 
 RV (Random Variable Options)
 ============================
@@ -131,7 +132,7 @@ RV (Random Variable Options)
       
       :sup:`1`: For SimCentreUQ and UCSD algorithms only, the RVs can be defined by any of parameters, moments, or a dataset.
       :sup:`2`: Available for Optimization routines in Dakota only.
-      :sup:`3`: Avaliable in SimCenterUQ and UCSD only.
+      :sup:`3`: Available in SimCenterUQ and UCSD only.
 
 EDP (Outputs from Computational Models)
 =======================================
@@ -153,7 +154,7 @@ RES (Summary and Visualization of UQ Analysis Results)
 	
 #. Output values visualized in interactive chart
 
-     A. Scatter plot
+     A. Scatter plot  :blue:`[← display of correlation coefficient]`
      B. Histogram
      C. Cumulative distribution
      D. Inspect points on chart
@@ -166,10 +167,11 @@ RES (Summary and Visualization of UQ Analysis Results)
      D. Save QoIs (Useful for surrogate model training)
      E. Save Surrogate Predictions (Only for the surrogate model results)
 
-#. Visualization of surrogate modeling results
+#. Visualization of surrogate modeling (GP) results
 
      A. Goodness-of-fit measures            
-     B. 90% confidence interval and :blue:`prediction interval`
+     B. 90% confidence interval and prediction interval
+     C. Save GP model :blue:`[← simplified surrogate model file]`
 
 #. Visualization of PLoM training results
 
