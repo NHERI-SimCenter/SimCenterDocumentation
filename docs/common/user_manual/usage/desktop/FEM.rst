@@ -81,7 +81,7 @@ The **Multi Model** simulation application allows users to define multiple finit
 
 By adding a model, a new tab is created in the FEM panel where users can choose one of the finite element analysis applications described in the sections above and provide the inputs necessary to define the required analysis options. Users also need to specify their belief corresponding to that analysis option. The beliefs are expressed as non-negative numerical values. The belief value in each tab is defined relative to the values in the other tabs, and the beliefs do not need to sum to 1.
 
-.. figure:: figures/multiModel-FEM.png
+.. figure:: figures/multimodelFEM.png
   :align: center
   :figclass: align-center
   :width: 800

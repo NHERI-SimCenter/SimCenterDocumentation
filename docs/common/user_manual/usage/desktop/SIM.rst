@@ -160,7 +160,7 @@ The **Multi Model** structural modeling application allows users to define multi
 
 By adding a model, a new tab is created in the SIM panel where users can choose one of the structural modeling applications described in the sections above and provide the inputs necessary to create the model. Users also need to specify their belief about the credibility of the model in the tab corresponding to that model. The beliefs are expressed as non-negative numerical values. The belief value for each model is defined relative to the other models, and the beliefs do not need to sum to 1.
 
-.. figure:: figures/multiModel-SIM.png
+.. figure:: figures/multimodelSIM.png
   :align: center
   :figclass: align-center
   :width: 800
