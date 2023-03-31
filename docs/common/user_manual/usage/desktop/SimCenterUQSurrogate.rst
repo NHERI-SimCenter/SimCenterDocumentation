@@ -67,7 +67,7 @@ When the **Training Dataset** option is set to the ``Sampling and Simulation``, 
 
 .. _figSim1:
 
-.. figure:: figures/Surrogate1_SimUQ.jpg
+.. figure:: figures/Surrogate1_SimUQ.png
    :align: center
    :figclass: align-center
    :width: 1200
@@ -98,7 +98,7 @@ User can also activate the **Advanced Options for Gaussian Process Model**
 
 .. _figSim2:
 
-.. figure:: figures/Surrogate2_SimUQ.jpg
+.. figure:: figures/Surrogate2_SimUQ.png
    :align: center
    :figclass: align-center
    :width: 1200
@@ -115,7 +115,7 @@ Additionally, users may populate the initial samples directly from data files by
 
 .. _figSim3:
 
-.. figure:: figures/Surrogate3_SimUQ.jpg
+.. figure:: figures/Surrogate3_SimUQ.png
    :align: center
    :figclass: align-center
    :width: 1200
@@ -157,7 +157,7 @@ When the **Training Dataset** option is set to ``Import Data File`` AND **Get re
 
 .. _figSim5:
 
-.. figure:: figures/Surrogate5_SimUQ.jpg
+.. figure:: figures/Surrogate5_SimUQ.png
    :align: center
    :figclass: align-center
    :width: 1200
@@ -182,7 +182,7 @@ When the **Training Dataset** option is set to ``Import Data File`` AND **Get re
 
 .. _figSim6:
 
-.. figure:: figures/Surrogate6_SimUQ.jpg
+.. figure:: figures/Surrogate6_SimUQ.png
    :align: center
    :figclass: align-center
    :width: 1200
@@ -378,10 +378,10 @@ Saving Options
 
 .. _figSim10:
 
-.. figure:: figures/Surrogate10_SimUQ.jpg
+.. figure:: figures/Surrogate10_SimUQ.png
    :align: center
    :figclass: align-center
-   :width: 1200
+   :width: 600
 
    Example outputs from saving options
 
