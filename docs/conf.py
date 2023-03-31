@@ -542,6 +542,7 @@ elif app_name == "EE-UQ":
 
     sync_examples = True
 
+
     rst_prolog += """
 .. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application (EE-UQ)
 .. |tool version| replace:: 3.2
