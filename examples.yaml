@@ -12,11 +12,9 @@ PBE:
 
 quoFEM:
   include-item:
-    - qfem-0001
-    - qfem-0001    
+    - qfem-0001 
     - qfem-0002
     - qfem-0005
-    - qfem-0027    
     - qfem-0007
     - qfem-0009
     - qfem-0014
