@@ -116,7 +116,7 @@ update:
 examples:
 	make build/$(SIMDOC_APP)_Examples.json
 
-build/%.json: examples.yaml
+build/%.json: examples.yaml Makefile FORCE
 	$(PYTHON) scripts/index_examples.py $(SIMDOC_APP) \
     | aurore -D- -B ../$(SIMDOC_APP)/Examples/ -C scripts/config.yml get \
     > $(call BUILDDIR,$(SIMDOC_APP))_Examples.json
