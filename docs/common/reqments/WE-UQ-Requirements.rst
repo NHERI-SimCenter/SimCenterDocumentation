@@ -25,7 +25,7 @@ Loading Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0,1,2,3,4,7
-  :include: {0: 'WL.*'}
+  :include: {0: 'WL*'}
 
 
 .. include:: key.rst
