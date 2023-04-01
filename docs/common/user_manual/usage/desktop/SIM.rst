@@ -151,6 +151,26 @@ The **MDOF-LU** building modeling application creates a hysteretic, multi-degree
   :figclass: align-center
 
   MDOF-LU Building model input panel.
+
+
+Multi Model
+-----------
+
+The **Multi Model** structural modeling application allows users to define multiple structural models for use in their analysis. The Add and Remove buttons allow users to control the number of models they want to use in the analysis. 
+
+By adding a model, a new tab is created in the SIM panel where users can choose one of the structural modeling applications described in the sections above and provide the inputs necessary to create the model. Users also need to specify their belief about the credibility of the model in the tab corresponding to that model. The beliefs are expressed as non-negative numerical values. The belief value for each model is defined relative to the other models, and the beliefs do not need to sum to 1.
+
+.. figure:: figures/multimodelSIM.png
+  :align: center
+  :figclass: align-center
+  :width: 800
+
+  Selecting a structural modeling application within a Multi Model SIM Application
+
+
+.. Note:: 
+
+  If a Multi Model application is selected, at least 2 models must be defined.
 	
 .. .. bibliography:: ../../../../references.bib
 

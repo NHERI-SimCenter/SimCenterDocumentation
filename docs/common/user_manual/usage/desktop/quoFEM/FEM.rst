@@ -4,8 +4,7 @@ FEM: Finite Element Method
 ==========================
 
 The **FEM** tab will present users with a selection of FEM
-applications. Currently, there are four options: OpenSees, Python, FEAPpv, 
-and a custom user-specified application.
+applications. Currently, there are six options: OpenSees, Python, FEAPpv, SurrogateGP (using a surrogate model trained in quoFEM in place of a numerical simulation model), Custom (user-specified application), Multi Model (using more than one model in an analysis), along with the option of specifying no simulation model.
 
 .. _figFEM:
 
@@ -17,7 +16,7 @@ and a custom user-specified application.
 	Input for the **FEM** tab.
 
 .. note::
-   Because the UQ engines treat the FEM applications as a black box, when the UQ engine runs each deterministic simulation it expects the FEM application to output a single file. This file must be named ``results.out`` and be placed in the same directory as the main input file. The ``results.out`` file must contain a single line. That line must contain as many QoI values as the user will enter in the **QoI** panel. Each value must be separated by a space. An example ``results.out`` file for a problem specifying four response QoI values is as shown:
+   Because the UQ engines treat the FEM applications as a black box, when the UQ engine runs each deterministic simulation it expects the FEM application to output a single file. This file must be named ``results.out`` and be placed in the same directory as the main input file. The ``results.out`` file must contain a single line. That line must contain as many QoI values as the sum of the length of all the EDPs defined by the user in the **QoI** panel. Each value must be separated by a space. An example ``results.out`` file for a problem specifying four response QoI values is as shown:
 
    .. literalinclude:: results.out
 
@@ -231,3 +230,31 @@ If the user wants to inspect the simulation status or check error/warning messag
 .. Note:: 
 
   Once the surrogate model is imported, RV and QoI tab will be auto-populated. Users are allowed to remove some of the QoIs if not interested but may not add new QoIs or modify the names of existing QoIs.
+
+
+Multi Model
+^^^^^^^^^^^
+By selecting this option, users can define multiple numerical simulation models for use in their UQ analysis. The Add and Remove buttons allow users to control the number of models they want to use in the analysis. 
+
+.. figure:: figures/multiModel1.png
+  :align: center
+  :figclass: align-center
+  :width: 800
+
+  Input for Multi Model FEM Application
+
+
+By adding a model, a new tab is created in the FEM panel where users can choose one of the FEM applications described in the sections above and provide the inputs necessary to define the model. Users also need to specify their belief about the credibility of the model in the tab corresponding to that model. The beliefs are expressed as non-negative numerical values. The belief value for each model is defined relative to the other models, and the beliefs do not need to sum to 1.
+
+.. figure:: figures/multiModel2.png
+  :align: center
+  :figclass: align-center
+  :width: 800
+
+  Selecting a FEM application within a model tab
+
+
+.. Note:: 
+
+  If a Multi Model application is selected, at least 2 models must be defined.
+
