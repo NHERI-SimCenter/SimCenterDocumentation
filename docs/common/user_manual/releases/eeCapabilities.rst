@@ -2,7 +2,7 @@
 .. role:: blue
 
 ************
-Cababilities
+Capabilities
 ************
 
 **Version 3.3** of |app| was released **March 23**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
