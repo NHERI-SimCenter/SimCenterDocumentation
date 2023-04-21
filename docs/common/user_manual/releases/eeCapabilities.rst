@@ -28,7 +28,7 @@ Earthquake Motion Event
 Applications used to specify/select ground motions for the structure.
 
 #.  Stochastic Ground Motion: simulating stochastic ground motion recordings
-#.  PEER NGA Records: selecting and scaling PEER NGA West2 ground motions :blue:`[<- New option to select a suit of ground motions with with uniformly populated IMs. This can be useful when training a surrogate model]`
+#.  PEER NGA Records: selecting and scaling PEER NGA West2 ground motions :blue:`[<- New option to select a suit of ground motions with uniformly populated IMs. This can be useful when training a surrogate model]`
 #.  Site Response: propagating rock motions to the surface
 #.  Multiple PEER: using multiple PEER recordings
 #.  Multiple SimCenter: using multiple SimCenter-format recordings
