@@ -12,7 +12,7 @@ PBE:
 
 quoFEM:
   include-item:
-    - qfem-0001
+    - qfem-0001 
     - qfem-0002
     - qfem-0005
     - qfem-0007
@@ -25,6 +25,7 @@ quoFEM:
     - qfem-0022    
     - qfem-0023
     - qfem-0025
+    - qfem-0027
 
 WE-UQ:
   include-item:
@@ -41,6 +42,7 @@ EE-UQ:
     - eeuq-0005
     - eeuq-0006
     - eeuq-0007
+    - eeuq-0008
 
 R2DTool:
   include-item:
