@@ -51,7 +51,7 @@ Finite Element Application
 Applications used to determine the response output parameters given the ground motion and structural model.
 
 #.  OpenSees: Open System for Earthquake Engineering Simulation
-#.  CustomPy-Simulation: user-provided python script
+#.  :blue:`CustomPy-Simulation: user-provided python script`
 #.  :blue:`None: used only for surrogate model-based predictions`
 #.  :blue:`Multimodel: selecting multiple finite element applications`
 
