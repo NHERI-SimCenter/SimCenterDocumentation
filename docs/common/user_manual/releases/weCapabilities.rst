@@ -5,7 +5,7 @@
 Cababilities
 ************
 
-**Version 2.0.0** of |app| was released **Sept 29, 2019**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+**Version 2.3.0** of |app| was released **March 2023**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 Structural Information Model
@@ -16,8 +16,8 @@ Applications used to specify/select the structural model to be used in analysis.
 #. MDOF: creating idealized multi-degree-of-freedom models
 #. OpenSees: user-defined OpenSees models
 #. Steel Building Model: automating steel frame design and modeling
-#. :blue:`Concrete Building Model: automating concrete moment frame design and modeling`
-#. :blue:`MDOF-LU: MDOF shear building model`
+#. MDOF-LU: MDOF shear building model
+#. CustomPy
 
     
 Wind Loading Event
@@ -27,9 +27,12 @@ Applications used to specify/select wind loading for the structure.
 
 #.  Stochastic Wind: simulating stochastic wind speed using spectral method
 #.  CFD-Basic: generating CFD model for beginners with limited control options
-#.  CFD-Expert: generating CFD model for advanced with several control options 
+#.  CFD-Expert: generating CFD model for advanced with several control options
+#.  :blue:`CFD-Digital Wind Tunnel: generating CFD models to numerically simulate the Boundary Layer Wind Tunnel at University of Florida`
 #.  DEDM_HRP: database-enabled design framework based on wind-tunnel data for high rise buildings 
 #.  LowRiseTPU: extracting aerodynamics loads based on TPU database for low-rise buildings
+#.  WInd Tuneel Experiment
+#.  Existing: User supplied time varying floor loads
 
 
 Engineering Demand Parameter Generator
@@ -58,18 +61,17 @@ Applications to perform the uncertainty quantification for the response paramete
 
 #. Forward Uncertainty Propagation
 
-     A. Dakota Options :blue:`[← New option to discard working directories after each model evaluation]` 
+     A. Dakota Options 
 
         #. Monte Carlo Sampling (MCS)
         #. Latin Hypercube Sampling (LHS)
         #. Gaussian Process Regression
         #. Polynomial Chaos Expansion
 
-     B. :blue:`SimCenterUQ Options`
+     B. SimCenterUQ Options
 
-        #. :blue:`Monte Carlo Sampling (MCS)`
-
-           a. :blue:`Resample from existing correlated dataset of samples`
+        #. Monte Carlo Sampling (MCS)
+           a. Resample from existing correlated dataset of samples
 
 #. Global Sensitivity Analysis
 
@@ -78,11 +80,11 @@ Applications to perform the uncertainty quantification for the response paramete
         #. MCS
         #. LHS
 
-     B. :blue:`SimCenterUQ Sensitivity Options`
+     B. SimCenterUQ Sensitivity Options
 
-        #. :blue:`Probability Model-based Global Sensitivity Analysis (PM-GSA)`
+        #. Probability Model-based Global Sensitivity Analysis (PM-GSA)
 
-           a. :blue:`Import input/output samples from data files`
+           a. Import input/output samples from data files
 
 
 #. Surrogate Modeling

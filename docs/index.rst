@@ -74,7 +74,6 @@
    :EEUQ:common/user_manual/releases/eePlans	   
 
    :WEUQ:common/user_manual/releases/weCapabilities
-   :WEUQ:common/user_manual/releases/weReleaseNotes
    :WEUQ:common/user_manual/releases/wePlans
       
    :R2D:common/user_manual/usage/desktop/R2DTool/releasenotes

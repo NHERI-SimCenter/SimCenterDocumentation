@@ -5,7 +5,7 @@
 Cababilities
 ************
 
-**Version 3.2** of |app| was released **Sept 22**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+**Version 3.3** of |app| was released **March 23**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 Structural Information Model
@@ -16,8 +16,8 @@ Applications used to specify/select the structural model to be used in analysis.
 #. MDOF: creating idealized multi-degree-of-freedom models
 #. OpenSees: user-defined OpenSees models
 #. Steel Building Model: automating steel frame design and modeling
-#. :blue:`Concrete Building Model: automating concrete moment frame design and modeling`
-#. :blue:`MDOF-LU: MDOF shear building model`
+#. Concrete Building Model: automating concrete moment frame design and modeling
+#. MDOF-LU: MDOF shear building model
 
     
 Earthquake Motion Event
@@ -64,11 +64,11 @@ Applications to perform the uncertainty quantification for the response paramete
         #. Gaussian Process Regression
         #. Polynomial Chaos Expansion
 
-     B. :blue:`SimCenterUQ Options`
+     B. SimCenterUQ Options
 
-        #. :blue:`Monte Carlo Sampling (MCS)`
+        #. Monte Carlo Sampling (MCS)
 
-           a. :blue:`Resample from existing correlated dataset of samples`
+           a. Resample from existing correlated dataset of samples
 
 #. Global Sensitivity Analysis
 
@@ -77,11 +77,11 @@ Applications to perform the uncertainty quantification for the response paramete
         #. MCS
         #. LHS
 
-     B. :blue:`SimCenterUQ Sensitivity Options`
+     B. SimCenterUQ Sensitivity Options
 
-        #. :blue:`Probability Model-based Global Sensitivity Analysis (PM-GSA)`
+        #. Probability Model-based Global Sensitivity Analysis (PM-GSA)
 
-           a. :blue:`Import input/output samples from data files`
+           a. Import input/output samples from data files
 
 
 #. Surrogate Modeling
@@ -89,4 +89,5 @@ Applications to perform the uncertainty quantification for the response paramete
      A. SimCenterUQ Engine Surrogating Options:
 
         #. Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)
+	#. :blue:`Gaussian process surrogate modeling`
 	   

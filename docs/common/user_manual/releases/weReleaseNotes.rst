@@ -28,12 +28,7 @@ Major Version 2
 
       Highlights
 
-         #. Initial Digital Twin
-
          #. Updated UQ methods for Sampling, Sensitivity, Reliability
-
-         #. Modification to TInF to remove negative scaling factors if appear during OpenFOAM simulation
-
          #. Minor bug fixes
 
 
@@ -41,7 +36,7 @@ Major Version 2
 
       **Release date:** September. 2019
 
-      Highlights
+p      Highlights
 
          #. Nnew UQ features
 
