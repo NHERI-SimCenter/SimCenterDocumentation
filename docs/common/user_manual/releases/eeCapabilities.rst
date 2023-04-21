@@ -18,6 +18,8 @@ Applications used to specify/select the structural model to be used in analysis.
 #. Steel Building Model: automating steel frame design and modeling
 #. Concrete Building Model: automating concrete moment frame design and modeling
 #. MDOF-LU: MDOF shear building model
+#. :blue:`SurrogateGP: surrogate model trained in EE-UQ`
+#. :blue:`Multimodel: selecting multiple suctural information models`
 
     
 Earthquake Motion Event
@@ -26,7 +28,7 @@ Earthquake Motion Event
 Applications used to specify/select ground motions for the structure.
 
 #.  Stochastic Ground Motion: simulating stochastic ground motion recordings
-#.  PEER NGA Records: selecting and scaling PEER NGA West2 ground motions
+#.  PEER NGA Records: selecting and scaling PEER NGA West2 ground motions :blue:`[<- New option to select a suit of ground motions with uniformly populated IMs. This can be useful when training a surrogate model]`
 #.  Site Response: propagating rock motions to the surface
 #.  Multiple PEER: using multiple PEER recordings
 #.  Multiple SimCenter: using multiple SimCenter-format recordings
@@ -40,6 +42,7 @@ Applications to identify the output parameters of interest given the ground moti
 
 #. Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration
 #. User Defined: user-specified EDP
+#. :blue:`None: used only for surrogate model-based predictions`
     
     
 Finite Element Application
@@ -48,7 +51,9 @@ Finite Element Application
 Applications used to determine the response output parameters given the ground motion and structural model.
 
 #.  OpenSees: Open System for Earthquake Engineering Simulation
-
+#.  :blue:`CustomPy-Simulation: user-provided python script`
+#.  :blue:`None: used only for surrogate model-based predictions`
+#.  :blue:`Multimodel: selecting multiple finite element applications`
 
 Uncertainty Quantification
 ==========================
@@ -57,7 +62,7 @@ Applications to perform the uncertainty quantification for the response paramete
 
 #. Forward Uncertainty Propagation
 
-     A. Dakota Options :blue:`[← New option to discard working directories after each model evaluation]` 
+     A. Dakota Options
 
         #. Monte Carlo Sampling (MCS)
         #. Latin Hypercube Sampling (LHS)
@@ -88,6 +93,6 @@ Applications to perform the uncertainty quantification for the response paramete
 
      A. SimCenterUQ Engine Surrogating Options:
 
-        #. Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)
-	#. :blue:`Gaussian process surrogate modeling`
+        #. Probabilistic Learning on Manifolds (PLoM) Surrogate modeling
+        #. :blue:`Gaussian Process Surrogate Modeling`
 	   
