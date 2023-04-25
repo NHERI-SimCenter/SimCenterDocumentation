@@ -185,7 +185,14 @@ Once the installation procedure has been completed, it is a good practice to run
 
 .. note::
 
-   SimCenter apps are code-signed and notarized, but because they are not downloaded from the operating system's app store, they may not be recognized as safe applications. Depending on your security settings, when you start a SimCenter app for the first time, your operating system may show a dialog box indicating it is unsafe. If this dialog appears, choose the cancel button. Restart the app by right clicking on it and selecting open.
+   SimCenter apps are code-signed and notarized, but because they are not downloaded from the operating system's app store, they may not be recognized as safe applications. Depending on your security settings, when you start a SimCenter app for the first time, your operating system may show a dialog box indicating it is unsafe. If this dialog appears, choose the cancel button. Try to start the app again, this time by right clicking on it and selecting open.
+
+   If the app still fails to open. You need to go to System Settings->Privacy and Security. Under the Security section you need to at least temprarily select the option to allow applications downloaded from the **App Store and Identified Developers**. With this schecked try again. If it fails again, go back to System Settings->Privacy and Security. Just below the section you just checked, there should be some text about why the app was stopped and an option to **Open Anayway" , as shown in figure below. Click on the button and the app should start.
+
+   .. figure:: figures/AppleSecurity.png
+    :align: center
+    :figclass: align-center
+
 
 Once the application started, you should see the user interface shown in |figUI|. We recommend running the example problem |test example| to test the application.
 
