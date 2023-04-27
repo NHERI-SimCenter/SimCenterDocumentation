@@ -20,11 +20,11 @@ How To Cite
   
 .. only:: EEUQ_app
 
-   1. Frank McKenna, Kuanshi Zhong, Michael Gardner, Adam Zsarnoczay, Charles Wang, &
-      Wael Elhaddad. (2022).
-      NHERI-SimCenter/EE-UQ: Version 3.0.0 (v3.0.0).
-      Zenodo. `DOI: 10.5281/zenodo.3475642 <https://doi.org/10.5281/zenodo.3475642>`_
-    
+   1.  Frank McKenna, Kuanshi Zhong, Michael Gardner, Adam Zsarnoczay, Sang-ri Yi, Aakash Bangalore Satish,
+       Charles Wang, & Wael Elhaddad. (2023).
+       NHERI-SimCenter/EE-UQ: Version 3.3.0 (v3.3.0).
+       Zenodo. "https://doi.org/10.5281/zenodo.7790405
+   
 .. only:: WEUQ_app
 
    1. Frank McKenna, Peter Mackenzie-Helnwein, Jiawei Wan & Stevan Gavrilovic.
@@ -33,10 +33,11 @@ How To Cite
 	     
 .. only:: quoFEM_app	     
       
-   1.  Frank McKenna, Sang-ri Yi, Aakash Bangalore Satish, Adam Zsarnoczay,
-       Michael Gardner, Kuanshi Zhong, & Wael Elhaddad. (2022).
-       NHERI-SimCenter/quoFEM: Version 3.0.0 (v3.0.0).
-       Zenodo: `DOI: 10.5281/zenodo.6404498 <https://doi.org/10.5281/zenodo.6404498>`_
+
+1. Frank McKenna, Sang-ri Yi, Aakash Bangalore Satish, Kuanshi Zhong, Adam Zsarnoczay, & Wael Elhaddad. (2023).
+   NHERI-SimCenter/quoFEM: Version 3.3.0 (v3.3.0). Zenodo. https://doi.org/10.5281/zenodo.7786857
+   Zenodo: `DOI: 10.5281/zenodo.6404498 <https://doi.org/10.5281/zenodo.6404498>`_
+
 
 2. Gregory G. Deierlein, Frank McKenna, Adam Zsarnóczay, Tracy Kijewski-Correa, Ahsan Kareem,
    Wael Elhaddad, Laura Lowes, Matt J. Schoettler, and Sanjay Govindjee (2020)

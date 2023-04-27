@@ -2,10 +2,10 @@
 .. role:: blue
 
 ************
-Cababilities
+Capabilities
 ************
 
-**Version 3.2** of |app| was released **Sept 22**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+**Version 3.3** of |app| was released **March 23**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 Structural Information Model
@@ -16,8 +16,10 @@ Applications used to specify/select the structural model to be used in analysis.
 #. MDOF: creating idealized multi-degree-of-freedom models
 #. OpenSees: user-defined OpenSees models
 #. Steel Building Model: automating steel frame design and modeling
-#. :blue:`Concrete Building Model: automating concrete moment frame design and modeling`
-#. :blue:`MDOF-LU: MDOF shear building model`
+#. Concrete Building Model: automating concrete moment frame design and modeling
+#. MDOF-LU: MDOF shear building model
+#. :blue:`SurrogateGP: surrogate model trained in EE-UQ`
+#. :blue:`Multimodel: selecting multiple suctural information models`
 
     
 Earthquake Motion Event
@@ -26,7 +28,7 @@ Earthquake Motion Event
 Applications used to specify/select ground motions for the structure.
 
 #.  Stochastic Ground Motion: simulating stochastic ground motion recordings
-#.  PEER NGA Records: selecting and scaling PEER NGA West2 ground motions
+#.  PEER NGA Records: selecting and scaling PEER NGA West2 ground motions :blue:`[<- New option to select a suit of ground motions with uniformly populated IMs. This can be useful when training a surrogate model]`
 #.  Site Response: propagating rock motions to the surface
 #.  Multiple PEER: using multiple PEER recordings
 #.  Multiple SimCenter: using multiple SimCenter-format recordings
@@ -40,6 +42,7 @@ Applications to identify the output parameters of interest given the ground moti
 
 #. Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration
 #. User Defined: user-specified EDP
+#. :blue:`None: used only for surrogate model-based predictions`
     
     
 Finite Element Application
@@ -48,7 +51,9 @@ Finite Element Application
 Applications used to determine the response output parameters given the ground motion and structural model.
 
 #.  OpenSees: Open System for Earthquake Engineering Simulation
-
+#.  :blue:`CustomPy-Simulation: user-provided python script`
+#.  :blue:`None: used only for surrogate model-based predictions`
+#.  :blue:`Multimodel: selecting multiple finite element applications`
 
 Uncertainty Quantification
 ==========================
@@ -57,18 +62,18 @@ Applications to perform the uncertainty quantification for the response paramete
 
 #. Forward Uncertainty Propagation
 
-     A. Dakota Options :blue:`[← New option to discard working directories after each model evaluation]` 
+     A. Dakota Options
 
         #. Monte Carlo Sampling (MCS)
         #. Latin Hypercube Sampling (LHS)
         #. Gaussian Process Regression
         #. Polynomial Chaos Expansion
 
-     B. :blue:`SimCenterUQ Options`
+     B. SimCenterUQ Options
 
-        #. :blue:`Monte Carlo Sampling (MCS)`
+        #. Monte Carlo Sampling (MCS)
 
-           a. :blue:`Resample from existing correlated dataset of samples`
+           a. Resample from existing correlated dataset of samples
 
 #. Global Sensitivity Analysis
 
@@ -77,16 +82,17 @@ Applications to perform the uncertainty quantification for the response paramete
         #. MCS
         #. LHS
 
-     B. :blue:`SimCenterUQ Sensitivity Options`
+     B. SimCenterUQ Sensitivity Options
 
-        #. :blue:`Probability Model-based Global Sensitivity Analysis (PM-GSA)`
+        #. Probability Model-based Global Sensitivity Analysis (PM-GSA)
 
-           a. :blue:`Import input/output samples from data files`
+           a. Import input/output samples from data files
 
 
 #. Surrogate Modeling
 
      A. SimCenterUQ Engine Surrogating Options:
 
-        #. Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)
+        #. Probabilistic Learning on Manifolds (PLoM) Surrogate modeling
+        #. :blue:`Gaussian Process Surrogate Modeling`
 	   

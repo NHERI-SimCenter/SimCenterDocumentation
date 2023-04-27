@@ -70,3 +70,25 @@ that is created based on the defaults is the following:
 If the user specifies their own analysis script to run
 instead of the default, they can take advantage of the **numStep** and **dt** variables that
 are obtained from the EVENT and are automatically set by the program.
+
+
+
+
+Multi Model
+-----------
+
+The **Multi Model** simulation application allows users to define multiple finite element analysis options. The Add and Remove buttons allow users to control the number of sets of options they want to use while conducting the analysis. 
+
+By adding a model, a new tab is created in the FEM panel where users can choose one of the finite element analysis applications described in the sections above and provide the inputs necessary to define the required analysis options. Users also need to specify their belief corresponding to that analysis option. The beliefs are expressed as non-negative numerical values. The belief value in each tab is defined relative to the values in the other tabs, and the beliefs do not need to sum to 1.
+
+.. figure:: figures/multimodelFEM.png
+  :align: center
+  :figclass: align-center
+  :width: 800
+
+  Selecting a set of finite element analysis options within a Multi Model FEM Application
+
+
+.. Note:: 
+
+  If a Multi Model application is selected, at least 2 models must be defined.

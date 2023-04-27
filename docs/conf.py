@@ -456,19 +456,6 @@ elif app_name == "R2DTool":
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 
 """
-    #example_config.update(
-    #    {
-    #        "include-item": [
-    #            "r2dt-0001",
-    #            "r2dt-0002",
-    #            "r2dt-0003",
-    #            "r2dt-0004",
-    #            "r2dt-0005",
-    #            "r2dt-0006",
-    #            "r2dt-0007"
-    #        ]
-    #    }
-    #)
     html_theme_options.update(
         {
             "analytics_id": "...",  # TODO: add analytics ID
@@ -554,23 +541,11 @@ elif app_name == "EE-UQ":
     exclude_patterns.remove("**/*EE[-_]UQ*")
 
     sync_examples = True
-    example_config.update(
-        {
-            "include-item": [
-                "eeuq-0001",
-                "eeuq-0002",
-                "eeuq-0003",
-                "eeuq-0004",
-                "eeuq-0005",
-                "eeuq-0006",
-                "eeuq-0007",
-            ]
-        }
-    )
+
 
     rst_prolog += """
 .. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application (EE-UQ)
-.. |tool version| replace:: 3.2
+.. |tool version| replace:: 3.3
 .. |test example| replace:: :ref:`eeuq-0001`
 .. _EE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/EE_UQ
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
@@ -615,7 +590,7 @@ elif app_name == "quoFEM":
     rst_prolog += f"""
 .. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)
 .. |test example| replace:: :ref:`qfem-0001`
-.. |tool version| replace:: 3.2
+.. |tool version| replace:: 3.3
 .. _quoFEM Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
@@ -623,31 +598,11 @@ elif app_name == "quoFEM":
 
 """
     html_theme_options.update({"analytics_id": "UA-158130480-4"})
-    #example_config.update(
-    #    {
-    #        "include-item": [
-    #            "qfem-0001",
-    #            "qfem-0002",
-    #            "qfem-0005",
-    #            "qfem-0003",
-    #            "qfem-0004",
-    #            "qfem-0009",
-    #            "qfem-0007",
-    #            "qfem-0008",
-    #            "qfem-0014",
-    #            "qfem-0015",
-    #            "qfem-0016",
-    #            "qfem-0017",
-    #            "qfem-0018",
-    #            "qfem-0019",
-    #        ]
-    #    }
-    #)
 
 elif app_name == "WE-UQ":
     project = "Wind Engineering with Uncertainty Quantification"
     # author = 'Frank McKenna'
-    author = "Frank McKenna, Peter Mackenzie-Helnwein, Wael Elhaddad, Jiawei Wan, Michael Gardner, Dae Kun Kwon"
+    author = "Frank McKenna, Peter Mackenzie-Helnwein, Wael Elhaddad, Jiawei Wan, Michael Gardner, Dae Kun Kwon, Fei Ding"
 
     tags.add("desktop_app")
     tags.add("response")
@@ -678,16 +633,7 @@ elif app_name == "WE-UQ":
     exclude_patterns.append("**/DakotaInverseProblems.rst")
 
     sync_examples = True
-    example_config.update(
-        {
-            "include-item": [
-                "weuq-0001",
-                # "weuq-0002",
-                # "weuq-0004",
-                "weuq-0007",
-            ]
-        }
-    )
+
     html_theme_options.update({"analytics_id": "UA-158130480-2"})
 
     rst_prolog += f"""

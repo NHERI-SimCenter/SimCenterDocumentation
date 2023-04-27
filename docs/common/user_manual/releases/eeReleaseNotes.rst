@@ -8,6 +8,17 @@ Release Notes
 Version 3.2.0 (Current)
 -----------------------
 
+**Release date:** March. 2023
+
+**Highlights**
+
+#. Multi model uncertainty propagation options for Modeling (SIM) and Analysis (FEM) tabs
+#. Gaussian process surrogate modeling
+
+
+Version 3.2.0
+-------------
+
 **Release date:** Sept. 2022
 
 **Highlights**
