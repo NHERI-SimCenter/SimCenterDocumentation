@@ -182,7 +182,6 @@ BRAILS
 .. csv-filter:: Requirements - BR
   :header: "#", "Description", "Source", "Priority", "Status", "WBS"
   :widths: 10, 50, 10, 10, 10, 10
-  :widths: 10, 50, 10, 10, 10
   :file: BRAILS.csv
 
 .. include:: key.rst
@@ -213,8 +212,8 @@ DL Database
 
 
 .. csv-filter:: Requirements - DLD
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2D"
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10
   :file: _out/Damage.csv
   :include: {0: 'DLD.*'}
 

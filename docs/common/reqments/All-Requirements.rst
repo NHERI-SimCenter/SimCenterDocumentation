@@ -71,7 +71,7 @@ Earthquake Loading Requirements
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
   :file: _out/Loading.csv
-  :include: {0: '\**EL.*'}
+  :include: {0: '\**EL.*|#'}
   :included_cols: 0, 1, 2, 3, 4
 
 .. include:: key.rst
@@ -85,7 +85,7 @@ Wind Loading Requirements
   :widths: 10, 50, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4
   :file: _out/Loading.csv
-  :include: {0: '\**WL.*'}
+  :include: {0: '\**WL.*|#'}
 
 .. include:: key.rst
 
@@ -96,7 +96,7 @@ Surge/Tsunami Loading Requirements
   :widths: 10, 50, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4
   :file: _out/Loading.csv
-  :include: {0: '\**HL.*'}
+  :include: {0: '\**HL.*|#'}
   :header: "#", "Description", "Source", "Priority", "Status"
 
 .. include:: key.rst
@@ -157,7 +157,7 @@ Damage & Loss Requirements
   :widths: 10, 50, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4
   :file: _out/Damage.csv
-  :include: {0: '\**DL.*'}
+  :include: {0: '\**DL.*|#'}
 
 .. include:: key.rst
 
@@ -229,7 +229,7 @@ DL Database
   :widths: 10, 50, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4
   :file: _out/Damage.csv
-  :include: {0: '\**DLD.*'}
+  :include: {0: '\**DLD.*|#'}
 
 .. include:: key.rst
 
