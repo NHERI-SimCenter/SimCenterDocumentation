@@ -9,4 +9,3 @@ BE.3, "Incorporate transportation newtwork data from existing datasets made avai
 BE.3.1, "Ingest additionally needed transportation netwwork data utilizing AI/ML and satellite and street-level images", SP, M, InProgress,1.1.3.4.1
 BE.4 , "Include National Models of Utility Networks", GC , M ,,
 BE.4.1, "Incorporate utility network data from existing datasets made available through www", SP, M,,
-
