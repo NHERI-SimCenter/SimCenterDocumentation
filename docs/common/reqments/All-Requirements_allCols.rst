@@ -68,12 +68,11 @@ Earthquake Loading Requirements
 -------------------------------
 
 .. csv-filter:: Requirements - EL
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2D"
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10
   :file: _out/Loading.csv
-  :include: {0: '\**EL.*'}
-  :included_cols: 0, 1, 2, 3, 4
-
+  :include: {0: 'EL\..*'}
+  
 .. include:: key.rst
 
 
@@ -81,11 +80,10 @@ Wind Loading Requirements
 -------------------------
 
 .. csv-filter:: Requirements - WL
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10
-  :included_cols: 0, 1, 2, 3, 4
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2D"
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10
   :file: _out/Loading.csv
-  :include: {0: '\**WL.*'}
+  :include: {0: 'WL\..*'}
 
 .. include:: key.rst
 
@@ -93,11 +91,10 @@ Surge/Tsunami Loading Requirements
 ----------------------------------
 
 .. csv-filter:: Requirements - HL
+  :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4
-  :file: _out/Loading.csv
-  :include: {0: '\**HL.*'}
-  :header: "#", "Description", "Source", "Priority", "Status"
+  :file: HydroLoading.csv
 
 .. include:: key.rst
 
@@ -105,9 +102,8 @@ UQ Requirements
 ---------------
 
 .. csv-filter:: Requirements - Uncertainty Quantification Methods and Variables
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10
-  :included_cols: 0, 1, 2, 3, 4
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2D"
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10
   :file: _out/Uncertainty.csv
 
 
@@ -118,9 +114,8 @@ RV Requirements
 ---------------
 
 .. csv-filter:: Requirements - Random Variables
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10
-  :included_cols: 0, 1, 2, 3, 4
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2D"
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10  
   :file: _out/RandomVariables.csv
 
 .. include:: key.rst
@@ -131,8 +126,7 @@ Modeling Requirements
 
 .. csv-filter:: Requirements - MOD
   :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10
-  :included_cols: 0, 1, 2, 3, 4
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10
   :file: _out/Modeling.csv
 
 .. include:: key.rst
@@ -141,9 +135,8 @@ Analysis Requirements
 ---------------------
 
 .. csv-filter:: Requirements - ANA
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10
-  :included_cols: 0, 1, 2, 3, 4
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2D"
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10
   :file: _out/Analysis.csv
 
 .. include:: key.rst
@@ -153,11 +146,10 @@ Damage & Loss Requirements
 --------------------------
 
 .. csv-filter:: Requirements - DL
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10
-  :included_cols: 0, 1, 2, 3, 4
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2D"
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10
   :file: _out/Damage.csv
-  :include: {0: '\**DL.*'}
+  :include: {0: 'DL\..*'}
 
 .. include:: key.rst
 
@@ -166,9 +158,8 @@ Recovery Requirements
 ---------------------
 
 .. csv-filter:: Requirements - REC
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10
-  :included_cols: 0, 1, 2, 3, 4
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2D"
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10
   :file: _out/Recovery.csv
 
 .. include:: key.rst
@@ -178,9 +169,8 @@ Common Research Application Requirements
 ----------------------------------------
 
 .. csv-filter:: Requirements - CR
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10
-  :included_cols: 0, 1, 2, 3, 4
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2D"
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10
   :file: _out/Common.csv
 
 .. include:: key.rst
@@ -190,9 +180,9 @@ BRAILS
 ------
 
 .. csv-filter:: Requirements - BR
-  :header: "#", "Description", "Source", "Priority", "Status"
+  :header: "#", "Description", "Source", "Priority", "Status", "WBS"
+  :widths: 10, 50, 10, 10, 10, 10
   :widths: 10, 50, 10, 10, 10
-  :included_cols: 0, 1, 2, 3, 4
   :file: BRAILS.csv
 
 .. include:: key.rst
@@ -202,9 +192,8 @@ PELICUN
 -------
 
 .. csv-filter:: Requirements - P
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10
-  :included_cols: 0, 1, 2, 3, 4
+  :header: "#", "Description", "Source", "Priority", "Status", "WBS"
+  :widths: 10, 50, 10, 10, 10, 10
   :file: requirements_pelicun_general.csv
 
 .. include:: key.rst
@@ -213,9 +202,8 @@ BE Database
 -----------
 
 .. csv-filter:: Requirements - BE
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10
-  :included_cols: 0, 1, 2, 3, 4
+  :header: "#", "Description", "Source", "Priority", "Status", "WBS"
+  :widths: 10, 50, 10, 10, 10, 10
   :file: BE.csv
 
 .. include:: key.rst
@@ -227,9 +215,8 @@ DL Database
 .. csv-filter:: Requirements - DLD
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
-  :included_cols: 0, 1, 2, 3, 4
   :file: _out/Damage.csv
-  :include: {0: '\**DLD.*'}
+  :include: {0: 'DLD.*'}
 
 .. include:: key.rst
 

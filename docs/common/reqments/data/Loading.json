@@ -392,32 +392,27 @@
         "target": "Local Scale Storm Surge/Tsunami Hazard Options",
         "items": [
           {
-            "target": "",
+            "target": "Using computational fluid dynamics to model interface and impact between water loads and buildings",
             "items": [
               {
                 "target": "CFD to model fluid flow around a single rigid structure",
-                "fields": ["SP", "M", "InProgress"],
-                "items": []
+                "fields": ["SP", "M", "InProgress"]
               },
               {
                 "target": "Mesh refinement around structures",
-                "fields": ["SP", "M", "InProgress"],
-                "items": []
+                "fields": ["SP", "M", "InProgress"]
               },
               {
                 "target": "CFD to model fluid flow around a single deformable structure",
-                "fields": ["SP", "M", "InProgress"],
-                "items": []
+                "fields": ["SP", "M", "InProgress"]
               },
               {
                 "target": "CFD to model fluid flow considering inflow and accumulation of fluid inside a rigid structure",
-                "fields": ["SP", "M", ""],
-                "items": []
+                "fields": ["SP", "M", ""]
               },
               {
                 "target": "CFD to model fluid flow considering inflow, accumulation, and possible outflow of fluid across a deformable structure",
-                "fields": ["SP", "M", ""],
-                "items": []
+                "fields": ["SP", "M", ""]
               }
             ]
           },

@@ -46,19 +46,19 @@
               {
                 "target": "Incorporate high-resolution assessment of buildings under water hazards, item P1.1.4",
                 "fields": ["SP", "M", "InProgress"],
-                "WBS": "1.1.3.5.1",
+                "WBS": "1.1.3.5.2",
                 "items": []
               },
               {
                 "target": "Incorporate high-resolution assessment of transportation networks, item P1.1.5",
                 "fields": ["SP", "M", "InProgress"],
-                "WBS": "1.1.3.5.1",
+                "WBS": "1.1.3.5.3",
                 "items": []
               },
               {
                 "target": "Incorporate high-resolution assessment of buried pipelines, item P1.1.6",
                 "fields": ["SP", "M", "InProgress"],
-                "WBS": "1.1.3.5.1",
+                "WBS": "1.1.3.5.4",
                 "items": []
               },
               {
@@ -83,12 +83,14 @@
               },
               {
                 "target": "Incorporate the assessment of transportation networks under earthquake hazard from HAZUS, item P1.2.5",
-                "fields": ["SP", "M", ""],
+                "fields": ["SP", "M", "InProgress"],
+                "WBS": "1.1.3.4.3",
                 "items": []
               },
               {
                 "target": "Incorporate the assessment of power networks under earthquake hazard from HAZUS, item P1.2.6",
-                "fields": ["SP", "M", ""],
+                "fields": ["SP", "M", "InProgress"],
+                "WBS": "1.1.3.4.3",
                 "items": []
               }
             ]
@@ -118,7 +120,8 @@
               },
               {
                 "target": "Extend FEMA P58 Second Edition consequence functions with environmental impact parameters",
-                "fields": ["SP", "M", ""],
+                "fields": ["SP", "M", "Implemented"],
+                "WBS": "1.1.4.3.1",
                 "items": []
               }
             ]
@@ -148,12 +151,14 @@
             "items": [
               {
                 "target": "HAZUS bridge damage and reconstruction cost and time",
-                "fields": ["SP", "M", ""],
+                "fields": ["SP", "M", "InProgress"],
+                "WBS": "1.1.3.4.3",
                 "items": []
               },
               {
                 "target": "HAZUS buried pipeline damage and reconstruction cost and time",
-                "fields": ["SP", "M", ""],
+                "fields": ["SP", "M", "InProgress"],
+                "WBS": "1.1.3.4.3",
                 "items": []
               },
               {
@@ -228,17 +233,20 @@
             "items": [
               {
                 "target": "Create an online database for storing parameters of damage and loss models for buildings",
-                "fields": ["SP", "M", ""],
+                "fields": ["SP", "M", "Implemented"],
+                "WBS" : "1.1.3.2.2",
                 "items": []
               },
               {
                 "target": "Extend online database to store parameters of damage and loss models for transportation networks",
-                "fields": ["SP", "M", ""],
+                "fields": ["SP", "M", "Implemented"],
+                "WBS" : "1.1.3.4.2",
                 "items": []
               },
               {
                 "target": "Extend online database to store parameters of damage and loss models for buried pipeline networks",
-                "fields": ["SP", "M", ""],
+                "fields": ["SP", "M", "Implemented"],
+                "WBS" : "1.1.3.4.3",
                 "items": []
               },
               {
@@ -248,7 +256,8 @@
               },
               {
                 "target": "Populate lifeline database with high-resolution model parameters from researchers",
-                "fields": ["SP", "M", ""],
+                "fields": ["SP", "M", "InProgress"],
+                "WBS" : "1.1.3.5.3",
                 "items": []
               }
             ]
