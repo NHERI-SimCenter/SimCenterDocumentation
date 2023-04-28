@@ -25,7 +25,7 @@
       {
         "target": "Ability to use Multi-Fidelity Models",
         "fields": ["SP", "M", "InProgress"],
-        "fields": "1.1.2.3.1 and 1.1.2.4.1",
+        "WBS": "1.1.2.3.1 and 1.1.2.4.1",
         "apps": ["qfem"]
       }
     ]
@@ -209,7 +209,7 @@
         "items": [
           {
             "target": "Ability to use First Order Reliability method",
-            "fields": ["UF", "M", "2.1"],
+            "fields": ["UF", "M", "Implemented"],
             "config_values": ["Local Reliability"]
           },
           {
@@ -218,7 +218,7 @@
           },
           {
             "target": "Ability to use Own External Application to generate Results",
-            "fields": ["UF", "M", "2.2"]
+            "fields": ["UF", "M", "Implemented"]
           }
         ]
       },
@@ -229,7 +229,7 @@
         "items": [
           {
             "target": "Ability to obtain Global Sensitivity Sobol's indices",
-            "fields": ["UF", "M", null],
+            "fields": ["UF", "M", "Implemented"],
             "config_values": ["Sampling Analysis"]
           }
         ]
