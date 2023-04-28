@@ -8,6 +8,7 @@ R2D
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
   :file: R2D.csv
+  :width: 80%
 
 .. include:: key.rst
 
@@ -18,6 +19,7 @@ PBE
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
   :file: generalPBE.csv
+  :width: 80%
 
 .. include:: key.rst
 
@@ -28,6 +30,7 @@ WE-UQ Requirements
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
   :file: generalWE.csv
+  :width: 80%
 
 .. include:: key.rst
 
@@ -39,6 +42,7 @@ Hydro-UQ Requirements
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
   :file: generalHydro.csv
+  :width: 80%
 
 .. include:: key.rst
 
@@ -50,6 +54,7 @@ EE-UQ Requirements
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
   :file: generalEEUQ.csv
+  :width: 80%
 
 .. include:: key.rst
 
@@ -60,6 +65,7 @@ quoFEM Requirements
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
   :file: generalQUO-FEM.csv
+  :width: 80%
 
 .. include:: key.rst
 
@@ -73,6 +79,7 @@ Earthquake Loading Requirements
   :file: _out/Loading.csv
   :include: {0: '\**EL.*|#'}
   :included_cols: 0, 1, 2, 3, 4
+  :width: 80%
 
 .. include:: key.rst
 
@@ -86,6 +93,7 @@ Wind Loading Requirements
   :included_cols: 0, 1, 2, 3, 4
   :file: _out/Loading.csv
   :include: {0: '\**WL.*|#'}
+  :width: 80%
 
 .. include:: key.rst
 
@@ -98,6 +106,7 @@ Surge/Tsunami Loading Requirements
   :file: _out/Loading.csv
   :include: {0: '\**HL.*|#'}
   :header: "#", "Description", "Source", "Priority", "Status"
+  :width: 80%
 
 .. include:: key.rst
 
@@ -109,6 +118,7 @@ UQ Requirements
   :widths: 10, 50, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4
   :file: _out/Uncertainty.csv
+  :width: 80%
 
 
 .. include:: key.rst
@@ -122,6 +132,7 @@ RV Requirements
   :widths: 10, 50, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4
   :file: _out/RandomVariables.csv
+  :width: 80%
 
 .. include:: key.rst
 
@@ -134,6 +145,7 @@ Modeling Requirements
   :widths: 10, 50, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4
   :file: _out/Modeling.csv
+  :width: 80%
 
 .. include:: key.rst
 
@@ -145,6 +157,7 @@ Analysis Requirements
   :widths: 10, 50, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4
   :file: _out/Analysis.csv
+  :width: 80%
 
 .. include:: key.rst
 
@@ -158,6 +171,7 @@ Damage & Loss Requirements
   :included_cols: 0, 1, 2, 3, 4
   :file: _out/Damage.csv
   :include: {0: '\**DL.*|#'}
+  :width: 80%
 
 .. include:: key.rst
 
@@ -170,6 +184,7 @@ Recovery Requirements
   :widths: 10, 50, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4
   :file: _out/Recovery.csv
+  :width: 80%
 
 .. include:: key.rst
 
@@ -182,6 +197,7 @@ Common Research Application Requirements
   :widths: 10, 50, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4
   :file: _out/Common.csv
+  :width: 80%
 
 .. include:: key.rst
 
@@ -194,6 +210,7 @@ BRAILS
   :widths: 10, 50, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4
   :file: BRAILS.csv
+  :width: 80%
 
 .. include:: key.rst
 
@@ -206,6 +223,7 @@ PELICUN
   :widths: 10, 50, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4
   :file: requirements_pelicun_general.csv
+  :width: 80%
 
 .. include:: key.rst
 
@@ -217,6 +235,7 @@ BE Database
   :widths: 10, 50, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4
   :file: BE.csv
+  :width: 80%
 
 .. include:: key.rst
 
@@ -230,6 +249,7 @@ DL Database
   :included_cols: 0, 1, 2, 3, 4
   :file: _out/Damage.csv
   :include: {0: '\**DLD.*|#'}
+  :width: 80%
 
 .. include:: key.rst
 
