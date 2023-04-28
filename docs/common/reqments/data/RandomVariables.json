@@ -43,7 +43,7 @@
       },
       {
         "target": "Define Correlation Matrix",
-        "fields": ["SP", "M", ""]
+        "fields": ["SP", "M", "Implemented"]
       },
       {
         "target": "Random Fields",
