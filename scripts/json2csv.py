@@ -88,9 +88,9 @@ def create_link(v:str,app:str=None)->str:
             return v
     elif v and EXAMPLE_DIRS[app] is not None:
         match = re.search(f"({EXAMPLE_DIRS[app]})",v)
-        return f'":{match.group(0)}:`/`"' if match else '-'
+        return f'":{match.group(0)}:`/`"' if match else '_'
     else:
-        return '-'
+        return '_'
 
 def find_implementation(key:str,item:dict, examples:dict, options=None)->list:
     if "implementation" in item:
@@ -98,11 +98,11 @@ def find_implementation(key:str,item:dict, examples:dict, options=None)->list:
             if item["implementation"] == "core" or item["implementation"] == "standard":
                 return {
                     #app: "**core**" if v else "NA" for app,v in examples.items()
-                    app: "**core**" if examples[app] else '-' for app in EXAMPLE_DIRS.keys()
+                    app: "**core**" if examples[app] else '_' for app in EXAMPLE_DIRS.keys()
                 }
         else:
             implementations = {
-               k: item["implementation"][k] if k in item["implementation"] else  '-'
+               k: item["implementation"][k] if k in item["implementation"] else  '_'
                for k in EXAMPLE_DIRS.keys()
             }
             return {
@@ -110,7 +110,7 @@ def find_implementation(key:str,item:dict, examples:dict, options=None)->list:
                     for k,v in implementations.items()
             }
     else:
-        return {app: create_link(find_first(key,examples[app]),app) if examples[app] else "-"
+        return {app: create_link(find_first(key,examples[app]),app) if examples[app] else "_"
                 for app in EXAMPLE_DIRS.keys()}
 
 
@@ -131,12 +131,12 @@ def print_reqs(items:list,parent,level:int,examples:dict,options=None)->dict:
             field_template = '"**{}**"'
             print(", ".join(
                 map(field_template.format,
-                    [key, item["target"], "-", "-", "-"] + ["-"]*len(EXAMPLE_DIRS)
+                    [key, item["target"], "_", "_", "_"] + ["_"]*len(EXAMPLE_DIRS)
             )), file=options.file)
             print_reqs(item["items"],key,level+1,examples,options)
 
         else:
-            fields = [f'"{f}"' if f else '-' for f in item["fields"]]
+            fields = [f'"{f}"' if f else '_' for f in item["fields"]]
             refs = list(find_implementation(key, item, examples,options).values())
             print(f'"{key}", "{item["target"]}",' + ", ".join(fields + refs),
                     file=options.file

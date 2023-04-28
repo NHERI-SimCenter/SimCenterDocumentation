@@ -232,21 +232,25 @@
                             {
                                 "target": "Replacement of empirical linear models with multi-scale nonlinear models",
                                 "fields": ["GC","D",""],
+                                "WBS": "1.1.1.1.3",
                                 "items": []
                             },
                             {
                                 "target": "Include both multi-scale and multi-phase (account for liquefaction)",
                                 "fields": ["GC","M",""],
+                                "WBS": "1.1.3.4.4",
                                 "items": []
                             },
                             {
                                 "target": "Interface between asset and regional simulations using site response  method",
-                                "fields": ["SP","M",""],
+                                "fields": ["SP","M","InProgress"],
+                                "WBS": "1.1.1.1.3",
                                 "items": []
                             },
                             {
                                 "target": "Interface between asset and regional simulations using DRM method",
                                 "fields": ["SP","M",""],
+                                "WBS": "1.1.1.1.3",
                                 "items": []
                             }
                         ]
@@ -272,16 +276,19 @@
                             {
                                 "target": "Select using default selection options",
                                 "fields": ["SP","D","Implemented"],
+                                "WBS": "1.1.1.1.3",
                                 "items": []
                             },
                             {
                                 "target": "Select using all options available at PEER site",
                                 "fields": ["UF","D","Implemented"],
+                                "WBS": "1.1.1.1.3",
                                 "items": []
                             },
                             {
                                 "target": "Select using user supplied spectrum",
                                 "fields": ["UF","D","Implemented"],
+                                "WBS": "1.1.1.1.3",
                                 "items": []
                             }
                         ]
@@ -358,7 +365,8 @@
                     },
                     {
                         "target": "Ability to select surrogate modeling events",
-                        "fields": ["SP","M",""],
+                        "fields": ["SP","M","Implemented"],
+                        "WBS": "1.1.1.2.1",
                         "items": []
                     }
                 ]
@@ -375,6 +383,7 @@
           {
             "target": "Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow",
             "fields": ["SP", "D", ""],
+            "WBS": "1.1.3.3.2",
             "items": []
           }
         ]
@@ -383,21 +392,21 @@
         "target": "Local Scale Storm Surge/Tsunami Hazard Options",
         "items": [
           {
-            "target": "",
+            "target": "Using computational fluid dynamics to model interface and impact between water loads and buildings",
             "items": [
               {
                 "target": "CFD to model fluid flow around a single rigid structure",
-                "fields": ["SP", "M", ""],
+                "fields": ["SP", "M", "InProgress"],
                 "items": []
               },
               {
                 "target": "Mesh refinement around structures",
-                "fields": ["SP", "M", ""],
+                "fields": ["SP", "M", "InProgress"],
                 "items": []
               },
               {
                 "target": "CFD to model fluid flow around a single deformable structure",
-                "fields": ["SP", "M", ""],
+                "fields": ["SP", "M", "InProgress"],
                 "items": []
               },
               {
@@ -427,7 +436,7 @@
               },
               {
                 "target": "Explore multiple methods like Material Point Method (MPM), Immersed Boundary Method (IBM), DEM-CFD, particle tracking",
-                "fields": ["SP", "M", ""],
+                "fields": ["SP", "M", "InProgress"],
                 "items": []
               },
               {
@@ -443,10 +452,10 @@
             "items": []
           },
           {
-            "target": null
+            "target": ""
           },
           {
-            "target": "",
+            "target": "Multi-scale models for wind and water flows, i.e., lower fidelity regional models with more refined models to capture local flow",
             "items": [
               {
                 "target": "Interface GeoClaw and OpenFOAM",
@@ -482,12 +491,14 @@
           },
           {
             "target": "Ability to simulate with surrogate models as alternative to full 3D CFD",
-            "fields": ["SP", "M", ""],
+            "fields": ["SP", "M", "InProgress"],
+            "WBS": "1.1.2.2.3",
             "items": []
           },
           {
             "target": "Develop digital twin with OSU wave Tank Facility",
-            "fields": ["SP", "M", ""],
+            "fields": ["SP", "M", "InProgress"],
+            "WBS": "1.1.2.5.1",
             "items": []
           }
         ]
@@ -528,7 +539,8 @@
           },
           {
             "target": "Interface with NOAA",
-            "fields": ["SP", "D", ""],
+            "fields": ["SP", "D", "Implemented"],
+            "WBS": "1.1.1.3.2",
             "items": []
           }
         ]
@@ -549,12 +561,14 @@
                   },
                   {
                     "target": "Gable Shaped Roof - TPU dataset",
-                    "fields": ["SP", "M", ""],
+                    "fields": ["SP", "M", "InProgress"],
+                    "WBS": "1.1.1.1.4",
                     "items": []
                   },
                   {
                     "target": "Hipped Shaped Roof - TPU dataset",
-                    "fields": ["SP", "M", ""],
+                    "fields": ["SP", "M", "InProgress"],
+                    "WBS": "1.1.1.1.4",
                     "items": []
                   }
                 ]
@@ -633,12 +647,14 @@
           },
           {
             "target": "Libraries of high resolution hurricane wind/surge/wave simulations",
-            "fields": ["GC", "M", ""],
+            "fields": ["GC", "M", "InProgress"],
+            "WBS": "1.1.1.1.4",
             "items": []
           },
           {
             "target": "Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow",
-            "fields": ["SP", "", ""],
+            "fields": ["SP", "M", "InProgress"],
+            "WBS": "1.1.2.2.3",
             "items": []
           },
           {
