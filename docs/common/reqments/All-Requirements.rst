@@ -7,6 +7,7 @@ R2D
 .. csv-filter:: Requirements - R2D
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4
   :file: R2D.csv
   :width: 80%
 
@@ -18,6 +19,7 @@ PBE
 .. csv-filter:: Requirements - PBE
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4
   :file: generalPBE.csv
   :width: 80%
 
@@ -29,6 +31,7 @@ WE-UQ Requirements
 .. csv-filter:: Requirements - WE
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4
   :file: generalWE.csv
   :width: 80%
 
@@ -41,6 +44,7 @@ Hydro-UQ Requirements
 .. csv-filter:: Requirements - H
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4
   :file: generalHydro.csv
   :width: 80%
 
@@ -53,6 +57,7 @@ EE-UQ Requirements
 .. csv-filter:: Requirements - EE
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4
   :file: generalEEUQ.csv
   :width: 80%
 
@@ -64,6 +69,7 @@ quoFEM Requirements
 .. csv-filter:: Requirements - QF
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4
   :file: generalQUO-FEM.csv
   :width: 80%
 
