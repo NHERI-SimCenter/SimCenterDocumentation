@@ -115,14 +115,9 @@
    :Hydro:common/user_manual/usage/desktop/hydro/resguide
    :Hydro:common/user_manual/usage/desktop/hydro/helpvideo
 
-   :EEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
-   :WEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
-   :PBE:common/user_manual/troubleshooting/desktop/troubleshooting
-   :quoFEM:common/user_manual/troubleshooting/desktop/troubleshooting
-   :R2D:common/user_manual/troubleshooting/desktop/troubleshooting
-   :pelicun:common/user_manual/troubleshooting/pelicun/troubleshooting
-   :Hydro:common/user_manual/troubleshooting/pelicun/errors
 
+   :R2D:common/user_manual/usage/desktop/R2DTool/tools
+	  
    :EEUQ:common/user_manual/examples/desktop/examples
    :WEUQ:common/user_manual/examples/desktop/examples
    :PBE:common/user_manual/examples/desktop/examples
@@ -130,6 +125,14 @@
    :quoFEM:common/user_manual/examples/desktop/examples
    :R2D:common/user_manual/examples/desktop/examples
    :pelicun:common/user_manual/examples/pelicun/examples
+
+   :EEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
+   :WEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
+   :PBE:common/user_manual/troubleshooting/desktop/troubleshooting
+   :quoFEM:common/user_manual/troubleshooting/desktop/troubleshooting
+   :R2D:common/user_manual/troubleshooting/desktop/troubleshooting
+   :pelicun:common/user_manual/troubleshooting/pelicun/troubleshooting
+   :Hydro:common/user_manual/troubleshooting/pelicun/errors
 
    :Hydro:common/user_manual/usage/desktop/hydro/bestpractices
 
