@@ -174,7 +174,7 @@ As shown in fig userEDP, this panel allows the user to determine their own outpu
 None
 -----------
 
-This option is used only when the user specifies a surrogate model in SIM tab. Because a surrogate model can evaluate only the EDPs that are pre-trained, we automatically display those quantities, and do not allow users to modify the list. 
+This option is used only when the user specifies a surrogate model in the SIM tab. Because a surrogate model can evaluate only the EDPs that are pre-trained, we automatically display those quantities, and do not allow users to modify the list. 
 
 .. Note::   
    This option is not for training a surrogate model but for using a pre-trained surrogate model.

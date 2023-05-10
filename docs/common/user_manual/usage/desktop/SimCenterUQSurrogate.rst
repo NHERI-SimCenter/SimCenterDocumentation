@@ -29,11 +29,11 @@ Gaussian Process (GP) Surrogate Modeling
          - dataset: :math:`\{\boldsymbol{x^{(1)},x^{(2)}, ... ,x^{(N)}}\}`
          - dataset: :math:`\{\boldsymbol{y^{(1)},y^{(2)}, ... ,y^{(N)}}\}`
 
-    **Case 1 (Sampling and Simulation)**: User provides lower and upper bounds of each random variable (RV) and a simulation model. |short tool id| will find the best training points sequentially by the adaptive **design of experiments** (DoE) strategies until the model converges or reaches a user-specified computational tolerance. 
+    **Case 1 (Sampling and Simulation)**: The user provides lower and upper bounds of each random variable (RV) and a simulation model. |short tool id| will find the best training points sequentially by the adaptive **design of experiments** (DoE) strategies until the model converges or reaches a user-specified computational tolerance. 
 
-    **Case 2 (Import RV Dataset and run Simulation)**: User provides sample population of RVs as a separate text file. |short tool id| will run simulations to get QoI values and build a surrogate model. 
+    **Case 2 (Import RV Dataset and run Simulation)**: The user provides sample population of RVs as a separate text file. |short tool id| will run simulations to get QoI values and build a surrogate model. 
 
-    **Case 3 (Import both RV and QoI Dataset)**:  User provides sample population of RVs and QoIs. |short tool id| will not run any simulations and build a surrogate model purely based on the provided dataset.
+    **Case 3 (Import both RV and QoI Dataset)**: The user provides sample population of RVs and QoIs. |short tool id| will not run any simulations and build a surrogate model purely based on the provided dataset.
 
     .. list-table:: |short tool id| workflow (DoE: Design of experiments)      
        :widths: 2 5 5 5
@@ -74,7 +74,7 @@ Gaussian Process (GP) Surrogate Modeling
 
     * **Output of surrogate model**: Following the performance-based earthquake engineering practice, the response estimation module in SimCenter workflow concerns only the peak responses (e.g. peak acceleration, peak drift ratio at each floor) rather than the whole time history. Therefore, the surrogate modeling algorithms in this tool are designed to predict the non-time history responses.
 
-    * **Input of surrogate model**: To keep the input dimension of surrogate to a reasonable scale, the ground motion time history are first parameterized into a number of key features in the algorithm. This can be, for example, the sources properties (e.g. M,R) or time/frequency domain excitation property at the site of interest (e.g. intensity measures) ([Kyprioti2021]_, [Zhong2023]_).
+    * **Input of surrogate model**: To keep the input dimension of the surrogate model to a reasonable scale, the ground motion time history are first parameterized into a number of key features in the algorithm. This can be, for example, the sources properties (e.g. M,R) or time/frequency domain excitation property at the site of interest (e.g. intensity measures) ([Kyprioti2021]_, [Zhong2023]_).
 
     The surrogate prediction of EDP given the ground motion parameters typically inherits significant randomness, as the amount of information provided by these parameters are not sufficient to determine the exact model peak response. Therefore, the key task in surrogate modeling is to capture the remaining amount of uncertainty in the EDP predictions, as shown in the above figure.
 
@@ -97,7 +97,7 @@ Case 1: Sampling and Simulation
 .. only:: EEUQ_app
 
     .. Note::
-        Another SimCenter tool named `quoFEM <https://simcenter.designsafe-ci.org/research-tools/quofem-application/>`_ also supports surrogate modeling capability that shares the same algorithm with EE-UQ. However quoFEM is targeted at more general applications not restricted to the earthquake problems. quoFEM additionally supports different user-provided information types, allowing users to directly (i) Import RV Dataset and run Simulation (Case 2), or (ii) Import both RV and EDP Dataset (Case 3). Currently in EE-UQ, we only support Sampling and simulation option (Case 1).
+        Another SimCenter tool named `quoFEM <https://simcenter.designsafe-ci.org/research-tools/quofem-application/>`_ also supports surrogate modeling capability that shares the same algorithm with EE-UQ. However, quoFEM is targeted at more general applications not restricted to earthquake problems. quoFEM additionally supports different user-provided information types, allowing users to directly (i) Import RV Dataset and run the Simulation (Case 2), or (ii) Import both RV and EDP Dataset (Case 3). Currently, in EE-UQ, we only support the  Sampling and simulation option (Case 1).
 
 When the **Training Dataset** option is set to the ``Sampling and Simulation``, a simulation model should be presented in the later tabs. The training points are sampled adaptively by the design of experiments.
 
@@ -112,14 +112,14 @@ When the **Training Dataset** option is set to the ``Sampling and Simulation``, 
 
 * **Maximum Number of Model Runs**: When the number of simulation runs reaches the limit, the analysis will be terminated.
 * **Maximum Computation Time (in minutes)**: When the tolerance limit of the computation time is reached, the analysis will be terminated. There will be a few minutes of error.
-* **Target Accuracy (Normalized Error)**: The target accuracy is defined in terms of normalized root-mean squared error (NRMSE) estimated by leave-out-one cross-validation (LOOCV).
+* **Target Accuracy (Normalized Error)**: The target accuracy is defined in terms of normalized root-mean-squared error (NRMSE) estimated by leave-out-one cross-validation (LOOCV).
 
-	.. math::
-		:label: NRMSE
+    .. math::
+        :label: NRMSE
 
-		\begin{align*}
-			\rm{NRMSE} ~ &= \frac{\sqrt{\frac{1}{N} \sum^{N}_{k=1} (y_k-\hat{y}_k)^2}}{\max_{k=1,...,N}(y_k)-\min_{k=1,...,N}(y_k)}
-		\end{align*}	
+        \begin{align*}
+            \rm{NRMSE} ~ &= \frac{\sqrt{\frac{1}{N} \sum^{N}_{k=1} (y_k-\hat{y}_k)^2}}{\max_{k=1,...,N}(y_k)-\min_{k=1,...,N}(y_k)}
+        \end{align*}    
 
    |   where 
    |      :math:`y_k` : exact response from the model simulation
@@ -153,9 +153,9 @@ Note that the results from the parallel and serial run may not be exactly the sa
 .. only:: EEUQ_app
 
     * **Kernel function**: Correlation function for Gaussian process regression. Matern5/2 function is the default, and Matern3/2, Radial Basis, and Exponential functions (exponent :math:`\gamma=1`) are additionally supported. (For details, please refer to `chapter 4 <http://gaussianprocess.org/gpml/chapters/RW4.pdf>`_ of the book Gaussian Processes for Machine Learning)
-    * **Add Linear Trend Function**: When increasing or decreasing trend is expected over the variables domain, a linear trend function may be introduced. The default is checked.
-    * **Log-space Transform of QoI**: When the user can guarantee that the response quantities are always greater than 0, user may want to introduce a surrogate model in log-transformed space of QoI. The default is checked.
-    * **Design of Experiments options**: User may manually select the design of experiments (DoE) method and the number of the initial DoE. The default is "none" and the default number of DoE is 4 times the number of random variables.
+    * **Add Linear Trend Function**: When an increasing or decreasing trend is expected over the variables domain, a linear trend function may be introduced. The default is checked.
+    * **Log-space Transform of QoI**: When the user can guarantee that the response quantities are always greater than 0, the user may want to introduce a surrogate model in the log-transformed space of QoI. The default is checked.
+    * **Design of Experiments options**: The user may manually select the design of experiments (DoE) method and the number of the initial DoE. The default is "none" and the default number of DoE is 4 times the number of random variables.
     * **Nugget Variances**: The default is "heteroscedastic" with replication size 1.
 
 :blue:`Start with Existing Dataset`
@@ -182,10 +182,10 @@ Note that the results from the parallel and serial run may not be exactly the sa
 
     where
 
-    * Each text file is a numeric table with the columns separated by a tab, space, or comma. Multiple headers can be presented following the symbol %. 
+    * Each text file is a numeric table with columns separated by a tab, space, or comma. Multiple headers can be presented following the symbol %. 
     * The number of rows corresponds to the number of training data samples.
-    * Train Points (Input): The number of columns should match the number of RVs presented in the **RV tab** and also match with required inputs of the simulation model provided in the **FEM tab**. **The order of the columns should match thoses of the random variables presented in the RV tab** (See :numref:`figSim4` and :numref:`figSim7` for example.)
-    * System Responses (Output): The number of columns  and the order of columns should match the QoI quantities presented in **QoI tab**.
+    * Train Points (Input): The number of columns should match the number of RVs presented in the **RV tab** and also match the required inputs of the simulation model provided in the **FEM tab**. **The order of the columns should match those of the random variables presented in the RV tab** (See :numref:`figSim4` and :numref:`figSim7` for example.)
+    * System Responses (Output): The number of columns and the order of columns should match the QoI quantities presented in **QoI tab**.
     * Both files need to be provided, and the number of columns for the two files should be the same.
     * See :numref:`figSim4` for example input data sheets.
 
@@ -217,7 +217,7 @@ Note that the results from the parallel and serial run may not be exactly the sa
 
        Advanced Options (Earthquake Specific)
 
-    The user can select intensity measures (IMs) that will be used as auxiliary inputs of the surrogate model, additional to those specified in the RV tab. If ground motions have more than one directional component, either each component's IM can be added as separate surrogate input parameter, or they can be aggregated by using their geometric mean. The later can be selected by checking 'Use geometric mean when 2 or more ground motion components are given'.
+    The user can select intensity measures (IMs) that will be used as auxiliary inputs of the surrogate model, in addition to those specified in the RV tab. If ground motions have more than one directional component, either each component's IM can be added as a separate surrogate input parameter, or they can be aggregated by using their geometric mean. The latter can be selected by checking 'Use geometric mean when 2 or more ground motion components are given'.
 
 
 .. only:: quoFEM
@@ -276,13 +276,13 @@ Note that the results from the parallel and serial run may not be exactly the sa
     **FEM tab** will be inactivated in Case 3 as model information is not required.
 
     .. Tip::
-    	- Surrogate model training can be continued after termination by reusing RV and QoI samples obtained by the previous training.
+        - Surrogate model training can be continued after termination by reusing RV and QoI samples obtained by the previous training.
 
 
     Multi-Fidelity Modeling
     -----------------------
 
-    When a user provides two different models, i.e. high and low fidelity models, the surrogate model for the high fidelity can be constructed with better performance in assisted by the low fidelity simulation results. The two models should share the same input RVs and output QoIs pools. Ideally, combined model should have the best prediction better than each individual ones, however, the benefit from low fidelity model differs depending on the correlation between the two model outputs [Patsialis2021]_. Currently, adaptive design of experiments capacity of the multi-fidelity surrogate modeling is NOT supported. 
+    When a user provides two different models, i.e. high and low fidelity models, the surrogate model for the high fidelity can be constructed with better performance assisted by the low fidelity simulation results. The two models should share the same input RVs and output QoIs pools. Ideally, the combined model should have the best prediction better than each individual one, however, the benefit from the low fidelity model differs depending on the correlation between the two model outputs [Patsialis2021]_. Currently, the adaptive design of experiments capacity of the multi-fidelity surrogate modeling is NOT supported. 
 
     .. Note:: 
          Multi-fidelity surrogate modeling functionality of |short tool id| is built upon `emukit <https://emukit.github.io/>`_ library (available under Apache-2.0 license), an opensource python toolkit for emulation (surrogate modeling) and decision making under uncertainty. 
@@ -318,7 +318,7 @@ Note that the results from the parallel and serial run may not be exactly the sa
 
     Heteroscedastic Gaussian Process
     ------------------------------------
-    When the noise in the response surface is expected to vary across the domains, heteroscedastic measurement noise model should be introduced. See the :ref:`theory manual<lbluqSimTechnical>` for more.
+    When the noise in the response surface is expected to vary across the domains, a heteroscedastic measurement noise model should be introduced. See the :ref:`theory manual<lbluqSimTechnical>` for more.
      
     .. _figSimStoch1:
 
@@ -329,9 +329,9 @@ Note that the results from the parallel and serial run may not be exactly the sa
 
        Input fields for heteroscedastic GP
 
-    Heteroscedastic Gaussian Process can be trained by selecting 'Heteroscedastic' option in the 'Nugget Variance' field. The following two parameters are are requested:
+    Heteroscedastic Gaussian Process can be trained by selecting 'Heteroscedastic' option in the 'Nugget Variance' field. The following two parameters are requested:
 
-    * **Number of samples to be replicated (A)** : Among number of unique samples specified in the 'Number of Samples' field, decide how many of them will have its replications. 
+    * **Number of samples to be replicated (A)** : From the number of unique samples specified in the 'Number of Samples' field, decide how many of them will have replications. 
     * **Number of replications per sample (B)** : Specify how many replications will be generated for the number of samples specified in A. 
     * Without DoE, the total number of simulations required is then 'Number of Samples':math:`+A(B-1)`.
 
@@ -342,7 +342,7 @@ RV (Random Variables) Tab
         
     **Case 1 and 2**: 
 
-The bounds of RVs need to cover the domain of interest in future applications, while it should not be unnecessarily stretched. **Input type** and **Distribution** should be set to **Parameters** and **Uniform**. When dataset is provided, make sure to match the order of RVs in the **RV tab** to the order of data columns. Any correlation values will be ignored.
+The bounds of RVs need to cover the domain of interest in future applications, while it should not be unnecessarily stretched. **Input type** and **Distribution** should be set to **Parameters** and **Uniform**. When a dataset is provided, make sure to match the order of RVs in the **RV tab** to the order of data columns. Any correlation values will be ignored.
 
 .. _figSim7:
 
@@ -382,24 +382,24 @@ We provide different verification measures for two different cases.
 
       | R2 error is defined in terms of the total sum of squares over the residual sum of squares
 
-    	.. math::
-    		:label: R2
+        .. math::
+            :label: R2
 
-    		\begin{align*}
-    			R^2 &= 1 - \frac{\sum^N_{k=1} (\hat{y}_k-\mu_\hat{y})^2}{\sum^N_{k=1} (\hat{y}_k-y_k)^2}
-    		\end{align*}	
+            \begin{align*}
+                R^2 &= 1 - \frac{\sum^N_{k=1} (\hat{y}_k-\mu_\hat{y})^2}{\sum^N_{k=1} (\hat{y}_k-y_k)^2}
+            \end{align*}    
 
       | The surrogate model is considered well-trained when the **R2 (<1) approaches 1**
      
 
     * **Normalized root-mean-squared-error (NRMSE)**
 
-    	.. math::
-    		:label: NRMSE
+        .. math::
+            :label: NRMSE
 
-    		\begin{align*}
-    			\rm{NRMSE} ~ &= \frac{\sqrt{\frac{1}{N_t} \sum^{N_t}_{k=1} (y_k-\hat{y}_k)^2}}{\max_{k=1,...,N_t}(y_k)-\min_{k=1,...,N_t}(y_k)}
-    		\end{align*}	
+            \begin{align*}
+                \rm{NRMSE} ~ &= \frac{\sqrt{\frac{1}{N_t} \sum^{N_t}_{k=1} (y_k-\hat{y}_k)^2}}{\max_{k=1,...,N_t}(y_k)-\min_{k=1,...,N_t}(y_k)}
+            \end{align*}    
 
       | The surrogate model is considered well-trained when the **NRMSE (>0) approaches 0**
 
@@ -426,7 +426,7 @@ We provide different verification measures for two different cases.
 
     * **Inter-quartile ratio (IQR)**: IQR provides the ratio of the sample QoIs that lies in 25-75% LOOCV prediction bounds (interquartile range). The IQR values should theoretically approach 0.5 if the prediction is accurate.
 
-    * **Cramer-Von Mises statistics**: Cramer-Von Mises statistics calculates the normality score. The assumption of a GP is that the observations follow a normal distribution conditional on the input parameters. To assess the normality of the model predictions, the difference between the mean prediction :math:`\hat{y}_k` and the sample observation  :math:`y_k` value is divided by the standard deviation prediction from surrogate :math:`\hat{\sigma}_{y,k}`:
+    * **Cramer-Von Mises statistics**: Cramer-Von Mises statistics calculate the normality score. The assumption of a GP is that the observations follow a normal distribution conditional on the input parameters. To assess the normality of the model predictions, the difference between the mean prediction :math:`\hat{y}_k` and the sample observation  :math:`y_k` value is divided by the standard deviation prediction from surrogate :math:`\hat{\sigma}_{y,k}`:
 
       .. math::
         :label: normed
@@ -434,10 +434,10 @@ We provide different verification measures for two different cases.
           u_k = \frac{y_k-\hat{y}_k} {\hat{\sigma}_{y,k}}
 
 
-     If the values of :math:`{u_k}` follow standard normal distribution, the resulting surrogate model may be considered well-constructed. The Cramer-Von Mises test is calculated using the ``scipy.stats.cramervonmises`` function in the Python package Scipy, and the resulting p-value is displayed. Conventionally, if the p-value exceeds a significance threshold, e.g. 0.05, the null hypothesis that the samples are from a normal distribution is not rejected, meaning the samples may be considered to follow a Gaussian distribution.
+     If the values of :math:`{u_k}` follow the standard normal distribution, the resulting surrogate model may be considered well-constructed. The Cramer-Von Mises test is calculated using the ``scipy.stats.cramervonmises`` function in the Python package Scipy, and the resulting p-value is displayed. Conventionally, if the p-value exceeds a significance threshold, e.g. 0.05, the null hypothesis that the samples are from a normal distribution is not rejected, meaning the samples may be considered to follow a Gaussian distribution.
 
 
-Additionally **scatter plot** between the predicted and exact responses are presented: Well-trained model will form a clear diagonal line in case (i), or distributed normally around the diagonal line in case (ii). Poorly trained model will have the points that are more scattered around.
+Additionally, **scatter plot** between the predicted and exact responses is presented: Well-trained model will form a clear diagonal line in case (i), or be distributed normally around the diagonal line in case (ii). A poorly trained model will have points that are more scattered around.
 
 
 .. _figSim8:
@@ -450,7 +450,7 @@ Additionally **scatter plot** between the predicted and exact responses are pres
    Well-trained surrogate (left) and poorly trained surrogate (right) models
 
 .. Note:: 
-     Since these validation measures are calculated from the cross-validation predictions, they can be **biased**, particularly when highly localized nonlinear range exists in actual response surface and those regions are not covered by the training samples. The introduction of adaptive design of experiments helps to suppress the bias by enabling the targeted selection of simulation points around potentially faulty regions.
+     Since these validation measures are calculated from the cross-validation predictions, they can be **biased**, particularly when a highly localized nonlinear range exists in the actual response surface, and those regions are not covered by the training samples. The introduction of adaptive design of experiments helps to suppress the bias by enabling the targeted selection of simulation points around potentially faulty regions.
 
 .. Warning:: 
      Note that GP-based surrogate models can be used to fit only smooth, continuous functions. When the surrogate model is poorly trained, a parametric study is highly recommended to check any possible discontinuity presented in the simulation model.

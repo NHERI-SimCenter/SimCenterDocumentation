@@ -23,5 +23,5 @@ For the users who are interested in the advanced options please refer to the `qu
 
 .. Important:: 
 
-  The user who selected "surrogate (GP)" option in SIM tab must select "None" in FEM and EDP tabs. Otherwise, |short tool id| will give an error.
+  The user who selected "surrogate (GP)" option in the SIM tab must select "None" in FEM and EDP tabs. Otherwise, |short tool id| will give an error.
 
