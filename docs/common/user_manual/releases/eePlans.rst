@@ -8,12 +8,6 @@ Release Plans
 
 The following features are planned to be developed for upcoming releases of |app|. We are actively working on the features in the next release. Farther development priorities may change depending on feedback from the community. If you have any suggestions, we encourage you to contribute and contact us through the SimCenter Forum.
 
-March 2023
-----------
-   #. Quantify epistemic uncertainty in structural response by considering multiple models to represent various candidates for events, structural models, or simulation methods (1.2.4.1) - Define weights for each model candidate and propagate epistemic uncertainty by randomly selecting a model for each realization according to these weights.
-   #. Use any simulation engine with the CustomPy feature - CustomPy allows you to execute a Python script that can serve as a wrapper for any other application. After preparing a wrapper, you can take leverage the applications in the SimCenter backend while running the FEM engine of your choice - OpenSeesPy, ETABS, Perform3D, ANSYS, Abaqus, etc.
-
-      
 Sept 2023
 ---------
    #. New, state-of-the-art surrogate methods - Heteroscedastic Gaussian Process Surrogates (1.2.2.2) - First, train a GP surrogate to capture the mean response, then train another GP surrogate the capture the variance using the residuals. This approach is especially powerful when large differences are observed in the variance of the output in different parts of the input space. 

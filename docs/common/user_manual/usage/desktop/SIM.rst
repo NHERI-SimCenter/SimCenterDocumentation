@@ -136,6 +136,11 @@ The input panel for this module is shown in :numref:`fig-EEUQRCFIAPSIM`. Users n
 	Concrete Building Model.
 
 
+.. only:: EEUQ_app
+		
+		.. include:: FEM_EEUQ_surrogate.rst
+
+
 MDOF-LU Building Model
 ---------------------------
 
