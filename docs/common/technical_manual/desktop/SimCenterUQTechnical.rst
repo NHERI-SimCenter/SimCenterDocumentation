@@ -130,9 +130,8 @@ Aggregated sensitivity index
 
 When the quantities of interest (QoI) are given as a vector or field variable, aggregated sensitivity index can provide insight into the system's overall sensitivity characteristics. The aggregated sensitivity index achieves this by calculating the weighted average of the sensitivity indices of each QoI component, where the weights are proportional to the variances of the components [Jung2022]_. Component sensitivity indices are useful for visualization, while the aggregated sensitivity index gives instant intuition on how much each variable influences the system response overall. See :ref:`this example<qfem-0023>`.
 
-
 .. [Jung2022]
-   To be added
+   Jung, W., & Taflanidis, A. A. (2023). Efficient global sensitivity analysis for high-dimensional outputs combining data-driven probability models and dimensionality reduction. *Reliability Engineering & System Safety*, 231, 108805.
 
 
 Global surrogate modeling 
@@ -220,42 +219,60 @@ Dealing with noisy measurements
 
 
 
-
 Construction of surrogate model
 ---------------------------------
 
 Input-Output settings
 ^^^^^^^^^^^^^^^^^^^^^
 
-+-----------+----------------------------------------------------------+-------------------------------------------+
-|           | Input (RV) type                                          |  Output (QoI) type                        |
-+===========+==========================================================+===========================================+
-| **Case1** | Adaptive Design of Experiments (DoE) :                   | Simulator :                               |
-|           |                                                          |                                           |
-|           | a bounded variable space of :math:`\boldsymbol{x}`       | :math:`\boldsymbol{y}=f(\boldsymbol{x})`  |
-+-----------+------------------------------------------+---------------+-------------------------------------------+
-| **Case2** | Data set :                                               | Simulator :                               |
-|           |                                                          |                                           |
-|           | {:math:`\boldsymbol{x_1,x_2, ... ,x_N}`}                 | :math:`\boldsymbol{y}=f(\boldsymbol{x})`  |
-+-----------+----------------------------------------------------------+-------------------------------------------+
-| **Case3** | Data set :                                               | Data set :                                |
-|           |                                                          |                                           |
-|           | {:math:`\boldsymbol{x_1,x_2, ... ,x_N}`}                 | {:math:`\boldsymbol{y_1,y_2, ... ,y_N}`}  |
-+-----------+----------------------------------------------------------+-------------------------------------------+
+
+.. only:: quoFEM_app
+
+	+-----------+----------------------------------------------------------+-------------------------------------------+
+	|           | Input (RV) type                                          |  Output (QoI) type                        |
+	+===========+==========================================================+===========================================+
+	| **Case1** | Adaptive Design of Experiments (DoE) :                   | Simulator :                               |
+	|           |                                                          |                                           |
+	|           | a bounded variable space of :math:`\boldsymbol{x}`       | :math:`\boldsymbol{y}=f(\boldsymbol{x})`  |
+	+-----------+------------------------------------------+---------------+-------------------------------------------+
+	| **Case2** | Data set :                                               | Simulator :                               |
+	|           |                                                          |                                           |
+	|           | {:math:`\boldsymbol{x_1,x_2, ... ,x_N}`}                 | :math:`\boldsymbol{y}=f(\boldsymbol{x})`  |
+	+-----------+----------------------------------------------------------+-------------------------------------------+
+	| **Case3** | Data set :                                               | Data set :                                |
+	|           |                                                          |                                           |
+	|           | {:math:`\boldsymbol{x_1,x_2, ... ,x_N}`}                 | {:math:`\boldsymbol{y_1,y_2, ... ,y_N}`}  |
+	+-----------+----------------------------------------------------------+-------------------------------------------+
+
+.. only:: EEUQ_app
+
+	+-----------+----------------------------------------------------------+-------------------------------------------+
+	|           | Input (RV) type                                          |  Output (QoI) type                        |
+	+===========+==========================================================+===========================================+
+	| **Case1** | Adaptive Design of Experiments (DoE) :                   | Simulator :                               |
+	|           |                                                          |                                           |
+	|           | a bounded variable space of :math:`\boldsymbol{x}`       | :math:`\boldsymbol{y}=f(\boldsymbol{x})`  |
+	+-----------+------------------------------------------+---------------+-------------------------------------------+
 
 
-User have the following options:
+.. only:: quoFEM_app
 
-* **Case1** : users can provide a range of input variables (bounds) and a simulation model. After initial space-filling phase using Latin hypercube sampling (LHS), **adaptive design of experiment (DoE)** is activated. Given current predictions, the next optimal simulation point is optimized such that expected gain is maximized. 
-* **Case2** : users can provide pairs of input-output dataset
-* **Case3** : users can provide input data points and a simulation model
+	User have the following options:
 
+	* **Case1** : users can provide a range of input variables (bounds) and a simulation model. After initial space-filling phase using Latin hypercube sampling (LHS), **adaptive design of experiment (DoE)** is activated. Given current predictions, the next optimal simulation point is optimized such that expected gain is maximized. 
+	* **Case2** : users can provide pairs of input-output dataset
+	* **Case3** : users can provide input data points and a simulation model
+
+.. only:: EEUQ_app
+
+	User have the following option:
+
+	* **Case1** : users can provide a range of input variables (bounds) and a simulation model. After initial space-filling phase using Latin hypercube sampling (LHS), **adaptive design of experiment (DoE)** is activated. Given current predictions, the next optimal simulation point is optimized such that expected gain is maximized. 
 
 
 Kernel and basis functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The covariance kernel of the outcome process is unknown in most practical applications. Therefore, the mathematical form of the kernel is first assumed, and its parameters are calibrated based on the observation data. Followings are some of the popular stationary covariance kernels. 
-
 
 * **Radial-basis function (RBF)**
 
@@ -316,63 +333,68 @@ Once the kernel form is selected, the parameters are calibrated to maximize the 
 Adaptive Design of Experiments (DoE)
 -------------------------------------
 
-In the case where bounds of input variables and a simulator model is provided (Case 1), model evaluation points can be selected by space-filling methods, e.g. Latin hyper cube sampling (LHS). This is non-adaptive Design of Experiments (DoE) in a sense that the whole samples can be located before running any simulations. On the other hand, the number of model evaluations can be reduced by selecting evaluation points *adaptively* after each run to get the best model improvements. 
+.. only:: quoFEM_app
 
-.. _figGP_DoE1:
+	In the case where bounds of input variables and a simulator model is provided (Case 1), model evaluation points can be selected by space-filling methods, e.g. Latin hyper cube sampling (LHS). This is non-adaptive Design of Experiments (DoE) in a sense that the whole samples can be located before running any simulations. On the other hand, the number of model evaluations can be reduced by selecting evaluation points *adaptively* after each run to get the best model improvements. 
 
-.. figure:: figures/UQ/GPtmp1.png
-	:align: center
-	:figclass: align-center
-	:width: 600
+	.. _figGP_DoE1:
 
-  	Two optimizations in design of experiments
+	.. figure:: figures/UQ/GPtmp1.png
+		:align: center
+		:figclass: align-center
+		:width: 600
 
-
-However, as shown in the figure, adaptive DoE requires multiple optimization turns to find the optimal surrogate model parameters as well as the next optimal DoE. Therefore, it is noted that the adaptive DoE is efficient only when model evaluation time is significantly greater than the optimization time. 
-
-**Adaptive DoE algorithm: IMSEw, MMSEw** ([Kyprioti2020]_)
-
-The optimal design points can be selected by finding arguments that maximize (or minimize) the so-called score function. The score function in global surrogate modeling is often designed to predict the amount of reduced (or remaining) variance and bias after adding the new sample points. While there are many variations of the score function [Fuhg2020]_, in quoFEM, the modified integrated mean squared error (IMSE) from Kyprioti *et al.* (2020) is introduced as:
-
-.. math::
-	:label: IMSE
-
-	\begin{align*}
-		\rm{IMSE}_w(\boldsymbol{X},\boldsymbol{x_{new}}) &= \int_{\boldsymbol{X_d}} \phi^\rho\boldsymbol{\sigma_n}^2(\boldsymbol{x}|\boldsymbol{X,x_{new}})dx
-	\end{align*}
+	  	Two optimizations in design of experiments
 
 
-where :math:`\phi` is bias measure from leave-one-out cross validation (LOOCV) analysis, :math:`\rho` is a weighting coefficient, and :math:`\boldsymbol{\sigma_n}^2(\boldsymbol{x}|\boldsymbol{X,x_{new}})` is the predictive variance after additional observation :math:`x_{new}` [Kyprioti2020]_. To find the sample location that gives minimum IMSE value, two step screening-clustering algorithm is implemented.
+	However, as shown in the figure, adaptive DoE requires multiple optimization turns to find the optimal surrogate model parameters as well as the next optimal DoE. Therefore, it is noted that the adaptive DoE is efficient only when model evaluation time is significantly greater than the optimization time. 
 
-.. _figGP_DoE2:
+	**Adaptive DoE algorithm: IMSEw, MMSEw** ([Kyprioti2020]_)
 
-.. figure:: figures/UQ/GPtmp2.png
-	:align: center
-	:figclass: align-center
-	:width: 600
+	The optimal design points can be selected by finding arguments that maximize (or minimize) the so-called score function. The score function in global surrogate modeling is often designed to predict the amount of reduced (or remaining) variance and bias after adding the new sample points. While there are many variations of the score function [Fuhg2020]_, in quoFEM, the modified integrated mean squared error (IMSE) from Kyprioti *et al.* (2020) is introduced as:
 
-  	Adaptive DoE procedure by Kyprioti et al. (2020) [Kyprioti2020]_
+	.. math::
+		:label: IMSE
 
-
-**Adaptive DoE algorithm: Pareto**
-
-Alternatively, multiple design points can be selected by multi-objective optimization scheme. The variance mesure and bias measure defined by
+		\begin{align*}
+			\rm{IMSE}_w(\boldsymbol{X},\boldsymbol{x_{new}}) &= \int_{\boldsymbol{X_d}} \phi^\rho\boldsymbol{\sigma_n}^2(\boldsymbol{x}|\boldsymbol{X,x_{new}})dx
+		\end{align*}
 
 
-.. math::
-	:label: Pareto
+	where :math:`\phi` is bias measure from leave-one-out cross validation (LOOCV) analysis, :math:`\rho` is a weighting coefficient, and :math:`\boldsymbol{\sigma_n}^2(\boldsymbol{x}|\boldsymbol{X,x_{new}})` is the predictive variance after additional observation :math:`x_{new}` [Kyprioti2020]_. To find the sample location that gives minimum IMSE value, two step screening-clustering algorithm is implemented.
 
-	\begin{align*}
-		\rm{IMSE}_w(\boldsymbol{X},\boldsymbol{x_{new}}) &= \int_{\boldsymbol{X_d}} \phi^\rho\boldsymbol{\sigma_n}^2(\boldsymbol{x}|\boldsymbol{X,x_{new}})dx
-	\end{align*}
+	.. _figGP_DoE2:
+
+	.. figure:: figures/UQ/GPtmp2.png
+		:align: center
+		:figclass: align-center
+		:width: 600
+
+	  	Adaptive DoE procedure by Kyprioti et al. (2020) [Kyprioti2020]_
 
 
-Adaptive DoE is terminated when one of the three conditions is met:
+	**Adaptive DoE algorithm: Pareto**
 
-* **Time**: analysis time exceeds a predefined (rough) time constraint
-* **Count**: number of model evaluation exceeds a predefined count constraint 
-* **Accuracy**: accuracy measure of the model meets a predefined convergence level
+	Alternatively, multiple design points can be selected by multi-objective optimization scheme. The variance mesure and bias measure defined by
 
+
+	.. math::
+		:label: Pareto
+
+		\begin{align*}
+			\rm{IMSE}_w(\boldsymbol{X},\boldsymbol{x_{new}}) &= \int_{\boldsymbol{X_d}} \phi^\rho\boldsymbol{\sigma_n}^2(\boldsymbol{x}|\boldsymbol{X,x_{new}})dx
+		\end{align*}
+
+
+	Adaptive DoE is terminated when one of the three conditions is met:
+
+	* **Time**: analysis time exceeds a predefined (rough) time constraint
+	* **Count**: number of model evaluation exceeds a predefined count constraint 
+	* **Accuracy**: accuracy measure of the model meets a predefined convergence level
+
+only:: EEUQ_app
+	
+	Currently not supported in EE-UQ.
 
 Verification of surrogate model
 -------------------------------
@@ -381,7 +403,12 @@ Once the training is completed, the following three verification measures are pr
 
 * **Leave-one-out cross-validation (LOOCV)**
 
-  | LOOCV prediction :math:`\hat{\boldsymbol{y}}_k` at each sample location :math:`\boldsymbol{x}_k` is obatined by the following procedure: A temporary surrogate model :math:`\hat{\boldsymbol{y}}=f^{sur}_{loo,k}(\boldsymbol{\boldsymbol{x}})` is constructed using the samples :math:`\{\boldsymbol{x}_1,\boldsymbol{x}_2,...,\boldsymbol{x}_{k-1},\boldsymbol{x}_{k+1},...,\boldsymbol{x}_N\}` and the calibrated parameters, and the prediction :math:`\hat{\boldsymbol{y}}_k=f^{sur}_{loo,k}(\boldsymbol{x}_k)` is compared with the exact outcome :math:`y_k=f(\boldsymbol{x}_k)`.
+  | LOOCV prediction :math:`\hat{\boldsymbol{y}}_k` at each sample location :math:`\boldsymbol{x}_k` is obatined by the following procedure: A temporary surrogate model :math:`\hat{\boldsymbol{y}}=f^{sur}_{loo,k}(\boldsymbol{\boldsymbol{x}})` is constructed using the samples :math:`\{\boldsymbol{x}_1,\boldsymbol{x}_2,...,\boldsymbol{x}_{k-1},\boldsymbol{x}_{k+1},...,\boldsymbol{x}_N\}` and the calibrated parameters, and the prediction :math:`\hat{\boldsymbol{y}}_k=f^{sur}_{loo,k}(\boldsymbol{x}_k)` is compared with the exact outcome .
+
+
+We provide different verification measures for two different cases.
+
+(i) When nugget variance is low : The LOOCV prediction :math:`\hat{\boldsymbol{y}}_k` is expected to match the exact outcome :math:`\boldsymbol{y_k}=f(\boldsymbol{x}_k)` when the surrogate model is well-trained. To quantify the goodness, R2 error, normalized root-mean-squared-error (NRMSE), and correlation coefficient are provided:
 
 * **R2 error**
 
@@ -430,6 +457,19 @@ Once the training is completed, the following three verification measures are pr
 
 	Since these measures are calculated from the cross-validation predictions rather than external validation predictions, they can be biased, particularly when a **highly localized nonlinear range exists in the actual response surface** and those regions are not covered by the training samples. 
 
+(ii) When nugget variance is high : The distance between LOOCV prediction :math:`\hat{\boldsymbol{y}}_k` and the exact outcome :math:`\boldsymbol{y_k}=f(\boldsymbol{x}_k)` is expected to follow a normal distribution when the surrogate model is well-trained. To quantify the goodness, inter-quartile ratio (IQR) and Cramer-Von Mises statistics can be evaluated:
+
+    * **Inter-quartile ratio (IQR)**: IQR provides the ratio of the sample QoIs that lies in 25-75% LOOCV prediction bounds (interquartile range). The IQR values should theoretically approach 0.5 if the prediction is accurate.
+
+    * **Cramer-Von Mises statistics**: Cramer-Von Mises statistics calculates the normality score. The assumption of a GP is that the observations follow a normal distribution conditional on the input parameters. To assess the normality of the model predictions, the difference between the mean prediction :math:`\hat{y}_k` and the sample observation  :math:`y_k` value is divided by the standard deviation prediction from surrogate :math:`\hat{\sigma}_{y,k}`:
+
+      .. math::
+        :label: normed
+
+          u_k = \frac{y_k-\hat{y}_k} {\hat{\sigma}_{y,k}}
+
+
+     If the values of :math:`{u_k}` follow standard normal distribution, the resulting surrogate model may be considered well-constructed. The Cramer-Von Mises test is calculated using the ``scipy.stats.cramervonmises`` function in the Python package Scipy, and the resulting p-value is displayed. Conventionally, if the p-value exceeds a significance threshold, e.g. 0.05, the null hypothesis that the samples are from a normal distribution is not rejected, meaning the samples may be considered to follow a Gaussian distribution.
 
 .. [Rasmussen2006]
 	Rasmussen, C.E. and Williams, C.K. (2006). *Gaussian Process for Machine Learning*. Cambridge, MA: The MIT Press, 2006 (available on-line at http://www.gaussianprocess.org/gpml/)

@@ -9,7 +9,7 @@ The first selection panel the user must select from and enter data into is the *
 
 .. only:: quoFEM_app
      
-   The **UQ Engine** options currently available are Dakota, SimCenterUQ, and UCSD-UQ. Users can also configure quoFEM to use their own UQ methods and algorithms in the quoFEM workflow by selecting the CustomUQ option.
+   The **UQ Engine** options currently available are Dakota, SimCenterUQ, and UCSD-UQ. Users can also configure |appName| to use their own UQ methods and algorithms in the |appName| workflow by selecting the CustomUQ option.
 
    UQ Features At-a-Glance
    -------------------------
@@ -170,7 +170,7 @@ The following categories are available:
    :quoFEM:DakotaBayesianCalibration
    :quoFEM:DakotaGradientFreeOptimization
 
-.. only:: quoFEM_app
+.. only:: quoFEM_app or EEUQ_app
 
    SimCenter UQ Engine
    -------------------
@@ -196,6 +196,7 @@ The following categories are available:
       SimCenterUQSurrogate
       SimCenterUQPLoM
 
+.. only:: quoFEM_app
 
    UCSD UQ Engine
    --------------
@@ -221,7 +222,7 @@ The following categories are available:
    Custom UQ Engine
    ----------------
 
-   The **CustomUQ** option enables users to switch out the UQ engine in the quoFEM workflow such that different methods and tools can be applied within the SimCenter framework with minimal effort on the part of the user. The CustomUQ option can be accessed as shown below:
+   The **CustomUQ** option enables users to switch out the UQ engine in the |appName| workflow such that different methods and tools can be applied within the SimCenter framework with minimal effort on the part of the user. The CustomUQ option can be accessed as shown below:
    .. _figCustomUQ:
 
    .. figure:: figures/customUQ.png
@@ -243,28 +244,3 @@ The following categories are available:
 
       Configuring_CustomUQ
 
-.. only:: EEUQ_app
-
-   SimCenter UQ Engine
-   -------------------
-     
-   The **SimCenterUQ** engine is a UQ engine developed in-house at the SimCenter that accommodates different UQ methods, which are organized into categories that can be accessed through a pull-down menu, as shown in :numref:`figSimCenterUQ`.
-
-   .. _figSimCenterUQ:
-
-   .. figure:: figures/SimCenterUQ.png
-      :align: center
-      :figclass: align-center
-      :width: 1200
-
-      SimCenterUQ engine and category selection.
-
-   The following category options are available:
-
-
-   .. toctree-filt::
-      :maxdepth: 1
-
-      SimCenterUQSampling
-      SimCenterUQSensitivity
-      SimCenterUQPLoM
