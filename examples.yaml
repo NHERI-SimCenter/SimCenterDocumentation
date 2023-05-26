@@ -32,6 +32,7 @@ WE-UQ:
     - weuq-0001
     - weuq-0007
     - weuq-0011
+    - weuq-0012
 
 EE-UQ:
   include-item:
