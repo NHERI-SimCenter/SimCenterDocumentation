@@ -161,10 +161,10 @@ Now that the UI has handed over to the back-end application, the back-end applic
    Sequence diagram showing what happens when a Workflow runs Locally
 
 
-That is for the case where the computations are performed on the local computer. When the computations are performed remotely, the steps are different. The first 8 steps are the same. But now, the UQwrapper will not start the UQ engine. Instead, control is returned to the UI. The UI will, as shown in the following: (111) Compress the temporary folder. (12) Send the compressed folder to the remote HPC, shown in the figure DesignSafe. (13) Start an application to perform the computations. All the remote data transfer and application invocation is down through a cloud service. In the figure presented, the `TACC tapis <https://tapis-project.org/>`_ interface is being used and provides SimCenter users with access to the TACC HPC resources through the DesignSafe portal.
+That is for the case where the computations are performed on the local computer. When the computations are performed remotely, the steps are different. The first 8 steps are the same. But now, the UQwrapper will not start the UQ engine. Instead, control is returned to the UI. The UI will, as shown in the following: (11) Compress the temporary folder. (12) Send the compressed folder to the remote HPC, shown in :numref:`figSequenceRemote`. (13) Start an application to perform the computations. All the remote data transfer and application invocation is down through a cloud service. The `TACC tapis <https://tapis-project.org/>`_ interface is used to provide SimCenter users with access to the TACC HPC resources through the DesignSafe portal.
 
 
-.. _figSequenceLocal:
+.. _figSequenceRemote:
 
 .. figure:: figures/sequenceRemote.png
    :align: center

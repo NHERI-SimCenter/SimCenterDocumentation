@@ -19,7 +19,7 @@ Applications used to specify/select the structural model to be used in analysis.
 #. Concrete Building Model: automating concrete moment frame design and modeling
 #. MDOF-LU: MDOF shear building model
 #. :blue:`SurrogateGP: surrogate model trained in EE-UQ`
-#. :blue:`Multimodel: selecting multiple suctural information models`
+#. :blue:`Multimodel: selecting multiple structural information models`
 
     
 Earthquake Motion Event
@@ -91,7 +91,7 @@ Applications to perform the uncertainty quantification for the response paramete
 
 #. Surrogate Modeling
 
-     A. SimCenterUQ Engine Surrogating Options:
+     A. SimCenterUQ Engine Surrogate Options:
 
         #. Probabilistic Learning on Manifolds (PLoM) Surrogate modeling
         #. :blue:`Gaussian Process Surrogate Modeling`
