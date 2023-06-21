@@ -69,9 +69,14 @@ all:
 	make pbe html 2>&1 | grep 'build succ'
 
 
-hydro pelicun pbe rtm:
+hydro pelicun rtm:
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
 
+pbe:
+	$(eval SIMDOC_APP=$(SIMDOC_APP))
+	@echo Generating temporary files for Damage and Loss Database docs...
+
+	cd ./docs/common/dldb && python3 generate_dldb_doc.py
 
 r2d qfem we ee:
 	$(eval SIMDOC_APP=$(SIMDOC_APP))

@@ -511,7 +511,10 @@ elif app_name == "PBE":
 
 """
 
-    html_theme_options.update({"analytics_id": "UA-158130480-3"})
+    html_theme_options.update({
+        "analytics_id": "UA-158130480-3",
+        "navigation_depth": -1,
+        })
 
 elif app_name == "EE-UQ":
     project = "Earthquake Engineering with Uncertainty Quantification"
