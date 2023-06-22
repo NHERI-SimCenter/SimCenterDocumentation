@@ -160,9 +160,17 @@
    .. :docTestbeds:common/testbeds/anchorage/index
    :docTestbeds:common/testbeds/lake_charles/index
 
+.. _lbl-dldb-manual:
+
+.. toctree-filt::
+   :caption: Damage and Loss DB
+   :maxdepth: 1
+   :numbered: 3
+
+   :docDLDB:common/dldb/damage/index
+   :docDLDB:common/dldb/repair/index
+
 .. _lbl-technical-manual:
-
-
 
 .. toctree-filt::
    :caption: Technical Manual
