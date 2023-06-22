@@ -75,14 +75,15 @@
 
    :WEUQ:common/user_manual/releases/weCapabilities
    :WEUQ:common/user_manual/releases/wePlans
+
+   :R2D:common/user_manual/releases/r2dCapabilities 	 
+   :R2D:common/user_manual/releases/r2dPlans 
+   :R2D:common/user_manual/releases/r2dReleaseNotes
       
-   :R2D:common/user_manual/usage/desktop/R2DTool/releasenotes
    :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
+	  
    :PBE:common/user_manual/usage/desktop/PBE/releasenotes
-   :R2D:common/user_manual/releases/r2dPlans
-
    :PBE:common/user_manual/releases/pbePlans
-
 	    
    common/front-matter/glossary.rst
    common/front-matter/abbreviations.rst
