@@ -99,13 +99,13 @@ The interaction between the frontend and the backend is best understood by looki
 
 2. It will then run through all the currently selected widgets and on each invoke the ``copyFiles()`` method, telling these widgets to copy all files that will be needed during the workflow to the ``templatedir`` directory.
 
-3. It will then create a JSON file and will run through the currenly selected widgets and on each invoke the methods ``outputToJSON()`` and ``outputAppDataToJSON``, these telling the application to augment the JSOIN file with the inputs the user has provided in the widget and also the name of the widget.
+3. It will then create a JSON file and will run through the currenly selected widgets and on each invoke the methods ``outputToJSON()`` and ``outputAppDataToJSON``, these telling the application to augment the JSON file with the inputs the user has provided in the widget and also the name of the widget.
 
 4. The UI will now start the backend application and will spin until the backend application returns with a completion signal.
 
 Now that the UI has handed over to the backend application, the backend application will perform the following:
 
-5. Open the output file from the UI and parse it to obtain the name of the application to run and the arguments to run the application with. Open up another file, the ``WorkflowApplications.json`` file, contained with the application, to determine given the application name the full path to the executable to be invoked. It will the create in ``templatedir`` a file named ``workflow_driver``. This file is a script file that when run by the UQ engine will generate a file named ``results.out``. ``results.out`` when the ``workflow_driver`` script has completed will contain a single line of space separated values, one value for each EDP.
+5. Open the output file from the UI and parse it to obtain the name of the application to run and the arguments to run the application with. Open up another file, the ``WorkflowApplications.json`` file, contained with the application, to determine given the application name the full path to the executable to be invoked. It will then create in ``templatedir`` a file named ``workflow_driver``. This file is a script file that when run by the UQ engine will generate a file named ``results.out``. ``results.out`` when the ``workflow_driver`` script has completed will contain a single line of space separated values, one value for each EDP.
 
 6.  It will invoke each of the applications with supplied arguments and an additional command line argument, ``--getRV``, to inform the application to process the input file, and to create any additional random variables and input files needed before the workflow runs.
 
@@ -136,7 +136,7 @@ Now that the UI has handed over to the backend application, the backend applicat
    Sequence diagram showing what happens when a workflow runs locally.
 
 
-That is for the case where the computations are performed on the local computer. When the computations are performed remotely the steps are different. The first 8 steps are the same. But now the UQwrapper will not start the UQ engine. Instead, control is returned to the UI. The UI will, as shown in the following: (111) Compress the temporary folder. (12) Send the compressed folder to the remote HPC, shown in the figure DesignSafe. (13) Start an application to perform the computations. All the remote data transfer and application invocation is down through a cloud service, in the figure presented the `TACC tapis <https://tapis-project.org/>`_ interface is being used and provides SimCenter users with access to the TACC HPC resources through DesignSafe portal.
+That is for the case where the computations are performed on the local computer. When the computations are performed remotely the steps are different. The first 8 steps are the same. But now the UQwrapper will not start the UQ engine. Instead, control is returned to the UI. The UI will, as shown in the following: (11) Compress the temporary folder. (12) Send the compressed folder to the remote HPC, shown in :numref:`figSequenceRemote`. (13) Start an application to perform the computations. All the remote data transfer and application invocation is down through a cloud service. The `TACC tapis <https://tapis-project.org/>`_ interface is used to provide SimCenter users with access to the TACC HPC resources through DesignSafe portal.
 
 
 .. figure:: figures/sequenceRemote.png
