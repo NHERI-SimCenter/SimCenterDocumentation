@@ -1,7 +1,7 @@
 Isolated Building CFD Model
 -------------------
 
-The Isolated Building CFD Model is a Computational Fluid Dynamics(CFD) based wind load generator that provides greater flexibility in modeling the approaching wind and the building geometry. This event allows the user to seamlessly define CFD model for isolated building with rectangularly shaped cross-section. The  modeling process is automated with different pre-/post-processing utilities integrated. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection,       
+The Isolated Building CFD Model is a Computational Fluid Dynamics(CFD) based wind load generator that provides greater flexibility in modeling the approaching wind and the flow around the building. This event allows the user to seamlessly define CFD model for isolated building with rectangularly shaped cross-section. The  modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient feature include automatic meshing with user interactive interface.        
 
 
 
