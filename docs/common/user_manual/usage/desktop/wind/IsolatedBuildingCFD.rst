@@ -1,7 +1,12 @@
-Digital Wind Tunnel
+Isolated Building CFD Model
 -------------------
 
-The Digital Wind Tunnel provides great flexibility in testing different designs and wind scenarios. This features allows users to run CFD simulations with user-defined atmospheric boundary layer inflow conditions and with user-defined OpenFOAM models. It can be implemented with the empty domain for validation purposes, or users can provide their own building model for analysis. This initial version is limited in scope due to the following assumptions:
+The Isolated Building CFD Model is a Computational Fluid Dynamics(CFD) based wind load generator that provides greater flexibility in modeling the approaching wind and the building geometry. This event allows the user to seamlessly define CFD model for isolated building with rectangularly shaped cross-section. The overall modeling process is automated with several pre-/post-processing options. The user needs to provide information related to geometry (domain size and scaling), mesh generation (grid size and refinement options), boundary conditions, turbulence modeling,      
+
+
+
+
+great flexibility in testing different designs and wind scenarios. This features allows users to run CFD simulations with user-defined atmospheric boundary layer inflow conditions and with user-defined OpenFOAM models. It can be implemented with the empty domain for validation purposes, or users can provide their own building model for analysis. This initial version is limited in scope due to the following assumptions: 
 
 #. Meshing is performed using the *snappyHexMesh* tool.
 
