@@ -21,7 +21,7 @@ Considering the high computational cost of the simulation, the CFD models can on
 Overall, the GUI of the CFD-even has two region, the *Input Panel* where the user can specify details of the CFD model, and the *Model View Panel* for visualizing the geometry and generated mesh (see :numref:`fig-iso-gui-overview`). The *Input Panel* contains tabbed interface for defining different components of the CFD workflow. Whereas, the *Model View Panel* holds the VTK representation of computational domain and a tool bar for manipulating the view of the model. Individual components in each part of the GUI are described in the following subsections.           
 
 .. _fig-iso-gui-overview:
-.. figure:: figures/IsolatedBuildingCFD/input_panel_and_model_view_window.svg
+.. figure:: figures/IsolatedBuildingCFD/input_and_model_view_panel.svg
 	:align: center
 	:figclass: align-center
 
@@ -30,7 +30,7 @@ Overall, the GUI of the CFD-even has two region, the *Input Panel* where the use
 
 *Start* Tab
 ~~~~~~~~~~~~
-This tab outlines the steps in the CFD modeling process, shows path for the working directory and options for unit system. 
+This tab outlines the main steps in the CFD modeling process, provides the path to the working directory and options for the unit system. 
 
 #. **Path:** The path where the created OpenFOAM case will be saved. "Browse" button as shown in :numref:`fig-iso-gui-overview` can be used to change the location to any user specified path. By default, this is path points to SimCenter's working directory.
 
@@ -41,7 +41,21 @@ This tab outlines the steps in the CFD modeling process, shows path for the work
 
 *Geometry* Tab
 ~~~~~~~~~~~~
-#. **Method selection:** Select the inflow turbulence generation approach as shown in :numref:`fig-dwt-inflow-method`. The Digital Wind Tunnel incorporates the Turbulence Inflow Tool (TInF) developed by NHERI SimCenter, which features four inflow turbulence generation approaches. The basic parameter settings can be referred to `Turbulence Inflow Tool (TInF) documentation <https://nheri-simcenter.github.io/TinF-Documentation/>`_.
+Here the geometry and dimensions of the building and computational domain are defined. It is common to conduct CFD simulations as a replica of actual wind tunnel testing facilities. For such type application, the user must specify the geometric scale used to represent the building in the corresponding experimental study. The shwon in :numref:`fig-iso-gui-overview`.     
+
+First, the user specifies the building dimensions in full-scale.    
+
+.. _fig-iso-geometry-tab:
+.. figure:: figures/IsolatedBuildingCFD/geometry_tab.svg
+	:align: center
+	:figclass: align-center
+
+
+#. **Building Width**, **Building Depth** and **Building Height** Width of the building in full-scale. 
+#.  Depth of the building in full-scale. 
+#.  Height of the building in full-scale. 
+
+#.  this same Select the inflow turbulence generation approach as shown in :numref:`fig-dwt-inflow-method`. The Digital Wind Tunnel incorporates the Turbulence Inflow Tool (TInF) developed by NHERI SimCenter, which features four inflow turbulence generation approaches. The basic parameter settings can be referred to `Turbulence Inflow Tool (TInF) documentation <https://nheri-simcenter.github.io/TinF-Documentation/>`_.
 
 .. _fig-dwt-upload-case:
 .. figure:: figures/DWTcase.png
