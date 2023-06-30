@@ -1,31 +1,46 @@
 Isolated Building CFD Model
 -------------------
 
-The Isolated Building CFD Model is a Computational Fluid Dynamics(CFD) based wind load generator that provides greater flexibility in modeling the approaching wind and the flow around the building. This event allows the user to seamlessly define CFD model for isolated building with rectangularly shaped cross-section. The  modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient feature include automatic meshing with user interactive interface.        
+The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wind load generator that provides greater flexibility in modeling the approaching wind and the flow around the building. This event allows the user to seamlessly define CFD model for isolated building with rectangularly shaped cross-section. The modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient feature include automatic meshing with user interactive interface. At the backend, the CFD simulations are conducted by executing an open-source CFD code, OpenFOAM. The user need to follow the following procedure to model wind loading using this event.           
+
+#. Define the geometry of the building and the computational domain
+#. Generate the mesh using global and refinement options
+#. Define boundary conditions with the characteristics of the approaching wind
+#. Specify turbulence model, solver type, and other numerical setup 
+#. Define the outputs to be monitored from the CFD simulation
+#. Submit the simulation to run remotely and follow-up the progress 
+#. Post-process and verify the results from the simulation 
 
 
+Considering the high computational cost of the simulation, the CFD models can only be run remotely using High Performance Computing (HPC) resources at DesignSafe-CI. Thus, the user is required to have DesignSafe account to run the simulations. Also, the generated CFD model is saved locally as a standard OpenFOAM case. This will permit the user to copy this directory and run the simulation using their own OpenFOAM installation elsewhere. 
+
+.. note::
+	It is important to note that, no uncertainty is considered in the CFD simulation. At this stage of the development, the CFD results informs the workflow in a rather deterministic manner. 
 
 
-great flexibility in testing different designs and wind scenarios. This features allows users to run CFD simulations with user-defined atmospheric boundary layer inflow conditions and with user-defined OpenFOAM models. It can be implemented with the empty domain for validation purposes, or users can provide their own building model for analysis. This initial version is limited in scope due to the following assumptions: 
+Overall, the GUI of the CFD-even has two region, the *Input Panel* where the user can specify details of the CFD model, and the *Model View Panel* for visualizing the geometry and generated mesh (see :numref:`fig-iso-gui-overview`). The *Input Panel* contains tabbed interface for defining different components of the CFD workflow. Whereas, the *Model View Panel* holds the VTK representation of computational domain and a tool bar for manipulating the view of the model. Individual components in each part of the GUI are described in the following subsections.           
 
-#. Meshing is performed using the *snappyHexMesh* tool.
+.. _fig-iso-gui-overview:
+.. figure:: figures/IsolatedBuildingCFD/input_panel_and_model_view_window.svg
+	:align: center
+	:figclass: align-center
 
-#. OpenFOAM solvers supported are limited to *pisoFOAM*.
+	Parts of the GUI for the CFD-based wind load event. 
 
-#. Only horizontal forces are applied to the building model, the vertical force and moments are not considered.
 
-#. The building forces are extracted using the binning feature in OpenFOAM force module and thus, it is assumed that all the floors are of equal heights.
+*Start* Tab
+~~~~~~~~~~~~
+This tab outlines the steps in the CFD modeling process, shows path for the working directory and options for unit system. 
 
-#. No uncertainty is considered in the CFD analysis.
+#. **Path:** The path where the created OpenFOAM case will be saved. "Browse" button as shown in :numref:`fig-iso-gui-overview` can be used to change the location to any user specified path. By default, this is path points to SimCenter's working directory.
 
-It is important to note that this type of event is only supported when running the simulation at DesignSafe and does not run on the local computer. For that reason, users need to create a DesignSafe account in order to use this feature. 
+#. **Units:** Select units for mass, length, time and angle. The units for each property can be selected from the corresponding combo boxes as shown in :numref:`fig-iso-gui-overview`. 
 
-The user needs to input certain parameters, which are summarized as follows:
+	.. note::
+		Note that for defining the CFD models, units different from those specified in *GI* Tab of the workflow can be used. However, throughout the CFD modeling process the physical properties need to have a consistent units.
 
-#. **Case:** The user-defined OpenFOAM case can be uploaded by pressing the "Browse" button as shown in :numref:`fig-dwt-upload-case`. By default, this is set to a benchmark case that is provided by the SimCenter in the community directory.
-
-#. **Inflow Conditions:** Select the patch where the inflow conditions will be specified for the CFD simulation as shown in :numref:`fig-dwt-inflow-method`. 
-
+*Geometry* Tab
+~~~~~~~~~~~~
 #. **Method selection:** Select the inflow turbulence generation approach as shown in :numref:`fig-dwt-inflow-method`. The Digital Wind Tunnel incorporates the Turbulence Inflow Tool (TInF) developed by NHERI SimCenter, which features four inflow turbulence generation approaches. The basic parameter settings can be referred to `Turbulence Inflow Tool (TInF) documentation <https://nheri-simcenter.github.io/TinF-Documentation/>`_.
 
 .. _fig-dwt-upload-case:
