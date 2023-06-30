@@ -37,7 +37,7 @@ This tab outlines the main steps in the CFD modeling process, provides the path 
 #. **Units:** Select units for mass, length, time and angle. The units for each property can be selected from the corresponding combo boxes as shown in :numref:`fig-iso-gui-overview`. 
 
 	.. note::
-		Note that for defining the CFD models, units different from those specified in *GI* Tab of the workflow can be used. However, throughout the CFD modeling process the physical properties need to have a consistent units.
+		Note that for defining the CFD models, units specified under this event are used (not those defined in *GI* tab of the main workflow). Throughout the CFD modeling process the physical properties need to have a consistent units specified here.
 
 *Geometry* Tab
 ~~~~~~~~~~~~
