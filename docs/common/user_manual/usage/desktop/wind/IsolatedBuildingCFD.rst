@@ -69,7 +69,7 @@ Here the geometry and dimensions of the building and computational domain are de
 #. **COST Recommendation**: This option specified wether to use the COST(REF) recommendations to determining the extents of the computational domain.  
 
 	.. note::
-		To define the CFD models, units specified under this event are used (not those defined in the *GI* tab of the main workflow). Throughout the CFD modeling process, the physical properties need to be specified using the units provided here consistently. Currently, the CFD-even is defined using the metric system. 
+		If the CFD simulation is run for a validation purpose, to define the CFD models, units specified under this event are used (not those defined in the *GI* tab of the main workflow). Throughout the CFD modeling process, the physical properties need to be specified using the units provided here consistently. Currently, the CFD-even is defined using the metric system. 
 
 the or not  Represents the vertical extension of the domain in z-direction. 
 
