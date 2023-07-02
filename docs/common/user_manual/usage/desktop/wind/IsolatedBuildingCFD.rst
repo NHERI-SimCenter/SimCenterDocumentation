@@ -54,9 +54,30 @@ Here the geometry and dimensions of the building and computational domain are de
 
 #. **Input Dimension Normalization**: This option specifies whether to use normalized dimensions for specifying the domain dimensions. The normalization is done relative to the building height. The user must specify whether to use *Relative* or *Absolute* dimensions.    
 
+#. **Geometric Scale**: If the CFD simulation is conducted at a reduced scale, the geometric scale (the ratio of full-scale to  model-scale dimensions) must be specified here.
+
 #. **Building Width**, **Building Depth** and **Building Height** are the dimensions of the building in full-scale. The dimensions of the building are defined in *GI* tab and cannot be changed here. 
       
-#. **Wind Direction**: The angle of incidence of the approaching wind measured from the x-axis in a counter clock-wise direction. The wind direction is changed indirectly by rotating the building configuration relative to the rest of the computational domain. 
+#. **Wind Direction**: The angle of incidence of the approaching wind measured from the x-axis in a counter clock-wise direction. The wind direction is accounted indirectly by rotating the building configuration relative to the rest of the computational domain. 
+
+#. **Domain Length**: Represents the length of the domain in the stream-wise (x-direction). If **Input Dimension Normalization** is *Relative*, it is normalized by the building height.  
+
+#. **Domain Width**: Represents the lateral dimensions of the domain in y-direction. 
+
+#. **Domain Height**: Represents the vertical extension of the domain in z-direction. 
+
+#. **COST Recommendation**: This option specified wether to use the COST(REF) recommendations to determining the extents of the computational domain.  
+
+	.. note::
+		To define the CFD models, units specified under this event are used (not those defined in the *GI* tab of the main workflow). Throughout the CFD modeling process, the physical properties need to be specified using the units provided here consistently. Currently, the CFD-even is defined using the metric system. 
+
+the or not  Represents the vertical extension of the domain in z-direction. 
+
+
+If **Input Dimension Normalization** is *Relative*, it is normalized by the building height.  
+
+
+The angle of incidence of the approaching wind measured from the x-axis in a counter clock-wise direction. The wind direction is accounted indirectly by rotating the building configuration relative to the rest of the computational domain. 
 
 
 #.  this same Select the inflow turbulence generation approach as shown in :numref:`fig-dwt-inflow-method`. The Digital Wind Tunnel incorporates the Turbulence Inflow Tool (TInF) developed by NHERI SimCenter, which features four inflow turbulence generation approaches. The basic parameter settings can be referred to `Turbulence Inflow Tool (TInF) documentation <https://nheri-simcenter.github.io/TinF-Documentation/>`_.
