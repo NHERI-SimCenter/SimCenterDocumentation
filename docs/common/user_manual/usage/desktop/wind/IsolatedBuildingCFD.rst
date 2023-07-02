@@ -1,0 +1,112 @@
+----------------------------
+Isolated Building CFD Model
+----------------------------
+
+The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wind load generator that provides greater flexibility in modeling the approaching wind and the flow around the building. This event allows the user to seamlessly define CFD model for an isolated building with a rectangularly shaped plan area. The modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient features includes automatic meshing with a user-interactive interface. At the backend, the CFD simulations are conducted by executing an open-source CFD code, OpenFOAM. The user needs to follow the following procedure to model wind loading using this event.           
+
+#. Define the geometry of the building and the computational domain
+#. Generate the mesh using different local and global refinement options
+#. Define boundary conditions with the characteristics of the approaching wind
+#. Specify turbulence model, solver type, and other numerical setups 
+#. Define the outputs to be monitored from the CFD simulation
+#. Submit the simulation to run remotely and follow up on the progress 
+#. Post-process and verify the results from the simulation 
+
+
+Considering the high computational cost of the simulation, the CFD models can only be run remotely using High-Performance Computing (HPC) resources at DesignSafe-CI. Thus, the user is required to have DesignSafe account to run the simulations. Also, the generated CFD model is saved locally as a standard OpenFOAM case. This will permit the user to copy this directory and run the simulation using their own OpenFOAM installation elsewhere. 
+
+.. note::
+	It is important to note that, no uncertainty is considered in the CFD simulation. At this stage of the development, the CFD results inform the workflow in a rather deterministic manner. 
+
+
+Overall, the GUI of the CFD-even has two regions, the *Input Panel* where the user can specify details of the CFD model, and the *Model View Panel* for visualizing the geometry and generated mesh (see :numref:`fig-iso-gui-overview`). The *Input Panel* contains a tabbed interface for defining different components of the CFD workflow. Whereas, the *Model View Panel* holds the VTK representation of the computational domain and a toolbar for manipulating the view of the model. Individual components in each part of the GUI are described in the following subsections.           
+
+.. _fig-iso-gui-overview:
+.. figure:: figures/IsolatedBuildingCFD/input_and_model_view_panel.svg
+	:align: center
+	:figclass: align-center
+
+	Parts of the GUI for the CFD-based wind load event. 
+
+User Inputs 
+~~~~~~~~~~~~~~~~
+
+*Start* Tab
+""""""""""""""""
+This tab outlines the main steps in the CFD modeling process. It provides the path to the working directory and options for the unit system. 
+
+#. **Path:** The path where the created OpenFOAM case will be saved. The "Browse" button in :numref:`fig-iso-gui-overview` can be used to change the location to any user-specified location. By default, this path points to SimCenter's working directory in *Documents*.
+
+#. **Units:** Select units for mass, length, time and angle. The units for each property can be specified at the bottom of the *Start* tab as shown in :numref:`fig-iso-gui-overview`. 
+
+	.. note::
+		To define the CFD models, units specified under this event are used (not those defined in the *GI* tab of the main workflow). Throughout the CFD modeling process, the physical properties need to be specified using the units provided here consistently. Currently, the CFD-even is defined using the metric system. 
+
+
+*Geometry* Tab
+""""""""""""""""
+Here the geometry and dimensions of the building and computational domain are defined. It is common to conduct CFD simulations as a replica of actual wind tunnel testing facilities. For this type of application, the user must specify the dimensions of the tunnel and the geometric scale used to construct the building model in the experiment. In :numref:`fig-iso-gui-overview`, all the inputs are related to the geometry of the building and the computational domain.     
+
+.. _fig-iso-geometry-tab:
+.. figure:: figures/IsolatedBuildingCFD/geometry_tab.svg
+	:align: center
+	:figclass: align-center
+
+#. **Input Dimension Normalization**: This option specifies whether to use normalized dimensions for specifying the domain dimensions. The normalization is done relative to the building height. The user must specify whether to use *Relative* or *Absolute* dimensions.    
+
+#. **Geometric Scale**: If the CFD simulation is conducted at a reduced scale, the geometric scale (the ratio of full-scale to  model-scale dimensions) must be specified here.
+
+#. **Building Width**, **Building Depth** and **Building Height** are the dimensions of the building in full-scale. The dimensions of the building are defined in *GI* tab and cannot be changed here. 
+      
+#. **Wind Direction**: The angle of incidence of the approaching wind measured from the x-axis in a counter clock-wise direction. The wind direction is accounted indirectly by rotating the building configuration relative to the rest of the computational domain. 
+
+#. **Domain Length**: Represents the length of the domain in the stream-wise (x-direction). If **Input Dimension Normalization** is *Relative*, it is normalized by the building height.  
+
+#. **Domain Width**: Represents the lateral dimensions of the domain in y-direction. 
+
+#. **Domain Height**: Represents the vertical extension of the domain in z-direction. 
+
+#. **COST Recommendation**: This option specified wether to use the COST(REF) recommendations to determining the extents of the computational domain.  
+
+	.. note::
+		To define the CFD models, units specified under this event are used (not those defined in the *GI* tab of the main workflow). Throughout the CFD modeling process, the physical properties need to be specified using the units provided here consistently. Currently, the CFD-even is defined using the metric system. 
+
+the or not  Represents the vertical extension of the domain in z-direction. 
+
+
+If **Input Dimension Normalization** is *Relative*, it is normalized by the building height.  
+
+
+The angle of incidence of the approaching wind measured from the x-axis in a counter clock-wise direction. The wind direction is accounted indirectly by rotating the building configuration relative to the rest of the computational domain. 
+
+
+#.  this same Select the inflow turbulence generation approach as shown in :numref:`fig-dwt-inflow-method`. The Digital Wind Tunnel incorporates the Turbulence Inflow Tool (TInF) developed by NHERI SimCenter, which features four inflow turbulence generation approaches. The basic parameter settings can be referred to `Turbulence Inflow Tool (TInF) documentation <https://nheri-simcenter.github.io/TinF-Documentation/>`_.
+
+.. _fig-dwt-upload-case:
+.. figure:: figures/DWTcase.png
+	:align: center
+	:figclass: align-center
+
+	Uploading a user-defined CFD model. 
+
+.. _fig-dwt-inflow-method:
+.. figure:: figures/DWTmethod.png
+	:align: center
+	:figclass: align-center
+
+	Selecting the inflow patch and turbulence generation approach.
+
+After selecting a particular approach for inflow turbulence generation, the statistical information of the inflow turbulence is required by the selected approach. The Digital Wind Tunnel offers two input options for users as shown in :numref:`fig-dwt-inflow-option2`:
+
+#. **User-defined inflow boundary data:** This option allows users to specify the inflow turbulence properties obtained from wind tunnel measurements, such as mean velocity, Reynolds stress, and length scales at the inflow boundary for a CFD simulation. By pressing the "Browse" button, the **csv** file format can be uploaded and displayed in the user interface.
+
+#. **Inflow turbulence parameters:** Users can also specify the inflow conditions through the embedded functions in the Digital Wind Tunnel. There are three functions to characterize the atmospheric inflow profiles: uniform function, exponential function and logarithmic function. The uniform function assumes a constant wind velocity over the entire simulation domain, but may not accurately represent the complex nature of atmospheric boundary layer flows. The exponential function is often used to represent the vertical profile of wind velocity in the atmospheric boundary layer. The logarithmic function is another commonly used function that also represents the vertical profile of wind speed in the atmospheric boundary layer, based on the assumption of a logarithmic variation of wind velocity with height. Detailed information about the parameter settings can be referred to `Turbulence Inflow Tool (TInF) documentation <https://nheri-simcenter.github.io/TinF-Documentation/>`_.
+
+.. _fig-dwt-inflow-option2:
+.. figure:: figures/DWTvelocity.png
+	:align: center
+	:figclass: align-center
+
+	Two options to configure inflow conditions.
+
+After the CFD model with the appropriate inflow conditions is set up, the next step is to run the simulation. Press the **RUN at DesignSafe** button to submit the job to TACC Frontera HPC resources. Once the simulation is completed, download the data from **GET from DesignSafe** for post-processing.

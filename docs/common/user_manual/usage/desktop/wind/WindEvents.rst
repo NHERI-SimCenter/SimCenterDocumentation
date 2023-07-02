@@ -17,5 +17,6 @@ The event panel presents the user with a drop-down menu with a list of available
 	windTunnelExp
 	WeUQExisting
 	DigitalWindTunnel
+	IsolatedBuildingCFD
 	ExperimentalWindForce
 	WindForceSpectrum
