@@ -28,7 +28,7 @@ Overall, the GUI of the CFD-even has two regions, the *Input Panel* where the us
 	Parts of the GUI for the CFD-based wind load event. 
 
 
-*Start* Tab
+Start
 ---------------
 This tab outlines the main steps in the CFD modeling process. It provides the path to the working directory and options for the unit system. 
 
@@ -40,7 +40,7 @@ This tab outlines the main steps in the CFD modeling process. It provides the pa
 		To define the CFD models, units specified under this event are used (not those defined in the *GI* tab of the main workflow). Throughout the CFD modeling process, the physical properties need to be specified using the units provided here consistently. Currently, the CFD-even is defined using the metric system. 
 
 
-*Geometry* Tab
+Geometry
 ----------------
 Here the geometry and dimensions of the building and computational domain are defined. It is common to conduct CFD simulations as a replica of actual wind tunnel testing facilities. For this type of application, the user must specify the dimensions of the tunnel and the geometric scale used to construct the building model in the experiment. In :numref:`fig-iso-geometry-tab`, all the inputs are related to the geometry of the building and the computational domain.     
 
@@ -75,9 +75,15 @@ Here the geometry and dimensions of the building and computational domain are de
 
 #. **Location of Absolute Origin**: This option specified the location of the absolute origin for the coordinate system where :math:`(x = 0, y = 0, z = 0)`. There are three options: *Building Bottom Center*, *Domain Bottom Left Corner*, and *Custom*. By default, the origin is the *Building Bottom Center*. The origin also can be changed to any user-specified point by using the *Custom* option and editing the coordinates (see the bottom of :numref:`fig-iso-geometry-tab`).  
 
-*Mesh* Tab
-------------
-The 
+Meshing
+----------------
+The mesh (computational grid) is generated employing OpenFOAM’s *snappyHexMesh* tool. The procedure involves first defining a regularly spaced background mesh for the whole domain. Then, further refinements are made progressively as we get close to the surface of the building. The building geometry is created as a Stereolithography (STL) surface from its width, depth and height. Finally, the meshing is performed locally on the user's machine. Thus, the user can interactively visualize the mesh using the model view window on the right. The step-by-step procedure to define the mesh for this event involves: 
+
+* **Step 1**: Define a background structured mesh.     
+* **Step 2**: Specify the volumetric refinement regions.
+* **Step 3**: Specify refinement on the building surface.
+* **Step 4**: Apply further refinements to the edges of the building.   
+* **Step 5**: Add prism layers on the building surface in the wall-normal direction.    
 
 .. _fig-iso-mesh-tab:
 .. figure:: figures/IsolatedBuildingCFD/mesh_tab.svg
@@ -85,6 +91,12 @@ The
 	:figclass: align-center
 
 	**Mesh** tab for generating the computational grid using *snappyHexMesh* tool.
+The following subsections describe the GUI for each step. Further details of the *snappyHexMesh* meshing tool used can be found in [Greenshields2022]_. 
 
 Background Mesh
 """"""""""""""""
+
+
+.. [Greenshields2022] Greenshields, C.J. (2022). https://doc.cfd.direct/openfoam/user-guide-v10/snappyhexmesh
+
+
