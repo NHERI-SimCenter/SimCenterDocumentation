@@ -1,10 +1,10 @@
 ****************************
 Isolated Building CFD Model
 ****************************
-The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wind load generator that provides greater flexibility in modeling the approaching wind and the flow around the building. This event allows the user to seamlessly define CFD model for an isolated building with a rectangularly shaped plan area. The modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient features includes automatic meshing with a user-interactive interface. At the backend, the CFD simulations are conducted by executing an open-source CFD code, OpenFOAM. The user needs to follow the following procedure to model wind loading using this event.           
+The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wind load generator for an isolated building with a rectangularly shaped plan area. It provides greater flexibility in modeling the approaching wind and the wind induced loads on the building. This event allows the user to seamlessly define the computational model with interactive GUI support. The modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient features includes automatic meshing with a user-interactive interface. At the backend, the CFD simulations are conducted by executing an open-source CFD code from OpenFOAM [Greenshields2015]_. The user needs to follow the following procedure to model wind loading using this event.           
 
 #. Define the geometry of the building and the computational domain
-#. Generate the mesh using different local and global refinement options
+#. Generate the mesh using different global and local refinement options
 #. Define boundary conditions with the characteristics of the approaching wind
 #. Specify turbulence model, solver type, and other numerical setups 
 #. Define the outputs to be monitored from the CFD simulation
@@ -97,6 +97,7 @@ Background Mesh
 """"""""""""""""
 
 
+.. [Greenshields2015] Greenshields, C.J. (2015). OpenFOAM Programmer's Guide. OpenFOAM Foundation Ltd.
 .. [Greenshields2022] Greenshields, C.J. (2022). https://doc.cfd.direct/openfoam/user-guide-v10/snappyhexmesh
 
 
