@@ -95,7 +95,7 @@ The following subsections describe the GUI for each step. Further details of the
 
 Background Mesh
 """"""""""""""""
-The background mesh consit 
+The user needs to defined a background mesh before running *snappyHexMesh*. The background must be hex mesh  
 
 .. [Greenshields2015] Greenshields, C.J. (2015). OpenFOAM Programmer's Guide. OpenFOAM Foundation Ltd.
 .. [Franke2007] Franke, J., Hellsten, A., Schlünzen, K.H. and Carissimo, B., 2007. COST Action 732: Best practice guideline for the CFD simulation of flows in the urban environment.
