@@ -1,7 +1,7 @@
 ****************************
 Isolated Building CFD Model
 ****************************
-The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wind load generator for an isolated building with a rectangularly shaped plan area. It provides greater flexibility in modeling the approaching wind and the wind induced loads on the building. This event allows the user to seamlessly define the computational model with interactive GUI support. The modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient features includes automatic meshing with a user-interactive interface. At the backend, the CFD simulations are conducted by executing an open-source CFD code from OpenFOAM [Greenshields2015]_. The user needs to follow the following procedure to model wind loading using this event.           
+The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wind load generator for an isolated building with a rectangularly shaped plan area. It provides greater flexibility in modeling the approaching wind and the wind induced loads on the building. This event allows the user to seamlessly define the computational model with interactive GUI support. The modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient features includes automatic meshing with a user-interactive interface. At the backend, the CFD simulations are conducted by executing an open-source CFD solvers from OpenFOAM [Greenshields2015]_. The user needs to follow the following procedure to model wind loading using this event.           
 
 #. Define the geometry of the building and the computational domain
 #. Generate the mesh using different global and local refinement options
@@ -67,7 +67,7 @@ Here the geometry and dimensions of the building and computational domain are de
 
 #. **Fetch Length**: Distance between the inlet of the domain and the building center.   
 
-#. **COST Recommendation**: This option specified whether to use the COST(Ref) recommendations to determine the extent of the computational domain.  
+#. **COST Recommendation**: This option specified whether to use the COST([Franke2007]_) recommendations to determine the extent of the computational domain.  
 
 	.. note::
 		If the CFD simulation is run for a validation purpose i.e., to compare with an experimental measurement, it is recommended to make the extent of the domain the same as the test section of the wind tunnel. This typically requires the width and height of the domain to be the same as the experimental facility. However, the length of the domain can be reduced by applying synthetically generated inflow turbulence at the inlet that satisfies important statistics of a fully developed wind flow. Details about inflow turbulence generations can be found in (Ref TInf). 
@@ -95,9 +95,10 @@ The following subsections describe the GUI for each step. Further details of the
 
 Background Mesh
 """"""""""""""""
-
+The background mesh consit 
 
 .. [Greenshields2015] Greenshields, C.J. (2015). OpenFOAM Programmer's Guide. OpenFOAM Foundation Ltd.
+.. [Franke2007] Franke, J., Hellsten, A., Schlünzen, K.H. and Carissimo, B., 2007. COST Action 732: Best practice guideline for the CFD simulation of flows in the urban environment.
 .. [Greenshields2022] Greenshields, C.J. (2022). https://doc.cfd.direct/openfoam/user-guide-v10/snappyhexmesh
 
 
