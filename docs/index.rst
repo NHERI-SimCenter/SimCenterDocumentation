@@ -12,7 +12,7 @@
 
    .. only:: PBE_app
 
-      The |full tool name| (|app|) is an open-source desktop application designed to support the assessment of building performance under natural hazard events. The application quantifies performance in a probabilistic approach. Users can consider uncertainties in event intensity, structural behavior, component quantities and their limit state capacities, as well as the consequences of exceeding their limit states (i.e., experiencing damage). The |app| provides a convenient user interface and automatically prepares a simulation workflow description based on the settings provided by the user. This workflow description is used to run the corresponding computations on SimCenter's backend engine using sWHALE. The structural response estimation part of the workflow can run on the high performance computing cluster made available through |DesignSafe|. The performance assessment part runs locally using SimCenter's Pelicun performance assessment engine.
+      The |full tool name| (|app|) is an open-source desktop application designed to support the assessment of building performance under natural hazard events. The application quantifies performance in a probabilistic approach. Users can consider uncertainties in event intensity, structural behavior, component quantities and their limit state capacities, as well as the consequences of exceeding component limit states (i.e., experiencing damage). The |app| provides a convenient user interface and uses the settings provided by the user to prepare a simulation workflow description in a JSON file. This workflow description is used to run a simulation workflow on SimCenter's backend engine using sWHALE. The structural response estimation part of the workflow can run on the TACC high performance computing cluster made available through |DesignSafe|. The performance assessment part runs locally using SimCenter's Pelicun performance assessment engine.
 
    .. only:: EEUQ_app
 
@@ -55,7 +55,7 @@
    :pelicun:common/user_manual/about/pelicun/about
 
    :R2D:common/front-matter/desktop/ack
-   :PBE:common/front-matter/desktop/ack
+   :PBE:common/front-matter/desktop/ack_pbe
    :EEUQ:common/front-matter/desktop/ack
    :WEUQ:common/front-matter/desktop/ack
    :Hydro:common/front-matter/desktop/ack
@@ -75,14 +75,16 @@
 
    :WEUQ:common/user_manual/releases/weCapabilities
    :WEUQ:common/user_manual/releases/wePlans
+
+   :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
+
+   :PBE:common/user_manual/releases/pbeCapabilities
+   :PBE:common/user_manual/releases/pbeReleaseNotes
+   :PBE:common/user_manual/usage/desktop/PBE/releasenotes
+   :PBE:common/user_manual/releases/pbePlans
       
    :R2D:common/user_manual/usage/desktop/R2DTool/releasenotes
-   :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
-   :PBE:common/user_manual/usage/desktop/PBE/releasenotes
    :R2D:common/user_manual/releases/r2dPlans
-
-   :PBE:common/user_manual/releases/pbePlans
-
 	    
    common/front-matter/glossary.rst
    common/front-matter/abbreviations.rst

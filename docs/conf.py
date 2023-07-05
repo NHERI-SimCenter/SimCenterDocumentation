@@ -467,7 +467,7 @@ elif app_name == "PBE":
     project = "Performance Based Engineering Application"
 
     author = (
-        "Adam Zsarnóczay, Frank McKenna, Chaofeng Wang, Wael Elhaddad, Michael Gardner"
+        "Adam Zsarnóczay, Frank McKenna, Kuanshi Zhong, Chaofeng Wang, Michael Gardner, Wael Elhaddad"
     )
     sync_examples = False
 
@@ -504,7 +504,7 @@ elif app_name == "PBE":
 .. |full tool name| replace:: Performance Based Engineering Application
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
 .. _PBE Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE
-.. |tool version| replace:: 3.0
+.. |tool version| replace:: 3.1
 .. |test example| replace:: :ref:`pbdl-0001`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-PBE`
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
