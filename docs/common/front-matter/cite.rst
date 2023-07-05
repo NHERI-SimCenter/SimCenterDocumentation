@@ -4,6 +4,8 @@
 How To Cite
 ***********
 
+If this application helped you perform your work, please recognize the contributions of the developers by citing the following publications:
+
 .. only:: R2D_app
 
 
@@ -14,9 +16,9 @@ How To Cite
 	     
 .. only:: PBE_app
 
-   1. Adam Zsarnoczay, Frank McKenna, Charles Wang, Wael Elhaddad, & Michael Gardner. (2022).
-      NHERI-SimCenter/PBE: Release v3.0.0.
-      Zenodo. `DOI: 10.5281/zenodo.1472503 <https://doi.org/10.5281/zenodo.1472503>`_
+   1. Adam Zsarnoczay, Frank McKenna, Kuanshi Zhong, Charles Wang, Michael Gardner, and Wael Elhaddad (2023)
+      NHERI-SimCenter Performance Based Engineering Application, PBE v3.1,
+      Zenodo, `DOI: 10.5281/zenodo.1472503 <https://doi.org/10.5281/zenodo.1472503>`_
   
 .. only:: EEUQ_app
 
@@ -33,8 +35,8 @@ How To Cite
 	     
 .. only:: quoFEM_app	     
       
-
-1. Frank McKenna, Sang-ri Yi, Aakash Bangalore Satish, Kuanshi Zhong, Adam Zsarnoczay, & Wael Elhaddad. (2023).
+   1. Frank McKenna, Sang-ri Yi, Aakash Bangalore Satish, Kuanshi Zhong, Adam Zsarnoczay, & Wael Elhaddad. 
+   (2023).
    NHERI-SimCenter/quoFEM: Version 3.3.0 (v3.3.0). 
    Zenodo. `DOI: 10.5281/zenodo.6404498 <https://doi.org/10.5281/zenodo.6404498>`_
 
