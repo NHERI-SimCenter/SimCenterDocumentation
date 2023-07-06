@@ -95,7 +95,68 @@ The following subsections describe the GUI for each step. Further details of the
 
 Background Mesh
 """"""""""""""""
-The background mesh is the grid used in the far-field away from the area the building is located. The user needs to defined a background mesh before running *snappyHexMesh*. Ideal grid for the background mesh is hexahedral (hex) cells. Thus, the background mesh is generated using OpenFOAM's *blockMesh* tool as a structured grid. To start, the user need to specify the number of cells in the three-orthogonal direction as shown :numref:`fig-iso-mesh-tab`. Once the information in *Background Mesh* tab (see :numref:`fig-iso-mesh-tab`) is filled, the user can press the *Run blockMesh* button to see the background mesh. The mesh is automatically updated on the model view panel on the right side of the wind shown in :numref:`fig-iso-gui-overview`. Descriptions of the parameters used to define the background mesh are given below.     
+The background mesh is the grid used in the far-field away from the area the building is located. The user needs to defined a background mesh before running *snappyHexMesh*. Ideal grid for the background mesh is hexahedral (hex) cells. Thus, the background mesh is generated using OpenFOAM's *blockMesh* utility as a structured grid. To start, the user need to specify the number of cells in the three-orthogonal directions as shown in :numref:`fig-iso-mesh-tab`. Once the information in *Background Mesh* tab (see :numref:`fig-iso-mesh-tab`) is filled, the user can press the *Run blockMesh* button to generate and visualizing the background mesh. The mesh is automatically updated on the model view panel as seen in :numref:`fig-iso-gui-overview`. Descriptions of the fields used to define the background mesh are given below.     
+
+#. **Direction**: The axis along which the number of cells will be specified. The mesh information must be provided in :math:`(x, y, z)` directions separately.  
+
+#. **No. Cells**: Number of cells in each direction. 
+
+#. **Grading**: This field provides expansion ratios to generated graded mesh in any direction. Theses values specify the ratio of the width of the first cell to last cell along the direction considered. Specially, will be useful if one wants to provided stretched cells near the ground surface.
+
+#. **Grid Size**: The width of cells in a specified direction.  This field is automatically calculated as the user edits **No. Cells** field.
+
+	.. warning:: 
+		It is recommended to use nearly cubical cells for the background mesh. This can be achieved by changing the **No. Cells** in each direction until the corresponding **Grid Size** felids are approximately equal. Specially close to the building location, the use of nearly cubical cells is important for the *snappyHexMesh* to operate properly.
+
+	.. note:: 
+		If the **Input Dimension Normalization** in the *Geometry* tab of this event set to *Relative*, all the dimensions used for defining meshing e.g. **Grid Size**, are expressed relative to the building height. 
+	
+Refinement Regions
+""""""""""""""""""""
+Once the background mesh is generated, further mesh refinements can be added using refinement regions (boxes). To achieve this, the user can specify multiple refinement regions. The refinement regions are boxes defining the extents of the region, and the corresponding refinement level. :numref:`fig-iso-mesh-tab-regional` shows a sample input with four refinement boxes. In the current version of the tool, the refinement regions can only be box shaped. Here descriptions each field are provided.  
+
+.. _fig-iso-mesh-tab-regional:
+.. figure:: figures/IsolatedBuildingCFD/mesh_tab_regional_refinment.svg	
+	:align: center
+	:figclass: align-center
+
+	Specification of the refinement regions.
+
+#. **Name**: Name of the refinement box, any unique identifier text can be used here. 
+#. **Level**: Specifies the level of refinement for each region. Can start at 1 for the outermost refinement region and goes up to the highest level used close to the building. To reduce abrupt change in grid size,  refinement level should be incremented by 1 as one goes from lower to higher refinement levels.   
+
+#. **X-min**, **Y-min** and **Z-min** are coordinates of the minimum point for the bounding box encompassing the refinement region.
+
+#. **X-max**, **Y-max** and **Z-max** are coordinates of the maximum point for the bounding box encompassing the refinement region. 
+
+To add a new refinement region the user can use **Add Region** button shown in :numref:`fig-iso-mesh-tab-regional`. In a similar way, to remove an existing region, first the user needs to select a row from the table and press the **Remove Region** button. 
+
+	.. note:: 
+		All the refinements are done by progressively splitting the cells from the previous level. Thus, the mesh size is reduced by half when we go one refinement level higher. 
+		
+		..
+			Whereas, the cell count  increase by about :math:`(2^3 = 8)` folds.
+	
+Near-surface Refinements
+""""""""""""""""""""""""""
+
+Edge Refinement
+""""""""""""""""
+
+Prism Layers
+""""""""""""""""
+
+Boundary Conditions
+----------------
+
+Numerical Setup
+----------------
+
+Monitoring
+----------------
+
+Results
+----------------
 
 .. [Greenshields2015] Greenshields, C.J. (2015). OpenFOAM Programmer's Guide. OpenFOAM Foundation Ltd.
 .. [Franke2007] Franke, J., Hellsten, A., Schlünzen, K.H. and Carissimo, B., 2007. COST Action 732: Best practice guideline for the CFD simulation of flows in the urban environment.
