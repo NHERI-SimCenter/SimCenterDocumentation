@@ -154,7 +154,7 @@ Near solid walls, surface refinements can be added to resolve important flow fea
 
 #. **Refinement Level**: Specifies the level of refinement as it continues from the regional refinement. Needs to be bigger (at least by 1 level) than the highest refinement level used in the *Regional Refinement* tab earlier.  
 
-#.  **Refinement Distance**: Represents a wall-normal distance the refinement will extend in the computational domain. This distance is always measured from the target (building) surface. For example, if 0.5 is used, the near-surface refinement will encompass a region with a distance of 0.5 units away from the surface in all directions. 
+#.  **Refinement Distance**: Represents a wall-normal distance that the surface refinement will extend outward in the domain. This distance is always measured from the target (building) surface. For example, if 0.5 is used, the near-surface refinement will encompass a region with a distance of 0.5 units away from the surface in all directions. 
 
 Edge Refinement
 """"""""""""""""
