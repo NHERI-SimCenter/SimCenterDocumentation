@@ -135,7 +135,7 @@ To add a new refinement region the user can use **Add Region** button shown in :
 		All the refinements are done by progressively splitting the cells from the previous level. Thus, the mesh size is reduced by half when we go one refinement level higher. 
 		
 		..
-			Whereas, the cell count  increase by about :math:`(2^3 = 8)` folds.
+			Whereas, the cell count increases by about :math:`(2^3 = 8)` folds.
 	
 Near-surface Refinements
 """"""""""""""""""""""""""
