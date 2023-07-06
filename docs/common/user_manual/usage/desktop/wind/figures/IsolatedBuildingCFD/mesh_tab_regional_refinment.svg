@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="961.43091mm"
-   height="428.3801mm"
-   viewBox="0 0 961.43091 428.3801"
+   width="957.26001mm"
+   height="339.74881mm"
+   viewBox="0 0 957.26001 339.74881"
    version="1.1"
    id="svg5"
    xml:space="preserve"
@@ -27,7 +27,7 @@
      showgrid="false"
      inkscape:zoom="0.25374316"
      inkscape:cx="2035.5228"
-     inkscape:cy="955.69079"
+     inkscape:cy="833.52001"
      inkscape:window-width="1920"
      inkscape:window-height="1010"
      inkscape:window-x="-6"
@@ -35,8 +35,8 @@
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1" /><defs
      id="defs2"><rect
-       x="746.83635"
-       y="961.41247"
+       x="746.83636"
+       y="961.41248"
        width="688.31561"
        height="169.14075"
        id="rect931" /><linearGradient
@@ -73,7 +73,7 @@
      inkscape:label="Layer 1"
      inkscape:groupmode="layer"
      id="layer1"
-     transform="translate(856.60678,159.09416)"
+     transform="translate(856.60678,125.72709)"
      style="display:inline"><image
        width="738.49652"
        height="312.4809"
@@ -111,14 +111,14 @@
        style="font-size:61.3333px;font-family:Arial;-inkscape-font-specification:Arial;white-space:pre;shape-inside:url(#rect931);fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:9.89346;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="746.83594"
          y="1016.6584"
-         id="tspan947">Buttons for <tspan
+         id="tspan1046">Buttons for <tspan
    style="font-weight:bold;-inkscape-font-specification:'Arial Bold'"
-   id="tspan945">adding</tspan> or </tspan><tspan
+   id="tspan1044">adding</tspan> or </tspan><tspan
          x="746.83594"
          y="1093.325"
-         id="tspan951"><tspan
+         id="tspan1050"><tspan
    style="font-weight:bold;-inkscape-font-specification:'Arial Bold'"
-   id="tspan949">removing</tspan> a region </tspan></text><path
+   id="tspan1048">removing</tspan> a region </tspan></text><path
        style="fill:#ff0000;fill-opacity:1;stroke:#ff0000;stroke-width:3;stroke-dasharray:none;stroke-opacity:1"
        d="m -632.00305,160.58605 h -32.33881"
        id="path1145" /><rect
@@ -138,10 +138,10 @@
        style="font-size:61.3333px;font-family:Arial;-inkscape-font-specification:Arial;white-space:pre;shape-inside:url(#rect931-5);display:inline;fill:#ff0000;fill-opacity:1;stroke:none;stroke-width:9.89346;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="746.83594"
          y="1016.6584"
-         id="tspan955"><tspan
+         id="tspan1054"><tspan
    style="font-weight:bold;-inkscape-font-specification:'Arial Bold'"
-   id="tspan953">Parameters</tspan> to define 
+   id="tspan1052">Parameters</tspan> to define 
 </tspan><tspan
          x="746.83594"
          y="1093.325"
-         id="tspan957">a refinement region </tspan></text></g></svg>
+         id="tspan1056">a refinement region </tspan></text></g></svg>

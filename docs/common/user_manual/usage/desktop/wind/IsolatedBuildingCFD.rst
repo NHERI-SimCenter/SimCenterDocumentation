@@ -95,13 +95,13 @@ The following subsections describe the GUI for each step. Further details of the
 
 Background Mesh
 """"""""""""""""
-The background mesh is the grid used in the far-field away from the area the building is located. The user needs to defined a background mesh before running *snappyHexMesh*. Ideal grid for the background mesh is hexahedral (hex) cells. Thus, the background mesh is generated using OpenFOAM's *blockMesh* utility as a structured grid. To start, the user need to specify the number of cells in the three-orthogonal directions as shown in :numref:`fig-iso-mesh-tab`. Once the information in *Background Mesh* tab (see :numref:`fig-iso-mesh-tab`) is filled, the user can press the *Run blockMesh* button to generate and visualizing the background mesh. The mesh is automatically updated on the model view panel as seen in :numref:`fig-iso-gui-overview`. Descriptions of the fields used to define the background mesh are given below.     
+The background mesh is the grid used in the far field away from the area the building is located. The user needs to define a background mesh before running *snappyHexMesh*. The ideal grid for the background mesh is hexahedral (hex) cells. Thus, the background mesh is generated using OpenFOAM's *blockMesh* utility as a structured grid. To start, the user needs to specify the number of cells in the three-orthogonal directions as shown in :numref:`fig-iso-mesh-tab`. Once the information in the *Background Mesh* tab (see :numref:`fig-iso-mesh-tab`) is filled, the user can press the *Run blockMesh* button to generate and visualizing the background mesh. The mesh is automatically updated on the model view panel as seen in :numref:`fig-iso-gui-overview`. Descriptions of the fields used to define the background mesh are given below.     
 
 #. **Direction**: The axis along which the number of cells will be specified. The mesh information must be provided in :math:`(x, y, z)` directions separately.  
 
 #. **No. Cells**: Number of cells in each direction. 
 
-#. **Grading**: This field provides expansion ratios to generated graded mesh in any direction. Theses values specify the ratio of the width of the first cell to last cell along the direction considered. Specially, will be useful if one wants to provided stretched cells near the ground surface.
+#. **Grading**: This field provides expansion ratios to generated graded mesh in any direction. These values specify the ratio of the width of the first cell to the last cell along the direction considered. Specially, will be useful if one wants to provide stretched cells near the ground surface.
 
 #. **Grid Size**: The width of cells in a specified direction.  This field is automatically calculated as the user edits **No. Cells** field.
 
@@ -109,11 +109,11 @@ The background mesh is the grid used in the far-field away from the area the bui
 		It is recommended to use nearly cubical cells for the background mesh. This can be achieved by changing the **No. Cells** in each direction until the corresponding **Grid Size** felids are approximately equal. Specially close to the building location, the use of nearly cubical cells is important for the *snappyHexMesh* to operate properly.
 
 	.. note:: 
-		If the **Input Dimension Normalization** in the *Geometry* tab of this event set to *Relative*, all the dimensions used for defining meshing e.g. **Grid Size**, are expressed relative to the building height. 
+		If the **Input Dimension Normalization** in the *Geometry* tab of this event is set to *Relative*, all the dimensions used for defining meshing e.g. **Grid Size**, are expressed relative to the building height. 
 	
 Refinement Regions
 """"""""""""""""""""
-Once the background mesh is generated, further mesh refinements can be added using refinement regions (boxes). To achieve this, the user can specify multiple refinement regions. The refinement regions are boxes defining the extents of the region, and the corresponding refinement level. :numref:`fig-iso-mesh-tab-regional` shows a sample input with four refinement boxes. In the current version of the tool, the refinement regions can only be box shaped. Here descriptions each field are provided.  
+Once the background mesh is generated, further mesh refinements can be added using refinement regions (boxes). To achieve this, the user can specify multiple refinement regions. The refinement regions are boxes defining the extent of the region, and the corresponding refinement level. :numref:`fig-iso-mesh-tab-regional` shows a sample input with four refinement boxes. It is recommended to have both global and local refinement regions. Here global refinement refers to a box that extends from the inlet of the domain up to the wake of the study building. Whereas, local refinements cover the region in the vicinity of the building. For example, Box1 and Box2 in :numref:`fig-iso-mesh-tab-regional` are of global type, whereas Box3 and Box4 are local refinements. In the current version of the tool, the refinement regions can only be box-shaped. Here descriptions of each field are provided.  
 
 .. _fig-iso-mesh-tab-regional:
 .. figure:: figures/IsolatedBuildingCFD/mesh_tab_regional_refinment.svg	
@@ -123,13 +123,13 @@ Once the background mesh is generated, further mesh refinements can be added usi
 	Specification of the refinement regions.
 
 #. **Name**: Name of the refinement box, any unique identifier text can be used here. 
-#. **Level**: Specifies the level of refinement for each region. Can start at 1 for the outermost refinement region and goes up to the highest level used close to the building. To reduce abrupt change in grid size,  refinement level should be incremented by 1 as one goes from lower to higher refinement levels.   
+#. **Level**: Specifies the level of refinement for each region. Can start at 1 for the outermost refinement region and goes up to the highest level used close to the building. To reduce abrupt changes in grid size, the refinement level should be incremented by 1 as one goes from lower to higher refinement levels.   
 
-#. **X-min**, **Y-min** and **Z-min** are coordinates of the minimum point for the bounding box encompassing the refinement region.
+#. **X-min**, **Y-min** and **Z-min** are the coordinates of the minimum point for the bounding box encompassing the refinement region.
 
-#. **X-max**, **Y-max** and **Z-max** are coordinates of the maximum point for the bounding box encompassing the refinement region. 
+#. **X-max**, **Y-max** and **Z-max** are the coordinates of the maximum point for the bounding box encompassing the refinement region. 
 
-To add a new refinement region the user can use **Add Region** button shown in :numref:`fig-iso-mesh-tab-regional`. In a similar way, to remove an existing region, first the user needs to select a row from the table and press the **Remove Region** button. 
+To add a new refinement region the user can use **Add Region** button shown in :numref:`fig-iso-mesh-tab-regional`. In a similar way, to remove an existing region, first, the user needs to select a row from the table and press the **Remove Region** button. 
 
 	.. note:: 
 		All the refinements are done by progressively splitting the cells from the previous level. Thus, the mesh size is reduced by half when we go one refinement level higher. 
@@ -137,8 +137,24 @@ To add a new refinement region the user can use **Add Region** button shown in :
 		..
 			Whereas, the cell count increases by about :math:`(2^3 = 8)` folds.
 	
-Near-surface Refinements
+Surface Refinements
 """"""""""""""""""""""""""
+Near solid walls, surface refinements can be added to resolve important flow features. Especially on the building surface, additional refinements are often necessary to capture the wind loads (e.g., surface pressure fluctuations) more accurately. Surface refinement is defined by specifying the name of the target surface, the required refinement level, and the refinement distance as shown in :numref:`fig-iso-mesh-tab-surface`.
+
+.. _fig-iso-mesh-tab-surface:
+.. figure:: figures/IsolatedBuildingCFD/mesh_tab_surface_refinment.svg	
+	:align: center
+	:figclass: align-center
+
+	Specification of the surface refinements.
+
+#. **Add Surface Refinement**: If this option is checked, the surface refinement will be added to the building surface. If the user wants not to use any surface refinement this option needs to be unchecked. 
+
+#. **Surface Name**: Name of the surface where the refinement will be applied. Currently, it supports only the building surface and this field cannot be edited.
+
+#. **Refinement Level**: Specifies the level of refinement as it continues from the regional refinement. Needs to be bigger (at least by 1 level) than the highest refinement level used in the *Regional Refinement* tab earlier.  
+
+#.  **Refinement Distance**: Represents a wall-normal distance the refinement will extend in the computational domain. This distance is always measured from the building surface. For example, if 0.5 is used, the near-surface refinement will encompass a region with a distance of 0.5 units away from the surface in all directions. 
 
 Edge Refinement
 """"""""""""""""
