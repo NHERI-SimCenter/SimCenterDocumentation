@@ -202,24 +202,30 @@ Another important refinement option includes prism layers. Prism layers are dens
 
 Advanced Options
 """"""""""""""""
-Additional options for mesh generations can be found under *Advanced Options* group as shown in :numref:`fig-iso-mesh-tab`. These options include: 
+Additional options for mesh generations can be found under *Advanced Options* group as shown in :numref:`_fig-iso-mesh-tab-advanced-options`. These options include:
+
+
+.. _fig-iso-mesh-tab-advanced-options:
+.. figure:: figures/IsolatedBuildingCFD/mesh_tab_advanced_options.svg
+	:align: center
+	:figclass: align-center
+
+	Advanced meshing control options. 
 
 #. **Number of Cells Between Levels**: The number of buffer cells between two consecutive refinement levels. For closely spaced refinements, this will provide a relatively smooth transition avoiding sudden jump in mesh size over a short distance. 
 
-#. **Feature Resolution Angle**: The number of buffer cells between two consecutive refinement levels. For closely spaced refinements, this will provide a relatively smooth transition avoiding sudden jump in mesh size over a short distance. 
+#. **Feature Resolution Angle**: Edges created by two intersecting surfaces with angels higher than the value specified for this field will be further refined. By default it is set to :math:`30^o`. For a building with sharp angels, to better resolve the edges, a smaller value should be specified.
 
-#. **Run Mesh In Parallel**: The number of buffer cells between two consecutive refinement levels. For closely spaced refinements, this will provide a relatively smooth transition avoiding sudden jump in mesh size over a short distance. 
+#. **Run Mesh In Parallel**: If this option is turned on, the mesh generation will run in parallel. This is particularly needed when  generating dense meshes that take considerable time to run in serial. 
 
-#. **Number of Processors**: The number of buffer cells between two consecutive refinement levels. For closely spaced refinements, this will provide a relatively smooth transition avoiding sudden jump in mesh size over a short distance. 
+#. **Number of Processors**: The number of processors to utilize if the mesh generation is executed in parallel. Note that this value can be different from the number of processors used for the main simulation.  
 
-
-
-
-If checked, prism layers will be applied on the building surface.
+	.. warning:: 
+		For parallel mesh generation, the number of processor specified here must be less than or equal to the number of the cores available on the machine. 
 
 Running the Mesh
 """"""""""""""""
-
+Can also be run on local and remote machine. 
 
 Boundary Conditions
 ----------------
