@@ -4,7 +4,7 @@ Isolated Building CFD Model
 The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wind load generator for an isolated building with a rectangularly shaped plan area. It provides greater flexibility in modeling the approaching wind and the wind induced loads on the building. This event allows the user to seamlessly define the computational model with interactive GUI support. The modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient features includes automatic meshing with a user-interactive interface. At the backend, the CFD simulations are conducted by executing an open-source CFD solvers from OpenFOAM [Greenshields2015]_. The user needs to follow the following procedure to model wind loading using this event.           
 
 #. Define the geometry of the building and the computational domain
-#. Generate the mesh using different global and local refinement options
+#. Generate the mesh using global and local refinement options
 #. Define boundary conditions with the characteristics of the approaching wind
 #. Specify turbulence model, solver type, and other numerical setups 
 #. Define the outputs to be monitored from the CFD simulation
@@ -116,7 +116,7 @@ Refinement Regions
 Once the background mesh is generated, further mesh refinements can be added using refinement regions (boxes). To achieve this, the user can specify multiple refinement regions. The refinement regions are boxes defining the extent of the region, and the corresponding refinement level. :numref:`fig-iso-mesh-tab-regional` shows a sample input with four refinement boxes. It is recommended to have both global and local refinement regions. Here global refinement refers to a box that extends from the inlet of the domain up to the wake of the study building. Whereas, local refinements cover the region in the vicinity of the building. For example, Box1 and Box2 in :numref:`fig-iso-mesh-tab-regional` are of global type, whereas Box3 and Box4 are local refinements. In the current version of the tool, the refinement regions can only be box-shaped. Here descriptions of each field are provided.  
 
 .. _fig-iso-mesh-tab-regional:
-.. figure:: figures/IsolatedBuildingCFD/mesh_tab_regional_refinment.svg	
+.. figure:: figures/IsolatedBuildingCFD/mesh_tab_regional_refinement.svg	
 	:align: center
 	:figclass: align-center
 
@@ -142,7 +142,7 @@ Surface Refinements
 Near solid walls, surface refinements can be added to resolve important flow features. Especially on the building surface, additional refinements are often necessary to capture the wind loads (e.g., surface pressure fluctuations) more accurately. Surface refinement is defined by specifying the name of the target surface, the required refinement level, and the refinement distance as shown in :numref:`fig-iso-mesh-tab-surface`.
 
 .. _fig-iso-mesh-tab-surface:
-.. figure:: figures/IsolatedBuildingCFD/mesh_tab_surface_refinment.svg	
+.. figure:: figures/IsolatedBuildingCFD/mesh_tab_surface_refinement.svg	
 	:align: center
 	:figclass: align-center
 
@@ -158,9 +158,41 @@ Near solid walls, surface refinements can be added to resolve important flow fea
 
 Edge Refinement
 """"""""""""""""
+Near the building edges, the flow separation point can be better captured by employing edge refinement options. If the user opts for edge refinement, the grid around the edges of the building will automatically be refined to the specified level. In addition to improving the resolution of wind flow, the use of edge refinements results in a more accurate representation of the building geometry. :numref:`fig-iso-mesh-tab-edge` shows the fields to specify the edge refinement. 
+
+.. _fig-iso-mesh-tab-edge:
+.. figure:: figures/IsolatedBuildingCFD/mesh_tab_edge_refinement.svg	
+	:align: center
+	:figclass: align-center
+
+	Specification of the edge refinement.
+#. **Add Edge Refinement**: If checked, the edges of the building will be further refined. If the user wants to mesh without edge refinement this option needs to be unchecked. 
+
+#. **Refinement Edge**: Target edges for the refinement. Currently, this option applies only to the building edges. 
+
+#. **Refinement Level**: Specifies the level of refinement for the edges. To better resolve the edges, it needs to be bigger than the highest refinement level used in the *Surface Refinement* tab.  
+
+	.. note:: 
+		If  the refinements are done by progressively splitting the cells from the previous level. Thus, the mesh size is reduced by half when we go one refinement level higher. 
 
 Prism Layers
 """"""""""""""""
+Another important refinement option includes prism layers. Prism layers are dense layers of usually stretched cells added near solid boundaries. By adding multiple prismatic layers of cells on the building surface, one can improve the resolution of the thin boundary layer that develops at solid walls. The inputs needed to specify prism layers are given in :numref:`fig-iso-mesh-tab-prism-layers`. 
+
+.. _fig-iso-mesh-tab-prism-layers:
+.. figure:: figures/IsolatedBuildingCFD/mesh_tab_prism_layers.svg	
+	:align: center
+	:figclass: align-center
+
+	Adding prism layers to the building surface.
+
+#. **Add Edge Refinement**: If checked, the edges of the building will be further refined. If the user wants to mesh without edge refinement this option needs to be unchecked. 
+
+
+	.. note:: 
+		All the refinements are done by progressively splitting the cells from the previous level. Thus, the mesh size is reduced by half when we go one refinement level higher. 
+
+
 
 Boundary Conditions
 ----------------
