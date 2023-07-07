@@ -101,9 +101,9 @@ The background mesh is the grid used in the far field away from the area the bui
 
 #. **No. Cells**: Number of cells in each direction. 
 
-#. **Grading**: This field provides expansion ratios to generated graded mesh in any direction. These values specify the ratio of the width of the first cell to the last cell along the direction considered. Specially, will be useful if one wants to provide stretched cells near the ground surface.
+#. **Grading**: This field provides expansion ratios to generate graded mesh in any direction. These values specify the ratio of the width of the first cell to the last cell along the direction considered. Specially, will be useful if one wants to provide stretched cells near the ground surface.
 
-#. **Grid Size**: The width of cells in a specified direction.  This field is automatically calculated as the user edits **No. Cells** field.
+#. **Grid Size**: The width of cells in a specified direction.  This field is automatically calculated as the user edits the **No. Cells** field.
 
 	.. warning:: 
 		It is recommended to use nearly cubical cells for the background mesh. This can be achieved by changing the **No. Cells** in each direction until the corresponding **Grid Size** felids are approximately equal. Specially close to the building location, the use of nearly cubical cells is important for the *snappyHexMesh* to operate properly.
@@ -173,11 +173,11 @@ Near the building edges, the flow separation point can be better captured by emp
 #. **Refinement Level**: Specifies the level of refinement for the edges. To better resolve the edges, it needs to be bigger than the highest refinement level used in the *Surface Refinement* tab.  
 
 	.. note:: 
-		If  the refinements are done by progressively splitting the cells from the previous level. Thus, the mesh size is reduced by half when we go one refinement level higher. 
+		Near sharp edges, sometimes the building geometry might not be resolved well. In this case, the quality of the generated grid can be improved by adjusting feature resolution angle in *Advanced Options* section. Note that changes to meshing parameters will not take effect unless the user run the whole mesh generation again.
 
 Prism Layers
 """"""""""""""""
-Another important refinement option includes prism layers. Prism layers are dense layers of usually stretched cells added near solid boundaries. By adding multiple prismatic layers of cells on the building surface, one can improve the resolution of the thin boundary layer that develops at solid walls. The inputs needed to specify prism layers are given in :numref:`fig-iso-mesh-tab-prism-layers`. 
+Another important refinement option includes prism layers. Prism layers are dense layers of usually stretched cells added near solid boundaries. By adding multiple prismatic layers of cells on the building surface, one can improve the resolution of the thin boundary layer that develops on the walls. The prism layers are inserted by splitting the first layer of off-wall cells on the surface. The inputs needed to specify prism layers are shown in :numref:`fig-iso-mesh-tab-prism-layers`. 
 
 .. _fig-iso-mesh-tab-prism-layers:
 .. figure:: figures/IsolatedBuildingCFD/mesh_tab_prism_layers.svg	
@@ -186,12 +186,39 @@ Another important refinement option includes prism layers. Prism layers are dens
 
 	Adding prism layers to the building surface.
 
-#. **Add Edge Refinement**: If checked, the edges of the building will be further refined. If the user wants to mesh without edge refinement this option needs to be unchecked. 
+#. **Add Prism Layers**: If checked, prism layers will be applied on the building surface.
 
+#. **Surface Name**: Name of the target wall for adding the layers. Currently, this option is limited to the building surfaces. 
+
+#. **Number of Layers**: The number of prism layers to be added. 
+
+#. **Expansion Ratio**: The ration of thicknesses of two consecutive layers. Should be kept bellow 1.5. For more elaborate explanation, please refer the recommendations in [Franke2007]_.
+
+#. **Final Layer Thickness**: Thickness of the final prism layer relative to the size of the first off-wall cell before the prism layers are inserted. 
 
 	.. note:: 
-		All the refinements are done by progressively splitting the cells from the previous level. Thus, the mesh size is reduced by half when we go one refinement level higher. 
+		Generally, adding more prism layers increases solution accuracy. However, when the thickness of the cells close to building surface becomes small, the time step used for the solver must also be reduced proportionally to keep the simulation stable. 
 
+
+Advanced Options
+""""""""""""""""
+Additional options for mesh generations can be found under *Advanced Options* group as shown in :numref:`fig-iso-mesh-tab`. These options include: 
+
+#. **Number of Cells Between Levels**: The number of buffer cells between two consecutive refinement levels. For closely spaced refinements, this will provide a relatively smooth transition avoiding sudden jump in mesh size over a short distance. 
+
+#. **Feature Resolution Angle**: The number of buffer cells between two consecutive refinement levels. For closely spaced refinements, this will provide a relatively smooth transition avoiding sudden jump in mesh size over a short distance. 
+
+#. **Run Mesh In Parallel**: The number of buffer cells between two consecutive refinement levels. For closely spaced refinements, this will provide a relatively smooth transition avoiding sudden jump in mesh size over a short distance. 
+
+#. **Number of Processors**: The number of buffer cells between two consecutive refinement levels. For closely spaced refinements, this will provide a relatively smooth transition avoiding sudden jump in mesh size over a short distance. 
+
+
+
+
+If checked, prism layers will be applied on the building surface.
+
+Running the Mesh
+""""""""""""""""
 
 
 Boundary Conditions
