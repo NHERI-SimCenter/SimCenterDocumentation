@@ -242,7 +242,7 @@ One of the main improvements in the current release of the tool is the mesh gene
 #. **Run checkMesh**: Checks if the generated mesh satisfies the recommended mesh quality requirements. After the check is completed, the result is shown on the *Program Output* window (see :numref:`fig-iso-mesh-tab-run-mesh`). The user needs to make sure that the mesh check is completed with a *Mesh Ok* status before running the solver. Also, information such as the number of cells, points, faces, etc., are displayed in the same window.  
 
 	.. note:: 
-		Although, the mesh generation is done than or equal to the number of computing cores available on the user's machine. 
+		Note that the mesh generation is run locally for visualization purposes. When the simulation is submitted to run remotely, just the CFD solver is initiated, and the whole mesh is regenerated on the remote server from the input parameters. This will permit the user to run heavy meshing remotely while visualizing a small mesh (light version) of the original model here. 
 
 Viewing the Mesh
 """"""""""""""""
