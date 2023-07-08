@@ -1,7 +1,7 @@
-****************************
 Isolated Building CFD Model
-****************************
-The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wind load generator for an isolated building with a rectangularly shaped plan area. It provides greater flexibility in modeling the approaching wind and the wind induced loads on the building. This event allows the user to seamlessly define the computational model with interactive GUI support. The modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient features includes automatic meshing with a user-interactive interface. At the backend, the CFD simulations are conducted by executing an open-source CFD solvers from OpenFOAM [Greenshields2015]_. The user needs to follow the following procedure to model wind loading using this event.           
+============================
+
+The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wind load generator for an isolated building with a rectangularly shaped plan area. It provides greater flexibility in modeling the approaching wind and the wind-induced loads on the building. This event allows the user to seamlessly define the computational model with interactive GUI support. The modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient features includes automatic meshing with a user-interactive interface. At the backend, the CFD simulations are conducted by executing open-source CFD solvers from OpenFOAM [Greenshields2015]_. The user needs to follow the following procedure to model wind loading using this event.           
 
 #. Define the geometry of the building and the computational domain
 #. Generate the mesh using global and local refinement options
@@ -29,7 +29,7 @@ Overall, the GUI of the CFD-even has two regions, the *Input Panel* where the us
 
 
 Start
----------------
+----------
 This tab outlines the main steps in the CFD modeling process. It provides the path to the working directory and options for the unit system. 
 
 #. **Path:** The path where the created OpenFOAM case will be saved. The "Browse" button in :numref:`fig-iso-gui-overview` can be used to change the location to any user-specified directory. By default, this path points to SimCenter's working directory in *Documents*.
@@ -41,7 +41,7 @@ This tab outlines the main steps in the CFD modeling process. It provides the pa
 
 
 Geometry
-----------------
+-----------
 Here the geometry and dimensions of the building and computational domain are defined. It is common to conduct CFD simulations as a replica of actual wind tunnel testing facilities. For this type of application, the user must specify the dimensions of the tunnel and the geometric scale used to construct the building model in the experiment. In :numref:`fig-iso-geometry-tab`, all the inputs are related to the geometry of the building and the computational domain.     
 
 .. _fig-iso-geometry-tab:
@@ -76,7 +76,7 @@ Here the geometry and dimensions of the building and computational domain are de
 #. **Location of Absolute Origin**: This option specified the location of the absolute origin for the coordinate system where :math:`(x = 0, y = 0, z = 0)`. There are three options: *Building Bottom Center*, *Domain Bottom Left Corner*, and *Custom*. By default, the origin is the *Building Bottom Center*. The origin also can be changed to any user-specified point by using the *Custom* option and editing the coordinates (see the bottom of :numref:`fig-iso-geometry-tab`).  
 
 Meshing
-----------------
+-----------
 The mesh (computational grid) is generated employing OpenFOAM’s *snappyHexMesh* tool. The procedure involves first defining a regularly spaced background mesh for the whole domain. Then, further refinements are made progressively as we get close to the surface of the building. The building geometry is created as a Stereolithography (STL) surface from its width, depth and height. Finally, the meshing is performed locally on the user's machine. Thus, the user can interactively visualize the mesh using the model view window on the right. The step-by-step procedure to define the mesh for this event involves: 
 
 * **Step 1**: Define a background structured mesh.     
@@ -93,15 +93,16 @@ The mesh (computational grid) is generated employing OpenFOAM’s *snappyHexMesh
 	**Mesh** tab for generating the computational grid using *snappyHexMesh* tool.
 The following subsections describe the GUI for each step. Further details of the *snappyHexMesh* meshing tool used can be found in [Greenshields2022]_. 
 
+
 Background Mesh
 """"""""""""""""
-The background mesh is the grid used in the far field away from the area the building is located. The user needs to define a background mesh before running *snappyHexMesh*. The ideal grid for the background mesh is hexahedral (hex) cells. Thus, the background mesh is generated using OpenFOAM's *blockMesh* utility as a structured grid. To start, the user needs to specify the number of cells in the three-orthogonal directions as shown in :numref:`fig-iso-mesh-tab`. Once the information in the *Background Mesh* tab (see :numref:`fig-iso-mesh-tab`) is filled, the user can press the *Run blockMesh* button to generate and visualizing the background mesh. The mesh is automatically updated on the model view panel as seen in :numref:`fig-iso-gui-overview`. Descriptions of the fields used to define the background mesh are given below.     
+The background mesh is the grid used in the far field away from the area the building is located. The user needs to define a background mesh before running *snappyHexMesh*. The ideal grid for the background mesh is hexahedral (hex) cells. Thus, the background mesh is generated using OpenFOAM's *blockMesh* utility as a structured grid. To start, the user needs to specify the number of cells in the three-orthogonal directions as shown in :numref:`fig-iso-mesh-tab`. Once the information in the *Background Mesh* tab (see :numref:`fig-iso-mesh-tab`) is filled, the user can press the *Run blockMesh* button to generate and visualize the background mesh. The mesh is automatically updated on the model view panel as seen in :numref:`fig-iso-gui-overview`. Descriptions of the fields used to define the background mesh are given below.     
 
 #. **Direction**: The axis along which the number of cells will be specified. The mesh information must be provided in :math:`(x, y, z)` directions separately.  
 
 #. **No. Cells**: Number of cells in each direction. 
 
-#. **Grading**: This field provides expansion ratios to generate graded mesh in any direction. These values specify the ratio of the width of the first cell to the last cell along the direction considered. Specially, will be useful if one wants to provide stretched cells near the ground surface.
+#. **Grading**: This field provides expansion ratios to generate a graded mesh in any direction. These values specify the ratio of the width of the first cell to the last cell along the direction considered. Specially, will be useful if one wants to provide stretched cells near the ground surface.
 
 #. **Grid Size**: The width of cells in a specified direction.  This field is automatically calculated as the user edits the **No. Cells** field.
 
@@ -112,7 +113,7 @@ The background mesh is the grid used in the far field away from the area the bui
 		If the **Input Dimension Normalization** in the *Geometry* tab of this event is set to *Relative*, all the dimensions used for defining meshing e.g. **Grid Size**, are expressed relative to the building height. 
 	
 Refinement Regions
-""""""""""""""""""""
+""""""""""""""""
 Once the background mesh is generated, further mesh refinements can be added using refinement regions (boxes). To achieve this, the user can specify multiple refinement regions. The refinement regions are boxes defining the extent of the region, and the corresponding refinement level. :numref:`fig-iso-mesh-tab-regional` shows a sample input with four refinement boxes. It is recommended to have both global and local refinement regions. Here global refinement refers to a box that extends from the inlet of the domain up to the wake of the study building. Whereas, local refinements cover the region in the vicinity of the building. For example, Box1 and Box2 in :numref:`fig-iso-mesh-tab-regional` are of global type, whereas Box3 and Box4 are local refinements. In the current version of the tool, the refinement regions can only be box-shaped. Here descriptions of each field are provided.  
 
 .. _fig-iso-mesh-tab-regional:
@@ -138,7 +139,7 @@ To add a new refinement region the user can use **Add Region** button shown in :
 			Whereas, the cell count increases by about :math:`(2^3 = 8)` folds.
 	
 Surface Refinements
-""""""""""""""""""""""""""
+""""""""""""""""
 Near solid walls, surface refinements can be added to resolve important flow features. Especially on the building surface, additional refinements are often necessary to capture the wind loads (e.g., surface pressure fluctuations) more accurately. Surface refinement is defined by specifying the name of the target surface, the required refinement level, and the refinement distance as shown in :numref:`fig-iso-mesh-tab-surface`.
 
 .. _fig-iso-mesh-tab-surface:
@@ -173,7 +174,7 @@ Near the building edges, the flow separation point can be better captured by emp
 #. **Refinement Level**: Specifies the level of refinement for the edges. To better resolve the edges, it needs to be bigger than the highest refinement level used in the *Surface Refinement* tab.  
 
 	.. note:: 
-		Near sharp edges, sometimes the building geometry might not be resolved well. In this case, the quality of the generated grid can be improved by adjusting feature resolution angle in *Advanced Options* section. Note that changes to meshing parameters will not take effect unless the user run the whole mesh generation again.
+		Near sharp edges, sometimes the building geometry might not be resolved well. In this case, the quality of the generated grid can be improved by adjusting feature resolution angle in *Advanced Options* section. Note that changes to meshing parameters will not take effect unless the user runs the whole mesh generation again.
 
 Prism Layers
 """"""""""""""""
@@ -192,17 +193,17 @@ Another important refinement option includes prism layers. Prism layers are dens
 
 #. **Number of Layers**: The number of prism layers to be added. 
 
-#. **Expansion Ratio**: The ration of thicknesses of two consecutive layers. Should be kept bellow 1.5. For more elaborate explanation, please refer the recommendations in [Franke2007]_.
+#. **Expansion Ratio**: The ratio of thicknesses of two consecutive layers. Should be kept below 1.5. For a more elaborate explanation, please refer to the recommendations in [Franke2007]_.
 
 #. **Final Layer Thickness**: Thickness of the final prism layer relative to the size of the first off-wall cell before the prism layers are inserted. 
 
 	.. note:: 
-		Generally, adding more prism layers increases solution accuracy. However, when the thickness of the cells close to building surface becomes small, the time step used for the solver must also be reduced proportionally to keep the simulation stable. 
+		Generally, adding more prism layers increases solution accuracy. However, when the thickness of the cells close to the building surface becomes small, the time step used for the solver must also be reduced proportionally to keep the simulation stable. 
 
 
 Advanced Options
 """"""""""""""""
-Additional options for mesh generations can be found under *Advanced Options* group as shown in :numref:`fig-iso-mesh-tab-advanced-options`. These options include:
+Additional options for mesh generations can be found under the *Advanced Options* group as shown in :numref:`fig-iso-mesh-tab-advanced-options`. These options include:
 
 
 .. _fig-iso-mesh-tab-advanced-options:
@@ -212,20 +213,20 @@ Additional options for mesh generations can be found under *Advanced Options* gr
 
 	Advanced meshing control options. 
 
-#. **Number of Cells Between Levels**: The number of buffer cells between two consecutive refinement levels. For closely spaced refinements, this will provide a relatively smooth transition avoiding sudden jump in mesh size over a short distance. 
+#. **Number of Cells Between Levels**: The number of buffer cells between two consecutive refinement levels. For closely spaced refinements, this will provide a relatively smooth transition avoiding a sudden jump in mesh size over a short distance. 
 
-#. **Feature Resolution Angle**: Edges created by two intersecting surfaces with angels higher than the value specified for this field will be further refined. By default it is set to :math:`30^o`. For a building with sharp angels, to better resolve the edges, a smaller value should be specified.
+#. **Feature Resolution Angle**: Edges created by two intersecting surfaces with angles higher than the value specified for this field will be further refined. By default, it is set to :math:`30^o`. For a building with sharp angles, to better resolve the edges, a smaller value should be specified.
 
-#. **Run Mesh In Parallel**: If this option is turned on, the mesh generation will run in parallel. This is particularly needed when  generating dense meshes that take considerable time to run in serial. 
+#. **Run Mesh In Parallel**: If this option is turned on, the mesh generation will run in parallel. This is particularly needed when generating dense meshes that take considerable time to run in serial. 
 
 #. **Number of Processors**: The number of processors to utilize if the mesh generation is executed in parallel. Note that this value can be different from the number of processors used for the main simulation.  
 
 	.. warning:: 
-		For parallel mesh generation, the number of processor specified here must be less than or equal to the number of computing cores available on the user's machine. 
+		For parallel mesh generation, the number of processors specified here must be less than or equal to the number of computing cores available on the user's machine. 
 
 Running the Mesh
 """"""""""""""""
-One of the main improvement in the current release of the tool is the mesh generation module. Now, the user can create geometry, generate mesh and view the mesh on their local machine. Once the input parameters for mesh are filled, the next step is to run, check and view the mesh. After the mesh is run successfully, a sample message in the *Program Output* window is shown in :numref:`fig-iso-mesh-tab-run-mesh`. 
+One of the main improvements in the current release of the tool is the mesh generation module. Now, the user can create geometry, generate a mesh and view the mesh on their local machine. Once the input parameters for the mesh are filled, the next step is to run, check and view the mesh. After the mesh is run successfully, a sample message in the *Program Output* window is shown in :numref:`fig-iso-mesh-tab-run-mesh`. 
 
 .. _fig-iso-mesh-tab-run-mesh:
 .. figure:: figures/IsolatedBuildingCFD/mesh_tab_run_and_check_mesh.svg
@@ -236,40 +237,47 @@ One of the main improvement in the current release of the tool is the mesh gener
 
 #. **Run blockMesh**: Creates the background mesh required for the final mesh.
 
-#. **Run snappyHexMesh**: Generates the final mesh applying all the refinements specified. When the mesh generation is completed, the log file is printed in *Program Output* window at the bottom. If there are any issues in the mesh generation procedure, they will be shown here.    
+#. **Run snappyHexMesh**: Generates the final mesh by applying all the refinements specified. When the mesh generation is completed, the log file is printed in the *Program Output* window at the bottom. If there are any issues in the mesh generation procedure, they will be shown here.    
 
-#. **Run checkMesh**: Checks if the generated mesh satisfies the recommended mesh quality requirements. After the check is completed, the result is shown on *Program Output* window (see :numref:`fig-iso-mesh-tab-run-mesh`). The user needs to make sure that the mesh check is completed with *Mesh Ok* status before running the solver. Also, information such as the number of cells, points, faces, etc., are displayed in the same window.  
+#. **Run checkMesh**: Checks if the generated mesh satisfies the recommended mesh quality requirements. After the check is completed, the result is shown on the *Program Output* window (see :numref:`fig-iso-mesh-tab-run-mesh`). The user needs to make sure that the mesh check is completed with a *Mesh Ok* status before running the solver. Also, information such as the number of cells, points, faces, etc., are displayed in the same window.  
 
+	.. note:: 
+		Although, the mesh generation is done than or equal to the number of computing cores available on the user's machine. 
 
 Viewing the Mesh
 """"""""""""""""
-After the mesh generation is completed the *Model View Window* is updated automatically. This window provides the user with different options to visualizing the mesh. These options are found on a tool bar positioned at the top as seen :numref:`fig-iso-view-mesh-options`. 
+After the mesh generation is completed the *Model View Window* is updated automatically. This window provides the user with different options for visualizing the mesh. These options are found on a toolbar positioned at the top as seen :numref:`fig-iso-view-mesh-options`. 
 
 .. _fig-iso-view-mesh-options:
-.. figure:: figures/IsolatedBuildingCFD/vis_window_view_mesh.svg
+.. figure:: figures/IsolatedBuildingCFD/mesh_vis_window.svg
 	:align: center
 	:figclass: align-center
 
-	Viewing the generated mesh on *Model View Window* and checking the mesh generation process. 
+	*Model View Window* for viewing and checking the generated mesh. 
 
 
-The user can have different view of the generated model by changing the following options: 
+The user can have a different view of the generated model by changing the following options: 
 
-#. **View**: Provides options for changing view to see the whole or parts of the mesh. There are three options available. 
-	* **AllMesh**: Shows the mesh of the entire computational domain.  
-	* **Breakout**: Display the a breakout view of the computational domain.  
-	* **Building**: Shows only the geometry/mesh of the study building.  
+#. **View**: Provides options for changing the view to the whole or parts of the mesh. There are three options available. 
 
+	 * **AllMesh**: Shows the mesh for the entire computational domain.  
+	 * **Breakout**: Display a breakout view of the computational domain.  
+	 * **Building**: Shows only the geometry/mesh of the study building.  
 
-#. **Representation:** Provides options for changing the representation of the mesh surface. Three  surface view options are implemented. 
-   * **AllMesh**: Shows the mesh of the entire computational domain.  
-   * **Breakout**: Display the a breakout view of the computational domain.  
-   * **Building**: Shows only the geometry/mesh of the study building.  
+#. **Representation**: Provides options for changing the representation of the mesh surface. Three surface view options are implemented. 
+
+     * **SurfaceWithGrid**: Renders the surfaces and the edges together. This option is the default choice for visualizing the mesh.  
+     * **Surface**: Renders only the surface of the computational domain. This option can be used if the user wants to view only the geometry of the domain without the grid.   
+     * **Wireframe**: Shows only the edge of the generated grid without rendering the surfaces. 
+
+#. **Transparency**: Controls how transparent the model surface is. By default, it is set to zero. 
+
+#. **Reload**: Rereads the mesh from the case directory if there are changes or updates. 
 
 
 
 Boundary Conditions
-----------------
+--------------------
 
 Numerical Setup
 ----------------
