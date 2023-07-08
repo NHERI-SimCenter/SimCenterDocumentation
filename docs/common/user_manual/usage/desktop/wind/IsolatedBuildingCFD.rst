@@ -202,7 +202,7 @@ Another important refinement option includes prism layers. Prism layers are dens
 
 Advanced Options
 """"""""""""""""
-Additional options for mesh generations can be found under *Advanced Options* group as shown in :numref:`_fig-iso-mesh-tab-advanced-options`. These options include:
+Additional options for mesh generations can be found under *Advanced Options* group as shown in :numref:`fig-iso-mesh-tab-advanced-options`. These options include:
 
 
 .. _fig-iso-mesh-tab-advanced-options:
@@ -221,11 +221,52 @@ Additional options for mesh generations can be found under *Advanced Options* gr
 #. **Number of Processors**: The number of processors to utilize if the mesh generation is executed in parallel. Note that this value can be different from the number of processors used for the main simulation.  
 
 	.. warning:: 
-		For parallel mesh generation, the number of processor specified here must be less than or equal to the number of the cores available on the machine. 
+		For parallel mesh generation, the number of processor specified here must be less than or equal to the number of computing cores available on the user's machine. 
 
 Running the Mesh
 """"""""""""""""
-Can also be run on local and remote machine. 
+One of the main improvement in the current release of the tool is the mesh generation module. Now, the user can create geometry, generate mesh and view the mesh on their local machine. Once the input parameters for mesh are filled, the next step is to run, check and view the mesh. After the mesh is run successfully, a sample message in the *Program Output* window is shown in :numref:`fig-iso-mesh-tab-run-mesh`. 
+
+.. _fig-iso-mesh-tab-run-mesh:
+.. figure:: figures/IsolatedBuildingCFD/mesh_tab_run_and_check_mesh.svg
+	:align: center
+	:figclass: align-center
+
+	Running and checking the mesh generation process. 
+
+#. **Run blockMesh**: Creates the background mesh required for the final mesh.
+
+#. **Run snappyHexMesh**: Generates the final mesh applying all the refinements specified. When the mesh generation is completed, the log file is printed in *Program Output* window at the bottom. If there are any issues in the mesh generation procedure, they will be shown here.    
+
+#. **Run checkMesh**: Checks if the generated mesh satisfies the recommended mesh quality requirements. After the check is completed, the result is shown on *Program Output* window (see :numref:`fig-iso-mesh-tab-run-mesh`). The user needs to make sure that the mesh check is completed with *Mesh Ok* status before running the solver. Also, information such as the number of cells, points, faces, etc., are displayed in the same window.  
+
+
+Viewing the Mesh
+""""""""""""""""
+After the mesh generation is completed the *Model View Window* is updated automatically. This window provides the user with different options to visualizing the mesh. These options are found on a tool bar positioned at the top as seen :numref:`fig-iso-view-mesh-options`. 
+
+.. _fig-iso-view-mesh-options:
+.. figure:: figures/IsolatedBuildingCFD/vis_window_view_mesh.svg
+	:align: center
+	:figclass: align-center
+
+	Viewing the generated mesh on *Model View Window* and checking the mesh generation process. 
+
+
+The user can have different view of the generated model by changing the following options: 
+
+#. **View**: Provides options for changing view to see the whole or parts of the mesh. There are three options available. 
+	* **AllMesh**: Shows the mesh of the entire computational domain.  
+	* **Breakout**: Display the a breakout view of the computational domain.  
+	* **Building**: Shows only the geometry/mesh of the study building.  
+
+
+#. **Representation:** Provides options for changing the representation of the mesh surface. Three  surface view options are implemented. 
+   * **AllMesh**: Shows the mesh of the entire computational domain.  
+   * **Breakout**: Display the a breakout view of the computational domain.  
+   * **Building**: Shows only the geometry/mesh of the study building.  
+
+
 
 Boundary Conditions
 ----------------
