@@ -451,7 +451,7 @@ elif app_name == "R2DTool":
 .. |test example| replace:: :ref:`r2dt-0006`
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0
 .. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt
-.. |tool version| replace:: 1.1
+.. |tool version| replace:: 3.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 
@@ -469,7 +469,7 @@ elif app_name == "PBE":
     author = (
         "Adam Zsarnóczay, Frank McKenna, Kuanshi Zhong, Chaofeng Wang, Michael Gardner, Wael Elhaddad"
     )
-    sync_examples = False
+    sync_examples = True
 
     tags.add("PBE_app")
     tags.add("desktop_app")

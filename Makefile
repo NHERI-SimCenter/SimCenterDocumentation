@@ -1,6 +1,5 @@
 
 include Makefile.in
-
 SPHINXOPTS    ?= 
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = ./docs
@@ -73,12 +72,17 @@ hydro pelicun rtm:
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
 
 pbe:
+	rm -f build/$(SIMDOC_APP)_Examples.json
+	make build/$(SIMDOC_APP)_Examples.json
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
-	@echo Generating temporary files for Damage and Loss Database docs...
 
+db:
+	@echo Generating temporary files for Damage and Loss Database docs...
 	cd ./docs/common/dldb && python3 generate_dldb_doc.py
 
 r2d qfem we ee:
+	rm -f build/$(SIMDOC_APP)_Examples.json
+	make build/$(SIMDOC_APP)_Examples.json
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
 
 
@@ -119,6 +123,7 @@ update:
 	pip install -U -r requirements.txt
 
 examples:
+	rm -f build/$(SIMDOC_APP)_Examples.json
 	make build/$(SIMDOC_APP)_Examples.json
 
 build/%.json: examples.yaml Makefile FORCE

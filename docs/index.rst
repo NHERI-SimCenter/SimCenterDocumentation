@@ -83,8 +83,9 @@
    :PBE:common/user_manual/usage/desktop/PBE/releasenotes
    :PBE:common/user_manual/releases/pbePlans
       
-   :R2D:common/user_manual/usage/desktop/R2DTool/releasenotes
-   :R2D:common/user_manual/releases/r2dPlans
+   :R2D:common/user_manual/releases/r2dCapabilities 	 
+   :R2D:common/user_manual/releases/r2dPlans 
+   :R2D:common/user_manual/releases/r2dReleaseNotes
 	    
    common/front-matter/glossary.rst
    common/front-matter/abbreviations.rst

@@ -30,10 +30,15 @@ Examples
 
 .. only:: PBE_app
 
+   The following are a few examples showing the usage of PBE. The files for the examples are available on Github. The scope of these examples is limited to damage and loss assessment. The usage of the tool for response estimation is identical to that of the EE-UQ application. Examples on those features are available in the `EE-UQ Documentation <https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/examples/desktop/examples.html>`_.
+
+   All examples come with input files that are available in the `PBE Github repository <https://github.com/NHERI-SimCenter/PBE/tree/master/Examples>`_.	  
+
+.. only:: PBE1_app
+
    The following examples demonstrate the usage of the PBE application. The scope of these examples is limited to damage and loss assessment. The usage of the tool for response estimation is identical to that of the EE-UQ application. Examples on those features are available in the `EE-UQ Documentation <https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/examples/desktop/examples.html>`_.
 
    All examples come with input files that are available in the `PBE Github repository <https://github.com/NHERI-SimCenter/PBE/tree/master/Examples>`_.
-
 
 
 .. rendre:: filtered-gallery

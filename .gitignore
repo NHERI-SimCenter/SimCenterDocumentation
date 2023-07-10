@@ -306,3 +306,4 @@ build/
 fmkExamples
 .DS_Store
 web/
+_out
