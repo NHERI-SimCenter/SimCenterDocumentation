@@ -469,7 +469,7 @@ elif app_name == "PBE":
     author = (
         "Adam Zsarnóczay, Frank McKenna, Chaofeng Wang, Wael Elhaddad, Michael Gardner"
     )
-    sync_examples = False
+    sync_examples = True
 
     tags.add("PBE_app")
     tags.add("desktop_app")
