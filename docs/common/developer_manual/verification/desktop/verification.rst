@@ -18,6 +18,7 @@ Verification
            :WEUQ:WEUQ/PowerSpectralDensity
            :WEUQ:WEUQ/TinFverification
            :quoFEM:quoFEM/InterpointDistances
+           :quoFEM:quoFEM/DakotaSensitivity
 
 .. only:: R2D_app
 
