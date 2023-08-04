@@ -15,6 +15,7 @@ Verification
            :EEUQ:EEUQ/PortalFrameEarthquake
            :EEUQ:EEUQ/ResponseSpectrum
            :EEUQ:EEUQ/SiteResponse
+           :EEUQ:quoFEM/DakotaSensitivity
            :WEUQ:WEUQ/PowerSpectralDensity
            :WEUQ:WEUQ/TinFverification
            :quoFEM:quoFEM/InterpointDistances
