@@ -7,12 +7,12 @@
 pelicun: {}
 PBE:
   include-item:
-    - pbdl-0002
-    - pbdl-0003
+    - pbdl-0001
+    - pbdl-0002    
 
 quoFEM:
   include-item:
-    - qfem-0001
+    - qfem-0001 
     - qfem-0002
     - qfem-0005
     - qfem-0007
@@ -25,12 +25,14 @@ quoFEM:
     - qfem-0022    
     - qfem-0023
     - qfem-0025
+    - qfem-0027
 
 WE-UQ:
   include-item:
     - weuq-0001
     - weuq-0007
-
+    - weuq-0011
+    - weuq-0012
 
 EE-UQ:
   include-item:
@@ -41,6 +43,9 @@ EE-UQ:
     - eeuq-0005
     - eeuq-0006
     - eeuq-0007
+    - eeuq-0008
+    - eeuq-0009
+    - eeuq-0010
 
 R2DTool:
   include-item:
@@ -55,6 +60,7 @@ R2DTool:
   - E9Tsunami
   - E9Tsunami
   - E10SiteResponse
+  - E12IstanbulRegionalSeismicRiskAnalysis
 
 HydroUQ:
   include-item:

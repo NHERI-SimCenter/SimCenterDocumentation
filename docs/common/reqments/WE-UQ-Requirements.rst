@@ -4,8 +4,8 @@ General Requirements
 --------------------
 
 .. csv-table:: Requirements - General
-  :header: "#", "Description", "Source", "Priority", "Version"
-  :widths: 10, 60, 10, 10, 10
+  :header: "#", "Description", "Source", "Priority", "Version", "WBS"
+  :widths: 10, 60, 10, 10, 10, 10
   :file: generalWE.csv
 
 .. include:: key.rst
@@ -25,7 +25,7 @@ Loading Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0,1,2,3,4,7
-  :include: {0: 'WL.*'}
+  :include: {0: 'WL*'}
 
 
 .. include:: key.rst

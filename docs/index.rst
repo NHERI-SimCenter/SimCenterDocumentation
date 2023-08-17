@@ -69,14 +69,30 @@
    :pelicun:common/front-matter/pelicun/ack
 
    common/front-matter/license
-   common/front-matter/cite.rst	    
+   common/front-matter/cite.rst
+
+   :quoFEM:common/user_manual/releases/quoCapabilities   
+   :quoFEM:common/user_manual/releases/quoReleaseNotes
+   :quoFEM:common/user_manual/releases/quoPlans
+
+   :EEUQ:common/user_manual/releases/eeCapabilities   
+   :EEUQ:common/user_manual/releases/eeReleaseNotes
+   :EEUQ:common/user_manual/releases/eePlans	   
+
+   :WEUQ:common/user_manual/releases/weCapabilities
+   :WEUQ:common/user_manual/releases/wePlans
+
+   :R2D:common/user_manual/releases/r2dCapabilities 	 
+   :R2D:common/user_manual/releases/r2dPlans 
+   :R2D:common/user_manual/releases/r2dReleaseNotes
+      
+   :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
+	  
+   :PBE:common/user_manual/usage/desktop/PBE/releasenotes
+   :PBE:common/user_manual/releases/pbePlans
+	    
    common/front-matter/glossary.rst
    common/front-matter/abbreviations.rst
-   :quoFEM:common/user_manual/usage/desktop/quoFEM/releasenotes   
-   :R2D:common/user_manual/usage/desktop/releasenotes
-   :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
-   :EEUQ:common/user_manual/usage/desktop/earthquake/releasenotes
-   :PBE:common/user_manual/usage/desktop/PBE/releasenotes
 	  
 .. _lbl-user-manual:
 
@@ -106,6 +122,17 @@
    :Hydro:common/user_manual/usage/desktop/hydro/resguide
    :Hydro:common/user_manual/usage/desktop/hydro/helpvideo
 
+
+   :R2D:common/user_manual/usage/desktop/R2DTool/tools
+	  
+   :EEUQ:common/user_manual/examples/desktop/examples
+   :WEUQ:common/user_manual/examples/desktop/examples
+   :PBE:common/user_manual/examples/desktop/examples
+   :Hydro:common/user_manual/examples/desktop/examples	
+   :quoFEM:common/user_manual/examples/desktop/examples
+   :R2D:common/user_manual/examples/desktop/examples
+   :pelicun:common/user_manual/examples/pelicun/examples
+
    :EEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
    :WEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
    :PBE:common/user_manual/troubleshooting/desktop/troubleshooting
@@ -113,13 +140,6 @@
    :R2D:common/user_manual/troubleshooting/desktop/troubleshooting
    :pelicun:common/user_manual/troubleshooting/pelicun/troubleshooting
    :Hydro:common/user_manual/troubleshooting/pelicun/errors
-
-   :EEUQ:common/user_manual/examples/desktop/examples
-   :WEUQ:common/user_manual/examples/desktop/examples
-   :PBE:common/user_manual/examples/desktop/examples
-   :quoFEM:common/user_manual/examples/desktop/examples
-   :R2D:common/user_manual/examples/desktop/examples
-   :pelicun:common/user_manual/examples/pelicun/examples
 
    :Hydro:common/user_manual/usage/desktop/hydro/bestpractices
 
@@ -147,9 +167,17 @@
    .. :docTestbeds:common/testbeds/anchorage/index
    :docTestbeds:common/testbeds/lake_charles/index
 
+.. _lbl-dldb-manual:
+
+.. toctree-filt::
+   :caption: Damage and Loss DB
+   :maxdepth: 1
+   :numbered: 3
+
+   :docDLDB:common/dldb/damage/index
+   :docDLDB:common/dldb/repair/index
+
 .. _lbl-technical-manual:
-
-
 
 .. toctree-filt::
    :caption: Technical Manual

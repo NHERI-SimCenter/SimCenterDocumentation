@@ -1,6 +1,5 @@
 
 include Makefile.in
-
 SPHINXOPTS    ?= 
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = ./docs
@@ -27,7 +26,7 @@ help:
 	@echo '   or: make <all|update>'
 	@printf '\n'
 	@echo 'where <app> is one of:'
-	@printf '    {pelicun, qfem, r2d, pbe, we, ee, rtm}\n\n'
+	@printf '    {pelicun, qfem, r2d, pbe, we, hydro, ee, rtm}\n\n'
 	@echo 'and <target> is one of:'
 	@echo '    web    Run html target with build directory'
 	@echo '           set to app publishing repository.'
@@ -43,9 +42,7 @@ help:
 # Export target-specific environment vars
 ee:      export SIMDOC_APP=EE-UQ
 we:      export SIMDOC_APP=WE-UQ
-
 r2d:     export SIMDOC_APP=R2DTool
-
 pbe:     export SIMDOC_APP=PBE
 hydro:   export SIMDOC_APP=HydroUQ
 qfem:    export SIMDOC_APP=quoFEM
@@ -71,11 +68,21 @@ all:
 	make pbe html 2>&1 | grep 'build succ'
 
 
-hydro pelicun pbe rtm:
+hydro pelicun rtm:
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
 
+pbe:
+	rm -f build/$(SIMDOC_APP)_Examples.json
+	make build/$(SIMDOC_APP)_Examples.json
+	$(eval SIMDOC_APP=$(SIMDOC_APP))
+
+db:
+	@echo Generating temporary files for Damage and Loss Database docs...
+	cd ./docs/common/dldb && python3 generate_dldb_doc.py
 
 r2d qfem we ee:
+	rm -f build/$(SIMDOC_APP)_Examples.json
+	make build/$(SIMDOC_APP)_Examples.json
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
 
 
@@ -116,9 +123,10 @@ update:
 	pip install -U -r requirements.txt
 
 examples:
+	rm -f build/$(SIMDOC_APP)_Examples.json
 	make build/$(SIMDOC_APP)_Examples.json
 
-build/%.json: examples.yaml
+build/%.json: examples.yaml Makefile FORCE
 	$(PYTHON) scripts/index_examples.py $(SIMDOC_APP) \
     | aurore -D- -B ../$(SIMDOC_APP)/Examples/ -C scripts/config.yml get \
     > $(call BUILDDIR,$(SIMDOC_APP))_Examples.json

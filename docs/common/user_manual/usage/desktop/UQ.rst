@@ -9,7 +9,7 @@ The first selection panel the user must select from and enter data into is the *
 
 .. only:: quoFEM_app
      
-   The **UQ Engine** options currently available are Dakota, SimCenterUQ, and UCSD-UQ. Users can also configure quoFEM to use their own UQ methods and algorithms in the quoFEM workflow by selecting the CustomUQ option.
+   The **UQ Engine** options currently available are Dakota, SimCenterUQ, and UCSD-UQ. Users can also configure |appName| to use their own UQ methods and algorithms in the |appName| workflow by selecting the CustomUQ option.
 
    UQ Features At-a-Glance
    -------------------------
@@ -25,7 +25,7 @@ The first selection panel the user must select from and enter data into is the *
        .. container:: leftside
 
         :uqblue:`Forward propagation` 
-            | Forward propagation generates sample realizations of input random variables (RVs) and output quantity of interests (QoIs) to provide statistics such as mean, variance, skewness, and kurtosis. 
+            | Forward propagation generates sample realizations of input random variables (RVs) and output quantity of interests (QoIs) to provide statistics such as mean, variance, skewness, and kurtosis. See Dakota user manual for theory details.
 
              | ▪ :ref:`lblDakotaForward` in Dakota   :link-badge:`../../examples/desktop/qfem-0001/README.html,Example1, cls=badge-primary text-white` :link-badge:`../../examples/desktop/qfem-0002/README.html,Example2, cls=badge-primary text-white`
              | ▪ :ref:`lblSimForward` in SimCenterUQ   :link-badge:`../../examples/desktop/qfem-0015/README.html,Example, cls=badge-success text-white`
@@ -58,7 +58,7 @@ The first selection panel the user must select from and enter data into is the *
        .. container:: leftside
 
         :uqblue:`Reliability Analysis`
-            | Reliability Analysis is performed to estimate the probability of failure, i.e. the probability that a system response (QoI) exceeds a certain threshold level. 
+            | Reliability Analysis is performed to estimate the probability of failure, i.e. the probability that a system response (QoI) exceeds a certain threshold level. See Dakota user manual for theory details.
 
              | ▪ :ref:`lblDakotaReliability` in Dakota   :link-badge:`../../examples/desktop/qfem-0001/README.html,Example, cls=badge-primary text-white`
 
@@ -73,7 +73,7 @@ The first selection panel the user must select from and enter data into is the *
        .. container:: leftside
 
         :uqblue:`Bayesian Calibration`
-            | Inverse Problem (Bayesian Calibration) is used to calibrate model parameters probabilistically based on Bayesian inference. The probability distributions of the input parameters (RVs) are updated by experimental data. Theory details can be found in Dakota user manual and :ref:`here<lbluqUCSDSimTechnical>`
+            | Bayesian Calibration is used to calibrate model parameters probabilistically based on Bayesian inference. The probability distributions of the input parameters (RVs) are updated by experimental data. Theory details can be found in Dakota user manual and :ref:`here<lbluqUCSDSimTechnical>`
 
              | ▪ :ref:`lblDakotaBayesianCalibration` in Dakota
              | ▪ :ref:`lblUCSDTMCMC` in UCSD-UQ   :link-badge:`../../examples/desktop/qfem-0014/README.html,Example1, cls=badge-danger text-white` :link-badge:`../../examples/desktop/qfem-0019/README.html,Example2, cls=badge-danger text-white`
@@ -88,7 +88,7 @@ The first selection panel the user must select from and enter data into is the *
        .. container:: leftside
 
         :uqblue:`Deterministic Calibration` 
-            | Parameter Estimation (Deterministic Calibration) estimate the best parameter values of a simulation model that best fit the experimental data, using deterministic optimization algorithms, e.g. Gauss-Newton least squares, pattern search, etc.
+            | Deterministic Calibration estimate the best parameter values of a simulation model that best fit the experimental data, using deterministic optimization algorithms, e.g. Gauss-Newton least squares, pattern search, etc. See Dakota user manual for theory details.
 
              | ▪ :ref:`lblDakotaDeterministicCalibration` in Dakota   :link-badge:`../../examples/desktop/qfem-0007/README.html,Example1, cls=badge-primary text-white` :link-badge:`../../examples/desktop/qfem-0019/README.html,Example2, cls=badge-primary text-white`
              | ▪ :ref:`lblDakotaGradientFreeEstimation` in Dakota
@@ -170,7 +170,7 @@ The following categories are available:
    :quoFEM:DakotaBayesianCalibration
    :quoFEM:DakotaGradientFreeOptimization
 
-.. only:: quoFEM_app
+.. only:: quoFEM_app or EEUQ_app
 
    SimCenter UQ Engine
    -------------------
@@ -196,6 +196,7 @@ The following categories are available:
       SimCenterUQSurrogate
       SimCenterUQPLoM
 
+.. only:: quoFEM_app
 
    UCSD UQ Engine
    --------------
@@ -221,7 +222,7 @@ The following categories are available:
    Custom UQ Engine
    ----------------
 
-   The **CustomUQ** option enables users to switch out the UQ engine in the quoFEM workflow such that different methods and tools can be applied within the SimCenter framework with minimal effort on the part of the user. The CustomUQ option can be accessed as shown below:
+   The **CustomUQ** option enables users to switch out the UQ engine in the |appName| workflow such that different methods and tools can be applied within the SimCenter framework with minimal effort on the part of the user. The CustomUQ option can be accessed as shown below:
    .. _figCustomUQ:
 
    .. figure:: figures/customUQ.png
@@ -243,27 +244,3 @@ The following categories are available:
 
       Configuring_CustomUQ
 
-.. only:: EEUQ_app
-
-   SimCenter UQ Engine
-   -------------------
-     
-   The **SimCenterUQ** engine is a UQ engine developed in-house at the SimCenter that accommodates different UQ methods, which are organized into categories that can be accessed through a pull-down menu, as shown in :numref:`figSimCenterUQ`.
-
-   .. _figSimCenterUQ:
-
-   .. figure:: figures/SimCenterUQ.png
-      :align: center
-      :figclass: align-center
-      :width: 1200
-
-      SimCenterUQ engine and category selection.
-
-   The following category options are available:
-
-   .. toctree-filt::
-     :maxdepth: 1
-
-      SimCenterUQSampling
-      SimCenterUQSensitivity
-      SimCenterUQPLoM

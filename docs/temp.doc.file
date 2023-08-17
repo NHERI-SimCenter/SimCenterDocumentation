@@ -1,1 +1,1 @@
-{"data-file": "/Users/pmackenz/Development/SimCenter/R2DTool/Examples/index.json", "defaults": {"link": "./%%:base/README"}, "include-item": ["r2dt-0006", "r2dt-0003", "r2dt-0007", "r2dt-0001", "r2dt-0002"]}
+{"data-file": ["../build/WE-UQ_Examples.json"], "defaults": {"link": "./%%:base/README"}, "include-item": ["weuq-0001", "weuq-0007"]}

@@ -98,3 +98,5 @@ math_numfig = True
 latex_elements = {
   'extraclassoptions': 'openany,oneside'
 }
+
+bibtex_bibfiles = ['theory/references.bib']

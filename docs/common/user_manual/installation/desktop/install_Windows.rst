@@ -88,8 +88,9 @@ To download the |app|, navigate to the |appLink| page which should resemble |fig
 
 Click on the file with a name ending with **Windows_Download.zip** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner.
 
-After the download completed, extract the zip archive to a location in your filesystem. We suggest extracting to the **C:\\SimCenter\** folder. You can create a shortcut that points to the |short tool id|.exe executable of the application and move this shortcut to your Desktop for easy access.
+After the download completed, extract the zip archive to a location in your filesystem. We suggest extracting to the **C:/SimCenter/** folder. You can create a shortcut that points to the |short tool id|.exe executable of the application and move this shortcut to your Desktop for easy access.
 
+.. tip:: Using an external compressor program, such as `7-Zip <https://www.7-zip.org/>`_, can significantly reduce the zip archive extraction time compared to the Windows default extraction function.
 
 Test the Installation
 ^^^^^^^^^^^^^^^^^^^^^

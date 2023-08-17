@@ -16,3 +16,6 @@ The event panel presents the user with a drop-down menu with a list of available
 	lowRiseTPU
 	windTunnelExp
 	WeUQExisting
+	DigitalWindTunnel
+	ExperimentalWindForce
+	WindForceSpectrum

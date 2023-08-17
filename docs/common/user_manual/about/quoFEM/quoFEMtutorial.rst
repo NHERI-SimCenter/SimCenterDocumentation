@@ -268,7 +268,7 @@ This tutorial will show how a **deterministic** model written/interfaced in pyth
         The order should match that written in the ``results.out`` file, and the specified name of QoIs are used only for the display in this example. Please see :ref:`here<lblQUO_QOI>` to learn about vector QoIs which have a length greater than 1 
 
 
-     When all the fields are filled in, click the **Run** button, and the analysis will be performed. The program will go into "not responding", but that means quoFEM is busy running the analysis. You can check the progress status in your **Local Working directory** which can be found in the preference window. The number attached to 'workdir.' indicates the simulation index, and each folder contains the details for each simulation run.
+     When all the fields are filled in, click the **Run** button, and the analysis will be performed. **Do not press the Run button twice** - it will give you an error. You can check the progress status in your **Local Working directory** which can be found in the preference window. The number attached to 'workdir.' indicates the simulation index, and each folder contains the details for each simulation run.
 
         .. figure:: figures/step2_RES1.PNG
             :align: center
@@ -310,11 +310,6 @@ This tutorial will show how a **deterministic** model written/interfaced in pyth
 .. tabbed:: Step 3
 
   :uqblue:`Step 3. Run quoFEM at DesignSafe`
-
-     .. warning::
-       
-       Currently (October 2022), the OpenSeespy package on DesignSafe is going through an update. Until it is done, this tutorial will give an error. This Warning will be removed when the update is done. The examples that do not use OpenSeespy should run fine.
-
 
      .. panels::
        :column: col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2

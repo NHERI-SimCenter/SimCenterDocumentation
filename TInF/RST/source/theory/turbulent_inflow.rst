@@ -7,7 +7,10 @@ Theory
 Introduction
 ------------
 
-In computational wind engineering (CWE), generation of inflow turbulence satisfying prescribed mean-velocity profiles, turbulence spectra, spatial and temporal correlations is of great importance for the accurate evaluation of wind effects on buildings and structures. More specifically, the task is to generate a turbulent velocity field :math:`\mathbf{u}(\mathbf{x},t)` with the form
+In computational wind engineering (CWE) applications, the generation of inflow turbulence satisfying prescribed mean-velocity profiles, turbulence spectra, and spatial and temporal correlations is of great importance for the accurate evaluation of wind effects on buildings and structures. Several methodologies have been proposed for this purpose which can be classified into three general categories: precursor simulation methods, recycling methods, and synthetic methods. Compared with precursor simulation and recycling methods, synthetic methods, in general, offer a more practical and relatively efficient approach to generating inflow turbulence. Research activities on synthetic turbulence generation have been vigorous over the past decades. They have branched out into several categories of techniques, including the synthetic random Fourier method, the synthetic digital filtering method, and the synthetic eddy methods.
+Other schemes that promise to enhance the inflow simulation process involve the use of GPUs :cite:`ding2019`. This is another area that can benefit from machine learning as one could tap on a database of simulated data matching prescribed inflow kinematics and dynamics. 
+
+In the following, an inflow toolbox TInF at the SimCenter offers an off-the-shelf simulation of inflow conditions using a host of stochastic simulation schemes and is presented with the theoretical background. The task of simulating inflow conditions involves the generation of a turbulent velocity field :math:`\mathbf{u}(\mathbf{x},t)` given by
 
 .. math::
 
@@ -98,7 +101,7 @@ where
         \tilde{b}_k = e^{-\frac{\pi k^2}{2n^2}}
 
 
-The width :math:`N` of the filter should be chosen such that :math:`N\geq 2n` (where :math:`n=L\Delta x_1`) to ensure the accuracy of the approximation. On the other hand, for an exponential correlation function
+The width :math:`N` of the filter should be chosen such that :math:`N\geq 2n` (where :math:`n=L / \Delta x_1`) to ensure the accuracy of the approximation. On the other hand, for an exponential correlation function
 
 .. math::
 
@@ -129,13 +132,13 @@ Again, the width :math:`N` of the filter should be chosen such that :math:`N\geq
 
 An algorithm for generating inflow data may look like this (alternatively one can generate a large volume of data, store it and convect it through the inflow plane by applying Taylor's hypothesis):
 
-(a) Choose for each coordinate direction corresponding to the inflow plane a length scale :math:`L_{22} = n_2\Delta x_2`, :math:`L_{33} = n_3\Delta x_3`, a time scale :math:`T` and determine the filter width :math:`N_{\alpha}` (:math:`\alpha =1,2,3`) accordingly.
+Step (a). Choose for each coordinate direction corresponding to the inflow plane a length scale :math:`L_{22} = n_2\Delta x_2`, :math:`L_{33} = n_3\Delta x_3`, a time scale :math:`T` and determine the filter width :math:`N_{\alpha}` (:math:`\alpha =1,2,3`) accordingly.
 
-(b) Initialize and store three random fields :math:`R_{\alpha}` (again :math:`\alpha =1,2,3`) of dimensions :math:`[-N_1:N_1,-N_2+1:M_2+N_2,-N_3+1:M_3+N_3]` where :math:`M_2 \times M_3` denotes the dimensions of computational gird of the inflow plane.
+Step (b). Initialize and store three random fields :math:`R_{\alpha}` (again :math:`\alpha =1,2,3`) of dimensions :math:`[-N_1:N_1,-N_2+1:M_2+N_2,-N_3+1:M_3+N_3]` where :math:`M_2 \times M_3` denotes the dimensions of computational gird of the inflow plane.
 
-(c) Compute the filter coefficients :math:`b(i,j,k)` with a prescribed function or by a multidimensional Newton method such that the resulting correlation function :eq:`SDF1` meets the target one.
+Step (c). Compute the filter coefficients :math:`b(i,j,k)` with a prescribed function or by a multidimensional Newton method such that the resulting correlation function :eq:`SDF1` meets the target one.
 
-(d) Applying the following filter operation for :math:`j=1,\ldots,M_2`, :math:`k=1,\ldots,M_3`
+Step (d). Applying the following filter operation for :math:`j=1,\ldots,M_2`, :math:`k=1,\ldots,M_3`
 
 .. math::
 
@@ -143,16 +146,16 @@ An algorithm for generating inflow data may look like this (alternatively one ca
 
 which yields the two-dimensional arrays of spatially correlated data :math:`\Psi_{\alpha}`, :math:`\alpha =1,2,3`.
 
-(e) Output velocity data with the transformation
+Step (e). Output velocity data with the transformation
 
 .. math::
 
         u_i(j,k) = U_i + a_{ij}\Psi_j(j,k)
 
 
-where the coefficients :math:`a_{ij}` are given by :eq:`LundCoefficients`. This step ensures the synthetic velocity reproduces the target mean velocity and Reynolds stress tensor.
+where the coefficients :math:`a_{ij}` are computed from the Cholesky decomposition of the user-defined Reynolds stress tensor. The detailed information can be found in :eq:`LundCoefficients`. This step ensures the synthetic velocity reproduces the target mean velocity and Reynolds stress tensor.
 
-(f) Discard the first :math:`(x_2,x_3)`-plane of :math:`\Psi_{\alpha}` and shift the whole data: :math:`\Psi_{\alpha}(i,j,k) = R_{\alpha}(i+1,j,k)`. Fill the plane :math:`R_{\alpha}(N_1,j,k)` with new random numbers.
+Step (f). Discard the first :math:`(x_2,x_3)`-plane of :math:`\Psi_{\alpha}` and shift the whole data: :math:`\Psi_{\alpha}(i,j,k) = R_{\alpha}(i+1,j,k)`. Fill the plane :math:`R_{\alpha}(N_1,j,k)` with new random numbers.
 
 (g) Repeat the steps (d):math:`\sim` (g) for each time step.
 
@@ -178,13 +181,13 @@ where :math:`\Psi_{\alpha}(t,j,k)` and :math:`\varPsi_{\alpha}(t,j,k)` are two s
 
 which reproduces an exponential function. An overall algorithm for generating the inflow velocity supported by the method of :cite:`xie2008` can be stated as follows
 
-(a) Choose for each coordinate direction corresponding to the inflow plane a length scale :math:`L_{22} = n_2\Delta x_2`, :math:`L_{33} = n_3\Delta x_3`, a time scale :math:`T` and determine the filter width :math:`N_{\alpha}` (:math:`\alpha =1,2,3`) accordingly.
+Step (a). Choose for each coordinate direction corresponding to the inflow plane a length scale :math:`L_{22} = n_2\Delta x_2`, :math:`L_{33} = n_3\Delta x_3`, a time scale :math:`T` and determine the filter width :math:`N_{\alpha}` (:math:`\alpha =1,2,3`) accordingly.
 
-(b) Initialize and store three random fields :math:`R_{\alpha}` (again :math:`\alpha =1,2,3`) of dimensions :math:`[-N_2+1:M_2+N_2,-N_3+1:M_3+N_3]` where :math:`M_2 \times M_3` denotes the dimensions of computational gird in the inflow plane.
+Step (b). Initialize and store three random fields :math:`R_{\alpha}` (again :math:`\alpha =1,2,3`) of dimensions :math:`[-N_2+1:M_2+N_2,-N_3+1:M_3+N_3]` where :math:`M_2 \times M_3` denotes the dimensions of computational gird in the inflow plane.
 
-(c) Compute the filter coefficients :math:`b(j,k)` with a prescribed function or by a multidimensional Newton method such that the resulting correlation function meet the target one.
+Step (c). Compute the filter coefficients :math:`b(j,k)` with a prescribed function or by a multidimensional Newton method such that the resulting correlation function meet the target one.
 
-(d) Applying the following filter operations for :math:`j=1,\ldots,M_2`, :math:`k=1,\ldots,M_3`
+Step (d). Applying the following filter operations for :math:`j=1,\ldots,M_2`, :math:`k=1,\ldots,M_3`
 
 .. math::
 
@@ -193,7 +196,7 @@ which reproduces an exponential function. An overall algorithm for generating th
 
 which yields the two-dimensional arrays of spatially correlated data :math:`\varPsi_{\alpha}`, :math:`\alpha =1,2,3`.
 
-(e) Compute :math:`\Psi_{\alpha}(j,k)` with :eq:`temporalCorrelation` and output the velocity signal with the transformation
+Step (e). Compute :math:`\Psi_{\alpha}(j,k)` with :eq:`temporalCorrelation` and output the velocity signal with the transformation
 
 .. math::
 
@@ -202,7 +205,10 @@ which yields the two-dimensional arrays of spatially correlated data :math:`\var
 
 where the coefficients :math:`a_{ij}` are given by :eq:`LundCoefficients`. Again, this step ensures the synthetic velocity reproduces the target mean velocity and Reynolds stress tensor.
 
-(f) Repeat the steps (d) :math:`\sim` (f) for each time step.
+Step (f). Repeat the Steps (d) - (f) for each time step.
+
+The digital filtering approach implemented in the TInF provides three filter types: Gaussian, exponential and bessel to define the correlation function. Users can either select one filter type through the TInF application which will automatically modify the corresponding OpenFOAM files, or directly specify it in the *U* file by following the instruction in :numref:`Code Implementation`.
+
 
 
 .. _sectionSEM:
@@ -210,7 +216,7 @@ where the coefficients :math:`a_{ij}` are given by :eq:`LundCoefficients`. Again
 Synthetic Eddy Method
 ---------------------
 
-The synthetic eddy method (SEM) initiated by :cite:`jarrin2006` is based on the classical view of turbulence as a superposition of the representative coherent eddies. In the SEM, the flow is assumed to consist of randomly distributed turbulent spots, and each turbulent spot is modelled by a three-dimensional shape function with compact support and satisfies a proper normalization condition. The spots are then assumed to be convected through an inlet plane with a reference velocity using Taylor's frozen turbulence hypothesis. The resulting inflow turbulence is then reconstructed using the method proposed by to recover the desired statistical characteristics and to account for the conditions of inhomogeneity and anisotropy. The choice of the shape function plays an important role in the SEM since it is directly related to the two-point auto-correlation function, and consequently the power spectrum of the synthetic turbulence. Enforcement of the continuity condition in the SEM was discussed in :cite:`poletto2013` which will be introduced later.
+The synthetic eddy method (SEM) initiated by :cite:`jarrin2006` is based on the classical view of turbulence as a superposition of the representative coherent eddies. In the SEM, the flow is assumed to consist of randomly distributed turbulent spots, and each turbulent spot is modelled by a three-dimensional shape function with compact support and satisfies a proper normalization condition. The spots are then assumed to be convected through an inlet plane with a reference velocity using Taylor's frozen turbulence hypothesis. The resulting inflow turbulence is then reconstructed to recover the desired statistical characteristics and to account for the conditions of inhomogeneity and anisotropy. The choice of the shape function plays an important role in the SEM since it is directly related to the two-point auto-correlation function, and consequently the power spectrum of the synthetic turbulence. Enforcement of the continuity condition in the SEM was discussed in :cite:`poletto2013` which will be introduced later.
 
 A brief introduction on the SEM presented by :cite:`jarrin2006` is given as follows. To start with, the turbulent spot mentioned above can be represented as eddies defined by shape function :math:`f` which has a compact support on :math:`[-1,1]` and has the normalization
 
@@ -234,7 +240,7 @@ where
         x_{i,\text{min}} = \text{min}(x_i-\sigma_i(\mathbf{x})), \quad x_{i,\text{max}} = \text{max}(x_i+\sigma_i(\mathbf{x})), \quad \mathbf{x}\in S
 
 
-The volume of the box of eddies is noted by :math:`V_B`. In the synthetic eddy method, the velocity signal generated by :math:`N` eddies has the representation
+The volume of the box of eddies is noted by :math:`V_B`. In the synthetic eddy method, the velocity signal generated by :math:`N` eddies has the representation of
 
 .. math::
         :label: SEMvelocity
@@ -242,7 +248,7 @@ The volume of the box of eddies is noted by :math:`V_B`. In the synthetic eddy m
         u_i(\mathbf{x}) = U_i(\mathbf{x}) + \frac{1}{\sqrt{N}}\sum_{k=1}^N a_{ij} \epsilon_j^k f_{\mathbf{\sigma}(\mathbf{x})}(\mathbf{x}-\mathbf{x}^k)
 
 
-where :math:`\mathbf{x}` represent the coordinates of computational points and :math:`\mathbf{x}^k` represent the coordinates of eddies. The coefficient :math:`a_{ij}` results from the Cholesky decomposition of a prescribed Reynolds stress tensor :math:`R_{ij}`
+where :math:`\mathbf{x}` represents the coordinates of computational points and :math:`\mathbf{x}^k` represents the coordinates of eddies. The number of eddies noted by :math:`N` can be set to be :math:`(\text{max}(x_i)-\text{min}(x_i))/\sigma`. The coefficient :math:`a_{ij}` results from the Cholesky decomposition of a prescribed Reynolds stress tensor :math:`R_{ij}`. Specifically, the calculation of :math:`a_{ij}` can be expressed in the following
 
 .. math::
         :label: LundCoefficients
@@ -250,11 +256,11 @@ where :math:`\mathbf{x}` represent the coordinates of computational points and :
         \left(\begin{matrix}
         \sqrt{R_{11}} & 0 & 0 \\
         R_{21}/a_{11} & \sqrt{R_{22}-a_{21}^2} & 0 \\
-        R_{31}/a_{11}  & (R_{32}-a_{21}a_{31})/a_{22} & \sqrt{R_{33}-a_{31}^2--a_{32}^2}
+        R_{31}/a_{11}  & (R_{32}-a_{21}a_{31})/a_{22} & \sqrt{R_{33}-a_{31}^2-a_{32}^2}
         \end{matrix}\right)
 
 
-The coefficient :math:`\epsilon_j^k` (:math:`j=1,2,3`) is is the uniformly random intensity factor of values :math:`+1` or :math:`-1`, and :math:`f_{\mathbf{\sigma}(\mathbf{x})} (\mathbf{x}-\mathbf{x}^k)` is the velocity distribution at :math:`\mathbf{x}` of the eddy located at :math:`\mathbf{x}^k` defined as follows:
+The coefficient :math:`\epsilon_j^k` (:math:`j=1,2,3`) is the uniformly random intensity factor of values :math:`+1` or :math:`-1`, and :math:`f_{\mathbf{\sigma}(\mathbf{x})} (\mathbf{x}-\mathbf{x}^k)` is the velocity distribution at :math:`\mathbf{x}` of the eddy located at :math:`\mathbf{x}^k` defined as follows:
 
 .. math::
         :label: eddyType
@@ -276,7 +282,7 @@ where :math:`\Delta t` is the time step of the simulation. If an eddy :math:`k` 
         B_{\Delta t} = \left\{ \mathbf{x}\notin B, \ \mathbf{x}+\mathbf{U}(\mathbf{x})\Delta t \in B \right\}
 
 
-with a new random intensity vector :math:`\epsilon_j^k`. :math:`B_{\Delta t}` denotes the region in which regenerated eddy :math:`\mathbf{x}^k(t) \in B_{\Delta t}` dose not effect the synthetic velocity at the inflow plane until the next time-step.
+with a new random intensity vector :math:`\epsilon_j^k`. :math:`B_{\Delta t}` denotes the region in which regenerated eddy :math:`\mathbf{x}^k(t) \in B_{\Delta t}` dose not affect the synthetic velocity at the inflow plane until the next time-step.
 
 Mean Flow and Reynolds Stresses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -302,14 +308,14 @@ The term :math:`\langle\varepsilon_j^k\rangle = 0` since the intensities of the 
         \left\langle u_i \right\rangle = U_i(\mathbf{x}).
 
 
-The Reynolds stresses :math:`\langle u_i u_j \rangle` of the synthesized write
+The Reynolds stresses :math:`\langle u_i u_j \rangle` of the synthesized can be written as
 
 .. math::
 
         \langle u_i u_j \rangle = \frac{1}{N}\sum_{k=1}^N\sum_{k=1}^N a_{im}a_{jn} \langle \varepsilon_m^k \varepsilon_n^l \rangle \langle f_{\mathbf{\sigma}(\mathbf{x})}(\mathbf{x}-\mathbf{x}^k) f_{\mathbf{\sigma}(\mathbf{x})}(\mathbf{x}-\mathbf{x}^l) \rangle
 
 
-Using again the independence between the random variables :math:`\mathbf{x}^k` and :math:`\varepsilon_j^k`, the above equation reduces to
+Using again the independence between the random variables :math:`\mathbf{x}^k` and :math:`\varepsilon_j^k`, the above equation is reduced to
 
 .. math::
 
@@ -323,7 +329,7 @@ The term
         \langle f_{\mathbf{\sigma}(\mathbf{x})}^2(\mathbf{x}-\mathbf{x}^k) \rangle = \int_{\mathbb{R}^3} p(\mathbf{y}) f_{\mathbf{\sigma}(\mathbf{x})}^2(\mathbf{x}-\mathbf{x}^k) = 1
 
 
-follows from the fact that :math:`\mathbf{x}^k` follows a uniform distribution over :math:`B`, i.e.
+verifies that :math:`\mathbf{x}^k` follows a uniform distribution over :math:`B`, i.e.
 
 .. math::
         :label: distribution
@@ -371,7 +377,7 @@ Using again the independence between the positions :math:`\mathbf{x}^k` and the 
         R_{ij}(\mathbf{x},\mathbf{r}) = \frac{1}{N}\sum_{k=1}^N a_{im}a_{jm} \langle f_{\mathbf{\sigma}(\mathbf{x})}(\mathbf{x}-\mathbf{x}^k) f_{\mathbf{\sigma}(\mathbf{x}+\mathbf{r})}(\mathbf{x}+\mathbf{r}-\mathbf{x}^k) \rangle
 
 
-By :eq:`distribution`, the term in the mean operator writes
+By :eq:`distribution`, the term in the mean operator is written as
 
 .. math::
         :label: twoPointCorrelations2
@@ -387,7 +393,7 @@ Inserting :eq:`twoPointCorrelations2` back to :eq:`twoPointCorrelations1` and us
         R_{ij}(\mathbf{x},\mathbf{r}) = R_{ij} \cdot \prod_{l=1}^3 \left[f_{\mathbf{\sigma}(\mathbf{x})} *f_{\mathbf{\sigma}(\mathbf{x}+\mathbf{r})} \right](r_l)
 
 
-where :math:`*` denotes the convolution product. For homogeneous turbulence where integral length scales :math:`\mathbf{\sigma}(\mathbf{x}) = \mathbf{\sigma}(\mathbf{x}+\mathbf{r}) =(\sigma,\sigma,\sigma)^T`, the two-point cross-correlation tensor :math:`R_{ij}(\mathbf{x},\mathbf{r})` only depends on :math:`\mathbf{r}` and consequently :eq:`twoPointCorrelations3` simplifies to
+where :math:`*` denotes the convolution product. For homogeneous turbulence where integral length scales :math:`\mathbf{\sigma}(\mathbf{x}) = \mathbf{\sigma}(\mathbf{x}+\mathbf{r}) =(\sigma,\sigma,\sigma)^T`, the two-point cross-correlation tensor :math:`R_{ij}(\mathbf{x},\mathbf{r})` only depends on :math:`\mathbf{r}` and consequently :eq:`twoPointCorrelations3` is simplified to
 
 .. math::
         :label: twoPointCorrelations4
@@ -451,7 +457,7 @@ The independence between the position :math:`\mathbf{x}^k` and intensity :math:`
         \langle \varepsilon_m^k(t) \rangle \langle \varepsilon_n^l(t+\tau) \rangle \langle f_{\mathbf{\sigma}(\mathbf{x})}(\mathbf{x}-\mathbf{x}^k(t)) \rangle \langle f_{\mathbf{\sigma}(\mathbf{x})}(\mathbf{x}-\mathbf{x}^l(t+\tau)) \rangle = 0
 
 
-Consequently :eq:`twoTimeCorrelation1` reduces to
+Consequently :eq:`twoTimeCorrelation1` is reduced to
 
 .. math::
         :label: twoTimeCorrelation2
@@ -482,21 +488,21 @@ The condition :math:`\mathbf{y}\in B_{\tau}` leads to :math:`f_{\mathbf{\sigma}(
         R_{ij}(\mathbf{x},\tau) = R_{ij} \cdot \prod_{l=1}^3[f*f]\left(\frac{\tau U_{l}(\mathbf{x})}{\sigma_l(\mathbf{x})}\right)
 
 
-In the case where the mean velocity is in the :math:`x_1`-direction only :math:`\mathbf{U} = (U,0,0)` and the target turbulence is homogeneous, :eq:`twoTimeCorrelation4` simplifies to
+In the case where the mean velocity is in the :math:`x_1`-direction only :math:`\mathbf{U} = (U,0,0)` and the target turbulence is homogeneous, :eq:`twoTimeCorrelation4` is simplified to
 
 .. math::
 
         R_{ij}(\mathbf{x},\tau) = R_{ij} [f*f]\left(\frac{\tau U(\mathbf{x})}{\sigma(\mathbf{x})}\right)
 
 
-Thus, the two-time correlation of the signal at time :math:`\tau` is simply the auto-correlation function of :math:`f` at separation distance :math:`\tau U /\sigma`. By integrating the above equation it can be proved that the integral time scale of the signal writes :math:`T = \sigma/U C_f` where :math:`C_f` is a coefficient only depends on the choice of :math:`f`. Since the synthetic velocity is a stationary process, the information the two-time cross-correlation tensor :math:`R_{ij}(\mathbf{x},\tau)` contains can be re-expressed in terms of the wave number velocity spectrum tensor which writes
+Thus, the two-time correlation of the signal at time :math:`\tau` is simply the auto-correlation function of :math:`f` at separation distance :math:`\tau U /\sigma`. By integrating the above equation it can be proved that the integral time scale of the signal writes :math:`T = \sigma/U C_f` where :math:`C_f` is a coefficient only depends on the choice of :math:`f`. Since the synthetic velocity is a stationary process, the information the two-time cross-correlation tensor :math:`R_{ij}(\mathbf{x},\tau)` contains can be re-expressed in terms of the wave number velocity spectrum tensor which is written as
 
 .. math::
 
         \phi_{ij}(\mathbf{x},\omega) = \mathcal{F}_{\omega}\{R_{ij}(\mathbf{x},\tau)\}
 
 
-Using again the convolution theorem, the above expression simplifies to
+Using again the convolution theorem, the above expression is simplified to
 
 .. math::
 
@@ -506,7 +512,7 @@ Using again the convolution theorem, the above expression simplifies to
 Commonly Used Velocity Shape Functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The three commonly used velocity shape functions for :math:`f` are given below for reference which are the tent function, the step function and the truncated Gaussian function.
+The three commonly used velocity shape functions for :math:`f` which are the tent function, the step function and the truncated Gaussian function are implemented in the TInF. Their definitions are given below for references.
 
 * Tent function
 
@@ -583,7 +589,7 @@ where :math:`C` is a constant that ensures :math:`f` satisfies the normalization
 Divergence Free Synthetic Eddy Method
 -------------------------------------
 
-One route to obtain a divergence free method, as suggested by :cite:`poletto2013`, is to apply the original SEM methodology to the vorticity field, which is then transformed back to the velocity field by taking the curl of it. One easily verifies that vorticity and velocity fields are linked by the following:
+One drawback of the synthetic eddy method is that the inlet velocity field is not necessarily divergent-free, which may result in large pressure fluctuations near the inlet. One route to obtain a divergence free method, as suggested by :cite:`poletto2013`, is to apply the original SEM methodology to the vorticity field, which is then transformed back to the velocity field by taking the curl of it. One easily verifies that vorticity and velocity fields are linked by the following:
 
 .. math::
 
@@ -600,9 +606,9 @@ Because of the hypothesis of incompressible flow, the first term on the right ha
 
 where :math:`\mathbf{r}^k=(\mathbf{x}-\mathbf{x}^k)/\sigma^k`, :math:`q_{\sigma}(|\mathbf{r}^k|)` is a suitable shape function and :math:`\alpha_i^k` are random numbers with zero average which represent the eddy intensities.
 
-Despite the similarities between :eq:`SEMvelocity` and :eq:`DFSEMvelocity`, i.e. both including a user defined shape function and a random level eddy intensity, the lack of Lund coefficients in the second formulation poses a significant problem. Their role in the original SEM was crucial in order to allow any given turbulence state to be generated, however, they cannot be re-introduced to :eq:`DFSEMvelocity` without forgoing the divergence free condition.
+Despite the similarities between :eq:`SEMvelocity` and :eq:`DFSEMvelocity`, i.e. both including a user defined shape function and a random level eddy intensity, the lack of Lund coefficients in the second formulation poses a significant problem. Their role in the original SEM was crucial in order to allow any given turbulence state to be generated, however, they cannot be re-introduced to :eq:`DFSEMvelocity` without forgoing the divergence-free condition.
 
-In order to increase the turbulence anisotropy reproduction capabilities, the method presented by :cite:`poletto2013` employs the formulation of :eq:`DFSEMvelocity`, but with an anisotropic length-scale, :math:`\sigma_i`, employed in each of the coordinate directions, and allows a different shape function to be associated with each direction. However, such a form no longer automatically satisfies the divergence-free condition ensured by :eq:`DFSEMvelocity`, and further constraints on the shape functions need to be considered in order to retain a divergence-free field.  :cite:`poletto2013` redefine the shape functions to be of the form :math:`q_{sigma}=q|\mathbf{r}^k|^3` where :math:`q` is a function which depends on the locations :math:`\mathbf{x}` and :math:`\mathbf{x}^k`, and :math:`\mathbf{r}^k` differs slightly from its previous definition, as it now takes into account the length-scale anisotropy :math:`\mathbf{r}_{\beta}^k=(\mathbf{x}_{\beta}-\mathbf{x}_{\beta}^k)/\sigma_{\beta}^k`. The new general formulation for the velocity fluctuations thus becomes:
+In order to increase the turbulence anisotropy reproduction capabilities, the method presented by :cite:`poletto2013` employs the formulation of :eq:`DFSEMvelocity`, but with an anisotropic length-scale, :math:`\sigma_i`, employed in each of the coordinate directions, and allows a different shape function to be associated with each direction. However, such a form no longer automatically satisfies the divergence-free condition ensured by :eq:`DFSEMvelocity`, and further constraints on the shape functions need to be considered in order to retain a divergence-free field.  :cite:`poletto2013` redefine the shape functions to be of the form :math:`q_{sigma}=q|\mathbf{r}^k|^3` where :math:`q` is a function which depends on the locations of :math:`\mathbf{x}` and :math:`\mathbf{x}^k`, and :math:`\mathbf{r}^k` differs slightly from its previous definition, as it now takes into account the length-scale anisotropy :math:`\mathbf{r}_{\beta}^k=(\mathbf{x}_{\beta}-\mathbf{x}_{\beta}^k)/\sigma_{\beta}^k`. The new general formulation for the velocity fluctuations thus becomes:
 
 .. math::
         :label: DFSEMvelocity2
@@ -641,7 +647,7 @@ The function :math:`q_i` with the form :eq:`qequation` is continuous everywhere,
         u_{\beta}'(\mathbf{x}) = \sqrt{\frac{1}{N}}\sum_{k=1}^N \sigma_{\beta}^k\left[1-(d^k)^2\right] \epsilon_{\beta j l}r_j^k \alpha_l^k
 
 
-Time-averaging the product of :eq:`DFSEMvelocity3` with itself leads to an expression for the Reynolds stresses, from which one can examine how the prescription of the length-scales, :math:`\sigma_i^k`, and intensities, :math:`\alpha_i^k`, affect the stress anisotropy associated with the synthetically generated field given by :eq:`DFSEMvelocity3`:
+Time-averaging the product of :eq:`DFSEMvelocity3` with itself leads to an expression for the Reynolds stresses, from which one can examine how the prescription of the length scales, :math:`\sigma_i^k`, and intensities, :math:`\alpha_i^k`, affect the stress anisotropy associated with the synthetically generated field given by :eq:`DFSEMvelocity3`:
 
 .. math::
         :label: DFSEMtensor
@@ -671,7 +677,7 @@ where :math:`V_0` is the eddy box volume. For the normal stresses, the contribut
 
 
 
-where all the terms not explicitly reported are represented by :math:`C_2`. The remaining issue is to choose appropriate length-scales and eddy intensities to ensure the above will return the desired Reynolds stress statistics, over a wide range of stress anisotropy levels. For any choice of length-scale ratios (:math:`\sigma_1/\sigma_2` and :math:`\sigma_1/\sigma_3`), varying the intensity :math:`\alpha_l^k` allows one to reproduce possible turbulence anisotropy states over a particular region of the Lumley triangle. For a given the Reynolds stresses are reproduced by defining the following intensities:
+where all the terms not explicitly reported are represented by :math:`C_2`. The remaining issue is to choose appropriate length-scales and eddy intensities to ensure the above will return the desired Reynolds stress statistics, over a wide range of stress anisotropy levels. For any choice of length-scale ratios (:math:`\sigma_1/\sigma_2` and :math:`\sigma_1/\sigma_3`), varying the intensity :math:`\alpha_l^k` allows one to reproduce possible turbulence anisotropy states over a particular region of the Lumley triangle. For given length scales, the Reynolds stresses are reproduced by defining the following intensities:
 
 .. math::
         :label: DFSEMalpha
@@ -842,7 +848,10 @@ or
 
 The signs before different terms are independent of each other. Therefore, the integral lengths can not be arbitrary. If two length scales :math:`L_{11}` and :math:`L_{22}` are prescribed the remaining length should satisfy the conditions above. Particularly, this solution is wrong for the isotropic turbulence since, if :math:`R_{11} = R_{22} = R_{33}` and :math:`L_{11} = L_{33} = L`, the third length is :math:`L_{22} = L/2` although all integral lengths based on longitudinal auto-correlation functions should be equal. One possible remedy of the length scale restriction is to superpose two statistically independent anisotropic vortons with different parameters at the same position. It is then possible to prescribe arbitrary combinations of length scales and Reynolds stresses. Two approaches for determination of the free parameters are proposed by :cite:`kroger2018`:
 
-(a) Analytic Determination (Type R). In this formulation, it is intended to fulfill all prescribed Reynolds stresses at once. As becomes obvious from :eq:`anisotropicCondition`, then at least one length scale has to be constrained. A natural choice is to constrain :math:`L_{33}`, which is associated with minimum principal Reynolds stress direction :math:`R_{33}`. Thus, :math:`L_{11}` and :math:`L_{22}` remain unchanged while :math:`L_{33}` follows from:
+
+**(a) Analytic Determination (Type R)**
+
+In this formulation, it is intended to fulfill all prescribed Reynolds stresses at once. As becomes obvious from :eq:`anisotropicCondition`, then at least one length scale has to be constrained. A natural choice is to constrain :math:`L_{33}`, which is associated with minimum principal Reynolds stress direction :math:`R_{33}`. Thus, :math:`L_{11}` and :math:`L_{22}` remain unchanged while :math:`L_{33}` follows from:
 
 .. math::
 
@@ -869,7 +878,9 @@ or
 
 with :math:`\sigma_i` given by :eq:`anisotropicScale`. By determining parameters this way, Reynolds stresses are fulfilled and length scales are only approximately fulfilled. The anisotropic turbulent spot method with this kind of parameter determination is labeled by "Type R" in the work of :cite:`kroger2018`.
 
-(b) Pseudo Inverse (Type L). In this approach, it is intended to fulfill all prescribed length scales. Although it is not possible to account for all Reynolds stresses at the same time, it is possible to formulate a minimization problem and solve for the closest possible Reynolds stress state. First, the :math:`\sigma_i` are computed from the prescribed length scales :eq:`anisotropicScale`. With fixed length scales, the Reynolds stresses follow from the following system of equations, which is unsolvable because of the zero diagonal:
+**(b) Pseudo Inverse (Type L)**
+
+In this approach, it is intended to fulfill all prescribed length scales. Although it is not possible to account for all Reynolds stresses at the same time, it is possible to formulate a minimization problem and solve for the closest possible Reynolds stress state. First, the :math:`\sigma_i` are computed from the prescribed length scales :eq:`anisotropicScale`. With fixed length scales, the Reynolds stresses follow from the following system of equations, which is unsolvable because of the zero diagonal:
 
 .. math::
 
@@ -907,12 +918,13 @@ The minimization problem is solved by using the Moore-Penrose pseudo-inverse :ma
         \end{bmatrix}
 
 
-This way, all length scales are fulfilled, but the Reynolds stresses only approximately. The anisotropic turbulent spot method with this kind of parameter determination is labeled by "Type L".
+This way, all length scales are fulfilled, but the Reynolds stresses only approximately. The anisotropic turbulent spot method with this kind of parameter determination is labeled by "Type L". The TInF provides both types of turbulent spot for generating inflow turbulences.
+
 
 Code Implementation
 ===================
 
-The turbulence inflow tool provides a simple and efficient solution for generating a spatially and temporally correlated turbulent velocity field at the inflow of the computational domain via the open-source code,  OpenFOAM. It is developed based on the digital filtering method :cite:`klein2003,xie2008`, the synthetic eddy method :cite:`jarrin2006,poletto2013` and the turbulent spot method :cite:`kroger2018`. The back-end of the turbulence inflow tool is a custom-designed C++ library which contains a list of turbulent velocity boundary conditions developed within OpenFOAM. These boundary conditions can be used to feed the inflow plane with time-varying turbulent velocity signals. Note that the inflow tool provides the source code for two latest standard public versions of the OpenFOAM, i.e., version 6.0 and 7.0, respectively.
+The turbulence inflow tool provides a simple and efficient solution for generating a spatially and temporally correlated turbulent velocity field at the inflow of the computational domain via the open-source code, OpenFOAM. It is developed based on the digital filtering method :cite:`klein2003,xie2008`, the synthetic eddy method :cite:`jarrin2006,poletto2013` and the turbulent spot method :cite:`kroger2018`. The back-end of the turbulence inflow tool is a custom-designed C++ library which contains a list of turbulent velocity boundary conditions developed within OpenFOAM. These boundary conditions can be used to feed the inflow plane with time-varying turbulent velocity signals. Note that the inflow tool provides the source code for two latest standard public versions of the OpenFOAM, i.e., version 6.0 and 7.0, respectively.
 
 The tool can be mainly in two approaches. For users who are quite familiar with OpenFOAM, one can download the source code of the presented boundary conditions, compile the code locally on personal computers (or servers) and then carry out simulations as if those boundary conditions are originally available in the standard OpenFOAM. Similar to other boundary conditions available in OpenFOAM, the use of the presented boundary conditions requires adding some specific entries to the related files in an OpenFOAM project. For users who are not familiar with OpenFOAM, a user-interface (i.e., the front-end of the turbulence inflow tool), which help users to customize the related entries in the OpenFOAM project, is provided.
 
@@ -1066,7 +1078,7 @@ Apart from the *type* and *value* entries, there are also some identical entries
 The turbulentDFMInlet boundary condition
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For the *turbulentDFMInlet* boundary condition, the unique entries to be specified are *filterType*, *filterFactor* and *gridFactor*. The *filterShape* entry refers to the type of the prescribed function for computing the filter coefficients, and requires a string input. When this entry is taken as *gaussian*, the coefficients are computed with :eq:`gaussian`; when this entry is taken as *exponential*, the coefficients follow from :eq:`exponential`. As discussed earlier, the digital filtering method should be employed on uniform spacing Cartesian grids. To make this method applies to more general cases, a virtual uniform spacing Cartesian grid system will be generated during the implementation. The velocity fluctuations will be first generated on this virtual grid and then interpolated to the discrete points on the inflow patch. The *gridFactor* entry defines ratio between the virtual grid spacing :math:`\Delta` with the square root of the area of the smallest face element on the inflow plane. Higher *gridFactor* leads to larger grid spacing and vice versa. Finally, the *filterFactor* entry denotes the values of :math:`N/n` where :math:`N` and :math:`n` follow from the notation in :numref:`sectionDFM`, and consequently it requires an integer input. The entries related to the *turbulentDFMInlet* boundary, their input variable types and limitations are listed in :numref:`table_TInF_theory_02`.
+For the *turbulentDFMInlet* boundary condition, the unique entries to be specified are *filterType*, *filterFactor* and *gridFactor*. The *filterType* entry refers to the type of the prescribed function for computing the filter coefficients, and requires a string input. When this entry is taken as *gaussian*, the coefficients are computed with :eq:`gaussian`; when this entry is taken as *exponential*, the coefficients follow from :eq:`exponential`. As discussed earlier, the digital filtering method should be employed on uniform spacing Cartesian grids. To make this method to be applied to more general cases, a virtual uniform spacing Cartesian grid system will be generated during the implementation. The velocity fluctuations will be first generated on this virtual grid and then interpolated to the discrete points on the inflow patch. The *gridFactor* entry defines ratio between the virtual grid spacing :math:`\Delta` with the square root of the area of the smallest face element on the inflow plane. Higher *gridFactor* leads to larger grid spacing and vice versa. Finally, the *filterFactor* entry denotes the values of :math:`N/n` where :math:`N` and :math:`n` follow from the notation in :numref:`sectionDFM`, and consequently it requires an integer input. The entries related to the *turbulentDFMInlet* boundary, their input variable types and limitations are listed in :numref:`table_TInF_theory_02`.
 
 .. _table_TInF_theory_02:
 
@@ -1198,7 +1210,7 @@ The three entries displayed in the *inlet* dictionary are *U*, *R* and *L* which
             }
         }
 
-It is noted that each element in *R* defines a six-component symmetric tensor of the form :math:`(R_{11} \ R_{21} \ R_{31} \ R_{22} \ R_{32} \ R_{33})`. For the *turbulentDFMInlet* and *turbulentSEMInlet* boundary conditions, each element in *L* defines a nine-component tensor of the form (:math:`L_{11}^{x_1}` :math:`L_{11}^{x_2}` :math:`L_{11}^{x_3}` :math:`L_{22}^{x_1}` :math:`L_{22}^{x_2}` :math:`L_{22}^{x_3}` :math:`L_{33}^{x_1}` :math:`L_{33}^{x_2}` :math:`L_{33}^{x_3})`. For the *turbulentATSMInlet* boundary condition, each element in *L* defines a three-component vector of the form :math:`(L_{11}^{x_1} L_{22}^{x_2} L_{33}^{x_3})`.  For the *turbulentDFSEMInlet* boundary condition, each element in *L* is a scalar. The main difficultly in specifying the entries *U*, *R* and *L* directly is to make sure that the sequence of the elements in each entry is properly sorted coping with the corresponding faces on the inflow plane.
+It is noted that each element in *R* defines a six-component symmetric tensor of the form :math:`(R_{11} \ R_{21} \ R_{31} \ R_{22} \ R_{32} \ R_{33})`. For the *turbulentDFMInlet* and *turbulentSEMInlet* boundary conditions, each element in *L* defines a nine-component tensor of the form (:math:`L_{11}^{x_1}` :math:`L_{11}^{x_2}` :math:`L_{11}^{x_3}` :math:`L_{22}^{x_1}` :math:`L_{22}^{x_2}` :math:`L_{22}^{x_3}` :math:`L_{33}^{x_1}` :math:`L_{33}^{x_2}` :math:`L_{33}^{x_3})`. For the *turbulentATSMInlet* boundary condition, each element in *L* defines a three-component vector of the form :math:`(L_{11}^{x_1}` :math:`L_{22}^{x_2}` :math:`L_{33}^{x_3})`.  For the *turbulentDFSEMInlet* boundary condition, each element in *L* is a scalar. The main difficultly in specifying the entries *U*, *R* and *L* directly is to make sure that the sequence of the elements in each entry is properly sorted coping with the corresponding faces on the inflow plane.
 
 Specification via interpolation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1436,3 +1448,4 @@ References
 .. bibliography:: references.bib
    :cited:
    :style: unsrt
+

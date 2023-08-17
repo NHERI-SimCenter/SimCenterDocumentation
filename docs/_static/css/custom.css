@@ -72,3 +72,7 @@ div.rightside {
   vertical-align: text-bottom;
   /* float: right; */
 }
+
+.dl_comp_name {
+    font-size: 130%;
+}
