@@ -243,7 +243,7 @@ For each random variable, the user must enter a name and select from the pull do
 
    .. warning::
 
-       Correlation warping for Nataf variable transformation of **beta** distributions is not currently supported.
+       Correlation warping for Nataf variable transformation of **beta** distributions is currently not supported.
 
 
 .. only:: quoFEM_app
@@ -273,3 +273,18 @@ For each random variable, the user must enter a name and select from the pull do
        :figclass: align-center
 
        Specifying user-defined distributions under CustomUQ engine
+
+
+
+
+
+
+.. Tip::
+   
+   Summary of capabilities and limitations
+
+   * :badge:`o,badge-primary` Specify 12 different kinds of random distributions either by parameters, moments (mean and variance), or data samples (Specify 7 different kinds of random distributions by parameters when using Dakota instead of SimCenterUQ)
+   * :badge:`o,badge-primary` Draw correlated samples through Nataf transformation (Gaussian-copular) 
+   * :badge:`x,badge-danger` Explicitly specify random fields (planned)
+   * :badge:`x,badge-danger` Specify user-defined random distribution (planned)
+   * :badge:`x,badge-danger` Specify Non-Gaussian copular correlation (upon request)

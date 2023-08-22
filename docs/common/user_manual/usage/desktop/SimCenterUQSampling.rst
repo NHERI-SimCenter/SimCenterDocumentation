@@ -6,6 +6,7 @@ Forward Propagation
 
 The forward propagation provides a probabilistic understanding of output variables by producing sample realizations and statistical moments (mean, standard deviation, skewness, and kurtosis). Currently, only the Monte Carlo Sampling (MCS) method is available in the SimCenterUQ engine and the other sampling methods (Latin hypercube sampling, Surrogate model-based efficient sampling) are available in the Dakota engine.
 
+
 Sampling from dataset
 --------------------------------
 
@@ -64,3 +65,13 @@ On the other hand, if the two datasets are considered correlated, i.e. if "Resam
   	Example of uncorrelated samples (when "Resample ..." option in the UQ tab is enabled).
 
 This feature is especially useful when the user wants to perform a forward UQ analysis directly using the posterior samples obtained from Markov Chain Monte Carlo or other Bayesian sampling approaches. 
+
+
+.. Tip::
+	
+	Summary of capabilities and limitations
+
+	* :badge:`o,badge-primary` Run Monte Carlo simulation for 12 different kinds of probability distributions with correlations.
+	* :badge:`o,badge-primary` Use data samples as discrete distribution (especially useful when propagating samples from Bayesian updating)
+	* :badge:`x,badge-danger` Run advanced sampling algorithms including Latin hyper cube and surrogate-aided sampling. **[Available in Dakota engine]**
+
