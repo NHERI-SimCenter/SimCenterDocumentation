@@ -23,17 +23,20 @@ where :math:`\mathbf{U}(\mathbf{x},t)` and :math:`\mathbf{u}'(\mathbf{x},t)` are
 
 * :math:`\mathbf{u}'` needs to have prescribed Reynolds stresses tensor :math:`R_{ij}(\mathbf{x}) = \langle u_i'u_j'\rangle(\mathbf{x})` where :math:`u_i'` (:math:`i=1,2,3`) is the :math:`i`-th component of :math:`\mathbf{u}'`  and the angles denote the time average.
 
-* :math:`\mathbf{u}'` needs to have prescribed integral length scales :math:`L_{ij}(\mathbf{x},\mathbf{e})`
+* :math:`\mathbf{u}'` needs to have prescribed integral length scales, :math:`L_{ij}^{\mathbf{e}}(\mathbf{x})`, with respect to a direction :math:`\mathbf{e}` as
 
 .. math::
 
-        L_{ij}(\mathbf{x},\mathbf{e}) = \int_{0}^{\infty} \rho_{ij}(\mathbf{x},r\mathbf{e})\ \mathrm{d}r,
+        L_{ij}^{\mathbf{e}}(\mathbf{x}) :=
+        L_{ij}(\mathbf{x},\mathbf{e}) =
+	\int_{0}^{\infty} \rho_{ij}(\mathbf{x},r\mathbf{e})\ \mathrm{d}r,
 
 
 where :math:`\rho_{ij}(\mathbf{x},\mathbf{e})` is the correlation function given by
 
 .. math::
 
+        \rho_{ij}^{\mathbf{e}}(\mathbf{x}) :=
         \rho_{ij}(\mathbf{x},\mathbf{e}) = \frac{\langle u_i'(\mathbf{x},t)u_j'(\mathbf{x}+\mathbf{e},t)\rangle}{\langle u_i'(\mathbf{x},t)u_j'(\mathbf{x},t) \rangle}.
 
 
@@ -154,7 +157,7 @@ where the coefficients :math:`a_{ij}` are computed from the Cholesky decompositi
 
 Step (f). Discard the first :math:`(x_2,x_3)`-plane of :math:`\Psi_{\alpha}` and shift the whole data: :math:`\Psi_{\alpha}(i,j,k) = R_{\alpha}(i+1,j,k)`. Fill the plane :math:`R_{\alpha}(N_1,j,k)` with new random numbers.
 
-Step (g). Repeat the Steps (d) - (g) for each time step.
+(g) Repeat the steps (d):math:`\sim` (g) for each time step.
 
 If the target correlation function is an exponential function, an alternative approach by :cite:`xie2008` can be adopted for generating inflow turbulence which turns out to be much more efficient than the method of :cite:`klein2003`. Instead of using the filtering operation discussed above, the method of :cite:`xie2008` obtain the temporal correlation with the expression
 
