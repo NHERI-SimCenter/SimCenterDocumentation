@@ -104,6 +104,22 @@ Make sure you see a message that confirms the successful installation of the nhe
       The Java website should automatically detect your operating system and offer the corresponding installer for you to download. Make sure you see "Mac OS X" at the top of the page before downloading the installer.
 
 
+.. only:: WEUQ_app
+   
+   Install OpenFOAM for macOS
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   
+   This version of the |app| uses *OpenFOAM* for pre-processing the CFD model. At the backend, the mesh generation and visualization in the GUI utilize *OpenFOAM-10* built in meshing tools.  
+
+   .. note::
+     The packaged distribution of OpenFOAM is only available for Linux system. To install OpenFOAM on macOS, the user needs to use  Docker for Mac. Docker will provides a virtual environment for running Linux applications on macOS.
+
+   ..  The at mesh generation and pre-processing  party applications s. 
+
+
+   To install OpenFOAM-10 on macOS, follow the instruction in `OpenFOAM for macOS <https://openfoam.org/download/10-macos/>`_ .
+
+
 Download the Application
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
