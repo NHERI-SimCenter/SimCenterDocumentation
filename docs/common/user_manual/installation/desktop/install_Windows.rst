@@ -16,6 +16,13 @@ Install on Windows 10
    .. note::
       The Java website should automatically detect your operating system and offer the corresponding installer for you to download. Make sure you see "64-bit Java for Windows" at the top of the page before downloading the installer.
 
+
+.. only:: WEUQ_app
+
+   Install OpenFOAM
+   ^^^^^^^^^^^^^^^^^
+
+
 Download the Application
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
