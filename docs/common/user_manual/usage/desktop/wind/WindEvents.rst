@@ -10,13 +10,11 @@ The event panel presents the user with a drop-down menu with a list of available
 	:maxdepth: 3
 
 	stochasticWind
-	CFDBasic
-	CFDExpert
+	DigitalWindTunnel
+	IsolatedBuildingCFD
 	DEDMHrp
 	lowRiseTPU
 	windTunnelExp
 	WeUQExisting
-	DigitalWindTunnel
-	IsolatedBuildingCFD
 	ExperimentalWindForce
 	WindForceSpectrum

@@ -465,7 +465,7 @@ Since the story forces are needed for the main workflow, they are always monitor
 #.  **Write Interval**: The interval at which the story loads are written. This time step is the one that the structural solver will use. If checked the base loads will be monitored.  
 
 
-Pressure Data
+Cladding Loads
 """"""""""""""
 For the cladding loads, local pressure fluctuations on the building surface can be monitored. The cladding loads can be monitored on points automatically created by the application or on a set of points imported from an existing *.CSV* file.
 

@@ -5,7 +5,7 @@
 Capabilities
 ************
 
-**Version 2.3.0** of |app| was released **March 2023**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+**Version 3.0.1** of |app| was released **August 2023**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 Structural Information Model
@@ -25,9 +25,8 @@ Wind Loading Event
 Applications used to specify/select wind loading for the structure.
 
 #.  Stochastic Wind: simulating stochastic wind speed using spectral method
-#.  CFD-Basic: generating CFD model for beginners with limited control options
-#.  CFD-Expert: generating CFD model for advanced with several control options
-#.  :blue:`CFD-Digital Wind Tunnel: CFD simulation of boundary layer wind tunnel`
+#.  CFD-Digital Wind Tunnel: CFD simulation of boundary layer wind tunnel
+#.  :blue:`CFD-Wind Load on Isolated Buildings: CFD-based wind load simulation for isolated buildings`
 #.  DEDM_HRP: database-enabled design framework based on wind-tunnel data for high rise buildings 
 #.  LowRiseTPU: extracting aerodynamics loads based on TPU database for low-rise buildings
 #.  Wind Tunnel Experiment: uses pressure tap measurements from building in wind tunnel experiment
@@ -40,7 +39,7 @@ Engineering Demand Parameter Generator
 
 Applications to identify the output parameters of interest given the wind loading and the structural model.
 
-#. Standard Wind: (servicibility) inter story drift ratio, peak floor acceleration
+#. Standard Wind: (serviceability) inter story drift ratio, peak floor acceleration
 #. User Defined: user-specified EDP
     
     
@@ -50,7 +49,7 @@ Finite Element Application
 Applications used to determine the response output parameters given the ground motion and structural model.
 
 #.  OpenSees: Open System for Earthquake Engineering Simulation
-#.  CustomPy: Any user supplied python application can be incorprated
+#.  CustomPy: Any user supplied python application can be incorporated
 
 Uncertainty Quantification
 ==========================
@@ -86,7 +85,7 @@ Applications to perform the uncertainty quantification for the response paramete
 
 #. Surrogate Modeling
 
-     A. SimCenterUQ Engine Surrogating Options:
+     A. SimCenterUQ Engine Surrogate Options:
 
         #. Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)
 	   

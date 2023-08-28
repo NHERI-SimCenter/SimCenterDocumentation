@@ -27,8 +27,9 @@ How To Cite
    
 .. only:: WEUQ_app
 
-   1. Frank McKenna, Peter Mackenzie-Helnwein, Jiawei Wan & Stevan Gavrilovic.
-      (2021, May 17). NHERI-SimCenter/WE-UQ: Version 2.1.0 (Version v2.1.0).
+   1. Frank McKenna, Peter Mackenzie-Helnwein, Wael Elhaddad, Abiy F. Melaku, Michael Gardner, Claudio Perez, 
+      Sang-ri Yi, Noam-Elisha and Fei Ding (2023). 
+      NHERI-SimCenter/WE-UQ: Version 3.0.1 (Version v3.0.1).
       Zenodo. `DOI: 10.5281/zenodo.3464692 <https://doi.org/10.5281/zenodo.3464692>`_
 	     
 .. only:: quoFEM_app	     

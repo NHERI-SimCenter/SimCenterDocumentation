@@ -6,7 +6,6 @@ Damping Options
 The standard equations that are solved in the nonlinear analysis of structures subjected to dynamic forces are:
 
 .. math::
-   
    M \ddot{U}(t) + C \dot{U}(t)  + Fs(U(t)) = P(t)
 
 where :math:`U(t), \dot{U}(t), \ddot{U}(t)` are the vectors of displacements, velocities, and accelerations for the degrees of freedom, :math:`M` and :math:`C` are the mass and damping matrices, respectively, and the vector :math:`Fs(U)` represents the nonlinear relation between resisting forces and deformations, which includes both material and geometric nonlinearities, and :math:`P(t)` the time-varying applied load due to the event of interest. 
