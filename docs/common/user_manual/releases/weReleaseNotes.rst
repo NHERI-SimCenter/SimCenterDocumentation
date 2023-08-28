@@ -13,12 +13,12 @@ Version 3.0.1 (Current)
 **Highlights**
 
 1. **New CFD-based event for wind load evaluation**: 
-  a. Modeling option for generic isolated rectangular buildings is added 
-  b. Added advanced feature for boundary condition specification including inflow and ground roughness representation  
+  a. Modeling option for generic isolated rectangular buildings is added.
+  b. Added advanced feature for boundary condition specification including inflow and ground roughness representation.  
   c. Supports automated monitoring of integrated and cladding loads on the study building.   
-  d. Supports different turbulence modeling options including Large-Eddy Simulation (LES), Reynolds-Averaged Navier-Stokes (RANS) and Detached-Eddy Simulation (DES)
-  e.  Updated solver selection (with PISO, SIMPLE ad PIMPLE algorithms) and addition of new controls for numerical setup  
-  f. Included support for different OpenFOAM distribution starting from v7 to v10.
+  d. Supports different turbulence modeling options including Large-Eddy Simulation (LES), Reynolds-Averaged Navier-Stokes (RANS) and Detached-Eddy Simulation (DES).
+  e.  Updated solver selection (with PISO, SIMPLE ad PIMPLE algorithms) and added new controls for numerical setup.  
+  f. Included support for different OpenFOAM distribution starting from v7 up to v10.
 
 
 2. **Improved GUI design** 
@@ -32,7 +32,7 @@ Version 3.0.1 (Current)
   
 
 4. **Examples** 
-  a. Added an CFD example to demonstrate the new features with uncertainty quantification. 
+  a. Added a new CFD example to demonstrate the recently added features with uncertainty quantification. 
 
 
 
