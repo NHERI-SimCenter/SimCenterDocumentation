@@ -218,9 +218,10 @@ The main window of the UI is made up from the following areas:
 
    .. raw:: html
 
-       <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto;">
-           <iframe src="https://www.youtube.com/embed/5oWEAiC12Dg?start=1274" frameborder="0" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe>
-       </div>
+      <div style="text-align: center;">
+         <iframe src="https://www.youtube.com/embed/5oWEAiC12Dg?start=1274" width="560" height="315" frameborder="5" allowfullscreen="allowfullscreen"></iframe>
+      </div>
+    
+   .. raw:: html
 
-
-   Please note there were minor changes in the user interface since it is recorded. 
+      <p><br>Click to replay the video from <a href="javascript:window.location.reload(true);">21:14</a>. Please note there were minor changes in the user interface since it is recorded.</p>
