@@ -7,8 +7,7 @@
 
    .. only:: R2D_app
 
-
-      The |full tool name| (|app|) is an open-source research application that can be used to simulate the performance of the built environment subjected to natural hazards. Version 1 will allow users to predict the performance of the buildings in the region when subjected to earthquake events. Version 2, due May 2021, will allow researchers to study the effects given a Hurricane event. Future version will allow users to study effects of lifleines and interdependencies. The computations are performed by a simulation workflow that will run on either the user's local machine or on a high performance computer made available by |DesignSafe|.
+      The |full tool name| (|app|) is an open-source research application that can be used to simulate the performance of the built environment subjected to natural hazards. The tool allows users to study effects of Earthquake or Hurricane on buildings and lifeline networks (Transportation, Water, Gas, ..) in a region. The computations are performed by a simulation workflow that will run on either the user's local machine or on a high performance computer made available by |DesignSafe|.
 
    .. only:: PBE_app
 
