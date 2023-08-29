@@ -307,3 +307,7 @@ fmkExamples
 .DS_Store
 web/
 _out
+
+#Remove .vscode
+.vscode
+
