@@ -19,7 +19,7 @@ Dec 2023
 ----------
    #. Digital Wind Tunnel (1.2.5.2) - CFD models for a complex-shaped building with other surrounding buildings. 
    #. Surrogate support for regional assessment (1.3.6.1) - Extend surrogates developed in EE-UQ that can be utilized in R2D for wind hazard simulation.
-   #. Multi-Fidelity Monte-Carlo (1.2.3.1) - Utilizing low-fidelity models to predict the response of high-fidelity model efficiently
+   #. Multi-Fidelity Monte-Carlo (1.2.3.1) - Utilizing low-fidelity models to predict the response of high-fidelity models efficiently
 
 2024
 ----
