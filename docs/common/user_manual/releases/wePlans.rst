@@ -11,15 +11,15 @@ The following features are intended to be included in |app|  in upcoming release
       
 Sept 2023
 ----------
-   #. Digital Wind Tunnel (1.2.5.2) - Auto generated CFD models for isolated buildings with a complex shape given its CAD geometry. 
-   #. Aerodynamic Database (1.1.1.4) - Develope an aerodynamic databases integrating CFD simulation and experimental measurements.
+   #. Digital Wind Tunnel (1.2.5.2) - Auto-generated CFD models for isolated buildings with a complex shape given its CAD geometry. 
+   #. Aerodynamic Database (1.1.1.4) - Develop an aerodynamic database integrating CFD simulation and experimental measurements.
 
       
 Dec 2023
 ----------
-   #. Digital Wind Tunnel (1.2.5.2) - CFD models for a complex shaped building with other surrounding buildings. 
+   #. Digital Wind Tunnel (1.2.5.2) - CFD models for a complex-shaped building with other surrounding buildings. 
    #. Surrogate support for regional assessment (1.3.6.1) - Extend surrogates developed in EE-UQ that can be utilized in R2D for wind hazard simulation.
-   #. Multi-Fidelity Monte-Carlo (1.2.3.1) - Utilizing low fidelity models to predict the response of high fidelity model efficiently
+   #. Multi-Fidelity Monte-Carlo (1.2.3.1) - Utilizing low-fidelity models to predict the response of high-fidelity model efficiently
 
 2024
 ----
