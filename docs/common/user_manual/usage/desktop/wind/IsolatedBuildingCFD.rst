@@ -4,7 +4,15 @@
 Isolated Building CFD Model
 ============================
 
-The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wind load generator for an isolated building with a rectangularly shaped plan area. It provides greater flexibility in modeling the approaching wind and the wind-induced loads on the building. This event allows the user to seamlessly define the computational model with interactive GUI support. The modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient features includes automatic meshing with a user-interactive interface. At the backend, the CFD simulations are conducted by executing open-source CFD solvers from OpenFOAM [Greenshields2015]_. The user needs to follow the following procedure to model wind loading using this event.           
+The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wind load generator for an isolated building with a rectangularly shaped plan area. It provides greater flexibility in modeling the approaching wind and the wind-induced loads on the building. This event allows the user to seamlessly define the computational model with interactive GUI support. :numref:`fig-iso-cfd-workflow` shows the overall CFD-based workflow as within the framework of WE-UQ. The modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient features includes automatic meshing with a user-interactive interface. At the backend, the CFD simulations are conducted by executing open-source CFD solvers from OpenFOAM [Greenshields2015]_. The user needs to follow the following procedure to model wind loading using this event.           
+
+.. _fig-iso-cfd-workflow:
+.. figure:: figures/IsolatedBuildingCFD/WEUQ_CFD_Workflow.svg
+	:align: center
+	:figclass: align-center
+
+	The high-level CFD-based workflow with uncertainty quantification. 
+
 
 #. Define the geometry of the building and the computational domain
 #. Generate the mesh using global and local refinement options
