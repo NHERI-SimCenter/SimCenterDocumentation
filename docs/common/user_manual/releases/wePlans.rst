@@ -17,13 +17,13 @@ Sept 2023
       
 Dec 2023
 ----------
-   #. Digital Wind Tunnel (1.2.5.2) - CFD models for a complex-shaped building with other surrounding buildings. 
+   #. Digital Wind Tunnel (1.2.5.2) - CFD models for a complex-shaped building with the surrounding buildings explicitly modeled within a certain proximity. 
    #. Surrogate support for regional assessment (1.3.6.1) - Extend surrogates developed in EE-UQ that can be utilized in R2D for wind hazard simulation.
    #. Multi-Fidelity Monte-Carlo (1.2.3.1) - Utilizing low-fidelity models to predict the response of high-fidelity models efficiently
 
 2024
 ----
-   #.  Digital Wind Tunnel (1.2.5.2) - Customization of the Digital Wind Tunnel models for low-rise buildings with application examples. 
+   #.  Digital Wind Tunnel (1.2.5.2) - Customization of the Digital Wind Tunnel models for low-rise buildings with additional application examples. 
    #.  Ability to save & utilize surrogate models using advanced Surrogate-Modeling algorithms (1.2.2.2)
    #.  Reduced order surrogates modeling for CFD simulations (1.2.2.3)        
    #.  Regional-scale CFD simulation integration with R2D for high-resolution damage and loss assessment of wind storms (1.2.2.3)        

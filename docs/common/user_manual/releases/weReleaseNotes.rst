@@ -8,12 +8,12 @@ Release Notes
 Version 3.0 (Current)
 -----------------------
 
-**Release date:** August. 2023
+**Release date:** July. 2023
 
 **Highlights**
 
 1. **New CFD-based event for wind load evaluation**: 
-  a. Modeling option for generic isolated rectangular buildings is added.
+  a. Implemented CFD modeling option for generic isolated rectangular buildings.
   b. Added advanced feature for boundary condition specification including inflow and ground roughness representation.  
   c. Supports automated monitoring of integrated and cladding loads on the study building.   
   d. Supports different turbulence modeling options including Large-Eddy Simulation (LES), Reynolds-Averaged Navier-Stokes (RANS) and Detached-Eddy Simulation (DES).
@@ -36,7 +36,7 @@ Version 3.0 (Current)
 
 
 
-Version 2.3.0
+Version 2.3
 -------------
 
 **Release date:** March. 2022
@@ -50,7 +50,7 @@ Version 2.3.0
 #. Minor bug fixes
 
 
-Version 2.0.0
+Version 2.0
 ----------------
 
 **Release date:** September. 2019
@@ -64,7 +64,7 @@ Version 2.0.0
 
 
 
-Version 1.0.0 (First Release)
+Version 1.0 (First Release)
 -------------------
 
 **Release date:** July. 2019

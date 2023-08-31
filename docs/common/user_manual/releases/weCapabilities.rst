@@ -5,7 +5,7 @@
 Capabilities
 ************
 
-**Version 3.0.1** of |app| was released **August 2023**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+**Version 3.0.0** of |app| was released **July 2023**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 Structural Information Model
@@ -30,7 +30,7 @@ Applications used to specify/select wind loading for the structure.
 #.  DEDM_HRP: database-enabled design framework based on wind-tunnel data for high-rise buildings 
 #.  LowRiseTPU: extracting aerodynamics loads based on TPU database for low-rise buildings
 #.  Wind Tunnel Experiment: uses pressure tap measurements from building in wind tunnel experiment
-#.  Existing: User-supplied time varying floor loads
+#.  Existing: User-supplied time-varying floor loads
 
 
 Engineering Demand Parameter Generator
