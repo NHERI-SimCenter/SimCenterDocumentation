@@ -605,7 +605,7 @@ elif app_name == "quoFEM":
 elif app_name == "WE-UQ":
     project = "Wind Engineering with Uncertainty Quantification"
     # author = 'Frank McKenna'
-    author = "Frank McKenna, Peter Mackenzie-Helnwein, Wael Elhaddad, Jiawei Wan, Michael Gardner, Dae Kun Kwon, Fei Ding"
+    author = "Frank McKenna, Abiy F. Melaku, Fei Ding, Jiawei Wan, Peter Mackenzie-Helnwein, Wael Elhaddad, Michael Gardner, Dae Kun Kwon"
 
     tags.add("desktop_app")
     tags.add("response")

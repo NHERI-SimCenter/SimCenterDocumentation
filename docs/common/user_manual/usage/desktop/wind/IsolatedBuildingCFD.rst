@@ -4,7 +4,15 @@
 Isolated Building CFD Model
 ============================
 
-The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wind load generator for an isolated building with a rectangularly shaped plan area. It provides greater flexibility in modeling the approaching wind and the wind-induced loads on the building. This event allows the user to seamlessly define the computational model with interactive GUI support. The modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient features includes automatic meshing with a user-interactive interface. At the backend, the CFD simulations are conducted by executing open-source CFD solvers from OpenFOAM [Greenshields2015]_. The user needs to follow the following procedure to model wind loading using this event.           
+The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wind load generator for an isolated building with a rectangularly shaped plan area. It provides greater flexibility in modeling the approaching wind and the wind-induced loads on the building. This event allows the user to seamlessly define the computational model with interactive GUI support. :numref:`fig-iso-cfd-workflow` shows the overall CFD-based workflow as within the framework of WE-UQ. The modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient features includes automatic meshing with a user-interactive interface. At the backend, the CFD simulations are conducted by executing open-source CFD solvers from OpenFOAM [Greenshields2015]_. The user needs to follow the following procedure to model wind loading using this event.           
+
+.. _fig-iso-cfd-workflow:
+.. figure:: figures/IsolatedBuildingCFD/WEUQ_CFD_Workflow.png
+	:align: center
+	:figclass: align-center
+
+	The high-level CFD-based workflow with uncertainty quantification. 
+
 
 #. Define the geometry of the building and the computational domain
 #. Generate the mesh using global and local refinement options
@@ -60,7 +68,7 @@ Here the geometry and dimensions of the building and computational domain are de
 
 #. **Building Width**, **Building Depth** and **Building Height** are the dimensions of the building in full-scale. The dimensions of the building are defined in the *GI* tab and cannot be changed here. 
       
-#. **Wind Direction**: The angle of incidence of the approaching wind measured from the x-axis in a counter clock-wise direction. The wind direction is accounted for indirectly by rotating the building configuration relative to the rest of the computational domain. 
+#. **Wind Direction**: The angle of incidence of the approaching wind measured from the x-axis in a counterclockwise direction. The wind direction is accounted for indirectly by rotating the building configuration relative to the rest of the computational domain. 
 
 #. **Domain Length**: Represents the length of the domain in the stream-wise direction (x-direction). If the *Relative* dimensions are specified, the input should be normalized by the building height.  
 
@@ -70,13 +78,13 @@ Here the geometry and dimensions of the building and computational domain are de
 
 #. **Fetch Length**: Distance between the inlet of the domain and the building center.   
 
-#. **COST Recommendation**: This option specified whether to use the COST([Franke2007]_) recommendations to determine the extent of the computational domain.  
+#. **COST Recommendation**: This option specifies whether to use the COST([Franke2007]_) recommendations to determine the extent of the computational domain.  
 
 	.. note::
 		If the CFD simulation is run for a validation purpose i.e., to compare with an experimental measurement, it is recommended to make the extent of the domain the same as the test section of the wind tunnel. This typically requires the width and height of the domain to be the same as the experimental facility. However, the length of the domain can be reduced by applying synthetically generated inflow turbulence at the inlet that satisfies important statistics of a fully developed wind flow. Details about inflow turbulence generations can be found in (Ref TInf). 
 
 
-#. **Location of Absolute Origin**: This option specified the location of the absolute origin for the coordinate system where :math:`(x = 0, y = 0, z = 0)`. There are three options: *Building Bottom Center*, *Domain Bottom Left Corner*, and *Custom*. By default, the origin is the *Building Bottom Center*. The origin also can be changed to any user-specified point by using the *Custom* option and editing the coordinates (see the bottom of :numref:`fig-iso-geometry-tab`).  
+#. **Location of Absolute Origin**: This option specifies the location of the absolute origin for the coordinate system where :math:`(x = 0, y = 0, z = 0)`. There are three options: *Building Bottom Center*, *Domain Bottom Left Corner*, and *Custom*. By default, the origin is the *Building Bottom Center*. The origin also can be changed to any user-specified point by using the *Custom* option and editing the coordinates (see the bottom of :numref:`fig-iso-geometry-tab`).  
 
 Meshing
 -----------
@@ -99,7 +107,7 @@ The following subsections describe the GUI for each step. Further details of the
 
 Background Mesh
 """"""""""""""""
-The background mesh is the grid used in the far field away from the area the building is located. The user needs to define a background mesh before running *snappyHexMesh*. The ideal grid for the background mesh is hexahedral (hex) cells. Thus, the background mesh is generated using OpenFOAM's *blockMesh* utility as a structured grid. To start, the user needs to specify the number of cells in the three-orthogonal directions as shown in :numref:`fig-iso-mesh-tab`. Once the information in the *Background Mesh* tab (see :numref:`fig-iso-mesh-tab`) is filled, the user can press the *Run blockMesh* button to generate and visualize the background mesh. The mesh is automatically updated on the model view panel as seen in :numref:`fig-iso-gui-overview`. Descriptions of the fields used to define the background mesh are given below.     
+The background mesh is the grid used in the far field away from the area where the building is located. The user needs to define a background mesh before running *snappyHexMesh*. The ideal grid for the background mesh is hexahedral (hex) cells. Thus, the background mesh is generated using OpenFOAM's *blockMesh* utility as a structured grid. To start, the user needs to specify the number of cells in the three-orthogonal directions as shown in :numref:`fig-iso-mesh-tab`. Once the information in the *Background Mesh* tab (see :numref:`fig-iso-mesh-tab`) is filled, the user can press the *Run blockMesh* button to generate and visualize the background mesh. The mesh is automatically updated on the model view panel as seen in :numref:`fig-iso-gui-overview`. Descriptions of the fields used to define the background mesh are given below.     
 
 #. **Direction**: The axis along which the number of cells will be specified. The mesh information must be provided in :math:`(x, y, z)` directions separately.  
 
@@ -110,7 +118,7 @@ The background mesh is the grid used in the far field away from the area the bui
 #. **Grid Size**: The width of cells in a specified direction.  This field is automatically calculated as the user edits the **No. Cells** field.
 
 	.. warning:: 
-		It is recommended to use nearly cubical cells for the background mesh. This can be achieved by changing the **No. Cells** in each direction until the corresponding **Grid Size** felids are approximately equal. Specially close to the building location, the use of nearly cubical cells is important for the *snappyHexMesh* to operate properly.
+		It is recommended to use nearly cubical cells for the background mesh. This can be achieved by changing the **No. Cells** in each direction until the corresponding **Grid Size** felids are approximately equal. Especially close to the building location, the use of nearly cubical cells is important for the *snappyHexMesh* to operate properly.
 
 	.. note:: 
 		If the **Input Dimension Normalization** in the *Geometry* tab of this event is set to *Relative*, all the dimensions used for defining meshing e.g. **Grid Size**, are expressed relative to the building height. 
@@ -158,7 +166,7 @@ Near solid walls, surface refinements can be added to resolve important flow fea
 
 #. **Refinement Level**: Specifies the level of refinement as it continues from the regional refinement. Needs to be bigger (at least by 1 level) than the highest refinement level used in the *Regional Refinement* tab earlier.  
 
-#.  **Refinement Distance**: Represents a wall-normal distance that the surface refinement will extend outward in the domain. This distance is always measured from the target (building) surface. For example, if 0.5 is used, the near-surface refinement will encompass a region with a distance of 0.5 units away from the surface in all directions. 
+#.  **Refinement Distance**: This represents a wall-normal distance that the surface refinement will extend outward in the domain. This distance is always measured from the target (building) surface. For example, if 0.5 is used, the near-surface refinement will encompass a region with a distance of 0.5 units away from the surface in all directions. 
 
 Edge Refinement
 """"""""""""""""

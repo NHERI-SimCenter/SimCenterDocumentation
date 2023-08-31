@@ -19,20 +19,20 @@ Install on Windows 10
 
 .. only:: WEUQ_app
 
-   This version of the |app| uses *OpenFOAM* for pre-processing the CFD model. At the backend, the mesh generation and visualization in the GUI utilize *OpenFOAM-10* built in meshing tools.  
+   This version of the |app| uses *OpenFOAM* for pre-processing the CFD model. At the backend, the mesh generation and visualization in the GUI utilize *OpenFOAM-10* built-in meshing tools.  
 
    .. note::
-     The packaged distribution of OpenFOAM is only available for Linux system. To install OpenFOAM on Microsoft Windows 10, the user needs to use Windows Subsystem for Linux (WSL). WSL will provides a virtual environment for running Linux applications on Windows.
+     The packaged distribution of OpenFOAM is only available for Linux systems. To install OpenFOAM on Microsoft Windows 10, the user needs to use Windows Subsystem for Linux (WSL). WSL will provide a virtual environment for running Linux applications on Windows.
 
-   ..  The at mesh generation and pre-processing  party applications s. 
+   ..  The at mesh generation and pre-processing party applications s. 
 
    Install OpenFOAM for Windows
    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   To install OpenFOAM-10 on Windows 10, follow the instruction in `OpenFOAM.org <https://openfoam.org/download/windows/>`_ . 
+   To install OpenFOAM-10 on Windows 10, follow the instructions below: 
 
-   #. First, open *PowerShell* from start menu and run it as an administrator. Then, in the command window type ``wsl --install`` which will install all the necessary Linux feature. For detailed instructions please follow `Install WSL <https://learn.microsoft.com/en-us/windows/wsl/install>`_ 
+   #. First, open *PowerShell* from the start menu and run it as an administrator. Then, in the command window type ``wsl --install`` which will install all the necessary Linux features. For detailed instructions please follow `Install WSL <https://learn.microsoft.com/en-us/windows/wsl/install>`_.
    
-   #. Open WSL from the start menu and run and the following commands on the opened terminal window. Further instructions can be found in `OpenFOAM.org <https://openfoam.org/download/windows/>`_ 
+   #. Open WSL from the start menu and run the following commands on the opened terminal window.  
 
 .. code:: bash
 
@@ -40,6 +40,9 @@ Install on Windows 10
    sudo add-apt-repository http://dl.openfoam.org/ubuntu
    sudo apt-get update
    sudo apt-get install openfoam10
+
+
+Further instructions can be found in `OpenFOAM.org <https://openfoam.org/download/windows/>`_.
 
 
 Download the Application
@@ -125,9 +128,9 @@ Once the installation procedure has been completed, it is a good practice to run
 
 .. note::
 
-   Since the SimCenter is not registered as a Windows vendor, our apps are not recognized by the operating system as signed applications. You may receive a warning message that lets you know about risks involved in running unsigned applications from unkown sources when you start the |short tool name| application for the first time. It is safe to bypass that warning when running SimCenter applications.
+   Since the SimCenter is not registered as a Windows vendor, our apps are not recognized by the operating system as signed applications. You may receive a warning message that lets you know about the risks involved in running unsigned applications from unknown sources when you start the |short tool name| application for the first time. It is safe to bypass that warning when running SimCenter applications.
 
-Once the application started, you should see the user interface shown in |figWinUI|. We recommend running the example problem |test example| to test the application.
+Once the application starts, you should see the user interface shown in |figWinUI|. We recommend running the example problem |test example| to test the application.
 
 .. only:: R2D_app
 
