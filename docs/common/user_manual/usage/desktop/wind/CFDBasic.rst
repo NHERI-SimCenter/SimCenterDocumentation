@@ -1,3 +1,4 @@
+
 CFD Basic Template
 ------------------
 
@@ -22,18 +23,6 @@ The following are the steps the user should follow to use the CFD template:
 
 #. Basic and advanced simulation parameters needs to be specified. The user can specify the total time, time step, wind velocity, turbulence model used in the OpenFOAM CFD simulation.
 
-#. The user needs to specify how the force on the building are extracted. Currently, the only method supported is to group forces on the building into bins of equal height, where each bin corresponds to a building floor. In addition, a start time for the applying the forces on the building model has to be specified, forces before that time will not be used. This allows the user to ignore force values in the beginning of the CFD simulation as they may not be accurate.
-
-#. Choose whether or not you want the deformation/vibration of the building to be coupled with the CFD analysis.  This feature will significantly slow down your simulation for the CFD mesh will be updated frequently during the simulation.
-
-
-.. note::
-   
-   This is the first version of WE-UQ that supports this kind of coupling.  Eventually, the coupling will
-   become a fully outomated process, but for this first release, the user needs to provide an initial set of
-   mode shapes to initialize the procedure.
-
-   Mode shapes need to be prepared as a text file following this 
-   File format for user-provided input of building vibration modes.
+#.  Finally, the user needs to specify how the force on the building are extracted. Currently, the only method supported is to group forces on the building into bins of equal height, where each bin corresponds to a building floor. In addition, a start time for the applying the forces on the building model has to be specified, forces before that time will not be used. This allows the user to ignore force values in the beginning of the CFD simulation as they may not be accurate.
 
 It has to be noted that this event can only run remotely at DesignSafe-CI, and is not supported to be run on the local computer. Once the analysis is run a mesh is generated using Gmsh based on the meshing parameters specified by the user, then and OpenFOAM model is generated, analyzed and its output will be used to extract forces acting on the building, assuming the building is a rigid body. It is also important to note that intermediate meshing and CFD simulation results are available in the output archive folder for the user to inspect, if needed.
