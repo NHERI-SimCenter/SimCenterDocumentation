@@ -121,7 +121,7 @@ The first selection panel the user must select from and enter data into is the *
        .. container:: leftside 
 
         :uqblue:`Custom UQ`
-           | Custom UQ helps the user plug-in a user-defined UQ algorithm in SimCenter workflow.
+           | Custom UQ helps the user plug in a user-defined UQ algorithm in SimCenter workflow.
 
             | ▪ :ref:`lblCustomUQ` in CustomUQ engine   :link-badge:`../../examples/desktop/qfem-0017/README.html,Example, cls=badge-success text-white`
 

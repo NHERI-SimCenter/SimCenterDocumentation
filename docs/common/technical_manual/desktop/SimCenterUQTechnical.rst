@@ -18,9 +18,9 @@ Nataf transformation is introduced to standardize the interface between UQ metho
    Standardization of random variables using Nataf transformation
 
 .. Note ::
-(Ongoing implementation) All the custom UQ algorithm need to prepare for the standard Gaussian input while quoFEM intertwines with the simulation model to receive standard normal input u and gives physical y=G(u) back.
+(Ongoing implementation) All the custom UQ algorithms need to prepare for the standard Gaussian input while quoFEM intertwines with the simulation model to receive standard normal input u and gives physical y=G(u) back.
 
-For the Nataf trasformation, the SimCenterUQ engine borrows a part of the distribution class structure developed by ERA group in the Technical University of Munich [ERA2019]_ 
+For the Nataf transformation, the SimCenterUQ engine borrows a part of the distribution class structure developed by ERA group in the Technical University of Munich [ERA2019]_ 
 
 .. [Liu1986]
    Liu, P.L. and Der Kiureghian, A. (1986). Multivariate distribution models with prescribed marginals and covariances. *Probabilistic Engineering Mechanics*, 1(2), 105-112.
@@ -36,7 +36,7 @@ Global sensitivity analysis
 
 Variance-based global sensitivity indices
 -----------------------------------
-Global sensitivity analysis (GSA) is performed to quantify the contribution of each input variable to the uncertainty in QoI. Using the global sensitivity indices, users can set preferences between random variables considering both inherent randomness and its propagation through the model. GSA helps users to understand the overall impact of different sources of uncertainties, as well as to accelerate UQ computations by focusing on dominant dimensions or screening out trivial input variables.
+Global sensitivity analysis (GSA) is performed to quantify the contribution of each input variable to the uncertainty in QoI. Using the global sensitivity indices, users can set preferences between random variables considering both inherent randomness and its propagation through the model. GSA helps users to understand the overall impact of different sources of uncertainties, as well as accelerate UQ computations by focusing on dominant dimensions or screening out trivial input variables.
 
 .. _figSensitivity1:
 
@@ -45,10 +45,10 @@ Global sensitivity analysis (GSA) is performed to quantify the contribution of e
    :figclass: align-center
    :width: 600
 
-   Concept of global sensitivity analysis
+   Concept of Global Sensitivity Analysis
 	
 	
-Sobol indices are widely used variance-based global sensitivity measures. It has two types: main effect and total effect sensitivity indices. The **main effect index** finds the fraction of variance in QoI that can be attributed to specific input random variable(s) but without considering interactive effect with other input variables. The **total effect index**, on the other hand, additionally takes the interactions into account.
+Sobol indices are widely used variance-based global sensitivity measures. It has two types: main effect and total effect sensitivity indices. The **main effect index** finds the fraction of variance in QoI that can be attributed to specific input random variable(s) but without considering the interactive effect with other input variables. The **total effect index**, on the other hand, additionally takes the interactions into account.
 
 Given the output of model :math:`y=g(\boldsymbol{x})` and input random variables :math:`\boldsymbol{x}=\{x_1,x_2, \cdots ,x_d\}`, the first-order main and total effect indices of each input variable is defined as
 
@@ -86,10 +86,10 @@ where :math:`\boldsymbol{x}_{\sim ij}` indicates the set of all input variables 
    - The numerical results of Eq. :eq:`Sbound` for uncorrelated inputs may not hold due to the sampling variability and approximation errors. If this error is very high, the sensitivity index may not be reliable. However, the sensitivity rank between variables is relatively robust.
 
 
-Estimation of Sobol indices using Probablistic model-based global sensitivity analysis (PM-GSA)
+Estimation of Sobol indices using Probabilistic model-based global sensitivity analysis (PM-GSA)
 ----------------------------
 
-GSA is typically computationally expensive. High computation cost attributes to the multiple integrations (:math:`d`-dimensional) associated with the variance and expectation operations shown in Eqs. :eq:`Si` and :eq:`SiT`. To reduce the computational cost, efficient Monte Carlo methods, stochastic expansion methods, or meta model-based methods can be employed. Among different approaches, the SimCenterUQ engine supports the probability model-based GSA (PM-GSA) framework developed by [Hu2019]_. 
+GSA is typically computationally expensive. High computation cost attributes to the multiple integrations (:math:`d`-dimensional) associated with the variance and expectation operations shown in Eqs. :eq:`Si` and :eq:`SiT`. To reduce the computational cost, efficient Monte Carlo methods, stochastic expansion methods, or meta-model-based methods can be employed. Among different approaches, the SimCenterUQ engine supports the probability model-based GSA (PM-GSA) framework developed by [Hu2019]_. 
 
 The framework first conducts ordinary MCS to obtain input-output data pairs. Then by extracting only a subset dimension of the dataset, the probability distribution of a reduced dimension can be approximated and used for estimating the Sobol index. Among different probability distribution models introduced in [Hu2019]_  the Gaussian mixture model is implemented in this engine to approximate this lower dimension distribution. For example, to identify 1st order main Sobol index for a variable :math:`x_i`, a bivariate Gaussian mixture model is fitted for the joint probability distribution of :math:`x_i` and :math:`y`, i.e.
 
@@ -97,9 +97,7 @@ The framework first conducts ordinary MCS to obtain input-output data pairs. The
 	:label: GM
 
 	f_{x_i,y}(x_i,y) \simeq f_{x_i,y}^{GM} (x_i,y)
-	
-
-using expectation-maximization (EM) algorithm. The mean operation Eq. :eq:`Si` is then derived analytically from the Gaussian mixture model, while variance is approximated to be the sample variance. Therefore, the accuracy of the method depends on the quality of the base samples as well as the fitness of the mixture model. The below figure summarizes the procedure of Gaussian mixture model-based PM-GSA introduced in [Hu2019]_. The number of mixture components is optimized along with the mixture parameters during expectation-maximization iterations. 
+using the expectation-maximization (EM) algorithm. The mean operation Eq. :eq:`Si` is then derived analytically from the Gaussian mixture model, while the variance is approximated to be the sample variance. Therefore, the accuracy of the method depends on the quality of the base samples as well as the fitness of the mixture model. The below figure summarizes the procedure of Gaussian mixture model-based PM-GSA introduced in [Hu2019]_. The number of mixture components is optimized along with the mixture parameters during expectation-maximization iterations. 
 
 .. _figSensitivity2:
 
@@ -128,7 +126,7 @@ When the number of the quantities of interest (QoI) is very large, it is computa
 Aggregated sensitivity index
 -----------------------------
 
-When the quantities of interest (QoI) are given as a vector or field variable, aggregated sensitivity index can provide insight into the system's overall sensitivity characteristics. The aggregated sensitivity index achieves this by calculating the weighted average of the sensitivity indices of each QoI component, where the weights are proportional to the variances of the components [Jung2022]_. Component sensitivity indices are useful for visualization, while the aggregated sensitivity index gives instant intuition on how much each variable influences the system response overall. See :ref:`this example<qfem-0023>`.
+When the quantities of interest (QoI) are given as a vector or field variable, an aggregated sensitivity index can provide insight into the system's overall sensitivity characteristics. The aggregated sensitivity index achieves this by calculating the weighted average of the sensitivity indices of each QoI component, where the weights are proportional to the variances of the components [Jung2022]_. Component sensitivity indices are useful for visualization, while the aggregated sensitivity index gives instant intuition on how much each variable influences the system response overall. See :ref:`this example<qfem-0023>`.
 
 .. [Jung2022]
    Jung, W., & Taflanidis, A. A. (2023). Efficient global sensitivity analysis for high-dimensional outputs combining data-driven probability models and dimensionality reduction. *Reliability Engineering & System Safety*, 231, 108805.
@@ -147,7 +145,7 @@ Global surrogate modeling aims to build a regression model that reproduces the o
 
 	\boldsymbol{y}=f^{\rm{ex}} (\boldsymbol{x}) \simeq f^{\rm{sur}} (\boldsymbol{x})  
 
-where the basic assumption is that function evaluation speed of :math:`f^{\rm{sur}}(\boldsymbol{x})` is incomparably faster than :math:`f^{\rm{ex}}(\boldsymbol{x})`. To perform surrogate modeling, we first need to acquire data samples, :math:`(\boldsymbol{x},\boldsymbol{y})`, of exact model based on few rounds of model evaluations, and then the function is interpolated and extrapolated based on the data set. Among various surrogate techniques, Kriging approximates the response surface using a Gaussian process model. Specifically, Kriging surrogate model has the following form: 
+where the basic assumption is that the function evaluation speed of :math:`f^{\rm{sur}}(\boldsymbol{x})` is incomparably faster than :math:`f^{\rm{ex}}(\boldsymbol{x})`. To perform surrogate modeling, we first need to acquire data samples, :math:`(\boldsymbol{x},\boldsymbol{y})`, of exact model based on a few rounds of model evaluations, and then the function is interpolated and extrapolated based on the data set. Among various surrogate techniques, Kriging approximates the response surface using a Gaussian process model. Specifically, Kriging surrogate model has the following form: 
 
 .. math::
 	:label: GPsurr
@@ -186,12 +184,12 @@ Dealing with noisy measurements
 			\boldsymbol{y^{obs}}=\boldsymbol{y} + \boldsymbol{\varepsilon} =f^{\rm{ex}} (\boldsymbol{x}) + \boldsymbol{\varepsilon}
 
 
-	| where a common assumption is that the measurement noise, :math:`\boldsymbol{\varepsilon}`, follows a white Gaussian distribution (i.e. :math:`\varepsilon` is unbiased, follows a normal distribution with variance :math:`\tau`, and is independent of other observation noises). Additionally since the noise level is often unknown, :math:`\tau` is also calibrated along with :math:`\beta` and :math:`K(x_i,x_j)`. In such settings, surrogate model estimation will not interpolate the observation outputs :math:`\boldsymbol{y^{obs}}`, but instead make a regression curve passing through the optimal estimation of the true underlying outputs :math:`\boldsymbol{y}`. Additional to the measurement noise, a mild amount of inherent uncertainty in the simulation model (mild compared to a global trend) can be accounted for in terms of the same noise parameter :math:`\varepsilon`.
+	| where a common assumption is that the measurement noise, :math:`\boldsymbol{\varepsilon}`, follows a white Gaussian distribution (i.e. :math:`\varepsilon` is unbiased, follows a normal distribution with variance :math:`\tau`, and is independent of other observation noises). Additionally since the noise level is often unknown, :math:`\tau` is also calibrated along with :math:`\beta` and :math:`K(x_i,x_j)`. In such settings, surrogate model estimation will not interpolate the observation outputs :math:`\boldsymbol{y^{obs}}`, but instead make a regression curve passing through the optimal estimation of the true underlying outputs :math:`\boldsymbol{y}`. In addition to the measurement noise, a mild amount of inherent uncertainty in the simulation model (mild compared to a global trend) can be accounted for in terms of the same noise parameter :math:`\varepsilon`.
 
 
 * **Nugget effect: artificial noise for numerical stability**
 
-	| The constructed Kriging surrogate model is always smooth and continuous as it is a realization of a Gaussian process, while the actual response may be non-smooth, discontinuous, or highly variant that goes beyond the flexibility of the surrogate model. Especially when the measurements are noiseless, the Gaussian process training can suffer from numerical instability. In such ill-posed problems, the introduction of a small amount of artificial noise, often referred to as *nugget*, may significantly improve the algorithmic stability. In the quoFEM, the nugget parameter is automatically optimized in the loop along with the other parameters. (Note: technically, nugget effect and measurement noise do not coincide in the mathematical formulation as the nugget effect conserves the *interpolating* property while measurement noise does not [Roustant2012]_. However, this program treats the nugget as an artificial noise as their outcomes are often practically indistinguishable.)
+	| The constructed Kriging surrogate model is always smooth and continuous as it is a realization of a Gaussian process, while the actual response may be non-smooth, discontinuous, or highly variant that goes beyond the flexibility of the surrogate model. Especially when the measurements are noiseless, the Gaussian process training can suffer from numerical instability. In such ill-posed problems, the introduction of a small amount of artificial noise, often referred to as *nugget*, may significantly improve the algorithmic stability. In the quoFEM, the nugget parameter is automatically optimized in the loop along with the other parameters. (Note: technically, the nugget effect and measurement noise do not coincide in the mathematical formulation as the nugget effect conserves the *interpolating* property while measurement noise does not [Roustant2012]_. However, this program treats the nugget as an artificial noise as its outcomes are often practically indistinguishable.)
 
 
 .. _figGP1_2:
@@ -206,7 +204,7 @@ Dealing with noisy measurements
 
 * **Heteroscedastic measurement noise**
 
-	| When one expects a high noise level in the response observations with varying variance scales across the domain, one may want to consider modeling the heteroscedastic noise. Note that the observation noise here comes from the variability not captured by the RV values we defined (i.e. :math:`x`). For example, mapping between structural parameters (:math:`x`) and its earthquake response (:math:`y`) typically requires heteroscedastic GP models to capture effect of the aleatoric variability in the response ground motion time history. The below figure shows an example data shape for which a heteroscedastic GP model is required. |app| introduces the **stochastic Kriging** algorithm in [Kyprioti2021]_ to achieve this, which relies on the so-called **partial replication strategy**, that is, to generate multiple realizations for a subset of inputs to examine response variance. In particular, a subset of initial samples are replicated to obtain variance estimates, i.e., variance realizations, at different sample locations, and these values are used to construct a variance-field model. Then by constraining the relative scales of the variance, the stochastic kriging emulator is trained using both replication and unique (non-replicated) samples. :ref:`This example<qfem-0025>` reproduces the results of :numref:`figGP1_3`
+	| When one expects a high noise level in the response observations with varying variance scales across the domain, one may want to consider modeling the heteroscedastic noise. Note that the observation noise here comes from the variability not captured by the RV values we defined (i.e. :math:`x`). For example, mapping between structural parameters (:math:`x) and the earthquake response (:math:`y`) typically requires heteroscedastic GP models to capture the effect of the aleatoric variability in the response ground motion time history. The below figure shows an example data shape for which a heteroscedastic GP model is required. |app| introduces the **stochastic Kriging** algorithm in [Kyprioti2021]_ to achieve this, which relies on the so-called **partial replication strategy**, that is, to generate multiple realizations for a subset of inputs to examine response variance. In particular, a subset of initial samples are replicated to obtain variance estimates, i.e., variance realizations, at different sample locations, and these values are used to construct a variance-field model. Then by constraining the relative scales of the variance, the stochastic kriging emulator is trained using both replication and unique (non-replicated) samples. :ref:`This example<qfem-0025>` reproduces the results of :numref:`figGP1_3`
 
 	.. _figGP1_3:
 
@@ -259,7 +257,7 @@ Input-Output settings
 
 	User have the following options:
 
-	* **Case1** : users can provide a range of input variables (bounds) and a simulation model. After initial space-filling phase using Latin hypercube sampling (LHS), **adaptive design of experiment (DoE)** is activated. Given current predictions, the next optimal simulation point is optimized such that expected gain is maximized. 
+	* **Case1** : users can provide a range of input variables (bounds) and a simulation model. After the initial space-filling phase using Latin hypercube sampling (LHS), **adaptive design of experiment (DoE)** is activated. Given current predictions, the next optimal simulation point is optimized such that the expected gain is maximized. 
 	* **Case2** : users can provide pairs of input-output dataset
 	* **Case3** : users can provide input data points and a simulation model
 
@@ -267,12 +265,12 @@ Input-Output settings
 
 	User have the following option:
 
-	* **Case1** : users can provide a range of input variables (bounds) and a simulation model. After initial space-filling phase using Latin hypercube sampling (LHS), **adaptive design of experiment (DoE)** is activated. Given current predictions, the next optimal simulation point is optimized such that expected gain is maximized. 
+	* **Case1** : users can provide a range of input variables (bounds) and a simulation model. After the initial space-filling phase using Latin hypercube sampling (LHS), **adaptive design of experiment (DoE)** is activated. Given current predictions, the next optimal simulation point is optimized such that the expected gain is maximized. 
 
 
 Kernel and basis functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The covariance kernel of the outcome process is unknown in most practical applications. Therefore, the mathematical form of the kernel is first assumed, and its parameters are calibrated based on the observation data. Followings are some of the popular stationary covariance kernels. 
+The covariance kernel of the outcome process is unknown in most practical applications. Therefore, the mathematical form of the kernel is first assumed, and its parameters are calibrated based on the observation data. Following are some of the popular stationary covariance kernels. 
 
 * **Radial-basis function (RBF)**
 
@@ -284,7 +282,7 @@ The covariance kernel of the outcome process is unknown in most practical applic
 		k(\boldsymbol{x_i},\boldsymbol{x_j}) = \sigma\prod_{d=1}^{D} \exp\Bigg(-\frac{1}{2} \frac{(x_{i,d}-x_{j,d})^2}{l_d^2}\Bigg)
 
 	
-  | where :math:`\boldsymbol{x_i}` and :math:`\boldsymbol{x_j}` are two arbitrary points in the domain and the hyper parameters, :math:`D` is number of the input variables. The parameters :math:`\sigma` and :math:`l_d` respectively control the error scale and correlation length of the process. 
+  | where :math:`\boldsymbol{x_i}` and :math:`\boldsymbol{x_j}` are two arbitrary points in the domain and the hyperparameters, :math:`D` is number of the input variables. The parameters :math:`\sigma` and :math:`l_d` respectively control the error scale and correlation length of the process. 
 
 .. _figGP2:
 
@@ -298,7 +296,7 @@ The covariance kernel of the outcome process is unknown in most practical applic
 
 * **Exponential**
 
-  | Similarly, exponential covariance function is defined as follows.
+  | Similarly, the exponential covariance function is defined as follows.
 
 	.. math::
 		:label: exponential
@@ -307,7 +305,7 @@ The covariance kernel of the outcome process is unknown in most practical applic
 
 * **Matern Class** 
 
-  | Matern class of covariance function is another popular choice. It has a positive shape  parameter often denotoed as :math:`\nu` which additionally determines the roughness of the parameters. For Kriging regression, :math:`\nu=5/2` and :math:`\nu=3/2` is known to be generally applicable choices considering roughness property and the simplicity of the functional form. [Rasmussen2006]_
+  | Matern class of covariance function is another popular choice. It has a positive shape parameter, often denotoed as :math:`\nu` which additionally determines the roughness of the parameters. For Kriging regression, :math:`\nu=5/2` and :math:`\nu=3/2` is known to be generally applicable choices considering the roughness property and the simplicity of the functional form. [Rasmussen2006]_
 
 	.. math::
 		:label: Matern1
@@ -324,7 +322,7 @@ The covariance kernel of the outcome process is unknown in most practical applic
 		g_{d,\frac{3}{2}}(h_d) &= \Bigg(1+ \frac{\sqrt{3}|h_d|}{l_d}\Bigg)\exp\Bigg(-\frac{\sqrt{3}|h_d|}{l_d}\Bigg)
 
 
-  | respectively for :math:`\nu=5/2` (smoother) and :math:`\nu=3/2` (rougher). It is noted in the literature that if :math:`\nu` is greater than :math:`5/2`, the Matern kernel behaves similar to the radial-basis function. 
+  | respectively for :math:`\nu=5/2` (smoother) and :math:`\nu=3/2` (rougher). It is noted in the literature that if :math:`\nu` is greater than :math:`5/2`, the Matern kernel behaves similarly to the radial-basis function. 
 
 
 Once the kernel form is selected, the parameters are calibrated to maximize the likelihood of observations within the Gaussian process model. The default optimization function embedded in GPy is limited-memory BFGS with bound constraints (L-BFGS-B) algorithm from `Python/Numpy <https://docs.scipy.org/doc/scipy/reference/optimize.minimize-lbfgsb.html>`_ package. [ShaffieldML2012]_
@@ -335,7 +333,7 @@ Adaptive Design of Experiments (DoE)
 
 .. only:: quoFEM_app
 
-	In the case where bounds of input variables and a simulator model is provided (Case 1), model evaluation points can be selected by space-filling methods, e.g. Latin hyper cube sampling (LHS). This is non-adaptive Design of Experiments (DoE) in a sense that the whole samples can be located before running any simulations. On the other hand, the number of model evaluations can be reduced by selecting evaluation points *adaptively* after each run to get the best model improvements. 
+	In the case where bounds of input variables and a simulator model are provided (Case 1), model evaluation points can be selected by space-filling methods, e.g. Latin hypercube sampling (LHS). This is a non-adaptive Design of Experiments (DoE) in the sense that the whole samples can be located before running any simulations. On the other hand, the number of model evaluations can be reduced by selecting evaluation points *adaptively* after each run to get the best model improvements. 
 
 	.. _figGP_DoE1:
 
@@ -361,7 +359,7 @@ Adaptive Design of Experiments (DoE)
 		\end{align*}
 
 
-	where :math:`\phi` is bias measure from leave-one-out cross validation (LOOCV) analysis, :math:`\rho` is a weighting coefficient, and :math:`\boldsymbol{\sigma_n}^2(\boldsymbol{x}|\boldsymbol{X,x_{new}})` is the predictive variance after additional observation :math:`x_{new}` [Kyprioti2020]_. To find the sample location that gives minimum IMSE value, two step screening-clustering algorithm is implemented.
+	where :math:`\phi` is bias measure from leave-one-out cross validation (LOOCV) analysis, :math:`\rho` is a weighting coefficient, and :math:`\boldsymbol{\sigma_n}^2(\boldsymbol{x}|\boldsymbol{X,x_{new}})` is the predictive variance after additional observation :math:`x_{new}` [Kyprioti2020]_. To find the sample location that gives minimum IMSE value, a two-step screening-clustering algorithm is implemented.
 
 	.. _figGP_DoE2:
 
@@ -375,7 +373,7 @@ Adaptive Design of Experiments (DoE)
 
 	**Adaptive DoE algorithm: Pareto**
 
-	Alternatively, multiple design points can be selected by multi-objective optimization scheme. The variance mesure and bias measure defined by
+	Alternatively, multiple design points can be selected by a multi-objective optimization scheme. The variance measure and bias measure are defined by
 
 
 	.. math::
@@ -389,8 +387,8 @@ Adaptive Design of Experiments (DoE)
 	Adaptive DoE is terminated when one of the three conditions is met:
 
 	* **Time**: analysis time exceeds a predefined (rough) time constraint
-	* **Count**: number of model evaluation exceeds a predefined count constraint 
-	* **Accuracy**: accuracy measure of the model meets a predefined convergence level
+	* **Count**: the number of model evaluations exceeds a predefined count constraint 
+	* **Accuracy**: the accuracy measure of the model meets a predefined convergence level
 
 only:: EEUQ_app
 	
@@ -403,7 +401,7 @@ Once the training is completed, the following three verification measures are pr
 
 * **Leave-one-out cross-validation (LOOCV)**
 
-  | LOOCV prediction :math:`\hat{\boldsymbol{y}}_k` at each sample location :math:`\boldsymbol{x}_k` is obatined by the following procedure: A temporary surrogate model :math:`\hat{\boldsymbol{y}}=f^{sur}_{loo,k}(\boldsymbol{\boldsymbol{x}})` is constructed using the samples :math:`\{\boldsymbol{x}_1,\boldsymbol{x}_2,...,\boldsymbol{x}_{k-1},\boldsymbol{x}_{k+1},...,\boldsymbol{x}_N\}` and the calibrated parameters, and the prediction :math:`\hat{\boldsymbol{y}}_k=f^{sur}_{loo,k}(\boldsymbol{x}_k)` is compared with the exact outcome .
+  | LOOCV prediction :math:`\hat{\boldsymbol{y}}_k` at each sample location :math:`\boldsymbol{x}_k` is obtained by the following procedure: A temporary surrogate model :math:`\hat{\boldsymbol{y}}=f^{sur}_{loo,k}(\boldsymbol{\boldsymbol{x}})` is constructed using the samples :math:`\{\boldsymbol{x}_1,\boldsymbol{x}_2,...,\boldsymbol{x}_{k-1},\boldsymbol{x}_{k+1},...,\boldsymbol{x}_N\}` and the calibrated parameters, and the prediction :math:`\hat{\boldsymbol{y}}_k=f^{sur}_{loo,k}(\boldsymbol{x}_k)` is compared with the exact outcome.
 
 
 We provide different verification measures for two different cases.
@@ -437,7 +435,7 @@ We provide different verification measures for two different cases.
 
 * **Correlation coefficient**
 
-  | Correlation coefficient is a statistic that measures linear correlation between two variables
+  | Correlation coefficient is a statistic that measures a linear correlation between two variables
 
   .. math::
     :label: corr
@@ -461,7 +459,7 @@ We provide different verification measures for two different cases.
 
     * **Inter-quartile ratio (IQR)**: IQR provides the ratio of the sample QoIs that lies in 25-75% LOOCV prediction bounds (interquartile range). The IQR values should theoretically approach 0.5 if the prediction is accurate.
 
-    * **Cramer-Von Mises statistics**: Cramer-Von Mises statistics calculates the normality score. The assumption of a GP is that the observations follow a normal distribution conditional on the input parameters. To assess the normality of the model predictions, the difference between the mean prediction :math:`\hat{y}_k` and the sample observation  :math:`y_k` value is divided by the standard deviation prediction from surrogate :math:`\hat{\sigma}_{y,k}`:
+    * **Cramer-Von Mises statistics**: Cramer-Von Mises statistics calculates the normality score. GP assumes that the observations follow a normal distribution conditional on the input parameters. To assess the normality of the model predictions, the difference between the mean prediction :math:`\hat{y}_k` and the sample observation  :math:`y_k` value is divided by the standard deviation prediction from surrogate :math:`\hat{\sigma}_{y,k}`:
 
       .. math::
         :label: normed
@@ -469,10 +467,10 @@ We provide different verification measures for two different cases.
           u_k = \frac{y_k-\hat{y}_k} {\hat{\sigma}_{y,k}}
 
 
-     If the values of :math:`{u_k}` follow standard normal distribution, the resulting surrogate model may be considered well-constructed. The Cramer-Von Mises test is calculated using the ``scipy.stats.cramervonmises`` function in the Python package Scipy, and the resulting p-value is displayed. Conventionally, if the p-value exceeds a significance threshold, e.g. 0.05, the null hypothesis that the samples are from a normal distribution is not rejected, meaning the samples may be considered to follow a Gaussian distribution.
+     If the values of :math:`{u_k}` follow the standard normal distribution, the resulting surrogate model may be considered well-constructed. The Cramer-Von Mises test is calculated using the ``scipy.stats.cramervonmises`` function in the Python package Scipy, and the resulting p-value is displayed. Conventionally, if the p-value exceeds a significance threshold, e.g. 0.05, the null hypothesis that the samples are from a normal distribution is not rejected, meaning the samples may be considered to follow a Gaussian distribution.
 
 .. [Rasmussen2006]
-	Rasmussen, C.E. and Williams, C.K. (2006). *Gaussian Process for Machine Learning*. Cambridge, MA: The MIT Press, 2006 (available on-line at http://www.gaussianprocess.org/gpml/)
+	Rasmussen, C.E. and Williams, C.K. (2006). *Gaussian Process for Machine Learning*. Cambridge, MA: The MIT Press, 2006 (available online at http://www.gaussianprocess.org/gpml/)
 .. [Kyprioti2020]
 	Kyprioti, A.P., Zhang, J., and Taflanidis, A.A. (2020). Adaptive design of experiments for global Kriging metamodeling through cross-validation information. *Structural and Multidisciplinary Optimization*, 1-23.
 .. [Kyprioti2021]
