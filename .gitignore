@@ -309,6 +309,7 @@ fmkExamples
 .DS_Store
 web/
 _out
+docs_temp
 
 #Remove .vscode
 .vscode
