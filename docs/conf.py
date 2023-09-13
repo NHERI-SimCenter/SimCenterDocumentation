@@ -29,8 +29,8 @@ else:
     pass
     #app_name = 'R2DTool'
     #app_name = 'PBE'
-    app_name = 'EE-UQ'
-    #app_name = 'WE-UQ'
+    #app_name = 'EE-UQ'
+    app_name = 'WE-UQ'
     #app_name = 'quoFEM'
     #app_name = 'pelicun'
 
@@ -504,7 +504,7 @@ elif app_name == "PBE":
 .. |full tool name| replace:: Performance Based Engineering Application
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
 .. _PBE Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE
-.. |tool version| replace:: 3.0
+.. |tool version| replace:: 3.1
 .. |test example| replace:: :ref:`pbdl-0001`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-PBE`
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
@@ -605,7 +605,7 @@ elif app_name == "quoFEM":
 elif app_name == "WE-UQ":
     project = "Wind Engineering with Uncertainty Quantification"
     # author = 'Frank McKenna'
-    author = "Frank McKenna, Peter Mackenzie-Helnwein, Wael Elhaddad, Jiawei Wan, Michael Gardner, Dae Kun Kwon, Fei Ding"
+    author = "Frank McKenna, Abiy F. Melaku, Fei Ding, Jiawei Wan, Peter Mackenzie-Helnwein, Wael Elhaddad, Michael Gardner, Dae Kun Kwon"
 
     tags.add("desktop_app")
     tags.add("response")
@@ -642,7 +642,7 @@ elif app_name == "WE-UQ":
     rst_prolog += f"""
 .. |full tool name| replace:: Wind Engineering with Uncertainty Quantification Application
 .. |test example| replace:: :ref:`weuq-0001`
-.. |tool version| replace:: 2.0
+.. |tool version| replace:: 3.0
 .. _WE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=5.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-WE`

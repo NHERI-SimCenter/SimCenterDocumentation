@@ -13,11 +13,10 @@ General Requirements
 Loading Requirements
 --------------------
 
-..
-  .. csv-table:: Requirements - Wind Loading
-    :header: "#", "Description", "Source", "Priority", "Version"
-    :widths: 10, 60, 10, 10, 10
-    :file: WindLoading.csv
+.. csv-table:: Requirements - Wind Loading
+  :header: "#", "Description", "Source", "Priority", "Version"
+  :widths: 10, 60, 10, 10, 10
+  :file: WindLoading.csv
 
 
 .. csv-filter:: Requirements - Earthquake Loading
