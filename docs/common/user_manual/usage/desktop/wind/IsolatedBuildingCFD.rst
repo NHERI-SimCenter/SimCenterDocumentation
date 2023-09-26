@@ -53,7 +53,7 @@ This tab outlines the main steps in the CFD modeling process. It provides the pa
 
 Geometry
 -----------
-Here the geometry and dimensions of the building and computational domain are defined. It is common to conduct CFD simulations as a replica of actual wind tunnel testing facilities. For this type of application, the user must specify the dimensions of the tunnel and the geometric scale used to construct the building model in the experiment. In :numref:`fig-iso-geometry-tab`, all the inputs are related to the geometry of the building and the computational domain.     
+In the **Geometry** tab, the geometry and dimensions of the building and computational domain are defined. It is common to conduct CFD simulations as a replica of actual wind tunnel testing facilities. For this type of application, the user must specify the dimensions of the tunnel and the geometric scale used to construct the building model in the experiment. In :numref:`fig-iso-geometry-tab`, all the inputs related to the geometry of the building and the domain are shown.     
 
 .. _fig-iso-geometry-tab:
 .. figure:: figures/IsolatedBuildingCFD/geometry_tab.svg
@@ -88,7 +88,7 @@ Here the geometry and dimensions of the building and computational domain are de
 
 #. **Location of Absolute Origin**: This option specifies the location of the absolute origin for the coordinate system where :math:`(x = 0, y = 0, z = 0)`. There are three options: *Building Bottom Center*, *Domain Bottom Left Corner*, and *Custom*. By default, the origin is the *Building Bottom Center*. The origin also can be changed to any user-specified point by using the *Custom* option and editing the coordinates (see the bottom of :numref:`fig-iso-geometry-tab`).  
 
-Importing STL Geometry 
+Importing STL Surface 
 """""""""""""""""""""""
 For buildings with complex shapes, the user can specify the building geometry by clicking **Import STL** button under *Building Shape* group (see  :numref:`fig-iso-geometry-tab`). This opens a new window shown in :numref:`fig-iso-import-stl` which will allow the user to import an STL file. The properties of the STL geometry and options to transform the model are given below. 
 
