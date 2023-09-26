@@ -4,7 +4,7 @@
 Isolated Building CFD Model
 ============================
 
-The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wind load generator for an isolated building with a rectangularly shaped plan area. It provides greater flexibility in modeling the approaching wind and the wind-induced loads on the building. This event allows the user to seamlessly define the computational model with interactive GUI support. :numref:`fig-iso-cfd-workflow` shows the high-level view of CFD-based framework as it fits to the overall workflow of WE-UQ. The modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient features includes automatic meshing with a user-interactive interface. At the backend, the CFD simulations are conducted by executing open-source CFD solvers from OpenFOAM [Greenshields2015]_. The user needs to follow the following procedure to model wind loading using this event.           
+The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wind load generator for an isolated building. It provides greater flexibility in modeling the approaching wind and the wind-induced loads on the building. This event allows the user to seamlessly define the computational model with interactive GUI support. :numref:`fig-iso-cfd-workflow` shows the high-level view of CFD-based framework as it fits to the overall workflow of WE-UQ. The modeling process is automated with different pre-/post-processing functionalities. The user needs to provide information related to geometry, mesh generation, boundary conditions, turbulence modeling, solver selection, etc. One of the most salient features includes automatic meshing with a user-interactive interface. At the backend, the CFD simulations are conducted by executing open-source CFD solvers from OpenFOAM [Greenshields2015]_. The user needs to follow the following procedure to model wind loading using this event.           
 
 .. _fig-iso-cfd-workflow:
 .. figure:: figures/IsolatedBuildingCFD/WEUQ_CFD_Workflow.png
@@ -60,11 +60,13 @@ Here the geometry and dimensions of the building and computational domain are de
 	:align: center
 	:figclass: align-center
 
-	**Geometry** tab for editing dimensions/configurations of the building and computational domain.
+	**Geometry** tab for defining the geometry of the building and computational domain.
 
 #. **Input Dimension Normalization**: This option specifies whether to use normalized dimensions for specifying the domain dimensions. The normalization is done relative to the building height. The user must specify whether to use *Relative* or *Absolute* dimensions.    
 
 #. **Geometric Scale**: If the CFD simulation is conducted at a reduced scale, the geometric scale (the ratio of full-scale to model-scale dimensions) must be specified here.
+
+#. **Shape Type**: This option allows the user to choose the complexity of the building shape. To define the **Shape Type**,  there are two options. If the building has a generic shape with a rectangular floor plan, the user can select the *Simple* option. However, for a building with arbitrary geometry, by specifying the *Complex* options, the user can import an STL geometry of the building.  
 
 #. **Building Width**, **Building Depth** and **Building Height** are the dimensions of the building in full-scale. The dimensions of the building are defined in the *GI* tab and cannot be changed here. 
       
@@ -85,6 +87,38 @@ Here the geometry and dimensions of the building and computational domain are de
 
 
 #. **Location of Absolute Origin**: This option specifies the location of the absolute origin for the coordinate system where :math:`(x = 0, y = 0, z = 0)`. There are three options: *Building Bottom Center*, *Domain Bottom Left Corner*, and *Custom*. By default, the origin is the *Building Bottom Center*. The origin also can be changed to any user-specified point by using the *Custom* option and editing the coordinates (see the bottom of :numref:`fig-iso-geometry-tab`).  
+
+Importing STL Geometry 
+"""""""""""""""""""""""
+For buildings with complex shapes, the user can specify the building geometry by clicking **Import STL** button under *Building Shape* group (see  :numref:`fig-iso-geometry-tab`). This opens a new window shown in :numref:`fig-iso-import-stl` which will allow the user to import an STL file. The properties of the STL geometry and options to transform the model are given below. 
+
+.. _fig-iso-import-stl:
+.. figure:: figures/IsolatedBuildingCFD/import_stl_dialog.svg
+	:align: center
+	:width: 50%
+
+
+	Importing building geometry from an STL file.
+
+
+#. **Path**: Specifies the file path to the STL file. The user can change a file by clicking the **Browse** button.  
+
+#. **Bounding Box**: When the **Import** button is clicked, the extent of the STL geometry is calculated. The **Min** and **Max** coordinates of the bounding box in the **X**, **Y** and **Z** directions are displayed in :numref:`fig-iso-import-stl`. Also, the dimension of the bounding box in each direction is calculated as **Size**.  
+
+#. **Extract Building Dimensions from STL Surface**: If this option is checked, the building dimensions (width, depth and height) are directly extracted from the STL geometry.    
+
+#. **Recenter to Origin**: If checked, the building is translated and placed at the origin of the coordinate system. It is recommended that the user check this option to avoid the possibility of the building being outside the domain extent. If this option is not checked, the building will be located based on the coordinate system defined in the original STL file. 
+
+#. **Account Wind Direction**: If this option is checked, the created model accounts for the wind direction by rotating the building relative to the wind. It is recommended to check this option if a wind direction different from zero is specified. 
+
+#. **Scaling Factor**: Specifies the factor by which to scale the imported model. This allows the user to rescale the building if the geometric scale in the CFD mode is different from the one used in the STL file. 
+
+#. **Import**: Transforms the geometry and imports the STL into the CFD model. 
+
+#. **Ok**: Imports the STL after transformation and closes the opened dialog window. 
+
+#. **Cancel**: Closes the dialog window. 
+
 
 Meshing
 -----------
