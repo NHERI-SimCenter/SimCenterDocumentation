@@ -21,7 +21,7 @@ This is Version |tool version| of the tool. Users are encouraged to comment on w
 Capabilities and Limitations
 ------------------------------
 
-Below are key capabilities and limitations of |short tool id|, categorized by Uncertainty Quantification (UQ), Finite Element Method (FEM), Random Variabiles (RV), Quantity of Interest (QoI), Results (RES), and general.
+Below are key capabilities and limitations of |short tool id|, categorized by Uncertainty Quantification (UQ), Finite Element Method (FEM), Random Variables (RV), Quantity of Interest (QoI), Results (RES), and general.
 
 
 .. list-table:: 
@@ -39,7 +39,7 @@ Below are key capabilities and limitations of |short tool id|, categorized by Un
      - No support to assist modeling, e.g. creation of hazards and structural models. Those are featured in `other tools <https://simcenter.designsafe-ci.org/research-tools/overview/>`_ of SimCenter.
    * - RV
      - 12 different kinds of probability distributions with correlations.
-     - No support for random fields, non-Gaussian copular, or user-defined variables.
+     - No support for random fields, non-Gaussian copula, or user-defined variables.
    * - QoI
      - Scalar and vector QoI. Parsing of QoI names using :ref:`a post processing script<lblFEM>`.
      - 
