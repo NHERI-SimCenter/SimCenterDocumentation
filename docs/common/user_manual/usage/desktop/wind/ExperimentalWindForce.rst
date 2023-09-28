@@ -16,8 +16,7 @@ The application takes multivariate stationary wind force time series data obtain
 
 	Generating full-scale wind force history from a model-scale wind force time history obtained from wind tunnel experiments.
 
-.. [Duarte2023] Duarte, T. G. A., Arunachalam, S., Subgranon, A., & Spence, S. M. (2023). Uncertainty Quantification of a Wind Tunnel-Informed Stochastic Wind Load Model for Wind Engineering Applications. arXiv preprint arXiv:2305.06253.
-
+.. [Duarte2023] Duarte, T.G., Arunachalam, S., Subgranon, A. and Spence, S.M., (2023). Uncertainty Quantification and Simulation of Wind-Tunnel-Informed Stochastic Wind Loads. Wind, 3(3), pp.375-393.
 
 User Inputs
 ^^^^^^^^^^^^^^^^^^^^^^^^^^

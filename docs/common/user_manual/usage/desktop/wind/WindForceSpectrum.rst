@@ -103,5 +103,4 @@ If the inputs are provided in a json file, s_target should be split into real an
 	Example of information inside a Json file (.json) (``nfloor`` = 25, ``ntimesteps`` = 20,000, units: meter, Newton, second)
 
 
-
-.. [Duarte2023] Duarte, T. G. A., Arunachalam, S., Subgranon, A., & Spence, S. M. (2023). Uncertainty Quantification of a Wind Tunnel-Informed Stochastic Wind Load Model for Wind Engineering Applications. arXiv preprint arXiv:2305.06253.
+.. [Duarte2023] Duarte, T.G., Arunachalam, S., Subgranon, A. and Spence, S.M., (2023). Uncertainty Quantification and Simulation of Wind-Tunnel-Informed Stochastic Wind Loads. Wind, 3(3), pp.375-393.
