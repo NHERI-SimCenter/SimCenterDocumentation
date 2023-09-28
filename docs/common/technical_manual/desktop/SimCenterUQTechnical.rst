@@ -492,13 +492,13 @@ Multi-fidelity Monte Carlo (MFMC)
 
 Models with different infidelities
 ---------------------------------------
-When one has multiple models with different fidelity for the same target system, one can introduce multi-fidelity Monte Carlo (MFMC) methods to enhance the high-fidelity estimates leveraging a large number of low-fidelity simulations. The high-fidelity and low-fidelity models are defined as the following.  
+When one has multiple models of a target system with different fidelities, they can introduce multi-fidelity Monte Carlo (MFMC) methods. MFMC helps us to reduce the high-fidelity simulation runs by leveraging a large number of low-fidelity simulations. The high-fidelity and low-fidelity models are defined as the following.  
 
- * **High-fidelity (HF) model**: The model with a desired level of accuracy and very high computational cost. 
+ * **High-fidelity (HF) model**: The model with a desired level of accuracy and high computational cost. 
 
  * **Low-fidelity (LF) model(s)**: The model(s) with lower computational cost and lower accuracy. 
 
-The goal of MFMC is to estimate the statistics of the HF model using a small number of HF simulations and a large number of LF simulations. The *fidelity* can mean different idealization of models as shown in :numref:`fig-BeamColumn` (e.g. reduced order model), or the models with same idealization in different resolutions (e.g. coarser mesh or grids). The latter is also referred to as multi-level Monte Carlo (MLMC).
+The goal of MFMC is to estimate the statistics of the HF model using a small number of HF simulations and a large number of LF simulations. Those *fidelity* can be attributed to different idealization of models as shown in :numref:`fig-BeamColumn` (e.g. reduced order model), or the models with same idealization in different resolutions (e.g. coarser mesh or grids). The latter is also referred to as multi-level Monte Carlo (MLMC).
 
 .. _fig-BeamColumn:
 
@@ -510,7 +510,7 @@ The goal of MFMC is to estimate the statistics of the HF model using a small num
    Idealized models of beam-column elements (Fig 2.1 in [Deierlein2010]_)
 
 .. [Deierlein2010]
-	Deierlein, Gregory G., Andrei M. Reinhorn, and Michael R. Willford. "Nonlinear structural analysis for seismic design." *NEHRP seismic design technical brief* 4 (2010): 1-36.
+	Deierlein, Gregory G., Andrei M. Reinhorn, and Michael R. Willford. (2010). Nonlinear structural analysis for seismic design. *NEHRP seismic design technical brief* 4 : 1-36.
 
 .. note::
 		The concept of MFMC is different from that of **multi-model forward propagation** referred to at other parts of the documentation. 
@@ -526,11 +526,11 @@ Before running the MFMC simulation model, the users are advised to check the val
 
 * **The models should take the same input random variables and produces the same output quantities of interest.** For example, if target system is a structure, if one model takes stiffness as random variable and the other does not, the model violates the problem definition. Similarly, if :math:`j`-th output of the HF model is the 1st floor inter-story drift, :math:`j`-th output of the LF model should also be 1st floor inter-story drift. 
 
-* **The models should have clear hierarchy in terms of accuracy and time.** When the HF and LF model responses are different, the assumption is that the HF response is always accurate. Therefore, if a LF model runs faster than the HF model, it is optimal to run only the HF model, and there is no reason to run MFMC.
+* **The models should have clear hierarchy in terms of accuracy and time.** When the HF and LF model responses are different, the assumption is that the HF response is always accurate. Therefore, if a LF model runs faster than the HF model, it is optimal to run only the HF model, and there is no reason to introduce MFMC.
 
-* **The response of different models should have high correlation**. The efficiency of MFMC heavily depends on the correlation between the model outputs. Only if the correlation is fairly high, the MF estimation is meaningfully efficient than conducting only HF simulations. 
+* **The response of different models should have high correlation**. The efficiency of MFMC heavily depends on the correlation between the HF and LF model outputs. Only if the correlation is fairly high, the MF estimation is meaningfully efficient than conducting only HF simulations. 
 
-:numref:`fig-MF-SP` shows the expected speed-up factor for different computation time ratios and correlation coefficient values. One can notice that only when computational cost ratio is greater than a factor of 100 and when correlation is greater than 0.85-0.9, the expected gain is significant.
+:numref:`fig-MF-SP` shows the expected speed-up factor for different computation time ratios and correlation coefficient values. One can notice that only when the ratio of the model evaluation time is greater than 100 and when the correlation is greater than 0.85-0.9, the expected speed-up is significant.
 
 .. _fig-MF-SP:
 
@@ -539,12 +539,12 @@ Before running the MFMC simulation model, the users are advised to check the val
    :figclass: align-center
    :width: 900
 
-   Speed-up offered by the MFMC estimation (Fig 1 in [Patsialis2021]_). Note :math:`c^{FEM}=c_{HF}`, :math:`c^{ROM}=c_{LF}`, :math:`\rho=\rho_{LF,HF}`.
+   Speed-up offered by the MFMC estimation (Fig 1 in [Patsialis2021]_). (`c^{FEM}`: HF model evaluation time, :math:`c^{ROM}`: LF model evaluation time, :math:`\rho`: correlation between HF and LF responses).
 
 
 Algorithm details
 ----------------------------------------------
-The implementation in |short tool id| follows that of Patsialis et al. (2021) ([Patsialis2021]_). Let us denote the HF and LF output for a given input :math:`x` as 
+The implementation of MFMC in |short tool id| follows that of Patsialis et al. (2021) ([Patsialis2021]_). Let us denote the HF and LF output for a given input :math:`x` as 
 
    .. math::
 
@@ -555,18 +555,18 @@ The implementation in |short tool id| follows that of Patsialis et al. (2021) ([
        y_{LF} = g_{LF}(\boldsymbol{x})
 
 
-The goal of MFMC is to estimate the mean and variance of :math:`y_{HF}`, given some distribution of :math:`\boldsymbol{x}`, with highest accuracy. The MFMC consists of three steps.
+The goal of MFMC is to estimate the mean and variance of :math:`y_{HF}`, given some distribution of :math:`\boldsymbol{x}` and computational budget, with the highest accuracy. The MFMC consists of three steps.
  
 
 .. note::
 
-	For notational simplicity, the procedure presented in this page is the simplest case where we have single LF model, single output, and estimation first-order statistics. However, once one understand the simplest case, the extension into the advanced cases are fairly straightforward.
+	For notational simplicity, the procedure presented on this page is the simplest case where we have single LF model and single output, aiming to estimate first-order statistics. However, once one understands the simplest case, the extension into the advanced cases are fairly straightforward.
 
-	* For **multiple LF models**, the similar formulation can be found in literature. ([Patsialis2021]_, [Peherstorfer2016]_, etc). 
+	* For **multiple LF models**, a similar formulation can be found in the literature. ([Patsialis2021]_, [Peherstorfer2016]_, etc). 
 	* For **multiple outputs** :math:`y_{HF}` and :math:`y_{LF}` in the formulations can respectively be replaced with :math:`y_{j,HF}` and :math:`y_{j,LF}`, meaning it is :math:`j`-th output of the models.
-	* The presented procedure leads to the estimation of mean of :math:`\rm{E}[y_{HF}]`. The **variance can be estimated** by replacing :math:`y_{HF}` and :math:`y_{LF}` with :math:`y^2_{HF}` and :math:`y^2_{LF}`, respectively, which lead to the estimation of :math:`\rm{E}[y_{HF}^2]` and additionally introducing a post processing step to subtract :math:`\rm{E}[y_{HF}]^2`. Other higher-order statistics can be estimated in a similar manor.
+	* The presented procedure leads to the estimation of mean of :math:`\rm{E}[y_{HF}]`. The **variance can be estimated** by replacing :math:`y_{HF}` and :math:`y_{LF}` with :math:`y^2_{HF}` and :math:`y^2_{LF}`, respectively, which lead to the estimation of :math:`\rm{E}[y_{HF}^2]` and additionally introducing a post-processing step to subtract :math:`\rm{E}[y_{HF}]^2`. Other higher-order statistics can be estimated in a similar manner.
 
-	The current implementation can accommodate multiple LF models, process multiple outputs, and output MFMC estimate of the variance. The complete formulations can be found in literature ([Patsialis2021]_, [Peherstorfer2016]_, etc). 
+	The current implementation can accommodate multiple LF models, process multiple outputs, and output MFMC estimates of the variance. The complete formulations can be found in the literature ([Patsialis2021]_, [Peherstorfer2016]_, etc). 
 
 
 **Step 1: Pilot Simulations**
@@ -637,16 +637,16 @@ where
 
 		\sigma_{LF2}^2 = \frac{1}{N_1+N_2} \sum^{N_1+N_2}_{n=1} (y^{(n)}_{LF} - \mu_{LF2})^2
 
-Note that the first four terms are evaluated using only :math:`D_1`, and the last two terms are evaluated using both :math:`D_1` and :math:`D_2`. Additionally the precision of the estimation can be measured by coefficient of variation (c.o.v):
+Note that the first four terms are evaluated using only :math:`D_1`, and the last two terms are evaluated using both :math:`D_1` and :math:`D_2`. Additionally, the precision of the estimation can be measured by the coefficient of variation (c.o.v):
 
    .. math::
 
-		\rm{c.o.v}\it{[\mu_{MF}] = \frac{\sigma_{HF}}{N_1} \left(1-\left(1-\frac{1}{r}\right)\rho_{LF,HF}^2 \right)}
+		c.o.v[\mu_{MF}] = \frac{\sigma_{HF}}{N_1} \left(1-\left(1-\frac{1}{r}\right)\rho_{LF,HF}^2 \right)
 
 
 Speed-up
 ----------------------------------------------
-The speed-up is a efficiency metric that represents the computational time you save by using MFMC compared to only HF simulations to reach the same level of accuracy (same variance).
+The speed-up is an efficiency metric that represents the computational time you save by using MFMC compared to only HF simulations to reach the same level of accuracy (same variance).
 
    .. math::
 
@@ -655,7 +655,7 @@ The speed-up is a efficiency metric that represents the computational time you s
 
 
 .. [Patsialis2021]
-	Patsialis, D., and A. A. Taflanidis. "Multi-fidelity Monte Carlo for seismic risk assessment applications." *Structural Safety* 93 (2021): 102129.
+	Patsialis, D., and A. A. Taflanidis. (2021). Multi-fidelity Monte Carlo for seismic risk assessment applications. *Structural Safety* 93 (2021): 102129.
 
 .. [Peherstorfer2016]
- 	Peherstorfer, B., Willcox, K., Gunzburger, M. Optimal model management for multifidelity Monte Carlo estimation. *SIAM Journal on Scientific Computing* (2016); 38:A3163-A94. 
+ 	Peherstorfer, B., Willcox, K., Gunzburger, M. (2016). Optimal model management for multifidelity Monte Carlo estimation. *SIAM Journal on Scientific Computing*38:A3163-A94. 
