@@ -5,7 +5,7 @@
 Capabilities
 ************
 
-**Version 3.3** of |app| was released **March 23**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+**Version 3.4** of |app| was released **September 29**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 Structural Information Model
@@ -18,8 +18,8 @@ Applications used to specify/select the structural model to be used in analysis.
 #. Steel Building Model: automating steel frame design and modeling
 #. Concrete Building Model: automating concrete moment frame design and modeling
 #. MDOF-LU: MDOF shear building model
-#. :blue:`SurrogateGP: surrogate model trained in EE-UQ`
-#. :blue:`Multimodel: selecting multiple structural information models`
+#. SurrogateGP: surrogate model trained in EE-UQ
+#. Multiple models: selecting multiple structural information models :blue:`[<- renaming from Multimodel]`
 
     
 Earthquake Motion Event
@@ -28,7 +28,7 @@ Earthquake Motion Event
 Applications used to specify/select ground motions for the structure.
 
 #.  Stochastic Ground Motion: simulating stochastic ground motion recordings
-#.  PEER NGA Records: selecting and scaling PEER NGA West2 ground motions :blue:`[<- New option to select a suit of ground motions with uniformly populated IMs. This can be useful when training a surrogate model]`
+#.  PEER NGA Records: selecting and scaling PEER NGA West2 ground motions 
 #.  Site Response: propagating rock motions to the surface
 #.  Multiple PEER: using multiple PEER recordings
 #.  Multiple SimCenter: using multiple SimCenter-format recordings
@@ -42,7 +42,7 @@ Applications to identify the output parameters of interest given the ground moti
 
 #. Standard Earthquake: maximum story drift ratio, lateral story displacement, peak floor acceleration
 #. User Defined: user-specified EDP
-#. :blue:`None: used only for surrogate model-based predictions`
+#. None: used only for surrogate model-based predictions
     
     
 Finite Element Application
@@ -51,9 +51,9 @@ Finite Element Application
 Applications used to determine the response output parameters given the ground motion and structural model.
 
 #.  OpenSees: Open System for Earthquake Engineering Simulation
-#.  :blue:`CustomPy-Simulation: user-provided python script`
-#.  :blue:`None: used only for surrogate model-based predictions`
-#.  :blue:`Multimodel: selecting multiple finite element applications`
+#.  CustomPy-Simulation: user-provided python script`
+#.  None: used only for surrogate model-based predictions
+#.  Multiple models: selecting multiple finite element applications :blue:`[<- renaming from Multimodel]`
 
 Uncertainty Quantification
 ==========================
@@ -75,6 +75,8 @@ Applications to perform the uncertainty quantification for the response paramete
 
            a. Resample from existing correlated dataset of samples
 
+        #. :blue:`Multi-fidelity Monte Carlo (MFMC)`
+
 #. Global Sensitivity Analysis
 
      A. Dakota Sensitivity Options
@@ -94,5 +96,5 @@ Applications to perform the uncertainty quantification for the response paramete
      A. SimCenterUQ Engine Surrogate Options:
 
         #. Probabilistic Learning on Manifolds (PLoM) Surrogate modeling
-        #. :blue:`Gaussian Process Surrogate Modeling`
+        #. Gaussian Process Surrogate Modeling
 	   

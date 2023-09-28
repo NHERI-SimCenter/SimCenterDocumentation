@@ -209,3 +209,19 @@ The main window of the UI is made up from the following areas:
       
 
 .. [#] For more help on external services provided by DesignSafe-CI, such as creating an account, we encourage users to explore their `documentation <https://www.designsafe-ci.org/rw/user-guides/>`_ or consider `submitting a ticket <https://www.designsafe-ci.org/help/new-ticket/>`_.
+
+.. only:: quoFEM_app
+
+   **Overview of User Interface**
+   
+   Recorded in tool training, 2022 (From 21:14 to 26:58)
+
+   .. raw:: html
+
+      <div style="text-align: center;">
+         <iframe src="https://www.youtube.com/embed/5oWEAiC12Dg?start=1274" width="560" height="315" frameborder="5" allowfullscreen="allowfullscreen"></iframe>
+      </div>
+    
+   .. raw:: html
+
+      <p><br>Click to replay the video from <a href="javascript:window.location.reload(true);">21:14</a>. Please note there were minor changes in the user interface since it is recorded.</p>

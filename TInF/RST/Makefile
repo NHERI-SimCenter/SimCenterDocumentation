@@ -20,6 +20,7 @@ github:
 	rm -fr ../../../TinF-Documentation/docs/_images
 	rm -fr ../../../TinF-Documentation/docs/common
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" ../../../TinF-Documentation/docs $(O)
+	touch ../../../TinF-Documentation/docs/.nojekyll
 
 .PHONY: help Makefile
 

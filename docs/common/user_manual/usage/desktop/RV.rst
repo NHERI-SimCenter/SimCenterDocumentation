@@ -19,7 +19,7 @@ Dakota Engine
 
 The following six distribution classes are supported for Dakota engine.
 
-1. `Normal (Gaussian) <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-normal_uncertain.html>`_
+1. `Normal (Gaussian) <https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-normal_uncertain.html>`_
 
    User provides the mean (:math:`\mu`) and standard deviation (:math:`\sigma`) of the normal distribution. The density function of the normal distribution, as a function of :math:`\mu` and :math:`\sigma` is:
 
@@ -28,7 +28,7 @@ The following six distribution classes are supported for Dakota engine.
       f(x) = \frac{1}{\sqrt{2 \pi} \sigma} \exp \left( -{\frac{1}{2} \left( \frac{x - \mu}{\sigma} \right)^2} \right)
 
 
-2. `Lognormal <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-lognormal_uncertain.html>`_
+2. `Lognormal <https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-lognormal_uncertain.html>`_
 
 
    User provides the mean (:math:`\mu`) and standard deviation (:math:`\sigma`) of the lognormal distribution. The density function of the lognormal distribution, as a function of :math:`\mu` and :math:`\sigma` is:
@@ -41,7 +41,7 @@ The following six distribution classes are supported for Dakota engine.
   where :math:`\zeta^2 = \ln \left( \frac{\sigma^2}{\mu^2} + 1 \right)` and :math:`\lambda = \ln(\mu) - \frac{\zeta^2}{2}`
 
 
-3. `Beta <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-beta_uncertain.html>`_
+3. `Beta <https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-beta_uncertain.html>`_
 
 
    User provides :math:`\alpha`, :math:`\beta`, lower bound (:math:`L_B`), and an upper bound (:math:`U_B`) for the beta distribution. The density function of the normal distribution, as a function of these quantities is:
@@ -55,7 +55,7 @@ The following six distribution classes are supported for Dakota engine.
 
 
 
-4. `Uniform <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-uniform_uncertain.html>`_
+4. `Uniform <https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-uniform_uncertain.html>`_
 
 
    User provides the lower bound (:math:`L_B`), and an upper bound (:math:`U_B`) for the uniform distribution. The density function of the normal distribution, as a function of these quantities is:
@@ -66,19 +66,19 @@ The following six distribution classes are supported for Dakota engine.
 
    The mean of the distribution is :math:`\frac{(U_B + L_B)}{2.0}`
 
-5. `Weibull <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-weibull_uncertain.html>`_
+5. `Weibull <https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-weibull_uncertain.html?highlight=weibull>`_
 
 
-   User provides shape parameter (:math:`k`) and scale parameter (:math:`\lambda`)  for the Weibull distribution. The density function of the Weibull distribution, as a function of these quantities is:
+   User provides shape parameter (:math:`k`) and scale parameter (:math:`a_n`)  for the Weibull distribution. The density function of the Weibull distribution, as a function of these quantities is:
 
    .. math::
 
-      f(x) = \frac{k}{\lambda}\left(\frac{x}{\lambda}\right)^{k-1} \exp \left( -(x/\lambda)^{k} \right)
+      f(x) = \frac{k}{a_n}\left(\frac{x}{a_n}\right)^{k-1} \exp \left( -(x/a_n)^{k} \right)
 
-   where :math:`k,\lambda > 0` and :math:`x \geq 0`. For :math:`x<0`, :math:`f(x) = 0`.
+   where :math:`k,a_n > 0` and :math:`x \geq 0`. For :math:`x<0`, :math:`f(x) = 0`.
 
 
-6. `Gumbel <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/variables-gumbel_uncertain.html>`_
+6. `Gumbel <https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-gumbel_uncertain.html>`_
 
 
    User provides :math:`\alpha` and :math:`\beta` for the Gumbel distribution, where :math:`\beta` is known as the **location parameter** and :math:`\frac{1}{\alpha}` the **scale parameter**. The density function of the Gumbel distribution, as a function of these quantities is:
@@ -243,7 +243,7 @@ For each random variable, the user must enter a name and select from the pull do
 
    .. warning::
 
-       Correlation warping for Nataf variable transformation of **beta** distributions is not currently supported.
+       Correlation warping for Nataf variable transformation of **beta** distributions is currently not supported.
 
 
 .. only:: quoFEM_app
@@ -273,3 +273,18 @@ For each random variable, the user must enter a name and select from the pull do
        :figclass: align-center
 
        Specifying user-defined distributions under CustomUQ engine
+
+
+
+
+
+
+.. Tip::
+   
+   Summary of capabilities and limitations
+
+   * :badge:`o,badge-primary` Specify 12 different kinds of random distributions either by parameters, moments (mean and variance), or data samples (Specify 7 different kinds of random distributions by parameters when using Dakota instead of SimCenterUQ)
+   * :badge:`o,badge-primary` Draw correlated samples through Nataf transformation (Gaussian-copular) 
+   * :badge:`x,badge-danger` Explicitly specify random fields (planned)
+   * :badge:`x,badge-danger` Specify user-defined random distribution (planned)
+   * :badge:`x,badge-danger` Specify Non-Gaussian copular correlation (upon request)
