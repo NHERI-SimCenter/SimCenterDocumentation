@@ -5,7 +5,16 @@
 Release Notes
 *************
 
-Version 3.3.0 (Current)
+Version 3.4.0 (Current)
+-----------------------
+
+**Release date:** September. 2023
+
+**Highlights**
+
+#. Multi Fidelity Monte Carlo (MFMC) method
+
+Version 3.3.0 
 -----------------------
 
 **Release date:** March. 2023

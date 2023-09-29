@@ -193,3 +193,15 @@ Once the application starts, you should see the user interface shown in |figWinU
     HydroUQ tool on startup in Windows 10    
 
     
+
+Troubleshooting
+^^^^^^^^^^^^^^^^^^^^^
+If the analysis fails, please see the :ref:`troubleshooting<lblTroubleshooting>` page.
+
+.. note::
+   When analysis fails, a quick check is to inspect the **local working directory** path in the preference menu. The below could lead to the analysis failure 
+
+   * The path is located under a cloud folder, e.g. OneDriver, Box (may give file-not-found error due to the real-time cloud-only sync)
+   * The path contains non-alphabetic character (may give an encoding error)
+   * The path contains empty space (low likelihood, but it may give the file-not-found error)
+   * The path is located under a different driver from the app executable (.exe) path, e.g. one is under C drive, and the other is under E drive (may give a permission error)
