@@ -35,11 +35,11 @@ this includes the choice of:
 
      #. `Convergence Test <http://opensees.berkeley.edu/wiki/index.php/Test_Command>`_, the default is a norm on the unbalance force with a convergence tolerance of 1.0e-2 and a limit of 10 trial steps to achieve convergence. Other convergence criteria that can be chosen incude: NormDispIncr, EnergyIncrement, and the relative norms.
 
-     #. Damping Model: The pull down menu defaults to **Rayleigh Damping**. The other option is **Modal Damping**. The theory behind the two are presented in :ref:`lblDamping`.
+     #. Damping Model: The pull down menu defaults to **Rayleigh Damping**. The other option is **Modal Damping**. The theory behind the two is presented in :ref:`lblDamping`.
 
-          #. Rayleigh Damping. With Rayleigh damping the user mist provide the damping ratio, :math:`\zeta` and specify two modes from which the damping coefficients :math:`a_0` and :math:`a_1` will be determined. Mass proportional damping can be obtained by setting the **Mode 2** option to 0, **stiffness proportional damping** by setting **Mode 1** option to 0.
+          #. Rayleigh Damping. With Rayleigh damping the user must provide the damping ratio, :math:`\zeta` and specify two modes from which the damping coefficients :math:`a_0` and :math:`a_1` will be determined. Mass proportional damping can be obtained by setting the **Mode 2** option to 0, **stiffness proportional damping** by setting **Mode 1** option to 0.
 
-	  #. Modal Damping: With modal damping the user specifies the number of modes and the damping ratio :math:`\zeta`. In addition the user has the option of specifying a **stiffness proportional damping ratio**, which as mentioned in the :ref:`lblDamping` is used to provide additional damping for the higher modes.
+	  #. Modal Damping: With modal damping the user specifies the number of modes and the damping ratio :math:`\zeta`. In addition, the user has the option of specifying a **stiffness proportional damping ratio**, which as mentioned in the :ref:`lblDamping` is used to provide additional damping for the higher modes.
 
 	  .. figure:: figures/OpenSeesFEM-Modal.png
 	     :align: center
@@ -74,10 +74,10 @@ are obtained from the EVENT and are automatically set by the program.
 
 
 
-Multi Model
+Multiple Models
 -----------
 
-The **Multi Model** simulation application allows users to define multiple finite element analysis options. The Add and Remove buttons allow users to control the number of sets of options they want to use while conducting the analysis. 
+The **Multiple Models** simulation application allows users to define multiple finite element analysis options. The Add and Remove buttons allow users to control the number of sets of options they want to use while conducting the analysis. 
 
 By adding a model, a new tab is created in the FEM panel where users can choose one of the finite element analysis applications described in the sections above and provide the inputs necessary to define the required analysis options. Users also need to specify their belief corresponding to that analysis option. The beliefs are expressed as non-negative numerical values. The belief value in each tab is defined relative to the values in the other tabs, and the beliefs do not need to sum to 1.
 
@@ -86,12 +86,16 @@ By adding a model, a new tab is created in the FEM panel where users can choose 
   :figclass: align-center
   :width: 800
 
-  Selecting a set of finite element analysis options within a Multi Model FEM Application
+  Selecting a set of finite element analysis options within a Multiple Models FEM Application
 
 
 .. Note:: 
 
-  If a Multi Model application is selected, at least 2 models must be defined.
+  If the Multiple Models application is selected, at least 2 models must be defined. 
+
+.. Note:: 
+
+  If the "Multi-fidelity Monte Carlo (MFMC)" option was selected in the UQ tab, the belief values will be ignored. The premise of MFMC is that the high-fidelity model response is always the best response, therefore, *belief in each model* does not apply.
 
 
 None
