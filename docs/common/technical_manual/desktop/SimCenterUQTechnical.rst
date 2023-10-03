@@ -661,4 +661,4 @@ The speed-up is an efficiency metric that represents the computational time you 
 	Patsialis, D., and A. A. Taflanidis. (2021). Multi-fidelity Monte Carlo for seismic risk assessment applications. *Structural Safety* 93 (2021): 102129.
 
 .. [Peherstorfer2016]
- 	Peherstorfer, B., Willcox, K., Gunzburger, M. (2016). Optimal model management for multifidelity Monte Carlo estimation. *SIAM Journal on Scientific Computing*38:A3163-A94. 
+ 	Peherstorfer, B., Willcox, K., Gunzburger, M. (2016). Optimal model management for multifidelity Monte Carlo estimation. *SIAM Journal on Scientific Computing* 38:A3163-A94. 
