@@ -203,7 +203,7 @@ The main window of the UI is made up from the following areas:
 
    6. **Main Menu**
 
-      | The main menu, which contains the typical pull down options found in almost all desktop applications, contains three additional options **Examples**, **Tools** and **GIS Map**. The **Examples** pull down provides a way to download and then load the examples described in this manual. The **Tools** pull down provide a number of options for generating inputs and additional attributed for the various input widgets of the tool, e.g. a user can use the Ground motion selection tool to create a set of ground motions using OpenSHA, PEER, etc., which can be subsequently used in the **HAZ** part of the workflow. The **GIS Map** pulldown provides access to the standard **QGIS** options, e.g. adding layers, maps, plugins.
+      | The main menu, which contains the typical pull down options found in almost all desktop applications, contains three additional options **Examples**, **Tools** and **GIS Map**. The **Examples** pull down provides a way to download and then load the examples described in this manual. The **Tools** (See :ref:`r2d-tools`) pull down provide a number of options for generating inputs and additional attributed for the various input widgets of the tool, e.g. a user can use the Ground motion selection tool to create a set of ground motions using OpenSHA, PEER, etc., which can be subsequently used in the **HAZ** part of the workflow. The **GIS Map** pulldown provides access to the standard **QGIS** options, e.g. adding layers, maps, plugins.
 
       .. include:: R2DTool/tools.rst
       
