@@ -56,12 +56,6 @@ After a ShakeMap is loaded, it will appear in the list of ShakeMaps shown above 
 .. note:: 
    R2D will create one .csv file containing the ground motion intensity measures at each grid point in the ``grid.xml`` file. The files will be stored in a similar format as the ground motion files used in the **User-specified Ground Motion** application. As shown in :numref:`fig-R2DShakeMapOutput`, the number of grid point is usually large (sometimes over 10 thousand). Although creating such a number of .csv files is fast in Unix-like operating systems, it may be particular slow (around 5 minutes for 10,000 grid points) on a Windows machine. As a result, consider trimming or subsampling the ``grid.xml`` file downloaded from USGS's ShakeMap website, if fast computation is desired for testing or debugging purposes.
 
-
-.. [SnaikiWu2017a]
-   Snaiki, R. and Wu, T. (2017a). Modeling tropical cyclone boundary layer: Height-resolving pressure and wind fields. Journal of Wind Engineering and Industrial Aerodynamics, 170, pp. 18-27.
-
-.. [SnaikiWu2017b]
-   Snaiki, R. and Wu, T. (2017b). A linear height-resolving wind field model for tropical cyclone boundary layer. Journal of Wind Engineering and Industrial Aerodynamics, 171, pp. 248-260.
    
   
 Raster Defined Hazard
@@ -138,8 +132,3 @@ maximum shear strain and excess pore pressure ratio plots are also important.
 .. [Boyd2020]
    Boyd, O.S., 2020, Calibration of the U.S. Geological Survey National Crustal Model: U.S. Geological Survey Open-File Report 2020–1052, 23 p., https://doi.org/10.3133/ofr20201052.
 
-.. [Manzour2016]
-   Manzour, H., Davidson, R. A., Horspool, N., & Nozick, L. K. (2016). Seismic hazard and loss analysis for spatially distributed infrastructure in Christchurch, New Zealand. Earthquake Spectra, 32(2), 697-712.
-
-.. [Peterson2020]
-   Petersen, M. D., Shumway, A. M., Powers, P. M., Mueller, C. S., Moschetti, M. P., Frankel, A. D., ... & Zeng, Y. (2020). The 2018 update of the US National Seismic Hazard Model: Overview of model and implications. Earthquake Spectra, 36(1), 5-41.
