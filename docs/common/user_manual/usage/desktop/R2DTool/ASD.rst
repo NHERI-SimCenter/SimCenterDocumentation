@@ -69,7 +69,7 @@ The **GIS to AIM** application imports a building inventory database from a user
 Regional Water Distribution Networks
 -------------------------------------
 
-The water distribution network input panel, as shown in :numref:`fig-wdnInputPanel`, allows a user to input the nodes and pipelines of a water distribution network. The **Regional Water Network Selection** combo box is where the user selects the application for the import of buildings, and for the generation of a building information model (AIM).
+The water distribution network input panel, as shown in :numref:`fig-wdnInputPanel`, allows a user to input the nodes and pipelines of a water distribution network. The **Regional Water Network Selection** combo box is where the user selects the application for the import of water distribution networks, and for the generation of a asset information model (AIM).
 
 CSV to Regional Water Network
 *****************************
@@ -118,4 +118,42 @@ The **Node and Pipeline Information** table, shown in :numref:`fig-WDNInputPanel
   :figclass: align-center
 
   GIS to regional water network input panel.
- 
+
+
+Regional Transportation Networks
+-------------------------------------
+The transportation network input panel, as shown in :numref:`fig-R2DTransportJsonInputPanel`, allows a user to input roadways, bridges, and tunnels in a transportation network. The **Transportation Network Selection** combo box is where the user selects the application for the import of transportation network and for the generation of asset information models (AIM). 
+
+JSON to Transportation Network AIM
+*****************************
+
+The **JSON to Transportation Network AIM** application imports a transportation network from a user-provided JSON file that contains information on highway bridges, tunnels, and/or roadways. Such a JSON file can be obtained with the BRIALS Transportation tool (see :numref:`lbl-BrailsTransportation`) in the **Tools** pull-down menu. The format of the JSON file is described in :numref:`lblTransportationInputOption1`
+If the selection filters are empty, all the transportation network components will be analyzed. Otherwise, only the selected components will be analyzed. Unlike buildings and water distribution networks, where the *first attribute* in the .csv or GIS files are used as the ID for the selection line edits, the transportation network components are selected according to their indices in the loaded JSON asset file, and the indices starts from 0. For example, if “0-4” is input to roadway selection line edit, the first five roadways in the loaded JSON file will be analyzed. 
+
+After loading the JSON file, the **JSON to Transportation Network AIM** application will first convert the roadways to a graph and combine the graph edges between roadway intersections (i.e., graph nodes with more than 2 neighbors) into one edge. If the combined edges are longer than the “Roadway length per AIM”, the application will break down the edges into n pieces, where n is the roundup integer of roadway length divided by roadway length per AIM. For example, the application will break a 150 m roadway into two 75 m roadways if the roadway length per AIM is set as 100 m. More examples can be found in the example E14 in :numref:`lbl-examples`.
+
+
+.. _fig-R2DTransportJsonInputPanel:
+
+.. figure:: figures/R2DTransportJsonInputPanel.png
+  :align: center
+  :figclass: align-center
+
+  JSON to regional transportation network input panel.
+
+GIS to Transportation Network AIM
+*****************************
+
+The **GIS to Transportation Network AIM** application imports a transportation network from user-provided GIS files that contain information on highway bridges, tunnels, and/or roadways.  The input panel is shown in :numref:`fig-R2DTransportGeoJsonInputPanel`. The GIS files can be in one of many common GIS file formats, e.g., shp, gdb, etc.
+
+The Path to Roadways/Bridges/Tunnels box is where the user supplies the file path to the GIS file that contains the roadways/bridges/tunnels features in the transportation network. At a minimum, the GIS file must contain a field providing the identification numbers (id), in **sequential order**. Any number of attributes can be added to the features to provide information that may be required by other applications in the workflow. R2D will load all feature attributes as columns in a table in a similar way to :numref:`fig-R2DWDNgisInputPanel`. Only the Roadways/Bridges/Tunnels selected in the corresponding selection box will be analyzed in the later part of the workflow. 
+
+The shape type (also called geometry type) of the roadway features must be 'LineString' and the shape type of the bridges and tunnels must be "Point". The **GIS to Transportation Network AIM** takes the first Point in the roadway 'LineString' as the start node and the last Point in the roadway 'LineString' as the end node. The application will creat a graph by looking for the 'LineString's that share start or end nodes. The application will then break down the roadways longer than "Roadway length per AIM" to segments as described in the **JSON to Transportation Network AIM** application. The creation of graph from roadway is achieved with the Python package `momepy <https://docs.momepy.org/en/stable/user_guide/graph/convert.html>`_. An example can be found in the example E14 in :numref:`lbl-examples`.
+
+.. _fig-R2DTransportGeoJsonInputPanel:
+
+.. figure:: figures/R2DTransportGeoJsonInputPanel.png
+  :align: center
+  :figclass: align-center
+
+  GIS to regional transportation network input panel.

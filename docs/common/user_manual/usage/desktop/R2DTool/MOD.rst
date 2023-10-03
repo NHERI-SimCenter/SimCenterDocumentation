@@ -59,5 +59,10 @@ The **OpenSeesPy** building modeling application creates an OpenSeesPy structura
   OpenSeesPy Building model input panel.
 
 
+Transportation Networks
+-----------------------
+Only the Intensity Measure as Engineering Demand Parameter (**IMasEDP**) type of analysis is supported for transportation network damage and loss analysis now. The asset models should be **None** for **IMasEDP** analyses. 
+
+
 
 

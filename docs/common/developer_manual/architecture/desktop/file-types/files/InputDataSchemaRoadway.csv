@@ -1,0 +1,4 @@
+,Earthquake Required,Earthquake Required,Earthquake Required,Earthquake Required,*OptionalInputs
+Key,ID,start_node,end_node,road_type,
+Item,A string of the road ID.,An integer of the ID of the node that describes the road start,An integer of the ID of the node that describes the road end,"A string describes the road type. Values allowed are 'primary', 'secondary', 'residential', and 'unclassified'. ",(Optional) Additional items which may be included for custom roadway definitions.
+Example,"""ID"": ""110167234853_0""","""start_node"": 480","""end_node"": 481","""road_type"": ""residential""",
