@@ -11,11 +11,18 @@ Major Version 3
 
    .. warning::
 
-      The major version number was increased from 2 to 3 as changes were made to input and output formats of |app|. This means old examples will not be loaded in this version of the tool.
+      The major version number was increased from 2 to 3 as changes were made to the input and output formats of |app|. This means old examples will not be loaded in this version of the tool.
 
 
-   .. dropdown::    Version 3.3 (:blue:`Current`)
+   .. dropdown::    Version 3.4 (:blue:`Current`)
       :open:
+
+      **Release date:** October. 2023
+
+      **Highlights**
+         #. **Multi-fidelity** Monte Carlo Simulation 
+
+   .. dropdown::    Version 3.3 
 
       **Release date:** March. 2023
 
@@ -98,7 +105,7 @@ Major Version 2
 
          #. Minor fixes in surrogate UI (nugget values option should not show up by default, RVs should be uniform by default)
 
-         #. A fix to prevent the mixed-use of slash/backslash when printing a path
+         #. A fix to prevent the mixed use of slash/backslash when printing a path
 
          #. Parameter values are passed to the log-likelihood script when using the UCSD_UQ engine
 
@@ -117,7 +124,7 @@ Major Version 2
 
          #. Visualization improved for surrogate results
 
-         #. More adaptive design of experiments options added for surrogate modeling
+         #. More adaptive design of experiment options added for surrogate modeling
 
          #. Nugget optimization options added for surrogate modeling
 
@@ -148,9 +155,9 @@ Major Version 2
 
          #. Included new Bayesian calibration method: transitional Markov chain Monte Carlo (TMCMC)
 
-         #. Option to allow user to include their own UQ engine
+         #. Option to allow users to include their own UQ engine
 
-         #. Option to allow user to include their own FEM engine
+         #. Option to allow users to include their own FEM engine
 
          #. Changes to UI to reduce wasted space
 

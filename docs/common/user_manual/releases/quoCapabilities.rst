@@ -5,7 +5,7 @@
 Capabilities
 ************
 
-Version |tool version| of the |app| was released in **March 30**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+Version |tool version| of the |app| was released on **October 2, 2023**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 UQ (Uncertainty Quantification and Optimization Options)
@@ -24,7 +24,9 @@ UQ (Uncertainty Quantification and Optimization Options)
 
         #. Monte Carlo Sampling (MCS)
 
-           a. Resample from existing correlated dataset of samples
+           a. Resample from the existing correlated dataset of samples
+
+        #. :blue:`Multi-fidelity Monte Calro` 
 
 #. Global Sensitivity Analysis
 
@@ -48,11 +50,11 @@ UQ (Uncertainty Quantification and Optimization Options)
 
      A. :ref:`Dakota<lblDakotaReliability>` 
 
-        #. Local Reliability :blue:`[← minor bug fix]`
+        #. Local Reliability 
         #. Global Reliability
         #. Importance Sampling
 
-#. Bayesian Calibration :blue:`[← minor bug fix]`
+#. Bayesian Calibration
 
      A. :ref:`Dakota<lblDakotaBayesianCalibration>`
 
@@ -81,9 +83,9 @@ UQ (Uncertainty Quantification and Optimization Options)
         #. :ref:`Train Gaussian Process (GP) Surrogate Model<lblSimSurrogate>`
 
            a. Multifidelity surrogate modeling
-           b. Adaptive design of experiments options for surrogate modeling
+           b. Adaptive design of experiment options for surrogate modeling
            c. Nugget optimization options for surrogate modeling
-           d. Stochastic Kriging :blue:`[← new option for 'no replications']`
+           d. Stochastic Kriging 
 
         #. :ref:`Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)<lblSimCenterUQPLoM>` *
 
@@ -104,9 +106,9 @@ FEM (Computational Model Specification)
 #. FEAPpv
 #. Python
 #. Custom
-#. SurrogateGP  :blue:`[← simplified user interface]`
+#. SurrogateGP  
 #. None
-#. :blue:`Multi model`
+#. Multiple models
 
 RV (Random Variable Options)
 ============================
@@ -150,11 +152,11 @@ RES (Summary and Visualization of UQ Analysis Results)
 	   
 #. All output values presented in spreadsheet
 
-     A. Update chart by clicking on spreadsheet columns
+     A. Update the chart by clicking on spreadsheet columns
 	
-#. Output values visualized in interactive chart
+#. Output values visualized in the interactive chart
 
-     A. Scatter plot  :blue:`[← display of correlation coefficient]`
+     A. Scatter plot 
      B. Histogram
      C. Cumulative distribution
      D. Inspect points on chart
@@ -171,7 +173,7 @@ RES (Summary and Visualization of UQ Analysis Results)
 
      A. Goodness-of-fit measures            
      B. 90% confidence interval and prediction interval
-     C. Save GP model :blue:`[← simplified surrogate model file]`
+     C. Save GP model
 
 #. Visualization of PLoM training results
 
