@@ -153,6 +153,7 @@
 
    common/user_manual/bugs
    :quoFEM:common/user_manual/dcv/quoFEM/quoFEM
+   :quoFEM:common/user_manual/usage/desktop/quoFEM/usage_video
 
 .. _lbl-testbeds-manual:
 
