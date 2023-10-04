@@ -302,3 +302,4 @@ build/
 fmkExamples
 .DS_Store
 web/
+#examples
