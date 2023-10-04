@@ -306,8 +306,6 @@ build/
 fmkExamples
 .DS_Store
 web/
+#examples
 _out
-
-#Remove .vscode
 .vscode
-
