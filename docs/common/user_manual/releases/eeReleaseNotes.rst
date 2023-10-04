@@ -5,8 +5,28 @@
 Release Notes
 *************
 
-Version 3.2.0 (Current)
+Version 3.4.0 (Current)
 -----------------------
+
+**Release date:** September. 2023
+
+**Highlights**
+
+#. Multi Fidelity Monte Carlo (MFMC) method
+
+Version 3.3.0 
+-----------------------
+
+**Release date:** March. 2023
+
+**Highlights**
+
+#. Multi model uncertainty propagation options for Modeling (SIM) and Analysis (FEM) tabs
+#. Gaussian process surrogate modeling
+
+
+Version 3.2.0
+-------------
 
 **Release date:** Sept. 2022
 

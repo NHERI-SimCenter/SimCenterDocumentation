@@ -6,13 +6,13 @@ Install on macOS 10
 Install Python 3.9
 ^^^^^^^^^^^^^^^^^^
 
-SimCenter tools require an x86-based version of Python 3.9 to run properly. You may already use other versions of Python, or Python served by a larger scientific package such as Anaconda or homebrew.
+SimCenter tools require an x86-based version of Python to run properly currently. The latest version of the Python (i.e. 3.12) breaks up dependencies and we tested the tools using Python 3.10.13 and 3.9.13. You may already use other versions of Python, or Python served by a larger scientific package such as Anaconda or homebrew.
 
 To see if your python kernel is compatable with SimCenter tools, issue the following in a terminal window.
 
  .. note::
 
-   You can use the spotlight app (magnifying glass at the top right corner of the desktop) to start a Terminal window. Start the spotlight app and type in terminal. The Terminal application should appear as the top hit.
+   You can use the spotlight app (magnifying glass at the top right corner of the desktop) to start a Terminal window. Start the spotlight app (you can alternatively use command + space shortcut) and type in terminal. The Terminal application should appear as the top hit.
 
 .. code::
    
@@ -21,7 +21,7 @@ To see if your python kernel is compatable with SimCenter tools, issue the follo
    platform.uname()
    exit()
 
-As shown in screenshot below, you should see Python 3.9 after issuing the python3 command and machine='x86_64' in the last line of output of the platform.uname() command. If you see another Python version or machine='arm64', you will need to install an x86 Python 3.9 on your computer.
+As shown in screenshot below, you should see Python 3.10 after issuing the python3 command and machine='x86_64' in the last line of output of the platform.uname() command. If you see another Python version or machine='arm64', you will need to install an x86 Python 3.9 on your computer.
 
 .. figure:: figures/pythonKernel.png
       :align: center
@@ -32,23 +32,30 @@ As shown in screenshot below, you should see Python 3.9 after issuing the python
 
 .. note::
 
-   The latest MacBooks use ARM-based processors in their M1 and M2 chips. Older MacBooks utilize Intel x86 processors. The new ARM-based processors present a problem for Python users of scientific applications beacuse Python programs typically import many different modules and not all modules have been ported to the new ARM environments. The python3 kernels provided with macOS 12 (Monterey) and later are ARM based. You will need to download and install an **x86** version of Python to use the SimCenter applications on these systems. Such Python versions will run fine on the ARM-based machines, thanks to `Rosetta <https://support.apple.com/en-us/HT211861#:~:text=Rosetta%202%20is%20available%20only,to%20allow%20installation%20to%20proceed.>`_.
+   The latest MacBooks use ARM-based processors in their M1 and M2 chips lineups. Older MacBooks utilize Intel x86 processors. The new ARM-based processors present a problem for Python users of scientific applications beacuse Python programs typically import many different modules and not all modules have been ported to the new ARM environments. The python3 kernels provided with macOS 12 (Monterey) and later are ARM based. You will need to download and install an **x86** version of Python to use the SimCenter applications on these systems. Such Python versions will run fine on the ARM-based machines, thanks to `Rosetta <https://support.apple.com/en-us/HT211861#:~:text=Rosetta%202%20is%20available%20only,to%20allow%20installation%20to%20proceed.>`_.
 
 
-**1.** To obtain an x86 version of Python, we recommend installing Python 3.9, we tested the 3.9.13 version,  from |PythonDownload|. It is important to select the **macOS 64-bit Intel-only installer** version of the installer. The **intel-only** is key to obtaining the 64-bit x86 version.
-
+**1.** To obtain an x86 version of Python, you can either download and install Python 3.10.13 or Python 3.9.13 version,  from |PythonDownload|. There will be only one installer for the MacOS platform (both ARM64 and x86_64 versions) for python 3.10.3 and versions above. However, for version 3.9.13, there are 2 installer. The intel-only installer provides **x86** version.
 
 .. figure:: figures/pythonDownload.png
       :align: center
       :figclass: align-center
 
-      Python: python.org MacOS Download Page
+      Python: python.org MacOS Download Page 
 
 .. note::
-   
-   #. We prefer the python.org installation over others due to it's simplicity.
-   #. Python 3.10 from python.org, does not provide an x86 version.
-   #. Homebrew can also be used to install a Python x86 version, the instructions are convoluted but can be found using **Google**.. If installed correctly python3 will be in /usr/local/Cellar directory and not in the /usr/local/opt directory. Remember the platform.uname() output above will show you if you have installed a correct version.
+   We prefer the python.org installation over others due to it's simplicity.
+   Python Version 3.10.13 and later provides both version and the user must specify **x86** python to be used in SimCenter tools.
+   To run x86 version of Python, instead of python3, you need to type python3-intel64.
+   .. code::
+	   python3-intel64
+	   import platform
+	   platform.uname()
+	   exit()
+   you should able to see **machine='x86_64'** at the line. 
+	
+.. note::   
+   Homebrew can also be used to install a Python x86 version, the instructions are convoluted but can be found using **Google**.. If installed correctly python3 will be in /usr/local/Cellar directory and not in the /usr/local/opt directory. Remember the platform.uname() output above will show you if you have installed a correct version.
 
 **2.** The Python.org installer leaves two script files in the Python directory at the end of the installation and these appear in a pop up window when installation is complete. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal application. To execute the files, double click on them with your mouse. The two files, shown in the image below, are: ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh``.
 
@@ -67,6 +74,13 @@ As shown in screenshot below, you should see Python 3.9 after issuing the python
 .. code-block:: bash
 
       pip3 install nheri_simcenter --upgrade
+
+.. note::
+	If you are using Python 3.10 or later versions, you can install dependencies via python:
+
+ .. code-block:: bash
+
+      Python3 -m code pip install nheri_simcenter --upgrade
 
 
 Make sure you see a message that confirms the successful installation of the nheri-simcenter package before proceeding to the next step.
@@ -102,6 +116,22 @@ Make sure you see a message that confirms the successful installation of the nhe
    .. note::
       
       The Java website should automatically detect your operating system and offer the corresponding installer for you to download. Make sure you see "Mac OS X" at the top of the page before downloading the installer.
+
+
+.. only:: WEUQ_app
+   
+   Install OpenFOAM for macOS
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   
+   This version of the |app| uses *OpenFOAM* for pre-processing the CFD model. At the backend, the mesh generation and visualization in the GUI utilize *OpenFOAM-10* built-in meshing tools.  
+
+   .. note::
+     The packaged distribution of OpenFOAM is only available for Linux systems. To install OpenFOAM on macOS, the user needs to use  Docker for Mac. Docker will provide a virtual environment for running Linux applications on macOS.
+
+   ..  The at mesh generation and pre-processing  party applications s. 
+
+
+   To install OpenFOAM-10 on macOS, follow the instructions in `OpenFOAM for macOS <https://openfoam.org/download/10-macos/>`_ .
 
 
 Download the Application
@@ -185,7 +215,14 @@ Once the installation procedure has been completed, it is a good practice to run
 
 .. note::
 
-   SimCenter apps are code-signed and notarized, but because they are not downloaded from the operating system's app store, they may not be recognized as safe applications. Depending on your security settings, when you start a SimCenter app for the first time, your operating system may show a dialog box indicating it is unsafe. If this dialog appears, choose the cancel button. Restart the app by right clicking on it and selecting open.
+   SimCenter apps are code-signed and notarized, but because they are not downloaded from the operating system's app store, they may not be recognized as safe applications. Depending on your security settings, when you start a SimCenter app for the first time, your operating system may show a dialog box indicating it is unsafe. If this dialog appears, choose the cancel button. Try to start the app again, this time by right clicking on it and selecting open.
+
+   If the app still fails to open. You need to go to System Settings->Privacy and Security. Under the Security section you need to at least temprarily select the option to allow applications downloaded from the **App Store and Identified Developers**. With this schecked try again. If it fails again, go back to System Settings->Privacy and Security. Just below the section you just checked, there should be some text about why the app was stopped and an option to **Open Anayway" , as shown in figure below. Click on the button and the app should start.
+
+   .. figure:: figures/AppleSecurity.png
+    :align: center
+    :figclass: align-center
+
 
 Once the application started, you should see the user interface shown in |figUI|. We recommend running the example problem |test example| to test the application.
 
@@ -252,11 +289,11 @@ Once the application started, you should see the user interface shown in |figUI|
 
 .. note::
 
-   When the |app| is running, open the app/preferences or File/Preferences and make sure that python3 appears under **External Applications:Python**, as shown in the figure below. If you used older versions of SimCenter tools this was not the default. The exact location of python3 that you installed can be found by opening the terminal application and executing the **which python3** command. Enter the path shown as a response to the Preferences panel under Python and then press the **Save** button.
+   When the |app| is running, open the app/preferences or File/Preferences and make sure that python3 appears under **External Applications:Python**, as shown in the figure below when you are using a **X86** (e.g., intel-only on M chip lineup). If you are using Python 3.10 and later versions which have single installer, make sure that you edit **python3** to **python3-intel64** to specify that **X86** based python is used rather than the default arm64 version. If you used older versions of SimCenter tools this was not the default. The exact location of python3 that you installed can be found by opening the terminal application and executing the **which python3** command. Enter the path shown as a response to the Preferences panel under Python and then press the **Save** button.
 
       .. figure:: figures/pythonPreferences.png
-    :align: center
-    :figclass: align-center
+	:align: center
+	:figclass: align-center
 
     Set Python Preferences.    
 

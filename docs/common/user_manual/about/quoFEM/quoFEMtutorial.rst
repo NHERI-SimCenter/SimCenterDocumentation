@@ -39,7 +39,7 @@ If you have not yet installed quoFEM, please see
 
 quoFEM for a Python Model Interface
 -------------------------------------------------
-This tutorial will show how a **deterministic** model written/interfaced in python script can be used for **Uncertainty Quantification** analysis, using an example of global sensitivity analysis. 
+This tutorial will show how a **deterministic** model written/interfaced in a python script can be used for **Uncertainty Quantification** analysis, using an example of global sensitivity analysis. 
 
 * **Step 0**. Prepare a Python Model
 * **Step 1**. Modify the Model Script to Define Random Variables and Quantities of Interest
@@ -76,7 +76,7 @@ This tutorial will show how a **deterministic** model written/interfaced in pyth
 
                It is important to save the model in a **new folder** instead of root, desktop or downloads
 
-        3. :badge:`Test Your Model,badge-primary` Test if the input script ``ElasticTruss.py`` runs successfully using the commend prompt (Windows) or terminal (Mac). To do this,  navigate into ``TrussExample`` folder using 'cd' command and type the following. 
+        3. :badge:`Test Your Model,badge-primary` Test if the input script ``ElasticTruss.py`` runs successfully using the command prompt (Windows) or terminal (Mac). To do this,  navigate into ``TrussExample`` folder using 'cd' command and type the following. 
 
           .. code:: console
 
@@ -89,7 +89,7 @@ This tutorial will show how a **deterministic** model written/interfaced in pyth
                :figclass: align-center
                :width: 800
 
-               Find the python path in ``File``-``Preference`` in the manu bar
+               Find the python path in ``File``-``Preference`` in the menu bar
 
           According to ``ElasticTruss.py``, the analysis should print out "Passed!", meaning the model ran successfully.
 
@@ -106,7 +106,7 @@ This tutorial will show how a **deterministic** model written/interfaced in pyth
                openseespy, numpy and matplotlib libraries are readily available in quoFEM because:
 
                * Windows 
-                    quoFEM is bundled with a python executable which have those packages pre-installed. See :ref:`here<lblFEM>`.
+                    quoFEM is bundled with a python executable which has those packages pre-installed. See :ref:`here<lblFEM>`.
                * macOS 
                     In the :ref:`installation steps<lblInstallMac>`, the command ``pip3 install nheri_simcenter --upgrade`` will include those packages
 
@@ -265,10 +265,10 @@ This tutorial will show how a **deterministic** model written/interfaced in pyth
 
             EDP Panel
 
-        The order should match that written in the ``results.out`` file, and the specified name of QoIs are used only for the display in this example. Please see :ref:`here<lblQUO_QOI>` to learn about vector QoIs which have a length greater than 1 
+        The order should match that written in the ``results.out`` file, and the specified name of QoIs are used only for the display in this example. Please see :ref:`here<lblQUO_QOI>` to learn about vector QoIs that have a length greater than 1 
 
 
-     When all the fields are filled in, click the **Run** button, and the analysis will be performed. The program will go into "not responding", but that means quoFEM is busy running the analysis. You can check the progress status in your **Local Working directory** which can be found in the preference window. The number attached to 'workdir.' indicates the simulation index, and each folder contains the details for each simulation run.
+     When all the fields are filled in, click the **Run** button, and the analysis will be performed. **Do not press the Run button twice** - it will give you an error. You can check the progress status in your **Local Working directory** which can be found in the preference window. The number attached to 'workdir.' indicates the simulation index, and each folder contains the details for each simulation run.
 
         .. figure:: figures/step2_RES1.PNG
             :align: center
@@ -330,7 +330,7 @@ This tutorial will show how a **deterministic** model written/interfaced in pyth
 
             Login window
 
-     If you don't have the DesignSafe account, you can easily sign up at |DesignSafe|.
+     If you don't have a DesignSafe account, you can easily sign up at |DesignSafe|.
 
      Then by clicking **RUN at DesignSafe**, one can specify the job details. Please see :ref:`here<lbl-usage>` for more details on the number of nodes and processors.
 
@@ -390,7 +390,7 @@ This tutorial will show how a **deterministic** model written/interfaced in pyth
         On Windows, it is important to install python packages to the correct python executable. Please read :ref:`here<lblFEM>` about pip-installing python packages and changing the python version.
 
         .. note::
-           **When running at DesingSafe (e.g. Step 3)**, SimCenter workflow uses its own python executable installed on the cloud computer. Currently, the only supported python packages are those installed through 'nheri_simcenter' package. The available list of packages include - numpy, scipy, sklearn, pandas, tables, pydoe, gpy, emukit, plotly, matplotlib. If your model uses a package beyond this list, quoFEM analysis will fail.
+           **When running at DesingSafe (e.g. Step 3)**, SimCenter workflow uses its own python executable installed on the cloud computer. Currently, the only supported python packages are those installed through 'nheri_simcenter' package. The available list of packages includes - numpy, scipy, sklearn, pandas, tables, pydoe, gpy, emukit, plotly, matplotlib. If your model uses a package beyond this list, quoFEM analysis will fail.
 
            An option to allow user-defined python packages on DesignSafe is under implementation. Meanwhile, if you need to request to use additional python packages, please contact us through `user forum <https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0>`_.
 

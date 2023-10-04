@@ -7,8 +7,7 @@
 
    .. only:: R2D_app
 
-
-      The |full tool name| (|app|) is an open-source research application that can be used to simulate the performance of the built environment subjected to natural hazards. Version 1 will allow users to predict the performance of the buildings in the region when subjected to earthquake events. Version 2, due May 2021, will allow researchers to study the effects given a Hurricane event. Future version will allow users to study effects of lifleines and interdependencies. The computations are performed by a simulation workflow that will run on either the user's local machine or on a high performance computer made available by |DesignSafe|.
+      The |full tool name| (|app|) is an open-source research application that can be used to simulate the performance of the built environment subjected to natural hazards. The tool allows users to study effects of Earthquake or Hurricane on buildings and lifeline networks (Transportation, Water, Gas, ..) in a region. The computations are performed by a simulation workflow that will run on either the user's local machine or on a high performance computer made available by |DesignSafe|.
 
    .. only:: PBE_app
 
@@ -76,14 +75,15 @@
    :WEUQ:common/user_manual/releases/weCapabilities
    :WEUQ:common/user_manual/releases/weReleaseNotes
    :WEUQ:common/user_manual/releases/wePlans
+
+   :R2D:common/user_manual/releases/r2dCapabilities 	 
+   :R2D:common/user_manual/releases/r2dPlans 
+   :R2D:common/user_manual/releases/r2dReleaseNotes
       
-   :R2D:common/user_manual/usage/desktop/R2DTool/releasenotes
    :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
+	  
    :PBE:common/user_manual/usage/desktop/PBE/releasenotes
-   :R2D:common/user_manual/releases/r2dPlans
-
    :PBE:common/user_manual/releases/pbePlans
-
 	    
    common/front-matter/glossary.rst
    common/front-matter/abbreviations.rst
@@ -116,14 +116,9 @@
    :Hydro:common/user_manual/usage/desktop/hydro/resguide
    :Hydro:common/user_manual/usage/desktop/hydro/helpvideo
 
-   :EEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
-   :WEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
-   :PBE:common/user_manual/troubleshooting/desktop/troubleshooting
-   :quoFEM:common/user_manual/troubleshooting/desktop/troubleshooting
-   :R2D:common/user_manual/troubleshooting/desktop/troubleshooting
-   :pelicun:common/user_manual/troubleshooting/pelicun/troubleshooting
-   :Hydro:common/user_manual/troubleshooting/pelicun/errors
 
+   :R2D:common/user_manual/usage/desktop/R2DTool/tools
+	  
    :EEUQ:common/user_manual/examples/desktop/examples
    :WEUQ:common/user_manual/examples/desktop/examples
    :PBE:common/user_manual/examples/desktop/examples
@@ -131,6 +126,14 @@
    :quoFEM:common/user_manual/examples/desktop/examples
    :R2D:common/user_manual/examples/desktop/examples
    :pelicun:common/user_manual/examples/pelicun/examples
+
+   :EEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
+   :WEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
+   :PBE:common/user_manual/troubleshooting/desktop/troubleshooting
+   :quoFEM:common/user_manual/troubleshooting/desktop/troubleshooting
+   :R2D:common/user_manual/troubleshooting/desktop/troubleshooting
+   :pelicun:common/user_manual/troubleshooting/pelicun/troubleshooting
+   :Hydro:common/user_manual/troubleshooting/pelicun/errors
 
    :Hydro:common/user_manual/usage/desktop/hydro/bestpractices
 
@@ -158,9 +161,17 @@
    .. :docTestbeds:common/testbeds/anchorage/index
    :docTestbeds:common/testbeds/lake_charles/index
 
+.. _lbl-dldb-manual:
+
+.. toctree-filt::
+   :caption: Damage and Loss DB
+   :maxdepth: 1
+   :numbered: 3
+
+   :docDLDB:common/dldb/damage/index
+   :docDLDB:common/dldb/repair/index
+
 .. _lbl-technical-manual:
-
-
 
 .. toctree-filt::
    :caption: Technical Manual

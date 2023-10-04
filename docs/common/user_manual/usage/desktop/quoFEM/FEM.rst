@@ -4,8 +4,7 @@ FEM: Finite Element Method
 ==========================
 
 The **FEM** tab will present users with a selection of FEM
-applications. Currently, there are four options: OpenSees, Python, FEAPpv, 
-and a custom user-specified application.
+applications. Currently, there are six options: OpenSees, Python, FEAPpv, SurrogateGP (using a surrogate model trained in quoFEM in place of a numerical simulation model), Custom (user-specified application), Multi Model (using more than one model in an analysis), along with the option of specifying no simulation model.
 
 .. _figFEM:
 
@@ -17,7 +16,7 @@ and a custom user-specified application.
 	Input for the **FEM** tab.
 
 .. note::
-   Because the UQ engines treat the FEM applications as a black box, when the UQ engine runs each deterministic simulation it expects the FEM application to output a single file. This file must be named ``results.out`` and be placed in the same directory as the main input file. The ``results.out`` file must contain a single line. That line must contain as many QoI values as the user will enter in the **QoI** panel. Each value must be separated by a space. An example ``results.out`` file for a problem specifying four response QoI values is as shown:
+   Because the UQ engines treat the FEM applications as a black box, when the UQ engine runs each deterministic simulation it expects the FEM application to output a single file. This file must be named ``results.out`` and be placed in the same directory as the main input file. The ``results.out`` file must contain a single line. That line must contain as many QoI values as the sum of the length of all the EDPs defined by the user in the **QoI** panel. Each value must be separated by a space. An example ``results.out`` file for a problem specifying four response QoI values is as shown:
 
    .. literalinclude:: results.out
 
@@ -183,22 +182,7 @@ In place of the physical simulation models, the Gaussian process surrogate model
 
   Input for Surrogate model FEM Application
 
-When users select the SurrogateGP option, they are requested to provide the following files:
-
-.. Note:: 
-
-  All the required input files described below can be generated from the quoFEM. See :ref:`lblSimSurrogate`.
-
-
-1. **Surrogate info file (.json)**: This file contains the meta-information about the surrogate model. Users can open it with a text editor to see the contents.
-
-2. **Surrogate model file (.pkl)**: Surrogate model is saved in a binary format. GPy python package is required to view or use this model outside of quoFEM.
-
-Additionally, if users want to allow alternation between the exact simulation model and surrogate model depending on the predicted error rate, an additional folder that contains the simulation information is required (See **Run Exact FEM Simulation** option below). Note that this folder is not explicitly specified in the input panel, but it needs to be located in the specific directory under the specific name (``templatedir_SIM``).  
-
-3. **Simulation template folder (templatedir_SIM)**: This folder contains the simulator scripts (workflow driver) and required files to run the original simulation model. **Note that the folder should be located in the same directory as the Surrogate info file**. If the folder is not presented in the right directory, the analysis can fail. The name of the folder should not be modified.
-
-Once the files are loaded, users may choose the tolerance level of the predictive variance.
+When users select the SurrogateGP option, they are requested to provide **Surrogate info file (.json)** that contains the information about the surrogate model. Users can open it with a text editor to see the contents. Once the file is loaded, users may choose the tolerance level of the predictive variance.
 
 * **Maximum Allowable Normalized Variance**: Prediction variance divided by the variance level of the training dataset. If more than one QoIs is introduced, only the highest normalized variance value will be considered.
 
@@ -212,8 +196,11 @@ Users may either stop the analysis, continue, or run exact FEM simulations whene
 
 * **Continue**: The tolerance level is ignored and the analysis is continued. This option is not recommended.
 
-* **Run Exact FEM Simulation**: The program will run the exact FEM simulation user provided in the training session. In case the surrogate model is constructed purely based on the data and without any model information (case 3 in section 2.1.2.2), this option will be disabled.
+* **Run Exact FEM Simulation**: The program will run the exact FEM simulation user provided in the training session. In case the surrogate model is constructed purely based on the data and without any model information (case 3 in section 2.1.2.2), this option will be disabled. To allow this option, an additional folder that contains the simulation information is required. This folder, called **Simulation template folder (templatedir_SIM)**, contains the simulator scripts (workflow driver) and required files to run the original simulation model. This file can be obtained by 
 
+.. Note:: 
+
+  The **surrogate model file (.json)** and **Simulation template folder (templatedir_SIM)** can be generated from the quoFEM. See :ref:`lblSimSurrogate`.
 
 Additionally, **GP output** can be set as either the *median prediction* or a *random sample* generated from the normal distribution (or lognormal distribution if the user used log-transform when training) with the predictive median and variance. **NOTE:** the random generator does not account for the Gaussian process correlation, and each realization of QoI given RVs is independent of each other. Only users familiar with GP modeling and who understand the limitation are recommended to use the *random sample* option.
 
@@ -231,3 +218,31 @@ If the user wants to inspect the simulation status or check error/warning messag
 .. Note:: 
 
   Once the surrogate model is imported, RV and QoI tab will be auto-populated. Users are allowed to remove some of the QoIs if not interested but may not add new QoIs or modify the names of existing QoIs.
+
+
+Multi Model
+^^^^^^^^^^^
+By selecting this option, users can define multiple numerical simulation models for use in their UQ analysis. The Add and Remove buttons allow users to control the number of models they want to use in the analysis. 
+
+.. figure:: figures/multiModel1.png
+  :align: center
+  :figclass: align-center
+  :width: 800
+
+  Input for Multi Model FEM Application
+
+
+By adding a model, a new tab is created in the FEM panel where users can choose one of the FEM applications described in the sections above and provide the inputs necessary to define the model. Users also need to specify their belief about the credibility of the model in the tab corresponding to that model. The beliefs are expressed as non-negative numerical values. The belief value for each model is defined relative to the other models, and the beliefs do not need to sum to 1.
+
+.. figure:: figures/multiModel2.png
+  :align: center
+  :figclass: align-center
+  :width: 800
+
+  Selecting a FEM application within a model tab
+
+
+.. Note:: 
+
+  If a Multi Model application is selected, at least 2 models must be defined.
+
