@@ -17,18 +17,17 @@ For a coupled event the user is presented with a workflow they must progress thr
             (4) Desired data output specification
             (5) Post processing
 
+(1) Coupled Simulation Settings
 
-            (1) Coupled Simulation Settings
+Time Step: The coupling timestep for the solution. This value should be selected such that CFD model CFL criterion is satisfied, as well as the required minimum timestep for finite element analysis model stability.
 
-            Time Step: The coupling timestep for the solution. This value should be selected such that CFD model CFL criterion is satisfied, as well as the required minimum timestep for finite element analysis model stability.
+Duration: Coupled simulation duration.
 
-            Duration: Coupled simulation duration.
+Preload Structure w/ Gravity: Utilize the nodal masses to create a gravity loading in the -Z direction of the OpenSees model. (optional, this could be handled manually within the OpenSees script itself)
 
-            Preload Structure w/ Gravity: Utilize the nodal masses to create a gravity loading in the -Z direction of the OpenSees model. (optional, this could be handled manually within the OpenSees script itself)
+Run Preliminary Structural Analysis: Utilize the end state of the OpenSees analysis (if defined in the OpenSees script) as the initial state of structure during the coupled analysis.
 
-            Run Preliminary Structural Analysis: Utilize the end state of the OpenSees analysis (if defined in the OpenSees script) as the initial state of structure during the coupled analysis.
-
-(1.1) Simulation Settings
+   (1.1) Simulation Settings
 
 
 .. figure:: coupled/Settings.png
@@ -37,45 +36,33 @@ For a coupled event the user is presented with a workflow they must progress thr
     Settings
 
 
-(1.2) OpenFOAM Settings
+   (1.2) OpenFOAM Settings
 
-   Adjust Timestep: [Default, No] This setting allows the OpenFOAM analysis to reduce its timestep to a value below that of the coupling timestep. NOT RECOMMENDEDFOR CASES WITH STRUCTURAL DEFORMATION. Subcycling of the CFD model between coupling iterations can result in erroneous force spikes. It is suggested that a constant timestep size is utilized for coupled analyses.
+Adjust Timestep: [Default, No] This setting allows the OpenFOAM analysis to reduce its timestep to a value below that of the coupling timestep. NOT RECOMMENDEDFOR CASES WITH STRUCTURAL DEFORMATION. Subcycling of the CFD model between coupling iterations can result in erroneous force spikes. It is suggested that a constant timestep size is utilized for coupled analyses.
 
+Turbulence: Allow for calculation of turbulence within the CFD model.
 
-   Turbulence: Allow for calculation of turbulence within the CFD model.
+Number of Processors: The number of processors the OpenFOAM CFD solution will be calculated with.
 
+Start Event Recording Time: What time the user would like the coupled model to output post-processing data.
 
-   Number of Processors: The number of processors the OpenFOAM CFD solution will be calculated with.
+   (1.3) OpenCOUPLING Settings
 
+Coupling Scheme: Implicit/Explicit. Implicit is recommended.
 
-   Start Event Recording Time: What time the user would like the coupled model to output post-processing data.
+Coupling Data Acceleration Method: IQN-ILS is recommended.
 
+Initial Relaxation Factor: The relaxation factor for FSI coupling iterations.
 
-(1.3) OpenCOUPLING Settings
+Maximum Coupling Iterations: Default, 100. Keep at a large value, should converge before reaching maximum iterations.
 
-   Coupling Scheme: Implicit/Explicit. Implicit is recommended.
+Coupling Iteration Convergence Tolerance: This is a relative convergence measure of the coupling data passed between participants within each coupling timestep. This value should be below 5e-3, but not too small. This is a measure of how much the coupling residuals change from coupling iteration to coupling iteration. Once the values have nearly approached their desired values from the interface acceleration techniques, the coupling convergence tolerance is satisfied.
 
+Data Mapping Scheme: Nearest Neighbor is recommended. Radial-basis-function mapping is available, but is less stable and slower than nearest neighbor.
 
-   Coupling Data Acceleration Method: IQN-ILS is recommended.
+Output Data from Coupling Iterations: Not recommended. Intended for debugging of coupling iterations for models which are not converging.
 
-
-   Initial Relaxation Factor: The relaxation factor for FSI coupling iterations.
-
-
-   Maximum Coupling Iterations: Default, 100. Keep at a large value, should converge before reaching maximum iterations.
-
-
-   Coupling Iteration Convergence Tolerance: This is a relative convergence measure of the coupling data passed between participants within each coupling timestep. This value should be below 5e-3, but not too small. This is a measure of how much the coupling residuals change from coupling iteration to coupling iteration. Once the values have nearly approached their desired values from the interface acceleration techniques, the coupling convergence tolerance is satisfied.
-
-
-   Data Mapping Scheme: Nearest Neighbor is recommended. Radial-basis-function mapping is available, but is less stable and slower than nearest neighbor.
-
-
-   Output Data from Coupling Iterations: Not recommended. Intended for debugging of coupling iterations for models which are not converging.
-
-
-   Coupling Iteration Output Data Frequency: A large value is recommended.
-
+Coupling Iteration Output Data Frequency: A large value is recommended.
 
 (2) Specification of OpenSees Model File (must be an OpenSeesPy script) and external surface file for structure (STL file, this is the boundary which will represent the structure within a three-dimensional CFD simulation, which will be coupled to the FEA model)
 
