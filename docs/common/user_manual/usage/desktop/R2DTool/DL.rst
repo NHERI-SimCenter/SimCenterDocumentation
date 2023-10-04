@@ -6,6 +6,8 @@ The **Damage and Loss** panel is where the user selects a damage and loss method
 .. contents::
    :local:
 
+.. _lbl-DLPelicun:
+
 Pelicun Damage and Loss 
 -----------------------
 
