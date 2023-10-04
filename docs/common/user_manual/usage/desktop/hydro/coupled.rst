@@ -16,8 +16,11 @@ For a coupled event the user is presented with a workflow they must progress thr
             (3) Specification of CFD domain information and initial conditions
             (4) Desired data output specification
             (5) Post processing
+---------------------------------------------------------------------------------------------------------------------------------------------------
 
-(1) Coupled Simulation Settings
+**(1) Coupled Simulation Settings**
+---------------------------------------------------------------------------------------------------------------------------------------------------
+**(1.1) Simulation Settings**
 
 Time Step: The coupling timestep for the solution. This value should be selected such that CFD model CFL criterion is satisfied, as well as the required minimum timestep for finite element analysis model stability.
 
@@ -27,16 +30,13 @@ Preload Structure w/ Gravity: Utilize the nodal masses to create a gravity loadi
 
 Run Preliminary Structural Analysis: Utilize the end state of the OpenSees analysis (if defined in the OpenSees script) as the initial state of structure during the coupled analysis.
 
-   (1.1) Simulation Settings
-
-
 .. figure:: coupled/Settings.png
    :align: center
    :figclass: align-center
     Settings
 
 
-   (1.2) OpenFOAM Settings
+**(1.2) OpenFOAM Settings**
 
 Adjust Timestep: [Default, No] This setting allows the OpenFOAM analysis to reduce its timestep to a value below that of the coupling timestep. NOT RECOMMENDEDFOR CASES WITH STRUCTURAL DEFORMATION. Subcycling of the CFD model between coupling iterations can result in erroneous force spikes. It is suggested that a constant timestep size is utilized for coupled analyses.
 
@@ -46,7 +46,7 @@ Number of Processors: The number of processors the OpenFOAM CFD solution will be
 
 Start Event Recording Time: What time the user would like the coupled model to output post-processing data.
 
-   (1.3) OpenCOUPLING Settings
+**(1.3) OpenCOUPLING Settings**
 
 Coupling Scheme: Implicit/Explicit. Implicit is recommended.
 
@@ -64,36 +64,37 @@ Output Data from Coupling Iterations: Not recommended. Intended for debugging of
 
 Coupling Iteration Output Data Frequency: A large value is recommended.
 
-(2) Specification of OpenSees Model File (must be an OpenSeesPy script) and external surface file for structure (STL file, this is the boundary which will represent the structure within a three-dimensional CFD simulation, which will be coupled to the FEA model)
+**(2) Specification of OpenSees Model File And External Surface File for Structure**
+---------------------------------------------------------------------------------------------------------------------------------------------------
+OpenSees File must be an OpenSeesPy script
 
+External surface file  - Must be a STL file, this is the boundary which will represent the structure within a three-dimensional CFD simulation, which will be coupled to the FEA model)
 
-(2.1) OpenSees Model
-
+**(2.1) OpenSees Model**
 
 .. figure:: coupled/OpenSees.png 
    :align: center
    :figclass: align-center
     OpenSees
 
- 
-(3) Specification of CFD model domain and initial conditions.
 
-                                                                                    
-(3.1) OpenFOAM Model
+**(3) Specification of CFD model domain and initial conditions.**
+---------------------------------------------------------------------------------------------------------------------------------------------------
+**(3.1) OpenFOAM Model**
 
 Select a NHERI flume facility or specify the flume geometry within the text field boxes provided.
                                                                                                                                                                            
 Specify a flume cell size (this is the approximate edge length size of the volumes within the CFD domain for the largest cells). The minimum flume cell size could tentatively be 8 times smaller than this value, due to mesh castellation during automatic meshing routines. Use caution when specifying this value. CFD mesh resolution is increased in the structural near field.
 
-
+s
 
 .. figure:: coupled/OpenFOAM.png
    :align: center
    :figclass: align-center
     OpenFOAM
 
-   
-(3.2) Specify the flume bathymetry (STL file, or point list of x position, elevation of flume floor at x position).
+
+**(3.2) Specify the flume bathymetry (STL file, or point list of x position, elevation of flume floor at x position).**
 
 If there is no bathymetry, please provide points within the point list which are outside of the boundary of the flume, or specify the bottom of the flume as a two point list with your start x location and end x location as the start and end of the flume and the flume elevation at both points as 0.
 
@@ -103,29 +104,31 @@ If there is no bathymetry, please provide points within the point list which are
    :figclass: align-center
     Bathymetry
 
-                                                                                                                              
-(3.3) Specify the initial conditions of the OpenFOAM model, including the still water level, the initial fluid velocity, and the fluid reference pressure [default, 0 Pa]. If a velocity time history is desired as an inlet boundary condition, upload a CSV file containing the times and velocities desired at the inlet at those times.
-                                                                                                                                                                                                                                       
+
+**(3.3) Specify the initial conditions of the OpenFOAM model, including the still water level, the initial fluid velocity, and the fluid reference pressure [default, 0 Pa]. If a velocity time history is desired as an inlet boundary condition, upload a CSV file containing the times and velocities desired at the inlet at those times.**
+
+
 .. figure:: coupled/initialOF.png
     :align: center
     :figclass: align-center
      Initial Conditions
 
 
-(3.4) Specify the turbulence initial conditions. The reference length, turbulence intensity, and the reference velocity of the turbulence.
+**(3.4) Specify the turbulence initial conditions. The reference length, turbulence intensity, and the reference velocity of the turbulence.**
 
 .. figure:: coupled/turbulanceOF.png
     :align: center
     :figclass: align-center
      Turbulence 
 
-                                                                                                                            
-(3.5) Specify the wave generation techniques for the CFD model, if waves are desired.                                                                                                                                                                                                                            
-Paddle Generated Waves: Upload a CSV of times, displacements of the paddle at the inlet. This will create a paddle generated wave through motion of the CFD boundary at the minimum X boundary of the model.
 
-                                                                                                                                                                                                                            
+**(3.5) Specify the wave generation techniques for the CFD model, if waves are desired.**
+
+
+Paddle Generated Waves: Upload a CSV of times, displacements of the paddle at the inlet. This will create a paddle generated wave through motion of the CFD boundary at the minimum X boundary of the model.
+                                                                                                                                                                            
 Periodic Waves: Specify the wave properties to apply a periodic wave inlet boundary condition to the CFD model.
-                                                                                                                                                                                                                           
+                
 No Waves: Steady state flow or flows without waves.
 
 .. figure:: coupled/waveOF.png
@@ -134,7 +137,8 @@ No Waves: Steady state flow or flows without waves.
      Wave Generation 
 
 
-(4) Outputs                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+**(4) Specify Outputs**       
+---------------------------------------------------------------------------------------------------------------------------------------------------                                                                                                                                                                                                                                                                                                                                             
 A variety of outputs from the coupled model can be obtained through specification of the output settings.
  
 - Output VTK - Output a VTK file of the OpenSees and OpenFOAM models at the specified time interval.
@@ -172,4 +176,9 @@ Section Cuts
    :align: center
    :figclass: align-center
     Section Cuts
+
+**(5) Postprocessing**       
+--------------------------------------------------------------------------------------------------------------------------------------------------- 
+
+Data from the coupled analysis will be available in the DesignSafe Data Depot under your My Data/Hydro-UQ/ folder. Each analysis will have a temporary directory associated with it. Within this directory, there is a results.zip file which contains the OpenFOAM postProcessing folder, as well as VTK output from OpenSees. This zip folder can be extracted and results can be viewed with ParaView.  
 
