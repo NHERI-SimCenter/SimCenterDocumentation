@@ -117,7 +117,7 @@ If there is no bathymetry, please provide points within the point list which are
     Bathymetry
 
                                                                                                                               
-(3.3) Specify the initial conditions of the OpenFOAM model, including the still water level, the initial fluid velocity, and the fluid reference pressure [default, 0 Pa]. If a velocity time history is desired as an inlet boundary condition, upload a CSV file containing the times and velocities desired at the inlet at those times. [E.G.]
+(3.3) Specify the initial conditions of the OpenFOAM model, including the still water level, the initial fluid velocity, and the fluid reference pressure [default, 0 Pa]. If a velocity time history is desired as an inlet boundary condition, upload a CSV file containing the times and velocities desired at the inlet at those times.
                                                                                                                                                                                                                                        
 .. figure:: coupled/initialOF.png
     :align: center
