@@ -6,6 +6,8 @@ In this panel the user can import the databases of different asset classes. The 
 .. contents::
    :local:
 
+.. _lbl-ASDBuildings:
+
 Buildings
 ---------
 
