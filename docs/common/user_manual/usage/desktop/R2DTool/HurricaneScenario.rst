@@ -1,3 +1,5 @@
+.. _hurricane_scenario_tool:
+
 Hurricane Scenario
 ------------------
 

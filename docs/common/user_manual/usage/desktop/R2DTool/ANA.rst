@@ -14,6 +14,8 @@ In this panel, the user can select the applications that will be employed in the
 .. contents::
    :local:
 
+.. _lbl-ANABuildings:
+
 Buildings
 ---------
 
