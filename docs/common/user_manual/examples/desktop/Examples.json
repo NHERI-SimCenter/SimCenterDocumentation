@@ -1,0 +1,14 @@
+{
+  "Examples": [
+    {
+      "name": "E1: FEMA P-58 assessment using external demand data",
+      "description": "This example conducts a FEMA P-58 assessment of a 4-story office building.",
+      "inputFile": "pbdl-0001/src/input.json"
+    },
+    {
+      "name": "E2: Shear building simulation and Hazus assessment",
+      "description": "This example conducts a Hazus assessment of a 3-story office building.",
+      "inputFile": "pbdl-0002/src/input.json"
+    }
+  ]
+}
