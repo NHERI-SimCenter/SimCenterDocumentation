@@ -540,9 +540,9 @@ Efficiency of MFMC can be evaluated using the speed-up ratio, defined as the red
 .. figure:: figures/UQ/SimCenterMF4.png
    :align: center
    :figclass: align-center
-   :width: 900
+   :width: 700
 
-   Speed-up offered by the MFMC estimation
+   Speed-up offered by the MFMC estimation (:math:`c_{HF}`: HF model evaluation time, :math:`c_{LF}`: LF model evaluation time, :math:`\rho_{LF,HF}`: correlation between HF and LF responses)
 
 
 Algorithm details
@@ -581,7 +581,7 @@ The goal of MFMC is to estimate the mean and variance of :math:`y_{HF}`, given s
 
    Step 1: Pilot Simulation
 
-Randomly generate :math:`N_p` sample points and run both HF and LF simulations. Compute the correlation between two model outputs (:math:`\rho_{HF,LF}`) and estimate the average model evaluation times (:math:`c_{HF}` and :math:`c_{LF}`). The optimal ratio of HF and LF simulation runs can be decided by
+Randomly generate :math:`N_p` sample points and run both HF and LF simulations. Compute the correlation between two model outputs (:math:`\rho_{LF,HF}`) and estimate the average model evaluation times (:math:`c_{HF}` and :math:`c_{LF}`). The optimal ratio of HF and LF simulation runs can be decided by
 
    .. math::
 
