@@ -4,10 +4,7 @@
 How To Cite
 ***********
 
-If this application helped you perform your work, please recognize the contributions of the developers by citing the following publications:
-
 .. only:: R2D_app
-
 
    1. Frank McKenna, Stevan Gavrilovic, Adam Zsarnoczay, Kuanshi Zhong, Wael Elhaddad, and
       Pedro Arduino (2022).
@@ -16,9 +13,9 @@ If this application helped you perform your work, please recognize the contribut
 	     
 .. only:: PBE_app
 
-   1. Adam Zsarnoczay, Frank McKenna, Kuanshi Zhong, Charles Wang, Michael Gardner, and Wael Elhaddad (2023)
-      NHERI-SimCenter Performance Based Engineering Application, PBE v3.1,
-      Zenodo, `DOI: 10.5281/zenodo.1472503 <https://doi.org/10.5281/zenodo.1472503>`_
+   1. Adam Zsarnoczay, Frank McKenna, Charles Wang, Wael Elhaddad, & Michael Gardner. (2022).
+      NHERI-SimCenter/PBE: Release v3.0.0.
+      Zenodo. `DOI: 10.5281/zenodo.1472503 <https://doi.org/10.5281/zenodo.1472503>`_
   
 .. only:: EEUQ_app
 
@@ -29,16 +26,16 @@ If this application helped you perform your work, please recognize the contribut
    
 .. only:: WEUQ_app
 
-   1. Frank McKenna, Peter Mackenzie-Helnwein, Jiawei Wan & Stevan Gavrilovic.
-      (2021, May 17). NHERI-SimCenter/WE-UQ: Version 2.1.0 (Version v2.1.0).
-      Zenodo. `DOI: 10.5281/zenodo.3464692 <https://doi.org/10.5281/zenodo.3464692>`_
+   1. Frank McKenna, Abiy F. Melaku, Fei Ding, Jiawei Wan, Peter Mackenzie-Helnwein, Wael Elhaddad, &
+      Michael Gardner. (2023). NHERI-SimCenter/WE-UQ: Version 3.0.0 (v3.0.0). 
+      Zenodo. `DOI: 10.5281/zenodo.8133017 <https://doi.org/10.5281/zenodo.8133017>`_
 	     
 .. only:: quoFEM_app	     
       
-   1. Frank McKenna, Sang-ri Yi, Aakash Bangalore Satish, Kuanshi Zhong, Adam Zsarnoczay, & Wael Elhaddad. 
-   (2023).
-   NHERI-SimCenter/quoFEM: Version 3.3.0 (v3.3.0). 
-   Zenodo. `DOI: 10.5281/zenodo.6404498 <https://doi.org/10.5281/zenodo.6404498>`_
+
+    1. Frank McKenna, Sang-ri Yi, Aakash Bangalore Satish, Kuanshi Zhong, Adam Zsarnoczay, & Wael Elhaddad. (2023).
+       NHERI-SimCenter/quoFEM: Version 3.3.0 (v3.3.0). 
+       Zenodo. `DOI: 10.5281/zenodo.6404498 <https://doi.org/10.5281/zenodo.6404498>`_
 
 
 2. Gregory G. Deierlein, Frank McKenna, Adam Zsarnóczay, Tracy Kijewski-Correa, Ahsan Kareem,

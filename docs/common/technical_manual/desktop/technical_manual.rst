@@ -16,6 +16,9 @@ Technical Manual
    :PBE:damping
    :WEUQ:WEUQ/scalingWindTunnelData
    :WEUQ:WEUQ/TinF
+   :WEUQ:WEUQ/dataInformedStochasticWind
+   
+..   :WEUQ:WEUQ/computationalWindLoadEvaluation
 
    :EEUQ:spatial_correlation
    :PBE:spatial_correlation

@@ -6,10 +6,7 @@ Turbulence Inflow
 Introduction
 ------------
 
-In computational wind engineering (CWE), generation of inflow turbulence satisfying prescribed
-mean-velocity profiles, turbulence spectra, spatial and temporal correlations is of great
-importance for the accurate evaluation of wind effects on buildings and structures. More
-specifically, the task is to generate a turbulent velocity field :math:`\boldsymbol{u}(\boldsymbol{x},t)` with the form
+In computational wind engineering (CWE), the generation of inflow turbulence satisfying prescribed mean-velocity profiles, turbulence spectra, and spatial and temporal correlations is of great importance for the accurate evaluation of wind effects on buildings and structures. More specifically, the task is to generate a turbulent velocity field :math:`\boldsymbol{u}(\boldsymbol{x},t)` with the form
 
 .. math::
     
@@ -45,66 +42,27 @@ velocity field :math:`\boldsymbol{u}` and its fluctuation :math:`\boldsymbol{u}'
 
 
 
-Several methodologies have been proposed for this purpose which can be classified into three
-general categories: precursor simulation methods, recycling methods and synthetic methods.
-Compared with precursor simulation and recycling methods, the synthetic methods in general offer
-a more practical and relatively efficient approach to generate inflow turbulence, and is
-therefore chosen as the subject of this section. Research activities on synthetic turbulence
-generation have been vigorous over the past decades and have branched out into several
-categories of techniques :cite:`wu2017`, including the synthetic random Fourier method
-:cite:`kraichnan1970,hoshiya1972`, the synthetic digital filtering method :cite:`klein2003` 
-and the synthetic eddy methods :cite:`jarrin2006`.
-A brief introduction regarding to these techniques is given below and emphasis is placed on their abilities to capture the statistical characteristics as well as the spatial and temporal coherence of turbulence. Also note that since real turbulence is very complex, in most cases, not all of the above listed features can be fulfilled. There is always some adaptation time required for the artificial turbulence to evolve into real turbulence. Fulfilling the properties above with the synthetic turbulence is important to minimize the adaptation time or length.
+Several methodologies have been proposed for this purpose which can be classified into three general categories: precursor simulation methods, recycling methods and synthetic methods. Compared with precursor simulation and recycling methods, synthetic methods in general offer a more practical and relatively efficient approach to generate inflow turbulence, and is therefore chosen as the subject of this section. Research activities on synthetic turbulence generation have been vigorous over the past decades and have branched out into several categories of techniques :cite:`wu2017`, including the synthetic random Fourier method :cite:`kraichnan1970,hoshiya1972,melaku2021divergence`, the synthetic digital filtering method :cite:`klein2003` and the synthetic eddy methods :cite:`jarrin2006`. A brief introduction regarding to these techniques is given below and emphasis is placed on their abilities to capture the statistical characteristics as well as the spatial and temporal coherence of turbulence. Also note that since real turbulence is very complex, in most cases, not all of the above listed features can be fulfilled. There is always some adaptation time required for artificial turbulence to evolve into real turbulence. Fulfilling the properties above with the synthetic turbulence is important to minimize the adaptation time or length. 
+
 
 Synthetic Random Fourier Method
 -------------------------------
 
 The so-called synthetic random Fourier method (SRFM) attempts to model turbulent flow field indirectly by imposing constraints on uncorrelated random fields through an energy spectrum to account for the spatial and temporal correlations, which can be further classified into two groups. 
-The first group of the SRFM was based on the pioneering work in :cite:`hoshiya1972` and :cite:`shinozuka1972` on the simulation of multi-correlated random processes using a weighted amplitude wave superposition (WAWS) method. This approach has an advantage that both the targeted power- and cross-spectra can be imposed in the generation process so that the prescribed target characteristics can be maintained. A major drawback of this method is that the generated turbulence does not satisfy the continuity equation of the flow, or in other words, the divergence-free condition is not guaranteed. As a consequence it would take enormous effort for the solver to enforce the continuity by correcting the turbulence inflow inserted into the computational domain, and the statistical characteristics of the corrected flow field differs from the target values.
+The first group of the SRFM was based on the pioneering work in :cite:`hoshiya1972` and :cite:`shinozuka1972` on the simulation of multi-correlated random processes using a weighted amplitude wave superposition (WAWS) method. This approach has an advantage that both the targeted power- and cross-spectra can be imposed in the generation process so that the prescribed target characteristics can be maintained. A major drawback of this method is that the generated turbulence does not satisfy the continuity equation of the flow, or in other words, the divergence-free condition is not guaranteed. As a consequence, it would take enormous effort for the solver to enforce the continuity by correcting the turbulence inflow inserted into the computational domain, and the statistical characteristics of the corrected flow field differ from the target values.  More recently, :cite:`melaku2021divergence` proposed a computationally efficient implementation of the method in :cite:`shinozuka1972` to generate inflow turbulence by enforcing continuity requirements posteriorly.
 
-The second group of the SRFM was initiated by the work in :cite:`kraichnan1970` on
-divergence-free homogeneous isotropic turbulence synthesis through the superposition of random
-harmonic functions. :cite:`smirnov2001` took a step forward by combing Kraichnan's technique
-with scaling and orthogonal transformation operations in a procedure known as the random flow
-generation (RFG) which allows to generate inhomogeneous and anisotropic turbulence. However the
-scaling operation introduced in the RFG technique can result in a velocity field that is not
-divergence-free for inhomogeneous turbulence. Modifications to enforce the divergence-free
-constraint for inhomogeneous turbulence was discussed in :cite:`yu2014`. A major drawback of RFG
-technique is that the power-spectra of the generated turbulence only follows Gaussian's spectra
-model, so it is not suitable for simulating flows in atmospheric boundary layer.
-:cite:`huang2010` revisited Kraichnan's method and proposed a technique called DSRFG (for
-discretizing and synthesizing random flow generation) which allows to generate turbulent inflow
-from any prescribed spectrum. Instead of using the scaling and orthogonal transformation, the
-anisotropy of turbulence is realized by modifying the distribution strategy of the wave vector
-in Kraichnan's original method. A drawback of the DSRFG technique is that it produces
-fluctuating velocities with high correlation due to the fact that in this method the spatial
-correlation is modelled by a parameter which is not a function of frequency but a constant
-value. Inspired by the DSRFG method, :cite:`castro2017` proposed some modifications to this
-technique to obtain the velocity field that had a better match with the target turbulent
-statistics. This method, known as modified discretizing and synthesizing random flow generation
-(MDSRFG), is capable of removing the dependence of statistic quantities of synthetic turbulence
-on spectra discretization resolution. :cite:`aboshosha2015` also proposed a technique called consistent discrete RFG (CDRFG) to accurately model the target spectra and the coherence function. In both two methods mentioned above, the parameter that characterizes the spatial correlation is expressed as a function of frequency to account for the damping of coherence with the increase of frequency. An attractive feature of second group of SRFM is that the generation procedures are usually independent at each point and each time-instant so that it can be easily accelerated by conducting parallel computation, although the generated random flow may not satisfy the continuity equation. 
+The second group of the SRFM was initiated by the work in :cite:`kraichnan1970` on divergence-free homogeneous isotropic turbulence synthesis through the superposition of random harmonic functions. :cite:`smirnov2001` took a step forward by combining Kraichnan's technique with scaling and orthogonal transformation operations in a procedure known as the random flow generation (RFG) which allows to generate inhomogeneous and anisotropic turbulence. However, the scaling operation introduced in the RFG technique can result in a velocity field that is not divergence-free for inhomogeneous turbulence. Modifications to enforce the divergence-free the constraint for inhomogeneous turbulence was discussed in :cite:`yu2014`. A major drawback of RFG technique is that the power spectra of the generated turbulence only follow Gaussian spectra model, so it is not suitable for simulating flows in the atmospheric boundary layer. :cite:`huang2010` revisited Kraichnan's method and proposed a technique called DSRFG (for discretizing and synthesizing random flow generation) which allows to generate turbulent inflow from any prescribed spectrum. Instead of using the scaling and orthogonal transformation, the anisotropy of turbulence is realized by modifying the distribution strategy of the wave vector in Kraichnan's original method. A drawback of the DSRFG technique is that it produces fluctuating velocities with high correlation due to the fact that in this method the spatial correlation is modeled by a parameter which is not a function of frequency but a constant value. Inspired by the DSRFG method, :cite:`castro2017` proposed some modifications to this
+technique to obtain the velocity field that had a better match with the target turbulent statistics. This method, known as modified discretizing and synthesizing random flow generation (MDSRFG), is capable of removing the dependence of statistical quantities of synthetic turbulence on spectra discretization resolution. :cite:`aboshosha2015` also proposed a technique called consistent discrete RFG (CDRFG) to accurately model the target spectra and the coherence function. In both two methods mentioned above, the parameter that characterizes the spatial correlation is expressed as a function of frequency to account for the damping of coherence with the increase of frequency. An attractive feature of second group of SRFM is that the generation procedures are usually independent at each point and each time-instant so that it can be easily accelerated by conducting parallel computation, although the generated random flow may not satisfy the continuity equation. 
 
 
 .. _section3:
 Synthetic Eddy Method
 ---------------------
 
-The synthetic eddy method (SEM) initiated by :cite:`jarrin2006` is based on the classical view
-of turbulence as a superposition of the representative coherent eddies. In the SEM, the flow is
-assumed to consist of randomly distributed turbulent spots, and each turbulent spot is modelled
-by a three-dimensional shape function with compact support and satisfies a proper normalization
-condition. The spots are then assumed to be convected through an inlet plane with a reference
-velocity using Taylor's frozen turbulence hypothesis. The resulting inflow turbulence is then
-reconstructed using the method proposed by to recover the desired statistical characteristics
-and to account for the conditions of inhomogeneity and anisotropy. The choice of the shape
-function plays an important role in the SEM since it is directly related to the two-point
-autocorrelation function, and consequently the power spectrum of the synthetic turbulence.
-Enforcement of the continuity condition in the SEM was discussed in :cite:`poletto2013`.
+The synthetic eddy method (SEM) initiated by :cite:`jarrin2006` is based on the classical view of turbulence as a superposition of the representative coherent eddies. In the SEM, the flow is assumed to consist of randomly distributed turbulent spots, and each turbulent spot is modeled by a three-dimensional shape function with compact support and satisfies a proper normalization condition. The spots are then assumed to be convected through an inlet plane with a reference velocity using Taylor's frozen turbulence hypothesis. The resulting inflow turbulence is then reconstructed using the method proposed to recover the desired statistical characteristics
+and to account for the conditions of inhomogeneity and anisotropy. The choice of the shape function plays an important role in the SEM since it is directly related to the two-point autocorrelation function, and consequently the power spectrum of the synthetic turbulence. Enforcement of the continuity condition in the SEM was discussed in :cite:`poletto2013`.
 
-A brief introduction on the SEM presented by :cite:`jarrin2006` is given as follows. To start
-with, the turbulent spot mentioned above can be represented as eddies defined by shape function
-:math:`f` which has a compact support on :math:`[-1,1]` and has the normalization
+A brief introduction on the SEM presented by :cite:`jarrin2006` is given as follows. To start with, the turbulent spot mentioned above can be represented as eddies defined by shape function :math:`f` which has a compact support on :math:`[-1,1]` and has the normalization
 
 .. math::
     :label: normalization
@@ -112,10 +70,7 @@ with, the turbulent spot mentioned above can be represented as eddies defined by
     \int_{-1}^1 f^2(x) \mathrm{d}x = 1
 
 
-The inflow plane on which we want to generate the synthetic turbulence with the SEM is basically
-a finite set of points :math:`S =
-\{\boldsymbol{x}_1,\boldsymbol{x}_2,\ldots,\boldsymbol{x}_s\}`. The first step is to create a
-box of eddies :math:`B` surrounding :math:`S` which is going to contain the synthetic eddies. It is defined by
+The inflow plane on which we want to generate the synthetic turbulence with the SEM is basically a finite set of points :math:`S =\{\boldsymbol{x}_1,\boldsymbol{x}_2,\ldots,\boldsymbol{x}_s\}`. The first step is to create a box of eddies :math:`B` surrounding :math:`S` which is going to contain the synthetic eddies. It is defined by
 
 .. math::
     
@@ -138,9 +93,7 @@ velocity signal generated by :math:`N` eddies has the representation
     u_i(\boldsymbol{x}) = U_i(\boldsymbol{x}) + \frac{1}{\sqrt{N}}\sum_{k=1}^N a_{ij} \epsilon_j^k f_{\boldsymbol{\sigma}(\boldsymbol{x})}(\boldsymbol{x}-\boldsymbol{x}^k)
 
 
-where :math:`\boldsymbol{x}` represent the coordinates of computational points and
-:math:`\boldsymbol{x}^k` represent the coordinates of eddies. The coefficient :math:`a_{ij}`
-results from the Cholesky decomposition of a prescribed Reynolds stress tensor :math:`R_{ij}`
+where :math:`\boldsymbol{x}` represent the coordinates of computational points and :math:`\boldsymbol{x}^k` represent the coordinates of eddies. The coefficient :math:`a_{ij}` results from the Cholesky decomposition of a prescribed Reynolds stress tensor :math:`R_{ij}`
 
 .. math::
     :label: LundCoefficients
@@ -163,27 +116,21 @@ eddy located at :math:`\boldsymbol{x}^k` defined as follows:
     f_{\boldsymbol{\sigma}(\boldsymbol{x})} (\boldsymbol{x}-\boldsymbol{x}^k) = \sqrt{\frac{V_B}{\sigma_1\sigma_2\sigma_3}}f\left(\frac{x_1-x_1^k}{\sigma_1}\right)f\left(\frac{x_2-x_2^k}{\sigma_2}\right)f\left(\frac{x_3-x_3^k}{\sigma_3}\right)
 
 
-where :math:`\boldsymbol{\sigma}=(\sigma_1,\sigma_2,\sigma_3)^T`. The position of the eddies
-:math:`\boldsymbol{x}^k` before the first time step are independent from each other and taken
-from a uniform distribution over the box of eddies :math:`B`. The eddies are convected through
-the box of eddies :math:`B` with the mean velocity :math:`\boldsymbol{U}(\boldsymbol{x})`. At
-each time step, the new position of eddy :math:`k` is given by
+where :math:`\boldsymbol{\sigma}=(\sigma_1,\sigma_2,\sigma_3)^T`. The position of the eddies :math:`\boldsymbol{x}^k` before the first time step are independent from each other and taken from a uniform distribution over the box of eddies :math:`B`. The eddies are convected through the box of eddies :math:`B` with the mean velocity :math:`\boldsymbol{U}(\boldsymbol{x})`. At each time step, the new position of eddy :math:`k` is given by
 
 .. math::
     
     \boldsymbol{x}^k(t+\varDelta t) = \boldsymbol{x}^k(t)+\boldsymbol{U}(\boldsymbol{x}^k)\varDelta t
 
 
-where :math:`\varDelta t` is the time step of the simulation. If an eddy :math:`k` is convected
-out of the box :math:`B`, then it is immediately regenerated randomly with in the region
+where :math:`\varDelta t` is the time step of the simulation. If an eddy :math:`k` is convected out of the box :math:`B`, then it is immediately regenerated randomly with in the region
 
 .. math::
     
     B_{\varDelta t} = \left\{ \boldsymbol{x}\notin B, \ \boldsymbol{x}+\boldsymbol{U}(\boldsymbol{x})\varDelta t \in B \right\}
 
 
-with a new random intensity vector :math:`\epsilon_j^k`. :math:`B_{\varDelta t}` denotes the
-region in which regenerated eddy :math:`\boldsymbol{x}^k(t) \in B_{\varDelta t}` dose not effect the synthetic velocity at the inflow plane until the next time-step.
+with a new random intensity vector :math:`\epsilon_j^k`. :math:`B_{\varDelta t}` denotes the region in which regenerated eddy :math:`\boldsymbol{x}^k(t) \in B_{\varDelta t}` dose not effect the synthetic velocity at the inflow plane until the next time-step.
 
 Mean flow and Reynolds stresses
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

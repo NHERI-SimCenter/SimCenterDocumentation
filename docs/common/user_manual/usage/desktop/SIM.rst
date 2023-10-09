@@ -80,7 +80,7 @@ The input panel for this module is shown in :numref:`fig-sda`. Users need to pro
  
 #. Seismic Design Parameters: The seismic design parameters box contains the Equivalent Lateral Force (ELF) design parameters as specified by ASCE 7-10. ``AutoSDA`` employs these parameters in its automated seismic design procedures. Note that the values of these ELF parameters are site-specific, and can be obtained from the `SEAOC/OSHPD Seismic Design Maps Tool <https://seismicmaps.org>`_ or the `ATC Hazards by Location Tool <https://hazards.atcouncil.org>`_.
 
-#. Building Data Folder: The location of the building data folder is specified within this box. The building data folder should contain the following four CSV files that are required by ``AutoSDA``: 1) Geometry.csv; 2) ELFParameters.csv; 3) MemberDepth.csv; and 4) Loads.csv. These files can be automatically created on the user's computer by by clicking on the ``Save File`` button. The user will be prompted to select a folder whereafter the files will be saved. Alternatively, users have the option to upload their own CSV files by selecting a folder, and then clicking on the ``Load File`` button. Note that users are encouraged to backup their CSV files as **EE-UQ** will overwrite the existing files in the selected folder. Before running an analysis, users must save or load the corresponding CSV files so that ``AutoSDA`` can locate them. 
+#. Building Data Folder: The location of the building data folder is specified within this box. The building data folder should contain the following four CSV files that are required by ``AutoSDA``: 1) Geometry.csv; 2) ELFParameters.csv; 3) MemberDepth.csv; and 4) Loads.csv. These files can be automatically created on the user's computer by clicking on the ``Save File`` button. The user will be prompted to select a folder whereafter the files will be saved. Alternatively, users have the option to upload their own CSV files by selecting a folder, and then clicking on the ``Load File`` button. Note that users are encouraged to backup their CSV files as **EE-UQ** will overwrite the existing files in the selected folder. Before running an analysis, users must save or load the corresponding CSV files so that ``AutoSDA`` can locate them. 
 
 #. Member Depth Table: This table lists the user-specified depths for the interior columns, exterior columns, and beams. Each row in the table corresponds to a building story. The first row corresponds to the first story, the second row to the second story, etc. As shown in :numref:`fig-sda`, the member depth values need to follow nomenclature from the AISC steel shapes database, e.g., W14, W24. If multiple depths are specified, the depths need to be separated by a comma, followed by a space. 
 
@@ -110,7 +110,7 @@ The input panel for this module is shown in :numref:`fig-EEUQRCFIAPSIM`. Users n
 
 #. Column Section Dimensions: Where the user specifies the interior and exterior column dimensions, namely the width and depth in meters. 
 
-#. Beam Section Dimensions: Where the user specifies the width and depth of the beam sections. The the beam section dimension units are in meters. 
+#. Beam Section Dimensions: Where the user specifies the width and depth of the beam sections. The beam section dimension units are in meters. 
 
 #. Frame Geometry: The frame geometry is defined as a vector of story heights and spans, in meters. Each height or span needs to be separated by a comma. That is, there are as many building stories as there are comma-separated heights. Note that changing the values of the stories and spans will update the building properties in the **GI** panel.
  
@@ -158,10 +158,10 @@ The **MDOF-LU** building modeling application creates a hysteretic, multi-degree
   MDOF-LU Building model input panel.
 
 
-Multi Model
+Multiple Models
 -----------
 
-The **Multi Model** structural modeling application allows users to define multiple structural models for use in their analysis. The Add and Remove buttons allow users to control the number of models they want to use in the analysis. 
+The **Multiple Models** structural modeling application allows users to define multiple structural models for use in their analysis. The Add and Remove buttons allow users to control the number of models they want to use in the analysis. 
 
 By adding a model, a new tab is created in the SIM panel where users can choose one of the structural modeling applications described in the sections above and provide the inputs necessary to create the model. Users also need to specify their belief about the credibility of the model in the tab corresponding to that model. The beliefs are expressed as non-negative numerical values. The belief value for each model is defined relative to the other models, and the beliefs do not need to sum to 1.
 
@@ -170,12 +170,16 @@ By adding a model, a new tab is created in the SIM panel where users can choose 
   :figclass: align-center
   :width: 800
 
-  Selecting a structural modeling application within a Multi Model SIM Application
+  Selecting a structural modeling application within a Multiple Models SIM Application
 
 
 .. Note:: 
 
-  If a Multi Model application is selected, at least 2 models must be defined.
-	
+  If a Multiple Models application is selected, at least 2 models must be defined.
+
+.. Note:: 
+
+  If the "Multi-fidelity Monte Carlo (MFMC)" option was selected in the UQ tab, the belief values will be ignored. The premise of MFMC is that the high-fidelity model response is always the best response, therefore, *belief in each model* does not apply.
+
 .. .. bibliography:: ../../../../references.bib
 

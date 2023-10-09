@@ -7,8 +7,7 @@
 
    .. only:: R2D_app
 
-
-      The |full tool name| (|app|) is an open-source research application that can be used to simulate the performance of the built environment subjected to natural hazards. Version 1 will allow users to predict the performance of the buildings in the region when subjected to earthquake events. Version 2, due May 2021, will allow researchers to study the effects given a Hurricane event. Future version will allow users to study effects of lifleines and interdependencies. The computations are performed by a simulation workflow that will run on either the user's local machine or on a high performance computer made available by |DesignSafe|.
+      The |full tool name| (|app|) creates and launches simulation workflows to assess the regional impact of natural hazard events. Advanced capabilities facilitate high-resolution simulation. Researchers can investigate disaster scenarios or perform a probabilistic assessment by including uncertainties in both the hazard and the characteristics of the built environment. Assessments can include a comprehensive inventory of assets or focus on a distributed portfolio of structures, subjected to hurricanes, earthquakes, or other hazard events. The application integrates tools and libraries to support the creation of inventories, characterization hazard events, and simulate damage and losses on large inventories of buildings and civil infrastructure. User-defined models and calculation methodologies are also supported. Detailed results are provided in a standardized format to facilitate post-processing and further calculations to evaluate community impacts and recovery. The computations are performed by a simulation workflow that runs on either the user’s local machine or on a high performance computer made available by |DesignSafe|.
 
    .. only:: PBE_app
 
@@ -74,6 +73,7 @@
    :EEUQ:common/user_manual/releases/eePlans	   
 
    :WEUQ:common/user_manual/releases/weCapabilities
+   :WEUQ:common/user_manual/releases/weReleaseNotes
    :WEUQ:common/user_manual/releases/wePlans
 
    :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
