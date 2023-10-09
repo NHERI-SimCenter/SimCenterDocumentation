@@ -246,3 +246,16 @@ By adding a model, a new tab is created in the FEM panel where users can choose 
 
   If a Multi Model application is selected, at least 2 models must be defined.
 
+
+.. only:: quoFEM_app
+
+    Video Resources
+    ----------------
+
+    Recorded in tool training, 2022.
+
+    .. raw:: html
+
+      <div style="text-align: center;">
+         <video controls src="../../../../../_static/videos/quoFEM/youtube_FEM_Day1_TestClip.mp4" width="560" height="315"> </video>   
+      </div>
