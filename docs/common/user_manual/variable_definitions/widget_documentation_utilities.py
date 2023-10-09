@@ -1,13 +1,14 @@
 import os
 import pandas as pd
+from typing import Iterable, Any
 
 
-def _make_page_title(title_text):
+def _make_page_title(title_text: str):
     return ("".join([title_text, "\n", "="*len(title_text), "\n\n"]))
 
 
-def _make_link_target_string(row, widget_name):
-    return f'.. _{"".join(widget_name.strip().split())}_{"".join(row.name.strip().split())}:\n'
+def _make_link_target_string(widget_name: str, variable_name: str):
+    return f'.. _{"".join(widget_name.strip().split())}_{"".join(variable_name.strip().split())}:\n'
 
 
 def _make_first_line_of_definition_list_item(row):
@@ -30,7 +31,7 @@ def _make_following_lines_of_definition_list_item(row):
 
 
 def _make_definition_list_item_from_parameter_data(row, widget_name):
-    link_target_string = _make_link_target_string(row, widget_name)
+    link_target_string = _make_link_target_string(widget_name, row.name)
     first_line_of_definition_item = _make_first_line_of_definition_list_item(row)
     following_lines_of_definition_item = _make_following_lines_of_definition_list_item(row)
     return "\n".join([link_target_string, first_line_of_definition_item, following_lines_of_definition_item])
