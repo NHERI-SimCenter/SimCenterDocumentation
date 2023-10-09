@@ -14,6 +14,8 @@ In this panel the user can select the applications that will be used to model ea
 .. contents::
    :local:
 
+.. _lbl-MODBuildings:
+
 Buildings
 ---------
 

@@ -9,6 +9,8 @@ PBE:
   include-item:
     - pbdl-0001
     - pbdl-0002    
+    - pbdl-0003
+
 
 quoFEM:
   include-item:
@@ -34,6 +36,7 @@ WE-UQ:
     - weuq-0012
     - weuq-0011
     - weuq-0013
+    - weuq-0014
 
 EE-UQ:
   include-item:
@@ -47,6 +50,7 @@ EE-UQ:
     - eeuq-0008
     - eeuq-0009
     - eeuq-0010
+    - eeuq-0011
 
 R2DTool:
   include-item:
