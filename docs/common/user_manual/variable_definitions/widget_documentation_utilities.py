@@ -2,12 +2,6 @@ import os
 import pandas as pd
 
 
-def _make_csv_table_rst_string(table_title, csv_file_path):
-    return "\n".join([f".. csv-table:: {table_title}", 
-                      f"   :file: ../{csv_file_path}",
-                      f"   :header-rows: 1"])   
-
-
 def _make_page_title(title_text):
     return ("".join([title_text, "\n", "="*len(title_text), "\n\n"]))
 
