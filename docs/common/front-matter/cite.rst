@@ -13,8 +13,8 @@ How To Cite
 	     
 .. only:: PBE_app
 
-   1. Adam Zsarnoczay, Frank McKenna, Charles Wang, Wael Elhaddad, & Michael Gardner. (2022).
-      NHERI-SimCenter/PBE: Release v3.0.0.
+   1. Adam Zsarnoczay, Frank McKenna, Stevan Gavrilovic, Kuanshi Zhong, Chaofeng Wang, Michael Gardner, and Wael Elhaddad. (2022).
+      NHERI-SimCenter/PBE: Release v3.2.0.
       Zenodo. `DOI: 10.5281/zenodo.1472503 <https://doi.org/10.5281/zenodo.1472503>`_
   
 .. only:: EEUQ_app

@@ -467,7 +467,7 @@ elif app_name == "PBE":
     project = "Performance Based Engineering Application"
 
     author = (
-        "Adam Zsarnóczay, Frank McKenna, Kuanshi Zhong, Chaofeng Wang, Michael Gardner, Wael Elhaddad"
+        "Adam Zsarnóczay, Frank McKenna, Stevan Gavrilovic, Kuanshi Zhong, Chaofeng Wang, Michael Gardner, Wael Elhaddad"
     )
     sync_examples = True
 
