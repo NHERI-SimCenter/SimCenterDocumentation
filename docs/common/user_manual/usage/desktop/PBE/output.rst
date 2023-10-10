@@ -123,7 +123,7 @@ The ``ds=0`` option is included in the output and it provides the quantity of un
    The ``DMG_stats.csv`` output file with the damaged component quantity statistics.
 
 
-Two additional output files provide aggregate component damage information. The ``DMG_grp.csv`` (:numref:`fig-dl-pelicun-outputs-DMG_grp`) aggregates damage quantities from the ``DMG_sample.csv`` across locations and directions. In other words, it provides the total quantity of components in each damage state across the entire asset. Its column labels are structured as ``componentID-ds``. The ``DMG_grp_stats.csv`` (:numref:`fig-dl-pelicun-outputs-DMG_grp_stats`) provides statistics for the aggregated damage sample. 
+Two additional output files provide grouped component damage information. The ``DMG_grp.csv`` (:numref:`fig-dl-pelicun-outputs-DMG_grp`) aggregates damage quantities from the ``DMG_sample.csv`` across locations and directions. In other words, it provides the total quantity of components in each damage state across the entire asset. Its column labels are structured as ``componentID-ds``. The ``DMG_grp_stats.csv`` (:numref:`fig-dl-pelicun-outputs-DMG_grp_stats`) provides statistics for the grouped damage sample. 
 
 
 .. _fig-dl-pelicun-outputs-DMG_grp:
@@ -147,66 +147,74 @@ Two additional output files provide aggregate component damage information. The 
 Repair Consequences
 -------------------
 
-The ``DV_repair_sample.csv`` (:numref:`fig-dl-pelicun-outputs-DV_repair_sample`) and ``DV_repair_stats.csv`` (:numref:`fig-dl-pelicun-outputs-DV_repair_stats`) files provide detailed information on the repair consequences. The label of each column is structured as ``consequenceType-lossComponentID-damageComponentID-ds-location-direction``, where ``consequenceType`` identifies the repair consequence (*Carbon*, *Cost*, *Energy*, and *Time* are currently supported); ``damageComponentID`` identifies which component's damage resulted in the consequence; and ``lossComponentID`` identifies the component used to model the consequences. Consequence values are currently provided in the default units of the loss components.
+The ``DV_bldg_repair_sample.csv`` (:numref:`fig-dl-pelicun-outputs-DV_repair_sample`) and ``DV_bldg_repair_stats.csv`` (:numref:`fig-dl-pelicun-outputs-DV_repair_stats`) files provide detailed information on the repair consequences. The label of each column is structured as ``consequenceType-lossComponentID-damageComponentID-ds-location-direction``, where ``consequenceType`` identifies the repair consequence (*Carbon*, *Cost*, *Energy*, and *Time* are currently supported); ``damageComponentID`` identifies which component's damage resulted in the consequence; and ``lossComponentID`` identifies the component used to model the consequences. Consequence values are currently provided in the default units of the loss components.
 
-<HERE>
-
-The ``ds=0`` option is included in the output and it provides the quantity of undamaged components for convenience. For the sake of efficiency, if a component type at a given location-direction is not damaged in any of the realizations, it is not included in the output. Furthermore, damage states that are never triggered (i.e., columns that would have all zero quantities) are also removed from the output. This behavior is controlled by optional settings in Pelicun that keep the output file sizes manageable. Let us know if there is interest in outputs with a comprehensive list of component-location-direction-ds; we can make such options available through the PBE app.
+The ``ds=0`` option is included in the output and it provides the quantity of undamaged components for convenience. For the sake of efficiency, if a component type at a given location-direction is not damaged in any of the realizations, it is not included in the output. Furthermore, damage states that are never triggered (i.e., columns that would have all zero quantities) are also removed from the output. This behavior is controlled by optional settings in Pelicun that keep the output file sizes manageable. Let us know if there is interest in outputs with a comprehensive list of location-direction-ds; we can make such options available through the PBE app.
 
 .. note::
-	Some of the rows can be almost entirely empty if the assessment includes global vulnerabilities, such as collapse, that render other component damages undefined (see Damage Processes under :ref:`lbl-dldb_damage`). In such cases, the columns corresponding to the ``collapse`` component will identify the realizations (i.e., rows) where collapse was observed and other damages were not evaluated. 
-
-	In the figures below, for example, realizations 4995, 4998, and 4999 are collapses and we see no damage quantities for other components. In the statistics file, we see that there are 4134 realizations with valid damage quantities for the first component. That yields a `4134/5000 = 82.68%` probability of non-collapse outcomes.
-
-	Collapse is used here to demonstrate a common example that can lead to undefined damage quantities. Complex damage processes can introduce sophisticated interdependencies in the damage simulation that can yield similarly undefined damages for a subset of components.
+	Unlike damage information, the repair consequences are always available, that is, they cannot be undefined or missing in the output. When a component unit's damage is undefined in a realization, for example, because the building collapsed in that realization, the component's repair consequences will be zero. Hence, we can interpret the consequence outputs as "the contribution of each component unit to the total repair consequences". If the building needs to be replaced, we do not count individual component contributions, hence those are zero in the output.
 
 
-.. _fig-dl-pelicun-outputs-DMG_sample:
+.. _fig-dl-pelicun-outputs-DV_repair_sample:
 
-.. figure:: figures/dl_pelicun_outputs_DMG_sample.png
+.. figure:: figures/dl_pelicun_outputs_DV_repair_sample.png
    :align: center
    :figclass: align-center
 
-   The ``DMG_sample.csv`` output file with the damaged component quantity sample.
+   The ``DV_bldg_repair_sample.csv`` output file with the repair consequence sample for each component.
 
 
-.. _fig-dl-pelicun-outputs-DMG_stats:
+.. _fig-dl-pelicun-outputs-DV_repair_stats:
 
-.. figure:: figures/dl_pelicun_outputs_DMG_stats.png
+.. figure:: figures/dl_pelicun_outputs_DV_repair_stats.png
    :align: center
    :figclass: align-center
 
-   The ``DMG_stats.csv`` output file with the damaged component quantity statistics.
+   The ``DV_bldg_repair_stats.csv`` output file with the repair consequence statistics for each component.
 
 
-Two additional output files provide aggregate component damage information. The ``DMG_grp.csv`` (:numref:`fig-dl-pelicun-outputs-DMG_grp`) aggregates damage quantities from the ``DMG_sample.csv`` across locations and directions. In other words, it provides the total quantity of components in each damage state across the entire asset. Its column labels are structured as ``componentID-ds``. The ``DMG_grp_stats.csv`` (:numref:`fig-dl-pelicun-outputs-DMG_grp_stats`) provides statistics for the aggregated damage sample. 
+Two additional output files provide grouped component repair consequence information. The ``DV_bldg_repair_grp.csv`` (:numref:`fig-dl-pelicun-outputs-DV_repair_grp`) aggregates consequences from the ``DV_bldg_repair_sample.csv`` across locations and directions. In other words, it provides the total repair consequence for each component type across the entire asset. Its column labels are structured as ``consequenceType-lossComponentID-damageComponentID``. The ``DV_bldg_repair_grp_stats.csv`` (:numref:`fig-dl-pelicun-outputs-DV_repair_grp_stats`) provides statistics for the grouped damage sample. 
 
 
-.. _fig-dl-pelicun-outputs-DMG_grp:
+.. _fig-dl-pelicun-outputs-DV_repair_grp:
 
-.. figure:: figures/dl_pelicun_outputs_DMG_grp.png
+.. figure:: figures/dl_pelicun_outputs_DV_repair_grp.png
    :align: center
    :figclass: align-center
 
-   The ``DMG_grp.csv`` output file with the aggregate damaged component quantity sample.
+   The ``DV_bldg_repair_grp.csv`` output file with the grouped repair consequence sample for each component type.
 
 
-.. _fig-dl-pelicun-outputs-DMG_grp_stats:
+.. _fig-dl-pelicun-outputs-DV_repair_grp_stats:
 
-.. figure:: figures/dl_pelicun_outputs_DMG_grp_stats.png
+.. figure:: figures/dl_pelicun_outputs_DV_repair_grp_stats.png
    :align: center
    :figclass: align-center
 
-   The ``DMG_grp_stats.csv`` output file with the aggregate damaged component quantity statistics.
+   The ``DV_bldg_repair_grp_stats.csv`` output file with the grouped repair consequence statistics for each component.
 
 
+Finally, the aggregate sample and statistics files provide a high-level overview of the repair consequences by aggregating them across all components within the asset. Repair costs and embodied carbon and energy are simply summed for each realization. Repair time is calculated using the two edge cases recommended in FEMA P58: The parallel sceanrio assumes that floors are repaired simultaneously, in parallel. The sequential sceanrio assumes that floors are repaired in a serial fashion, each floor's repairs starting when the one below is finished. Neither of these assumptions are realistic, but they span the range of plausible repair times. If you seek more realisitc repair time estimates, we suggest using one of the functional recovery simulation methodologies that employ some form of repair sequencing. See the :ref:`lblPRF` section for the available methodologies and corresponding examples.
 
-Aggregate Sample
-^^^^^^^^^^^^^^^^
+The ``DV_bldg_repair_agg.csv`` (:numref:`fig-dl-pelicun-outputs-DV_repair_agg`) provides the aggregate consequences for every realization, while the ``DV_bldg_repair_agg_stats.csv`` (:numref:`fig-dl-pelicun-outputs-DV_repair_agg_stats`) provides statistics.
 
-Aggregate Statistics
-^^^^^^^^^^^^^^^^^^^^
 
+.. _fig-dl-pelicun-outputs-DV_repair_agg:
+
+.. figure:: figures/dl_pelicun_outputs_DV_repair_agg.png
+   :align: center
+   :figclass: align-center
+
+   The ``DV_bldg_repair_agg.csv`` output file with the aggregate repair consequence sample.
+
+
+.. _fig-dl-pelicun-outputs-DV_repair_agg_stats:
+
+.. figure:: figures/dl_pelicun_outputs_DV_repair_agg_stats.png
+   :align: center
+   :figclass: align-center
+
+   The ``DV_bldg_repair_agg_stats.csv`` output file with the aggregate repair consequence statistics.
 
 
 
