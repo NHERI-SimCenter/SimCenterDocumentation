@@ -7,33 +7,33 @@ def _make_page_title(title_text: str):
     return ("".join([title_text, "\n", "="*len(title_text), "\n\n"]))
 
 
-def _make_link_target_string(widget_name: str, variable_name: str):
-    return f'.. _{"".join(widget_name.strip().split())}_{"".join(variable_name.strip().split())}:\n'
+def _make_link_target_string(widget_name: str, input_item_name_in_json_file: str):
+    return f'.. _{"".join(widget_name.strip().split())}_{"".join(input_item_name_in_json_file.strip().split())}:\n'
 
 
-def _make_first_line_of_definition_list_item(row):
-    term_string = f"{row.display_name}"
-    if not pd.isnull(row.optional):
-        classifier_string = f"*{row.data_type}, optional*"
+def _make_first_line_of_definition_list_item(input_item_display_name: str, input_item_optional: str, input_item_data_type: str):
+    term_string = f"{input_item_display_name}"
+    if not pd.isnull(input_item_optional):
+        classifier_string = f"*{input_item_data_type}, optional*"
     else:
-        classifier_string = f"*{row.data_type}*"
+        classifier_string = f"*{input_item_data_type}*"
     return " : ".join([term_string, classifier_string])
 
 
-def _make_following_lines_of_definition_list_item(row):
-    definition_string_list = [f"\t{row.description}"]
-    if not pd.isnull(row.default_value):
-        definition_string_list.append(f"Default: {row.default_value}")
-    if not pd.isnull(row.constraints):
-        definition_string_list.append(f"Constraints: {row.constraints}")
-    definition_string_list.append(f"Key in JSON file: {row.name}\n")
+def _make_following_lines_of_definition_list_item(input_item_description: str, input_item_default_value: str, input_item_constraints: str, input_item_name_in_json_file: str):
+    definition_string_list = [f"\t{input_item_description}"]
+    if not pd.isnull(input_item_default_value):
+        definition_string_list.append(f"Default: {input_item_default_value}")
+    if not pd.isnull(input_item_constraints):
+        definition_string_list.append(f"Constraints: {input_item_constraints}")
+    definition_string_list.append(f"Key in JSON file: {input_item_name_in_json_file}\n")
     return "\n\n\t".join(definition_string_list)
 
 
-def _make_definition_list_item_from_parameter_data(row, widget_name):
-    link_target_string = _make_link_target_string(widget_name, row.name)
-    first_line_of_definition_item = _make_first_line_of_definition_list_item(row)
-    following_lines_of_definition_item = _make_following_lines_of_definition_list_item(row)
+def _make_definition_list_item_from_parameter_data(widget_name: str, input_item_name_in_json_file: str, input_item_display_name: str, input_item_optional: str, input_item_data_type: str, input_item_description: str, input_item_default_value: str, input_item_constraints: str):
+    link_target_string = _make_link_target_string(widget_name, input_item_name_in_json_file)
+    first_line_of_definition_item = _make_first_line_of_definition_list_item(input_item_display_name, input_item_optional, input_item_data_type)
+    following_lines_of_definition_item = _make_following_lines_of_definition_list_item(input_item_description, input_item_default_value, input_item_constraints, input_item_name_in_json_file)
     return "\n".join([link_target_string, first_line_of_definition_item, following_lines_of_definition_item])
 
 
@@ -61,7 +61,12 @@ def _make_list_of_strings_for_rst_definition_list(widget_name, widget_data):
     list_of_strings_definition_list = []
     for row in widget_data.itertuples():
         if not pd.isnull(row.name):
-            list_of_strings_definition_list.append(_make_definition_list_item_from_parameter_data(row, widget_name))
+            list_of_strings_definition_list.append(
+                _make_definition_list_item_from_parameter_data(
+                    widget_name, row.name, 
+                    row.display_name, row.optional, 
+                    row.data_type, row.description, 
+                    row.default_value, row.constraints))
     return list_of_strings_definition_list
 
 
