@@ -15,7 +15,7 @@ Version 3.2 (:blue:`Current`)
 
 **Highlights:**
 
-#. Inclusion of the Arup REDi system for building performance assesment
+#. nclusion of Arup's PyREDi, `open-source REDi Seismic Downtime Model <https://github.com/arup-group/REDi>`_
 #. To the DBDL added Hazus Earthquake Transportation library
 #. All features of EE-UQ up to v3.4, including:
    
