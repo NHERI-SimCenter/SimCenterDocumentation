@@ -1,4 +1,4 @@
-.. _lblDL:
+.. _lblPRF:
 
 PRF: Recovery Performance Assessment
 ====================================
