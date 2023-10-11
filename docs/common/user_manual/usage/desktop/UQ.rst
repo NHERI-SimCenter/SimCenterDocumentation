@@ -29,6 +29,7 @@ The first selection panel the user must select from and enter data into is the *
 
              | ▪ :ref:`lblDakotaForward` in Dakota   :link-badge:`../../examples/desktop/qfem-0001/README.html,Example1, cls=badge-primary text-white` :link-badge:`../../examples/desktop/qfem-0002/README.html,Example2, cls=badge-primary text-white`
              | ▪ :ref:`lblSimForward` in SimCenterUQ   :link-badge:`../../examples/desktop/qfem-0015/README.html,Example, cls=badge-success text-white`
+             | ▪ :ref:`lblSimForwardMF` in SimCenterUQ  
 
        .. container:: rightside
 

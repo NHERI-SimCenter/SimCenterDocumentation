@@ -14,30 +14,32 @@ Capabilities
 **Release date:** May, 2023
 
 #. **Hazard Types**:
-    * User specified earthquakes
-	* User specified hurricanes
-	* ShakeMap Scenarios
-		* Suports import of the following ShakeMap outputs:
-			a. ShakeMap ground motion grid in .xml format
-			b. PGA contours in .json format
-			c. Fault rupture in .json format
-	* Raster Defined Hazard for Earthquake, Hurricane, Inundation
-	* GIS Defined Hazard for Earthquake, Hurricane, Inundation
+
+    * :ref:`User specified earthquakes <lbl-UserSpecifiedGroundMotions>`.
+    * :ref:`User specified hurricanes <lbl-UserSpecifiedHurricane>`.
+    * :ref:`ShakeMap Scenarios <lbl-shakeMapEQScenarios>`, which suports importing the following ShakeMap outputs:
+            a. ShakeMap ground motion grid in .xml format.
+            b. PGA contours in .json format.
+            c. Fault rupture in .json format.	
+    * :ref:`Raster Defined Hazard <lbl-rasterDefinedHazard>` for Earthquake, Hurricane, Inundation**.
+    * **GIS Defined Hazard for Earthquake, Hurricane, Inundation**.
+
+
 
 #. **Asset Types**: 
-    * Buildings:
+    * :ref:`Buildings <lbl-ASDBuildings>`:
 	a. Building database in a ``.csv`` format.
 	b. Building database in a ``.gis`` format.		   
 	
 #. **Asset Modeling**: 
-    * Buildings:
+    * :ref:`Buildings <lbl-MODBuildings>`:
 		a. MDOF-LU (MDOF shear building model)
 		b. OpenSeesPy script building generator
 		c. IMasEDP, i.e., no analysis as the IM is considered the EDP
                 d. CustomPy
 
 #. **Asset Analysis**: 
-    * Buildings:
+    * :ref:`Buildings <lbl-ANABuildings>`:
 		a. OpenSees
 		b. OpenSeesPy 
 		c. IMasEDP, i.e., no analysis as the IM is considered the EDP
@@ -46,19 +48,19 @@ Capabilities
 		
 #. **Damage and Loss**: 
     * Buildings:
-		* Pelicun 
+		* :ref:`Pelicun <lbl-DLPelicun>`
 			a. HAZUS MH EQ
 			b. HAZUS MH EQ IM
 			c. HAZUS MH HU
 			
 #. **Uncertainty Quantification**: 
-    * Dakota:
+    * :ref:`Dakota <lblUQ>`:
 		a. Latin hypercube sampling (LHS)
 		b. Monte Carlo Sampling (MCS)
 
 
 #. ** Additional Tools To Perform Tasks Generating or Using Data in Workflow**:
-    * Earthquake Scenario Simulation (ground motion selection)
+    * :ref:`Earthquake Scenario Simulation <ground_motion_tool>` (ground motion selection)
 		* Site definition:
 			a. Grid
 			b. Point
@@ -93,7 +95,7 @@ Capabilities
 			d. Global Vs30 (Heath et al., 2020)
 			e. User Defined`
 
-    * Hurricane Scenario Simulation (hurricane wind field generation)
+    * :ref:`Hurricane Scenario Simulation <hurricane_scenario_tool>` (hurricane wind field generation)
 		* Site definition:
 			a. Grid
 		* Hurricane track definition:
@@ -106,8 +108,8 @@ Capabilities
 		* Wind field generation model:
 			a.  Snaiki and Wu (2017)
 
-    * **OpenQuake Selection**
-    * **Census Data & American Community Survey**
+    * :ref:`OpenQuake Selection <openquake_selection_tool>`
+    * :ref:`Census Data & American Community Survey <lbl-censusDataAllocation>`
 
 		
 		   

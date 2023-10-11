@@ -16,6 +16,8 @@ In this panel the user can define or simulate hazards over a region. The user ca
 
   Hazard input panel.
 
+.. _lbl-UserSpecifiedGroundMotions:
+
 User-specified Ground Motions
 -----------------------------
 
@@ -28,8 +30,16 @@ The **User-specified Ground Motion** application loads the results of an **Earth
   :figclass: align-center
 
   User-defined earthquakes input panel.
+
+.. _lbl-UserSpecifiedHurricane:
+
+User-specified Hurricane
+-----------------------------
+
+The **User-specified Hurricane** application works similar to the **User-specified Ground Motion** application. It loads the results of an **Hurricane Scenario Simulation** that was run previously. The **User-specified Hurricane** application input pane is similar to :numref:`fig-UserSelectEQ`. As seen in the figure, the user is required to input the file path to the ``EventGrid.csv`` file in the `Event File Listing Hurricane Field`. If the hurricane files are not in the same folder as the ``EventGrid.csv`` file, then the user needs to input the directory path to the folder containing the hurricane stations. Users also need to specify the units of the hurricane hazard input fields.
+
   
-  
+.. _lbl-shakeMapEQScenarios: 
 
 ShakeMap Earthquake Scenarios
 -----------------------------
@@ -60,7 +70,8 @@ After a ShakeMap is loaded, it will appear in the list of ShakeMaps shown above 
 .. [SnaikiWu2017b]
    Snaiki, R. and Wu, T. (2017b). A linear height-resolving wind field model for tropical cyclone boundary layer. Journal of Wind Engineering and Industrial Aerodynamics, 171, pp. 248-260.
    
-  
+.. _lbl-rasterDefinedHazard:
+
 Raster Defined Hazard
 ---------------------
    
@@ -81,6 +92,7 @@ The **Raster Defined Hazard Widget** allows for the import of raster files to re
   
 .. note:: When the **Raster Defined Hazard Widget** is employed in an analysis, for each asset, the raster will be sampled at the asset location to determine the hazard intensity level. A set of .csv files in the SimCenter event format (EventGrid.csv) will be created where each grid point corresponds to the location of an asset. As a result, the corresponding **Mapping Application** in **HTA** (Hazard to Asset Mapping) should be set to **Site Specified**. 
 
+.. _lbl-regionalSiteResponse:
 
 Regional Site Response
 --------------------------

@@ -131,6 +131,7 @@ The main window of the UI is made up from the following areas:
       :Hydro:response/EDP
       :quoFEM:quoFEM/QuantitiesOfInterest
       :PBE:PBE/DL
+      :PBE:PBE/performance
       :EEUQ:response/resEE
       :WEUQ:response/resEE
       :quoFEM:quoFEM/resQUO
@@ -212,6 +213,7 @@ The main window of the UI is made up from the following areas:
 
 .. only:: quoFEM_app
 
+
    **Overview of User Interface**
    
    Recorded in tool training, 2022 (From 21:14 to 26:58)
@@ -225,3 +227,6 @@ The main window of the UI is made up from the following areas:
    .. raw:: html
 
       <p><br>Click to replay the video from <a href="javascript:window.location.reload(true);">21:14</a>. Please note there were minor changes in the user interface since it is recorded.</p>
+
+   
+   Click here to watch :ref:`lbl-usageVideo`

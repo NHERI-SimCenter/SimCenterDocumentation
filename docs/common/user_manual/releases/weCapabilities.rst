@@ -5,7 +5,7 @@
 Capabilities
 ************
 
-**Version 3.0.0** of |app| was released **July 2023**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+**Version 3.3.0** of |app| was released **September 2023**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 Structural Information Model
@@ -35,7 +35,6 @@ Applications used to specify/select wind loading for the structure.
 
 Engineering Demand Parameter Generator
 ======================================
-
 
 Applications to identify the output parameters of interest given the wind loading and the structural model.
 
