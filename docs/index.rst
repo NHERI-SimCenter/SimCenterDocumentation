@@ -80,7 +80,6 @@
 
    :PBE:common/user_manual/releases/pbeCapabilities
    :PBE:common/user_manual/releases/pbeReleaseNotes
-   :PBE:common/user_manual/usage/desktop/PBE/releasenotes
    :PBE:common/user_manual/releases/pbePlans
       
    :R2D:common/user_manual/releases/r2dCapabilities 	 
