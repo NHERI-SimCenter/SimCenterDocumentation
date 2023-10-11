@@ -75,7 +75,7 @@ extensions =  [
     "sphinx.ext.autodoc",
     "crate.sphinx.csv",
     "sphinx_panels",
-    #"sphinxcontrib.spelling",
+    "sphinxcontrib.spelling",
     'sphinx_toolbox.collapse',
     'sphinx_tabs.tabs',
 ]
@@ -792,6 +792,10 @@ elif app_name == "requirements":
 
 """
 
+elif app_name == 'Bootcamp':
+    project = 'SimCenter Programming Bootcamp'
+    copyright = '2020'
+    author = 'Peter Mackenzie-Helnwein, Frank McKenna'
 
 # -- General configuration ----------------------------------------------
 
@@ -839,7 +843,12 @@ latex_documents = [
 latex_logo = "common/figures/NSF_SimCenter_NO TEXT_SimCenter.png"
 
 
+spelling_lang='en_US'
+tokenizer_lang='en_US'
+spelling_show_suggestions=True
 spelling_word_list_filename = ["spelling.txt"]
+spelling_exclude_patterns=['ignored_*']
+
 
 # sync files for examples
 if sync_examples:

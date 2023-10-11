@@ -13,7 +13,7 @@ If you have not yet installed quoFEM, please see
    * :ref:`Run quoFEM without installation<lblquoFEM_DCV>`
 
 .. important::
-     If you just downloaded quoFEM, but have previously used the older version of it or other SimCneter tools, it is recommended to reset the cached path values by pressing the ``reset`` button in ``File``-``Preference``.
+     If you just downloaded quoFEM, but have previously used the older version of it or other SimCenter tools, it is recommended to reset the cached path values by pressing the ``reset`` button in ``File``-``Preference``.
 
 
 
@@ -70,13 +70,16 @@ This tutorial will show how a **deterministic** model written/interfaced in a py
              :figclass: align-center
              :width: 1200
 
-             Download OpenSeespy Elastic Truss Analysis
+             Download OpenSeesPy Elastic Truss Analysis
 
           .. important::
 
                It is important to save the model in a **new folder** instead of root, desktop or downloads
 
-        3. :badge:`Test Your Model,badge-primary` Test if the input script ``ElasticTruss.py`` runs successfully using the command prompt (Windows) or terminal (Mac). To do this,  navigate into ``TrussExample`` folder using 'cd' command and type the following. 
+        3. :badge:`Test Your Model,badge-primary` Test if the input
+	script ``ElasticTruss.py`` runs successfully using the
+	command prompt (Windows) or terminal (Mac). To do this,
+	navigate into ``TrussExample`` folder using :code:`cd` command and type the following. 
 
           .. code:: console
 
@@ -230,7 +233,7 @@ This tutorial will show how a **deterministic** model written/interfaced in a py
 
             FEM Panel
 
-        The postprocessing script is not needed in this example because the ``results.out`` is already printed in the main script. See :ref:`here<lblFEM>` for more about the postprocessing script     
+        The post-processing script is not needed in this example because the ``results.out`` is already printed in the main script. See :ref:`here<lblFEM>` for more about the post-processing script     
 
 
      3. **RV (Random Variables)**
@@ -343,7 +346,7 @@ This tutorial will show how a **deterministic** model written/interfaced in a py
             Run at DesignSafe
 
 
-     If one sets 32 processors, quoFEM will run 32 model evaluations simultaneously in parallel. By clicking **Submit**, the jobs will be automatically submitted to DeisgnSafe. (See :ref:`here<lblArchitecture>` to learn more about "What happens when **RUN at DesignSafe** button is clicked"). Depending on how busy the **Frontera** at TACC is, your job may start within 30 sec or it may take longer. By clicking **GET from DesignSafe**, one can check the status. The major stages are **Queued**, **Running**, and **Finished**. 
+     If one sets 32 processors, quoFEM will run 32 model evaluations simultaneously in parallel. By clicking **Submit**, the jobs will be automatically submitted to DesignSafe. (See :ref:`here<lblArchitecture>` to learn more about "What happens when **RUN at DesignSafe** button is clicked"). Depending on how busy the **Frontera** at TACC is, your job may start within 30 sec or it may take longer. By clicking **GET from DesignSafe**, one can check the status. The major stages are **Queued**, **Running**, and **Finished**. 
 
 
         .. figure:: figures/step3_Jobs.PNG
@@ -390,7 +393,7 @@ This tutorial will show how a **deterministic** model written/interfaced in a py
         On Windows, it is important to install python packages to the correct python executable. Please read :ref:`here<lblFEM>` about pip-installing python packages and changing the python version.
 
         .. note::
-           **When running at DesingSafe (e.g. Step 3)**, SimCenter workflow uses its own python executable installed on the cloud computer. Currently, the only supported python packages are those installed through 'nheri_simcenter' package. The available list of packages includes - numpy, scipy, sklearn, pandas, tables, pydoe, gpy, emukit, plotly, matplotlib. If your model uses a package beyond this list, quoFEM analysis will fail.
+           **When running at DesignSafe (e.g. Step 3)**, SimCenter workflow uses its own python executable installed on the cloud computer. Currently, the only supported python packages are those installed through 'nheri_simcenter' package. The available list of packages includes - numpy, scipy, sklearn, pandas, tables, pydoe, gpy, emukit, plotly, matplotlib. If your model uses a package beyond this list, quoFEM analysis will fail.
 
            An option to allow user-defined python packages on DesignSafe is under implementation. Meanwhile, if you need to request to use additional python packages, please contact us through `user forum <https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0>`_.
 

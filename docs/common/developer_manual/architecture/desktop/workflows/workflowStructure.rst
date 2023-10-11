@@ -3,7 +3,7 @@
 Workflow Structure
 ******************
 
-The backend applications for the |app| follows a standard workflow:
+The backend applications for the |app| follow a standard workflow:
 
 I. **Read the configuration file.** At the start of the workflow, the workflow settings specified in the configuration file are parsed (:ref:`Inputs <lblUserDefInputs>`). *Note that if a particular component application is excluded from the configuration file, then it is automatically skipped in the workflow.*
 
@@ -19,7 +19,7 @@ The structure of a general workflow is depicted in :numref:`figBackendApps` with
 
 - User-provided input files are shown in orange.
 - Component applications are shown in blue. File dependencies for each component application are shown with arrows.
-- Intermediate files produced by the workflow to propagate data is shown in grey.
+- Intermediate files produced by the workflow to propagate data are shown in grey.
 - Output files provided to the user are shown in green.
 - Within the parallelized workflow for running each building asset simulation, two passes through the component applications are illustrated: the first pass in setting up the intermediate files (in red), then the second pass of executing the simulation and producing output results (in green).
 

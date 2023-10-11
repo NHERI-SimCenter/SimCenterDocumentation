@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 "**BE.1**", "**Ability to use cumulative knowledge bases rather than the piecemeal individual approaches**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**"
 "BE.1.1", "Utilize Federated Databases to maintain individual databases & data sources yet provide central database resource","SP", "M", _, _, _, _, _, _, _
 "**BE.2**", "**Include National building model inventories**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**"
@@ -59,3 +60,5 @@ Q.1.3, Ability to utilize resources beyond the desktop,e.g. HPC,for computations
 "TB.3.2", "Provide Atlantic City Hurricane Wind and Storm Surge Testbed","SP", "M", _, _, _, _, _, _, _
 "TB.3.3", "Provide Hurricane Laura Testbed looking at Lake Charles","SP", "M", _, _, _, _, _, _, _
 "TB.4", "Provide Earthquake and Lifelines Testbed","SP", "M", _, _, _, _, _, _, _
+=======
+>>>>>>> Stashed changes

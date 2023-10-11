@@ -3,12 +3,12 @@
 Outputs
 ===================
 
-After DL assessment is complete, the workflow collects the EDP.csv, DM.csv, and DV.csv file produced for each building asset and aggregates the results into single output files. When run locally, the workflow returns the output in a CSV format which are located in the *results* folder. When run remotely, the workflow returns the output in a HDF format which are located in the job archive. The HDF files may be converted into CSV format as a post-processing step.
+After DL assessment is complete, the workflow collects the EDP.csv, DM.csv, and DV.csv files produced for each building asset and aggregates the results into single output files. When run locally, the workflow returns the output in a CSV format which is located in the *results* folder. When run remotely, the workflow returns the output in an HDF format which is located in the job archive. The HDF files may be converted into CSV format as a post-processing step.
 
 
 .. jsonschema:: File_Schema.json#/properties/Outputs/outputEDP
 
-The header schema, followed by an example output, are provided:
+The header schema, followed by an example output, is provided:
 
 .. csv-table:: OutputEDPSchema.csv
    :file: files/OutputEDPSchema.csv
@@ -17,7 +17,7 @@ The header schema, followed by an example output, are provided:
 
 .. jsonschema:: File_Schema.json#/properties/Outputs/outputDM
 
-The header schema, followed by an example output, are provided:
+The header schema, followed by an example output, is provided:
 
 .. csv-table:: OutputDMSchema.csv
    :file: files/OutputDMSchema.csv
@@ -26,7 +26,7 @@ The header schema, followed by an example output, are provided:
 
 .. jsonschema:: File_Schema.json#/properties/Outputs/outputDV
 
-The header schema, followed by an example output, are provided:
+The header schema, followed by an example output, is provided:
 
 .. csv-table:: OutputDVSchema.csv
    :file: files/OutputDVSchema.csv

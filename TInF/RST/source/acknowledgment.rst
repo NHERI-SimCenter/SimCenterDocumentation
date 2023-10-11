@@ -1,4 +1,5 @@
-.. _lblAcknowledgements
+
+.. _lblAcknowledgements:
 
 Acknowledgments
 ===============

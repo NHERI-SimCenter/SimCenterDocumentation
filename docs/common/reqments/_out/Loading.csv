@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 "**BE.1**", "**Ability to use cumulative knowledge bases rather than the piecemeal individual approaches**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**"
 "BE.1.1", "Utilize Federated Databases to maintain individual databases & data sources yet provide central database resource","SP", "M", _, _, _, _, _, _, _
 "**BE.2**", "**Include National building model inventories**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**"
@@ -117,3 +118,5 @@
 "WL.2.11", "Libraries of high resolution hurricane wind/surge/wave simulations","GC", "M", "InProgress", _, _, _, _, _, _
 "WL.2.12", "Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow","SP", "M", "InProgress", _, _, _, _, _, _
 "WL.2.13", "Ability to select surrogate modeling events","SP", "M", _, _, _, _, _, _, _
+=======
+>>>>>>> Stashed changes
