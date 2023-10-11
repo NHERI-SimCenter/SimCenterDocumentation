@@ -7,39 +7,39 @@
 
    .. only:: R2D_app
 
-      The |full tool name| (|app|) is an open-source research application that can be used to simulate the performance of the built environment subjected to natural hazards. The tool allows users to study effects of Earthquake or Hurricane on buildings and lifeline networks (Transportation, Water, Gas, ..) in a region. The computations are performed by a simulation workflow that will run on either the user's local machine or on a high performance computer made available by |DesignSafe|.
+      The |full tool name| (|app|) is an open-source research application that can be used to simulate the performance of the built environment subjected to natural hazards. The tool allows users to study the effects of Earthquakes or Hurricanes on buildings and lifeline networks (Transportation, Water, Gas, ..) in a region. The computations are performed by a simulation workflow that will run on either the user's local machine or on a high-performance computer made available by |DesignSafe|.
 
    .. only:: PBE_app
 
-      The |full tool name| (|app|) is an open-source desktop application designed to support the assessment of building performance under natural hazard events. The application quantifies performance in a probabilistic approach. Users can consider uncertainties in event intensity, structural behavior, component quantities and their limit state capacities, as well as the consequences of exceeding their limit states (i.e., experiencing damage). The |app| provides a convenient user interface and automatically prepares a simulation workflow description based on the settings provided by the user. This workflow description is used to run the corresponding computations on SimCenter's backend engine using sWHALE. The structural response estimation part of the workflow can run on the high performance computing cluster made available through |DesignSafe|. The performance assessment part runs locally using SimCenter's Pelicun performance assessment engine.
+      The |full tool name| (|app|) is an open-source desktop application designed to support the assessment of building performance under natural hazard events. The application quantifies performance in a probabilistic approach. Users can consider uncertainties in event intensity, structural behavior, component quantities and their limit state capacities, as well as the consequences of exceeding their limit states (i.e., experiencing damage). The |app| provides a convenient user interface and automatically prepares a simulation workflow description based on the settings provided by the user. This workflow description is used to run the corresponding computations on SimCenter's backend engine using sWHALE. The structural response estimation part of the workflow can run on the high-performance computing cluster made available through |DesignSafe|. The performance assessment part runs locally using SimCenter's Pelicun performance assessment engine.
 
    .. only:: EEUQ_app
 
-      The |full tool name| (|app|) is an open-source research application that can be used to predict the response of a building subjected to earthquake events. The application is focused on quantifying the uncertainties in the predicted response, given the that the uncertainties in models, earthquake loads, and analysis. The computations are performed in a workflow application that will run on either the users local machine or on a high performance computer made available by |DesignSafe|.
+      The |full tool name| (|app|) is an open-source research application that can be used to predict the response of a building subjected to earthquake events. The application is focused on quantifying the uncertainties in the predicted response, given the uncertainties in models, earthquake loads, and analysis. The computations are performed in a workflow application that will run on either the user's local machine or on a high-performance computer made available by |DesignSafe|.
 
 
    .. only:: WEUQ_app
 
-      The |full tool name| (|app|) is an open-source research application that can be used to predict the response of a building subjected to wind loading events. The application is focused on quantifying the uncertainties in the predicted response, given the that the uncertainties in models, wind loads, and analysis. The computations are performed in a workflow application that will run on either the users local machine or on a high performance computer made available by |DesignSafe|.
+      The |full tool name| (|app|) is an open-source research application that can be used to predict the response of a building subjected to wind loading events. The application is focused on quantifying the uncertainties in the predicted response, given the uncertainties in models, wind loads, and analysis. The computations are performed in a workflow application that will run on either the user's local machine or on a high-performance computer made available by |DesignSafe|.
 
 
    .. only:: quoFEM_app
 
-      The |full tool name|  is an open-source research application which focuses on providing uncertainty quantification methods (forward, inverse, reliability, sensitivity and parameter estimation) to researchers in natural hazards who utilize existing simulation software applications, typically Finite Element applications, in their work. The computations are performed in a workflow application that will run on either the users local machine or on a high performance computer made available by |DesignSafe|.
+      The |full tool name|  is an open-source research application that focuses on providing uncertainty quantification methods (forward, inverse, reliability, sensitivity and parameter estimation) to researchers in natural hazards who utilize existing simulation software applications, typically Finite Element applications, in their work. The computations are performed in a workflow application that will run on either the user's local machine or on a high-performance computer made available by |DesignSafe|.
 
    
    .. only:: pelicun
 
-      The |full tool name| is an open-source implementation of the PELICUN framework in a Python package. PELICUN is developed as an integrated multi-hazard framework to assess the performance of buildings and other assets in the built environment under natural hazards. Its foundation is the FEMA P58 performance assessment methodology that is extended beyond the seismic performance assessment of buildings to also handle wind and water hazards, bridges and buried pipelines, and performance assessment using vulnerability functions and  damage models based on intensity measures (e.g., Hazus).
+      The |full tool name| is an open-source implementation of the PELICUN framework in a Python package. PELICUN is developed as an integrated multi-hazard framework to assess the performance of buildings and other assets in the built environment under natural hazards. Its foundation is the FEMA P58 performance assessment methodology that is extended beyond the seismic performance assessment of buildings to also handle wind and water hazards, bridges and buried pipelines, and performance assessment using vulnerability functions and damage models based on intensity measures (e.g., Hazus).
 
       .. only:: Hydro
 
-      The Water-borne Natural Hazards with Uncertainty Quantification Application (Hydro-UQ app) is an open-source research application that can be used to predict the response of a building a community subjected to events like tsunami and storm-surge. The application is focused on quantifying the uncertainties in the predicted response, given the that the uncertainties in models, loads, and analysis. The computations are performed in a workflow application that will run on a high performance computer made available by |DesignSafe|.
+      The Water-borne Natural Hazards with Uncertainty Quantification Application (Hydro-UQ app) is an open-source research application that can be used to predict the response of a building in a community subjected to events like tsunamis and storm surges. The application is focused on quantifying the uncertainties in the predicted response, given the uncertainties in models, loads, and analysis. The computations are performed in a workflow application that will run on a high-performance computer made available by |DesignSafe|.
 
 
     .. only:: Bootcamp
 
-   The |full tool name| is a short course on programming python, C, and C++ for personal computers (PC) through high-performance computers (HPC).  It is designed for engineering students who want to integrate SimCenter Workflow Tools with their research, use and extend their capabilities, and hopefully share their contributions with the broader research community.
+   The |full tool name| is a short course on programming Python, C, and C++ for personal computers (PC) through high-performance computers (HPC).  It is designed for engineering students who want to integrate SimCenter Workflow Tools with their research, use and extend their capabilities, and hopefully share their contributions with the broader research community.
 
    
    This document covers the features and capabilities of Version |tool version| of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the |messageBoard|.
