@@ -35,7 +35,7 @@ Below are key capabilities and limitations of |short tool id|, categorized by Un
      - Easy access to different :ref:`UQ methods<lblFEM>`. Parallelized UQ algorithms. Multiple alternative algorithms for each method.
      - No support for optimization under uncertainty and local sensitivity analysis.
    * - FEM
-     - Easy interface for user-provided simulations models (not only FEM models but *any model*), including Opensees, python, or any other simulation models (e.g. FEM or non-FEM software) with a python-scripted interface.
+     - Easy interface for user-provided simulation models (not only FEM models but *any model*), including Opensees, python, or any other simulation models (e.g. FEM or non-FEM software) with a python-scripted interface.
      - No support to assist modeling, e.g. creation of hazards and structural models. Those are featured in `other tools <https://simcenter.designsafe-ci.org/research-tools/overview/>`_ of SimCenter.
    * - RV
      - 12 different kinds of probability distributions with correlations.
@@ -44,8 +44,8 @@ Below are key capabilities and limitations of |short tool id|, categorized by Un
      - Scalar and vector QoI. Parsing of QoI names using :ref:`a post processing script<lblFEM>`.
      - 
    * - RES
-     - Interactive plotting of scatter charts, histogram, cumulative mass function. Summary of statistics. Save data into a csv file.
+     - Interactive plotting of scatter charts, histograms, and cumulative mass functions. Summary of statistics. Save data into a CSV file.
      - Limited flexibility in visualization.
    * - General
-     - Graphical user interface. Free & easy one-click remote running option. 
+     - Graphical user interface. Free and easy one-click remote running option. 
      - 
