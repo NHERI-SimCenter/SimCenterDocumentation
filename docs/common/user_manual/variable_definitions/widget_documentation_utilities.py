@@ -175,7 +175,7 @@ def main(
         widget_data.to_csv(csv_file_path)
         rst_file_path = rst_files_directory / f"{widget_name}.rst"
         rst_file_path_list.append(rst_file_path)
-        make_rst_file_for_widget(Path(rst_file_path), widget_name, widget_data)
+        make_rst_file_for_widget(rst_file_path, widget_name, widget_data)
 
     rst_file_name = toc_include_file_path
     with open(rst_file_name, "w+") as f:
@@ -204,8 +204,9 @@ if __name__ == "__main__":
         type=Path,
     )
     parser.add_argument(
-        "path_to_rst_files",
-        help="directory where rst files for widget documentation should be written",
+        "--relative_path_to_rst_files",
+        help="directory where rst files for widget documentation should be written, the path to this directory is specified relative to the directory containing this python script",
+        default="Widget_RST_Files",
         type=Path,
     )
     parser.add_argument(
@@ -217,7 +218,9 @@ if __name__ == "__main__":
 
     command_line_arguments = parser.parse_args()
     csv_files_directory = command_line_arguments.path_to_csv_files.resolve()
-    rst_files_directory = command_line_arguments.path_to_rst_files.resolve()
+    rst_files_directory = (
+        command_line_arguments.relative_path_to_rst_files.resolve()
+    )
     toc_include_file_path = (
         command_line_arguments.toc_include_file_path.resolve()
     )
@@ -232,6 +235,11 @@ if __name__ == "__main__":
                 f"Specified source directory '{csv_files_directory}' does not exist"
             )
 
+    if not rst_files_directory.is_relative_to(Path(__file__).parent):
+        raise ValueError(
+            f"Expected a directory that is relative to the parent of this python script, i.e., {Path(__file__).parent}"
+        )
+
     if not rst_files_directory.is_dir():
         rst_files_directory.mkdir(parents=True)
 
@@ -239,7 +247,9 @@ if __name__ == "__main__":
     all_data = pd.read_excel(spreadsheet, sheet_name=None)
     main(
         csv_files_directory=csv_files_directory,
-        rst_files_directory=rst_files_directory,
+        rst_files_directory=rst_files_directory.relative_to(
+            Path(__file__).parent
+        ),
         toc_include_file_path=toc_include_file_path,
         all_data=all_data,
     )
