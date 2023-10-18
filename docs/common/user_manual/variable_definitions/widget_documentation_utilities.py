@@ -1,5 +1,4 @@
 import argparse
-import os
 from pathlib import Path
 from typing import NamedTuple
 
@@ -171,9 +170,9 @@ def main(
     rst_file_path_list = []
     for widget_name in all_data.keys():
         widget_data = all_data[widget_name]
-        csv_file_path = os.path.join(csv_files_directory, f"{widget_name}.csv")
+        csv_file_path = csv_files_directory / f"{widget_name}.csv"
         widget_data.to_csv(csv_file_path)
-        rst_file_path = os.path.join(rst_files_directory, f"{widget_name}.rst")
+        rst_file_path = rst_files_directory / f"{widget_name}.rst"
         rst_file_path_list.append(rst_file_path)
         make_rst_file_for_widget(Path(rst_file_path), widget_name, widget_data)
 
@@ -232,8 +231,8 @@ if __name__ == "__main__":
                 f"Specified source directory '{csv_files_directory}' does not exist"
             )
 
-    if not os.path.exists(rst_files_directory):
-        os.mkdir(rst_files_directory)
+    if not rst_files_directory.is_dir():
+        rst_files_directory.mkdir(parents=True)
 
     spreadsheet = "WidgetParameters.xlsx"
     all_data = pd.read_excel(spreadsheet, sheet_name=None)
