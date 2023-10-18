@@ -160,14 +160,12 @@ def main(
     csv_files_directory: Path,
     rst_files_directory: Path,
     toc_include_file_path: Path,
-    all_data: dict[str, pd.DataFrame],
 ):
     print(f"Walking through {csv_files_directory}")
-    print(f"Creating rst files in {rst_files_directory}")
-    print(
-        f"Building the file '{toc_include_file_path}' that appropriately includes the generated rst files"
-    )
+    spreadsheet = "WidgetParameters.xlsx"
+    all_data = pd.read_excel(spreadsheet, sheet_name=None)
 
+    print(f"Creating rst files in {rst_files_directory}")
     rst_file_path_list = []
     for widget_name in all_data.keys():
         widget_data = all_data[widget_name]
@@ -177,8 +175,10 @@ def main(
         rst_file_path_list.append(rst_file_path)
         make_rst_file_for_widget(rst_file_path, widget_name, widget_data)
 
-    rst_file_name = toc_include_file_path
-    with open(rst_file_name, "w+") as f:
+    print(
+        f"Building the file '{toc_include_file_path}' that appropriately includes the generated rst files"
+    )
+    with open(toc_include_file_path, "w+") as f:
         f.write(_make_page_title("User Inputs"))
         f.write(
             "\n".join(
@@ -194,29 +194,7 @@ def main(
             f.write(f"\n   {rst_file}")
 
 
-if __name__ == "__main__":
-    parser = argparse.ArgumentParser(
-        description="Generate rst files documenting user inputs in SimCenter graphical user interface widgets."
-    )
-    parser.add_argument(
-        "path_to_csv_files",
-        help="directory containing csv files defining user inputs",
-        type=Path,
-    )
-    parser.add_argument(
-        "--relative_path_to_rst_files",
-        help="directory where rst files for widget documentation should be written, the path to this directory is specified relative to the directory containing this python script",
-        default="Widget_RST_Files",
-        type=Path,
-    )
-    parser.add_argument(
-        "--toc_include_file_path",
-        help="path to the file that is included in the table of contents of the SimCenter application documentation",
-        default="WidgetTables.rst",
-        type=Path,
-    )
-
-    command_line_arguments = parser.parse_args()
+def _check_inputs(command_line_arguments):
     csv_files_directory = command_line_arguments.path_to_csv_files.resolve()
     rst_files_directory = (
         command_line_arguments.relative_path_to_rst_files.resolve()
@@ -242,17 +220,46 @@ if __name__ == "__main__":
 
     if not rst_files_directory.is_dir():
         rst_files_directory.mkdir(parents=True)
+    # Get the path of 'rst_files_directory' relative to the directory containing this python module
+    rst_files_directory = rst_files_directory.relative_to(
+        Path(__file__).parent
+    )
+    return csv_files_directory, rst_files_directory, toc_include_file_path
 
-    spreadsheet = "WidgetParameters.xlsx"
-    all_data = pd.read_excel(spreadsheet, sheet_name=None)
-    main(
-        csv_files_directory=csv_files_directory,
-        rst_files_directory=rst_files_directory.relative_to(
-            Path(__file__).parent
-        ),
-        toc_include_file_path=toc_include_file_path,
-        all_data=all_data,
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(
+        description="Generate rst files documenting user inputs in SimCenter graphical user interface widgets."
+    )
+    parser.add_argument(
+        "path_to_csv_files",
+        help="directory containing csv files defining user inputs",
+        type=Path,
+    )
+    parser.add_argument(
+        "--relative_path_to_rst_files",
+        help="directory where rst files for widget documentation should be written, the path to this directory is specified relative to the directory containing this python script",
+        default="Widget_RST_Files",
+        type=Path,
+    )
+    parser.add_argument(
+        "--toc_include_file_path",
+        help="path to the file that is included in the table of contents of the SimCenter application documentation",
+        default="WidgetTables.rst",
+        type=Path,
     )
 
-    print(all_data.keys())
+    command_line_arguments = parser.parse_args()
+    (
+        csv_files_directory,
+        rst_files_directory,
+        toc_include_file_path,
+    ) = _check_inputs(command_line_arguments)
+
+    main(
+        csv_files_directory=csv_files_directory,
+        rst_files_directory=rst_files_directory,
+        toc_include_file_path=toc_include_file_path,
+    )
+
     print("Done!")
