@@ -1,11 +1,12 @@
 import argparse
+from dataclasses import dataclass
 from pathlib import Path
-from typing import NamedTuple
 
 import pandas as pd
 
 
-class InputItem(NamedTuple):
+@dataclass
+class InputItem:
     input_item_name_in_json_file: str
     input_item_display_name: str
     input_item_optional: str
