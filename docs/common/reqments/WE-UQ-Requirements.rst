@@ -38,7 +38,6 @@ UQ Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0,1,2,3,4,7
-  :exclude: {7: 'NA'}
 
 
 
@@ -53,7 +52,6 @@ Modeling Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0,1,2,3,4,7
-  :exclude: {7: 'NA'}
 
 .. include:: key.rst
 
@@ -66,7 +64,6 @@ Analysis Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0,1,2,3,4,7
-  :exclude: {7: 'NA'}
 
 
 .. include:: key.rst
