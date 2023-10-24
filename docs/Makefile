@@ -53,6 +53,14 @@ WE:
 	rm -fr ../../WE-UQ-Documentation/docs/common
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" ../../WE-UQ-Documentation/docs $(O)
 
+Bootcamp:
+	make clean
+	rm -fr ../../SimCenterBootcamp2020/docs/_sources
+	rm -fr ../../SimCenterBootcamp2020/docs/_static
+	rm -fr ../../SimCenterBootcamp2020/docs/_images
+	rm -fr ../../SimCenterBootcamp2020/docs/common
+	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" ../../SimCenterBootcamp2020/docs $(O)
+
 .PHONY: help Makefile expl
 
 

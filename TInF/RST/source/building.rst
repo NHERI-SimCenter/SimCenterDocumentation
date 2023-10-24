@@ -1,4 +1,4 @@
-.. _sec_TInF-installation:
+.. _sec_TInF-building:
 
 Building TInF
 =============

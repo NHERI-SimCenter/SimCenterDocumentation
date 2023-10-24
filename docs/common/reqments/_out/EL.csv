@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 "**EL.1**", "**Regional Scale Earthquake Hazard Simulation Options**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**"
 "**EL.1.1**", "**Coupling of multi-scale nonlinear models from the point of rupture through rock and soil into structure**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**"
 "EL.1.1.1", "Replacement of empirical linear models with multi-scale nonlinear models","GC", "D", _, _, _, _, _, _, _
@@ -26,3 +27,5 @@
 "EL.2.8.2", "per Dabaghi, Der Kiureghian (2017)","UF", "D", "Implemented", _, _, _, _, _, _
 "EL.2.9", "Ability to select from synthetic ground motions","SP", "M", "Implemented", _, _, _, _, _, _
 "EL.2.10", "Ability to select surrogate modeling events","SP", "M", _, _, _, _, _, _, _
+=======
+>>>>>>> Stashed changes

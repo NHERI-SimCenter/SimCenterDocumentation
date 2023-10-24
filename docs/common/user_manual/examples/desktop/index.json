@@ -1,0 +1,44 @@
+{
+  "items": {
+    "pbdl-0001": {
+      "id": "pbdl-0001",
+      "title": "FEMA P-58 assessment using external demand data",
+      "base": "pbdl-0001",
+      "doc": [
+        "pbdl-0001/README.rst"
+      ],
+      "entry_point": "pbdl-0001/./input.json",
+      "summary": "This example conducts a FEMA P-58 assessment of a 4-story office building.",
+      "logo": "None",
+      "published": "2022-06-30T00:00:00-08:00",
+      "categories": {
+        "Difficulty": "1"
+      },
+      "tags": [
+      ]
+    },
+    "pbdl-0002": {
+      "id": "pbdl-0002",
+      "title": "Seismic performance assessment workflow of a shear building using Hazus",
+      "base": "pbdl-0002",
+      "doc": [
+        "pbdl-0002/README.rst"
+      ],
+      "entry_point": "pbdl-0002/./input.json",
+      "summary": "This example conducts a Hazus assessment of a 3-story office building.",
+      "published": "2022-06-30T00:00:00-08:00",
+      "categories": {
+        "Difficulty": "0"
+      },
+      "tags": [
+      ]
+    }
+  },
+  "categories": {
+    "Difficulty": {
+      "0": "Beginner",
+      "1": "Intermediate",
+      "2": "Advanced"
+    }
+  }
+}

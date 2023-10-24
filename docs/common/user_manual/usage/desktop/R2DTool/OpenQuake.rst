@@ -1,3 +1,5 @@
+.. _openquake_selection_tool:
+
 OpenQuake Selection Widget
 --------------------------
    

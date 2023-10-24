@@ -245,3 +245,15 @@ The following categories are available:
 
       Configuring_CustomUQ
 
+.. only:: quoFEM_app
+
+   Video Resources
+   -------------------
+
+   Recorded in tool training, 2022.
+
+   .. raw:: html
+
+      <div style="text-align: center;">
+         <video controls src="../../../../_static/videos/quoFEM/youtube_UQ_Day1_TestClip.mp4" width="560" height="315"> </video>   
+      </div>

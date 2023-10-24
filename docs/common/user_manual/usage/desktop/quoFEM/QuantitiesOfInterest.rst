@@ -29,3 +29,19 @@ If **a postprocessing** Python script has been provided in the FEM tab, it will 
    1. There can be no spaces in variable names, underscores are permitted.
    2. Names cannot begin with a numeral, i.e. 0,1,2,3,4,5,6,7,8,9.
    3. Names cannot be duplicated.
+
+
+
+.. only:: quoFEM_app
+
+   Video Resources
+   -------------------
+
+   Recorded in tool training, 2022.
+
+   .. raw:: html
+
+      <div style="text-align: center;">
+         <video controls src="../../../../../_static/videos/quoFEM/youtube_QoI_Day1_TestClip.mp4" width="560" height="315"> </video>   
+      </div>
+

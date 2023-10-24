@@ -1,4 +1,4 @@
-.. _lblR2Dworkflows:
+.. _lblR2Dworkflows manually:
 
 Running Manually
 ===================
