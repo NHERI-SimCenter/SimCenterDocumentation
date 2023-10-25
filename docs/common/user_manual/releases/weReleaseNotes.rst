@@ -5,7 +5,7 @@
 Release Notes
 *************
 
-Version 3.3 (Current)
+Version 3.1.1 (Current)
 -----------------------
 
 **Release date:** Sept. 2023
@@ -14,11 +14,11 @@ Version 3.3 (Current)
 
 #. Added capability to simulate wind load on building with arbitrary shape
 #. Added options to import and transform STL geometry of the building.
-#. Fixed bugs in prior release 
+#. Fixed bugs in the prior release 
 #. Created a new CFD example to demonstrate the recently added features. 
 
 
-Version 3.0
+Version 3.0.0
 ---------------
 
 **Release date:** July. 2023

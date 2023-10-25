@@ -5,13 +5,13 @@
 Capabilities
 ************
 
-**Version 3.3.0** of |app| was released **September 2023**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+**Version 3.1.1** of |app| was released **September 2023**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 Structural Information Model
 ============================
 
-Applications used to specify/select the structural model to be used in the analysis.
+Applications are used to specify/select the structural model to be used in the analysis.
 
 #. MDOF: creating idealized multi-degree-of-freedom models
 #. MDOF-LU: auto-generated multi-degree-of-freedom model     
