@@ -26,7 +26,7 @@ Applications used to specify/select wind loading for the structure.
 
 #.  Stochastic Wind: simulating stochastic wind speed using spectral method
 #.  CFD-Digital Wind Tunnel: CFD simulation of boundary layer wind tunnel
-#.  :blue:`CFD-Wind Load on Isolated Buildings: CFD-based wind load simulation for isolated buildings`
+#.  :blue:`CFD-Wind Load on Isolated Buildings: CFD-based wind load simulation for isolated buildings with complex geometry`
 #.  DEDM_HRP: database-enabled design framework based on wind-tunnel data for high-rise buildings 
 #.  LowRiseTPU: extracting aerodynamics loads based on TPU database for low-rise buildings
 #.  Wind Tunnel Experiment: uses pressure tap measurements from building in wind tunnel experiment
