@@ -10,7 +10,7 @@ Backend Applications
 *********************
 
 
-The backend applications are categorized by function into the following workflow |term1| which create and populate *intermediate files* used to propagate information from one component application to the next. The |term1| and their intermediate files are as follows:
+The backend applications are categorized by function into the following workflow |term1| which creates and populate *intermediate files* used to propagate information from one component application to the next. The |term1| and their intermediate files are as follows:
 
 
 .. |term1| replace:: modules

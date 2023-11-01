@@ -15,7 +15,7 @@ The results of the Sensitivity analysis will show both the main effect and total
 
 .. _figSensitivity:
 
-.. figure:: figures/SensitivityAnalysis.png
+.. figure:: figures/DakotaSensitivityAnalysis.png
 	:align: center
 	:figclass: align-center
 

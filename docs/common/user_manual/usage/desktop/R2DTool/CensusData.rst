@@ -1,3 +1,5 @@
+.. _lbl-censusDataAllocation:
+
 Census Data Allocation
 ----------------------
 

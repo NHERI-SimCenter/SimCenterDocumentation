@@ -75,7 +75,7 @@ extensions =  [
     "sphinx.ext.autodoc",
     "crate.sphinx.csv",
     "sphinx_panels",
-    #"sphinxcontrib.spelling",
+    "sphinxcontrib.spelling",
     'sphinx_toolbox.collapse',
     'sphinx_tabs.tabs',
 ]
@@ -467,7 +467,7 @@ elif app_name == "PBE":
     project = "Performance Based Engineering Application"
 
     author = (
-        "Adam Zsarnóczay, Frank McKenna, Chaofeng Wang, Wael Elhaddad, Michael Gardner"
+        "Adam Zsarnóczay, Frank McKenna, Stevan Gavrilovic, Kuanshi Zhong, Chaofeng Wang, Michael Gardner, Wael Elhaddad"
     )
     sync_examples = True
 
@@ -548,7 +548,7 @@ elif app_name == "EE-UQ":
 
     rst_prolog += """
 .. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application (EE-UQ)
-.. |tool version| replace:: 3.3
+.. |tool version| replace:: 3.4
 .. |test example| replace:: :ref:`eeuq-0001`
 .. _EE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/EE_UQ
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
@@ -593,7 +593,7 @@ elif app_name == "quoFEM":
     rst_prolog += f"""
 .. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)
 .. |test example| replace:: :ref:`qfem-0001`
-.. |tool version| replace:: 3.3
+.. |tool version| replace:: 3.4
 .. _quoFEM Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
@@ -792,6 +792,10 @@ elif app_name == "requirements":
 
 """
 
+elif app_name == 'Bootcamp':
+    project = 'SimCenter Programming Bootcamp'
+    copyright = '2020'
+    author = 'Peter Mackenzie-Helnwein, Frank McKenna'
 
 # -- General configuration ----------------------------------------------
 
@@ -839,7 +843,12 @@ latex_documents = [
 latex_logo = "common/figures/NSF_SimCenter_NO TEXT_SimCenter.png"
 
 
+spelling_lang='en_US'
+tokenizer_lang='en_US'
+spelling_show_suggestions=True
 spelling_word_list_filename = ["spelling.txt"]
+spelling_exclude_patterns=['ignored_*']
+
 
 # sync files for examples
 if sync_examples:

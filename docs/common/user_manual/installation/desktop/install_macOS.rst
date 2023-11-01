@@ -6,13 +6,9 @@ Install on macOS 10
 Install Python 3.9
 ^^^^^^^^^^^^^^^^^^
 
-SimCenter tools require an x86-based version of Python 3.9 to run properly. You may already use other versions of Python, or Python served by a larger scientific package such as Anaconda or homebrew.
+SimCenter tools require an x86-based version of Python 3.9 to run properly. If you have a different version of Python installed, you will need to add a Python 3.9 x86 version to your system. Below, we will demonstrate the process for installing Python 3.9 using the official distributor of Python, **python.org**.
 
-To see if your python kernel is compatable with SimCenter tools, issue the following in a terminal window.
-
- .. note::
-
-   You can use the spotlight app (magnifying glass at the top right corner of the desktop) to start a Terminal window. Start the spotlight app and type in terminal. The Terminal application should appear as the top hit.
+To see if you have python installed and whether it is compatable with SimCenter tools, issue the following in a terminal window.
 
 .. code::
    
@@ -21,7 +17,7 @@ To see if your python kernel is compatable with SimCenter tools, issue the follo
    platform.uname()
    exit()
 
-As shown in screenshot below, you should see Python 3.9 after issuing the python3 command and machine='x86_64' in the last line of output of the platform.uname() command. If you see another Python version or machine='arm64', you will need to install an x86 Python 3.9 on your computer.
+As shown in screenshot below, you should see a Python 3.9 version after issuing the python3 command and the machine='x86_64' in the last line of output from the platform.uname() command. If you see another Python version or machine='arm64', you will need to install an x86 Python 3.9 on your computer.
 
 .. figure:: figures/pythonKernel.png
       :align: center
@@ -30,12 +26,7 @@ As shown in screenshot below, you should see Python 3.9 after issuing the python
       Python: Kernel Version
 
 
-.. note::
-
-   The latest MacBooks use ARM-based processors in their M1 and M2 chips. Older MacBooks utilize Intel x86 processors. The new ARM-based processors present a problem for Python users of scientific applications beacuse Python programs typically import many different modules and not all modules have been ported to the new ARM environments. The python3 kernels provided with macOS 12 (Monterey) and later are ARM based. You will need to download and install an **x86** version of Python to use the SimCenter applications on these systems. Such Python versions will run fine on the ARM-based machines, thanks to `Rosetta <https://support.apple.com/en-us/HT211861#:~:text=Rosetta%202%20is%20available%20only,to%20allow%20installation%20to%20proceed.>`_.
-
-
-**1.** To obtain an x86 version of Python, we recommend installing Python 3.9, we tested the 3.9.13 version,  from |PythonDownload|. It is important to select the **macOS 64-bit Intel-only installer** version of the installer. The **intel-only** is key to obtaining the 64-bit x86 version.
+**1.** To obtain an x86 version of Python 3.9 use `Python.org <https://www.python.org/downloads/macos/>`_ . From their Downloads page, look under the available downloads for a 3.9 version with an **macOS 64-bit Intel-only installer** link below the version number, e.g. Python 3.9.13, and select that installer to download it.
 
 
 .. figure:: figures/pythonDownload.png
@@ -44,13 +35,7 @@ As shown in screenshot below, you should see Python 3.9 after issuing the python
 
       Python: python.org MacOS Download Page
 
-.. note::
-   
-   #. We prefer the python.org installation over others due to it's simplicity.
-   #. Python 3.10 from python.org, does not provide an x86 version.
-   #. Homebrew can also be used to install a Python x86 version, the instructions are convoluted but can be found using **Google**.. If installed correctly python3 will be in /usr/local/Cellar directory and not in the /usr/local/opt directory. Remember the platform.uname() output above will show you if you have installed a correct version.
-
-**2.** The Python.org installer leaves two script files in the Python directory at the end of the installation and these appear in a pop up window when installation is complete. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal application. To execute the files, double click on them with your mouse. The two files, shown in the image below, are: ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh``.
+**2.** After running yhe Python.org installer, a pop up directory window will appear containing a number of files, as shown in the figure below. Two of these files, ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh`` are script files. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal application. To execute the files, double click on the files individually with your mouse. 
 
    .. figure:: figures/pythonInstallShell.png
       :align: center
@@ -73,13 +58,12 @@ Make sure you see a message that confirms the successful installation of the nhe
 
 .. note::
 
-   If you forget to invoke the ``UpdateShellProfile.command.sh`` script at the end of the install, you can always edit the correct shell file later to update the ``PATH`` variable to point to the Python application.
+   1. If you forget to invoke the ``UpdateShellProfile.command.sh`` script at the end of the install, you can always execute the correct shell file later to update the ``PATH`` variable to point to the Python application.
 
    On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e., there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the **bash** shell, the up and coming one is the **Z** shell. Power MacOS users will write shell scripts to do many many useful things. By default the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the users ``PATH``. Users can modify this path by editing files that the shell program will read from everytime the program is started.
 
    When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of  some of the external applications that you have installed as **OpenSees** and **Dakota** do not provide installers that automatically do this when they are installed. Other applications, like **Tcl** provide scripts that you invoke to do it. In short you have to edit the file appropriate to the shell you are using.
 
-   
    To find which shell program you are using when you issue commands inside the terminal window, type the following:
 
    .. code:: bash
@@ -88,6 +72,7 @@ Make sure you see a message that confirms the successful installation of the nhe
 
    If the result is ``/bin/bash`` you will need to edit the ``.bashrc`` file or the ``bash_profile`` file. If the result is ``/bin/zsh`` you will need to edit the ``.zshrc`` or ``.zprofile``. Typically, the ``.bash_profile`` or the ``.zprofile`` file is the one to edit as by design these will invoke the ``.bashrc`` or ``.zshrc`` file. If in doubt, look for these files in your home directory and see which of these other installers have modified.
 
+   2. Python 3.10 from python.org will also work, though there is no x86 installer. The reason we do not recommend it's usage is that there is additional settings that need to be modified in the application under the Preferences tab as that python package has a different mechanism for invoking the x86 version, specifically **python3-intel64**.
 
 .. only:: R2D_app
 
