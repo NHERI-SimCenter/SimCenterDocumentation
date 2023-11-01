@@ -31,12 +31,12 @@ The following six distribution classes are supported for Dakota engine.
 2. `Lognormal <https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-lognormal_uncertain.html>`_
 
 
+
    User provides the mean (:math:`\mu`) and standard deviation (:math:`\sigma`) of the lognormal distribution. The density function of the lognormal distribution, as a function of :math:`\mu` and :math:`\sigma` is:
 
    .. math::
 
       f(x) = \frac{1}{\sqrt{2 \pi} \zeta x} \exp \left( -{\frac{1}{2} \left( \frac{\ln x - \lambda}{\zeta} \right)^2} \right)
-
 
   where :math:`\zeta^2 = \ln \left( \frac{\sigma^2}{\mu^2} + 1 \right)` and :math:`\lambda = \ln(\mu) - \frac{\zeta^2}{2}`
 
