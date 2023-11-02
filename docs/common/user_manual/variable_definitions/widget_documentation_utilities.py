@@ -200,7 +200,8 @@ def main(
         make_rst_file_for_widget(rst_file_path, widget_name, widget_data)
 
     print(
-        f"Building the file '{toc_include_file_path}' that appropriately includes the generated rst files"
+        f"Building the file '{toc_include_file_path}' that appropriately"
+        " includes the generated rst files"
     )
     with open(toc_include_file_path, "w+") as f:
         f.write(_make_page_title("User Inputs"))
@@ -218,15 +219,7 @@ def main(
             f.write(f"\n   {rst_file}")
 
 
-def _check_inputs(command_line_arguments):
-    csv_files_directory = command_line_arguments.path_to_csv_files.resolve()
-    rst_files_directory = (
-        command_line_arguments.relative_path_to_rst_files.resolve()
-    )
-    toc_include_file_path = (
-        command_line_arguments.toc_include_file_path.resolve()
-    )
-
+def _check_path_to_csv_files(csv_files_directory: Path):
     try:
         csv_files_directory.is_dir()
     except:
@@ -234,26 +227,47 @@ def _check_inputs(command_line_arguments):
     else:
         if not csv_files_directory.is_dir():
             raise OSError(
-                f"Specified source directory '{csv_files_directory}' does not exist"
+                f"Specified source directory '{csv_files_directory}' does not"
+                " exist"
             )
 
+
+def _check_path_to_rst_files(rst_files_directory: Path):
     if not rst_files_directory.is_relative_to(Path(__file__).parent):
         raise ValueError(
-            f"Expected a directory that is relative to the parent of this python script, i.e., {Path(__file__).parent}"
+            "Expected a directory that is relative to the parent of this"
+            f" python script, i.e., {Path(__file__).parent}"
         )
 
     if not rst_files_directory.is_dir():
         rst_files_directory.mkdir(parents=True)
+
+
+def _handle_arguments(command_line_arguments):
+    csv_files_directory = command_line_arguments.path_to_csv_files.resolve()
+    _check_path_to_csv_files(csv_files_directory)
+
+    rst_files_directory = (
+        command_line_arguments.relative_path_to_rst_files.resolve()
+    )
+    _check_path_to_rst_files(rst_files_directory)
     # Get the path of 'rst_files_directory' relative to the directory containing this python module
     rst_files_directory = rst_files_directory.relative_to(
         Path(__file__).parent
+    )
+
+    toc_include_file_path = (
+        command_line_arguments.toc_include_file_path.resolve()
     )
     return csv_files_directory, rst_files_directory, toc_include_file_path
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Generate rst files documenting user inputs in SimCenter graphical user interface widgets."
+        description=(
+            "Generate rst files documenting user inputs in SimCenter graphical"
+            " user interface widgets."
+        )
     )
     parser.add_argument(
         "path_to_csv_files",
@@ -262,24 +276,30 @@ if __name__ == "__main__":
     )
     parser.add_argument(
         "--relative_path_to_rst_files",
-        help="directory where rst files for widget documentation should be written, the path to this directory is specified relative to the directory containing this python script",
+        help=(
+            "directory where rst files for widget documentation should be"
+            " written, the path to this directory is specified relative to the"
+            " directory containing this python script"
+        ),
         default="Widget_RST_Files",
         type=Path,
     )
     parser.add_argument(
         "--toc_include_file_path",
-        help="path to the file that is included in the table of contents of the SimCenter application documentation",
+        help=(
+            "path to the file that is included in the table of contents of the"
+            " SimCenter application documentation"
+        ),
         default="WidgetTables.rst",
         type=Path,
     )
 
     command_line_arguments = parser.parse_args()
-
     (
         csv_files_directory,
         rst_files_directory,
         toc_include_file_path,
-    ) = _check_inputs(command_line_arguments)
+    ) = _handle_arguments(command_line_arguments)
 
     main(
         csv_files_directory=csv_files_directory,
