@@ -1,17 +1,18 @@
 import argparse
+import csv
 from dataclasses import dataclass
 from pathlib import Path
-
-import pandas as pd
 
 
 @dataclass
 class InputItem:
-    input_item_name_in_json_file: str
-    input_item_display_name: str
-    input_item_optional: str
-    input_item_data_type: str
-    input_item_constraints: str
+    key_in_json_file: str
+    label_in_user_interface: str
+    data_type: str
+    description: str
+    optional: str
+    default_value: str
+    constraints: str
     seealso_text: str
     seealso_link: str
     seealso_description: str
@@ -33,23 +34,23 @@ def _make_first_line_of_definition_list_item(
     input_item_data_type: str,
 ):
     term_string = f"{input_item_display_name}"
-    if not pd.isnull(input_item_optional):
+    if input_item_optional:
         classifier_string = f"*{input_item_data_type}, optional*"
     else:
         classifier_string = f"*{input_item_data_type}*"
     return " : ".join([term_string, classifier_string])
 
 
-def _make_following_lines_of_definition_list_item(
+def _make_subsequent_lines_of_definition_list_item(
     input_item_description: str,
     input_item_default_value: str,
     input_item_constraints: str,
     input_item_name_in_json_file: str,
 ):
     definition_string_list = [f"\t{input_item_description}"]
-    if not pd.isnull(input_item_default_value):
+    if input_item_default_value:
         definition_string_list.append(f"Default: {input_item_default_value}")
-    if not pd.isnull(input_item_constraints):
+    if input_item_constraints:
         definition_string_list.append(f"Constraints: {input_item_constraints}")
     definition_string_list.append(
         f"Key in JSON file: {input_item_name_in_json_file}\n"
@@ -74,7 +75,7 @@ def _make_definition_list_item_from_parameter_data(
         input_item_display_name, input_item_optional, input_item_data_type
     )
     following_lines_of_definition_item = (
-        _make_following_lines_of_definition_list_item(
+        _make_subsequent_lines_of_definition_list_item(
             input_item_description,
             input_item_default_value,
             input_item_constraints,
@@ -105,22 +106,23 @@ def _make_link_reference_string(text: str, uri: str):
 
 def _make_seealso(row: InputItem):
     string = _make_link_reference_string(row.seealso_text, row.seealso_link)
-    if not pd.isnull(row.seealso_description):
+    if row.seealso_description:
         string += f"\t\t{row.seealso_description}\n"
     return string
 
 
 def _make_list_of_strings_for_rst_definition_list(
-    widget_name: str, widget_data: pd.DataFrame
+    widget_name: str, widget_data: list[dict[str, str]]
 ):
     list_of_strings_definition_list = []
-    for row in widget_data.itertuples():
-        if not pd.isnull(row.name):
+    for input_item in widget_data:
+        row = InputItem(**input_item)
+        if row.key_in_json_file:
             list_of_strings_definition_list.append(
                 _make_definition_list_item_from_parameter_data(
                     widget_name,
-                    row.name,
-                    row.display_name,
+                    row.key_in_json_file,
+                    row.label_in_user_interface,
                     row.optional,
                     row.data_type,
                     row.description,
@@ -131,16 +133,17 @@ def _make_list_of_strings_for_rst_definition_list(
     return list_of_strings_definition_list
 
 
-def _make_list_of_strings_for_rst_seealso(widget_data: pd.DataFrame):
+def _make_list_of_strings_for_rst_seealso(widget_data: list[dict[str, str]]):
     list_of_strings_seealso = []
-    for row in widget_data.itertuples():
-        if not pd.isnull(row.seealso_text):
+    for input_item in widget_data:
+        row = InputItem(**input_item)
+        if row.seealso_text:
             list_of_strings_seealso.append(_make_seealso(row))
     return list_of_strings_seealso
 
 
 def make_rst_file_for_widget(
-    rst_file_path: Path, widget_name: str, widget_data: pd.DataFrame
+    rst_file_path: Path, widget_name: str, widget_data: list[dict[str, str]]
 ):
     list_of_strings_definition_list = (
         _make_list_of_strings_for_rst_definition_list(widget_name, widget_data)
@@ -156,21 +159,42 @@ def make_rst_file_for_widget(
         f.write("\n\n\n")
 
 
+def _read_one_csv_file(csv_file_name: Path) -> list[dict[str, str]]:
+    widget_data = []
+    with open(csv_file_name, newline="") as csv_file:
+        reader = csv.DictReader(csv_file)
+        for row in reader:
+            widget_data.append(row)
+    return widget_data
+
+
+def _read_widget_data_from_csv_files(
+    csv_files_directory: Path,
+) -> dict[str, list[dict[str, str]]]:
+    print(f"Reading csv files in {csv_files_directory}")
+    all_data = dict()
+    for csv_file_name in csv_files_directory.glob("*.csv"):
+        widget_data = _read_one_csv_file(csv_file_name)
+        all_data[f"{csv_file_name.stem}"] = widget_data
+    return all_data
+
+
 def main(
     csv_files_directory: Path,
     rst_files_directory: Path,
     toc_include_file_path: Path,
 ):
-    print(f"Walking through {csv_files_directory}")
-    spreadsheet = "WidgetParameters.xlsx"
-    all_data = pd.read_excel(spreadsheet, sheet_name=None)
+    all_data = _read_widget_data_from_csv_files(csv_files_directory)
+
+    # spreadsheet = "WidgetParameters.xlsx"
+    # all_data = pd.read_excel(spreadsheet, sheet_name=None)
 
     print(f"Creating rst files in {rst_files_directory}")
     rst_file_path_list = []
     for widget_name in all_data.keys():
         widget_data = all_data[widget_name]
-        csv_file_path = csv_files_directory / f"{widget_name}.csv"
-        widget_data.to_csv(csv_file_path)
+        # csv_file_path = csv_files_directory / f"{widget_name}.csv"
+        # widget_data.to_csv(csv_file_path)
         rst_file_path = rst_files_directory / f"{widget_name}.rst"
         rst_file_path_list.append(rst_file_path)
         make_rst_file_for_widget(rst_file_path, widget_name, widget_data)
@@ -250,6 +274,7 @@ if __name__ == "__main__":
     )
 
     command_line_arguments = parser.parse_args()
+
     (
         csv_files_directory,
         rst_files_directory,
