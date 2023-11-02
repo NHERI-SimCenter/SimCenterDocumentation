@@ -171,7 +171,6 @@ def _read_one_csv_file(csv_file_name: Path) -> list[dict[str, str]]:
 def _read_widget_data_from_csv_files(
     csv_files_directory: Path,
 ) -> dict[str, list[dict[str, str]]]:
-    print(f"Reading csv files in {csv_files_directory}")
     all_data = dict()
     for csv_file_name in csv_files_directory.glob("*.csv"):
         widget_data = _read_one_csv_file(csv_file_name)
@@ -184,17 +183,13 @@ def main(
     rst_files_directory: Path,
     toc_include_file_path: Path,
 ):
+    print(f"Reading widget data from csv files in {csv_files_directory}")
     all_data = _read_widget_data_from_csv_files(csv_files_directory)
-
-    # spreadsheet = "WidgetParameters.xlsx"
-    # all_data = pd.read_excel(spreadsheet, sheet_name=None)
 
     print(f"Creating rst files in {rst_files_directory}")
     rst_file_path_list = []
     for widget_name in all_data.keys():
         widget_data = all_data[widget_name]
-        # csv_file_path = csv_files_directory / f"{widget_name}.csv"
-        # widget_data.to_csv(csv_file_path)
         rst_file_path = rst_files_directory / f"{widget_name}.rst"
         rst_file_path_list.append(rst_file_path)
         make_rst_file_for_widget(rst_file_path, widget_name, widget_data)
@@ -251,7 +246,8 @@ def _handle_arguments(command_line_arguments):
         command_line_arguments.relative_path_to_rst_files.resolve()
     )
     _check_path_to_rst_files(rst_files_directory)
-    # Get the path of 'rst_files_directory' relative to the directory containing this python module
+    # Get the path of 'rst_files_directory' relative to the directory
+    # containing this python module
     rst_files_directory = rst_files_directory.relative_to(
         Path(__file__).parent
     )
