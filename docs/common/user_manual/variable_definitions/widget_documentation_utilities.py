@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 @dataclass
-class InputItem:
+class UserInputItem:
     key_in_json_file: str
     label_in_user_interface: str
     data_type: str
@@ -64,26 +64,22 @@ def _make_subsequent_lines_of_definition_list_item(
 
 def _make_definition_list_item_from_parameter_data(
     widget_name: str,
-    input_item_name_in_json_file: str,
-    input_item_display_name: str,
-    input_item_optional: str,
-    input_item_data_type: str,
-    input_item_description: str,
-    input_item_default_value: str,
-    input_item_constraints: str,
+    input_item: UserInputItem,
 ):
     link_target_string = _make_link_target_string(
-        widget_name, input_item_name_in_json_file
+        widget_name, input_item.key_in_json_file
     )
     first_line_of_definition_item = _make_first_line_of_definition_list_item(
-        input_item_display_name, input_item_optional, input_item_data_type
+        input_item.label_in_user_interface,
+        input_item.optional,
+        input_item.data_type,
     )
     following_lines_of_definition_item = (
         _make_subsequent_lines_of_definition_list_item(
-            input_item_description,
-            input_item_default_value,
-            input_item_constraints,
-            input_item_name_in_json_file,
+            input_item.description,
+            input_item.default_value,
+            input_item.constraints,
+            input_item.key_in_json_file,
         )
     )
     return "\n".join(
@@ -108,7 +104,7 @@ def _make_link_reference_string(text: str, uri: str):
     return link
 
 
-def _make_seealso(row: InputItem):
+def _make_seealso(row: UserInputItem):
     string = _make_link_reference_string(row.seealso_text, row.seealso_link)
     if _is_not_blank(row.seealso_description):
         string += f"\t\t{row.seealso_description}\n"
@@ -116,38 +112,29 @@ def _make_seealso(row: InputItem):
 
 
 def _make_list_of_strings_for_rst_definition_list(
-    widget_name: str, widget_data: list[dict[str, str]]
+    widget_name: str, widget_data: list[UserInputItem]
 ):
     list_of_strings_definition_list = []
     for input_item in widget_data:
-        row = InputItem(**input_item)
-        if row.key_in_json_file:
+        if _is_not_blank(input_item.key_in_json_file):
             list_of_strings_definition_list.append(
                 _make_definition_list_item_from_parameter_data(
-                    widget_name,
-                    row.key_in_json_file,
-                    row.label_in_user_interface,
-                    row.optional,
-                    row.data_type,
-                    row.description,
-                    row.default_value,
-                    row.constraints,
+                    widget_name, input_item
                 )
             )
     return list_of_strings_definition_list
 
 
-def _make_list_of_strings_for_rst_seealso(widget_data: list[dict[str, str]]):
+def _make_list_of_strings_for_rst_seealso(widget_data: list[UserInputItem]):
     list_of_strings_seealso = []
     for input_item in widget_data:
-        row = InputItem(**input_item)
-        if _is_not_blank(row.seealso_text):
-            list_of_strings_seealso.append(_make_seealso(row))
+        if _is_not_blank(input_item.seealso_text):
+            list_of_strings_seealso.append(_make_seealso(input_item))
     return list_of_strings_seealso
 
 
 def make_rst_file_for_widget(
-    rst_file_path: Path, widget_name: str, widget_data: list[dict[str, str]]
+    rst_file_path: Path, widget_name: str, widget_data: list[UserInputItem]
 ):
     list_of_strings_definition_list = (
         _make_list_of_strings_for_rst_definition_list(widget_name, widget_data)
@@ -163,45 +150,46 @@ def make_rst_file_for_widget(
         f.write("\n\n\n")
 
 
-def _read_one_csv_file(csv_file_name: Path) -> list[dict[str, str]]:
+def _read_one_csv_file(csv_file_name: Path) -> list[UserInputItem]:
     widget_data = []
     with open(csv_file_name, newline="") as csv_file:
         reader = csv.DictReader(csv_file)
         for row in reader:
-            widget_data.append(row)
+            widget_data.append(UserInputItem(**row))
     return widget_data
 
 
-def _read_widget_data_from_csv_files(
+def _read_widget_documentation_from_csv_files(
     csv_files_directory: Path,
-) -> dict[str, list[dict[str, str]]]:
-    all_data = dict()
+) -> dict[str, list[UserInputItem]]:
+    all_widget_documentation_data = dict()
     for csv_file_name in csv_files_directory.glob("*.csv"):
-        widget_data = _read_one_csv_file(csv_file_name)
-        all_data[f"{csv_file_name.stem}"] = widget_data
-    return all_data
+        widget_name = f"{csv_file_name.stem}"
+        widget_documentation_data = _read_one_csv_file(csv_file_name)
+        all_widget_documentation_data[widget_name] = widget_documentation_data
+    return all_widget_documentation_data
 
 
-def main(
-    csv_files_directory: Path,
-    rst_files_directory: Path,
-    toc_include_file_path: Path,
-):
-    print(f"Reading widget data from csv files in {csv_files_directory}")
-    all_data = _read_widget_data_from_csv_files(csv_files_directory)
-
-    print(f"Creating rst files in {rst_files_directory}")
+def _create_rst_files(
+    rst_files_directory_path: Path,
+    all_widget_documentation_data: dict[str, list[UserInputItem]],
+) -> list[Path]:
     rst_file_path_list = []
-    for widget_name in all_data.keys():
-        widget_data = all_data[widget_name]
-        rst_file_path = rst_files_directory / f"{widget_name}.rst"
+    widget_names = all_widget_documentation_data.keys()
+    for widget_name in widget_names:
+        widget_documentation_data = all_widget_documentation_data[widget_name]
+        rst_file_path = rst_files_directory_path / f"{widget_name}.rst"
         rst_file_path_list.append(rst_file_path)
-        make_rst_file_for_widget(rst_file_path, widget_name, widget_data)
+        make_rst_file_for_widget(
+            rst_file_path, widget_name, widget_documentation_data
+        )
+    return rst_file_path_list
 
-    print(
-        f"Building the file '{toc_include_file_path}' that appropriately"
-        " includes the generated rst files"
-    )
+
+def _create_toc_include_file(
+    toc_include_file_path: Path,
+    rst_file_path_list: list[Path],
+):
     with open(toc_include_file_path, "w+") as f:
         f.write(_make_page_title("User Inputs"))
         f.write(
@@ -214,8 +202,33 @@ def main(
                 ]
             )
         )
-        for rst_file in rst_file_path_list:
-            f.write(f"\n   {rst_file}")
+        for rst_file_path in rst_file_path_list:
+            f.write(f"\n   {rst_file_path}")
+
+
+def main(
+    csv_files_directory_path: Path,
+    rst_files_directory_path: Path,
+    toc_include_file_path: Path,
+):
+    print(
+        f"Reading user interface widget documentation "
+        "from csv files in {csv_files_directory}"
+    )
+    all_widget_documentation_data = _read_widget_documentation_from_csv_files(
+        csv_files_directory_path
+    )
+
+    print(f"Creating rst files in {rst_files_directory_path}")
+    rst_file_path_list = _create_rst_files(
+        rst_files_directory_path, all_widget_documentation_data
+    )
+
+    print(
+        f"Building the file '{toc_include_file_path}' that appropriately"
+        " includes the generated rst files"
+    )
+    _create_toc_include_file(toc_include_file_path, rst_file_path_list)
 
 
 def _check_path_to_csv_files(csv_files_directory: Path):
@@ -302,8 +315,8 @@ if __name__ == "__main__":
     ) = _handle_arguments(command_line_arguments)
 
     main(
-        csv_files_directory=csv_files_directory,
-        rst_files_directory=rst_files_directory,
+        csv_files_directory_path=csv_files_directory,
+        rst_files_directory_path=rst_files_directory,
         toc_include_file_path=toc_include_file_path,
     )
 
