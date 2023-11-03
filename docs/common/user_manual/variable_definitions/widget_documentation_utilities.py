@@ -275,7 +275,7 @@ def _handle_arguments(command_line_arguments):
     return csv_files_directory, rst_files_directory, toc_include_file_path
 
 
-if __name__ == "__main__":
+def _create_parser():
     parser = argparse.ArgumentParser(
         description=(
             "Generate rst files documenting user inputs in SimCenter graphical"
@@ -306,17 +306,21 @@ if __name__ == "__main__":
         default="WidgetTables.rst",
         type=Path,
     )
+    return parser
 
+
+if __name__ == "__main__":
+    parser = _create_parser()
     command_line_arguments = parser.parse_args()
     (
-        csv_files_directory,
-        rst_files_directory,
+        csv_files_directory_path,
+        rst_files_directory_path,
         toc_include_file_path,
     ) = _handle_arguments(command_line_arguments)
 
     main(
-        csv_files_directory_path=csv_files_directory,
-        rst_files_directory_path=rst_files_directory,
+        csv_files_directory_path=csv_files_directory_path,
+        rst_files_directory_path=rst_files_directory_path,
         toc_include_file_path=toc_include_file_path,
     )
 
