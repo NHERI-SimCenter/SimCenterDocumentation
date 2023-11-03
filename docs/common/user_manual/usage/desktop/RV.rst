@@ -31,12 +31,12 @@ The following six distribution classes are supported for Dakota engine.
 2. `Lognormal <https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-lognormal_uncertain.html>`_
 
 
+
    User provides the mean (:math:`\mu`) and standard deviation (:math:`\sigma`) of the lognormal distribution. The density function of the lognormal distribution, as a function of :math:`\mu` and :math:`\sigma` is:
 
    .. math::
 
       f(x) = \frac{1}{\sqrt{2 \pi} \zeta x} \exp \left( -{\frac{1}{2} \left( \frac{\ln x - \lambda}{\zeta} \right)^2} \right)
-
 
   where :math:`\zeta^2 = \ln \left( \frac{\sigma^2}{\mu^2} + 1 \right)` and :math:`\lambda = \ln(\mu) - \frac{\zeta^2}{2}`
 
@@ -275,10 +275,6 @@ For each random variable, the user must enter a name and select from the pull do
        Specifying user-defined distributions under CustomUQ engine
 
 
-
-
-
-
 .. Tip::
    
    Summary of capabilities and limitations
@@ -288,3 +284,16 @@ For each random variable, the user must enter a name and select from the pull do
    * :badge:`x,badge-danger` Explicitly specify random fields (planned)
    * :badge:`x,badge-danger` Specify user-defined random distribution (planned)
    * :badge:`x,badge-danger` Specify Non-Gaussian copular correlation (upon request)
+
+.. only:: quoFEM_app
+
+   Video Resources
+   -------------------
+
+   Recorded in tool training, 2022.
+
+   .. raw:: html
+
+      <div style="text-align: center;">
+         <video controls src="../../../../_static/videos/quoFEM/youtube_RV_Day1_TestClip.mp4" width="560" height="315"> </video>   
+      </div>

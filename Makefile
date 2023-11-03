@@ -86,6 +86,12 @@ r2d qfem we ee:
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
 
 
+example_reference: 
+	for i in $(JSONDIR)/*.json; do \
+	    json_file="$${i##*/}"; \
+	    make $(CSVDIR)/$${json_file%.*}.csv; \
+	done
+
 web:
 	find . -type f -name "*.rst" -exec touch {} +
 	@echo cleaning directories: $(addprefix $(PUBLDIR),$(CLEANDIR))
@@ -94,15 +100,19 @@ web:
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(PUBLDIR)" $(O)
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(PUBLDIR)" $(O)
 
-spell:
+spell: example_reference
 	@$(SPHINXBUILD) -b spelling "$(SOURCEDIR)" "$(call BUILDDIR,$(SIMDOC_APP))/html" $(O)
 
-html:
-	for i in $(JSONDIR)/*.json; do \
-	    json_file="$${i##*/}"; \
-	    make $(CSVDIR)/$${json_file%.*}.csv; \
-	done
+html: example_reference
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(call BUILDDIR,$(SIMDOC_APP))/html" $(O)
+
+
+singlehtml: example_reference
+	@$(SPHINXBUILD) -b singlehtml "$(SOURCEDIR)" "$(call BUILDDIR,$(SIMDOC_APP))/singlehtml" $(O)
+
+
+text:
+	@$(SPHINXBUILD) -b text "$(SOURCEDIR)" "$(call BUILDDIR,$(SIMDOC_APP))/latex" $(O)
 
 
 latex:

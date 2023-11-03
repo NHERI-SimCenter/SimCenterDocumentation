@@ -302,10 +302,15 @@ docs/web
 
 build/
 
+*.swp
+
 .idea
 fmkExamples
 .DS_Store
 web/
 #examples
 _out
+docs_temp
+
+#Remove .vscode
 .vscode
