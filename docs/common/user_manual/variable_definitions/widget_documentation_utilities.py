@@ -5,7 +5,7 @@ from pathlib import Path
 
 
 @dataclass
-class UserInputItem:
+class DocumentationForUserInputItem:
     key_in_json_file: str
     label_in_user_interface: str
     data_type: str
@@ -22,10 +22,8 @@ def _make_page_title(title_text: str) -> str:
     return "".join([title_text, "\n", "=" * len(title_text), "\n\n"])
 
 
-def _make_link_target_string(
-    widget_name: str, input_item_name_in_json_file: str
-):
-    return f".. _{widget_name}_{input_item_name_in_json_file}:\n"
+def _make_link_target_string(widget_name: str, second_string: str):
+    return f".. _{widget_name} {second_string}:\n"
 
 
 def _is_not_blank(string: str) -> bool:
@@ -64,7 +62,7 @@ def _make_subsequent_lines_of_definition_list_item(
 
 def _make_definition_list_item_from_parameter_data(
     widget_name: str,
-    input_item: UserInputItem,
+    input_item: DocumentationForUserInputItem,
 ):
     link_target_string = _make_link_target_string(
         widget_name, input_item.key_in_json_file
@@ -104,7 +102,7 @@ def _make_link_reference_string(text: str, uri: str):
     return link
 
 
-def _make_seealso(row: UserInputItem):
+def _make_seealso(row: DocumentationForUserInputItem):
     string = _make_link_reference_string(row.seealso_text, row.seealso_link)
     if _is_not_blank(row.seealso_description):
         string += f"\t\t{row.seealso_description}\n"
@@ -112,7 +110,7 @@ def _make_seealso(row: UserInputItem):
 
 
 def _make_list_of_strings_for_rst_definition_list(
-    widget_name: str, widget_data: list[UserInputItem]
+    widget_name: str, widget_data: list[DocumentationForUserInputItem]
 ):
     list_of_strings_definition_list = []
     for input_item in widget_data:
@@ -125,7 +123,9 @@ def _make_list_of_strings_for_rst_definition_list(
     return list_of_strings_definition_list
 
 
-def _make_list_of_strings_for_rst_seealso(widget_data: list[UserInputItem]):
+def _make_list_of_strings_for_rst_seealso(
+    widget_data: list[DocumentationForUserInputItem],
+):
     list_of_strings_seealso = []
     for input_item in widget_data:
         if _is_not_blank(input_item.seealso_text):
@@ -133,8 +133,10 @@ def _make_list_of_strings_for_rst_seealso(widget_data: list[UserInputItem]):
     return list_of_strings_seealso
 
 
-def make_rst_file_for_widget(
-    rst_file_path: Path, widget_name: str, widget_data: list[UserInputItem]
+def _make_rst_file_for_widget(
+    rst_file_path: Path,
+    widget_name: str,
+    widget_data: list[DocumentationForUserInputItem],
 ):
     list_of_strings_definition_list = (
         _make_list_of_strings_for_rst_definition_list(widget_name, widget_data)
@@ -143,6 +145,8 @@ def make_rst_file_for_widget(
         widget_data
     )
     with open(rst_file_path, "w+") as f:
+        f.write(_make_link_target_string(widget_name, "User Inputs"))
+        f.write("\n")
         f.write(_make_page_title(widget_name))
         f.write("\n\n".join(list_of_strings_definition_list))
         f.write(_make_seealso_beginning())
@@ -150,18 +154,20 @@ def make_rst_file_for_widget(
         f.write("\n\n\n")
 
 
-def _read_one_csv_file(csv_file_name: Path) -> list[UserInputItem]:
+def _read_one_csv_file(
+    csv_file_name: Path,
+) -> list[DocumentationForUserInputItem]:
     widget_data = []
     with open(csv_file_name, newline="") as csv_file:
         reader = csv.DictReader(csv_file)
         for row in reader:
-            widget_data.append(UserInputItem(**row))
+            widget_data.append(DocumentationForUserInputItem(**row))
     return widget_data
 
 
 def _read_widget_documentation_from_csv_files(
     csv_files_directory: Path,
-) -> dict[str, list[UserInputItem]]:
+) -> dict[str, list[DocumentationForUserInputItem]]:
     all_widget_documentation_data = dict()
     for csv_file_name in csv_files_directory.glob("*.csv"):
         widget_name = f"{csv_file_name.stem}"
@@ -172,7 +178,9 @@ def _read_widget_documentation_from_csv_files(
 
 def _create_rst_files(
     rst_files_directory_path: Path,
-    all_widget_documentation_data: dict[str, list[UserInputItem]],
+    all_widget_documentation_data: dict[
+        str, list[DocumentationForUserInputItem]
+    ],
 ) -> list[Path]:
     rst_file_path_list = []
     widget_names = all_widget_documentation_data.keys()
@@ -180,7 +188,7 @@ def _create_rst_files(
         widget_documentation_data = all_widget_documentation_data[widget_name]
         rst_file_path = rst_files_directory_path / f"{widget_name}.rst"
         rst_file_path_list.append(rst_file_path)
-        make_rst_file_for_widget(
+        _make_rst_file_for_widget(
             rst_file_path, widget_name, widget_documentation_data
         )
     return rst_file_path_list
