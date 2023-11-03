@@ -28,13 +28,17 @@ def _make_link_target_string(
     return f".. _{widget_name}_{input_item_name_in_json_file}:\n"
 
 
+def _is_not_blank(string: str) -> bool:
+    return bool(string.strip())
+
+
 def _make_first_line_of_definition_list_item(
     input_item_display_name: str,
     input_item_optional: str,
     input_item_data_type: str,
 ):
     term_string = f"{input_item_display_name}"
-    if input_item_optional:
+    if _is_not_blank(input_item_optional):
         classifier_string = f"*{input_item_data_type}, optional*"
     else:
         classifier_string = f"*{input_item_data_type}*"
@@ -48,9 +52,9 @@ def _make_subsequent_lines_of_definition_list_item(
     input_item_name_in_json_file: str,
 ):
     definition_string_list = [f"\t{input_item_description}"]
-    if input_item_default_value:
+    if _is_not_blank(input_item_default_value):
         definition_string_list.append(f"Default: {input_item_default_value}")
-    if input_item_constraints:
+    if _is_not_blank(input_item_constraints):
         definition_string_list.append(f"Constraints: {input_item_constraints}")
     definition_string_list.append(
         f"Key in JSON file: {input_item_name_in_json_file}\n"
@@ -106,7 +110,7 @@ def _make_link_reference_string(text: str, uri: str):
 
 def _make_seealso(row: InputItem):
     string = _make_link_reference_string(row.seealso_text, row.seealso_link)
-    if row.seealso_description:
+    if _is_not_blank(row.seealso_description):
         string += f"\t\t{row.seealso_description}\n"
     return string
 
@@ -137,7 +141,7 @@ def _make_list_of_strings_for_rst_seealso(widget_data: list[dict[str, str]]):
     list_of_strings_seealso = []
     for input_item in widget_data:
         row = InputItem(**input_item)
-        if row.seealso_text:
+        if _is_not_blank(row.seealso_text):
             list_of_strings_seealso.append(_make_seealso(row))
     return list_of_strings_seealso
 
