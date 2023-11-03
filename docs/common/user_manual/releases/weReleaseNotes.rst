@@ -5,7 +5,7 @@
 Release Notes
 *************
 
-Version 3.1.1 (Current)
+Version 3.1 (Current)
 -----------------------
 
 **Release date:** Oct. 2023
