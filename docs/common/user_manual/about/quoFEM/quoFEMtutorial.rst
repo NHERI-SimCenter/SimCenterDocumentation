@@ -76,7 +76,10 @@ This tutorial will show how a **deterministic** model written/interfaced in a py
 
                It is important to save the model in a **new folder** instead of root, desktop or downloads
 
-        3. :badge:`Test Your Model,badge-primary` Test if the input script ``ElasticTruss.py`` runs successfully using the command prompt (Windows) or terminal (Mac). To do this,  navigate into ``TrussExample`` folder using 'cd' command and type the following. 
+        3. :badge:`Test Your Model,badge-primary` Test if the input
+	script ``ElasticTruss.py`` runs successfully using the
+	command prompt (Windows) or terminal (Mac). To do this,
+	navigate into ``TrussExample`` folder using :code:`cd` command and type the following. 
 
           .. code:: console
 
@@ -390,7 +393,7 @@ This tutorial will show how a **deterministic** model written/interfaced in a py
         On Windows, it is important to install python packages to the correct python executable. Please read :ref:`here<lblFEM>` about pip-installing python packages and changing the python version.
 
         .. note::
-           **When running at DesingSafe (e.g. Step 3)**, SimCenter workflow uses its own python executable installed on the cloud computer. Currently, the only supported python packages are those installed through 'nheri_simcenter' package. The available list of packages includes - numpy, scipy, sklearn, pandas, tables, pydoe, gpy, emukit, plotly, matplotlib. If your model uses a package beyond this list, quoFEM analysis will fail.
+           **When running at DesignSafe (e.g. Step 3)**, SimCenter workflow uses its own python executable installed on the cloud computer. Currently, the only supported python packages are those installed through 'nheri_simcenter' package. The available list of packages includes - numpy, scipy, sklearn, pandas, tables, pydoe, gpy, emukit, plotly, matplotlib. If your model uses a package beyond this list, quoFEM analysis will fail.
 
            An option to allow user-defined python packages on DesignSafe is under implementation. Meanwhile, if you need to request to use additional python packages, please contact us through `user forum <https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0>`_.
 

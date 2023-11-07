@@ -467,7 +467,7 @@ elif app_name == "PBE":
     project = "Performance Based Engineering Application"
 
     author = (
-        "Adam Zsarnóczay, Frank McKenna, Kuanshi Zhong, Chaofeng Wang, Michael Gardner, Wael Elhaddad"
+        "Adam Zsarnóczay, Frank McKenna, Stevan Gavrilovic, Kuanshi Zhong, Chaofeng Wang, Michael Gardner, Wael Elhaddad"
     )
     sync_examples = True
 
@@ -642,7 +642,7 @@ elif app_name == "WE-UQ":
     rst_prolog += f"""
 .. |full tool name| replace:: Wind Engineering with Uncertainty Quantification Application
 .. |test example| replace:: :ref:`weuq-0001`
-.. |tool version| replace:: 3.0
+.. |tool version| replace:: 3.1
 .. _WE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=5.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-WE`

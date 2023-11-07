@@ -79,6 +79,6 @@ This feature is especially useful when the user wants to perform a forward UQ an
  
 	.. include:: SimCenterUQMF.rst
 
-.. only::EEUQ_app
+.. only:: EEUQ_app
  
 	.. include:: SimCenterUQMF.rst

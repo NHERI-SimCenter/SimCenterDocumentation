@@ -14,7 +14,7 @@ I. **Read the configuration file:**
 
     - **line 16-62**: Reads the application registry file and displays all available applications.
 
-    - **line 64-85**: Reads the configuration file and displays the units, local application directory, remote application directory, reference directory, and the applications chosen for each workflow step. Any workflow steps which are skipped (excluded from the configuration file) are also listed here.
+    - **line 64-85**: Reads the configuration file and displays the units, local application directory, remote application directory, reference directory, and the applications chosen for each workflow step. Any workflow steps that are skipped (excluded from the configuration file) are also listed here.
 
 II. **Pre-process building and event data:**
 
@@ -43,7 +43,7 @@ III. **Set up and run simulations for each building asset:**
             python "C:/rWHALE/applications/createEVENT/SimCenterEvent/SimCenterEvent.py" "--filenameBIM" "1-BIM.json" "--filenameEVENT" "EVENT.json" "--pathEventData" "C:/rWHALE/earthquake_example/input_data/records/" "--getRV"
 
 
-    - **line 126**: Python command for executing the :ref:`Modeling <lblModelingApp>` application, creating the SAM file for the built  asset.
+    - **line 126**: Python command for executing the :ref:`Modeling <lblModelingApp>` application, creating the SAM file for the built asset.
 
         ::
 

@@ -14,13 +14,13 @@ The following abbreviations are used in the documentation:
 
 :EDP: Engineering Demand Parameter
 
-:EVT: Hazard Event (of earthquake / tsunami / storm surge hazard)
+:EVT: Hazard Event (of earthquake/tsunami/storm surge hazard)
 
 :GM: Ground Motion (of earthquake hazard)
 
 :IM: Intensity Measure (of hazard event)
 
-:SAM: Structural Analysis Model (i. e. finite element model)
+:SAM: Structural Analysis Model (i.e. finite element model)
 
 :SIM: Simulation
 

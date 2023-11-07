@@ -533,21 +533,21 @@ Before running the MFMC simulation model, the users are advised to check the val
 
 * **The response of different models should have high correlation**. The efficiency of MFMC heavily depends on the correlation between the HF and LF model outputs. Only if the correlation is fairly high, the MF estimation is meaningfully efficient than conducting only HF simulations. 
 
-:numref:`fig-MF-SP` shows the expected speed-up factor for different computation time ratios and correlation coefficient values. One can notice that only when the ratio of the model evaluation time is greater than 100 and when the correlation is greater than 0.85-0.9, the expected speed-up is significant.
+Efficiency of MFMC can be evaluated using the speed-up ratio, defined as the reduction of computational effort you need to get the same Monte Carlo statistical accuracy by the MFMC and direct Monte Carlo method. :numref:`fig-MF-SP` shows the expected speed-up factor for different computation time ratios and correlation coefficient values. One can notice that only when the ratio of the model evaluation time is greater than 100 and when the correlation is greater than 0.85-0.9, the expected speed-up is significant [Patsialis2021]_. The formulation used to estimate the speed-up ratio can found at the end of this section.
 
 .. _fig-MF-SP:
 
 .. figure:: figures/UQ/SimCenterMF4.png
    :align: center
    :figclass: align-center
-   :width: 900
+   :width: 700
 
-   Speed-up offered by the MFMC estimation (Fig 1 in [Patsialis2021]_), :math:`c^{FEM}`: HF model evaluation time, :math:`c^{ROM}`: LF model evaluation time, :math:`\rho`: correlation between HF and LF responses.
+   Speed-up offered by the MFMC estimation (:math:`c_{HF}`: HF model evaluation time, :math:`c_{LF}`: LF model evaluation time, :math:`\rho_{LF,HF}`: correlation between HF and LF responses)
 
 
 Algorithm details
 ----------------------------------------------
-The implementation of MFMC in |short tool id| follows that of [Patsialis2021]_. Let us denote the HF and LF output for a given input :math:`x` as 
+The implementation of MFMC in |short tool id| follows that of [Patsialis2021]_ which is based on the original work of [Peherstorfer2016]_. Let us denote the HF and LF output for a given input :math:`x` as 
 
    .. math::
 
@@ -581,7 +581,7 @@ The goal of MFMC is to estimate the mean and variance of :math:`y_{HF}`, given s
 
    Step 1: Pilot Simulation
 
-Randomly generate :math:`N_p` sample points and run both HF and LF simulations. Compute the correlation between two model outputs (:math:`\rho_{HF,LF}`) and estimate the average model evaluation times (:math:`c_{HF}` and :math:`c_{LF}`). The optimal ratio of HF and LF simulation runs can be decided by
+Randomly generate :math:`N_p` sample points and run both HF and LF simulations. Compute the correlation between two model outputs (:math:`\rho_{LF,HF}`) and estimate the average model evaluation times (:math:`c_{HF}` and :math:`c_{LF}`). The optimal ratio of HF and LF simulation runs can be decided by
 
    .. math::
 

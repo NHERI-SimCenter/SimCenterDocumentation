@@ -8,8 +8,25 @@ Release Notes
 Version 3
 =========
 
-   .. dropdown::    Version 3.1 (:blue:`Current`)
+   .. dropdown::    Version 3.2 (:blue:`Current`)
       :open:
+
+      **Release date:** Sept 2023
+
+      **Major updates:**
+
+      - Post-disaster Performance and Recovery Simulation
+   
+         - Extended the PBE simulation workflow with a Performance (PRF) step. Applications in this step use the Damage and Loss (DL) results in models that estimate the post-disaster performance and recovery of an asset
+         - Integrated the `ARUP REDi Seismic Downtime Model <https://sgavrilovicarup.github.io/REDi-docs/#>`_ using the open-source `PyREDI package <https://github.com/arup-group/REDi>`_ as the first tool in the PBE App to support functional recovery calculations.
+         - Example 3 is added to illustrate this new functionality.
+
+      - All features of EE-UQ up to v3.4, including:
+         
+         - Multi Fidelity Monte Carlo (MFMC) method for modeling building response
+
+
+   .. dropdown::    Version 3.1
 
       **Release date:** May 2023
 

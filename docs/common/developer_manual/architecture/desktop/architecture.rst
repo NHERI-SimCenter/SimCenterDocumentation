@@ -7,10 +7,10 @@ Software Architecture
 The |app| is one of the SimCenter's computational applications, which are `scientific workflow systems <https://en.wikipedia.org/wiki/Scientific_workflow_system>`_ that execute a sequence of computational tasks specialized for natural hazard engineering (NHE) problems. In contrast to more general-purpose scientific workflow systems (such as `Taverna <https://taverna.incubator.apache.org/>`_, `Kepler <https://kepler-project.org/>`_, and `Pegasus <https://pegasus.isi.edu/>`_), SimCenter workflow systems include the following features:
 
    - access to high-performance computing resources, available on the cloud through |DesignSafe|, to enable parallel workflows for non-trivial large-scale NHE problems;
-   - uncertainty quantification capabilities using `Dakota <https://dakota.sandia.gov/>`_, which allows users to introduce input uncertainties which are propagated through the workflow with random variables;
-   - streamlined interfaces between existing software applications and datasets that are widely used by the NHE community, such as `OpenFOAM <https://openfoam.org/>`_, `OpenSees <https://opensees.berkeley.edu/>`_, `ADCIRC <http://adcirc.org/>`_, and `PEER Strong Ground Motion Databases <https://peer.berkeley.edu/peer-strong-ground-motion-databases>`_. To do this, the SimCenter develops pre- and post-processors to these existing applications and utilize web technologies for accessing online services;
-   - additional custom software applications produced by the SimCenter. Among these are applications that automate the acquisition of building inventory data (`BRAILS <https://nheri-simcenter.github.io/BRAILS-Documentation/>`_), applications which simulate hazard evens and generate corresponding input files for passing through the workflow system (RegionalEvent Applications), applications for damage and loss assessment (`pelicun <https://nheri-simcenter.github.io/pelicun/>`_), and more.
-   - a modular framework which allows developers to incorporate their own software applications as components to the workflow system, so long as it meets the input-output structure at component interfaces.
+   - uncertainty quantification capabilities using `Dakota <https://dakota.sandia.gov/>`_, which allows users to introduce input uncertainties that are propagated through the workflow with random variables;
+   - streamlined interfaces between existing software applications and datasets that are widely used by the NHE community, such as `OpenFOAM <https://openfoam.org/>`_, `OpenSees <https://opensees.berkeley.edu/>`_, `ADCIRC <http://adcirc.org/>`_, and `PEER Strong Ground Motion Databases <https://peer.berkeley.edu/peer-strong-ground-motion-databases>`_. To do this, the SimCenter develops pre- and post-processors for these existing applications and utilizes web technologies for accessing online services;
+   - additional custom software applications produced by the SimCenter. Among these are applications that automate the acquisition of building inventory data (`BRAILS <https://nheri-simcenter.github.io/BRAILS-Documentation/>`_), applications that simulate hazard events and generate corresponding input files for passing through the workflow system (RegionalEvent Applications), applications for damage and loss assessment (`pelicun <https://nheri-simcenter.github.io/pelicun/>`_), and more.
+   - a modular framework that allows developers to incorporate their own software applications as components to the workflow system, so long as it meets the input-output structure at component interfaces.
 
 
 Documentation of the software architecture is detailed in the following pages:
@@ -25,15 +25,15 @@ Documentation of the software architecture is detailed in the following pages:
    :R2D:run-manually
    :notQuoFEM:c4model
 
-#. DL: application to determine the damage & loss to the building/infrastructure given the event.
+#. DL: application to determine the damage and loss to the building/infrastructure given the event.
 
 #. EDP: application to determine the response parameter given the event, building/lifeline, and damage and loss application.
 
-#. BRAILS: a framework of applications for creating regional level building inventories using machine learning.   
+#. BRAILS: a framework of applications for creating regional-level building inventories using machine learning.   
 
 #. Databases containing information on building inventories for regional simulations, consequence functions for the DL applications, and experimental and corresponding simulation models for future machine learning-based AI algorithms.
 
- Within the natural hazards engineering community, there exist several widely used open-source applications, e.g., OpenFOAM, and online datasets, e.g., PEER NGA, that researchers are currently using. Consequently, and to avoid duplication, SimCenter applications incorporate many widely used applications, e.g., OpenFOAM. To do this, SimCenter develops pre- and post-processors to these existing applications and utilizes web technologies for accessing online services.
+ Within the natural hazards engineering community, there exist several widely used open-source applications, e.g., OpenFOAM, and online datasets, e.g., PEER NGA, that researchers are currently using. Consequently, and to avoid duplication, SimCenter applications incorporate many widely used applications, e.g., OpenFOAM. To do this, SimCenter develops pre- and post-processors for these existing applications and utilizes web technologies for accessing online services.
 
    
 .. _figFramework:
@@ -48,8 +48,8 @@ Documentation of the software architecture is detailed in the following pages:
 The SimCenter scientific workflow systems aim to facilitate the use, reuse, and extension of common workflows encountered in NHE by a broad range of natural hazards engineering researchers with varying software skills. This chapter presents the software architecture for the SimCenter framework and |app| using the `C4 model <https://c4model.com>`_ to encourage this use and adoption. The **C4** model is a graphical approach for documenting software architecture through diagrams describing and communicating the software architecture at various levels of abstraction. It is a top-down approach that starts at a high level (level 1), showing how a user would interact with the software, and drills down through three more levels, with level 4 containing the typical UML diagrams. The **C4** model was chosen to provide NHE researchers with a diverse range of software architecture knowledge to understand the software architecture behind SimCenter applications that fit their skill level. The four levels:
 
 - Level 1: The level one diagram is a system diagram that shows how the software system fits in the real world in terms of people who use it and other software systems it interacts with.
-- Level 2: Level two is a container diagram showing the containers (applications, databases, etc.) that make up the software system.
-- Level 3: Level three diagrams are component diagrams, showing how the components pf the individual containers.
+- Level 2: Level 2 is a container diagram showing the containers (applications, databases, etc.) that make up the software system.
+- Level 3: Level three diagrams are component diagrams, showing how the components of the individual containers.
 - Level 4: The level four diagrams show how the individual components are implemented. They are typically UML class diagrams.
 
 The following sections present the architecture of SimCenter the SimCenter to level 3:
@@ -60,9 +60,9 @@ The following sections present the architecture of SimCenter the SimCenter to le
 
    #. **Application**: A software application performs operations on data residing in a computer for a user or another program; it can be self-contained, typically termed a program or part of a group of programs.
 
-   #. **Scientific Workflow**: A sequence of steps propagating input data through various applications to produce output. It is a loosely coupled application performing workflows in which each coordinated task is performed using an individual application. Each of the individual applications taking some data inputs and producing data outputs, which are then consumed by subsequent tasks according to the workflow definition. They are termed scientific because they are typically used by scientists to process, manage, and visualize ever-increasing amounts of data using "scientific" applications. 
+   #. **Scientific Workflow**: A sequence of steps propagating input data through various applications to produce output. It is a loosely coupled application performing workflows in which each coordinated task is performed using an individual application. Each of the individual applications takes some data inputs and produces data outputs, which are then consumed by subsequent tasks according to the workflow definition. They are termed scientific because they are typically used by scientists to process, manage, and visualize ever-increasing amounts of data using "scientific" applications. 
 
-   #. **Scientific Workflow System**: An application or applications to aid a user to set up, schedule, run, and monitor a user-defined scientific workflow. 
+   #. **Scientific Workflow System**: One or more applications that aid a user in setting up, scheduling, running, and monitoring a user-defined scientific workflow. 
 
    #. **Software Framework**: A collection of software for building applications in a specific domain. The framework defines the interfaces between the software components, provides example applications that can be developed using the provided software, and represents a clear set of interfaces. The software can be extended to build other applications.
 
@@ -95,8 +95,8 @@ SimCenter applications are broken into high-level components. The SimCenter appl
 
    System container diagram for SimCenter applications.
 
-Two-level 3 diagrams are now presented, which break up the two containers into the major building blocks or
-components in C4 terminology. In :numref:`architecture figComponentFront` , the component diagram for the front-end UI is presented. It outlines the interaction between the user and the individual graphical elements (widgets) of the UI. Given the jigsaw puzzle analogy, the user selects which piece of the jigsaw puzzle they are working on in the component selection widget. The widget for the jigsaw piece will then be displayed on the desktop. The user for each jigsaw piece then selects which application to run for that piece. For the chosen application, they provide the inputs. When the inputs are all provided, the user can choose to run the simulations locally or remotely. For jobs that run remotely, the user can download and review previously run simulations. As seen, the widgets may subsequently interact with web services through HTTPS requests or with DesignSafe utilizing TAPIS Restful API through the RemoteService container.
+Two level 3 diagrams are now presented, which break up the two containers into the major building blocks or
+components in C4 terminology. In :numref:`architecture figComponentFront`, the component diagram for the front-end UI is presented. It outlines the interaction between the user and the individual graphical elements (widgets) of the UI. Given the jigsaw puzzle analogy, the user selects which piece of the jigsaw puzzle they are working on in the component selection widget. The widget for the jigsaw piece will then be displayed on the desktop. The user for each jigsaw piece then selects which application to run for that piece. For the chosen application, they provide the inputs. When the inputs are all provided, the user can choose to run the simulations locally or remotely. For jobs that run remotely, the user can download and review previously run simulations. As seen, the widgets may subsequently interact with web services through HTTPS requests or with DesignSafe utilizing TAPIS Restful API through the RemoteService container.
 
 .. _architecture figComponentFront:
 
@@ -120,7 +120,7 @@ The component diagram for the back-end application shown in :numref:`architectur
 
 .. note::
 
-   ``femUQ.py`` is the back-end application for the EE-UQ, WE-UQ, Hydro-UQ, and the PBE applications. For R2D, the back-end application is ``R2D_Workflow.py``.
+   ``femUQ.py`` is the back-end application for the EE-UQ, WE-UQ, Hydro-UQ, and PBE applications. For R2D, the back-end application is ``R2D_Workflow.py``.
 
 The interaction between the front-end and the back-end is best understood by looking at the sequence of events when the user presses the ``Run`` button. As shown in the figure below, the UI application will first perform several steps:
 
@@ -132,13 +132,13 @@ The interaction between the front-end and the back-end is best understood by loo
 
 4. The UI will start the back-end application and spin until the back-end application returns with a completion signal.
 
-Now that the UI has handed over to the back-end application, the back-end application will perform the following:
+Now that the UI has been handed over to the back-end application, the back-end application will perform the following:
 
 5. Open the output file from the UI and parse it to obtain the name of the application to run and the arguments to run the application with. Open up another file, the ``WorkflowApplications.json`` file, contained with the application to determine, given the application name, the full path to the executable to be invoked. It will create in ``templatedir`` a file named ``workflow_driver``. When run by the UQ engine, this file is a script file that will generate a file named ``results.out``. ``results.out`` when the ``workflow_driver`` script has completed will contain a single line of space-separated values, one value for each EDP.
    
 6.  It will invoke each application with supplied arguments and an additional command-line argument, ``--getRV``, to inform the application to process the input file and create any additional random variables and input files needed before the workflow runs.
 
-7. It will then launch the UQengine. The UQ engine is typically a pre- and post-processor to an existing UQ engine.
+7. It will then launch the UQengine. The UQengine is typically a pre- and post-processor to an existing UQ engine.
 
 8. The pre-processor takes the JSON input file and creates an input file needed by the actual UQ engine.
 

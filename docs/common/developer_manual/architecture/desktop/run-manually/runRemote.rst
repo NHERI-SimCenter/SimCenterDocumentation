@@ -24,7 +24,7 @@ Prepare Input Files
 3. Upload the zipped ``input_data`` file and configuration file to "My Data" on the DesignSafe `Data Depot <https://www.designsafe-ci.org/data/browser/>`_.
 
 
-4. Upload the :download:`CreateLauncherTasks script <files/CreateLauncherTasks.py>` and a Jupyter notebook with commands for setting up the job on Tapis. You can use this example Jupyter notebook (:download:`run_rWHALE.ipynb <files/run_rWHALE.ipynb>`) as a template.
+4. Upload the :download:`CreateLauncherTasks script <files/CreateLauncherTasks.py>` and a Jupyter notebook with commands for setting up the job on Tapis. You can use this example Jupyter Notebook (:download:`run_rWHALE.ipynb <files/run_rWHALE.ipynb>`) as a template.
 
 On DesignSafe, the files should appear on Data Depot as:
 
@@ -38,10 +38,10 @@ On DesignSafe, the files should appear on Data Depot as:
 Run Job Through Jupyter
 ==========================
 
-This method uses Jupyter notebook to run the job, accessing Tapis CLI in the backend.
+This method uses Jupyter Notebook to run the job, accessing Tapis CLI in the backend.
 
 
-5. Click on the ``run_rWHALE.ipynb`` notebook, then click **Open in Jupyter**. You will be taken to a new page for editing the Jupyter notebook.
+5. Click on the ``run_rWHALE.ipynb`` notebook, then click **Open in Jupyter**. You will be taken to a new page for editing the Jupyter Notebook.
 
 
 .. figure:: figures/DS_jupyter.png
@@ -49,7 +49,7 @@ This method uses Jupyter notebook to run the job, accessing Tapis CLI in the bac
    :figclass: align-center
 
 
-6. Specify settings for running the job on Stampede2. Submit the job by running all cells in the Jupyter notebook (Cell > Run All).
+6. Specify settings for running the job on Stampede2. Submit the job by running all cells in the Jupyter Notebook (Cell > Run All).
 
 .. .. jsonschema:: App_Schema.json#/properties/runRemote
 
@@ -159,14 +159,14 @@ You will see an output in the Ubuntu window similar to the following.
       ``tapis jobs submit -F job.json``
 
 An ACCEPTED status indicates the job.json was valid, and e-mail alerts (if they were specified in job.json) will track
-the progress of the job. Also take note of the long hexadecimal ID (*job ID*) when you submit the job. This identifier can be
+the progress of the job. Also, take note of the long hexadecimal ID (*job ID*) when you submit the job. This identifier can be
 used to track progress and download results.
 
 11. To check on the status of a particular job, run the following command with the job ID:
 
       ``tapis jobs status <job ID>``
 
-12. Once the job has completed, the results can be downloaded either from the job archives (accessed from the Workspace on DesignSafe) or directly from Tapis, with the following command:
+12. Once the job has been completed, the results can be downloaded either from the job archives (accessed from the Workspace on DesignSafe) or directly from Tapis, with the following command:
 
       ``tapis jobs outputs download --progress <job ID string>``
 

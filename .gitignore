@@ -310,4 +310,7 @@ fmkExamples
 web/
 #examples
 _out
+docs_temp
+
+#Remove .vscode
 .vscode
