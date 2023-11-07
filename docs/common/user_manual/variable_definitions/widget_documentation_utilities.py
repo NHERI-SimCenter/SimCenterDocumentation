@@ -89,23 +89,25 @@ def _make_definition_list_item_from_parameter_data(
     )
 
 
-def _make_seealso_beginning():
-    string = "\n\n.. seealso::\n\n"
+def _make_seealso_beginning(start_space=""):
+    string = f"{start_space}" + ".. seealso::\n"
     return string
 
 
-def _make_link_reference_string(text: str, uri: str):
+def _make_link_reference_string(text: str, uri: str, start_space="\t"):
     if uri.lower().startswith("http"):
-        link = f"\t`{text} <{uri}>`_\n"
+        link = f"{start_space}" + f"`{text} <{uri}>`_\n"
     else:
-        link = f"\t:ref:`{text} <{uri}>`\n"
+        link = f"{start_space}" + f":ref:`{text} <{uri}>`\n"
     return link
 
 
-def _make_seealso(row: DocumentationForUserInputItem):
-    string = _make_link_reference_string(row.seealso_text, row.seealso_link)
+def _make_seealso(row: DocumentationForUserInputItem, start_space="\t"):
+    string = _make_link_reference_string(
+        row.seealso_text, row.seealso_link, start_space=start_space
+    )
     if _is_not_blank(row.seealso_description):
-        string += f"\t\t{row.seealso_description}\n"
+        string += f"{start_space}\t" + f"{row.seealso_description}\n"
     return string
 
 
@@ -133,7 +135,7 @@ def _make_list_of_strings_for_rst_seealso(
     return list_of_strings_seealso
 
 
-def _make_rst_file_for_widget(
+def _alternative_make_rst_file_for_widget(
     rst_file_path: Path,
     widget_name: str,
     widget_data: list[DocumentationForUserInputItem],
@@ -154,6 +156,45 @@ def _make_rst_file_for_widget(
         f.write("\n\n\n")
 
 
+def _make_rst_file_for_widget(
+    rst_file_path: Path,
+    widget_name: str,
+    widget_data: list[DocumentationForUserInputItem],
+):
+    list_of_strings_definition_list = []
+    list_of_strings_seealso = []
+    list_of_strings_seealso.append("\n")
+    list_of_strings_seealso.append(_make_seealso_beginning())
+    include_see_also = False
+    for input_item in widget_data:
+        if _is_not_blank(input_item.key_in_json_file):
+            list_of_strings_definition_list.append(
+                _make_definition_list_item_from_parameter_data(
+                    widget_name, input_item
+                )
+            )
+            if _is_not_blank(input_item.seealso_text):
+                list_of_strings_definition_list.append(
+                    _make_seealso_beginning(start_space="\t")
+                )
+                list_of_strings_definition_list.append(
+                    _make_seealso(input_item, start_space="\t\t")
+                )
+        else:
+            if _is_not_blank(input_item.seealso_text):
+                include_see_also = True
+                list_of_strings_seealso.append(_make_seealso(input_item))
+
+    with open(rst_file_path, "w+") as f:
+        f.write(_make_link_target_string(widget_name, "User Inputs"))
+        f.write("\n")
+        f.write(_make_page_title(widget_name))
+        f.write("\n\n".join(list_of_strings_definition_list))
+        if include_see_also:
+            f.write("\n".join(list_of_strings_seealso))
+        f.write("\n\n\n")
+
+
 def _read_one_csv_file(
     csv_file_name: Path,
 ) -> list[DocumentationForUserInputItem]:
@@ -170,8 +211,8 @@ def _read_widget_documentation_from_csv_files(
 ) -> dict[str, list[DocumentationForUserInputItem]]:
     all_widget_documentation_data = dict()
     for csv_file_name in csv_files_directory.glob("*.csv"):
-        widget_name = f"{csv_file_name.stem}"
         widget_documentation_data = _read_one_csv_file(csv_file_name)
+        widget_name = f"{csv_file_name.stem}"
         all_widget_documentation_data[widget_name] = widget_documentation_data
     return all_widget_documentation_data
 
