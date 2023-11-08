@@ -18,7 +18,13 @@ class DocumentationForUserInputItem:
     seealso_description: str
 
 
-def _top_level_string():
+class CommandLineArguments:
+    path_to_csv_files: Path
+    relative_path_to_rst_files: Path
+    toc_include_file_path: Path
+
+
+def _top_level_string() -> str:
     return "User Inputs"
 
 
@@ -29,7 +35,7 @@ def _make_page_title(title_text: str) -> str:
 def _make_link_target_string(
     widget_name: str,
     second_string: str,
-):
+) -> str:
     return f"\n.. _{widget_name} {second_string}:\n"
 
 
@@ -41,7 +47,7 @@ def _make_first_line_of_definition_list_item(
     input_item_display_name: str,
     input_item_optional: str,
     input_item_data_type: str,
-):
+) -> str:
     term_string = f"{input_item_display_name}"
     if _is_not_blank(input_item_optional):
         classifier_string = f"*{input_item_data_type}, optional*"
@@ -55,7 +61,7 @@ def _make_subsequent_lines_of_definition_list_item(
     input_item_default_value: str,
     input_item_constraints: str,
     input_item_name_in_json_file: str,
-):
+) -> str:
     definition_string_list = [f"\t{input_item_description}"]
     if _is_not_blank(input_item_default_value):
         definition_string_list.append(f"Default: {input_item_default_value}")
@@ -70,7 +76,7 @@ def _make_subsequent_lines_of_definition_list_item(
 def _make_definition_list_item_from_parameter_data(
     widget_name: str,
     input_item: DocumentationForUserInputItem,
-):
+) -> str:
     link_target_string = _make_link_target_string(
         widget_name, input_item.key_in_json_file
     )
@@ -96,7 +102,7 @@ def _make_definition_list_item_from_parameter_data(
     )
 
 
-def _make_seealso_beginning(start_space=""):
+def _make_seealso_beginning(start_space: str = "") -> str:
     string = f"{start_space}" + ".. seealso::\n"
     return string
 
@@ -104,8 +110,8 @@ def _make_seealso_beginning(start_space=""):
 def _make_link_reference_string(
     text: str,
     uri: str,
-    start_space="\t",
-):
+    start_space: str = "\t",
+) -> str:
     if uri.lower().startswith("http"):
         link = f"{start_space}" + f"`{text} <{uri}>`_\n"
     else:
@@ -115,8 +121,8 @@ def _make_link_reference_string(
 
 def _make_seealso(
     row: DocumentationForUserInputItem,
-    start_space="\t",
-):
+    start_space: str = "\t",
+) -> str:
     string = _make_link_reference_string(
         row.seealso_text, row.seealso_link, start_space=start_space
     )
@@ -129,7 +135,7 @@ def _make_rst_file_for_widget(
     rst_file_path: Path,
     widget_name: str,
     widget_data: list[DocumentationForUserInputItem],
-):
+) -> None:
     list_of_strings_definition_list = []
     list_of_strings_seealso = []
     list_of_strings_seealso.append("\n")
@@ -193,6 +199,8 @@ def _create_rst_files(
         list[DocumentationForUserInputItem],
     ],
 ) -> list[Path]:
+    if not (rst_files_directory_path.is_dir()):
+        rst_files_directory_path.mkdir(parents=True)
     rst_file_path_list = []
     widget_names = all_widget_documentation_data.keys()
     for widget_name in widget_names:
@@ -208,7 +216,7 @@ def _create_rst_files(
 def _create_toc_include_file(
     toc_include_file_path: Path,
     rst_file_path_list: list[Path],
-):
+) -> None:
     with open(toc_include_file_path, "w+") as f:
         f.write(_make_page_title(_top_level_string()))
         f.write(
@@ -234,7 +242,7 @@ def main(
     csv_files_directory_path: Path,
     rst_files_directory_path: Path,
     toc_include_file_path: Path,
-):
+) -> None:
     print(
         "\nINFO: Reading user interface widget documentation "
         f"from csv files in '{csv_files_directory_path}'."
@@ -259,7 +267,7 @@ def main(
     )
 
 
-def _check_path_to_csv_files(csv_files_directory: Path):
+def _check_path_to_csv_files(csv_files_directory: Path) -> None:
     try:
         csv_files_directory.is_dir()
     except:
@@ -272,7 +280,7 @@ def _check_path_to_csv_files(csv_files_directory: Path):
             )
 
 
-def _handle_arguments(command_line_arguments):
+def _handle_arguments(command_line_arguments: CommandLineArguments):
     csv_files_directory = command_line_arguments.path_to_csv_files
     _check_path_to_csv_files(csv_files_directory)
 
@@ -282,7 +290,7 @@ def _handle_arguments(command_line_arguments):
     return csv_files_directory, rst_files_directory, toc_include_file_path
 
 
-def _create_parser():
+def _create_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(
         description=(
             "Generate rst files documenting user inputs in SimCenter graphical"
@@ -335,7 +343,8 @@ def _print_end_message():
 if __name__ == "__main__":
     _print_start_message()
     parser = _create_parser()
-    command_line_arguments = parser.parse_args()
+    command_line_arguments = CommandLineArguments()
+    parser.parse_args(namespace=command_line_arguments)
     (
         csv_files_directory_path,
         rst_files_directory_path,
