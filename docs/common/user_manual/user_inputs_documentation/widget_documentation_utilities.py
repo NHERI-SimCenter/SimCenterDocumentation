@@ -18,6 +18,10 @@ class DocumentationForUserInputItem:
     seealso_description: str
 
 
+def _top_level_string():
+    return "User Inputs"
+
+
 def _make_page_title(title_text: str) -> str:
     return "".join([title_text, "\n", "=" * len(title_text), "\n\n"])
 
@@ -26,7 +30,7 @@ def _make_link_target_string(
     widget_name: str,
     second_string: str,
 ):
-    return f".. _{widget_name} {second_string}:\n"
+    return f"\n.. _{widget_name} {second_string}:\n"
 
 
 def _is_not_blank(string: str) -> bool:
@@ -151,10 +155,10 @@ def _make_rst_file_for_widget(
                 list_of_strings_seealso.append(_make_seealso(input_item))
 
     with open(rst_file_path, "w+") as f:
-        f.write(_make_link_target_string(widget_name, "User Inputs"))
+        f.write(_make_link_target_string(widget_name, _top_level_string()))
         f.write("\n")
         f.write(_make_page_title(widget_name))
-        f.write("\n\n".join(list_of_strings_definition_list))
+        f.write("\n".join(list_of_strings_definition_list))
         if include_see_also:
             f.write("\n".join(list_of_strings_seealso))
         f.write("\n\n\n")
@@ -206,19 +210,23 @@ def _create_toc_include_file(
     rst_file_path_list: list[Path],
 ):
     with open(toc_include_file_path, "w+") as f:
-        f.write(_make_page_title("User Inputs"))
+        f.write(_make_page_title(_top_level_string()))
+        f.write(
+            "The following pages define the inputs to be provided by users in the graphical interface of SimCenter applications\n\n"
+        )
         f.write(
             "\n".join(
                 [
                     ".. toctree::",
                     "   :maxdepth: 2",
-                    "   :caption: User Inputs:",
-                    "\n",
+                    "   :caption: Definition of User Inputs\n",
                 ]
             )
         )
         for rst_file_path in rst_file_path_list:
-            f.write(f"\n   {rst_file_path}")
+            f.write(
+                f"\n   {rst_file_path.relative_to(rst_file_path.parent.parent)}"
+            )
 
 
 def main(
@@ -227,25 +235,27 @@ def main(
     toc_include_file_path: Path,
 ):
     print(
-        "\nReading user interface widget documentation "
+        "\nINFO: Reading user interface widget documentation "
         f"from csv files in '{csv_files_directory_path}'."
     )
     all_widget_documentation_data = _read_widget_documentation_from_csv_files(
         csv_files_directory_path
     )
 
-    print(f"Creating rst files in '{rst_files_directory_path}'.")
+    print(f"\nINFO: Creating rst files in '{rst_files_directory_path}'.")
     rst_file_path_list = _create_rst_files(
         rst_files_directory_path, all_widget_documentation_data
     )
 
     print(
-        f"Building the file '{toc_include_file_path}' that makes use of the "
-        "created rst files. \n\nAdd the relative path to "
-        f"'{toc_include_file_path}' to the table of contents of the tool "
-        "documentation to see the user input documentation pages."
+        f"\nINFO: Building the file '{toc_include_file_path}' that includes the "
+        "created rst files."
     )
     _create_toc_include_file(toc_include_file_path, rst_file_path_list)
+    print(
+        f"\n\nNOTE: Ensure that the relative path to '{toc_include_file_path}'"
+        " is added to the table of contents of the tool documentation."
+    )
 
 
 def _check_path_to_csv_files(csv_files_directory: Path):
@@ -260,35 +270,27 @@ def _check_path_to_csv_files(csv_files_directory: Path):
                 " exist"
             )
 
+    # def _check_path_to_rst_files(rst_files_directory: Path):
+    # if not rst_files_directory.is_relative_to(Path(__file__).parent):
+    #     raise ValueError(
+    #         "Expected a directory that is relative to the parent of this"
+    #         f" python script, i.e., {Path(__file__).parent}"
+    #         f"\nbut got: {rst_files_directory}"
+    #     )
 
-def _check_path_to_rst_files(rst_files_directory: Path):
-    if not rst_files_directory.is_relative_to(Path(__file__).parent):
-        raise ValueError(
-            "Expected a directory that is relative to the parent of this"
-            f" python script, i.e., {Path(__file__).parent}"
-        )
-
-    if not rst_files_directory.is_dir():
-        rst_files_directory.mkdir(parents=True)
+    # if not rst_files_directory.is_dir():
+    #     rst_files_directory.mkdir(parents=True)
+    # pass
 
 
 def _handle_arguments(command_line_arguments):
-    csv_files_directory = command_line_arguments.path_to_csv_files.resolve()
+    csv_files_directory = command_line_arguments.path_to_csv_files
     _check_path_to_csv_files(csv_files_directory)
 
-    rst_files_directory = (
-        command_line_arguments.relative_path_to_rst_files.resolve()
-    )
-    _check_path_to_rst_files(rst_files_directory)
-    # Get the path of 'rst_files_directory' relative to the directory
-    # containing this python module
-    rst_files_directory = rst_files_directory.relative_to(
-        Path(__file__).parent
-    )
+    rst_files_directory = command_line_arguments.relative_path_to_rst_files
+    # _check_path_to_rst_files(rst_files_directory)
 
-    toc_include_file_path = (
-        command_line_arguments.toc_include_file_path.resolve()
-    )
+    toc_include_file_path = command_line_arguments.toc_include_file_path
     return csv_files_directory, rst_files_directory, toc_include_file_path
 
 
@@ -305,6 +307,7 @@ def _create_parser():
         type=Path,
     )
     parser.add_argument(
+        "-r",
         "--relative_path_to_rst_files",
         help=(
             "directory where rst files for widget documentation should be"
@@ -315,6 +318,7 @@ def _create_parser():
         type=Path,
     )
     parser.add_argument(
+        "-t",
         "--toc_include_file_path",
         help=(
             "path to the file that is included in the table of contents of the"
@@ -326,7 +330,22 @@ def _create_parser():
     return parser
 
 
+def _print_start_message():
+    msg = f"'{Path(__file__).name}' started running"
+    print()
+    print("=" * len(msg))
+    print(msg)
+
+
+def _print_end_message():
+    msg = f"'{Path(__file__).name}' finished running"
+    print()
+    print(msg)
+    print("=" * len(msg))
+
+
 if __name__ == "__main__":
+    _print_start_message()
     parser = _create_parser()
     command_line_arguments = parser.parse_args()
     (
@@ -334,11 +353,9 @@ if __name__ == "__main__":
         rst_files_directory_path,
         toc_include_file_path,
     ) = _handle_arguments(command_line_arguments)
-
     main(
         csv_files_directory_path=csv_files_directory_path,
         rst_files_directory_path=rst_files_directory_path,
         toc_include_file_path=toc_include_file_path,
     )
-
-    print("\nDone!")
+    _print_end_message()
