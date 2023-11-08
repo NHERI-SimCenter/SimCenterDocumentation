@@ -18,11 +18,54 @@ class DocumentationForUserInputItem:
     seealso_description: str
 
 
+# @dataclass
+# class DefinitionListItem:
+#     term: str
+#     definition_block: str
+#     classifier: str = ""
+
+
+# def _make_definition_list_item_rst_directive(
+#     definition_list_item: DefinitionListItem,
+#     start_space: str = "",
+# ):
+#     # reference:
+#     # https://docutils.sourceforge.io/docs/ref/rst/restructuredtext.html#definition-lists
+#     term = definition_list_item.term
+#     definition = definition_list_item.definition_block
+#     classifier = definition_list_item.classifier
+#     classifier_delimiter = ""
+
+#     if _is_not_blank(classifier):
+#         classifier_delimiter = " : "
+#         classifier = "*" + classifier + "*"
+#     term_line = f"{start_space}{term}{classifier_delimiter}{classifier}"
+#     definition_block = f"\t{start_space}{definition}"
+#     definition_list_item_rst_directive = "\n".join(
+#         [term_line, definition_block]
+#     )
+#     return definition_list_item_rst_directive
+
+
+# def _make_definition_list_rst_directive(
+#     list_of_definitions: list[DefinitionListItem],
+# ):
+#     definition_list_rst_directive = []
+#     for definition in list_of_definitions:
+#         definition_list_rst_directive.append(
+#             _make_definition_list_item_rst_directive(definition)
+#         )
+#     return "\n\n".join(definition_list_rst_directive)
+
+
 def _make_page_title(title_text: str) -> str:
     return "".join([title_text, "\n", "=" * len(title_text), "\n\n"])
 
 
-def _make_link_target_string(widget_name: str, second_string: str):
+def _make_link_target_string(
+    widget_name: str,
+    second_string: str,
+):
     return f".. _{widget_name} {second_string}:\n"
 
 
@@ -94,7 +137,11 @@ def _make_seealso_beginning(start_space=""):
     return string
 
 
-def _make_link_reference_string(text: str, uri: str, start_space="\t"):
+def _make_link_reference_string(
+    text: str,
+    uri: str,
+    start_space="\t",
+):
     if uri.lower().startswith("http"):
         link = f"{start_space}" + f"`{text} <{uri}>`_\n"
     else:
@@ -102,7 +149,10 @@ def _make_link_reference_string(text: str, uri: str, start_space="\t"):
     return link
 
 
-def _make_seealso(row: DocumentationForUserInputItem, start_space="\t"):
+def _make_seealso(
+    row: DocumentationForUserInputItem,
+    start_space="\t",
+):
     string = _make_link_reference_string(
         row.seealso_text, row.seealso_link, start_space=start_space
     )
@@ -111,49 +161,50 @@ def _make_seealso(row: DocumentationForUserInputItem, start_space="\t"):
     return string
 
 
-def _make_list_of_strings_for_rst_definition_list(
-    widget_name: str, widget_data: list[DocumentationForUserInputItem]
-):
-    list_of_strings_definition_list = []
-    for input_item in widget_data:
-        if _is_not_blank(input_item.key_in_json_file):
-            list_of_strings_definition_list.append(
-                _make_definition_list_item_from_parameter_data(
-                    widget_name, input_item
-                )
-            )
-    return list_of_strings_definition_list
+# def _make_list_of_strings_for_rst_definition_list(
+#     widget_name: str,
+#     widget_data: list[DocumentationForUserInputItem],
+# ):
+#     list_of_strings_definition_list = []
+#     for input_item in widget_data:
+#         if _is_not_blank(input_item.key_in_json_file):
+#             list_of_strings_definition_list.append(
+#                 _make_definition_list_item_from_parameter_data(
+#                     widget_name, input_item
+#                 )
+#             )
+#     return list_of_strings_definition_list
 
 
-def _make_list_of_strings_for_rst_seealso(
-    widget_data: list[DocumentationForUserInputItem],
-):
-    list_of_strings_seealso = []
-    for input_item in widget_data:
-        if _is_not_blank(input_item.seealso_text):
-            list_of_strings_seealso.append(_make_seealso(input_item))
-    return list_of_strings_seealso
+# def _make_list_of_strings_for_rst_seealso(
+#     widget_data: list[DocumentationForUserInputItem],
+# ):
+#     list_of_strings_seealso = []
+#     for input_item in widget_data:
+#         if _is_not_blank(input_item.seealso_text):
+#             list_of_strings_seealso.append(_make_seealso(input_item))
+#     return list_of_strings_seealso
 
 
-def _alternative_make_rst_file_for_widget(
-    rst_file_path: Path,
-    widget_name: str,
-    widget_data: list[DocumentationForUserInputItem],
-):
-    list_of_strings_definition_list = (
-        _make_list_of_strings_for_rst_definition_list(widget_name, widget_data)
-    )
-    list_of_strings_seealso = _make_list_of_strings_for_rst_seealso(
-        widget_data
-    )
-    with open(rst_file_path, "w+") as f:
-        f.write(_make_link_target_string(widget_name, "User Inputs"))
-        f.write("\n")
-        f.write(_make_page_title(widget_name))
-        f.write("\n\n".join(list_of_strings_definition_list))
-        f.write(_make_seealso_beginning())
-        f.write("\n".join(list_of_strings_seealso))
-        f.write("\n\n\n")
+# def _alternative_make_rst_file_for_widget(
+#     rst_file_path: Path,
+#     widget_name: str,
+#     widget_data: list[DocumentationForUserInputItem],
+# ):
+#     list_of_strings_definition_list = (
+#         _make_list_of_strings_for_rst_definition_list(widget_name, widget_data)
+#     )
+#     list_of_strings_seealso = _make_list_of_strings_for_rst_seealso(
+#         widget_data
+#     )
+#     with open(rst_file_path, "w+") as f:
+#         f.write(_make_link_target_string(widget_name, "User Inputs"))
+#         f.write("\n")
+#         f.write(_make_page_title(widget_name))
+#         f.write("\n\n".join(list_of_strings_definition_list))
+#         f.write(_make_seealso_beginning())
+#         f.write("\n".join(list_of_strings_seealso))
+#         f.write("\n\n\n")
 
 
 def _make_rst_file_for_widget(
@@ -209,7 +260,7 @@ def _read_one_csv_file(
 def _read_widget_documentation_from_csv_files(
     csv_files_directory: Path,
 ) -> dict[str, list[DocumentationForUserInputItem]]:
-    all_widget_documentation_data = dict()
+    all_widget_documentation_data = {}
     for csv_file_name in csv_files_directory.glob("*.csv"):
         widget_documentation_data = _read_one_csv_file(csv_file_name)
         widget_name = f"{csv_file_name.stem}"
@@ -220,7 +271,8 @@ def _read_widget_documentation_from_csv_files(
 def _create_rst_files(
     rst_files_directory_path: Path,
     all_widget_documentation_data: dict[
-        str, list[DocumentationForUserInputItem]
+        str,
+        list[DocumentationForUserInputItem],
     ],
 ) -> list[Path]:
     rst_file_path_list = []
