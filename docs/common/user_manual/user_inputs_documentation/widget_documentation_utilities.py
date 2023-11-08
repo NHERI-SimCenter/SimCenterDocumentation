@@ -331,6 +331,7 @@ def _print_start_message():
     print()
     print("=" * len(msg))
     print(msg)
+    print()
 
 
 def _print_end_message():
@@ -351,8 +352,8 @@ if __name__ == "__main__":
         toc_include_file_path,
     ) = _handle_arguments(command_line_arguments)
     main(
-        csv_files_directory_path=csv_files_directory_path,
-        rst_files_directory_path=rst_files_directory_path,
-        toc_include_file_path=toc_include_file_path,
+        csv_files_directory_path,
+        rst_files_directory_path,
+        toc_include_file_path,
     )
     _print_end_message()
