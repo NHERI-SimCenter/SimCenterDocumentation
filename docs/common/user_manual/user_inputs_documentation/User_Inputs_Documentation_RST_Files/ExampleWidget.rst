@@ -1,11 +1,11 @@
 
-.. _Example Widget User Inputs:
+.. _ExampleWidget User Inputs:
 
-Example Widget
-==============
+ExampleWidget
+=============
 
 
-.. _Example Widget compound_widget:
+.. _ExampleWidget compound_widget:
 
 Compound Widget : *compound widget inputs*
 	Follow the link for a description of the inputs to Compound Widget
@@ -18,7 +18,7 @@ Compound Widget : *compound widget inputs*
 			User inputs for Compound Widget
 
 
-.. _Example Widget sample_size:
+.. _ExampleWidget sample_size:
 
 Sample Size : *int*
 	Number of samples from the posterior probability distribution
@@ -30,7 +30,7 @@ Sample Size : *int*
 	Key in JSON file: sample_size
 
 
-.. _Example Widget seed:
+.. _ExampleWidget seed:
 
 Seed : *int*
 	State of pseudo-random number generator for reproducibility
@@ -45,7 +45,7 @@ Seed : *int*
 			Compare with this parameter too
 
 
-.. _Example Widget calibration_data_file:
+.. _ExampleWidget calibration_data_file:
 
 Calibration Data File : *str*
 	Full path to the file containing the calibration data
@@ -53,7 +53,7 @@ Calibration Data File : *str*
 	Key in JSON file: calibration_data_file
 
 
-.. _Example Widget log_likelihood_script:
+.. _ExampleWidget log_likelihood_script:
 
 Log Likelihood Script : *str, optional*
 	Full path to the file containing the log-likelihood function
@@ -68,7 +68,7 @@ Log Likelihood Script : *str, optional*
 			This is also relevant to this parameter and adds some context 
 
 
-.. _Example Widget dummy:
+.. _ExampleWidget dummy:
 
 Dummy Variable : *NonNegativeInt, optional*
 	This is a dummy variable

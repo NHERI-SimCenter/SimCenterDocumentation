@@ -7,5 +7,5 @@ The following pages define the inputs to be provided by users in the graphical i
    :maxdepth: 2
    :caption: Definition of User Inputs
 
+   User_Inputs_Documentation_RST_Files/ExampleWidget.rst
    User_Inputs_Documentation_RST_Files/UCSD_InputTMCMC.rst
-   User_Inputs_Documentation_RST_Files/Example Widget.rst
