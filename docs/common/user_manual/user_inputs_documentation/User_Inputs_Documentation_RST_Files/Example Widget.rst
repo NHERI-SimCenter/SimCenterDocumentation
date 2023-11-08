@@ -14,7 +14,7 @@ Compound Widget : *compound widget inputs*
 
 	.. seealso::
 
-		:ref:`Compound Widget <UCSD_TMCMC User Inputs>`
+		:ref:`Compound Widget <UCSD_InputTMCMC User Inputs>`
 			User inputs for Compound Widget
 
 
@@ -41,7 +41,7 @@ Seed : *int*
 
 	.. seealso::
 
-		:ref:`seed <UCSD_TMCMC seed>`
+		:ref:`seed <UCSD_InputTMCMC seed>`
 			Compare with this parameter too
 
 
@@ -64,7 +64,7 @@ Log Likelihood Script : *str, optional*
 
 	.. seealso::
 
-		:ref:`log_likelihood_script <UCSD_TMCMC log_likelihood_script>`
+		:ref:`log_likelihood_script <UCSD_InputTMCMC log_likelihood_script>`
 			This is also relevant to this parameter and adds some context 
 
 
