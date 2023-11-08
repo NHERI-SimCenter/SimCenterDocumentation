@@ -212,7 +212,8 @@ def _create_toc_include_file(
     with open(toc_include_file_path, "w+") as f:
         f.write(_make_page_title(_top_level_string()))
         f.write(
-            "The following pages define the inputs to be provided by users in the graphical interface of SimCenter applications\n\n"
+            "The following pages define the inputs to be provided by users in "
+            "the graphical interface of SimCenter applications\n\n"
         )
         f.write(
             "\n".join(
@@ -248,8 +249,8 @@ def main(
     )
 
     print(
-        f"\nINFO: Building the file '{toc_include_file_path}' that includes the "
-        "created rst files."
+        f"\nINFO: Building the file '{toc_include_file_path}' that includes "
+        "the created rst files."
     )
     _create_toc_include_file(toc_include_file_path, rst_file_path_list)
     print(
@@ -270,25 +271,12 @@ def _check_path_to_csv_files(csv_files_directory: Path):
                 " exist"
             )
 
-    # def _check_path_to_rst_files(rst_files_directory: Path):
-    # if not rst_files_directory.is_relative_to(Path(__file__).parent):
-    #     raise ValueError(
-    #         "Expected a directory that is relative to the parent of this"
-    #         f" python script, i.e., {Path(__file__).parent}"
-    #         f"\nbut got: {rst_files_directory}"
-    #     )
-
-    # if not rst_files_directory.is_dir():
-    #     rst_files_directory.mkdir(parents=True)
-    # pass
-
 
 def _handle_arguments(command_line_arguments):
     csv_files_directory = command_line_arguments.path_to_csv_files
     _check_path_to_csv_files(csv_files_directory)
 
     rst_files_directory = command_line_arguments.relative_path_to_rst_files
-    # _check_path_to_rst_files(rst_files_directory)
 
     toc_include_file_path = command_line_arguments.toc_include_file_path
     return csv_files_directory, rst_files_directory, toc_include_file_path
