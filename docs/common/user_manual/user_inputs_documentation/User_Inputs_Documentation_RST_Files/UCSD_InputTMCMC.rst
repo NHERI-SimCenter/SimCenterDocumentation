@@ -1,11 +1,11 @@
 
-.. _UCSD_TMCMC User Inputs:
+.. _UCSD_InputTMCMC User Inputs:
 
-UCSD_TMCMC
-==========
+UCSD_InputTMCMC
+===============
 
 
-.. _UCSD_TMCMC sample_size:
+.. _UCSD_InputTMCMC sample_size:
 
 Sample Size : *str*
 	Number of samples from the posterior probability distribution
@@ -13,7 +13,7 @@ Sample Size : *str*
 	Key in JSON file: sample_size
 
 
-.. _UCSD_TMCMC seed:
+.. _UCSD_InputTMCMC seed:
 
 Seed : *PositiveInt*
 	State of pseudo-random number generator for reproducibility
@@ -21,7 +21,7 @@ Seed : *PositiveInt*
 	Key in JSON file: seed
 
 
-.. _UCSD_TMCMC calibration_data_file:
+.. _UCSD_InputTMCMC calibration_data_file:
 
 Calibration Data File : *str*
 	Full path to the file containing the calibration data
@@ -33,7 +33,7 @@ Calibration Data File : *str*
 		`Calibration data file <https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/UCSD_UQ_TMCMC.html#usage>`_
 
 
-.. _UCSD_TMCMC log_likelihood_script:
+.. _UCSD_InputTMCMC log_likelihood_script:
 
 Log Likelihood Script : *str, optional*
 	Full path to the file containing the log-likelihood function
