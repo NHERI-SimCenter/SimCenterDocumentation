@@ -227,21 +227,23 @@ def main(
     toc_include_file_path: Path,
 ):
     print(
-        f"Reading user interface widget documentation "
-        "from csv files in {csv_files_directory}"
+        "\nReading user interface widget documentation "
+        f"from csv files in '{csv_files_directory_path}'."
     )
     all_widget_documentation_data = _read_widget_documentation_from_csv_files(
         csv_files_directory_path
     )
 
-    print(f"Creating rst files in {rst_files_directory_path}")
+    print(f"Creating rst files in '{rst_files_directory_path}'.")
     rst_file_path_list = _create_rst_files(
         rst_files_directory_path, all_widget_documentation_data
     )
 
     print(
-        f"Building the file '{toc_include_file_path}' that appropriately"
-        " includes the generated rst files"
+        f"Building the file '{toc_include_file_path}' that makes use of the "
+        "created rst files. \n\nAdd the relative path to "
+        f"'{toc_include_file_path}' to the table of contents of the tool "
+        "documentation to see the user input documentation pages."
     )
     _create_toc_include_file(toc_include_file_path, rst_file_path_list)
 
@@ -309,7 +311,7 @@ def _create_parser():
             " written, the path to this directory is specified relative to the"
             " directory containing this python script"
         ),
-        default="Widget_RST_Files",
+        default="User_Inputs_Documentation_RST_Files",
         type=Path,
     )
     parser.add_argument(
@@ -318,7 +320,7 @@ def _create_parser():
             "path to the file that is included in the table of contents of the"
             " SimCenter application documentation"
         ),
-        default="WidgetTables.rst",
+        default="User_Input_Documentation_Tables.rst",
         type=Path,
     )
     return parser
@@ -339,4 +341,4 @@ if __name__ == "__main__":
         toc_include_file_path=toc_include_file_path,
     )
 
-    print("Done!")
+    print("\nDone!")
