@@ -7,6 +7,7 @@ sys.path.append(str(Path(__file__).parent))
 
 from widget_documentation_utilities import (
     DocumentationForUserInputItem,
+    _is_not_blank,
     _print_end_message,
     _print_start_message,
 )
@@ -30,10 +31,11 @@ def _get_list_of_names_of_widgets_to_be_documented(
     set_of_widget_names_to_be_documented = set()
     with open(file_with_widget_names, "r", encoding="utf-8") as f:
         for line in f:
-            line = line.split("\\")[0].strip()
-            if not line.startswith("#"):
-                path = Path(line)
-                set_of_widget_names_to_be_documented.add(path.stem)
+            if _is_not_blank(line):
+                line = line.split("\\")[0].strip()
+                if not line.startswith("#"):
+                    path = Path(line)
+                    set_of_widget_names_to_be_documented.add(path.stem)
     return list(set_of_widget_names_to_be_documented)
 
 
@@ -44,7 +46,7 @@ def _make_one_csv_documentation_starter_file(
     with open(csv_file_name, "w") as f:
         f.write(header)
         f.write("\n")
-    print(f"Created documentation starter file '{csv_file_name}'")
+    print(f"STATUS: Created documentation starter file '{csv_file_name}'")
 
 
 def _make_csv_documentation_starter_files(
@@ -59,7 +61,9 @@ def _make_csv_documentation_starter_files(
             csv_file_name.touch()
             _make_one_csv_documentation_starter_file(csv_file_name, header)
             counter += 1
-    print(f"\nCreated {counter} new csv documentation starter file(s).\n")
+    print(
+        f"\nINFO: Created {counter} new csv documentation starter file(s).\n"
+    )
 
 
 def _count_lines_in_file(file_name: str) -> int:
@@ -89,7 +93,7 @@ def main(
         _get_list_of_names_of_widgets_to_be_documented(file_with_widget_names)
     )
     print(
-        f"\nFound {len(list_of_widget_names_to_be_documented)} "
+        f"\nINFO: Found {len(list_of_widget_names_to_be_documented)} "
         f"widgets to be documented in '{file_with_widget_names}'.\n"
     )
     _make_csv_documentation_starter_files(
@@ -101,8 +105,8 @@ def main(
         total_number_of_documentation_files,
     ) = _count_of_documented_widgets(csv_files_directory_path)
     print(
-        f"\nFound {total_number_of_documentation_files} documentation file(s) "
-        f"in '{csv_files_directory_path}' "
+        f"\nINFO: Found {total_number_of_documentation_files} documentation "
+        f"file(s) in '{csv_files_directory_path}' "
         f"out of which {number_of_documentation_files_with_content} file(s) "
         "had some documentation content.\n"
     )
