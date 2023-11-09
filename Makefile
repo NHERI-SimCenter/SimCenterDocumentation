@@ -185,6 +185,6 @@ starter_files:
 	@echo "\nRunning the following command to create starter csv files for user input documentation:\n"
 	$(PYTHON) \
 	$(USER_INPUT_DOC_DIR)/widget_documentation_starter_file_creation_utilities.py \
-	$(USER_INPUT_DOC_DIR)/widgets_to_be_included.txt \
+	$(USER_INPUT_DOC_DIR)/widget_header_files_list.txt \
 	-c $(USER_INPUT_DOC_DIR)/User_Inputs_Documentation_CSV_Files
 	@echo "\n'make starter_files' complete.\n"
