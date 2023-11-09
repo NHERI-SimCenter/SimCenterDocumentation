@@ -1,0 +1,120 @@
+# from Workflow.pri in quoFEM:
+# HEADERS += $$PWD/UQ/UQ_EngineSelection.h \
+    $$PWD/ANALYSIS/CustomPySimulation.h \
+    $$PWD/ANALYSIS/SurrogateSimulation.h \
+    $$PWD/SIM/CustomPy.h \
+    $$PWD/SIM/SurrogateGP.h \
+    # $$PWD/UQ/UQ_Results.h \
+    # $$PWD/UQ/UQ_Engine.h \
+    $$PWD/UQ/NoneEngine.h \
+    $$PWD/UQ/ucsd/UCSD_InputBayesianCalibration.h \
+    $$PWD/UQ/ucsd/UCSD_InputHierarchicalBayesian.h \
+    $$PWD/UQ/ucsd/UCSD_InputTMCMC.h \
+    # $$PWD/UQ/UQ_Method.h \
+    # $$PWD/UQ/uqpy/UQpyEngine.h \
+    # $$PWD/UQ/customUQ/CustomUQ_Results.h \
+    # $$PWD/UQ/customUQ/UQ_JsonEngine.h \
+    # $$PWD/UQ/common/ResultsDataChart.h \
+    # $$PWD/UQ/dakota/DakotaEngine.h \
+    $$PWD/UQ/dakota/DakotaInputSampling.h \
+    # $$PWD/UQ/dakota/DakotaResultsSampling.h \
+    $$PWD/UQ/dakota/MonteCarloInputWidget.h \
+    $$PWD/UQ/dakota/MultiFidelityMonteCarlo.h \
+    $$PWD/UQ/dakota/LatinHypercubeInputWidget.h \
+    $$PWD/UQ/dakota/ImportanceSamplingInputWidget.h \
+    $$PWD/UQ/dakota/GaussianProcessInputWidget.h \
+    $$PWD/UQ/dakota/PCEInputWidget.h \
+    $$PWD/UQ/dakota/DakotaInputBayesianCalibration.h \
+    # $$PWD/UQ/dakota/DakotaResultsBayesianCalibration.h \
+    # $$PWD/UQ/dakota/DakotaResultsCalibration.h \
+    $$PWD/UQ/dakota/DakotaInputCalibration.h \
+    $$PWD/UQ/dakota/DakotaInputSensitivity.h \
+    # $$PWD/UQ/dakota/DakotaResultsSensitivity.h \
+    $$PWD/UQ/dakota/DakotaInputReliability.h \
+    # $$PWD/UQ/dakota/DakotaResultsReliability.h \
+    $$PWD/UQ/dakota/LocalReliabilityWidget.h \
+    $$PWD/UQ/dakota/GlobalReliabilityWidget.h \
+    $$PWD/UQ/dakota/DakotaInputOptimization.h\
+    # $$PWD/UQ/dakota/DakotaResultsOptimization.h\
+    $$PWD/UQ/simcenterUQ/PLoMSimuWidget.h \
+    # $$PWD/UQ/ucsd/UCSD_Engine.h \
+    # $$PWD/UQ/ucsd/UCSD_Results.h \
+    # $$PWD/UQ/ucsd/BayesPlots.h \
+    # $$PWD/UQ/simcenterUQ/SimCenterUQEngine.h \
+    $$PWD/UQ/simcenterUQ/SimCenterUQInputSampling.h \
+    # $$PWD/UQ/simcenterUQ/SimCenterUQResultsSampling.h \
+    # $$PWD/UQ/simcenterUQ/SimCenterUQResultsMFSampling.h \
+    $$PWD/UQ/simcenterUQ/SimCenterUQInputSensitivity.h \
+    # $$PWD/UQ/simcenterUQ/SimCenterUQResultsSensitivity.h \
+    $$PWD/UQ/simcenterUQ/SimCenterUQInputSurrogate.h \
+    # $$PWD/UQ/simcenterUQ/SimCenterUQResultsSurrogate.h \
+    $$PWD/UQ/simcenterUQ/SurrogateNoDoEInputWidget.h \
+    $$PWD/UQ/simcenterUQ/SurrogateDoEInputWidget.h \
+    $$PWD/UQ/simcenterUQ/SurrogateMFInputWidget.h \
+    $$PWD/UQ/simcenterUQ/PLoMInputWidget.h \
+    $$PWD/UQ/simcenterUQ/SimCenterUQInputPLoM.h \
+    # $$PWD/UQ/simcenterUQ/SimCenterUQResultsPLoM.h \
+    $$PWD/UQ/simcenterUQ/ImportSamplesWidget.h \
+    $$PWD/UQ/simcenterUQ/MonteCarloInputSimWidget.h \
+    $$PWD/UQ/simcenterUQ/MultiFidelitySimWidget.h \
+    # $$PWD/UQ/uqpy/UQpyResultsSubsetSim.h \
+    $$PWD/UQ/uqpy/UQpySubsetSimulation.h \
+    # $$PWD/WORKFLOW/MainWindowWorkflowApp.h \
+    # $$PWD/WORKFLOW/WorkflowAppWidget.h \
+    # $$PWD/WORKFLOW/SimCenterComponentSelection.h \
+    # $$PWD/WORKFLOW/CustomizedItemModel.h \
+    # $$PWD/WORKFLOW/JsonConfiguredWidget.h \
+    # $$PWD/WORKFLOW/SimCenterComboBox.h \
+    # $$PWD/WORKFLOW/SimCenterFileInput.h \
+    # $$PWD/WORKFLOW/SimCenterRVLineEdit.h \
+    # $$PWD/WORKFLOW/SimCenterSpinBox.h \
+    # $$PWD/WORKFLOW/SimCenterDoubleSpinBox.h \
+    # $$PWD/WORKFLOW/SimCenterLineEdit.h \
+    # $$PWD/WORKFLOW/Utils/ExampleDownloader.h \
+    # $$PWD/WORKFLOW/Utils/NetworkDownloadManager.h \
+    # $$PWD/WORKFLOW/ModelViewItems/CheckableTreeModel.h \
+    # $$PWD/WORKFLOW/ModelViewItems/SimCenterTreeView.h \
+    # $$PWD/WORKFLOW/ModelViewItems/TreeItem.h \
+    # $$PWD/WORKFLOW/ModelViewItems/TreeViewStyle.h \ 
+    # $$PWD/WORKFLOW/ModelViewItems/LayerTreeModel.h \
+    # $$PWD/WORKFLOW/ModelViewItems/LayerTreeItem.h \    
+    $$PWD/SIM/OpenSeesBuildingModel.h \
+    $$PWD/SIM/MDOF_BuildingModel.h \
+    $$PWD/SIM/MDOF_LU.h \    
+    # $$PWD/SIM/ReadWriteRVJSON.h \
+    $$PWD/SIM/SteelBuildingModel.h \
+    $$PWD/SIM/ConcreteBuildingModel.h \
+    # $$PWD/SIM/SIM_Selection.h \
+    $$PWD/SIM/InputWidgetBIM.h \
+    # $$PWD/SIM/OpenSeesParser.h \
+    # $$PWD/ANALYSIS/FEA_Selection.h \
+    $$PWD/ANALYSIS/InputWidgetOpenSeesAnalysis.h \
+    # $$PWD/EXECUTION/RunLocalWidget.h \
+    # $$PWD/EXECUTION/AgaveCurl.h \
+    # $$PWD/EXECUTION/Application.h \
+    # $$PWD/EXECUTION/LocalApplication.h \
+    # $$PWD/EXECUTION/RemoteApplication.h \
+    # $$PWD/EXECUTION/RemoteService.h \
+    # $$PWD/EXECUTION/RemoteJobManager.h \
+    # $$PWD/EXECUTION/UserDefinedApplication.h \
+    $$PWD/EVENTS/ExistingSimCenterEvents.h \
+    $$PWD/EVENTS/InputWidgetExistingEvent.h \
+    $$PWD/EVENTS/SimCenterIntensityMeasureWidget.h \
+    $$PWD/EVENTS/SimCenterIntensityMeasureCombo.h \
+    $$PWD/EVENTS/SimCenterUnitsCombo.h \
+    # $$PWD/GRAPHICS/Controller2D.h \
+    # $$PWD/GRAPHICS/GlWidget2D.h \
+    # $$PWD/GRAPHICS/MyTableWidget.h \
+    # $$PWD/GRAPHICS/GraphicView2D.h \
+    # $$PWD/GRAPHICS/SimCenterGraphPlot.h \
+    # $$PWD/GRAPHICS/qcustomplot.h \
+    $$PWD/EDP/EDP_EarthquakeSelection.h \
+    $$PWD/EDP/StandardEarthquakeEDP.h \
+    $$PWD/EDP/UserDefinedEDP.h \
+    # $$PWD/EDP/EDP_Selection.h \
+    $$PWD/EDP/StandardEDP.h \    
+    $$PWD/EDP/SurrogateEDP.h \
+    $$PWD/EDP/EDP.h 
+        $$PWD/EDP/EDP.h
+            $$PWD/EDP/EDP.h
+                $$PWD/EDP/EDP.h
