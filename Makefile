@@ -180,3 +180,11 @@ user_inputs:
 	-r $(USER_INPUT_DOC_DIR)/User_Inputs_Documentation_RST_Files \
 	-t $(USER_INPUT_DOC_DIR)/User_Input_Documentation_Tables.rst
 	@echo "\n'make user_inputs' complete.\n"
+
+starter_files:
+	@echo "\nRunning the following command to create starter csv files for user input documentation:\n"
+	$(PYTHON) \
+	$(USER_INPUT_DOC_DIR)/widget_documentation_starter_file_creation_utilities.py \
+	$(USER_INPUT_DOC_DIR)/widgets_to_be_included.txt \
+	-c $(USER_INPUT_DOC_DIR)/User_Inputs_Documentation_CSV_Files
+	@echo "\n'make starter_files' complete.\n"
