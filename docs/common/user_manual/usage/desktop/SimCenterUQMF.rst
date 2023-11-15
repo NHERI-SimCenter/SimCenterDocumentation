@@ -10,7 +10,7 @@ Multi-fidelity Monte Carlo
 
 	.. figure:: figures/SimCenterUQ/Sampling_MF1.png
 		:align: center
-		:width: 600px
+		:width: 900px
 		:figclass: align-center
 
 		Multi-fidelity Monte Carlo
@@ -24,7 +24,7 @@ Multi-fidelity Monte Carlo
 
 	.. figure:: figures/SimCenterUQ/Sampling_MF2_quoFEM.png
 		:align: center
-		:width: 600px
+		:width: 900px
 		:figclass: align-center
 
 		Advanced options
@@ -42,7 +42,7 @@ Multi-fidelity Monte Carlo
 
 	.. figure:: figures/SimCenterUQ/Sampling_MF1.png
 		:align: center
-		:width: 600px
+		:width: 900px
 		:figclass: align-center
 
 		Multi-fidelity Monte Carlo
@@ -56,7 +56,7 @@ Multi-fidelity Monte Carlo
 
 	.. figure:: figures/SimCenterUQ/Sampling_MF2_EEUQ.png
 		:align: center
-		:width: 600px
+		:width: 900px
 		:figclass: align-center
 
 		Advanced options
