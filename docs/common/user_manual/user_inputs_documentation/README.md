@@ -42,5 +42,5 @@ Follow these steps to create documentation pages for the user inputs in the widg
 
 ## Step 5: Build Documentation
 
-1. Run the usual command to build the documentation pages, such as `'make qfem html'`, in the terminal/command window at the location of the "SimCenterDocumentation" repository on your machine.
+1. Run the usual command to build the documentation pages, such as `make qfem html`, in the terminal/command window at the location of the "SimCenterDocumentation" repository on your machine.
 
