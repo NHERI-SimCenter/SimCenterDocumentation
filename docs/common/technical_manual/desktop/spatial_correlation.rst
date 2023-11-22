@@ -1,3 +1,4 @@
+
 .. _lblCorrelation:
 
 Ground Motion Intensity Spatial Correlation Model Options
@@ -15,6 +16,9 @@ where :math:`Y_{ij}` is the intensity measure (e.g., :math:`Sa(T)`), :math:`\bar
 
    1. **Intra-event residual** quantifies the deviation of intensities at different sites given a specific earthquake realization.
    2. **Inter-event residual** quantifies the deviation of intensities at a specific site given different earthquake realizations.
+
+Intra-event Correlation Model Options
+-------------------------------------
 
 [Jayaram08]_ found that the spatially distributed intra-event residuals :math:`\epsilon_j = (\epsilon_{1j}, \epsilon_{2j}, ..., \epsilon_{dj})` follows a multivariate normal distribution. This multivariate normal distribution can be defined by the mean, variance, and correlation (between :math:`\epsilon_{i_1j}` and :math:`\epsilon_{i_2j}`). The mean is zero (as discussed previously) and the variance can be predicted by ground motion models, but the correlation between residuals at two different sites needs to be described. The semivariogram :math:`\gamma(u,u^\prime)` is used to describe the expected squared difference between two locations :math:`u` and :math:`u^\prime`. Because it is very difficult to obtain several observations of a random variable at a given pair of sites, the stationarity assumption is usually applied to simplify it to a more trackable problem. It is typically assumed that the semivariogram only depends on the distance :math:`h` - the stationary semivariogram :math:`\gamma(h)` can be obtained from data as follows:
 
@@ -43,7 +47,7 @@ Similarly, the correlation coefficient is defined as:
 Given the semivariogram is often preferred in geostatistical practice (because it does not require a prior estimation of the mean), many studies were carried to find the semivariogram models to derive the correlation :math:`rho(h)` of ground motion intensities. The available models in the current |short tool name| are briefly summarized in following sections.
 
 Jayaram and Baker (2009)
-------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 [Jayaram09]_ adopted a exponential model for the semivariogram function with a isotropic hypothesis (i.e., the distance :math:`h` is the separation length):
 
@@ -78,7 +82,7 @@ where T is the period. If the :math:`V_{S30}` values are very close in the given
    Earthquakes that were considered in the development: Anza earthquake, Alum Rock earthquake, Parkfield earthquake, Chi-Chi earthquake, Northridge earthquake, Big Bear City earthquake, and Chino Hills earthquake.
 
 Loth and Baker (2013)
-----------------------
+^^^^^^^^^^^^^^^^^^^^^
 
 Note that the cross-semivariograms between different pairs of intensity measures can be different, for instance, :math:`\rho_{Sa(T=0.1s),Sa(T=0.2s)}(h)` might be greater than :math:`\rho_{Sa(T=0.1s),Sa(T=1s)}(h)`. This means one needs to repeat a calibration process many times to develop semivariogram functions and correlation models that have higher resolutions (i.e., direct semivariogram fit). Instead of fitting each semivariogram independently, [Loth13]_ proposed a predictive model for spatial covariance of spectral accelerations at different periods:
 
@@ -168,7 +172,7 @@ where :math:`I_{h=0}` is the indicator function equal to 1 at :math:`h = 0` and 
 
 
 Markhvida et al. (2017)
------------------------
+^^^^^^^^^^^^^^^^^^^^^^^
 
 [Markhvida17]_ proposed to use Principal Component Analysis (PCA) to develop the predictive model for cross-correlograms. In theorem, PCA performs a linear transformation of the variables of interests to an orthogonal basis, where the resulting projections onto the new basis are uncorrelated:
 
@@ -258,3 +262,29 @@ The general idea is to include more degrees of freedom in the predictive model i
 .. [Markhvida17]
 
    Markhvida, M., Ceferino, L., & Baker, J. W. (2018). Modeling spatially correlated spectral accelerations at multiple periods using principal component analysis and geostatistics. Earthquake Engineering & Structural Dynamics, 47(5), 1107-1123.
+
+Inter-event Correlation Model Options
+-------------------------------------
+[Baker08]_ presented equations to predict the inter-event residual correlations of spectral acceleration values,
+using the Next Generation Attenuation (NGA) ground motion library and the new NGA 
+ground motion models (GMMs).  A predictive equation was presented that provides 
+correlations between logarithmic spectral accelerations at two periods. This equation was observed to be valid for
+a variety of definitions of spectral acceleration (i.e., spectral acceleration of 
+an individual component, the geometric mean of spectral accelerations from two orthogonal
+components, and the orientation-independent GMRotI definition used by the NGA modelers)
+
+The correlation equations are applicable for use with any of the NGA ground motion
+models at periods between 0.01 and 10 seconds. When the periods of interest are less
+than 5 seconds, correlation coefficients from all considered models are essentially identical. If one period is greater than 5 seconds and the second period is significantly less
+than 5 seconds, correlations vary slightly among models. These variations are likely due
+to a lack of empirical data, and these widely-spaced period pairs are also of less engineering interest, so separate correlation equations were not developed for each model.
+The similarity of correlations from the various GMMs occurs because the correlations
+are dominated by the large record-to-record variability in observed spectral values from
+similar events. While slight differences in mean predicted values from the GMMs may
+be important for some applications, they do not affect computed values to a large
+enough extent that correlations change noticeably. The predictive equations (Eq. 5 and Eq. 6 in [Baker08]_)
+are implemented in R2D.
+ 
+.. [Baker08]
+
+   Baker, J. W., & Jayaram, N. (2008). Correlation of spectral acceleration values from NGA ground motion models. Earthquake Spectra, 24(1), 299-317.
