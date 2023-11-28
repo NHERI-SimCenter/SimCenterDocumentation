@@ -25,8 +25,6 @@ Sample Size
 
 	Default: 2000
 
-	Constraints: gt=0
-
 	Key in JSON file: sample_size
 
 
@@ -34,8 +32,6 @@ Sample Size
 
 Seed
 	State of pseudo-random number generator for reproducibility
-
-	Constraints: ge=0
 
 	Key in JSON file: seed
 
@@ -74,8 +70,6 @@ Dummy Variable
 	This is a dummy variable
 
 	Default: check_default
-
-	Constraints: check_constraint
 
 	Key in JSON file: dummy
 

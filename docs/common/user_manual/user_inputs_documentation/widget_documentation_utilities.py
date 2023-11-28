@@ -1,8 +1,8 @@
 import argparse
 import csv
+import typing
 from dataclasses import dataclass
 from pathlib import Path
-import typing
 
 
 @dataclass
@@ -67,14 +67,14 @@ def _make_first_line_of_definition_list_item(
 def _make_subsequent_lines_of_definition_list_item(
     input_item_description: str,
     input_item_default_value: str,
-    input_item_constraints: str,
+    # input_item_constraints: str,
     input_item_name_in_json_file: str,
 ) -> str:
     definition_string_list = [f"\t{input_item_description}"]
     if _is_not_blank(input_item_default_value):
         definition_string_list.append(f"Default: {input_item_default_value}")
-    if _is_not_blank(input_item_constraints):
-        definition_string_list.append(f"Constraints: {input_item_constraints}")
+    # if _is_not_blank(input_item_constraints):
+    #     definition_string_list.append(f"Constraints: {input_item_constraints}")
     definition_string_list.append(
         f"Key in JSON file: {input_item_name_in_json_file}\n"
     )
@@ -91,13 +91,11 @@ def _make_definition_list_item_from_parameter_data(
     first_line_of_definition_item = _make_first_line_of_definition_list_item(
         input_item.label_in_user_interface,
     )
-    following_lines_of_definition_item = (
-        _make_subsequent_lines_of_definition_list_item(
-            input_item.description,
-            input_item.default_value,
-            input_item.constraints,
-            input_item.key_in_json_file,
-        )
+    following_lines_of_definition_item = _make_subsequent_lines_of_definition_list_item(
+        input_item.description,
+        input_item.default_value,
+        # input_item.constraints,
+        input_item.key_in_json_file,
     )
     return "\n".join(
         [
