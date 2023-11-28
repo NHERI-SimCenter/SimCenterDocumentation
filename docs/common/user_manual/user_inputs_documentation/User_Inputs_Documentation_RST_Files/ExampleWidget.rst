@@ -7,7 +7,7 @@ ExampleWidget
 
 .. _ExampleWidget compound_widget:
 
-Compound Widget : *compound widget inputs*
+Compound Widget
 	Follow the link for a description of the inputs to Compound Widget
 
 	Key in JSON file: compound_widget
@@ -20,7 +20,7 @@ Compound Widget : *compound widget inputs*
 
 .. _ExampleWidget sample_size:
 
-Sample Size : *int*
+Sample Size
 	Number of samples from the posterior probability distribution
 
 	Default: 2000
@@ -32,7 +32,7 @@ Sample Size : *int*
 
 .. _ExampleWidget seed:
 
-Seed : *int*
+Seed
 	State of pseudo-random number generator for reproducibility
 
 	Constraints: ge=0
@@ -47,7 +47,7 @@ Seed : *int*
 
 .. _ExampleWidget calibration_data_file:
 
-Calibration Data File : *str*
+Calibration Data File
 	Full path to the file containing the calibration data
 
 	Key in JSON file: calibration_data_file
@@ -55,7 +55,7 @@ Calibration Data File : *str*
 
 .. _ExampleWidget log_likelihood_script:
 
-Log Likelihood Script : *str, optional*
+Log Likelihood Script
 	Full path to the file containing the log-likelihood function
 
 	Default: probability density of multivariate normal with independent components
@@ -70,7 +70,7 @@ Log Likelihood Script : *str, optional*
 
 .. _ExampleWidget dummy:
 
-Dummy Variable : *NonNegativeInt, optional*
+Dummy Variable
 	This is a dummy variable
 
 	Default: check_default
