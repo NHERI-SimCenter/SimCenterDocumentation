@@ -2,6 +2,7 @@ import argparse
 import csv
 from dataclasses import dataclass
 from pathlib import Path
+import typing
 
 
 @dataclass
@@ -134,7 +135,7 @@ def _make_seealso(
 def _make_rst_file_for_widget(
     rst_file_path: Path,
     widget_name: str,
-    widget_data: list[DocumentationForUserInputItem],
+    widget_data: typing.List[DocumentationForUserInputItem],
 ) -> None:
     list_of_strings_definition_list = []
     list_of_strings_seealso = []
@@ -172,7 +173,7 @@ def _make_rst_file_for_widget(
 
 def _read_one_csv_file(
     csv_file_name: Path,
-) -> list[DocumentationForUserInputItem]:
+) -> typing.List[DocumentationForUserInputItem]:
     widget_data = []
     with open(csv_file_name, newline="") as csv_file:
         reader = csv.DictReader(csv_file)
@@ -183,7 +184,7 @@ def _read_one_csv_file(
 
 def _read_widget_documentation_from_csv_files(
     csv_files_directory: Path,
-) -> dict[str, list[DocumentationForUserInputItem]]:
+) -> typing.Dict[str, typing.List[DocumentationForUserInputItem]]:
     all_widget_documentation_data = {}
     for csv_file_name in csv_files_directory.glob("*.csv"):
         widget_documentation_data = _read_one_csv_file(csv_file_name)
@@ -194,11 +195,11 @@ def _read_widget_documentation_from_csv_files(
 
 def _create_rst_files(
     rst_files_directory_path: Path,
-    all_widget_documentation_data: dict[
+    all_widget_documentation_data: typing.Dict[
         str,
-        list[DocumentationForUserInputItem],
+        typing.List[DocumentationForUserInputItem],
     ],
-) -> list[Path]:
+) -> typing.List[Path]:
     if not (rst_files_directory_path.is_dir()):
         rst_files_directory_path.mkdir(parents=True)
     rst_file_path_list = []
@@ -215,7 +216,7 @@ def _create_rst_files(
 
 def _create_toc_include_file(
     toc_include_file_path: Path,
-    rst_file_path_list: list[Path],
+    rst_file_path_list: typing.List[Path],
 ) -> None:
     with open(toc_include_file_path, "w+") as f:
         f.write(_make_page_title(_top_level_string()))
