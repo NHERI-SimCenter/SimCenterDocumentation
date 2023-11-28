@@ -148,7 +148,7 @@ def _make_rst_file_for_widget(
     list_of_strings_seealso.append(_make_seealso_beginning())
     include_see_also = False
     for input_item in widget_data:
-        if _is_not_blank(input_item.key_in_json_file):
+        if _is_not_blank(input_item.label_in_user_interface):
             list_of_strings_definition_list.append(
                 _make_definition_list_item_from_parameter_data(
                     widget_name, input_item
