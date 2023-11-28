@@ -7,7 +7,7 @@ SurrogateDoEInputWidget
 
 .. _SurrogateDoEInputWidget samples:
 
-Number of Samples : *Int*
+Number of Samples
 	When the number of simulation runs reaches the limit, the analysis will be terminated.
 
 	Default: 150
@@ -17,7 +17,7 @@ Number of Samples : *Int*
 
 .. _SurrogateDoEInputWidget timeLimit:
 
-Max Computation Time (minutes) : *PositiveDouble*
+Max Computation Time (minutes)
 	When the tolerance limit of the computation time is reached, the analysis will be terminated. There will be a few minutes of error.
 
 	Default: 60
@@ -27,7 +27,7 @@ Max Computation Time (minutes) : *PositiveDouble*
 
 .. _SurrogateDoEInputWidget accuracyLimit:
 
-Target Accuracy (normalized err) : *PositiveDouble*
+Target Accuracy (normalized err)
 	The target accuracy is defined in terms of normalized root-mean-squared error (NRMSE) estimated by leave-out-one cross-validation (LOOCV).
 
 	Default: 0.02
@@ -37,7 +37,7 @@ Target Accuracy (normalized err) : *PositiveDouble*
 
 .. _SurrogateDoEInputWidget seed:
 
-Random Seed : *PositiveInt*
+Random Seed
 	Seed of the random number generator
 
 	Default: a random integer
@@ -47,7 +47,7 @@ Random Seed : *PositiveInt*
 
 .. _SurrogateDoEInputWidget parallelExecution:
 
-Parallel Execution : *Bool*
+Parallel Execution
 	This engine implemented multiprocessing (local) or mpi4py (remote) python packages to run parallel execution.
 
 	Default: checked
@@ -57,7 +57,7 @@ Parallel Execution : *Bool*
 
 .. _SurrogateDoEInputWidget advancedOpt:
 
-Advanced Options for Gaussian Process Model : *Bool*
+Advanced Options for Gaussian Process Model
 	If unchecked, default values will be used
 
 	Default: unchecked
@@ -67,7 +67,7 @@ Advanced Options for Gaussian Process Model : *Bool*
 
 .. _SurrogateDoEInputWidget kernel:
 
-Kernel Function : *ComboBox*
+Kernel Function
 	Correlation function for Gaussian process regression. Matern5/2 function is the default, and Matern3/2, Radial Basis, and Exponential functions (exponent) are additionally supported. 
 
 	Default: Matern5/2
@@ -77,7 +77,7 @@ Kernel Function : *ComboBox*
 
 .. _SurrogateDoEInputWidget linear:
 
-Add Linear Trend Function : *Bool*
+Add Linear Trend Function
 	When increasing or decreasing trend is expected over the variables domain, a linear trend function may be introduced. 
 
 	Default: unchecked
@@ -87,7 +87,7 @@ Add Linear Trend Function : *Bool*
 
 .. _SurrogateDoEInputWidget logTransform:
 
-Log-space Transform of QoI : *Bool*
+Log-space Transform of QoI
 	When the user can guarantee that the response quantities are always greater than 0, user may want to introduce a surrogate model in log-transformed space of QoI. 
 
 	Default: unchecked
@@ -97,7 +97,7 @@ Log-space Transform of QoI : *Bool*
 
 .. _SurrogateDoEInputWidget DoEmethod:
 
-DoE Options : *ComboBox*
+DoE Options
 	Design of Experiment method
 
 	Default: none
@@ -107,7 +107,7 @@ DoE Options : *ComboBox*
 
 .. _SurrogateDoEInputWidget initialDoE:
 
-Initial DoE # : *PositiveInt, optional*
+Initial DoE #
 	The number of the initial DoE
 
 	Default: 4 x #RV
@@ -117,7 +117,7 @@ Initial DoE # : *PositiveInt, optional*
 
 .. _SurrogateDoEInputWidget nuggetOpt:
 
-Nugget Variances : *ComboBox*
+Nugget Variances
 	User may define nugget variances or bounds of the nugget variances if needed. 
 
 	Default: Optimize
@@ -127,7 +127,7 @@ Nugget Variances : *ComboBox*
 
 .. _SurrogateDoEInputWidget nuggetString:
 
-Nugget Values/Bounds : *IntList or ListList*
+Nugget Values/Bounds
 	User-defined nugget variances or bounds
 
 	Key in JSON file: nuggetString
@@ -135,8 +135,8 @@ Nugget Values/Bounds : *IntList or ListList*
 
 .. _SurrogateDoEInputWidget numSampToBeRepl:
 
-# samples to be replicated (A) : *PositiveInt, optional*
-	From the number of unique samples specified in the ‘Number of Samples’ field, decide how many of them will have replications.
+# samples to be replicated (A)
+	From the number of unique samples specified in the 'Number of Samples' field, decide how many of them will have replications.
 
 	Default: 8 x #RV
 
@@ -145,7 +145,7 @@ Nugget Values/Bounds : *IntList or ListList*
 
 .. _SurrogateDoEInputWidget numRepl:
 
-# replications per sample (B) : *PositiveInt, optional*
+# replications per sample (B)
 	Specify how many replications will be generated for the number of samples specified in A.
 
 	Default: 10
@@ -155,7 +155,7 @@ Nugget Values/Bounds : *IntList or ListList*
 
 .. _SurrogateDoEInputWidget existingDoE:
 
-Start with Existing Dataset : *Bool*
+Start with Existing Dataset
 	If unchecked, no existing dataset is utilized
 
 	Default: checked
@@ -165,31 +165,31 @@ Start with Existing Dataset : *Bool*
 
 .. _SurrogateDoEInputWidget inpFile:
 
-Training Points (Input RV) : *Str*
+Training Points (Input RV)
 	Full path to the file containing training points (samples of RV)
 
 	Key in JSON file: inpFile
 
 	.. seealso::
 
-		:ref:`https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html <>`
+		`Training Points File Format <https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html>`_
 
 
 .. _SurrogateDoEInputWidget outFile:
 
-System Responses (Output QoI) : *Str*
+System Responses (Output QoI)
 	Full path to the file containing system responses (samples of QoI) corresponding to the specified training points
 
 	Key in JSON file: outFile
 
 	.. seealso::
 
-		:ref:`https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html <>`
+		`System Responses File Format <https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html>`_
 
 
 .. _SurrogateDoEInputWidget none:
 
-Advanced Options (Earthquake specific) : *Bool*
+Advanced Options (Earthquake specific)
 	If unchecked, default values will be used
 
 	Default: unchecked
@@ -199,7 +199,7 @@ Advanced Options (Earthquake specific) : *Bool*
 
 .. _SurrogateDoEInputWidget none:
 
-Input postprocess : *ComboBox*
+Input postprocess
 	Ground motion pre-processing for surrogate model training
 
 	Default: Ground Motion Intensity
@@ -209,7 +209,7 @@ Input postprocess : *ComboBox*
 
 .. _SurrogateDoEInputWidget IntensityMeasure:
 
-IM : *ComboBox*
+IM
 	The user can select intensity measures (IMs) that will be used as auxiliary inputs of the surrogate model, in addition to those specified in the RV tab.
 
 	Default: Pseudo Spectral Velocity (in/sec)
@@ -219,7 +219,7 @@ IM : *ComboBox*
 
 .. _SurrogateDoEInputWidget Periods:
 
-Periods : *PositiveDouble or PositiveDoubleList*
+Periods
 	Specify period(s) corresponding to IM
 
 	Default: 0.5 or 0.1,1.0,1.5
@@ -229,8 +229,8 @@ Periods : *PositiveDouble or PositiveDoubleList*
 
 .. _SurrogateDoEInputWidget useGeoMean:
 
-Geometric mean : *Bool*
-	If ground motions have more than one directional component, either each component’s IM can be added as a separate surrogate input parameter, or they can be aggregated by using their geometric mean. 
+Geometric mean
+	If ground motions have more than one directional component, either each component's IM can be added as a separate surrogate input parameter, or they can be aggregated by using their geometric mean. 
 
 	Default: checked
 

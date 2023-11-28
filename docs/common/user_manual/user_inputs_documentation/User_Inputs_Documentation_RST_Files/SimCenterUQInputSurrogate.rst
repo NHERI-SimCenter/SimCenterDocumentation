@@ -7,7 +7,7 @@ SimCenterUQInputSurrogate
 
 .. _SimCenterUQInputSurrogate method:
 
-Training Datase : *combo box (tab widget), optional*
+Training Datase
 	
 
 	Default: Sampling and Simulation
