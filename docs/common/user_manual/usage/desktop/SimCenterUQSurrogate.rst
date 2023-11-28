@@ -14,7 +14,7 @@ Gaussian Process (GP) Surrogate Modeling
 
     .. list-table:: User-provided information types      
        :widths: 3 10 10
-       :header-rowFs: 1
+       :header-rows: 1
 
        * -  
          - RV (model input :math:`\boldsymbol{x}`)
