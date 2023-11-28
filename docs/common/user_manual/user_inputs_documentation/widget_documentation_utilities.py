@@ -7,12 +7,12 @@ import typing
 
 @dataclass
 class DocumentationForUserInputItem:
-    key_in_json_file: str
     label_in_user_interface: str
+    key_in_json_file: str
     data_type: str
     description: str
-    optional: str
     default_value: str
+    example_value: str
     constraints: str
     seealso_text: str
     seealso_link: str
