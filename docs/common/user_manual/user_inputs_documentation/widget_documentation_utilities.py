@@ -44,17 +44,24 @@ def _is_not_blank(string: str) -> bool:
     return bool(string.strip())
 
 
-def _make_first_line_of_definition_list_item(
+def _make_first_line_of_definition_list_item_alternative(
     input_item_display_name: str,
-    input_item_optional: str,
+    input_item_default_value: str,
     input_item_data_type: str,
 ) -> str:
     term_string = f"{input_item_display_name}"
-    if _is_not_blank(input_item_optional):
+    if _is_not_blank(input_item_default_value):
         classifier_string = f"*{input_item_data_type}, optional*"
     else:
         classifier_string = f"*{input_item_data_type}*"
     return " : ".join([term_string, classifier_string])
+
+
+def _make_first_line_of_definition_list_item(
+    input_item_display_name: str,
+) -> str:
+    term_string = f"{input_item_display_name}"
+    return term_string
 
 
 def _make_subsequent_lines_of_definition_list_item(
@@ -83,8 +90,6 @@ def _make_definition_list_item_from_parameter_data(
     )
     first_line_of_definition_item = _make_first_line_of_definition_list_item(
         input_item.label_in_user_interface,
-        input_item.optional,
-        input_item.data_type,
     )
     following_lines_of_definition_item = (
         _make_subsequent_lines_of_definition_list_item(
