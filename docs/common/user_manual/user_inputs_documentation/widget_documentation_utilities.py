@@ -216,6 +216,7 @@ def _create_rst_files(
         _make_rst_file_for_widget(
             rst_file_path, widget_name, widget_documentation_data
         )
+    rst_file_path_list = sorted(rst_file_path_list)
     return rst_file_path_list
 
 
