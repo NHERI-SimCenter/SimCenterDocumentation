@@ -234,9 +234,13 @@ def _create_toc_include_file(
             )
         )
         for rst_file_path in rst_file_path_list:
-            f.write(
-                f"\n   {rst_file_path.relative_to(rst_file_path.parent.parent)}"
+            rst_file_relative_path = rst_file_path.relative_to(
+                rst_file_path.parent.parent
             )
+            rst_file_include_string = str(rst_file_relative_path).replace(
+                "\\", "/"
+            )
+            f.write(f"\n   {rst_file_include_string}")
 
 
 def main(
