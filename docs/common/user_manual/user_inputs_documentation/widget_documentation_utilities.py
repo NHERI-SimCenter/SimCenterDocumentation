@@ -1,17 +1,18 @@
 import argparse
 import csv
+import typing
 from dataclasses import dataclass
 from pathlib import Path
 
 
 @dataclass
 class DocumentationForUserInputItem:
-    key_in_json_file: str
     label_in_user_interface: str
+    key_in_json_file: str
     data_type: str
     description: str
-    optional: str
     default_value: str
+    example_value: str
     constraints: str
     seealso_text: str
     seealso_link: str
@@ -43,30 +44,37 @@ def _is_not_blank(string: str) -> bool:
     return bool(string.strip())
 
 
-def _make_first_line_of_definition_list_item(
+def _make_first_line_of_definition_list_item_alternative(
     input_item_display_name: str,
-    input_item_optional: str,
+    input_item_default_value: str,
     input_item_data_type: str,
 ) -> str:
     term_string = f"{input_item_display_name}"
-    if _is_not_blank(input_item_optional):
+    if _is_not_blank(input_item_default_value):
         classifier_string = f"*{input_item_data_type}, optional*"
     else:
         classifier_string = f"*{input_item_data_type}*"
     return " : ".join([term_string, classifier_string])
 
 
+def _make_first_line_of_definition_list_item(
+    input_item_display_name: str,
+) -> str:
+    term_string = f"{input_item_display_name}"
+    return term_string
+
+
 def _make_subsequent_lines_of_definition_list_item(
     input_item_description: str,
     input_item_default_value: str,
-    input_item_constraints: str,
+    # input_item_constraints: str,
     input_item_name_in_json_file: str,
 ) -> str:
     definition_string_list = [f"\t{input_item_description}"]
     if _is_not_blank(input_item_default_value):
         definition_string_list.append(f"Default: {input_item_default_value}")
-    if _is_not_blank(input_item_constraints):
-        definition_string_list.append(f"Constraints: {input_item_constraints}")
+    # if _is_not_blank(input_item_constraints):
+    #     definition_string_list.append(f"Constraints: {input_item_constraints}")
     definition_string_list.append(
         f"Key in JSON file: {input_item_name_in_json_file}\n"
     )
@@ -82,16 +90,12 @@ def _make_definition_list_item_from_parameter_data(
     )
     first_line_of_definition_item = _make_first_line_of_definition_list_item(
         input_item.label_in_user_interface,
-        input_item.optional,
-        input_item.data_type,
     )
-    following_lines_of_definition_item = (
-        _make_subsequent_lines_of_definition_list_item(
-            input_item.description,
-            input_item.default_value,
-            input_item.constraints,
-            input_item.key_in_json_file,
-        )
+    following_lines_of_definition_item = _make_subsequent_lines_of_definition_list_item(
+        input_item.description,
+        input_item.default_value,
+        # input_item.constraints,
+        input_item.key_in_json_file,
     )
     return "\n".join(
         [
@@ -134,7 +138,7 @@ def _make_seealso(
 def _make_rst_file_for_widget(
     rst_file_path: Path,
     widget_name: str,
-    widget_data: list[DocumentationForUserInputItem],
+    widget_data: typing.List[DocumentationForUserInputItem],
 ) -> None:
     list_of_strings_definition_list = []
     list_of_strings_seealso = []
@@ -142,7 +146,7 @@ def _make_rst_file_for_widget(
     list_of_strings_seealso.append(_make_seealso_beginning())
     include_see_also = False
     for input_item in widget_data:
-        if _is_not_blank(input_item.key_in_json_file):
+        if _is_not_blank(input_item.label_in_user_interface):
             list_of_strings_definition_list.append(
                 _make_definition_list_item_from_parameter_data(
                     widget_name, input_item
@@ -172,7 +176,7 @@ def _make_rst_file_for_widget(
 
 def _read_one_csv_file(
     csv_file_name: Path,
-) -> list[DocumentationForUserInputItem]:
+) -> typing.List[DocumentationForUserInputItem]:
     widget_data = []
     with open(csv_file_name, newline="") as csv_file:
         reader = csv.DictReader(csv_file)
@@ -183,7 +187,7 @@ def _read_one_csv_file(
 
 def _read_widget_documentation_from_csv_files(
     csv_files_directory: Path,
-) -> dict[str, list[DocumentationForUserInputItem]]:
+) -> typing.Dict[str, typing.List[DocumentationForUserInputItem]]:
     all_widget_documentation_data = {}
     for csv_file_name in csv_files_directory.glob("*.csv"):
         widget_documentation_data = _read_one_csv_file(csv_file_name)
@@ -194,11 +198,11 @@ def _read_widget_documentation_from_csv_files(
 
 def _create_rst_files(
     rst_files_directory_path: Path,
-    all_widget_documentation_data: dict[
+    all_widget_documentation_data: typing.Dict[
         str,
-        list[DocumentationForUserInputItem],
+        typing.List[DocumentationForUserInputItem],
     ],
-) -> list[Path]:
+) -> typing.List[Path]:
     if not (rst_files_directory_path.is_dir()):
         rst_files_directory_path.mkdir(parents=True)
     rst_file_path_list = []
@@ -210,12 +214,13 @@ def _create_rst_files(
         _make_rst_file_for_widget(
             rst_file_path, widget_name, widget_documentation_data
         )
+    rst_file_path_list = sorted(rst_file_path_list)
     return rst_file_path_list
 
 
 def _create_toc_include_file(
     toc_include_file_path: Path,
-    rst_file_path_list: list[Path],
+    rst_file_path_list: typing.List[Path],
 ) -> None:
     with open(toc_include_file_path, "w+") as f:
         f.write(_make_page_title(_top_level_string()))
@@ -233,9 +238,13 @@ def _create_toc_include_file(
             )
         )
         for rst_file_path in rst_file_path_list:
-            f.write(
-                f"\n   {rst_file_path.relative_to(rst_file_path.parent.parent)}"
+            rst_file_relative_path = rst_file_path.relative_to(
+                rst_file_path.parent.parent
             )
+            rst_file_include_string = str(rst_file_relative_path).replace(
+                "\\", "/"
+            )
+            f.write(f"\n   {rst_file_include_string}")
 
 
 def main(

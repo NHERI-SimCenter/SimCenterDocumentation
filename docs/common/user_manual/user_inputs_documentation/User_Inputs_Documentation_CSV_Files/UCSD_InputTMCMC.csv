@@ -1,5 +1,5 @@
-key_in_json_file,label_in_user_interface,data_type,description,optional,default_value,constraints,seealso_text,seealso_link,seealso_description
-sample_size,Sample Size,str,Number of samples from the posterior probability distribution,,,,,,
-seed,Seed,PositiveInt,State of pseudo-random number generator for reproducibility,,,,,,
-calibration_data_file,Calibration Data File,str,Full path to the file containing the calibration data,,,,Calibration data file,https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/UCSD_UQ_TMCMC.html#usage,
-log_likelihood_script,Log Likelihood Script,str,Full path to the file containing the log-likelihood function,yes,,,Defining the log-likelihood function,https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/UCSD_UQ_TMCMC.html#defining-the-log-likelihood-function,
+label_in_user_interface,key_in_json_file,data_type,description,default_value,example_value,constraints,seealso_text,seealso_link,seealso_description
+Sample Size,sample_size,str,Number of samples from the posterior probability distribution,,,,,,
+Seed,seed,PositiveInt,State of pseudo-random number generator for reproducibility,,,,,,
+Calibration Data File,calibration_data_file,str,Full path to the file containing the calibration data,,,,Calibration data file,https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/UCSD_UQ_TMCMC.html#usage,
+Log Likelihood Script,log_likelihood_script,str,Full path to the file containing the log-likelihood function,,,,Defining the log-likelihood function,https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/UCSD_UQ_TMCMC.html#defining-the-log-likelihood-function,

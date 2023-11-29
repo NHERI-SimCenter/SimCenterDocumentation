@@ -7,7 +7,7 @@ UCSD_InputTMCMC
 
 .. _UCSD_InputTMCMC sample_size:
 
-Sample Size : *str*
+Sample Size
 	Number of samples from the posterior probability distribution
 
 	Key in JSON file: sample_size
@@ -15,7 +15,7 @@ Sample Size : *str*
 
 .. _UCSD_InputTMCMC seed:
 
-Seed : *PositiveInt*
+Seed
 	State of pseudo-random number generator for reproducibility
 
 	Key in JSON file: seed
@@ -23,7 +23,7 @@ Seed : *PositiveInt*
 
 .. _UCSD_InputTMCMC calibration_data_file:
 
-Calibration Data File : *str*
+Calibration Data File
 	Full path to the file containing the calibration data
 
 	Key in JSON file: calibration_data_file
@@ -35,7 +35,7 @@ Calibration Data File : *str*
 
 .. _UCSD_InputTMCMC log_likelihood_script:
 
-Log Likelihood Script : *str, optional*
+Log Likelihood Script
 	Full path to the file containing the log-likelihood function
 
 	Key in JSON file: log_likelihood_script
