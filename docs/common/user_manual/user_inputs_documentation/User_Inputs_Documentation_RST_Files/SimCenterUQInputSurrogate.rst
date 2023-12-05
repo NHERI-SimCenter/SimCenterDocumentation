@@ -5,7 +5,7 @@ SimCenterUQInputSurrogate
 =========================
 
 
-.. _SimCenterUQInputSurrogate method:
+.. _SimCenterUQInputSurrogate Training Datase:
 
 Training Datase
 	
