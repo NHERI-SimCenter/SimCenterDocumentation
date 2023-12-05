@@ -5,7 +5,7 @@ SurrogateDoEInputWidget
 =======================
 
 
-.. _SurrogateDoEInputWidget samples:
+.. _SurrogateDoEInputWidget Number of Samples:
 
 Number of Samples
 	When the number of simulation runs reaches the limit, the analysis will be terminated.
@@ -15,7 +15,7 @@ Number of Samples
 	Key in JSON file: samples
 
 
-.. _SurrogateDoEInputWidget timeLimit:
+.. _SurrogateDoEInputWidget Max Computation Time (minutes):
 
 Max Computation Time (minutes)
 	When the tolerance limit of the computation time is reached, the analysis will be terminated. There will be a few minutes of error.
@@ -25,7 +25,7 @@ Max Computation Time (minutes)
 	Key in JSON file: timeLimit
 
 
-.. _SurrogateDoEInputWidget accuracyLimit:
+.. _SurrogateDoEInputWidget Target Accuracy (normalized err):
 
 Target Accuracy (normalized err)
 	The target accuracy is defined in terms of normalized root-mean-squared error (NRMSE) estimated by leave-out-one cross-validation (LOOCV).
@@ -35,7 +35,7 @@ Target Accuracy (normalized err)
 	Key in JSON file: accuracyLimit
 
 
-.. _SurrogateDoEInputWidget seed:
+.. _SurrogateDoEInputWidget Random Seed:
 
 Random Seed
 	Seed of the random number generator
@@ -45,7 +45,7 @@ Random Seed
 	Key in JSON file: seed
 
 
-.. _SurrogateDoEInputWidget parallelExecution:
+.. _SurrogateDoEInputWidget Parallel Execution:
 
 Parallel Execution
 	This engine implemented multiprocessing (local) or mpi4py (remote) python packages to run parallel execution.
@@ -55,7 +55,7 @@ Parallel Execution
 	Key in JSON file: parallelExecution
 
 
-.. _SurrogateDoEInputWidget advancedOpt:
+.. _SurrogateDoEInputWidget Advanced Options for Gaussian Process Model:
 
 Advanced Options for Gaussian Process Model
 	If unchecked, default values will be used
@@ -65,7 +65,7 @@ Advanced Options for Gaussian Process Model
 	Key in JSON file: advancedOpt
 
 
-.. _SurrogateDoEInputWidget kernel:
+.. _SurrogateDoEInputWidget Kernel Function:
 
 Kernel Function
 	Correlation function for Gaussian process regression. Matern5/2 function is the default, and Matern3/2, Radial Basis, and Exponential functions (exponent) are additionally supported. 
@@ -75,7 +75,7 @@ Kernel Function
 	Key in JSON file: kernel
 
 
-.. _SurrogateDoEInputWidget linear:
+.. _SurrogateDoEInputWidget Add Linear Trend Function:
 
 Add Linear Trend Function
 	When increasing or decreasing trend is expected over the variables domain, a linear trend function may be introduced. 
@@ -85,7 +85,7 @@ Add Linear Trend Function
 	Key in JSON file: linear
 
 
-.. _SurrogateDoEInputWidget logTransform:
+.. _SurrogateDoEInputWidget Log-space Transform of QoI:
 
 Log-space Transform of QoI
 	When the user can guarantee that the response quantities are always greater than 0, user may want to introduce a surrogate model in log-transformed space of QoI. 
@@ -95,7 +95,7 @@ Log-space Transform of QoI
 	Key in JSON file: logTransform
 
 
-.. _SurrogateDoEInputWidget DoEmethod:
+.. _SurrogateDoEInputWidget DoE Options:
 
 DoE Options
 	Design of Experiment method
@@ -105,7 +105,7 @@ DoE Options
 	Key in JSON file: DoEmethod
 
 
-.. _SurrogateDoEInputWidget initialDoE:
+.. _SurrogateDoEInputWidget Initial DoE #:
 
 Initial DoE #
 	The number of the initial DoE
@@ -115,7 +115,7 @@ Initial DoE #
 	Key in JSON file: initialDoE
 
 
-.. _SurrogateDoEInputWidget nuggetOpt:
+.. _SurrogateDoEInputWidget Nugget Variances:
 
 Nugget Variances
 	User may define nugget variances or bounds of the nugget variances if needed. 
@@ -125,7 +125,7 @@ Nugget Variances
 	Key in JSON file: nuggetOpt
 
 
-.. _SurrogateDoEInputWidget nuggetString:
+.. _SurrogateDoEInputWidget Nugget Values/Bounds:
 
 Nugget Values/Bounds
 	User-defined nugget variances or bounds
@@ -133,7 +133,7 @@ Nugget Values/Bounds
 	Key in JSON file: nuggetString
 
 
-.. _SurrogateDoEInputWidget numSampToBeRepl:
+.. _SurrogateDoEInputWidget # samples to be replicated (A):
 
 # samples to be replicated (A)
 	From the number of unique samples specified in the 'Number of Samples' field, decide how many of them will have replications.
@@ -143,7 +143,7 @@ Nugget Values/Bounds
 	Key in JSON file: numSampToBeRepl
 
 
-.. _SurrogateDoEInputWidget numRepl:
+.. _SurrogateDoEInputWidget # replications per sample (B):
 
 # replications per sample (B)
 	Specify how many replications will be generated for the number of samples specified in A.
@@ -153,7 +153,7 @@ Nugget Values/Bounds
 	Key in JSON file: numRepl
 
 
-.. _SurrogateDoEInputWidget existingDoE:
+.. _SurrogateDoEInputWidget Start with Existing Dataset:
 
 Start with Existing Dataset
 	If unchecked, no existing dataset is utilized
@@ -163,7 +163,7 @@ Start with Existing Dataset
 	Key in JSON file: existingDoE
 
 
-.. _SurrogateDoEInputWidget inpFile:
+.. _SurrogateDoEInputWidget Training Points (Input RV):
 
 Training Points (Input RV)
 	Full path to the file containing training points (samples of RV)
@@ -175,7 +175,7 @@ Training Points (Input RV)
 		`Training Points File Format <https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html>`_
 
 
-.. _SurrogateDoEInputWidget outFile:
+.. _SurrogateDoEInputWidget System Responses (Output QoI):
 
 System Responses (Output QoI)
 	Full path to the file containing system responses (samples of QoI) corresponding to the specified training points
@@ -187,7 +187,7 @@ System Responses (Output QoI)
 		`System Responses File Format <https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html>`_
 
 
-.. _SurrogateDoEInputWidget none:
+.. _SurrogateDoEInputWidget Advanced Options (Earthquake specific):
 
 Advanced Options (Earthquake specific)
 	If unchecked, default values will be used
@@ -197,7 +197,7 @@ Advanced Options (Earthquake specific)
 	Key in JSON file: none
 
 
-.. _SurrogateDoEInputWidget none:
+.. _SurrogateDoEInputWidget Input postprocess:
 
 Input postprocess
 	Ground motion pre-processing for surrogate model training
@@ -207,7 +207,7 @@ Input postprocess
 	Key in JSON file: none
 
 
-.. _SurrogateDoEInputWidget IntensityMeasure:
+.. _SurrogateDoEInputWidget IM:
 
 IM
 	The user can select intensity measures (IMs) that will be used as auxiliary inputs of the surrogate model, in addition to those specified in the RV tab.
@@ -227,7 +227,7 @@ Periods
 	Key in JSON file: Periods
 
 
-.. _SurrogateDoEInputWidget useGeoMean:
+.. _SurrogateDoEInputWidget Geometric mean:
 
 Geometric mean
 	If ground motions have more than one directional component, either each component's IM can be added as a separate surrogate input parameter, or they can be aggregated by using their geometric mean. 

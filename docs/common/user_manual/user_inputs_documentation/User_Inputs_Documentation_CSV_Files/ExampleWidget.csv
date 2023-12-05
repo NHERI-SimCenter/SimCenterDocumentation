@@ -1,9 +1,9 @@
 label_in_user_interface,key_in_json_file,data_type,description,default_value,example_value,constraints,seealso_text,seealso_link,seealso_description
 Compound Widget,compound_widget,compound widget inputs,Follow the link for a description of the inputs to Compound Widget,,,,Compound Widget,UCSD_InputTMCMC User Inputs,User inputs for Compound Widget
 Sample Size,sample_size,int,Number of samples from the posterior probability distribution,2000,,gt=0,,,
-Seed,seed,int,State of pseudo-random number generator for reproducibility,,,ge=0,seed,UCSD_InputTMCMC seed,Compare with this parameter too
+Seed,seed,int,State of pseudo-random number generator for reproducibility,,,ge=0,seed,UCSD_InputTMCMC Seed,Compare with this parameter too
 Calibration Data File,calibration_data_file,str,Full path to the file containing the calibration data,,,,,,
-Log Likelihood Script,log_likelihood_script,str,Full path to the file containing the log-likelihood function,probability density of multivariate normal with independent components,,,log_likelihood_script,UCSD_InputTMCMC log_likelihood_script,This is also relevant to this parameter and adds some context 
+Log Likelihood Script,log_likelihood_script,str,Full path to the file containing the log-likelihood function,probability density of multivariate normal with independent components,,,log_likelihood_script,UCSD_InputTMCMC Log Likelihood Script,This is also relevant to this parameter and adds some context 
 Dummy Variable,dummy,NonNegativeInt,This is a dummy variable,check_default,,check_constraint,,,
 ,,,,,,,,,
 ,,,,,,,Defining the log-likelihood function,https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/UCSD_UQ_TMCMC.html#defining-the-log-likelihood-function,Can link to external webpages too
