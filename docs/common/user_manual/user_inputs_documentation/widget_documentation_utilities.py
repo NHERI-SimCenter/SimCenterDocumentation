@@ -86,7 +86,7 @@ def _make_definition_list_item_from_parameter_data(
     input_item: DocumentationForUserInputItem,
 ) -> str:
     link_target_string = _make_link_target_string(
-        widget_name, input_item.key_in_json_file
+        widget_name, input_item.label_in_user_interface
     )
     first_line_of_definition_item = _make_first_line_of_definition_list_item(
         input_item.label_in_user_interface,
