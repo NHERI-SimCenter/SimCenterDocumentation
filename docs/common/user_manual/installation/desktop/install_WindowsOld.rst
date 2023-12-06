@@ -12,12 +12,12 @@ If you have not yet installed Python, we recommend installing Python 3.8 from
 
 .. note::
 
-   Allow the installer to change your system environment variables so that the directory containing the executable will be on your path. This requires checking the small box asking for this when the installer starts. The box is located at bottom of installer application window.
+   Allow the installer to change your system environment variables so that the directory containing the executable will be on your path. This requires checking the small box asking for this when the installer starts. The box is located at the bottom of the installer application window.
 
 .. warning::
-   The latest version of Python is 3.9.1. We require a previous version, 3.8.6 and above, to avoid issues with packages that have not have been adopted to the latest version and as a consequence fail to install.
+   The latest version of Python is 3.9.1. We require a previous version, 3.8.6 and above, to avoid issues with packages that have not been adopted to the latest version and as a consequence fail to install.
 
-Once Python is installed, you need to extend it by installing a few additional packages. To faciliate this phase of the installation, we created a **nheri_simcenter** python package that automatically installs all other dependencies. Start a `terminal window as an Admin user <https://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/>`_ and type the following command:
+Once Python is installed, you need to extend it by installing a few additional packages. To facilitate this phase of the installation, we created a **nheri_simcenter** python package that automatically installs all other dependencies. Start a `terminal window as an Admin user <https://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/>`_ and type the following command:
 
 .. code-block:: winbatch
 
@@ -25,7 +25,7 @@ Once Python is installed, you need to extend it by installing a few additional p
 
 Make sure you see a message that confirms the successful installation of the nheri-simcenter package before proceeding to the next step.
 
-If you plan to use OpenSeesPy to run finite element analyses, you should also install that package at this point. (If you are not sure, we recommend you to install it.) You can install OpenSeesPy using a terminal window and the following command:
+If you plan to use OpenSeesPy to run finite element analyses, you should also install that package at this point. (If you are not sure, we recommend that you install it.) You can install OpenSeesPy using a terminal window and the following command:
 
 .. code-block:: winbatch
 
@@ -101,11 +101,11 @@ To download the |app|, first navigate to the |appLink| page. As shown in :numref
 
       quoFEM download page.
 
-Click on the file with a name ending with **Windows_Download.zip** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner. After the download completed, extract the zip archive to a location in your filesystem.
+Click on the file with a name ending with **Windows_Download.zip** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner. After the download is completed, extract the zip archive to a location in your filesystem.
 
 .. note::
 
-   We suggest placing the directory in the **C:\\SimCenter** folder. Once here, you can create a shorcut to the application and move this shortcut to your Desktop.
+   We suggest placing the directory in the **C:\\SimCenter** folder. Once here, you can create a shortcut to the application and move this shortcut to your Desktop.
 
 Test the Installation
 ^^^^^^^^^^^^^^^^^^^^^
