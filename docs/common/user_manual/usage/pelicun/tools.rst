@@ -4,7 +4,7 @@
 Standalone Tools
 ****************
 
-Standalon python scripts are provided with pelicun that are built using methods from the library and facilitate using pelicun for those who prefer to work in an environment other than Python. These tools are listed below.
+Standalone python scripts are provided with pelicun that are built using methods from the library and facilitate using pelicun for those who prefer to work in an environment other than Python. These tools are listed below.
 
 ==============
 DL_calculation
@@ -42,10 +42,10 @@ The following arguments are available:
 exportDB
 ========
 
-This tool faciliates exporting the contents of HDF5 Damage and Loss databases to JSON files that can be easily edited by researchers.
+This tool facilitates exporting the contents of HDF5 Damage and Loss databases to JSON files that can be easily edited by researchers.
 
-The script can be run from the command line as follows::
+The script can be run from the command line as follows:
 
     python export_DB.py --DL_DB_path <DB_file_path> --target_dir <target_dir_path>
 
-where `<DB_file_path>` should be replaced with a string pointing to the HDF5 file tha contains the damage and loss database, and `<target_dir_path>` should be replaced with a string pointing to the directory where you want to save the JSON files.
+where `<DB_file_path>` should be replaced with a string pointing to the HDF5 file that contains the damage and loss database, and `<target_dir_path>` should be replaced with a string pointing to the directory where you want to save the JSON files.
