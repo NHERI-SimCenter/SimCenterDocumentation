@@ -4,7 +4,7 @@
 Deterministic Calibration
 *************************
 
-Deterministic calibration methods (also known as non-linear least squares methods or deterministic parameter estimation methods) are  used to fit a set of m observations (provided in the calibration data file defined in the **UQ** panel) with a model (defined in the **FEM** panel) that is non-linear with n unknown parameters. The unknown parameters of this model are defined in the **RV** panel. The bounds of the domain within which the optimal values of the parameters need to be searched for are also specified in the **RV** panel, along with the initial point at which the search will begin. No prior specification of the distribution associated with the random variables is necessary. The output quantities from the model are defined in the **QOI** panel. For each evaluation of the computational model, the processing scripts should write the values of the simulated response quantities of interest in a file called ``results.out``. The algorithms employed will find a set of parameter values that **minimizes** the sum of the squared differences between the measured values of the QoIs and the predicted values of the QoIs from the computational model. The algorithms themselves are general functional minimization algorithms seeking to minimize:
+Deterministic calibration methods (also known as non-linear least squares methods or deterministic parameter estimation methods) are used to fit a set of m observations (provided in the calibration data file defined in the **UQ** panel) with a model (defined in the **FEM** panel) that is non-linear with n unknown parameters. The unknown parameters of this model are defined in the **RV** panel. The bounds of the domain within which the optimal values of the parameters need to be searched for are also specified in the **RV** panel, along with the initial point at which the search will begin. No prior specification of the distribution associated with the random variables is necessary. The output quantities from the model are defined in the **QOI** panel. For each evaluation of the computational model, the processing scripts should write the values of the simulated response quantities of interest in a file called ``results.out``. The algorithms employed will find a set of parameter values that **minimizes** the sum of the squared differences between the measured values of the QoIs and the predicted values of the QoIs from the computational model. The algorithms themselves are general functional minimization algorithms seeking to minimize:
 
 .. math::
 
@@ -20,10 +20,10 @@ The panel that is presented to the user when this Dakota Category is chosen, is 
 	:align: center
 	:figclass: align-center
 
-  	Dakota determinstic calibration input panel.
+  	Dakota deterministic calibration input panel.
 
 
-For determinstic calibration two different optimization algorithms are currently provided under the Method drop down menu, namely OPT++GaussNewton and NL2SOL. For both methods three input parameters need to be specified as shown in the figure: 
+For deterministic calibration two different optimization algorithms are currently provided under the Method drop-down menu, namely OPT++GaussNewton and NL2SOL. For both methods three input parameters need to be specified as shown in the figure: 
 
 1. the maximum number of iterations for the optimization algorithm
 2. the convergence tolerance
@@ -37,7 +37,7 @@ OPT++ provides a Gauss-Newton least squares capability which, on zero-residual t
 NL2SOL
 ^^^^^^
 
-The NL2SOL method is based on an adaptive nonlinear least-squares algorithm, devised by Dennis and colleagues ([Dennis81a]_, [Dennis81b]_). NL2SOL uses a trust region method and adaptively switches between two Hessian approximations, the Gauss-Newton approximation alone and the Gauss-Newton approximation plus a quasi-Newton approximation to the rest of the Hessian. This latter approximation being useful when the starting guess is far from solution. For problems with large residuals, this algorithm is known to be more reliable than Gauss-Newton.
+The NL2SOL method is based on an adaptive nonlinear least-squares algorithm, devised by Dennis and colleagues ([Dennis81a]_, [Dennis81b]_). NL2SOL uses a trust region method and adaptively switches between two Hessian approximations, the Gauss-Newton approximation alone and the Gauss-Newton approximation plus a quasi-Newton approximation to the rest of the Hessian. This latter approximation is useful when the starting guess is far from the solution. For problems with large residuals, this algorithm is known to be more reliable than Gauss-Newton.
 
 
 .. note::

@@ -8,7 +8,7 @@ Install Python 3.9
 
 SimCenter tools require an x86-based version of Python 3.9 to run properly. If you have a different version of Python installed, you will need to add a Python 3.9 x86 version to your system. Below, we will demonstrate the process for installing Python 3.9 using the official distributor of Python, **python.org**.
 
-To see if you have python installed and whether it is compatable with SimCenter tools, issue the following in a terminal window.
+To see if you have python installed and whether it is compatible with SimCenter tools, issue the following in a terminal window.
 
 .. code::
    
@@ -17,7 +17,7 @@ To see if you have python installed and whether it is compatable with SimCenter 
    platform.uname()
    exit()
 
-As shown in screenshot below, you should see a Python 3.9 version after issuing the python3 command and the machine='x86_64' in the last line of output from the platform.uname() command. If you see another Python version or machine='arm64', you will need to install an x86 Python 3.9 on your computer.
+As shown in the screenshot below, you should see a Python 3.9 version after issuing the python3 command and the machine='x86_64' in the last line of output from the platform.uname() command. If you see another Python version or machine='arm64', you will need to install an x86 Python 3.9 on your computer.
 
 .. figure:: figures/pythonKernel.png
       :align: center
@@ -35,7 +35,7 @@ As shown in screenshot below, you should see a Python 3.9 version after issuing 
 
       Python: python.org MacOS Download Page
 
-**2.** After running yhe Python.org installer, a pop up directory window will appear containing a number of files, as shown in the figure below. Two of these files, ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh`` are script files. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal application. To execute the files, double click on the files individually with your mouse. 
+**2.** After running the Python.org installer, a pop-up directory window will appear containing several files, as shown in the figure below. Two of these files, ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh`` are script files. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal application. To execute the files, double-click on the files individually with your mouse. 
 
    .. figure:: figures/pythonInstallShell.png
       :align: center
@@ -60,9 +60,9 @@ Make sure you see a message that confirms the successful installation of the nhe
 
    1. If you forget to invoke the ``UpdateShellProfile.command.sh`` script at the end of the install, you can always execute the correct shell file later to update the ``PATH`` variable to point to the Python application.
 
-   On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e., there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the **bash** shell, the up and coming one is the **Z** shell. Power MacOS users will write shell scripts to do many many useful things. By default the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the users ``PATH``. Users can modify this path by editing files that the shell program will read from everytime the program is started.
+   On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e., there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the **bash** shell, and the up-and-coming one is the **Z** shell. Power MacOS users will write shell scripts to do many many useful things. By default, the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the user's ``PATH``. Users can modify this path by editing files that the shell program will read from every time the program is started.
 
-   When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of  some of the external applications that you have installed as **OpenSees** and **Dakota** do not provide installers that automatically do this when they are installed. Other applications, like **Tcl** provide scripts that you invoke to do it. In short you have to edit the file appropriate to the shell you are using.
+   When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of some of the external applications that you have installed as **OpenSees** and **Dakota** do not provide installers that automatically do this when they are installed. Other applications, like **Tcl** provide scripts that you invoke to do it. In short, you have to edit the file appropriate to the shell you are using.
 
    To find which shell program you are using when you issue commands inside the terminal window, type the following:
 
@@ -72,7 +72,7 @@ Make sure you see a message that confirms the successful installation of the nhe
 
    If the result is ``/bin/bash`` you will need to edit the ``.bashrc`` file or the ``bash_profile`` file. If the result is ``/bin/zsh`` you will need to edit the ``.zshrc`` or ``.zprofile``. Typically, the ``.bash_profile`` or the ``.zprofile`` file is the one to edit as by design these will invoke the ``.bashrc`` or ``.zshrc`` file. If in doubt, look for these files in your home directory and see which of these other installers have modified.
 
-   2. Python 3.10 from python.org will also work, though there is no x86 installer. The reason we do not recommend it's usage is that there is additional settings that need to be modified in the application under the Preferences tab as that python package has a different mechanism for invoking the x86 version, specifically **python3-intel64**.
+   2. Python 3.10 from python.org will also work, though there is no x86 installer. The reason we do not recommend its usage is that there are additional settings that need to be modified in the application under the Preferences tab as that python package has a different mechanism for invoking the x86 version, specifically **python3-intel64**.
 
 .. only:: R2D_app
 
@@ -173,7 +173,7 @@ To download the |app|, navigate to the |appLink| page which should resemble |fig
 
       HydroUQ tool download page.
 
-Click on the file with a name ending with **Mac_Download.dmg** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner. After the download has completed, open the dmg file and copy the |short tool name| application to a location in your filesystem.
+Click on the file with a name ending with **Mac_Download.dmg** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner. After the download is completed, open the dmg file and copy the |short tool name| application to a location in your filesystem.
 
 .. note::
 
@@ -186,16 +186,16 @@ Once the installation procedure has been completed, it is a good practice to run
 
 .. note::
 
-   SimCenter apps are code-signed and notarized, but because they are not downloaded from the operating system's app store, they may not be recognized as safe applications. Depending on your security settings, when you start a SimCenter app for the first time, your operating system may show a dialog box indicating it is unsafe. If this dialog appears, choose the cancel button. Try to start the app again, this time by right clicking on it and selecting open.
+   SimCenter apps are code-signed and notarized, but because they are not downloaded from the operating system's app store, they may not be recognized as safe applications. Depending on your security settings, when you start a SimCenter app for the first time, your operating system may show a dialog box indicating it is unsafe. If this dialog appears, choose the cancel button. Try to start the app again, this time by right-clicking on it and selecting open.
 
-   If the app still fails to open. You need to go to System Settings->Privacy and Security. Under the Security section you need to at least temprarily select the option to allow applications downloaded from the **App Store and Identified Developers**. With this schecked try again. If it fails again, go back to System Settings->Privacy and Security. Just below the section you just checked, there should be some text about why the app was stopped and an option to **Open Anayway" , as shown in figure below. Click on the button and the app should start.
+   If the app still fails to open. You need to go to System Settings->Privacy and Security. Under the Security section you need to at least temporarily select the option to allow applications downloaded from the **App Store and Identified Developers**. With this checked try again. If it fails again, go back to System Settings->Privacy and Security. Just below the section you just checked, there should be some text about why the app was stopped and an option to **Open Anayway" , as shown in figure below. Click on the button and the app should start.
 
    .. figure:: figures/AppleSecurity.png
     :align: center
     :figclass: align-center
 
 
-Once the application started, you should see the user interface shown in |figUI|. We recommend running the example problem |test example| to test the application.
+Once the application starts, you should see the user interface shown in |figUI|. We recommend running the example problem |test example| to test the application.
 
 .. only:: R2D_app
 
