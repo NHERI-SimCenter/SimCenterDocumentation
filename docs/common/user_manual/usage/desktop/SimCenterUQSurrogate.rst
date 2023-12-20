@@ -8,7 +8,7 @@ Gaussian Process (GP) Surrogate Modeling
 .. Note:: 
      Surrogate modeling functionality of |short tool id| is built upon `GPy <https://sheffieldml.github.io/GPy/>`_ library (available under BSD 3-clause license), an opensource python framework for Gaussian process modeling developed in the Sheffield machine learning group. 
 
-.. only:: quoFEM
+.. only:: quoFEM_app
 
     The ``Train GP Surrogate Model`` module is used to construct a Gaussian process (GP) based **surrogate model** that substitutes expensive computational **simulation models** or physical experiments. Consider a simulation model, with input random variables (or parameters) :math:`\boldsymbol{x}` and output quantity of interests, denoted as :math:`\boldsymbol{y}=f(\boldsymbol{x})`. A surrogate model for the corresponding simulation model can be built by different user-provided information types (RV-random variables, QoI-quantities of interest):
 
@@ -204,7 +204,7 @@ Note that the results from the parallel and serial run may not be exactly the sa
        * If the user wants to use the samples purely from data files and does not wish to introduce any simulation model, refer to Case 3 below.
 
 
-.. only:: EEUQ_app
+.. only:: EEUQ_app_app
 
     :blue:`Advanced Options (Earthquake specific)`
 
@@ -220,7 +220,7 @@ Note that the results from the parallel and serial run may not be exactly the sa
     The user can select intensity measures (IMs) that will be used as auxiliary inputs of the surrogate model, in addition to those specified in the RV tab. If ground motions have more than one directional component, either each component's IM can be added as a separate surrogate input parameter, or they can be aggregated by using their geometric mean. The latter can be selected by checking 'Use geometric mean when 2 or more ground motion components are given'.
 
 
-.. only:: quoFEM
+.. only:: quoFEM_app
 
     Case 2: Import RV Dataset and run Simulation
     ----------------------------------------------
@@ -338,7 +338,7 @@ Note that the results from the parallel and serial run may not be exactly the sa
 
 RV (Random Variables) Tab
 --------------------------
-.. only:: quoFEM
+.. only:: quoFEM_app
         
     **Case 1 and 2**: 
 
@@ -353,7 +353,7 @@ The bounds of RVs need to cover the domain of interest in future applications, w
 
    Example of RV tab
 
-.. only:: quoFEM
+.. only:: quoFEM_app
 
     **Case 3**: **RV data tab** will be populated automatically as soon as the dataset is imported.
 
