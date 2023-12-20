@@ -1,0 +1,32 @@
+{
+  "type": "FeatureCollection",
+  "crs": {
+    "type": "name",
+    "properties": {
+      "name": "urn:ogc:def:crs:OGC:1.3:CRS84"
+    }
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [[[-122.293878,37.771004],[-122.293973,37.771029],...]]
+      },
+      "properties": {
+        "AIM_id": "1",
+        "Latitude": 37.7709536,
+        "Longitude": -122.2939517,
+        "NumberOfStories": 1,
+        "YearBuilt": 1953,
+        "OccupancyClass": "IND2",
+        "StructureType": "W1",
+        "PlanArea": 18615.30048,
+        "ReplacementCost": 38781.876,
+        "Population": 1,
+        "SoilType": "B",
+        "BuildingType": "W1",
+        "DesignLevel": "MC"
+      }
+    },...]
+}

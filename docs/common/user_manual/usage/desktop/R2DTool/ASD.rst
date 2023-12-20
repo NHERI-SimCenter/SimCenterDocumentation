@@ -6,6 +6,37 @@ In this panel the user can import the databases of different asset classes. The 
 .. contents::
    :local:
 
+
+.. _lbl-GeoJSONtoAsset:
+GeoJSON to Asset
+----------------
+The **GeoJSON to Asset** application, shown in :numref:`fig-R2DGeoJsonInputBeforeLoad`, is SimCenter's preferred method to load regional infrastructure inventory.
+Users can load a ``.geojson`` format file containing inventory information that follows SimCenter's convention.
+Fig. :numref:`fig-R2DGeoJSONInputExampleBuilding` is an example of ``.geojson`` formatted database for buildings. 
+It follows the format convention of the official ``.geojson`` structure as described `here <https://geojson.org/>`_.
+
+
+
+
+.. _fig-R2DGeoJsonInputBeforeLoad:
+
+.. figure:: figures/R2DGeoJsonInputBeforeLoad.png
+  :align: center
+  :figclass: align-center
+
+.. _fig-R2DGeoJsonInputPanel:
+
+.. figure:: figures/R2DGeoJSONtoAsset.png
+  :align: center
+  :figclass: align-center
+
+.. _fig-R2DGeoJSONInputExampleBuilding:
+
+.. literalinclude:: figures/R2DGeoJSONInputExampleBuilding.json
+   :language: json
+   :linenos:
+
+
 .. _lbl-ASDBuildings:
 
 Buildings
@@ -25,7 +56,7 @@ The **CSV to AIM** application imports a building inventory database from a user
 	#. Input a string of numbers that correspond to the building IDs that you want to analyze. A range of buildings is specified with a dash, and multiple buildings are separated with a comma, e.g., 2-8, 9, 13, 15, 21, 34-38.
 	#. Employ the Advanced Filtering capabilities by clicking on the **Advanced Filter** button. The **Query Builder** dialog will appear, as seen in :numref:`fig-R2DQueryBuilderDialog`. You can create a custom filter expression (SQL format) using operators, e.g., ``<, =, OR``, and fields available in the imported building inventory, e.g., ``BuildingType``. Operators and fields can be combined to perform complex filtering expressions such as ``"YearBuilt" < 1970  AND  "BuildingType"  =  'Wood'``
 	
-	.. _fig-R2DQueryBuilderDialog:
+.. _fig-R2DQueryBuilderDialog:
 
 	.. figure:: figures/R2DQueryBuilderDialog.png
 	  :align: center
@@ -121,15 +152,16 @@ The **Node and Pipeline Information** table, shown in :numref:`fig-WDNInputPanel
 
   GIS to regional water network input panel.
 
+.. _lbl-ASDTransport:
 
-Regional Transportation Networks
+Regional Transportation Infrastructure
 -------------------------------------
-The transportation network input panel, as shown in :numref:`fig-R2DTransportJsonInputPanel`, allows a user to input roadways, bridges, and tunnels in a transportation network. The **Transportation Network Selection** combo box is where the user selects the application for the import of transportation network and for the generation of asset information models (AIM). 
+The transportation infrastructure input panel allows users to input the inventory of a transportation network. The **Transportation Network Selection** combo box is where users select the application for importing transportation network inventory generating asset information models (AIM).  
 
-JSON to Transportation Network AIM
+GeoJSON to Asset
 *****************************
 
-The **JSON to Transportation Network AIM** application imports a transportation network from a user-provided JSON file that contains information on highway bridges, tunnels, and/or roadways. Such a JSON file can be obtained with the BRIALS Transportation tool (see :numref:`lbl-BrailsTransportation`) in the **Tools** pull-down menu. The format of the JSON file is described in :numref:`lblTransportationInputOption1`
+The **JSON to Transportation Network AIM** application, as shown in :numref:`fig-R2DTransportJsonInputPanel`, imports a transportation network from a user-provided JSON file that contains information on highway bridges, tunnels, and/or roadways. Such a JSON file can be obtained with the BRIALS Transportation tool (see :numref:`lbl-BrailsTransportation`) in the **Tools** pull-down menu. The format of the JSON file is described in :numref:`lblTransportationInputOption1`
 If the selection filters are empty, all the transportation network components will be analyzed. Otherwise, only the selected components will be analyzed. Unlike buildings and water distribution networks, where the *first attribute* in the .csv or GIS files are used as the ID for the selection line edits, the transportation network components are selected according to their indices in the loaded JSON asset file, and the indices starts from 0. For example, if “0-4” is input to roadway selection line edit, the first five roadways in the loaded JSON file will be analyzed. 
 
 After loading the JSON file, the **JSON to Transportation Network AIM** application will first convert the roadways to a graph and combine the graph edges between roadway intersections (i.e., graph nodes with more than 2 neighbors) into one edge. If the combined edges are longer than the “Roadway length per AIM”, the application will break down the edges into n pieces, where n is the roundup integer of roadway length divided by roadway length per AIM. For example, the application will break a 150 m roadway into two 75 m roadways if the roadway length per AIM is set as 100 m. More examples can be found in the example E14 in :numref:`lbl-examples`.

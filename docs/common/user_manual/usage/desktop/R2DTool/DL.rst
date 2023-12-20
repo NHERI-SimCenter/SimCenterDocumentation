@@ -6,10 +6,10 @@ The **Damage and Loss** panel is where the user selects a damage and loss method
 .. contents::
    :local:
 
-.. _lbl-DLPelicun:
+.. _lbl-DLBuildingPelicun:
 
-Pelicun Damage and Loss 
------------------------
+Pelicun Damage and Loss for Buildings
+-------------------------------------
 
 Shown in :numref:`fig-R2DPelicunDLPanel`, the **Pelicun Damage and Loss** application has the following inputs:
 
@@ -50,3 +50,8 @@ Shown in :numref:`fig-R2DPelicunDLPanel`, the **Pelicun Damage and Loss** applic
 	Pelicun Damage and Loss Input panel.
 
 Additional information on Pelicun and descriptions of its output are available at `Pelicun Documentation <https://nheri-simcenter.github.io/pelicun/common/user_manual/usage/pelicun/outputs.html>`_.
+
+.. _lbl-DLTransportPelicun:
+
+Pelicun Damage and Loss for Transportation Infrastructure
+---------------------------------------------------------

@@ -43,6 +43,7 @@ IM as EDP Analysis Model
 The **IM as EDP** application forgoes a structural analysis altogether. In this case, the hazard intensity measure (IM) is considered the engineering demand parameter (EDP). 
 
 
+.. _lbl-ANATransport:
 
 Transportation Networks
 -----------------------
