@@ -204,7 +204,7 @@ Note that the results from the parallel and serial run may not be exactly the sa
        * If the user wants to use the samples purely from data files and does not wish to introduce any simulation model, refer to Case 3 below.
 
 
-.. only:: EEUQ_app_app
+.. only:: EEUQ_app
 
     :blue:`Advanced Options (Earthquake specific)`
 
