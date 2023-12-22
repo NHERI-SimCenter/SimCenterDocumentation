@@ -8,6 +8,7 @@
   },
   "features": [
     {
+      "id": 0,
       "type": "Feature",
       "geometry": {
         "type": "Polygon",
@@ -24,9 +25,7 @@
         "PlanArea": 18615.30048,
         "ReplacementCost": 38781.876,
         "Population": 1,
-        "SoilType": "B",
-        "BuildingType": "W1",
-        "DesignLevel": "MC"
+        "type": "Building"
       }
     },...]
 }

@@ -62,9 +62,9 @@ The **OpenSeesPy** building modeling application creates an OpenSeesPy structura
 
 .. _lbl-MODTransport:
 
-Transportation Networks
------------------------
-Only the Intensity Measure as Engineering Demand Parameter (**IMasEDP**) type of analysis is supported for transportation network damage and loss analysis now. The asset models should be **None** for **IMasEDP** analyses. 
+Transportation Infrastructure
+-----------------------------
+Only the Intensity Measure as Engineering Demand Parameter (**IMasEDP**) type of analysis is supported for transportation infrastructure analysis now. The asset models should be **None** for **IMasEDP** analyses. 
 
 
 
