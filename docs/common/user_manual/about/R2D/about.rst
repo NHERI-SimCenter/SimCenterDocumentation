@@ -9,8 +9,9 @@ This open-source research application, which is available at |tool github link|,
 The Regional Resilience Determnation (R2D) tool is an extensible scientific workflow system that can be used to quantify the effects of hazards on regional communities. The tool incorporates the same workflow components used in the WE-UQ, EE-UQ, and PBE tools, extended to consider multiple asssets and regionally distributed hazards. Current capablities and a potential; future timeline is presented in **Capabilities** and **Release Plans**, sections 5 and 6 below.
 
 
-Whether running locally or remotely, the computations are performed,
-as will be discussed in the :ref:`lbl-technical-manual`, by an application called rWHALE. rWHALE runs the scientific workflow specified by invoking and running a number of different applications, taking the outputs from some programs and providing them as inputs to others. The design of the R2D and rWhale applications is such that researchers are able to include their own application in the workflow. This will ensure researchers are not limited to using
+Whether running locally or remotely, the computations are performed by a backend `scientific workflow <https://en.wikipedia.org/wiki/Scientific_workflow_system>`_ application named rWHALE.
+rWHALE runs the scientific workflow specified by invoking and running a number of different :ref:`backend applications <lblbackendApps>`, 
+taking the outputs from some programs and providing them as inputs to others. The design of the R2D and rWhale applications is such that researchers are able to include their own application in the workflow. This will ensure researchers are not limited to using
 the default applications we provide and will be enthused to provide
 their own applications for others to use.
 
