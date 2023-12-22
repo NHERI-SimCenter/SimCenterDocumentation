@@ -137,10 +137,17 @@ examples:
 	make build/$(SIMDOC_APP)_Examples.json
 
 build/%.json: examples.yaml Makefile FORCE
+ifeq ($(SIMDOC_APP), R2DTool)
+	pwd
+	ls ../$(SIMDOC_APP)/../R2DExamples/
+	$(PYTHON) scripts/index_examples.py $(SIMDOC_APP) \
+    | aurore -D- -B ../$(SIMDOC_APP)/../R2DExamples/ -C scripts/config.yml get \
+    > $(call BUILDDIR,$(SIMDOC_APP))_Examples.json
+else
 	$(PYTHON) scripts/index_examples.py $(SIMDOC_APP) \
     | aurore -D- -B ../$(SIMDOC_APP)/Examples/ -C scripts/config.yml get \
     > $(call BUILDDIR,$(SIMDOC_APP))_Examples.json
-
+endif
 
 $(CSVDIR)/%.csv: $(JSONDIR)/%.json ./scripts/json2csv.py
 	python3 ./scripts/json2csv.py \
@@ -148,7 +155,7 @@ $(CSVDIR)/%.csv: $(JSONDIR)/%.json ./scripts/json2csv.py
 		-Eeeuq $(SIMCENTER_DEV)/EE-UQ/Examples/eeuq-*/src/input.json \
 		-Eweuq -  \
 		-Epbdl $(SIMCENTER_DEV)/PBE/Examples/pbdl-*/src/input.json \
-		-Er2dt $(SIMCENTER_DEV)/R2DTool/Examples/E*/input.json \
+		-Er2dt $(SIMCENTER_DEV)/R2DExamples/E*/input.json \
 		-Ehydr - \
 		< '$<' > '$@'
 
@@ -161,7 +168,7 @@ csv-debug: FORCE
             -Eeeuq $(SIMCENTER_DEV)/EE-UQ/Examples/eeuq-*/src/input.json \
             -Eweuq -  \
             -Epbdl $(SIMCENTER_DEV)/PBE/Examples/pbdl-*/src/input.json \
-            -Er2dt $(SIMCENTER_DEV)/R2DTool/Examples/E*/input.json \
+            -Er2dt $(SIMCENTER_DEV)/R2DExamples/E*/input.json \
             -Ehydr - \
             < "$(JSONDIR)/$$json_file"; \
 	done
