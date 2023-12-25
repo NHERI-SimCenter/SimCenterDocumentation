@@ -6,7 +6,7 @@ Capabilities
 ************
 
 
-**Version 3.2** of |app| was released **Dec 2023**. The following is the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+**Version |tool version|** of |app| was released **Dec 2023**. The following is the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 The major update from Version 3.0 is adding the analysis capability for :blue:`regional transportation infrastructure`. Note that since version 3.0, most **Haz** options were moved to the **Tool** main menu.
 
 
@@ -62,7 +62,9 @@ The major update from Version 3.0 is adding the analysis capability for :blue:`r
 			a. HAZUS MH EQ
 			b. HAZUS MH EQ IM
 			c. HAZUS MH HU
-    * :ref:`Transportation infrastructure <_lbl-DLTransportPelicun>`
+    * :ref:`Transportation infrastructure <lbl-DLTransportPelicun>`
+			a. HAZUS MH EQ
+			b. HAZUS MH EQ IM
 			
 #. **Uncertainty Quantification**: 
     * :ref:`Dakota <lblUQ>`:
@@ -75,10 +77,10 @@ The major update from Version 3.0 is adding the analysis capability for :blue:`r
 		* Site definition:
 			a. Grid
 			b. Point
-			c. Scattered sites (user defined sites in .csv format)
+			c. Scattered sites (user-defined sites in .csv format)
 		* Rupture forecast models:
 			a. OpenSHA UCERF rupture forecast models
-			b. OpenSHA Point source user defined
+			b. OpenSHA Point source user-defined
 			c. OpenQuake Scenario Based
 			d. OpenQuake Classical PSHA
 			e. :blue:`Hazard Occurrence Model`
@@ -110,12 +112,12 @@ The major update from Version 3.0 is adding the analysis capability for :blue:`r
 		* Site definition:
 			a. Grid
 		* Hurricane track definition:
-			a. User defined sites in .csv format
-			b. Select from database of historical hurricanes
+			a. User-defined sites in .csv format
+			b. Select from a database of historical hurricanes
 			c. Truncate hurricane track functionality
 		* Landfall location and parameters:
-			a. User select on GIS map
-			b. Manual user entry in input box
+			a. User selects on GIS map
+			b. Manual user entry in the input box
 		* Wind field generation model:
 			a.  Snaiki and Wu (2017)
 
