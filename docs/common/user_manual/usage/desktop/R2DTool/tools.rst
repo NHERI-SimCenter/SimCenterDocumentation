@@ -10,7 +10,8 @@ The main menu toolbar contains the tools dropdown menu. Tools in R2D are applica
 .. include:: OpenQuake.rst	     
 .. include:: HurricaneScenario.rst
 .. include:: CensusData.rst
-.. include:: BRAILS.rst	     	     	     
+.. include:: BRAILSBuildings.rst
+.. include:: BRAILSTransportation.rst	     	     	     
 
 
 

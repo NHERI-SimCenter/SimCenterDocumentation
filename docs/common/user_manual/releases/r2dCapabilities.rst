@@ -6,12 +6,13 @@ Capabilities
 ************
 
 
-**Version 3.0** of |app| was released **May 2023**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.) Note the version introduced major changes in how tool is used. Some of existing **Haz** options were moved to a new **Tool** main menu option.
+**Version 3.2** of |app| was released **Dec 2023**. The following is the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+The major update from Version 3.0 is adding the analysis capability for :blue:`regional transportation infrastructure`. Note that since version 3.0, most **Haz** options were moved to the **Tool** main menu.
 
 
 
 
-**Release date:** May, 2023
+**Release date:** Dec, 2023
 
 #. **Hazard Types**:
 
@@ -26,17 +27,24 @@ Capabilities
 
 
 
-#. **Asset Types**: 
+#. **Asset Types**:
+
     * :ref:`Buildings <lbl-ASDBuildings>`:
-	a. Building database in a ``.csv`` format.
-	b. Building database in a ``.gis`` format.		   
+		a. Load building database in a ``.csv`` format.
+		b. Load building database in a ``.gis`` format.
+    * :ref:`Transportation infrastructure <lbl-ASDTransport>`:
+		a. :blue:`Load transportation infrastructure database in SimCenter's` ``.geojson`` :blue:`format.`
+		b. :blue:`Load transportation infrastructure database in common` ``.gis`` :blue:`format.`
+		   
 	
 #. **Asset Modeling**: 
     * :ref:`Buildings <lbl-MODBuildings>`:
 		a. MDOF-LU (MDOF shear building model)
 		b. OpenSeesPy script building generator
-		c. IMasEDP, i.e., no analysis as the IM is considered the EDP
+		c. IMasEDP, i.e., no structural modeling, and the Intensity Measures (IMs) are considered the Engineering Demand Parameters (EDPs)
                 d. CustomPy
+    * :ref:`Transportation infrastructure <lbl-MODTransport>`:
+	    a. IMasEDP, i.e., no structural modeling, and the Intensity Measures (IMs) are considered the Engineering Demand Parameters (EDPs)
 
 #. **Asset Analysis**: 
     * :ref:`Buildings <lbl-ANABuildings>`:
@@ -44,14 +52,17 @@ Capabilities
 		b. OpenSeesPy 
 		c. IMasEDP, i.e., no analysis as the IM is considered the EDP
 		d. CustomPy for CustomPy in Asset Modeling
-		d. None for IMasEDP option in Modeling.		   		   
+		e. None for IMasEDP option in Modeling.	
+    * :ref:`Transportation infrastructure <lbl-ANATransport>`:
+	    a. None for IMasEDP option in Modeling.	   		   
 		
 #. **Damage and Loss**: 
-    * Buildings:
-		* :ref:`Pelicun <lbl-DLPelicun>`
+    * :ref:`Buildings <lbl-DLBuildingPelicun>`:
+		* Pelicun
 			a. HAZUS MH EQ
 			b. HAZUS MH EQ IM
 			c. HAZUS MH HU
+    * :ref:`Transportation infrastructure <_lbl-DLTransportPelicun>`
 			
 #. **Uncertainty Quantification**: 
     * :ref:`Dakota <lblUQ>`:
