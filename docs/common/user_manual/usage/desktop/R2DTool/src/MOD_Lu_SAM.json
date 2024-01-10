@@ -1,0 +1,150 @@
+{
+    "Properties":
+    {
+        "dampingRatio": 0.09956333887469665,
+        "uniaxialMaterials":
+        [
+            {
+                "name": 1,
+                "type": "shear",
+                "K0": 61532397.052015901,
+                "Sy": 2110124.6849974156,
+                "eta": 0.087035399999999999,
+                "C": 1000.0,
+                "gamma": 0.80000000000000004,
+                "alpha": 3.0,
+                "beta": 1.0,
+                "omega": 0.20000000000000001,
+                "eta_soft": -0.001,
+                "a_k": 0.10000000000000001
+            },
+            {
+                "name": 2,
+                "type": "shear",
+                "K0": 61532397.052015901,
+                "Sy": 1406749.7899982773,
+                "eta": 0.087035399999999999,
+                "C": 1000.0,
+                "gamma": 0.80000000000000004,
+                "alpha": 3.0,
+                "beta": 1.0,
+                "omega": 0.20000000000000001,
+                "eta_soft": -0.001,
+                "a_k": 0.10000000000000001
+            }
+        ]
+    },
+    "Geometry":
+    {
+        "nodes":
+        [
+            {
+                "name": 1,
+                "crd":
+                [
+                    0.0,
+                    0.0,
+                    0.0
+                ],
+                "ndf": 6,
+                "constraints":
+                [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1
+                ]
+            },
+            {
+                "name": 2,
+                "mass": 284190.39936000004,
+                "crd":
+                [
+                    0.0,
+                    0.0,
+                    3.6000000000000001
+                ],
+                "ndf": 6,
+                "constraints":
+                [
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1
+                ]
+            },
+            {
+                "name": 3,
+                "mass": 284190.39936000004,
+                "crd":
+                [
+                    0.0,
+                    0.0,
+                    7.2000000000000002
+                ],
+                "ndf": 6,
+                "constraints":
+                [
+                    0,
+                    0,
+                    1,
+                    1,
+                    1,
+                    1
+                ]
+            }
+        ],
+        "elements":
+        [
+            {
+                "name": 1,
+                "type": "shear_beam2d",
+                "uniaxial_material": 1,
+                "nodes":
+                [
+                    1,
+                    2
+                ]
+            },
+            {
+                "name": 2,
+                "type": "shear_beam2d",
+                "uniaxial_material": 2,
+                "nodes":
+                [
+                    2,
+                    3
+                ]
+            }
+        ]
+    },
+    "NodeMapping":
+    [
+        {
+            "cline": "response",
+            "floor": "0",
+            "node": 1
+        },
+        {
+            "cline": "response",
+            "floor": "1",
+            "node": 2
+        },
+        {
+            "cline": "response",
+            "floor": "2",
+            "node": 3
+        }
+    ],
+    "units":
+    {
+        "force": "kN",
+        "length": "m",
+        "temperature": "C",
+        "time": "sec"
+    }
+}
