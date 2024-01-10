@@ -173,6 +173,7 @@ toc_filter_exclusions = [
     "S3hark",
     "pelicun",
     "docTestbeds",
+    "docDLDB",
 ]
 
 

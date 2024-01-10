@@ -1,0 +1,19 @@
+{
+    "AIM_id": "1",
+    "location": {
+      "latitude": 61.21700019,
+      "longitude": -149.9083196
+    },
+    "Latitude": 61.21700019,
+    "Longitude": -149.9083196,
+    "NumberOfStories": 2,
+    "YearBuilt": 1983,
+    "OccupancyClass": "RES1",
+    "PlanArea": 3059,
+    "StructureType": "W1",
+    "units": {
+      "force": "kips",
+      "length": "ft",
+      "time": "sec"
+    }
+  }
