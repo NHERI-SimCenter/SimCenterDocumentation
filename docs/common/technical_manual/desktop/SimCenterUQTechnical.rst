@@ -34,6 +34,22 @@ For the Nataf transformation, the SimCenterUQ engine borrows a part of the distr
 Global sensitivity analysis
 ===========================
 
+Video Resources 
+------------------
+Global Sensitivity Analysis: why, what, and how.
+
+.. raw:: html
+
+   <div style="text-align: center;">
+      <iframe src="https://www.youtube.com/embed/JC8xN5LAo84?start=134" width="560" height="315" frameborder="5" allowfullscreen="allowfullscreen"></iframe>
+   </div>
+ 
+.. raw:: html
+
+   <p><br>Click to replay the video from <a href="javascript:window.location.reload(true);">2:14</a>. </p>
+
+
+
 Variance-based global sensitivity indices
 -----------------------------------
 Global sensitivity analysis (GSA) is performed to quantify the contribution of each input variable to the uncertainty in QoI. Using the global sensitivity indices, users can set preferences between random variables considering both inherent randomness and its propagation through the model. GSA helps users to understand the overall impact of different sources of uncertainties, as well as accelerate UQ computations by focusing on dominant dimensions or screening out trivial input variables.
