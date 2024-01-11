@@ -26,6 +26,9 @@
             "OptionalInputs": {"description": "(Optional) Additional column headers which may be included for custom building definitions. For example, structural model parameters used in the Simulation application or alternate building classifications used in the DL application may be specified here."}
           }
         },
+        "transportationSourceFile1": {
+          "title": "Transportation Network Source File Option 1"
+        },
         "modelFile": {
           "title": "Model File",
           "description": "If the simulation application chosen is OpenSees-Simulation or OpenSeesPy-Simulation, then a model file must be provided. It consists of an OpenSees/OpenSeesPy script with functions for building and analyzing a custom structural model. See the Simulation Applications page for more details on application-specific inputs."

@@ -1,0 +1,4 @@
+,Earthquake Required,Earthquake Required,Earthquake Required,*OptionalInputs
+Key,ID,location,cons_type,
+Item,A string of the tunnel ID.,An integer of the ID of the node that describes the location of the tunnel.,"A string describes the construction type as defined in HAZUS Earthquake Model Technical Manual (FEMA 2022). Values allowed are 'Bored', 'Cut', or 'unclassified'.",(Optional) Additional items which may be included for custom tunnel definitions.
+Example,"""ID"": ""330106L""","""location"": 8","""cons_type"": ""unclassified""",

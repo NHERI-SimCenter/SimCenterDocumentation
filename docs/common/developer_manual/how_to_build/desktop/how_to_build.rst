@@ -25,7 +25,13 @@ First, ensure the following dependencies are installed:
 
 * **Python**: The workflow requires at least Python 3.7.
 
-* **Conan**: This repository uses `Conan <https://conan.io/>`_ for dependency management. Conan is a python library and can be installed using the following `instructions <https://docs.conan.io/en/latest/installation.html>`_. Version 1.25 or later is recommended.
+* **Conan**: This repository uses `Conan <https://conan.io/>`_, a python library, for dependency management. **Install conan version 1.60.2**, for example, through
+
+        .. code:: console
+
+            pip install conan==1.60.2
+
+        | See the `instructions <https://docs.conan.io/en/latest/installation.html>`_ if alternative installation methods are needed
 
 * **CMake**: This repository uses `CMake <https://cmake.org/download/>`_ for managing the build process. Version 3.15 or later is recommended.
 
