@@ -5,7 +5,7 @@ ExampleWidget
 =============
 
 
-.. _ExampleWidget compound_widget:
+.. _ExampleWidget Compound Widget:
 
 Compound Widget
 	Follow the link for a description of the inputs to Compound Widget
@@ -18,34 +18,30 @@ Compound Widget
 			User inputs for Compound Widget
 
 
-.. _ExampleWidget sample_size:
+.. _ExampleWidget Sample Size:
 
 Sample Size
 	Number of samples from the posterior probability distribution
 
 	Default: 2000
 
-	Constraints: gt=0
-
 	Key in JSON file: sample_size
 
 
-.. _ExampleWidget seed:
+.. _ExampleWidget Seed:
 
 Seed
 	State of pseudo-random number generator for reproducibility
-
-	Constraints: ge=0
 
 	Key in JSON file: seed
 
 	.. seealso::
 
-		:ref:`seed <UCSD_InputTMCMC seed>`
+		:ref:`seed <UCSD_InputTMCMC Seed>`
 			Compare with this parameter too
 
 
-.. _ExampleWidget calibration_data_file:
+.. _ExampleWidget Calibration Data File:
 
 Calibration Data File
 	Full path to the file containing the calibration data
@@ -53,7 +49,7 @@ Calibration Data File
 	Key in JSON file: calibration_data_file
 
 
-.. _ExampleWidget log_likelihood_script:
+.. _ExampleWidget Log Likelihood Script:
 
 Log Likelihood Script
 	Full path to the file containing the log-likelihood function
@@ -64,18 +60,16 @@ Log Likelihood Script
 
 	.. seealso::
 
-		:ref:`log_likelihood_script <UCSD_InputTMCMC log_likelihood_script>`
+		:ref:`log_likelihood_script <UCSD_InputTMCMC Log Likelihood Script>`
 			This is also relevant to this parameter and adds some context 
 
 
-.. _ExampleWidget dummy:
+.. _ExampleWidget Dummy Variable:
 
 Dummy Variable
 	This is a dummy variable
 
 	Default: check_default
-
-	Constraints: check_constraint
 
 	Key in JSON file: dummy
 

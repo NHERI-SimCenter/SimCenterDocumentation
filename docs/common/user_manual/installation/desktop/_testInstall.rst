@@ -15,7 +15,7 @@ Test the Application
 
 .. only:: quoFEM_app
 
-   Follow the following steps to test the install:
+   Follow the following steps to test the installation:
 
     #. Create a folder test in your Desktop.
     #. Create a file ``test.tcl`` in this folder with the following contents.
@@ -32,7 +32,7 @@ Test the Application
 
         .. note::
 
-        For those interested, we are using quoFEM to answer the question of what is the distance between two random points (assumed independent and uniformly distributed) located on the line segment (0,1).The mean distance given by the exact solution is **1/3** with a standard deviation of **1/6**.
+        For those interested, we are using quoFEM to answer the question of what is the distance between two random points (assumed independent and uniformly distributed) located on the line segment (0,1). The mean distance given by the exact solution is **1/3** with a standard deviation of **1/6**.
 
 .. only:: EEUQ_app
 

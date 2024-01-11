@@ -2,7 +2,7 @@ Wind Tunnel Experiment
 ----------------------
 
 
-This application will take the wind tunnel data provided and scale it based on wind speed provided in this interface, and the building dimensions provided in the General Information. The theory on scaling wind tunnel data is provided in the theory. The data for the wind tunnel is provided in a JSON file format. That file contains information on model dimensions, model wind speed, and model frequency, tap locations and time varying pressure tap coefficients.
+This application will take the wind tunnel data provided and scale it based on wind speed provided in this interface, and the building dimensions provided in the General Information. The theory on scaling wind tunnel data is provided in the theory. The data for the wind tunnel is provided in a JSON file format. That file contains information on model dimensions, model wind speed, model frequency, tap locations and time-varying pressure tap coefficients.
 
 .. _fig-windTunnelExp:
 .. figure:: figures/windTunnelExperiment.png
@@ -15,7 +15,7 @@ This application will take the wind tunnel data provided and scale it based on w
 
 #. The Wind speed.
 
-#. The file containing the experimental data. The file contains information about the dimensions of the building model in the wind tunnel, the wind speed (the meaning of wind speed dis totally dependent on what wind speed measurement was used in the test), time varying data for the pressure coefficients, information on frequency of these data points, and information on the locations of pressure taps for which pressure coefficients are provided. An abbreviated example is as shown below.
+#. The file containing the experimental data. The file contains information about the dimensions of the building model in the wind tunnel, the wind speed (the meaning of wind speed is dependent on what wind speed measurement was used in the test), time-varying data for the pressure coefficients, information on the frequency of these data points, and information on the locations of pressure taps for which pressure coefficients are provided. An abbreviated example is shown below.
 
 Random Variables: For this event, the wind speed can be a random variable.
 
@@ -53,7 +53,7 @@ The format for the wind tunnel data file is presently a JSON file. Future versio
      #. It should be noted that at present the only valid **modelShape**  is a Cuboid. For users requiring other shapes, please post shape requests on the |messageBoard|.
 
 
-For a cuboid the input file contains information about the wind tunnel models width, depth, height and wind speed. In addition for each of the 4 faces the user provides information on tap location for which pressure coefficients are given. The coordinate system for each face is x and ym and assumes the origin is at bottom left of an elevation of the building assuming user is looking at that face of the building, as shown in figure below.
+For a cuboid, the input file contains information about the wind tunnel model's width, depth, height and wind speed. In addition for each of the 4 faces the user provides information on tap location for which pressure coefficients are given. The coordinate system for each face is x and ym and assumes the origin is at the bottom left of an elevation of the building assuming the user is looking at that face of the building, as shown in the figure below.
 
 .. _figWindTunnel:
 

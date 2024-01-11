@@ -64,7 +64,7 @@ The **Full Scale Building Geometry** and the **Units** are specified in the GI t
 
 
 .. warning::
-		This algorithm assumes that **the building is uniformly scaled in all dimensions**, meaning if model height is scaled by 1/200 for the experiment, width (breath) and depth is also scaled by 1/200. Therefore the ratio of model-scale dimensions (B,H,D) provided in the "Wind Force Time History File" should match that of the full-scale dimensions (Height, Width, Depth) specified in the GI tab. Otherwise, WE-UQ will give a warning message in blue font color as shown in the screen capture above.
+		This algorithm assumes that **the building is uniformly scaled in all dimensions**, meaning if model height is scaled by 1/200 for the experiment, width (breath) and depth are also scaled by 1/200. Therefore the ratio of model-scale dimensions (B,H,D) provided in the "Wind Force Time History File" should match that of the full-scale dimensions (Height, Width, Depth) specified in the GI tab. Otherwise, WE-UQ will give a warning message in blue font color as shown in the screen capture above.
 
 Wind Force Time History File
 ^^^^^^^^^^^^^^^^^^^^^^^^^
