@@ -20,6 +20,7 @@ Technical Manual
 
    :EEUQ:spatial_correlation
    :PBE:spatial_correlation
+   :R2D:HazardSimulationTool_useCase
    :R2D:spatial_correlation
    :R2D:hazard_occurrence
    
