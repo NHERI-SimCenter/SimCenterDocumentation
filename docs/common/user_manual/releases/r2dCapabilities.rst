@@ -81,9 +81,8 @@ The major update from Version 3.0 is adding the analysis capability for :blue:`r
 		* Rupture forecast models:
 			a. OpenSHA UCERF rupture forecast models
 			b. OpenSHA Point source user-defined
-			c. OpenQuake Scenario Based
-			d. OpenQuake Classical PSHA
-			e. :blue:`Hazard Occurrence Model`
+			c. OpenQuake rupture forecast
+			d. Hazard Occurrence Model
 		* Inter-event correlation:
 			a. Baker and Jayaram (2008)
 		* Intra-event correlation:
@@ -99,14 +98,13 @@ The major update from Version 3.0 is adding the analysis capability for :blue:`r
 			c. Campbell & Bozorgnia (2014)
 			d. Chiou & Youngs (2014)
 		* Intensity Measures: 
-			a. Spectral accelertion (SA)
+			a. Spectral acceleration (SA)
 			b. Peak ground acceleraation (PGA)
 		* Vs30 Model:
 			a. CGS/Wills Vs30 (Wills et al., 2015)
-			b. Peak ground acceleraation (PGA)
-			c. Thompson California Vs30 (Thompson et al., 2018)
-			d. Global Vs30 (Heath et al., 2020)
-			e. User Defined`
+			b. Thompson California Vs30 (Thompson et al., 2018)
+			c. Global Vs30 (Heath et al., 2020)
+			d. User Defined
 
     * :ref:`Hurricane Scenario Simulation <hurricane_scenario_tool>` (hurricane wind field generation)
 		* Site definition:
