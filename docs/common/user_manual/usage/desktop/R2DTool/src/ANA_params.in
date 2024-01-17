@@ -1,0 +1,34 @@
+33
+alpha-1 3.0
+mass-2 284190.39936000004
+gamma-1 0.8
+C-2 1000.0
+Sy-1 2110124.6849974156
+eta_soft-2 -0.001
+StructureType "W1"
+eventID "site_8040x00001"Latitude 61.21700019
+eta-2 0.0870354
+beta-2 1.0
+OccupancyClass "RES1"
+Latitude 61.21700019
+gamma-2 0.8
+beta-1 1.0
+eta-1 0.0870354
+C-1 1000.0
+Sy-2 1406749.7899982773
+Longitude -149.9083196
+a_k-2 0.1
+NumberOfStories 2
+omega-1 0.2
+K0-1 61532397.0520159
+YearBuilt 1983
+PlanArea 3059
+K0-2 61532397.0520159
+alpha-2 3.0
+kFactor 1.026465941898360e+00
+dampingRatio 0.09956333887469665
+dampFactor 9.956333887469664e-01
+a_k-1 0.1
+eta_soft-1 -0.001
+omega-2 0.2
+mass-3 284190.39936000004
