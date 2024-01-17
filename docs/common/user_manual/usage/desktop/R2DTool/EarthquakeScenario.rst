@@ -559,11 +559,31 @@ Run Hazard Simulation Button
 ++++++++++++++++++++++++++++
 
 Shown at the bottom of :numref:`fig-R2DEQSSGMDBPane`, the **Run Hazard Simulation** button starts the ground motion selection application.
-The earthquake scenario simulation is run via a Python script. When the **Run Hazard Simulation** button is pressed, text output from the script will appear in the **Program Output** console at the bottom of the application.
-Upon successful completion of the earthquake scenario simulation, results from the simulation are in the **HazardSimulation/GroundMotions/Ouput** folder of the local working directory that is specified in R2D preferences., as shown in :numref:`figUI-preferences`.
-The final output is a ``.csv`` file called ``EventGrid.csv``. The ``EventGrid.csv`` file contains the grid points and their locations and file names. Each grid point is assigned a ``.csv`` file containing a list of the ground motions at the grid point and their scaling factors. If ground motion record selection is carried out,
-the corresponding ground motion records, in ``JSON`` format, are also in the **Output Directory** directory. The intensity measures used to select the ground motion records are saved in the **IMs** folder in the **Ouput** folder.
-Next, the ``EventGrid.csv`` is post-processed, and a new layer containing the ground motions is added to the GIS widget. The grid points are represented with a cross symbol. Clicking on a grid point will produce a popup with information about the ground motions at that point.
+The earthquake scenario simulation is run via a Python script. When the **Run Hazard Simulation** button is pressed,
+text output from the script will appear in the **Program Output** console at the
+bottom of the application. Upon successful completion of the earthquake scenario
+simulation, results from the simulation are in the **HazardSimulation/GroundMotions/Ouput**
+folder of the local working directory that is specified in R2D preferences,
+as shown in :numref:`figUI-preferences`.
+
+The intensity measure outputs are stored in 
+the **IMs** folder in **HazardSimulation/GroundMotions/Ouput**. The output is a ``.csv`` file
+called ``EventGrid.csv`` containing the site locations and the names of the ``.csv`` files containing
+the intensity measure samples at each site. The number of intensity measure samples
+at each site is equal to the number of ground motions per site specified in the 
+ground motion record selection panel, as shown in :numref:`fig-R2DEQSSGMDBPane`.
+The output of PGA and SA are in the unit of gravitational acceleration (g). 
+
+If ground motion record selection is performed, the selected records will be saved in
+the **HazardSimulation/GroundMotions/Ouput** folder. The output includes an ``EventGrid.csv``
+file, which contains site locations and the names of the ``.csv`` files containing the selected
+ground motion records at each site. Each site is assigned a ``.csv`` file containing
+a list of the selected ground motions at the site and their scaling factors.
+If ground motion record are saved in ``JSON`` format in the **HazardSimulation/GroundMotions/Ouput** directory.
+The ``EventGrid.csv`` will also be post-processed, and a new layer containing the
+ground motions will be added to the GIS widget. The grid points are represented
+with a cross symbol. Clicking on a grid point will produce a popup with information
+about the ground motions at that point.
 
 
 
