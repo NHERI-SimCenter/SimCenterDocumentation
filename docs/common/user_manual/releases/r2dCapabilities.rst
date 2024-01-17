@@ -18,7 +18,7 @@ The major update from Version 3.0 is adding the analysis capability for :blue:`r
 
     * :ref:`User specified earthquakes <lbl-UserSpecifiedGroundMotions>`.
     * :ref:`User specified hurricanes <lbl-UserSpecifiedHurricane>`.
-    * :ref:`ShakeMap Scenarios <lbl-shakeMapEQScenarios>`, which suports importing the following ShakeMap outputs:
+    * :ref:`ShakeMap Scenarios <lbl-shakeMapEQScenarios>`, which supports importing the following ShakeMap outputs:
             a. ShakeMap ground motion grid in .xml format.
             b. PGA contours in .json format.
             c. Fault rupture in .json format.	

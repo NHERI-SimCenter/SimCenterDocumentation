@@ -203,6 +203,7 @@ More descriptions can be found in example 14 in :ref:`R2D examples <lbl-examples
 Users should switch the viewing panel with the **component selection panel** and select the assets they want to analyze in the **Asset Selection Filtering** box.
 The selected assets can be visualized in the **VIZ** panel.
 
+.. note:: The outputs of the BRIALS Transportation tool use the default units of the inventory databse described in :numref:`lbl-BrailsTransportation`. Users need to convert the units to those defined in the :ref:`General Information <lblGI>` panel before loading the units to this Asset panel.
 
 .. literalinclude:: figures/R2DGeoJSONInputExampleTransport.json
    :language: json
