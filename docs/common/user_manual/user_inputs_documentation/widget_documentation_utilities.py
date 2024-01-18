@@ -178,7 +178,7 @@ def _read_one_csv_file(
     csv_file_name: Path,
 ) -> typing.List[DocumentationForUserInputItem]:
     widget_data = []
-    with open(csv_file_name, newline="") as csv_file:
+    with open(csv_file_name, newline="", encoding='utf-8-sig') as csv_file:
         reader = csv.DictReader(csv_file)
         for row in reader:
             widget_data.append(DocumentationForUserInputItem(**row))
