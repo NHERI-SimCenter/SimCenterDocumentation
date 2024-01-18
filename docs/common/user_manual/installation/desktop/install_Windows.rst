@@ -34,15 +34,15 @@ Install on Windows 10
    
    #. Open WSL from the start menu and run the following commands on the opened terminal window.  
 
-.. code:: bash
+   .. code:: bash
 
-   sudo sh -c "wget -O - http://dl.openfoam.org/gpg.key | apt-key add -"
-   sudo add-apt-repository http://dl.openfoam.org/ubuntu
-   sudo apt-get update
-   sudo apt-get install openfoam10
+      sudo sh -c "wget -O - http://dl.openfoam.org/gpg.key | apt-key add -"
+      sudo add-apt-repository http://dl.openfoam.org/ubuntu
+      sudo apt-get update
+      sudo apt-get install openfoam10
 
 
-Further instructions can be found in `OpenFOAM.org <https://openfoam.org/download/windows/>`_.
+   Further instructions can be found in `OpenFOAM.org <https://openfoam.org/download/windows/>`_.
 
 
 Download the Application
