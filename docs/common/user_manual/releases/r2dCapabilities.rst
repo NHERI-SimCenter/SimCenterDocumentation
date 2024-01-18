@@ -6,7 +6,7 @@ Capabilities
 ************
 
 
-**Version 3.2** of |app| was released **Dec 2023**. The following is the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+**Version |tool version|** of |app| was released **Dec 2023**. The following is the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 The major update from Version 3.0 is adding the analysis capability for :blue:`regional transportation infrastructure`. Note that since version 3.0, most **Haz** options were moved to the **Tool** main menu.
 
 
@@ -18,7 +18,7 @@ The major update from Version 3.0 is adding the analysis capability for :blue:`r
 
     * :ref:`User specified earthquakes <lbl-UserSpecifiedGroundMotions>`.
     * :ref:`User specified hurricanes <lbl-UserSpecifiedHurricane>`.
-    * :ref:`ShakeMap Scenarios <lbl-shakeMapEQScenarios>`, which suports importing the following ShakeMap outputs:
+    * :ref:`ShakeMap Scenarios <lbl-shakeMapEQScenarios>`, which supports importing the following ShakeMap outputs:
             a. ShakeMap ground motion grid in .xml format.
             b. PGA contours in .json format.
             c. Fault rupture in .json format.	
@@ -62,7 +62,9 @@ The major update from Version 3.0 is adding the analysis capability for :blue:`r
 			a. HAZUS MH EQ
 			b. HAZUS MH EQ IM
 			c. HAZUS MH HU
-    * :ref:`Transportation infrastructure <_lbl-DLTransportPelicun>`
+    * :ref:`Transportation infrastructure <lbl-DLTransportPelicun>`
+			a. HAZUS MH EQ
+			b. HAZUS MH EQ IM
 			
 #. **Uncertainty Quantification**: 
     * :ref:`Dakota <lblUQ>`:
@@ -75,13 +77,12 @@ The major update from Version 3.0 is adding the analysis capability for :blue:`r
 		* Site definition:
 			a. Grid
 			b. Point
-			c. Scattered sites (user defined sites in .csv format)
+			c. Scattered sites (user-defined sites in .csv format)
 		* Rupture forecast models:
 			a. OpenSHA UCERF rupture forecast models
-			b. OpenSHA Point source user defined
-			c. OpenQuake Scenario Based
-			d. OpenQuake Classical PSHA
-			e. :blue:`Hazard Occurrence Model`
+			b. OpenSHA Point source user-defined
+			c. OpenQuake rupture forecast
+			d. Hazard Occurrence Model
 		* Inter-event correlation:
 			a. Baker and Jayaram (2008)
 		* Intra-event correlation:
@@ -97,25 +98,24 @@ The major update from Version 3.0 is adding the analysis capability for :blue:`r
 			c. Campbell & Bozorgnia (2014)
 			d. Chiou & Youngs (2014)
 		* Intensity Measures: 
-			a. Spectral accelertion (SA)
+			a. Spectral acceleration (SA)
 			b. Peak ground acceleraation (PGA)
 		* Vs30 Model:
 			a. CGS/Wills Vs30 (Wills et al., 2015)
-			b. Peak ground acceleraation (PGA)
-			c. Thompson California Vs30 (Thompson et al., 2018)
-			d. Global Vs30 (Heath et al., 2020)
-			e. User Defined`
+			b. Thompson California Vs30 (Thompson et al., 2018)
+			c. Global Vs30 (Heath et al., 2020)
+			d. User Defined
 
     * :ref:`Hurricane Scenario Simulation <hurricane_scenario_tool>` (hurricane wind field generation)
 		* Site definition:
 			a. Grid
 		* Hurricane track definition:
-			a. User defined sites in .csv format
-			b. Select from database of historical hurricanes
+			a. User-defined sites in .csv format
+			b. Select from a database of historical hurricanes
 			c. Truncate hurricane track functionality
 		* Landfall location and parameters:
-			a. User select on GIS map
-			b. Manual user entry in input box
+			a. User selects on GIS map
+			b. Manual user entry in the input box
 		* Wind field generation model:
 			a.  Snaiki and Wu (2017)
 

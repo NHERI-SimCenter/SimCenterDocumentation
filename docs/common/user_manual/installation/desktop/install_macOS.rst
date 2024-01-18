@@ -262,9 +262,12 @@ Once the application started, you should see the user interface shown in |figUI|
 
    When the |app| is running, open the app/preferences or File/Preferences and make sure that python3 appears under **External Applications:Python**, as shown in the figure below. If you used older versions of SimCenter tools this was not the default. The exact location of python3 that you installed can be found by opening the terminal application and executing the **which python3** command. Enter the path shown as a response to the Preferences panel under Python and then press the **Save** button.
 
-      .. figure:: figures/pythonPreferences.png
+   .. _figUI-preferences:
+
+   .. figure:: figures/pythonPreferences.png
     :align: center
     :figclass: align-center
 
-    Set Python Preferences.    
+    Set Python Preferences.
+
 
