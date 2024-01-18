@@ -1,0 +1,8 @@
+﻿Variable Name,Type,Example Value, Note
+Latitude,double,61.21700019
+Longitude,double,-149.9083196
+NumberOfStories,int,2
+YearBuilt,int,1983
+OccupancyClass,string,RES1
+StructureType,string,W1
+PlanArea,double,3059

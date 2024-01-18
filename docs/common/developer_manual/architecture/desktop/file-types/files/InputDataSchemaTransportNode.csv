@@ -1,0 +1,9 @@
+Key,Item,Example
+A string ID. The string should be able to convert to integer.,A JSON object containing two key/item pairs which are the latitude and longitude of the node,"""0"": {
+            ""lat"": 37.7641499997259,
+            ""lon"": -122.2612529999318
+        },
+        ""1"": {
+            ""lat"": 37.769650000195966,
+            ""lon"": -122.28610800043785
+        }"

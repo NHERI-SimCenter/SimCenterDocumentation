@@ -8,6 +8,36 @@ Gaussian Process (GP) Surrogate Modeling
 .. Note:: 
      Surrogate modeling functionality of |short tool id| is built upon `GPy <https://sheffieldml.github.io/GPy/>`_ library (available under BSD 3-clause license), an opensource python framework for Gaussian process modeling developed in the Sheffield machine learning group. 
 
+.. Warning::
+     Update: 01.04.2024
+
+     **Only on Mac**, the GPy module (v.1.12 or lower) has a dependency version compatibility issue with other python packages SimCenter uses. 
+     To run GPy on SimCenter tools, one needs to install the latest developer release of GPy. Below is the error message you get.
+     
+     .. code:: console
+
+        Surrogate modeling module uses GPy python package which is facing a version compatibility issue at this moment (01.05.2024). 
+        To use the surrogate module, one needs to update manually the GPy version to 1.13. The instructions can be found in the documentation: 
+        https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html#lblsimsurrogate
+
+     Until the GPy version v1.13 is available on pip, one can install the `developer release of GPy v1.13 <https://github.com/SheffieldML/GPy>`_ by typing the following commands one by one in the terminal 
+
+     .. code:: console
+
+        git clone https://github.com/SheffieldML/GPy.git
+        cd GPy
+        {$PathToPythonExe} -m pip uninstall GPy
+        {$PathToPythonExe} setup.py install
+
+     where ``{$PathToPythonExe}`` should be replaced with the python path found in the File-Preference window. After the third line, they will ask for the confirmation (type Y and enter). Check the installation status by typing
+      
+     .. code:: console
+
+        {$PathToPythonExe} -m pip show GPy
+
+     and confirming that the version appears as 1.13.x. For any questions and bug reports, please contact us through `user forum <https://simcenter-messageboard.designsafe-ci.org/smf/index.php>`_.
+
+
 .. only:: quoFEM_app
 
     The ``Train GP Surrogate Model`` module is used to construct a Gaussian process (GP) based **surrogate model** that substitutes expensive computational **simulation models** or physical experiments. Consider a simulation model, with input random variables (or parameters) :math:`\boldsymbol{x}` and output quantity of interests, denoted as :math:`\boldsymbol{y}=f(\boldsymbol{x})`. A surrogate model for the corresponding simulation model can be built by different user-provided information types (RV-random variables, QoI-quantities of interest):
@@ -204,7 +234,7 @@ Note that the results from the parallel and serial run may not be exactly the sa
        * If the user wants to use the samples purely from data files and does not wish to introduce any simulation model, refer to Case 3 below.
 
 
-.. only:: EEUQ_app_app
+.. only:: EEUQ_app
 
     :blue:`Advanced Options (Earthquake specific)`
 

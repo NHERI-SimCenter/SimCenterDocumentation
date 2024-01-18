@@ -6,10 +6,10 @@ The **Damage and Loss** panel is where the user selects a damage and loss method
 .. contents::
    :local:
 
-.. _lbl-DLPelicun:
+.. _lbl-DLBuildingPelicun:
 
-Pelicun Damage and Loss 
------------------------
+Pelicun Damage and Loss for Buildings
+-------------------------------------
 
 Shown in :numref:`fig-R2DPelicunDLPanel`, the **Pelicun Damage and Loss** application has the following inputs:
 
@@ -23,6 +23,7 @@ Shown in :numref:`fig-R2DPelicunDLPanel`, the **Pelicun Damage and Loss** applic
 			The **Hazus MH HU** option is for the prediction of damage and loss to buildings subjected to hurricanes. This option expects a wind intensity measure (IM) as an input, e.g., peak wind speed (PWS).
 		- User-provided Fragilities
 			The **User-provided Fragilities** option allows users to employ their own custom fragility functions in the damage and loss workflow. This option expects the user to provide an auto-populate script and the path to a folder containing the user-defined fragility functions, as seen below in :numref:`fig-R2DPelicunDLPanel`.
+			An example of such practice can be found in Example 9 of :ref:`R2D examples <lbl-examples>`.
 		
 		The HAZUS options employ data from the *Hazards U.S. Multi-Hazard project* (HAZUS-MH). The **Hazus MH EQ** and the **Hazus MH EQ IM** options are intended for damage and loss analysis of buildings subjected to earthquakes. The **Hazus MH HU** option is intended for damage and loss analysis of buildings subjected to hurricanes.
 	
@@ -50,3 +51,24 @@ Shown in :numref:`fig-R2DPelicunDLPanel`, the **Pelicun Damage and Loss** applic
 	Pelicun Damage and Loss Input panel.
 
 Additional information on Pelicun and descriptions of its output are available at `Pelicun Documentation <https://nheri-simcenter.github.io/pelicun/common/user_manual/usage/pelicun/outputs.html>`_.
+
+.. _lbl-DLTransportPelicun:
+
+Pelicun Damage and Loss for Transportation Infrastructure
+---------------------------------------------------------
+The Pelicun Damage and Loss for Transportation Infrastructure has the same user
+interface with buildings, as shown in :numref:`fig-R2DPelicunDLPanel`. The **damage
+and loss methodology** options supported for transportation infrastructure are 
+**Hazus MH EQ IM** and **User-provided Fragilities**. 
+
+The **Hazus MH EQ IM** 
+methodology implements the damage and loss model defined in 
+`Hazus Earthquake Model Technical Manual <https://www.fema.gov/sites/default/files/documents/fema_hazus-earthquake-model-technical-manual-5-1.pdf>`_.
+For bridges, **Hazus MH EQ IM** expects `SA_0.3` and `SA_1.0` as input for evaluating ground shaking-induced damage for bridges. 
+If ground failure is enabled, permanent ground deformation (`PGD_h` and `PGD_v`)
+also need to be provided. For roadways, permanent ground deformation (`PGD_h` and `PGD_v`)
+need to be provided. For tunnels, peak ground acceleration (`PGA`) and permanent ground deformation (`PGD_h` and `PGD_v`) are required.
+
+The **User-provided Fragilities** option allows users to employ their own custom fragility functions in the damage and loss workflow. This option expects the user to provide an auto-populate script and the path to a folder containing the user-defined fragility functions, as seen below in :numref:`fig-R2DPelicunDLPanel`.
+An example of such practice can be found in Example 9 of :ref:`R2D examples <lbl-examples>`.
+
