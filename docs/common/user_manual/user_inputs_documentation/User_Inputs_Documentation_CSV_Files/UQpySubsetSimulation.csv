@@ -1,1 +1,7 @@
 label_in_user_interface,key_in_json_file,data_type,description,default_value,example_value,constraints,seealso_text,seealso_link,seealso_description
+method,method,str,Reliability analysis method to be used,SubsetSimulation,SubsetSimulation,,,,
+Conditional Probabaility,conditionalProbability,float,Conditional probability for each conditional level,0.1,0.1,"gt=0, lt=1",,,
+Failure Threshold,failureThreshold,float,Threshold over which it is assume that the simulated system fails,0.001,5,gt=0,,,
+Max. Levels,maxLevels,NonNegativeInt,Maximum number of allowable conditional levels,10,10,gt=0,,,
+Initial samples,initialSamples,NonNegativeInt,Initial samples to bootstrap the Subset simulation algorithm,1000,100,gt=0,,,
+Sampling Method,samplingMethod,str,Specifies the MCMC sampling agorithm to be used ,MetropolisHastings,Stretch,,MCMC Algorithm,UQpyStretch User Inputs,
