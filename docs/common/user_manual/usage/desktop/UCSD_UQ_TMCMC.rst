@@ -1,15 +1,16 @@
 .. _lblUCSDTMCMC:
 
 
-Transitional Markov chain Monte Carlo (TMCMC) algorithm
-*******************************************************
+Non-hierarchical model
+**********************
 
 Introduction
 ============
-TMCMC is an algorithm which is used to draw samples from the posterior probability distribution of random variables when performing Bayesian estimation. Bayesian estimation is a probabilistic inverse problem where the objective is to estimate the probability distribution of the parameters of a computational model, given data. The data consist of numbers which are typically obtained from measurements of a physical phenomenon being studied. In quoFEM, the data are provided in a text file, whose path is defined in the **UQ** panel. The computational model (defined in the **FEM** panel) is an approximation of the real process that generated the data and the outputs of this model (defined in the **QoI** panel) are the same quantities of interest for which we have measured data. The model has several parameters that influence the output predicted by the model when it is evaluated at a set of inputs. In the inverse problem, the values of these parameters are unknown, and in the Bayesian setting, they are treated as random variables, with specified prior probability distribution functions (defined in the **RV** panel). To complete the definition of the Bayesian inverse problem, the probability model for the data needs to be specified, which is done by the log-likelihood function in the **UQ** panel. 
+Bayesian calibration of a non-hierarchical model is a probabilistic inverse problem where the objective is to estimate the probability distribution of the parameters of a computational model, using all the available data. The data consist of numbers which are typically obtained from measurements of a physical phenomenon being studied. In quoFEM, the data are provided in a text file, whose path is defined in the **UQ** panel. The computational model (defined in the **FEM** panel) is an approximation of the real process that generated the data and the outputs of this model (defined in the **QoI** panel) are the same quantities of interest for which we have measured data. The model has several parameters that influence the output predicted by the model when it is evaluated at a set of inputs. In the inverse problem, the values of these parameters are unknown, and in the Bayesian setting, they are treated as random variables, with specified prior probability distribution functions (defined in the **RV** panel). To complete the definition of the Bayesian inverse problem, the probability model for the data needs to be specified, which is done by the log-likelihood function in the **UQ** panel. 
 
 Usage
 =====
+Transitional Markov chain Monte Carlo (TMCMC) is an algorithm which is used to draw samples from the posterior probability distribution of the parameters of a computational model when performing Bayesian calibration using a non-hierarchical model. 
 To use the TMCMC algorithm, select the **UCSD-UQ** engine in the **UQ** panel. Currently, only the TMCMC method is available with the **UCSD-UQ** engine. 
 
 The required inputs to perform Bayesian calibration in quoFEM using the TMCMC algorithm are **# Samples**, **Seed**, and **Calibration Data File**. Specifying **Log Likelihood Script** is optional. Figure :numref:`figTMCMCPanel` shows the input panel that is presented when the TMCMC method is selected. Each of the options on this panel will be explained next.
