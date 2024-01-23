@@ -59,5 +59,6 @@ The following pages define the inputs to be provided by users in the graphical i
    User_Inputs_Documentation_RST_Files/UCSD_InputBayesianCalibration.rst
    User_Inputs_Documentation_RST_Files/UCSD_InputHierarchicalBayesian.rst
    User_Inputs_Documentation_RST_Files/UCSD_InputTMCMC.rst
+   User_Inputs_Documentation_RST_Files/UQpyStretch.rst
    User_Inputs_Documentation_RST_Files/UQpySubsetSimulation.rst
    User_Inputs_Documentation_RST_Files/UserDefinedEDP.rst
