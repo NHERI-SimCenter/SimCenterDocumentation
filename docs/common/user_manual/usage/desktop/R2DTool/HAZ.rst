@@ -21,7 +21,7 @@ In this panel the user can define or simulate hazards over a region. The user ca
 User-specified Ground Motions
 -----------------------------
 
-The **User-specified Ground Motion** application loads the results of an **Earthquake Scenario Simulation** that was run previously. The **User-specified Earthquakes** application input pane is given in :numref:`fig-UserSelectEQ`. As seen in the figure, the user is required to input the file path to the ``EventGrid.csv`` file in the `Event File Listing Motions Field`. If the ground motions are not in the same folder as the ``EventGrid.csv`` file, then the user needs to input the directory path to the folder containing the ground motions. Users also need to specify the units of the ground motion field.
+The **User-specified Ground Motion** application loads the results of an **Earthquake Scenario Simulation** that was run previously. The **User-specified Earthquakes** application input pane is given in :numref:`fig-UserSelectEQ`. As seen in the figure, the user is required to input the file path to the ``EventGrid.csv`` file in the `Event File Listing Motions Field`. If the ground motions are not in the same folder as the ``EventGrid.csv`` file, then the user needs to input the directory path to the folder containing the ground motions. Users also need to specify the units of the ground motion field. Both ground shaking (See :ref:`Example E1-E4 <lbl-examples>`) and ground failure (See :ref:`Example E5 and E14 <lbl-examples>`) can be analyzed in the current version.
 
 .. _fig-UserSelectEQ:
 
@@ -44,7 +44,7 @@ The **User-specified Hurricane** application works similar to the **User-specifi
 ShakeMap Earthquake Scenarios
 -----------------------------
 
-The **ShakeMap Earthquake Scenario** application provides the functionality to import a USGS ShakeMap earthquake hazard. The **ShakeMap Earthquake Scenario** application input pane is given in :numref:`fig-R2DShakeMapPane`. As seen in the figure, the user is required to input a path to a folder on the user's computer that contains the ShakeMap data. At a minimum, the folder must contain a ``grid.xml`` file that provides the ground motion intensity measures, e.g., PGA, PGV, over a geographical grid. To visualize the PGA contours or rupture in the GIS window, a user can also provide the ``cont_pga.json`` file, or ``rupture.json`` file, respectively. Note that more than one ShakeMap can be input. However, the ShakeMap that is selected in the **List of ShakeMaps** tree in :numref:`fig-R2DShakeMapPane`, is the one that is employed in the subsequent analysis. The user also has the option to select the type of intensity measure they want from the ShakeMap grid. 
+The **ShakeMap Earthquake Scenario** application provides the functionality to import a USGS ShakeMap earthquake hazard. The **ShakeMap Earthquake Scenario** application input pane is given in :numref:`fig-R2DShakeMapPane`. As seen in the figure, the user is required to input a path to a folder on the user's computer that contains the ShakeMap data. At a minimum, the folder must contain a ``grid.xml`` file (e.g., downloaded from `this <https://earthquake.usgs.gov/product/shakemap-scenario/ushaywiredm7.05_se/us/1484100039013/download/grid.xml>`_ page) that provides the ground motion intensity measures, e.g., PGA, PGV, over a geographical grid. To visualize the PGA contours or rupture in the GIS window, a user can also provide the ``cont_pga.json`` file, or ``rupture.json`` file, respectively. Note that more than one ShakeMap can be input. However, the ShakeMap that is selected in the **List of ShakeMaps** tree in :numref:`fig-R2DShakeMapPane`, is the one that is employed in the subsequent analysis. The user also has the option to select the type of intensity measure they want from the ShakeMap grid. 
 
 .. _fig-R2DShakeMapPane:
 
@@ -63,12 +63,9 @@ After a ShakeMap is loaded, it will appear in the list of ShakeMaps shown above 
   :figclass: align-center
 
   ShakeMap visualization.
-  
-.. [SnaikiWu2017a]
-   Snaiki, R. and Wu, T. (2017a). Modeling tropical cyclone boundary layer: Height-resolving pressure and wind fields. Journal of Wind Engineering and Industrial Aerodynamics, 170, pp. 18-27.
+.. note:: 
+   R2D will create one .csv file containing the ground motion intensity measures at each grid point in the ``grid.xml`` file. The files will be stored in a similar format as the ground motion files used in the **User-specified Ground Motion** application. As shown in :numref:`fig-R2DShakeMapOutput`, the number of grid point is usually large (sometimes over 10 thousand). Although creating such a number of .csv files is fast in Unix-like operating systems, it may be particular slow (around 5 minutes for 10,000 grid points) on a Windows machine. As a result, consider trimming or subsampling the ``grid.xml`` file downloaded from USGS's ShakeMap website, if fast computation is desired for testing or debugging purposes.
 
-.. [SnaikiWu2017b]
-   Snaiki, R. and Wu, T. (2017b). A linear height-resolving wind field model for tropical cyclone boundary layer. Journal of Wind Engineering and Industrial Aerodynamics, 171, pp. 248-260.
    
 .. _lbl-rasterDefinedHazard:
 
@@ -147,8 +144,3 @@ maximum shear strain and excess pore pressure ratio plots are also important.
 .. [Boyd2020]
    Boyd, O.S., 2020, Calibration of the U.S. Geological Survey National Crustal Model: U.S. Geological Survey Open-File Report 2020–1052, 23 p., https://doi.org/10.3133/ofr20201052.
 
-.. [Manzour2016]
-   Manzour, H., Davidson, R. A., Horspool, N., & Nozick, L. K. (2016). Seismic hazard and loss analysis for spatially distributed infrastructure in Christchurch, New Zealand. Earthquake Spectra, 32(2), 697-712.
-
-.. [Peterson2020]
-   Petersen, M. D., Shumway, A. M., Powers, P. M., Mueller, C. S., Moschetti, M. P., Frankel, A. D., ... & Zeng, Y. (2020). The 2018 update of the US National Seismic Hazard Model: Overview of model and implications. Earthquake Spectra, 36(1), 5-41.

@@ -10,7 +10,7 @@ The following set of instructions assumes all files will be placed in a **C:\\Si
 
 .. note::
 
-   The choice of **C:\\SimCenter** was made as opposed to typical **C:\\Program Files** location as there is no uninstallers provided for the different software packages we provide. To remove the software you only need to remove the **SimCenter** folder.
+   The choice of **C:\\SimCenter** was made as opposed to typical **C:\\Program Files** location as there are no uninstallers provided for the different software packages we provide. To remove the software you only need to remove the **SimCenter** folder.
 
 Python
 ^^^^^^
@@ -21,10 +21,10 @@ If you have not yet installed Python 3.7, we recommend installing Python 3.7 fro
 
 .. note::
 
-   Allow the installer to change yur system environment variables so that the directory containing the executable is on your path. This requires checking the small box asking for this when the installer starts. The box is located at bottom of installer application window.
+   Allow the installer to change your system environment variables so that the directory containing the executable is on your path. This requires checking the small box asking for this when the installer starts. The box is located at the bottom of the installer application window.
 
 .. warning::
-   The latest version of Python is 3.8.3 At time of writing Python 3.8.3 was no working with the current **numpy** package.
+   The latest version of Python is 3.8.3 At the time of writing, Python 3.8.3 was not working with the current **numpy** package.
 
 Once Python is installed, you need to extend it by installing the following packages: **numpy**, **scipy**, and **pandas**. To install these packages, start a `terminal window as an Admin user <https://www.howtogeek.com/194041/how-to-open-the-command-prompt-as-administrator-in-windows-8.1/>`_ and in that window type the following instructions:
 
@@ -46,7 +46,7 @@ Once Python is installed, you need to extend it by installing the following pack
 
 Dakota
 ^^^^^^
-|DakotaLink| is the default UQ engine used by the |app| that is publicly available from the |DakotaDownload| page. The download page offers an extensive list of downloadable files. You can narrow this down to the file to be selected by selecting **Windows** in the `Platform`, **6.10** (**6.10** was latest at time of writing, select newer of course if available) in the `Release`, and **Command Line Only** for the `interface type`. In the `Public` area you should now only have a single option, click on the link to download |Dakota|. When you extract the files that you download, they will all be contained in a single folder, we suggest renaming it **dakota-6.10.0** (the last **.0** was the number in the download, sometimes developers issue minor updates and identify them through the last number). When you have renamed the folder move that folder to the **C:\\SimCenter\\dakota\\** folder.
+|DakotaLink| is the default UQ engine used by the |app| that is publicly available from the |DakotaDownload| page. The download page offers an extensive list of downloadable files. You can narrow this down to the file to be selected by selecting **Windows** in the `Platform`, **6.10** (**6.10** was the latest at the time of writing, select newer of course if available) in the `Release`, and **Command Line Only** for the `interface type`. In the `Public` area you should now only have a single option, click on the link to download |Dakota|. When you extract the files that you download, they will all be contained in a single folder, we suggest renaming it **dakota-6.10.0** (the last **.0** was the number in the download, sometimes developers issue minor updates and identify them through the last number). When you have renamed the folder move that folder to the **C:\\SimCenter\\dakota\\** folder.
 
 .. note::
 
@@ -55,18 +55,18 @@ Dakota
 OpenSees
 ^^^^^^^^
 
-|OpenSeesLink| is the default FEM engine used by the |app| that is publicly available from the |OpenSeesDownload| page. To download the **OpenSees** you have to enter your email address, which may also require you to register (that requirement is going away and may be gone by time you read this). At the bottom of the page, under section **Windows Version** is the download link for the current executable, currently **3.2.0** Follow the link to download the application. It is in the form of a **.zip** file. The zip file contains a folder and in the bin directory is the **OpenSees.exe** application. The other files and folders are needed by the application and must be kept. Rename the folder to **OpenSees-3.2.0** and move the folder to the **C:\\SimCenter\\OpenSees** folder.
+|OpenSeesLink| is the default FEM engine used by the |app| that is publicly available from the |OpenSeesDownload| page. To download the **OpenSees** you have to enter your email address, which may also require you to register (that requirement is going away and may be gone by the time you read this). At the bottom of the page, under section **Windows Version** is the download link for the current executable, currently **3.2.0** Follow the link to download the application. It is in the form of a **.zip** file. The zip file contains a folder and in the bin directory is the **OpenSees.exe** application. The other files and folders are needed by the application and must be kept. Rename the folder to **OpenSees-3.2.0** and move the folder to the **C:\\SimCenter\\OpenSees** folder.
 
 FEAPpv
 ^^^^^^
 
-|FEAPpv| is the another FEM engine used by the |app| that is publicly available from the |FEAPpvDownload| page. FEAPpv is a general purpose finite element analysis program which is designed for research and educational use. To install |FEAPpv| you must download the source code and follow the build instructions on the **Source Code Download and Compile Instructions** section of the |FEAPpvDownload| page.
+|FEAPpv| is another FEM engine used by the |app| that is publicly available from the |FEAPpvDownload| page. FEAPpv is a general-purpose finite element analysis program that is designed for research and educational use. To install |FEAPpv| you must download the source code and follow the build instructions on the **Source Code Download and Compile Instructions** section of the |FEAPpvDownload| page.
 
 
 OpenSeesPy
 ^^^^^^^^^^
 
-|OpenSeesPy| is the another FEM engine used by the |app| that is publicly available using pip. 
+|OpenSeesPy| is another FEM engine used by the |app| that is publicly available using pip. 
 
 .. code-block:: python
 
@@ -74,14 +74,14 @@ OpenSeesPy
 
 .. note::
    
-	#. FEAPpv, OpenSees, and OpenSeesPy only need to be installed on the local machine if user intends to run the applications locally. 
+	#. FEAPpv, OpenSees, and OpenSeesPy only need to be installed on the local machine if the user intends to run the applications locally. 
    	#. If the intent is to run locally, only those applications you intend to use need to be installed. The other applications are only needed if you want to use them. If not installed and you select that application, the backend application will fail when you press the ``Run`` button.
 
 
 Modify the Environment Variables
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You now need to make some changes to your environment variables as neither OpenSees or Dakota includes an installer which typically performs this task.
+You now need to make some changes to your environment variables as neither OpenSees or Dakota includes an installer that typically performs this task.
 
 1. Open the Start Search, type in “env”, and choose “Edit the system environment variables”
 2. Click the **Environment Variables…** button at the bottom right of the application that pop up.
@@ -102,7 +102,7 @@ You now need to make some changes to your environment variables as neither OpenS
    C:\\SimCenter\\dakota\\share\\dakota\\Python
 
 9. Press the **OK** button.
-10. Press now the **Apply** button and exit the SystemProperties application
+10. Now press the **Apply** button and exit the SystemProperties application
 
 
 Test the Install of Python, OpenSees & Dakota
@@ -111,7 +111,7 @@ Test the Install of Python, OpenSees & Dakota
 Steps to Test:
    1. Open a command window window(type `cmd` in search)
    2. Type `python3` in the application that starts (this should bring up python interpreter)
-   3. Enter the following to test the install of the modules and quit the application:
+   3. Enter the following to test the installation of the modules and quit the application:
    
    .. :code-block:: python
 

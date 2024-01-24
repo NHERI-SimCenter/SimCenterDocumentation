@@ -1,0 +1,10 @@
+﻿Variable Name,Type,Note
+K0,double,initial stiffness
+Sy,double,yield strength
+beta,double,ultimate deformation
+eta,double,post-yield stiffness ratio
+a_k,double,parameter related to unloading stiffness*
+gamma,double,pinching factor
+alpha,double,overstrength factor
+mass,double,mass
+dampingRatio,double,damping

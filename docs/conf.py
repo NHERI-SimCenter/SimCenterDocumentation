@@ -173,6 +173,7 @@ toc_filter_exclusions = [
     "S3hark",
     "pelicun",
     "docTestbeds",
+    "docDLDB",
 ]
 
 
@@ -859,9 +860,15 @@ if sync_examples:
             example_config = yaml.load(f,Loader=yaml.Loader)["HydroUQ"]
     # Load the `sync_files` routine from ./modules/sync_files.py
     from sync_files import sync_files
-    sync_files(
-        src_dir=os.path.abspath(f"../../{app_name}/Examples"),
+    if app_name == "R2DTool":
+        sync_files(
+        src_dir=os.path.abspath(f"../../R2DExamples"),
         dst_dir="common/user_manual/examples/desktop",
-        config=example_config,
-    )
+        config=example_config,)
+    else:    
+        sync_files(
+            src_dir=os.path.abspath(f"../../{app_name}/Examples"),
+            dst_dir="common/user_manual/examples/desktop",
+            config=example_config,
+        )
 

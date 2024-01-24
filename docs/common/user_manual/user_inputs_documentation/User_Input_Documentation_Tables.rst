@@ -22,8 +22,8 @@ The following pages define the inputs to be provided by users in the graphical i
    User_Inputs_Documentation_RST_Files/ExistingSimCenterEvents.rst
    User_Inputs_Documentation_RST_Files/GaussianProcessInputWidget.rst
    User_Inputs_Documentation_RST_Files/GlobalReliabilityWidget.rst
-   User_Inputs_Documentation_RST_Files/ImportSamplesWidget.rst
    User_Inputs_Documentation_RST_Files/ImportanceSamplingInputWidget.rst
+   User_Inputs_Documentation_RST_Files/ImportSamplesWidget.rst
    User_Inputs_Documentation_RST_Files/InputWidgetBIM.rst
    User_Inputs_Documentation_RST_Files/InputWidgetExistingEvent.rst
    User_Inputs_Documentation_RST_Files/InputWidgetOpenSeesAnalysis.rst
@@ -42,13 +42,13 @@ The following pages define the inputs to be provided by users in the graphical i
    User_Inputs_Documentation_RST_Files/PLoMSimuWidget.rst
    User_Inputs_Documentation_RST_Files/SimCenterIntensityMeasureCombo.rst
    User_Inputs_Documentation_RST_Files/SimCenterIntensityMeasureWidget.rst
+   User_Inputs_Documentation_RST_Files/SimCenterUnitsCombo.rst
    User_Inputs_Documentation_RST_Files/SimCenterUQInputPLoM.rst
    User_Inputs_Documentation_RST_Files/SimCenterUQInputSampling.rst
    User_Inputs_Documentation_RST_Files/SimCenterUQInputSensitivity.rst
    User_Inputs_Documentation_RST_Files/SimCenterUQInputSurrogate.rst
-   User_Inputs_Documentation_RST_Files/SimCenterUnitsCombo.rst
-   User_Inputs_Documentation_RST_Files/StandardEDP.rst
    User_Inputs_Documentation_RST_Files/StandardEarthquakeEDP.rst
+   User_Inputs_Documentation_RST_Files/StandardEDP.rst
    User_Inputs_Documentation_RST_Files/SteelBuildingModel.rst
    User_Inputs_Documentation_RST_Files/SurrogateDoEInputWidget.rst
    User_Inputs_Documentation_RST_Files/SurrogateEDP.rst

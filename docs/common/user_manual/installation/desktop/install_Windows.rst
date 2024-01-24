@@ -34,15 +34,15 @@ Install on Windows 10
    
    #. Open WSL from the start menu and run the following commands on the opened terminal window.  
 
-.. code:: bash
+   .. code:: bash
 
-   sudo sh -c "wget -O - http://dl.openfoam.org/gpg.key | apt-key add -"
-   sudo add-apt-repository http://dl.openfoam.org/ubuntu
-   sudo apt-get update
-   sudo apt-get install openfoam10
+      sudo sh -c "wget -O - http://dl.openfoam.org/gpg.key | apt-key add -"
+      sudo add-apt-repository http://dl.openfoam.org/ubuntu
+      sudo apt-get update
+      sudo apt-get install openfoam10
 
 
-Further instructions can be found in `OpenFOAM.org <https://openfoam.org/download/windows/>`_.
+   Further instructions can be found in `OpenFOAM.org <https://openfoam.org/download/windows/>`_.
 
 
 Download the Application
@@ -117,7 +117,7 @@ To download the |app|, navigate to the |appLink| page which should resemble |fig
 
 Click on the file with a name ending with **Windows_Download.zip** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner.
 
-After the download is completed, extract the zip archive to a location in your filesystem. We suggest extracting to the **C:/SimCenter/** folder. You can create a shortcut that points to the |short tool id|.exe executable of the application and move this shortcut to your Desktop for easy access.
+After the download is completed, extract the zip archive to a location in your filesystem. We suggest extracting it to the **C:/SimCenter/** folder. You can create a shortcut that points to the |short tool id|.exe executable of the application and move this shortcut to your Desktop for easy access.
 
 .. tip:: Using an external compressor program, such as `7-Zip <https://www.7-zip.org/>`_, can significantly reduce the zip archive extraction time compared to the Windows default extraction function.
 

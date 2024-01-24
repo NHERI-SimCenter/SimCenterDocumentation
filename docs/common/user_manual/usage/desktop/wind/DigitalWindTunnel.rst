@@ -1,7 +1,7 @@
 Digital Wind Tunnel
 -------------------
 
-The Digital Wind Tunnel provides great flexibility in testing different designs and wind scenarios. This features allows users to run CFD simulations with user-defined atmospheric boundary layer inflow conditions and with user-defined OpenFOAM models. It can be implemented with the empty domain for validation purposes, or users can provide their own building model for analysis. This initial version is limited in scope due to the following assumptions:
+The Digital Wind Tunnel provides great flexibility in testing different designs and wind scenarios. This feature allows users to run CFD simulations with user-defined atmospheric boundary layer inflow conditions and with user-defined OpenFOAM models. It can be implemented with the empty domain for validation purposes, or users can provide their own building model for analysis. This initial version is limited in scope due to the following assumptions:
 
 #. Meshing is performed using the *snappyHexMesh* tool.
 
