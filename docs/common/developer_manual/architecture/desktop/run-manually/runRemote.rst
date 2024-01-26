@@ -49,7 +49,7 @@ This method uses Jupyter Notebook to run the job, accessing Tapis CLI in the bac
    :figclass: align-center
 
 
-6. Specify settings for running the job on Stampede2. Submit the job by running all cells in the Jupyter Notebook (Cell > Run All).
+6. Specify settings for running the job on Frontera. Submit the job by running all cells in the Jupyter Notebook (Cell > Run All).
 
 .. .. jsonschema:: App_Schema.json#/properties/runRemote
 
@@ -151,7 +151,7 @@ You will see an output in the Ubuntu window similar to the following.
 
       ``vim job.json``
 
-9. Edit the job.json file to specify settings for running the job on Stampede2. To make edits in the VIM Editor, type ``Ctrl+I``. To exit out of the editor, type ``:wq``.
+9. Edit the job.json file to specify settings for running the job on Frontera. To make edits in the VIM Editor, type ``Ctrl+I``. To exit out of the editor, type ``:wq``.
 
 
 10. Once the job.json file is prepared, submit the job by running the command:

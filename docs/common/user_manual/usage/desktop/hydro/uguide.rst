@@ -24,7 +24,7 @@ The action buttons consist of several possible action buttons. This includes:
 
     a. **RUN**: This button is used to set up and run the jobs locally on the user's computer. However, note that the Hydro-UQ application does not facilitate local runs.
 
-    b. **RUN at DesignSafe**: Process the information provided by the user in the UI, and send this information to DesignSafe. The simulation will be run on the TACC's supercomputer Stampede2, and results will be stored in the user’s DesignSafe jobs folder.
+    b. **RUN at DesignSafe**: Process the information provided by the user in the UI, and send this information to DesignSafe. The simulation will be run on the TACC's supercomputer Frontera, and results will be stored in the user’s DesignSafe jobs folder.
 
     c. **GET from DesignSafe**: Obtain the list of jobs for the user from DesignSafe and select a job to download from that list.
 
