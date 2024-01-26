@@ -28,6 +28,7 @@ quoFEM:
     - qfem-0023
     - qfem-0025
     - qfem-0027
+    - qfem-0028
 
 WE-UQ:
   include-item:
