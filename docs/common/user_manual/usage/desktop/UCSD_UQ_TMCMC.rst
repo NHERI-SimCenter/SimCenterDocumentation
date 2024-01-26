@@ -11,6 +11,7 @@ Bayesian calibration of a non-hierarchical model is a probabilistic inverse prob
 Usage
 =====
 Transitional Markov chain Monte Carlo (TMCMC) is an algorithm that is used to draw samples from the posterior probability distribution of the parameters of a computational model when performing Bayesian calibration using a non-hierarchical model. 
+
 To use the TMCMC algorithm, select the **UCSD-UQ** engine in the **UQ** panel. Currently, only the TMCMC method is available with the **UCSD-UQ** engine. 
 
 The required inputs to perform Bayesian calibration in quoFEM using the TMCMC algorithm are **# Samples**, **Seed**, and **Calibration Data File**. Specifying **Log Likelihood Script** is optional. Figure :numref:`figTMCMCPanel` shows the input panel that is presented when the TMCMC method is selected. Each of the options on this panel will be explained next.
