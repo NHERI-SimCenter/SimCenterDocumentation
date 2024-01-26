@@ -6,7 +6,7 @@ Capabilities
 ************
 
 
-**Version |tool version|** of |app| was released **Dec 2023**. The following is the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+**Version** |tool version| of |app| was released **Jan 2024**. The following is the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 The major update from Version 3.0 is adding the analysis capability for :blue:`regional transportation infrastructure`. Note that since version 3.0, most **Haz** options were moved to the **Tool** main menu.
 
 

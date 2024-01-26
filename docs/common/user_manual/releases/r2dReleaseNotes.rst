@@ -6,7 +6,20 @@
 Release Notes
 ***************************
 
-Version 3.0.0 (Current)
+Version 4.0.1 (Current)
+-----------------------
+
+**Release date:** Jan. 2024
+
+**Highlights**
+
+#. Support the assessment of transportation infrastructure.
+#. Revised interface for earthquake scenario simulation tool.
+#. Added Brails-Transportation tool to generate transportation infrastructure inventory.
+#. Allow using PreTrained Surrogate Models from EE-UQ as structural analysis models. 
+
+
+Version 3.0.0
 -----------------------
 
 **Release date:** May. 2023
