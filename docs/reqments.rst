@@ -18,7 +18,7 @@ The SimCenter has relied on community input to drive application and educational
 
 Each requirement in the RTM has the following entry fields:
 
-   #. A unique identifier is a combination of an abbreviation of a tool or component name, plus one or more numbers; the sequence of numbers indicating a hierarchy in the requirements.
+   #. A unique identifier is a combination of an abbreviation of a tool or component name, plus one or more numbers; the sequence of numbers indicates a hierarchy in the requirements.
 
    #. A brief description of the requirement.
 
