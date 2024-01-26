@@ -3,6 +3,8 @@
 Methods in SimCenterUQ Engine 
 *****************************
 
+.. _lbluqSimTechnical_Nataf:
+
 Nataf transformation
 ====================
 
@@ -33,6 +35,22 @@ For the Nataf transformation, the SimCenterUQ engine borrows a part of the distr
 
 Global sensitivity analysis
 ===========================
+
+Video Resources 
+------------------
+Global Sensitivity Analysis: why, what, and how.
+
+.. raw:: html
+
+   <div style="text-align: center;">
+      <iframe src="https://www.youtube.com/embed/JC8xN5LAo84?start=134" width="560" height="315" frameborder="5" allowfullscreen="allowfullscreen"></iframe>
+   </div>
+ 
+.. raw:: html
+
+   <p><br>Click to replay the video from <a href="javascript:window.location.reload(true);">2:14</a>. </p>
+
+
 
 Variance-based global sensitivity indices
 -----------------------------------

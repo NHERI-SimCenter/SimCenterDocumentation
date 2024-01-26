@@ -155,6 +155,7 @@
    common/user_manual/bugs
    :quoFEM:common/user_manual/dcv/quoFEM/quoFEM
    :quoFEM:common/user_manual/usage/desktop/quoFEM/usage_video
+   :quoFEM:common/user_manual/user_inputs_documentation/User_Input_Documentation_Tables
 
 .. _lbl-testbeds-manual:
 

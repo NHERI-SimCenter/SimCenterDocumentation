@@ -1,0 +1,2 @@
+label_in_user_interface,key_in_json_file,data_type,description,default_value,example_value,constraints,seealso_text,seealso_link,seealso_description
+Training Datase,method,combo box (tab widget),,Sampling and Simulation,,,,,

@@ -213,7 +213,6 @@ The main window of the UI is made up from the following areas:
 
 .. only:: quoFEM_app
 
-
    **Overview of User Interface**
    
    Recorded in tool training, 2022 (From 21:14 to 26:58)
