@@ -6,10 +6,8 @@ How To Cite
 
 .. only:: R2D_app
 
-   1. Frank McKenna, Stevan Gavrilovic, Adam Zsarnoczay, Kuanshi Zhong, Wael Elhaddad, and
-      Pedro Arduino (2022).
-      NHERI-SimCenter/R2DTool: Version 2.1.0.
-      Zenodo.  `DOI 10.5281/zenodo.6404528 <https://doi.org/10.5281/zenodo.6404528>`_
+   1. Frank McKenna, Stevan Gavrilovic, Zsarnoczay, A., Zhao, J., Zhong, K., Barbaros Cetiner, Yi, S.-. ri ., Elhaddad, W., & Arduino, P. (2024).
+   NHERI-SimCenter/R2DTool: Version 4.0.0 (v4.0.0). Zenodo. `DOI 10.5281/zenodo.4483614 <https://doi.org/10.5281/zenodo.4483614>`_
 	     
 .. only:: PBE_app
 
