@@ -10,6 +10,15 @@
 .eqno {
     float: right;
 }
+.math .headerlink {
+    display: none;
+    visibility: hidden;
+}
+.math:hover .headerlink {
+    display: inline-block;
+    visibility: visible;
+    margin-right: -0.7em;
+}
 
 table {
   display: block;
