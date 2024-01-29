@@ -14,15 +14,22 @@ Major Version 3
       The major version number was increased from 2 to 3 as changes were made to the input and output formats of |app|. This means old examples will not be loaded in this version of the tool.
 
 
-   .. dropdown::    Version 3.4 (:blue:`Current`)
+   .. dropdown:: Version 3.5 (:blue:`Current`)
       :open:
+
+      **Release date:** December. 2023
+
+      **Highlights**
+         #. Bayesian calibration of a **hierarchical model** 
+
+   .. dropdown:: Version 3.4 
 
       **Release date:** October. 2023
 
       **Highlights**
          #. **Multi-fidelity** Monte Carlo Simulation 
 
-   .. dropdown::    Version 3.3 
+   .. dropdown:: Version 3.3 
 
       **Release date:** March. 2023
 
@@ -32,7 +39,7 @@ Major Version 3
          #. Display of correlation coefficients within the input/output dataset
          #. Switching the display order of the UQ method and UQ engine
 
-   .. dropdown::    Version 3.2
+   .. dropdown:: Version 3.2
 
       **Release date:** September. 2022
 
@@ -51,7 +58,7 @@ Major Version 3
             * Inverse problem → **Bayesian calibration** 
 
 
-   .. dropdown::    Version 3.1
+   .. dropdown:: Version 3.1
 
       **Release date:** June. 2022
 
@@ -59,7 +66,7 @@ Major Version 3
 
          #. New efficient global sensitivity analysis method for high-dimensional output (GSA-PCA)
 
-         #. "Save RVs" and "Save QoIs" buttons added to the results tab spreadsheet
+         #. "Save RVs" and "Save QoIs" buttons were added to the results tab spreadsheet
 
          #. “NaN” handling option added to SimCenterUQ engine
 
@@ -68,7 +75,7 @@ Major Version 3
          #. Minor bug fixes in the user interface, surrogate modeling, and sensitivity analysis scripts
 
 
-   .. dropdown::    Version 3.0
+   .. dropdown:: Version 3.0
 
       **Release date:** March. 2022
 
@@ -91,7 +98,7 @@ Major Version 3
 
 Major Version 2
 =================
-   .. dropdown::    Version 2.4.1
+   .. dropdown:: Version 2.4.1
 
       **Release date:** Dec. 2021
 
@@ -101,7 +108,7 @@ Major Version 2
 
          #. SimCenterUQ RV tab - preventing path strings from being deleted when "choose" is clicked (dataset inputs)
 
-         #. SimCenterUQ checks if python packages are missing in the environment and shows an error message if needed
+         #. SimCenterUQ checks if Python packages are missing in the environment and shows an error message if needed
 
          #. Minor fixes in surrogate UI (nugget values option should not show up by default, RVs should be uniform by default)
 
@@ -110,13 +117,13 @@ Major Version 2
          #. Parameter values are passed to the log-likelihood script when using the UCSD_UQ engine
 
 
-   .. dropdown::    Version 2.4.0
+   .. dropdown:: Version 2.4.0
 
       **Release date:** Oct. 2021
 
       Highlights
 
-         #. New forward propagation method in SimCenterUQ to import existing sample sets (eg. samples obtained by MCMC)
+         #. New forward propagation method in SimCenterUQ to import existing sample sets (e.g. samples obtained by MCMC)
 
          #. New multi-fidelity surrogate modeling option in SimCenterUQ
          
@@ -130,7 +137,7 @@ Major Version 2
 
          #. Minor improvements and bug fixes
 
-   .. dropdown::    Version 2.3
+   .. dropdown:: Version 2.3
 
       **Release date:** May 2021
 
@@ -145,7 +152,7 @@ Major Version 2
          #. Log-likelihood function specification made optional for TMCMC
 
 
-   .. dropdown::    Version 2.2
+   .. dropdown:: Version 2.2
 
       **Release date:** Oct. 2020
 
@@ -161,7 +168,7 @@ Major Version 2
 
          #. Changes to UI to reduce wasted space
 
-   .. dropdown::    Version 2.0
+   .. dropdown:: Version 2.0
 
       **Release date:** Sept. 2019
 
