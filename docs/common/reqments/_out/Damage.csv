@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 "DL.1", "Ability to use open-source version of Hazus","GC", "M", "Implemented", _, _, _, _, _, _
 "DL.2", "Ability to incorporate improved damage and fragility models for buildings and lifelines","GC", "M", "InProgress", _, _, _, _, _, _
 "DL.3", "Ability to perform time-based assessment","GC", "M", "Implemented", _, _, _, _, _, _
@@ -49,5 +48,3 @@
 "DLD.2.3.3", "Extend online database to store parameters of damage and loss models for buried pipeline networks","SP", "M", "Implemented", _, _, _, _, _, _
 "DLD.2.3.4", "Populate building database with high-resolution model parameters from researchers","SP", "M", _, _, _, _, _, _, _
 "DLD.2.3.5", "Populate lifeline database with high-resolution model parameters from researchers","SP", "M", "InProgress", _, _, _, _, _, _
-=======
->>>>>>> Stashed changes
