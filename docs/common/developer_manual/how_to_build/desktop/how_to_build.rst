@@ -189,7 +189,7 @@ You now have two ways to build the application: (1) using the **Qt Creator** des
 
 
 Build using Qt Creator
-----------------------
+========================
 
 1. Start Qt Creator, then open the |short tool id|.pro file located in the |short tool id| directory that was downloaded in the previous step.
 2. Setup the development kit in Qt Creator. This is usually done by selecting the Qt version, compiler, and configuration and following the onscreen dialog.
@@ -197,7 +197,7 @@ Build using Qt Creator
 
 
 Build from the Terminal
------------------------
+========================
 
 The operations are similar to what was done when building the backend applications. In the terminal application, starting inside the directory of the cloned application again, you will create a build directory, cd into that build directory, run **qmake**, and finally make (or on Windows nmake) to create the application.
 
@@ -253,11 +253,9 @@ Once built, the tool **Preferences** needs to be modified. To do this, open the 
   #. Custom Local Application: Here, select the checkbox to the left, and then provide the path to the SimCenterBackendApplications directory. The code assumes that the folder **applications**, which you created when building the backend applications, exists.
 
      
+    .. _figPreferences:
 
 .. only:: notQuoFEM
-
-    
-    .. _figPreferences:
 
     .. figure:: figures/Preferences.png
        :align: center
@@ -267,11 +265,9 @@ Once built, the tool **Preferences** needs to be modified. To do this, open the 
 
 .. only:: quoFEM_app
 
-
-    .. _figPreferences:
-
     .. figure:: figures/Preferences_qfem.png
        :align: center
        :figclass: align-center
 
        Preferences Dialog
+

@@ -70,13 +70,12 @@ extensions =  [
     "toctree_filter",
     "sphinxcontrib.images",
     "sphinx.ext.extlinks",
-    "sphinxcontrib.images",
     "rendre.sphinx",
     "sphinx.ext.autodoc",
     "crate.sphinx.csv",
     "sphinx_panels",
-    "sphinxcontrib.spelling",
-    'sphinx_toolbox.collapse',
+#    "sphinxcontrib.spelling",
+#    'sphinx_toolbox.collapse',
     'sphinx_tabs.tabs',
 ]
 
