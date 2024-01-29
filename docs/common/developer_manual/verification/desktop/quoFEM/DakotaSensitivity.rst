@@ -1,7 +1,7 @@
 .. _lblDakotaSensitivityVeri:
 
 Global Sensitivity Analysis (Dakota)
-=============================
+=====================================
 
 Global Sensitivity Analysis in Dakota Engine is based on Eqs. (8) and (9) of [Weirs12]_. Using the raw analysis samples shown in "RES" tab - "Data Values" tab after running a sensitivity analysis, one can reproduce the sensitivity indices as follows. 
 

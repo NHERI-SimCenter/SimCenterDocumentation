@@ -10,14 +10,14 @@ The SimCenter workflow systems are aimed at facilitating the use, reuse and exte
 Level 1: Context Diagram
 ------------------------
 
-A Level 1 diagram in :numref:`figContext` shows the system context for the SimCenter applications, i.e. how it fits in the world. In the diagram:
+A Level 1 diagram in :numref:`c4model_figContext` shows the system context for the SimCenter applications, i.e. how it fits in the world. In the diagram:
 - the SimCenter computational applications (EE-UQ, WE-UQ, PBE, R2D) are shown in the center surrounded by the user and the systems it interacts with.
 - input data for the SimCenter applications can be obtained either from NHERI datasets accessible on the DesignSafe `Data Depot <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/>`_, shown to the right, or from web-based databases, shown to the left.
 - the SimCenter applications can then be run in conjunction with open-source software applications (such as Dakota, FEAP, OpenSees, Python, OpenFOAM, etc.) either on a local desktop, shown below, or using HPC resources on |DesignSafe|, shown to the right.
 
 
 .. figure:: figures/context.png
-   :name: figContext
+   :name: c4model_figContext
    :align: center
    :width: 800
    :figclass: align-center
@@ -28,10 +28,10 @@ A Level 1 diagram in :numref:`figContext` shows the system context for the SimCe
 Level 2: Container Diagram
 --------------------------
 
-A Level 2 diagram in :numref:`figContainer` demonstrates how the SimCenter applications are broken into high-level containers (applications, databases, etc.). Each of the SimCenter applications is broken into two components: A front-end UI and a back-end application that runs the workflow. The front-end is a desktop application written using the cross-platform `Qt framework <https://www.qt.io/product/framework>`_. The back-end is an application that processes the input from the front-end, which comes in the form of a JSON file, creates a workflow and runs it. The workflow applications, written in Python, C, or C++, utilize existing applications where possible and run on either the local desktop machine or on an HPC utilizing resources made available to NHE community through DesignSafe.
+A Level 2 diagram in :numref:`c4model_figContainer` demonstrates how the SimCenter applications are broken into high-level containers (applications, databases, etc.). Each of the SimCenter applications is broken into two components: A front-end UI and a back-end application that runs the workflow. The front-end is a desktop application written using the cross-platform `Qt framework <https://www.qt.io/product/framework>`_. The back-end is an application that processes the input from the front-end, which comes in the form of a JSON file, creates a workflow and runs it. The workflow applications, written in Python, C, or C++, utilize existing applications where possible and run on either the local desktop machine or on an HPC utilizing resources made available to NHE community through DesignSafe.
 
 .. figure:: figures/container.png
-   :name: figContainer
+   :name: c4model_figContainer
    :align: center
    :width: 800
    :figclass: align-center
@@ -42,10 +42,11 @@ A Level 2 diagram in :numref:`figContainer` demonstrates how the SimCenter appli
 Level 3: Component Diagram
 --------------------------
 
-Two level 3 diagrams are now presented which break up the two containers into the major building blocks or components in C4 terminology. In :numref:`figComponentFront` the component diagram for the front-end UI is presented. It outlines the interaction between the user and the individual graphical elements (widgets) of the UI. Given the analogy of a jigsaw puzzle, the user selects which piece of the jigsaw puzzle they are working on in the component selection widget. The widget for the jigsaw piece will then be displayed on the desktop. The user for each jigsaw piece then selects which application to run for that piece, and for the chosen application, they provide the inputs. When the inputs are all provided, the user can select to run the simulations locally or remotely. For jobs that run remotely, the user can download and review previously run simulations. As seen the widgets may subsequently interact with web services through HTTPS requests, or with DesignSafe utilizing TAPIS Restful API through the RemoteService container.
+Two level 3 diagrams are now presented which break up the two containers into the major building blocks or
+components in C4 terminology. In :numref:`c4model_figComponentFront` the component diagram for the front-end UI is presented. It outlines the interaction between the user and the individual graphical elements (widgets) of the UI. Given the analogy of a jigsaw puzzle, the user selects which piece of the jigsaw puzzle they are working on in the component selection widget. The widget for the jigsaw piece will then be displayed on the desktop. The user for each jigsaw piece then selects which application to run for that piece, and for the chosen application, they provide the inputs. When the inputs are all provided, the user can select to run the simulations locally or remotely. For jobs that run remotely, the user can download and review previously run simulations. As seen the widgets may subsequently interact with web services through HTTPS requests, or with DesignSafe utilizing TAPIS Restful API through the RemoteService container.
 
 .. figure:: figures/componentFront.png
-   :name: figComponentFront
+   :name: c4model_figComponentFront
    :align: center
    :width: 800
    :figclass: align-center
@@ -53,11 +54,11 @@ Two level 3 diagrams are now presented which break up the two containers into th
    Component diagram for front end UI.
 
 
-The component diagram for the backend application shown in :numref:`figComponentBack`, shows that the backend is made up of a number of component applications. The application ``femUQ.py`` is the application that parses the input from the front end, sets up the workflow by creating a ``workflow_driver`` script and then launches the UQ engine. Which UQ Engine and which applications to run in the workflow, is determined from the data passed from the UI and information contained in a file, ``WorkflowApplication.json``. The ``WorkflowApplication.json`` file is a file that maps the applications specified in the output from the UI with a specific application contained on the user's local machine or at the remote HPC resource, as such it allows the researchers to modify the applications that may be run in the workflow w/o the need to recompile the application. Once the ``workflow_driver`` file is created, control is passed to a UQ engine, which repeatedly runs the ``workflow_driver`` to generate the results. In running the workflow some of the applications will invoke applications not developed to meet the API. For such applications, pre- and post-processors are provided. The figure shows the backend application running locally or remotely on an HPC at DesignSafe.
+The component diagram for the backend application shown in :numref:`c4model_figComponentBack`, shows that the backend is made up of a number of component applications. The application ``femUQ.py`` is the application that parses the input from the front end, sets up the workflow by creating a ``workflow_driver`` script and then launches the UQ engine. Which UQ Engine and which applications to run in the workflow, is determined from the data passed from the UI and information contained in a file, ``WorkflowApplication.json``. The ``WorkflowApplication.json`` file is a file that maps the applications specified in the output from the UI with a specific application contained on the user's local machine or at the remote HPC resource, as such it allows the researchers to modify the applications that may be run in the workflow w/o the need to recompile the application. Once the ``workflow_driver`` file is created, control is passed to a UQ engine, which repeatedly runs the ``workflow_driver`` to generate the results. In running the workflow some of the applications will invoke applications not developed to meet the API. For such applications, pre- and post-processors are provided. The figure shows the backend application running locally or remotely on an HPC at DesignSafe.
 
 
 .. figure:: figures/componentBack.png
-   :name: figComponentBack
+   :name: c4model_figComponentBack
    :align: center
    :width: 800
    :figclass: align-center
@@ -128,7 +129,7 @@ Now that the UI has been handed over to the backend application, the backend app
 
 
 .. figure:: figures/sequenceLocal.png
-   :name: figSequenceLocal
+   :name: c4model_figSequenceLocal
    :align: center
    :width: 800
    :figclass: align-center
@@ -136,11 +137,14 @@ Now that the UI has been handed over to the backend application, the backend app
    Sequence diagram showing what happens when a workflow runs locally.
 
 
-That is for the case where the computations are performed on the local computer. When the computations are performed remotely the steps are different. The first 8 steps are the same. But now the UQwrapper will not start the UQ engine. Instead, control is returned to the UI. The UI will, as shown in the following: (11) Compress the temporary folder. (12) Send the compressed folder to the remote HPC, shown in :numref:`figSequenceRemote`. (13) Start an application to perform the computations. All the remote data transfer and application invocation is down through a cloud service. The `TACC tapis <https://tapis-project.org/>`_ interface is used to provide SimCenter users with access to the TACC HPC resources through the DesignSafe portal.
+That is for the case where the computations are performed on the local computer. When the computations are
+performed remotely the steps are different. The first 8 steps are the same. But now the UQwrapper will not
+start the UQ engine. Instead, control is returned to the UI. The UI will, as shown in the following: (11)
+Compress the temporary folder. (12) Send the compressed folder to the remote HPC, shown in :numref:`c4model_figSequenceRemote`. (13) Start an application to perform the computations. All the remote data transfer and application invocation is down through a cloud service. The `TACC tapis <https://tapis-project.org/>`_ interface is used to provide SimCenter users with access to the TACC HPC resources through the DesignSafe portal.
 
 
 .. figure:: figures/sequenceRemote.png
-   :name: figSequenceRemote
+   :name: c4model_figSequenceRemote
    :align: center
    :width: 800
    :figclass: align-center
