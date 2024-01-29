@@ -5,7 +5,7 @@
 Capabilities
 ************
 
-Version |tool version| of the |app| was released on **October 2, 2023**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+Version |tool version| of the |app| was released on **December 29, 2023**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 UQ (Uncertainty Quantification and Optimization Options)
@@ -26,7 +26,7 @@ UQ (Uncertainty Quantification and Optimization Options)
 
            a. Resample from the existing correlated dataset of samples
 
-        #. :blue:`Multi-fidelity Monte Calro` 
+        #. Multi-fidelity Monte Carlo
 
 #. Global Sensitivity Analysis
 
@@ -60,13 +60,19 @@ UQ (Uncertainty Quantification and Optimization Options)
 
         #. DREAM
 
-     B. :ref:`UCSD_UQ<lblUCSDTMCMC>`
+     B. :ref:`TMCMC <lblUCSDTMCMC>`
 
         #. Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation
         
            a. Override default log-likelihood function
            b. Override default error covariance structure
            c. Calibrate multipliers on error covariance structure
+     
+     C. :ref:`Hierarchical Models <lblUCSDHierarchical>`
+
+        #. :blue:`Bayesian updating of parameters of a hierarchical model`
+
+            a. Quantify aleatory uncertainty in the parameter values of a computational model
 
 #. Deterministic Calibration
 
@@ -96,7 +102,7 @@ UQ (Uncertainty Quantification and Optimization Options)
 
 .. note::
    
-   Support for the running computation to be preformed on TACC's high performance computer, Frontera, is provided through DesignSafe for all but the methods indicated with a star (*).	 
+   Support for the running computation to be performed on TACC's high-performance computer, Frontera, is provided through DesignSafe for all but the methods indicated with a star (*).  
 
 
 FEM (Computational Model Specification)
@@ -132,7 +138,7 @@ RV (Random Variable Options)
 
 .. note::
       
-      :sup:`1`: For SimCentreUQ and UCSD algorithms only, the RVs can be defined by any of parameters, moments, or a dataset.
+      :sup:`1`: For SimCenterUQ and UCSD algorithms only, the RVs can be defined through any of these options - parameters, moments, or a dataset.
       :sup:`2`: Available for Optimization routines in Dakota only.
       :sup:`3`: Available in SimCenterUQ and UCSD only.
 
@@ -149,11 +155,11 @@ RES (Summary and Visualization of UQ Analysis Results)
 
      A. Mean
      B. Standard deviation
-	   
-#. All output values presented in spreadsheet
+       
+#. All output values presented in the spreadsheet
 
      A. Update the chart by clicking on spreadsheet columns
-	
+    
 #. Output values visualized in the interactive chart
 
      A. Scatter plot 

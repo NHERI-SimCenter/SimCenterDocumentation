@@ -17,7 +17,7 @@ information that characterizes the uncertainties in the computed
 response measures. As the computations to make these determinations
 can be prohibitively expensive to perform on a user's local computer,
 the user has the option to perform the computations remotely on the
-Stampede2 supercomputer. Stampede2 is located at the Texas Advanced
+Frontera supercomputer. Frontera is located at the Texas Advanced
 Computing Center (TACC) and made available to the user through NHERI
 DesignSafe, the cyberinfrastructure provider for the distributed NSF
 funded Natural Hazards in Engineering Research Infrastructure (NHERI)

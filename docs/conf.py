@@ -452,7 +452,7 @@ elif app_name == "R2DTool":
 .. |test example| replace:: :ref:`r2dt-0006`
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0
 .. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt
-.. |tool version| replace:: 3.0
+.. |tool version| replace:: 4.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 
@@ -594,7 +594,7 @@ elif app_name == "quoFEM":
     rst_prolog += f"""
 .. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)
 .. |test example| replace:: :ref:`qfem-0001`
-.. |tool version| replace:: 3.4
+.. |tool version| replace:: 3.5
 .. _quoFEM Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
@@ -860,7 +860,7 @@ if sync_examples:
             example_config = yaml.load(f,Loader=yaml.Loader)["HydroUQ"]
     # Load the `sync_files` routine from ./modules/sync_files.py
     from sync_files import sync_files
-    if app_name == "R2DTool":
+    if app_name == "R2DToolSkip":
         sync_files(
         src_dir=os.path.abspath(f"../../R2DExamples"),
         dst_dir="common/user_manual/examples/desktop",

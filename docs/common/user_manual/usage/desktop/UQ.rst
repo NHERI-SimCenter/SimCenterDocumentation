@@ -213,17 +213,19 @@ The following categories are available:
 
       UCSD-UQ engine and category selection.
 
-   This module currently offers support for Bayesian estimation using the Transitional Markov chain Monte Carlo (TMCMC) algorithm:
+   This module currently offers support for Bayesian estimation of the parameters of a traditional (non-hierarchical) model using the Transitional Markov chain Monte Carlo (TMCMC) algorithm and of a hierarchical model using an adaptive Metropolis-within-Gibbs sampling algorithm.
 
    .. toctree-filt::
      :maxdepth: 1
 
      UCSD_UQ_TMCMC
+     UCSD_UQ_Hierarchical
 
    Custom UQ Engine
    ----------------
 
    The **CustomUQ** option enables users to switch out the UQ engine in the |appName| workflow such that different methods and tools can be applied within the SimCenter framework with minimal effort on the part of the user. The CustomUQ option can be accessed as shown below:
+   
    .. _figCustomUQ:
 
    .. figure:: figures/customUQ.png
