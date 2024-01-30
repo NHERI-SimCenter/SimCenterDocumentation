@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 "**REC.1**", "**Building Recovery**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**"
 "REC.1.1", "Incorporate advanced methods for building recovery time estimation","SP", "M", _, _, _, _, _, _, _
 "**REC.2**", "**Housing and Community Recovery**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**"
@@ -16,5 +15,3 @@
 "REC.5.2", "Ability to include lifeline disruptions","GC", "M", _, _, _, _, _, _, _
 "**REC.6**", "**Metrics of recovery**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**", "**_**"
 "REC.6.1", "Implement metrics to inform recovery and community resilience based on the outputs of the available recovery models","SP", "M", _, _, _, _, _, _, _
-=======
->>>>>>> Stashed changes

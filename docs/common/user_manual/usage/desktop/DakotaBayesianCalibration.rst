@@ -37,10 +37,8 @@ The Differential Evolution Adaptive Metropolis ([DREAM]_) method runs multiple M
 5. Seed: seed of the random number generator, this option is provided for repeatability. If the same analysis is run multiple times with the same seed, the results will be identical from all the runs. If the same analysis is run with differing seed values, the results from all the runs will not be identical. 
 6. Calibration data file: the path to the file which contains the calibration data (i.e., the measured values of the reponses).
 
-.. note::
+.. note:: Calibration data file requirements
 
-	Calibration data file requirements
-	==================================
 	The data are provided in the calibration data file, which must fulfill the following requirements:
 
 	1. Each row of the calibration data file contains data from one experiment. The individual entries in every row of this file can be separated by spaces, tabs, or commas.
