@@ -31,7 +31,7 @@ How To Cite
 .. only:: quoFEM_app	     
       
 
-    1. Frank McKenna, Sang-ri Yi, Aakash Bangalore Satish, Adam Zsarnoczay, Michael Gardner, & Wael Elhaddad. (2023). 
+    1. Frank McKenna, Sang-ri Yi, Aakash Bangalore Satish, Adam Zsarnoczay, Kuanshi Zhong, Michael Gardner, & Wael Elhaddad. (2023). 
     NHERI-SimCenter/quoFEM: Version 3.5.0 (v3.5.0). 
     Zenodo. `DOI: 10.5281/zenodo.10443180 <https://doi.org/10.5281/zenodo.10443180>`_
 
