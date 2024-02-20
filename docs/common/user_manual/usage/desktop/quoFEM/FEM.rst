@@ -13,7 +13,7 @@ applications. Currently, there are six options: OpenSees, Python, FEAPpv, Surrog
   :figclass: align-center
   :width: 1200
 
-	Input for the **FEM** tab.
+  Input for the **FEM** tab.
 
 .. note::
    Because the UQ engines treat the FEM applications as a black box, when the UQ engine runs each deterministic simulation it expects the FEM application to output a single file. This file must be named ``results.out`` and be placed in the same directory as the main input file. The ``results.out`` file must contain a single line. That line must contain as many QoI values as the sum of the length of all the EDPs defined by the user in the **QoI** panel. Each value must be separated by a space. An example ``results.out`` file for a problem specifying four response QoI values is as shown:
