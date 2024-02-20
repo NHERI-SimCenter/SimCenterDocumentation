@@ -70,9 +70,9 @@ This feature is especially useful when the user wants to perform a forward UQ an
 	
 	Summary of capabilities and limitations
 
-	* :badge:`o,badge-primary` Run Monte Carlo simulation for 12 different kinds of probability distributions with correlations.
-	* :badge:`o,badge-primary` Use data samples as discrete distribution (especially useful when propagating samples from Bayesian updating)
-	* :badge:`x,badge-danger` Run advanced sampling algorithms including Latin hypercube and surrogate-aided sampling. **[Available in Dakota engine]**
+	* :bdg-primary:`o` Run Monte Carlo simulation for 12 different kinds of probability distributions with correlations.
+	* :bdg-primary:`o` Use data samples as discrete distribution (especially useful when propagating samples from Bayesian updating)
+	* :bdg-danger:`x` Run advanced sampling algorithms including Latin hypercube and surrogate-aided sampling. **[Available in Dakota engine]**
 
 
 .. only:: quoFEM_app
