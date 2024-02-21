@@ -394,7 +394,7 @@ This tutorial will show how a **deterministic** model written/interfaced in a Py
                 .. note::
                     **When running at DesignSafe (e.g. Step 3)**, SimCenter workflow uses its own Python executable installed on the cloud computer. Currently, the only supported Python packages are those installed through the 'nheri_simcenter' package. The available list of packages includes - numpy, scipy, sklearn, pandas, tables, pydoe, gpy, emukit, plotly, matplotlib. If your model uses a package beyond this list, quoFEM analysis will fail.
 
-                An option to allow user-defined Python packages on DesignSafe is under implementation. Meanwhile, if you need to request to use additional Python packages, please contact us through `user forum <https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0>`_.
+                    An option to allow user-defined Python packages on DesignSafe is under implementation. Meanwhile, if you need to request to use additional Python packages, please contact us through `user forum <https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0>`_.
 
 
             * **When your model consists of more than one script**
