@@ -39,7 +39,7 @@
 
     .. only:: Bootcamp
 
-   The |full tool name| is a short course on programming Python, C, and C++ for personal computers (PC) through high-performance computers (HPC).  It is designed for engineering students who want to integrate SimCenter Workflow Tools with their research, use and extend their capabilities, and hopefully share their contributions with the broader research community.
+	      The |full tool name| is a short course on programming Python, C, and C++ for personal computers (PC) through high-performance computers (HPC).  It is designed for engineering students who want to integrate SimCenter Workflow Tools with their research, use and extend their capabilities, and hopefully share their contributions with the broader research community.
 
    
    This document covers the features and capabilities of Version |tool version| of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the |messageBoard|.
@@ -155,7 +155,6 @@
    common/user_manual/bugs
    :quoFEM:common/user_manual/dcv/quoFEM/quoFEM
    :quoFEM:common/user_manual/usage/desktop/quoFEM/usage_video
-   :quoFEM:common/user_manual/user_inputs_documentation/User_Input_Documentation_Tables
 
 .. _lbl-testbeds-manual:
 
