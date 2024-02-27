@@ -65,6 +65,7 @@ if app_name == "pelicun":
 
 # Add any Sphinx extension modules 
 extensions =  [
+    "sphinx_design",
     "sphinx-jsonschema",
     "sphinxcontrib.bibtex",
     "toctree_filter",
@@ -73,7 +74,7 @@ extensions =  [
     "rendre.sphinx",
     "sphinx.ext.autodoc",
     "crate.sphinx.csv",
-    "sphinx_panels",
+#    "sphinx_panels",
 #    "sphinxcontrib.spelling",
 #    'sphinx_toolbox.collapse',
     'sphinx_tabs.tabs',
