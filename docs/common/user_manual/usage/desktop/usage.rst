@@ -119,14 +119,13 @@ The main window of the UI is made up from the following areas:
       :wind:FEM
       :WEUQ:wind/WindEvents
       :WEUQ:FEM
-      :Hydro:hydro/EVT.rst
       :EEUQ:FEM
       :PBE:FEM
       :quoFEM:quoFEM/FEM
-      :Hydro:./GI
-      :Hydro:./SIM
+      :Hydro:GI
+      :Hydro:SIM
       :Hydro:hydro/EVT
-      :Hydro:./FEM
+      :Hydro:FEM
       RV
       :Hydro:response/EDP
       :EEUQ:response/EDP
