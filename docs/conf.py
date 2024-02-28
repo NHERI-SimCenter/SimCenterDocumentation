@@ -175,7 +175,7 @@ toc_filter_exclusions = [
     "S3hark",
     "pelicun",
     "docTestbeds",
-    "docDLDB",
+    "docDLDB"    
 ]
 
 
@@ -490,12 +490,12 @@ elif app_name == "PBE":
     tags.add("notQuoFEM")
     tags.add("notR2D")
 
-
     toc_filter_exclusions.remove("PBE")
     toc_filter_exclusions.remove("desktop")
     toc_filter_exclusions.remove("earthquake")
     toc_filter_exclusions.remove("notQuoFEM")
     toc_filter_exclusions.remove("notR2D")
+    toc_filter_exclusions.remove("docDLDB")    
     toc_filter_exclude = toc_filter_exclusions
 
     exclude_patterns.remove("**/*desktop*")
