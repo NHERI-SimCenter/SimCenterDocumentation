@@ -354,7 +354,7 @@ extlinks.update(
 docTestbeds = "True"
 
 
-if app_name == "HydroUQ" :
+if app_name == "HydroUQ" or app_name == "Hydro":
 
     project = "Hydro-UQ"
     copyright = f"2018-{str(datetime.today().year)}, The Regents of the University of California"
