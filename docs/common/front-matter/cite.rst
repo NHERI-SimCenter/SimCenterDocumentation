@@ -35,6 +35,11 @@ How To Cite
       NHERI-SimCenter/quoFEM: Version 3.5.0 (v3.5.0). 
       Zenodo. `DOI: 10.5281/zenodo.10443180 <https://doi.org/10.5281/zenodo.10443180>`_
 
+.. only:: HydroUQ_app    
+      
+   1. Justin Bonus, Frank McKenna, Ajay B Harish, & Nicolette Lewis. (2024). 
+      NHERI-SimCenter/HydroUQ: Version 3.0.0 (v3.0.0). 
+      Zenodo. `DOI: 0.5281/zenodo.10443180 <https://doi.org/10.5281/zenodo.8396242>`_
 
 2. Gregory G. Deierlein, Frank McKenna, Adam Zsarnóczay, Tracy Kijewski-Correa, Ahsan Kareem,
    Wael Elhaddad, Laura Lowes, Matt J. Schoettler, and Sanjay Govindjee (2020)

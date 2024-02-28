@@ -80,3 +80,12 @@ WEUQ:
     title: "30-Story Frame - Sensitivity"
   - id: weuq-13
     title: "50-Story Building - Wind Load Evaluation with CFD"
+
+#--------------------------------------------------
+# HydroUQ Examples
+#---------------------------------------------------
+HydroUQ:
+  - id: hdro-01
+    title: "9 Story Frame - Basic Sampling"
+  - id: hdro-03
+    title: "9 Story Frame - Sampling with Select EDPs"

@@ -71,6 +71,7 @@ R2DTool:
 HydroUQ:
   include-item:
     - hdro-0001
+    - hdro-0003
 
 requirements: []
 

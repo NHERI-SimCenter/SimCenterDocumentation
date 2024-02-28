@@ -4,6 +4,33 @@
 Release Notes
 ***************************
 
+Version 3.0
+=================
+
+Version 3.0.0
+----------------
+
+**Release date:** March 20th, 2024
+
+#. **Simulation types**:
+    a. Material Point Method for large deformation, multi-phase, multi-material scenarios.
+    b. Two-way FSI coupling between CFD and structural solvers. Uses FOAMySees (OpenFOAM + OpenSees) with coupling using preCICE.
+
+#. **Materials**: 
+    a. Supports elastic, plastic, hyperelastic, and elasto-plastic materials.
+    b. Supports kinematic viscosity and density of the two phases in addition to the surface tension between the fluids.
+
+Version 2.0
+=================
+
+Version 2.0.0
+----------------
+
+**Release date:**  November 30th, 2023
+#. **Simulation types**:
+    a. Two-way FSI coupling between CFD and structural solvers. Uses FOAMySees (OpenFOAM + OpenSees) with coupling using preCICE.
+
+
 Version 1.0
 =================
 
@@ -20,7 +47,7 @@ Version 1.0.0
 
 #. **Simulation types**:
     a. CFD to resolve SW (Using SW results), CFD using bathymetry data, CFD of wave flume is supported.
-    c. For simulation type with SW-CFD coupling, ``v1.0.0`` considers one point on the interface. However, if you would like more flexibility, please let us know using the :ref:`lblBugs`.
+    b. For simulation type with SW-CFD coupling, ``v1.0.0`` considers one point on the interface. However, if you would like more flexibility, please let us know using the :ref:`lblBugs`.
 
 #. **Geometry**: 
     a. Geometry can be imported as Bathymetry files (GeoClaw format - type 1), STL files, or the Hydro flume digital twin. 
