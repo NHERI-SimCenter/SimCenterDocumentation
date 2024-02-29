@@ -279,11 +279,11 @@ For each random variable, the user must enter a name and select from the pull do
    
    Summary of capabilities and limitations
 
-   * :badge:`o,badge-primary` Specify 12 different kinds of random distributions either by parameters, moments (mean and variance), or data samples (Specify 7 different kinds of random distributions by parameters when using Dakota instead of SimCenterUQ)
-   * :badge:`o,badge-primary` Draw correlated samples through Nataf transformation (Gaussian-copular) 
-   * :badge:`x,badge-danger` Explicitly specify random fields (planned)
-   * :badge:`x,badge-danger` Specify user-defined random distribution (planned)
-   * :badge:`x,badge-danger` Specify Non-Gaussian copular correlation (upon request)
+   * :bdg-primary:`o` Specify 12 different kinds of random distributions either by parameters, moments (mean and variance), or data samples (Specify 7 different kinds of random distributions by parameters when using Dakota instead of SimCenterUQ)
+   * :bdg-primary:`o` Draw correlated samples through Nataf transformation (Gaussian-copular) 
+   * :bdg-danger:`x` Explicitly specify random fields (planned)
+   * :bdg-danger:`x` Specify user-defined random distribution (planned)
+   * :bdg-danger:`x` Specify Non-Gaussian copular correlation (upon request)
 
 .. only:: quoFEM_app
 

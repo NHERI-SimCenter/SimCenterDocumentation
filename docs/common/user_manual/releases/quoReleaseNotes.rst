@@ -23,6 +23,7 @@ Major Version 3
          #. Bayesian calibration of a **hierarchical model** 
 
    .. dropdown:: Version 3.4 
+      :open:
 
       **Release date:** October. 2023
 
@@ -30,6 +31,7 @@ Major Version 3
          #. **Multi-fidelity** Monte Carlo Simulation 
 
    .. dropdown:: Version 3.3 
+      :open:
 
       **Release date:** March. 2023
 
@@ -40,6 +42,7 @@ Major Version 3
          #. Switching the display order of the UQ method and UQ engine
 
    .. dropdown:: Version 3.2
+      :open:
 
       **Release date:** September. 2022
 
@@ -59,6 +62,7 @@ Major Version 3
 
 
    .. dropdown:: Version 3.1
+      :open:
 
       **Release date:** June. 2022
 
@@ -76,6 +80,7 @@ Major Version 3
 
 
    .. dropdown:: Version 3.0
+      :open:
 
       **Release date:** March. 2022
 
@@ -99,6 +104,7 @@ Major Version 3
 Major Version 2
 =================
    .. dropdown:: Version 2.4.1
+      :open:
 
       **Release date:** Dec. 2021
 
@@ -118,6 +124,7 @@ Major Version 2
 
 
    .. dropdown:: Version 2.4.0
+      :open:
 
       **Release date:** Oct. 2021
 
@@ -138,6 +145,7 @@ Major Version 2
          #. Minor improvements and bug fixes
 
    .. dropdown:: Version 2.3
+      :open:
 
       **Release date:** May 2021
 
@@ -153,6 +161,7 @@ Major Version 2
 
 
    .. dropdown:: Version 2.2
+      :open:
 
       **Release date:** Oct. 2020
 
@@ -169,6 +178,7 @@ Major Version 2
          #. Changes to UI to reduce wasted space
 
    .. dropdown:: Version 2.0
+      :open:
 
       **Release date:** Sept. 2019
 

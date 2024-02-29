@@ -471,7 +471,7 @@ We provide different verification measures for two different cases.
 
   | The surrogate model is considered well-trained when the **correlation coefficient (** :math:`-1<\rho<1` **) approaches 1**
 
-.. Note:: 
+.. note:: 
 
 	Since these measures are calculated from the cross-validation predictions rather than external validation predictions, they can be biased, particularly when a **highly localized nonlinear range exists in the actual response surface** and those regions are not covered by the training samples. 
 
@@ -534,24 +534,25 @@ The goal of MFMC is to estimate the statistics of the HF model using a small num
 	Deierlein, Gregory G., Andrei M. Reinhorn, and Michael R. Willford. (2010). Nonlinear structural analysis for seismic design. *NEHRP seismic design technical brief* 4 : 1-36.
 
 .. note::
-		The concept of MFMC is different from that of **multi-model forward propagation** referred to at other parts of the documentation. 
 
-		* **MFMC** algorithm has a clear hierarchy between different models in terms of accuracy. A good MFMC algorithm will give accurate estimates of the statistics of HF model. 
+	The concept of MFMC is different from that of **multi-model forward propagation** referred to at other parts of the documentation. 
 
-		* **Multi-model forward propagation** is used when one has different alternative models without clear hierarchy in accuracy, meaning for each model, we have certain *belief* that this model gives true value. Therefore, a good multi-model forward propagation algorithm will give the final estimate that compromises the estimation from different models by considering how much *belief* we have in each model. 
+	* **MFMC** algorithm has a clear hierarchy between different models in terms of accuracy. A good MFMC algorithm will give accurate estimates of the statistics of HF model. 
+
+	* **Multi-model forward propagation** is used when one has different alternative models without clear hierarchy in accuracy, meaning for each model, we have certain *belief* that this model gives true value. Therefore, a good multi-model forward propagation algorithm will give the final estimate that compromises the estimation from different models by considering how much *belief* we have in each model. 
 
 
 Pre-execution checklist for MFMC
 ----------------------------------------------
 Before running the MFMC simulation model, the users are advised to check the validity and effectiveness of MFMC for their problem. Only when the below conditions are satisfied, the users are expected to gain meaningful benefit by using MFMC compared to only HF simulations:
 
-* **The models should take the same input random variables and produces the same output quantities of interest.** For example, if target system is a structure, if one model takes stiffness as random variable and the other does not, the model violates the problem definition. Similarly, if :math:`j`-th output of the HF model is the 1st floor inter-story drift, :math:`j`-th output of the LF model should also be 1st floor inter-story drift. 
+* **The models should take the same input random variables and produce the same output quantities of interest.** For example, if target system is a structure, if one model takes stiffness as random variable and the other does not, the model violates the problem definition. Similarly, if :math:`j`-th output of the HF model is the 1st floor inter-story drift, :math:`j`-th output of the LF model should also be 1st floor inter-story drift. 
 
-* **The models should have clear hierarchy in terms of accuracy and time.** When the HF and LF model responses are different, the assumption is that the HF response is always accurate. Therefore, if a LF model runs faster than the HF model, it is optimal to run only the HF model, and there is no reason to introduce MFMC.
+* **The models should have a clear hierarchy in terms of accuracy and time.** When the HF and LF model responses are different, the assumption is that the HF response is always accurate. Therefore, if a LF model runs faster than the HF model, it is optimal to run only the HF model, and there is no reason to introduce MFMC.
 
-* **The response of different models should have high correlation**. The efficiency of MFMC heavily depends on the correlation between the HF and LF model outputs. Only if the correlation is fairly high, the MF estimation is meaningfully efficient than conducting only HF simulations. 
+* **The response of different models should have a high correlation**. The efficiency of MFMC heavily depends on the correlation between the HF and LF model outputs. Only if the correlation is fairly high, the MF estimation is meaningfully efficient than conducting only HF simulations. 
 
-Efficiency of MFMC can be evaluated using the speed-up ratio, defined as the reduction of computational effort you need to get the same Monte Carlo statistical accuracy by the MFMC and direct Monte Carlo method. :numref:`fig-MF-SP` shows the expected speed-up factor for different computation time ratios and correlation coefficient values. One can notice that only when the ratio of the model evaluation time is greater than 100 and when the correlation is greater than 0.85-0.9, the expected speed-up is significant [Patsialis2021]_. The formulation used to estimate the speed-up ratio can found at the end of this section.
+The efficiency of MFMC can be evaluated using the speed-up ratio, defined as the reduction of computational effort you need to get the same Monte Carlo statistical accuracy by the MFMC and direct Monte Carlo method. :numref:`fig-MF-SP` shows the expected speed-up factor for different computation time ratios and correlation coefficient values. One can notice that only when the ratio of the model evaluation time is greater than 100 and when the correlation is greater than 0.85-0.9, the expected speed-up is significant [Patsialis2021]_. The formulation used to estimate the speed-up ratio can found at the end of this section.
 
 .. _fig-MF-SP:
 
@@ -608,6 +609,7 @@ Randomly generate :math:`N_p` sample points and run both HF and LF simulations. 
 Considering the remaining computational budget (:math:`C_T`), the optimal number of HF and LF simulations (denoted as :math:`N_1` and :math:`N_1+N_2`) can ideally be decided such that :math:`N_1:(N_1+N_2) = 1:r` and :math:`C_T = N_1 c_{HF} + (N_1+N_2) c_{LF}`. However, the due to practical obstacles (e.g. when multiple outputs are simultaneously considered or when the number of pilot samples exceeds :math:`N_1`) the final ratio :math:`r` can be different from the optimal one. 
 
 .. note::
+
 	When multiple outputs are considered, the simulation ratio is chosen to be the average of the optimal ratios (:math:`r^*`) for different outputs.
 
 **Step 2: Final Simulations**

@@ -14,122 +14,136 @@ The first selection panel the user must select from and enter data into is the *
    UQ Features At-a-Glance
    -------------------------
 
-   .. panels::
-    :container: container-lg pb-3
-    :column: col-lg-12 col-md-12 col-sm-12 col-xs-12 p-2
+   .. grid:: 2
+     :gutter: 1
 
-    ---
-
-    .. container:: twocol
-
-       .. container:: leftside
-
-        :uqblue:`Forward propagation` 
-            | Forward propagation generates sample realizations of input random variables (RVs) and output quantity of interests (QoIs) to provide statistics such as mean, variance, skewness, and kurtosis. See Dakota user manual for theory details.
-
-             | ▪ :ref:`lblDakotaForward` in Dakota   :link-badge:`../../examples/desktop/qfem-0001/README.html,Example1, cls=badge-primary text-white` :link-badge:`../../examples/desktop/qfem-0002/README.html,Example2, cls=badge-primary text-white`
-             | ▪ :ref:`lblSimForward` in SimCenterUQ   :link-badge:`../../examples/desktop/qfem-0015/README.html,Example, cls=badge-success text-white`
-             | ▪ :ref:`lblSimForwardMF` in SimCenterUQ  
-
-       .. container:: rightside
+     .. grid-item-card::
+         :columns: 3
 
          .. thumbnail:: figures/UQtab/method_forward.png
-                :width: 25%
+                :width: 100%
 
-    ---
+     .. grid-item-card:: Forward propagation
+            :columns: 9
 
-    .. container:: twocol
+            | Forward propagation generates sample realizations of input random variables (RVs) and output quantity of interests (QoIs) to provide statistics such as mean, variance, skewness, and kurtosis. See Dakota user manual for theory details.
 
-       .. container:: leftside
+             | ▪ :ref:`lblDakotaForward` in Dakota   :bdg-link-primary:`Example1 <../../examples/desktop/qfem-0001/README.html>` :bdg-link-primary:`Example2 <../../examples/desktop/qfem-0002/README.html>`
+             | ▪ :ref:`lblSimForward` in SimCenterUQ   :bdg-link-success:`Example <../../examples/desktop/qfem-0015/README.html>`
+             | ▪ :ref:`lblSimForwardMF` in SimCenterUQ  
 
-        :uqblue:`Global Sensitivity Analysis`            
-            | Global sensitivity analysis is used to quantify the contribution of each input RV to the uncertainty in an output QoI. Dakota engine provides classical non-parametric estimation based on a smart sampling approach and the SimCenterUQ engine provides a probabilistic model-based approximation. See Dakota user manual and :ref:`here<lbluqSimTechnical_Sensitivity>` for theory details.
+            | See Dakota user manual for theory details.
 
-             | ▪ :ref:`lblDakotaSensitivity` in Dakota   :link-badge:`../../examples/desktop/qfem-0001/README.html,Example, cls=badge-primary text-white`
-             | ▪ :ref:`lblSimSensitivity` in SimCenterUQ   :link-badge:`../../examples/desktop/qfem-0009/README.html,Example1, cls=badge-success text-white` :link-badge:`../../examples/desktop/qfem-0023/README.html,Example2, cls=badge-success text-white`
 
-       .. container:: rightside
+   .. grid:: 2
+     :gutter: 1
 
-            .. thumbnail:: figures/UQtab/method_sensitivity.png
-                :width: 25%
+     .. grid-item-card::
+         :columns: 3
 
-    ---
-    .. container:: twocol
+         .. thumbnail:: figures/UQtab/method_sensitivity.png
+               :width: 100%
 
-       .. container:: leftside
+     .. grid-item-card:: Global Sensitivity Analysis
+            :columns: 9
 
-        :uqblue:`Reliability Analysis`
-            | Reliability Analysis is performed to estimate the probability of failure, i.e. the probability that a system response (QoI) exceeds a certain threshold level. See Dakota user manual for theory details.
+            | Global sensitivity analysis is used to quantify the contribution of each input RV to the uncertainty in an output QoI. Dakota engine provides classical non-parametric estimation based on a smart sampling approach and the SimCenterUQ engine provides a probabilistic model-based approximation. 
 
-             | ▪ :ref:`lblDakotaReliability` in Dakota   :link-badge:`../../examples/desktop/qfem-0001/README.html,Example, cls=badge-primary text-white`
+             | ▪ :ref:`lblDakotaSensitivity` in Dakota   :bdg-link-primary:`Example <../../examples/desktop/qfem-0001/README.html>`
+             | ▪ :ref:`lblSimSensitivity` in SimCenterUQ   :bdg-link-success:`Example1 <../../examples/desktop/qfem-0009/README.html>` :bdg-link-success:`Example2 <../../examples/desktop/qfem-0023/README.html>`
 
-       .. container:: rightside
+            | See Dakota user manual and :ref:`here<lbluqSimTechnical_Sensitivity>` for theory details.
+
+   .. grid:: 2
+     :gutter: 1
+
+     .. grid-item-card::
+         :columns: 3
 
          .. thumbnail:: figures/UQtab/method_reliability.png
-                :width: 25%
+                :width: 100%
 
-    ---
-    .. container:: twocol
+     .. grid-item-card:: Reliability Analysis
+            :columns: 9
 
-       .. container:: leftside
+            | Reliability Analysis is performed to estimate the probability of failure, i.e. the probability that a system response (QoI) exceeds a certain threshold level. 
 
-        :uqblue:`Bayesian Calibration`
-            | Bayesian Calibration is used to calibrate model parameters probabilistically based on Bayesian inference. The probability distributions of the input parameters (RVs) are updated by experimental data. Theory details can be found in Dakota user manual and :ref:`here<lbluqUCSDSimTechnical>`
+             | ▪ :ref:`lblDakotaReliability` in Dakota   :bdg-link-primary:`Example <../../examples/desktop/qfem-0001/README.html,>`
+
+            | See Dakota user manual for theory details.
+
+   .. grid:: 2
+     :gutter: 1
+
+     .. grid-item-card::
+         :columns: 3
+
+         .. thumbnail:: figures/UQtab/method_Bayesian.png
+                :width: 100%
+
+     .. grid-item-card:: Bayesian Calibration
+            :columns: 9
+
+            | Bayesian Calibration is used to calibrate model parameters probabilistically based on Bayesian inference. The probability distributions of the input parameters (RVs) are updated by experimental data. 
 
              | ▪ :ref:`lblDakotaBayesianCalibration` in Dakota
-             | ▪ :ref:`lblUCSDTMCMC` in UCSD-UQ   :link-badge:`../../examples/desktop/qfem-0014/README.html,Example1, cls=badge-danger text-white` :link-badge:`../../examples/desktop/qfem-0019/README.html,Example2, cls=badge-danger text-white`
+             | ▪ :ref:`lblUCSDTMCMC` in UCSD-UQ   :bdg-link-danger:`Example1 <../../examples/desktop/qfem-0014/README.html>` :bdg-link-danger:`Example2 <../../examples/desktop/qfem-0019/README.html>`
 
-       .. container:: rightside
+            | Theory details can be found in Dakota user manual and :ref:`here<lbluqUCSDSimTechnical>`.
 
-          .. thumbnail:: figures/UQtab/method_Bayesian.png
-                :width: 25%
-    ---
-    .. container:: twocol
+   .. grid:: 2
+     :gutter: 1
 
-       .. container:: leftside
+     .. grid-item-card::
+         :columns: 3
 
-        :uqblue:`Deterministic Calibration` 
-            | Deterministic Calibration estimates the best parameter values of a simulation model that best fit the experimental data, using deterministic optimization algorithms, e.g. Gauss-Newton least squares, pattern search, etc. See Dakota user manual for theory details.
+         .. thumbnail:: figures/UQtab/method_deterministic.png
+                :width: 100%
 
-             | ▪ :ref:`lblDakotaDeterministicCalibration` in Dakota   :link-badge:`../../examples/desktop/qfem-0007/README.html,Example1, cls=badge-primary text-white` :link-badge:`../../examples/desktop/qfem-0019/README.html,Example2, cls=badge-primary text-white`
+     .. grid-item-card:: Deterministic Calibration
+            :columns: 9
+
+            | Deterministic Calibration estimates the best parameter values of a simulation model that best fit the experimental data, using deterministic optimization algorithms, e.g. Gauss-Newton least squares, pattern search, etc. 
+
+             | ▪ :ref:`lblDakotaDeterministicCalibration` in Dakota   :bdg-link-primary:`Example1 <../../examples/desktop/qfem-0007/README.html>` :bdg-link-primary:`Example2 <../../examples/desktop/qfem-0019/README.html>`
              | ▪ :ref:`lblDakotaGradientFreeEstimation` in Dakota
 
-       .. container:: rightside
-        
-          .. thumbnail:: figures/UQtab/method_deterministic.png
-                :width: 25%
+            | See Dakota user manual for theory details. 
 
-    ---
-    .. container:: twocol
+   .. grid:: 2
+     :gutter: 1
 
-       .. container:: leftside
+     .. grid-item-card::
+         :columns: 3
 
-        :uqblue:`Surrogate Modeling`
+         .. thumbnail:: figures/UQtab/method_surrogate.png
+                :width: 100%
 
-            | |app| can be used to train a surrogate model that substitutes expensive computational simulation models or physical experiments. Theory details can be found in :ref:`here<lbluqSimTechnical>`.
+     .. grid-item-card:: Surrogate Modeling
+            :columns: 9
 
-             | ▪ :ref:`lblSimSurrogate` in SimCenterUQ   :link-badge:`../../examples/desktop/qfem-0015/README.html,Example1, cls=badge-success text-white` :link-badge:`../../examples/desktop/qfem-0016/README.html,Example2, cls=badge-success text-white`
+            | |app| can be used to train a surrogate model that substitutes expensive computational simulation models or physical experiments. 
+
+             | ▪ :ref:`lblSimSurrogate` in SimCenterUQ   :bdg-link-success:`Example1 <../../examples/desktop/qfem-0015/README.html>` :bdg-link-success:`Example2 <../../examples/desktop/qfem-0016/README.html>`
              | ▪ :ref:`lblSimCenterUQPLoM` in SimCenterUQ
 
-       .. container:: rightside
-        
-           .. thumbnail:: figures/UQtab/method_surrogate.png
-                :width: 25%
+            | Theory details can be found in :ref:`here<lbluqSimTechnical>`.
 
-    ---
-    .. container:: twocol
+   .. grid:: 2
+     :gutter: 1
 
-       .. container:: leftside 
-
-        :uqblue:`Custom UQ`
-           | Custom UQ helps the user plug in a user-defined UQ algorithm in SimCenter workflow.
-
-            | ▪ :ref:`lblCustomUQ` in CustomUQ engine   :link-badge:`../../examples/desktop/qfem-0017/README.html,Example, cls=badge-success text-white`
-
-       .. container:: rightside
+     .. grid-item-card::
+         :columns: 3
         
          .. thumbnail:: figures/UQtab/method_custom.png
-                :width: 25%
+                :width: 100%
+
+     .. grid-item-card:: Custom UQ
+           :columns: 9
+
+           | Custom UQ helps the user plug in a user-defined UQ algorithm in SimCenter workflow.
+
+            | ▪ :ref:`lblCustomUQ` in CustomUQ engine   :bdg-link-success:`Example <../../examples/desktop/qfem-0017/README.html>`
 
 
 .. only:: notQuoFEM
