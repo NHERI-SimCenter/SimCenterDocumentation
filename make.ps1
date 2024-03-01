@@ -28,7 +28,7 @@ function json-to-csv{
     $EE_Examples = @("-Eeeuq") + (gci "$env:SIMCENTER_DEV\EE-UQ\Examples\eeuq-*\src\input.json")
     $WE_Examples = @("-Eweuq") + (gci "$env:SIMCENTER_DEV\WE-UQ\Examples\weuq-*\src\input.json")
     $PB_Examples = @("-Epbdl") + (gci "$env:SIMCENTER_DEV\PBE\Examples\pbdl-*\src\input.json")
-    $R2_Examples = @("-Er2dt") + (gci "$env:SIMCENTER_DEV\R2DTool\Examples\E[0-9]*\input.json")
+    $R2_Examples = @("-Er2dt") + (gci "$env:SIMCENTER_DEV\R2DExamples\Examples\E[0-9]*\input.json")
     $arglist = @("scripts/json2csv.py") + $QF_Examples + $EE_Examples + $WE_Examples + $PB_Examples + $R2_Examples
     write-host $arglist
     Get-ChildItem -File -Filter ".\docs\common\reqments\data\*.json" | ForEach-Object {

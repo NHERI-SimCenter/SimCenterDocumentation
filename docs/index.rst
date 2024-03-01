@@ -7,36 +7,41 @@
 
    .. only:: R2D_app
 
-
-      The |full tool name| (|app|) is an open-source research application that can be used to simulate the performance of the built environment subjected to natural hazards. Version 1 will allow users to predict the performance of the buildings in the region when subjected to earthquake events. Version 2, due May 2021, will allow researchers to study the effects given a Hurricane event. Future version will allow users to study effects of lifleines and interdependencies. The computations are performed by a simulation workflow that will run on either the user's local machine or on a high performance computer made available by |DesignSafe|.
+      The |full tool name| (|app|) creates and launches simulation workflows to assess the regional impact of natural hazard events. Advanced capabilities facilitate high-resolution simulation. Researchers can investigate disaster scenarios or perform a probabilistic assessment by including uncertainties in both the hazard and the characteristics of the built environment. Assessments can include a comprehensive inventory of assets or focus on a distributed portfolio of structures, subjected to hurricanes, earthquakes, or other hazard events. The application integrates tools and libraries to support the creation of inventories, characterize hazard events, and simulate damage and losses on large inventories of buildings and civil infrastructure. User-defined models and calculation methodologies are also supported. Detailed results are provided in a standardized format to facilitate post-processing and further calculations to evaluate community impacts and recovery. The computations are performed by a simulation workflow that runs on either the user’s local machine or on a high performance computer made available by |DesignSafe|.
 
    .. only:: PBE_app
 
-      The |full tool name| (|app|) is an open-source desktop application designed to support the assessment of building performance under natural hazard events. The application quantifies performance in a probabilistic approach. Users can consider uncertainties in event intensity, structural behavior, component quantities and their limit state capacities, as well as the consequences of exceeding their limit states (i.e., experiencing damage). The |app| provides a convenient user interface and automatically prepares a simulation workflow description based on the settings provided by the user. This workflow description is used to run the corresponding computations on SimCenter's backend engine using sWHALE. The structural response estimation part of the workflow can run on the high performance computing cluster made available through |DesignSafe|. The performance assessment part runs locally using SimCenter's Pelicun performance assessment engine.
+      The |full tool name| (|app|) is an open-source desktop application designed to support the assessment of building performance under natural hazard events. The application quantifies performance in a probabilistic approach. Users can consider uncertainties in event intensity, structural behavior, component quantities and their limit state capacities, as well as the consequences of exceeding component limit states (i.e., experiencing damage). The |app| provides a convenient user interface and uses the settings provided by the user to prepare a simulation workflow description in a JSON file. This workflow description is used to run a simulation workflow on SimCenter's backend engine using sWHALE. The structural response estimation part of the workflow can run on the TACC high performance computing cluster made available through |DesignSafe|. The performance assessment part runs locally using SimCenter's Pelicun performance assessment engine.
 
    .. only:: EEUQ_app
 
-      The |full tool name| (|app|) is an open-source research application that can be used to predict the response of a building subjected to earthquake events. The application is focused on quantifying the uncertainties in the predicted response, given the that the uncertainties in models, earthquake loads, and analysis. The computations are performed in a workflow application that will run on either the users local machine or on a high performance computer made available by |DesignSafe|.
+      The |full tool name| (|app|) is an open-source research application that can be used to predict the response of a building subjected to earthquake events. The application is focused on quantifying the uncertainties in the predicted response, given the uncertainties in models, earthquake loads, and analysis. The computations are performed in a workflow application that will run on either the user's local machine or on a high-performance computer made available by |DesignSafe|.
 
 
    .. only:: WEUQ_app
 
-      The |full tool name| (|app|) is an open-source research application that can be used to predict the response of a building subjected to wind loading events. The application is focused on quantifying the uncertainties in the predicted response, given the that the uncertainties in models, wind loads, and analysis. The computations are performed in a workflow application that will run on either the users local machine or on a high performance computer made available by |DesignSafe|.
+      The |full tool name| (|app|) is an open-source research application that can be used to predict the response of a building subjected to wind loading events. The application is focused on quantifying the uncertainties in the predicted response, given the uncertainties in models, wind loads, and analysis. The computations are performed in a workflow application that will run on either the user's local machine or on a high-performance computer made available by |DesignSafe|.
 
 
    .. only:: quoFEM_app
 
-      The |full tool name|  is an open-source research application which focuses on providing uncertainty quantification methods (forward, inverse, reliability, sensitivity and parameter estimation) to researchers in natural hazards who utilize existing simulation software applications, typically Finite Element applications, in their work. The computations are performed in a workflow application that will run on either the users local machine or on a high performance computer made available by |DesignSafe|.
+      The |full tool name|  is an open-source research application that focuses on providing uncertainty quantification methods (forward, inverse, reliability, sensitivity and parameter estimation) to researchers in natural hazards who utilize existing simulation software applications, typically Finite Element applications, in their work. The computations are performed in a workflow application that will run on either the user's local machine or on a high-performance computer made available by |DesignSafe|.
 
+   
    .. only:: pelicun
 
-      The |full tool name| is an open-source implementation of the PELICUN framework in a Python package. PELICUN is developed as an integrated multi-hazard framework to assess the performance of buildings and other assets in the built environment under natural hazards. Its foundation is the FEMA P58 performance assessment methodology that is extended beyond the seismic performance assessment of buildings to also handle wind and water hazards, bridges and buried pipelines, and performance assessment using vulnerability functions and  damage models based on intensity measures (e.g., Hazus).
+      The |full tool name| is an open-source implementation of the PELICUN framework in a Python package. PELICUN is developed as an integrated multi-hazard framework to assess the performance of buildings and other assets in the built environment under natural hazards. Its foundation is the FEMA P58 performance assessment methodology that is extended beyond the seismic performance assessment of buildings to also handle wind and water hazards, bridges and buried pipelines, and performance assessment using vulnerability functions and damage models based on intensity measures (e.g., Hazus).
 
       .. only:: Hydro
 
-      The Water-borne Natural Hazards with Uncertainty Quantification Application (Hydro-UQ app) is an open-source research application that can be used to predict the response of a building a community subjected to events like tsunami and storm-surge. The application is focused on quantifying the uncertainties in the predicted response, given the that the uncertainties in models, loads, and analysis. The computations are performed in a workflow application that will run on a high performance computer made available by |DesignSafe|.
+      The Water-borne Natural Hazards with Uncertainty Quantification Application (Hydro-UQ app) is an open-source research application that can be used to predict the response of a building in a community subjected to events like tsunamis and storm surges. The application is focused on quantifying the uncertainties in the predicted response, given the uncertainties in models, loads, and analysis. The computations are performed in a workflow application that will run on a high-performance computer made available by |DesignSafe|.
 
 
+    .. only:: Bootcamp
+
+	      The |full tool name| is a short course on programming Python, C, and C++ for personal computers (PC) through high-performance computers (HPC).  It is designed for engineering students who want to integrate SimCenter Workflow Tools with their research, use and extend their capabilities, and hopefully share their contributions with the broader research community.
+
+   
    This document covers the features and capabilities of Version |tool version| of the tool. Users are encouraged to comment on what additional features and capabilities they would like to see in future versions of the application through the |messageBoard|.
 
 
@@ -55,7 +60,7 @@
    :pelicun:common/user_manual/about/pelicun/about
 
    :R2D:common/front-matter/desktop/ack
-   :PBE:common/front-matter/desktop/ack
+   :PBE:common/front-matter/desktop/ack_pbe
    :EEUQ:common/front-matter/desktop/ack
    :WEUQ:common/front-matter/desktop/ack
    :Hydro:common/front-matter/desktop/ack
@@ -74,15 +79,18 @@
    :EEUQ:common/user_manual/releases/eePlans	   
 
    :WEUQ:common/user_manual/releases/weCapabilities
+   :WEUQ:common/user_manual/releases/weReleaseNotes
    :WEUQ:common/user_manual/releases/wePlans
-      
-   :R2D:common/user_manual/usage/desktop/R2DTool/releasenotes
+
    :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
-   :PBE:common/user_manual/usage/desktop/PBE/releasenotes
-   :R2D:common/user_manual/releases/r2dPlans
 
+   :PBE:common/user_manual/releases/pbeCapabilities
+   :PBE:common/user_manual/releases/pbeReleaseNotes
    :PBE:common/user_manual/releases/pbePlans
-
+      
+   :R2D:common/user_manual/releases/r2dCapabilities 	 
+   :R2D:common/user_manual/releases/r2dPlans 
+   :R2D:common/user_manual/releases/r2dReleaseNotes
 	    
    common/front-matter/glossary.rst
    common/front-matter/abbreviations.rst
@@ -115,14 +123,9 @@
    :Hydro:common/user_manual/usage/desktop/hydro/resguide
    :Hydro:common/user_manual/usage/desktop/hydro/helpvideo
 
-   :EEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
-   :WEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
-   :PBE:common/user_manual/troubleshooting/desktop/troubleshooting
-   :quoFEM:common/user_manual/troubleshooting/desktop/troubleshooting
-   :R2D:common/user_manual/troubleshooting/desktop/troubleshooting
-   :pelicun:common/user_manual/troubleshooting/pelicun/troubleshooting
-   :Hydro:common/user_manual/troubleshooting/pelicun/errors
 
+   :R2D:common/user_manual/usage/desktop/R2DTool/tools
+	  
    :EEUQ:common/user_manual/examples/desktop/examples
    :WEUQ:common/user_manual/examples/desktop/examples
    :PBE:common/user_manual/examples/desktop/examples
@@ -130,6 +133,14 @@
    :quoFEM:common/user_manual/examples/desktop/examples
    :R2D:common/user_manual/examples/desktop/examples
    :pelicun:common/user_manual/examples/pelicun/examples
+
+   :EEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
+   :WEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
+   :PBE:common/user_manual/troubleshooting/desktop/troubleshooting
+   :quoFEM:common/user_manual/troubleshooting/desktop/troubleshooting
+   :R2D:common/user_manual/troubleshooting/desktop/troubleshooting
+   :pelicun:common/user_manual/troubleshooting/pelicun/troubleshooting
+   :Hydro:common/user_manual/troubleshooting/pelicun/errors
 
    :Hydro:common/user_manual/usage/desktop/hydro/bestpractices
 
@@ -143,6 +154,7 @@
 
    common/user_manual/bugs
    :quoFEM:common/user_manual/dcv/quoFEM/quoFEM
+   :quoFEM:common/user_manual/usage/desktop/quoFEM/usage_video
 
 .. _lbl-testbeds-manual:
 
@@ -157,9 +169,17 @@
    .. :docTestbeds:common/testbeds/anchorage/index
    :docTestbeds:common/testbeds/lake_charles/index
 
+.. _lbl-dldb-manual:
+
+.. toctree-filt::
+   :caption: Damage and Loss DB
+   :maxdepth: 1
+   :numbered: 3
+
+   :docDLDB:common/dldb/damage/index
+   :docDLDB:common/dldb/repair/index
+
 .. _lbl-technical-manual:
-
-
 
 .. toctree-filt::
    :caption: Technical Manual

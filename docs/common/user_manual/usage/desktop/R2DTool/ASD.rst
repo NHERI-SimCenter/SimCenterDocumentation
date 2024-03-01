@@ -6,6 +6,8 @@ In this panel the user can import the databases of different asset classes. The 
 .. contents::
    :local:
 
+.. _lbl-ASDBuildings:
+
 Buildings
 ---------
 
@@ -23,13 +25,13 @@ The **CSV to AIM** application imports a building inventory database from a user
 	#. Input a string of numbers that correspond to the building IDs that you want to analyze. A range of buildings is specified with a dash, and multiple buildings are separated with a comma, e.g., 2-8, 9, 13, 15, 21, 34-38.
 	#. Employ the Advanced Filtering capabilities by clicking on the **Advanced Filter** button. The **Query Builder** dialog will appear, as seen in :numref:`fig-R2DQueryBuilderDialog`. You can create a custom filter expression (SQL format) using operators, e.g., ``<, =, OR``, and fields available in the imported building inventory, e.g., ``BuildingType``. Operators and fields can be combined to perform complex filtering expressions such as ``"YearBuilt" < 1970  AND  "BuildingType"  =  'Wood'``
 	
-	.. _fig-R2DQueryBuilderDialog:
+.. _fig-R2DQueryBuilderDialog:
 
-	.. figure:: figures/R2DQueryBuilderDialog.png
-	  :align: center
-	  :figclass: align-center
+.. figure:: figures/R2DQueryBuilderDialog.png
+  :align: center
+  :figclass: align-center
 
-	  Query Builder Dialog.
+  Query Builder Dialog.
 
 When the **Select** button is pressed, the buildings that are specified in the **Building Selection** box are added to the list of buildings that will be analyzed. Pressing the **Clear Selection** button will clear the list of buildings that will be analyzed.
 
@@ -66,10 +68,58 @@ The **GIS to AIM** application imports a building inventory database from a user
   GIS to AIM input panel.
 
 
+
+GeoJSON to Asset
+****************
+The **GeoJSON to Asset** application, shown in :numref:`fig-R2DGeoJsonInputBeforeLoad`, is SimCenter's preferred method to load regional infrastructure inventory.
+:numref:`fig-R2DGeoJSONInputExampleBuilding` is an example of a ``.geojson`` formatted database for buildings. 
+It follows the format convention of the official ``.geojson`` structure as described `here <https://geojson.org/>`_. 
+A "CRS" key-item pair is necessary to define the coordinate reference system, and the building stock information is described in the `"features"` array.
+Each feature in the features array stands for one asset. Each feature must include a `{"type":"Feature"}` key-item pair, a `"geometry"` item, and a `"properties"` item.
+`It can also contain an optional "id" item <https://datatracker.ietf.org/doc/html/rfc7946#section-3.2>`_, and the value of this item is either
+a JSON string or number. 
+The building information needed in later workflow should be included in the `"properties"` item. All information needed in the 
+subsequent workflow (e.g., IMasEDP asset analysis and HAZUS-MH EQ damage and loss analysis) must be provided, otherwise, R2D may return errors.
+The information required for typical analysis workflows can be found in :ref:`File Types and Schemas <lblUserDefInputs>` and in :ref:`R2D examples <lbl-examples>`. 
+A special SimCenter convention is an attribute **"type"** must be included in the `"properties"` items. The value of **"type"**
+describes the component type of this feature. For building inventory, the component type is always
+**"Building"**, i.e., `{"type":"Building"}`. For other infrastructure, such as transportation 
+infrastructure, the value of `"type"` could be `Bridge`, `Roadway`, and `Tunnel`.
+Depending on the component type, the asset will be managed differently in later simulation workflow.
+More descriptions can be found at :ref:`lbl-ASDTransport` and example 14 in :ref:`R2D examples <lbl-examples>`. 
+
+:numref:`fig-R2DGeoJsonInputAfterLoadBuilding` is the panel after a ``.geojson`` buidling inventory database is loaded in R2D.
+Users should select the buildings they want to analyze in the **Building Selection Filtering** box.
+The selected buildings can be visualized in the **VIZ** panel.
+
+.. _fig-R2DGeoJsonInputBeforeLoad:
+
+.. figure:: figures/R2DGeoJsonInputBeforeLoad.png
+  :align: center
+  :figclass: align-center
+
+  GeoJSON to Asset input panel.
+
+
+.. literalinclude:: figures/R2DGeoJSONInputExampleBuilding.json
+   :language: json
+   :linenos:
+   :caption: GeoJSON formatted database for buildings.
+   :name: fig-R2DGeoJSONInputExampleBuilding
+
+.. _fig-R2DGeoJsonInputAfterLoadBuilding:
+
+.. figure:: figures/R2DGeoJsonInputAfterLoadBuilding.png
+  :align: center
+  :figclass: align-center
+  
+  GeoJSON to Asset input panel after loading a building ``.geojson`` database.
+  
+
 Regional Water Distribution Networks
 -------------------------------------
 
-The water distribution network input panel, as shown in :numref:`fig-wdnInputPanel`, allows a user to input the nodes and pipelines of a water distribution network. The **Regional Water Network Selection** combo box is where the user selects the application for the import of buildings, and for the generation of a building information model (AIM).
+The water distribution network input panel, as shown in :numref:`fig-wdnInputPanel`, allows a user to input the nodes and pipelines of a water distribution network. The **Regional Water Network Selection** combo box is where the user selects the application for the import of water distribution networks, and for the generation of a asset information model (AIM).
 
 CSV to Regional Water Network
 *****************************
@@ -118,80 +168,72 @@ The **Node and Pipeline Information** table, shown in :numref:`fig-WDNInputPanel
   :figclass: align-center
 
   GIS to regional water network input panel.
-  
 
-Housing Unit Allocation
------------------------
+.. _lbl-ASDTransport:
 
-The **Housing Unit Allocation** application can be employed to augment an existing asset inventory with US Census demographic information and socio-economic information from the American Community Survey (ACS). The input panel is shown in :numref:`fig-R2DHUAPanel`. As seen in the figure, the asset information is supplied via selection of an already imported layer in R2D. Alternatively, a user can supply an asset layer in a GIS format, e.g., shapefile, geodatabase, and the supplied layer will be employed.
+Regional Transportation Infrastructure
+-------------------------------------
+The transportation infrastructure input panel allows users to input the inventory of a transportation network. The **Transportation Network Selection** combo box is where users select the application for importing transportation network inventory generating asset information models (AIM).  
 
-.. note:: R2D will always make a copy of the asset layer it is working with. Going forward, the copied asset layer is employed to preserve the original data.
+GeoJSON to Asset
+****************
+The **GeoJSON to Asset** application, shown in :numref:`fig-R2DGeoJsonInputBeforeLoad`, is SimCenter's preferred method to load regional infrastructure inventory.
+:numref:`fig-R2DGeoJSONInputExampleBuilding` is an example of a ``.geojson`` formatted database for transportation infrastructure. 
+It follows the format convention of the official ``.geojson`` structure as described `here <https://geojson.org/>`_. 
+A "CRS" key-item pair is necessary to define the coordinate reference system, and the infrastructure information is described in the `"features"` array.
+Each feature in the features array stands for one asset. Each feature must include a `{"type":"Feature"}` key-item pair, a `"geometry"` item, and a `"properties"` item.
+`It can also contain an optional "id" item <https://datatracker.ietf.org/doc/html/rfc7946#section-3.2>`_, and the value of this item is either
+a JSON string or number. 
+The information needed in later workflow should be included in the `"properties"` item. All information needed in the 
+subsequent workflow (e.g., IMasEDP asset analysis and HAZUS-MH EQ damage and loss analysis) must be provided. Otherwise, R2D may return errors.
+The information required for typical analysis workflows can be found in :ref:`File Types and Schemas <lblUserDefInputs>` and in :ref:`R2D examples <lbl-examples>`. 
+A special SimCenter convention is an attribute **"type"** must be included in the `"properties"` items. The value of **"type"**
+describes the component type of this feature. For transportation 
+infrastructure, the value of `"type"` could be `Bridge`, `Roadway`, `Tunnel`, or other values. Assets with the same `"type"` (e.g., all bridges)
+will be visualized in the same visualization layer. Assets with the same `"type"` will also be placed in the 
+same working directory in the **Results** folder is in the **Output Directory** folder that is specified in R2D preferences. For each bridge (or other component type),
+there can be other identification keys (such as, `"assetSubtype": "HwyBridge"` in :numref:`R2DGeoJSONInputExampleTransport`). The key `"assetSubtype"` is 
+used by the R2D built-in Damage and Loss (DL) application **Pelicun3** when the HAZUS-MH damage and loss methods are selected. `"HwyBridge"` stands for highway bridge as classified in the
+`Hazus Inventory Technical Manual <https://www.fema.gov/sites/default/files/documents/fema_hazus-6-inventory-technical-manual.pdf>`_ and the
+`Hazus Earthquake Model Technical Manual <https://www.fema.gov/sites/default/files/documents/fema_hazus-earthquake-model-technical-manual-5-1.pdf>`_.
+If a user selected to use **User-provided Fragilities** in **Pelicun3**, the key `"assetSubtype"` is not needed.
+More descriptions can be found in example 14 in :ref:`R2D examples <lbl-examples>`. 
 
-The procedure is as follows:
-	#. Given an asset inventory, R2D cross-references the assets with a US counties map (2021), generating a set of US county codes that overlap with the provided asset inventory.
-	#. The US Census API is queried and the population demographic information within each county is downloaded at the block level and saved locally . Similarly, the ACS API is called to download socio-economic information and the data is saved as a second GIS file. The ACS data is saved at the block group level. The GIS files are found in the output folder specified by the user (shown below).
-	#. The Census and ACS information from the downloaded GIS files is extracted and appended to the copied layer by performing a spatial join. This means that each asset within the copied layer will be augmented to contain the informtaion extracted from the Census block level layer and the ACS block group layer of which it is located in.
+:numref:`fig-R2DGeoJsonInputAfterLoadTransport` is the panel after a ``.geojson`` transportation infrastructure inventory database is loaded in R2D.
+Users should switch the viewing panel with the **component selection panel** and select the assets they want to analyze in the **Asset Selection Filtering** box.
+The selected assets can be visualized in the **VIZ** panel.
 
-.. note:: The download of census data employs a modified version of the ``censusutil.py`` script from the `pyincore-data <https://github.com/IN-CORE/pyincore-data>`_ module, a component of IN-CORE. 
+.. note:: The outputs of the BRIALS Transportation tool use the default units of the inventory databse described in :numref:`lbl-BrailsTransportation`. Users need to convert the units to those defined in the :ref:`General Information <lblGI>` panel before loading the units to this Asset panel.
 
-#. The **Asset Layer Selection Dropdown** is where the user selects the GIS layer that contains the asset inventory. When the user selects a layer, it will be copied automatically.
+.. literalinclude:: figures/R2DGeoJSONInputExampleTransport.json
+   :language: json
+   :linenos:
+   :caption: GeoJSON formatted database for buildings.
+   :name: R2DGeoJSONInputExampleTransport
 
-#. If the user provides their own GIS file with the asset inventory, they will also have to provide the **Coordinate Reference System (CRS)**. The CRS dropdown is where the coordinate reference system for a particular GIS file is specified so that it can be located in the correct projected coordinate system.
+.. _fig-R2DGeoJsonInputAfterLoadTransport:
 
-#. The **Census Date** dropdown is where the Census vintage is provided. Currently, the 2010 and 2020 Census dates are supported. 
-
-#. The **Census Variables** input box is where the user can provide custom variables to download from the Census API. For the 2010 vintage the default variables are ``P005001,P005003,P005004,P005010``, and for the 2020 vintage, the default variables are ``P2_001N,P2_002N,P2_005N,P2_006N``. You can go to the Census website for a particular vintage to see what the variables mean.
-
-	The default variables for 2010 are:
-		- P005001 = Total
-		- P005003 = Total!!Not Hispanic or Latino!!White alone
-		- P005004 = Total!!Not Hispanic or Latino!!Black or African American alone
-		- P005010 = Total!!Hispanic or Latino
-	
-	The default variables for 2020 are:
-		- P2_001N=!!Total:
-		- P2_002N=!!Total:!!Hispanic or Latino
-		- P2_005N=!!Total:!!Not Hispanic or Latino:!!Population of one race:!!White alone
-		- P2_006N=!!Total:!!Not Hispanic or Latino:!!Population of one race:!!Black or African American alone
-
-#. The **ACS Date** dropdown is where the ACS vintage is provided. Currently, the 2010, 2015, and 2020 ACS dates are supported.
-
-#. The **ACS Variables** input box is where the user can provide custom variables to download from the ACS API.
-
-	For the 2010, 2015, and 2020 5-year ACS vintage the default variables are:
-		- B19001_001E - Estimate!!Total
-		- B19001_002E - Estimate!!Total!!Less than $10,000
-		- B19001_003E - Estimate!!Total!!$10,000 to $14,999
-		- B19001_004E - Estimate!!Total!!$15,000 to $19,999
-		- B19001_005E - Estimate!!Total!!$20,000 to $24,999
-		- B19001_006E - Estimate!!Total!!$25,000 to $29,999
-		- B19001_007E - Estimate!!Total!!$30,000 to $34,999
-		- B19001_008E - Estimate!!Total!!$35,000 to $39,999
-		- B19001_009E - Estimate!!Total!!$40,000 to $44,999
-		- B19001_010E - Estimate!!Total!!$45,000 to $49,999
-		- B19001_011E - Estimate!!Total!!$50,000 to $59,999
-		- B19001_012E - Estimate!!Total!!$60,000 to $74,999
-		- B19001_013E - Estimate!!Total!!$75,000 to $99,999
-		- B19001_014E - Estimate!!Total!!$100,000 to $124,999
-		- B19001_015E - Estimate!!Total!!$125,000 to $149,999
-		- B19001_016E - Estimate!!Total!!$150,000 to $199,999
-		- B19001_017E - Estimate!!Total!!$200,000 or more
-		- B19013_001E - Estimate!!Median household income in the past 12 months (in 2016 inflation-adjusted dollars)
-
-
-#. The **Output Folder** is where the program will save the GIS files that are downloaded from the US Census API. 
-
-#. The **Download Census Data Button** runs the process that extracts counties from the building inventory, calls the US Census and ACS APIs to download data for the extracted counties, and saves the data as GIS files to the output folder.
-
-#. The **Census Block-level GIS File** and **American Community Survey Block Group Level GIS File** box provides the file paths to the respective GIS files. These paths will be populated automatically after the download process described above completes. Alternatively, you can provide their own Census and ACS layers to join to the building inventory. Clicking on the **Browse** button will open a dialog where you can select the appropriate file.
-
-#. The **Extract Census Data Button** runs the process that extracts the Census and ACS data from the GIS files and appends that information to each asset in the asset layer copy. Users can now save the newly augmented layer by right-clicking on the layer in the layer tree and selecting the ``Export->Save As`` option.
-
-.. _fig-R2DHUAPanel:
-
-.. figure:: figures/R2DHUAPanel.png
+.. figure:: figures/R2DGeoJsonInputAfterLoadTransport.png
   :align: center
   :figclass: align-center
 
-  Housing Unit Allocation input panel.
+  GeoJSON to Asset input panel after loading a transportation infrastructure ``.geojson`` database.
+  
 
+GIS to Transportation Network AIM
+*****************************
+
+The **GIS to Transportation Network AIM** application imports a transportation network from user-provided GIS files that contain information on highway bridges, tunnels, and/or roadways.  The input panel is shown in :numref:`fig-R2DTransportGISInputPanel`. The GIS files can be in one of many common GIS file formats, e.g., shp, gdb, etc.
+
+The Path to Roadways/Bridges/Tunnels box is where the user supplies the file path to the GIS file that contains the roadways/bridges/tunnels features in the transportation network. At a minimum, the GIS file must contain a field providing the identification numbers (id), in **sequential order**. Any number of attributes can be added to the features to provide information that may be required by other applications in the workflow. R2D will load all feature attributes as columns in a table in a similar way to :numref:`fig-R2DWDNgisInputPanel`. Only the Roadways/Bridges/Tunnels selected in the corresponding selection box will be analyzed in the later part of the workflow. 
+
+Example GIS files for roadways, bridges, and tunnels that can be loaded to R2D with **GIS to Transportation Network AIM** can 
+be found in the `github data repository <https://github.com/NHERI-SimCenter/R2DExamples>`_ of example 14 of :ref:`R2D examples <lbl-examples>`
+
+.. _fig-R2DTransportGISInputPanel:
+
+.. figure:: figures/R2DTransportGISInputPanel.png
+  :align: center
+  :figclass: align-center
+
+  GIS to regional transportation network input panel.

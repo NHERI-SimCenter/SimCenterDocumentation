@@ -424,7 +424,7 @@ The Flood-Exposed Inventory then was used to extract out the subset of buildings
      - Number of Assets
      - Typical Run Time
    * - Atlantic County Inventory
-     - `Atlantic County Inventory <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/atlantic_city/data/AtlanticCountyInventory.csv>`_
+     - Atlantic County Inventory
      - 100,721
      - ~ 1,500 CPU-Hour
    * - Flood-Exposed Inventory

@@ -378,7 +378,7 @@ in-situ data are available. This calibration process can become cumbersome when 
 a parametric study was conducted to establish a correlation among :math:`D_R`, :math:`G_o`, :math:`h_{po}`, and CRR, i.e., :math:`CRR = f(D_R, G_o, h_{po})`. The function, :math:`f`, should be solvable for :math:`h_{po}` when the other variables
 are known and eventually yield :math:`h_{po} = g(CRR, D_R, G_o)`. This correlation is intended to provide a preliminary estimation of :math:`h_{po}` and simplify the iterative calibration process under selected :math:`D_R`, :math:`G_o`, and CRR,
 especially when both SPT and :math:`V_s` data are available and the user wants to make :math:`G_o` independent to :math:`D_R`. For this purpose, the Dakota platform, run through the uqFEM (now quoFEM) tool was used in this parametric study.
-uqFEM was modified to include UW MixedDriver tool. All the simulations were performed on the Texas Advanced Computing Center (http://www.tacc.utexas.edu) Stampede2 supercomputer made available through DesignSafe-ci.
+uqFEM was modified to include UW MixedDriver tool. All the simulations were performed on the Texas Advanced Computing Center (http://www.tacc.utexas.edu) Frontera supercomputer made available through DesignSafe-ci.
 
 Using this tool, :math:`D_R`, :math:`G_o`, and :math:`h_{po}` were varied while all the secondary parameters were kept of their default values (predefined by primary parameters and initial stresses). The Latin Hypercube Sampling (LHS) method was
 used to generate near-random variables. Each of these three variables was assigned an independent uniform distribution between minimum and maximum values. The range of these variables was chosen to cover a reasonable range of scenarios and can be

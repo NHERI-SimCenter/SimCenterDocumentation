@@ -9,7 +9,7 @@ The first selection panel the user must select from and enter data into is the *
 
 .. only:: quoFEM_app
      
-   The **UQ Engine** options currently available are Dakota, SimCenterUQ, and UCSD-UQ. Users can also configure quoFEM to use their own UQ methods and algorithms in the quoFEM workflow by selecting the CustomUQ option.
+   The **UQ Engine** options currently available are Dakota, SimCenterUQ, and UCSD-UQ. Users can also configure |appName| to use their own UQ methods and algorithms in the |appName| workflow by selecting the CustomUQ option.
 
    UQ Features At-a-Glance
    -------------------------
@@ -29,6 +29,7 @@ The first selection panel the user must select from and enter data into is the *
 
              | ▪ :ref:`lblDakotaForward` in Dakota   :link-badge:`../../examples/desktop/qfem-0001/README.html,Example1, cls=badge-primary text-white` :link-badge:`../../examples/desktop/qfem-0002/README.html,Example2, cls=badge-primary text-white`
              | ▪ :ref:`lblSimForward` in SimCenterUQ   :link-badge:`../../examples/desktop/qfem-0015/README.html,Example, cls=badge-success text-white`
+             | ▪ :ref:`lblSimForwardMF` in SimCenterUQ  
 
        .. container:: rightside
 
@@ -42,7 +43,7 @@ The first selection panel the user must select from and enter data into is the *
        .. container:: leftside
 
         :uqblue:`Global Sensitivity Analysis`            
-            | Global sensitivity analysis is used to quantify contribution of each input RV to the uncertainty in an output QoI. Dakota engine provides classical non-parametric estimation based on smart sampling approach and SimCenterUQ engine provides probabilistic model-based approximation. See Dakota user manual and :ref:`here<lbluqSimTechnical_Sensitivity>` for theory details.
+            | Global sensitivity analysis is used to quantify the contribution of each input RV to the uncertainty in an output QoI. Dakota engine provides classical non-parametric estimation based on a smart sampling approach and the SimCenterUQ engine provides a probabilistic model-based approximation. See Dakota user manual and :ref:`here<lbluqSimTechnical_Sensitivity>` for theory details.
 
              | ▪ :ref:`lblDakotaSensitivity` in Dakota   :link-badge:`../../examples/desktop/qfem-0001/README.html,Example, cls=badge-primary text-white`
              | ▪ :ref:`lblSimSensitivity` in SimCenterUQ   :link-badge:`../../examples/desktop/qfem-0009/README.html,Example1, cls=badge-success text-white` :link-badge:`../../examples/desktop/qfem-0023/README.html,Example2, cls=badge-success text-white`
@@ -88,7 +89,7 @@ The first selection panel the user must select from and enter data into is the *
        .. container:: leftside
 
         :uqblue:`Deterministic Calibration` 
-            | Deterministic Calibration estimate the best parameter values of a simulation model that best fit the experimental data, using deterministic optimization algorithms, e.g. Gauss-Newton least squares, pattern search, etc. See Dakota user manual for theory details.
+            | Deterministic Calibration estimates the best parameter values of a simulation model that best fit the experimental data, using deterministic optimization algorithms, e.g. Gauss-Newton least squares, pattern search, etc. See Dakota user manual for theory details.
 
              | ▪ :ref:`lblDakotaDeterministicCalibration` in Dakota   :link-badge:`../../examples/desktop/qfem-0007/README.html,Example1, cls=badge-primary text-white` :link-badge:`../../examples/desktop/qfem-0019/README.html,Example2, cls=badge-primary text-white`
              | ▪ :ref:`lblDakotaGradientFreeEstimation` in Dakota
@@ -105,7 +106,7 @@ The first selection panel the user must select from and enter data into is the *
 
         :uqblue:`Surrogate Modeling`
 
-            | |app| can be used to train a surrogate model model that substitutes expensive computational simulation models or physical experiments. Theory details can be found in :ref:`here<lbluqSimTechnical>`.
+            | |app| can be used to train a surrogate model that substitutes expensive computational simulation models or physical experiments. Theory details can be found in :ref:`here<lbluqSimTechnical>`.
 
              | ▪ :ref:`lblSimSurrogate` in SimCenterUQ   :link-badge:`../../examples/desktop/qfem-0015/README.html,Example1, cls=badge-success text-white` :link-badge:`../../examples/desktop/qfem-0016/README.html,Example2, cls=badge-success text-white`
              | ▪ :ref:`lblSimCenterUQPLoM` in SimCenterUQ
@@ -121,7 +122,7 @@ The first selection panel the user must select from and enter data into is the *
        .. container:: leftside 
 
         :uqblue:`Custom UQ`
-           | Custom UQ helps user to plug-in an user-defined UQ algorithm in SimCenter workflow.
+           | Custom UQ helps the user plug in a user-defined UQ algorithm in SimCenter workflow.
 
             | ▪ :ref:`lblCustomUQ` in CustomUQ engine   :link-badge:`../../examples/desktop/qfem-0017/README.html,Example, cls=badge-success text-white`
 
@@ -139,11 +140,11 @@ The first selection panel the user must select from and enter data into is the *
 Dakota UQ Engine
 ----------------
 
-This UQ engine utilizes the `Dakota Software <https://dakota.sandia.gov/>`_, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. **Dakota** provides the user with a large number of methods for different kinds of analyses. For this reason we have divided the methods into categories though a pull-down menu, as shown below. Once the category has been selected, a number of different methods are made available to the user.
+This UQ engine utilizes the `Dakota Software <https://dakota.sandia.gov/>`_, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. **Dakota** provides the user with a large number of methods for different kinds of analyses. For this reason, we have divided the methods into categories through a pull-down menu, as shown below. Once the category has been selected, a number of different methods are made available to the user.
 
-* By checking the ``Parallel Execution``, the UQ analysis will be performed in parallel. It will try to use all the processors available in the machine. 
+* By checking the ``Parallel Execution``, the UQ analysis will be performed in parallel. It will try to use all the processors available on the machine. 
 
-* By checking the ``Save Woring dirs``, individual working directories will be saved at Local Jobs Directory. Local Jobs Directory is defined at ``File``-``Preference`` in the menubar. Otherwise, individual simulation files will be deleted after each simulation run. Users might uncheck this box when a large number of simulations is requested, to manage driver space.
+* By checking the ``Save Working dirs``, individual working directories will be saved in the Local Jobs Directory. Local Jobs Directory is defined at ``File``-``Preference`` in the menubar. Otherwise, individual simulation files will be deleted after each simulation run. Users might uncheck this box when a large number of simulations is requested, to manage driver space.
 
 .. _figDakota:
 
@@ -170,7 +171,7 @@ The following categories are available:
    :quoFEM:DakotaBayesianCalibration
    :quoFEM:DakotaGradientFreeOptimization
 
-.. only:: quoFEM_app
+.. only:: quoFEM_app or EEUQ_app
 
    SimCenter UQ Engine
    -------------------
@@ -196,6 +197,7 @@ The following categories are available:
       SimCenterUQSurrogate
       SimCenterUQPLoM
 
+.. only:: quoFEM_app
 
    UCSD UQ Engine
    --------------
@@ -211,17 +213,19 @@ The following categories are available:
 
       UCSD-UQ engine and category selection.
 
-   This module currently offers support for Bayesian estimation using the Transitional Markov chain Monte Carlo (TMCMC) algorithm:
+   This module currently offers support for Bayesian estimation of the parameters of a traditional (non-hierarchical) model using the Transitional Markov chain Monte Carlo (TMCMC) algorithm and of a hierarchical model using an adaptive Metropolis-within-Gibbs sampling algorithm.
 
    .. toctree-filt::
      :maxdepth: 1
 
      UCSD_UQ_TMCMC
+     UCSD_UQ_Hierarchical
 
    Custom UQ Engine
    ----------------
 
-   The **CustomUQ** option enables users to switch out the UQ engine in the quoFEM workflow such that different methods and tools can be applied within the SimCenter framework with minimal effort on the part of the user. The CustomUQ option can be accessed as shown below:
+   The **CustomUQ** option enables users to switch out the UQ engine in the |appName| workflow such that different methods and tools can be applied within the SimCenter framework with minimal effort on the part of the user. The CustomUQ option can be accessed as shown below:
+   
    .. _figCustomUQ:
 
    .. figure:: figures/customUQ.png
@@ -233,7 +237,7 @@ The following categories are available:
 
    In order to use the CustomUQ engine option, two steps are required:
 
-   * Configuring UQ tab to accept the required inputs
+   * Configuring the UQ tab to accept the required inputs
    * Adding UQ engine to customized UQ backend
 
    These steps are described in more detail here:
@@ -243,28 +247,15 @@ The following categories are available:
 
       Configuring_CustomUQ
 
-.. only:: EEUQ_app
+.. only:: quoFEM_app
 
-   SimCenter UQ Engine
+   Video Resources
    -------------------
-     
-   The **SimCenterUQ** engine is a UQ engine developed in-house at the SimCenter that accommodates different UQ methods, which are organized into categories that can be accessed through a pull-down menu, as shown in :numref:`figSimCenterUQ`.
 
-   .. _figSimCenterUQ:
+   Recorded in tool training, 2022.
 
-   .. figure:: figures/SimCenterUQ.png
-      :align: center
-      :figclass: align-center
-      :width: 1200
+   .. raw:: html
 
-      SimCenterUQ engine and category selection.
-
-   The following category options are available:
-
-
-   .. toctree-filt::
-      :maxdepth: 1
-
-      SimCenterUQSampling
-      SimCenterUQSensitivity
-      SimCenterUQPLoM
+      <div style="text-align: center;">
+         <video controls src="../../../../_static/videos/quoFEM/youtube_UQ_Day1_TestClip.mp4" width="560" height="315"> </video>   
+      </div>

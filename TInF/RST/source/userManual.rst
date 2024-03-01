@@ -51,7 +51,7 @@ OpenFOAM model is as follows.
 
 
     Based on the selected method, additional parameters will be collected.  The particular parameters and
-    their meaning are discussed in detail in Chapter :ref:`sec:TInF-theory`.
+    their meaning are discussed in detail in Chapter :ref:`sec_TInF-theory`.
     Depending on selected model and sub-options, as well as your screen size, you may need to scroll down to
     get access to all parameter fields (:numref:`fig_TInF07` and  :numref:`fig_TInF08`, item 2).
     

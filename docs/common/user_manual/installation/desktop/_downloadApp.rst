@@ -62,12 +62,12 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
       R2D download page.
 
 
-To download the |app| click on the link for the appropriate file for your operating system: file ending with **Windows_Download.zip** for users on a Windows machine and file ending with **Mac_Download.dmg** for users on a Mac. This will bring up a pop-up window. Click on the **Download** button in bottom right hand corner of this pop-up. Unpackage the ensuing downloaded file and place it in a location on your filesystem. 
+To download the |app| click on the link for the appropriate file for your operating system: file ending with **Windows_Download.zip** for users on a Windows machine and file ending with **Mac_Download.dmg** for users on a Mac. This will bring up a pop-up window. Click on the **Download** button in the bottom right-hand corner of this pop-up. Unpackage the ensuing downloaded file and place it in a location on your filesystem. 
 
 .. note::
 
-   #. Windows: On computers running the Windows operating system we suggest placing the directory in the **C:\\SimCenter** folder. Once here, create a shorcut link to the application and move this shortcut link to your Desktop folder.
-   #. MacOS: We sugget copying the app to your Desktop.
+   #. Windows: On computers running the Windows operating system we suggest placing the directory in the **C:\\SimCenter** folder. Once here, create a shortcut link to the application and move this shortcut link to your Desktop folder.
+   #. MacOS: We suggest copying the app to your Desktop.
 
 Now test that the application starts. To do this navigate to the location where you placed the application and open it. You should see the user interface shown in |figUI| after starting the application. Now quit the application. Additional installation steps, outlined in :ref:`lblDownloadOther`, are required before computations can be performed.
 
@@ -112,11 +112,11 @@ Now test that the application starts. To do this navigate to the location where 
 	quoFEM application on startup.
 
 .. note::
-   #. On a Mac you will need to right click on the .dmg file to open it. The user interface will not start correctly while in the DMG file, you need to open the ``.dmg`` file and then copy the |short tool name| application to your Documents or Desktop folder. You can then move the ``.dmg`` file to the trash or eject it after this has been done.
+   #. On a Mac, you will need to right-click on the .dmg file to open it. The user interface will not start correctly while in the DMG file, you need to open the ``.dmg`` file and then copy the |short tool name| application to your Documents or Desktop folder. You can then move the ``.dmg`` file to the trash or eject it after this has been done.
 
    #. The SimCenter is not recognized as either a Windows or an Apple vendor. Our applications are not recognized by the operating system as being signed. Consequently, you may receive a warning message when you start the |short tool name| application for the first time. Follow the procedure you used in :numref:`lblDownloadOther` to remedy this issue.
 
-The |short tool name| application requires an up to date version of Python, that outlined in :numref:`lblDownloadOther` to work properly. In :numref:`lblTestInstall`, instructions are given on testing the installation.
+The |short tool name| application requires an up-to-date version of Python, outlined in :numref:`lblDownloadOther` to work properly. In :numref:`lblTestInstall`, instructions are given on testing the installation.
 
 
 

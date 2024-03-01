@@ -11,38 +11,35 @@ Pelicun Damage and Loss
 
 :numref:`fig-R2DRESPanel` shows the results panel for the **Pelicun Damage and Loss** application. The results panel is comprised of several docking windows that can be moved, rearranged, resized, and opened and closed by the user. The results panel contains these main docks:
 
-	#. **Regional Map Dock:** Geographic map of the region. The assets are colored according to their loss ratio. Clicking on an asset will produce a popup showing the detailed information of that asset.
+	#. **Regional Map Dock:** Geographic map of the region. The assets are colored according to their most likely critical damage state. Clicking on an asset will produce a popup showing the detailed information of that asset.
 	
-	#. **Analysis Summary Dock:** A high-level summary of the aggregated losses, repair times, and casualties over a region. 
+	.. note:: The critical damage state of an asset is defined as the largest damage
+		state experienced by its components. For asset-level damage assessment (e.g., Hazus-MH EQ IM)
+		each asset is represented by several components that are prone to different hazard 
+		intensity measure inputs. For example, a building may be represeted by one
+		ground shaking vulnerable component and one ground failure vulnerable component.
+		The damage state of the first component is determined by `PGA` while the
+		damage state of the second component is determined by `PGD`. The large damage state of
+		the two components is defined as the critical damage state. The `Most likely` critical
+		damage state is the mode of the critical damage state realizations. Pelicun will 
+		generate a number of damage state realizations as defined in :numref:`fig-R2DPelicunDLPanel`.
+		Additional information on Pelicun and descriptions of its output are available at `Pelicun Documentation <https://nheri-simcenter.github.io/pelicun/common/user_manual/usage/pelicun/outputs.html>`_. 
+		A critical damage state can be determined in each realization and the 
+		most likely damage state is the mode of the critical damage state realizations.
+
 	
-	#. **Charts Dock:** Graphical representation of the results in three charts:
-		
-		#. *Casualties:* Bar chart showing the casualties in a region accross four casualty severity levels; with 1 being the least severe and 4 being the most severe level. 
-		
-		#. *Economic Losses:* Bar chart providing the losses in a region according to damage states, *DS*, where *DS* = 1..4, and where *DS* =1 is the least severe and *DS* = 4 is the most severe damage state. Moreover, the losses are grouped into losses resulting from damage to structural components, damage to non-structural drift sensitive components, and damage to non-structural acceleration sensitive components.
-		
-		#. *Relative Frequency Diagram of the Losses:* Line chart of the relative frequency diagram of the total losses of each building. 
-	
-		To switch between the charts, the user can click on the **Chart Selection Tabs** shown in :numref:`fig-R2DRESPanel`
-	
-	#. **Detailed Building Results Dock:** Table showing the detailed building results. For each building, the table provides the:
+	#. **Detailed Building Results Dock:** Table showing the detailed results. For each asset, the table provides the:
 		 
 		 - Asset ID
-		 - Repair Cost
-		 - Repair Time
-		 - Probability of Replacement
-		 - Fatalities
-		 - Loss Ratio
+		 - Mean and standard deviation of repair Cost
+		 - Mean and standard deviation of repair Time
+		 - Mean and standard deviation of most likely damage state
 	
 		The **Table Sort** combo box, shown in :numref:`fig-R2DRESPanel`, sorts the table in descending order according to the selected filter, e.g., repair cost. 
-	
-By default, the results are displayed for all buildings in an analysis. The **Subset Selection** box allows the user to specify a subset of buildings for which the results will be displayed. A range of buildings is specified with a dash, and multiple buildings are separated with a comma, e.g., 2-8, 9, 13, 15, 21, 34-38. When the **Select** button is pressed, only the buildings that are specified in the **Building Selection** box are post-processed and shown in the results.
-
-The **Export to PDF** file box and button allows for the creation of a PDF containing the regional summary, charts, and building results table for future reference. The user can specify the folder to which to save the results by pressing on the **Browse** button. By default, the file will be saved as ``Results.pdf``. Clicking on the **Export to PDF** button creates the PDF in the specified folder. 
 
 .. _fig-R2DRESPanel:
 
-.. figure:: figures/R2DRESPanel.png
+.. figure:: figures/R2DRESPanelNew.png
 	:align: center
 	:figclass: align-center
 

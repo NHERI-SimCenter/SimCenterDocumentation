@@ -9,6 +9,7 @@ the simulation runs. There are a number of options available in the pull-down
 
 #. Standard
 #. User Defined
+#. None
 
 Standard
 --------
@@ -168,3 +169,12 @@ As shown in fig userEDP, this panel allows the user to determine their own outpu
   file. If the process script has an array of strings named named
   EDP's the script, the Response Parameters will be initially set with
   these values from the script.
+
+
+None
+-----------
+
+This option is used only when the user specifies a surrogate model in the SIM tab. Because a surrogate model can evaluate only the EDPs that are pre-trained, we automatically display those quantities, and do not allow users to modify the list. 
+
+.. Note::   
+   This option is not for training a surrogate model but for using a pre-trained surrogate model.

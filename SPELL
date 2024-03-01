@@ -1,0 +1,6 @@
+rm -f build/quoFEM_Examples.json
+make build/quoFEM_Examples.json
+python3 scripts/index_examples.py quoFEM \
+    | aurore -D- -B ../quoFEM/Examples/ -C scripts/config.yml get \
+    > ./build/quoFEM_Examples.json
+make: `spell' is up to date.

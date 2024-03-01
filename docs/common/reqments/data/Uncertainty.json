@@ -24,7 +24,8 @@
       },
       {
         "target": "Ability to use Multi-Fidelity Models",
-        "fields": ["SP", "M", null],
+        "fields": ["SP", "M", "InProgress"],
+        "WBS": "1.1.2.3.1 and 1.1.2.4.1",
         "apps": ["qfem"]
       }
     ]
@@ -97,11 +98,12 @@
       },
       {
         "target": "Ability to Asses Reliability of Surrogate Model",
-        "fields": ["SP", "M", "InProgress"]
+        "fields": ["SP", "M", "Implemented"]
       },
       {
         "target": "Ability to Build Surrogate Under Stochastic Excitation",
-        "fields": ["SP", "M", ""]
+        "fields": ["SP", "M", "InProgress"],
+        "WBS": "1.1.2.2.2"
       },
       {
         "target": "Ability to Use Physics-Informed Machine Learning",
@@ -119,11 +121,11 @@
       },
       {
         "target": "Ability to read calibration data from file",
-        "fields": ["UF", "M", "InProgress"]
+        "fields": ["UF", "M", "Implemented"]
       },
       {
         "target": "Ability to handle non-scalar response quantities",
-        "fields": ["UF", "M", "InProgress"]
+        "fields": ["UF", "M", "Implemented"]
       }
     ]
   },
@@ -134,7 +136,7 @@
     "items": [
       {
         "target": "Ability to use DREAM algorithm for Bayesian inference",
-        "fields": ["SP", "M", "InProgress"]
+        "fields": ["SP", "M", "Implemented"]
       },
       {
         "target": "Ability to use TMCMC algorithm for Bayesian inference",
@@ -143,19 +145,19 @@
       },
       {
         "target": "Ability to read calibration data from file",
-        "fields": ["UF", "M", "InProgress"]
+        "fields": ["UF", "M", "Implemented"]
       },
       {
         "target": "Ability to handle non-scalar response quantities",
-        "fields": ["UF", "M", "InProgress"]
+        "fields": ["UF", "M", "Implemented"]
       },
       {
         "target": "Ability to calibrate multipliers on error covariance",
-        "fields": ["UF", "M", ""]
+        "fields": ["UF", "M", "Implemented"]
       },
       {
         "target": "Ability to use a default log-likelihood function",
-        "fields": ["UF", "M", ""]
+        "fields": ["UF", "M", "Implemented"]
       },
       {
         "target": "Ability to use Kalman Filtering",
@@ -173,7 +175,7 @@
     "items": [
       {
         "target": "Ability to sample from manifold",
-        "fields": ["SP", "M", ""],
+        "fields": ["SP", "M", "Implemented"],
         "items": []
       },
       {
@@ -207,7 +209,7 @@
         "items": [
           {
             "target": "Ability to use First Order Reliability method",
-            "fields": ["UF", "M", "2.1"],
+            "fields": ["UF", "M", "Implemented"],
             "config_values": ["Local Reliability"]
           },
           {
@@ -216,7 +218,7 @@
           },
           {
             "target": "Ability to use Own External Application to generate Results",
-            "fields": ["UF", "M", "2.2"]
+            "fields": ["UF", "M", "Implemented"]
           }
         ]
       },
@@ -227,7 +229,7 @@
         "items": [
           {
             "target": "Ability to obtain Global Sensitivity Sobol's indices",
-            "fields": ["UF", "M", null],
+            "fields": ["UF", "M", "Implemented"],
             "config_values": ["Sampling Analysis"]
           }
         ]

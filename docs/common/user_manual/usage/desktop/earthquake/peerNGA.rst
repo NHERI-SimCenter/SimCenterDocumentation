@@ -96,6 +96,38 @@ Target Spectrum
    
    Target spectrum from hazard surrogate 
 
+
+7. **No Spectrum - Uniform IMs**: This option does not select ground motions based on a target spectrum. Instead, it selects ground motion to have as diverse intensity measure (IM) combinations as possible. Based on the IM quantities and their range that user provides, it will select the ground records to uniformly fill in the IM domain. This is done by first uniformly binning the IM domain, and then, for each bin, allocating ground motion records that has IM values closest to the center of each bin. 
+   
+   * **# samples per bin**: 1 is recommended. If the number is 2, for example, twice number of ground motions will be selected.  
+   * **Intensity Measure Calculation**: Choose the intensity measures and their range to be uniformly populated. In order to achieve this, it is recommended to avoid having highly correlated IMs together in the list, for example, both peak spectral acceleration and peak ground acceleration. An example of good mildly correlated IM combinations is [spectral acceleration, significant duration, and sa ratio] as shown in the figure below [Zhong2023]_.
+   * **Ground motion coverage**: When the number of IMs in the list are either 2 or 3, a plot that shows the covered domain of IM will be provided. Note that if no matching ground motions are found for the bins, corresponding anchor points (center of each bin) are colored red. 
+.. _figUniform1:
+
+.. figure:: figures/peerNGA_uniform1.png
+   :align: center
+   :figclass: align-center
+   :width: 600
+   
+   Setting up bins (grid points)
+
+.. _figUniform2:
+
+.. figure:: figures/peerNGA_uniform2.png
+   :align: center
+   :figclass: align-center
+   :width: 600
+   
+   Ground motion coverage: selected ground motions (yellow dots) and the centers of each bin (red/blue dots).
+
+.. Note:: The IMs of each ground motion shown in the figure (yellow points) are obtained by looking up the library of pre-computed IMs and it's proximity to each anchor point is calculated using **geometric mean** of the two horizontal directional components. Therefore, the IMs of the finally selected ground motions may not be *exactly* located at the yellow points shown in the below figure, but will have close proximity. The range of allowed scaling factor without any penalty is 0.5~10.0. The ground motions that are scaled beyond this range will get de-prioritized.
+
+.. Tip:: This option is useful for training a surrogate model. See :ref:`example 09<eeuq-0009>`.
+
+.. [Zhong2023]
+   Zhong, K., Navarro, J.G., Govindjee, S., and Deierlein, G.G., "Surrogate Modeling of Structural Seismic Response Using Probabilistic Learning on Manifolds," *Earthquake Engineering & Structural Dynamics*, 1-22, (2023) https://doi.org/10.1002/eqe.3839
+
+
 .. lblPEER-NGA-SelectionCriteria
 
 Configure Selection

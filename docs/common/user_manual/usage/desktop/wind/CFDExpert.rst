@@ -1,3 +1,4 @@
+
 CFD Expert Template
 -------------------
 
@@ -24,7 +25,7 @@ It is important to note that this type of event is only supported when running t
 
 	CFD expert event.
 
-There are at least 6 input parameters that needs to be provided by the user and can be summarized as follows:
+There are at least 6 input parameters that need to be provided by the user and can be summarized as follows:
 
 #. **Case:** The remote path of the OpenFOAM case that was uploaded in advance to DesignSafe data depot. By default, this is set to an example case that is provided by the SimCenter in the community directory.
 

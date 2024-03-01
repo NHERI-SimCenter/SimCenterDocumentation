@@ -26,8 +26,8 @@ General
 -------
 
 .. csv-table:: Requirements - General
-  :header: "#", "Description", "Source", "Priority", "Version"
-  :widths: 10, 60, 10, 10, 10
+  :header: "#", "Description", "Source", "Priority", "Version", "WBS"
+  :widths: 10, 60, 10, 10, 10, 10
   :file: requirements_pelicun_general.csv
 
 .. include:: key.rst
@@ -36,8 +36,8 @@ Databases & Files
 -----------------
 
 .. csv-table:: Requirements - Databases & Files
-  :header: "#", "Description", "Source", "Priority", "Version"
-  :widths: 10, 60, 10, 10, 10
+  :header: "#", "Description", "Source", "Priority", "Version", "WBS"
+  :widths: 10, 60, 10, 10, 10, 10
   :file: requirements_pelicun_db.csv
 
 .. include:: key.rst

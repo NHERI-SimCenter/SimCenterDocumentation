@@ -11,7 +11,7 @@ Wind Tunnel Data
 
 The data obtained from a wind tunnel typically contains the following:
 
-#. Building dimensions. For example, for a cuboid shaped building this would contain: height, breadth(width) and depth.
+#. Building dimensions. For example, for a cuboid-shaped building, this would contain: height, breadth(width) and depth.
 #. Time interval. The time step, :math:`\Delta t`, or frequency, :math:`f`, of the data.
 #. Time history of pressure tap data. This data is provided as the pressure coefficient, :math:`C_p` and is a dimensionless parameter.
 #. Location of pressure taps.
@@ -20,7 +20,7 @@ The data obtained from a wind tunnel typically contains the following:
 Time Step for Real Structure Transient Analysis
 -----------------------------------------------
 
-Due to similitude, is is necessary to convert the time step :math:`\Delta t_M` or frequency :math:`f_M` obtained from wind tunnel data to one that is used in the transient analysis of the full-scale structure, :math:`\Delta t_R` or :math:`f_R`. (note: the subscript :math:`M` is used for model parameter and subscript :math:`R` for real world structure). This is done by determining some scale factors which relate ratios of quantity in model scale to quantity in real world scale.
+Due to similitude, is is necessary to convert the time step :math:`\Delta t_M` or frequency :math:`f_M` obtained from wind tunnel data to one that is used in the transient analysis of the full-scale structure, :math:`\Delta t_R` or :math:`f_R`. (note: the subscript :math:`M` is used for model parameter and subscript :math:`R` for real-world structure). This is done by determining some scale factors which relate ratios of quantity in model scale to quantity in real world scale.
 
 
 1. Length factor, :math:`\lambda_L = \frac{D_M}{D_R}`

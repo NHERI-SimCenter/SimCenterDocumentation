@@ -1,6 +1,5 @@
 
 include Makefile.in
-
 SPHINXOPTS    ?= 
 SPHINXBUILD   ?= sphinx-build
 SOURCEDIR     = ./docs
@@ -20,6 +19,9 @@ JSONDIR = docs/common/reqments/data/
 # that contains both the SimCenterDocumentation/ and
 # application source repositories.
 export SIMCENTER_DEV = $(shell pwd | xargs dirname)
+
+# Path to widget documentation directory
+USER_INPUT_DOC_DIR = docs/common/user_manual/user_inputs_documentation
 
 #-Help-----------------------------------------------------
 help:
@@ -69,13 +71,29 @@ all:
 	make pbe html 2>&1 | grep 'build succ'
 
 
-hydro pelicun pbe rtm:
+hydro pelicun rtm:
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
 
+pbe:
+	rm -f build/$(SIMDOC_APP)_Examples.json
+	make build/$(SIMDOC_APP)_Examples.json
+	$(eval SIMDOC_APP=$(SIMDOC_APP))
+
+db:
+	@echo Generating temporary files for Damage and Loss Database docs...
+	cd ./docs/common/dldb && python3 generate_dldb_doc.py
 
 r2d qfem we ee:
+	rm -f build/$(SIMDOC_APP)_Examples.json
+	make build/$(SIMDOC_APP)_Examples.json
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
 
+
+example_reference: 
+	for i in $(JSONDIR)/*.json; do \
+	    json_file="$${i##*/}"; \
+	    make $(CSVDIR)/$${json_file%.*}.csv; \
+	done
 
 web:
 	find . -type f -name "*.rst" -exec touch {} +
@@ -85,15 +103,19 @@ web:
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(PUBLDIR)" $(O)
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(PUBLDIR)" $(O)
 
-spell:
+spell: example_reference
 	@$(SPHINXBUILD) -b spelling "$(SOURCEDIR)" "$(call BUILDDIR,$(SIMDOC_APP))/html" $(O)
 
-html:
-	for i in $(JSONDIR)/*.json; do \
-	    json_file="$${i##*/}"; \
-	    make $(CSVDIR)/$${json_file%.*}.csv; \
-	done
+html: example_reference
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" "$(call BUILDDIR,$(SIMDOC_APP))/html" $(O)
+
+
+singlehtml: example_reference
+	@$(SPHINXBUILD) -b singlehtml "$(SOURCEDIR)" "$(call BUILDDIR,$(SIMDOC_APP))/singlehtml" $(O)
+
+
+text:
+	@$(SPHINXBUILD) -b text "$(SOURCEDIR)" "$(call BUILDDIR,$(SIMDOC_APP))/latex" $(O)
 
 
 latex:
@@ -114,13 +136,21 @@ update:
 	pip install -U -r requirements.txt
 
 examples:
+	rm -f build/$(SIMDOC_APP)_Examples.json
 	make build/$(SIMDOC_APP)_Examples.json
 
 build/%.json: examples.yaml Makefile FORCE
+ifeq ($(SIMDOC_APP), R2DTool)
+	pwd
+	ls ../$(SIMDOC_APP)/../R2DExamples/
+	$(PYTHON) scripts/index_examples.py $(SIMDOC_APP) \
+    | aurore -D- -B ../$(SIMDOC_APP)/../R2DExamples/ -C scripts/config.yml get \
+    > $(call BUILDDIR,$(SIMDOC_APP))_Examples.json
+else
 	$(PYTHON) scripts/index_examples.py $(SIMDOC_APP) \
     | aurore -D- -B ../$(SIMDOC_APP)/Examples/ -C scripts/config.yml get \
     > $(call BUILDDIR,$(SIMDOC_APP))_Examples.json
-
+endif
 
 $(CSVDIR)/%.csv: $(JSONDIR)/%.json ./scripts/json2csv.py
 	python3 ./scripts/json2csv.py \
@@ -128,7 +158,7 @@ $(CSVDIR)/%.csv: $(JSONDIR)/%.json ./scripts/json2csv.py
 		-Eeeuq $(SIMCENTER_DEV)/EE-UQ/Examples/eeuq-*/src/input.json \
 		-Eweuq -  \
 		-Epbdl $(SIMCENTER_DEV)/PBE/Examples/pbdl-*/src/input.json \
-		-Er2dt $(SIMCENTER_DEV)/R2DTool/Examples/E*/input.json \
+		-Er2dt $(SIMCENTER_DEV)/R2DExamples/E*/input.json \
 		-Ehydr - \
 		< '$<' > '$@'
 
@@ -141,7 +171,7 @@ csv-debug: FORCE
             -Eeeuq $(SIMCENTER_DEV)/EE-UQ/Examples/eeuq-*/src/input.json \
             -Eweuq -  \
             -Epbdl $(SIMCENTER_DEV)/PBE/Examples/pbdl-*/src/input.json \
-            -Er2dt $(SIMCENTER_DEV)/R2DTool/Examples/E*/input.json \
+            -Er2dt $(SIMCENTER_DEV)/R2DExamples/E*/input.json \
             -Ehydr - \
             < "$(JSONDIR)/$$json_file"; \
 	done
@@ -150,3 +180,19 @@ csv-debug: FORCE
 FORCE:
 .PHONY: csv-debug
 
+user_inputs:
+	@echo "\nRunning the following command to generate user input documentation pages:\n"
+	$(PYTHON) \
+	$(USER_INPUT_DOC_DIR)/widget_documentation_utilities.py \
+	$(USER_INPUT_DOC_DIR)/User_Inputs_Documentation_CSV_Files \
+	-r $(USER_INPUT_DOC_DIR)/User_Inputs_Documentation_RST_Files \
+	-t $(USER_INPUT_DOC_DIR)/User_Input_Documentation_Tables.rst
+	@echo "\n'make user_inputs' complete.\n"
+
+starter_files:
+	@echo "\nRunning the following command to create starter csv files for user input documentation:\n"
+	$(PYTHON) \
+	$(USER_INPUT_DOC_DIR)/widget_documentation_starter_file_creation_utilities.py \
+	$(USER_INPUT_DOC_DIR)/widget_header_files_list.txt \
+	-c $(USER_INPUT_DOC_DIR)/User_Inputs_Documentation_CSV_Files
+	@echo "\n'make starter_files' complete.\n"

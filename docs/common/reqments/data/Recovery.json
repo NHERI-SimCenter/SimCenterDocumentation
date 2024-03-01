@@ -67,7 +67,8 @@
         "items": [
           {
             "target": "Implement a framework to model interdependencies between the recovery of various systems",
-            "fields": ["SP", "M", ""],
+            "fields": ["SP", "M", "Implemented"],
+            "WBS": "1.1.3.4.6",
             "items": []
           },
           {

@@ -25,7 +25,13 @@ First, ensure the following dependencies are installed:
 
 * **Python**: The workflow requires at least Python 3.7.
 
-* **Conan**: This repository uses `Conan <https://conan.io/>`_ for dependency management. Conan is a python library and can be installed using the following `instructions <https://docs.conan.io/en/latest/installation.html>`_. Version 1.25 or later is recommended.
+* **Conan**: This repository uses `Conan <https://conan.io/>`_, a python library, for dependency management. **Install conan version 1.60.2**, for example, through
+
+        .. code:: console
+
+            pip install conan==1.60.2
+
+        | See the `instructions <https://docs.conan.io/en/latest/installation.html>`_ if alternative installation methods are needed
 
 * **CMake**: This repository uses `CMake <https://cmake.org/download/>`_ for managing the build process. Version 3.15 or later is recommended.
 
@@ -183,7 +189,7 @@ You now have two ways to build the application: (1) using the **Qt Creator** des
 
 
 Build using Qt Creator
-----------------------
+========================
 
 1. Start Qt Creator, then open the |short tool id|.pro file located in the |short tool id| directory that was downloaded in the previous step.
 2. Setup the development kit in Qt Creator. This is usually done by selecting the Qt version, compiler, and configuration and following the onscreen dialog.
@@ -191,7 +197,7 @@ Build using Qt Creator
 
 
 Build from the Terminal
------------------------
+========================
 
 The operations are similar to what was done when building the backend applications. In the terminal application, starting inside the directory of the cloned application again, you will create a build directory, cd into that build directory, run **qmake**, and finally make (or on Windows nmake) to create the application.
 
@@ -247,11 +253,9 @@ Once built, the tool **Preferences** needs to be modified. To do this, open the 
   #. Custom Local Application: Here, select the checkbox to the left, and then provide the path to the SimCenterBackendApplications directory. The code assumes that the folder **applications**, which you created when building the backend applications, exists.
 
      
+    .. _figPreferences:
 
 .. only:: notQuoFEM
-
-    
-    .. _figPreferences:
 
     .. figure:: figures/Preferences.png
        :align: center
@@ -261,11 +265,9 @@ Once built, the tool **Preferences** needs to be modified. To do this, open the 
 
 .. only:: quoFEM_app
 
-
-    .. _figPreferences:
-
     .. figure:: figures/Preferences_qfem.png
        :align: center
        :figclass: align-center
 
        Preferences Dialog
+
