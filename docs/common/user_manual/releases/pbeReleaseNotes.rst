@@ -11,7 +11,7 @@ Version 3
    .. dropdown::    Version 3.3 (:blue:`Current`)
       :open:
 
-      **Release date:** Dec 2023
+      **Release date:** Jan 2024
 
       **Major updates:**
 

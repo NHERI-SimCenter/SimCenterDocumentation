@@ -5,7 +5,7 @@
 Capabilities
 ************
 
-The following functionality is available in **version 3.3** of the |app| that was released on **Dec 31, 2023**.
+The following functionality is available in **version 3.3** of the |app| that was released on **Jan 1, 2024**.
 
 Structural Response
 ===================
