@@ -25,7 +25,7 @@ Version 3
 
       - Several error and warning messages added to provide more meaningful information when something goes wrong in a simulation.
 
-      - A lot of minor bugs fixed and robustness of the Pelicun engine ensured by brining back continuous integration.
+      - A lot of minor bugs fixed and robustness of the Pelicun engine ensured by bringing back continuous integration.
 
    .. dropdown::    Version 3.2
       :open:
