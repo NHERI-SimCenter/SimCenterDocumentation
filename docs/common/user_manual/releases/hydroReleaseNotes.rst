@@ -1,193 +1,136 @@
 .. _lbl-release_HydroUQ:
 .. role:: blue
 
-*************
+***************************
 Release Notes
-*************
+***************************
 
-
-Major Version 3
-===============
-
-   .. warning::
-
-      The major version number was increased from 2 to 3 as changes were made to the input and output formats of |app|. This means old examples will not be loaded in this version of the tool.
-
-
-   .. dropdown:: Version 3.5 (:blue:`Current`)
-      :open:
-
-      **Release date:** December. 2023
-
-      **Highlights**
-         #. Bayesian calibration of a **hierarchical model** 
-
-   .. dropdown:: Version 3.4 
-      :open:
-
-      **Release date:** October. 2023
-
-      **Highlights**
-         #. **Multi-fidelity** Monte Carlo Simulation 
-
-   .. dropdown:: Version 3.3 
-      :open:
-
-      **Release date:** March. 2023
-
-      **Highlights**
-         #. **Multimodel** uncertainty propagation
-         #. Stochastic kriging **without replications**
-         #. Display of correlation coefficients within the input/output dataset
-         #. Switching the display order of the UQ method and UQ engine
-
-   .. dropdown:: Version 3.2
-      :open:
-
-      **Release date:** September. 2022
-
-      **Highlights**
-         #. Support for **a gradient-free optimization** and **stochastic Kriging**
-         #. Fast global sensitivity analysis for **very high dimensional** output (tested on 2 million QoIs)
-         #. New option to **discard working directories** after each model simulation
-         #. Support for **PLoM on DesignSafe**
-         #. Significantly **enhanced speed** of surrogate validation and prediction 
-         #. **None** option for FEM
-         #. Improved user interface including error bounds of the surrogate prediction
-         #. Major renaming: 
-
-            * OpenseesPy → **python**
-            * Parameters estimation → **deterministic calibration** 
-            * Inverse problem → **Bayesian calibration** 
-
-
-   .. dropdown:: Version 3.1
-      :open:
-
-      **Release date:** June. 2022
-
-      Highlights
-
-         #. New efficient global sensitivity analysis method for high-dimensional output (GSA-PCA)
-
-         #. "Save RVs" and "Save QoIs" buttons were added to the results tab spreadsheet
-
-         #. “NaN” handling option added to SimCenterUQ engine
-
-         #. Improvements to reliability analysis and global sensitivity analysis user interface
-
-         #. Minor bug fixes in the user interface, surrogate modeling, and sensitivity analysis scripts
-
-
-   .. dropdown:: Version 3.0
-      :open:
-
-      **Release date:** March. 2022
-
-      Highlights
-
-         #. New option for surrogate modeling using Probabilistic Learning on Manifolds (PLoM)
-
-         #. Restructured surrogate model scripts
-
-         #. Improvements to the user interface for RV, QoI and RES tabs
-
-         #. Improvements to the message area
-
-         #. Major restructuring of the backend
-
-         #. Minor bug fixes in the user interface, surrogate modeling and sensitivity analysis scripts
-
-         #. Updated example files
-
-
-Major Version 2
+Version 3
 =================
-   .. dropdown:: Version 2.4.1
-      :open:
 
-      **Release date:** Dec. 2021
+    .. dropdown:: Version 3.0.0 (:blue:`Current`)
+        :open:
 
-      Highlights
+        **Release date:** March 20th, 2024
 
-         #. Added 'file_save' keyword in dakota.in to not delete paramsDakota.in files
+        **Highlights**
+            #. **Simulation types**:
 
-         #. SimCenterUQ RV tab - preventing path strings from being deleted when "choose" is clicked (dataset inputs)
+                a. Material Point Method via ClaymoreUW.
 
-         #. SimCenterUQ checks if Python packages are missing in the environment and shows an error message if needed
+                b. Finite Volume Method + Finite Elements via FOAMySees (OpenFOAM + OpenSees). Two-way FSI coupling between CFD and structural solvers. 
 
-         #. Minor fixes in surrogate UI (nugget values option should not show up by default, RVs should be uniform by default)
+            #. **Physics**
 
-         #. A fix to prevent the mixed use of slash/backslash when printing a path
+                a. Large deformations
+                b. Nonlinear materials
+                c. Multi-material and multi-phase interaction
+                d. Debris-fluid-structure interaction
 
-         #. Parameter values are passed to the log-likelihood script when using the UCSD_UQ engine
+            #. **Materials**: 
+
+                a. Supports elastic, plastic, hyperelastic, and elasto-plastic materials.
+
+                b. Supports kinematic viscosity and density of the two phases in addition to the surface tension between the fluids.
+
+            #. **DesignSafe Support and Hardware**
+
+                a. Multi-GPU accelerated simulations now supported in certain simulation types (e.g. ClaymoreUW MPM).
+
+                b. Updated support for the TACC Frontera supercomputer.
+
+                    * Access the 'rtx' queue. Includes 4 NVIDIA RTX Quadro 5000 GPUs (16GB memory each).
+
+                b. Added support for the TACC Lonestar6 supercomputer.
+
+                    * Access the 'gpu-h100' queue. Includes 2 NVIDIA H100 GPUs (80GB memory each).
+                    * Access the 'gpu-a100' queue. Includes 3 NVIDIA A100 GPUs (40GB memory each).
+
+                c. Updated support for the Tapis API (used to run jobs remotely).
+
+            #. **Tools**
+            
+                a. Events (EVT) may now run as standalone tools (i.e. does not require a SimCenter workflow for UQ, etc.)
+
+                b. Added Tapis API support for running Tools remotely, allowing for specialized Tapis applications and system/queue selection
+
+            #. **Digital Twins**
+
+                a. Digital twins now allow for debris and floating bodies.
+
+                b. Added Oregon State University's Large Wave Flume (OSU LWF) as a digital twin for MPM.
+
+                c. Added Oregon State University's Directional Wave Basin (OSU DWB) as a digital twin for MPM.
+
+                d. Added Waseda University's Tsunami Wave Basin (WU TWB) as a digital twin for MPM.
 
 
-   .. dropdown:: Version 2.4.0
-      :open:
+Version 2.0
+=================
+    .. dropdown:: Version 2.0.0
+        :open:
 
-      **Release date:** Oct. 2021
+        **Release date:**  November 30th, 2023
+            #. **Simulation types**:
+            
+                a. Two-way FSI coupling between CFD and structural solvers. Uses FOAMySees (OpenFOAM + OpenSees) with coupling library preCICE.
 
-      Highlights
-
-         #. New forward propagation method in SimCenterUQ to import existing sample sets (e.g. samples obtained by MCMC)
-
-         #. New multi-fidelity surrogate modeling option in SimCenterUQ
-         
-         #. Local/remote parallel computing support for SimCenterUQ methods
-
-         #. Visualization improved for surrogate results
-
-         #. More adaptive design of experiment options added for surrogate modeling
-
-         #. Nugget optimization options added for surrogate modeling
-
-         #. Minor improvements and bug fixes
-
-   .. dropdown:: Version 2.3
-      :open:
-
-      **Release date:** May 2021
-
-      Highlights
-
-         #. Data for calibration methods (DREAM, TMCMC, parameter estimation) required to be provided in a file
-
-         #. Option to supply a covariance structure for error in Bayesian calibration methods
-
-         #. Option to calibrate values of multipliers on error covariance structure in Bayesian calibration methods
-
-         #. Log-likelihood function specification made optional for TMCMC
+            #. **Digital Twin**
+            
+                a. OSU LWF digital twin now supports FOAMySees (OpenFOAM + OpenSees). Added options for adjustable bathymetry and flexible two-way coupled structures.
+            
+            #. **New multi-model and multi-fidelity modeling options**
 
 
-   .. dropdown:: Version 2.2
-      :open:
+Version 1.0
+=================
+    .. dropdown:: Version 1.0.0
+        :open:
 
-      **Release date:** Oct. 2020
 
-      Highlights
+        **Release date:** Apr 30th, 2021
 
-         #. Included new sensitivity method: probability model-based global sensitivity analysis (PM-GSA)
+        #. Supports run on DesignSafe only. Local run on the user's desktop is not supported.
 
-         #. Included new Bayesian calibration method: transitional Markov chain Monte Carlo (TMCMC)
+        #. |app| ``v1.0.0`` currently requires the users to ensure that the inputs provided are 
 
-         #. Option to allow users to include their own UQ engine
+        #. Supports two-phase isothermal flows only. Water and air are considered as the two primary phases. However, this can be modified in the material properties to accommodate any other alternative two-phases instead.
 
-         #. Option to allow users to include their own FEM engine
+        #. **Simulation types**:
+            a. CFD to resolve SW (Using SW results), CFD using bathymetry data, CFD of wave flume is supported.
+            b. For simulation type with SW-CFD coupling, ``v1.0.0`` considers one point on the interface. However, if you would like more flexibility, please let us know using the :ref:`lblBugs`.
 
-         #. Changes to UI to reduce wasted space
+        #. **Geometry**: 
+            a. Geometry can be imported as Bathymetry files (GeoClaw format - type 1), STL files, or the Hydro flume digital twin. 
+            b. Shallow-water to CFD interface can be imported as a ``.csv`` file only.
+            c. Buildings of cuboid shapes are supported in ``v1.0.0``. For other shapes, the user can upload them as an STL file. The buildings need to be specified in the table or can be generated parametrically. Importing buildings as a ``.csv`` file is not currently supported in ``v1.0.0`` but can be requested using the :ref:`lblBugs`. 
+            d. Floating bodies and debris modeling are not supported in ``v1.0.0``. Support will be added in upcoming versions. If you are interested in this feature, please write to us at :ref:`lblBugs`.
 
-   .. dropdown:: Version 2.0
-      :open:
+        #. **Meshing**: 
+            a. Supports blockMesh and snappyHexMesh for internal meshing.
+            b. Supports import for the following mesh formats: Ansys Fluent (.msh), Ansys I-DEAS (.ans), CFX mesh (.geo), GAMBIT mesh (.neu), Gmsh mesh (.msh).
+            c. Supports import of OpenFOAM mesh dictionaries, namely the blockMeshDict and snappyHexMeshDict. Additionally, surfaceFeatureExtractDict is required if STL files are used to define the geometry.
 
-      **Release date:** Sept. 2019
+        #. **Materials**: 
+            a. Supports Newtonian materials only.
+            b. Supports kinematic viscosity and density of the two phases in addition to the surface tension between the fluids.
 
-      Highlights
+        #. **Initial conditions**: 
+            a. For CFD simulations that resolve the shallow-water solutions, the initial conditions are derived from the shallow-water solutions.
+            b. For all other simulation types, the user-specified initial conditions include phase only. 
 
-         #. Forward uncertainty: Importance Sampling, Gaussian Process Regression
+        #. **Boundary conditions**: 
+            a. The boundary conditions can be selected based using standard patch names. Here standard patches include entry / exit / inlet / outlet / left / right. 
+            b. Velocity boundary conditions for inlet conditions include shallow-water solutions, moving wall, and constant velocity; for outlet conditions include zeroGradient and inletOutlet
+            c. Pressure boundary conditions include zeroGradient and fixedValue. Alternatively, the user can also leave the default option. An appropriate boundary condition relevant to the velocity boundary will be chosen.
+            d. It is recommended to use the wall boundary conditions for walls
 
-         #. Reliability: FORM and SORM
+        #. **Domain decomposition and solver**: 
+            a. Allows simple decomposition techniques from OpenFOAM.
+            b. Can set start and end times for simulation
+            c. Can set time interval and the write intervals
+            d. Restarting facility is supported
 
-         #. Sensitivity with Monte Carlo or LHS
-
-         #. Parameter Estimation
+        #. **Turbulence**:
+            a. Presently, only RANS is supported for turbulence modeling.
+            b. If you would like to use LES, please let us know about it using :ref:`lblBugs`.

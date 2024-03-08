@@ -86,6 +86,12 @@ WEUQ:
 #---------------------------------------------------
 HydroUQ:
   - id: hdro-01
-    title: "9 Story Frame - Basic Sampling"
+    title: "Simple Example of running CFD using OpenFOAM"
+  - id: hdro-02
+    title: "Digital Twin of OSU LWF - Debris Impacts in a Tsunami-Like Wave - MPM"
   - id: hdro-03
-    title: "9 Story Frame - Sampling with Select EDPs"
+    title: "Coupled Digital Twin - Simple Cantilevered Cylinder Half-Submerged in Crossflow"
+  - id: hdro-04
+    title: "Digital Twin of WU TWB - Debris Motion through Obstacles in a Tsunami-Like Wave - MPM"
+
+#--------------------------------------------------

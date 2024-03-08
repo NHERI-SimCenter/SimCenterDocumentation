@@ -16,11 +16,11 @@ APPS = [
     "PBE",
     "EE-UQ",
     "WE-UQ",
+    "HydroUQ",
     "quoFEM",
     "BRAILS",
     "pelicun",
-    "requirements",
-    "HydroUQ",
+    "requirements"
 ]
 if app_name in APPS:
     # `make` was invoked from root, all env vars should already be defined.
@@ -31,6 +31,7 @@ else:
     #app_name = 'PBE'
     #app_name = 'EE-UQ'
     app_name = 'WE-UQ'
+    app_name = 'HydroUQ'
     #app_name = 'quoFEM'
     #app_name = 'pelicun'
 
@@ -413,7 +414,8 @@ if app_name == "HydroUQ" or app_name == "Hydro":
 .. |tool version| replace:: 3.0
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0
 .. _Hydro Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ
-.. |figMissingCRT| replace:: :numref:`figMissingCRT`
+.. _HydroUQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ
+.. |figMissingCRT| replace:: :numref:`figMissingCRT-HydroUQ`
 .. |contact person| replace:: Justin Bonus (bonus@berkeley.edu), Ajay B Harish (ajaybh@berkeley.edu), Frank Mckenna (fmk@berkeley.edu), NHERI SimCenter, University of California Berkeley
 
 """

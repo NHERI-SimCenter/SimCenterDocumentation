@@ -11,98 +11,39 @@ Version |tool version| of the |app| was released on **November 30, 2023**. The f
 UQ (Uncertainty Quantification and Optimization Options)
 ========================================================
 
-#. Forward Uncertainty Propagation
+#. Water Event Selection: Users are provided with multiple paths for water borne hazard generation:
 
-     A. :ref:`Dakota<lblDakotaForward>`
+   A. Generate/record integrated loads and point pressure measurements by creating and running a CFD
+   model on DesignSafe.
 
-        #. Monte Carlo Sampling (MCS)
-        #. Latin Hypercube Sampling (LHS)
-        #. Gaussian Process Regression
-        #. Polynomial Chaos Expansion
+   B. Run GeoClaw, a widely used shallow-water solver vetted for tsunamis / storm surges, via the graphical user interface.
 
-     B. :ref:`SimCenterUQ<lblSimForward>`
+   C. Define and adjust prebuilt, digital twin wave-makers (1D / 2D pistons, pumps, gravity head).
 
-        #. Monte Carlo Sampling (MCS)
+   D. For advanced users, full authority is provided to input hydrodynamic files from tools of their choice.
 
-           a. Resample from the existing correlated dataset of samples
+#. Structural Model: Defines the structural modeling approach and returns the scripts required to perform the response simulation. One or more models can be assigned to a workflow. Using more than one model allows for benchmarking and epistemic uncertainty analysis. The following options are available:
 
-        #. Multi-fidelity Monte Carlo
+   A. Provide your own OpenSees model in Tcl or Python format.
 
-#. Global Sensitivity Analysis
+   B. Provide a Python script that prepares a structural model and performs the response simulation.
+   
+   C. Automatically generate an idealized shear column model in OpenSees from basic building information.
 
-     A. :ref:`Dakota<lblDakotaSensitivity>`
+#. Response Simulation: Defines the analysis options that will be used to perform the numerical simulation, e.g., time integration strategy, convergence criteria, and damping options. The user-specified modeling tool is used to perform the simulation and collect the requested response quantities.
 
-        #. MCS
-        #. LHS
+#. Uncertainty Quantification: Samples the prescribed random input variables and obtains realizations of the outputs by executing the workflow with each input realization from the generated sample. The underlying UQ engines let you leverage the following techniques in your research:
 
-     B. :ref:`SimCenterUQ<lblSimSensitivity>`
+   A. Forward propagation :ref:`Dakota<lblDakotaForward>` :ref:`SimCenterUQ<lblSimForward>`: Define a set of random input parameters and perform simulations to obtain a corresponding sample of output parameters and their statistics.
 
-        #. Probability Model-based Global Sensitivity Analysis (PM-GSA)
+   B. Sensitivity analysis :ref:`Dakota<lblDakotaSensitivity>` :ref:`SimCenterUQ<lblSimSensitivity>`: Measure the influence of the uncertainty in each input on the uncertainty of outputs.
 
-           a. First-order Sobol indices
-           b. Total-effect Sobol indices
-           c. Group-wise Sobol indices
-           d. Principal component analysis and probabilistic model-based GSA (PCA-PSA) for high-dimensional QoIs
-           e. Aggregated Sobol indices for field QoIs
-           f. Import input/output samples from data files
-
-#. Reliability Analysis
-
-     A. :ref:`Dakota<lblDakotaReliability>` 
-
-        #. Local Reliability 
-        #. Global Reliability
-        #. Importance Sampling
-
-#. Bayesian Calibration
-
-     A. :ref:`Dakota<lblDakotaBayesianCalibration>`
-
-        #. DREAM
-
-     B. :ref:`TMCMC <lblUCSDTMCMC>`
-
-        #. Transitional Markov Chain Monte Carlo (TMCMC) for Bayesian estimation
-        
-           a. Override default log-likelihood function
-           b. Override default error covariance structure
-           c. Calibrate multipliers on error covariance structure
-     
-     C. :ref:`Hierarchical Models <lblUCSDHierarchical>`
-
-        #. :blue:`Bayesian updating of parameters of a hierarchical model`
-
-            a. Quantify aleatory uncertainty in the parameter values of a computational model
-
-#. Deterministic Calibration
-
-     A. :ref:`Dakota<lblDakotaDeterministicCalibration>`
-
-        #. NL2SOL
-        #. OPT++GaussNewton
-        #. Gradient-free optimization
-        
-#. Surrogate Modeling 
-
-     A. SimCenterUQ
-
-        #. :ref:`Train Gaussian Process (GP) Surrogate Model<lblSimSurrogate>`
-
-           a. Multifidelity surrogate modeling
-           b. Adaptive design of experiment options for surrogate modeling
-           c. Nugget optimization options for surrogate modeling
-           d. Stochastic Kriging 
-
-        #. :ref:`Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)<lblSimCenterUQPLoM>` *
-
-#.  :ref:`CustomUQ<lblCustomUQ>`
-
-        #. Configure UQ analysis using JSON file
+   C. Reliability analysis :ref:`Dakota<lblDakotaReliability>` :ref:`SimCenterUQ<lblSimSensitivity>`: Algorithms to estimate the probability of exceeding a failure surface.
 
 
 .. note::
    
-   Support for the running computation to be performed on TACC's high-performance computer, Frontera, is provided through DesignSafe for all but the methods indicated with a star (*).  
+   Support for the running computation to be performed on a TACC high-performance computer, e.g. Frontera or Lonestar6, is provided through DesignSafe for all but the methods indicated with a star (*).  
 
 
 FEM (Computational Model Specification)
