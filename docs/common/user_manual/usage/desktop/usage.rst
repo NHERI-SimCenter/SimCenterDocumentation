@@ -199,7 +199,6 @@ The main window of the UI is made up from the following areas:
 
       .. note:: You can check the status of a remote run by clicking on the **GET from DesignSafe** button. If the analysis status shows FAILED,  log into your DesignSafe account to view the detailed output of the run. First, log in with your credentials on the `DesignSafe <https://www.designsafe-ci.org/help/new-ticket/>`_ webpage. Next, use the menu to navigate to **Workspace** -> **Tools & Applications** -> **Job Status** and then select a job and click on **More info** to view the status of that job.
 
-     
 .. only:: R2D_app
 
    6. **Main Menu**
