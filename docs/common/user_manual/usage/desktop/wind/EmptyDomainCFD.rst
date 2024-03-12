@@ -4,7 +4,7 @@
 Empty Domain CFD Simulation
 ============================
 
-When performing wind load evaluation on buildings using CFD, it is often necessary to calibrate the characteristics of the approaching Atmospheric Boundary Layer(ABL) flow. This is particularly important for transient simulations (i.e., LES) as the flow characteristics change downstream of the inlet. Thus, it is customary to run an empty domain simulation and evaluate the statistics of the flow at the incident location (i.e. where the building/structure will be placed). If the statistics of flow do not match the target wind profiles, the boundary conditions need to be rescaled. This process is often an iterative procedure that requires running an empty domain simulation multiple times. Once the target profiles are matched, the final boundary conditions can be used in the main wind load simulation. :numref:`fig-emp-cfd-workflow` describes this procedure schematically. The inputs of the empty domain simulation can be imported from the main simulation in the form of ``JSON`` file.     
+When performing wind load evaluation on buildings using CFD, it is often necessary to calibrate the characteristics of the approaching Atmospheric Boundary Layer(ABL) flow. This is particularly important for transient simulations (i.e., LES) as the flow characteristics change downstream of the inlet. Thus, it is customary to run an empty domain simulation and evaluate the statistics of the flow at the incident location (i.e. where the building/structure will be placed). If the statistics of flow do not match the target wind profiles, the boundary conditions need to be rescaled. This process is often an iterative procedure that requires running an empty domain simulation multiple times. Once the target profiles are matched, the final boundary conditions can be used in the main wind load simulation. :numref:`fig-emp-cfd-workflow` describes this procedure schematically. The inputs of the empty domain simulation can be imported from the main simulation in the form of ``JSON`` file. Further reading material for running an empty domain simulation can be found in [Lamberti2018]_, [Melaku2021]_, [Melaku2024]_.
 
 .. _fig-emp-cfd-workflow:
 
@@ -27,7 +27,7 @@ To define CFD model for the empty domain simulation, the user needs to follow th
 Considering the high computational cost of the simulation, the CFD models can only be run remotely using High-Performance Computing (HPC) resources at DesignSafe-CI. Thus, the user is required to have DesignSafe account to run the simulations. Also, the generated CFD model is saved locally as a typical OpenFOAM case. This will allow the user to copy this directory and run the simulation elsewhere. 
 
 
-To set up empty domain simulation in WE-UQ, from the *Menu Bar* click **Tools** and select *CFD - Empty Domain Simulation* as shown in :numref:`fig-tools-menu-bar`. This will open up a new dialog window for defining the CFD model (see :numref:`fig-emp-dmn-window`). The workflow for this feature is similar to :ref:`Isolated Building CFD Model <lblIsolatedBuildingCFD>` and the user need to refer to this manual for the details instruction. Here a brief step-by-step procedure is given. 
+To set up empty domain simulation in WE-UQ, from the *Menu Bar* click **Tools** and select *CFD - Empty Domain Simulation* as shown in :numref:`fig-tools-menu-bar`. This will open up a new dialog window for defining the CFD model (see :numref:`fig-emp-dmn-window`). The workflow for this feature is similar to :ref:`Isolated Building CFD Model <lblIsolatedBuildingCFD>` and the user needs to refer to this manual for details instructions. Here a brief step-by-step procedure is given. 
 
 .. _fig-tools-menu-bar:
 
@@ -208,6 +208,10 @@ Sample plots for wind profiles, velocity spectra and pressure fluctuations are s
 .. [Greenshields2022] Greenshields, C.J. (2022). https://doc.cfd.direct/openfoam/user-guide-v10/snappyhexmesh
 
 .. [Melaku2021] Melaku, A.F. and Bitsuamlak, G.T., 2021. A divergence-free inflow turbulence generator using spectral representation method for large-eddy simulation of ABL flows. Journal of Wind Engineering and Industrial Aerodynamics, 212, p.104580.
+
+.. [Lamberti2018] Lamberti, G., García-Sánchez, C., Sousa, J. and Gorlé, C., 2018. Optimizing turbulent inflow conditions for large-eddy simulations of the atmospheric boundary layer. Journal of Wind Engineering and Industrial Aerodynamics, 177, pp.32-44.
+
+.. [Melaku2024] Melaku, A.F. and Bitsuamlak, G.T., 2024. Prospect of LES for predicting wind loads and responses of tall buildings: A validation study. Journal of Wind Engineering and Industrial Aerodynamics, 244, p.105613.
 
 .. [Klein2003] Klein, M., Sadiki, A. and Janicka, J., 2003. A digital filter based generation of inflow data for spatially developing direct numerical or large eddy simulations. Journal of Computational Physics, 186(2), pp.652-665.
 
