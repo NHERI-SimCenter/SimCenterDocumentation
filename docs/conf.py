@@ -172,7 +172,7 @@ toc_filter_exclusions = [
     "S3hark",
     "pelicun",
     "docTestbeds",
-    "docDLDB",
+    "docDLDB"    
 ]
 
 
@@ -477,12 +477,12 @@ elif app_name == "PBE":
     tags.add("notQuoFEM")
     tags.add("notR2D")
 
-
     toc_filter_exclusions.remove("PBE")
     toc_filter_exclusions.remove("desktop")
     toc_filter_exclusions.remove("earthquake")
     toc_filter_exclusions.remove("notQuoFEM")
     toc_filter_exclusions.remove("notR2D")
+    toc_filter_exclusions.remove("docDLDB")    
     toc_filter_exclude = toc_filter_exclusions
 
     exclude_patterns.remove("**/*desktop*")
@@ -504,7 +504,7 @@ elif app_name == "PBE":
 .. |full tool name| replace:: Performance Based Engineering Application
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
 .. _PBE Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE
-.. |tool version| replace:: 3.1
+.. |tool version| replace:: 3.3
 .. |test example| replace:: :ref:`pbdl-0001`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-PBE`
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
