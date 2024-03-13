@@ -88,7 +88,7 @@ Applications to perform the uncertainty quantification for the response paramete
 
         #. Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)
 	   
-Addition Tools 
+Additional Tools 
 ===============
 
 #. :blue:`Empty Domain CFD Simulation`:

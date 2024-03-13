@@ -642,7 +642,7 @@ elif app_name == "WE-UQ":
     rst_prolog += f"""
 .. |full tool name| replace:: Wind Engineering with Uncertainty Quantification Application
 .. |test example| replace:: :ref:`weuq-0001`
-.. |tool version| replace:: 3.1
+.. |tool version| replace:: 3.2
 .. _WE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=5.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-WE`
