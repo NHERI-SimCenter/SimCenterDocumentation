@@ -25,7 +25,7 @@ How To Cite
 .. only:: WEUQ_app
 
    1. Frank McKenna, Abiy F. Melaku, Fei Ding, Jiawei Wan, Peter Mackenzie-Helnwein, Wael Elhaddad, &
-      Michael Gardner. (2023). NHERI-SimCenter/WE-UQ: Version 3.1.0 (v3.1.0). 
+      Michael Gardner. (2024). NHERI-SimCenter/WE-UQ: Version 3.2.0 (v3.2.0). 
       Zenodo. `DOI: 10.5281/zenodo.8396121 <https://doi.org/10.5281/zenodo.8396121>`_
 	     
 .. only:: quoFEM_app	     
