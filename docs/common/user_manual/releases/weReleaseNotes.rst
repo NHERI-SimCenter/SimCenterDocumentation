@@ -5,7 +5,23 @@
 Release Notes
 *************
 
-Version 3.1 (Current)
+Version 3.2 (Current)
+-----------------------
+
+**Release date:** Mar. 2024
+
+**Highlights**
+
+#. Implemented a new capability to characterize Atmospheric Boundary Layer (ABL) flows using large-eddy simulation (LES).
+#. Added advanced options for pre-processing, monitoring and postprocessing CFD simulation.
+#. Integrated a new method to Turbulence Inflow Tool (TInF) tool for wind loading simulation.
+#. Supports visualization of the simulation data using Paraview on local machine. 
+#. Addressed bugs in the prior release 
+#. Created a new example to demonstrate the recently added CFD features. 
+
+
+
+Version 3.1
 -----------------------
 
 **Release date:** Oct. 2023
