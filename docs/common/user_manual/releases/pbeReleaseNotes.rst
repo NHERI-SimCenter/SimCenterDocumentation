@@ -8,7 +8,26 @@ Release Notes
 Version 3
 =========
 
-   .. dropdown::    Version 3.2 (:blue:`Current`)
+   .. dropdown::    Version 3.3 (:blue:`Current`)
+      :open:
+
+      **Release date:** Jan 2024
+
+      **Major updates:**
+
+      - Allow multiple definitions of the same component type at the same location and direction in the asset model. (If needed, we can later add a feature to propagate these as separate instances to model, e.g., components used by various tenants.)
+
+      - Update JSON outputs to follow new standard SimCenter output format
+
+      - Include unit information in every CSV and JSON output file.
+
+      - Several minor efficiency improvements that lead to faster runtimes - major improvments in that area are coming in the next minor release
+
+      - Several error and warning messages added to provide more meaningful information when something goes wrong in a simulation.
+
+      - A lot of minor bugs fixed and robustness of the Pelicun engine ensured by bringing back continuous integration.
+
+   .. dropdown::    Version 3.2
       :open:
 
       **Release date:** Sept 2023

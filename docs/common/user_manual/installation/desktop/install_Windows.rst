@@ -105,7 +105,7 @@ To download the |app|, navigate to the |appLink| page which should resemble |fig
 
 .. only:: Hydro
 
-   .. _figDownload-HydroUQ:
+   .. _figDownloadWin-HydroUQ:
 
    .. figure:: figures/H20Download.png      
       :alt: HydroUQ tool download page

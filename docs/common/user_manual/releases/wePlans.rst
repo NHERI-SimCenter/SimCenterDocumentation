@@ -7,15 +7,13 @@ Release Plans
 *************
 
 The following features are intended to be included in |app|  in upcoming releases. These may change, depending on feedback and changing priorities, though the ones closest out are things we are actively working and will be delivered. If you have any suggestions or wish to contribute, please contact us through the SimCenter Forum.
-
       
-Dec 2023
+Mar 2024
 ----------
-   #. Digital Wind Tunnel (1.2.5.2) - CFD models for empty domain simulation with synthetic inflow turbulence. 
    #. Aerodynamic Database (1.1.1.4) - Develop an aerodynamic database integrating CFD simulation and experimental measurements.
 
       
-Mar 2024
+Apr 2024
 ----------
    #. Digital Wind Tunnel (1.2.5.2) - CFD models for a complex-shaped building with explicitly modeled surrounding buildings. 
    #. Surrogate support for regional assessment (1.3.6.1) - Extend surrogates developed in EE-UQ that can be utilized in R2D for wind hazard simulation.

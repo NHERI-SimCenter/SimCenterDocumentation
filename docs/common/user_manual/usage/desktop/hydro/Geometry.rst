@@ -7,7 +7,7 @@ Geometry
 There are four aspects related to the definition of geometry, namely geometry of the ocean floor or wave flume, buildings or specimens, floating bodies, and shallow water to CFD interface. This section discusses the setup of all aspects of geometry.
 
 Bathymetry
-==============
+===========================
 
 The geometry can be provided either in terms of the bathymetry of the ocean floor, an STL file, or the wave flume digital twin. The geometry definition is based on the type of ``Simulation type`` chosen in the :ref:`lbl-projsett`. The geometry definition for each of the simulation types has been outlined below.
 
@@ -28,8 +28,8 @@ The geometry can be provided either in terms of the bathymetry of the ocean floo
     .. include:: Geometry/Geom_WFlume.rst
 
 
-SW-CFD interface
-===================
+SW-CFD Interface
+===========================
 
 The shallow-water to CFD interface can only be defined for the simulation type where CFD is used to resolve the shallow-water solutions. The interface is specified using a ``.csv`` file and uploaded as shown in :numref:`SWCFDInter`.
 
@@ -70,8 +70,8 @@ The ``.csv`` needs four patches to be explicitly defined. The first is the patch
 
     #. The patch names need to be provided to identify appropriate boundaries.
 
-Buildings/specimens
-========================
+Buildings / Specimens
+===========================
 
 Buildings or specimens can be defined in the ``EVT``. It is important here to note that there can be two types of buildings: (a) Building of interest for which the structural response is measured (b) Other neighboring buildings that impact the flow fields.
 
@@ -148,7 +148,7 @@ The parametric definition of the building is recommended for usage mainly for th
 
         Building distribution definition in the ``EVT``
 
-Floating bodies
-===================
+Floating Bodies / Debris
+===========================
 
-The present version of the HydroUQ does not facilitate floating bodies. These would be added to the upcoming versions of |app|.
+Currently, HydroUQ only supports floating bodies in the Mateiral Point Method Event (EVT). This may expand to include OpenFOAM in an upcoming versions of |app|.

@@ -5,7 +5,7 @@
 Capabilities
 ************
 
-**Version 3.1.0** of |app| was released **October 2023**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+**Version 3.2.0** of |app| was released **March 2024**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 Structural Information Model
@@ -26,7 +26,7 @@ Applications used to specify/select wind loading for the structure.
 
 #.  Stochastic Wind: simulating stochastic wind speed using spectral method
 #.  CFD-Digital Wind Tunnel: CFD simulation of boundary layer wind tunnel
-#.  :blue:`CFD-Wind Load on Isolated Buildings: CFD-based wind load simulation for isolated buildings with complex geometry`
+#.  CFD-Wind Load on Isolated Buildings: CFD-based wind load simulation for isolated buildings with complex geometry
 #.  DEDM_HRP: database-enabled design framework based on wind-tunnel data for high-rise buildings 
 #.  LowRiseTPU: extracting aerodynamics loads based on TPU database for low-rise buildings
 #.  Wind Tunnel Experiment: uses pressure tap measurements from building in wind tunnel experiment
@@ -88,3 +88,8 @@ Applications to perform the uncertainty quantification for the response paramete
 
         #. Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)
 	   
+Additional Tools 
+===============
+
+#. :blue:`Empty Domain CFD Simulation`:
+   Capability to perform empty domain simulation to characterize Atmospheric Boundary Layer (ABL) flows using large-eddy simulation (LES). This added feature uses the Turbulence Inflow Tool (TInF) tool for calibrating ABL flows for a subsequent wind load evaluation study. 

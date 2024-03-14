@@ -50,6 +50,15 @@ To download the |app|, first navigate to the |appLink| page. As shown in |figDow
 
       quoFEM download page.
 
+.. only:: HydroUQ_app
+
+   .. _figDownloadHydroUQ:
+
+   .. figure:: figures/H20Download.png
+      :align: center
+      :figclass: align-center
+
+      HydroUQ download page.
 
 .. only:: R2D_app
 
@@ -108,6 +117,14 @@ Now test that the application starts. To do this navigate to the location where 
    .. figure:: figures/quoFEM.png
 	:align: center
 	:figclass: align-center
+
+.. only:: HydroUQ_app
+
+   .. _figUI-HydroUQ:
+
+   .. figure:: figures/HydroWIN.png
+   :align: center
+   :figclass: align-center
 
 	quoFEM application on startup.
 

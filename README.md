@@ -64,6 +64,7 @@ where `<app>` is one of:
 | `pbe`     |  PBE
 | `we`      |  WE-UQ
 | `ee`      |  EE-UQ
+| `hydro`   |  HydroUQ
 | `rtm`     |  Requirements matrix
 
 and `<target>` is one of:

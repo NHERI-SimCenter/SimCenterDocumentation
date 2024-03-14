@@ -53,15 +53,14 @@ remotely, and finally view the results of the simulation.
 
 .. only:: Hydro
 
-	  
-   .. _figGenericUI-Hydro:
+   .. _figGenericUI-HydroUQ:
 
-   .. figure:: figures/HydroPanel.png
+   .. figure:: figures/HydroPanel_MPM.png
 	   :align: center
 	   :figclass: align-center
 
 	   The |app| user interface.
-   
+
 
 .. only:: R2D_app
 
@@ -110,25 +109,27 @@ The main window of the UI is made up from the following areas:
       :EEUQ:GI
       :WEUQ:GI
       :PBE:GI
-      :Hydro:GI
       :EEUQ:SIM
       :WEUQ:SIM
-      :Hydro:SIM
       :PBE:SIM
       :wind:Assets
       :EEUQ:earthquake/earthquakeEvents.rst
       :PBE:earthquake/earthquakeEvents.rst
       :wind:wind/WindEvents
       :wind:FEM
-      :Hydro:hydro/EVT.rst
+      :WEUQ:wind/WindEvents
+      :WEUQ:FEM
       :EEUQ:FEM
-      :Hydro:FEM
       :PBE:FEM
       :quoFEM:quoFEM/FEM
+      :Hydro:GI
+      :Hydro:SIM
+      :Hydro:hydro/EVT
+      :Hydro:FEM
       RV
+      :Hydro:response/EDP
       :EEUQ:response/EDP
       :WEUQ:response/EDP
-      :Hydro:response/EDP
       :quoFEM:quoFEM/QuantitiesOfInterest
       :PBE:PBE/DL
       :PBE:PBE/performance
@@ -199,7 +200,6 @@ The main window of the UI is made up from the following areas:
 
       .. note:: You can check the status of a remote run by clicking on the **GET from DesignSafe** button. If the analysis status shows FAILED,  log into your DesignSafe account to view the detailed output of the run. First, log in with your credentials on the `DesignSafe <https://www.designsafe-ci.org/help/new-ticket/>`_ webpage. Next, use the menu to navigate to **Workspace** -> **Tools & Applications** -> **Job Status** and then select a job and click on **More info** to view the status of that job.
 
-     
 .. only:: R2D_app
 
    6. **Main Menu**
