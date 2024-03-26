@@ -23,10 +23,7 @@ is used along with the rulesets developed to map the inventory to HAZUS-type dam
       :width: 500
 
       R2D GI setup.
-#. Download and unzip the `HurricaneLaura_MappedPWS <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/02.%20Input:%20HAZ%20-%20Hazard%20Characterization>`_. 
-   Set the **Event File Listing Wind Field** in the **HAZ** panel to the "EventGrid.csv" in the unzipped "IMs" folder.
-   The app would automatically load the directory (:numref:`r2d_haz`). And the **Units of Event Input File** should be 
-   "Miles per hour".
+#. The **Raster Defined Hazard** option is used to define the peak gust wind speed field in the region.
 
    .. figure:: figures/r2dt-0008-HAZ.png
       :name: r2d_haz
@@ -47,7 +44,7 @@ is used along with the rulesets developed to map the inventory to HAZUS-type dam
       :width: 500
 
       R2D ASD setup.
-#. Set the **Regional Mapping** and **SimCenterEvent** in the **HTA** panel (e.g., :numref:`r2d_hta`).
+#. Select the **Site Specified** option in the **HTA** panel (e.g., :numref:`r2d_hta`).
 
    .. figure:: figures/r2dt-0008-HTA.png
       :name: r2d_hta
@@ -74,10 +71,10 @@ is used along with the rulesets developed to map the inventory to HAZUS-type dam
       :width: 500
 
       R2D ANA setup.
-#. Set the "Damage and Loss Method" in **DL** panel to "HAZUS MH HU". Download the rulset scripts from 
+#. Set the "Damage and Loss Method" in **DL** panel to "HAZUS MH HU". Download the ruleset scripts from 
    `DesignSafe PRJ-3207 <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/03.%20Input:%20DL%20-%20Rulesets%20for%20Asset%20Representation/scripts>`_ 
    (under **03. Input: DL - Rulesets for Asset Representation/scripts** folder) and 
-   set the **Auto populate script** to "auto_HU_LA.py" (:numref:`r2d_dl`). Note please place the rulset scripts 
+   set the **Auto populate script** to "auto_HU_LA.py" (:numref:`r2d_dl`). Note please place the ruleset scripts 
    in an individual folder so that the application could copy and load them later. 
 
    .. figure:: figures/r2dt-0008-DL.png
@@ -97,7 +94,7 @@ is used along with the rulesets developed to map the inventory to HAZUS-type dam
 
       R2D UQ setup.
 
-After setting up the simulation, please click the **RUN** to execute the analysis. Once the simulation completed, 
+After setting up the simulation, please click the **RUN** to execute the analysis. Once the simulation is completed, 
 the app would direct you to the **RES** panel (:numref:`r2d_res`) where you could examine and export the results.
 
 .. figure:: figures/r2dt-0008-RES.png
@@ -109,7 +106,7 @@ the app would direct you to the **RES** panel (:numref:`r2d_res`) where you coul
    R2D RES panel.
 
 For simulating the damage and loss for a large region of interest (please remember to reset the building IDs in **ASD**), it would be efficient to submit and run the job 
-to `DesignSafe <https://www.designsafe-ci.org/>`_ on `Stampede2 <https://www.tacc.utexas.edu/systems/stampede2>`_. 
+to `DesignSafe <https://www.designsafe-ci.org/>`_ on `Frontera <https://tacc.utexas.edu/systems/frontera/>`_. 
 This can be done in R2D by clicking **RUN at DesignSafe** (one would need to have a valid 
 `DesignSafe account <https://www.designsafe-ci.org/account/register/>`_ for login and access the computing resource). 
 :numref:`r2d_run_ds` provides an example configuration to run the analysis (and please see `R2D User Guide <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/usage/desktop/usage.html#figremjobpanel>`_ for detailed descriptions).
