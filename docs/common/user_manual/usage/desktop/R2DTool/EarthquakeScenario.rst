@@ -544,9 +544,41 @@ Special thanks to Dr. Anne Hulsey for sharing the python package `seaturtles <ht
 
 Ground Failure Models
 **********************
-Ground failure models are selected in this tab. Currently, only the permanent ground
+Ground failure models are selected in this tab. Fig. :numref:`fig-R2DEQSGroundFailurePanel`
+is the user interface of the ground failure models panel. Users select the ground failure sources with the
+ground failure source checkboxes. When a checkbox is checked, a ground failure tab
+(e.g., Fig. :numref:`fig-R2DEQSLiquefactionPanel` for liquefaction) will be displayed.
+The ground failure models require geospatial data input. For example, distance to water bodies and
+groundwater depth are required for several liquefaction trigging models. These geospatial
+data may be large and are not distributed with R2D by default. When any of the liquefaction
+source checkboxes are checked, R2D will check if the geospatial data exits in the R2D package.
+If they do not exist, a window like Fig. :numref:`fig-R2DEQGroundFailureDownloadWindow` will pop up.
+If you would like to use the R2D default database, please click "Yes" and wait until
+the download completes to continue analyses. If you do not plan to use the R2D 
+the default database, you can click "Cancel" and provide the database with custom 
+GIS files or define the geospatial values in the Site File loaded Site Definition Panel.
+
+
+Currently, only the permanent ground
 deformation (PGD) induced by liquefaction can be estimated. The PGD induced by landslide and earthquake fault displacement will be added in future releases.
 The estimated horizontal ground deformation (PGD_h) and vertical ground deformation (PGD_v) are in the units of meter (m).
+
+  	.. _fig-R2DEQSGroundFailurePanel:
+
+  	.. figure:: figures/R2DEQSGroundFailurePanel.png
+  	  :align: center
+  	  :figclass: align-center
+
+  	  Ground Failure Models Panel.
+
+  	.. _fig-R2DEQGroundFailureDownloadWindow:
+
+  	.. figure:: figures/R2DEQGroundFailureDownloadWindow.png
+  	  :scale: 50%
+  	  :align: center
+  	  :figclass: align-center
+
+  	  Ground Failure Data Download Dialog.
 
 Liquefaction-induced Ground Failure
 +++++++++++++++++++++++++++++++++++
@@ -601,6 +633,14 @@ the aggregated PGD induced by liquefaction, landslide, and fault displacement in
    Zhu, J., Baise, L. G., & Thompson, E. M. (2017). An updated geospatial liquefaction model for global application. Bulletin of the Seismological Society of America, 107(3), 1365-1385.
 .. [Hazus2020]
    FEMA (2020). Hazus Earthquake Model Technical Manual. 
+
+.. _fig-R2DEQSLiquefactionPanel:
+
+  	.. figure:: figures/R2DEQSLiquefactionPanel.png
+  	  :align: center
+  	  :figclass: align-center
+
+  	  Ground Failure Models Panel.
 
 Ground Motion Record Selection
 ******************************
