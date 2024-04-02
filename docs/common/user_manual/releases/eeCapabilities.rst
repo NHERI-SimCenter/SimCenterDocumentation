@@ -32,7 +32,8 @@ Applications used to specify/select ground motions for the structure.
 #.  Site Response: propagating rock motions to the surface
 #.  Multiple PEER: using multiple PEER recordings
 #.  Multiple SimCenter: using multiple SimCenter-format recordings
-#.  User Specified Database: selecting and scaling ground motions from the user-specified flatfile
+#.  User-specified Database: selecting and scaling ground motions from the user-specified flatfile
+#.  Physics-based ground motion simulations generate by the `M9 project <https://sites.uw.edu/pnet/m9-simulations/>`_.
 
 
 Engineering Demand Parameter Generator
