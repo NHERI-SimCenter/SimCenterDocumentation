@@ -409,7 +409,7 @@ elif app_name == "R2DTool":
 
     project = "Regional Resilience Determination Tool"
 
-    author = "Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez"
+    author = "Frank McKenna, Stevan Gavrilovic, Jinyan Zhao, Kuanshi Zhong, Adam Zsarnoczay, Barbaros Cetiner, Sang-ri Yi, Pedro Arduino, Wael Elhaddad"
     sync_examples = True
 
     tags.add("desktop_app")
@@ -451,7 +451,7 @@ elif app_name == "R2DTool":
 .. |test example| replace:: :ref:`r2dt-0006`
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0
 .. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt
-.. |tool version| replace:: 4.0
+.. |tool version| replace:: 4.1
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 
@@ -519,7 +519,7 @@ elif app_name == "PBE":
 elif app_name == "EE-UQ":
     project = "Earthquake Engineering with Uncertainty Quantification"
     author = (
-        "Frank McKenna, Wael Elhaddad, Michael Gardner, Chaofeng Wang, Adam Zsarnóczay"
+        "Frank McKenna, Kuanshi Zhong, Michael Gardner, Adam Zsarnoczay, Sang-ri Yi, Aakash Bangalore Satish, Charles Wang, Wael Elhaddad"
     )
 
     tags.add("desktop_app")
@@ -548,7 +548,7 @@ elif app_name == "EE-UQ":
 
     rst_prolog += """
 .. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application (EE-UQ)
-.. |tool version| replace:: 3.4
+.. |tool version| replace:: 3.5
 .. |test example| replace:: :ref:`eeuq-0001`
 .. _EE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/EE_UQ
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
