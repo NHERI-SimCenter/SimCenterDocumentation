@@ -4,7 +4,7 @@
 About
 *****
 
-|full tool name|  is an open-source research application, that is hosted on the |tool github link|, and released under the **2-Clause BSD** license (see :ref:`lblLicense` ). The application provides uncertainty quantification methods (forward, inverse, reliability, sensitivity, parameter estimation, and surrogate modeling) to researchers in natural hazards who utilize existing simulation software applications, such as Finite Element applications, in their research. It has been developed at the SimCenter, within the University of California, Berkeley. The SimCenter is part of the Natural Hazards Engineering Research Infrastructure (NHERI) program, funded by the National Science Foundation. 
+|full tool name|  is an open-source research application, that is hosted on the |tool github link|, and released under the **2-Clause BSD** license (see :ref:`lblLicense` ). The application provides uncertainty quantification methods (forward, inverse, reliability, sensitivity, parameter estimation, and surrogate modeling) to researchers in natural hazards who utilize existing simulation software applications, such as Finite Element applications, in their research. It has been developed at the SimCenter, within the University of California, Berkeley. The SimCenter is part of the Natural Hazards Engineering Research Infrastructure (NHERI) program, funded by the U.S. National Science Foundation. 
 
 .. figure:: quoFEM.gif
      :align: center
