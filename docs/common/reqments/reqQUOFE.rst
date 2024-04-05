@@ -11,7 +11,7 @@ quoFEM Requirements
 -------------------
 
 .. csv-filter:: Requirements - QF
-  :header: "#", "Description", "Source", "Priority", "Status"
+  :header-rows: 1
   :file: _out/Applications.csv
   :include: {0: 'QF.*'}
   :widths: 10, 50, 10, 10, 10, 10
@@ -25,7 +25,7 @@ UQ Requirements
 ---------------
 
 .. csv-filter:: Requirements - Uncertainty Quantification Methods and Variables
-  :header: "#", "Description", "Source", "Priority", "Status", "Implementation"
+  :header-rows: 1
   :file: _out/Uncertainty.csv
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 5
@@ -38,7 +38,7 @@ RV Requirements
 ---------------
 
 .. csv-filter:: Requirements - CR
-  :header: "#", "Description", "Source", "Priority", "Status", "Implementation"
+  :header-rows: 1
   :file: _out/RandomVariables.csv
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 5
@@ -50,7 +50,7 @@ Common Research Application Requirements
 ----------------------------------------
 
 .. csv-filter:: Requirements - CR
-  :header: "#", "Description", "Source", "Priority", "Status", "Implementation"
+  :header-rows: 1
   :file: _out/Common.csv
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 5
