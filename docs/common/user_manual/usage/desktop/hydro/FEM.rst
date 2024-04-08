@@ -1,4 +1,4 @@
-.. _lbl-FEM:
+.. _lblFEMHydro:
 
 FEM: Finite Element Method
 ==========================

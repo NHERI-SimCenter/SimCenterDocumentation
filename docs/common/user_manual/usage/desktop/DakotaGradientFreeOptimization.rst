@@ -27,7 +27,7 @@ The panel that is presented to the user when this Dakota Category is chosen, is 
 
 Pattern Search
 ^^^^^^^^^^^^^^
-Gradient-free parameter estimation uses the pattern search algorithm that is available in Dakota, called *coliny_pattern_search*. Please refer to the Dakota user manual for more details about the algorithm. The inputs that are required for this algorithm are: 
+Gradient-free parameter estimation uses the pattern search algorithm that is available in Dakota, called *coliny_pattern_search*. Please refer to the Dakota user manual and [Torczon]_ for more details about the algorithm. The inputs that are required for this algorithm are: 
 
 1. Initial step size: this defines the initial size of the offsets used in the pattern search algorithm
 2. Contraction factor: this specifies the ratio of the reduction in the offset size used in the pattern search algorithm
