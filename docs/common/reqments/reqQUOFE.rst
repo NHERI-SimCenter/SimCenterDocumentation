@@ -24,7 +24,7 @@ UQ Requirements
 ---------------
 
 .. csv-filter:: Requirements - Uncertainty Quantification Methods and Variables
-  :header-rows: 1
+  :header: "#", "Description", "Source", "Priority", "Status", "Implementation"
   :file: _out/Uncertainty.csv
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 5
