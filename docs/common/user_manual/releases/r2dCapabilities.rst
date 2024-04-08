@@ -6,13 +6,11 @@ Capabilities
 ************
 
 
-**Version** |tool version| of |app| was released **Jan 2024**. The following is the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
-The major update from Version 3.0 is adding the analysis capability for :blue:`regional transportation infrastructure`. Note that since version 3.0, most **Haz** options were moved to the **Tool** main menu.
+**Version** |tool version| of |app| was released **April 2024**. The following is the functionality available in this current version. New features and fixes in this release are marked :blue:`blue` in the following list of features.
+The major update from Version 4.0 is upgrading the :blue:`regional earthquake event generation tool`, :blue:`regional inventory generation tool BRAILS`, and :blue:` damage and loss engine Pelicun`. 
 
 
-
-
-**Release date:** Dec, 2023
+**Release date:** April, 2024
 
 #. **Hazard Types**:
 
@@ -92,15 +90,24 @@ The major update from Version 3.0 is adding the analysis capability for :blue:`r
 		* Record selection:
 			a. PEER NGA West 2 ground motion database
 			b. None, i.e., stop at the IM stage and no record selection
-		* Ground motion prediction equations: 
+		* Ground motion models: 
 			a. Abrahamson, Silva & Kamai (2014)
 			b. Boore, Stewart, Seyhan & Atkinson (2014)
 			c. Campbell & Bozorgnia (2014)
 			d. Chiou & Youngs (2014)
-		* Intensity Measures: 
+		* Intensity measures: 
 			a. Spectral acceleration (SA)
 			b. Peak ground acceleraation (PGA)
-		* Vs30 Model:
+			c. Peak ground velocity (PGV)
+		* Ground failure models: 
+			a. Liquefaction triggering
+				1. Zhu et al. (2017) 
+				2. Hazus (2020)
+			b. Liquefaction lateral spreading permenant ground deformation (PGD_h)
+				1. Hazus (2020)
+			c. Liquefaction settlement permenant ground deformation (PGD_v)
+				1. Hazus (2020)
+		* Vs30 model:
 			a. CGS/Wills Vs30 (Wills et al., 2015)
 			b. Thompson California Vs30 (Thompson et al., 2018)
 			c. Global Vs30 (Heath et al., 2020)
@@ -121,6 +128,8 @@ The major update from Version 3.0 is adding the analysis capability for :blue:`r
 
     * :ref:`OpenQuake Selection <openquake_selection_tool>`
     * :ref:`Census Data & American Community Survey <lbl-censusDataAllocation>`
-
+	* :ref:`BRAILS <https://nheri-simcenter.github.io/BRAILS-Documentation/>`_
+		* Building inventory generation
+		* Transportation inventory generation
 		
 		   
