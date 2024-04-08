@@ -172,7 +172,7 @@ toc_filter_exclusions = [
     "S3hark",
     "pelicun",
     "docTestbeds",
-    "docDLDB",
+    "docDLDB"    
 ]
 
 
@@ -409,7 +409,7 @@ elif app_name == "R2DTool":
 
     project = "Regional Resilience Determination Tool"
 
-    author = "Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez"
+    author = "Frank McKenna, Stevan Gavrilovic, Jinyan Zhao, Kuanshi Zhong, Adam Zsarnoczay, Barbaros Cetiner, Sang-ri Yi, Pedro Arduino, Wael Elhaddad"
     sync_examples = True
 
     tags.add("desktop_app")
@@ -451,7 +451,7 @@ elif app_name == "R2DTool":
 .. |test example| replace:: :ref:`r2dt-0006`
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0
 .. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt
-.. |tool version| replace:: 4.0
+.. |tool version| replace:: 4.1
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 
@@ -477,12 +477,12 @@ elif app_name == "PBE":
     tags.add("notQuoFEM")
     tags.add("notR2D")
 
-
     toc_filter_exclusions.remove("PBE")
     toc_filter_exclusions.remove("desktop")
     toc_filter_exclusions.remove("earthquake")
     toc_filter_exclusions.remove("notQuoFEM")
     toc_filter_exclusions.remove("notR2D")
+    toc_filter_exclusions.remove("docDLDB")    
     toc_filter_exclude = toc_filter_exclusions
 
     exclude_patterns.remove("**/*desktop*")
@@ -504,7 +504,7 @@ elif app_name == "PBE":
 .. |full tool name| replace:: Performance Based Engineering Application
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
 .. _PBE Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE
-.. |tool version| replace:: 3.1
+.. |tool version| replace:: 3.3
 .. |test example| replace:: :ref:`pbdl-0001`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-PBE`
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
@@ -519,7 +519,7 @@ elif app_name == "PBE":
 elif app_name == "EE-UQ":
     project = "Earthquake Engineering with Uncertainty Quantification"
     author = (
-        "Frank McKenna, Wael Elhaddad, Michael Gardner, Chaofeng Wang, Adam Zsarnóczay"
+        "Frank McKenna, Kuanshi Zhong, Michael Gardner, Adam Zsarnoczay, Sang-ri Yi, Aakash Bangalore Satish, Charles Wang, Wael Elhaddad"
     )
 
     tags.add("desktop_app")
@@ -548,7 +548,7 @@ elif app_name == "EE-UQ":
 
     rst_prolog += """
 .. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application (EE-UQ)
-.. |tool version| replace:: 3.4
+.. |tool version| replace:: 3.5
 .. |test example| replace:: :ref:`eeuq-0001`
 .. _EE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/EE_UQ
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
@@ -642,7 +642,7 @@ elif app_name == "WE-UQ":
     rst_prolog += f"""
 .. |full tool name| replace:: Wind Engineering with Uncertainty Quantification Application
 .. |test example| replace:: :ref:`weuq-0001`
-.. |tool version| replace:: 3.1
+.. |tool version| replace:: 3.2
 .. _WE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=5.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-WE`
@@ -859,7 +859,7 @@ if sync_examples:
             example_config = yaml.load(f,Loader=yaml.Loader)["HydroUQ"]
     # Load the `sync_files` routine from ./modules/sync_files.py
     from sync_files import sync_files
-    if app_name == "R2DToolSkip":
+    if app_name == "R2DTool":
         sync_files(
         src_dir=os.path.abspath(f"../../R2DExamples"),
         dst_dir="common/user_manual/examples/desktop",
