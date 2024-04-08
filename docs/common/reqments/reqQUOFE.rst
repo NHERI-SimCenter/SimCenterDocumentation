@@ -11,10 +11,10 @@ quoFEM Requirements
 -------------------
 
 .. csv-filter:: Requirements - QF
-  :header-rows: 1
   :file: generalQUO-FEM.csv
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 5
+  :header: "#", "Description", "Source", "Priority", "Status", "Implementation"
 
 
 .. include:: key.rst
