@@ -26,7 +26,7 @@ This example presents a coupled damage assessment for hurricane wind and water i
       :align: center
 
 
-#. **HAZ** Now, in the hazard panel, the **User Specified Wind Field** option is selected, which allows for the use of pre-generated hurricane wind field scenarios. The following figure shows the relevant example files, which are now entered in this pane. The peak wind speed is used as the intensity measure to quantify the potential hurricane effects.
+#. **HAZ** Now, in the hazard panel, the **User Specified Hurricane** option is selected, which allows for the use of pre-generated hurricane wind field scenarios. The following figure shows the relevant example files, which are now entered in this pane. The peak wind speed is used as the intensity measure to quantify the potential hurricane effects.
 
    .. figure:: figures/r2dt-0007-HAZ.png
       :width: 600px
@@ -57,7 +57,7 @@ This example presents a coupled damage assessment for hurricane wind and water i
       :width: 600px
       :align: center
 
-#. **DL** The damage and loss panel is now used to configure the **Pelicun** backend. The **HAZUS MH EQ HU** damage and loss method is selected and configured as shown in the following figure:
+#. **DL** The damage and loss panel is now used to configure the **Pelicun3** backend. The **HAZUS MH EQ HU** damage and loss method is selected and configured as shown in the following figure:
 
    .. figure:: figures/r2dt-0007-DL.png
       :width: 600px

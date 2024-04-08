@@ -466,7 +466,7 @@ The **Intensity Measure and Period Points** pane, shown in :numref:`fig-R2DEQSSI
 
 	- **Intensity Measure Type:** Type of intensity measure. The Spectral Acceleration (SA) and Peak Ground Acceleration (PGA) intensity measures are available.
 	- **Period Points:** List of periods, in seconds, that are used in the ground motion selection procedure.
-	
+The units of the PGA and SA estimated in R2D are the gravitational constant (g) and the unit of PGV is centimeter per second (cm/s).
 .. _fig-R2DEQSSIMPane:
 
 .. figure:: figures/R2DEQSSIMPane.png
@@ -500,12 +500,14 @@ Spatial Correlation Models
 This is where the user selects the spatial correlation models, and where the user defines the minimum and maximum scaling factors that are used in ground motion selection. Shown at the top of :numref:`fig-R2DEQSSCorrScalePane`, the user has the option to select the Intra- and Inter-event Spatial Correlation Models. Spatial correlation ensures that ground motions at different locations will share similar characteristics. The following Inter-event Spatial Correlation Models are available:
 
 	- Baker & Jayaram (2008) [Jayaram08]_
+	- Baker & Bradley (2017) [BakerBradley17]_
 
 and the following Intra-event Spatial Correlation Models are available:
 
 	- Markhvida et al. (2017) [Markhvida17]_
 	- Jayaram & Baker (2009) [Jayaram09]_
 	- Loth & Baker (2013) [Loth13]_
+	- Du & Ning (2021) [DuNing2021]_
 
 Special thanks to Dr. Anne Hulsey for sharing the python package `seaturtles <https://github.com/annehulsey/seaturtles>`_, especially for the method of computing the regional ground motion intensity using the Markhvida et al. (2017) and Baker & Jayaram (2008) correlation models. 
 
@@ -535,7 +537,110 @@ Special thanks to Dr. Anne Hulsey for sharing the python package `seaturtles <ht
    Loth, C., & Baker, J. W. (2013). A spatial cross‐correlation model of spectral accelerations at multiple periods. Earthquake Engineering & Structural Dynamics, 42(3), 397-417.
 .. [Markhvida17]
    Markhvida, M., Ceferino, L., & Baker, J. W. (2018). Modeling spatially correlated spectral accelerations at multiple periods using principal component analysis and geostatistics. Earthquake Engineering & Structural Dynamics, 47(5), 1107-1123.
+.. [BakerBradley17]
+   Baker, J. W., & Bradley, B. A. (2017). Intensity measure correlations observed in the NGA-West2 database, and dependence of correlations on rupture and site parameters. Earthquake Spectra, 33(1), 145-156.
+.. [DuNing2021]
+   Du, W., & Ning, C. L. (2021). Modeling spatial cross-correlation of multiple ground motion intensity measures (SAs, PGA, PGV, Ia, CAV, and significant durations) based on principal component and geostatistical analyses. Earthquake Spectra, 37(1), 486-504.
 
+Ground Failure Models
+**********************
+Ground failure models are selected in this tab. Fig. :numref:`fig-R2DEQSGroundFailurePanel`
+is the user interface of the ground failure models panel. Users select the ground failure sources with the
+ground failure source checkboxes. When a checkbox is checked, a ground failure tab
+(e.g., Fig. :numref:`fig-R2DEQSLiquefactionPanel` for liquefaction) will be displayed.
+The ground failure models require geospatial data input. For example, distance to water bodies and
+groundwater depth are required for several liquefaction trigging models. These geospatial
+data may be large and are not distributed with R2D by default. When any of the liquefaction
+source checkboxes are checked, R2D will check if the geospatial data exits in the R2D package.
+If they do not exist, a window like Fig. :numref:`fig-R2DEQGroundFailureDownloadWindow` will pop up.
+If you would like to use the R2D default database, please click "Yes" and wait until
+the download completes to continue analyses. If you do not plan to use the R2D 
+the default database, you can click "Cancel" and provide the database with custom 
+GIS files or define the geospatial values in the Site File loaded Site Definition Panel.
+
+
+Currently, only the permanent ground
+deformation (PGD) induced by liquefaction can be estimated. The PGD induced by landslide and earthquake fault displacement will be added in future releases.
+The estimated horizontal ground deformation (PGD_h) and vertical ground deformation (PGD_v) are in the units of meter (m).
+
+  	.. _fig-R2DEQSGroundFailurePanel:
+
+  	.. figure:: figures/R2DEQSGroundFailurePanel.png
+  	  :align: center
+  	  :figclass: align-center
+
+  	  Ground Failure Models Panel.
+
+  	.. _fig-R2DEQGroundFailureDownloadWindow:
+
+  	.. figure:: figures/R2DEQGroundFailureDownloadWindow.png
+  	  :scale: 50%
+  	  :align: center
+  	  :figclass: align-center
+
+  	  Ground Failure Data Download Dialog.
+
+Liquefaction-induced Ground Failure
++++++++++++++++++++++++++++++++++++
+**Liquefaction Triggering Models** |br|
+To estimate liquefaction-induced PGD_h and PGD_v, a triggering model, a lateral spreading model, and a settlement model need to be selected.
+The triggering, lateral spreading and settlement suitable for regional-scale liquefaction are summarized and 
+implemented in the `OpenSRA project <https://peer.berkeley.edu/opensra>`_. The OpenSRA Project is a multi-year study to develop open-source seismic risk assessment tools for natural gas infrastructure.
+The theories of the ground failure models are described in detail in the `OpenSRA report <https://peer.berkeley.edu/sites/default/files/cec_opensra_task-b_liquefaction-landslide_final_clean_web.pdf>`_.
+
+The liquefaction triggering model estimates the liquefaction susceptibility (liq_susc) and liquefaction probability (liq_prob)
+at the sites defined in the **Site Definition Panel**. The following liquefaction-triggering models are available:
+	- Zhu et al. (2017) [Zhu2017]_
+	- Hazus (2020) [Hazus2020]_
+	- Zhu et al. (2017) [Zhu2017]_ susceptibility and Hazus (2020) [Hazus2020]_ probability
+The [Zhu2017]_ triggering model uses geospatial proxies (e.g., distance to water body, groundwater depth) to estimate
+liquefaction susceptibility and liquefaction probability. The [Hazus2020]_ uses geologic unit information to define liquefaction susceptibility. The liquefaction probability
+is then calculated based on the liquefaction susceptibility and ground shaking intensities as suggested in section 4.2.2.1.2 of [Hazus2020]_.
+The Zhu et al. (2017) [Zhu2017]_ susceptibility and Hazus (2020) [Hazus2020]_ probability method uses the liquefaction susceptibility
+derived from geospatial proxies as suggested in [Zhu2017]_ and then use the equations in [Hazus2020]_ to evaluate liquefaction probability.
+
+To use the liquefaction triggering models, GIS raster or vector files are required as inputs.
+R2D provides several default files that can be used as baselines to estimate liquefaction triggering
+in California. The GIS files are produced and published by the `OpenSRA project <https://peer.berkeley.edu/opensra>`_.
+They are on state-wide scales and may introduce uncertainties due to limited resolutions.
+Users can provide other raster files, or define the proxy values in the Site File (.csv) if
+preferred.
+
+The output of the triggering model is the liquefaction susceptibility (liq_susc) and liquefaction
+probability (liq_prob). The liq_susc is defined in section 4.2.2.1.1 of [Hazus2020]_ and is
+encoded with integer numbers, with 0 standing for "None" and 5 standing for "Very High". liq_susc and liq_prob
+will only be saved in the final output if the checkboxes at the bottom of the triggering model selection are checked.
+
+.. note:: Possible Errors: 
+	Besides the geospatial proxies and geologic information, the triggering models also
+	require peak ground acceleration (PGA), peak ground velocity (PGV), and earthquake magnitude. As a result,
+	PGA and PGV need to be selected in the **Ground Motion Models** panel. Otherwise, the backend Python script will
+	return an error and a message of "At least one of 'PGA' and 'PGV' is missing in the selected intensity measures."
+	will be printed.
+**Lateral Spreading and Settlement Models** |br|
+The liquefaction lateral spreading and settlement model available in R2D is:
+	- Hazus (2020) [Hazus2020]_
+The details of the models are described in 4.2.2.1.3.1 of [Hazus2020]_ and `OpenSRA report <https://peer.berkeley.edu/sites/default/files/cec_opensra_task-b_liquefaction-landslide_final_clean_web.pdf>`_.
+
+The units of the lateral spreading ground deformation (liq_PGD_h) and settlement ground deformation (liq_PGD_v) estimated with R2D is meter (m).
+liq_PGD_h and liq_PGD_v will be saved in the final output if the checkboxes below the lateral spreading and settlement selection combo box are checked.
+
+The output will also contain fields of "PGD_h" and "PGD_v". Currently, they are equal to "liq_PGD_h" and "liq_PGD_v" and they will be 
+the aggregated PGD induced by liquefaction, landslide, and fault displacement in future releases.
+
+
+.. [Zhu2017]
+   Zhu, J., Baise, L. G., & Thompson, E. M. (2017). An updated geospatial liquefaction model for global application. Bulletin of the Seismological Society of America, 107(3), 1365-1385.
+.. [Hazus2020]
+   FEMA (2020). Hazus Earthquake Model Technical Manual. 
+
+.. _fig-R2DEQSLiquefactionPanel:
+
+  	.. figure:: figures/R2DEQSLiquefactionPanel.png
+  	  :align: center
+  	  :figclass: align-center
+
+  	  Ground Failure Models Panel.
 
 Ground Motion Record Selection
 ******************************
