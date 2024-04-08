@@ -37,7 +37,7 @@ RV Requirements
 ---------------
 
 .. csv-filter:: Requirements - CR
-  :header-rows: 1
+  :header: "#", "Description", "Source", "Priority", "Status", "Implementation"
   :file: _out/RandomVariables.csv
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 5
@@ -49,7 +49,7 @@ Common Research Application Requirements
 ----------------------------------------
 
 .. csv-filter:: Requirements - CR
-  :header-rows: 1
+  :header: "#", "Description", "Source", "Priority", "Status", "Implementation"
   :file: _out/Common.csv
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 5
