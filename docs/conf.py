@@ -467,7 +467,8 @@ elif app_name == "PBE":
     project = "Performance Based Engineering Application"
 
     author = (
-        "Adam Zsarnóczay, Frank McKenna, Stevan Gavrilovic, Kuanshi Zhong, Chaofeng Wang, Michael Gardner, Wael Elhaddad"
+        "Adam Zsarnoczay, Frank McKenna, Charles Wang, Stevan Gavrilovic, Michael Gardner, Sang-ri Yi, Aakash Bangalore Satish, Wael\
+ Elhaddad, & Peter Mackenzie-Helnwein"
     )
     sync_examples = True
 
@@ -504,7 +505,7 @@ elif app_name == "PBE":
 .. |full tool name| replace:: Performance Based Engineering Application
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
 .. _PBE Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE
-.. |tool version| replace:: 3.3
+.. |tool version| replace:: 3.4
 .. |test example| replace:: :ref:`pbdl-0001`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-PBE`
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
@@ -519,7 +520,8 @@ elif app_name == "PBE":
 elif app_name == "EE-UQ":
     project = "Earthquake Engineering with Uncertainty Quantification"
     author = (
-        "Frank McKenna, Kuanshi Zhong, Michael Gardner, Adam Zsarnoczay, Sang-ri Yi, Aakash Bangalore Satish, Charles Wang, Wael Elhaddad"
+        "Frank McKenna, Kuanshi Zhong, Michael Gardner, Adam Zsarnoczay, Sang-ri Yi, Aakash Bangalore Satish, Charles Wang, Wael\
+ Elhaddad & Peter Mackenzie-Helnwein"
     )
 
     tags.add("desktop_app")
