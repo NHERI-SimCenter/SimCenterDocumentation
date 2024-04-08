@@ -13,21 +13,18 @@ Examples
 
    The following are a few examples showing the usage of quoFEM. Video companions showing these examples are also provided for selected problems. The files for the examples are available on Github.
 
-
 .. only:: EEUQ_app
 
    The following are a few examples showing the usage of EE-UQ. Video companions showing these examples are also provided. The files for the examples are available in Github.
-
- .. only:: Hydro
-
-   The following are a few examples showing the usage of Hydro-UQ. The files for the examples are available on Github.
-   
 
 .. only:: WEUQ_app
 
    The following are a few examples showing the usage of WE-UQ. The files for the examples are available on Github.
 
+ .. only:: HydroUQ_app
 
+   The following are a few examples showing the usage of Hydro-UQ. The files for the examples are available on `Github <https://github.com/NHERI-SimCenter/HydroUQ/tree/master/Examples>`_.
+   
 .. only:: PBE_app
 
    The following are a few examples showing the usage of PBE. The files for the examples are available on Github. The scope of these examples is limited to damage and loss assessment. The usage of the tool for response estimation is identical to that of the EE-UQ application. Examples of those features are available in the `EE-UQ Documentation <https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/examples/desktop/examples.html>`_.

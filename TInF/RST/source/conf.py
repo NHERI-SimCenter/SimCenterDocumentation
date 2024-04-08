@@ -30,7 +30,7 @@ rst_prolog = """
 .. |app| replace:: Turbulence Inflow Tool
 .. |githubLink| replace:: `Turbulence Inflow Tool Github page`_
 .. _Turbulence Inflow Tool Github page: https://github.com/NHERI-SimCenter/TurbulenceInflowTool
-.. |appLink| replace:: `Turbulence Inflow Tool`_
+.. |appLink| replace:: `Turbulence Inflow Tool page`_
 .. _Turbulence Inflow Tool page: https://simcenter.designsafe-ci.org/research-tools/tinf/
 .. |messageBoard| replace:: `Message Board`_
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=5.0
