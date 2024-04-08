@@ -115,11 +115,12 @@
    :pelicun:common/user_manual/installation/pelicun/installation
 
    :quoFEM:common/user_manual/about/quoFEM/quoFEMtutorial
-   :Hydro:common/user_manual/about/Hydro/HydroUQtutorial
+   .. :Hydro:common/user_manual/about/Hydro/HydroUQtutorial
 
    :EEUQ:common/user_manual/usage/desktop/usage
    :WEUQ:common/user_manual/usage/desktop/usage
    :Hydro:common/user_manual/usage/desktop/usage
+
    :PBE:common/user_manual/usage/desktop/usage
    :quoFEM:common/user_manual/usage/desktop/usage
    :R2D:common/user_manual/usage/desktop/usage
@@ -128,7 +129,10 @@
 
    :R2D:common/user_manual/usage/desktop/R2DTool/tools
    :WEUQ:common/user_manual/usage/desktop/wind/tools
-	  
+	:Hydro:common/user_manual/usage/desktop/hydro/tools
+
+
+
    :EEUQ:common/user_manual/examples/desktop/examples
    :WEUQ:common/user_manual/examples/desktop/examples
    :PBE:common/user_manual/examples/desktop/examples
@@ -160,7 +164,9 @@
    common/user_manual/bugs
    :quoFEM:common/user_manual/dcv/quoFEM/quoFEM
    :quoFEM:common/user_manual/usage/desktop/quoFEM/usage_video
-   :Hydro:common/user_manual/dcv/Hydro/HydroUQ
+   .. :Hydro:common/user_manual/dcv/Hydro/HydroUQ
+
+
    :Hydro:common/user_manual/usage/desktop/hydro/helpvideo
    .. :Hydro:common/user_manual/user_inputs_documentation/User_Input_Documentation_Tables
 
@@ -207,6 +213,7 @@
    :Hydro:common/technical_manual/desktop/hydro/cfdsolver/cfdsolver
    :Hydro:common/technical_manual/desktop/hydro/verification/verification
 
+
    :pelicun:common/technical_manual/pelicun/background/background
    :pelicun:common/technical_manual/pelicun/verification/verification
 
@@ -224,15 +231,15 @@
 
    :EEUQ:common/developer_manual/how_to_extend/desktop/how_to_extend
    :WEUQ:common/developer_manual/how_to_extend/desktop/how_to_extend
-   :Hydro:common/developer_manual/how_to_extend/desktop/how_to_extend
    :quoFEM:common/developer_manual/how_to_extend/desktop/how_to_extend
    :R2D:common/developer_manual/how_to_extend/desktop/how_to_extend
+   .. :Hydro:common/developer_manual/how_to_extend/desktop/how_to_extend
 
    :EEUQ:common/developer_manual/verification/desktop/verification
    :WEUQ:common/developer_manual/verification/desktop/verification
-   :Hydro:common/developer_manual/verification/desktop/verification
    :quoFEM:common/developer_manual/verification/desktop/verification
    :R2D:common/developer_manual/verification/desktop/verification
+   .. :Hydro:common/developer_manual/verification/desktop/verification
 
    :desktop_app:common/developer_manual/coding_style/desktop/coding_style
    :pelicun:common/developer_manual/coding_style/pelicun/coding_style
