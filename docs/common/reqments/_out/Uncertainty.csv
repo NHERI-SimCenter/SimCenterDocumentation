@@ -14,7 +14,7 @@ US.2, Ability to Construct GP Regression Model from Input-output Dataset, SP, M,
 US.3, Ability to use Surrogate Model for UQ Analysis, SP, M, InProgress, _, _, _, _, _, _
 US.4, Ability to Save the Surrogate Model, SP, M, InProgress, _, _, _, _, _, _
 US.5, Ability to Use Adaptive Design of Experiments, SP, M, InProgress, _, _, _, _, _, _
-US.6, Ability to Asses Reliability of Surrogate Model, SP, M, Implemented, _, _, _, _, _, _
+US.6, Ability to Assess Reliability of Surrogate Model, SP, M, Implemented, _, _, _, _, _, _
 US.7, Ability to Build Surrogate Under Stochastic Excitation, SP, M, InProgress, _, _, _, _, _, _
 US.8, Ability to Use Physics-Informed Machine Learning, SP, M, _, _, _, _, _, _, _
 UN.1, Ability to use Gauss-Newton solvers for parameter estimation, SP, M, Implemented, _, _, _, _, _, _
