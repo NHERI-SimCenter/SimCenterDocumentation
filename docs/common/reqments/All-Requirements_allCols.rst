@@ -97,8 +97,8 @@ Surge/Tsunami Loading Requirements
 ----------------------------------
 
 .. csv-filter:: Requirements - HL
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2D", "HydroUQ"
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4
   :file: HydroLoading.csv
 
