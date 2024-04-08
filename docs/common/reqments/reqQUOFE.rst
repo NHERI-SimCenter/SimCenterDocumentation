@@ -12,8 +12,7 @@ quoFEM Requirements
 
 .. csv-filter:: Requirements - QF
   :header-rows: 1
-  :file: _out/Applications.csv
-  :include: {0: 'QF.*'}
+  :file: generalQUO-FEM.csv
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 5
 
