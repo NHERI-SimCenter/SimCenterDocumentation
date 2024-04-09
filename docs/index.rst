@@ -156,7 +156,7 @@
    :WEUQ:common/reqments/WEUQ
    :PBE:common/reqments/PBE
    :R2D:common/reqments/R2D
-   :quoFEM:common/reqments/reqQUOFEM
+   :quoFEM:common/reqments/reqQUOFE
    :pelicun:common/reqments/reqPelicun
    :Hydro:common/reqments/HydroUQ
 
