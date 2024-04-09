@@ -108,14 +108,12 @@ UQ Requirements
 ---------------
 
 .. csv-filter:: Requirements - Uncertainty Quantification Methods and Variables
-  :header-rows: 1,
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2D"
   :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10
   :file: _out/Uncertainty.csv
 
 
 .. include:: key.rst
-
-.. :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2D"
 
 RV Requirements
 ---------------
