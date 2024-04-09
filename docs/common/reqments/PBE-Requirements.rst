@@ -4,10 +4,11 @@
 General Requirements
 --------------------
 
-.. csv-table:: PBE Requirements - General
+.. csv-filter:: PBE Requirements - General
   :header: "#", "Description", "Source", "Priority", "Version"
   :widths: 10, 60, 10, 10, 10	   
   :file: generalPBE.csv
+  :included_cols: 0, 1, 2, 3, 4
 
 .. include:: key.rst
 	     

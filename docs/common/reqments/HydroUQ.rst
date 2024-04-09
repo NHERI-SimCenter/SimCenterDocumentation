@@ -10,10 +10,10 @@ HydroUQ Requirements - General
 -----------------------
 The following are the requirements for response of single structure due to wave or hydrodynamic loading effects of water caused by a tsunami or coastal inundation during a hurricane. The requirements are being met by the Hydro-UQ application. All requirements in this section are related to work in WBS 1.3.7.
 
-.. csv-table:: Requirements - General
-  :header: "#", "Description", "Source", "Priority", "Version", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2DTool", "HydroUQ"
-  :widths: 10, 60, 10, 10, 10, 10, 10, 10, 10, 10, 10
-  :included_cols: 0,1,2,3,4,11
+.. csv-filter:: Requirements - General
+  :header: "#", "Description", "Source", "Priority", "Version", "WBS"
+  :widths: 10, 60, 10, 10, 10, 10
+  :included_cols: 0,1,2,3,4,5
   :file: generalHydro.csv
 
 .. include:: key.rst
