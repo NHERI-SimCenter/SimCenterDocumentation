@@ -18,7 +18,7 @@ Loading Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0,1,2,3,4,6
-  :include: {0: 'EL.*'}
+  :include: {0: '#|\**EL.*'}
 
 
 .. include:: key.rst
