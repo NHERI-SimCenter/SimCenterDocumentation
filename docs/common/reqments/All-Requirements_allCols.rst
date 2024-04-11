@@ -1,4 +1,4 @@
-The following is the list of all requirements across all the tools. It is helpful to view an abstract hierarchy of the tools, showing **R2D** at the top and the components at the bottom. Each application pulls in many of the requirements from the others. For Example PBE, builds upon EE-UQ. It has it;'s own requirements, i.e. DL, but includes the loading, modeling and analysis requirements from EE-UQ. It specializes the UQ requirement, in that it only incorporates the sampling option. One set of requirements not shown in the figure is CR, a listing of all the common functionalty required of all the applications.
+The following is the list of all requirements across all the tools. It is helpful to view an abstract hierarchy of the tools, showing **R2D** at the top and the components at the bottom. Each application pulls in many of the requirements from the others. For example, PBE builds upon EE-UQ. It has its own requirements, i.e. DL, but includes the loading, modeling and analysis requirements from EE-UQ. It specializes the UQ requirement, in that it only incorporates the sampling option. One set of requirements not shown in the figure is CR, a listing of all the common functionality required of all the applications.
 
 
 R2D
@@ -7,6 +7,7 @@ R2D
 .. csv-filter:: Requirements - R2D
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4
   :file: R2D.csv
 
 .. include:: key.rst
@@ -17,6 +18,7 @@ PBE
 .. csv-filter:: Requirements - PBE
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4
   :file: generalPBE.csv
 
 .. include:: key.rst
@@ -27,6 +29,7 @@ WE-UQ Requirements
 .. csv-filter:: Requirements - WE
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4
   :file: generalWE.csv
 
 .. include:: key.rst
@@ -38,6 +41,7 @@ Hydro-UQ Requirements
 .. csv-filter:: Requirements - H
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4
   :file: generalHydro.csv
 
 .. include:: key.rst
@@ -49,6 +53,7 @@ EE-UQ Requirements
 .. csv-filter:: Requirements - EE
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4
   :file: generalEEUQ.csv
 
 .. include:: key.rst
@@ -59,6 +64,7 @@ quoFEM Requirements
 .. csv-filter:: Requirements - QF
   :header: "#", "Description", "Source", "Priority", "Status"
   :widths: 10, 50, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4
   :file: generalQUO-FEM.csv
 
 .. include:: key.rst
@@ -91,8 +97,8 @@ Surge/Tsunami Loading Requirements
 ----------------------------------
 
 .. csv-filter:: Requirements - HL
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2D", "HydroUQ"
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4
   :file: HydroLoading.csv
 
@@ -108,7 +114,6 @@ UQ Requirements
 
 
 .. include:: key.rst
-
 
 RV Requirements
 ---------------

@@ -53,15 +53,14 @@ remotely, and finally view the results of the simulation.
 
 .. only:: Hydro
 
-	  
-   .. _figGenericUI-Hydro:
+   .. _figGenericUI-HydroUQ:
 
-   .. figure:: figures/HydroPanel.png
+   .. figure:: figures/HydroPanel_MPM.png
 	   :align: center
 	   :figclass: align-center
 
 	   The |app| user interface.
-   
+
 
 .. only:: R2D_app
 
@@ -110,25 +109,27 @@ The main window of the UI is made up from the following areas:
       :EEUQ:GI
       :WEUQ:GI
       :PBE:GI
-      :Hydro:GI
       :EEUQ:SIM
       :WEUQ:SIM
-      :Hydro:SIM
       :PBE:SIM
       :wind:Assets
       :EEUQ:earthquake/earthquakeEvents.rst
       :PBE:earthquake/earthquakeEvents.rst
+      :wind:wind/WindEvents
+      :wind:FEM
       :WEUQ:wind/WindEvents
       :WEUQ:FEM
-      :Hydro:hydro/EVT.rst
       :EEUQ:FEM
-      :Hydro:FEM
       :PBE:FEM
       :quoFEM:quoFEM/FEM
+      :Hydro:GI
+      :Hydro:SIM
+      :Hydro:hydro/EVT
+      :Hydro:FEM
       RV
+      :Hydro:response/EDP
       :EEUQ:response/EDP
       :WEUQ:response/EDP
-      :Hydro:response/EDP
       :quoFEM:quoFEM/QuantitiesOfInterest
       :PBE:PBE/DL
       :PBE:PBE/performance
