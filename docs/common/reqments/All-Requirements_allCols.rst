@@ -146,8 +146,9 @@ Analysis Requirements
 ---------------------
 
 .. csv-filter:: Requirements - ANA
-  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2D"
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
   :file: _out/Analysis.csv
 
 .. include:: key.rst
@@ -157,10 +158,10 @@ Damage & Loss Requirements
 --------------------------
 
 .. csv-filter:: Requirements - DL
-  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2D"
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
   :file: _out/Damage.csv
-  :include: {0: 'DL\..*'}
 
 .. include:: key.rst
 
@@ -169,8 +170,9 @@ Recovery Requirements
 ---------------------
 
 .. csv-filter:: Requirements - REC
-  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2D"
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
   :file: _out/Recovery.csv
 
 .. include:: key.rst
@@ -180,8 +182,9 @@ Common Research Application Requirements
 ----------------------------------------
 
 .. csv-filter:: Requirements - CR
-  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2D"
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
   :file: _out/Common.csv
 
 .. include:: key.rst
@@ -223,10 +226,10 @@ DL Database
 
 
 .. csv-filter:: Requirements - DLD
-  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "PBE", "R2D"
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
   :file: _out/Damage.csv
-  :include: {0: 'DLD.*'}
 
 .. include:: key.rst
 
