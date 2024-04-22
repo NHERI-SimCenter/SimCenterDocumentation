@@ -5,10 +5,10 @@ General Requirements
 --------------------
 
 .. csv-filter:: PBE Requirements - General
-  :header: "#", "Description", "Source", "Priority", "Version"
-  :widths: 10, 60, 10, 10, 10	   
+  :header: "#", "Description", "Source", "Priority", "Status", "Implementation"
+  :widths: 10, 60, 10, 10, 10, 10  
   :file: generalPBE.csv
-  :included_cols: 0, 1, 2, 3, 4
+  :included_cols: 0, 1, 2, 3, 4, 5
 
 .. include:: key.rst
 	     
@@ -19,10 +19,11 @@ General Requirements
 Damage & Loss Requirements
 --------------------------
 
-.. csv-table:: PBE Requirements - Damage & Loss
-  :header: "#", "Description", "Source", "Priority", "Version"
-  :widths: 10, 60, 10, 10, 10	   
+.. csv-filter:: PBE Requirements - Damage & Loss
+  :header: "#", "Description", "Source", "Priority", "Status", "Implementation"
+  :widths: 10, 60, 10, 10, 10, 10
   :file: DL.csv
+  :included_cols: 0, 1, 2, 3, 4, 5
 
 .. include:: key.rst	 
 

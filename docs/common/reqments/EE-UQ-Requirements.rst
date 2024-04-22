@@ -18,7 +18,7 @@ Loading Requirements
   :file: _out/Loading.csv
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
-  :included_cols: 0,1,2,3,4,6
+  :included_cols: 0, 1, 2, 3, 4, 6
   :include: {0: '#|\**EL.*'}
 
 

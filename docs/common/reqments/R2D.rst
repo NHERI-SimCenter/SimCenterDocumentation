@@ -46,9 +46,11 @@ Surge/Tsunami Loading Requirements
 ----------------------------------
 
 .. csv-filter:: Requirements - HL
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 50, 10, 10, 10	   
-  :file: HydroLoading.csv
+  :header: "#", "Description", "Source", "Priority", "Status", "Implementation"
+  :widths: 10, 50, 10, 10, 10, 10
+  :included_cols: 0,1,2,3,4,8
+  :file: _out/Loading.csv
+  :include: {0: '#|\**HL.*'}
 
 .. include:: key.rst	     
 
