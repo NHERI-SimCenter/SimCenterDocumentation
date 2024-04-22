@@ -2,9 +2,10 @@
 General Requirements
 --------------------
 
-.. csv-table:: Requirements - General
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 60, 10, 10, 10
+.. csv-filter:: Requirements - General
+  :header: "#", "Description", "Source", "Priority", "Status", "Implementation"
+  :widths: 10, 50, 10, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4, 5
   :file: generalEEUQ.csv
 
 .. include:: key.rst

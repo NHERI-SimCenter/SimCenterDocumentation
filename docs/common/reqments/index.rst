@@ -6,7 +6,7 @@ Requirements Traceability Matrix
 Introduction
 ++++++++++++
 
-The SimCenter has relied on community input to drive application and educational activities. We track these inputs as requirements in our Requirements Traceability Matrix (RTM). This is a living document, which is updated at least yearly. In this document is listed the general requirements for each tool and for each tool, there is also listed the requirements for each component that is used to build up the tool. The components are as shown in the figure below, for example, EE-UQ has components of Cloud (CLD), Reliability (UQR), Sensitivity (UQS), Sampling (UQF), Modelling (MOD), Earthquake Loading (EL), and  Analysis (ANA).
+The SimCenter has relied on community input to drive application and educational activities. We track these inputs as requirements in our Requirements Traceability Matrix (RTM). This is a living document, which is updated at least yearly. In this document is listed the general requirements for each tool and for each tool, there is also listed the requirements for each component that is used to build up the tool. The components are as shown in the figure below, for example, EE-UQ has components of Cloud (CLD), Reliability (UQR), Sensitivity (UQS), Sampling (UQF), Modelling (MOD), Earthquake Loading (EL), and Analysis (ANA).
 
 .. _figRTM:
 

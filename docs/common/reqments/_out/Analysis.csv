@@ -7,5 +7,5 @@ ANA.2, Ability to know if an analysis run fails, UF, M, _, _, **core**, _, _, **
 **ANA.3**, **Ability to specify Modal Damping**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, 
 ANA.3.1, Ability to specify damping ratio as a random variable, UF, M, Implemented, _, _, _, _, _, _, _
 ANA.3.2, "When using Rayleigh Damping, ability to specify the two modes used to calculate damping parameters", UF, M, Implemented, _, _, _, _, _, 
-ANA.4, Ability to run for more than 60hours at DesignSafe, UF, D, _, _, _, _, _, _, _, 
+ANA.4, Ability to run for more than 60 hours at DesignSafe, UF, D, _, _, _, _, _, _, _, 
 ANA.5, Ability to specify the number of iterations in convergence test, UF, M, Implemented, _, _, _, _, _, _, 
