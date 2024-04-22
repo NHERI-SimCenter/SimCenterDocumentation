@@ -194,9 +194,10 @@ BRAILS
 ------
 
 .. csv-filter:: Requirements - BR
-  :header: "#", "Description", "Source", "Priority", "Status", "WBS"
+  :header: "#", "Description", "Source", "Priority", "Status", "BRAILS"
   :widths: 10, 50, 10, 10, 10, 10
-  :file: BRAILS.csv
+  :included_cols: 0, 1, 2, 3, 4, 5
+  :file: generalBRAILS.csv
 
 .. include:: key.rst
 
@@ -205,9 +206,10 @@ PELICUN
 -------
 
 .. csv-filter:: Requirements - P
-  :header: "#", "Description", "Source", "Priority", "Status", "WBS"
+  :header: "#", "Description", "Source", "Priority", "Status", "PELICUN"
   :widths: 10, 50, 10, 10, 10, 10
-  :file: requirements_pelicun_general.csv
+  :included_cols: 0, 1, 2, 3, 4, 5
+  :file: generalPELICUN.csv
 
 .. include:: key.rst
 
@@ -215,9 +217,10 @@ BE Database
 -----------
 
 .. csv-filter:: Requirements - BE
-  :header: "#", "Description", "Source", "Priority", "Status", "WBS"
+  :header: "#", "Description", "Source", "Priority", "Status", "BE"
   :widths: 10, 50, 10, 10, 10, 10
-  :file: BE.csv
+  :included_cols: 0, 1, 2, 3, 4, 5
+  :file: generalBE.csv
 
 .. include:: key.rst
 
