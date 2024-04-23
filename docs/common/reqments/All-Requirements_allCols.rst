@@ -34,7 +34,6 @@ WE-UQ Requirements
 
 .. include:: key.rst
 
-
 Hydro-UQ Requirements
 ---------------------
 
@@ -45,7 +44,6 @@ Hydro-UQ Requirements
   :file: generalHydro.csv
 
 .. include:: key.rst
-
 
 EE-UQ Requirements
 ------------------
@@ -69,7 +67,6 @@ quoFEM Requirements
 
 .. include:: key.rst
 
-
 Earthquake Loading Requirements
 -------------------------------
 
@@ -81,7 +78,6 @@ Earthquake Loading Requirements
   :included_cols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
   
 .. include:: key.rst
-
 
 Wind Loading Requirements
 -------------------------
@@ -116,7 +112,6 @@ UQ Requirements
   :included_cols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
   :file: _out/Uncertainty.csv
 
-
 .. include:: key.rst
 
 RV Requirements
@@ -129,7 +124,6 @@ RV Requirements
   :file: _out/RandomVariables.csv
 
 .. include:: key.rst
-
 
 Modeling Requirements
 ---------------------
@@ -153,7 +147,6 @@ Analysis Requirements
 
 .. include:: key.rst
 
-
 Damage & Loss Requirements
 --------------------------
 
@@ -164,7 +157,6 @@ Damage & Loss Requirements
   :file: _out/Damage.csv
 
 .. include:: key.rst
-
 
 Recovery Requirements
 ---------------------
@@ -177,7 +169,6 @@ Recovery Requirements
 
 .. include:: key.rst
 
-
 Common Research Application Requirements
 ----------------------------------------
 
@@ -189,7 +180,6 @@ Common Research Application Requirements
 
 .. include:: key.rst
 
-
 BRAILS Requirements
 -------------------
 
@@ -200,7 +190,6 @@ BRAILS Requirements
   :file: generalBRAILS.csv
 
 .. include:: key.rst
-
 
 PELICUN Requirements
 --------------------
@@ -227,7 +216,6 @@ BE Database Requirements
 DL Database Requirements
 ------------------------
 
-
 .. csv-filter:: Requirements - DLD
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10
@@ -235,7 +223,3 @@ DL Database Requirements
   :file: _out/Damage.csv
 
 .. include:: key.rst
-
-
-
-
