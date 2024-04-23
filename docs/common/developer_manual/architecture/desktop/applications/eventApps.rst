@@ -11,7 +11,7 @@ This input information is saved in an ``EVENT.json`` file, located in its corres
    :align: center
    :figclass: align-center
 
-The following options for event applications vary in the type of event, event properties, and format of the event file which it processes.
+The following options for event applications vary in the type of event, event properties, and format of the event file that it processes.
 
  
 

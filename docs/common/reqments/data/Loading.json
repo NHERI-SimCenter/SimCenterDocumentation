@@ -396,23 +396,28 @@
             "items": [
               {
                 "target": "CFD to model fluid flow around a single rigid structure",
-                "fields": ["SP", "M", "InProgress"]
+                "fields": ["SP", "M", "InProgress"],
+                "items": []
               },
               {
                 "target": "Mesh refinement around structures",
-                "fields": ["SP", "M", "InProgress"]
+                "fields": ["SP", "M", "InProgress"],
+                "items": []
               },
               {
                 "target": "CFD to model fluid flow around a single deformable structure",
-                "fields": ["SP", "M", "InProgress"]
+                "fields": ["SP", "M", "InProgress"],
+                "items": []
               },
               {
                 "target": "CFD to model fluid flow considering inflow and accumulation of fluid inside a rigid structure",
-                "fields": ["SP", "M", ""]
+                "fields": ["SP", "M", ""],
+                "items": []
               },
               {
                 "target": "CFD to model fluid flow considering inflow, accumulation, and possible outflow of fluid across a deformable structure",
-                "fields": ["SP", "M", ""]
+                "fields": ["SP", "M", ""],
+                "items": []
               }
             ]
           },
@@ -447,10 +452,10 @@
             "items": []
           },
           {
-            "target": null
+            "target": ""
           },
           {
-            "target": "",
+            "target": "Multi-scale models for wind and water flows, i.e., lower fidelity regional models with more refined models to capture local flow",
             "items": [
               {
                 "target": "Interface GeoClaw and OpenFOAM",

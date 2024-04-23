@@ -16,11 +16,11 @@ APPS = [
     "PBE",
     "EE-UQ",
     "WE-UQ",
+    "HydroUQ",
     "quoFEM",
     "BRAILS",
     "pelicun",
-    "requirements",
-    "HydroUQ",
+    "requirements"
 ]
 if app_name in APPS:
     # `make` was invoked from root, all env vars should already be defined.
@@ -30,8 +30,9 @@ else:
     #app_name = 'R2DTool'
     #app_name = 'PBE'
     #app_name = 'EE-UQ'
-    #app_name = 'WE-UQ'
-    app_name = 'quoFEM'
+    app_name = 'WE-UQ'
+    app_name = 'HydroUQ'
+    #app_name = 'quoFEM'
     #app_name = 'pelicun'
 
     os.environ["SIMDOC_APP"] = app_name
@@ -65,18 +66,18 @@ if app_name == "pelicun":
 
 # Add any Sphinx extension modules 
 extensions =  [
+    "sphinx_design",
     "sphinx-jsonschema",
     "sphinxcontrib.bibtex",
     "toctree_filter",
     "sphinxcontrib.images",
     "sphinx.ext.extlinks",
-    "sphinxcontrib.images",
     "rendre.sphinx",
     "sphinx.ext.autodoc",
     "crate.sphinx.csv",
-    "sphinx_panels",
-    #"sphinxcontrib.spelling",
-    'sphinx_toolbox.collapse',
+#    "sphinx_panels",
+#    "sphinxcontrib.spelling",
+#    'sphinx_toolbox.collapse',
     'sphinx_tabs.tabs',
 ]
 
@@ -131,6 +132,7 @@ exclude_patterns = (
         "**/Hydro*",
         "Hydro*",
         "**/hydro/*",
+        "**/*hydro*",
 
         "common/user_manual/examples/desktop/E*",  # R2D examples
         "**/R2D*",
@@ -160,6 +162,7 @@ toc_filter_exclusions = [
     "response",
     "earthquake",
     "wind",
+    "hydro",
     "R2D",
     "PBE",
     "quoFEM",
@@ -173,6 +176,7 @@ toc_filter_exclusions = [
     "S3hark",
     "pelicun",
     "docTestbeds",
+    "docDLDB"    
 ]
 
 
@@ -340,7 +344,7 @@ extlinks.update(
 examples_url = f"https://github.com/NHERI-SimCenter/HydroUQ/tree/master/Examples/"
 extlinks.update(
     {
-        f"hdro-{i:04}": (f"{examples_url}/hydro-{i:04}/%s", f"hydro-{i:04}")
+        f"hdro-{i:04}": (f"{examples_url}/hdro-{i:04}/%s", f"hdro-{i:04}") 
         for i in range(1, 20)
     }
 )
@@ -350,10 +354,12 @@ extlinks.update(
 #------------------------------------------------------
 docTestbeds = "True"
 
-if app_name == "HydroUQ":
+
+if app_name == "HydroUQ" or app_name == "Hydro":
 
     project = "Hydro-UQ"
-    author = "Ajay B Harish, Frank McKenna"
+    copyright = f"2018-{str(datetime.today().year)}, The Regents of the University of California"
+    author = "Justin Bonus, Ajay B Harish, Frank McKenna"
 
     tags.add("tsunami")
     tags.add("stormsurge")
@@ -361,6 +367,7 @@ if app_name == "HydroUQ":
     tags.add("notQuoFEM")
     tags.add("notR2D")
     tags.add("Hydro")
+    tags.add("desktop_app") # JB - Added this, but it may not be necessary
 
     toc_filter_exclusions.remove("Hydro")
     toc_filter_exclusions.remove("desktop")
@@ -369,6 +376,7 @@ if app_name == "HydroUQ":
 
     exclude_patterns.remove("**/*desktop*")
     exclude_patterns.remove("**/*earthquake*")
+    exclude_patterns.remove("**/*hydro*")
     exclude_patterns.remove("**/*response*")
     exclude_patterns.remove("**/Hydro*")
     exclude_patterns.remove("Hydro*")
@@ -383,7 +391,13 @@ if app_name == "HydroUQ":
     exclude_patterns.append("**/DakotaReliability.rst")
     exclude_patterns.append("**/DakotaParameterEstimation.rst")
     exclude_patterns.append("**/DakotaInverseProblems.rst")
+    exclude_patterns.append("**/damping.rst") # Added below to be more consistent with quofem - JB
+    exclude_patterns.append("**/desktop/hydro-*")
+    exclude_patterns.append("**/testbeds/*")
     # END TODO
+    # exclude_patterns.append("**/desktop/FEM.rst")
+    # exclude_patterns.append("**/desktop/GI.rst")
+    # exclude_patterns.append("**/desktop/SIM.rst")
 
     html_theme_options.update(
         {
@@ -396,12 +410,13 @@ if app_name == "HydroUQ":
 
     rst_prolog += f"""
 .. |full tool name| replace:: Water-borne Hazards Engineering with Uncertainty Quantification
-.. |test example| replace:: :ref:`(Under development)`
-.. |tool version| replace:: 1.0
+.. |test example| replace:: :ref:`hdro-0001`
+.. |tool version| replace:: 3.0
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0
 .. _Hydro Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ
-.. |figMissingCRT| replace:: :numref:`figMissingCRT`
-.. |contact person| replace:: Ajay B Harish (ajaybh@berkeley.edu), Frank Mckenna (fmk@berkeley.edu), NHERI SimCenter, University of California Berkeley
+.. _HydroUQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ
+.. |figMissingCRT| replace:: :numref:`figMissingCRT-HydroUQ`
+.. |contact person| replace:: Justin Bonus (bonus@berkeley.edu), Ajay B Harish (ajaybh@berkeley.edu), Frank Mckenna (fmk@berkeley.edu), NHERI SimCenter, University of California Berkeley
 
 """
 
@@ -409,7 +424,7 @@ elif app_name == "R2DTool":
 
     project = "Regional Resilience Determination Tool"
 
-    author = "Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez"
+    author = "Frank McKenna, Stevan Gavrilovic, Jinyan Zhao, Kuanshi Zhong, Adam Zsarnoczay, Barbaros Cetiner, Sang-ri Yi, Pedro Arduino, Wael Elhaddad"
     sync_examples = True
 
     tags.add("desktop_app")
@@ -451,7 +466,7 @@ elif app_name == "R2DTool":
 .. |test example| replace:: :ref:`r2dt-0006`
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0
 .. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt
-.. |tool version| replace:: 1.1
+.. |tool version| replace:: 4.1
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 
@@ -467,9 +482,9 @@ elif app_name == "PBE":
     project = "Performance Based Engineering Application"
 
     author = (
-        "Adam Zsarnóczay, Frank McKenna, Chaofeng Wang, Wael Elhaddad, Michael Gardner"
+        "Adam Zsarnóczay, Frank McKenna, Stevan Gavrilovic, Kuanshi Zhong, Chaofeng Wang, Michael Gardner, Wael Elhaddad"
     )
-    sync_examples = False
+    sync_examples = True
 
     tags.add("PBE_app")
     tags.add("desktop_app")
@@ -477,12 +492,12 @@ elif app_name == "PBE":
     tags.add("notQuoFEM")
     tags.add("notR2D")
 
-
     toc_filter_exclusions.remove("PBE")
     toc_filter_exclusions.remove("desktop")
     toc_filter_exclusions.remove("earthquake")
     toc_filter_exclusions.remove("notQuoFEM")
     toc_filter_exclusions.remove("notR2D")
+    toc_filter_exclusions.remove("docDLDB")    
     toc_filter_exclude = toc_filter_exclusions
 
     exclude_patterns.remove("**/*desktop*")
@@ -504,19 +519,22 @@ elif app_name == "PBE":
 .. |full tool name| replace:: Performance Based Engineering Application
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
 .. _PBE Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE
-.. |tool version| replace:: 3.0
+.. |tool version| replace:: 3.3
 .. |test example| replace:: :ref:`pbdl-0001`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-PBE`
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
 
 """
 
-    html_theme_options.update({"analytics_id": "UA-158130480-3"})
+    html_theme_options.update({
+        "analytics_id": "UA-158130480-3",
+        "navigation_depth": -1,
+        })
 
 elif app_name == "EE-UQ":
     project = "Earthquake Engineering with Uncertainty Quantification"
     author = (
-        "Frank McKenna, Wael Elhaddad, Michael Gardner, Chaofeng Wang, Adam Zsarnóczay"
+        "Frank McKenna, Kuanshi Zhong, Michael Gardner, Adam Zsarnoczay, Sang-ri Yi, Aakash Bangalore Satish, Charles Wang, Wael Elhaddad"
     )
 
     tags.add("desktop_app")
@@ -545,7 +563,7 @@ elif app_name == "EE-UQ":
 
     rst_prolog += """
 .. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application (EE-UQ)
-.. |tool version| replace:: 3.3
+.. |tool version| replace:: 3.5
 .. |test example| replace:: :ref:`eeuq-0001`
 .. _EE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/EE_UQ
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
@@ -590,7 +608,7 @@ elif app_name == "quoFEM":
     rst_prolog += f"""
 .. |full tool name| replace:: Quantified Uncertainty with Optimization for the Finite Element Method (quoFEM)
 .. |test example| replace:: :ref:`qfem-0001`
-.. |tool version| replace:: 3.3
+.. |tool version| replace:: 3.5
 .. _quoFEM Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
@@ -602,7 +620,7 @@ elif app_name == "quoFEM":
 elif app_name == "WE-UQ":
     project = "Wind Engineering with Uncertainty Quantification"
     # author = 'Frank McKenna'
-    author = "Frank McKenna, Peter Mackenzie-Helnwein, Wael Elhaddad, Jiawei Wan, Michael Gardner, Dae Kun Kwon, Fei Ding"
+    author = "Frank McKenna, Abiy F. Melaku, Fei Ding, Jiawei Wan, Peter Mackenzie-Helnwein, Wael Elhaddad, Michael Gardner, Dae Kun Kwon"
 
     tags.add("desktop_app")
     tags.add("response")
@@ -639,7 +657,7 @@ elif app_name == "WE-UQ":
     rst_prolog += f"""
 .. |full tool name| replace:: Wind Engineering with Uncertainty Quantification Application
 .. |test example| replace:: :ref:`weuq-0001`
-.. |tool version| replace:: 2.0
+.. |tool version| replace:: 3.2
 .. _WE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=5.0
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-WE`
@@ -789,6 +807,10 @@ elif app_name == "requirements":
 
 """
 
+elif app_name == 'Bootcamp':
+    project = 'SimCenter Programming Bootcamp'
+    copyright = '2020'
+    author = 'Peter Mackenzie-Helnwein, Frank McKenna'
 
 # -- General configuration ----------------------------------------------
 
@@ -836,7 +858,12 @@ latex_documents = [
 latex_logo = "common/figures/NSF_SimCenter_NO TEXT_SimCenter.png"
 
 
+spelling_lang='en_US'
+tokenizer_lang='en_US'
+spelling_show_suggestions=True
 spelling_word_list_filename = ["spelling.txt"]
+spelling_exclude_patterns=['ignored_*']
+
 
 # sync files for examples
 if sync_examples:
@@ -847,9 +874,15 @@ if sync_examples:
             example_config = yaml.load(f,Loader=yaml.Loader)["HydroUQ"]
     # Load the `sync_files` routine from ./modules/sync_files.py
     from sync_files import sync_files
-    sync_files(
-        src_dir=os.path.abspath(f"../../{app_name}/Examples"),
+    if app_name == "R2DTool":
+        sync_files(
+        src_dir=os.path.abspath(f"../../R2DExamples"),
         dst_dir="common/user_manual/examples/desktop",
-        config=example_config,
-    )
+        config=example_config,)
+    else:    
+        sync_files(
+            src_dir=os.path.abspath(f"../../{app_name}/Examples"),
+            dst_dir="common/user_manual/examples/desktop",
+            config=example_config,
+        )
 

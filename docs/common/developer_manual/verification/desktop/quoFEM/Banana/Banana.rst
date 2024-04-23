@@ -1,4 +1,4 @@
-.. _lblMCMCVerification:
+.. _lbl_Banana_MCMCVerification:
 
 MCMC verification example 1
 ===========================

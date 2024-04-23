@@ -277,6 +277,10 @@ latexmkrc
 # build folder of the docs
 docs/_build
 
+#auto-generated files for DB DL
+docs/common/dldb/damage
+docs/common/dldb/repair
+
 *~
 TInF/TInF-documentation\.pdf
 
@@ -298,7 +302,15 @@ docs/web
 
 build/
 
+*.swp
+
 .idea
 fmkExamples
 .DS_Store
 web/
+#examples
+_out
+docs_temp
+
+#Remove .vscode
+.vscode

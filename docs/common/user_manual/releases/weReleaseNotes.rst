@@ -1,60 +1,106 @@
-.. _lbl-release_quoFEM:
+.. _lbl-release_weuq:
 .. role:: blue
 
 *************
 Release Notes
 *************
 
+Version 3.2 (Current)
+-----------------------
 
-Major Version 2
-===============
+**Release date:** Mar. 2024
 
-   .. dropdown::    Version 2.3.0 (:blue:`Current`)
-      :open:
+**Highlights**
 
-      **Release date:** March. 2023
-
-      **Highlights**
-         #. New Digital Twin Event
-         #. New UQ options for sampling, sensitivity, reliability
-         #. Updated FEM analysis options
-         #. TInF modified so no converted negative length scales during OpenFOAM run 
-         #. Minor bug fixes
+#. Implemented a new capability to characterize Atmospheric Boundary Layer (ABL) flows using large-eddy simulation (LES).
+#. Added advanced options for pre-processing, monitoring and postprocessing CFD simulation.
+#. Integrated a new method to Turbulence Inflow Tool (TInF) tool for wind loading simulation.
+#. Supports visualization of the simulation data using Paraview on local machine. 
+#. Addressed bugs in the prior release 
+#. Created a new example to demonstrate the recently added CFD features. 
 
 
-   .. dropdown::    Version 2.2.0 
 
-      **Release date:** March. 2023
+Version 3.1
+-----------------------
 
-      Highlights
+**Release date:** Oct. 2023
 
-         #. Updated UQ methods for Sampling, Sensitivity, Reliability
-         #. Minor bug fixes
+**Highlights**
 
-
-   .. dropdown::    Version 2.0.0
-
-      **Release date:** September. 2019
-
-p      Highlights
-
-         #. Nnew UQ features
-
-         #. added the CWE interface to the tool to aid beginners perform CFD simulations
-
-         #. integrate with wind tunnel datasets
-
-         #. Updated example files
+#. Added capability to simulate wind load on building with arbitrary shape
+#. Added options to import and transform the STL geometry of the building.
+#. Fixed bugs in the prior release 
+#. Created a new CFD example to demonstrate the recently added features. 
 
 
-Major Version 1
-=================
-   .. dropdown::    Version 1.0.0
+Version 3.0.0
+---------------
 
-      **Release date:** July. 2019
+**Release date:** July. 2023
 
-      Highlights
+**Highlights**
 
-         #. Initial Release include DEDM_HRP, Stochastic Wind, Expert CFD, and Existing Wind Event applications
+1. **New CFD-based event for wind load evaluation**: 
+  a. Implemented CFD modeling option for generic isolated rectangular buildings.
+  b. Added advanced feature for boundary condition specification including inflow and ground roughness representation.  
+  c. Supports automated monitoring of integrated and cladding loads on the study building.   
+  d. Supports different turbulence modeling options including Large-Eddy Simulation (LES), Reynolds-Averaged Navier-Stokes (RANS) and Detached-Eddy Simulation (DES).
+  e. Updated solver selection (with PISO, SIMPLE and PIMPLE algorithms) and added new controls for numerical setup.  
+  f. Included support for different OpenFOAM distributions starting from v7 up to v10.
 
 
+2. **Improved GUI design** 
+  a. Implemented user-friendly GUI support for creating the CFD model
+  b. Added a new 3D model visualization window using Visualization Toolkit (VTK)
+  c. Supports reading and writing of the case files to the user's local machine 
+
+3. **Automated mesh generation** 
+  a. Integrated automated mesh generation workflow with several refinement controls.  
+  b. Added option to generate mesh on the user's local machine. 
+  
+
+4. **Examples** 
+  a. Added a new CFD example to demonstrate the recently added features with uncertainty quantification. 
+
+
+
+Version 2.3
+-------------
+
+**Release date:** March. 2022
+
+**Highlights**
+
+#. New Digital Wind Tunnel Event
+#. New UQ options for sampling, sensitivity, reliability
+#. Updated FEM analysis options
+#. Updated TInF to avoid negative length scales during OpenFOAM run 
+#. Minor bug fixes
+
+
+Version 2.0
+----------------
+
+**Release date:** September. 2019
+
+**Highlights**
+
+#. Added new UQ features
+#. Added the CWE interface to the tool to aid beginners in performing CFD simulations
+#. Integrated with wind tunnel datasets
+#. Updated example files
+
+
+
+Version 1.0 (First Release)
+-------------------
+
+**Release date:** July. 2019
+
+**Highlights**
+
+#. High-Rise with Pressure Database (DEDM_HRP)
+#. Stochastic Wind Load Generator 
+#. Expert CFD Simulation Option
+#. Selection from Existing Wind Event applications

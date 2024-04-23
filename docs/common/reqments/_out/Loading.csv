@@ -1,110 +1,119 @@
-"**BE.1**", "**Ability to use cumulative knowledge bases rather than the piecemeal individual approaches**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"BE.1.1", "Utilize Federated Databases to maintain individual databases & data sources yet provide central database resource","SP", "M", -, -, -, -, -, -, -
-"**BE.2**", "**Include National building model inventories**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"BE.2.1", "Incorporate Building data from existing datasets published by states, counties and cities","SP", "M", "InProgress", -, -, -, -, -, -
-"BE.2.2", "Ingest building data from web-scraping techniques, e.g. from zillow, county websites","SP", "M", "InProgress", -, -, -, -, -, -
-"BE.2.3", "Ingest building data using AI/ML techniques and satellite and streetview images","SP", "M", "InProgress", -, -, -, -, -, -
-"**BE.3**", "**Incorporate transportation newtwork data from existing datasets made avail through www**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"BE.3.1", "Ingest additionally needed transportation newtwork data utilizing AI/ML and satellite and streetview images","SP", "M", -, -, -, -, -, -, -
-"**BE.4**", "**Include National Models of Utility Networks**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"BE.4.1", "Incorporate utility network data from existing datasets made avail through www","SP", "M", -, -, -, -, -, -, -
-"BR.1", "Need for scalable tools that autonomously create an accurate database of all infrastructure components, including points of inter- dependency with other infrastructure components","GC", "M", "InProgress", -, -, -, -, -, -
-"BR.2", "Promote living community risk models utilizing local inventory data from various sources","GC", "M", "InProgress", -, -, -, -, -, -
-"BR.3", "Developing and sharing standardized definitions, measurement protocols and strategies for data collection","GC", "M", -, -, -, -, -, -, -
-"**BR.4**", "**Developing tools that utilize GIS information and online images, e.g. google maps, for data collection for gathering Building Information**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"BR.4.1", "Develop Framework for creating asset inventories","SP", "M", "Implemented", -, -, -, -, -, -
-"BR.4.2", "Create workflow application for building inventory from framework modules","SP", "M", "Implemented", -, -, -, -, -, -
-"BR.4.3", "Create workflow application for transportation network from framework modules","SP", "M", -, -, -, -, -, -, -
-"**BR.5**", "**Developing Modules for Asset Inventory Workflows identified in BR.4**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"BR.5.1", "Predicting if building is a soft-story building for earthquake simulations","UF", "M", "Implemented", -, -, -, -, -, -
-"BR.5.2", "Predicting First Floor Height","SP", "M", "InProgress", -, -, -, -, -, -
-"BR.5.3", "Predicting Roof Height","SP", "M", "InProgress", -, -, -, -, -, -
-"BR.5.4", "Predicting Eave Height","SP", "M", "InProgress", -, -, -, -, -, -
-"BR.5.5", "Predicting Eave Length","SP", "M", -, -, -, -, -, -, -
-"BR.5.6", "Predicting Roof Shape","SP", "M", "Implemented", -, -, -, -, -, -
-"BR.5.7", "Predicting Roof Pitch","SP", "M", "InProgress", -, -, -, -, -, -
-"BR.5.8", "Predicting Roof Material","SP", "M", "InProgress", -, -, -, -, -, -
-"BR.5.9", "Predicting Window Area","SP", "M", "InProgress", -, -, -, -, -, -
-"BR.5.10", "Predicting Building Material","SP", "M", -, -, -, -, -, -, -
-"BR.5.11", "Classifying Elevated Building","SP", "M", "Implemented", -, -, -, -, -, -
-"BR.5.12", "Predicting Structural Type","SP", "M", -, -, -, -, -, -, -
-"BR.5.13", "Predicting Occupancy Type","SP", "M", "Implemented", -, -, -, -, -, -
-"BR.5.14", "Predicting Year Built","SP", "M", "Implemented", -, -, -, -, -, -
-"BR.5.15", "Predicting Attached Garage","SP", "M", -, -, -, -, -, -, -
-"BR.5.16", "Predicting Presence of Masonry Chimney","UF", "D", -, -, -, -, -, -, -
-"**BR.6**", "**DesignSafe integration to provide access to GPU**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"BR.6.1", "Create JupyterHub notebook at DesignSafe for building asset inventory workflow usage","SP", "M", -, -, -, -, -, -, -
-"BR.6.2", "For classification done at DesignSafe, store images and meta data for BE Database","SP", "M", -, -, -, -, -, -, -
-"BR.6.3", "Create JupyterHub notebook at DesignSafe for individual modules to demonstrate immediate results","SP", "M", -, -, -, -, -, -, -
-"**BR.7**", "**Work to improve existing performance models through Continous Learning**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"BR.7.1", "Continous Learning for Year Built","SP", "M", -, -, -, -, -, -, -
-"BR.7.2", "Continous Learning for Roof Material","SP", "M", -, -, -, -, -, -, -
-"BR.8", "Work to gather data for Module Validation/Verification/Training","SP", "M", "InProgress", -, -, -, -, -, -
-"**EL.1**", "**Regional Scale Earthquake Hazard Simulation Options**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"**EL.1.1**", "**Coupling of multi-scale nonlinear models from the point of rupture through rock and soil into structure**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"EL.1.1.1", "Replacement of empirical linear models with multi-scale nonlinear models","GC", "D", -, -, -, -, -, -, -
-"EL.1.1.2", "Include both multi-scale and multi-phase (account for liquefaction)","GC", "M", -, -, -, -, -, -, -
-"EL.1.1.3", "Interface between asset and regional simulations using site response  method","SP", "M", -, -, -, -, -, -, -
-"EL.1.1.4", "Interface between asset and regional simulations using DRM method","SP", "M", -, -, -, -, -, -, -
-"EL.1.2", "Method to include both the intra-event residual and inter-event residual in simulating spatial correlated ground motion intensity measures with multiple correlation model options. Select site specific grouind motions from PEER to match target intensity","SP", "M", "Implemented", -, -, -, -, -, -
-"EL.1.3", "Use GIS-Specified Matrix of Recorded Motions","SP", "M", "Implemented", -, -, -, -, -, -
-"**EL.2**", "**Select from Multiple Local Scale Earthquake Hazard Options**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"**EL.2.1**", "**Coupling of multi-scale nonlinear models from the point of rupture through rock and soil into structure**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"EL.2.1.1", "Select using default selection options","SP", "D", "Implemented", -, -, -, -, -, -
-"EL.2.1.2", "Select using all options available at PEER site","UF", "D", "Implemented", -, -, -, -, -, -
-"EL.2.1.3", "Select using user supplied spectrum","UF", "D", "Implemented", -, -, -, -, -, -
-"EL.2.2", "Ability to select utilizing PEER NGA_West web service","SP", "D", "Implemented", -, -, -, -, -, -
-"EL.2.3", "Ability to select from list of user supplied PEER motions","SP", "M", "Implemented", -, -, -, -, -, -
-"EL.2.4", "Ability to select from list of SimCenter motions","SP", "M", "Implemented", -, -, -, -, -, -
-"EL.2.5", "Ability to use OpenSHA and selection methods to generate motions","UF", "D", -, -, -, -, -, -, -
-"EL.2.6", "Ability to Utilize Own Application in Workflow","SP", "M", "Implemented", -, -, -, -, -, -
-"**EL.2.7**", "**Ability to use Broadband**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"EL.2.7.1", "1D nonlinear site response with effective stress analysis","SP", "M", "Implemented", -, -, -, -, -, -
-"EL.2.7.2", "Nonlinear site response with bidirectional loading","SP", "M", "Implemented", -, -, -, -, -, -
-"EL.2.7.3", "Nonlinear site response with full stochastic characterization of soil layers","SP", "M", "Implemented", -, -, -, -, -, -
-"EL.2.7.4", "Nonlinear site response, bidirectional different input motions","SP", "M", -, -, -, -, -, -, -
-"**EL.2.8**", "**Ability to include Soil Structure Interaction Effects**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"EL.2.8.1", "per Vlachos, Papakonstantinou, Deodatis (2017)","SP", "D", "Implemented", -, -, -, -, -, -
-"EL.2.8.2", "per Dabaghi, Der Kiureghian (2017)","UF", "D", "Implemented", -, -, -, -, -, -
-"EL.2.9", "Ability to select from synthetic ground motions","SP", "M", "Implemented", -, -, -, -, -, -
-"EL.2.10", "Ability to select surrogate modeling events","SP", "M", -, -, -, -, -, -, -
-"**HL.1**", "**Regional Loading due to Storm Surge/Tsunami Hazards**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"HL.1.1", "Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow","SP", "D", -, -, -, -, -, -, -
-"**HL.2**", "**Local Scale Storm Surge/Tsunami Hazard Options**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"HL.2.3", "load combinations need to be developed to account for the simultaneous impacts of various flood forces, such as those generated by breaking waves, moving water and flood-borne debris","GC", -, -, -, -, -, -, -, -
-"**HL.2.6**", "**Libraries of high resolution hurricane wind/surge/wave simulations**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"HL.2.6.1", "Develop a simulation library of GeoClaw simulations","SP", "M", -, -, -, -, -, -, -
-"HL.2.6.2", "Develop a simulation library of AdCirc simulations","SP", "M", -, -, -, -, -, -, -
-"HL.2.6.3", "Develop a simulation library of OpenFOAM simulations","SP", "M", -, -, -, -, -, -, -
-"HL.2.7", "Ability to simulate with surrogate models as alternative to full 3D CFD","SP", "M", -, -, -, -, -, -, -
-"HL.2.8", "Develop digital twin with OSU wave Tank Facility","SP", "M", -, -, -, -, -, -, -
-"**WL.1**", "**Regional Loading due to Wind Hazards**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"**WL.1.1**", "**Regional Hurricane Wind Options**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"WL.1.1.1", "Utilize GIS and online to account for wind speed given local terrain, topography and nearby buildings","GC", "D", -, -, -, -, -, -, -
-"WL.1.1.2", "MultiScale Wind Models","SP", "D", -, -, -, -, -, -, -
-"WL.1.1.3", "Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow","SP", "D", -, -, -, -, -, -, -
-"WL.1.2", "Modeling and simulation for determination of wind loads due to non-synoptic winds, including tornadoes","GC", "D", -, -, -, -, -, -, -
-"WL.1.3", "Interface with NOAA","SP", "D", -, -, -, -, -, -, -
-"**WL.2**", "**Local Scale Wind Hazard Options**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"**WL.2.1**", "**Utilize Extensive wind tunnel datasets in industry and academia for wide range of building shapes**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"**WL.2.1.1**", "**Accommodate Range of Low Rise building shapes**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"WL.2.1.1.1", "Flat Shaped Roof - TPU dataset","SP", "M", "Implemented", -, -, -, -, -, -
-"WL.2.1.1.2", "Gable Shaped Roof - TPU dataset","SP", "M", -, -, -, -, -, -, -
-"WL.2.1.1.3", "Hipped Shaped Roof - TPU dataset","SP", "M", -, -, -, -, -, -, -
-"WL.2.1.2", "Accommodate Range of High Rise building","SP", "M", "InProgress", -, -, -, -, -, -
-"WL.2.1.3", "Non Isolated Low Rise Buildings - TPU dataset","SP", "M", "InProgress", -, -, -, -, -, -
-"WL.2.2", "Interface with data driven Interface with Vortex Winds DEDM-HRP Web service","SP", "M", "Implemented", -, -, -, -, -, -
-"WL.2.3", "Accommodate Data from Wind Tunnel Experiment","SP", "M", "Implemented", -, -, -, -, -, -
-"WL.2.4", "Simple CFD model generation and turbulence modeling","GC", "M", "Implemented", -, -, -, -, -, -
-"**WL.2.5**", "**Computational Fluid Dynamics tool for utilizing open source CFD software for practitioners**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**", "**-**"
-"WL.2.5.1", "Uncoupled OpenFOAM CFD model with nonlinear FEM code for building response","SP", "M", "Implemented", -, -, -, -, -, -
-"WL.2.5.2", "Coupled OpenFOAM CFD model with linear FEM code for building response","SP", "M", "InProgress", -, -, -, -, -, -
-"WL.2.5.3", "Inflow Conditions for non-synoptic winds","GC", "M", -, -, -, -, -, -, -
-"WL.2.6", "Quantification of Effects of Wind Borne Debris","GC", "D", -, -, -, -, -, -, -
-"WL.2.7", "Ability to utilize synthetic wind loading algorithms per Wittig and Sinha","SP", "D", "Implemented", -, -, -, -, -, -
-"WL.2.8", "Hazard modification by terrain, topography, and nearby buildings","GC", "D", -, -, -, -, -, -, -
-"WL.2.9", "Probabilistic methods are needed to enable site-specific and storm-type specific characterization of likely debris types, weights, and speeds","GC", "D", -, -, -, -, -, -, -
-"WL.2.10", "Joint description for hurricane wind, storm surge, and wave hazards","GC", "D", -, -, -, -, -, -, -
-"WL.2.11", "Libraries of high resolution hurricane wind/surge/wave simulations","GC", "M", -, -, -, -, -, -, -
-"WL.2.12", "Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow","SP", -, -, -, -, -, -, -, -
-"WL.2.13", "Ability to select surrogate modeling events","SP", "M", -, -, -, -, -, -, -
+**BE.1**, **Ability to use cumulative knowledge bases rather than the piecemeal individual approaches**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
+BE.1.1, Utilize Federated Databases to maintain individual databases & data sources yet provide central database resource, SP, M, _, _, _, _, _, _, _, , 
+**BE.2**, **Include National building model inventories**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, _, 
+BE.2.1, "Incorporate Building data from existing datasets published by states, counties and cities", SP, M, InProgress, _, _, _, _, _, _, _
+BE.2.2, "Ingest building data from web-scraping techniques, e.g. from Zillow, county websites", SP, M, InProgress, _, _, _, _, , 
+BE.2.3, Ingest building data using AI/ML techniques and satellite and street view images, SP, M, InProgress, _, _, _, _, _, _, , 
+**BE.3**, **Incorporate transportation network data from existing datasets made avail through www**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
+BE.3.1, Ingest additionally needed transportation network data utilizing AI/ML and satellite and street view images, SP, M, _, _, _, _, _, _, _, , 
+**BE.4**, **Include National Models of Utility Networks**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
+BE.4.1, Incorporate utility network data from existing datasets made avail through www, SP, M, _, _, _, _, _, _, _, _, 
+BR.1, "Need for scalable tools that autonomously create an accurate database of all infrastructure components, including points of inter-dependency with other infrastructure components", GC, M, InProgress, _, _, _, _, _, , ,
+BR.2, Promote living community risk models utilizing local inventory data from various sources, GC, M, InProgress, _, _, _, _, _, _, _, 
+BR.3, "Developing and sharing standardized definitions, measurement protocols and strategies for data collection", GC, M, _, _, _, _, _, _, **_**, **_**
+**BR.4**, "**Developing tools that utilize GIS information and online images, e.g. google maps, for data collection for gathering Building Information**", **_**, **_**, **_**, **_**, **_**, **_**, **_**, , , ,
+BR.4.1, Develop Framework for creating asset inventories, SP, M, Implemented, _, _, _, _, _, _, , 
+BR.4.2, Create workflow application for building inventory from framework modules, SP, M, Implemented, _, _, _, _, _, _, , 
+BR.4.3, Create workflow application for transportation network from framework modules, SP, M, _, _, _, _, _, _, _, , 
+**BR.5**, **Developing Modules for Asset Inventory Workflows identified in BR.4**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
+BR.5.1, Predicting if a building is a soft-story building for earthquake simulations, UF, M, Implemented, _, _, _, _, _, _, , 
+BR.5.2, Predicting First Floor Height, SP, M, InProgress, _, _, _, _, _, _, , 
+BR.5.3, Predicting Roof Height, SP, M, InProgress, _, _, _, _, _, _, , 
+BR.5.4, Predicting Eave Height, SP, M, InProgress, _, _, _, _, _, _, , 
+BR.5.5, Predicting Eave Length, SP, M, _, _, _, _, _, _, _, , 
+BR.5.6, Predicting Roof Shape, SP, M, Implemented, _, _, _, _, _, _, , 
+BR.5.7, Predicting Roof Pitch, SP, M, InProgress, _, _, _, _, _, _, , 
+BR.5.8, Predicting Roof Material, SP, M, InProgress, _, _, _, _, _, _, , 
+BR.5.9, Predicting Window Area, SP, M, InProgress, _, _, _, _, _, _, , 
+BR.5.10, Predicting Building Material, SP, M, _, _, _, _, _, _, _, , 
+BR.5.11, Classifying Elevated Building, SP, M, Implemented, _, _, _, _, _, _, , 
+BR.5.12, Predicting Structural Type, SP, M, _, _, _, _, _, _, _, , 
+BR.5.13, Predicting Occupancy Type, SP, M, Implemented, _, _, _, _, _, _, , 
+BR.5.14, Predicting Year Built, SP, M, Implemented, _, _, _, _, _, _, , 
+BR.5.15, Predicting Attached Garage, SP, M, _, _, _, _, _, _, _, , 
+BR.5.16, Predicting Presence of Masonry Chimney, UF, D, _, _, _, _, _, _, _, , 
+**BR.6**, **DesignSafe integration to provide access to GPU**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
+BR.6.1, Create JupyterHub notebook at DesignSafe for building asset inventory workflow usage, SP, M, _, _, _, _, _, _, _, _, 
+BR.6.2, "For classification done at DesignSafe, store images and metadata for BE Database", SP, M, _, _, _, _, _, _, , ,
+BR.6.3, Create a JupyterHub notebook at DesignSafe for individual modules to demonstrate immediate results, SP, M, _, _, _, _, _, _, _, , 
+**BR.7**, **Work to improve existing performance models through Continous Learning**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
+BR.7.1, Continous Learning for Year Built, SP, M, _, _, _, _, _, _, _, , 
+BR.7.2, Continous Learning for Roof Material, SP, M, _, _, _, _, _, _, _, , 
+BR.8, Work to gather data for Module Validation/Verification/Training, SP, M, InProgress, _, _, _, _, _, _, , 
+**EL.1**, **Regional Scale Earthquake Hazard Simulation Options**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
+**EL.1.1**, **Coupling of multi-scale nonlinear models from the point of rupture through rock and soil into structure**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
+EL.1.1.1, Replacement of empirical linear models with multi-scale nonlinear models, GC, D, _, _, _, _, _, _, _, , 
+EL.1.1.2, Include both multi-scale and multi-phase (account for liquefaction), GC, M, _, _, _, _, _, _, _, , 
+EL.1.1.3, Interface between asset and regional simulations using site response method, SP, M, InProgress, _, _, _, _, _, _, , 
+EL.1.1.4, Interface between asset and regional simulations using DRM method, SP, M, _, _, _, _, _, _, _, , 
+EL.1.2, Method to include both the intra-event residual and inter-event residual in simulating spatial correlated ground motion intensity measures with multiple correlation model options. Select site-specific ground motions from PEER to match target intensity, SP, M, Implemented, _, _, _, _, _, _, , 
+EL.1.3, Use GIS-Specified Matrix of Recorded Motions, SP, M, Implemented, _, _, _, _, _, _, , 
+**EL.2**, **Select from Multiple Local Scale Earthquake Hazard Options**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
+**EL.2.1**, **Coupling of multi-scale nonlinear models from the point of rupture through rock and soil into structure**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
+EL.2.1.1, Select using default selection options, SP, D, Implemented, _, _, _, _, _, _, , 
+EL.2.1.2, Select using all options available at PEER site, UF, D, Implemented, _, _, _, _, _, _, , 
+EL.2.1.3, Select using user-supplied spectrum, UF, D, Implemented, _, _, _, _, _, _, , 
+EL.2.2, Ability to select utilizing PEER NGA_West web service, SP, D, Implemented, _, _, _, _, _, _, , 
+EL.2.3, Ability to select from a list of user-supplied PEER motions, SP, M, Implemented, _, _, _, _, _, _, , 
+EL.2.4, Ability to select from a list of SimCenter motions, SP, M, Implemented, _, _, _, _, _, _, , 
+EL.2.5, Ability to use OpenSHA and selection methods to generate motions, UF, D, _, _, _, _, _, _, _, , 
+EL.2.6, Ability to Utilize Own Application in Workflow, SP, M, Implemented, _, _, _, _, _, _, , 
+**EL.2.7**, **Ability to use Broadband**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
+EL.2.7.1, 1D nonlinear site response with effective stress analysis, SP, M, Implemented, _, _, _, _, _, _, , 
+EL.2.7.2, Nonlinear site response with bidirectional loading, SP, M, Implemented, _, _, _, _, _, _, , 
+EL.2.7.3, Nonlinear site response with full stochastic characterization of soil layers, SP, M, Implemented, _, _, _, _, _, _, _, 
+EL.2.7.4, "Nonlinear site response, bidirectional different input motions", SP, M, _, _, _, _, _, _, , 
+**EL.2.8**, **Ability to include Soil-Structure Interaction Effects**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, _,
+EL.2.8.1, "per Vlachos, Papakonstantinou, Deodatis (2017)", SP, D, Implemented, _, _, _, _, _, , ,
+EL.2.8.2, "per Dabaghi, Der Kiureghian (2017)", UF, D, Implemented, _, _, _, _, _, , , 
+EL.2.9, Ability to select from synthetic ground motions, SP, M, Implemented, _, _, _, _, _, _, , 
+EL.2.10, Ability to select surrogate modeling events, SP, M, Implemented, _, _, _, _, _, _, , 
+**HL.1**, **Regional Loading due to Storm Surge/Tsunami Hazards**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, _, 
+HL.1.1, "Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow", SP, D, _, _, _, _, _, _, , ,
+**HL.2**, **Local Scale Storm Surge/Tsunami Hazard Options**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
+**HL.2.1**, **Using computational fluid dynamics to model interface and impact between water loads and buildings**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
+HL.2.1.1, CFD to model fluid flow around a single rigid structure, SP, M, InProgress, _, _, _, _, _, _, , 
+HL.2.1.2, Mesh refinement around structures, SP, M, InProgress, _, _, _, _, _, _, , 
+HL.2.1.3, CFD to model fluid flow around a single deformable structure, SP, M, InProgress, _, _, _, _, _, _, , 
+HL.2.1.4, CFD to model fluid flow considering inflow and accumulation of fluid inside a rigid structure, SP, M, _, _, _, _, _, _, _, _, 
+HL.2.1.5, "CFD to model fluid flow considering inflow, accumulation, and possible outflow of fluid across a deformable structure", SP, M, _, _, _, _, _, _, _, ,
+HL.2.3, "load combinations need to be developed to account for the simultaneous impacts of various flood forces, such as those generated by breaking waves, moving water and flood-borne debris", GC, _, _, _, _, _, _, **_**, **_**, ,
+**HL.2.5**, "**Multi-scale models for wind and water flows, i.e., lower fidelity regional models with more refined models to capture local flow**", **_**, **_**, **_**, **_**, **_**, **_**, **_**, , , ,
+HL.2.5.1, Interface GeoClaw and OpenFOAM, SP, M, _, _, _, _, _, _, _, , 
+HL.2.5.2, Interface AdCirc and OpenFOAM, SP, M, _, _, _, _, _, _, _, , 
+**HL.2.6**, **Libraries of high-resolution hurricane wind/surge/wave simulations**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
+HL.2.6.1, Develop a simulation library of GeoClaw simulations, SP, M, _, _, _, _, _, _, _, , 
+HL.2.6.2, Develop a simulation library of AdCirc simulations, SP, M, _, _, _, _, _, _, _, , 
+HL.2.6.3, Develop a simulation library of OpenFOAM simulations, SP, M, _, _, _, _, _, _, _, , 
+HL.2.7, Ability to simulate with surrogate models as an alternative to full 3D CFD, SP, M, InProgress, _, _, _, _, _, _, , 
+HL.2.8, Develop digital twin with OSU wave Tank Facility, SP, M, InProgress, _, _, _, _, _, _, , 
+**WL.1**, **Regional Loading due to Wind Hazards**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
+**WL.1.1**, **Regional Hurricane Wind Options**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, _, 
+WL.1.1.1, "Utilize GIS and online to account for wind speed given local terrain, topography and nearby buildings", GC, D, _, _, _, _, _, _, , ,
+WL.1.1.2, MultiScale Wind Models, SP, D, _, _, _, _, _, _, _, _, 
+WL.1.1.3, "Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow", SP, D, _, _, _, _, _, _, _, ,
+WL.1.2, "Modeling and simulation for determination of wind loads due to non-synoptic winds, including tornadoes", GC, D, _, _, _, _, _, _, , ,
+WL.1.3, Interface with NOAA, SP, D, Implemented, _, _, _, _, _, _, , 
+**WL.2**, **Local Scale Wind Hazard Options**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
+**WL.2.1**, **Utilize Extensive wind tunnel datasets in industry and academia for a wide range of building shapes**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
+**WL.2.1.1**, **Accommodate Range of Low Rise building shapes**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
+WL.2.1.1.1, Flat Shaped Roof - TPU dataset, SP, M, Implemented, _, _, _, _, _, _, , 
+WL.2.1.1.2, Gable Shaped Roof - TPU dataset, SP, M, InProgress, _, _, _, _, _, _, , 
+WL.2.1.1.3, Hipped Shaped Roof - TPU dataset, SP, M, InProgress, _, _, _, _, _, _, , 
+WL.2.1.2, Accommodate Range of High Rise building, SP, M, InProgress, _, _, _, _, _, _, , 
+WL.2.1.3, Non-Isolated Low Rise Buildings - TPU dataset, SP, M, InProgress, _, _, _, _, _, _, , 
+WL.2.2, Interface with data-driven Interface with Vortex Winds DEDM-HRP Web service, SP, M, Implemented, _, _, _, _, _, _, , 
+WL.2.3, Accommodate Data from Wind Tunnel Experiment, SP, M, Implemented, _, _, _, _, _, _, , 
+WL.2.4, Simple CFD model generation and turbulence modeling, GC, M, Implemented, _, _, _, _, _, _, , 
+**WL.2.5**, **Computational Fluid Dynamics tool for utilizing open source CFD software for practitioners**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
+WL.2.5.1, Uncoupled OpenFOAM CFD model with nonlinear FEM code for building response, SP, M, Implemented, _, _, _, _, _, _, , 
+WL.2.5.2, Coupled OpenFOAM CFD model with linear FEM code for building response, SP, M, InProgress, _, _, _, _, _, _, , 
+WL.2.5.3, Inflow Conditions for non-synoptic winds, GC, M, _, _, _, _, _, _, _, , 
+WL.2.6, Quantification of Effects of Wind Borne Debris, GC, D, _, _, _, _, _, _, _, , 
+WL.2.7, Ability to utilize synthetic wind loading algorithms per Wittig and Sinha, SP, D, Implemented, _, _, _, _, _, _, _,
+WL.2.8, "Hazard modification by terrain, topography, and nearby buildings", GC, D, _, _, _, _, _, _, _, ,
+WL.2.9, "Probabilistic methods are needed to enable site-specific and storm-type specific characterization of likely debris types, weights, and speeds", GC, D, _, _, _, _, _, _, _, ,
+WL.2.10, "Joint description for hurricane wind, storm surge, and wave hazards", GC, D, _, _, _, _, _, , , , 
+WL.2.11, Libraries of high-resolution hurricane wind/surge/wave simulations, GC, M, InProgress, _, _, _, _, _, _, _, 
+WL.2.12, "Multi-scale models for wind and water flows, i.e. lower fidelity regional models with more refined models to capture local flow", SP, M, InProgress, _, _, _, _, _, , , 
+WL.2.13, Ability to select surrogate modeling events, SP, M, _, _, _, _, _, _, _, , 

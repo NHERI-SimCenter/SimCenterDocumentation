@@ -5,7 +5,26 @@
 Release Notes
 *************
 
-Version 3.2.0 (Current)
+Version 3.5.0 (Current)
+-----------------------
+
+**Release date:** Apr. 2024
+
+**Highlights**
+
+#. Physics-based ground motion simulations generate by the `M9 project <https://sites.uw.edu/pnet/m9-simulations/>`_.
+
+
+Version 3.4.0
+-----------------------
+
+**Release date:** Oct. 2023
+
+**Highlights**
+
+#. Multi Fidelity Monte Carlo (MFMC) method
+
+Version 3.3.0 
 -----------------------
 
 **Release date:** March. 2023

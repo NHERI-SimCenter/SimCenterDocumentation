@@ -4,7 +4,7 @@
 Bayesian Calibration
 ********************
 
-The methods in the Bayesian calibration category are concerned with estimation of the probability distribution of the parameter values given observational measurements. Unlike deterministic parameter estimation methods, in which the user provides a range and an initial starting point for the input random variables, when using the methods in this category, the user has some idea about the probability distribution of the parameter values. This information is provided in the form of the prior distributions in the **RV** panel. The Bayesian calibration methods take this prior information and combine it with information from the observed data provided in the **UQ** panel, to infer posterior distributions of the parameter values. A Bayesian updating paradigm is followed, the prior distribution on a parameter is updated through a Bayesian framework involving experimental data and a likelihood function. The likelihood function  specifies the likelihood that a particular parameter value of the model produced the observed data. Dakota uses a Gaussian likelihood function. The algorithms that generate the samples to characterize the posterior distributions are typically based on some Markov Chain Monte Carlo (MCMC) methods. Currently, |appName| provides access to the DREAM algorithm implemented in Dakota.
+The methods in the Bayesian calibration category are concerned with the estimation of the probability distribution of the parameter values given observational measurements. Unlike deterministic parameter estimation methods, in which the user provides a range and an initial starting point for the input random variables, when using the methods in this category, the user has some idea about the probability distribution of the parameter values. This information is provided in the form of the prior distributions in the **RV** panel. The Bayesian calibration methods take this prior information and combine it with information from the observed data provided in the **UQ** panel, to infer posterior distributions of the parameter values. A Bayesian updating paradigm is followed, the prior distribution on a parameter is updated through a Bayesian framework involving experimental data and a likelihood function. The likelihood function specifies the likelihood that a particular parameter value of the model produced the observed data. Dakota uses a Gaussian likelihood function. The algorithms that generate the samples to characterize the posterior distributions are typically based on some Markov Chain Monte Carlo (MCMC) methods. Currently, |appName| provides access to the DREAM algorithm implemented in Dakota.
 
 
 ..
@@ -37,10 +37,8 @@ The Differential Evolution Adaptive Metropolis ([DREAM]_) method runs multiple M
 5. Seed: seed of the random number generator, this option is provided for repeatability. If the same analysis is run multiple times with the same seed, the results will be identical from all the runs. If the same analysis is run with differing seed values, the results from all the runs will not be identical. 
 6. Calibration data file: the path to the file which contains the calibration data (i.e., the measured values of the reponses).
 
-.. note::
+.. note:: Calibration data file requirements
 
-	Calibration data file requirements
-	==================================
 	The data are provided in the calibration data file, which must fulfill the following requirements:
 
 	1. Each row of the calibration data file contains data from one experiment. The individual entries in every row of this file can be separated by spaces, tabs, or commas.

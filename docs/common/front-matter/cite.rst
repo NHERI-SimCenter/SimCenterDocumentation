@@ -6,38 +6,36 @@ How To Cite
 
 .. only:: R2D_app
 
-
-   1. Frank McKenna, Stevan Gavrilovic, Adam Zsarnoczay, Kuanshi Zhong, Wael Elhaddad, and
-      Pedro Arduino (2022).
-      NHERI-SimCenter/R2DTool: Version 2.1.0.
-      Zenodo.  `DOI 10.5281/zenodo.6404528 <https://doi.org/10.5281/zenodo.6404528>`_
+   1. Frank McKenna, Stevan Gavrilovic, Jinyan Zhao, Kuanshi Zhong, Adam Zsarnoczay, Barbaros Cetiner, Sang-ri Yi, Pedro Arduino, & Wael Elhaddad. (2024). NHERI-SimCenter/R2DTool: Version 4.1.0 (v4.1.0). Zenodo. `<https://doi.org/10.5281/zenodo.10902064>`_
 	     
 .. only:: PBE_app
 
-   1. Adam Zsarnoczay, Frank McKenna, Charles Wang, Wael Elhaddad, & Michael Gardner. (2022).
-      NHERI-SimCenter/PBE: Release v3.0.0.
-      Zenodo. `DOI: 10.5281/zenodo.1472503 <https://doi.org/10.5281/zenodo.1472503>`_
+   1. Adam Zsarnoczay, Frank McKenna, Charles Wang, Stevan Gavrilovic, Kuanshi Zhong, Michael Gardner, Sang-ri Yi, Aakash B. Satish & Wael Elhaddad. (2024).
+      NHERI-SimCenter/PBE: Version 3.3.0 (v3.3.0).
+      Zenodo. `DOI: 10.5281/zenodo.10448044 <https://doi.org/10.5281/zenodo.10448044>`_
   
 .. only:: EEUQ_app
 
-   1.  Frank McKenna, Kuanshi Zhong, Michael Gardner, Adam Zsarnoczay, Sang-ri Yi, Aakash Bangalore Satish,
-       Charles Wang, & Wael Elhaddad. (2023).
-       NHERI-SimCenter/EE-UQ: Version 3.3.0 (v3.3.0).
-       Zenodo. "https://doi.org/10.5281/zenodo.7790405
+   1.  Frank McKenna, Kuanshi Zhong, Michael Gardner, Adam Zsarnoczay, Sang-ri Yi, Aakash Bangalore Satish, Charles Wang, & Wael Elhaddad. (2024). NHERI-SimCenter/EE-UQ: Version 3.5.0 (v3.5.0). Zenodo. `<https://doi.org/10.5281/zenodo.10902075>`_
    
 .. only:: WEUQ_app
 
-   1. Frank McKenna, Peter Mackenzie-Helnwein, Jiawei Wan & Stevan Gavrilovic.
-      (2021, May 17). NHERI-SimCenter/WE-UQ: Version 2.1.0 (Version v2.1.0).
-      Zenodo. `DOI: 10.5281/zenodo.3464692 <https://doi.org/10.5281/zenodo.3464692>`_
+   1. Frank McKenna, Abiy F. Melaku, Fei Ding, Jiawei Wan, Peter Mackenzie-Helnwein, Wael Elhaddad,
+      Michael Gardner, & Sang-ri Yi. (2024). NHERI-SimCenter/WE-UQ: Version 3.2.0 (v3.2.0). 
+      Zenodo. `DOI: 10.5281/zenodo.10806694 <https://doi.org/10.5281/zenodo.10806694>`_
 	     
 .. only:: quoFEM_app	     
       
 
-1. Frank McKenna, Sang-ri Yi, Aakash Bangalore Satish, Kuanshi Zhong, Adam Zsarnoczay, & Wael Elhaddad. (2023).
-   NHERI-SimCenter/quoFEM: Version 3.3.0 (v3.3.0). Zenodo. https://doi.org/10.5281/zenodo.7786857
-   Zenodo: `DOI: 10.5281/zenodo.6404498 <https://doi.org/10.5281/zenodo.6404498>`_
+   1. Frank McKenna, Sang-ri Yi, Aakash Bangalore Satish, Adam Zsarnoczay, Kuanshi Zhong, Michael Gardner, & Wael Elhaddad. (2023). 
+      NHERI-SimCenter/quoFEM: Version 3.5.0 (v3.5.0). 
+      Zenodo. `DOI: 10.5281/zenodo.10443180 <https://doi.org/10.5281/zenodo.10443180>`_
 
+.. only:: HydroUQ_app    
+      
+   1. Frank McKenna, Ajay B Harish, Justin Bonus. (2024). 
+      NHERI-SimCenter/HydroUQ: Version 3.0.0 (v3.0.0). 
+      Zenodo. `DOI: 0.5281/zenodo.10443180 <https://doi.org/10.5281/zenodo.8396242>`_
 
 2. Gregory G. Deierlein, Frank McKenna, Adam Zsarnóczay, Tracy Kijewski-Correa, Ahsan Kareem,
    Wael Elhaddad, Laura Lowes, Matt J. Schoettler, and Sanjay Govindjee (2020)

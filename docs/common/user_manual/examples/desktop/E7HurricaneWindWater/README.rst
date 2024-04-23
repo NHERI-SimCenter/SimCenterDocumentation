@@ -12,7 +12,7 @@ This example presents a coupled damage assessment for hurricane wind and water i
    :width: 400px
    :align: center
 
-#. **VIZ** This example shows simulation for pseudo earthquake scenarios in Bay Area. The damage and loss of a sample of buildings in the Alameda County due to the soil liquefaction are estimated.  The results presented herein are only for demonstrating the use of R2DTool and do not serve as an accurate representation of the real losses.
+#. **VIZ** This example shows the simulation for a pseudo hurricane scenario in Atlantic City, NJ. The damage and loss of a sample of buildings in Atlantic City due to wind and water inundation are estimated.  The results presented herein are only for demonstrating the use of R2DTool and do not serve as an accurate representation of the real losses.
 
    .. figure:: figures/r2dt-0007-VIZ.png
       :width: 600px
@@ -26,7 +26,7 @@ This example presents a coupled damage assessment for hurricane wind and water i
       :align: center
 
 
-#. **HAZ** Now in the hazard panel, the **User Specified Wind Field** option is selected which allows for the use of pre-generated hurricane wind field scenarios. The following figure shows the relevant example files which are now entered in this pane. The peak wind speed is used as intensity measure to quantify the potential hurricane effects.
+#. **HAZ** Now, in the hazard panel, the **User Specified Hurricane** option is selected, which allows for the use of pre-generated hurricane wind field scenarios. The following figure shows the relevant example files, which are now entered in this pane. The peak wind speed is used as the intensity measure to quantify the potential hurricane effects.
 
    .. figure:: figures/r2dt-0007-HAZ.png
       :width: 600px
@@ -39,7 +39,7 @@ This example presents a coupled damage assessment for hurricane wind and water i
       :width: 600px
       :align: center
 
-#. **HTA** Next, a hazard mapping algorithm is specified using the **Nearest Neighbor** method and the **SimCenterEvent** application, which are configured as show in the following figure with **10** samples in **4** neighbours.
+#. **HTA** Next, a hazard mapping algorithm is specified using the **Nearest Neighbor** method and the **SimCenterEvent** application, configured as shown in the following figure with **10** samples in **4** neighbours.
 
    .. figure:: figures/r2dt-0007-HTA.png
       :width: 600px
@@ -57,7 +57,7 @@ This example presents a coupled damage assessment for hurricane wind and water i
       :width: 600px
       :align: center
 
-#. **DL** The damage and loss panel is now used to configure the **Pelicun** backend. The **HAZUS MH EQ HU** damage and loss method is selected and configured as shown in the following figure:
+#. **DL** The damage and loss panel is now used to configure the **Pelicun3** backend. The **HAZUS MH EQ HU** damage and loss method is selected and configured as shown in the following figure:
 
    .. figure:: figures/r2dt-0007-DL.png
       :width: 600px
