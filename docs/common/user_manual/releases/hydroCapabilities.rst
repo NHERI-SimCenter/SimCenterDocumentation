@@ -5,7 +5,7 @@
 Capabilities
 ************
 
-Version |tool version| of the |app| was released on **November 30, 2023**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+Version |tool version| of the |app| was released on **March 31, 2024**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 UQ (Uncertainty Quantification and Optimization Options)
