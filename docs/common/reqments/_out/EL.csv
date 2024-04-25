@@ -21,7 +21,7 @@ EL.2.7.1, 1D nonlinear site response with effective stress analysis, SP, M, Impl
 EL.2.7.2, Nonlinear site response with bidirectional loading, SP, M, Implemented, _, _, _, _, _, _, , 
 EL.2.7.3, Nonlinear site response with full stochastic characterization of soil layers, SP, M, Implemented, _, _, _, _, _, _, _, 
 EL.2.7.4, "Nonlinear site response, bidirectional different input motions", SP, M, _, _, _, _, _, _, , 
-**EL.2.8**, **Ability to include Soil-Structure Interaction Effects**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, _, _
+**EL.2.8**, **Ability to include Soil-Structure Interaction Effects**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, _, _, 
 EL.2.8.1, "per Vlachos, Papakonstantinou, Deodatis (2017)", SP, D, Implemented, _, _, _, _, _, 
 EL.2.8.2, "per Dabaghi, Der Kiureghian (2017)", UF, D, Implemented, _, _, _, _, _, , 
 EL.2.9, Ability to select from synthetic ground motions, SP, M, Implemented, _, _, _, _, _, _, , 
