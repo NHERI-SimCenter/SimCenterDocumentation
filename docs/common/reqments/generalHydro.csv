@@ -1,33 +1,50 @@
-H,"Application to determine response of Building Subject Water Action due to Storm Surge or Tsunami  including formal treatment of randomness and uncertainty",,,InProgress,
-**H.1**,"**Quantification of flood-borne debris hazards**",**GC**,**M**,,
+H,"Application to determine response of a Building Subject to Water Action due to Storm Surge or Tsunami Hazards including formal treatment of randomness and uncertainty",GC,M,InProgress, `Application <https://NHERI-SimCenter.github.io/Hydro-Documentation>`_, 
 ,,,,,
-**H.2**,"**Effects of over-land flow,including waves, debris, flood velocity, wind-driven influences, erosion effects at buildings and channeling effects of the built environment**",**GC**,**D**,,
+**H.1**,"**Quantification of water-borne debris hazards**",**GC**,**M**,InProgress,1.1.2.1.2
+H.1.1,"Multiple debris impacts in a solitary-like wave",GC,M,Implemented,`Example <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/examples/desktop/hdro-0002/README.html>`_
+H.1.2,"Multiple debris impacts in a tsunami-like wave",GC,M,Implemented,`Example <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/examples/desktop/hdro-0004/README.html>`_
+H.1.3,"Multiple debris impacts in a surge-like wave",GC,M,InProgress,1.1.2.1.2
 ,,,,,
-**H.3**,"**Ability to select from all Loading Options listed in HL2**",**SP**,**M**,**InProgress**,
+**H.2**,"**Effects of over-land flow, including waves, debris, flood velocity, wind-driven influences, erosion effects at buildings and channeling effects of the built environment**",,,,
+H.2.1,"Effects of over-land flow",GC,D,Implemented,`Example <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/examples/desktop/hdro-0004/README.html>`_
+H.2.2,"Effects of waves, e.g. solitary vs irregular type",GC,D,Implemented,`Example <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/examples/desktop/hdro-0002/README.html>`_ & `Example <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/examples/desktop/hdro-0004/README.html>`_
+H.2.3,"Effects of debris",GC,D,Implemented,`Example <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/examples/desktop/hdro-0002/README.html>`_,
+H.2.4,"Effects of flood velocity",GC,D,Implemented,`Example <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/examples/desktop/hdro-0003/README.html>`_
+H.2.5,"Effects of wind-driven influences",GC,D,,
+H.2.6,"Effects of erosion at buildings",GC,D,,
+H.2.7,"Effects of flow channeling in the built environment",GC,D,Implemented,`Example <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/examples/desktop/hdro-0004/README.html>`_ 
 ,,,,,
-**H.4**,"**Ability to select from Building Modeling Options listed in MOD under BM**",**SP**,**M**,**InProgress**,
+**H.3**,"**Ability to select from all Loading Options listed in HL.2**",,,,
+H.3.1,"Ability to define local-scale tsunami loading events",SP,M,InProgress,1.1.2.1.2
+H.3.2,"Ability to define local-scale surge loading events",SP,M,InProgress,1.1.2.1.2
 ,,,,,
-**H.5**,"**Include ability to perform nonlinear analysis on the building models listed in ANA**",**SP**,**M**,**InProgress**,
+**H.4**,"**Ability to select from Building Modeling Options listed in MOD under BM**",**SP**,**M**,**Implemented**,`SIM <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/usage/desktop/SIM.html>`_
+,,,,,
+**H.5**,"**Include ability to perform nonlinear analysis on the building models listed in ANA**",**SP**,**M**,**Implemented**,`FEM <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/usage/desktop/FEM.html>`_
 ,,,,,
 **H.6**,"**Ability to use Various UQ Methods and Variable Options**",,,,
-H.6.1,"Ability to use Forward Propagtion methods listed in UQ under UF",SP,M,InProgress,
-H.6.2,"Ability to use Random Variable Distributions defeined in RV",SP,M,,
+H.6.1,"Ability to use Forward Propagtion methods listed in UQ under UF",SP,M,InProgress,`UQ <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/usage/desktop/UQ.html>`_
+H.6.2,"Ability to use Random Variable Distributions defined in RV",SP,M,Implemented,`RV <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/usage/desktop/RV.html>`_
 H.6.3,"Ability to use Reliability Methods listed in UQ under UR",SP,M,InProgress,
 H.6.4,"Ability to use Global Sensitivity Methods listed in UQ under UG",SP,M,InProgress,
-H.6.5,"Ability to both use and create surrogates listed in UQ under US",SP,M,,
+H.6.5,"Ability to both use and create surrogates listed in UQ under US",SP,M,InProgress,"1.1.2.2.2 & 1.1.2.2.3"
 H.6.6,"Ability to use High Dimensional UQ listed in UQ under UH",SP,M,,
 ,,,,,
-**H.7**,"**Ability to Visualize the Results**",**SP**,**M**,**InProgress**,
-H.7.1,"Ability to view individual sample results",SP,M,InProgress,
-H.7.2,"Ability to graphically view the results to show distribution in respone",SP,M,InProgress,
+**H.7**,"**Ability to Visualize the Results**",,,,
+H.7.1,"Ability to view individual sample results",SP,M,Implemented,`Example <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/examples/desktop/hdro-0002/README.html>`_
+H.7.2,"Ability to graphically view the results to show distributions in structural responses",SP,M,Implemented,`RES <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/usage/desktop/hydro/resHydro.html>`_
 ,,,,,
 **H.8**,"**Miscelleneous User Requests**",,,,
-H.8.1,"Ability to quickly model experimental tests perform in OSU wave tank",UF,M,,
+H.8.1,"Ability to quickly model experimental tests performed in Oregon State University's Large Wave Flume (OSU LWF) wave tank",UF,M,Implemented,`Example <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/examples/desktop/hdro-0002/README.html>`_
+H.8.1,"Ability to quickly model experimental tests performed in Waseda University's Tsunami Wave Basin (WU TWB) wave tank",UF,D,Implemented,`Example <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/examples/desktop/hdro-0004/README.html>`_
 ,,,,,
 **H.9**,"**General Software Requirements**",,,,
 H.9.1,"Application to Provide Common SimCenter Research Application Requirements listed in CR",GC,M,InProgress,1.1.2.5.1
 ,,,,,
-**H.10**,"**Tool should incorporate data from www**",GC,M,,
+**H.10**,"**Tool should incorporate data from world-wide-web (www)**",,,,
 H.10.1,"Tool should use satelite imagery in aid of determine channeling effect",SP,D,,
-H.10.2,"Tool should use satelite imagery in aid of determining amount of debris",SP,D,,
+H.10.2,"Tool should use satelite imagery in aid of determining amount of debris",SP,D,InProgress,1.1.3.5.2
 H.10.3,"Tool should obtain building modelling info from database through www",SP,D,,
+H.10.4,"Tool should obtain bathymetry elevation data through www",UF,D,InProgress,`NOAA Digital Coast <https://coast.noaa.gov/slr/>`_
+H.10.5,"Tool should obtain sea-level rise data through www",UF,D,InProgress,`NOAA Digital Coast <https://coast.noaa.gov/slr/>`_
+H.10.6,"Tool should incorporate hardware-accelerated web-applications through www",UF,D,InProgress,`Celeris-WebGPU <https://plynett.github.io>`_
