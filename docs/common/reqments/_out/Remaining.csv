@@ -1,7 +1,7 @@
 **BE.1**, **Ability to use cumulative knowledge bases rather than the piecemeal individual approaches**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
 BE.1.1, Utilize Federated Databases to maintain individual databases & data sources yet provide central database resource, SP, M, _, _, _, _, _, _, _, , 
 **BE.2**, **Include National building model inventories**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, _, 
-BE.2.1, "Incorporate Building data from existing datasets published by states, counties and cities", SP, M, InProgress, _, _, _, _, _, _, _
+BE.2.1, "Incorporate Building data from existing datasets published by states, counties and cities", SP, M, InProgress, _, _, _, _, _, _, _, 
 BE.2.2, "Ingest building data from web-scraping techniques, e.g. from Zillow, county websites", SP, M, InProgress, _, _, _, _, , 
 BE.2.3, Ingest building data using AI/ML techniques and satellite and street view images, SP, M, InProgress, _, _, _, _, _, _, , 
 **BE.3**, **Incorporate transportation network data from existing datasets made avail through www**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, **_**, , 
