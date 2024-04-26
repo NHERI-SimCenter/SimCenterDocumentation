@@ -387,8 +387,8 @@ if app_name == "HydroUQ" or app_name == "Hydro":
     exclude_patterns.append("**/*architectureLevel4.rst*")
     exclude_patterns.append("**/reqments/index.rst")
     exclude_patterns.append("**/requirements/bigRequirements.rst")
-    exclude_patterns.append("**/DakotaSensitivity.rst")
-    exclude_patterns.append("**/DakotaReliability.rst")
+    #exclude_patterns.append("**/DakotaSensitivity.rst")
+    #exclude_patterns.append("**/DakotaReliability.rst")
     exclude_patterns.append("**/DakotaParameterEstimation.rst")
     exclude_patterns.append("**/DakotaInverseProblems.rst")
     exclude_patterns.append("**/damping.rst") # Added below to be more consistent with quofem - JB
@@ -409,9 +409,9 @@ if app_name == "HydroUQ" or app_name == "Hydro":
     sync_examples = True
 
     rst_prolog += f"""
-.. |full tool name| replace:: Water-borne Hazards Engineering with Uncertainty Quantification Application
+.. |full tool name| replace:: Water-borne Hazards Engineering with Uncertainty Quantification
 .. |test example| replace:: :ref:`hdro-0001`
-.. |tool version| replace:: 3.1
+.. |tool version| replace:: 3.0
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0
 .. _Hydro Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ
 .. _HydroUQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ
@@ -645,8 +645,8 @@ elif app_name == "WE-UQ":
     exclude_patterns.remove("**/weuq-*")
 
     exclude_patterns.append("**/testbeds/*")
-    exclude_patterns.append("**/DakotaSensitivity.rst")
-    exclude_patterns.append("**/DakotaReliability.rst")
+    #exclude_patterns.append("**/DakotaSensitivity.rst")
+    #exclude_patterns.append("**/DakotaReliability.rst")
     exclude_patterns.append("**/DakotaParameterEstimation.rst")
     exclude_patterns.append("**/DakotaInverseProblems.rst")
 
