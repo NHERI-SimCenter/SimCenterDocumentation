@@ -17,7 +17,7 @@ WL.2.1.2, "Accommodate Range of High Rise building  ", SP , M , InProgress
 WL.2.1.3, "Non Isolated Low Rise Buildings - TPU dataset ", SP , M , InProgress
 WL.2.2, "Interface with data driven", GC, M, InProgress
 WL.2.2.1, "Interface with Vortex Winds DEDM-HRP Web service ", SP , M , Implemented
-WL.2.3 , "Accommodate Data from Wind Tunnel Experiment ", SP , M , Implemented  
+WL.2.3 , "Accommodate Data from Wind Tunnel Experiment ", SP , M , Implemented
 WL.2.4 , "Simple CFD model generation and turbulence modeling ", GC , M , Implemented
 WL.2.5, "Computational Fluid Dynamics tool for utilizing open source CFD software for practitioners ", GC , M , Implemented 
 WL.2.5.1, "Uncoupled OpenFOAM CFD model with nonlinear FEM code for building response ", SP , M , Implemented  
