@@ -92,10 +92,10 @@ HydroUQ:
   - id: hdro-01
     title: "Simple Example of running CFD using OpenFOAM"
   - id: hdro-02
-    title: "Digital Twin of OSU LWF - Debris Impacts in a Tsunami-Like Wave - MPM"
+    title: "Debris Impacts in a Tsunami-Like Wave - Oregon State University Large Wave Flume"
   - id: hdro-03
     title: "Coupled Digital Twin - Simple Cantilevered Cylinder Half-Submerged in Crossflow"
   - id: hdro-04
-    title: "Digital Twin of WU TWB - Debris Motion through Obstacles in a Tsunami-Like Wave - MPM"
+    title: "Debris Motion through Obstacles in a Tsunami-Like Wave - Waseda University Tsunami Wave Basin"
 
 #--------------------------------------------------
