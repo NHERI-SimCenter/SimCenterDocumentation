@@ -37,6 +37,16 @@ On Windows operating systems, you might receive the error shown in |figMissingCR
 
       Error message for missing Visual C/C++ runtime library.
 
+.. only:: HydroUQ_app
+
+   .. _figMissingCRT-HydroUQ:
+
+   .. figure:: figures/MissingCRT.png
+      :align: center
+      :figclass: align-center
+
+      Error message for missing Visual C/C++ runtime library.
+
 
 .. only:: R2D_app
 

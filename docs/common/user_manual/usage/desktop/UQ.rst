@@ -175,42 +175,45 @@ The following categories are available:
    :maxdepth: 1
 
    DakotaSampling
-   :EEUQ:DakotaSensitivity
-   :EEUQ:DakotaReliability
-   :Hydro:DakotaSensitivity
-   :Hydro:DakotaReliability    
-   :quoFEM:DakotaSensitivity
-   :quoFEM:DakotaReliability
+   DakotaSensitivity
+   DakotaReliability
    :quoFEM:DakotaDeterministicCalibration
    :quoFEM:DakotaBayesianCalibration
    :quoFEM:DakotaGradientFreeOptimization
 
-.. only:: quoFEM_app or EEUQ_app
+SimCenter UQ Engine
+-------------------
 
-   SimCenter UQ Engine
-   -------------------
+The **SimCenterUQ** engine is a UQ engine developed in-house at the SimCenter that accommodates different UQ methods, which are organized into categories that can be accessed through a pull-down menu, as shown below:
 
-   The **SimCenterUQ** engine is a UQ engine developed in-house at the SimCenter that accommodates different UQ methods, which are organized into categories that can be accessed through a pull-down menu, as shown below:
+.. _figSimCenterUQ:
 
-   .. _figSimCenterUQ:
+.. figure:: figures/SimCenterUQ.png
+   :align: center
+   :figclass: align-center
+   :width: 1200
 
-   .. figure:: figures/SimCenterUQ.png
-      :align: center
-      :figclass: align-center
-      :width: 1200
+   SimCenterUQ engine and category selection.
 
-      SimCenterUQ engine and category selection.
+The following category options are available:
 
-   The following category options are available:
+.. toctree-filt::
+   :maxdepth: 1
 
-   .. toctree-filt::
-      :maxdepth: 1
-
-      SimCenterUQSampling
-      SimCenterUQSensitivity
-      SimCenterUQSurrogate
-      SimCenterUQPLoM
-
+   SimCenterUQSampling
+   :quoFEM:SimCenterUQSensitivity
+   :quoFEM:SimCenterUQSurrogate
+   :quoFEM:SimCenterUQPLoM
+   :quoFEM:SimCenterUQMF
+   :EEUQ:SimCenterUQSensitivity
+   :EEUQ:SimCenterUQSurrogate
+   :EEUQ:SimCenterUQPLoM
+   :EEUQ:SimCenterUQMF
+   :WEUQ:SimCenterUQSensitivity
+   :WEUQ:SimCenterUQMF
+   :Hydro:SimCenterUQSensitivity
+   :Hydro:SimCenterUQMF
+   
 .. only:: quoFEM_app
 
    UCSD UQ Engine

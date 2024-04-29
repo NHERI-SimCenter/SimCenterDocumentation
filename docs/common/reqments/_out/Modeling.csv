@@ -1,10 +1,10 @@
-**MOD**,   **Asset Model Generators for Analysis**, , , , , , , , , 
-BM,   Asset Model Generators for Buildings, , , , , , , , , 
-BM.1, Ability to quickly create a simple nonlinear building model for simple methods of seismic evaluation, GC, D, Implemented, _, :eeuq-0001:`/`, _, _, _, _
-BM.2, Ability to use existing OpenSees model scripts, SP, M, Implemented, _, :eeuq-0003:`/`, _, _, _, _
-BM.3, Ability to define a building and use Expert System to generate FE mesh, SP, D, _, _, _, _, _, _, _
-BM.4, Ability to define a building and use Machine Learning applications to generate FE, GC, D, _, _, _, _, _, _, _
-BM.5, Ability to specify connection details for member ends, UF, D, _, _, _, _, _, _, _
-BM.6, Ability to define a user-defined moment-rotation response representing the connection details, UF, D, _, _, _, _, _, _, _
-BM.7, Ability to incorporate AutoSDA Steel Design Application in Local Applications, UF, M, Implemented, _, :eeuq-0004:`/`, _, _, _, _
-BM.8, Ability to use user-supplied Python script to generate mesh, UF, M, Implemented, _, _, _, _, _, _
+**MOD**, **Asset Model Generators for Analysis**, , , , , , , , , 
+BM, Asset Model Generators for Buildings, , , , , , , , , 
+BM.1, Ability to quickly create a simple nonlinear building model for simple methods of seismic evaluation, GC, D, Implemented, N/A, :eeuq-0001:`/`, _, _, _, _
+BM.2, Ability to use existing OpenSees model scripts, SP, M, Implemented, N/A, :eeuq-0003:`/`, _, _, _, _
+BM.3, Ability to define a building and use Expert System to generate FE mesh, SP, D, _, N/A, _, _, _, _, _
+BM.4, Ability to define a building and use Machine Learning applications to generate FE, GC, D, _, N/A, _, _, _, _, _
+BM.5, Ability to specify connection details for member ends, UF, D, _, N/A, _, _, _, _, _
+BM.6, Ability to define a user-defined moment-rotation response representing the connection details, UF, D, _, N/A, _, _, _, _, _
+BM.7, Ability to incorporate AutoSDA Steel Design Application in Local Applications, UF, M, Implemented, N/A, :eeuq-0004:`/`, _, _, _, _
+BM.8, Ability to use user-supplied Python script to generate mesh, UF, M, Implemented, N/A, _, _, _, _, _

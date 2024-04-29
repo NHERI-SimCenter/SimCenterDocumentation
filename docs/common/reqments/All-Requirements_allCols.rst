@@ -1,4 +1,4 @@
-The following is the list of all requirements across all the tools. It is helpful to view an abstract hierarchy of the tools, showing **R2D** at the top and the components at the bottom. Each application pulls in many of the requirements from the others. For example, PBE builds upon EE-UQ. It has its own requirements, i.e. DL, but includes the loading, modeling and analysis requirements from EE-UQ. It specializes the UQ requirement, in that it only incorporates the sampling option. One set of requirements not shown in the figure is CR, a listing of all the common functionality required of all the applications.
+The following is the list of application requirements across all the SimCenter tools. It is helpful to view an abstract hierarchy of the tools, showing **R2D** at the top and the components at the bottom. Each tool can pull in requirements from other applications lower on the hierarchy. For example, **PBE** builds upon **EE-UQ**. It has its own requirements, i.e. **DL**, but includes the loading, modeling and analysis requirements from **EE-UQ**. It specializes the **UQ** requirement, in that it only incorporates the sampling option. One set of requirements not shown in the figure is **CR**, the list of common research functionalities required in all the applications.
 
 
 R2D Requirements
@@ -206,10 +206,11 @@ BE Database Requirements
 ------------------------
 
 .. csv-filter:: Requirements - BE
-  :header: "#", "Description", "Source", "Priority", "Status", "BE"
-  :widths: 10, 50, 10, 10, 10, 10
-  :included_cols: 0, 1, 2, 3, 4, 5
-  :file: generalBE.csv
+  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
+  :widths: 10, 50, 10, 10, 10, 10, 10, 10, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
+  :file: _out/Loading.csv
+  :include: {0: '\**BE.*|#'}
 
 .. include:: key.rst
 
