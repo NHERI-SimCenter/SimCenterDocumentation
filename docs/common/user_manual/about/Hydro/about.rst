@@ -6,6 +6,11 @@ About
 
 |full tool name| (|app|) is an open-source software tool developed by the NHERI SimCenter. It allows for utilization of existing simulation software applications, e.g. OpenSees and OpenFOAM, in uncertainty quantification (UQ) workflows. The application provides popular UQ methods (e.g., forward, inverse, reliability, sensitivity, parameter estimation, and surrogate modeling) to engineers, researchers, and students for tsunamis, hurricane storm-surges, and other water-borne hazards. The SimCenter is part of the Natural Hazards Engineering Research Infrastructure (NHERI) program, funded by the National Science Foundation (see :ref:`lblAcknowledgements`). 
 
+.. figure:: NHERI_SimCenter_DamBreakAnimation_VelocityPressureVisualized_2.5MParticles_res0.05m_23012023.gif
+     :align: center
+     :figclass: align-center
+
+     Using HydroUQ to model the text "NHERI SimCenter" during a dam-break simulation. "NHERI" is made of Drucker-Prager sand, "SimCenter" is made of Non-Associative Cam-Clay concrete. The Material Point Method (ClaymoreUW) was used for the simulation within HydroUQ.
 To download the HydroUQ desktop application for Windows 8/10/11 or Mac OS X, navigate to |appLink|. For Linux systems, e.g. Ubuntu 18.04-LTS, download the source code at |tool github link| and build the program file by following steps provided in the :ref:`Build Guide <lblHowToBuild>`.  The |app| is released under the **2-Clause BSD** license (see :ref:`lblLicense`).
 
 .. figure:: HydroUQ_MPM_3DViewPort_OSULWF_2024.04.25.gif
