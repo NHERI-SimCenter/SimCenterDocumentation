@@ -23,7 +23,7 @@ WE.6.2,"Ability to graphically view the results to show distribution in respone"
 **WE.7**,"**Miscelleneous User Requests**",,,,
 WE.7.1,"Ability to Process own Output Parameters",UF,M,Implemented,
 WE.7.2,"Ability to Remove from Results certain Samples,e.g. ones that failed in analysis",UF,M,Implemented,
-WE.7.3,"Create a digital twin of the Wall of Wind facility to allow researchers to simulate experiments",UF,M,,`Example <https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0015/README.html>`_
+WE.7.3,"Create a digital twin of the Wall of Wind facility to allow researchers to simulate experiments",UF,M,Implemented,`Example <https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/examples/desktop/weuq-0015/README.html>`_
 ,,,,,
 **WE.8**,"**Tool should incorporate data from www**",**GC**,**M**,**Implemented**,
 WE.8.1,"Tool could obtain loading from Vortex Winds over www",SP,M,Implemented,`Event <https://nheri-simcenter.github.io/WE-UQ-Documentation/common/user_manual/usage/desktop/wind/DEDMHrp.html>`_
