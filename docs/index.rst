@@ -85,8 +85,8 @@
    :WEUQ:common/user_manual/releases/wePlans
 
    :Hydro:common/user_manual/releases/hydroCapabilities
-   :Hydro:common/user_manual/releases/hydroPlans
    :Hydro:common/user_manual/usage/desktop/hydro/releasenotes
+   :Hydro:common/user_manual/releases/hydroPlans
 
    :PBE:common/user_manual/releases/pbeCapabilities
    :PBE:common/user_manual/releases/pbeReleaseNotes
