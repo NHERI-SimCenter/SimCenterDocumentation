@@ -10,7 +10,7 @@ EXAMPLE_DIRS = {
     "weuq": "weuq-[0-9]{4}",
     "pbdl": "pbdl-[0-9]{4}",
     "r2dt": "E[0-9].*",
-    "hydr": None,
+    "hdro": "hdro-[0-9]{4}",
 }
 
 def print_help():

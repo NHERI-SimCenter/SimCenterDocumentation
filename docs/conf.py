@@ -387,8 +387,8 @@ if app_name == "HydroUQ" or app_name == "Hydro":
     exclude_patterns.append("**/*architectureLevel4.rst*")
     exclude_patterns.append("**/reqments/index.rst")
     exclude_patterns.append("**/requirements/bigRequirements.rst")
-    exclude_patterns.append("**/DakotaSensitivity.rst")
-    exclude_patterns.append("**/DakotaReliability.rst")
+    #exclude_patterns.append("**/DakotaSensitivity.rst")
+    #exclude_patterns.append("**/DakotaReliability.rst")
     exclude_patterns.append("**/DakotaParameterEstimation.rst")
     exclude_patterns.append("**/DakotaInverseProblems.rst")
     exclude_patterns.append("**/damping.rst") # Added below to be more consistent with quofem - JB
@@ -645,8 +645,8 @@ elif app_name == "WE-UQ":
     exclude_patterns.remove("**/weuq-*")
 
     exclude_patterns.append("**/testbeds/*")
-    exclude_patterns.append("**/DakotaSensitivity.rst")
-    exclude_patterns.append("**/DakotaReliability.rst")
+    #exclude_patterns.append("**/DakotaSensitivity.rst")
+    #exclude_patterns.append("**/DakotaReliability.rst")
     exclude_patterns.append("**/DakotaParameterEstimation.rst")
     exclude_patterns.append("**/DakotaInverseProblems.rst")
 
