@@ -3,8 +3,15 @@
 FEM: Finite Element Method
 ==========================
 
-The **FEM** tab will present users with a selection of FEM
-applications. Currently, there are six options: OpenSees, Python, FEAPpv, SurrogateGP (using a surrogate model trained in quoFEM in place of a numerical simulation model), Custom (user-specified application), 'Multi Model' (using more than one model in an analysis), along with the option of specifying no simulation model.
+The **FEM** tab will present users with a selection of FEM applications. Currently, there are six options: 
+  #. OpenSees
+  #. Python
+  #. FEAPpv
+  #. SurrogateGP (using a surrogate model trained in quoFEM in place of a numerical simulation model)
+  #. Custom (user-specified application)
+  #. Multi Model (using more than one model in an analysis), along with the option of specifying no simulation model.
+
+  The user must select one of these applications to proceed with the analysis. The user must also provide the necessary input files for the selected application. The input files required for each application are described below.
 
 .. _figFEM:
 
@@ -36,7 +43,7 @@ When the choice of FEM application is OpenSees (the default application), the us
    The postprocess file can be either a tcl script or a Python script and the file extensions must be either ``.py`` or ``.tcl``.
 
 .. warning::
-   If a tcl script file and the user is reading results from files created with OpenSees recorder commands, the user must ensure there is a ``wipe recorders`` command at either the end of the main script or the start of the postprocessing script.
+   If a tcl script file is used and the user is reading results from files created with OpenSees recorder commands, the user must ensure there is a ``wipe recorders`` command at either the end of the main script or the start of the postprocessing script.
 
 
 Python
@@ -56,7 +63,7 @@ The user provides a main script and has the option to provide 2 other scripts:
   .. literalinclude:: TrussParams.py
      :language: py
 
-  The **RV** tab would be populated with the ``E``, ``P``, ``Ao``, and ``Au`` random variables. See :ref:`example 2<qfem-0002>` for more. For the Windows users, see the below important warning.
+  The **RV** tab would be populated with the ``E``, ``P``, ``Ao``, and ``Au`` random variables. See :ref:`example 2<qfem-0002>` for more. For users on Windows systems, see the important warning below:
 
 .. Caution::
 
@@ -244,7 +251,7 @@ By adding a model, a new tab is created in the FEM panel where users can choose 
 
 .. Note:: 
 
-  If a 'Multi Model' application is selected, at least 2 models must be defined.
+  If a **Multi Model** application is selected, at least 2 models must be defined.
 
 
 .. only:: quoFEM_app
