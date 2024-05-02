@@ -4,7 +4,4 @@
 Response Simulation
 *******************
 
-The initial implementation of the hurricane testbed is limited to
-consideration of wind damage and losses. More
-details are introduced in :ref:`lbl-testbed_LC_damage_and_loss`.
-
+The initial implementation of the hurricane testbed is limited to the consideration of wind damage and losses. More details are introduced in :ref:`lbl-testbed_LC_damage_and_loss`.
