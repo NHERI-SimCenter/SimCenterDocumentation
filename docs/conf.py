@@ -400,7 +400,7 @@ if app_name == "HydroUQ" or app_name == "Hydro":
     # exclude_patterns.append("**/desktop/FEM.rst")
     # exclude_patterns.append("**/desktop/GI.rst")
     # exclude_patterns.append("**/desktop/SIM.rst")
-    # sync_examples = True
+    sync_examples = True
     html_theme_options.update(
         {
             "analytics_id": "...",  # TODO: add analytics ID
