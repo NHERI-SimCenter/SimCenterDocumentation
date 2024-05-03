@@ -6,17 +6,17 @@ Gaussian Process (GP) Surrogate Modeling
 ******************************************
 
 .. Note:: 
-     Surrogate modeling functionality of |short tool id| is built upon `GPy <https://sheffieldml.github.io/GPy/>`_ library (available under BSD 3-clause license), an opensource python framework for Gaussian process modeling developed in the Sheffield machine learning group. 
+     Surrogate modeling functionality of |short tool id| is built upon `GPy <https://sheffieldml.github.io/GPy/>`_ library (available under BSD 3-clause license), an opensource Python framework for Gaussian process modeling developed in the Sheffield machine learning group. 
 
 .. Warning::
      Update: 01.04.2024
 
-     **Only on Mac**, the GPy module (v.1.12 or lower) has a dependency version compatibility issue with other python packages SimCenter uses. 
+     **Only on Mac**, the GPy module (v.1.12 or lower) has a dependency version compatibility issue with other Python packages SimCenter uses. 
      To run GPy on SimCenter tools, one needs to install the latest developer release of GPy. Below is the error message you get.
      
      .. code:: console
 
-        Surrogate modeling module uses GPy python package which is facing a version compatibility issue at this moment (01.05.2024). 
+        The surrogate modeling module uses the GPy python package which is facing a version compatibility issue at this moment (01.05.2024). 
         To use the surrogate module, one needs to update manually the GPy version to 1.13. The instructions can be found in the documentation: 
         https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html#lblsimsurrogate
 
@@ -35,7 +35,7 @@ Gaussian Process (GP) Surrogate Modeling
 
         {$PathToPythonExe} -m pip show GPy
 
-     and confirming that the version appears as 1.13.x. For any questions and bug reports, please contact us through `user forum <https://simcenter-messageboard.designsafe-ci.org/smf/index.php>`_.
+     and confirming that the version appears as 1.13.x. For any questions and bug reports, please contact us through the `user forum <https://simcenter-messageboard.designsafe-ci.org/smf/index.php>`_.
 
 
 .. only:: quoFEM_app
