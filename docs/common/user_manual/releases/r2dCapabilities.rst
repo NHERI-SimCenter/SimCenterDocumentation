@@ -7,7 +7,7 @@ Capabilities
 
 
 **Version** |tool version| of |app| was released **April 2024**. The following is the functionality available in this current version. New features and fixes in this release are marked :blue:`blue` in the following list of features.
-The major update from Version 4.0 is upgrading the :blue:`regional earthquake event generation tool`, :blue:`regional inventory generation tool BRAILS`, and :blue:` damage and loss engine Pelicun`. 
+The major update from Version 4.0 is upgrading the :blue:`regional earthquake event generation tool`, :blue:`regional inventory generation tool BRAILS`, and :blue:`damage and loss engine Pelicun`. 
 
 
 **Release date:** April, 2024
@@ -103,9 +103,9 @@ The major update from Version 4.0 is upgrading the :blue:`regional earthquake ev
 			a. Liquefaction triggering
 				1. Zhu et al. (2017) 
 				2. Hazus (2020)
-			b. Liquefaction lateral spreading permenant ground deformation (PGD_h)
+			b. Liquefaction lateral spreading permanent ground deformation (PGD_h)
 				1. Hazus (2020)
-			c. Liquefaction settlement permenant ground deformation (PGD_v)
+			c. Liquefaction settlement permanent ground deformation (PGD_v)
 				1. Hazus (2020)
 		* Vs30 model:
 			a. CGS/Wills Vs30 (Wills et al., 2015)
