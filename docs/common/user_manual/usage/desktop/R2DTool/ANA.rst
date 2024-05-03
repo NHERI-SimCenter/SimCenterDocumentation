@@ -14,6 +14,8 @@ In this panel, the user can select the applications that will be employed in the
 .. contents::
    :local:
 
+.. _lbl-ANABuildings:
+
 Buildings
 ---------
 
@@ -134,3 +136,14 @@ Step 2 is covered below and `Step 1 <https://nheri-simcenter.github.io/EE-UQ-Doc
 
 :uqblue:`Default Analysis`
    Select the engine that will be used when "Default" is returned from the **filter script.**
+
+
+.. _lbl-ANATransport:
+
+Transportation Infrastructure
+-----------------------------
+
+IM as EDP Analysis Model
+*************************
+
+The **IM as EDP** application forgoes a structural analysis altogether. In this case, the hazard intensity measure (IM) is considered the engineering demand parameter (EDP). 
