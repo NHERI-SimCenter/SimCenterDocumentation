@@ -114,6 +114,7 @@ The main window of the UI is made up from the following areas:
       :R2D:R2DTool/MOD
       :R2D:R2DTool/ANA
       :R2D:R2DTool/DL
+      :R2D:R2DTool/SP
       UQ
       :EEUQ:GI
       :WEUQ:GI
@@ -124,30 +125,29 @@ The main window of the UI is made up from the following areas:
       :Hydro:SIM
       :PBE:SIM
       :wind:Assets
+      :WEUQ:wind/WindEvents
+      :Hydro:hydro/EVT
       :EEUQ:earthquake/earthquakeEvents.rst
       :PBE:earthquake/earthquakeEvents.rst
-      :wind:wind/WindEvents
-      :Hydro:hydro/EVT
-      :wind:FEM
-      :WEUQ:wind/WindEvents
       :WEUQ:FEM
       :EEUQ:FEM
       :Hydro:FEM
       :PBE:FEM
       :quoFEM:quoFEM/FEM
-      RV
       :EEUQ:response/EDP
       :WEUQ:response/EDP
       :Hydro:response/EDP
+      RV
       :quoFEM:quoFEM/QuantitiesOfInterest
       :PBE:PBE/DL
       :PBE:PBE/performance
+      :quoFEM:quoFEM/resQUO
       :EEUQ:response/resEE
       :WEUQ:response/resEE
-      :quoFEM:quoFEM/resQUO
       :Hydro:hydro/resHydro
       :PBE:PBE/resPBE
       :R2D:R2DTool/RES
+
 
    
 #. **Push Buttons**

@@ -5,7 +5,7 @@ Verification Results
 ********************
 
 This page summarizes sample results from the 
-testbed runs with the emphasis on verifying the estimated loss ratios by hand-calculations.
+testbed runs with an emphasis on verifying the estimated loss ratios by hand calculations.
 
 Building Inventory
 ===================
@@ -40,7 +40,7 @@ Note that there are two major processes in the damage and loss assessment:
 and (2) estimating the damage and loss given the HAZUS building class and the 
 intensity measure (i.e., PWS in this testbed) for each building. 
 The first process will be discussed in :ref:`lbl-testbed_LC_verification_rulesets`.
-The second process is the addressed by this section with key steps:
+The second process is addressed by this section with key steps:
 
 #. Mapping the building inventory to HAZUS building classes using the `AssetRepresentationRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/releases/tag/v1.0.0>`_
 #. Fetching the individual damage fragilities and loss ratios for each building given its HAZUS building class
@@ -64,7 +64,7 @@ results, which are in good agreement.
 Verification of Rulesets
 ===========================
 
-Following the discussion in the previous section, this section would discuss the verification process 
+Following the discussion in the previous section, this section discusses the verification process 
 for the Rulesets introduced in :ref:`lbl-testbed_LC_asset_representation`. This verification includes 
 two aspects: (1) verifying the implementation of Rulesets and (2) verifying the influence 
 of rulesets. The first aspect is addressed by the 
@@ -72,19 +72,19 @@ of rulesets. The first aspect is addressed by the
 in the `AssetRepresentationRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/releases/tag/v1.0.0>`_.  Each 
 pytest examines a set of rulesets for a specific HAZUS building class to see if the resulting HAZUS classifier is as expected.
 The second aspect involves examinations of damage and loss results from the testbed to investigate the influence of a specific 
-building attribute on the building performance, i.e., if the results is rational then the corresponding rulesets 
+building attribute on the building performance, i.e., if the results are rational then the corresponding rulesets 
 are verified. As an example of this process, the construction year (YearBuilt) is focused in this section. 
 
 In order to investigate the cause and rationalize potential influence of year built, a parametric study is conducted for 
 a single-family house (ID = 2 in :numref:`bldg_inv_lc`). The original building record is expanded to 51 different buildings 
-by varying the year built only (i.e., from 1970 to 2020). For each building, expected loss ratio is estimated with 50 
+by varying the year built only (i.e., from 1970 to 2020). For each building, the expected loss ratio is estimated with 50 
 realizations to consider the uncertainty from the random sampling in the rulesets. The black curves in :numref:`year_built_infl` 
-plots the individual realizations of expected loss ratio against different year built values. The red curve shows the mean value 
+plot the individual realizations of expected loss ratio against different year built values. The red curve shows the mean value 
 based on the 50 realizations at each year built. It is clear to see that the building 
 performance improves following major code revisions. For example, labeled by the yellow dashed line at 2000, the IRC 2000-2009 
 requires 8d nails (with spacing 6"/6") for sheathing thickness of 1" (as default in this testbed) for basic wind speeds greater than 
 100 mph which enhances the building performance (reducing the loss ratio); while this ultimate wind speed is increased to 130 mph (just 
-above the DWSII of the building) after 2016 accepting the use of spacing to 6"/12" which in turns slightly degrades the 
+above the DWSII of the building) after 2016 accepting the use of spacing to 6"/12" which in turn slightly degrades the 
 building performance. This observation highlights the particular importance of nail spacing requirements for sheathing in 
 reducing wind-induced losses for this class of building.
 
@@ -96,12 +96,12 @@ reducing wind-induced losses for this class of building.
 
    Expected loss ratio vs. year built (WSF1, Gable Roof, Roof Slope=0.21)
 
-A similar study is also conducted for a multi-unit wood building (i.e., WMUH1) with year of construction varying from 1970 to 2020.
-For each building, expected loss ratio is estimated with 50 realizations to consider the uncertainty from the random sampling in the rulesets.
-:numref:`year_built_infl_wmuh1` plots individual realizations of expected loss ratio in black and average in red. Two year divisions (1987 and 2000) are noticed where buildings are 
-estimated to have different performances. Further investigating the cause of this trend indicates that the building from 1988 to 2000 are classified
-by our ruleset to have the second water resistance (SWR) given the roof slope is less than 0.33, whereas for the pre-1988 and post-2000 buildings
-random samplings are conducted to assign SWR to the building by chances (30% for pre-1988 and 60% for post-2000, which also explains that on average 
+A similar study is also conducted for a multi-unit wood building (i.e., WMUH1) with the year of construction varying from 1970 to 2020.
+For each building, the expected loss ratio is estimated with 50 realizations to consider the uncertainty from the random sampling in the rulesets.
+:numref:`year_built_infl_wmuh1` plots individual realizations of expected loss ratio in black and the average in red. Two year divisions (1987 and 2000) are noticeable where buildings are 
+estimated to have different performances. Further investigation into the cause of this trend indicates that the buildings from 1988 to 2000 are classified
+by our ruleset to have the second water resistance (SWR) given the roof slope is less than 0.33, whereas for the pre-1988 and post-2000 buildings,
+random samplings are conducted to assign SWR to the building by chance (30% for pre-1988 and 60% for post-2000, which also explains that on average 
 the expected loss after 2000 is lower than the expected loss before 1988).
 
 .. figure:: figure/WMUH1_LossRatio_HazusClass.png
