@@ -105,6 +105,7 @@ The main window of the UI is made up from the following areas:
       :R2D:R2DTool/MOD
       :R2D:R2DTool/ANA
       :R2D:R2DTool/DL
+	  :R2D:R2DTool/SP
       UQ
       :EEUQ:GI
       :WEUQ:GI
