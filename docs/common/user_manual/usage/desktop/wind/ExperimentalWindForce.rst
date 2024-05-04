@@ -1,8 +1,8 @@
 .. _lblExperimentalWindForce:
 
 
-Experimental Wind Force (Time Series Input) 
-------------------------------------------------
+Experimental Wind Force 
+------------------------
 
 
 The application takes multivariate stationary wind force time series data obtained from a wind tunnel experiment and can generate multiple realizations of the full-scale multivariate Gaussian wind force time series that is accurate up to the second-order properties (i.e., mean, CPSD functions, correlation) of the input data. Based on the Central Limit Theorem, the wind forces can be approximately modeled as Gaussian processes due to the integral effects of the incident pressures. This algorithm follows the implementation details in [Duarte2023]_ and the theory manual is available :ref:`here<lblDataInformedWindTheory>`.

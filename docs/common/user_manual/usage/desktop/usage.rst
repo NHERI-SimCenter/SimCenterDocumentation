@@ -116,8 +116,6 @@ The main window of the UI is made up from the following areas:
       :wind:Assets
       :EEUQ:earthquake/earthquakeEvents.rst
       :PBE:earthquake/earthquakeEvents.rst
-      :wind:wind/WindEvents
-      :wind:FEM
       :WEUQ:wind/WindEvents
       :WEUQ:FEM
       :EEUQ:FEM
