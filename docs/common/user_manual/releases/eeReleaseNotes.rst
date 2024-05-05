@@ -90,8 +90,7 @@ Version 2.2.7
 
 **Highlights**
 
-#. New Options added for PEER NGA Event: Specifying the fault type, pulse-like feature, and duration filter in ground motion selection
-Adding the option of "Geometric" suite average for the PEER NGA West2 ground motion selection
+#. New Options added for PEER NGA Event: Specifying the fault type, pulse-like feature, and duration filter in ground motion selection Adding the option of "Geometric" suite average for the PEER NGA West2 ground motion selection
 #. In User Defined EDP fixed a bug of using user-specified EDP names
 
 
