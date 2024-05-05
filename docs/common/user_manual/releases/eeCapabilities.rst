@@ -5,13 +5,13 @@
 Capabilities
 ************
 
-**Version 3.4** of |app| was released **September 29**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+**Version 3.5** of |app| was released **April 2024**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 Structural Information Model
 ============================
 
-Applications used to specify/select the structural model to be used in analysis.
+Applications used to specify/select the structural model to be used in the analysis.
 
 #. MDOF: creating idealized multi-degree-of-freedom models
 #. OpenSees: user-defined OpenSees models
@@ -74,7 +74,7 @@ Applications to perform the uncertainty quantification for the response paramete
 
         #. Monte Carlo Sampling (MCS)
 
-           a. Resample from existing correlated dataset of samples
+           a. Resample from an existing correlated dataset of samples
 
         #. :blue:`Multi-fidelity Monte Carlo (MFMC)`
 
