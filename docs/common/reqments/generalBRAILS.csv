@@ -1,6 +1,6 @@
-BR.1,"Need for scalable tools that autonomously create an accurate database of all infrastructure components, including points of inter- dependency with other infrastructure components", GC, M,InProgress,"WBS 111312, 111313, 111424"
+BR.1,"Need for scalable tools that autonomously create an accurate database of all infrastructure components, including points of inter- dependency with other infrastructure components", GC, M,InProgress, "1.1.3.1.2, 1.1.3.1.3, 1.1.4.2.4"
 BR.2 ,Promote living community risk models utilizing local inventory data from various sources, GC , M ,InProgress,**Not sure what this item is**
-BR.3 ,"Developing and sharing standardized definitions, measurement protocols and strategies for data collection", GC , M ,InProgress,"WBS 111341, 111362, 111341"
+BR.3 ,"Developing and sharing standardized definitions, measurement protocols and strategies for data collection", GC , M ,InProgress,"1.1.3.4.1, 1.1.3.6.2, 1.1.3.4.1"
 **BR.4**,"**Developing tools that utilize GIS information and online images, e.g., Google Maps, for data collection for gathering building information**", **GC**, **M**,**Implemented**,
 BR.4.1,Develop framework for creating asset inventories, SP, M,Implemented,`UM Workflow <https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/workflow.html>`_
 BR.4.2 ,Create workflow application for building inventory from framework modules, SP , M ,Implemented,`UM Workflow <https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/workflow.html>`_
@@ -22,7 +22,7 @@ BR.5.12 ,Predicting occupancy type, SP , M ,Implemented, `UM Occupancy Classifie
 BR.5.13 ,Predicting Year Built, SP , M ,Implemented, `UM Year Built Classifier <https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/yearClassifier.html>`_
 BR.5.14 ,Predicting attached garage, SP , M ,Implemented, `UM Garage Detector <https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/garageDetector.html>`_
 BR.5.15 ,Predicting presence of masonry chimney, UF , D ,Implemented, `UM Chimney Detector <https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/chimneyDetector.html>`_
-BR.5.16 ,Predicting building material, SP , M ,InProgress,WBS 111312
+BR.5.16 ,Predicting building material, SP , M ,InProgress, 1.1.3.1.2
 BR.5.17 ,Predicting Structural Type, SP , M ,Implemented, `Inventory Generator <https://github.com/NHERI-SimCenter/BRAILS/blob/master/brails/InventoryGenerator.py>`_
 **BR.6**,**DesignSafe integration to provide access to GPU**,,,**Implemented**,
 BR.6.1,Create JupyterHub notebook at DesignSafe for building asset inventory workflow usage, SP, M,Implemented, `Example Notebooks <https://github.com/NHERI-SimCenter/BRAILS/tree/master/notebooks>`_
@@ -31,4 +31,4 @@ BR.6.3,Create JupyterHub notebook at DesignSafe for individual modules to demons
 **BR.7**,**Work to improve existing performance models through Continuous Learning**,,,,**Not sure if this is still of interest and is worked on**
 BR.7.1,Continuous Learning for Year Built, SP, M,,**Not sure if this is still of interest and is worked on**
 BR.7.2,Continuous Learning for Roof Material, SP, M,,**Not sure if this is still of interest and is worked on**
-BR.8,Work to gather data for Module Validation/Verification/Training, SP, M,InProgress,"WBS 111312, 111315"
+BR.8,Work to gather data for Module Validation/Verification/Training, SP, M,InProgress,"1.1.3.1.2, 1.1.3.1.5"
