@@ -8,7 +8,7 @@ This testbed for regional hurricane risk assessment of Lake Charles, LA under wi
 consistent with that developed for the Atlantic County testbed. Its intent is to (1) explore the possibility 
 of using advanced machine learning and artificial intelligence techniques to populate/predict important 
 building features that are limited by the tax assessor and open inventory data, (2) further validate the developed 
-workflow with a recent hurricane event with field investigation data, and (3) identifying potential research 
+workflow with a recent hurricane event with field investigation data, and (3) identify potential research 
 needs for refining/upgrading/extending damage assessment methods and models at parcel levels. Similar to the general 
 idea of other testbeds, community developers can progressively contribute refinements that increase the fidelity and capacities 
 of the backend regional resilience assessment workflow. This documentation specifically demonstrates the process of: 
@@ -38,13 +38,13 @@ of building occupancies and other critical infrastructure.
 This testbed builds upon existing relationships between SimCenter and the Structural Extreme Events Reconnaissance (StEER) 
 Network, which made various reconnaissance data in the affected region available for initial validation. The 
 validation did not take advantage of the extensive street-level panoramas (available in Google Maps) that can provide 
-an even richer validation data set for this hurricane. Notably, the areas impacted by Laura were previously impacted by 
-Hurricane Rita (2005), with many structures reconstructed or repaired and unfortunately again damaged. As a large 
+an even richer validation dataset for this hurricane. Notably, the areas impacted by Laura were previously impacted by 
+Hurricane Rita (2005), with many structures reconstructed or repaired and unfortunately damaged again. As a large 
 swath of modern (post-IBC/IRC construction) single-family residential structures were impacted by design-level winds 
 during Hurricane Laura, underscoring vulnerabilities to garage doors and high rates of roof cover losses, the 
 current implementation mainly focuses on establishing the residential inventories, though other building classes warrant 
 future investigation, including mobile homes where even Zone II anchorages were observed to fail. Notably, 
-regrettably low rates of impact-resistant fenestration was observed by StEER across the region, further suggesting 
+regrettably low rates of impact-resistant fenestration were observed by StEER across the region, further suggesting 
 opportunities to explore this attribute in the ensuing losses.
 
 This testbed also demonstrates the challenges of creating inventories in areas where tax assessor and other open 
@@ -57,8 +57,8 @@ Capabilities & Supported Hazards
 
 The testbed supports the transition from census-block-level loss projections to asset-level projections that assess 
 the damage to individual buildings under hurricane-induced wind hazards. Water penetration due to the breach of building 
-envelopes and/or wind-borne debris impact are also captured in the damage and loss modeling, though the physics of 
-these phenomena themselves are not explicitly modeled. Storm surge, flood and other rainfall-induced hazards are 
+envelopes and/or wind-borne debris impact is also captured in the damage and loss modeling, though the physics of 
+these phenomena themselves are not explicitly modeled. Storm surge, flood, and other rainfall-induced hazards are 
 not included in the current implementation. Moreover, the inventory focuses only on wood-frame 
 residential construction. These intentional focuses of the current implementation leave ample room for further 
 community-led development. The adoption of HAZUS loss estimation frameworks [FEMA18]_ takes advantage of a process developed 
@@ -71,8 +71,8 @@ specific regulations and mitigation measures in Lake Charles.
 Current Implementation
 ========================
 
-For the initial implementation of the backend workflow, asset description adopts an augmented parcel and 
-available hindcast wind fields provide the Peak Wind Speed (PWS) during the hurricane (used as hazard 
+For the initial implementation of the backend workflow, asset description adopts an augmented parcel, and 
+available hindcast wind fields provide the Peak Wind Speed (PWS) during the hurricane (used as a hazard 
 intensity measure). In lieu of a structural analysis model, assets are assigned attributes associated 
 with various HAZUS-consistent building classifications. The adoption of HAZUS damage and loss assessment 
 methodology for hurricanes thus enables these intensity measures to be related to probabilities of 
@@ -82,10 +82,10 @@ Available Inventories
 ========================
 
 The constructed building inventory developed for Lake Charles is accessible via DesignSafe. 
-Among the total 30,072 collected buildings in the city of Lake Charles, 26,516 are classified as residential buildings and 
-3,556 are commercial buildings (classified by BRAILS, more details will be introduced in :ref:`lbl-testbed_LC_asset_description`). 
-This testbed creates and focuses on an inventory of the 26,516 residential buildings. :numref:`fig-yearBuilt` visualizes the 
-Year Built of the buildings in the inventory. :numref:`fig-occupancyClass` shows the geospatial distribution 
+Among the total 30,072 collected buildings in the city of Lake Charles, 26,516 are classified as residential buildings, 
+and 3,556 are commercial buildings (classified by BRAILS, more details will be introduced in :ref:`lbl-testbed_LC_asset_description`).
+ This testbed creates and focuses on an inventory of the 26,516 residential buildings. :numref:`fig-yearBuilt` visualizes the 
+ Year Built of the buildings in the inventory. :numref:`fig-occupancyClass` shows the geospatial distribution 
 of the occupancy classes in the inventory.
 
 .. _fig-yearBuilt:
