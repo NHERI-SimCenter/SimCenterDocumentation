@@ -125,10 +125,10 @@ The main window of the UI is made up from the following areas:
       :Hydro:SIM
       :PBE:SIM
       :wind:Assets
-      :WEUQ:wind/WindEvents
       :Hydro:hydro/EVT
       :EEUQ:earthquake/earthquakeEvents.rst
       :PBE:earthquake/earthquakeEvents.rst
+      :WEUQ:wind/WindEvents
       :WEUQ:FEM
       :EEUQ:FEM
       :Hydro:FEM
