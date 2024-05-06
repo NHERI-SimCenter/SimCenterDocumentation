@@ -8,10 +8,10 @@ M9 Dataset
 ==========
 
 With funding support from the National Science Foundation, a United States Geological Survey and University of Washington team studied the impacts of
-large magnitude, megathrust earthquakes on the Cascadia subduction zone as part of the `M9 Project <https://sites.uw.edu/pnet/m9-simulations/about-m9-simulations/>`_ . The researchers used physics-based simulations to generate possible ground motions for the entire Pacific Northwest region during a magnitude-9 (M9) event. Broadband ground motions were developed from these M9 simulations for seven grids (A, B, C, D, E, Y and Z), each corresponding to a particular combination of region and/or `grid resolution <https://sites.uw.edu/pnet/m9-simulations/about-m9-simulations/extent-of-model/>`_
+large magnitude, megathrust earthquakes on the Cascadia subduction zone as part of the `M9 Project <https://sites.uw.edu/pnet/m9-simulations/about-m9-simulations/>`_ . The researchers used physics-based simulations to generate possible ground motions for the entire Pacific Northwest region during a magnitude-9 (M9) event. Broadband ground motions were developed from these M9 simulations for a number of grids (A, B, C, D, E, Y and Z), each corresponding to a particular combination of region and/or `grid resolution <https://sites.uw.edu/pnet/m9-simulations/about-m9-simulations/extent-of-model/>`_. 
 
 .. list-table:: Title
-   :widths: 15 15 30 30
+   :widths: 10 30 10 25 25
    :header-rows: 1
 
    * - Grid
@@ -30,7 +30,7 @@ large magnitude, megathrust earthquakes on the Cascadia subduction zone as part 
      - 40.3 to 48.6
      - -127.7 to -125.4
    * - C
-     - Portlan, Oregon
+     - Portland, Oregon
      - 1 km
      - 45.2 to 45.9
      - -123.3 to -122.2
