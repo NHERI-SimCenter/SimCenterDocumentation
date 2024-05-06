@@ -104,11 +104,11 @@ EVT (Event Selection)
 
      #. :blue:`Material Point Method (ClaymoreUW MPM)` :sup:`1`
 
-          #. Unified debris-fluid-structure-soil interaction simulations using Material Point Method (MPM)
+          #. :blue:`Unified debris-fluid-structure-soil interaction simulations using Material Point Method (MPM)`
 
-          #. Multi-GPU accelerated
+          #. :blue:`Multi-GPU accelerated`
 
-          #. Available for running on TACC HPC
+          #. :blue:`Available for running on TACC HPC`
 
      #. GeoClaw (**Returning Soon**) :sup:`2`
 
@@ -120,7 +120,7 @@ EVT (Event Selection)
 
           #. Available for running on TACC HPC
 
-     #. :blue:`Celeris (**Coming Soon**)` :sup:`3`
+     #. :blue:`Celeris`` (Coming Soon)` :sup:`3`
      
           #. :blue:`Boussinesq wave solver`
 
@@ -132,7 +132,7 @@ EVT (Event Selection)
 
 .. note:: 
      
-     :sup:`1` ClaymoreUW MPM numerical method currently only available as a standalone tool in the `Tools` header-ribbon. Soon to be introduced into the full workflow.
+     :sup:`1` ClaymoreUW MPM numerical method currently only available as a standalone tool in the ``Tools`` header-ribbon. Soon to be introduced into the full workflow.
 
      :sup:`2` GeoClaw functionality from HydroUQ v1.0 is partially deprecated in the current version. It is to be fully reintroduced in the near future.
 
@@ -150,7 +150,7 @@ FEM (Computational Model Specification)
 RV (Random Variable Options)
 ============================
 
-#. Inspect PDF of RV
+#. Inspect probability distribution function (PDF) of RV
 
 #. Distributions available: :sup:`1`
      
@@ -188,7 +188,7 @@ EDP (Outputs from Computational Models)
 
      #. :blue:`Standard Tsunami EDPs``
 
-          #. :blue:`Maximum force / pressure / wave-velocity / wave-height / inter-story drift (PID) / roof displacement (PRD)`
+          #. :blue:`Peak force / pressure / wave-velocity / wave-height / inter-story drift (PID) / roof displacement (PRD)`
 
           #. :blue:`Total impulse / wave-duration / wave momentum-flux`
 
