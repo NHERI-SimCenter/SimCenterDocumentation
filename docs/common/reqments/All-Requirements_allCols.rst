@@ -232,5 +232,5 @@ DL Database Requirements
 
 .. raw:: latex
 
-    \end{landscape}	     
+    \end{landscape}
 	     
