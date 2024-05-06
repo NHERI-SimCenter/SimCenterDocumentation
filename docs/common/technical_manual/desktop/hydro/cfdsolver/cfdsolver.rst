@@ -3,7 +3,7 @@
 CFD Solvers
 ==============
 
-HydroUQ leverages the power of OlaFlow for the CFD solver. The 
+.. HydroUQ leverages the power of OlaFlow for the CFD solver. The 
 
 Turbulence models
 --------------------

@@ -1,0 +1,100 @@
+P.1, Existing Assessment Methods, , , , 
+P.1.1, Implement the high-resolution loss assessment methodologies, GC, , , 
+P.1.1.1, Implement the scenario-based assessment from FEMA-P58, SP, M, Implemented,`Example 1 <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/examples/desktop/pbdl-0001/README.html>`_
+P.1.1.2, Implement the time-based assessment from FEMA-P58, SP, D, InProgress,
+P.1.1.3, Implement high-resolution assessment of buildings under wind hazards, SP, M, InProgress,WBS: 11351
+P.1.1.4, Implement high-resolution assessment of buildings under water hazards, SP, M, InProgress,WBS: 11352
+P.1.1.5, Implement high-resolution assessment of transportation networks, SP, M, InProgress,WBS: 11353
+P.1.1.6, Implement high-resolution assessment of buried pipelines, SP, M, InProgress,WBS: 11354
+P.1.2, Implement the efficient loss assessment methodologies from HAZUS, GC, ,,
+P.1.2.1, Implement the assessment of buildings under earthquake hazard from HAZUS, SP, M, Implemented,`Example 1 <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/examples/desktop/E1BasicHAZUS/README.html>`_
+P.1.2.2, Implement the assessment of buildings under hurricane wind hazard from HAZUS, SP, M, Implemented,`Example 8 <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/examples/desktop/E8HurricaneWind/README.html>`_
+P.1.2.3, Implement the assessment of buildings under storm surge hazard from HAZUS, SP, M,Implemented,`Example 7 <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/examples/desktop/E7HurricaneWindWater/README.html>`_
+P.1.2.4, Implement the assessment of buried pipelines under earthquake hazard from HAZUS, SP, M,Implemented,`Example 16 <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/examples/desktop/E16WDNRecoveryAndPerformanceAssessment/README.html>`_
+P.1.2.5, Implement the assessment of transportation networks under earthquake hazard from HAZUS, SP, M,Implemented,`Example 14 <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/examples/desktop/E14BasicHAZUSTransportation/README.html>`_
+P.1.2.6, Implement the assessment of power networks under earthquake hazard from HAZUS, SP, M, InProgress,WBS: 11343
+, , , , , 
+P.2, Control, , , , 
+P.2.1, Analysis & Data, , , , 
+P.2.1.1, Allow users to set the number of realizations, SP, M, Implemented,`Example 1 <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/examples/desktop/pbdl-0001/README.html>`_
+P.2.1.2, Allow users to customize fragility and consequence function parameters, SP, D, Implemented,`Example 9 <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/examples/desktop/E9Tsunami/README.html>`_
+P.2.1.3, Allow users to specify dependencies between logically similar parts of the stochastic models, SP, D, Implemented,`Example 1 <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/examples/desktop/pbdl-0001/README.html>`_
+P.2.2, Response Model, , , , 
+P.2.2.1, Allow users to specify the added uncertainty to EDPs (increase in log-standard dev.), SP, M, Implemented,`Example 1 <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/examples/desktop/pbdl-0001/README.html>`_
+P.2.2.2, Allow users to specify the EDP ranges that correspond to reliable simulation results, SP, D, Implemented,`Example 1 <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/examples/desktop/pbdl-0001/README.html>`_
+P.2.2.3, Allow users to specify the type of distribution they want to fit to the empirical EDP data, UF, D, Implemented,`Example 1 <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/examples/desktop/pbdl-0001/README.html>`_
+P.2.2.4, Allow users to choose if they want to fit a distribution only to the non-collapsed EDPs, UF, M, Implemented,`Example 1 <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/examples/desktop/pbdl-0001/README.html>`_
+P.2.3, Performance Model, , , , 
+P.2.3.1, Allow users to prescribe a different number of inhabitants on each floor, SP, D,InProgress,Revision of model implemented in v2.0 in progress
+P.2.3.2, Allow users to customize the temporal distribution of inhabitants, SP, D,InProgress,Revision of model implemented in v2.0 in progress
+P.2.3.3, Allow users to prescribe different component quantities for each floor in each direction, SP, D, Implemented,`Example 1 <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/examples/desktop/pbdl-0001/README.html>`_
+P.2.3.4, Allow users to specify the number of component groups and their quantities in each performance group, UF, D, Implemented,`Example 1 <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/examples/desktop/pbdl-0001/README.html>`_
+P.2.4, Damage Model, , , , 
+P.2.4.1, Allow users to specify the residual drift limits that determine irrepairability, SP, D, Implemented,`Example 1 <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/examples/desktop/pbdl-0001/README.html>`_
+P.2.4.2, Allow users to specify the yield drift value that is used to estimate residual drifts from peak drifts, SP, D, Implemented,`Example 1 <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/examples/desktop/pbdl-0001/README.html>`_
+P.2.4.3, Allow users to specify the EDP limits that are used to determine collapse probability, SP, D, Implemented,`Example 1 <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/examples/desktop/pbdl-0001/README.html>`_
+P.2.4.4, Allow users to specify arbitrary collapse modes and their likelihood, SP, D, Implemented,`Component Vulnerability Model Documentation <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/usage/desktop/PBE/asset.html#user-defined-components>`_
+P.2.4.5, Allow users to prescribe the collapse probability of the structure, UF, M, Implemented,`Collapse Model Documentation <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/usage/desktop/PBE/damage.html#collapse>`
+P.2.5, Loss Model, , , , 
+P.2.5.1, Allow users to decide which DVs to calculate, SP, D, Implemented,`Loss Model Documentation <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/usage/desktop/PBE/repairs.html>`
+P.2.5.2, Allow users to specify the likelihood of various injuries in each collapse mode, SP, D,InProgress,Revision of model implemented in v2.0 in progress
+, , , , , 
+P.3, Hazard Model, , ,,
+P.3.1, Hazard Occurrence Rate, , , , 
+P.3.1.1, Enable estimation of the likelihood of earthquake events, SP,D, , 
+P.3.1.2, Enable estimation of the likelihood of wind events, SP,D, , 
+P.3.1.3, Enable estimation of the likelihood of storm surge events, SP,D, , 
+P.3.1.4, Enable estimation of the likelihood of tsunami events, SP,D, , 
+, , , , , 
+P.4, Response Model, , ,,
+P.4.1, EDP (re-)sampling, , , , 
+P.4.1.1, Enable coupled assessment by using raw EDP values as-is, UF, M, Implemented,`Example 1 <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/examples/desktop/E1BasicHAZUS/README.html>`_
+P.4.1.2, Enable non-Gaussian EDP distributions, UF, D,Implemented,`Probabilistic Demand Model Documentation <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/usage/desktop/PBE/demands.html#probabilistic-model>`
+P.4.2, EDP Identification, , , , 
+P.4.2.1, Implement automatic identification of required EDP types based on the performance model, SP,D, , 
+, , , , , 
+P.5, Performance Model, , , , 
+P.5.1, Auto-population of performance models, , , , 
+P.5.1.1, Implement framework to enable user-defined auto-population scripts, UF, D, Implemented,`Example 1 <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/examples/desktop/E1BasicHAZUS/README.html>`_
+P.5.1.2, Prepare script to perform auto-population based on normative quantities in FEMA P58, UF, D, , 
+, , , , , 
+P.6, Damage Model, , ,,
+P.6.1, Collapse estimation, , , , 
+P.6.1.1, Estimate collapse probability of the structure using EDP limits and the joint distribution of EDPs, SP, D, Implemented,`Example 1 <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/examples/desktop/pbdl-0001/README.html>`_
+P.6.1.2, Estimate the collapse probability of the structure using empirical (raw) EDP data, UF, M, Implemented,`Collapse Model Documentation <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/usage/desktop/PBE/damage.html#collapse>`
+P.6.1.3, Enable user-defined collapse probability, UF, M, Implemented,`Collapse Model Documentation <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/usage/desktop/PBE/damage.html#collapse>`
+P.6.2, Building Damage, , , , 
+P.6.2.1, Implement earthquake fragility functions for building components from FEMA P58, SP, M, Implemented,`Example 1 <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/examples/desktop/pbdl-0001/README.html>`_
+P.6.2.2, Implement earthquake fragility functions for buildings from HAZUS, SP, M, Implemented,`Example 2 <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/examples/desktop/pbdl-0002/README.html>`_
+P.6.2.3, Implement wind fragility functions for buildings from HAZUS, SP, M, Implemented,`Example 8 <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/examples/desktop/E8HurricaneWind/README.html>`_
+P.6.2.4, Implement inundation fragility functions for buildings from HAZUS, SP, M, Implemented,`Example 7 <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/examples/desktop/E7HurricaneWindWater/README.html>`_
+P.6.2.5, Implement high-resolution wind fragility functions for building components, SP, M, InProgress,WBS: 11351
+P.6.2.6, Implement high-resolution inundation fragility functions for building components, SP, M, InProgress,WBS: 11352
+P.6.3, Lifeline Damage, , , ,
+P.6.3.1, Implement earthquake fragility functions for buried pipelines from HAZUS, SP, M,Implemented,`Example 16 <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/examples/desktop/E16WDNRecoveryAndPerformanceAssessment/README.html>`_
+P.6.3.2, Implement earthquake fragility functions for bridges from HAZUS, SP, M,Implemented,`Example 14 <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/examples/desktop/E14BasicHAZUSTransportation/README.html>`_
+P.6.3.3, Implement earthquake fragility functions for power networks from HAZUS, SP, M, ,
+P.6.3.4, Implement high-resolution fragility functions for buried pipelines, SP, M, InProgress,WBS: 11354
+P.6.3.5, Implement high-resolution fragility functions for transportation networks, SP, M, InProgress,WBS: 11353
+P.6.4, Cascading Damages, , , , 
+P.6.4.1, Implement fault tree-based cascading damage model, SP, M,Implemented,`Damage Process Documentation <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/usage/desktop/PBE/damage.html#damage-process>`
+, , , , , 
+P.7, Loss Model, , , , 
+P.7.1, Consequence functions for buildings, , , , 
+P.7.1.1, Implement functions for repair cost and time as per FEMA P58, SP, M, Implemented,`Example 1 <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/examples/desktop/pbdl-0001/README.html>`_
+P.7.1.2, Implement functions for red tag triggering as per FEMA P58, SP, M,InProgress,Revision of model implemented in v2.0 in progress
+P.7.1.3, Implement functions for injuries and fatalities as per FEMA P58, SP, M,InProgress,Revision of model implemented in v2.0 in progress
+P.7.1.4, Implement functions for repair cost and time as per HAZUS earthquake, SP, M, Implemented,`Example 2 <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/examples/desktop/pbdl-0002/README.html>`_
+P.7.1.5, Implement functions for debris as per HAZUS earthquake, SP, D, , 
+P.7.1.6, Implement functions for business interruption as per HAZUS earthquake, SP, D, , 
+P.7.1.7, Implement functions for repair cost and time as per HAZUS wind, SP, M, Implemented,`Example 8 <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/examples/desktop/E8HurricaneWind/README.html>`_
+P.7.1.8, Implement functions for repair cost and time as per HAZUS inundation, SP, M,Implemented,`Example 7 <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/examples/desktop/E7HurricaneWindWater/README.html>`_
+P.7.1.9, Implement functions for environmental impact estimation as per FEMA P58 2nd edition, SP, M, Implemented,`Example 1 <https://nheri-simcenter.github.io/PBE-Documentation/common/user_manual/examples/desktop/pbdl-0001/README.html>`_
+P.7.1.10, Implement functions for high-resolution repair cost and time assessment for wind hazards, SP, M, InProgress,WBS: 11351
+P.7.1.11, Implement functions for high-resolution repair cost and time assessment for water hazards, SP, M, InProgress,WBS: 11352
+P.7.2, Consequence functions for other assets, , , , 
+P.7.2.1, Implement functions for repair cost and time for buried pipelines as per HAZUS earthquake, SP, M,InProgress,WBS: 11343
+P.7.2.2, Implement functions for repair cost and time for bridges as per HAZUS earthquake, SP, M,Implemented,`Example 14 <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/examples/desktop/E14BasicHAZUSTransportation/README.html>`_
+P.7.2.3, Implement functions for repair cost and time for power networks as per HAZUS earthquake, SP, M,,WBS: 11343
+P.7.2.4, Implement high-resolution functions for repair cost and time for transportation networks, SP, M, InProgress,WBS: 11353
+P.7.2.5, Implement high-resolution functions for repair cost and time for buried pipelines, SP, M, InProgress,WBS: 11354

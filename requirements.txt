@@ -12,3 +12,4 @@ sphinx-design
 jsonpath2
 sphinxcontrib.spelling==7.2.1
 sphinx_toolbox
+sphinx_design
