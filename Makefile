@@ -12,7 +12,7 @@ PUBLDIR = $(shell v="$(SIMDOC_APP)"; echo "../$${v%Tool}-Documentation/docs/")
 # Directories to remove when cleaning
 CLEANDIR      = _sources _static _images common
 
-CSVDIR  = docs/common/reqments/_out/
+CSVDIR  = docs/common/reqments/_out_from_json/
 JSONDIR = docs/common/reqments/data/
 
 # This environment variable should specify a directory

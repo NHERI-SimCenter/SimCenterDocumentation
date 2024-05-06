@@ -111,5 +111,13 @@ The particular application must be selected by un-commenting the appropriate `ap
     ```
     Note, however, that in order to achieve a proper build, one may need to run the `make <app> latex` target several times in succession before running `make <app> pdf`.
 
+- It is often useful to clean and update the documentation when building, as some changes in other repositories can affect this one. The following command will clean the documentation and update the source files before building the **HydroUQ** application's example cases, of which many files are located in the adjacent HydroUQ repository (if installed locally in the same parent directory):
+
+    ```shell
+    make clean 
+    make update 
+    make hydro examples
+    ```
+
 > Note: Legacy build scripts in the `docs` directory do not sync example files from their source repositories.
 

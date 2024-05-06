@@ -309,7 +309,7 @@ extlinks.update(
     }
 )
 
-examples_url = f"https://github.com/NHERI-SimCenter/HydroUQ/tree/master/Examples/"
+examples_url = f"https://github.com/JustinBonus/HydroUQ/tree/mpm/Examples/"
 extlinks.update(
     {
         f"hdro-{i:04}": (f"{examples_url}/hdro-{i:04}/%s", f"hdro-{i:04}") 
@@ -387,8 +387,8 @@ if app_name == "HydroUQ" or app_name == "Hydro":
     # TODO: fix these temporary changes
     exclude_patterns.append("**/user_manual/usage/desktop/earthquake/*")
     exclude_patterns.append("**/*architectureLevel4.rst*")
-    exclude_patterns.append("**/reqments/index.rst")
-    exclude_patterns.append("**/requirements/bigRequirements.rst")
+    # exclude_patterns.append("**/reqments/index.rst")
+    # exclude_patterns.append("**/requirements/bigRequirements.rst")
     #exclude_patterns.append("**/DakotaSensitivity.rst")
     #exclude_patterns.append("**/DakotaReliability.rst")
     exclude_patterns.append("**/DakotaParameterEstimation.rst")
@@ -401,24 +401,24 @@ if app_name == "HydroUQ" or app_name == "Hydro":
     # exclude_patterns.append("**/desktop/GI.rst")
     # exclude_patterns.append("**/desktop/SIM.rst")
     sync_examples = True
-
     html_theme_options.update(
         {
             "analytics_id": "...",  # TODO: add analytics ID
         }
     )
-    #master_doc = "Hydro"
     master_doc = "index"
+    # master_doc = "Hydro"
+
 
     rst_prolog += f"""
 .. |full tool name| replace:: Water-borne Hazards Engineering with Uncertainty Quantification
-.. |test example| replace:: :ref:`hdro-0001`
-.. |tool version| replace:: 3.0
+.. |test example| replace:: :ref:`hdro-0002`
+.. |tool version| replace:: 3.1.0
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0
 .. _Hydro Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ
 .. _HydroUQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-HydroUQ`
-.. |contact person| replace:: Justin Bonus (bonus@berkeley.edu), Ajay B Harish (ajaybh@berkeley.edu), Frank Mckenna (fmk@berkeley.edu), NHERI SimCenter, University of California Berkeley
+.. |contact person| replace:: Justin Bonus (bonus@berkeley.edu), Ajay B Harish (ajay.harish@manchester.uk.edu), Frank Mckenna (fmk@berkeley.edu), NHERI SimCenter, University of California Berkeley
 
 """
 
@@ -870,7 +870,7 @@ spelling_exclude_patterns=['ignored_*']
 
 # sync files for examples
 if sync_examples:
-    # TODO: Temporary fix
+    # # TODO: Temporary fix
     # if not example_config:
     #     import yaml
     #     with open("../examples.yaml","r") as f:

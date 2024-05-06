@@ -9,7 +9,7 @@ SimCenter tools all comprise a frontend UI and some backend applications. They a
 
 .. note::
 
-   As part of our continuous integration process, |app| is built evrey time we check code into the NHERI-SimCenter repositories. To do this we make use of a CI service. That current service is `appveyor <https://www.appveyor.com/>`_. As a consequence in the |app| repo that you will clone as part of this build process there is a file **appveyor.yml**. This file contains shell commands that are issued to set-up the operating system, download the software and build it. If the following commands fail for you, look at the appveyor.yml file to see what commands are currently beeing called as these may be more up to date than what is presented below.
+   As part of our continuous integration process, |app| is built every time we check code into the NHERI-SimCenter repositories. To do this we make use of a CI service. That current service is `appveyor <https://www.appveyor.com/>`_. As a consequence in the |app| repo that you will clone as part of this build process there is a file **appveyor.yml**. This file contains shell commands that are issued to set-up the operating system, download the software and build it. If the following commands fail for you, look at the appveyor.yml file to see what commands are currently beeing called as these may be more up to date than what is presented below.
 
 ********************
 Install Dependencies
@@ -130,7 +130,7 @@ Build the applications
 
           
       
-If building and installation were successful, you should find a folder called ``applications`` in the repository with all the applications inside of it.   The name of this folder should not be changed.
+If building and installation were successful, you should find a folder called ``applications`` in the repository with all the applications inside of it. The name of this folder should not be changed.
    
 
 ************************
@@ -178,6 +178,13 @@ To build the interface, you first need to download the repo and a companion repo
 
        git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
        git clone https://github.com/NHERI-SimCenter/WE-UQ.git	  
+
+.. only:: HydroUQ_app	  
+
+   .. code::
+
+       git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
+       git clone https://github.com/NHERI-SimCenter/HydroUQ.git	  
 
 
 .. note::
