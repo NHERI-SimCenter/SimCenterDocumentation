@@ -1,6 +1,10 @@
 The following is the list of application requirements across all the SimCenter tools. It is helpful to view an abstract hierarchy of the tools, showing **R2D** at the top and the components at the bottom. Each tool can pull in requirements from other applications lower on the hierarchy. For example, **PBE** builds upon **EE-UQ**. It has its own requirements, i.e. **DL**, but includes the loading, modeling and analysis requirements from **EE-UQ**. It specializes the **UQ** requirement, in that it only incorporates the sampling option. One set of requirements not shown in the figure is **CR**, the list of common research functionalities required in all the applications.
 
 
+.. raw:: latex
+
+    \begin{landscape}
+    
 R2D Requirements
 ----------------
 
@@ -224,3 +228,9 @@ DL Database Requirements
   :file: _out/Damage.csv
 
 .. include:: key.rst
+
+
+.. raw:: latex
+
+    \end{landscape}	     
+	     

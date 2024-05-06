@@ -40,59 +40,12 @@ Each requirement in the RTM has the following entry fields:
   #. A column indicating which examples are provided that can be used to test the features.
 
 
-The software requirements are many. For ease of presentation, they are broken into three groups: 1) Building Scale Applications, 2) Regional Scale Applications, and 3) Education and Outreach Activities.
-
-
-+++++++++++++++++++++++++++
-Building Scale Applications
-+++++++++++++++++++++++++++
-
-Applications to allow researchers to improve on methods related to determining the response assessment and performance-based design of individual buildings subject to the impact of a natural hazard. For building scale simulations, the requirements are broken down by the SimCenter application. There are applications under development for each of the hazards. Many of the requirements related to UQ and nonlinear analysis are repeated amongst the different applications under the assumption that if they are beneficial to engineers dealing with one hazard, they will be beneficial to engineers dealing with other hazards.
-
-.. toctree-filt::
-   :caption: Building Scale
-   :maxdepth: 1
-   :numbered: 4
-
-   QUOFEM
-   WE-UQ
-   EE-UQ
-   HydroUQ
-   PBER
-
-
-+++++++++++++++++++++++++++
-Regional Scale Applications
-+++++++++++++++++++++++++++
-
-For the regional scale, the requirements are broken down into four classes. AI-related requirements in **BRAILS**, damage and loss prediction in **pelicun**, backend workflow requirements in **rWhale**, and front-end user interface requirements in **R2D**.
-
-.. toctree-filt::
-   :caption: Regional Scale 
-   :maxdepth: 1
-   :numbered: 4
-
-   R2D
-   BRAILS
-   pelicun
-   testbeds
-
-++++++++++++++++
-All Requirements
-++++++++++++++++
-
 .. toctree-filt::
    :caption: All Requirements
    :maxdepth: 1
    :numbered: 4
 
    All-Requirements_allCols
-
-..
-   .. toctree::
-      :caption: Gallery
-
-      ../user_manual/examples/desktop/gallery
 
    
 Contact
