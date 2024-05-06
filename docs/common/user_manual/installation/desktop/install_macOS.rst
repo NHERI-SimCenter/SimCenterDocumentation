@@ -1,6 +1,6 @@
 .. _lblInstallMac:
 
-Install on macOS 10
+Install on MacOS
 ===================
 
 Install Python 3.9
