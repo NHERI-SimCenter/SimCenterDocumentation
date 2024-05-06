@@ -6,7 +6,7 @@ Probabilistic Learning on Manifolds (PLoM)
 About PLoM
 ^^^^^^^^^^^^
 
-**PLoM** is an open source Python package that implements the algorithm of **Probabilistic 
+**PLoM** is an open-source Python package that implements the algorithm of **Probabilistic 
 Learning on Manifolds** with and without constraints ([SoizeGhanem2016]_, [SoizeGhanem2020]_) 
 for *generating realizations of a random vector in a finite Euclidean space that are 
 statistically consistent with a given dataset of that vector*. 
