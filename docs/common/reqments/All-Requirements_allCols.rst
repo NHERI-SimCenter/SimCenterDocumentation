@@ -222,10 +222,10 @@ DL Database Requirements
 ------------------------
 
 .. csv-filter:: Requirements - DLD
-  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
-  :widths: 10, 55, 10, 10, 12, 10, 10
-  :included_cols: 0, 1, 2, 3, 4, 9, 10
-  :file: _out/Damage.csv
+  :header: "#", "Description", "Source", "Priority", "Status", "DBDL"
+  :widths: 10, 50, 10, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4, 5
+  :file: generalDBDL.csv
 
 .. include:: key.rst
 
