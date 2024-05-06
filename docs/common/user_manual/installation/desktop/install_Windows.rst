@@ -193,7 +193,7 @@ Launch the application to view the user interface as shown in |figWinUI|. It's r
 
     
 
-Troubleshooting
+**Troubleshooting**
 ^^^^^^^^^^^^^^^^^^^^^
 If the test example fails, refer to :ref:`troubleshooting<lblTroubleshooting>`.
 
