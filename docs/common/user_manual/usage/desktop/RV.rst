@@ -110,9 +110,9 @@ For each random variable, the user must enter a name and select from the drop-do
    :width: 800
    :figclass: align-center
 
-   Various distributions offered by the |app|.
+   Distributions offered by the |app|.
 
-.. only:: quoFEM_app
+.. only:: notR2D 
 
    SimCenterUQ Engine
    +++++++++++++++++
@@ -220,7 +220,7 @@ For each random variable, the user must enter a name and select from the drop-do
    .. [ERA19]
       Engineering Risk Analysis Group, Technische Universität München: https://www.bgu.tum.de/era/software/eradist/ (Matlab/python programs and documentations)
 
-.. only:: quoFEM_app
+.. only:: notR2D
 
    Correlation matrix
    ------------------------
