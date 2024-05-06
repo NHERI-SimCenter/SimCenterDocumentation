@@ -76,8 +76,8 @@ The **GeoJSON to Asset** application, shown in :numref:`fig-R2DGeoJsonInputBefor
 It follows the format convention of the official ``.geojson`` structure as described `here <https://geojson.org/>`_. 
 A "CRS" key-item pair is necessary to define the coordinate reference system, and the building stock information is described in the `"features"` array.
 Each feature in the features array stands for one asset. Each feature must include a `{"type":"Feature"}` key-item pair, a `"geometry"` item, and a `"properties"` item.
-`It can also contain an optional "id" item <https://datatracker.ietf.org/doc/html/rfc7946#section-3.2>`_, and the value of this item is either
-a JSON string or number. 
+
+To be used in R2D, the ``.geojson`` file also needs to contain an "id" item, and the value of the "id" needs to be integer values in a string format. The "id" is used to select assets to be analyzed. 
 The building information needed in later workflow should be included in the `"properties"` item. All information needed in the 
 subsequent workflow (e.g., IMasEDP asset analysis and HAZUS-MH EQ damage and loss analysis) must be provided, otherwise, R2D may return errors.
 The information required for typical analysis workflows can be found in :ref:`File Types and Schemas <lblUserDefInputs>` and in :ref:`R2D examples <lbl-examples>`. 
@@ -182,8 +182,9 @@ The **GeoJSON to Asset** application, shown in :numref:`fig-R2DGeoJsonInputBefor
 It follows the format convention of the official ``.geojson`` structure as described `here <https://geojson.org/>`_. 
 A "CRS" key-item pair is necessary to define the coordinate reference system, and the infrastructure information is described in the `"features"` array.
 Each feature in the features array stands for one asset. Each feature must include a `{"type":"Feature"}` key-item pair, a `"geometry"` item, and a `"properties"` item.
-`It can also contain an optional "id" item <https://datatracker.ietf.org/doc/html/rfc7946#section-3.2>`_, and the value of this item is either
-a JSON string or number. 
+
+To be used in R2D, the ``.geojson`` file also needs to contain an "id" item, and the value of the "id" needs to be integer values in a string format. The "id" is used to select assets to be analyzed. 
+The "id" needs to be unique in each asset type, (e.g., a "Bridge" and a "Tunnel" can have the same "id" but two "Bridge"s can not share the same "id")
 The information needed in later workflow should be included in the `"properties"` item. All information needed in the 
 subsequent workflow (e.g., IMasEDP asset analysis and HAZUS-MH EQ damage and loss analysis) must be provided. Otherwise, R2D may return errors.
 The information required for typical analysis workflows can be found in :ref:`File Types and Schemas <lblUserDefInputs>` and in :ref:`R2D examples <lbl-examples>`. 
@@ -208,7 +209,7 @@ The selected assets can be visualized in the **VIZ** panel.
 .. literalinclude:: figures/R2DGeoJSONInputExampleTransport.json
    :language: json
    :linenos:
-   :caption: GeoJSON formatted database for buildings.
+   :caption: GeoJSON formatted database for transportation infrastructure inventory.
    :name: R2DGeoJSONInputExampleTransport
 
 .. _fig-R2DGeoJsonInputAfterLoadTransport:

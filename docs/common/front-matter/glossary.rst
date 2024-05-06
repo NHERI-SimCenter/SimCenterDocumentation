@@ -9,7 +9,7 @@ The following terms may be found throughout this document:
 .. glossary::
 
    Workflow
-      The automation of a business process, in whole or part, during which documents, information or tasks are passed from one participant to another for action, according to a set of procedural rules.” [Workflow Management Coalition].
+      "The automation of a business process, in whole or part, during which documents, information or tasks are passed from one participant to another for action, according to a set of procedural rules." [Workflow Management Coalition].
 
    Application
       A software application performs operations on data residing in a computer for a user or another program; it can be self-contained, typically termed a program or part of a group of programs.
@@ -21,4 +21,4 @@ The following terms may be found throughout this document:
       An application or application to aid a user in setting up, scheduling, running and monitoring a user-defined scientific workflow.
 
    Software Framework
-      A software framework defines a set of component interfaces. It provides a set of implementations in the code of these interfaces, which allows developers to build applications for the domain for which the framework has been designed. For example, a C++ framework will provide a set of abstract classes that define interfaces and a set of concrete classes that implement the interfaces, which will allow developers to quickly build and release applications using the concrete classes.  Frameworks allow developers to extend the functionality of the applications by introducing their components that meet the component interface.
+      A software framework defines a set of component interfaces. It provides a set of implementations in the code of these interfaces, which allows developers to build applications for the domain for which the framework has been designed. For example, a C++ framework will provide a set of abstract classes that define interfaces and a set of concrete classes that implement the interfaces, which will allow developers to quickly build and release applications using the concrete classes.  Frameworks allow developers to extend the functionality of the applications by introducing components that meet the component interface.

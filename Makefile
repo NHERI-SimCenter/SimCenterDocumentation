@@ -12,7 +12,7 @@ PUBLDIR = $(shell v="$(SIMDOC_APP)"; echo "../$${v%Tool}-Documentation/docs/")
 # Directories to remove when cleaning
 CLEANDIR      = _sources _static _images common
 
-CSVDIR  = docs/common/reqments/_out/
+CSVDIR  = docs/common/reqments/_out_from_json/
 JSONDIR = docs/common/reqments/data/
 
 # This environment variable should specify a directory
@@ -159,7 +159,7 @@ $(CSVDIR)/%.csv: $(JSONDIR)/%.json ./scripts/json2csv.py
 		-Eweuq -  \
 		-Epbdl $(SIMCENTER_DEV)/PBE/Examples/pbdl-*/src/input.json \
 		-Er2dt $(SIMCENTER_DEV)/R2DExamples/E*/input.json \
-		-Ehydr $(SIMCENTER_DEV)/HydroUQ/Examples/hdro-*/src/input.json  \
+		-Ehdro $(SIMCENTER_DEV)/HydroUQ/Examples/hdro-*/src/input.json  \
 		< '$<' > '$@'
 
 csv-debug: FORCE

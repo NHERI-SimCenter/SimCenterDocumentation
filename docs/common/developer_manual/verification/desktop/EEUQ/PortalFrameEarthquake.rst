@@ -24,7 +24,7 @@ Examples folder in a subfolder called **PortalFrame2D**.
 
 	Two-dimensional portal frame model subjected to gravity and earthquake loading.
 
-To introduce uncertainty in the model, both mass and young’s modulus
+To introduce uncertainty in the model, both mass and Young’s modulus
 are assumed to be normally distributed random variables with means and
 standard deviation values shown in :ref:`lblRV`; In this
 example, the model will be sampled with the Latin Hypercube sampling
@@ -101,7 +101,7 @@ Verification Script
 
 A verification script (Listing 1) for propagating the uncertainty was
 developed in Python and is included in the example folder.  The script
-creates 1000 samples for both the Young’s modulus and mass values
+creates 1000 samples for both Young’s modulus and mass values
 using Latin Hypercube sampling, then modifies the OpenSees
 model, runs it and stores the output.  After all the model samples are
 processed, the script will compute and output the mean and standard
@@ -117,7 +117,7 @@ This section verifies the results produced for the portal frame
 by |app| against the results of running the same
 problem using the Python script.  Running the uncertainty
 quantification problem locally using EE-UQ and using the Python script
-produces the results shown in figures below. The results (mean and standard deviation
+produces the results shown in the figures below. The results (mean and standard deviation
 values of EDPs) for both are compared in the table below and, as seen, are in good
 agreement.
 

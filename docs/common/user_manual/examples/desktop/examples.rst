@@ -23,7 +23,7 @@ Examples
 
  .. only:: HydroUQ_app
 
-   The following are a few examples showing the usage of Hydro-UQ. The files for the examples are available on `Github <https://github.com/NHERI-SimCenter/HydroUQ/tree/master/Examples>`_.
+   The following are a few examples showing the usage of Hydro-UQ. The files for the examples are available in the `HydroUQ Github repository <https://github.com/NHERI-SimCenter/HydroUQ/tree/master/Examples>`_.
    
 .. only:: PBE_app
 

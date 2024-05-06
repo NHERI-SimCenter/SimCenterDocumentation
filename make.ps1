@@ -16,7 +16,7 @@ $app_names["we"]  = "WE-UQ"
 $app_names["ee"]  = "EE-UQ"
 $app_names["r2d"]  = "R2DTool"
 $app_names["pbe"]  = "PBE"
-$app_names["hydro"]  = "Hydro"
+$app_names["hydro"]  = "HydroUQ"
 $app_names["qfem"] = "quoFEM"
 $app_names["pelicun"]  = "pelicun"
 $app_names["rtm"] = "requirements"
@@ -29,7 +29,8 @@ function json-to-csv{
     $WE_Examples = @("-Eweuq") + (gci "$env:SIMCENTER_DEV\WE-UQ\Examples\weuq-*\src\input.json")
     $PB_Examples = @("-Epbdl") + (gci "$env:SIMCENTER_DEV\PBE\Examples\pbdl-*\src\input.json")
     $R2_Examples = @("-Er2dt") + (gci "$env:SIMCENTER_DEV\R2DExamples\Examples\E[0-9]*\input.json")
-    $arglist = @("scripts/json2csv.py") + $QF_Examples + $EE_Examples + $WE_Examples + $PB_Examples + $R2_Examples
+    $HydroUQ_Examples = @("-Ehdro") + (gci "$env:SIMCENTER_DEV\HydroUQ\Examples\hdro-*\src\input.json")
+    $arglist = @("scripts/json2csv.py") + $QF_Examples + $EE_Examples + $WE_Examples + $PB_Examples + $R2_Examples + $HydroUQ_Examples
     write-host $arglist
     Get-ChildItem -File -Filter ".\docs\common\reqments\data\*.json" | ForEach-Object {
         start-process python -ArgumentList $arglist -RedirectStandardOutput ("docs\common\reqments\_out\" + $_.basename + ".csv") -Wait -NoNewWindow -RedirectStandardInput (".\docs\common\reqments\data\" + $_.name)
