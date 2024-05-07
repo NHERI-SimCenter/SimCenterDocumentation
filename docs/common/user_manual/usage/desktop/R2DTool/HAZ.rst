@@ -3,7 +3,7 @@
 HAZ: Hazards
 ============
 
-In this panel the user can define or simulate hazards over a region. The user can select the type of hazard, such as Earthquakes and Hurricanes, from the **Hazard Selection** combo box, as shown on the top of :numref:`fig-HazMainPanel`. As the user selects between the different hazard applications, the main panel will change to reflect the inputs for each application.
+This panel allows users to define or simulate hazards across a specified region. Users can choose the hazard type, such as Earthquakes and Hurricanes, from the **Hazard Selection** dropdown menu at the top of the Hazard input panel, as depicted in :numref:`fig-HazMainPanel`. The main panel updates to display relevant input fields for the selected hazard type.
 
 .. contents::
    :local:
@@ -21,7 +21,7 @@ In this panel the user can define or simulate hazards over a region. The user ca
 User-specified Ground Motions
 -----------------------------
 
-The **User-specified Ground Motion** application loads the results of an **Earthquake Scenario Simulation** that was run previously. The **User-specified Earthquakes** application input pane is given in :numref:`fig-UserSelectEQ`. As seen in the figure, the user is required to input the file path to the ``EventGrid.csv`` file in the `Event File Listing Motions Field`. If the ground motions are not in the same folder as the ``EventGrid.csv`` file, then the user needs to input the directory path to the folder containing the ground motions. Users also need to specify the units of the ground motion field. Both ground shaking (See :ref:`Example E1-E4 <lbl-examples>`) and ground failure (See :ref:`Example E5 and E14 <lbl-examples>`) can be analyzed in the current version.
+The **User-specified Ground Motion** option enables users to load results from a prior **Earthquake Event Simulation**. Users must provide the path to the ``EventGrid.csv`` file in the `Event File Listing Motions Field`, as shown in :numref:`fig-UserSelectEQ`. If the ground motion files are located in a different directory, the path to that directory must also be specified. Users are required to define the units for the ground motion data. This application supports analysis of both ground shaking and ground failure, as detailed in :ref:`Example E1-E4 <lbl-examples>` and :ref:`Example E5 and E14 <lbl-examples>`, respectively.
 
 .. _fig-UserSelectEQ:
 
@@ -34,17 +34,15 @@ The **User-specified Ground Motion** application loads the results of an **Earth
 .. _lbl-UserSpecifiedHurricane:
 
 User-specified Hurricane
------------------------------
+------------------------
 
-The **User-specified Hurricane** application works similar to the **User-specified Ground Motion** application. It loads the results of an **Hurricane Scenario Simulation** that was run previously. The **User-specified Hurricane** application input pane is similar to :numref:`fig-UserSelectEQ`. As seen in the figure, the user is required to input the file path to the ``EventGrid.csv`` file in the `Event File Listing Hurricane Field`. If the hurricane files are not in the same folder as the ``EventGrid.csv`` file, then the user needs to input the directory path to the folder containing the hurricane stations. Users also need to specify the units of the hurricane hazard input fields.
+Similar to the **User-specified Ground Motion**, the **User-specified Hurricane** option imports results from a **Hurricane Scenario Simulation**. Users must input the path to the ``EventGrid.csv`` file in the `Event File Listing Hurricane Field`, as illustrated in :numref:`fig-UserSelectEQ`. If hurricane files are not in the same directory as the ``EventGrid.csv`` file, the directory path containing the hurricane data must be provided. Users also need to specify the units for the hurricane hazard input fields.
 
-  
 .. _lbl-shakeMapEQScenarios: 
-
 ShakeMap Earthquake Scenarios
 -----------------------------
 
-The **ShakeMap Earthquake Scenario** application provides the functionality to import a USGS ShakeMap earthquake hazard. The **ShakeMap Earthquake Scenario** application input pane is given in :numref:`fig-R2DShakeMapPane`. As seen in the figure, the user is required to input a path to a folder on the user's computer that contains the ShakeMap data. At a minimum, the folder must contain a ``grid.xml`` file (e.g., downloaded from `this <https://earthquake.usgs.gov/product/shakemap-scenario/ushaywiredm7.05_se/us/1484100039013/download/grid.xml>`_ page) that provides the ground motion intensity measures, e.g., PGA, PGV, over a geographical grid. To visualize the PGA contours or rupture in the GIS window, a user can also provide the ``cont_pga.json`` file, or ``rupture.json`` file, respectively. Note that more than one ShakeMap can be input. However, the ShakeMap that is selected in the **List of ShakeMaps** tree in :numref:`fig-R2DShakeMapPane`, is the one that is employed in the subsequent analysis. The user also has the option to select the type of intensity measure they want from the ShakeMap grid. 
+The **ShakeMap Earthquake Scenario** option allows users to import USGS ShakeMap earthquake hazard data. Users must input a path to a directory containing the ShakeMap data, which must include a ``grid.xml`` file, and optionally, ``cont_pga.json`` or ``rupture.json`` files for visualizing PGA contours or rupture in the GIS window, respectively. Multiple ShakeMaps can be imported, but only the selected ShakeMap in the **List of ShakeMaps** will be used for analysis. Users can choose the desired intensity measure from the ShakeMap grid.
 
 .. _fig-R2DShakeMapPane:
 
@@ -53,9 +51,9 @@ The **ShakeMap Earthquake Scenario** application provides the functionality to i
   :figclass: align-center
 
   ShakeMap input panel.
-  
-After a ShakeMap is loaded, it will appear in the list of ShakeMaps shown above in :numref:`fig-R2DShakeMapPane`. Users can see the grid, contours, etc., ShakeMap visuals by going to the **VIZ** pane, as highlighted in :numref:`fig-R2DShakeMapOutput` below. 
-  
+
+After loading a ShakeMap, it appears in the list of ShakeMaps as shown in :numref:`fig-R2DShakeMapPane`. The **VIZ** pane allows users to view ShakeMap visuals, including the grid and contours, as highlighted in :numref:`fig-R2DShakeMapOutput` below.
+
 .. _fig-R2DShakeMapOutput:
 
 .. figure:: figures/R2DShakeMapOutput.png
@@ -63,21 +61,16 @@ After a ShakeMap is loaded, it will appear in the list of ShakeMaps shown above 
   :figclass: align-center
 
   ShakeMap visualization.
-.. note:: 
-   R2D will create one .csv file containing the ground motion intensity measures at each grid point in the ``grid.xml`` file. The files will be stored in a similar format as the ground motion files used in the **User-specified Ground Motion** application. As shown in :numref:`fig-R2DShakeMapOutput`, the number of grid point is usually large (sometimes over 10 thousand). Although creating such a number of .csv files is fast in Unix-like operating systems, it may be particular slow (around 5 minutes for 10,000 grid points) on a Windows machine. As a result, consider trimming or subsampling the ``grid.xml`` file downloaded from USGS's ShakeMap website, if fast computation is desired for testing or debugging purposes.
 
-   
+.. note:: 
+   R2D generates a .csv file for each grid point in the ``grid.xml`` file, storing ground motion intensity measures. While Unix-like systems process these files quickly, Windows systems may take longer (approximately 5 minutes for 10,000 grid points). For faster computation during testing or debugging, consider trimming or subsampling the ``grid.xml`` file.
+
 .. _lbl-rasterDefinedHazard:
 
 Raster Defined Hazard
 ---------------------
-   
-The **Raster Defined Hazard Widget** allows for the import of raster files to represent hazard intensities. The **Raster Defined Hazard Widget** input pane is given in :numref:`fig-R2DRasterHazardPane`. 
 
-#. To load a raster file, click on the **Browse** button next to the input file box, and then select the raster file in the dialog that will appear. 
-#. Next, select the event type in the **Event Type Dropdown**, shown in the :numref:`fig-R2DRasterHazardPane`, e.g., Hurricane or Earthquake. 
-#. You then need to specify the coordinate reference system (CRS) that was used to create the raster so that the raster will appear in the correct geographic location. Upon import, a default CRS will be assigned, which will be the CRS that is currently used by the main map.
-#. Depending on the number of bands in your raster, the equivalent number of **Unit Selection Dropdowns** will appear. For each raster band, you need to provide the corresponding units. 
+The **Raster Defined Hazard Widget** imports raster files to represent hazard intensities. Users can load a raster file by clicking the **Browse** button and selecting the file. The event type (e.g., Hurricane or Earthquake) must be selected from the **Event Type Dropdown**. Users must specify the coordinate reference system (CRS) used to create the raster to ensure rasters appear correctly on the map. For rasters with multiple bands, users must provide units for each band.
 
 .. _fig-R2DRasterHazardPane:
 
@@ -86,48 +79,38 @@ The **Raster Defined Hazard Widget** allows for the import of raster files to re
   :figclass: align-center
 
   Raster hazard input pane.
-  
-.. note:: When the **Raster Defined Hazard Widget** is employed in an analysis, for each asset, the raster will be sampled at the asset location to determine the hazard intensity level. A set of .csv files in the SimCenter event format (EventGrid.csv) will be created where each grid point corresponds to the location of an asset. As a result, the corresponding **Mapping Application** in **HTA** (Hazard to Asset Mapping) should be set to **Site Specified**. 
 
+.. note:: The **Raster Defined Hazard Widget** samples the raster at each asset location to determine hazard intensity. It generates a set of .csv files in the SimCenter event format (EventGrid.csv), with each grid point corresponding to an asset location. The **Mapping Application** in **HTA** should be set to **Site Specified** for analysis.
 .. _lbl-regionalSiteResponse:
 
 Regional Site Response
---------------------------
+----------------------
 
-Site response analysis is commonly performed to analyze the propagation of seismic wave through soil. As shown in :numref:`fig_siteResponse`, 
-one-dimensional response analyses, as a simplified method, assume that all boundaries are horizontal and that the response of a soil deposit is
-predominately caused by SH-waves propagating vertically from the underlying bedrock. Ground surface response is usually the major output from
-these analyses, together with profile plots such as peak horizontal acceleration along the soil profile. When liquefiable soils are presenting,
-maximum shear strain and excess pore pressure ratio plots are also important.
+Site response analysis evaluates seismic wave propagation through soil, assuming horizontal boundaries and vertical SH-wave propagation. The output includes ground surface response and, for liquefiable soils, maximum shear strain and excess pore pressure ratio plots.
 
 .. _fig_siteResponse:
 .. figure:: figures/siteResponse.png
    :align: center
    :figclass: align-center
 
-   Schematic figure for site response analysis (courtesy of Pedro Arduino)
+   Schematic of site response analysis (courtesy of Dr. Pedro Arduino)
 
-**Regional Site Response** consists of four major functionalities for site response analysis, each of which is encapsulated in a specific widget:
+**Regional Site Response** offers four functionalities for site response analysis, each represented by a widget:
 
 .. _fig_siteResponsePane:
 .. figure:: figures/R2DSiteResponsePane.png
    :align: center
    :figclass: align-center
 
-   Graphic user interface of Regional Site Response
+   Regional Site Response graphic user interface
 
-#. **Site information widget**: three options for defining a set of sites for soil response analysis: (1) ``Single Location``, (2) ``Grid of Locations``, and (3) ``Scattering Locations``.
-   Users can manually define or select a rectangular grid on map using the ``Grid of Locations``.
-   In addition, users can upload a csv site file using the ``Scattering Locations``. 
-   The minimum attributes are: ``Station`` ID column, ``Longitude`` and ``Latitude`` columns.
-   Users can add extra columns for soil properties or modeling paramters; alternatively, users could use the **Site Data tool widget**
-   to generate needed attributes.
-#. **Site data toolbox widget**: three Vs30 data sources are available: (1) Wills et al., 2015 ([Wills2015]_), (2) Thompson et al., 2018 ([Thompson2018]_), and (3) Heath et al., 2020 ([Heath2020]_). 
-   There are two data sources of bedrock depth: (1) SoilGrid250 ([Hengl2017]_) and (2) National Crustal Model ([Boyd2020]_). Three soil model types will be available: (1) Elastic isotropic, (2) Multiaxial Cyclic plasticity, and (3) User.
-   After selecting the desired data sources and model type, a new site information csv site file will be generated and loaded by clicking the ``Fetch Site Data`` button.
-#. **Soil model widget**: a soil modeling script is expected, which will be used to create numerical models from the site information csv and run simulations.
-#. **Input motion widget**: a ``EventGrid.csv`` csv file along with a directory including ground motion acceleration time history files are expected.  
-   Note that the units of the time history and scaling factor should also be provided by users.
+#. **Site information widget**: Defines sites for analysis through ``Single Location``, ``Grid of Locations``, or ``Scattering Locations``. Users can define a grid on the map or upload a .csv file with minimum attributes: ``Station`` ID, ``Longitude``, and ``Latitude``. Additional soil properties or modeling parameters can be added or generated using the **Site Data tool widget**.
+
+#. **Site data toolbox widget**: Offers Vs30 data from Wills et al., 2015 ([Wills2015]_), Thompson et al., 2018 ([Thompson2018]_), and Heath et al., 2020 ([Heath2020]_), and bedrock depth data from SoilGrid250 ([Hengl2017]_). Three soil model types will be available: (1) Elastic isotropic, (2) Multiaxial Cyclic plasticity, and (3) User. After selecting the desired data sources and model type, a new site information csv site file will be generated and loaded by clicking the ``Fetch Site Data`` button.
+
+#. **Soil model widget**: Requires a soil modeling script to create numerical models and run simulations based on the site information .csv.
+
+#. **Input motion widget**: Expect an ``EventGrid.csv`` file and a directory with ground motion acceleration time history files, including units and scaling factors.
 
 .. [Wills2015]
    Wills, C. J., Gutierrez, C. I., Perez, F. G., & Branum, D. M. (2015). A next generation VS 30 map for California based on geology and topography. Bulletin of the Seismological Society of America, 105(6), 3083-3091.
@@ -140,7 +123,3 @@ maximum shear strain and excess pore pressure ratio plots are also important.
 
 .. [Hengl2017]
    Hengl T, Mendes de Jesus J, Heuvelink GBM, Ruiperez Gonzalez M, Kilibarda M, Blagotić A, et al. (2017) SoilGrids250m: Global gridded soil information based on machine learning. PLoS ONE 12(2): e0169748.
-
-.. [Boyd2020]
-   Boyd, O.S., 2020, Calibration of the U.S. Geological Survey National Crustal Model: U.S. Geological Survey Open-File Report 2020–1052, 23 p., https://doi.org/10.3133/ofr20201052.
-

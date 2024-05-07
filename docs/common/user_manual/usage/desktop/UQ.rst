@@ -3,7 +3,7 @@
 UQ: Uncertainty Quantification
 ==============================
 
-The first selection panel the user must select from and enter data into is the **UQ** tab. It is in this panel that the user selects the **UQ Engine** to use for performing the uncertainty quantification calculations. The **UQ Engine** provides algorithms for solving various types of uncertainty analysis and optimization problems. 
+The **UQ** tab is the panel where users select the **UQ Engine** for uncertainty quantification calculations. The **UQ Engine** encompasses algorithms for various uncertainty analysis and optimization problems.
 
 .. role:: uqblue
 
@@ -147,9 +147,8 @@ The first selection panel the user must select from and enter data into is the *
 
 
 .. only:: notQuoFEM
-     
-   The **UQ Engine** options currently available are Dakota and SimCenterUQ
 
+   The **UQ Engine** options currently available are Dakota and SimCenterUQ.
 
 Dakota UQ Engine
 ----------------
