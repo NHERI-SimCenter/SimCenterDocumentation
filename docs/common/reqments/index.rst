@@ -1,3 +1,8 @@
+.. raw:: latex
+
+    \begin{landscape}
+
+
 ################################
 Requirements Traceability Matrix
 ################################
@@ -6,12 +11,17 @@ Requirements Traceability Matrix
 Introduction
 ++++++++++++
 
+.. note::
+   The contents of this document are also available online at https://nheri-simcenter.github.io/RTM-Documentation/index.html. It might be more up-to-date and easier to review than this PDF version.
+
+
 The SimCenter has relied on community input to drive application and educational activities. We track these inputs as requirements in our Requirements Traceability Matrix (RTM). This is a living document, which is updated at least yearly. In this document is listed the general requirements for each tool and for each tool, there is also listed the requirements for each component that is used to build up the tool. The components are as shown in the figure below, for example, EE-UQ has components of Cloud (CLD), Reliability (UQR), Sensitivity (UQS), Sampling (UQF), Modelling (MOD), Earthquake Loading (EL), and Analysis (ANA).
 
 .. _figRTM:
 
 .. figure:: figures/RTM.png
    :align: center
+   :width: 60%
    :figclass: align-center
 
    Application & Component Abbreviations for RTM
@@ -40,59 +50,12 @@ Each requirement in the RTM has the following entry fields:
   #. A column indicating which examples are provided that can be used to test the features.
 
 
-The software requirements are many. For ease of presentation, they are broken into three groups: 1) Building Scale Applications, 2) Regional Scale Applications, and 3) Education and Outreach Activities.
-
-
-+++++++++++++++++++++++++++
-Building Scale Applications
-+++++++++++++++++++++++++++
-
-Applications to allow researchers to improve on methods related to determining the response assessment and performance-based design of individual buildings subject to the impact of a natural hazard. For building scale simulations, the requirements are broken down by the SimCenter application. There are applications under development for each of the hazards. Many of the requirements related to UQ and nonlinear analysis are repeated amongst the different applications under the assumption that if they are beneficial to engineers dealing with one hazard, they will be beneficial to engineers dealing with other hazards.
-
-.. toctree-filt::
-   :caption: Building Scale
-   :maxdepth: 1
-   :numbered: 4
-
-   QUOFEM
-   WE-UQ
-   EE-UQ
-   HydroUQ
-   PBER
-
-
-+++++++++++++++++++++++++++
-Regional Scale Applications
-+++++++++++++++++++++++++++
-
-For the regional scale, the requirements are broken down into four classes. AI-related requirements in **BRAILS**, damage and loss prediction in **pelicun**, backend workflow requirements in **rWhale**, and front-end user interface requirements in **R2D**.
-
-.. toctree-filt::
-   :caption: Regional Scale 
-   :maxdepth: 1
-   :numbered: 4
-
-   R2D
-   BRAILS
-   pelicun
-   testbeds
-
-++++++++++++++++
-All Requirements
-++++++++++++++++
-
 .. toctree-filt::
    :caption: All Requirements
    :maxdepth: 1
    :numbered: 4
 
    All-Requirements_allCols
-
-..
-   .. toctree::
-      :caption: Gallery
-
-      ../user_manual/examples/desktop/gallery
 
    
 Contact
@@ -116,3 +79,9 @@ NIST GCR 14-973-13 http://www.nist.gov/customcf/get_pdf.cfm?pub_id=915541.
 .. [NSB2007] Hurricane Warning-The Critical Need for a National Hurricane Research Initiative. National Science Board. https://www.nsf.gov/nsb/publications/landing/nsb06115.jsp?org=NSF.
 
 .. [NSTC2006] Windstorm Impact Reduction Implementation Plan, National Science and Technology Council. https://www.preventionweb.net/publications/view/1559
+
+
+.. raw:: latex
+
+    \end{landscape}
+	     
