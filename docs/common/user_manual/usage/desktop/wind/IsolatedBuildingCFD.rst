@@ -90,7 +90,7 @@ In the **Geometry** tab, the geometry and dimensions of the building and computa
 
 Importing STL Surface 
 """""""""""""""""""""""
-For buildings with complex shapes, the user can specify the building geometry by clicking **Import STL** button under *Building Shape* group (see  :numref:`fig-iso-geometry-tab`). This opens a new window shown in :numref:`fig-iso-import-stl` which will allow the user to import an STL file. The properties of the STL geometry and options to transform the model are given below. 
+For buildings with complex shapes, the user can specify the building geometry by clicking **Import STL** button under *Building Shape* group (see :numref:`fig-iso-geometry-tab`). This opens a new window shown in :numref:`fig-iso-import-stl` which will allow the user to import an STL file. The properties of the STL geometry and options to transform the model are given below. 
 
 .. _fig-iso-import-stl:
 .. figure:: figures/IsolatedBuildingCFD/import_stl_dialog.svg
@@ -180,9 +180,6 @@ To add a new refinement region the user can use **Add Region** button shown in :
 	.. note:: 
 		All the refinements are done by progressively splitting the cells from the previous level. Thus, the mesh size is reduced by half when we go one refinement level higher. 
 		
-		..
-			Whereas, the cell count increases by about :math:`(2^3 = 8)` folds.
-	
 Surface Refinements
 """"""""""""""""
 Near solid walls, surface refinements can be added to resolve important flow features. Especially on the building surface, additional refinements are often necessary to capture the wind loads (e.g., surface pressure fluctuations) more accurately. Surface refinement is defined by specifying the name of the target surface, the required refinement level, and the refinement distance as shown in :numref:`fig-iso-mesh-tab-surface`.
@@ -453,7 +450,7 @@ Depending on the type of simulation selected (i.e. steady-state and transient), 
 
 #.  **Number of Corrector Loops**: Specifies the number of pressure-corrector loops per each time iteration. The default value is set to 2. This value is valid only for transient solvers. 
 
-#.  **Number of Outer Corrector Loops**: Specifies the number PISO loops to run for each time step. This value is valid only for *pimpleFoam* solver. The *pimpleFoam* solver works by running multiple PISO iterations, and if this field is set to 1, it will run in a PISO mode. 
+#.  **Number of Outer Corrector Loops**: Specifies the number of PISO loops to run for each time step. This value is valid only for the *pimpleFoam* solver. The *pimpleFoam* solver works by running multiple PISO iterations, and if this field is set to 1, it will run in a PISO mode. 
 
 
 Duration and Time Step
@@ -531,12 +528,12 @@ The sampling points can be visualized on the building surface by clicking **Show
 
 .. [Melaku2021] Melaku, A.F. and Bitsuamlak, G.T., 2021. A divergence-free inflow turbulence generator using spectral representation method for large-eddy simulation of ABL flows. Journal of Wind Engineering and Industrial Aerodynamics, 212, p.104580.
 
-.. [Klein2003] Klein, M., Sadiki, A. and Janicka, J., 2003. A digital filter based generation of inflow data for spatially developing direct numerical or large eddy simulations. Journal of Computational Physics, 186(2), pp.652-665.
+.. [Klein2003] Klein, M., Sadiki, A. and Janicka, J., 2003. A digital filter-based generation of inflow data for spatially developing direct numerical or large eddy simulations. Journal of Computational Physics, 186(2), pp.652-665.
 
 .. [Xie2008] Xie, Z.T. and Castro, I.P., 2008. Efficient generation of inflow conditions for large eddy simulation of street-scale flows. Flow, turbulence and combustion, 81, pp.449-470.
 
 .. [Jarrin2006] Jarrin, N., Benhamadouche, S., Laurence, D. and Prosser, R., 2006. A synthetic-eddy-method for generating inflow conditions for large-eddy simulations. International Journal of Heat and Fluid Flow, 27(4), pp.585-593.
 
-.. [Poletto2013] Poletto, R., Craft, T. and Revell, A., 2013. A new divergence free synthetic eddy method for the reproduction of inlet flow conditions for LES. Flow, turbulence and combustion, 91, pp.519-539.
+.. [Poletto2013] Poletto, R., Craft, T. and Revell, A., 2013. A new divergence-free synthetic eddy method for the reproduction of inlet flow conditions for LES. Flow, turbulence and combustion, 91, pp.519-539.
 
-.. [Kröger2018] Kröger, H. and Kornev, N., 2018. Generation of divergence free synthetic inflow turbulence with arbitrary anisotropy. Computers & Fluids, 165, pp.78-88.
+.. [Kröger2018] Kröger, H. and Kornev, N., 2018. Generation of divergence-free synthetic inflow turbulence with arbitrary anisotropy. Computers & Fluids, 165, pp.78-88.
