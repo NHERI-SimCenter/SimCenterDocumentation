@@ -1,3 +1,8 @@
+.. raw:: latex
+
+    \begin{landscape}
+
+
 ################################
 Requirements Traceability Matrix
 ################################
@@ -5,6 +10,10 @@ Requirements Traceability Matrix
 ++++++++++++
 Introduction
 ++++++++++++
+
+.. note::
+   The contents of this document are also available online at https://nheri-simcenter.github.io/RTM-Documentation/index.html. It might be more up-to-date and easier to review than this PDF version.
+
 
 The SimCenter has relied on community input to drive application and educational activities. We track these inputs as requirements in our Requirements Traceability Matrix (RTM). This is a living document, which is updated at least yearly. In this document is listed the general requirements for each tool and for each tool, there is also listed the requirements for each component that is used to build up the tool. The components are as shown in the figure below, for example, EE-UQ has components of Cloud (CLD), Reliability (UQR), Sensitivity (UQS), Sampling (UQF), Modelling (MOD), Earthquake Loading (EL), and Analysis (ANA).
 
@@ -69,3 +78,9 @@ NIST GCR 14-973-13 http://www.nist.gov/customcf/get_pdf.cfm?pub_id=915541.
 .. [NSB2007] Hurricane Warning-The Critical Need for a National Hurricane Research Initiative. National Science Board. https://www.nsf.gov/nsb/publications/landing/nsb06115.jsp?org=NSF.
 
 .. [NSTC2006] Windstorm Impact Reduction Implementation Plan, National Science and Technology Council. https://www.preventionweb.net/publications/view/1559
+
+
+.. raw:: latex
+
+    \end{landscape}
+	     
