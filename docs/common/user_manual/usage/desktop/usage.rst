@@ -72,7 +72,9 @@ The |app| is a scientific workflow application that creates workflows and runs t
 
 	   The |app| user interface.
 
+
 The main window of the UI comprises the following key components:
+
 
 #. **Login Button**
 
@@ -195,7 +197,7 @@ The main window of the UI comprises the following key components:
 
          * **Save Intermediate Results**: Save intermediate results to a compressed folder. This is only recommended for debugging purposes because intermediate results will use a substantial amount of disk space.
 
-         * **Max Run Time**: The maximum time a job will run on the DesignSafe computer, in the format of Hours:Min:Sec. The job will be terminated and the intermediate results will be lost if the run time exceeds this threshold. The maximum runtime allowed for a job on DesignSafe is 48 hours.
+         * **Max Run Time**: The maximum time a job will run on the DesignSafe computer, in the format of Hours:Min:Sec. The job will be terminated, and the intermediate results will be lost if the run time exceeds this threshold. The maximum runtime allowed for a job on DesignSafe is 48 hours.
 
 
       .. note:: You can check the status of a remote run by clicking on the **GET from DesignSafe** button. If the analysis status shows FAILED,  log into your DesignSafe account to view the detailed output of the run. First, log in with your credentials on the `DesignSafe <https://www.designsafe-ci.org/help/new-ticket/>`_ webpage. Next, use the menu to navigate to **Workspace** -> **Tools & Applications** -> **Job Status** and then select a job and click on **More info** to view the status of that job.
