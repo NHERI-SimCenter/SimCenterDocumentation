@@ -15,7 +15,3 @@ September 2024
 December 2024
 ---------------
     #.  Create reduced order models automatically from high-fidelity models of structures in OpenSees, given an OpenSees script of a high-fidelity model and a list of the degrees of freedom of interest.
-
-.. note::
-
-    The numbers in parentheses are for internal tracking purposes.
