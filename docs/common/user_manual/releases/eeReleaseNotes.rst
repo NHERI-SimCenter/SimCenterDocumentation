@@ -8,7 +8,7 @@ Release Notes
 Version 3.5.0 (Current)
 -----------------------
 
-**Release date:** April 2024
+**Release date:** March. 2024
 
 **Highlights**
 
