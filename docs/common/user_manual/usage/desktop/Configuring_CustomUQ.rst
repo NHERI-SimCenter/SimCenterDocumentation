@@ -12,7 +12,7 @@ These two steps are explained in more detail next.
 Configuring UQ tab
 ==================
 
-The quoFEM interface can be customized to accept the required inputs for user-specified UQ engines. The "CustomUQ" option should be selected, as shown in :numref:`figCustomUQOption`. This will direct quoFEM to invoke the customized UQ backend where users can plug in their own functionality.	   
+The quoFEM interface can be customized to accept the required inputs for user-specified UQ engines. The "CustomUQ" option should be selected, as shown in :numref:`figCustomUQOption`. This will direct quoFEM to invoke the customized UQ backend where users can plug in their own functionality.
 
 .. _figCustomUQOption:
 
@@ -47,10 +47,10 @@ Users can currently specify the following types of inputs:
 #.  **Line Edit**: Used to input text values	  
 
 Lastly, users must specify the UQ driver name. This is required to direct the
-customized UQ backend to the correct UQ driver. The driver name must correspond
+customized UQ backend to the correct UQ driver. The driver's name must correspond
 to the name provided by the customized backend, as described below.
 
-Adding UQ Engine to Customized Backend	  
+Adding UQ Engine to Customized Backend
 ======================================
 
 In addition to configuring the user interface to accept the required inputs, it is necessary
