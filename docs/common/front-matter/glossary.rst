@@ -9,7 +9,7 @@ The following terms may be found throughout this document:
 .. glossary::
 
    Workflow
-      "The automation of a business process, in whole or part, during which documents, information or tasks are passed from one participant to another for action, according to a set of procedural rules." [Workflow Management Coalition].
+      "The automation of a business process, in whole or part, during which documents, information or tasks are passed from one participant to another for action, according to a set of procedural rules." [`Workflow Management Coalition <https://wfmc.org/>`_].
 
    Application
       A software application performs operations on data residing in a computer for a user or another program; it can be self-contained, typically termed a program or part of a group of programs.
