@@ -151,7 +151,7 @@ The main window of the UI comprises the following key components:
 
    **Running Jobs Remotely**
 
-     .. only:: notR2D
+   .. only:: notR2D
 
        Clicking on the **RUN at DesignSafe** button will show the remote job submission dialog shown below (:numref:`figRemJobPanel-notR2D`)
 
@@ -164,7 +164,7 @@ The main window of the UI comprises the following key components:
 
             Remote job submission dialog.
 
-      .. only:: R2D_app
+   .. only:: R2D_app
 
         Clicking on the **RUN at DesignSafe** button will show the remote job submission dialog shown below (:numref:`figRemJobPanel-R2D`)
 
@@ -187,7 +187,7 @@ The main window of the UI comprises the following key components:
 
       * **Number of processes per Node**: Number of processors that will be utilized on each node. It is advantageous to use all available processors of a node when the memory demand of a job is small. When a job is memory intensive, e.g., large finite element models, utilizing all available processors may overwhelm the memory cache of a core and the computation will slow down. Currently, the maximum number of processors is 48 and the minimum is 1.
 
-      .. only:: R2D_app
+   .. only:: R2D_app
 
          * **Number of Buildings per Task**: Number of buildings per task.
 
