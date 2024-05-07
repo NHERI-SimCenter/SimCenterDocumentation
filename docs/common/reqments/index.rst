@@ -21,6 +21,7 @@ The SimCenter has relied on community input to drive application and educational
 
 .. figure:: figures/RTM.png
    :align: center
+   :width: 60%
    :figclass: align-center
 
    Application & Component Abbreviations for RTM
