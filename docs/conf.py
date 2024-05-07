@@ -77,7 +77,7 @@ extensions =  [
     "crate.sphinx.csv",
 #    "sphinx_panels",
 #    "sphinxcontrib.spelling",
-#    'sphinx_toolbox.collapse',
+    'sphinx_toolbox.collapse',
     'sphinx_tabs.tabs',
 ]
 
@@ -133,7 +133,7 @@ exclude_patterns = (
         "Hydro*",
         "**/hydro/*",
         "**/*hydro*",
-
+        "**/hdro-*",
         "common/user_manual/examples/desktop/E*",  # R2D examples
         "**/R2D*",
         "reqments.rst",
@@ -309,6 +309,14 @@ extlinks.update(
     }
 )
 
+examples_url = f"https://github.com/NHERI-SimCenter/HydroUQ/tree/master/Examples/"
+extlinks.update(
+    {
+        f"hdro-{i:04}": (f"{examples_url}/hdro-{i:04}/%s", f"hdro-{i:04}") 
+        for i in range(1, 99)
+    }
+)
+
 examples_url = f"https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples/"
 extlinks.update(
     {
@@ -341,13 +349,6 @@ extlinks.update(
     }
 )
 
-examples_url = f"https://github.com/NHERI-SimCenter/HydroUQ/tree/master/Examples/"
-extlinks.update(
-    {
-        f"hdro-{i:04}": (f"{examples_url}/hdro-{i:04}/%s", f"hdro-{i:04}") 
-        for i in range(1, 20)
-    }
-)
 
 #
 # App-specific settings
@@ -381,6 +382,7 @@ if app_name == "HydroUQ" or app_name == "Hydro":
     exclude_patterns.remove("**/Hydro*")
     exclude_patterns.remove("Hydro*")
     exclude_patterns.remove("**/hydro/*")
+    exclude_patterns.remove("**/hdro-*")
 
     # TODO: fix these temporary changes
     exclude_patterns.append("**/user_manual/usage/desktop/earthquake/*")
@@ -398,6 +400,7 @@ if app_name == "HydroUQ" or app_name == "Hydro":
     # exclude_patterns.append("**/desktop/FEM.rst")
     # exclude_patterns.append("**/desktop/GI.rst")
     # exclude_patterns.append("**/desktop/SIM.rst")
+    sync_examples = True
 
     html_theme_options.update(
         {
@@ -406,7 +409,6 @@ if app_name == "HydroUQ" or app_name == "Hydro":
     )
     #master_doc = "Hydro"
     master_doc = "index"
-    sync_examples = True
 
     rst_prolog += f"""
 .. |full tool name| replace:: Water-borne Hazards Engineering with Uncertainty Quantification
@@ -775,6 +777,7 @@ elif app_name == "requirements":
         "common/reqments/PBE.rst",
         #"common/reqments/WEUQ.rst",
         "common/reqments/WE-UQ-Requirements.rst",
+        "common/reqments/HydroUQ-Requirements.rst",
         "common/reqments/allRequirements.rst",
         "common/reqments/bigRequirements.rst",
         "common/reqments/edRequirements.rst",
@@ -868,10 +871,10 @@ spelling_exclude_patterns=['ignored_*']
 # sync files for examples
 if sync_examples:
     # TODO: Temporary fix
-    if not example_config:
-        import yaml
-        with open("../examples.yaml","r") as f:
-            example_config = yaml.load(f,Loader=yaml.Loader)["HydroUQ"]
+    # if not example_config:
+    #     import yaml
+    #     with open("../examples.yaml","r") as f:
+    #         example_config = yaml.load(f,Loader=yaml.Loader)["HydroUQ"]
     # Load the `sync_files` routine from ./modules/sync_files.py
     from sync_files import sync_files
     if app_name == "R2DTool":

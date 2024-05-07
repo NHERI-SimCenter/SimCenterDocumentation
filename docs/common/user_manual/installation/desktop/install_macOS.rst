@@ -162,7 +162,7 @@ To download the |app|, navigate to the |appLink| page which should resemble |fig
 
       HydroUQ tool download page.
 
-Click on the file with a name ending with **Mac_Download.dmg** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner. After the download is completed, open the dmg file and copy the |short tool name| application to a location in your filesystem.
+Click on the file with a name ending with **Mac_Download.dmg** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner. After the download is completed, open the dmg file and **copy** the |short tool name| **to a location in your filesystem**.
 
 .. note::
 

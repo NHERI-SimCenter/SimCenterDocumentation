@@ -68,6 +68,7 @@ R2DTool:
   - E10SiteResponse
   - E12IstanbulRegionalSeismicRiskAnalysis
   - E14BasicHAZUSTransportation
+  - E15WDNRecoveryAndPerformanceAssessment
 
 HydroUQ:
   include-item:
