@@ -13,6 +13,7 @@ H.2.4,"Effects of flood velocity",GC,D,Implemented,`Example <https://nheri-simce
 H.2.5,"Effects of wind-driven influences",GC,D,,
 H.2.6,"Effects of erosion at buildings",GC,D,,
 H.2.7,"Effects of flow channeling in the built environment",GC,D,Implemented,`Example <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/examples/desktop/hdro-0004/README.html>`_ 
+*H.2.8*,"Effects of frictional resistance with respect to debris hazards",SP,D,Implemented,`hdro-0004 <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/examples/desktop/hdro-0004/README.html>`_
 ,,,,,
 **H.3**,"**Ability to select from all Loading Options listed in HL.2**",,,,
 H.3.1,"Ability to define local-scale tsunami loading events",SP,M,InProgress,1.1.2.1.2
@@ -21,6 +22,9 @@ H.3.2,"Ability to define local-scale surge loading events",SP,M,InProgress,1.1.2
 **H.4**,"**Ability to select from Building Modeling Options listed in MOD under BM**",**SP**,**M**,**Implemented**,`SIM <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/usage/desktop/SIM.html>`_
 ,,,,,
 **H.5**,"**Include ability to perform nonlinear analysis on the building models listed in ANA**",**SP**,**M**,**Implemented**,`FEM <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/usage/desktop/FEM.html>`_
+*H.5.1*,"Implement ability to perform a strongly two-way coupled analysis between the fluid and structural domains",SP,M,Implemented,`hdro-0003 <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/examples/desktop/hdro-0003/README.html>`_
+*H.5.2*,"Implement ability to perform a unified analysis between the fluid and structural domains",SP,M,Implemented,`hdro-0002 <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/examples/desktop/hdro-0002/README.html>`_
+*H.5.3*,"Implement ability to perform a strongly two-way or unified analysis between the debris-fluid-structure domains",SP,M,Implemented,`hdro-0002 <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/examples/desktop/hdro-0002/README.html>`_
 ,,,,,
 **H.6**,"**Ability to use Various UQ Methods and Variable Options**",,,,
 H.6.1,"Ability to use Forward Propagtion methods listed in UQ under UF",SP,M,InProgress,`UQ <https://nheri-simcenter.github.io/Hydro-Documentation/common/user_manual/usage/desktop/UQ.html>`_
@@ -48,3 +52,15 @@ H.10.3,"Tool should obtain building modelling info from database through www",SP
 H.10.4,"Tool should obtain bathymetry elevation data through www",UF,D,InProgress,`NOAA Digital Coast <https://coast.noaa.gov/slr/>`_
 H.10.5,"Tool should obtain sea-level rise data through www",UF,D,InProgress,`NOAA Digital Coast <https://coast.noaa.gov/slr/>`_
 H.10.6,"Tool should incorporate hardware-accelerated web-applications through www",UF,D,InProgress,`Celeris-WebGPU <https://plynett.github.io>`_
+ , , , , , 
+*H.11*,"Library for surge/tsunami debris materials, geometries, longitudinal andlateral spread, uncertainties and correlations between parameters",SP,D,Proposed,"Mar 2025"
+*H.11.1*,"Library for broad regions, e.g. PNW, SoCal, Hawaii, or the Great Lakes",SP,D,Proposed,"Mar 2025"
+*H.11.2*,"Library for land-use classifications, e.g. rural, residential, industrial",SP,D,Proposed,"Mar 2025"
+*H.11.3*,"Library for seminal events, e.g. Tohoku 2011",SP,D,Proposed,"Mar 2025"
+*H.11.4*,"Library for a likely future event, e.g. Cascadia M9.0 Event",SP,D,Proposed,"Mar 2025"
+ , , , , , 
+*H.12*,"Probabilistic methods to enable site- and wave-specific specific characterization of likely debris types, weights, and speeds",GC,D,Proposed,"Jan 2025"
+*H.12.1*,"Develop a probabilistic framework to quantify the likelihood of debris generation and mobilization in a given event at a given site, e.g. refine the 0.9 m flow-depth threshold",SP,D,Proposed,"Jan 2025"
+*H.12.2*,"Develop a probabilistic framework to couple debris mobilization,generation,and transport, e.g. random-walk skewed by friction anisotropy, flood and wind vectors",SP,D,Proposed,"Jan 2025"
+ , , , , , 
+*H.13*,"Develop a PBE-compatible characterization of debris-fields, e.g. material laws, porosity, angularity",SP,D,Proposed,"Jan 2025"
