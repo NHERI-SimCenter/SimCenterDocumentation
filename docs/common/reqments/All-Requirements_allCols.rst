@@ -210,9 +210,9 @@ BE Database Requirements
 ------------------------
 
 .. csv-filter:: Requirements - BE
-  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
+  :header: "#", "Description", "Source", "Priority", "Status", "DB-BE"
   :widths: 8, 55, 10, 10, 12, 10
-  :included_cols: 0, 1, 2, 3, 4, 10
+  :included_cols: 0, 1, 2, 3, 4, 5
   :file: generalBE.csv
 
 .. include:: key.rst
@@ -221,7 +221,7 @@ DL Database Requirements
 ------------------------
 
 .. csv-filter:: Requirements - DLD
-  :header: "#", "Description", "Source", "Priority", "Status", "DBDL"
+  :header: "#", "Description", "Source", "Priority", "Status", "DB-DL"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 5
   :file: generalDBDL.csv
