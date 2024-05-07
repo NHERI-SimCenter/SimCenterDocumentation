@@ -4,12 +4,12 @@
 How to Build
 ============
 
-SimCenter tools all comprise a frontend UI and some backend applications. They are kept in separate GitHub repositories and are also built separately. The following3 sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI and the backend.
+SimCenter tools all comprise a frontend user interface (UI) and backend applications. They are kept in separate GitHub repositories and are also built separately. The following sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI and the backend.
 
 
 .. note::
 
-   As part of our continuous integration process, |app| is built every time we check code into the NHERI-SimCenter repositories. To do this we make use of a CI service. That current service is `appveyor <https://www.appveyor.com/>`_. As a consequence in the |app| repo that you will clone as part of this build process there is a file **appveyor.yml**. This file contains shell commands that are issued to set-up the operating system, download the software and build it. If the following commands fail for you, look at the appveyor.yml file to see what commands are currently beeing called as these may be more up to date than what is presented below.
+   As part of our continuous integration process, |app| is built every time we check code into the NHERI-SimCenter repositories. To do this we make use of a CI service. That current service is `appveyor <https://www.appveyor.com/>`_. As a consequence in the |app| repo that you will clone as part of this build process there is a file **appveyor.yml**. This file contains shell commands that are issued to set up the operating system, download the software and build it. If the following commands fail for you, look at the appveyor.yml file to see what commands are currently being called as these may be more up-to-date than what is presented below.
 
 ********************
 Install Dependencies
@@ -17,7 +17,7 @@ Install Dependencies
 
 First, ensure the following dependencies are installed:
 
-* **C++17 compliant compiler**: many of the workflow applications included use C++17 features; consequently, they may need a newer C++17 compliant compiler. For Windows users, MSVC in `Visual Studio 2019 (Community Edition) <https://visualstudio.microsoft.com/vs/older-downloads/Install Dependencies>`_ can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with C++ and Visual Studio extension development; under the Individual components tab, check C++ CMake tools for windows. Then click Modify.
+* **C++17 compliant compiler**: many of the workflow applications included use C++17 features; consequently, they may need a newer C++17 compliant compiler. For Windows users, MSVC in `Visual Studio 2019 (Community Edition) <https://visualstudio.microsoft.com/vs/older-downloads>`_ can be used. Some extensions of Visual Studio are also needed: Open Visual Studio Installer, go to Installed / More / Modify, under the Workloads tab, check Desktop development with C++ and Visual Studio extension development; under the Individual components tab, check C++ CMake tools for Windows. Then click Modify.
 
 * **OpenSees**: The workflow applications require an installation of `OpenSees <http://opensees.berkeley.edu/>`_ to carry out a structural analysis using the finite element method.
 
@@ -85,10 +85,10 @@ Build the applications
 
         git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications	 
 
-#. To build the applications you need to now navigate to the **SimCenterBackendApplications** folder that was created with the **git clone** command. Once there you will issue the following set of commands to create a **build** folder, change director to that folder, install needed software using conan, and finally use **cmake** to build and install thge applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail).
+#. To build the applications you need to now navigate to the **SimCenterBackendApplications** folder that was created with the **git clone** command. Once there you will issue the following set of commands to create a **build** folder, change directory to that folder, install needed software using conan, and finally use **cmake** to build and install the applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail).
 
 
-    For those developers using the Windows operating system, in a terminal or powershell window you need to type the following:
+    For those developers using the Windows operating system, in a terminal or power-shell window you need to type the following:
 
             .. code:: console
 
@@ -192,14 +192,14 @@ To build the interface, you first need to download the repo and a companion repo
 
    Use the above links if you just want to download and build the applications. If you intend to make changes to any of the code in the repo's, you should fork that repo and then clone your forked repo. Forking a repo at **github** is done through your browser as shown on the following `github guides page <https://guides.github.com/activities/forking/>`_
 
-You now have two ways to build the application: (1) using the **Qt Creator** desktop application provided by **Qt** and (2) from terminal application.
+You now have two ways to build the application: (1) using the **Qt Creator** desktop application provided by **Qt** and (2) from the terminal application.
 
 
 Build using Qt Creator
 ========================
 
 1. Start Qt Creator, then open the |short tool id|.pro file located in the |short tool id| directory that was downloaded in the previous step.
-2. Setup the development kit in Qt Creator. This is usually done by selecting the Qt version, compiler, and configuration and following the onscreen dialog.
+2. Set up the development kit in Qt Creator. This is usually done by selecting the Qt version, compiler, and configuration and following the onscreen dialog.
 3. Build the application and run it in Qt Creator IDE using the **Run** button. This can be done using the keyboard shortcut ``F5`` to build and start the tool.
 
 
@@ -208,7 +208,7 @@ Build from the Terminal
 
 The operations are similar to what was done when building the backend applications. In the terminal application, starting inside the directory of the cloned application again, you will create a build directory, cd into that build directory, run **qmake**, and finally make (or on Windows nmake) to create the application.
 
-Windows developers will type the following in a terminal or a powershell window:
+Windows developers will type the following in a terminal or a power-shell window:
 
     .. parsed-literal::
 
