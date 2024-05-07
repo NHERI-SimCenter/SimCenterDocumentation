@@ -1,9 +1,9 @@
 The following is the list of application requirements across all the SimCenter tools. It is helpful to view an abstract hierarchy of the tools, showing **R2D** at the top and the components at the bottom. Each tool can pull in requirements from other applications lower on the hierarchy. For example, **PBE** builds upon **EE-UQ**. It has its own requirements, i.e. **DL**, but includes the loading, modeling, and analysis requirements from **EE-UQ**. It specializes the **UQ** requirement, in that it only incorporates the sampling option. One set of requirements not shown in the figure is **CR**, the list of common research functionalities required in all the applications.
 
 
-.. raw:: latex
+.. .. raw:: latex
 
-    \begin{landscape}
+..     \begin{landscape}
     
 R2D Requirements
 ----------------
@@ -88,7 +88,7 @@ Wind Loading Requirements
 
 .. csv-filter:: Requirements - WL
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
-  :widths: 8, 55, 8, 10, 15, 10, 10, 10
+  :widths: 10, 55, 8, 10, 15, 10, 10, 10
   :file: _out/Loading.csv
   :include: {0: '\**WL.*|#'}
   :included_cols: 0, 1, 2, 3, 4, 7, 9, 10
@@ -100,7 +100,7 @@ Surge/Tsunami Loading Requirements
 
 .. csv-filter:: Requirements - HL
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
-  :widths: 8, 55, 8, 10, 15, 10, 10, 10
+  :widths: 10, 65, 8, 10, 15, 25, 6, 6
   :included_cols: 0, 1, 2, 3, 4, 8, 9, 10
   :file: _out/Loading.csv
   :include: {0: '\**HL.*|#'}
@@ -156,7 +156,7 @@ Damage & Loss Requirements
 
 .. csv-filter:: Requirements - DL
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
-  :widths: 10, 50, 10, 10, 15, 10, 10
+  :widths: 8, 50, 8, 8, 12, 10, 20
   :included_cols: 0, 1, 2, 3, 4, 9, 10
   :file: _out/Damage.csv
 
@@ -178,7 +178,7 @@ Common Research Application Requirements
 
 .. csv-filter:: Requirements - CR
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
-  :widths: 8, 45, 10, 10, 12, 10, 10, 10, 10, 10, 10
+  :widths: 8, 45, 8, 8, 12, 10, 10, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
   :file: _out/Common.csv
 
@@ -210,11 +210,10 @@ BE Database Requirements
 ------------------------
 
 .. csv-filter:: Requirements - BE
-  :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
+  :header: "#", "Description", "Source", "Priority", "Status", "DB-BE"
   :widths: 8, 55, 10, 10, 12, 10
-  :included_cols: 0, 1, 2, 3, 4, 10
-  :file: _out/Loading.csv
-  :include: {0: '\**BE.*|#'}
+  :included_cols: 0, 1, 2, 3, 4, 5
+  :file: generalBE.csv
 
 .. include:: key.rst
 
@@ -222,7 +221,7 @@ DL Database Requirements
 ------------------------
 
 .. csv-filter:: Requirements - DLD
-  :header: "#", "Description", "Source", "Priority", "Status", "DBDL"
+  :header: "#", "Description", "Source", "Priority", "Status", "DB-DL"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 5
   :file: generalDBDL.csv
@@ -230,7 +229,7 @@ DL Database Requirements
 .. include:: key.rst
 
 
-.. raw:: latex
+.. .. raw:: latex
 
-    \end{landscape}
+..     \end{landscape}
 	     
