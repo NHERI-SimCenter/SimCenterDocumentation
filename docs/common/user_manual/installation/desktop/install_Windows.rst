@@ -5,16 +5,16 @@ Install on Windows 10
 
 .. only:: R2D_app
 
-   Install Java
+   **Install Java**
    ^^^^^^^^^^^^
 
    .. note::
-      Java is needed to use OpenSHA to characterize the regional seismic hazard (see :ref:`ground_motion_tool`). If you do not plan to use that feature, you can skip this step of the installation.
+      Java is required for utilizing OpenSHA for regional seismic hazard characterization (:ref:`ground_motion_tool`). Skip this step if you do not intend to use this feature.
 
-   If you have not yet installed Java, please download the installer from the Java website. The version `16.0.2 <https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html>`_ has been tested to be working with the latest |app|. Follow the on-screen instructions to install Java. If you run into a JVM error that suggests setting JAVA_HOME environment variable, you can do so per this `link <https://docs.oracle.com/cd/E19182-01/821-0917/inst_jdk_javahome_t/index.html>`_
+   Download and install Java from the official Java website. Version `16.0.2 <https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html>`_ is confirmed compatible with the latest |app|. Follow the installation prompts. If a JVM error appears, suggesting the JAVA_HOME environment variable needs setting, refer to this `guide <https://docs.oracle.com/cd/E19182-01/821-0917/inst_jdk_javahome_t/index.html>`_.
  
    .. note::
-      The Java website should automatically detect your operating system and offer the corresponding installer for you to download. Make sure you see "64-bit Java for Windows" at the top of the page before downloading the installer.
+      The Java website should automatically detect and suggest the appropriate installer for your operating system. Ensure "64-bit Java for Windows" is indicated before downloading the Java installer.
 
 
 .. only:: WEUQ_app
@@ -45,10 +45,10 @@ Install on Windows 10
    Further instructions can be found in `OpenFOAM.org <https://openfoam.org/download/windows/>`_.
 
 
-Download the Application
-^^^^^^^^^^^^^^^^^^^^^^^^
+**Download the Application**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To download the |app|, navigate to the |appLink| page which should resemble |figDownload|. The download page contains a list of downloadable files and directories.
+Navigate to the |appLink| page, which should resemble |figDownload|, for a list of downloadable files and directories. Click the **Windows_Download.zip** file and select **Download** in the pop-up window's bottom right.
 
 
 .. only:: R2D_app
@@ -59,7 +59,7 @@ To download the |app|, navigate to the |appLink| page which should resemble |fig
       :align: center
       :figclass: align-center
 
-      R2DTool download page.
+      R2D Tool download page.
 
 .. only:: PBE_app
 
@@ -114,23 +114,22 @@ To download the |app|, navigate to the |appLink| page which should resemble |fig
 
       HydroUQ tool download page.
 
+After downloading, extract the zip file to your preferred location, such as **C:/SimCenter/**. You can create and move a shortcut of the |short tool id|.exe to your Desktop for convenience.
 
-Click on the file with a name ending with **Windows_Download.zip** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner.
+.. tip:: Use an external compressor like `7-Zip <https://www.7-zip.org/>`_ for faster extraction than the default Windows function.
 
-After the download is completed, extract the zip archive to a location in your filesystem. We suggest extracting it to the **C:/SimCenter/** folder. You can create a shortcut that points to the |short tool id|.exe executable of the application and move this shortcut to your Desktop for easy access.
+**Test the Installation**
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. tip:: Using an external compressor program, such as `7-Zip <https://www.7-zip.org/>`_, can significantly reduce the zip archive extraction time compared to the Windows default extraction function.
-
-Test the Installation
-^^^^^^^^^^^^^^^^^^^^^
-
-Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by running the |short tool id|.exe executable.
+After installation, perform basic checks by running the |short tool id|.exe from the installation directory.
 
 .. note::
 
-   Since the SimCenter is not registered as a Windows vendor, our apps are not recognized by the operating system as signed applications. You may receive a warning message that lets you know about the risks involved in running unsigned applications from unknown sources when you start the |short tool name| application for the first time. It is safe to bypass that warning when running SimCenter applications.
+   Since the SimCenter is not registered as a Windows vendor, our applications may trigger a warning about unsigned applications from unknown sources when you start the |short tool name| application for the first time. It is safe to bypass this warning for SimCenter applications.
 
-Once the application starts, you should see the user interface shown in |figWinUI|. We recommend running the example problem |test example| to test the application.
+
+Launch the application to view the user interface as shown in |figWinUI|. It's recommended to run the |test example| to ensure proper operation.
+
 
 .. only:: R2D_app
 
@@ -140,7 +139,7 @@ Once the application starts, you should see the user interface shown in |figWinU
     :align: center
     :figclass: align-center
 
-    R2DTool on startup.
+    R2D Tool on startup.
 
 .. only:: PBE_app
 
@@ -194,14 +193,13 @@ Once the application starts, you should see the user interface shown in |figWinU
 
     
 
-Troubleshooting
+**Troubleshooting**
 ^^^^^^^^^^^^^^^^^^^^^
-If the analysis fails, please see the :ref:`troubleshooting<lblTroubleshooting>` page.
+If the test example fails, refer to :ref:`troubleshooting<lblTroubleshooting>`.
 
 .. note::
-   When analysis fails, a quick check is to inspect the **local working directory** path in the preference menu. The below could lead to the analysis failure 
+   Analysis failure may be due to the **local working directory** path defined in the preference menu. Check for:
 
-   * The path is located under a cloud folder, e.g. OneDriver, Box (may give file-not-found error due to the real-time cloud-only sync)
-   * The path contains non-alphabetic characters (may give an encoding error)
-   * The path contains empty space (low likelihood, but it may give the file-not-found error)
-   * The path is located under a different driver from the app executable (.exe) path, e.g. one is under C drive, and the other is under E drive (may give a permission error)
+   - Avoid setting the local working directory under cloud-synced folders like OneDrive or Box, which may cause file-not-found errors.
+   - Avoid including non-alphabetic characters or spaces in the path, which may potentially lead to encoding or file-not-found errors.
+   - Avoid setting the local working directory on a different drive than the app executable (.exe), which may result in permission errors , e.g. the executable is under the C drive, and the working directory is under the E drive.
