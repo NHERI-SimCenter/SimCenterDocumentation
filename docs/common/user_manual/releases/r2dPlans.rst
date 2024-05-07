@@ -9,7 +9,7 @@ Release Plans
 The following features are planned to be developed for upcoming releases of |app|. We are actively working on the features in the next release. Farther development priorities may change depending on feedback from the community. If you have any suggestions, we encourage you to contribute and contact us through the SimCenter Forum.
 
 
-March 2024
+June 2024
 ----------
 #. Water Distribution Network, buried pipelines.(1.3.4.3)
 
@@ -20,7 +20,7 @@ March 2024
 #. Probabilistic asset inventories (1.3.6.2) - Calibrate, store, and propagate uncertainties in building features at the regional scale. For example, we have some but not all information for all buildings in an area, fill in the gaps using information we do know.
 
       
-June 2024
+Sep 2024
 ----------
 #. Automatic access to physics-based ground motion simulation results (1.1.1.3)
 
@@ -29,7 +29,7 @@ June 2024
 #. Add datasets to simulate high-resolution damages and losses in buried pipeline networks (1.3.5.4)
    
 
-Sept 2024
+Dec 2024
 ---------
 #. Develop methods to model interdependencies between physical components, housing, socio-economic functions, and lifelines (1.3.4.6)
 

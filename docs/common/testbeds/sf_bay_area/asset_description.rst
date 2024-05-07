@@ -9,18 +9,18 @@ Area that was developed by UrbanSim ([Waddell02]_) using
 public resources such as the City and County of San Francisco’s
 data portal ([DataSF20]_) and tax assessor databases. 
 
-The raw database which includes 1.8 M San Francisco buildings were shared 
-in the collaboration with UrbanSim. The UrbanSim database includes two files:
+The raw database, which includes 1.8 M San Francisco buildings, was shared 
+in collaboration with UrbanSim. The UrbanSim database includes two files:
 
 1. Buildings File: a CSV file that contains building properties including total floor 
-   area, number of stories, year built, building occupancy and parcel ID. 
+   area, number of stories, year built, building occupancy, and parcel ID. 
 2. Parcels File: a CSV file including the latitude and longitude of each building defined 
    by the parcel ID.
 
-A parsing application was built to collect the mentioned building properties and from the 
+A parsing application was built to collect the mentioned building properties from the 
 UrbanSim building files. The occupancy ID (in integer) was used to infer the occupancy 
-type and replacement cost per unit area (:numref:`occupancy_map`). The buildings with missing or invalid occupancy 
-ID, the building was mapped to the default occupancy type (i.e., residential) with average area of buildings 
+type and replacement cost per unit area (:numref:`occupancy_map`). For buildings with missing or invalid occupancy 
+ID, the building was mapped to the default occupancy type (i.e., residential) with the average area of buildings 
 in the inventory.
 
 .. csv-table:: Mapping rules for building occupancy type and replacement cost.
@@ -40,13 +40,13 @@ structure types are equally likely. :numref:`structure_map` summarizes the struc
    :align: center
 
 The available information about location
-and building geometry were further refined by merging the UrbanSim
+and building geometry was further refined by merging the UrbanSim
 database with the publicly available Microsoft Building Footprint
 data ([Microsoft20]_) for the testbed area. These data were
 used to populate two additional attributes, replacement cost and
 structure type, based on a ruleset that considers local design
 practice and real estate pricing. For further details about the
-database and ruleset see [Elhadded19]_.
+database and ruleset, see [Elhadded19]_.
 
 
 .. [Waddell02]

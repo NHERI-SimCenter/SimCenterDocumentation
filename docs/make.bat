@@ -60,6 +60,13 @@ if "%1" == "pelicun" (
 	goto end
 )
 
+if "%1" == "HydroUQ" (
+	%SPHINXBUILD% -M html %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+	robocopy %BUILDDIR%/html ../../HydroUQ-Documentation/docs /E > nul
+	echo.Generating HydroUQ Documentation...
+	goto end
+)
+
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
 	echo.

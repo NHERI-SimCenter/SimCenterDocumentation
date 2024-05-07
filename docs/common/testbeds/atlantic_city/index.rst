@@ -7,30 +7,30 @@ Atlantic County, NJ
 
 **Acknowledgements**
 
-A number of members of the SimCenter Team assisted with this testbed’s development and its documentation: 
+Several members of the SimCenter Team assisted with the development and documentation of this testbed: 
 Adam Zsarnoczay, Ajay Harish, Barbaros Cetiner, Charles Wang, Claudio Perez, Joanna Zou, Kuanshi Zhong, Stevan Gavrilovic, and Wael Elhaddad. 
-The testbed conceptualization was guided by Tracy Kijewski-Correa (University of Notre Dame), 
-with implementation supervised by Frank McKenna (University of California Berkeley). 
-Additional guidance was offered by Greg Deierlein (Stanford University), Andrew Kennedy 
-(University of Notre Dame), and Matt Schoettler (University of California Berkeley). 
+The conceptualization of the testbed was guided by Tracy Kijewski-Correa (University of Notre Dame), 
+with implementation supervised by Frank McKenna (University of California, Berkeley). 
+Additional guidance was provided by Greg Deierlein (Stanford University), Andrew Kennedy 
+(University of Notre Dame), and Matt Schoettler (University of California, Berkeley). 
 
-The Hazard Characterization leveraged models, software and simulations executed by the following groups, 
+The Hazard Characterization utilized models, software, and simulations executed by the following groups, 
 whose collaboration is greatly appreciated:
 
-The NJcoast project, with storm surge surrogate model developed by Alexandros Taflanidis (University of Notre Dame) 
-in collaboration with Andrew Kennedy (University of Notre Dame) and wind field model contributed by Teng Wu (University at Buffalo)
-Superstorm Sandy ADCIRC hindcast results for storm surge provided by Joannes Westerink (University of Notre Dame) 
-and wind fields made available by Peter Vickery (Applied Research Associates).
+The NJcoast project, with a storm surge surrogate model developed by Alexandros Taflanidis (University of Notre Dame) 
+in collaboration with Andrew Kennedy (University of Notre Dame) and a wind field model contributed by Teng Wu (University at Buffalo).
+Superstorm Sandy ADCIRC hindcast results for storm surge were provided by Joannes Westerink (University of Notre Dame) 
+and wind fields were made available by Peter Vickery (Applied Research Associates).
 
 Additional information required for Asset Description and Asset Representation was made possible through the 
-ongoing collaboration between the University of Notre dame and the New Jersey Department of Community Affairs (NJ DCA) 
-through the NJcoast project. NJ DCA’s Keith Henderson’s sustained support and collaboration is greatly appreciated.
+ongoing collaboration between the University of Notre Dame and the New Jersey Department of Community Affairs (NJ DCA) 
+through the NJcoast project. The sustained support and collaboration of NJ DCA’s Keith Henderson is greatly appreciated.
 
 **Preface**
 
 This documentation is intended to introduce the implementation of the SimCenter’s hurricane 
 regional loss modeling workflow in the context of Atlantic City (Atlantic County), New Jersey. 
-While certain aspects of the workflow are unchanged in a given application context, this 
+While certain aspects of the workflow remain unchanged in a given application context, this 
 testbed specifically demonstrates how building inventories can be constructed through 
 automated processes that fuse different data sources to enrich parcel data, using SimCenter 
 applications and heuristic rulesets grounded in local codes/standards and normative 
@@ -38,8 +38,8 @@ construction practices.
 
 **Versioning**
 
-Since this documentation will continue to evolve when features are added and as software capabilities improve, documentation, 
-associated input files, results, and rulesets will be updated over time. The applications are hosted in NHERI-SimCenter 
+As this documentation will continue to evolve when features are added and as software capabilities improve, the documentation, 
+associated input files, results, and rulesets will be updated over time. The applications are hosted on NHERI-SimCenter 
 DesignSafe and the versioned source codes are archived via Zenodo. Other related files are maintained in two types of repositories:
 
 #. The DesignSafe Project PRJ-3314 contains inputs (inventories, rulesets, and hazard data) and outputs (results) along with PDFs that 
@@ -113,12 +113,12 @@ to execute in 40 minutes using five Skylake (SKX) nodes (240 cores) on `Frontera
 **Envisioned Use Cases**
 
 Given the significance of the building inventory generation for this 
-testbed, this documentation was written in response to two primary audiences/use cases:
+testbed, this documentation has been written to cater to two primary audiences/use cases:
 
 **Case 1**: End users who wish to use the testbed to explore specific research questions such as:
-1. the impact of different hurricane scenarios beyond those provided herein
-2. the potential benefits of various mitigation efforts (changing select attribute assignments and/or damage/loss descriptions)
-3. the benefits of more refined damage/loss models, particularly for coastal hazards
+1. The impact of different hurricane scenarios beyond those provided herein.
+2. The potential benefits of various mitigation efforts (changing select attribute assignments and/or damage/loss descriptions).
+3. The benefits of more refined damage/loss models, particularly for coastal hazards.
 
 Such individuals may not wish to generate their own inventories, but require some background in order 
 to meaningfully interpret results. This documentation will enhance their understanding of the various 
@@ -127,16 +127,16 @@ loss models. Use Case 1 generally requires skill sets in :ref:`lbl-testbed_AC_ha
 :ref:`lbl-testbed_AC_damage_and_loss`.
 
 **Case 2**: Users who seek to develop building inventories beyond Atlantic County, NJ will benefit from a 
-deeper understanding of the techniques, rulesets and scripts used to generate this building inventory. 
+deeper understanding of the techniques, rulesets, and scripts used to generate this building inventory. 
 In addition to the explanations that follow, this documentation is accompanied by detailed rulesets used 
 for building and attribute assignment, 
 as well as their implementation as Python scripts. 
 These provide templates that such users can potentially 
-refine, extend and replicate this testbed’s process for Building Inventory generation beyond the current 
+refine, extend, and replicate this testbed’s process for Building Inventory generation beyond the current 
 application in Atlantic County. Use Case 2 generally requires skill sets in :ref:`lbl-testbed_AC_asset_description`, 
 :ref:`lbl-testbed_AC_asset_representation`, and :ref:`lbl-testbed_AC_damage_and_loss`.
 
-The revised damage and loss models or extensions to the heuristic rulesets can be contributed back to the SimCenter 
+Revised damage and loss models or extensions to the heuristic rulesets can be contributed back to the SimCenter 
 to expand the capabilities of this community software. 
 
 If you have any feedback or questions, please check out the `SimCenter Regional Testbeds <http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=22.0>`_. 

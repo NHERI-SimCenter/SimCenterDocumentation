@@ -6,7 +6,23 @@
 Release Notes
 ***************************
 
-Version 4.0.1 (Current)
+Version 4.1.0 (Current)
+-----------------------
+
+**Release date:** April 2024
+
+**Highlights**
+
+#. Upgrade the earthquake event generation toolbox to support simulation of Peak Ground Velocity (PGV) and liquefaction induced Permanent Ground Deformation (PGD).
+#. Enhancements to the BRAILS-Buildings widget, providing detailed user interaction with the existing BRAILS building inventory generation capabilities. In brief, these enhancements enable:
+   
+   #. Importing footprint and building data from i) OpenStreetMaps, ii) Microsoft Global Building Footprints dataset, iii) FEMA USA Structures, and iv) user-specified data sources.
+   #. Using National Structures Inventory data or other user-specified data to create a baseline building inventory.
+   #. Requesting a subset of BRAILS attributes for inventory generation.
+
+#. Update the damage and loss engine Pelicun to v3.3. 
+
+Version 4.0.1
 -----------------------
 
 **Release date:** Jan. 2024
@@ -16,8 +32,7 @@ Version 4.0.1 (Current)
 #. Support the assessment of transportation infrastructure.
 #. Revised interface for earthquake scenario simulation tool.
 #. Added Brails-Transportation tool to generate transportation infrastructure inventory.
-#. Allow using PreTrained Surrogate Models from EE-UQ as structural analysis models. 
-
+#. Allow using PreTrained Surrogate Models from EE-UQ as structural analysis models.
 
 Version 3.0.0
 -----------------------
@@ -59,10 +74,7 @@ Version 2.0.0
 
 #. QGIS integrated into R2D with the ability to:
 
-   #. load several types of GIS files into R2D to visualize and extract information
-post-process results based on advanced queries and expression filters
-join external databases to GIS features to add additional information for pre- and post-processing
-export GIS layers into many supported formats for viewing in other GIS applications
+   #. load several types of GIS files into R2D to visualize and extract information post-process results based on advanced queries and expression filters join external databases to GIS features to add additional information for pre- and post-processing export GIS layers into many supported formats for viewing in other GIS applications
 
 #. Filtering of assets to include in an analysis based on advanced queries and expressions
 

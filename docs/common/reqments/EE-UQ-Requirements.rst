@@ -2,9 +2,10 @@
 General Requirements
 --------------------
 
-.. csv-table:: Requirements - General
-  :header: "#", "Description", "Source", "Priority", "Status"
-  :widths: 10, 60, 10, 10, 10
+.. csv-filter:: Requirements - General
+  :header: "#", "Description", "Source", "Priority", "Status", "Implementation"
+  :widths: 10, 50, 10, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4, 5
   :file: generalEEUQ.csv
 
 .. include:: key.rst
@@ -12,25 +13,12 @@ General Requirements
 Loading Requirements
 --------------------
 
-
 .. csv-filter:: Requirements - Earthquake Loading
   :file: _out/Loading.csv
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
-  :included_cols: 0,1,2,3,4,6
-  :include: {0: 'EL.*'}
-
-
-.. include:: key.rst
-
-UQ Requirements
----------------
-
-.. csv-filter:: Requirements - Uncertainty Quantification Methods and Variables
-  :file: _out/Uncertainty.csv
-  :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
-  :widths: 10, 50, 10, 10, 10, 10
-  :included_cols: 0,1,2,3,4,6
+  :included_cols: 0, 1, 2, 3, 4, 6
+  :include: {0: '#|\**EL.*'}
 
 .. include:: key.rst
 
@@ -41,7 +29,7 @@ Modeling Requirements
   :file: _out/Modeling.csv
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
-  :included_cols: 0,1,2,3,4,6
+  :included_cols: 0, 1, 2, 3, 4, 6
 
 .. include:: key.rst
 
@@ -52,20 +40,29 @@ Analysis Requirements
   :file: _out/Analysis.csv
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
-  :included_cols: 0,1,2,3,4,6
+  :included_cols: 0, 1, 2, 3, 4, 6
 
 .. include:: key.rst
 
+UQ Requirements
+---------------
+
+.. csv-filter:: Requirements - Uncertainty Quantification Methods and Variables
+  :file: _out/Uncertainty.csv
+  :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
+  :widths: 10, 50, 10, 10, 10, 10
+  :included_cols: 0, 1, 2, 3, 4, 6
+
+.. include:: key.rst
 
 RV Requirements
 ---------------
-
 
 .. csv-filter:: Requirements - Random Variables
   :file: _out/RandomVariables.csv
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
-  :included_cols: 0,1,2,3,4,6
+  :included_cols: 0, 1, 2, 3, 4, 6
 
 .. include:: key.rst
 
@@ -76,7 +73,7 @@ Common Research Application Requirements
   :file: _out/Common.csv
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
-  :included_cols: 0,1,2,3,4,6
+  :included_cols: 0, 1, 2, 3, 4, 6
 
 .. include:: key.rst
 

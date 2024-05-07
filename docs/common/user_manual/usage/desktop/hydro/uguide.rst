@@ -8,7 +8,7 @@ The HydroUQ app, as will be discussed in :ref:`lblArchitecture`, is a hazard eve
 
 .. _primaryGUI:
 
-.. figure:: figures/EVT_Tab.png
+.. figure:: figures/EVT_Tab_MPM.png
    :align: center
    :figclass: align-center
 

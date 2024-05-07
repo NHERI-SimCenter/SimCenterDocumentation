@@ -40,10 +40,8 @@ NL2SOL
 The NL2SOL method is based on an adaptive nonlinear least-squares algorithm, devised by Dennis and colleagues ([Dennis81a]_, [Dennis81b]_). NL2SOL uses a trust region method and adaptively switches between two Hessian approximations, the Gauss-Newton approximation alone and the Gauss-Newton approximation plus a quasi-Newton approximation to the rest of the Hessian. This latter approximation is useful when the starting guess is far from the solution. For problems with large residuals, this algorithm is known to be more reliable than Gauss-Newton.
 
 
-.. note::
+.. note:: Calibration data file requirements
 
-	Calibration data file requirements
-	==================================
 	The data are provided in the calibration data file, which must fulfill the following requirements:
 
 	1. Each row of the calibration data file contains data from one experiment. The individual entries in every row of this file can be separated by spaces, tabs, or commas.

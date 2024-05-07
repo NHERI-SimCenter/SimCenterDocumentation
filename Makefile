@@ -12,7 +12,7 @@ PUBLDIR = $(shell v="$(SIMDOC_APP)"; echo "../$${v%Tool}-Documentation/docs/")
 # Directories to remove when cleaning
 CLEANDIR      = _sources _static _images common
 
-CSVDIR  = docs/common/reqments/_out/
+CSVDIR  = docs/common/reqments/_out_from_json/
 JSONDIR = docs/common/reqments/data/
 
 # This environment variable should specify a directory
@@ -69,9 +69,9 @@ all:
 	make we html 2>&1 | grep 'build succ'
 	make ee html 2>&1 | grep 'build succ'
 	make pbe html 2>&1 | grep 'build succ'
+	make hydro html 2>&1 | grep 'build succ'
 
-
-hydro pelicun rtm:
+pelicun rtm:
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
 
 pbe:
@@ -83,7 +83,7 @@ db:
 	@echo Generating temporary files for Damage and Loss Database docs...
 	cd ./docs/common/dldb && python3 generate_dldb_doc.py
 
-r2d qfem we ee:
+r2d qfem we ee hydro:
 	rm -f build/$(SIMDOC_APP)_Examples.json
 	make build/$(SIMDOC_APP)_Examples.json
 	$(eval SIMDOC_APP=$(SIMDOC_APP))
@@ -159,7 +159,7 @@ $(CSVDIR)/%.csv: $(JSONDIR)/%.json ./scripts/json2csv.py
 		-Eweuq -  \
 		-Epbdl $(SIMCENTER_DEV)/PBE/Examples/pbdl-*/src/input.json \
 		-Er2dt $(SIMCENTER_DEV)/R2DExamples/E*/input.json \
-		-Ehydr - \
+		-Ehdro $(SIMCENTER_DEV)/HydroUQ/Examples/hdro-*/src/input.json  \
 		< '$<' > '$@'
 
 csv-debug: FORCE
@@ -172,7 +172,7 @@ csv-debug: FORCE
             -Eweuq -  \
             -Epbdl $(SIMCENTER_DEV)/PBE/Examples/pbdl-*/src/input.json \
             -Er2dt $(SIMCENTER_DEV)/R2DExamples/E*/input.json \
-            -Ehydr - \
+            -Ehdro $(SIMCENTER_DEV)/HydroUQ/Examples/hdro-*/src/input.json \
             < "$(JSONDIR)/$$json_file"; \
 	done
 
