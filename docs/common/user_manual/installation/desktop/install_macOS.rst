@@ -1,12 +1,14 @@
 .. _lblInstallMac:
 
-Install on macOS 10
+Install on MacOS
 ===================
 
 Install Python 3.9
 ^^^^^^^^^^^^^^^^^^
 
-SimCenter tools require an x86-based version of Python 3.9 to run properly. If you have a different version of Python installed, you will need to add a Python 3.9 x86 version to your system. To see if you have Python installed and whether it is compatible with SimCenter tools, issue the following in a terminal window.
+SimCenter tools require an x86-based Python 3.9. If your current Python version is incompatible, follow these steps to install the required version from `Python.org <https://www.python.org/downloads/macos/>`_.
+
+To check your Python version compatibility, issue the following in a terminal window.
 
 .. code::
    
@@ -15,7 +17,7 @@ SimCenter tools require an x86-based version of Python 3.9 to run properly. If y
    platform.uname()
    exit()
 
-As shown in the screenshot below, you should see a Python 3.9 version after issuing the python3 command and the machine='x86_64' in the last line of output from the platform.uname() command. If you see another Python version or machine='arm64', you will need to install an x86 Python 3.9 on your computer.
+Ensure the output indicates Python 3.9 and `machine='x86_64'`, as shown in the screenshot below. If not, proceed to install Python 3.9 x86.
 
 .. figure:: figures/pythonKernel.png
       :align: center
@@ -23,11 +25,14 @@ As shown in the screenshot below, you should see a Python 3.9 version after issu
       :width: 75%
 
       Python: Kernel Version
+**1.** Visit `Python.org <https://www.python.org/downloads/macos/>`_ and download the **macOS 64-bit Intel-only installer** for Python 3.9.
 
+.. figure:: figures/pythonDownload.png
+      :align: center
+      :figclass: align-center
 
-**1.** To download a Python installer with your browser open the |appLink| page. There, you will find various files and directories available for download. Locate the file named 'python-3.9.13-macosx19.9.pkg, which we copied from `Python.org <https://www.python.org/downloads/macos/>`_. Proceed to download this installer file and then open it on your local machine to initiate the Python installation process.
-
-**2.** Once you have run the Python.org installer, a popup directory window will appear, displaying several files. Among these, you will find two script files named ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh``. It's essential to execute both of these script files to configure Python correctly for terminal use. Simply double-click on each file individually with your mouse to execute them.
+      Python: python.org MacOS Download Page
+**2.** Run the installer. Upon completion, a folder with several files will open, as shown in the figure below. Execute ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh`` by double-clicking each.
 
    .. figure:: figures/pythonInstallShell.png
       :align: center
@@ -35,11 +40,7 @@ As shown in the screenshot below, you should see a Python 3.9 version after issu
       :width: 75%
 
       Python: Folder Displayed at Conclusion of Install
-
-.. warning::
-
-
-**3.** Once Python is installed, you need to extend it by installing some additional packages. To facilitate this phase of the installation, we created a **nheri_simcenter** python package that automatically installs all other dependencies. Start a Terminal window and type the following command:
+**3.** Install additional packages via the **nheri_simcenter** package by starting a Terminal window and type the following command:
 
 .. code-block:: bash
 
@@ -68,17 +69,16 @@ Make sure you see a message that confirms the successful installation of the nhe
 
 .. only:: R2D_app
 
-   Install Java
+   **Install Java**
    ^^^^^^^^^^^^
 
    .. note::
-      Java is needed to use OpenSHA to characterize the regional seismic hazard (see :ref:`ground_motion_tool`). If you do not plan to use that feature, you can skip this step of the installation.
+      Java is required for utilizing OpenSHA for regional seismic hazard characterization (:ref:`ground_motion_tool`). Skip this step if you do not intend to use this feature.
 
-   If you have not yet installed Java, please download the installer from the Java website. The version `16.0.2 <https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html>`_ has been tested to be working with the latest |app|. Follow the on-screen instructions to install Java.
-
+   Download and install Java from the official Java website. Version `16.0.2 <https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html>`_ is confirmed compatible with the latest |app|. Follow the installation prompts. If a JVM error appears, suggesting the JAVA_HOME environment variable needs setting, refer to this `guide <https://docs.oracle.com/cd/E19182-01/821-0917/inst_jdk_javahome_t/index.html>`_.
+ 
    .. note::
-      
-      The Java website should automatically detect your operating system and offer the corresponding installer for you to download. Make sure you see "Mac OS X" at the top of the page before downloading the installer.
+      The Java website should automatically detect and suggest the appropriate installer for your operating system. Ensure "64-bit Java for Windows" is indicated before downloading the Java installer.
 
 
 .. only:: WEUQ_app
@@ -96,9 +96,8 @@ Make sure you see a message that confirms the successful installation of the nhe
 
    To install OpenFOAM-10 on macOS, follow the instructions in `OpenFOAM for macOS <https://openfoam.org/download/10-macos/>`_.
 
-
-Download the Application
-^^^^^^^^^^^^^^^^^^^^^^^^
+**Download the Application**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To download the |app|, navigate to the |appLink| page which should resemble |figDownload|. The download page contains a list of downloadable files and directories.
 
@@ -110,7 +109,7 @@ To download the |app|, navigate to the |appLink| page which should resemble |fig
       :align: center
       :figclass: align-center
 
-      R2DTool download page.
+      R2D Tool download page.
 
 
 .. only:: PBE_app
@@ -190,7 +189,9 @@ Once the installation procedure has been completed, it is a good practice to run
            :figclass: align-center
            :width: 50%
 
-Once the application starts, you should see the user interface shown in |figUI|. We recommend running the example problem |test example| to test the application.
+
+
+Once the application starts, verify the setup by running an example problem |test example|, see |figUI|.
 
 .. only:: R2D_app
 
@@ -200,7 +201,7 @@ Once the application starts, you should see the user interface shown in |figUI|.
     :align: center
     :figclass: align-center
 
-    R2DTool on startup.
+    R2D Tool on startup.
 
 .. only:: PBE_app
 

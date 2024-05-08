@@ -5,8 +5,7 @@ User Interface
 **************
 
 
-The |app| is a scientific workflow application that creates workflows and runs them in the background. These workflows can involve multiple different workflow applications (see more information on the backend and workflows under :ref:`lblArchitecture`). Once the |app| is started, the user is presented with the user interface (UI) shown in |figGenericUI|. This interface allows the user to select the applications to run in a workflow, input the controlling parameters for each of these applications, start the workflow either locally or
-remotely, and finally view the results of the simulation.
+The |app| is a scientific workflow application that creates workflows and runs them in the background. These workflows can integrate multiple applications, detailed further in the backend and workflows section (:ref:`lblArchitecture`). Upon launching |app|, the user is presented with the user interface (UI) shown in |figGenericUI|, which facilitates the selection of workflow applications, configuration of application parameters, initiation of workflows either locally or remotely, and visualization of simulation outcomes.
 
 .. only:: quoFEM_app
 
@@ -73,7 +72,9 @@ remotely, and finally view the results of the simulation.
 
 	   The |app| user interface.
 
-The main window of the UI is made up of the following areas:
+
+The main window of the UI comprises the following key components:
+
 
 #. **Login Button**
 
@@ -152,7 +153,7 @@ The main window of the UI is made up of the following areas:
 
    **Running Jobs Remotely**
 
-     .. only:: notR2D
+   .. only:: notR2D
 
        Clicking on the **RUN at DesignSafe** button will show the remote job submission dialog shown below (:numref:`figRemJobPanel-notR2D`)
 
@@ -165,7 +166,7 @@ The main window of the UI is made up of the following areas:
 
             Remote job submission dialog.
 
-      .. only:: R2D_app
+   .. only:: R2D_app
 
         Clicking on the **RUN at DesignSafe** button will show the remote job submission dialog shown below (:numref:`figRemJobPanel-R2D`)
 
@@ -188,7 +189,7 @@ The main window of the UI is made up of the following areas:
 
       * **Number of processes per Node**: Number of processors that will be utilized on each node. It is advantageous to use all available processors of a node when the memory demand of a job is small. When a job is memory intensive, e.g., large finite element models, utilizing all available processors may overwhelm the memory cache of a core and the computation will slow down. Currently, the maximum number of processors is 48 and the minimum is 1.
 
-      .. only:: R2D_app
+   .. only:: R2D_app
 
          * **Number of Buildings per Task**: Number of buildings per task.
 
