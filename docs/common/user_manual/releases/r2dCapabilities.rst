@@ -5,10 +5,9 @@
 Capabilities
 ************
 
+**Version** |tool version| of |app| was released in **April 2024**, introducing significant updates and enhancements. This document outlines the functionalities available in the current version, highlighting new features and improvements marked in :blue:`blue`.
 
-**Version** |tool version| of |app| was released **April 2024**. The following is the functionality available in this current version. New features and fixes in this release are marked :blue:`blue` in the following list of features.
-The major update from Version 4.0 is upgrading the :blue:`regional earthquake event generation tool`, :blue:`regional inventory generation tool BRAILS`, and :blue:` damage and loss engine Pelicun`. 
-
+Major updates from Version 4.0 are adding liquefaction-induced ground deformation estimation in the :blue:`regional earthquake event generation tool`, refactored :blue:`regional inventory generation tool BRAILS`, and upgraded :blue:`damage and loss engine Pelicun`. 
 
 **Release date:** April, 2024
 
@@ -16,14 +15,9 @@ The major update from Version 4.0 is upgrading the :blue:`regional earthquake ev
 
     * :ref:`User specified earthquakes <lbl-UserSpecifiedGroundMotions>`.
     * :ref:`User specified hurricanes <lbl-UserSpecifiedHurricane>`.
-    * :ref:`ShakeMap Scenarios <lbl-shakeMapEQScenarios>`, which supports importing the following ShakeMap outputs:
-            a. ShakeMap ground motion grid in .xml format.
-            b. PGA contours in .json format.
-            c. Fault rupture in .json format.	
-    * :ref:`Raster Defined Hazard <lbl-rasterDefinedHazard>` for Earthquake, Hurricane, Inundation**.
-    * **GIS Defined Hazard for Earthquake, Hurricane, Inundation**.
-
-
+    * :ref:`ShakeMap Scenarios <lbl-shakeMapEQScenarios>` for earthquake events, allowing the import of ShakeMap `XML grid file <https://usgs.github.io/shakemap/manual4_0/ug_products.html#xml-grid>`_, PGA Contours (.json) file, and Fault Rupture (.json) file.
+    * :ref:`Raster Defined Hazard <lbl-rasterDefinedHazard>` for Earthquake, Hurricane, Inundation.
+    * **GIS Defined Hazard** for Earthquake, Hurricane, Inundation.
 
 #. **Asset Types**:
 
@@ -31,38 +25,40 @@ The major update from Version 4.0 is upgrading the :blue:`regional earthquake ev
 		a. Load building database in a ``.csv`` format.
 		b. Load building database in a ``.gis`` format.
     * :ref:`Transportation infrastructure <lbl-ASDTransport>`:
-		a. :blue:`Load transportation infrastructure database in SimCenter's` ``.geojson`` :blue:`format.`
-		b. :blue:`Load transportation infrastructure database in common` ``.gis`` :blue:`format.`
+		a. Load transportation infrastructure database in SimCenter's ``.geojson`` format.
+		b. Load transportation infrastructure database in common ``.gis`` format.
 		   
 	
 #. **Asset Modeling**: 
     * :ref:`Buildings <lbl-MODBuildings>`:
-		a. MDOF-LU (MDOF shear building model)
-		b. OpenSeesPy script building generator
-		c. IMasEDP, i.e., no structural modeling, and the Intensity Measures (IMs) are considered the Engineering Demand Parameters (EDPs)
-                d. CustomPy
+		a. MDOF-LU (MDOF shear building model).
+		b. OpenSeesPy building generator.
+		c. None (Used for the IMasEDP option in Asset Analysis).
+		d. CustomPy.
     * :ref:`Transportation infrastructure <lbl-MODTransport>`:
-	    a. IMasEDP, i.e., no structural modeling, and the Intensity Measures (IMs) are considered the Engineering Demand Parameters (EDPs)
+	    a. None (Used for the IMasEDP option in Asset Analysis).
 
 #. **Asset Analysis**: 
     * :ref:`Buildings <lbl-ANABuildings>`:
-		a. OpenSees
-		b. OpenSeesPy 
-		c. IMasEDP, i.e., no analysis as the IM is considered the EDP
-		d. CustomPy for CustomPy in Asset Modeling
-		e. None for IMasEDP option in Modeling.	
+		a. OpenSees.
+		b. OpenSeesPy. 
+		c. IMasEDP (simplified analysis using Intensity Measures (IMs) as Engineering Demand Parameters (EDPs)).
+		d. CustomPy for CustomPy Asset Modeling.
+		e. Pre-trained surrogate models.
     * :ref:`Transportation infrastructure <lbl-ANATransport>`:
-	    a. None for IMasEDP option in Modeling.	   		   
+	    a. IMasEDP (simplified analysis using Intensity Measures (IMs) as Engineering Demand Parameters (EDPs)).
 		
 #. **Damage and Loss**: 
     * :ref:`Buildings <lbl-DLBuildingPelicun>`:
-		* Pelicun
-			a. HAZUS MH EQ
+		* Pelicun Damage and Loss Methods:
+			a. HAZUS MH EQ Story
 			b. HAZUS MH EQ IM
 			c. HAZUS MH HU
+			d. User-provided Models
     * :ref:`Transportation infrastructure <lbl-DLTransportPelicun>`
-			a. HAZUS MH EQ
-			b. HAZUS MH EQ IM
+		* Pelicun Damage and Loss Methods:
+			a. HAZUS MH EQ IM
+			b. User-provided Models
 			
 #. **Uncertainty Quantification**: 
     * :ref:`Dakota <lblUQ>`:
@@ -70,7 +66,7 @@ The major update from Version 4.0 is upgrading the :blue:`regional earthquake ev
 		b. Monte Carlo Sampling (MCS)
 
 
-#. ** Additional Tools To Perform Tasks Generating or Using Data in Workflow**:
+#. **Additional Tools To Perform Tasks Generating or Using Data in Workflow**:
     * :ref:`Earthquake Scenario Simulation <ground_motion_tool>` (ground motion selection)
 		* Site definition:
 			a. Grid
@@ -103,9 +99,9 @@ The major update from Version 4.0 is upgrading the :blue:`regional earthquake ev
 			a. Liquefaction triggering
 				1. Zhu et al. (2017) 
 				2. Hazus (2020)
-			b. Liquefaction lateral spreading permenant ground deformation (PGD_h)
+			b. Liquefaction lateral spreading permanent ground deformation (PGD_h)
 				1. Hazus (2020)
-			c. Liquefaction settlement permenant ground deformation (PGD_v)
+			c. Liquefaction settlement permanent ground deformation (PGD_v)
 				1. Hazus (2020)
 		* Vs30 model:
 			a. CGS/Wills Vs30 (Wills et al., 2015)
@@ -128,7 +124,7 @@ The major update from Version 4.0 is upgrading the :blue:`regional earthquake ev
 
     * :ref:`OpenQuake Selection <openquake_selection_tool>`
     * :ref:`Census Data & American Community Survey <lbl-censusDataAllocation>`
-	* :ref:`BRAILS <https://nheri-simcenter.github.io/BRAILS-Documentation/>`_
+    * `Building and Infrastructure Recognition using AI at Large-Scale (BRAILS) <https://nheri-simcenter.github.io/BRAILS-Documentation/>`_
 		* Building inventory generation
 		* Transportation inventory generation
 		

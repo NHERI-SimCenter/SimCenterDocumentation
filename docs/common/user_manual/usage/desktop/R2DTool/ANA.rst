@@ -1,7 +1,10 @@
 ANA: Asset Analysis
 ===================
 
-In this panel, the user can select the applications that will be employed in the analysis of each asset class. The user can select the type of asset from the **Asset Selection Ribbon**, e.g., Buildings and Gas Network, as shown on the left-hand side of :numref:`fig-R2DANAInputPanel`. The **Asset Selection Ribbon** is hidden by default, and appears when more than one type of asset is selected in the **GI: General Information** panel. Additionally, only the assets that are checked in the **GI: General Information** panel will appear in the **Asset Selection Ribbon**. As the user switches between assets, the **Input Panel** in :numref:`fig-buildingModelingPanel` will change to reflect the applications that are available for analyzing each type of asset.
+In this panel, users can select specific applications for analyzing different asset classes. To choose an asset type, such as Buildings or Transportation Network, users interact with the **Asset Selection Ribbon** on the left side of the interface as depicted in :numref:`fig-R2DANAInputPanel`. This ribbon is initially hidden and becomes visible when multiple asset types are selected in the **GI: General Information** panel. Only assets marked in the **GI** panel will be listed in the **Asset Selection Ribbon**. Switching between assets updates the **Input Panel** to display the relevant analysis applications for the selected asset type.
+
+.. contents::
+   :local:
 
 .. _fig-R2DANAInputPanel:
 
@@ -11,24 +14,25 @@ In this panel, the user can select the applications that will be employed in the
 
   Buildings analysis input panel.
 
-.. contents::
-   :local:
+
+.. _lbl-ANABuildings:
 
 Buildings
 ---------
 
-The applications available for the modeling of buildings are: 
+For building analysis, the following applications are supported: 
 
   - OpenSees
   - OpenSeesPy
-  - IM as EDP
-
-Currently, the inputs, scripts, commands, etc., for the analysis applications are provided by the modeling applications. Future implementation will allow for the user to customize the analysis applications, e.g., specify the type of solver and convergence test in an OpenSees analysis. 
+  - IMasEDP
+  - PreTrained Surrogate Models
+  - CustomPy-Simulation
+  - None
 
 OpenSees Analysis Model
 ***********************
 
-The **OpenSees** analysis application employs OpenSees to conduct the structural analysis. Note that when the optional argument "Analysis Script" is provided, the quantities above will be ignored.
+The **OpenSees** option performs structural analysis using OpenSees. If an "Analysis Script" argument is provided, the quantities defined with the graphical user interface will be ignored.
 
 .. _fig-R2DANAOpenSees:
 
@@ -47,12 +51,12 @@ Following is an example of user-provided :download:`analysis script <src/ANA_Ope
 OpenSeesPy Analysis Model
 *************************
 
-The **OpenSeesPy** analysis application employs OpenSeesPy to conduct the structural analysis.
+The **OpenSeesPy** application utilizes OpenSeesPy for structural analysis.
 
-IM as EDP Analysis Model
+IMasEDP Analysis Model
 *************************
 
-The **IM as EDP** application forgoes a structural analysis altogether. In this case, the hazard intensity measure (IM) is considered the engineering demand parameter (EDP). 
+The IMasEDP application directly uses the hazard intensity measure (IM) as the engineering demand parameter (EDP), bypassing structural analysis.
 
 Pre-trained surrogate models
 ****************************
@@ -67,10 +71,9 @@ The **Pre-trained surrogate model** is used to import the surrogate models train
       :figclass: align-center
       :width: 1200
 
-Step 2 is covered below and `Step 1 <https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html>`_ can be found in EE-UQ documentation. The user needs to fill in two tabs: *Surrogate Models* and *Default Analysis*.
+Refer to `Step 1 <https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html>`_ in the EE-UQ documentation for initial steps. Users must complete the *Surrogate Models* and *Default Analysis* tabs to use pre-trained surrogate models.
 
-
-.. _fig-R2DANAInputPanel:
+.. _fig-R2DANASurrogateInputPanel:
 
 .. figure:: figures/R2DANASurrogateInput.png
   :align: center
@@ -83,7 +86,7 @@ Step 2 is covered below and `Step 1 <https://nheri-simcenter.github.io/EE-UQ-Doc
 
 :uqblue:`Surrogate Models`
 
-* **Filter script**: a user-provided python script used to assign the surrogate model to individual buildings when multiple surrogate models representing different building types are available. In the script, the user needs to provide a python function named ``model distributor`` that takes two dictionary variables, general information (``GI``) and structural analysis model parameters (``SAM``), as inputs. The function should return either the name of the surrogate model (the name is defined in the user interface) or the string "Default". Below is an example of the filter script.
+* **Filter script**: A Python script provided by the user to assign surrogate models to buildings when multiple surrogate models representing different building types are provided. The script should contain a function named ``model distributor`` that processes dictionary inputs for general information (``GI``) and structural analysis model parameters (``SAM``), returning the surrogate model name or "Default". Below is an example of the filter script.
 
   .. literalinclude:: src/ANA_surrogate_filter.py
 
@@ -112,7 +115,7 @@ Step 2 is covered below and `Step 1 <https://nheri-simcenter.github.io/EE-UQ-Doc
          :align: center
          :widths: 2, 1, 2,7
 
-   2. Structural properties - the variables created in the modeling (MOD) application (an example of MDOF-LU module for 2 story building) 
+   2. Structural properties - variables from the modeling (MOD) application (example for a 2-story building using MDOF-LU) 
 
       .. csv-table:: Structural parameters estimated by structural modeling app (specified in the MOD tab)
          :file: src/ANA_surrogate_SAM.csv
@@ -120,7 +123,7 @@ Step 2 is covered below and `Step 1 <https://nheri-simcenter.github.io/EE-UQ-Doc
          :align: center
          :widths: 2, 1, 2, 7
 
-      See :ref:`lbl-MODMDOFLu` for details. If other custom modeling apps (other than MDOF-LU) are used, "SAM.json" should be manually created by the user with the specified format. See :download:`here <src/ANA_SAM.json>` for an example of SAM.json file.
+Refer to :ref:`lbl-MODMDOFLu` for more details. Custom modeling apps should follow the specified format for "SAM.json". See :download:`here <src/ANA_SAM.json>` for an example of SAM.json file.
 
    3. Ground motion parameters (automatically named internally both in EE-UQ and R2D)
 
@@ -130,7 +133,17 @@ Step 2 is covered below and `Step 1 <https://nheri-simcenter.github.io/EE-UQ-Doc
          :align: center
          :widths: 2, 1, 2, 7
 
-   In R2D workflow, only the intensity measures that were specified when **training** the surrogate model (in EE-UQ) will be automatically computed and passed on to the surrogate model. 
+R2D ensures only the intensity measures specified during the training of the surrogate model are computed and utilized.
 
 :uqblue:`Default Analysis`
-   Select the engine that will be used when "Default" is returned from the **filter script.**
+   Choose the analysis engine for cases where the **filter script** returns "Default".
+
+.. _lbl-ANATransport:
+Transportation Infrastructure Analysis
+---------------------------------------
+
+
+IMasEDP Analysis Model
+*************************
+
+Similar to buildings, the IMasEDP application for transportation infrastructure uses the hazard intensity measure (IM) directly as the engineering demand parameter (EDP), bypassing structural analysis.

@@ -12,7 +12,7 @@ The parameters of the model (which is defined in the **FEM** panel) are defined 
 
 The output from the model is the objective function value, and this can be given a name that is defined in the **EDP** panel. The length must be set equal to 1. 
 
-The algorithms employed will find a set of parameter values that **minimizes** the objective function. 
+The algorithms employed will find a set of parameter values that **minimize** the objective function. 
 
 The panel that is presented to the user when this Dakota Category is chosen, is as shown in :numref:`figGradientFreeParameterEstimation`.
 
