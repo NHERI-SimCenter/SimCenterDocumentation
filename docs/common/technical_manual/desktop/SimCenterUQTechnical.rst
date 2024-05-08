@@ -8,7 +8,7 @@ Methods in SimCenterUQ Engine
 Nataf transformation
 ====================
 
-Nataf transformation is introduced to standardize the interface between UQ methods and Simulation models. Nataf converts the samples in the physical space (X-space) into the standard normal samples (U-space), :math:`T:\rm{X} \rightarrow \rm{U}`, and vice versa, during UQ computations [Liu1986]_. Specifically, the latter transformation, called inverse Nataf :math:`T^{-1}`, is performed each time when UQ engine generates sample points and calls external workflow applications, so that the main UQ algorithms would face only the standard normal random variables. Among various standardization transformations, Nataf is one of the most popular methods which exploits **marginal distributions** of each physical variables and their **correlation coefficients**.
+Nataf transformation is introduced to standardize the interface between UQ methods and Simulation models. Nataf converts the samples in the physical space (X-space) into the standard normal samples (U-space), :math:`T:\rm{X} \rightarrow \rm{U}`, and vice versa, during UQ computations [Liu1986]_. Specifically, the latter transformation, called inverse Nataf :math:`T^{-1}`, is performed each time the UQ engine generates sample points and calls external workflow applications so that the main UQ algorithms would face only the standard normal random variables. Among various standardization transformations, Nataf is one of the most popular methods which exploits **marginal distributions** of each physical variable and their **correlation coefficients**.
 
 .. _figNataf1:
 
@@ -19,10 +19,10 @@ Nataf transformation is introduced to standardize the interface between UQ metho
 
    Standardization of random variables using Nataf transformation
 
-.. Note ::
+.. Note::
 (Ongoing implementation) All the custom UQ algorithms need to prepare for the standard Gaussian input while quoFEM intertwines with the simulation model to receive standard normal input u and gives physical :math:`y=G(u)` back.
 
-For the Nataf transformation, the SimCenterUQ engine borrows a part of the distribution class structure developed by ERA group in the Technical University of Munich [ERA2019]_ 
+For the Nataf transformation, the SimCenterUQ engine borrows a part of the distribution class structure developed by the ERA group at the Technical University of Munich [ERA2019]_ 
 
 .. [Liu1986]
    Liu, P.L. and Der Kiureghian, A. (1986). Multivariate distribution models with prescribed marginals and covariances. *Probabilistic Engineering Mechanics*, 1(2), 105-112.
@@ -157,14 +157,14 @@ Global surrogate modeling
 Introduction to Gaussian process regression (Kriging)
 --------------------------------------------------------
 
-Global surrogate modeling aims to build a regression model that reproduces the outcomes of computationally expensive high fidelity simulations. 
+Global surrogate modeling aims to build a regression model that reproduces the outcomes of computationally expensive high-fidelity simulations. 
 
 .. math::
 	:label: GP
 
 	\boldsymbol{y}=g^{\rm{ex}} (\boldsymbol{x}) \simeq g^{\rm{sur}} (\boldsymbol{x})  
 
-where the basic assumption is that the function evaluation speed of :math:`g^{\rm{sur}}(\boldsymbol{x})` is incomparably faster than :math:`g^{\rm{ex}}(\boldsymbol{x})`. To perform surrogate modeling, we first need to acquire data samples, :math:`(\boldsymbol{x},\boldsymbol{y})`, of exact model based on a few rounds of model evaluations, and then the function is interpolated and extrapolated based on the data set. Among various surrogate techniques, Kriging approximates the response surface using a Gaussian process model. Specifically, Kriging surrogate model has the following form: 
+where the basic assumption is that the function evaluation speed of :math:`g^{\rm{sur}}(\boldsymbol{x})` is incomparably faster than :math:`g^{\rm{ex}}(\boldsymbol{x})`. To perform surrogate modeling, we first need to acquire data samples, :math:`(\boldsymbol{x},\boldsymbol{y})`, of exact model based on a few rounds of model evaluations, and then the function is interpolated and extrapolated based on the data set. Among various surrogate techniques, Kriging approximates the response surface using a Gaussian process model. Specifically, the Kriging surrogate model has the following form: 
 
 .. math::
 	:label: GPsurr
@@ -178,8 +178,8 @@ where the term :math:`\tilde{g}(\boldsymbol{x})^T\boldsymbol{\beta}` captures th
 
 	z(\boldsymbol{x}) \sim GP (\boldsymbol{x};0,K(\boldsymbol{x_i},\boldsymbol{x_j}))
 
-Therefore the main tasks of surrogate modeling is (1) to find optimal stochastic parameters :math:`\hat{\boldsymbol{\beta}}` and :math:`\hat{K}(x_i,x_j)` that best match the observations, and (2) to predict the response at an arbitrary sample point :math:`\boldsymbol{x^*}` as a conditional distribution of :math:`f(\boldsymbol{y^*}|\boldsymbol{y^{obs}})`, exploiting the fact that 
-:math:`\boldsymbol{y^*}` and :math:`\boldsymbol{y^{obs}}` are joint Gaussian distribution with known mean and covariances.
+Therefore, the main tasks of surrogate modeling are (1) to find optimal stochastic parameters :math:`\hat{\boldsymbol{\beta}}` and :math:`\hat{K}(x_i,x_j)` that best match the observations, and (2) to predict the response at an arbitrary sample point :math:`\boldsymbol{x^*}` as a conditional distribution of :math:`f(\boldsymbol{y^*}|\boldsymbol{y^{obs}})`, exploiting the fact that 
+:math:`\boldsymbol{y^*}` and :math:`\boldsymbol{y^{obs}}` are joint Gaussian distributions with known mean and covariances.
 
 
 .. _figSensitivity2_2:
@@ -203,7 +203,7 @@ Dealing with noisy measurements
 			\boldsymbol{y^{obs}}=\boldsymbol{y} + \boldsymbol{\varepsilon} =g^{\rm{ex}} (\boldsymbol{x}) + \boldsymbol{\varepsilon}
 
 
-	| where a common assumption is that the measurement noise, :math:`\boldsymbol{\varepsilon}`, follows a white Gaussian distribution (i.e. :math:`\varepsilon` is unbiased, follows a normal distribution with variance :math:`\tau`, and is independent of other observation noises). Additionally since the noise level is often unknown, :math:`\tau` is also calibrated along with :math:`\beta` and :math:`K(x_i,x_j)`. In such settings, surrogate model estimation will not interpolate the observation outputs :math:`\boldsymbol{y^{obs}}`, but instead make a regression curve passing through the optimal estimation of the true underlying outputs :math:`\boldsymbol{y}`. In addition to the measurement noise, a mild amount of inherent uncertainty in the simulation model (mild compared to a global trend) can be accounted for in terms of the same noise parameter :math:`\varepsilon`.
+	| where a common assumption is that the measurement noise, :math:`\boldsymbol{\varepsilon}`, follows a white Gaussian distribution (i.e., :math:`\varepsilon` is unbiased, follows a normal distribution with variance :math:`\tau`, and is independent of other observation noises). Additionally since the noise level is often unknown, :math:`\tau` is also calibrated along with :math:`\beta` and :math:`K(x_i,x_j)`. In such settings, the surrogate model estimation will not interpolate the observation outputs :math:`\boldsymbol{y^{obs}}`, but instead make a regression curve passing through the optimal estimation of the true underlying outputs :math:`\boldsymbol{y}`. In addition to the measurement noise, a mild amount of inherent uncertainty in the simulation model (mild compared to a global trend) can be accounted for in terms of the same noise parameter :math:`\varepsilon`.
 
 
 * **Nugget effect: artificial noise for numerical stability**
@@ -223,7 +223,7 @@ Dealing with noisy measurements
 
 * **Heteroscedastic measurement noise**
 
-	| When one expects a high noise level in the response observations with varying variance scales across the domain, one may want to consider modeling the heteroscedastic noise. Note that the observation noise here comes from the variability not captured by the RV values we defined (i.e. :math:`x`). For example, mapping between structural parameters (:math:`x`) and the earthquake response (:math:`y`) typically requires heteroscedastic GP models to capture the effect of the aleatoric variability in the response ground motion time history. The below figure shows an example data shape for which a heteroscedastic GP model is required. |app| introduces the **stochastic Kriging** algorithm in [Kyprioti2021]_ to achieve this, which relies on the so-called **partial replication strategy**, that is, to generate multiple realizations for a subset of inputs to examine response variance. In particular, a subset of initial samples are replicated to obtain variance estimates, i.e., variance realizations, at different sample locations, and these values are used to construct a variance-field model. Then by constraining the relative scales of the variance, the stochastic kriging emulator is trained using both replication and unique (non-replicated) samples. :ref:`This example<qfem-0025>` reproduces the results of :numref:`figGP1_3`
+	| When one expects a high noise level in the response observations with varying variance scales across the domain, one may want to consider modeling the heteroscedastic noise. Note that the observation noise here comes from the variability not captured by the RV values we defined (i.e., :math:`x`). For example, mapping between structural parameters (:math:`x`) and the earthquake response (:math:`y`) typically requires heteroscedastic GP models to capture the effect of the aleatoric variability in the response ground motion time history. The below figure shows an example data shape for which a heteroscedastic GP model is required. |app| introduces the **stochastic Kriging** algorithm in [Kyprioti2021]_ to achieve this, which relies on the so-called **partial replication strategy**, that is, to generate multiple realizations for a subset of inputs to examine response variance. In particular, a subset of initial samples are replicated to obtain variance estimates, i.e., variance realizations, at different sample locations, and these values are used to construct a variance-field model. Then by constraining the relative scales of the variance, the stochastic kriging emulator is trained using both replication and unique (non-replicated) samples. :ref:`This example<qfem-0025>` reproduces the results of :numref:`figGP1_3`
 
 	.. _figGP1_3:
 
@@ -236,8 +236,8 @@ Dealing with noisy measurements
 
 
 
-Construction of surrogate model
----------------------------------
+Construction of the surrogate model
+-----------------------------------
 
 Input-Output settings
 ^^^^^^^^^^^^^^^^^^^^^
@@ -274,27 +274,27 @@ Input-Output settings
 
 .. only:: quoFEM_app
 
-	User have the following options:
+	Users have the following options:
 
-	* **Case1** : users can provide a range of input variables (bounds) and a simulation model. After the initial space-filling phase using Latin hypercube sampling (LHS), **adaptive design of experiment (DoE)** is activated. Given current predictions, the next optimal simulation point is optimized such that the expected gain is maximized. 
-	* **Case2** : users can provide pairs of input-output dataset
-	* **Case3** : users can provide input data points and a simulation model
+	* **Case1**: users can provide a range of input variables (bounds) and a simulation model. After the initial space-filling phase using Latin hypercube sampling (LHS), **adaptive design of experiment (DoE)** is activated. Given current predictions, the next optimal simulation point is optimized such that the expected gain is maximized. 
+	* **Case2**: users can provide pairs of input-output dataset
+	* **Case3**: users can provide input data points and a simulation model
 
 
 .. only:: EEUQ_app
 
-	User have the following option:
+	Users have the following options:
 
-	* **Case1** : users can provide a range of input variables (bounds) and a simulation model. 
+	* **Case1**: users can provide a range of input variables (bounds) and a simulation model. 
 
 
 Kernel and basis functions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The covariance kernel of the outcome process is unknown in most practical applications. Therefore, the mathematical form of the kernel is first assumed, and its parameters are calibrated based on the observation data. Following are some of the popular stationary covariance kernels. 
+The covariance kernel of the outcome process is unknown in most practical applications. Therefore, the mathematical form of the kernel is first assumed, and its parameters are calibrated based on the observation data. Following are some popular stationary covariance kernels. 
 
 * **Radial-basis function (RBF)**
 
-  | Radial-basis function, also known as squared-exponential or Gaussian kernel, is one of the most widely used covariance kernel. 
+  | Radial-basis function, also known as squared-exponential or Gaussian kernel, is one of the most widely used covariance kernels. 
 
 	.. math::
 		:label: RBD
@@ -302,7 +302,7 @@ The covariance kernel of the outcome process is unknown in most practical applic
 		k(\boldsymbol{x_i},\boldsymbol{x_j}) = \sigma\prod_{d=1}^{D} \exp\Bigg(-\frac{1}{2} \frac{(x_{i,d}-x_{j,d})^2}{l_d^2}\Bigg)
 
 	
-  | where :math:`\boldsymbol{x_i}` and :math:`\boldsymbol{x_j}` are two arbitrary points in the domain and the hyperparameters, :math:`D` is number of the input variables. The parameters :math:`\sigma` and :math:`l_d` respectively control the error scale and correlation length of the process. 
+  | where :math:`\boldsymbol{x_i}` and :math:`\boldsymbol{x_j}` are two arbitrary points in the domain and the hyperparameters, :math:`D` is the number of input variables. The parameters :math:`\sigma` and :math:`l_d` respectively control the error scale and correlation length of the process. 
 
 .. _figGP2:
 
@@ -325,7 +325,7 @@ The covariance kernel of the outcome process is unknown in most practical applic
 
 * **Matern Class** 
 
-  | Matern class of covariance function is another popular choice. It has a positive shape parameter, often denotoed as :math:`\nu` which additionally determines the roughness of the parameters. For Kriging regression, :math:`\nu=5/2` and :math:`\nu=3/2` is known to be generally applicable choices considering the roughness property and the simplicity of the functional form. [Rasmussen2006]_
+  | Matern class of covariance function is another popular choice. It has a positive shape parameter, often denoted as :math:`\nu` which additionally determines the roughness of the parameters. For Kriging regression, :math:`\nu=5/2` and :math:`\nu=3/2` are known to be generally applicable choices considering the roughness property and the simplicity of the functional form. [Rasmussen2006]_
 
 	.. math::
 		:label: Matern1
@@ -362,10 +362,10 @@ Adaptive Design of Experiments (DoE)
 		:figclass: align-center
 		:width: 600
 
-	  	Two optimizations in design of experiments
+	  	Two optimizations in the design of experiments
 
 
-	However, as shown in the figure, adaptive DoE requires multiple optimization turns to find the optimal surrogate model parameters as well as the next optimal DoE. Therefore, it is noted that the adaptive DoE is efficient only when model evaluation time is significantly greater than the optimization time. 
+	However, as shown in the figure, adaptive DoE requires multiple optimization turns to find the optimal surrogate model parameters as well as the next optimal DoE. Therefore, it is noted that the adaptive DoE is efficient only when the model evaluation time is significantly greater than the optimization time. 
 
 	**Adaptive DoE algorithm: IMSEw, MMSEw** ([Kyprioti2020]_)
 
@@ -426,7 +426,7 @@ Once the training is completed, the following three verification measures are pr
 
 We provide different verification measures for two different cases.
 
-(i) When nugget variance is low : The LOOCV prediction :math:`\hat{\boldsymbol{y}}_k` is expected to match the exact outcome :math:`\boldsymbol{y_k}=g(\boldsymbol{x}_k)` when the surrogate model is well-trained. To quantify the goodness, R2 error, normalized root-mean-squared-error (NRMSE), and correlation coefficient are provided:
+(i) When nugget variance is low: The LOOCV prediction :math:`\hat{\boldsymbol{y}}_k` is expected to match the exact outcome :math:`\boldsymbol{y_k}=g(\boldsymbol{x}_k)` when the surrogate model is well-trained. To quantify the goodness, R2 error, normalized root-mean-squared-error (NRMSE), and correlation coefficient are provided:
 
 * **R2 error**
 
@@ -475,7 +475,7 @@ We provide different verification measures for two different cases.
 
 	Since these measures are calculated from the cross-validation predictions rather than external validation predictions, they can be biased, particularly when a **highly localized nonlinear range exists in the actual response surface** and those regions are not covered by the training samples. 
 
-(ii) When nugget variance is high : The distance between LOOCV prediction :math:`\hat{\boldsymbol{y}}_k` and the exact outcome :math:`\boldsymbol{y_k}=g(\boldsymbol{x}_k)` is expected to follow a normal distribution when the surrogate model is well-trained. To quantify the goodness, inter-quartile ratio (IQR) and Cramer-Von Mises statistics can be evaluated:
+(ii) When nugget variance is high: The distance between LOOCV prediction :math:`\hat{\boldsymbol{y}}_k` and the exact outcome :math:`\boldsymbol{y_k}=g(\boldsymbol{x}_k)` is expected to follow a normal distribution when the surrogate model is well-trained. To quantify the goodness, inter-quartile ratio (IQR) and Cramer-Von Mises statistics can be evaluated:
 
     * **Inter-quartile ratio (IQR)**: IQR provides the ratio of the sample QoIs that lies in 25-75% LOOCV prediction bounds (interquartile range). The IQR values should theoretically approach 0.5 if the prediction is accurate.
 
@@ -496,7 +496,7 @@ We provide different verification measures for two different cases.
 .. [Kyprioti2021]
 	Kyprioti, A.P. and Taflanidis, A.A., (2021). Kriging metamodeling for seismic response distribution estimation. *Earthquake Engineering & Structural Dynamics*, 50(13), pp.3550-3576.
 .. [ShaffieldML2012]
-	GPy, A Gaussian process framework in python, http://github.com/SheffieldML/GPy, since 2012
+	GPy, A Gaussian process framework in Python, http://github.com/SheffieldML/GPy, since 2012
 .. [Sacks1989]
 	Sacks J.,Welch W.J.,Mitchell T.J.,Wynn H.P. (1989). Design and analysis of
 	computer experiments. *Stat Sci* 4(4):409–435
@@ -513,13 +513,13 @@ Multi-fidelity Monte Carlo (MFMC)
 
 Models with different infidelities
 ---------------------------------------
-When one has multiple models of a target system with different fidelities, they can introduce multi-fidelity Monte Carlo (MFMC) methods. MFMC helps us to reduce the high-fidelity simulation runs by leveraging a large number of low-fidelity simulations. The high-fidelity and low-fidelity models are defined as the following.  
+When one has multiple models of a target system with different fidelities, one can introduce multi-fidelity Monte Carlo (MFMC) methods. MFMC helps us to reduce the high-fidelity simulation runs by leveraging a large number of low-fidelity simulations. The high-fidelity and low-fidelity models are defined as the following.  
 
- * **High-fidelity (HF) model**: The model with a desired level of accuracy and high computational cost. 
+ * **High-fidelity (HF) model**: The model with the desired level of accuracy and high computational cost. 
 
  * **Low-fidelity (LF) model(s)**: The model(s) with lower computational cost and lower accuracy. 
 
-The goal of MFMC is to estimate the statistics of the HF model using a small number of HF simulations and a large number of LF simulations. Those *fidelity* can be attributed to different idealization of models as shown in :numref:`fig-BeamColumn` (e.g. reduced order model), or the models with same idealization in different resolutions (e.g. coarser mesh or grids). The latter is also referred to as multi-level Monte Carlo (MLMC).
+The goal of MFMC is to estimate the statistics of the HF model using a small number of HF simulations and a large number of LF simulations. Those *fidelities* can be attributed to the different idealization of models as shown in :numref:`fig-BeamColumn` (e.g. reduced order model), or models with the same idealization in different resolutions (e.g. coarser mesh or grids). The latter is also referred to as multi-level Monte Carlo (MLMC).
 
 .. _fig-BeamColumn:
 
@@ -535,24 +535,24 @@ The goal of MFMC is to estimate the statistics of the HF model using a small num
 
 .. note::
 
-	The concept of MFMC is different from that of **multi-model forward propagation** referred to at other parts of the documentation. 
+	The concept of MFMC is different from that of **multi-model forward propagation** referred to in other parts of the documentation. 
 
-	* **MFMC** algorithm has a clear hierarchy between different models in terms of accuracy. A good MFMC algorithm will give accurate estimates of the statistics of HF model. 
+	* **MFMC** algorithm has a clear hierarchy between different models in terms of accuracy. A good MFMC algorithm will give accurate estimates of the statistics of the HF model. 
 
-	* **Multi-model forward propagation** is used when one has different alternative models without clear hierarchy in accuracy, meaning for each model, we have certain *belief* that this model gives true value. Therefore, a good multi-model forward propagation algorithm will give the final estimate that compromises the estimation from different models by considering how much *belief* we have in each model. 
+	* **Multi-model forward propagation** is used when one has different alternative models without a clear hierarchy in accuracy, meaning for each model, we have a certain *belief* that this model gives true value. Therefore, a good multi-model forward propagation algorithm will give the final estimate that compromises the estimation from different models by considering how much *belief* we have in each model. 
 
 
 Pre-execution checklist for MFMC
 ----------------------------------------------
-Before running the MFMC simulation model, the users are advised to check the validity and effectiveness of MFMC for their problem. Only when the below conditions are satisfied, the users are expected to gain meaningful benefit by using MFMC compared to only HF simulations:
+Before running the MFMC simulation model, the users are advised to check the validity and effectiveness of MFMC for their problem. Only when the below conditions are satisfied, the users are expected to gain meaningful benefits by using MFMC compared to only HF simulations:
 
-* **The models should take the same input random variables and produce the same output quantities of interest.** For example, if target system is a structure, if one model takes stiffness as random variable and the other does not, the model violates the problem definition. Similarly, if :math:`j`-th output of the HF model is the 1st floor inter-story drift, :math:`j`-th output of the LF model should also be 1st floor inter-story drift. 
+* **The models should take the same input random variables and produce the same output quantities of interest.** For example, if the target system is a structure, if one model takes stiffness as a random variable and the other does not, the model violates the problem definition. Similarly, if :math:`j`-th output of the HF model is the 1st-floor inter-story drift, :math:`j`-th output of the LF model should also be the 1st-floor inter-story drift. 
 
-* **The models should have a clear hierarchy in terms of accuracy and time.** When the HF and LF model responses are different, the assumption is that the HF response is always accurate. Therefore, if a LF model runs faster than the HF model, it is optimal to run only the HF model, and there is no reason to introduce MFMC.
+* **The models should have a clear hierarchy in terms of accuracy and time.** When the HF and LF model responses are different, the assumption is that the HF response is always accurate. Therefore, if an LF model runs faster than the HF model, it is optimal to run only the HF model, and there is no reason to introduce MFMC.
 
 * **The response of different models should have a high correlation**. The efficiency of MFMC heavily depends on the correlation between the HF and LF model outputs. Only if the correlation is fairly high, the MF estimation is meaningfully efficient than conducting only HF simulations. 
 
-The efficiency of MFMC can be evaluated using the speed-up ratio, defined as the reduction of computational effort you need to get the same Monte Carlo statistical accuracy by the MFMC and direct Monte Carlo method. :numref:`fig-MF-SP` shows the expected speed-up factor for different computation time ratios and correlation coefficient values. One can notice that only when the ratio of the model evaluation time is greater than 100 and when the correlation is greater than 0.85-0.9, the expected speed-up is significant [Patsialis2021]_. The formulation used to estimate the speed-up ratio can found at the end of this section.
+The efficiency of MFMC can be evaluated using the speed-up ratio, defined as the reduction of computational effort you need to get the same Monte Carlo statistical accuracy by the MFMC and direct Monte Carlo method. :numref:`fig-MF-SP` shows the expected speed-up factor for different computation time ratios and correlation coefficient values. One can notice that only when the ratio of the model evaluation time is greater than 100 and when the correlation is greater than 0.85-0.9, the expected speed-up is significant [Patsialis2021]_. The formulation used to estimate the speed-up ratio can be found at the end of this section.
 
 .. _fig-MF-SP:
 
@@ -582,11 +582,11 @@ The goal of MFMC is to estimate the mean and variance of :math:`y_{HF}`, given s
 
 .. note::
 
-	For notational simplicity, the procedure presented on this page is the simplest case where we have single LF model and single output, aiming to estimate first-order statistics. However, once one understands the simplest case, the extension into the advanced cases are fairly straightforward.
+	For notational simplicity, the procedure presented on this page is the simplest case where we have a single LF model and a single output, aiming to estimate first-order statistics. However, once one understands the simplest case, the extension into the advanced cases is fairly straightforward.
 
 	* For **multiple LF models**, a similar formulation can be found in the literature. ([Patsialis2021]_, [Peherstorfer2016]_, etc). 
 	* For **multiple outputs** :math:`y_{HF}` and :math:`y_{LF}` in the formulations can respectively be replaced with :math:`y_{j,HF}` and :math:`y_{j,LF}`, meaning it is :math:`j`-th output of the models.
-	* The presented procedure leads to the estimation of mean of :math:`\rm{E}[y_{HF}]`. The **variance can be estimated** by replacing :math:`y_{HF}` and :math:`y_{LF}` with :math:`y^2_{HF}` and :math:`y^2_{LF}`, respectively, which lead to the estimation of :math:`\rm{E}[y_{HF}^2]` and additionally introducing a post-processing step to subtract :math:`\rm{E}[y_{HF}]^2`. Other higher-order statistics can be estimated in a similar manner.
+	* The presented procedure leads to the estimation of the mean of :math:`\rm{E}[y_{HF}]`. The **variance can be estimated** by replacing :math:`y_{HF}` and :math:`y_{LF}` with :math:`y^2_{HF}` and :math:`y^2_{LF}`, respectively, which lead to the estimation of :math:`\rm{E}[y_{HF}^2]` and additionally introducing a post-processing step to subtract :math:`\rm{E}[y_{HF}]^2`. Other higher-order statistics can be estimated similarly.
 
 	The current implementation can accommodate multiple LF models, process multiple outputs, and output MFMC estimates of the variance. The complete formulations can be found in the literature ([Patsialis2021]_, [Peherstorfer2016]_, etc). 
 
