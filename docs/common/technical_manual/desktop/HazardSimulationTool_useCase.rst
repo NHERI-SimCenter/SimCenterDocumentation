@@ -34,7 +34,7 @@ can be achieved as described in :ref:`ShakeMap Earthquake Scenarios <lbl-shakeMa
 The functions in the earthquake hazard simulation tool required for 
 scenario-specific use cases are Site Definition,
 Earthquake Rupture Forecasting, Intensity Measure Definition, Ground Motion Prediction
-Equations, Spatial Correlations and Ground Motion Record Selection (optional).
+Equations, Spatial Correlations, and Ground Motion Record Selection (optional).
 The "Scenario-specific" option should be selected in the "Scenario Selection" tool tab.
 More details of the use cases, required inputs, and some benefits/limitations are
 summarised in :numref:`tab-R2DScenarioSpecificUseCases`.
@@ -68,7 +68,7 @@ summarised in :numref:`tab-R2DScenarioSpecificUseCases`.
      -
    * - OpenSHA/UCERF 
      - Recommended where UCERF ruptures are available (maybe we can show a map). Recommended because it requires no additional inputs other than selections using the R2D interface (source models are openly available).
-     - No external files are required and all selection can be done in R2D. 
+     - No external files are required, and all selections can be done in R2D. 
      - Users can select out of several choices of GMM and correlation models to use through the R2D interface. Limited in that it only has information available about ruptures in certain locations.
    * - OpenQuake 
      - Recommended to describe distributed and background seismicity. Also recommended for use where rupture information is unavailable through UCERF.
@@ -76,18 +76,18 @@ summarised in :numref:`tab-R2DScenarioSpecificUseCases`.
      - Can be used to describe distributed and background seismicity where information on the faults is unavailable.
    * - Point Source
      - For educational and/or academic use only. The point source option does not accurately reflect real faults. 
-     - No external files are required and all selection can be done in R2D.
+     - No external files are required, and all selections can be done in R2D.
      - Not representative of real faults/scenarios. 
    * - ShakeMap
      - Re-creation of a past earthquake event by obtaining seismic intensity measures sufficiently representative of the event.
-     - Inputs are USGS ShakeMap files for a given earthquake scenario. These files must be located in a folder in which at least must be a grid.xml file. These files contain ShakeMaps that include the intensity measures for a given earthquake event as spectral ordinate values (Those can be given as PGA, PGV, PGD and spectral ordinates at different periods). These files can be obtained from `USGS's ShakeMap archives <https://earthquake.usgs.gov/earthquakes/search/>`_ for real past earthquake events. 
+     - Inputs are USGS ShakeMap files for a given earthquake scenario. These files must be located in a folder in which at least must be a grid.xml file. The files contain ShakeMaps that include the intensity measures for a given earthquake event as spectral ordinate values (Those can be given as PGA, PGV, PGD, and spectral ordinates at different periods). These files can be obtained from `USGS's ShakeMap archives <https://earthquake.usgs.gov/earthquakes/search/>`_ for real past earthquake events. 
      - ShakeMap intensity measures (as spectral ordinates) for past earthquakes might not be an accurate representation of this event in locations far from the grid control points (usually recording stations where GMM predictions are adjusted to match real recorded ground motion spectra). Moreover, the set of scenarios is limited.
 
 
 Regional Probabilistic Seismic Hazard Analysis
 ----------------------------------------------
 The regional probabilistic seismic hazard analysis (PSHA) characterizes the probability
-of certain levels of intensity are exceeded in a region considering all nearby
+that certain levels of intensity are exceeded in a region considering all nearby
 earthquake sources. 
 :numref:`fig-R2DScenarioSpecificUseCases` shows two typical use cases in regional PSHA.
 Both use cases can be achieved in R2D with the :ref:`earthquake hazard simulation tool <ground_motion_tool>`.
@@ -95,7 +95,7 @@ The functions in the earthquake hazard simulation tool required for
 regional PSHA are Site Definition,
 Earthquake Rupture Forecasting, Intensity Measure Definition, Ground Motion Prediction
 Equations, Spatial Correlations, Ground Motion Record Selection (optional), and hazard consistent
-downsamping (optional). The "Conventional Monte Carlo" or "Hazard consistent downsampling" option
+downsampling (optional). The "Conventional Monte Carlo" or "Hazard consistent downsampling" option
 should be selected in the "Scenario Selection" tool tab. More details of the use cases,
 required inputs, and some benefits/limitations are summarised in :numref:`tab-R2DRegionalPSHAUseCases`.
 

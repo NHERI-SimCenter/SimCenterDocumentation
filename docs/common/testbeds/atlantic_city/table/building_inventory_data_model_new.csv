@@ -38,7 +38,7 @@ RoofCover,"Roof covering, specified only for residential construction.","Choices
 MeanRoofHt,Mean height of roof system in ft,Floating point number  
 WindowArea,Percentage of walls defined by window openings,Floating point number (decimal<1)
 Garage,Assessor-provided type of garage.,Floating point number  
-TerrainRoughness,HAZUS-defined terrain classifications (x100) based on LULC data,"Choices: 3, 15, 35, 70, 100"
+TerrainRoughness (z0 x100),HAZUS-defined terrain classifications (z0) multiplied by 100 based on LULC data,"Choices: 3, 15, 35, 70, 100"
 AnalysisDefault,Defines the default level of fidelity for analysis,"Choices: 1, 2, 3"
 AnalysisAdopted,Defines the adopted level of fidelity for analysis,"Choices: 1, 2, 3"
 Modifications,"Record of manual updates, corrections or modifications to record",Alphanumeric (freeform)

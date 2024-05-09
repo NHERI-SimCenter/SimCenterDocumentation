@@ -1,22 +1,15 @@
 .. _ground_motion_tool:
 
-Earthquake Scenario Simulation
+Earthquake Event Simulation
 ------------------------------
 
-This tool dialog is where users can enter data on an earthquake scenario, and the
-tool will generate a series of ground motions for a series of points in the area.
-The application employs OpenSHA, determining which records to select from a ground
-motion database. The individual input panels in the **Earthquake Scenario Simulation** 
-are discussed below. The typical use cases of this tool is described in the
-:ref:`technical manual <lblEQSimulationUseCases>`.
+This tool allows users to input earthquake scenario data, generating ground motions for specified points within an area. The **Earthquake Scenario Simulation** tool's input panels are detailed below, with use cases described in the :ref:`technical manual <lblEQSimulationUseCases>`.
 
 Site Definition Panel
 *********************
 
-The **Site Definition Panel** is shown in :numref:`fig-R2DEQSSitePanel`. 
-This is where a user defines the geographical locations and seismic site conditions 
-of the sites where ground motion selection will occur. 
-    
+The **Site Definition Panel** (:numref:`fig-R2DEQSSitePanel`) enables users to specify geographical locations and seismic characteristics for ground motion models.
+
 .. _fig-R2DEQSSitePanel:
 
 .. figure:: figures/R2DEQSSitePanel.png
