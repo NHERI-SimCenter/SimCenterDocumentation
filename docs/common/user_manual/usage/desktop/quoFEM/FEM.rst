@@ -4,6 +4,7 @@ FEM: Finite Element Method
 ==========================
 
 The **FEM** tab will present users with a selection of FEM applications. Currently, there are six options: 
+
   #. OpenSees
   #. Python
   #. FEAPpv
@@ -11,7 +12,7 @@ The **FEM** tab will present users with a selection of FEM applications. Current
   #. Custom (user-specified application)
   #. Multi Model (using more than one model in an analysis), along with the option of specifying no simulation model.
 
-  The user must select one of these applications to proceed with the analysis. The user must also provide the necessary input files for the selected application. The input files required for each application are described below.
+  The user must select one of these applications to proceed with the analysis. The user must also provide the necessary input files for the selected application. The input files required for each application are described in the following sections.
 
 .. _figFEM:
 

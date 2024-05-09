@@ -6,46 +6,41 @@
 Release Plans
 *************
 
-The following features are planned to be developed for upcoming releases of |app|. We are actively working on the features in the next release. Farther development priorities may change depending on feedback from the community. If you have any suggestions, we encourage you to contribute and contact us through the SimCenter Forum.
+The following features are planned to be developed for upcoming releases of |app|. Development priorities may change depending on feedback from the community and our users. For suggestions or to contribute, we encourage you to reach out via the `SimCenter Forum <http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0&_gl=1*1mybwj*_ga*NzI5NDMzMDUzLjE2ODU0ODE2MzQ.*_ga_D96RT1T24K*MTcxNDc3MzkxMy4zMTEuMC4xNzE0NzczOTEzLjAuMC4w>`_.
 
 
 June 2024
 ----------
-#. Water Distribution Network, buried pipelines.(1.3.4.3)
+#. **Water Distribution Network, Buried Pipelines** (1.3.4.3): Add modeling capabilities for buried water pipelines and other water distribution infrastructure.
 
-#. Efficient forward propagation using Multi-Fidelity Monte-Carlo (1.2.3.1) - Use a few realizations of the output calculated with expensive, high-fidelity models to evaluate and correct the bias in efficient, approximate models, such as surrogates. With little extra computational demands, this method provides a substantial improvement in surrogate model performance if you have the high-fidelity models available that were used to train the surrogates.
+#. **Efficient Forward Propagation using Multi-Fidelity Monte-Carlo** (1.2.3.1): This feature leverages a small number of high-fidelity model outputs to improve the accuracy of efficient, approximate models, such as surrogates, enhancing performance with minimal computational overhead.
 
-#. Add datasets to simulate subassembly damage and losses under wind demands (1.3.5.1) - Data from recent publications in the Performance-Based Wind Engineering literature is collected to enable high-resolution performance assessment under wind hazard, add data to DB-DamegeAndLoss.
+#. **Add Datasets to Simulate Subassembly Damage and Losses Under Wind Demands** (1.3.5.1): Incorporation of damage and loss data published in recent Performance-Based Wind Engineering research to facilitate high-resolution wind hazard performance assessments. The data is added to the `SimCenter Damage and Loss Model Library <https://github.com/NHERI-SimCenter/DamageAndLossModelLibrary>`_. 
 
-#. Probabilistic asset inventories (1.3.6.2) - Calibrate, store, and propagate uncertainties in building features at the regional scale. For example, we have some but not all information for all buildings in an area, fill in the gaps using information we do know.
+#. **Probabilistic Asset Inventories** (1.3.6.2): Calibrate, store, and propagate uncertainties in building features at the regional scale. Probabilistically fill in missing building features using the known information.
 
-      
 Sep 2024
 ----------
-#. Automatic access to physics-based ground motion simulation results (1.1.1.3)
+#. **Access to Physics-Based Ground Motion Simulation Results** (1.1.1.3): Integration of physics-based ground motion simulation data into hazard assessments.
 
-#. Add datasets to simulate subassembly damage and losses under water demands (1.3.5.2)
+#. **Add Datasets to Simulate Subassembly Damage and Losses Under Water Hazard Demands** (1.3.5.2): Expansion of the `SimCenter Damage and Loss Model Library <https://github.com/NHERI-SimCenter/DamageAndLossModelLibrary>`_ to include water hazard-specific damage and loss models.
 
-#. Add datasets to simulate high-resolution damages and losses in buried pipeline networks (1.3.5.4)
-   
+#. **Add Datasets to Simulate High-Resolution Damages and Losses in Buried Pipeline Networks** (1.3.5.4): Expansion of the `SimCenter Damage and Loss Model Library <https://github.com/NHERI-SimCenter/DamageAndLossModelLibrary>`_ to include detailed water pipeline damage and loss models.
 
 Dec 2024
 ---------
-#. Develop methods to model interdependencies between physical components, housing, socio-economic functions, and lifelines (1.3.4.6)
+#. **Model Interdependencies Between Physical Components, Housing, Socio-economic Functions, and Lifelines** (1.3.4.6): Incorporation models and simulation programs to capture the interdependencies between physical and socio-economical components.
 
-#. Add datasets to simulate high-resolution damages and losses in transportation networks (1.3.5.3)
+#. **Add Datasets to Simulate High-Resolution Damages and losses in Transportation Networks** (1.3.5.3): Expansion of the `SimCenter Damage and Loss Model Library <https://github.com/NHERI-SimCenter/DamageAndLossModelLibrary>`_ to detailed transportation infrastructure damage and loss models.
 
-#. Develop and implement metrics and their visualization to inform recovery and community resilience (1.4.3.2)
-
-#. Look at aspects related to recovery. Housholds (1.4.3.2), Infrastructure (1.4.2.4), Business operations (1.4.2.5)
-
+#. **Develop and implement metrics and their visualization to inform recovery and community resilience** (1.4.3.2): Development of new metrics and visualization tools to support recovery planning and community resilience assessment.
 
 Sept 2025
 ---------
-#. Multi-fidelity models in regional simulations (1.3.3.1)
-#. Multi-scale models for wind and water (1.3.3.2)
+#. **Multi-Fidelity Models in Regional Simulations** (1.3.3.1): Introduction of multi-fidelity modeling approaches for enhanced regional simulation capability.
 
- .. note::
+#. **Multi-Scale Models for Wind and Water** (1.3.3.2): Development of multi-scale modeling capabilities for wind and water hazard assessment.
 
-    The numbers in parentheses are for internal tracking purposes.
+.. note::
 
+    The numbers in parentheses are internal tracking identifiers.

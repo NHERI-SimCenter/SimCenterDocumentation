@@ -24,7 +24,7 @@ Click the check box to import correlated datasets
 
 To enable this feature, the user can explicitly define the group of RVs that will share the index samples in the UQ tab using the ``Resample RVs from correlated dataset``:
 
-	* The actual datasets of the RVs written in this field should be imported in the RV tab, through ``parameters``-``discrete`` option. 
+	* The actual datasets of the RVs written in this field should be imported in the RV tab, through the ``parameters``-``discrete`` option. 
 	* The RVs inside each group should be provided with the same length of the samples (e.g. in :numref:`figSimSamp3`, :math:`w` and :math:`wR` should have the same sample size :math:`N_1` and :math:`alp` and :math:`F_y` should have the same sample size :math:`N_2`)
 
 .. note::

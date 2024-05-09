@@ -5,8 +5,7 @@ User Interface
 **************
 
 
-The |app| is a scientific workflow application that creates workflows and runs them in the background. These workflows can involve multiple different workflow applications (see more information on the backend and workflows under :ref:`lblArchitecture`). Once the |app| is started, the user is presented with the user interface (UI) shown in |figGenericUI|. This interface allows the user to select the applications to run in a workflow, input the controlling parameters for each of these applications, start the workflow either locally or
-remotely, and finally view the results of the simulation.
+The |app| is a scientific workflow application that creates workflows and runs them in the background. These workflows can integrate multiple applications, detailed further in the backend and workflows section (:ref:`lblArchitecture`). Upon launching |app|, the user is presented with the user interface (UI) shown in |figGenericUI|, which facilitates the selection of workflow applications, configuration of application parameters, initiation of workflows either locally or remotely, and visualization of simulation outcomes.
 
 .. only:: quoFEM_app
 
@@ -73,7 +72,9 @@ remotely, and finally view the results of the simulation.
 
 	   The |app| user interface.
 
-The main window of the UI is made up from the following areas:
+
+The main window of the UI comprises the following key components:
+
 
 #. **Login Button**
 
@@ -152,7 +153,7 @@ The main window of the UI is made up from the following areas:
 
    **Running Jobs Remotely**
 
-     .. only:: notR2D
+   .. only:: notR2D
 
        Clicking on the **RUN at DesignSafe** button will show the remote job submission dialog shown below (:numref:`figRemJobPanel-notR2D`)
 
@@ -165,7 +166,7 @@ The main window of the UI is made up from the following areas:
 
             Remote job submission dialog.
 
-      .. only:: R2D_app
+   .. only:: R2D_app
 
         Clicking on the **RUN at DesignSafe** button will show the remote job submission dialog shown below (:numref:`figRemJobPanel-R2D`)
 
@@ -179,7 +180,7 @@ The main window of the UI is made up from the following areas:
 
       Descriptions and guidelines for each input are given below:
 
-      * **Job Name**: An easy to remember and meaningful name to differentiate this job from others.
+      * **Job Name**: An easy-to-remember and meaningful name to differentiate this job from others.
 
       * **Number of Nodes**: Number of compute nodes requested. Each node includes several cores and each core can run one thread of a parallel calculation.
 
@@ -188,7 +189,7 @@ The main window of the UI is made up from the following areas:
 
       * **Number of processes per Node**: Number of processors that will be utilized on each node. It is advantageous to use all available processors of a node when the memory demand of a job is small. When a job is memory intensive, e.g., large finite element models, utilizing all available processors may overwhelm the memory cache of a core and the computation will slow down. Currently, the maximum number of processors is 48 and the minimum is 1.
 
-      .. only:: R2D_app
+   .. only:: R2D_app
 
          * **Number of Buildings per Task**: Number of buildings per task.
 
@@ -196,7 +197,7 @@ The main window of the UI is made up from the following areas:
 
          * **Save Intermediate Results**: Save intermediate results to a compressed folder. This is only recommended for debugging purposes because intermediate results will use a substantial amount of disk space.
 
-         * **Max Run Time**: The maximum time a job will run on the DesignSafe computer, in the format of Hours:Min:Sec. The job will be terminated and the intermediate results will be lost if the run time exceeds this threshold. The maximum runtime allowed for a job on DesignSafe is 48 hours.
+         * **Max Run Time**: The maximum time a job will run on the DesignSafe computer, in the format of Hours:Min:Sec. The job will be terminated, and the intermediate results will be lost if the run time exceeds this threshold. The maximum runtime allowed for a job on DesignSafe is 48 hours.
 
 
       .. note:: You can check the status of a remote run by clicking on the **GET from DesignSafe** button. If the analysis status shows FAILED,  log into your DesignSafe account to view the detailed output of the run. First, log in with your credentials on the `DesignSafe <https://www.designsafe-ci.org/help/new-ticket/>`_ webpage. Next, use the menu to navigate to **Workspace** -> **Tools & Applications** -> **Job Status** and then select a job and click on **More info** to view the status of that job.
@@ -205,7 +206,7 @@ The main window of the UI is made up from the following areas:
 
    6. **Main Menu**
 
-      | The main menu, which contains the typical pull down options found in almost all desktop applications, contains three additional options **Examples**, **Tools** and **GIS Map**. The **Examples** pull down provides a way to download and then load the examples described in this manual. The **Tools** (See :ref:`r2d-tools`) pull down provide a number of options for generating inputs and additional attributed for the various input widgets of the tool, e.g. a user can use the Ground motion selection tool to create a set of ground motions using OpenSHA, PEER, etc., which can be subsequently used in the **HAZ** part of the workflow. The **GIS Map** pulldown provides access to the standard **QGIS** options, e.g. adding layers, maps, plugins.
+      | The main menu, which contains the typical pull-down options found in almost all desktop applications, contains three additional options **Examples**, **Tools** and **GIS Map**. The **Examples** pull-down provides a way to download and then load the examples described in this manual. The **Tools** (See :ref:`r2d-tools`) pull-down provides many options for generating inputs and additional attributes for the various input widgets of the tool, e.g. a user can use the Ground motion selection tool to create a set of ground motions using OpenSHA, PEER, etc., which can be subsequently used in the **HAZ** part of the workflow. The **GIS Map** pulldown provides access to the standard **QGIS** options, e.g. adding layers, maps, and plugins.
 
       .. include:: R2DTool/tools.rst
       

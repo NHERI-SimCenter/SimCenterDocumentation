@@ -1,7 +1,7 @@
 MOD: Asset Modeling
 ===================
 
-In this panel, the user can select the applications that will be used to model each asset class. The user can select the type of asset from the **Asset Selection Ribbon**, e.g., Buildings and Gas Network, as shown on the left-hand side of :numref:`fig-buildingModelingPanel`. The **Asset Selection Ribbon** is hidden by default, and appears when more than one type of asset is selected in the **GI: General Information** panel. Additionally, only the assets that are checked in the **GI: General Information** panel will appear in the **Asset Selection Ribbon**. As the user switches between assets, the **Input Panel** in :numref:`fig-buildingModelingPanel` will change to reflect the applications that are available for the modeling of each type of asset. 
+This section outlines how users can configure the modeling of various asset classes within the application. Users can choose specific applications for modeling different asset types, such as Buildings or Transportation Networks, via the **Asset Selection Ribbon** on the left-hand side of the interface, as depicted in :numref:`fig-buildingModelingPanel`. This ribbon is initially hidden and becomes visible when multiple asset types are selected in the **GI: General Information** panel. Only assets marked in the **GI: General Information** panel will be displayed in the **Asset Selection Ribbon**. Switching between assets updates the **Input Panel** to show the relevant applications for modeling the selected asset type.
 
 .. _fig-buildingModelingPanel:
 
@@ -19,7 +19,7 @@ In this panel, the user can select the applications that will be used to model e
 Buildings
 ---------
 
-The applications available for the modeling of buildings are: 
+For building modeling, the following applications are available:
 
 	- MDOF-LU Building Model
 	- OpenSeesPy Building Model
@@ -30,7 +30,7 @@ The applications available for the modeling of buildings are:
 MDOF-LU Building Model
 **********************
 
-The **MDOF-LU** building modeling application creates a hysteretic, multi-degree of freedom (MDOF) model from the user-provided high-level building information. The implementation is a variation of work of [Lu2020]_. The module essentially takes the building inventory information (construction year, structural type, plan area, and the number of stories) provided by the user in ASD tab, determines the design code level (e.g. high code, low code), and creates an Opensees model of each building. The following are the needed information.
+The **MDOF-LU** application generates a hysteretic, multi-degree of freedom (MDOF) model based on high-level building information provided by the user. This approach is adapted from [Lu2020]_. It processes building inventory data (e.g., construction year, structural type, plan area, number of stories) provided by the user in the ASD tab to determine the design code level and generates an OpenSees model for each building. Required information includes:
 
 .. _fig-MDOFLUModelingPanel:
 
@@ -39,7 +39,7 @@ The **MDOF-LU** building modeling application creates a hysteretic, multi-degree
   :figclass: align-center
   :width: 80%
 
-* **Hazus Data File:** The path to a file that contains the ruleset that maps the design code-level & structural types to various structural parameters. :download:`Here <src/MDOF_Lu_HazusData.txt>` is an example file, where the columns are in the order of
+* **Hazus Data File:** Path to a file with rules mapping design code levels and structural types to structural parameters. An example file can be downloaded :download:`here <src/MDOF_Lu_HazusData.txt>`, with column names explained below:
 
     .. collapse:: Column names of HazusData.txt (click)
 
@@ -47,15 +47,12 @@ The **MDOF-LU** building modeling application creates a hysteretic, multi-degree
          :file: src/MOD_Lu_HazusData_display.csv
          :header-rows: 1
          :align: center
-
-
   See :numref:`fig-MDOFLUModelingHys` for the parameter definitions. Note that not all the parameters are being used.
+* **Std deviation Stiffness:** Standard deviation for lateral stiffness. The uncertainty will be applied by sampling a multiplication factor with the specified standard deviation and mean of 1. The factor is sampled only once per structure and will be applied to all stories.
+* **Std deviation Damping:** Standard deviation for damping ratio. The uncertainty will be applied by sampling a multiplication factor with the specified standard deviation and mean of 1.
+* **Default Story Height (optional):** Sets mass node coordinates.
 
-* **Std deviation Stiffness:** The standard deviation of lateral stiffness of the building model. The randomness will be applied by sampling a multiplication factor with the specified standard deviation and mean of 1. The factor is sampled only once per structure and will be applied to all stories.
-* **Std deviation Damping:** The standard deviation of the damping ratio of the building model. The randomness will be applied by sampling a multiplication factor with the specified standard deviation and mean of 1. 
-* **Default Story Height (optional):** Used to set the mass node coordinates.
-
-Once the analysis is done, the estimated structural parameters are written in ``SAM.json`` and the corresponding opensees model is written in ``example.tcl`` (with  `uniaxialMaterial Hysteretic <https://opensees.berkeley.edu/wiki/index.php/Hysteretic_Material>`_ material model) for the downstream analysis. Both files can be found in the local working directory. 
+The analysis outputs include a ``SAM.json`` file for structural parameters and an ``example.tcl`` file (with  `uniaxialMaterial Hysteretic <https://opensees.berkeley.edu/wiki/index.php/Hysteretic_Material>`_ material model) for the downstream OpenSees model. Both files are located in the working directory.
 
     .. collapse:: Example of SAM.json (click)
 
@@ -77,7 +74,7 @@ where the keys of ``SAM.json`` are defined as follows:
   :figclass: align-center
   :width: 400
 
-  MDOF-LU Building model.  
+  Hysteresis model in MDOF-LU Building Model.
 
 .. csv-table:: Structure parameters estimated from MDOF-Lu
   :file: src/MOD_SAM.csv
@@ -88,13 +85,12 @@ where the keys of ``SAM.json`` are defined as follows:
 
 .. note:: When the **MDOF-LU** building modeling application is employed, the **OpenSees** simulation application should be used for analysis in the **ANA: Asset Analysis** input panel. 
 
-
-.. [Lu2020] Lu, X., McKenna, F., Cheng, Q., Xu, Z., Zeng, X., & Mahin, S. A. (2020). An open-source framework for regional earthquake loss estimation using the city-scale nonlinear time history analysis. Earthquake Spectra, 36(2), 806-831.
+.. [Lu2020] Lu, X., McKenna, F., Cheng, Q., Xu, Z., Zeng, X., & Mahin, S. A. (2020). An open-source framework for regional earthquake loss estimation using city-scale nonlinear time history analysis. Earthquake Spectra, 36(2), 806-831.
 
 OpenSeesPy Building Model
 *************************
 
-The **OpenSeesPy** building modeling application creates an OpenSeesPy structural model from a user-defined Python script. The input panel, shown in :numref:`fig-R2DOpenSeesPyBuildingModel`, has the following inputs:
+The **OpenSeesPy** application allows for the creation of structural models using a user-defined Python script. The input panel (:numref:`fig-R2DOpenSeesPyBuildingModel`) provides fields for:
 
 	#. **OpenSeesPy Script:** Script containing the code to create the building model. 
 	#. **Node Response Mapping:** By default, the workflow assumes X=1, Y=2, Z=3 mapping between the *x,y,z* directions and degrees of freedom, with *x* and *y* being the horizontal directions. This input allows you to define an alternative mapping by providing three numbers separated by commas in a string, such as ‘1, 3, 2’ if you wish to have *y* as the vertical direction.
@@ -113,8 +109,5 @@ The **OpenSeesPy** building modeling application creates an OpenSeesPy structura
 
 Transportation Infrastructure
 -----------------------------
-Only the Intensity Measure as Engineering Demand Parameter (**IMasEDP**) type of analysis is supported for transportation infrastructure analysis now. The asset models should be **None** for **IMasEDP** analyses. 
 
-
-
-
+Currently, only Intensity Measure as Engineering Demand Parameter (**IMasEDP**) analysis is supported for transportation infrastructure. The asset models should be **None** for **IMasEDP** analyses. 
