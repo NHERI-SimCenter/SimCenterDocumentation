@@ -91,10 +91,7 @@ Make sure you see a message that confirms the successful installation of the nhe
    .. note::
      The packaged distribution of OpenFOAM is only available for Linux systems. To install OpenFOAM on macOS, the user needs to use Docker for Mac. Docker will provide a virtual environment for running Linux applications on macOS.
 
-   ..  The at mesh generation and pre-processing  party applications s. 
-
-
-   To install OpenFOAM-10 on macOS, follow the instructions in `OpenFOAM for macOS <https://openfoam.org/download/10-macos/>`_.
+   To install OpenFOAM-10 on macOS, follow the instructions in `OpenFOAM for macOS <https://openfoam.org/download/10-macos/>`_ .
 
 **Download the Application**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
