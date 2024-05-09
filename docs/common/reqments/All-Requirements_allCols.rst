@@ -77,7 +77,7 @@ Earthquake Loading Requirements
 .. csv-filter:: Requirements - EL
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 8, 55, 8, 10, 15, 10, 10, 10
-  :file: _out/Loading.csv
+  :file: Loading.csv
   :include: {0: '\**EL.*|#'}
   :included_cols: 0, 1, 2, 3, 4, 6, 9, 10
   
@@ -89,7 +89,7 @@ Wind Loading Requirements
 .. csv-filter:: Requirements - WL
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 10, 55, 8, 10, 15, 10, 10, 10
-  :file: _out/Loading.csv
+  :file: Loading.csv
   :include: {0: '\**WL.*|#'}
   :included_cols: 0, 1, 2, 3, 4, 7, 9, 10
 
@@ -102,7 +102,7 @@ Surge/Tsunami Loading Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 10, 65, 8, 10, 15, 25, 6, 6
   :included_cols: 0, 1, 2, 3, 4, 8, 9, 10
-  :file: _out/Loading.csv
+  :file: Loading.csv
   :include: {0: '\**HL.*|#'}
 
 .. include:: key.rst
@@ -114,7 +114,7 @@ UQ Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 8, 35, 10, 10, 15, 10, 10, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-  :file: _out/Uncertainty.csv
+  :file: Uncertainty.csv
 
 .. include:: key.rst
 
@@ -125,7 +125,7 @@ RV Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 8, 40, 10, 10, 15, 10, 10, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-  :file: _out/RandomVariables.csv
+  :file: RandomVariables.csv
 
 .. include:: key.rst
 
@@ -136,7 +136,7 @@ Modeling Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 8, 50, 10, 10, 15, 10, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 6, 7, 8, 9, 10
-  :file: _out/Modeling.csv
+  :file: Modeling.csv
 
 .. include:: key.rst
 
@@ -147,7 +147,7 @@ Analysis Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 8, 50, 10, 10, 15, 10, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 6, 7, 8, 9, 10
-  :file: _out/Analysis.csv
+  :file: Analysis.csv
 
 .. include:: key.rst
 
@@ -158,7 +158,7 @@ Damage & Loss Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 8, 50, 8, 8, 12, 10, 20
   :included_cols: 0, 1, 2, 3, 4, 9, 10
-  :file: _out/Damage.csv
+  :file: Damage.csv
 
 .. include:: key.rst
 
@@ -169,7 +169,7 @@ Recovery Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 8, 50, 10, 10, 15, 10
   :included_cols: 0, 1, 2, 3, 4, 10
-  :file: _out/Recovery.csv
+  :file: Recovery.csv
 
 .. include:: key.rst
 
@@ -180,7 +180,7 @@ Common Research Application Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 8, 45, 8, 8, 12, 10, 10, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-  :file: _out/Common.csv
+  :file: Common.csv
 
 .. include:: key.rst
 
