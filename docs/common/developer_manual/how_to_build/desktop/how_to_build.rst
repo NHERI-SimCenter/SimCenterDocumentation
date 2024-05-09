@@ -9,7 +9,7 @@ SimCenter tools all comprise a frontend user interface (UI) and backend applicat
 
 .. note::
 
-   As part of our continuous integration process, |app| is built every time we check code into the NHERI-SimCenter repositories. To do this we make use of a CI service. That current service is `appveyor <https://www.appveyor.com/>`_. As a consequence in the |app| repo that you will clone as part of this build process there is a file **appveyor.yml**. This file contains shell commands that are issued to set up the operating system, download the software and build it. If the following commands fail for you, look at the appveyor.yml file to see what commands are currently being called as these may be more up-to-date than what is presented below.
+   As part of our continuous integration process, |app| is built every time we check code into the NHERI-SimCenter repositories. To do this we make use of a CI service. That current service is `appveyor <https://www.appveyor.com/>`_. As a consequence in the |app| repo that you will clone as part of this build process there is a file **appveyor.yml**. This file contains shell commands that are issued to set up the operating system, download the software, and build it. If the following commands fail for you, look at the appveyor.yml file to see what commands are currently being called as these may be more up-to-date than what is presented below.
 
 ********************
 Install Dependencies
@@ -45,7 +45,7 @@ First, ensure the following dependencies are installed:
 Build the Backend Applications
 ******************************
 
-Instructions to build the backend workflow applications on your local desktop depend on your operating system, but is a 2 step process involving some initial setup and finally the build.
+Instructions to build the backend workflow applications on your local desktop depend on your operating system. This is a 2-step process involving some initial setup and finally the build.
 
 Setup the development environment with Conan
 ============================================
@@ -131,13 +131,14 @@ Build the applications
           
       
 If building and installation were successful, you should find a folder called ``applications`` in the repository with all the applications inside of it. The name of this folder should not be changed.
+
    
 
 ************************
 Build the User Interface
 ************************
 
-To build the interface, you first need to download the repo and a companion repo(SimCenterCommon) from Github using our `github repos <https://github.com/NHERI-SimCenter>`_. In a folder in which you wish to build the application, issue the following two commands.
+To build the interface, you first need to download the repo and a companion repo(SimCenterCommon) from GitHub using our `GitHub repos <https://github.com/NHERI-SimCenter>`_. In a folder in which you wish to build the application, issue the following two commands.
 
 .. only:: quoFEM_app
 
@@ -152,32 +153,32 @@ To build the interface, you first need to download the repo and a companion repo
    .. code::
       
       git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
-      git clone https://github.com/NHERI-SimCenter/R2DTool.git      
+      git clone https://github.com/NHERI-SimCenter/R2DTool.git
 
 
 .. only:: PBE_app
 
-   .. code::	  
+   .. code::
 
        git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
-       git clone https://github.com/NHERI-SimCenter/QS3hark.git	  
+       git clone https://github.com/NHERI-SimCenter/QS3hark.git
        git clone https://github.com/NHERI-SimCenter/EE-UQ.git
-       git clone https://github.com/NHERI-SimCenter/PBE.git       
+       git clone https://github.com/NHERI-SimCenter/PBE.git
 
 .. only:: EEUQ_app
 
    .. code::
       
        git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
-       git clone https://github.com/NHERI-SimCenter/QS3hark.git	  
-       git clone https://github.com/NHERI-SimCenter/EE-UQ.git	  
+       git clone https://github.com/NHERI-SimCenter/QS3hark.git
+       git clone https://github.com/NHERI-SimCenter/EE-UQ.git
 
-.. only:: WEUQ_app	  
+.. only:: WEUQ_app
 
    .. code::
 
        git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
-       git clone https://github.com/NHERI-SimCenter/WE-UQ.git	  
+       git clone https://github.com/NHERI-SimCenter/WE-UQ.git
 
 .. only:: HydroUQ_app	  
 
@@ -190,7 +191,7 @@ To build the interface, you first need to download the repo and a companion repo
 .. note::
 
 
-   Use the above links if you just want to download and build the applications. If you intend to make changes to any of the code in the repo's, you should fork that repo and then clone your forked repo. Forking a repo at **github** is done through your browser as shown on the following `github guides page <https://guides.github.com/activities/forking/>`_
+   Use the above links if you just want to download and build the applications. If you intend to make changes to any of the code in the repos, you should fork that repo and then clone your forked repo. Forking a repo at **GitHub** is done through your browser as shown on the following `GitHub guides page <https://guides.github.com/activities/forking/>`_
 
 You now have two ways to build the application: (1) using the **Qt Creator** desktop application provided by **Qt** and (2) from the terminal application.
 
@@ -251,7 +252,7 @@ Modify the User Interface Preferences
 
 Once built, the tool **Preferences** needs to be modified. To do this, open the |short tool id| tool, then click on File -> Preferences in the main menu if on Windows or |short tool id| -> Preferences if on a Mac. This will bring up a dialog window shown below. You need to modify specific values:
 
-  #. Python: provide the full path to the python interpreter.
+  #. Python: provide the full path to the Python interpreter.
    
   #. OpenSees: provide the full path to the OpenSees executable
 
