@@ -4,7 +4,7 @@
 Ground Motion Intensity Spatial Correlation Model Options
 =========================================================
 
-The regional seismic risk analysis requires the prediction of ground motion intensities at multiple sites. Such joint predictions need to consider the correlation between ground motion intensities at different sites given a specific earthquake scenario. In general, ground motion models predict intensities at an individual site :math:`i` due to an earthquake :math:`j` have the following form:
+The regional seismic risk analysis requires the prediction of ground motion intensities at multiple sites. Such joint predictions need to consider the correlation between ground motion intensities at different sites given a specific earthquake scenario. In general, ground motion models predicting intensities at an individual site :math:`i` due to an earthquake :math:`j` have the following form:
 
 .. math::
 
@@ -44,7 +44,7 @@ Similarly, the correlation coefficient is defined as:
 
    \rho(h) = \frac{C(h)}{C(0)} = 1 - \frac{\gamma(h)}{C(0)}
 
-Given the semivariogram is often preferred in geostatistical practice (because it does not require a prior estimation of the mean), many studies were carried to find the semivariogram models to derive the correlation :math:`rho(h)` of ground motion intensities. The available models in the current |short tool name| are briefly summarized in following sections.
+Given the semivariogram is often preferred in geostatistical practice (because it does not require a prior estimation of the mean), many studies were carried out to find the semivariogram models to derive the correlation :math:`rho(h)` of ground motion intensities. The available models in the current |short tool name| are briefly summarized in the following sections.
 
 Jayaram and Baker (2009)
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -84,7 +84,7 @@ where T is the period. If the :math:`V_{S30}` values are very close in the given
 Loth and Baker (2013)
 ^^^^^^^^^^^^^^^^^^^^^
 
-Note that the cross-semivariograms between different pairs of intensity measures can be different, for instance, :math:`\rho_{Sa(T=0.1s),Sa(T=0.2s)}(h)` might be greater than :math:`\rho_{Sa(T=0.1s),Sa(T=1s)}(h)`. This means one needs to repeat a calibration process many times to develop semivariogram functions and correlation models that have higher resolutions (i.e., direct semivariogram fit). Instead of fitting each semivariogram independently, [Loth13]_ proposed a predictive model for spatial covariance of spectral accelerations at different periods:
+Note that the cross-semivariograms between different pairs of intensity measures can be different, for instance, :math:`\rho_{Sa(T=0.1s),Sa(T=0.2s)}(h)` might be greater than :math:`\rho_{Sa(T=0.1s), Sa(T=1s)}(h)`. This means one needs to repeat a calibration process many times to develop semivariogram functions and correlation models that have higher resolutions (i.e., direct semivariogram fit). Instead of fitting each semivariogram independently, [Loth13]_ proposed a predictive model for spatial covariance of spectral accelerations at different periods:
 
 .. math::
 
@@ -174,13 +174,13 @@ where :math:`I_{h=0}` is the indicator function equal to 1 at :math:`h = 0` and 
 Markhvida et al. (2017)
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-[Markhvida17]_ proposed to use Principal Component Analysis (PCA) to develop the predictive model for cross-correlograms. In theorem, PCA performs a linear transformation of the variables of interest to an orthogonal basis, where the resulting projections onto the new basis are uncorrelated:
+[Markhvida17]_ proposed to use Principal Component Analysis (PCA) to develop the predictive model for cross-correlograms. In theory, PCA performs a linear transformation of the variables of interest to an orthogonal basis, where the resulting projections onto the new basis are uncorrelated:
 
 .. math::
 
    \textbf{P} \textbf{Z} = \textbf{Y}
 
-where :math:`\textbf{P}` is an orthogonal linear transformation matrix, :math:`\textbf{Z}` is the original data matrix, and :math:`\textbf{Y}` is the transformed variable matrix which contains uncorrelated principal components :math:`\textbf{Y}_i`. Since :math:`\textbf{P}` is orthogonal, so the inversion is easy to compute:
+where :math:`\textbf{P}` is an orthogonal linear transformation matrix, :math:`\textbf{Z}` is the original data matrix, and :math:`\textbf{Y}` is the transformed variable matrix which contains uncorrelated principal components :math:`\textbf{Y}_i`. Since :math:`\textbf{P}` is orthogonal, the inversion is easy to compute:
 
 .. math::
 

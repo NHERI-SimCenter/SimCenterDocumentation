@@ -107,10 +107,10 @@ Navigate to the |appLink| page, which should resemble |figDownload|, for a list 
 
    .. _figDownloadWin-HydroUQ:
 
-   .. figure:: figures/H20Download.png      
+   .. figure:: figures/H20Download.png
       :alt: HydroUQ tool download page
       :align: center
-      :figclass: align-center		 
+      :figclass: align-center
 
       HydroUQ tool download page.
 
@@ -189,7 +189,7 @@ Launch the application to view the user interface as shown in |figWinUI|. It's r
     :align: center
     :figclass: align-center
 
-    HydroUQ tool on startup in Windows 10    
+    HydroUQ tool on startup in Windows 10
 
     
 
