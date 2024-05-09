@@ -20,6 +20,5 @@ June - Dec 2024
 #. Multi-fidelity Monte Carlo routines to utilize lower cost computational models along with higher fidelity models to reduce computational time while preserving accuracy (Dec 2024, WBS 1.3.3.2)
 
 
- .. note::
-
-    The numbers in parentheses are for internal tracking purposes.
+.. note::
+   The numbers in parentheses are for internal tracking purposes.

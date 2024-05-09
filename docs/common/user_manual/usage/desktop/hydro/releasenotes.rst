@@ -8,10 +8,10 @@ Release Notes
 Version 3
 =================
 
-    .. dropdown:: Version 3.0.0 (:blue:`Current`)
+    .. dropdown:: Version 3.1.0 (:blue:`Current`)
         :open:
 
-        **Release date:** March 20th, 2024
+        **Release date:** April 1st, 2024
 
         
         **Simulation types**:

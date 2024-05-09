@@ -11,7 +11,7 @@ Version 3.1
     .. dropdown:: Version 3.1.0 (:blue:`Current`)
         :open:
 
-        **Release date:** March 29th, 2024
+        **Release date:** April 1st, 2024
 
         **Highlights**
             #. **Simulation types**:
