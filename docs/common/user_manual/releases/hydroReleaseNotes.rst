@@ -5,13 +5,13 @@
 Release Notes
 ***************************
 
-Version 3
+Version 3.1
 =================
 
-    .. dropdown:: Version 3.0.0 (:blue:`Current`)
+    .. dropdown:: Version 3.1.0 (:blue:`Current`)
         :open:
 
-        **Release date:** March 20th, 2024
+        **Release date:** March 29th, 2024
 
         **Highlights**
             #. **Simulation types**:
@@ -29,9 +29,23 @@ Version 3
 
             #. **Materials**: 
 
-                a. Supports elastic, plastic, hyperelastic, and elasto-plastic materials.
+                a. Supports elastic, plastic, hyperelastic, and elasto-plastic materials in MPM.
 
-                b. Supports kinematic viscosity and density of the two phases in addition to the surface tension between the fluids.
+                b. Supports kinematic viscosity and density of the two phases in addition to the surface tension between the fluids in OpenFOAM.
+
+            #. **Tools**
+            
+                a. Certain Events (EVT) may now run as standalone tools (i.e. does not require a SimCenter workflow for UQ, etc.). Simplifies implementation of new modules.
+
+                b. Added Tapis API support for running Tools remotely, allowing for specialized Tapis applications and system/queue selection
+
+            #. **Digital Twins**
+
+                a. Digital twins now allow for debris and floating bodies.
+
+                b. Added Oregon State University's Large Wave Flume (OSU LWF) as a digital twin for MPM and FOAMySees.
+
+                c. Added Waseda University's Tsunami Wave Basin (WU TWB) as a digital twin for MPM.
 
             #. **DesignSafe Support and Hardware**
 
@@ -43,26 +57,11 @@ Version 3
 
                 b. Added support for the TACC Lonestar6 supercomputer.
 
-                    * Access the 'gpu-h100' queue. Includes 2 NVIDIA H100 GPUs (80GB memory each).
                     * Access the 'gpu-a100' queue. Includes 3 NVIDIA A100 GPUs (40GB memory each).
+                    * Access the 'gpu-h100' queue. Includes 2 NVIDIA H100 GPUs (80GB memory each).
 
                 c. Updated support for the Tapis API (used to run jobs remotely).
 
-            #. **Tools**
-            
-                a. Events (EVT) may now run as standalone tools (i.e. does not require a SimCenter workflow for UQ, etc.)
-
-                b. Added Tapis API support for running Tools remotely, allowing for specialized Tapis applications and system/queue selection
-
-            #. **Digital Twins**
-
-                a. Digital twins now allow for debris and floating bodies.
-
-                b. Added Oregon State University's Large Wave Flume (OSU LWF) as a digital twin for MPM.
-
-                c. Added Oregon State University's Directional Wave Basin (OSU DWB) as a digital twin for MPM.
-
-                d. Added Waseda University's Tsunami Wave Basin (WU TWB) as a digital twin for MPM.
 
 
 Version 2.0

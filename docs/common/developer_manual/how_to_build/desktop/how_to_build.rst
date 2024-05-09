@@ -130,7 +130,8 @@ Build the applications
 
           
       
-If building and installation were successful, you should find a folder called ``applications`` in the repository with all the applications inside it. The name of this folder should not be changed.
+If building and installation were successful, you should find a folder called ``applications`` in the repository with all the applications inside of it. The name of this folder should not be changed.
+
    
 
 ************************
@@ -178,6 +179,13 @@ To build the interface, you first need to download the repo and a companion repo
 
        git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
        git clone https://github.com/NHERI-SimCenter/WE-UQ.git
+
+.. only:: HydroUQ_app	  
+
+   .. code::
+
+       git clone https://github.com/NHERI-SimCenter/SimCenterCommon.git
+       git clone https://github.com/NHERI-SimCenter/HydroUQ.git	  
 
 
 .. note::
