@@ -10,9 +10,7 @@ How To Cite
 	     
 .. only:: PBE_app
 
-   1. Adam Zsarnoczay, Frank McKenna, Charles Wang, Stevan Gavrilovic, Kuanshi Zhong, Michael Gardner, Sang-ri Yi, Aakash B. Satish & Wael Elhaddad. (2024).
-      NHERI-SimCenter/PBE: Version 3.3.0 (v3.3.0).
-      Zenodo. `DOI: 10.5281/zenodo.10448044 <https://doi.org/10.5281/zenodo.10448044>`_
+   1. Adam Zsarnoczay, Frank McKenna, Charles Wang, Stevan Gavrilovic, Michael Gardner, Sang-ri Yi, Aakash Bangalore Satish, & Wael Elhaddad. (2024). NHERI-SimCenter/PBE: Version 3.4.0 (V3.4.0). Zenodo. `DOI: 10.5281/zenodo.10902085 <https://doi.org/10.5281/zenodo.10902085>`_
   
 .. only:: EEUQ_app
 
