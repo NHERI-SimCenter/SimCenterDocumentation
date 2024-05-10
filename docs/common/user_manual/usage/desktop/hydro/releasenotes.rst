@@ -88,18 +88,18 @@ Version 3
 
                 * Added boundaries for geometry primitives (e.g. ``sphere``, ``box``, ``cylinder``).
                 * Added selectable contact models (e.g. ``Sticky``, ``Slip``, ``Separable``).
-                * Added boundaries for the ``OSU LWF``, ``OSU DWB``, and ``WU TWB`` digital twin bathymetries. 
-                * Added boundaries for the ``OSU LWF`` and ``OSU DWB`` moving piston wave-makers. 
-                * Implemnted array operations for boundary conditions (e.g. create an array of the same boundary at specified spacings in X, Y, and Z).
+                * Added boundaries for the ``OSU LWF`` and ``WU TWB`` digital twin bathymetries. 
+                * Added boundary for the ``OSU LWF`` moving piston wave-maker. 
+                * Implemented array operations for boundary conditions (e.g. instace a boundary at specified spacings in X, Y, and Z).
 
             4. **Sensors**: 
 
                 Any object in a simulation that is not a boundary condition or body is considered a ``Sensor``. ``Sensors``, the collection of ``Sensor`` objects, are used to monitor the simulation, collect desired data, reduce said data, and report the aggregated output as a time-series. In effect, they replicate instruments / sensors used in experiments (e.g. load-cells, wave-gauges, piezometers, velocimeters).
 
-                * Sensors may be placed in the simulation (e.g. on ``particles`` or ``grid-nodes``) to monitor the simulation.
+                * Sensors may be placed on numerical bodies (e.g. on ``particles`` or ``grid-nodes`` for ``MPM``) to monitor the simulation.
                 * Supports force, pressure, velocity, and elevation sensors by default.
                 * Custom sensors may be added to the simulation through the GUI.
-                * Supports reduction operations (e.g. sum, average, max, min) for sensor data.
+                * Supports automatic reduction operations (e.g. sum, average, max, min) to reduce sensor data to a single scalar or vector value per sampling step.
                 * Allows specification of sensor output frequency.
 
             5. **Outputs**:
@@ -113,17 +113,16 @@ Version 3
                 * Enable / disable output of simulation checkpoints (allow for a simulation to be resumed if stopped).
 
         **Visualization**
-            * Enabled visualizationof the Event (``EVT``) using ``Qt3D`` and ``VTK``
-            * Implemented a Model-View-Controller (MVC) architecture for the Event GUI.
+            * Enabled visualization of the Event (``EVT``) using ``Qt3D``
+            * Added support for mouse controls of camera in 3D visualization.
             * Added support for visualizing simulation ``Bodies`` in 3D.
             * Added support for visualizing simulation ``Boundaries`` in 3D.
             * Added support for visualizing simulation ``Sensors`` in 3D.
 
         **Digital Twins**
-            * Digital twins now allow for debris and floating bodies.
             * Added Oregon State University's Large Wave Flume (``OSU LWF``) as a digital twin for ``MPM``.
-            * Added Oregon State University's Directional Wave Basin (``OSU DWB``) as a digital twin for ``MPM``.
             * Added Waseda University's Tsunami Wave Basin (``WU TWB``) as a digital twin for ``MPM``.
+            * Digital twins now allow for debris and floating bodies.
 
         **DesignSafe Support and Hardware**
             * Multi-GPU accelerated simulations now supported in certain simulation types (e.g. ``ClaymoreUW MPM``).
@@ -134,7 +133,6 @@ Version 3
 
             * Added support for the TACC Lonestar6 supercomputer:
 
-                a. Access the ``gpu-h100`` queue. Includes 2 NVIDIA H100 GPUs (80GB memory each).
                 b. Access the ``gpu-a100`` queue. Includes 3 NVIDIA A100 GPUs (40GB memory each).
                 c. Access the ``gpu-a100-small`` queue. Includes 1 NVIDIA A100 GPU (40GB memory).
 

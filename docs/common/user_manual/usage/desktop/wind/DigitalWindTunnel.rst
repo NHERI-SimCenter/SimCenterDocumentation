@@ -9,11 +9,11 @@ The Digital Wind Tunnel provides great flexibility in testing different designs 
 
 #. Only horizontal forces are applied to the building model, the vertical force and moments are not considered.
 
-#. The building forces are extracted using the binning feature in OpenFOAM force module and thus, it is assumed that all the floors are of equal heights.
+#. The building forces are extracted using the binning feature in OpenFOAM forces module and thus, it is assumed that all the floors are of equal heights.
 
 #. No uncertainty is considered in the CFD analysis.
 
-It is important to note that this type of event is only supported when running the simulation at DesignSafe and does not run on the local computer. For that reason, users need to create a DesignSafe account in order to use this feature. 
+It is important to note that this type of event is only supported when running the simulation at DesignSafe and does not run on the local computer. For that reason, users need to create a DesignSafe account to use this feature. 
 
 The user needs to input certain parameters, which are summarized as follows:
 

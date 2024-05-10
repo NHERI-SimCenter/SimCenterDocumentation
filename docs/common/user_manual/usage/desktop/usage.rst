@@ -50,15 +50,24 @@ The |app| is a scientific workflow application that creates workflows and runs t
       The |app| user interface.
 
 
-.. only:: Hydro
+.. only:: HydroUQ_app
+
+   .. _figNewUI-HydroUQ:
+
+   .. figure:: figures/HydroUQ_MPM_3DViewPort_OSULWF_2024.04.25.gif
+      :align: center
+      :figclass: align-center
+
+      The |app| new graphical user interface.
 
    .. _figGenericUI-HydroUQ:
 
-   .. figure:: figures/HydroPanel_MPM.png
+   .. figure:: figures/HydroPanel.png
 	   :align: center
 	   :figclass: align-center
 
-	   The |app| user interface.
+	   The |app| basic user interface.
+
 
 
 .. only:: R2D_app
@@ -106,39 +115,40 @@ The main window of the UI comprises the following key components:
       :R2D:R2DTool/MOD
       :R2D:R2DTool/ANA
       :R2D:R2DTool/DL
-	  :R2D:R2DTool/SP
+      :R2D:R2DTool/SP
       UQ
       :EEUQ:GI
       :WEUQ:GI
+      :Hydro:GI
       :PBE:GI
       :EEUQ:SIM
       :WEUQ:SIM
+      :Hydro:SIM
       :PBE:SIM
       :wind:Assets
+      :Hydro:hydro/EVT
       :EEUQ:earthquake/earthquakeEvents.rst
       :PBE:earthquake/earthquakeEvents.rst
       :WEUQ:wind/WindEvents
       :WEUQ:FEM
       :EEUQ:FEM
+      :Hydro:FEM
       :PBE:FEM
       :quoFEM:quoFEM/FEM
-      :Hydro:GI
-      :Hydro:SIM
-      :Hydro:hydro/EVT
-      :Hydro:FEM
-      RV
-      :Hydro:response/EDP
       :EEUQ:response/EDP
       :WEUQ:response/EDP
+      :Hydro:response/EDP
+      RV
       :quoFEM:quoFEM/QuantitiesOfInterest
       :PBE:PBE/DL
       :PBE:PBE/performance
+      :quoFEM:quoFEM/resQUO
       :EEUQ:response/resEE
       :WEUQ:response/resEE
-      :quoFEM:quoFEM/resQUO
+      :Hydro:hydro/resHydro
       :PBE:PBE/resPBE
       :R2D:R2DTool/RES
-      :Hydro:hydro/resHydro
+
 
    
 #. **Push Buttons**
