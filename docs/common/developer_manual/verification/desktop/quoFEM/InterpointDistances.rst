@@ -5,7 +5,7 @@ Interpoint Distances
 
 This is not a structural example, it is one used in the literature to verify sampling methods as a mathematical formula
 exists for the solution. The example presented is computing the average distance between randomly chosen points
-in a rectangular region. Such average distances come up in many settings. For cell phone companies, the probability that a distributed network is fully connected depends on average distances between communicating nodes. For city planners preparing for disasters, 
+in a rectangular region. Such average distances come up in many settings. For cell phone companies, the probability that a distributed network is fully connected depends on the average distances between communicating nodes. For city planners preparing for disasters, 
 it could represent the average distances from dwellings to fire stations or from the dwellings to the epicenter of an earthquake.
 
 The problem is defined as follows: Suppose two points :math:`P` and :math:`Q` are independent and considered uniformly distributed random points in a finite rectangle of dimension :math:`L_w` and :math:`L_h`. It has been `shown <http://www.math.utep.edu/Faculty/moschopoulos/Publications/1999-Random_Points_Associated_With_Rectangles.pdf>`_ that the expected average distance between these two points :math:`E(P,Q)` is given by the formula:
@@ -16,7 +16,7 @@ The problem is defined as follows: Suppose two points :math:`P` and :math:`Q` ar
 
 where :math:`d=\sqrt{L_w^2+L_h^2}`
       
-Using the above formula one can compute a number of expected distances for rectangles of different sizes, for example:
+Using the above formula, one can compute the expected distances for rectangles of different sizes, for example:
 
 .. csv-table:: 
    :header: "Lw", "Lh", "E"
@@ -32,19 +32,19 @@ Using the above formula one can compute a number of expected distances for recta
    .. literalinclude:: InterpointDistance.m
       :language: python
 
-In the following steps we will demonstrate how this is done using the |app| with figures showing the inputs for case with ``Lw=1.0``, ``Lh= 0.6`` and utilizing **LHS** with 1000 samples. A table will provide additional results for other sampling methods and numbers of samples.
+In the following steps we will demonstrate how this is done using the |app| with figures showing the inputs for the case with ``Lw=1.0``, ``Lh= 0.6`` and utilizing **LHS** with 1000 samples. A table will provide additional results for other sampling methods and sample sizes.
 
 1.  Repeating this exercise in quoFEM requires using either the OpenSees or the OpenSeesPy Interpreter. Depending on your choice, create a *new* folder and in it place one of the following files, the first is a Python script to be named ``ghosh.py``. It is to be used with the OpenSeesPy FEM application.
 
 .. literalinclude:: ghosh.py
    :language: python
 
-The second a tcl script to be named ``ghosh.tcl``. It is to be used with the OpenSees FEM application.
+The second is a tcl script to be named ``ghosh.tcl``. It is to be used with the OpenSees FEM application.
 
 .. literalinclude:: ghosh.tcl
    :language: tcl
 
-2. Start the |app| and select Dakota UQ Engine, Forward propagation type of problem and LHS method. Specify ``10000`` samples and a seed of ``175``.
+2. Start the |app| and select Dakota UQ Engine, Forward propagation type of problem, and LHS method. Specify ``10000`` samples and a seed of ``175``.
 
 .. figure:: figures/ghoshUQ.png
    :align: center
@@ -56,7 +56,7 @@ The second a tcl script to be named ``ghosh.tcl``. It is to be used with the Ope
    :align: center
    :figclass: align-center
 
-4. Select the **RV** tab. Create four random variables named ``X1``, ``Y1``, ``X2``, ``Y2``. For each specify a uniform distribution with the range for the ``X`` variables being ``0`` and ``Lw`` and range of ``Y`` variables being ``0`` and ``Lh``. This is as shown for ``Lw = 1.0`` and ``Lh = 0.6``.
+4. Select the **RV** tab. Create four random variables named ``X1``, ``Y1``, ``X2``, ``Y2``. For each specify a uniform distribution with the range for the ``X`` variables being ``0`` and ``Lw`` and the range of ``Y`` variables being ``0`` and ``Lh``. This is as shown for ``Lw = 1.0`` and ``Lh = 0.6``.
 
 .. figure:: figures/ghoshRV.png
    :align: center
@@ -75,17 +75,17 @@ The second a tcl script to be named ``ghosh.tcl``. It is to be used with the Ope
    :figclass: align-center
 
    
-These simulations can be performed for a number of the different sampling methods for a number of different number of samples.
+These simulations can be performed for a number of the different sampling methods for several numbers of samples.
 
 
 .. csv-table:: 
-   :header: "Method", "#Samples", "E(P,Q)", "Error"
+   :header: "Method", "#Samples", "E(P, Q)", "Error"
    :widths: 20, 20, 20, 20
 
-   MC, 100,  0.447626, 0.0560
+   MC, 100, 0.447626, 0.0560
    MC, 1000, 0.430936, 0.0166
    MC, 10000, 0.421910, 0.0047
-   LHS, 100,  0.435349, 0.0270
+   LHS, 100, 0.435349, 0.0270
    LHS, 1000, 0.425709, 0.0043
    LHS, 10000, 0.422350, 0.0037
 
