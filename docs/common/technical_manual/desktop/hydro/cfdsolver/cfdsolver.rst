@@ -1,9 +1,16 @@
 .. _lbl-openfoam:
 
+===========
 CFD Solvers
-==============
+===========
 
-.. HydroUQ leverages the power of OlaFlow for the CFD solver. The 
+.. HydroUQ leverages OpenFOAM for its 3D CFD simulations. OpenFOAM is a free, open-source software package for computational fluid dynamics (CFD). It is developed by the OpenFOAM Foundation and distributed by the OpenFOAM community. It includes a range of solvers for incompressible, compressible flows, and multiphase flows
+
+.. contents:: Table of Contents
+   :local:
+   :backlinks: none
+   :depth: 2
+
 
 Turbulence models
 --------------------
