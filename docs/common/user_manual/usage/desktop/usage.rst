@@ -53,20 +53,21 @@ The |app| is a scientific workflow application that creates workflows and runs t
 .. only:: HydroUQ_app
 
    .. _figNewUI-HydroUQ:
-
+   
    .. figure:: figures/HydroUQ_MPM_3DViewPort_OSULWF_2024.04.25.gif
       :align: center
       :figclass: align-center
 
       The |app| new graphical user interface.
 
+   
    .. _figGenericUI-HydroUQ:
-
+   
    .. figure:: figures/HydroPanel.png
-	   :align: center
-	   :figclass: align-center
-
-	   The |app| basic user interface.
+      :align: center
+      :figclass: align-center
+      
+      The |app| basic user interface.
 
 
 
@@ -83,7 +84,6 @@ The |app| is a scientific workflow application that creates workflows and runs t
 
 
 The main window of the UI comprises the following key components:
-
 
 #. **Login Button**
 
@@ -165,28 +165,28 @@ The main window of the UI comprises the following key components:
 
    .. only:: notR2D
 
-       Clicking on the **RUN at DesignSafe** button will show the remote job submission dialog shown below (:numref:`figRemJobPanel-notR2D`)
+      Clicking on the **RUN at DesignSafe** button will show the remote job submission dialog shown below (:numref:`figRemJobPanel-notR2D`)
 
       .. _figRemJobPanel-notR2D:
 
       .. figure:: figures/RemoteJobPanel_sWHALE.png
-            :align: center
-            :scale: 25%
-            :figclass: align-center
+         :align: center
+         :scale: 25%
+         :figclass: align-center
 
-            Remote job submission dialog.
+         Remote job submission dialog.
 
    .. only:: R2D_app
 
-        Clicking on the **RUN at DesignSafe** button will show the remote job submission dialog shown below (:numref:`figRemJobPanel-R2D`)
+      Clicking on the **RUN at DesignSafe** button will show the remote job submission dialog shown below (:numref:`figRemJobPanel-R2D`)
 
-        .. _figRemJobPanel-R2D:
+      .. _figRemJobPanel-R2D:
 
-        .. figure:: figures/RemoteJobPanel_rWHALE.png
-              :align: center
-              :figclass: align-center
+      .. figure:: figures/RemoteJobPanel_rWHALE.png
+         :align: center
+         :figclass: align-center
 
-              Remote job submission dialog.
+         Remote job submission dialog.
 
       Descriptions and guidelines for each input are given below:
 
@@ -194,21 +194,19 @@ The main window of the UI comprises the following key components:
 
       * **Number of Nodes**: Number of compute nodes requested. Each node includes several cores and each core can run one thread of a parallel calculation.
 
-
-      .. note:: The number of nodes requested affects the time it takes for the job to start. Jobs are queued by a so-called scheduler on the supercomputer that optimizes its performance. Jobs that use 1-2 nodes typically start almost immediately, while a larger number of nodes (e.g., more than 10) may stay in the queue for several hours.
+        .. note:: The number of nodes requested affects the time it takes for the job to start. Jobs are queued by a so-called scheduler on the supercomputer that optimizes its performance. Jobs that use 1-2 nodes typically start almost immediately, while a larger number of nodes (e.g., more than 10) may stay in the queue for several hours.
 
       * **Number of processes per Node**: Number of processors that will be utilized on each node. It is advantageous to use all available processors of a node when the memory demand of a job is small. When a job is memory intensive, e.g., large finite element models, utilizing all available processors may overwhelm the memory cache of a core and the computation will slow down. Currently, the maximum number of processors is 48 and the minimum is 1.
 
    .. only:: R2D_app
 
-         * **Number of Buildings per Task**: Number of buildings per task.
+      * **Number of Buildings per Task**: Number of buildings per task.
 
-	      .. note:: Tasks will run in parallel on their own processors. The number of tasks is equal to the number of nodes multiplied by the number of processes per node. Since it takes time to assign buildings to a task and spool up the computation, it may be advantageous to assign a batch of buildings to a task when the individual building analyses are expected to have a short runtime. A good approach is to estimate the total number of buildings to be analyzed and then select the **Number of Nodes**, **Number of processors per Node**, and **Number of Buildings per Task** so that the buildings can be strategically distributed across all processors. This is so that all processors are effectively utilized and do not sit idle.
+	     .. note:: Tasks will run in parallel on their own processors. The number of tasks is equal to the number of nodes multiplied by the number of processes per node. Since it takes time to assign buildings to a task and spool up the computation, it may be advantageous to assign a batch of buildings to a task when the individual building analyses are expected to have a short runtime. A good approach is to estimate the total number of buildings to be analyzed and then select the **Number of Nodes**, **Number of processors per Node**, and **Number of Buildings per Task** so that the buildings can be strategically distributed across all processors. This is so that all processors are effectively utilized and do not sit idle.
 
-         * **Save Intermediate Results**: Save intermediate results to a compressed folder. This is only recommended for debugging purposes because intermediate results will use a substantial amount of disk space.
+      * **Save Intermediate Results**: Save intermediate results to a compressed folder. This is only recommended for debugging purposes because intermediate results will use a substantial amount of disk space.
 
-         * **Max Run Time**: The maximum time a job will run on the DesignSafe computer, in the format of Hours:Min:Sec. The job will be terminated, and the intermediate results will be lost if the run time exceeds this threshold. The maximum runtime allowed for a job on DesignSafe is 48 hours.
-
+      * **Max Run Time**: The maximum time a job will run on the DesignSafe computer, in the format of Hours:Min:Sec. The job will be terminated, and the intermediate results will be lost if the run time exceeds this threshold. The maximum runtime allowed for a job on DesignSafe is 48 hours.
 
       .. note:: You can check the status of a remote run by clicking on the **GET from DesignSafe** button. If the analysis status shows FAILED,  log into your DesignSafe account to view the detailed output of the run. First, log in with your credentials on the `DesignSafe <https://www.designsafe-ci.org/help/new-ticket/>`_ webpage. Next, use the menu to navigate to **Workspace** -> **Tools & Applications** -> **Job Status** and then select a job and click on **More info** to view the status of that job.
 
