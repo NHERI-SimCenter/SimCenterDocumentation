@@ -1,5 +1,6 @@
-General Event Option
---------------------
+----------------------
+General Event (Legacy)
+----------------------
 
 The ``general`` event option is used to setup the flow parameters related to the water-borne hazard event. This can either be a coupling between the shallow-water and CFD solver or using the CFD solver alone. The steps of the setup process for the event have been kept nearly similar to that often used in Finite Element Method to make it easier for researchers from structural engineering background to easily use this application. This includes ``project settings`` >> ``geometry`` >> ``meshing`` >> ``materials`` >> ``initial conditions`` >> ``boundary conditions`` >> ``solver settings``. These steps are available through a tree-structure as shown in :numref:`EVTSettings`.
 
@@ -9,16 +10,16 @@ The ``general`` event option is used to setup the flow parameters related to the
    :align: center
    :figclass: align-center
 
-   The steps involved in setup of the ``Hydro`` event
+   The steps involved in setup of the ``HydroUQ`` event
 
 Each of the above steps in the setup process differs depending on the type of simulation considered. They will be outlined in detail below:
 
 .. toctree::
-    :maxdepth: 1
+   :maxdepth: 1
 
-    Project
-    Geometry
-    Meshing
-    Materials
-    Initial
-    Solver
+   Project
+   Geometry
+   Meshing
+   Materials
+   Initial
+   Solver
