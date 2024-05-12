@@ -393,10 +393,10 @@ if app_name == "HydroUQ" or app_name == "Hydro":
     #exclude_patterns.append("**/DakotaReliability.rst")
     exclude_patterns.append("**/DakotaParameterEstimation.rst")
     exclude_patterns.append("**/DakotaInverseProblems.rst")
-    exclude_patterns.append("**/damping.rst") # Added below to be more consistent with quofem - JB
     exclude_patterns.append("**/desktop/hydro-*")
     exclude_patterns.append("**/testbeds/*")
     # END TODO
+    # exclude_patterns.append("**/damping.rst") # Added below to be more consistent with quofem - JB
     # exclude_patterns.append("**/desktop/FEM.rst")
     # exclude_patterns.append("**/desktop/GI.rst")
     # exclude_patterns.append("**/desktop/SIM.rst")
