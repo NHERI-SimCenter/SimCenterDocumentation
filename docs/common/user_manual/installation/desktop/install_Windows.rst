@@ -101,7 +101,7 @@ Navigate to the |appLink| page, which should resemble |figDownload|, for a list 
       quoFEM download page.
 
 
-.. only:: Hydro
+.. only:: HydroUQ_app
 
    .. _figDownloadWin-HydroUQ:
 
@@ -179,15 +179,15 @@ Launch the application to view the user interface as shown in |figWinUI|. It's r
 
     quoFEM application on startup.
 
-.. only:: Hydro
+.. only:: HydroUQ_app
 
-    .. _figWinUI-HydroUQ:
+   .. _figWinUI-HydroUQ:
 
    .. figure:: figures/HydroWIN.png
-    :align: center
-    :figclass: align-center
+      :align: center
+      :figclass: align-center
 
-    HydroUQ tool on startup in Windows 10
+      HydroUQ tool on startup in Windows 10
 
     
 

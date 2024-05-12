@@ -1,8 +1,8 @@
 .. _lbl-solversett:
 
-***********************************************
+------
 Solver
-***********************************************
+------
 
 The solver window can be activated by selecting the option from the left panel as shown in :numref:`Solver`.
 
@@ -22,4 +22,4 @@ There are three categories of inputs required from the user.
 
 #. **Time settings:** This corresponds to when the CFD simulation start (``Start time``), end (``End time``)and time increment to be used (``Time interval``). It is important to note here that writing the results at every time step can lead to large file sizes. Thus, it is generally recommended to write once in 100 - 1000 steps. This is specified by the ``Write interval`` input.
 
-    #. *Restart option:* HydroUQ also supports a restart option. If selected, the simulation will start from the latest time directory available. The user will be required to upload existing time directories from where the simulation can start.
+   #. *Restart option:* HydroUQ also supports a restart option. If selected, the simulation will start from the latest time directory available. The user will be required to upload existing time directories from where the simulation can start.

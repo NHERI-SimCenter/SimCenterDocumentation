@@ -85,50 +85,51 @@ Now test that the application starts. To do this, navigate to the location where
    .. _figUI-PBE:
 
    .. figure:: figures/PBE.png
-	:align: center
-	:figclass: align-center
+	   :align: center
+	   :figclass: align-center
 
-	PBE application on startup.
+	   PBE application on startup.
 
 .. only:: EEUQ_app
 
    .. _figUI-EE:
 
    .. figure:: figures/EE-UQ.png
-	:align: center
-	:figclass: align-center
+	   :align: center
+	   :figclass: align-center
 
-	EE-UQ application on startup.
+	   EE-UQ application on startup.
 
 .. only:: WEUQ_app
 
    .. _figUI-WE:
 
    .. figure:: figures/WE-UQ.png
-	:align: center
-	:figclass: align-center
+	   :align: center
+	   :figclass: align-center
 
-	WE-UQ application on startup.
+	   WE-UQ application on startup.
 
 .. only:: quoFEM_app
 
    .. _figQUO_FEM:
 
    .. figure:: figures/quoFEM.png
-	:align: center
-	:figclass: align-center
+	   :align: center
+	   :figclass: align-center
 
 .. only:: HydroUQ_app
 
    .. _figUI-HydroUQ:
 
    .. figure:: figures/HydroWIN.png
-   :align: center
-   :figclass: align-center
+      :align: center
+      :figclass: align-center
 
-	quoFEM application on startup.
+	   HydroUQ application on startup.
 
 .. note::
+
    #. On a Mac, you will need to right-click on the .dmg file to open it. The user interface will not start correctly while in the DMG file, you need to open the ``.dmg`` file and then copy the |short tool name| application to your Documents or Desktop folder. You can then move the ``.dmg`` file to the trash or eject it after this has been done.
 
    #. The SimCenter is not recognized as either a Windows or an Apple vendor. Our applications are not recognized by the operating system as being signed. Consequently, you may receive a warning message when you start the |short tool name| application for the first time. Follow the procedure you used in :numref:`lblDownloadOther` to remedy this issue.

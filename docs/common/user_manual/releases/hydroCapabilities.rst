@@ -5,11 +5,9 @@
 Capabilities
 ************
 
-Version |tool version| of the |app| was released on **March 31, 2024**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+Version |tool version| of the |app| was released on **April 1st, 2024**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
-UQ (Uncertainty Quantification and Optimization Options)
-========================================================
 
 #. Water Event Selection: Users are provided with multiple paths for water borne hazard generation:
 
@@ -31,6 +29,9 @@ UQ (Uncertainty Quantification and Optimization Options)
 
 #. Response Simulation: Defines the analysis options that will be used to perform the numerical simulation, e.g., time integration strategy, convergence criteria, and damping options. The user-specified modeling tool is used to perform the simulation and collect the requested response quantities.
 
+UQ (Uncertainty Quantification and Optimization Options)
+========================================================
+
 #. Uncertainty Quantification: Samples the prescribed random input variables and obtains realizations of the outputs by executing the workflow with each input realization from the generated sample. The underlying UQ engines let you leverage the following techniques in your research:
 
    A. Forward propagation :ref:`Dakota<lblDakotaForward>` :ref:`SimCenterUQ<lblSimForward>`: Define a set of random input parameters and perform simulations to obtain a corresponding sample of output parameters and their statistics.
@@ -38,11 +39,6 @@ UQ (Uncertainty Quantification and Optimization Options)
    B. Sensitivity analysis :ref:`Dakota<lblDakotaSensitivity>` :ref:`SimCenterUQ<lblSimSensitivity>`: Measure the influence of the uncertainty in each input on the uncertainty of outputs.
 
    C. Reliability analysis :ref:`Dakota<lblDakotaReliability>` :ref:`SimCenterUQ<lblSimSensitivity>`: Algorithms to estimate the probability of exceeding a failure surface.
-
-
-.. note::
-   
-   Support for the running computation to be performed on a TACC high-performance computer, e.g. Frontera or Lonestar6, is provided through DesignSafe for all but the methods indicated with a star (*).  
 
 
 SIM (Structural Model)
