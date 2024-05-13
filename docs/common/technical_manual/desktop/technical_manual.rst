@@ -1,16 +1,13 @@
-****************
-Technical Manual
-****************
-
 
 .. toctree-filt::
-   :maxdepth: 1
+   :maxdepth: 3
 
    uqTechnical
    :EEUQ:SimCenterUQTechnical
    :quoFEM:SimCenterUQTechnical
    :quoFEM:UCSDUQTechnical
-   
+
+   :Hydro:damping
    :EEUQ:damping
    :WEUQ:damping
    :PBE:damping
@@ -23,7 +20,10 @@ Technical Manual
    :R2D:HazardSimulationTool_useCase
    :R2D:spatial_correlation
    :R2D:hazard_occurrence
-   
-..   :WEUQ:WEUQ/computationalWindLoadEvaluation
 
-   
+   :Hydro:hydro/hazards/water
+   :Hydro:hydro/swsolver/swsolver
+   :Hydro:hydro/cfdsolver/cfdsolver
+   :Hydro:hydro/fvm/fvm
+   :Hydro:hydro/mpm/mpm
+   :Hydro:hydro/verification/verification

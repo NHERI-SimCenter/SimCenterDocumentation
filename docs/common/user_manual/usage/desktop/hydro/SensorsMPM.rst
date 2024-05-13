@@ -1,8 +1,8 @@
 .. _lbl-SensorsMPM:
 
-***********************************************
+-------
 Sensors
-***********************************************
+-------
 
 Sensors are used to measure physical quantities such as force, pressure, etc. within the simulation. Fundamentally, a sensor is a function that maps the state of the simulation within some specified space to a scalar or vector value. These functions are often "higher-order", i.e. reduction operation such as max or add. 
 

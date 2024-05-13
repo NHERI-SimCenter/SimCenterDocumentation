@@ -1,5 +1,6 @@
 .. _lblDamping:
 
+===============
 Damping Options
 ===============
 
@@ -12,8 +13,13 @@ where :math:`U(t), \dot{U}(t), \ddot{U}(t)` are the vectors of displacements, ve
 
 Energy is dissipated by the structure as it deforms, which is why it comes to rest when the force is removed. The :math:`Fs(U(t))` term captures the **hysteretic** energy dissipated through the nonlinear behavior of the structural members. The :math:`C \dot{U}(t)` term, the **viscous** damping term, attempts to capture energy dissipated through other mechanisms present in the structure, e.g. thermal effects from repeated elastic straining of structural materials, repeated straining of nonstructural elements—partition walls, mechanical equipment, fireproofing, and so on—friction at steel connections, opening and closing of microcracks in concrete, friction between the structure itself and nonstructural elements, and other mechanisms, some of which are even difficult to identify. Damping for such is often quantified in terms of **modal** damping ratios, and are typically of the order of 1% (steel buildings) to 5% (concrete buildings). These values have been obtained from field testing and system identification, albeit they have mostly been obtained from buildings undergoing low levels of vibration.
 
-It is the formulation of the :math:`C` matrix that is of interest here. There are two damping options presented to the user as inputs to the :ref:`FEM <lblFEM>` panel: 1) Rayleigh Damping Options and 2) Modal Damping options. This is a brief overview of the theory behind both.
+It is the formulation of the :math:`C` matrix that is of interest here. There are two damping options presented to the user as inputs to the :ref:`FEM <lblFEM>` panel, this section is a brief overview of the theory behind both.
 
+.. contents:: Table of Contents
+   :local:
+   :backlinks: none
+
+.. _lblRayleighDamping:
 
 Rayleigh Damping
 ----------------
@@ -91,9 +97,10 @@ The coefficients :math:`a_0` and :math:`a_1` are typically determined by specify
    Different approaches are of course possible, e.g. where the user explicitly models damping. These must be specified by the user in the optional analysis script they provide.
 
 
+.. _lblModalDamping:
 
 Modal Damping
----------------
+-------------
 
 In modal damping the eigenvectors :math:`\Phi` of the :math:`N` degree-of-freedom system are used to create the :math:`C` matrix.
 

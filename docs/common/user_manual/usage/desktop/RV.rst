@@ -1,6 +1,6 @@
 .. _rv:
 
-
+====================
 RV: Random Variables
 ====================
 
@@ -38,7 +38,7 @@ The following six distribution classes are supported for the Dakota UQ engine.
 
       f(x) = \frac{1}{\sqrt{2 \pi} \zeta x} \exp \left( -{\frac{1}{2} \left( \frac{\ln x - \lambda}{\zeta} \right)^2} \right)
 
-  where :math:`\zeta^2 = \ln \left( \frac{\sigma^2}{\mu^2} + 1 \right)` and :math:`\lambda = \ln(\mu) - \frac{\zeta^2}{2}`
+   where :math:`\zeta^2 = \ln \left( \frac{\sigma^2}{\mu^2} + 1 \right)` and :math:`\lambda = \ln(\mu) - \frac{\zeta^2}{2}`
 
 
 3. `Beta <https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-beta_uncertain.html>`_
@@ -242,8 +242,8 @@ For each random variable, the user must enter a name and select from the drop-do
       - When more than one random variable is provided as ``Dataset``, correlations between the data pairs will not be incorporated automatically. If correlations exist, the user can define them manually at the correlation matrix window.
 
    .. warning::
-
-       Correlation warping for Nataf variable transformation of **beta** distributions is currently not supported.
+      
+      Correlation warping for Nataf variable transformation of **beta** distributions is currently not supported.
 
 
 .. only:: quoFEM_app

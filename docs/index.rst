@@ -115,7 +115,6 @@
    :pelicun:common/user_manual/installation/pelicun/installation
 
    :quoFEM:common/user_manual/about/quoFEM/quoFEMtutorial
-   .. :Hydro:common/user_manual/about/Hydro/HydroUQtutorial
 
    :EEUQ:common/user_manual/usage/desktop/usage
    :WEUQ:common/user_manual/usage/desktop/usage
@@ -126,12 +125,9 @@
    :R2D:common/user_manual/usage/desktop/usage
    :pelicun:common/user_manual/usage/pelicun/usage
 
-
    :R2D:common/user_manual/usage/desktop/R2DTool/tools
    :WEUQ:common/user_manual/usage/desktop/wind/tools
-	:Hydro:common/user_manual/usage/desktop/hydro/tools
-
-
+   :Hydro:common/user_manual/usage/desktop/hydro/tools
 
    :EEUQ:common/user_manual/examples/desktop/examples
    :WEUQ:common/user_manual/examples/desktop/examples
@@ -140,6 +136,8 @@
    :quoFEM:common/user_manual/examples/desktop/examples
    :R2D:common/user_manual/examples/desktop/examples
    :pelicun:common/user_manual/examples/pelicun/examples
+   
+   :Hydro:common/user_manual/usage/desktop/hydro/bestpractices
 
    :EEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
    :WEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
@@ -150,8 +148,6 @@
    :Hydro:common/user_manual/troubleshooting/desktop/troubleshooting
 
 
-   :Hydro:common/user_manual/usage/desktop/hydro/bestpractices
-
    :EEUQ:common/reqments/EEUQ
    :WEUQ:common/reqments/WEUQ
    :PBE:common/reqments/PBE
@@ -160,14 +156,12 @@
    :pelicun:common/reqments/reqPelicun
    :Hydro:common/reqments/HydroUQ
 
-
    common/user_manual/bugs
    :quoFEM:common/user_manual/dcv/quoFEM/quoFEM
    :quoFEM:common/user_manual/usage/desktop/quoFEM/usage_video
-   .. :Hydro:common/user_manual/dcv/Hydro/HydroUQ
-
 
    :Hydro:common/user_manual/usage/desktop/hydro/helpvideo
+
    .. :Hydro:common/user_manual/user_inputs_documentation/User_Input_Documentation_Tables
 
 .. _lbl-testbeds-manual:
@@ -207,13 +201,6 @@
    :quoFEM:common/technical_manual/desktop/technical_manual
    :R2D:common/technical_manual/desktop/technical_manual
    :Hydro:common/technical_manual/desktop/technical_manual
-   :Hydro:common/technical_manual/desktop/hydro/hazards/water
-   :Hydro:common/technical_manual/desktop/hydro/mpm/mpm
-   :Hydro:common/technical_manual/desktop/hydro/fvm/fvm
-   :Hydro:common/technical_manual/desktop/hydro/swsolver/swsolver
-   :Hydro:common/technical_manual/desktop/hydro/cfdsolver/cfdsolver
-   :Hydro:common/technical_manual/desktop/hydro/verification/verification
-
 
    :pelicun:common/technical_manual/pelicun/background/background
    :pelicun:common/technical_manual/pelicun/verification/verification

@@ -1,8 +1,8 @@
 .. _lbl-uguide:
 
-*********************
+**********
 User Guide
-*********************
+**********
 
 The HydroUQ app, as will be discussed in :ref:`lblArchitecture`, is a hazard event application. In addition to the hazard event, the workflow also includes other aspects, like UQ and FEM engine. Each of these workflow elements can involve multiple different backend applications. Once the Hydro-UQ app is started, the user is presented with the user interface shown in :numref:`primaryGUI`. In this UI, the user selects the applications to run in a workflow, inputs the necessary parameters for each of these applications, starts the workflow either locally or remotely, and finally views the simulation results. The main window of the UI is divided into several separate areas. Each of these areas is discussed in the upcoming sections.
 
@@ -14,7 +14,7 @@ The HydroUQ app, as will be discussed in :ref:`lblArchitecture`, is a hazard eve
 
    The Hydro-UQ app user interface, with the EVT panel selected and the lnew HydroUQ v3.0 GUI. Numerical solver shown is the MPM solver, which is only available as a standalone pop-out Tool in the current app release, with integration in the next release.
 
-.. _legacyGUI
+.. _legacyGUI:
 
 .. figure:: figures/HydroPanel.png
    :align: center
@@ -43,16 +43,16 @@ The action buttons consist of several possible action buttons. This includes:
 The ribbon on the left side provides the user with a selection of buttons to choose from (e.g., **UQ**, **GI**, **SIM**, **EVT**, **RV**, **FEM**, **EDP**, **RES**). Selecting any of these buttons will change what is displayed in the central input panel. Except for the **RV** panel, each panel will present the user with an option for which application to choose for that part of the workflow and then present the users for inputs for that application. Of particular interest here is the **EVT**, where all flow parameters are assigned. At present, the other inputs have not been integrated into the Hydro-UQ application. More information will be provided as and when the other inputs are integrated.
 
 .. toctree::
-    :maxdepth: 1
+   :maxdepth: 4
 
-    UQ
-    GI
-    SIM
-    EVT
-    FEM
-    EDP
-    RV
-    RES
+   UQ
+   GI
+   SIM
+   EVT
+   FEM
+   EDP
+   RV
+   RES
 
 .. **4. Event type selection panel:**
 
@@ -65,7 +65,3 @@ The ribbon on the left side provides the user with a selection of buttons to cho
 .. **4. Event simulation parameter panel:**
 
 .. All the parameters related to the simulation for the ``EVT`` are provided by the user in this panel.
-
-.. .. note::
-
-..     For other tabs, other than the ``EVT``, the event simulation and event simulation parameter panels are merged into one large central area. This central area of the UI is where the user provides input for the other tabs and views the results. For example, suppose the user had selected **RV** in the input panel selection. In that case, it is in this panel that the user would provide details on the distributions associated with each random variable. In the following sections, each of the panels is presented to the user when the buttons in the input panel selection are reviewed

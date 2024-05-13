@@ -152,7 +152,7 @@ To download the |app|, navigate to the |appLink| page which should resemble |fig
       quoFEM download page.
 
 
-.. only:: Hydro
+.. only:: HydroUQ_app
 
    .. _figDownload:
 
@@ -242,29 +242,28 @@ Once the application starts, verify the setup by running an example problem |tes
            :figclass: align-center
            :width: 75%
 
-
     quoFEM application on startup.
 
 
-.. only:: Hydro
+.. only:: HydroUQ_app
 
    .. _figUI-HydroUQ:
 
    .. figure:: figures/HydroMac.png
-        :align: center
-        :figclass: align-center
-        :width: 75%
-
-    HydroUQ application on startup.
+      :align: center
+      :figclass: align-center
+      :width: 75%
+      
+      HydroUQ application on startup.
 
 .. note::
 
    When the |app| is running, open the app/preferences or File/Preferences and make sure that python3 appears under **External Applications:Python**, as shown in the figure below. If you used older versions of SimCenter tools this was not the default. The exact location of Python3 that you installed can be found by opening the terminal application and executing the **which python3** command. Enter the path shown as a response in the Preferences panel under Python and then press the **Save** button.
 
-      .. figure:: figures/pythonPreferences.png
-           :align: center
-           :figclass: align-center
-           :width: 75%
+   .. figure:: figures/pythonPreferences.png
+      :align: center
+      :figclass: align-center
+      :width: 75%
 
-    Set Python Preferences.
+      Set Python Preferences.
 

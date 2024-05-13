@@ -1,5 +1,6 @@
 .. _lbluqTechnical:
 
+==============
 Dakota Methods
 ==============
 
