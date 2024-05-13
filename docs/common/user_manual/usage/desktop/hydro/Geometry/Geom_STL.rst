@@ -1,5 +1,9 @@
 .. _lbl-geom-stl:
 
+------------------
+STL Input Geometry
+------------------
+
 Here the user needs to provide the ``STL`` files related to the geometry here of the ocean floor. In addition, it is required to provide separate ``STL`` files for all the boundaries and buildings. The files need to be in the 'STL ASCII format. The files need to be named as
 
 #. **Entry.stl** - This is the patch for the inlet of the fluid
@@ -21,5 +25,4 @@ The other input is the direction of gravity. For this type of simulation, it is 
    UI for loading the geometry as ``STL`` files
     
 .. note::
-
-    #. It is necessary to provide each of these ``STL`` files separately. Hydro-UQ uses them to determine the boundary conditions accurately.
+   It is necessary to provide each of these ``STL`` files separately. Hydro-UQ uses them to determine the boundary conditions accurately.

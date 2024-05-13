@@ -1,7 +1,18 @@
 .. _lbl-mpm:
 
+*********************
 Material Point Method
-=====================
+*********************
+
+.. contents:: Table of Contents
+    :local:
+    :backlinks: none
+
+.. _lbl-mpm-intro:
+
+============
+Introduction
+============
 
 Similar to other numerical methods, the Material Point Method (MPM) [Sulsky1994]_ transforms a set of partial differential equations (PDE) into a system of linear algebraic equations. We explain our reasoning for choosing this method and our reasoning for avoiding others. Note that the derivation of traditional MPM presented here is similar to previous descriptions used by MPM researchers in natural hazards engineering (Carter Mast [Carter2013Dissertation]_, Wen-Chia Yang [Yang2016Dissertation]_, and Wookuen Shin [Shin2009Dissertation]_) to maintain nomenclature consistency. 
 
@@ -15,12 +26,12 @@ Loosely, a Material Point Method cycle can be described graphically by :numref:`
 .. _MPM_CBGeo:
 
 .. figure:: images/MPM_CBGeoFlowchart.png
-    :width: 600px
-    :align: center
-    :alt: alternate text
-    :figclass: align-center
+   :width: 600px
+   :align: center
+   :alt: alternate text
+   :figclass: align-center
 
-    Material Point Method numerical steps as a flowchart (Source: `CB-Geo MPM <https://www.cb-geo.com/research/mpm/>`_)
+   Material Point Method numerical steps as a flowchart (Source: `CB-Geo MPM <https://www.cb-geo.com/research/mpm/>`_)
 
 
 In this context, the Material Point Method (MPM) is a numerical technique that is best suited for modeling history dependent materials in a dynamic, large deformation setting. The formulation tracks moving points relative to stationary nodes, and can be used to capture the behavior of both fluids and solids in a unified framework. The standard, or traditional implementation solves the governing equation of motion at fixed nodes that collectively form a grid.  
@@ -47,9 +58,11 @@ The primary goal of any analyses is to track the system in time while monitoring
 When the governing equation is conservation of linear momentum, material point quantities of mass, momentum, and force are mapped to the appropriate nodes as indicated in :numref:`MPM_CBGeo`. After collecting contributions from all particles in the support, the nodal acceleration and velocity vectors are determined over :math:`\Delta t` as observed in :numref:`MPM_CBGeo` (b). 
 The velocity gradient and the corresponding strain increment are mapped to the particle location using the updated nodal velocity. The particle stress and material state variables are computed from the desired constitutive model as part of the third step highlighted in :numref:`MPM_CBGeo` (c). Finally, the incremental changes in nodal velocity and position are mapped from the nodes to the particles, resulting in a fully updated system at the particle level. After :numref:`MPM_CBGeo` (d) the procedure begins again and the computational cycle is repeated for a prescribed time duration. 
 
+.. _lbl-mpm-derivation:
 
+==========
 Derivation
-------------
+==========
 
 The traditional approach [Sulsky1993]_ is built around conservation of linear momentum, which when expressed in differential form appears as follows:
 
@@ -168,8 +181,11 @@ where :math:`\bar{\mathbf{\sigma}}` and :math:`\bar{\mathbf{b}}` are the mass-sp
 
 .. \label{Sec:MPM_ConstructingTheSystemOfEquations}
 
+.. _lbl-mpm-soe:
+
+====================================
 Constructing the System of Equations
-------------------------------------
+====================================
 
 The discrete set of equations 
 
@@ -341,66 +357,11 @@ The details provided here highlight the very basics of the Material Point Method
 .. MPM revolves around conservation of quantities such as mass, momentum and energy, typically associated with fluid mechanics problems. Since this method is based on applying conservation principles over each control volume, global conservation of each quantity is already ensured. One of the first objectives of MPM is discretization or dividing the physical domain into a finite number of small control volumes or cells. There is no restriction on the shape of the control volume although it is necessary that the resulting volume is convex and the faces that make up the control volume should be planar (3D) and bounded by straight edges (2D). All data about the control variables are stored at the centroid of each control volume and extra boundary nodes are often added for convenience. 
 
 
+.. _lbl-mpm-references:
 
-Numerical integration
------------------------------
-
-The conservation equation for any given general scalar variable :math:`\phi` can be given as
-
-.. math::
-    \underbrace{\frac{\partial \left( \rho \phi \right)}{\partial t}}_{\text{Transient term}} + \underbrace{\nabla \cdot \left( \rho \mathbf{v} \phi \right)}_{\text{Convective term}} = \underbrace{\nabla \cdot \left( \Gamma^{\phi} \nabla\phi \right)}_{\text{Diffusion term}} + \underbrace{Q^{\phi}}_{\text{Source term}}
-
-where :math:`\rho` is the density of the fluid, :math:`\mathbf{v}` is the velocity vector. Considering the quasi-static flow, by dropping the transient term, and integrating over the volume of an element, we have
-
-.. math::
-    \int_{\Omega} {\nabla \cdot \left(\rho\mathbf{v}\phi\right) \ d\Omega} = \int_{\Omega} {\nabla \cdot \left( \Gamma^{\phi} \nabla\phi \right) \ d\Omega} + \int_{\Omega} {Q^{\phi} \ d\Omega} 
-
-Using the divergence theorem, the above can be re-written in terms of surface integrals as
-
-.. math::
-    \int_{\Gamma} {\left(\rho\mathbf{v}\phi\right) \ d\Gamma} = \int_{\Gamma} {\left( \Gamma^{\phi} \nabla\phi \right) \ d\Gamma} + \int_{\Omega} {Q^{\phi} \ d\Omega} 
-
-The above integral form requires the evaluation of the flux integration over the elemental faces for the convective and diffusion terms. This can be alternatively written as the summation of the flux terms over each of the individual faces of the element, i.e.
-
-.. math::
-    \begin{split}
-    \int_{\Gamma} {\left(\rho\mathbf{v}\phi\right) \ d\Gamma} &= \sum_{i = 1}^{n\left(\Omega\right)} \left( \int_{\Gamma_i} {\left(\rho\mathbf{v}\phi\right) \ d\Gamma} \right) \\
-    \int_{\Gamma} {\left( \Gamma^{\phi} \nabla\phi \right) \ d\Gamma} &= \sum_{i = 1}^{n\left(\Omega\right)} \left( \int_{\Gamma_i} {\left( \Gamma^{\phi} \nabla\phi \right) \ d\Gamma} \right)
-    \end{split}
-
-where :math:`n\left(\Omega\right)` represents the number of faces of the element with volume :math:`\Omega`, :math:`\Gamma_i` represents the :math:`i`-th face of the element with volume :math:`\Omega`. The above form of discretization ensures the conservation of quantities. It is important to note that the quantities of interest are conservative in nature. These include mass, volume, energy etc. Thus, without the convervative properties, the overall solution process can lead to unphysical solutions. In other words, the flux across the face of two shared elements need to have equal magnitudes but of opposite signs. The flux leaving the face of the first element should be equal to the flux entering, through the face, into the second element.
-
-The resulting integral equations, shown above, include surface integral over each face of the element. These integral equations need to be converted to algebraic equations and are hence further simplified using the Gaussian quadrature as
-
-.. math::
-    \int_{\Gamma_i} {\left( \alpha \right) \ d\Gamma} = \sum_{p} {\alpha_p w_p} A_{\Gamma_i}
-
-where :math:`\alpha` represents the quantity of interest (here the advection or diffusion term), :math:`A_{\Gamma_i}` represents the area of the face, :math:`\alpha_p` represents the quantity of interest at the :math:`p-th` integration point, :math:`w_p` represents the weight at the :math:`p-th` integration point. The accuracy of the integration depends on the number of integration points used. In the case of a 2-D problem, the faces are 1-D line units and the integration points are given as
-
-* **One-integration point (or also known as Trapezoidal rule):** :math:`\xi_{p} = 1` and :math:`w_{p} = 1`
-
-* **Two-integration points:** :math:`\xi_{1} = \left(3-\sqrt{3}\right)/6, \ \xi_{2} = \left(3+\sqrt{3}\right)/6` and :math:`w_{1} = w_{2} = 1/2`.
-
-* **Three-integration points:** :math:`\xi_{1} = \left(5-\sqrt{15}\right)/10, \ \xi_{2} = 1/2, \ \xi_{3} = \left(5+\sqrt{15}\right)/10` and :math:`w_{1} = 5/18, \ w_{2} = 4/9, \ w_{3} = 5/18`.
-
-Similarly, the volume integration of the source term can be achieved using the Gaussian quadrature. Similar to the integration over the boundary, a volume integral need to be performed.
-
-Once the PDE's have been converted to a summation form above, it is necessary to express the face and volume fluxes in terms of the values of the variable at the neighboring cell centers or in otherwods, we need to linearize the fluxes.
-
-Points to note
-^^^^^^^^^^^^^^^^^
-
-* One other aspect that needs to be considered is the effect of hydrostatic pressure. Thus, one also needs to consider which direction the gravity is pointed in.
-
-
+==========
 References
------------
-.. [MoMaDa2016] F. Moukalled, L. Mangani and M. Darwish, "The finite volume method in computational fluid dynamics," Springer International Publishing Switzerland (2016)
-
-.. [HiNi1981] C. W. Hirt and B. D. Nichols , "Volume of fluid (VOF) method for the dynamics of free boundaries," Journal of Computational Physics, vol. 39(1), pp. 201-225 (1981)
-
-.. [Beetal2009] E. Berberovic, N. P. Van Hinsberg, S. Jakirlic, I. V. Roisman, C. Tropea, "Drop impact onto a liquid layer of finite thickness: Dynamics of the cavity evolution," Physical Review E, vol. 79 (2009)
-
+==========
 .. [Carter2013Dissertation] Mast, C. M. (2013). Modeling Landslide-Induced Flow Interactions with Structures using the Material Point Method. PhD thesis. University of Washington, Seattle, WA. https://digital.lib.washington.edu/researchworks/bitstream/handle/1773/23580/Mast_washington_0250E_11795.pdf?sequence=1
 
 .. [Shin2009Dissertation] Shin, W. (2009). Modeling Mixing and Separation of Solid Matter and Fluid in Landslides and Debris Flows by Representing the Multiphase Material through Distinct Phases. PhD thesis. University of Washington, Seattle, WA.

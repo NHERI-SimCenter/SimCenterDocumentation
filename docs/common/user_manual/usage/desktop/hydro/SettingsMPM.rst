@@ -1,8 +1,8 @@
 .. _lbl-SettingsMPM:
 
-***********************************************
+--------
 Settings
-***********************************************
+--------
 
 Settings for the simulation that are not specific to a body, boundary, or sensor (i.e. global settings) are collected here. They sort into a few primary categories:
 

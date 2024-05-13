@@ -1,5 +1,9 @@
 .. _lbl-geom-wflume:
 
+-------------------
+Wave Flume Geometry
+-------------------
+
 This constitutes the geometric definition of the wave flume. This is the first step in the description of the digital twin for the wave flume. One of the inputs is the direction of gravity. For this type of simulation, it is recommended to use ``-z`` for the gravity direction.
 
 **Standard OSU flume**
@@ -50,5 +54,4 @@ Alternatively, the user can define their own custom wave-flume geometry, as show
    Defining a custom wave-flume geometry
 
 .. note::
-
-    #. The breadth of the flume needs to be greater than 0. If the breadth is too small, this can lead to numerical issues.
+   The breadth of the flume needs to be greater than 0. If the breadth is too small, this can lead to numerical issues.

@@ -43,6 +43,7 @@ The Mac comes with Python pre-installed, which is currently the outdated version
 **macOS 64-bit installer**. The installer will place a python3 executable in your /usr/local/bin directory, whose location should be on your system PATH. Version 3.8 does not appear to do so anymore, see the note below. 
 
 .. note:: 
+   
    #. We use the python.org installation over others, due to its simplicity of installation.
    #. In the current installation of Python it leaves two script files in a folder when the installation ends. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal. To execute the files, double-click on them. The two files, shown in the image below, are: ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh``.
 
@@ -63,6 +64,7 @@ Once Python is installed, you need to extend it by installing the following pack
       pip3 install hdf5
 
 .. note:: 
+
    #. To start a terminal window you can use the spotlight app (magnifying glass at the top right corner of the desktop). Start the spotlight app and type in the terminal. The terminal application should appear as the top hit. Click on it to start it.
 
    #. When the |app| is running, open the File/Preferences and make sure that python3 appears under **External Applications:Python**. If you used older versions of SimCenter tools this was not the default.
