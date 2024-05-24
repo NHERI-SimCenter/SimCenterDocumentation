@@ -167,8 +167,6 @@ UML WE-UQ
 
 
 
-
-
 .. only:: PBE
 
 .. _lblUmlPBE:
