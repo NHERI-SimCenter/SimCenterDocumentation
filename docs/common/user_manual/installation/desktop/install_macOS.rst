@@ -1,5 +1,6 @@
 .. _lblInstallMac:
 
+===================
 Install on MacOS
 ===================
 
@@ -8,69 +9,78 @@ Install Python 3.9
 
 SimCenter tools require an x86-based Python 3.9. If your current Python version is incompatible, follow these steps to install the required version from `Python.org <https://www.python.org/downloads/macos/>`_.
 
-To check your Python version compatibility, issue the following in a terminal window.
+#. To check your Python version compatibility, issue the following in a terminal window.
 
-.. code::
+   .. code::
    
-   python3
-   import platform
-   platform.uname()
-   exit()
+      python3
+      import platform
+      platform.uname()
+      exit()
 
-Ensure the output indicates Python 3.9 and `machine='x86_64'`, as shown in the screenshot below. If not, proceed to install Python 3.9 x86.
+   Ensure the output indicates Python 3.9 and `machine='x86_64'`, as shown in the screenshot below. If not, proceed to install Python 3.9 x86.
 
-.. figure:: figures/pythonKernel.png
+   .. figure:: figures/pythonKernel.png
       :align: center
       :figclass: align-center
       :width: 75%
-
+      
       Python: Kernel Version
-**1.** Visit `Python.org <https://www.python.org/downloads/macos/>`_ and download the **macOS 64-bit Intel-only installer** for Python 3.9.
 
-.. figure:: figures/pythonDownload.png
+#. Visit `Python.org <https://www.python.org/downloads/macos/>`_ and download the **macOS 64-bit Intel-only installer** for Python 3.9.
+
+   .. figure:: figures/pythonDownload.png
       :align: center
       :figclass: align-center
-
+      
       Python: python.org MacOS Download Page
-**2.** Run the installer. Upon completion, a folder with several files will open, as shown in the figure below. Execute ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh`` by double-clicking each.
+
+#. Run the installer. Upon completion, a folder with several files will open, as shown in the figure below. Execute ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh`` by double-clicking each.
 
    .. figure:: figures/pythonInstallShell.png
       :align: center
       :figclass: align-center
       :width: 75%
-
+      
       Python: Folder Displayed at Conclusion of Install
-**3.** Install additional packages via the **nheri_simcenter** package by starting a Terminal window and type the following command:
 
-.. code-block:: bash
+#. Install additional packages via the **nheri_simcenter** package by starting a Terminal window and type the following command:
 
+   .. code-block:: bash
+      
       pip3 install nheri_simcenter --upgrade
+      python3 -m pip3 install --upgrade nheri_simcenter
 
 
-Make sure you see a message that confirms the successful installation of the nheri-simcenter package before proceeding to the next step.
+   .. note::
+      Use of `pip` versus `pip3`, and `python` versus `python3` or `python3.9` may vary depending on your system configuration. 
+      If the above commands fail, try using `pip` and `python` instead.
+
+
+   Make sure you see a message that confirms the successful installation of the nheri-simcenter package before proceeding to the next step.
 
 .. note::
 
    1. If you forget to invoke the ``UpdateShellProfile.command.sh`` script at the end of the install, you can always execute the correct shell file later to update the ``PATH`` variable to point to the Python application.
+      On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e., there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the **bash** shell, and the up-and-coming one is the **Z** shell. Power MacOS users will write shell scripts to do many useful things. By default, the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the user's ``PATH``. Users can modify this path by editing files that the shell program will read from every time the program is started.
+      When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of some of the external applications that you have installed as **OpenSees** and **Dakota** do not provide installers that automatically do this when they are installed. Other applications, like **Tcl** provide scripts that you invoke to do it. In short, you have to edit the file appropriate to the shell you are using.
 
-   On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e., there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the **bash** shell, and the up-and-coming one is the **Z** shell. Power MacOS users will write shell scripts to do many useful things. By default, the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the user's ``PATH``. Users can modify this path by editing files that the shell program will read from every time the program is started.
+      To find which shell program you are using when you issue commands inside the terminal window, type the following:
 
-   When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of some of the external applications that you have installed as **OpenSees** and **Dakota** do not provide installers that automatically do this when they are installed. Other applications, like **Tcl** provide scripts that you invoke to do it. In short, you have to edit the file appropriate to the shell you are using.
+      .. code:: bash
 
-   To find which shell program you are using when you issue commands inside the terminal window, type the following:
+         env | grep SHELL
 
-   .. code:: bash
 
-      env | grep SHELL
-
-   If the result is ``/bin/bash`` you will need to edit the ``.bashrc`` file or the ``bash_profile`` file. If the result is ``/bin/zsh`` you will need to edit the ``.zshrc`` or ``.zprofile``. Typically, the ``.bash_profile`` or the ``.zprofile`` file is the one to edit as by design these will invoke the ``.bashrc`` or ``.zshrc`` file. If in doubt, look for these files in your home directory and see which of these other installers have modified.
+      If the result is ``/bin/bash`` you will need to edit the ``.bashrc`` file or the ``bash_profile`` file. If the result is ``/bin/zsh`` you will need to edit the ``.zshrc`` or ``.zprofile``. Typically, the ``.bash_profile`` or the ``.zprofile`` file is the one to edit as by design these will invoke the ``.bashrc`` or ``.zshrc`` file. If in doubt, look for these files in your home directory and see which of these other installers have modified.
 
    2. Python 3.10 from python.org will also work, though there is no x86 installer. The reason we do not recommend its usage is that there are additional settings that need to be modified in the application under the Preferences tab as that python package has a different mechanism for invoking the x86 version, specifically **python3-intel64**.
+
 
 .. only:: R2D_app
 
    **Install Java**
-   ^^^^^^^^^^^^
+   ^^^^^^^^^^^^^^^^
 
    .. note::
       Java is required for utilizing OpenSHA for regional seismic hazard characterization (:ref:`ground_motion_tool`). Skip this step if you do not intend to use this feature.
@@ -89,9 +99,26 @@ Make sure you see a message that confirms the successful installation of the nhe
    This version of the |app| uses *OpenFOAM* for pre-processing the CFD model. At the backend, the mesh generation and visualization in the GUI utilize *OpenFOAM-10* built-in meshing tools.  
 
    .. note::
-     The packaged distribution of OpenFOAM is only available for Linux systems. To install OpenFOAM on macOS, the user needs to use Docker for Mac. Docker will provide a virtual environment for running Linux applications on macOS.
+      The packaged distribution of OpenFOAM is only available for Linux systems. To install OpenFOAM on macOS, the user needs to use Docker for Mac. Docker will provide a virtual environment for running Linux applications on macOS.
 
    To install OpenFOAM-10 on macOS, follow the instructions in `OpenFOAM for macOS <https://openfoam.org/download/10-macos/>`_ .
+
+
+
+
+.. only:: HydroUQ_app
+   
+   Install OpenFOAM for macOS
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   
+   This version of the |app| uses *OpenFOAM* for pre-processing the CFD model. At the backend, the mesh generation and visualization in the GUI utilize *OpenFOAM-10* built-in meshing tools.  
+
+   .. note::
+      The packaged distribution of OpenFOAM is only available for Linux systems. To install OpenFOAM on macOS, the user needs to use Docker for Mac. Docker will provide a virtual environment for running Linux applications on macOS.
+
+   To install OpenFOAM-10 on macOS, follow the instructions in `OpenFOAM for macOS <https://openfoam.org/download/10-macos/>`_ .
+
+
 
 **Download the Application**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -100,66 +127,68 @@ To download the |app|, navigate to the |appLink| page which should resemble |fig
 
 .. only:: R2D_app
 
-   .. _figDownload:
+   .. _figDownload-R2D:
 
    .. figure:: figures/R2DDownload.png
       :align: center
       :figclass: align-center
-
+      
       R2D Tool download page.
 
 
 .. only:: PBE_app
 
-   .. _figDownload:
+   .. _figDownload-PBE:
 
    .. figure:: figures/pbeDownload.png
       :align: center
       :figclass: align-center
-
+      
       PBE download page.
+
 
 .. only:: EEUQ_app
 
-   .. _figDownload:
+   .. _figDownload-EE:
 
    .. figure:: figures/eeDownload.png
       :align: center
       :figclass: align-center
-
+      
       EE-UQ download page.
+
 
 .. only:: WEUQ_app
 
-   .. _figDownload:
+   .. _figDownload-WE:
 
    .. figure:: figures/weDownload.png
       :align: center
       :figclass: align-center
-
+      
       WE-UQ download page.
 
 
 .. only:: quoFEM_app
 
-   .. _figDownload:
+   .. _figDownload-quoFEM:
 
    .. figure:: figures/quoFEMDownload.png
       :align: center
       :figclass: align-center
       :width: 75%
-
+      
       quoFEM download page.
 
 
 .. only:: HydroUQ_app
 
-   .. _figDownload:
+   .. _figDownload-HydroUQ:
 
    .. figure:: figures/H20Download.png
       :align: center
       :figclass: align-center
-
+      
       HydroUQ tool download page.
 
 
@@ -167,8 +196,8 @@ To download the |app|, navigate to the |appLink| page which should resemble |fig
 Click on the file with a name ending with **Mac_Download.dmg** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner. After the download is completed, open the dmg file and **copy** the |short tool name| **to a location in your filesystem**.
 
 .. note::
-
    We suggest copying the application to your Desktop. After copying the application, you can move the dmg file to the trash or eject it.
+
 
 Test the Installation
 ^^^^^^^^^^^^^^^^^^^^^
@@ -258,14 +287,14 @@ Once the application starts, verify the setup by running an example problem |tes
 
 .. note::
 
-   When the |app| is running, open the app/preferences or File/Preferences and make sure that python3 appears under **External Applications:Python**, as shown in the figure below. If you used older versions of SimCenter tools this was not the default. The exact location of Python3 that you installed can be found by opening the terminal application and executing the **which python3** command. Enter the path shown as a response in the Preferences panel under Python and then press the **Save** button.
+   When the |app| is running, open the app/preferences or File/Preferences and make sure that ``python3`` appears under **External Applications:Python**, as shown in the figure below. If you used older versions of SimCenter tools this was not the default. The exact location of Python3 that you installed can be found by opening the terminal application and executing the **which python3** command. Enter the path shown as a response in the Preferences panel under Python and then press the **Save** button.
 
-      .. _figUI-preferences:
+   .. _figUI-preferences:
+   
+   .. figure:: figures/pythonPreferences.png
+      :align: center
+      :figclass: align-center
+      :width: 75%
       
-      .. figure:: figures/pythonPreferences.png
-           :align: center
-           :figclass: align-center
-           :width: 75%
-
       Set Python Preferences.
 
