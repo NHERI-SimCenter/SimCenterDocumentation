@@ -3,9 +3,9 @@
 Hurricane Scenario
 ------------------
 
-This tool dialog is where user can enter data for a specific Hurricane and it will generate a wind field for a specific region..
+This tool dialog is where the user can enter data for a specific hurricane, and it will generate a wind field for a specific region.
 
-The **Hurricane Scenario Simulation**, seen in :numref:`fig-R2DHurricaneMainPanel`, is an tool that calculates a wind field over a user defined grid. The application is implemented based on the method proposed by [SnaikiWu2017a]_ and [SnaikiWu2017b]_. The GIS visualization window, seen at the bottom of :numref:`fig-R2DHurricaneMainPanel`, is used to interactively define hurricane inputs. At a minimum, a user needs to specify a set of hurricane track points, landfall location and parameters, and a wind field grid. The individual input panes are discussed below.
+The **Hurricane Scenario Simulation**, seen in :numref:`fig-R2DHurricaneMainPanel`, is a tool that calculates a wind field over a user-defined grid. The application is implemented based on the method proposed by [SnaikiWu2017a]_ and [SnaikiWu2017b]_. The GIS visualization window, seen at the bottom of :numref:`fig-R2DHurricaneMainPanel`, is used to interactively define hurricane inputs. At a minimum, a user needs to specify a set of hurricane track points, landfall location and parameters, and a wind field grid. The individual input panes are discussed below.
 
 .. _fig-R2DHurricaneMainPanel:
 
@@ -17,11 +17,11 @@ The **Hurricane Scenario Simulation**, seen in :numref:`fig-R2DHurricaneMainPane
 
 **Hurricane Definition**
 
-A user has the option to specify a hurricane track and associated landfall parameters, or select a historical hurricane from a built-in database.
+A user has the option to either specify a hurricane track and associated landfall parameters or select a historical hurricane from a built-in database.
 
     #. **Specify Hurricane Track**
 
-	To manually input a hurricane track, the user needs to supply a ``.csv`` file with rows that contain the latitude and longitude coordinates of the points along the track. To input the hurricane track file, the user needs to specify the file path in the **Path to Hurricane Track File** input shown in :numref:`fig-R2DHurricaneTrackSelectPane`. A successfully loaded track is shown at the top of :numref:`fig-R2DHurricaneTrackSelectPane`. The circles represent a measurement point along the track and the arrow head shows the direction of the hurricane. Clicking on a circle will produce a dialog with the available information at that point.
+	To manually input a hurricane track, the user needs to supply a ``.csv`` file with rows that contain the latitude and longitude coordinates of the points along the track. To input the hurricane track file, the user needs to specify the file path in the **Path to Hurricane Track File** input shown in :numref:`fig-R2DHurricaneTrackSelectPane`. A successfully loaded track is shown at the top of :numref:`fig-R2DHurricaneTrackSelectPane`. The circles represent a measurement point along the track and the arrowhead shows the direction of the hurricane. Clicking on a circle will produce a dialog with the available information at that point.
 
 	.. _fig-R2DHurricaneTrackSelectPane:
 
@@ -41,11 +41,11 @@ A user has the option to specify a hurricane track and associated landfall param
 
 	  Example data for hurricane track input.
 	  
-	Users also have the option to specify a terrain roughness file in the ``.geojson`` format. Users need to provide the path to the terrain roughness file in the **Path to Terrain Roughness File** input, given in :numref:`fig-R2DHurricaneTrackSelectPane`. When loaded, the terrain roughness file will be visualized in the GIS window, as highlighted at the bottom of :numref:`fig-R2DHurricaneTrackSelectPane`. If a terrain roughness is not specified, a default value of 0.03 m is used (assuming open/flat terrain few isolated obstacles). 
+	Users also have the option to specify a terrain roughness file in the ``.geojson`` format. Users need to provide the path to the terrain roughness file in the **Path to Terrain Roughness File** input, given in :numref:`fig-R2DHurricaneTrackSelectPane`. When loaded, the terrain roughness file will be visualized in the GIS window, as highlighted at the bottom of :numref:`fig-R2DHurricaneTrackSelectPane`. If a terrain roughness is not specified, a default value of 0.03 m is used (assuming open/flat terrain with few isolated obstacles). 
 		  
     #. **Select Hurricane from Database**
 
-	The panel to select a historical hurricane is shown in :numref:`fig-R2DHurricaneTrackDB`. Clicking on the **Load Hurricane Database** button will load the database and all of the hurricanes in the database will appear in the GIS window, as shown at the bottom of :numref:`fig-R2DHurricaneTrackDB`. The database that is pre-bundled with the application is the International Best Track Archive for Climate Stewardship (IBTrACS) v04r00 database, listing storms that have occurred in the last three years. Users can modify the ``.csv`` database file, e.g., update it or add their own storm information, if the same header format and file name (ibtracs.last3years.list.v04r00.csv) is retained. Users can find this file in the ``Databases`` folder that is in the R2D installation directory. 
+	The panel to select a historical hurricane is shown in :numref:`fig-R2DHurricaneTrackDB`. Clicking on the **Load Hurricane Database** button will load the database and all the hurricanes in the database will appear in the GIS window, as shown at the bottom of :numref:`fig-R2DHurricaneTrackDB`. The database that is pre-bundled with the application is the International Best Track Archive for Climate Stewardship (IBTrACS) v04r00 database, listing storms that have occurred in the last three years. Users can modify the ``.csv`` database file, e.g., update it or add their own storm information, if the same header format and file name (ibtracs.last3years.list.v04r00.csv) is retained. Users can find this file in the ``Databases`` folder that is in the R2D installation directory. 
 
 	.. _fig-R2DHurricaneTrackDB:
 
@@ -53,7 +53,7 @@ A user has the option to specify a hurricane track and associated landfall param
 	  :align: center
 	  :figclass: align-center
 
-	  Hurricane selection from database.
+	  Hurricane selection from a database.
 			  
 	To load a specific hurricane, a user needs to navigate to a hurricane of their choice in the GIS window and click on the hurricane to select it. The selected hurricane will be highlighted, as shown in :numref:`fig-R2DHurricaneTrackDB2`, and a dialog will appear providing the hurricane track metadata. Clicking on the **Select Hurricane Button** in :numref:`fig-R2DHurricaneTrackDB2` will finalize the selection. The selected hurricane's metadata will appear in the box that is given in the middle of :numref:`fig-R2DHurricaneTrackDB`.
 			
@@ -65,7 +65,7 @@ A user has the option to specify a hurricane track and associated landfall param
 
   	  Selecting a hurricane from the map.
 			
-	After selecting a hurricane, a user will see the final hurricane track, similar to what is shown in :numref:`fig-R2DHurricaneTrackDB3`. The circles represent a measurement point along the track. Clicking on a circle will produce a dialog with the available information at that point. The blue diamond represents the first point of hurricane landfall, i.e., the first point at which the distance to land is equal to zero. If a landfall location is found, the landfall parameters are programmatically filled in with the measurements at the landfall location. In the case where a hurricane makes landfall more than once, the user has the option to clear the initial landfall point, and select another landfall point, the procedure of which is described below. Note that if a new landfall location is selected by the user, except for the latitude and longitude which is updated programmatically, users should manually update the landfall parameters to agree with the expected parameter values at new location.
+	After selecting a hurricane, a user will see the final hurricane track, similar to what is shown in :numref:`fig-R2DHurricaneTrackDB3`. The circles represent a measurement point along the track. Clicking on a circle will produce a dialog with the available information at that point. The blue diamond represents the first point of hurricane landfall, i.e., the first point at which the distance to land is equal to zero. If a landfall location is found, the landfall parameters are programmatically filled in with the measurements at the landfall location. In the case where a hurricane makes landfall more than once, the user has the option to clear the initial landfall point and select another landfall point, the procedure of which is described below. Note that if a new landfall location is selected by the user, except for the latitude and longitude which is updated programmatically, users should manually update the landfall parameters to agree with the expected parameter values at the new location.
 	
   	.. _fig-R2DHurricaneTrackDB3:
 
@@ -113,7 +113,7 @@ The hurricane landfall location is manually defined using the buttons in :numref
 
 **Truncate Hurricane Track**
 
-R2D allows users to truncate hurricane tracks to save time in the wind field computations. This is also useful when a user requires only a portion of a hurricane track in their region of interest. The buttons for truncating a hurricane track are shown in :numref:`fig-R2DHurricaneTruncateTrack`. Clicking on the **Select Area on Map** button in the figure will turn on the selection procedure. Clicking on any point in the GIS window will start the selection process. Continuing the point selection procedure by clicking elsewhere on the map will form the boundary of the selection polygon, an example of which is provided in :numref:`fig-R2DHurricaneTruncateTrack`. Right-clicking anywhere on the map, or my pressing the escape key, will clear the polygon and select the points within the polygon. The selected points will be highlighted in yellow.The selection points can be cleared at any time by pressing the **Clear** button. Clicking on the **Apply** button will finalize the selection. The yellow-highlighted track points that are selected will be kept and all other points will be discarded. Note that once the **Apply** button is pressed, the procedure cannot be undone. An example truncated track is given in the left-hand side of the GIS window in :numref:`fig-R2DHurricaneTruncateTrack`.
+R2D allows users to truncate hurricane tracks to save time in the wind field computations. This is also useful when a user requires only a portion of a hurricane track in their region of interest. The buttons for truncating a hurricane track are shown in :numref:`fig-R2DHurricaneTruncateTrack`. Clicking on the **Select Area on Map** button in the figure will turn on the selection procedure. Clicking on any point in the GIS window will start the selection process. Continuing the point selection procedure by clicking elsewhere on the map will form the boundary of the selection polygon, an example of which is provided in :numref:`fig-R2DHurricaneTruncateTrack`. Right-clicking anywhere on the map, or pressing the escape key, will clear the polygon and select the points within the polygon. The selected points will be highlighted in yellow. The selection points can be cleared at any time by pressing the **Clear** button. Clicking on the **Apply** button will finalize the selection. The yellow-highlighted track points that are selected will be kept, and all other points will be discarded. Note that once the **Apply** button is pressed, the procedure cannot be undone. An example truncated track is given in the left-hand side of the GIS window in :numref:`fig-R2DHurricaneTruncateTrack`.
 	
 .. _fig-R2DHurricaneTruncateTrack:
 
