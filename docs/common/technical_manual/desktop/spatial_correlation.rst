@@ -4,7 +4,7 @@
 Ground Motion Intensity Spatial Correlation Model Options
 =========================================================
 
-The regional seismic risk analysis requires the prediction of ground motion intensities at multiple sites. Such joint predictions need to consider the correlation between ground motion intensities at different sites given a specific earthquake scenario. In general, ground motion models predict intensities at an individual site :math:`i` due to an earthquake :math:`j` have the following form:
+The regional seismic risk analysis requires the prediction of ground motion intensities at multiple sites. Such joint predictions need to consider the correlation between ground motion intensities at different sites given a specific earthquake scenario. In general, ground motion models that predict intensities at an individual site :math:`i` due to an earthquake :math:`j` have the following form:
 
 .. math::
 
@@ -44,7 +44,7 @@ Similarly, the correlation coefficient is defined as:
 
    \rho(h) = \frac{C(h)}{C(0)} = 1 - \frac{\gamma(h)}{C(0)}
 
-Given the semivariogram is often preferred in geostatistical practice (because it does not require a prior estimation of the mean), many studies were carried to find the semivariogram models to derive the correlation :math:`rho(h)` of ground motion intensities. The available models in the current |short tool name| are briefly summarized in following sections.
+Given the semivariogram is often preferred in geostatistical practice (because it does not require a prior estimation of the mean), many studies were carried out to find the semivariogram models to derive the correlation :math:`rho(h)` of ground motion intensities. The available models in the current |short tool name| are briefly summarized in the following sections.
 
 Jayaram and Baker (2009)
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -180,7 +180,7 @@ Markhvida et al. (2017)
 
    \textbf{P} \textbf{Z} = \textbf{Y}
 
-where :math:`\textbf{P}` is an orthogonal linear transformation matrix, :math:`\textbf{Z}` is the original data matrix, and :math:`\textbf{Y}` is the transformed variable matrix which contains uncorrelated principal components :math:`\textbf{Y}_i`. Since :math:`\textbf{P}` is orthogonal, so the inversion is easy to compute:
+where :math:`\textbf{P}` is an orthogonal linear transformation matrix, :math:`\textbf{Z}` is the original data matrix, and :math:`\textbf{Y}` is the transformed variable matrix which contains uncorrelated principal components :math:`\textbf{Y}_i`. Since :math:`\textbf{P}` is orthogonal, the inversion is easy to compute:
 
 .. math::
 

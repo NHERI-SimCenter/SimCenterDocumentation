@@ -34,7 +34,7 @@ can be achieved as described in :ref:`ShakeMap Earthquake Scenarios <lbl-shakeMa
 The functions in the earthquake hazard simulation tool required for 
 scenario-specific use cases are Site Definition,
 Earthquake Rupture Forecasting, Intensity Measure Definition, Ground Motion Prediction
-Equations, Spatial Correlations and Ground Motion Record Selection (optional).
+Equations, Spatial Correlations, and Ground Motion Record Selection (optional).
 The "Scenario-specific" option should be selected in the "Scenario Selection" tool tab.
 More details of the use cases, required inputs, and some benefits/limitations are
 summarised in :numref:`tab-R2DScenarioSpecificUseCases`.
