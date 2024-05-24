@@ -36,9 +36,18 @@ The **User-specified Ground Motion** option enables users to load results from a
 User-specified Hurricane
 ------------------------
 
-Similar to the **User-specified Ground Motion**, the **User-specified Hurricane** option imports results from a **Hurricane Scenario Simulation**. Users must input the path to the ``EventGrid.csv`` file in the `Event File Listing Hurricane Field`, as illustrated in :numref:`fig-UserSelectEQ`. If hurricane files are not in the same directory as the ``EventGrid.csv`` file, the directory path containing the hurricane data must be provided. Users also need to specify the units for the hurricane hazard input fields.
+Similar to the **User-specified Ground Motion**, the **User-specified Hurricane** option imports results from a **Hurricane Scenario Simulation**. Users must input the path to the ``EventGrid.csv`` file in the `Event File Listing Hurricane Field`, as illustrated in :numref:`fig-UserSelectWindField`. If hurricane files are not in the same directory as the ``EventGrid.csv`` file, the directory path containing the hurricane data must be provided. Users also need to specify the units for the hurricane hazard input fields.
+
+.. _fig-UserSelectWindField:
+
+.. figure:: figures/R2DUserSelectWindField.png
+  :align: center
+  :figclass: align-center
+
+  User-defined hurricane input panel.
 
 .. _lbl-shakeMapEQScenarios: 
+
 ShakeMap Earthquake Scenarios
 -----------------------------
 

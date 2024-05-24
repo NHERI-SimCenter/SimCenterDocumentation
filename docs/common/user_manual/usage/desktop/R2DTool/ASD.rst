@@ -20,7 +20,7 @@ This application imports a building inventory from a .csv file provided by the u
 
 #. **Path to Buildings Database**: Users specify the .csv file path here. The file must at least contain columns for building IDs (id, in sequence), and the latitudes (Latitude) and longitudes (Longitude) of building locations. Additional columns should be included to supply information needed by other workflow applications.
 
-#. **Building Selection Filtering**: Users can select a subset of buildings for analysis either by inputting building IDs directly or using the **Advanced Filter** for SQL format filter expressions. The **Query Builder** dialog (:numref:`fig-R2DQueryBuilderDialog`) aids in creating these expressions. Operators and fields can be combined to perform complex filtering expressions such as ``"YearBuilt" < 1970  AND  "BuildingType"  =  'Wood'``
+#. **Building Selection Filtering**: Users can select a subset of buildings for analysis either by entering building IDs directly or using the **Advanced Filter** for SQL format filter expressions. The **Query Builder** dialog (:numref:`fig-R2DQueryBuilderDialog`) aids in creating these expressions. Operators and fields can be combined to perform complex filtering expressions such as ``"YearBuilt" < 1970  AND  "BuildingType"  =  'Wood'``
 
 
 .. _fig-R2DQueryBuilderDialog:
@@ -65,9 +65,9 @@ The **Building Information** table displays a spreadsheet of the imported data, 
 GeoJSON to Asset
 ****************
 
-The **GeoJSON to Asset** application (:numref:`fig-R2DGeoJsonInputBeforeLoad`) is the preferred method for loading regional infrastructure inventories in SimCenter. It requires a `.geojson` file conforming to the official `.geojson` format (`https://geojson.org/`). The file must include a "CRS" key-item pair for the coordinate reference system and describe building stock information in the `"features"` array. Each feature represents an asset and must include `{"type":"Feature"}`, `"id"`, `"geometry"`, and `"properties"` items.  The value of `"id"` should be an integer in string format for asset selection.
+The **GeoJSON to Asset** application (:numref:`fig-R2DGeoJsonInputBeforeLoad`) is the preferred method for loading regional infrastructure inventories in SimCenter. It requires a `.geojson` file conforming to the official `.geojson` format described `here <https://geojson.org/>`_. The file must include a "CRS" key-item pair for the coordinate reference system and describe building stock information in the `"features"` array. Each feature represents an asset and must include `{"type":"Feature"}`, `"id"`, `"geometry"`, and `"properties"` items.  The value of `"id"` should be an integer in string format for asset selection.
 
-The `"properties"` item should contain all information necessary for subsequent workflow analyses. A **"type"** attribute within `"properties"` is necessary and it specifies the component type (e.g., **"Building"** for building inventory). This affects how assets are managed in later simulation workflows.
+The `"properties"` item should contain all information necessary for subsequent workflow analyses. A **"type"** attribute within `"properties"` is necessary, and it specifies the component type (e.g., **"Building"** for building inventory). This affects how assets are managed in later simulation workflows.
 
 .. _fig-R2DGeoJsonInputBeforeLoad:
 
@@ -157,19 +157,19 @@ A special SimCenter convention is an attribute **"type"** must be included in th
 describes the component type of this feature. For transportation 
 infrastructure, the value of `"type"` could be `Bridge`, `Roadway`, `Tunnel`, or other values. Assets with the same `"type"` (e.g., all bridges)
 will be visualized in the same visualization layer. Assets with the same `"type"` will also be placed in the 
-same working directory in the **Results** folder is in the **Output Directory** folder that is specified in R2D preferences. For each bridge (or other component type),
+same working directory in the **Results** folder in the **Output Directory** folder that is specified in R2D preferences. For each bridge (or other component type),
 there can be other identification keys (such as, `"assetSubtype": "HwyBridge"` in :numref:`R2DGeoJSONInputExampleTransport`). The key `"assetSubtype"` is 
 used by the R2D built-in Damage and Loss (DL) application **Pelicun3** when the HAZUS-MH damage and loss methods are selected. `"HwyBridge"` stands for highway bridge as classified in the
 `Hazus Inventory Technical Manual <https://www.fema.gov/sites/default/files/documents/fema_hazus-6-inventory-technical-manual.pdf>`_ and the
 `Hazus Earthquake Model Technical Manual <https://www.fema.gov/sites/default/files/documents/fema_hazus-earthquake-model-technical-manual-5-1.pdf>`_.
-If a user selected to use **User-provided Fragilities** in **Pelicun3**, the key `"assetSubtype"` is not needed.
+If a user selects to use **User-provided Fragilities** in **Pelicun3**, the key `"assetSubtype"` is not needed.
 More descriptions can be found in example 14 in :ref:`R2D examples <lbl-examples>`. 
 
 :numref:`fig-R2DGeoJsonInputAfterLoadTransport` is the panel after a ``.geojson`` transportation infrastructure inventory database is loaded in R2D.
 Users should switch the viewing panel with the **component selection panel** and select the assets they want to analyze in the **Asset Selection Filtering** box.
 The selected assets can be visualized in the **VIZ** panel.
 
-.. note:: The outputs of the BRIALS Transportation tool use the default units of the inventory databse described in :numref:`lbl-BrailsTransportation`. Users need to convert the units to those defined in the :ref:`General Information <lblGI>` panel before loading the units to this Asset panel.
+.. note:: The outputs of the BRIALS Transportation tool use the default units of the inventory database described in :numref:`lbl-BrailsTransportation`. Users need to convert the units to those defined in the :ref:`General Information <lblGI>` panel before loading the units to this Asset panel.
 
 .. literalinclude:: figures/R2DGeoJSONInputExampleTransport.json
    :language: json
@@ -191,7 +191,7 @@ GIS to Transportation Network AIM
 
 This application (:numref:`fig-R2DTransportGISInputPanel`) imports transportation networks from GIS files containing highway bridges, tunnels, and roadways. Users specify file paths for each feature type, with the GIS files containing identification numbers and additional attributes as needed.
 Example GIS files for roadways, bridges, and tunnels that can be loaded to R2D with **GIS to Transportation Network AIM** can 
-be found in the `github data repository <https://github.com/NHERI-SimCenter/R2DExamples>`_ of example 14 of :ref:`R2D examples <lbl-examples>`
+be found in the `GitHub data repository <https://github.com/NHERI-SimCenter/R2DExamples>`_ of example 14 of :ref:`R2D examples <lbl-examples>`
 
 .. _fig-R2DTransportGISInputPanel:
 

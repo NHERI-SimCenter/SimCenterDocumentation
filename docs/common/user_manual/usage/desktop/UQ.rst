@@ -90,7 +90,7 @@ The **UQ** tab is the panel where users select the **UQ Engine** for uncertainty
              | ▪ :ref:`lblDakotaBayesianCalibration` in Dakota
              | ▪ :ref:`lblUCSDTMCMC` in UCSD-UQ   :bdg-link-danger:`Example1 <../../examples/desktop/qfem-0014/README.html>` :bdg-link-danger:`Example2 <../../examples/desktop/qfem-0019/README.html>`
 
-            | Theory details can be found in Dakota user manual and :ref:`here<lbluqUCSDSimTechnical>`.
+            | Theory details can be found in the Dakota user manual and :ref:`here<lbluqUCSDSimTechnical>`.
 
    .. grid:: 2
      :gutter: 1
@@ -154,7 +154,7 @@ The **UQ** tab is the panel where users select the **UQ Engine** for uncertainty
 Dakota UQ Engine
 ----------------
 
-This UQ engine utilizes the `Dakota Software <https://dakota.sandia.gov/>`_, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. **Dakota** provides the user with a large number of methods for different kinds of analyses. For this reason, we have divided the methods into categories through a pull-down menu, as shown below. Once the category has been selected, a number of different methods are made available to the user.
+This UQ engine utilizes the `Dakota Software <https://dakota.sandia.gov/>`_, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. **Dakota** provides the user with several methods for different kinds of analyses. For this reason, we have divided the methods into categories through a pull-down menu, as shown below. Once the category has been selected, a few different methods are made available to the user.
 
 * By checking the ``Parallel Execution``, the UQ analysis will be performed in parallel. It will try to use all the processors available on the machine. 
 

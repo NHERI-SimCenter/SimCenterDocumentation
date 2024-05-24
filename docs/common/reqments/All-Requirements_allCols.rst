@@ -13,7 +13,7 @@ R2D Requirements
   :widths: 8, 55, 8, 8, 12, 15
   :included_cols: 0, 1, 2, 3, 4, 5
   :file: generalR2D.csv
-  :class: longtable		  	 	 
+  :class: longtable
 
 .. include:: key.rst
 
@@ -25,7 +25,7 @@ PBE Requirements
   :widths: 8, 55, 8, 8, 12, 15
   :included_cols: 0, 1, 2, 3, 4, 5
   :file: generalPBE.csv
-  :class: longtable		  	 	 
+  :class: longtable
 
 .. include:: key.rst
 
@@ -37,7 +37,7 @@ WE-UQ Requirements
   :widths: 8, 55, 8, 8, 12, 15
   :included_cols: 0, 1, 2, 3, 4, 5
   :file: generalWE.csv
-  :class: longtable		  	 	 
+  :class: longtable
 
 .. include:: key.rst
 
@@ -84,7 +84,7 @@ Earthquake Loading Requirements
 .. csv-filter:: Requirements - EL
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 8, 55, 8, 10, 15, 10, 10, 10
-  :file: _out/Loading.csv
+  :file: Loading.csv
   :include: {0: '\**EL.*|#'}
   :included_cols: 0, 1, 2, 3, 4, 6, 9, 10
   :class: longtable		  		  
@@ -97,7 +97,7 @@ Wind Loading Requirements
 .. csv-filter:: Requirements - WL
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 10, 55, 8, 10, 15, 10, 10, 10
-  :file: _out/Loading.csv
+  :file: Loading.csv
   :include: {0: '\**WL.*|#'}
   :included_cols: 0, 1, 2, 3, 4, 7, 9, 10
   :class: longtable		  		  
@@ -111,9 +111,9 @@ Surge/Tsunami Loading Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 10, 65, 8, 10, 15, 25, 6, 6
   :included_cols: 0, 1, 2, 3, 4, 8, 9, 10
-  :file: _out/Loading.csv
+  :file: Loading.csv
   :include: {0: '\**HL.*|#'}
-  :class: longtable		  	    
+  :class: longtable
 
 .. include:: key.rst
 
@@ -124,8 +124,8 @@ UQ Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 8, 35, 10, 10, 15, 10, 10, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-  :file: _out/Uncertainty.csv
-  :class: longtable		  	 
+  :file: Uncertainty.csv
+  :class: longtable
 
 .. include:: key.rst
 
@@ -136,8 +136,8 @@ RV Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 8, 40, 10, 10, 15, 10, 10, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-  :file: _out/RandomVariables.csv
-  :class: longtable		  	 
+  :file: RandomVariables.csv
+  :class: longtable
 
 .. include:: key.rst
 
@@ -148,8 +148,8 @@ Modeling Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 8, 50, 10, 10, 15, 10, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 6, 7, 8, 9, 10
-  :file: _out/Modeling.csv
-  :class: longtable		  	 
+  :file: Modeling.csv
+  :class: longtable
 
 .. include:: key.rst
 
@@ -160,8 +160,8 @@ Analysis Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 8, 50, 10, 10, 15, 10, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 6, 7, 8, 9, 10
-  :file: _out/Analysis.csv
-  :class: longtable		  	 
+  :file: Analysis.csv
+  :class: longtable
 
 .. include:: key.rst
 
@@ -172,8 +172,8 @@ Damage & Loss Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 8, 50, 8, 8, 12, 10, 20
   :included_cols: 0, 1, 2, 3, 4, 9, 10
-  :file: _out/Damage.csv
-  :class: longtable		  	 
+  :file: Damage.csv
+  :class: longtable
 
 .. include:: key.rst
 
@@ -184,8 +184,8 @@ Recovery Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 8, 50, 10, 10, 15, 10
   :included_cols: 0, 1, 2, 3, 4, 10
-  :file: _out/Recovery.csv
-  :class: longtable		  	 
+  :file: Recovery.csv
+  :class: longtable
 
 .. include:: key.rst
 
@@ -196,8 +196,8 @@ Common Research Application Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "quoFEM", "EE-UQ", "WE-UQ", "Hydro-UQ", "PBE", "R2D"
   :widths: 8, 45, 8, 8, 12, 10, 10, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10
-  :file: _out/Common.csv
-  :class: longtable		  	 
+  :file: Common.csv
+  :class: longtable
 
 .. include:: key.rst
 
@@ -209,7 +209,7 @@ BRAILS Requirements
   :widths: 8, 55, 8, 8, 12, 15
   :included_cols: 0, 1, 2, 3, 4, 5
   :file: generalBRAILS.csv
-  :class: longtable		  	 
+  :class: longtable
 
 .. include:: key.rst
 
@@ -221,7 +221,7 @@ PELICUN Requirements
   :widths: 8, 55, 8, 8, 12, 15
   :included_cols: 0, 1, 2, 3, 4, 5
   :file: generalPELICUN.csv
-  :class: longtable		  	 
+  :class: longtable
 
 .. include:: key.rst
 
@@ -233,7 +233,7 @@ BE Database Requirements
   :widths: 8, 55, 10, 10, 12, 10
   :included_cols: 0, 1, 2, 3, 4, 5
   :file: generalBE.csv
-  :class: longtable		  	 
+  :class: longtable
 
 .. include:: key.rst
 
@@ -245,7 +245,7 @@ DL Database Requirements
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 5
   :file: generalDBDL.csv
-  :class: longtable		  	 
+  :class: longtable
 
 .. include:: key.rst
 

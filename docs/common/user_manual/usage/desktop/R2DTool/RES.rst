@@ -9,7 +9,7 @@ The **Results** panel is where the user can review the results of an analysis. C
 Pelicun Damage and Loss 
 -----------------------
 
-:numref:`fig-R2DRESPanel` shows the results panel for the **Pelicun Damage and Loss** application. The results panel is comprised of several docking windows that can be moved, rearranged, resized, and opened and closed by the user. The results panel contains these main docks:
+:numref:`fig-R2DRESPanel` shows the results panel for the **Pelicun Damage and Loss** application. The results panel consists of several docking windows that can be moved, rearranged, resized, and opened and closed by the user. The results panel contains these main docks:
 
 	1. **Regional Map Dock:** Displays a geographic map highlighting the assets within the analyzed region. Assets are color-coded based on their most likely critical damage state. Clicking on an asset reveals a popup with detailed information about it.
 
