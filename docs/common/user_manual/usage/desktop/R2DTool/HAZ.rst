@@ -21,7 +21,7 @@ This panel allows users to define or simulate hazards across a specified region.
 User-specified Ground Motions
 -----------------------------
 
-The **User-specified Ground Motion** option enables users to load results from a prior **Earthquake Event Simulation**. Users must provide the path to the ``EventGrid.csv`` file in the `Event File Listing Motions Field`, as shown in :numref:`fig-UserSelectEQ`. If the ground motion files are located in a different directory, the path to that directory must also be specified. Users are required to define the units for the ground motion data. This application supports analysis of both ground shaking and ground failure, as detailed in :ref:`Example E1-E5 <lbl-examples>` and :ref:`Example E5 and E14 <lbl-examples>`, respectively.
+The **User-specified Ground Motion** option enables users to load results from a prior **Earthquake Event Simulation**. Users must provide the path to the ``EventGrid.csv`` file in the `Event File Listing Motions Field`, as shown in :numref:`fig-UserSelectEQ`. If the ground motion files are located in a different directory, the path to that directory must also be specified. Users are required to define the units for the ground motion data. This application supports analysis of both ground shaking and ground failure, as detailed in :ref:`Example E1-E4 <lbl-examples>` and :ref:`Example E5 and E14 <lbl-examples>`, respectively.
 
 .. _fig-UserSelectEQ:
 
