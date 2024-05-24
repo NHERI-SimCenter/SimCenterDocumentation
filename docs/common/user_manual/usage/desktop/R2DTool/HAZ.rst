@@ -39,6 +39,7 @@ User-specified Hurricane
 Similar to the **User-specified Ground Motion**, the **User-specified Hurricane** option imports results from a **Hurricane Scenario Simulation**. Users must input the path to the ``EventGrid.csv`` file in the `Event File Listing Hurricane Field`, as illustrated in :numref:`fig-UserSelectEQ`. If hurricane files are not in the same directory as the ``EventGrid.csv`` file, the directory path containing the hurricane data must be provided. Users also need to specify the units for the hurricane hazard input fields.
 
 .. _lbl-shakeMapEQScenarios: 
+
 ShakeMap Earthquake Scenarios
 -----------------------------
 

@@ -106,7 +106,7 @@ The main window of the UI comprises the following key components:
       :R2D:R2DTool/MOD
       :R2D:R2DTool/ANA
       :R2D:R2DTool/DL
-	  :R2D:R2DTool/SP
+	   :R2D:R2DTool/SP
       UQ
       :EEUQ:GI
       :WEUQ:GI
