@@ -1,5 +1,6 @@
 .. _lblDamping:
 
+===============
 Damping Options
 ===============
 
@@ -12,8 +13,13 @@ where :math:`U(t), \dot{U}(t), \ddot{U}(t)` are the vectors of displacements, ve
 
 Energy is dissipated by the structure as it deforms, which is why it comes to rest when the force is removed. The :math:`Fs(U(t))` term captures the **hysteretic** energy dissipated through the nonlinear behavior of the structural members. The :math:`C \dot{U}(t)` term, the **viscous** damping term, attempts to capture energy dissipated through other mechanisms present in the structure, e.g. thermal effects from repeated elastic straining of structural materials, repeated straining of nonstructural elements—partition walls, mechanical equipment, fireproofing, and so on—friction at steel connections, opening and closing of microcracks in concrete, friction between the structure itself and nonstructural elements, and other mechanisms, some of which are even difficult to identify. Damping for such is often quantified in terms of **modal** damping ratios, and are typically of the order of 1% (steel buildings) to 5% (concrete buildings). These values have been obtained from field testing and system identification, albeit they have mostly been obtained from buildings undergoing low levels of vibration.
 
-It is the formulation of the :math:`C` matrix that is of interest here. There are two damping options presented to the user as inputs to the :ref:`FEM <lblFEM>` panel: 1) Rayleigh Damping Options and 2) Modal Damping options. This is a brief overview of the theory behind both.
+It is the formulation of the :math:`C` matrix that is of interest here. There are two damping options presented to the user as inputs to the :ref:`FEM <lblFEM>` panel, this section is a brief overview of the theory behind both.
 
+.. contents:: Table of Contents
+   :local:
+   :backlinks: none
+
+.. _lblRayleighDamping:
 
 Rayleigh Damping
 ----------------
@@ -40,7 +46,7 @@ The coefficients :math:`a_0` and :math:`a_1` are typically determined by specify
 
       a_0 = 2 \zeta_n \omega_n
 
-   In mass proportional damping, the damping matrix is inversely proportional to the natural frequency. The coefficient is chosen to represent the period at a single mode, modes with a higher frequency will have less damping, and modes with a smaller frequency will have more damping.
+   In mass-proportional damping, the damping matrix is inversely proportional to the natural frequency. The coefficient is chosen to represent the period at a single mode, modes with a higher frequency will have less damping, and modes with a smaller frequency will have more damping.
 
 #. **Stiffness Proportional Damping**, :math:`C = a_1 K`
 
@@ -50,7 +56,7 @@ The coefficients :math:`a_0` and :math:`a_1` are typically determined by specify
 
       a_1 = \frac{2 * \zeta_n}{\omega_n}
 
-   In stiffness proportional damping, the damping is proportional to the natural frequency, increasing linearly as the natural frequency increases. The coefficient is again chosen to represent the period at a single mode, modes with a higher frequency will have more damping, and modes with a smaller frequency will have less damping.
+   In stiffness-proportional damping, the damping is proportional to the natural frequency, increasing linearly as the natural frequency increases. The coefficient is again chosen to represent the period at a single mode, modes with a higher frequency will have more damping, and modes with a smaller frequency will have less damping.
 
 
 #. **Traditional Rayleigh Damping**, :math:`C = a_0 M + a_1 K`
@@ -86,14 +92,15 @@ The coefficients :math:`a_0` and :math:`a_1` are typically determined by specify
 
 .. note:: 
    
-   In the tool the user has the option of specifying which of the stiffness matrices (the current linearized stiffness matrix or the initial tangent stiffness matrix). Opinion in the literature is divided, the default is set to the initial stiffness as the possible inclusion of negative damping (should the descending branch of yield curve be reached), the possibility of including zero damping (should elastic perfectly plastic materials yield), and the very fact that the damping is tied to the hysteretic behavior given why it is included in the first place, makes little physical sense.
+   In the tool, the user has the option of specifying which of the stiffness matrices (the current linearized stiffness matrix or the initial tangent stiffness matrix). Opinion in the literature is divided, the default is set to the initial stiffness as the possible inclusion of negative damping (should the descending branch of the yield curve be reached), the possibility of including zero damping (should elastic perfectly plastic materials yield), and the very fact that the damping is tied to the hysteretic behavior given why it is included in the first place, makes little physical sense.
 
-   Different approaches are of course possible, e.g. where user explicitly models damping. These must be specified by the user in the optional analysis script they provide.
+   Different approaches are of course possible, e.g. where the user explicitly models damping. These must be specified by the user in the optional analysis script they provide.
 
 
+.. _lblModalDamping:
 
 Modal Damping
----------------
+-------------
 
 In modal damping the eigenvectors :math:`\Phi` of the :math:`N` degree-of-freedom system are used to create the :math:`C` matrix.
 
@@ -101,7 +108,7 @@ In modal damping the eigenvectors :math:`\Phi` of the :math:`N` degree-of-freedo
 
    C = M \left ( \sum_{m=1}^{N} \frac{2 \zeta_m \omega_m}{M_m} \phi_m \phi_m^TC \dot{U} \right ) M
 
-where the :math:`m`'th term is the contribution of the :math:`m`'th mode. The resulting damping matrix has not been popular in practical analyses because it is a fully populated matrix and its construction requires all frequencies and modes. However many FEM applications approximate this by limiting number of modes to first :math:`n` modes, not including those components outside the sparsity pattern of the :math:`K` matrix, **AND** including all terms in the calculation of the resisting forces to ensure that convergence to correct numerical solution occurs, albeit at a slower rate of convergence.
+where the :math:`m`'th term is the contribution of the :math:`m`'th mode. The resulting damping matrix has not been popular in practical analyses because it is a fully populated matrix and its construction requires all frequencies and modes. However many FEM applications approximate this by limiting the number of modes to first :math:`n` modes, not including those components outside the sparsity pattern of the :math:`K` matrix, **AND** including all terms in the calculation of the resisting forces to ensure that convergence to correct numerical solution occurs, albeit at a slower rate of convergence.
 
 .. math:: 
 

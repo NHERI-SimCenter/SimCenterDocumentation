@@ -24,8 +24,6 @@ Install on Windows 10
    .. note::
      The packaged distribution of OpenFOAM is only available for Linux systems. To install OpenFOAM on Microsoft Windows 10, the user needs to use Windows Subsystem for Linux (WSL). WSL will provide a virtual environment for running Linux applications on Windows.
 
-   ..  The at mesh generation and pre-processing party applications s. 
-
    Install OpenFOAM for Windows
    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
    To install OpenFOAM-10 on Windows 10, follow the instructions below: 
@@ -103,14 +101,14 @@ Navigate to the |appLink| page, which should resemble |figDownload|, for a list 
       quoFEM download page.
 
 
-.. only:: Hydro
+.. only:: HydroUQ_app
 
    .. _figDownloadWin-HydroUQ:
 
-   .. figure:: figures/H20Download.png      
+   .. figure:: figures/H20Download.png
       :alt: HydroUQ tool download page
       :align: center
-      :figclass: align-center		 
+      :figclass: align-center
 
       HydroUQ tool download page.
 
@@ -181,15 +179,15 @@ Launch the application to view the user interface as shown in |figWinUI|. It's r
 
     quoFEM application on startup.
 
-.. only:: Hydro
+.. only:: HydroUQ_app
 
-    .. _figWinUI-HydroUQ:
+   .. _figWinUI-HydroUQ:
 
    .. figure:: figures/HydroWIN.png
-    :align: center
-    :figclass: align-center
+      :align: center
+      :figclass: align-center
 
-    HydroUQ tool on startup in Windows 10    
+      HydroUQ tool on startup in Windows 10
 
     
 

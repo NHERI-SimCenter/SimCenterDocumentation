@@ -25,10 +25,10 @@ Wind Loading Event
 Applications used to specify/select wind loading for the structure.
 
 #.  Stochastic Wind: simulating stochastic wind speed using spectral method
-#.  CFD-Digital Wind Tunnel: CFD simulation of boundary layer wind tunnel
-#.  CFD-Wind Load on Isolated Buildings: CFD-based wind load simulation for isolated buildings with complex geometry
+#.  CFD - Digital Wind Tunnel: CFD simulation of boundary layer wind tunnel
+#.  CFD - Wind Load on Isolated Buildings: CFD-based wind load simulation for isolated buildings with complex geometry
 #.  DEDM_HRP: database-enabled design framework based on wind-tunnel data for high-rise buildings 
-#.  LowRiseTPU: extracting aerodynamics loads based on TPU database for low-rise buildings
+#.  LowRiseTPU: extracting aerodynamics loads based on the TPU database for low-rise buildings
 #.  Wind Tunnel Experiment: uses pressure tap measurements from building in wind tunnel experiment
 #.  Existing: User-supplied time-varying floor loads
 
@@ -45,7 +45,7 @@ Applications to identify the output parameters of interest given the wind loadin
 Finite Element Application
 ==========================
 
-Applications used to determine the response output parameters given the ground motion and structural model.
+Applications used to determine the response output parameters given the wind load generation and structural models.
 
 #.  OpenSees: Open System for Earthquake Engineering Simulation
 #.  CustomPy: Any user-supplied Python application can be incorporated
@@ -92,4 +92,4 @@ Additional Tools
 ===============
 
 #. :blue:`Empty Domain CFD Simulation`:
-   Capability to perform empty domain simulation to characterize Atmospheric Boundary Layer (ABL) flows using large-eddy simulation (LES). This added feature uses the Turbulence Inflow Tool (TInF) tool for calibrating ABL flows for a subsequent wind load evaluation study. 
+   Capability to perform empty domain simulation to characterize Atmospheric Boundary Layer (ABL) flows using large-eddy simulation (LES). This feature uses the Turbulence Inflow Tool (TInF) tool for calibrating ABL flows for a subsequent wind load evaluation study. 

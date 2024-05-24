@@ -20,7 +20,7 @@ then used as the input for assessing the regional seismic risk of the portfolio.
 To propagate the uncertainty in the seismic hazard, ground motion characteristics, and structural damage and loss fragility, the risk analysis 
 typically needs a sufficient number of samples (realizations) to reliably estimate the mean and variation of possible damage and loss. For instance, 
 if applying the conventional Monte Carlo method (e.g., [Bazzurro07]_), for each of the considered earthquake scenarios (with a specific magnitude and location), 
-many ground motion intensity maps are first simulated. Then, for each of the ground motion maps, several damage and loss assessments are 
+many ground motion intensity maps are first simulated. Then, for each of the ground motion maps, several assessments of damage and loss are 
 conducted to propagate the uncertainty in the inventory, response analysis model, and/or fragility functions. The process is repeated for 
 all considered earthquake scenarios which leads to a tremendous number of realizations and an excessive computational demand.
 
@@ -57,19 +57,19 @@ between points on the reference hazard curves and the corresponding points on ha
    min \Sigma_{i=1}^{I} \Sigma_{r=1}^{R} w_{ir} (e_{ir}^{+}+e_{ir}^{-})
 
 where :math:`e_{ir}^{+}` and :math:`e_{ir}^{-}` are the errors resulting from overestimating and underestimating, respectively, the reference hazard curve for the site :math:`i` 
-at the return period `r`. The weight :math:`w_{ir}` is taken as the return period so that the error occurs at a longer return period (i.e., higher intensity level) can be 
-scaled relatively more than the error occurs at a shorter return period. This typically helps the final fitting given the nonlinear shape of a hazard curve.
+at the return period `r`. The weight :math:`w_{ir}` is taken as the return period so that the error occurring at a longer return period (i.e., higher intensity level) can be 
+scaled relatively more than the error occurring at a shorter return period. This typically helps the final fitting given the nonlinear shape of a hazard curve.
 
 Assuming we have overall :math:`J` candidate earthquakes, for any earthquake scenario :math:`j`, we can use empirical ground motion model(s) to compute its resulting ground motion intensity
-(i.e., the mean and standard deviation) for each individual site :math:`i`: :math:`m_{lnSa}` and :math:`\sigma_{lnSa}`.  Suppose that for the site :math:`i` and return period :math:`r`, 
+(i.e., the mean and standard deviation) for each site :math:`i`: :math:`m_{lnSa}` and :math:`\sigma_{lnSa}`.  Suppose that for the site :math:`i` and return period :math:`r`, 
 :math:`Sa_{ir}` is the intensity level from the reference hazard curve, then with :math:`m_{lnSa}` and :math:`\sigma_{lnSa}` we could estimate the exceeding probability of :math:`Sa_{ir}` for 
-the earthquake scenario :math:`j`: :math:`P(y \geq Sa_{ir})`. Now assuming the modified occurrence rate is :math:`P_j`, then the total exceedance probability using the reduced set of earthquake
+the earthquake scenario :math:`j`: :math:`P(y \geq Sa_{ir})`. Now assuming the modified occurrence rate is :math:`P_j`, then the total exceedance probability using the reduced set of earthquakes
 could be written as:
 
 .. math::
    \Sigma_{j=1}^{J} [P_j \times P(y \geq Sa_{ir})] - e_{ir}^{+}+e_{ir}^{-} = \frac{1}{r}, \forall i, r
 
-Note if :math:`P_j=0`, then the earthquake :math:`j` is not included in the reduced set of earthquake scenarios (:math:`N_{red}`).  The other constraints in the optimization are:
+Note that if :math:`P_j=0`, then the earthquake :math:`j` is not included in the reduced set of earthquake scenarios (:math:`N_{red}`).  The other constraints in the optimization are:
 
 .. math::
    0 \leq P_j \leq z_j, \forall j
@@ -85,11 +85,11 @@ Note if :math:`P_j=0`, then the earthquake :math:`j` is not included in the redu
 
 The above OPS method can also be applied to reduce the number of ground motion maps to recover the reference hazard curves for the sites in the studied region.
 The only difference is the computation of the exceedance probability given the ground motion map :math:`k`, :math:`P(y \geq Sa_{ir})`, which would be a binary 
-variable (either 1 or 0) as whether to exceed :math:`Sa_{ir}` is deterministic given a ground motion map.
+variable (either 1 or 0) since whether :math:`Sa_{ir}` is exceeded or not is deterministic given a ground motion map.
 
 The flowchart below summarizes the workflow of using the OPS method to select a reduced number of earthquakes, reduce ground motion maps given the selected earthquake scenarios, 
 and assign new occurrence rates for the earthquake scenarios and ground motion maps. To illustrate the process, an example case will be introduced along with 
-a bit more details of each major step.
+a few more details of each major step.
 
 .. figure:: figures/hazard_occurrence_flowchart.png
    :align: center

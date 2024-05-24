@@ -4,7 +4,7 @@
 Ground Motion Intensity Spatial Correlation Model Options
 =========================================================
 
-The regional seismic risk analysis requires the prediction of ground motion intensities at multiple sites. Such joint predictions need to consider the correlation between ground motion intensities at different sites given a specific earthquake scenario. In general, ground motion models that predict intensities at an individual site :math:`i` due to an earthquake :math:`j` have the following form:
+The regional seismic risk analysis requires the prediction of ground motion intensities at multiple sites. Such joint predictions need to consider the correlation between ground motion intensities at different sites given a specific earthquake scenario. In general, ground motion models predicting intensities at an individual site :math:`i` due to an earthquake :math:`j` have the following form:
 
 .. math::
 
@@ -84,7 +84,7 @@ where T is the period. If the :math:`V_{S30}` values are very close in the given
 Loth and Baker (2013)
 ^^^^^^^^^^^^^^^^^^^^^
 
-Note that the cross-semivariograms between different pairs of intensity measures can be different, for instance, :math:`\rho_{Sa(T=0.1s),Sa(T=0.2s)}(h)` might be greater than :math:`\rho_{Sa(T=0.1s),Sa(T=1s)}(h)`. This means one needs to repeat a calibration process many times to develop semivariogram functions and correlation models that have higher resolutions (i.e., direct semivariogram fit). Instead of fitting each semivariogram independently, [Loth13]_ proposed a predictive model for spatial covariance of spectral accelerations at different periods:
+Note that the cross-semivariograms between different pairs of intensity measures can be different, for instance, :math:`\rho_{Sa(T=0.1s),Sa(T=0.2s)}(h)` might be greater than :math:`\rho_{Sa(T=0.1s), Sa(T=1s)}(h)`. This means one needs to repeat a calibration process many times to develop semivariogram functions and correlation models that have higher resolutions (i.e., direct semivariogram fit). Instead of fitting each semivariogram independently, [Loth13]_ proposed a predictive model for spatial covariance of spectral accelerations at different periods:
 
 .. math::
 
@@ -174,7 +174,7 @@ where :math:`I_{h=0}` is the indicator function equal to 1 at :math:`h = 0` and 
 Markhvida et al. (2017)
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-[Markhvida17]_ proposed to use Principal Component Analysis (PCA) to develop the predictive model for cross-correlograms. In theorem, PCA performs a linear transformation of the variables of interest to an orthogonal basis, where the resulting projections onto the new basis are uncorrelated:
+[Markhvida17]_ proposed to use Principal Component Analysis (PCA) to develop the predictive model for cross-correlograms. In theory, PCA performs a linear transformation of the variables of interest to an orthogonal basis, where the resulting projections onto the new basis are uncorrelated:
 
 .. math::
 
