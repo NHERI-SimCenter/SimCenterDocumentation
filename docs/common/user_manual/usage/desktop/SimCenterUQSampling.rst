@@ -20,7 +20,7 @@ SimCenterUQ uniquely provides an option to define the distribution of random var
 	:width: 1200
 
 
-Click the check box to import correlated datasets
+Click the checkbox to import correlated datasets
 
 To enable this feature, the user can explicitly define the group of RVs that will share the index samples in the UQ tab using the ``Resample RVs from correlated dataset``:
 

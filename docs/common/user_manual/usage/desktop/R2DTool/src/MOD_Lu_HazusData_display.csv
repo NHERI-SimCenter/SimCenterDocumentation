@@ -1,4 +1,4 @@
-id, str type, min #story, max #story, height, Sy, eta, C, gamma, eta_soft, alpha, beta, a_k, omega, damage1, dmamge2, damage3, damage4, T1, T2, hos, damp
+id, str type, min #story, max #story, height, Sy, eta, C, gamma, eta_soft, alpha, beta, a_k, omega, damage1, damage2, damage3, damage4, T1, T2, hos, damp
 1,W1,1,50,18.4547,0.4,0.0870354,1000,0.8,-0.001,3,1,0.1,0.2,0.004,0.012,0.04,0.1,0.35,0.33333,4.27,0.1
 2,W2,1,50,56.243,0.4,0.0794118,1000,0.6,-0.001,2.5,1,0.1,0.2,0.004,0.012,0.04,0.1,0.2,0.33333,3.66,0.1
 3,S1L,1,3,38.7247,0.25,0.0865974,1000,1,-0.001,3,1,0,0.2,0.006,0.012,0.03,0.08,0.25,0.33333,3.66,0.05
