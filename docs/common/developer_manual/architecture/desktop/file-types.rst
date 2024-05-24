@@ -1,4 +1,4 @@
-
+.. _lblFileTypes:
 
 **********************
 File Types and Schemas
