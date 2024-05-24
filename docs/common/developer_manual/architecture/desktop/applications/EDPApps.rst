@@ -26,4 +26,19 @@ The following options for EDP applications vary in the type of EDPs identified f
    :include-exclusive: %./categories:createEDP
 
 
+.. only:: HydroUQ_app
+
+   .. raw:: html
+      :file: _static/html/HydroUQ/createEDP.html
+
+.. only:: EEUQ_app
+
+   .. raw:: html
+      :file: _static/html/EE-UQ/createEDP.html
+
+.. only:: WEUQ_app
+
+   .. raw:: html
+      :file: _static/html/WE-UQ/createEDP.html
+
 

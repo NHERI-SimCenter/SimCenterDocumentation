@@ -9,9 +9,9 @@ Our software is designed to be modular and extensible. As an open-source project
 If you would like to contribute, checkout our GitHub repositories at |GitHub| and familiarize yourself with the below resources:
 
 .. toctree-filt::
-   :maxdepth: 3
+   :maxdepth: 4
 
-   :desktop_app:coding_style/desktop/coding_style
    :desktop_app:architecture/desktop/architecture
-   :pelicun:coding_style/pelicun/coding_style
+   :desktop_app:coding_style/desktop/coding_style
    :pelicun:API/pelicun/API
+   :pelicun:coding_style/pelicun/coding_style

@@ -1,7 +1,28 @@
-.. _lblArchitectureOverview:
 
-Overview
-========
+.. _lblArchitecture:
+
+=====================
+Software Architecture
+=====================
+
+The |app| is one of the SimCenter's computational applications, which are `scientific workflow systems <https://en.wikipedia.org/wiki/Scientific_workflow_system>`_ that executes a sequence of computational tasks specialized for natural hazard engineering (NHE) problems. In contrast to more general-purpose scientific workflow systems (such as `Taverna <https://taverna.incubator.apache.org/>`_, `Kepler <https://kepler-project.org/>`_, and `Pegasus <https://pegasus.isi.edu/>`_), SimCenter workflow systems include the following features:
+
+   - Access to high-performance computing resources, available on the cloud through |DesignSafe|, to enable parallel workflows for non-trivial large-scale NHE problems;
+   - Uncertainty quantification capabilities using `Dakota <https://dakota.sandia.gov/>`_, which allows users to introduce input uncertainties that are propagated through the workflow with random variables;
+   - Streamlined interfaces between existing software applications and datasets that are widely used by the NHE community, such as `OpenFOAM <https://openfoam.org/>`_, |OpenSeesLink|, `ADCIRC <http://adcirc.org/>`_, and `PEER Strong Ground Motion Databases <https://peer.berkeley.edu/peer-strong-ground-motion-databases>`_. To do this, the SimCenter develops pre- and post-processors for these existing applications and utilizes web technologies for accessing online services;
+   - Additional custom software applications produced by the SimCenter. Among these are applications that automate the acquisition of building inventory data (`BRAILS <https://nheri-simcenter.github.io/BRAILS-Documentation/>`_), applications that simulate hazard events and generate corresponding input files for passing through the workflow system (RegionalEvent Applications), applications for damage and loss assessment (`pelicun <https://nheri-simcenter.github.io/pelicun/>`_), and more.
+   - Modular framework that allows developers to incorporate their own software applications as components to the workflow system, so long as it meets the input-output structure at component interfaces.
+
+
+.. _figFramework:
+
+.. figure:: figures/SimCenterFramework.png
+   :align: center
+   :width: 1000
+   :figclass: align-center
+
+   SimCenter Software Framework
+
 
 A Level 1 diagram showing the system context for the SimCenter applications, i.e., how it fits in the world,
 is shown in :numref:`architecture figContext`. It shows SimCenter applications (EE-UQ, WE-UQ, HydroUQ, PBE, R2D) as a box in the center surrounded by the user and the user's systems. The SimCenter applications allow a user to create and run scientific workflow applications; the data for the applications may be obtained from the web or DataDepot. The workflow applications are run on either the local desktop or on some HPC at |DesignSafe|.
