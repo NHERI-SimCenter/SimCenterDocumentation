@@ -48,7 +48,7 @@ Install on Windows 10
 Download the Application
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-To download the |app|, navigate to the |appLink| page which should resemble |figDownload|. The download page contains a list of downloadable files and directories.
+To download the |app|, navigate to the |appLink| page which should resemble |figDownloadWin|. The download page contains a list of downloadable files and directories.
 
 
 .. only:: R2D_app
