@@ -6,7 +6,7 @@
 Release Plans
 *************
 
-There are not any new releases planned for |app|. The development plans may change depending on feedback from the community. If you have any suggestions, we encourage you to contribute and contact us through the SimCenter Forum.
+The development plans may change depending on feedback from the community. If you have any suggestions, we encourage you to contribute and contact us through the SimCenter Forum.
 
 September 2024
 ---------------
