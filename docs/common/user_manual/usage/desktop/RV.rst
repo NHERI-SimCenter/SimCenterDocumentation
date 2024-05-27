@@ -1,6 +1,6 @@
 .. _rv:
 
-
+====================
 RV: Random Variables
 ====================
 
@@ -17,11 +17,11 @@ Probability distribution
 Dakota Engine
 +++++++++++++
 
-The following six distribution classes are supported for Dakota engine.
+The following six distribution classes are supported for the Dakota UQ engine.
 
 1. `Normal (Gaussian) <https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-normal_uncertain.html>`_
 
-   User provides the mean (:math:`\mu`) and standard deviation (:math:`\sigma`) of the normal distribution. The density function of the normal distribution, as a function of :math:`\mu` and :math:`\sigma` is:
+   The user provides the mean (:math:`\mu`) and standard deviation (:math:`\sigma`) of the normal distribution. The density function of the normal distribution, as a function of :math:`\mu` and :math:`\sigma` is:
 
    .. math::
 
@@ -32,19 +32,19 @@ The following six distribution classes are supported for Dakota engine.
 
 
 
-   User provides the mean (:math:`\mu`) and standard deviation (:math:`\sigma`) of the lognormal distribution. The density function of the lognormal distribution, as a function of :math:`\mu` and :math:`\sigma` is:
+   The user provides the mean (:math:`\mu`) and standard deviation (:math:`\sigma`) of the lognormal distribution. The density function of the lognormal distribution, as a function of :math:`\mu` and :math:`\sigma` is:
 
    .. math::
 
       f(x) = \frac{1}{\sqrt{2 \pi} \zeta x} \exp \left( -{\frac{1}{2} \left( \frac{\ln x - \lambda}{\zeta} \right)^2} \right)
 
-  where :math:`\zeta^2 = \ln \left( \frac{\sigma^2}{\mu^2} + 1 \right)` and :math:`\lambda = \ln(\mu) - \frac{\zeta^2}{2}`
+   where :math:`\zeta^2 = \ln \left( \frac{\sigma^2}{\mu^2} + 1 \right)` and :math:`\lambda = \ln(\mu) - \frac{\zeta^2}{2}`
 
 
 3. `Beta <https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-beta_uncertain.html>`_
 
 
-   User provides :math:`\alpha`, :math:`\beta`, lower bound (:math:`L_B`), and an upper bound (:math:`U_B`) for the beta distribution. The density function of the normal distribution, as a function of these quantities is:
+   The user provides :math:`\alpha`, :math:`\beta`, lower bound (:math:`L_B`), and an upper bound (:math:`U_B`) for the beta distribution. The density function of the normal distribution, as a function of these quantities, is:
 
    .. math::
 
@@ -58,7 +58,7 @@ The following six distribution classes are supported for Dakota engine.
 4. `Uniform <https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-uniform_uncertain.html>`_
 
 
-   User provides the lower bound (:math:`L_B`), and an upper bound (:math:`U_B`) for the uniform distribution. The density function of the normal distribution, as a function of these quantities is:
+   The user provides the lower bound (:math:`L_B`), and an upper bound (:math:`U_B`) for the uniform distribution. The density function of the normal distribution, as a function of these quantities, is:
 
    .. math::
 
@@ -69,7 +69,7 @@ The following six distribution classes are supported for Dakota engine.
 5. `Weibull <https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-weibull_uncertain.html?highlight=weibull>`_
 
 
-   User provides shape parameter (:math:`k`) and scale parameter (:math:`a_n`)  for the Weibull distribution. The density function of the Weibull distribution, as a function of these quantities is:
+   The user provides the shape parameter (:math:`k`) and scale parameter (:math:`a_n`) for the Weibull distribution. The density function of the Weibull distribution, as a function of these quantities, is:
 
    .. math::
 
@@ -81,13 +81,13 @@ The following six distribution classes are supported for Dakota engine.
 6. `Gumbel <https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-gumbel_uncertain.html>`_
 
 
-   User provides :math:`\alpha` and :math:`\beta` for the Gumbel distribution, where :math:`\beta` is known as the **location parameter** and :math:`\frac{1}{\alpha}` the **scale parameter**. The density function of the Gumbel distribution, as a function of these quantities is:
+   The user provides :math:`\alpha` and :math:`\beta` for the Gumbel distribution, where :math:`\beta` is known as the **location parameter** and :math:`\frac{1}{\alpha}` the **scale parameter**. The density function of the Gumbel distribution, as a function of these quantities, is:
 
    .. math::
    
 	f(x) = \alpha e^{-\alpha(x-\beta)} \exp(-e^{-\alpha(x-\beta)})
 
-For each random variable, the user must enter a name and select from the pull down menu the distribution associated with the random variable. For the distribution selected, the user must then provide the input arguments, which are as described above. :numref:`figRV` shows the panel for a problem with four Random Variables with all random input following Gaussian distributions. 
+For each random variable, the user must enter a name and select from the drop-down menu the distribution associated with the random variable. For the distribution selected, the user must then provide the input arguments, which are as described above. :numref:`figRV` shows the panel for a problem with four Random Variables with all random input following Gaussian distributions. 
 
 .. _figRV:
 
@@ -110,140 +110,138 @@ For each random variable, the user must enter a name and select from the pull do
    :width: 800
    :figclass: align-center
 
-   Various distributions offered by the |app| .
-
-.. only:: quoFEM_app
-
-   SimCenterUQ Engine
-   +++++++++++++++++
-
-   Five additional distributions are supported in the SimCenter UQ engine. The users can define distributions either by **Parameters**, **Moments** or **Dataset**. (**Note**: Nataf transform module developed by [ERA19]_ is adopted)
-
-   1. Exponential
-
-      User provides the parameter (:math:`\lambda`) of the exponential distribution. The density function of the exponential distribution, as a function of :math:`\lambda` is:
-
-      .. math::
-
-         f(x) = \lambda \exp(-\lambda x)
-
-      where :math:`x>0` and :math:`\lambda>0`. User can alternatively provide the **mean** (:math:`m`) of the exponential distribution. 
-
-      .. math::
-
-   		m = \frac{1}{\lambda}
+   Distributions offered by the |app|.
 
 
-   2. Discrete 
+SimCenterUQ Engine
++++++++++++++++++
 
-      User provides the :math:`N` discrete values (:math:`x_i`) and their weights (probability :math:`p_i`) for a multinomial distribution. The probability mass function of the discrete distribution is:
+Five additional distributions are supported in the SimCenter UQ engine. The users can define distributions either by **Parameters**, **Moments** or **Dataset**. (**Note**: Nataf transform module developed by [ERA19]_ is adopted)
 
-      .. math::
+1. Exponential
 
-         p(x)=\begin{cases}
-      		 p_i, & \text{if $x=x_i$}\\
-      	 	 0, & \text{otherwise}
-         \end{cases}
+   The user provides the parameter (:math:`\lambda`) of the exponential distribution. The density function of the exponential distribution, as a function of :math:`\lambda`, is:
 
-      where :math:`p_i>0`. The weights (:math:`p_i`) will be automatically normalized if they do not sum up to one. The option to define by moments is not supported for the discrete distribution.
+   .. math::
 
-   3. Gamma
+      f(x) = \lambda \exp(-\lambda x)
 
-      User provides the shape parameter (:math:`k`) and scale parameter (:math:`\lambda`) of the Gamma distribution. The density function of the Gamma distribution, as a function of :math:`k` and :math:`\lambda` is:
+   where :math:`x>0` and :math:`\lambda>0`. The user can alternatively provide the **mean** (:math:`m`) of the exponential distribution. 
 
-      .. math::
+   .. math::
 
-         f(x) = \frac{\lambda^kx^{k-1}\exp(-\lambda x)}{\Gamma(k)}
+		m = \frac{1}{\lambda}
 
-      where :math:`\lambda>0` and :math:`k>0`. User can alternatively provide the **mean** (:math:`m`) and **standard deviation** (:math:`\sigma`) . 
 
-      .. math::
+2. Discrete 
 
-   		m &= \frac{k}{\lambda} \\
-   		\sigma &= \sqrt{\frac{k}{\lambda^2}}
+   The user provides the :math:`N` discrete values (:math:`x_i`) and their weights (probability :math:`p_i`) for a multinomial distribution. The probability mass function of the discrete distribution is:
 
-   4. Chi-squared
+   .. math::
 
-      User provides the parameter :math:`k` of the Chi-squared distribution. The density function of the Chi-squared distribution, as a function of :math:`k` is
+      p(x)=\begin{cases}
+   		 p_i, & \text{if $x=x_i$}\\
+   	 	 0, & \text{otherwise}
+      \end{cases}
 
-      .. math::
+   where :math:`p_i>0`. The weights (:math:`p_i`) will be automatically normalized if they do not sum up to one. The option to define by moments is not supported for the discrete distribution.
 
-         f(x) = \frac{1}{2^{\frac{k}{2}}\Gamma\left(\frac{k}{2}\right)}x^{\left(\frac{k}{2}-1\right)} \exp\left(-\frac{x}{2}\right)
+3. Gamma
 
-      where :math:`x>0` and :math:`k` is a natural number. User can alternatively select the moment option where the **mean** (:math:`m`) is 
+   The user provides the shape parameter (:math:`k`) and scale parameter (:math:`\lambda`) of the Gamma distribution. The density function of the Gamma distribution, as a function of :math:`k` and :math:`\lambda`, is:
 
-      .. math::
+   .. math::
 
-   		m = k
+      f(x) = \frac{\lambda^kx^{k-1}\exp(-\lambda x)}{\Gamma(k)}
 
-   5. Truncated exponential
+   where :math:`\lambda>0` and :math:`k>0`. Users can alternatively provide the **mean** (:math:`m`) and **standard deviation** (:math:`\sigma`). 
 
-      User provides the parameter :math:`k` and bounds :math:`L_B` and :math:`U_B` for the truncated exponential distribution. The density function of the truncated exponential distribution, as a function is
+   .. math::
 
-      .. math::
+		m &= \frac{k}{\lambda} \\
+		\sigma &= \sqrt{\frac{k}{\lambda^2}}
 
-         f(x) = \frac{\lambda}{c} \exp(-\lambda x), \text{  where $L_B<x<U_B$}
+4. Chi-squared
 
-      where :math:`c` is a normalization constant, i.e.
+   The user provides the parameter :math:`k` of the Chi-squared distribution. The density function of the Chi-squared distribution, as a function of :math:`k`, is
 
-      .. math::
+   .. math::
 
-         c = \int_{L_B}^{U_B} \lambda\exp(-\lambda x) dx
+      f(x) = \frac{1}{2^{\frac{k}{2}}\Gamma\left(\frac{k}{2}\right)}x^{\left(\frac{k}{2}-1\right)} \exp\left(-\frac{x}{2}\right)
 
-      where :math:`x>0` and :math:`\lambda>0`. User can alternatively provide the **mean** of the distribution along with the **truncated bounds**. 
+   where :math:`x>0` and :math:`k` is a natural number. Users can alternatively select the moment option where the **mean** (:math:`m`) is 
 
-      .. figure:: figures/rv5.png
-       :align: center
-       :width: 800
-       :figclass: align-center
+   .. math::
 
-       Extended random variable specification
-      
+		m = k
 
-   **Input Type - Dataset**
+5. Truncated exponential
 
-   User can also define the random variables by providing sample realization data set as shown in the below figure, by selecting ``Dataset`` input type. The data will be fitted to the specified probability distribution model. Note that for some of the bounded distributions, such as beta and truncated exponential, the bounds should additionally be provided through the user interface.  
+   The user provides the parameter :math:`k` and bounds :math:`L_B` and :math:`U_B` for the truncated exponential distribution. The density function of the truncated exponential distribution is
 
-   .. _figRVdata
+   .. math::
 
-   .. figure:: figures/rv3.png
-       :align: center
-       :width: 800
-       :figclass: align-center
+      f(x) = \frac{\lambda}{c} \exp(-\lambda x), \text{  where $L_B<x<U_B$}
 
-       Example of input dataset file
+   where :math:`c` is a normalization constant, i.e.
 
-   .. note::
+   .. math::
 
-      - Clicking the ``Show PDF`` or ``Show PMF`` button will display probability distribution (or mass) function of each random variable with the specified parameters/moments. If the PDF or PMF is not displayed, we recommend the users to double-check the parameters/moments if they are in a valid range. The plotting button is not activated for the ``Dataset`` input type. 
+      c = \int_{L_B}^{U_B} \lambda\exp(-\lambda x) dx
 
-   .. [ERA19]
-      Engineering Risk Analysis Group, Technische Universität München: https://www.bgu.tum.de/era/software/eradist/ (Matlab/python programs and documentations)
+   where :math:`x>0` and :math:`\lambda>0`. Users can alternatively provide the **mean** of the distribution along with the **truncated bounds**. 
 
-.. only:: quoFEM_app
+   .. figure:: figures/rv5.png
+    :align: center
+    :width: 800
+    :figclass: align-center
 
-   Correlation matrix
-   ------------------------
+    Extended random variable specification
+   
 
-   Correlation coefficients between each variable can be defined by clicking the ``Correlation Matrix`` button. Default correlations between variables are set to be zero. The diagonal element of the matrix is fixed as one, and symmetry of the correlation matrix is enforced once the entries of the lower triangular part of the matrix are modified. 
+**Input Type - Dataset**
 
-   .. figure:: figures/rv4.png
-      :align: center
-      :width: 800
-      :figclass: align-center
+Users can also define the random variables by providing a sample realization data set as shown in the below figure, by selecting the ``Dataset`` input type. The data will be fitted to the specified probability distribution model. Note that for some bounded distributions, such as beta and truncated exponential, the bounds should additionally be provided through the user interface.  
 
-      Example of a valid correlation matrix
+.. _figRVdata
 
-   Once the ``OK`` button is clicked after setting all required entries, the program will automatically check the validity of the matrix before closing the correlation matrix window. If the matrix is not **positive definite**, an error message will be displayed and the window will not be closed. In such case, user should adjust the correlation coefficients to be positive definite.
+.. figure:: figures/rv3.png
+    :align: center
+    :width: 800
+    :figclass: align-center
 
-   .. note::
+    Example of the input dataset file
 
-      - When ``constant`` variable is introduced instead of probability distributions, the correlation coefficient corresponding to those variables will be ignored. 
-      - When more than one random variable is provided as ``Dataset``, correlations between the data pairs will not be incorporated automatically. If correlations exist, user can define them manually at the correlation matrix window.
+.. note::
 
-   .. warning::
+   - Clicking the ``Show PDF`` or ``Show PMF`` button will display the probability distribution (or mass) function of each random variable with the specified parameters/moments. If the PDF or PMF is not displayed, we recommend the users double-check if the parameters/moments are in a valid range. The plotting button is not activated for the ``Dataset`` input type. 
 
-       Correlation warping for Nataf variable transformation of **beta** distributions is currently not supported.
+.. [ERA19]
+   Engineering Risk Analysis Group, Technische Universität München: https://www.bgu.tum.de/era/software/eradist/ (Matlab/python programs and documentations)
+
+
+Correlation matrix
+------------------------
+
+Correlation coefficients between each variable can be defined by clicking the ``Correlation Matrix`` button. Default correlations between variables are set to zero. The diagonal element of the matrix is fixed as one, and symmetry of the correlation matrix is enforced once the entries of the lower triangular part of the matrix are modified. 
+
+.. figure:: figures/rv4.png
+   :align: center
+   :width: 800
+   :figclass: align-center
+
+   Example of a valid correlation matrix
+
+Once the ``OK`` button is clicked after setting all required entries, the program will automatically check the validity of the matrix before closing the correlation matrix window. If the matrix is not **positive definite**, an error message will be displayed and the window will not be closed. In such a case, the user should adjust the correlation coefficients to be positive definite.
+
+.. note::
+
+   - When a ``constant`` variable is introduced instead of probability distributions, the correlation coefficient corresponding to those variables will be ignored. 
+   - When more than one random variable is provided as ``Dataset``, correlations between the data pairs will not be incorporated automatically. If correlations exist, the user can define them manually at the correlation matrix window.
+
+.. warning::
+   
+   Correlation warping for Nataf variable transformation of **beta** distributions is currently not supported.
 
 
 .. only:: quoFEM_app
@@ -272,7 +270,7 @@ For each random variable, the user must enter a name and select from the pull do
        :width: 800
        :figclass: align-center
 
-       Specifying user-defined distributions under CustomUQ engine
+       Specifying user-defined distributions under the CustomUQ engine
 
 
 .. Tip::
