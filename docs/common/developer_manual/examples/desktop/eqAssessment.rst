@@ -124,7 +124,7 @@ This command locates the backend applications in the folder "applications", and 
 
 
 Outputs
-==========
+=======
 
 The example output files can be downloaded here: :download:`output_data_eq.zip <files/output_data_eq.zip>`. For more information about the output files produced, refer to :ref:`Outputs <lblOutputs>`.
 
@@ -144,7 +144,7 @@ The example output files can be downloaded here: :download:`output_data_eq.zip <
    :align: center
 
 
-2. **DV_1-19.csv**: reports decision variable estimates (repair cost, repair time, injuries) for each building asset.
+3. **DV_1-19.csv**: reports decision variable estimates (repair cost, repair time, injuries) for each building asset.
 
 .. csv-table:: DV_1-19.csv
    :file: files/DV_1-19.csv
