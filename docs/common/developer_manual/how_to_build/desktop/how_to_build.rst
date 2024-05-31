@@ -4,11 +4,11 @@
 How to Build
 ============
 
-SimCenter tools all comprise a frontend user interface (UI) and backend applications. They are kept in separate GitHub repositories and are also built separately. The following sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI and the backend.
+SimCenter tools comprise a frontend user interface (UI) and backend applications. They are kept in separate GitHub repositories and are also built separately. The following sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI and the backend.
 
 .. note::
 
-   As part of our continuous integration process, |app| is built every time we check code into the NHERI-SimCenter repositories. To do this, we make use of a CI service. The current service is `appveyor <https://www.appveyor.com/>`_. As a consequence, in the |app| repo that you will clone as part of this build process, there is a file **appveyor.yml**. This file contains shell commands that are issued to set up the operating system, download the software, and build it. If the following commands fail for you, look at the appveyor.yml file to see what commands are currently being called, as these may be more up-to-date than what is presented below.
+   As part of our continuous integration process, |app| is built every time we check code into the NHERI-SimCenter repositories. To do this, we use a CI service. The current service is `AppVeyor <https://www.appveyor.com/>`_. Consequently, in the |app| repo that you will clone as part of this build process, there is a file **appveyor.yml**. This file contains shell commands that are issued to set up the operating system, download the software, and build it. If the following commands fail for you, look at the appveyor.yml file to see what commands are currently being called, as these may be more up-to-date than what is presented below.
 
 ********************
 Install Dependencies
@@ -38,7 +38,7 @@ First, ensure the following dependencies are installed:
 
 .. warning::
 
-  Qt Version 6.0 is currently available. It is so new we do not use it.
+   Qt Version 6.0 is currently available. It is so new we do not use it.
 
 ******************************
 Build the Backend Applications
@@ -76,13 +76,13 @@ Setup the development environment with Conan
 Build the applications
 ======================
 
-#. Obtain the code in the SimCenterBackendApplications repository from `Github <https://github.com/NHERI-SimCenter/SimCenterBackendApplications>`_. You can do that by using your preferred Git client/GUI or by using the ``git clone`` command in the terminal:
+#. Obtain the code in the SimCenterBackendApplications repository from `GitHub <https://github.com/NHERI-SimCenter/SimCenterBackendApplications>`_. You can do that by using your preferred Git client/GUI or by using the ``git clone`` command in the terminal:
 
     .. code:: console
 
         git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications
 
-#. To build the applications you need to now navigate to the **SimCenterBackendApplications** folder that was created with the **git clone** command. Once there, you will issue the following set of commands to create a **build** folder, change directory to that folder, install needed software using conan, and finally use **cmake** to build and install the applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail).
+#. To build the applications, you need to navigate to the **SimCenterBackendApplications** folder that was created with the **git clone** command. Once there, issue the following set of commands to create a **build** folder, change directory to that folder, install needed software using Conan, and finally use **CMake** to build and install the applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail).
 
     For those developers using the Windows operating system, in a terminal or PowerShell window you need to type the following:
 
@@ -110,7 +110,7 @@ Build the applications
 
     .. note::
 
-       #. For Mac users running **Big Sur** and version **12** of XCode there are some reported issues. Replace line 3 above with the following two lines:
+       #. For Mac users running **Big Sur** and version **12** of XCode, there are some reported issues. Replace line 3 above with the following two lines:
 
           .. code:: console
 
@@ -187,12 +187,12 @@ Build using Qt Creator
 
 1. Start Qt Creator, then open the |short tool id|.pro file located in the |short tool id| directory that was downloaded in the previous step.
 2. Set up the development kit in Qt Creator. This is usually done by selecting the Qt version, compiler, and configuration and following the onscreen dialog.
-3. Build the application and run it in Qt Creator IDE using the **Run** button. This can be done using the keyboard shortcut ``F5`` to build and start the tool.
+3. Build the application and run it in the Qt Creator IDE using the **Run** button. This can be done using the keyboard shortcut ``F5`` to build and start the tool.
 
 Build from the Terminal
 ========================
 
-The operations are similar to what was done when building the backend applications. In the terminal application, starting inside the directory of the cloned application again, you will create a build directory, cd into that build directory, run **qmake**, and finally make (or on Windows nmake) to create the application.
+The operations are similar to what was done when building the backend applications. In the terminal application, starting inside the directory of the cloned application again, you will create a build directory, cd into that build directory, run **qmake**, and finally make (or on Windows, nmake) to create the application.
 
 Windows developers will type the following in a terminal or a PowerShell window:
 
@@ -222,7 +222,7 @@ Linux or Mac users will type the following in a terminal window from inside the 
 
         /Users/fmckenna/Qt/5.15.2/clang_64/bin/qmake ../|short tool id|.pro
 
-   #. On a Windows 10 with Visual Studio, the above commands need to be performed using a `Visual Studio x64 command prompt <https://docs.microsoft.com/en-us/cpp/build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line?view=msvc-160>`_ .
+   #. On Windows 10 with Visual Studio, the above commands need to be performed using a `Visual Studio x64 command prompt <https://docs.microsoft.com/en-us/cpp/build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line?view=msvc-160>`_.
 
    #. If installed, jom can also be used to build in parallel.
 

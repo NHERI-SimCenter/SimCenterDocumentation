@@ -4,8 +4,7 @@
 Hurricane Assessment
 *********************
 
-This example is a small-scale regional hurricane risk assessment that performs damage/loss estimation for a group of 20 wooden buildings in Atlantic City during the Sandy Storm. The buildings are subject to two types of hazards: wind, measured by peak wind speed (PWS), and flooding, measured by flood water depth (FWD). This example does not use response simulation; instead, an **IMasEDP** application translates the IMs directly to the DL application and uses IM-based component fragility functions to estimate damage.
-The distributions of the buildings' structural types and stories are illustrated below.
+This example is a small-scale regional hurricane risk assessment that performs damage/loss estimation for a group of 20 wooden buildings in Atlantic City during the Sandy Storm. The buildings are subject to two types of hazards: wind, measured by peak wind speed (PWS), and flooding, measured by flood water depth (FWD). This example does not use response simulation; instead, an **IMasEDP** application translates the IMs directly to the DL application and uses IM-based component fragility functions to estimate damage. The distributions of the buildings' structural types and stories are illustrated below.
 
 .. figure:: figures/SandyWindFlood.png
    :align: center
@@ -14,7 +13,7 @@ The distributions of the buildings' structural types and stories are illustrated
    Peak wind speed and flood water depth maps of the Sandy Storm
 
 Inputs
-==========
+======
 
 The example input files can be downloaded here: :download:`example_hu.zip <files/example_hu.zip>`. For more information about required input files, refer to :ref:`Inputs <lblUserDefInputs>`.
 
@@ -64,7 +63,7 @@ The workflow can be executed by uploading the appropriate files to :ref:`DesignS
 
       python "C:/rWHALE/applications/Workflow/R2D_workflow.py" "C:/rWHALE/hurricane_example/rWHALE_config_hu.json" --registry "C:/rWHALE/applications/Workflow/WorkflowApplications.json" --referenceDir "C:/rWHALE/hurricane_example/input_data/" -w "C:/rWHALE/hurricane_example/results"
 
-This command locates the backend applications in the folder "applications", and the input files in the directory "hurricane_example". Please ensure that the paths in the command accurately identify the locations of the files in your directory.
+This command locates the backend applications in the folder "applications" and the input files in the directory "hurricane_example". Please ensure that the paths in the command accurately identify the locations of the files in your directory.
 
 ::
 
@@ -83,7 +82,7 @@ This command locates the backend applications in the folder "applications", and 
       └── input_params.csv            # building source file
 
 Outputs
-==========
+=======
 
 The example output files can be downloaded here: :download:`output_data_hu.zip <files/output_data_hu.zip>`. For more information about the output files produced, refer to :ref:`Outputs <lblOutputs>`.
 
