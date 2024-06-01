@@ -52,9 +52,8 @@ parse the wind speed to the 3-second and open-terrain PWS
 
 As the initial developer of this model has made the underlying code available for this testbed, 
 users have two ways to engage this model to generate wind fields for this testbed:
-1. Users can adopt the aforementioned default synthetic Category 5 scenario striking Atlantic City.
-2. Users can generate a custom storm scenario by providing the required inputs into this linear 
-   analytical model to generate a customized wind field for use with this testbed.
+   1. Users can adopt the aforementioned default synthetic Category 5 scenario striking Atlantic City.
+   2. Users can generate a custom storm scenario by providing the required inputs into this linear analytical model to generate a customized wind field for use with this testbed.
 
 Wind fields described by either approach are then locally interpolated to the coordinates associated with each 
 footprint. The resulting 3s-gust peak wind speed (PWS) ranges from 178 mph to 191 mph given the simulated 
