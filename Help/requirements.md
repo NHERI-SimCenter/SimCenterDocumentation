@@ -1,7 +1,7 @@
 # Requirements
 
 Tables on the requirement pages are built from automatically generated CSV
-files which are created in the [`docs/common/reqments/_out/`](../docs/common/reqments/_out/)
+files which are created in the [`docs/common/reqments/_out_from_json/`](../docs/common/reqments/_out_from_json/)
 directory.
 
 The data for these CSV files come from a common set of JSON files located 

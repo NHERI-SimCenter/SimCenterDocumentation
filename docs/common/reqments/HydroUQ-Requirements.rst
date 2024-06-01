@@ -17,7 +17,7 @@ Loading Requirements
 .. csv-filter:: Requirements - Storm-Surge / Tsunami Loading
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation", "Implementation", "Implementation"
   :widths: 10, 60, 10, 10, 10, 10
-  :file: _out/Loading.csv
+  :file: Loading.csv
   :included_cols: 0, 1, 2, 3, 4, 8
   :include: {0: '\**HL.*|#'}
 
@@ -30,7 +30,7 @@ Modeling Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation", "Implementation", "Implementation"
   :widths: 10, 60, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 8
-  :file: _out/Modeling.csv
+  :file: Modeling.csv
 
 .. include:: key.rst
 
@@ -41,7 +41,7 @@ Analysis Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation", "Implementation", "Implementation"
   :widths: 10, 60, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 8
-  :file: _out/Analysis.csv
+  :file: Analysis.csv
 
 .. include:: key.rst
 
@@ -50,7 +50,7 @@ UQ Requirements
 ---------------
 
 .. csv-filter:: Requirements - Uncertainty Quantification Methods and Variables
-  :file: _out/Uncertainty.csv
+  :file: Uncertainty.csv
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 8
@@ -61,7 +61,7 @@ RV Requirements
 ---------------
 
 .. csv-filter:: Requirements - Random Variables
-  :file: _out/RandomVariables.csv
+  :file: RandomVariables.csv
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 8
@@ -74,7 +74,7 @@ Common Research Application Requirements
 .. csv-filter:: Requirements - CR
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation", "Implementation", "Implementation"
   :widths: 10, 60, 10, 10, 10, 10
-  :file: _out/Common.csv
+  :file: Common.csv
   :included_cols: 0, 1, 2, 3, 4, 8
 
 .. include:: key.rst

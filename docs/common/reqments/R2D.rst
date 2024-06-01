@@ -27,7 +27,7 @@ Earthquake Loading Requirements
 .. csv-filter:: Requirements - EL
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation", "Implementation", "Implementation", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
-  :file: _out/Loading.csv
+  :file: Loading.csv
   :included_cols: 0, 1, 2, 3, 4, 10
   :include: {0: '#|\**EL.*'}
 
@@ -40,7 +40,7 @@ Wind Loading Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation", "Implementation", "Implementation", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 10
-  :file: _out/Loading.csv
+  :file: Loading.csv
   :include: {0: '#|\**WL.*'}
 
 .. include:: key.rst
@@ -52,7 +52,7 @@ Surge/Tsunami Loading Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation", "Implementation", "Implementation", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 10
-  :file: _out/Loading.csv
+  :file: Loading.csv
   :include: {0: '#|\**HL.*'}
 
 .. include:: key.rst
@@ -64,7 +64,7 @@ UQ Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation", "Implementation", "Implementation", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 10
-  :file: _out/Uncertainty.csv
+  :file: Uncertainty.csv
 
 .. include:: key.rst
 
@@ -76,7 +76,7 @@ RV Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation", "Implementation", "Implementation", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 10
-  :file: _out/RandomVariables.csv
+  :file: RandomVariables.csv
 
 .. include:: key.rst
 	     
@@ -88,7 +88,7 @@ Common Research Application Requirements
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation", "Implementation", "Implementation", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 10
-  :file: _out/Common.csv
+  :file: Common.csv
 
 .. include:: key.rst
 

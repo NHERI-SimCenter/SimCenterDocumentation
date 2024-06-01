@@ -4,11 +4,21 @@
 Wave Flume Geometry
 -------------------
 
-This constitutes the geometric definition of the wave flume. This is the first step in the description of the digital twin for the wave flume. One of the inputs is the direction of gravity. For this type of simulation, it is recommended to use ``-z`` for the gravity direction.
+This sections discusses the geometric definition for wave flume simulations. This is the first step in the description of a digital twin of an experimental set in said flume facilities. 
 
-**Standard OSU flume**
+For instance, one of the inputs required to use a simulation to represent a real-world representation is the direction of gravity. For fluid simulations, it is often recommended to use ``-z``, but ``-y`` is a common choice as well. Other parameters may entail wave-maker specifications, concrete wall roughness, the basic wave flume geometry height / width / depth, among others. 
 
-The flume geometry can be defined using the standard flume definition. Here, a common flume geometry for the Large Wave Flume at the O.H. Hinsdale Wave Research Laboratory in Oregon State University. This is selected as shown in :numref:`Flume02`.
+Bathymetry, i.e. sloped panels that are often present in wave flumes to influence wave development, are important for replicating experiments digitally and so an adjustable bathymetry creator is present in HydroUQ. The wave flume geometry in particular is a critical parameter, as it determines whether a full wave flume simulation is done or a truncated one (i.e. if reduced values were chosen). Bathymetry, i.e. sloped panels that are often present in wave flumes to influence wave development, are likewise important and supported in HydroUQ. 
+
+The basic domain geometry of the wave flume is defined by providing the coordinates of the external profile of the wave flume. The coordinates of the standard wave flume are provided below. 
+
+.. _FlumeOSU:
+
+Definition via Wave Flume Digital Twins
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The flume geometry can be defined using a standard flume definition, i.e. a digital twin. Here, a common flume geometry for the Large Wave Flume at the O.H. Hinsdale Wave Research Laboratory in Oregon State University. This is selected as shown in :fig:`Flume02`.
+
 
 .. _Flume02:
 
@@ -19,14 +29,18 @@ The flume geometry can be defined using the standard flume definition. Here, a c
 
    Using the standard wave flume geometry
 
-The geometry of the wave flume is defined by providing the coordinates of the external profile of the wave flume, as shown below.
-    
+
+The geometry of the wave flume is defined by providing the coordinates of the external profile of the wave flume, as shown in :fig:`WaveFlumeGeo` below.
+   
+.. _WaveFlumeGeo:
+
 .. figure:: Geometry/figures/WaveFlumeGeo.png
    :align: center
    :width: 500
    :figclass: align-center
 
    The coordinates representing the external profile of the wave flume
+
 
 The coordinates of the standard wave flume are provided below.
 
@@ -42,9 +56,18 @@ The coordinates of the standard wave flume are provided below.
    80.116,4.572
    -2.085,4.572
 
-**Definition by coordinates**
 
-Alternatively, the user can define their own custom wave-flume geometry, as shown below. Here, the user needs to specify the ``x`` (along the length) and ``z`` (along the height) coordinates in a tabular format. Additionally, breadth also needs to be provided to define the wave flume geometry uniquely. This is similar to the geometry defined above for the standard OSU flume. HydroUQ constructs the STL files necessary for the CFD simulation process using the provided coordinates and the breadth.
+
+.. _FlumeCoord:
+
+Definition by Coordinates
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Alternatively, you may define your own custom wave-flume geometry, as shown in :fig:`Flume01`. Specify the ``x`` (along the length) and ``z`` (along the height) coordinates in a tabular format. Additionally, breadth must be provided for 3D simulations.
+
+HydroUQ constructs the digital geometry repesentation, i.e. ``STL`` files, necessary for common CFD simulations using the provided coordinates and the breadth automatically.
+
+.. _Flume01:
 
 .. figure:: Geometry/figures/Flume01.png
    :align: center
@@ -53,5 +76,7 @@ Alternatively, the user can define their own custom wave-flume geometry, as show
 
    Defining a custom wave-flume geometry
 
-.. note::
-   The breadth of the flume needs to be greater than 0. If the breadth is too small, this can lead to numerical issues.
+
+.. important::
+   The breadth of the flume needs to be greater than 0, and typically a multiple of 4+ times the characteristic simulation length (e.g. a typical grid-cell width). If the breadth is too small, this can lead to numerical issues that may crash the simulation or over-constrain fluid motion.
+

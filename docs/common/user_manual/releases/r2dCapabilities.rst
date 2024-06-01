@@ -5,7 +5,7 @@
 Capabilities
 ************
 
-**Version** |tool version| of |app| was released in **April 2024**, introducing significant updates and enhancements. This document outlines the functionalities available in the current version, highlighting new features and improvements marked in :blue:`blue`.
+**Version** |tool version| of |app| was released in **April 2024**, introducing significant updates and enhancements. This document outlines the functionalities available in the current version, highlighting new features and improvements in :blue:`blue`.
 
 Major updates from Version 4.0 are adding liquefaction-induced ground deformation estimation in the :blue:`regional earthquake event generation tool`, refactored :blue:`regional inventory generation tool BRAILS`, and upgraded :blue:`damage and loss engine Pelicun`. 
 

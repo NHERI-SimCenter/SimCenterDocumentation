@@ -23,7 +23,7 @@ This section details the Visualization panel as depicted in :numref:`fig-regiona
 
 	- To select a subset of assets, click on the **Select** button, shown in :numref:`fig-R2DAssetSelection`, to start the selection process. 
 	- You can click on a single asset to select it, or click-hold and drag to create a rectangle that will select all assets that it intersects. By holding the shift key, you can continue selecting assets until you are satisfied. 
-	- Clicking on the **Add Assets** button will add the selected assets to the **Selected Assets** layer for that type of asset, e.g., **Selected Buildingss**. Only assets added to the **Selected Assets** layer will be analysed. 
+	- Clicking on the **Add Assets** button will add the selected assets to the **Selected Assets** layer for that type of asset, e.g., **Selected Buildings**. Only assets added to the **Selected Assets** layer will be analyzed. 
 	
 	.. note:: Only features that are in the current layer can be selected on the map. The current layer is the layer that is selected (highlighted) in the layer tree. 
 	
@@ -50,4 +50,4 @@ This section details the Visualization panel as depicted in :numref:`fig-regiona
 	  :align: center
 	  :figclass: align-center
 
-	  Asset identify.
+	  Asset attributes.

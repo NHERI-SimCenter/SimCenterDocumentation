@@ -48,7 +48,7 @@ The available methods to input site definitions are:
     #. **Grid of Locations**
 
 	In the **Grid of Locations** input pane, given in :numref:`fig-R2DEQSSSiteGridPane`, the user can either manually define a grid, or select a grid on a map. To manually define a grid, the user needs to provide the following input parameters:
-		- **Latitude Extents:**  The minimum and maximum latitude values that the grid will span.
+		- **Latitude Extents:** The minimum and maximum latitude values that the grid will span.
 		- **Longitude Extents:** The minimum and maximum longitude values that the grid will span.
 		- **Latitude Discretization:** The number of divisions along the latitude direction.
 		- **Longitude Discretization:** The number of divisions along the longitude direction.
@@ -65,7 +65,7 @@ The available methods to input site definitions are:
 
 	  Grid of locations site definition pane.
 
-	To select a grid on a map, the user needs to click on the **Define Grid on Map** button and a new **Grid Selection Window** will appear with the grid, as seen in :numref:`fig-R2DEQSSGridSelection`. A user can click and drag the **Resize** and **Move** handles, shown in :numref:`fig-R2DEQSSGridSelection` as blue circles, to resize the grid extents and to move the grid. Changing the grid discretization along the latitude and longitude directions will change the number of grid divisions on the map. Once a grid is defined on the map, the window can be closed and the grid information will be updated in the input pane. To view or modify the grid again, press the **Define Grid on Map** button and the **Grid Selection Window** displaying the grid will reappear.
+	To select a grid on a map, the user needs to click on the **Define Grid on Map** button, and a new **Grid Selection Window** will appear with the grid, as seen in :numref:`fig-R2DEQSSGridSelection`. A user can click and drag the **Resize** and **Move** handles, shown in :numref:`fig-R2DEQSSGridSelection` as blue circles, to resize the grid extents and to move the grid. Changing the grid discretization along the latitude and longitude directions will change the number of grid divisions on the map. Once a grid is defined on the map, the window can be closed and the grid information will be updated in the input pane. To view or modify the grid again, press the **Define Grid on Map** button and the **Grid Selection Window** displaying the grid will reappear.
 
 	.. _fig-R2DEQSSGridSelection:
 	
@@ -73,17 +73,17 @@ The available methods to input site definitions are:
 	  :align: center
 	  :figclass: align-center
 	
-	  Selection of grid on map.
+	  Selection of grid on the map.
 	  
     #. **Scattering Locations**
 
   	In the **Scattering Locations** input pane, given in :numref:`fig-R2DEQSSSiteScatterPane`, the user provides a custom list of sites. The following inputs are required:
 
-		- **Site File (.csv):** The user-provided file, in ``.csv`` format, containing the list of sites and corresponding site data. Users can provide user-specified Vs30, Z1pt0 and Z2pt5 values. The conventions to define such ``.csv`` file is described :ref:`here <lbl-siteFileAndSCSiteModel>`
+		- **Site File (.csv):** The user-provided file, in ``.csv`` format, which contains the list of sites and corresponding site data. Users can provide user-specified Vs30, Z1pt0 and Z2pt5 values. The conventions to define such ``.csv`` file is described :ref:`here <lbl-siteFileAndSCSiteModel>`
 		- **Sites to Analyze Filter:** A filter to select a subset of the sites in the loaded Site File to analyze. All sites will be analyzed if this field is left empty.
 		- **Vs30 model:** The model of the average shear-wave velocity (m/s) between 0 and 30 meters depth (Vs30). A "User-specified" option is available and the Vs30 models at each site should be provided in the Site File (.csv) as described in :ref:`Site File (.csv) definition <lbl-siteFileAndSCSiteModel>`
-		- **Z1pt0 model:** The model of depth (m) to where shear-wave velocity = 1.0 km/sec. If the "User-specified" option is selected, R2D will check if a "z1pt0" column exits in the Site File (.csv). If such a column exists, the values in the Site File (.csv) will be used. Otherwise, the value specified in the **Z1pt0** pane will be applied to all sites.
-		- **Z2pt5 model:** The model of depth (m) to where shear-wave velocity = 2.5 km/sec. If the "User-specified" option is selected, R2D will check if a "z2pt5" column exits in the Site File (.csv). If such a column exists, the values in the Site File (.csv) will be used. Otherwise, the value specified in the **Z2pt5** pane will be applied to all sites.
+		- **Z1pt0 model:** The model of depth (m) to where shear-wave velocity = 1.0 km/sec. If the "User-specified" option is selected, R2D will check if a "z1pt0" column exists in the Site File (.csv). If such a column exists, the values in the Site File (.csv) will be used. Otherwise, the value specified in the **Z1pt0** pane will be applied to all sites.
+		- **Z2pt5 model:** The model of depth (m) to where shear-wave velocity = 2.5 km/sec. If the "User-specified" option is selected, R2D will check if a "z2pt5" column exists in the Site File (.csv). If such a column exists, the values in the Site File (.csv) will be used. Otherwise, the value specified in the **Z2pt5** pane will be applied to all sites.
 		- The details of the available Vs30, Z1pt0, and Z2pt5 models in R2D are described :ref:`here <lbl-shearWaveVelocity>`
 	.. _fig-R2DEQSSSiteScatterPane:
 	
@@ -116,10 +116,10 @@ and Z2pt5 are several ways that shear-wave velocity data is incorporated into se
 	R2D supports three models to infer Vs30 values and a user-specified method to 
 	specify measured Vs30 values. The unit of Vs30 in R2D is meter per second.
 		- CGS/Wills Vs30 (Wills et al., 2015) [willsetal2015]_
-			This model is applicable to California, US and is created based on 
+			This model is applicable to California, US, and is created based on 
 			correlations of Vs30 with geologic units and surface slope. The database
 			is obtained by interfacing the `WillsMap2015 <https://github.com/opensha/opensha/blob/master/src/main/java/org/opensha/commons/data/siteData/impl/WillsMap2015.java>`_ class in **openSHA**, which
-			inturn obtained the database from the the electronic supplements of [willsetal2015]_.
+			obtained the database from the electronic supplements of [willsetal2015]_.
 		- Thompson California Vs30 (Thompson et al. 2018) [Thompson2018]_
 			This model is applicable to California, US and the raw data can be obtained from the `USGS website <https://www.sciencebase.gov/catalog/item/5a5fa029e4b06e28e9bfc43a>`_.
 		- Global Vs30 (Heath et al., 2020) [Heath2020]_
@@ -127,10 +127,10 @@ and Z2pt5 are several ways that shear-wave velocity data is incorporated into se
 			developed a hybrid global Vs30 map database that defaults to the global slope-based Vs30 map,
 			but smoothly insets the more accurate regional Vs30 maps where available.
 			The raw data can be obtained from the `USGS website <https://www.sciencebase.gov/catalog/item/5d815a9ae4b0c4f70d0586c8>`_.
-		- user-specified
-			This method allows user to input user-specified Vs30 values. This option
+		- User-specified
+			This method allows the user to input user-specified Vs30 values. This option
 			is only available if **Scattering Locations** is used to define site locations.
-			The user-specified values should be included in the user provided ``.csv``
+			The user-specified values should be included in the user-provided ``.csv``
 			file with a column named ("vs30"). If the user-specified option is
 			selected, users need also specify if the provided "vs30" values are 
 			measured or inferred by providing a "vsInferred" column in the ``.csv`` file
@@ -147,7 +147,7 @@ and Z2pt5 are several ways that shear-wave velocity data is incorporated into se
 			SCEC/Harvard Community Velocity Model Version 11.9.x Basin Depth, and USGS Bay Area Velocity Model Release 8.3.0
 			model to get the value of Z1pt0. The models are accessed by calling the class `OrderedSiteDataProviderList <https://github.com/opensha/opensha/blob/ba07dd44cb1b11448a88b142382d3a129df24df1/src/main/java/org/opensha/commons/data/siteData/OrderedSiteDataProviderList.java#L365>`_
 			in **openSHA**. If a NaN value is obtained from the interpolation, the prediction equation (Eq.1) in 
-			[ChiouYoungs2014] will be used to infer Z1pt0 value from Vs30. 
+			[ChiouYoungs2014]_ will be used to infer Z1pt0 value from Vs30. 
 		- User-specified
 			If the **Single Location** or **Grid of Locations** site definition method is selected. The value specified in the **Z1pt0 Model** pane
 			will be applied to all the site(s).
@@ -165,7 +165,7 @@ and Z2pt5 are several ways that shear-wave velocity data is incorporated into se
 			SCEC/Harvard Community Velocity Model Version 11.9.x Basin Depth, and USGS Bay Area Velocity Model Release 8.3.0
 			model to get the value of Z2pt5. The models are accessed by calling the class `OrderedSiteDataProviderList <https://github.com/opensha/opensha/blob/ba07dd44cb1b11448a88b142382d3a129df24df1/src/main/java/org/opensha/commons/data/siteData/OrderedSiteDataProviderList.java#L365>`_
 			in **openSHA**. If a NaN value is obtained from the interpolation, the prediction equation (Eq.33) in 
-			[CampbellBozorgnia2014] will be used to infer Z2pt5 value from Vs30. 
+			[CampbellBozorgnia2014]_ will be used to infer Z2pt5 value from Vs30. 
 		- User-specified
 			If the **Single Location** or **Grid of Locations** site definition method is selected. The value specified in the **Z2pt5 Model** pane
 			will be applied to all the site(s).
@@ -199,7 +199,7 @@ R2D preferences.
 
 .. note:: Users can check the correctness of the defined Site Model by reading the **SimCenterSiteModel.csv** file. If a user
 	would like to overwrite a value in the **SimCenterSiteModel.csv**, they can edit the **SimCenterSiteModel.csv** and load it back
-	to R2D as a Site File (.csv). Afterward, please select the "User-specified" option for the **Vs30**, **Z1pt0** and **Z2pt5 Model** and
+	to R2D as a Site File (.csv). Afterward, please select the "User-specified" option for the **Vs30**, **Z1pt0**, and **Z2pt5 Model**, and
 	the values specified in the edited **SimCenterSiteModel.csv** will be used in the subsequent earthquake hazard simulation workflow.
 	
 
@@ -243,7 +243,7 @@ and "Mean UCERF3" ([Field2017]_)
 		class in OpenSHA. 
 
 	#. Mean UCERF3 ([Field2017]_)
-		Three most commonly used logic trees (named presets in OpenSHA) are available in R2D.
+		Three of the most commonly used logic trees (named presets in OpenSHA) are available in R2D.
 		The presets can be selected in the "Mean UCERF3 Presets" combo box. The available presets 
 		are "FM3.1 Branch Averaged", "FM3.2 Branch Averaged", and "(POISSON ONLY) Both FM Branch Averaged".
 		For each preset, there are more options to specify how to treat background seismicity,
@@ -259,14 +259,14 @@ these three criteria will be selected.
 After the ERF model parameters are set up, users should click the **Forecast Rupture Scenarios** button.
 R2D will run the user-specified ERF models implemented in OpenSHA.
 The generated earthquake ruptures will be saved as a ``.geojson``
-file named ``RupFile.geojson`` in the "/HazardSimulation/GroundMotions/Output" folder in
+file named ``RupFile.geojson`` in the "HazardSimulation/GroundMotions/Output" folder in
 the local work directory of R2D. The ``RupFile.geojson`` will be loaded to R2D and visualized 
 in the lower part of the Earthquake Rupture Panel.
 
 .. note:: The number of ruptures generated by the UCERFs depends on the Fault Grid Spacing,
 	if background seismicity is included, maximum and minimum considered rupture scenarios.
-	A large number of scenarios (over tens of thousands) may be generated if the Mean UCERF3
-	model is used. Generating, saving and visualizing such a large number of ruptures can be slow in R2D.
+	Numerous scenarios (over tens of thousands) may be generated if the Mean UCERF3
+	model is used. Generating, saving, and visualizing such a large number of ruptures can be slow in R2D.
 	If Scenario-Based ground motion simulation is desired after the earthquake rupture
 	forecasting, users are recommended to look for their scenarios in OpenSHA's Deterministic
 	calculation type and identify their scenario. Afterward, a narrow selection criteria can be specified
@@ -312,9 +312,7 @@ OpenQuake Earthquake Rupture Forecasting
 	The **OpenQuake ERF** pane, shown in :numref:`fig-R2DEQSOpenQuakeERF`, requires the following inputs:
 		
 		- **OpenQuake Version:** Version of OpenQuake (currently available is 3.17).
-		- **Source Model File:** A ``.xml`` file (NRML format) defining an earthquake source geometry, magnitude scaling relationship,
-		rupture aspect ratio, and magnitude frequency distribution. Examples of the rupture files can be found in the `demos folder
-		of OpenQuake's GitHub repo <https://github.com/gem/oq-engine/tree/master/demos>`_. 
+		- **Source Model File:** A ``.xml`` file (NRML format) defining an earthquake source geometry, magnitude scaling relationship, rupture aspect ratio, and magnitude frequency distribution. Examples of the rupture files can be found in the `demos folder of OpenQuake's GitHub repo <https://github.com/gem/oq-engine/tree/master/demos>`_. 
 		- **Rupture Meshsize:** Mesh size for line sources.
 		- **Area Meshsize:** Mesh size for area sources.
 		- **Maximum Distance:** Maximum considered distance from source to site.
@@ -345,7 +343,7 @@ folder of the "HazardSimulation" folder. The SimCenterSiteModel.csv contains the
 and site classification information defined in the Site Definition Panel. 
 
 R2D will then run the earthquake rupture forecasting models defined in the earthquake rupture
-panel. A file "RupFile.geojson" will be created in the "Ouput" folder of the "HazardSimulation"
+panel. A file "RupFile.geojson" will be created in the "Output" folder of the "HazardSimulation"
 folder. The "RupFile.geojson" contains the basic information of the rupture scenarios
 generated by the earthquake rupture forecasting models. Users could inspect the
 SimCenterSiteModel.csv and RupFile.geojson files to check the results from earthquake
@@ -355,7 +353,7 @@ rupture forecasting.
 Scenario Selection Panel
 *************************
 The Scenario Selection Panel allows users to select which scenario(s) to consider
-in the generation of ground motion maps. Current available options are:
+in the generation of ground motion maps. Currently available options are:
 
 Scenario-specific
 +++++++++++++++++
@@ -367,7 +365,7 @@ Users need to identify the source ID and the rupture ID of the scenario they wou
 analyze and input them into the Scenario-specific selection pane. To identify the source
 and rupture IDs, users can visualize in the scenario selection panel as shown in 
 :numref:`fig-R2DEQSRupVizTableView` or visualize the earthquake rupture scenarios created in ERF by
-write click the **Earthquake Rupturtes -- RupFile** layer in the visualization pane
+right-clicking the **Earthquake Ruptures -- RupFile** layer in the visualization pane
 in **Earthquake Rupture** pane and open the attribute table as shown in :numref:`fig-R2DEQSRupVizAttributeTable`.
 Then users click on each row in the rupture table on the scenario selection panel, the rupture ID,
 and source ID will be filled automatically.
@@ -425,7 +423,7 @@ To apply the algorithms, users need to define:
 	- **Earthquake scenario sample size** The earthquake scenario sample size limit in the downsampled earthquake scenario subset.
 	- **Ground motion map sample size** The ground motion map sample size limit in the downsample earthquake suite.
 	- **Hazard curve Sa period:** Period of the response acceleration Sa if the intensity measure type is Sa.
-	- **Return periods (yr):** A list of return periods in years used in minimizing the difference between recovered and reference hazard curves (seperated by ",").
+	- **Return periods (yr):** A list of return periods in years used in minimizing the difference between recovered and reference hazard curves (separated by ",").
 Users are encouraged to read the original paper [Manzour2016]_ to better understand how to select parameters used in the algorithm.
 
 
@@ -460,6 +458,7 @@ The **Intensity Measure and Period Points** pane, shown in :numref:`fig-R2DEQSSI
 	- **Intensity Measure Type:** Type of intensity measure. The Spectral Acceleration (SA) and Peak Ground Acceleration (PGA) intensity measures are available.
 	- **Period Points:** List of periods, in seconds, that are used in the ground motion selection procedure.
 The units of the PGA and SA estimated in R2D are the gravitational constant (g) and the unit of PGV is centimeter per second (cm/s).
+
 .. _fig-R2DEQSSIMPane:
 
 .. figure:: figures/R2DEQSSIMPane.png
@@ -547,7 +546,7 @@ data may be large and are not distributed with R2D by default. When any of the l
 source checkboxes are checked, R2D will check if the geospatial data exits in the R2D package.
 If they do not exist, a window like Fig. :numref:`fig-R2DEQGroundFailureDownloadWindow` will pop up.
 If you would like to use the R2D default database, please click "Yes" and wait until
-the download completes to continue analyses. If you do not plan to use the R2D 
+the download completes to continue the analysis. If you do not plan to use the R2D 
 the default database, you can click "Cancel" and provide the database with custom 
 GIS files or define the geospatial values in the Site File loaded Site Definition Panel.
 
@@ -577,7 +576,7 @@ Liquefaction-induced Ground Failure
 +++++++++++++++++++++++++++++++++++
 **Liquefaction Triggering Models** |br|
 To estimate liquefaction-induced PGD_h and PGD_v, a triggering model, a lateral spreading model, and a settlement model need to be selected.
-The triggering, lateral spreading and settlement suitable for regional-scale liquefaction are summarized and 
+The triggering, lateral spreading, and settlement suitable for regional-scale liquefaction are summarized and 
 implemented in the `OpenSRA project <https://peer.berkeley.edu/opensra>`_. The OpenSRA Project is a multi-year study to develop open-source seismic risk assessment tools for natural gas infrastructure.
 The theories of the ground failure models are described in detail in the `OpenSRA report <https://peer.berkeley.edu/sites/default/files/cec_opensra_task-b_liquefaction-landslide_final_clean_web.pdf>`_.
 
@@ -627,13 +626,14 @@ the aggregated PGD induced by liquefaction, landslide, and fault displacement in
 .. [Hazus2020]
    FEMA (2020). Hazus Earthquake Model Technical Manual. 
 
+
 .. _fig-R2DEQSLiquefactionPanel:
 
-  	.. figure:: figures/R2DEQSLiquefactionPanel.png
-  	  :align: center
-  	  :figclass: align-center
+.. figure:: figures/R2DEQSLiquefactionPanel.png
+	:align: center
+	:figclass: align-center
 
-  	  Ground Failure Models Panel.
+	Ground Failure Models Panel.
 
 Ground Motion Record Selection
 ******************************
@@ -660,7 +660,7 @@ Shown at the bottom of :numref:`fig-R2DEQSSGMDBPane`, the **Run Hazard Simulatio
 The earthquake scenario simulation is run via a Python script. When the **Run Hazard Simulation** button is pressed,
 text output from the script will appear in the **Program Output** console at the
 bottom of the application. Upon successful completion of the earthquake scenario
-simulation, results from the simulation are in the **HazardSimulation/GroundMotions/Ouput**
+simulation, results from the simulation are in the **HazardSimulation/GroundMotions/Output**
 folder of the local working directory that is specified in R2D preferences,
 as shown in :numref:`figUI-preferences`.
 
@@ -677,7 +677,7 @@ the **HazardSimulation/GroundMotions/Ouput** folder. The output includes an ``Ev
 file, which contains site locations and the names of the ``.csv`` files containing the selected
 ground motion records at each site. Each site is assigned a ``.csv`` file containing
 a list of the selected ground motions at the site and their scaling factors.
-If ground motion record are saved in ``JSON`` format in the **HazardSimulation/GroundMotions/Ouput** directory.
+If ground motion records are saved in ``JSON`` format in the **HazardSimulation/GroundMotions/Ouput** directory.
 The ``EventGrid.csv`` will also be post-processed, and a new layer containing the
 ground motions will be added to the GIS widget. The grid points are represented
 with a cross symbol. Clicking on a grid point will produce a popup with information

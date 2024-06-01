@@ -14,7 +14,7 @@ Loading Requirements
 --------------------
 
 .. csv-filter:: Requirements - Earthquake Loading
-  :file: _out/Loading.csv
+  :file: Loading.csv
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 6
@@ -26,7 +26,7 @@ Modeling Requirements
 ---------------------
 
 .. csv-filter:: Requirements - Modeling
-  :file: _out/Modeling.csv
+  :file: Modeling.csv
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 6
@@ -37,7 +37,7 @@ Analysis Requirements
 ---------------------
 
 .. csv-filter:: Requirements - Analysis
-  :file: _out/Analysis.csv
+  :file: Analysis.csv
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 6
@@ -48,7 +48,7 @@ UQ Requirements
 ---------------
 
 .. csv-filter:: Requirements - Uncertainty Quantification Methods and Variables
-  :file: _out/Uncertainty.csv
+  :file: Uncertainty.csv
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 6
@@ -59,7 +59,7 @@ RV Requirements
 ---------------
 
 .. csv-filter:: Requirements - Random Variables
-  :file: _out/RandomVariables.csv
+  :file: RandomVariables.csv
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 6
@@ -70,7 +70,7 @@ Common Research Application Requirements
 ----------------------------------------
 
 .. csv-filter:: Requirements - CR
-  :file: _out/Common.csv
+  :file: Common.csv
   :header: "#", "Description", "Source", "Priority", "Status", "Implementation", "Implementation"
   :widths: 10, 50, 10, 10, 10, 10
   :included_cols: 0, 1, 2, 3, 4, 6

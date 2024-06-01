@@ -22,4 +22,17 @@ The following options for simulation applications vary in the type of finite ele
 
    :include-exclusive: %./categories:performSIMULATION
 
+.. only:: HydroUQ_app
 
+   .. raw:: html
+      :file: _static/html/HydroUQ/performSIMULATION.html
+
+.. only:: EEUQ_app
+
+   .. raw:: html
+      :file: _static/html/EE-UQ/performSIMULATION.html
+
+.. only:: WEUQ_app
+
+   .. raw:: html
+      :file: _static/html/WE-UQ/performSIMULATION.html
