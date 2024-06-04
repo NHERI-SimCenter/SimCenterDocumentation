@@ -17,7 +17,7 @@ Probability distribution
 Dakota Engine
 +++++++++++++
 
-The following six distribution classes are supported for the Dakota UQ engine.
+The following ten distribution classes are supported for the Dakota UQ engine.
 
 1. `Normal (Gaussian) <https://snl-dakota.github.io/docs/6.18.0/users/usingdakota/reference/variables-normal_uncertain.html>`_
 
@@ -87,6 +87,64 @@ The following six distribution classes are supported for the Dakota UQ engine.
    
 	f(x) = \alpha e^{-\alpha(x-\beta)} \exp(-e^{-\alpha(x-\beta)})
 
+
+7. Exponential
+
+   The user provides the parameter (:math:`\lambda`) of the exponential distribution. The density function of the exponential distribution, as a function of :math:`\lambda`, is:
+
+   .. math::
+
+      f(x) = \lambda \exp(-\lambda x)
+
+   where :math:`x>0` and :math:`\lambda>0`. The user can alternatively provide the **mean** (:math:`m`) of the exponential distribution. 
+
+   .. math::
+
+      m = \frac{1}{\lambda}
+
+
+8. Discrete 
+
+   The user provides the :math:`N` discrete values (:math:`x_i`) and their weights (probability :math:`p_i`) for a multinomial distribution. The probability mass function of the discrete distribution is:
+
+   .. math::
+
+         p(x)=\begin{cases}
+      		 p_i, & \text{if $x=x_i$}\\
+      	 	 0, & \text{otherwise}
+         \end{cases}
+
+   where :math:`p_i>0`. The weights (:math:`p_i`) will be automatically normalized if they do not sum up to one. The option to define by moments is not supported for the discrete distribution.
+
+9. Gamma
+
+   The user provides the shape parameter (:math:`k`) and scale parameter (:math:`\lambda`) of the Gamma distribution. The density function of the Gamma distribution, as a function of :math:`k` and :math:`\lambda`, is:
+
+   .. math::
+
+      f(x) = \frac{\lambda^kx^{k-1}\exp(-\lambda x)}{\Gamma(k)}
+
+   where :math:`\lambda>0` and :math:`k>0`. Users can alternatively provide the **mean** (:math:`m`) and **standard deviation** (:math:`\sigma`). 
+
+   .. math::
+
+   		m &= \frac{k}{\lambda} \\
+   		\sigma &= \sqrt{\frac{k}{\lambda^2}}
+
+10. Chi-squared
+
+   The user provides the parameter :math:`k` of the Chi-squared distribution. The density function of the Chi-squared distribution, as a function of :math:`k`, is
+
+   .. math::
+
+      f(x) = \frac{1}{2^{\frac{k}{2}}\Gamma\left(\frac{k}{2}\right)}x^{\left(\frac{k}{2}-1\right)} \exp\left(-\frac{x}{2}\right)
+
+   where :math:`x>0` and :math:`k` is a natural number. Users can alternatively select the moment option where the **mean** (:math:`m`) is 
+
+   .. math::
+
+      m = k
+		
 For each random variable, the user must enter a name and select from the drop-down menu the distribution associated with the random variable. For the distribution selected, the user must then provide the input arguments, which are as described above. :numref:`figRV` shows the panel for a problem with four Random Variables with all random input following Gaussian distributions. 
 
 .. _figRV:
@@ -113,69 +171,14 @@ For each random variable, the user must enter a name and select from the drop-do
    Distributions offered by the |app|.
 
 
-   SimCenterUQ Engine
-   +++++++++++++++++
+SimCenterUQ Engine
++++++++++++++++++
 
-   Five additional distributions are supported in the SimCenter UQ engine. The users can define distributions either by **Parameters**, **Moments** or **Dataset**. (**Note**: Nataf transform module developed by [ERA19]_ is adopted)
-
-   1. Exponential
-
-      The user provides the parameter (:math:`\lambda`) of the exponential distribution. The density function of the exponential distribution, as a function of :math:`\lambda`, is:
-
-      .. math::
-
-         f(x) = \lambda \exp(-\lambda x)
-
-      where :math:`x>0` and :math:`\lambda>0`. The user can alternatively provide the **mean** (:math:`m`) of the exponential distribution. 
-
-      .. math::
-
-   		m = \frac{1}{\lambda}
+One additional distribution is supported in the SimCenter UQ engine. The users can also define distributions either by **Parameters**, **Moments** or **Dataset**. (**Note**: Nataf transform module developed by [ERA19]_ is adopted)
 
 
-   2. Discrete 
 
-      The user provides the :math:`N` discrete values (:math:`x_i`) and their weights (probability :math:`p_i`) for a multinomial distribution. The probability mass function of the discrete distribution is:
-
-      .. math::
-
-         p(x)=\begin{cases}
-      		 p_i, & \text{if $x=x_i$}\\
-      	 	 0, & \text{otherwise}
-         \end{cases}
-
-      where :math:`p_i>0`. The weights (:math:`p_i`) will be automatically normalized if they do not sum up to one. The option to define by moments is not supported for the discrete distribution.
-
-   3. Gamma
-
-      The user provides the shape parameter (:math:`k`) and scale parameter (:math:`\lambda`) of the Gamma distribution. The density function of the Gamma distribution, as a function of :math:`k` and :math:`\lambda`, is:
-
-      .. math::
-
-         f(x) = \frac{\lambda^kx^{k-1}\exp(-\lambda x)}{\Gamma(k)}
-
-      where :math:`\lambda>0` and :math:`k>0`. Users can alternatively provide the **mean** (:math:`m`) and **standard deviation** (:math:`\sigma`). 
-
-      .. math::
-
-   		m &= \frac{k}{\lambda} \\
-   		\sigma &= \sqrt{\frac{k}{\lambda^2}}
-
-   4. Chi-squared
-
-      The user provides the parameter :math:`k` of the Chi-squared distribution. The density function of the Chi-squared distribution, as a function of :math:`k`, is
-
-      .. math::
-
-         f(x) = \frac{1}{2^{\frac{k}{2}}\Gamma\left(\frac{k}{2}\right)}x^{\left(\frac{k}{2}-1\right)} \exp\left(-\frac{x}{2}\right)
-
-      where :math:`x>0` and :math:`k` is a natural number. Users can alternatively select the moment option where the **mean** (:math:`m`) is 
-
-      .. math::
-
-   		m = k
-
-   5. Truncated exponential
+1. Truncated exponential
 
       The user provides the parameter :math:`k` and bounds :math:`L_B` and :math:`U_B` for the truncated exponential distribution. The density function of the truncated exponential distribution is
 
