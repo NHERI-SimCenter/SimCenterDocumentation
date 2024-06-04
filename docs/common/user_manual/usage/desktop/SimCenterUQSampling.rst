@@ -8,7 +8,7 @@ The forward propagation provides a probabilistic understanding of output variabl
 
 
 Sampling from dataset
---------------------------------
+========================
 
 SimCenterUQ uniquely provides an option to define the distribution of random variables (RVs) directly from the samples of the RVs (See :ref:`rv`). This feature is useful when the user does not know the actual distribution of an RV but has sample realizations. When a dataset is provided, quoFEM either treats the data as a discrete distribution (when ``Discrete`` distribution option is selected) or fits a parametric distribution to the data (when another distribution option is selected). For the former case, quoFEM uniformly samples the discrete index of the dataset provided by the user and uses the value corresponding to the index for the forward propagation analysis. The index is sampled either **with** replacement if the data size is smaller than the number of samples to draw or **without** replacement if the data size is larger than the number of samples to draw. Further, when the user provides coupled samples of *correlated* RVs, vector-wise resampling can be performed instead of independent resampling. In particular, a single index is sampled and shared in multiple variables for each realization. 
 
@@ -19,11 +19,12 @@ SimCenterUQ uniquely provides an option to define the distribution of random var
 	:figclass: align-center
 	:width: 1200
 
-Click the check box to import correlated datasets
+
+Click the checkbox to import correlated datasets
 
 To enable this feature, the user can explicitly define the group of RVs that will share the index samples in the UQ tab using the ``Resample RVs from correlated dataset``:
 
-	* The actual datasets of the RVs written in this field should be imported in the RV tab, through ``parameters``-``discrete`` option. 
+	* The actual datasets of the RVs written in this field should be imported in the RV tab, through the ``parameters``-``discrete`` option. 
 	* The RVs inside each group should be provided with the same length of the samples (e.g. in :numref:`figSimSamp3`, :math:`w` and :math:`wR` should have the same sample size :math:`N_1` and :math:`alp` and :math:`F_y` should have the same sample size :math:`N_2`)
 
 .. note::
@@ -70,9 +71,9 @@ This feature is especially useful when the user wants to perform a forward UQ an
 	
 	Summary of capabilities and limitations
 
-	* :badge:`o,badge-primary` Run Monte Carlo simulation for 12 different kinds of probability distributions with correlations.
-	* :badge:`o,badge-primary` Use data samples as discrete distribution (especially useful when propagating samples from Bayesian updating)
-	* :badge:`x,badge-danger` Run advanced sampling algorithms including Latin hypercube and surrogate-aided sampling. **[Available in Dakota engine]**
+	* :bdg-primary:`o` Run Monte Carlo simulation for 12 different kinds of probability distributions with correlations.
+	* :bdg-primary:`o` Use data samples as discrete distribution (especially useful when propagating samples from Bayesian updating)
+	* :bdg-danger:`x` Run advanced sampling algorithms including Latin hypercube and surrogate-aided sampling. **[Available in Dakota engine]**
 
 
 .. only:: quoFEM_app

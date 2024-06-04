@@ -3,14 +3,14 @@
 Census Data Allocation
 ----------------------
 
-The **Census Data Allocation** application can be employed to augment an existing asset inventory with US Census demographic information and socio-economic information, e.g., household income, from the American Community Survey (ACS). The input panel is shown in :numref:`fig-R2DHUAPanel`. As seen in the figure, the asset information is supplied via selection of an already imported layer in R2D. Alternatively, a user can supply an asset layer in a GIS format, e.g., shapefile, geodatabase, and the supplied layer will be employed.
+The **Census Data Allocation** application can be employed to augment an existing asset inventory with US Census demographic information and socio-economic information, e.g., household income, from the American Community Survey (ACS). The input panel is shown in :numref:`fig-R2DHUAPanel`. As seen in the figure, the asset information is supplied via the selection of an already imported layer in R2D. Alternatively, a user can supply an asset layer in a GIS format, e.g., shapefile, geodatabase, and the supplied layer will be employed.
 
 .. note:: R2D will make a copy of the asset layer that you provide. Going forward, the copy of the asset layer is employed to preserve the original data.
 
 The procedure is as follows:
 	#. Given an asset inventory, R2D cross-references the assets with a US counties map (2021), generating a set of US county codes that overlap with the provided asset inventory.
-	#. The US Census API is queried and the population demographic information within each county is downloaded at the block level and saved locally . Similarly, the ACS API is called to download socio-economic information and the data is saved as a second GIS file. The ACS data is saved at the block group level. The GIS files are found in the output folder specified by the user (shown below as Directory to store created .GIS files).
-	#. The Census and ACS information from the downloaded GIS files is extracted and appended to the assets in the copied layer by performing a spatial join. This means that each asset within the copied layer will be augmented to contain the informtaion extracted from the Census block level layer and the ACS block group layer of which it is located in.
+	#. The US Census API is queried and the population demographic information within each county is downloaded at the block level and saved locally. Similarly, the ACS API is called to download socio-economic information and the data is saved as a second GIS file. The ACS data is saved at the block group level. The GIS files are found in the output folder specified by the user (shown below as **Directory to store created .GIS files**).
+	#. The Census and ACS information from the downloaded GIS files is extracted and appended to the assets in the copied layer by performing a spatial join. This means that each asset within the copied layer will be augmented to contain the information extracted from the Census block level layer and the ACS block group layer in which it is located.
 
 .. note:: The download of census data employs a modified version of the ``censusutil.py`` script from the `pyincore-data <https://github.com/IN-CORE/pyincore-data>`_ module, a component of IN-CORE. 
 
@@ -36,7 +36,7 @@ The procedure is as follows:
 
 #. The **ACS Date** dropdown is where the ACS vintage is provided. Currently, the 2010, 2015, and 2020 ACS dates are supported.
 
-#. The **ACS Variables** input box is where the user can provide custom variables to download from the ACS API. They should also be provided in a comma separated list.
+#. The **ACS Variables** input box is where the user can provide custom variables to download from the ACS API. They should also be provided in a comma-separated list.
 
 	For the 2010, 2015, and 2020 5-year ACS vintage the default variables are:
 		- B19001_001E - Estimate!!Total
@@ -63,7 +63,7 @@ The procedure is as follows:
 
 #. The **Download Census Data Button** runs the process that extracts the counties that overlap the building inventory, calls the US Census and ACS APIs to download data for the extracted counties, and saves the data as GIS files to the output folder.
 
-#. The **Census Block-level GIS File** and **American Community Survey Block Group Level GIS File** box provides the file paths to the respective GIS files. These paths will be populated automatically after the download process described above completes. Alternatively, you can provide your own Census and ACS layers to join to the building inventory. Clicking on the **Browse** button will open a dialog where you can select the respective file.
+#. The **Census Block-level GIS File** and **American Community Survey Block Group Level GIS File** boxes provide the file paths to the respective GIS files. These paths will be populated automatically after the download process described above completes. Alternatively, you can provide your own Census and ACS layers to join the building inventory. Clicking on the **Browse** button will open a dialog where you can select the respective file.
 
 #. The **Extract Census Data Button** runs the process that extracts the Census and ACS data from the GIS files and appends that information to each asset in the copied asset layer. Users can now save the newly augmented layer by right-clicking on the layer in the layer tree and selecting the ``Export->Save As`` option.
 

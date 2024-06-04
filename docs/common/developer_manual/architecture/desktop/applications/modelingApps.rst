@@ -23,3 +23,18 @@ The following options for modeling applications vary in the type of model and fi
    :include-exclusive: %./categories:createSAM
 
 
+.. only:: HydroUQ_app
+
+   .. raw:: html
+      :file: _static/html/HydroUQ/createSAM.html
+
+.. only:: EEUQ_app
+
+   .. raw:: html
+      :file: _static/html/EE-UQ/createSAM.html
+
+.. only:: WEUQ_app
+
+   .. raw:: html
+      :file: _static/html/WE-UQ/createSAM.html
+

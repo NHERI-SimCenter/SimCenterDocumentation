@@ -5,8 +5,18 @@
 Release Notes
 *************
 
-Version 3.2 (Current)
+
+Version 3.3 (Current)
 -----------------------
+
+**Release date:** Apr. 2024
+
+**Highlights**
+
+#. A new wind load generator module: wind-tunnel informed stochastic wind pressure generator
+   
+Version 3.2
+-----------
 
 **Release date:** Mar. 2024
 
@@ -17,12 +27,12 @@ Version 3.2 (Current)
 #. Integrated a new method to Turbulence Inflow Tool (TInF) tool for wind loading simulation.
 #. Supports visualization of the simulation data using Paraview on local machine. 
 #. Addressed bugs in the prior release 
-#. Created a new example to demonstrate the recently added CFD features. 
-
+#. Created a new example to demonstrate the recently added CFD features.
+#. Option for multi-fidelity sampling, allowing for FEM models of different fidelity
 
 
 Version 3.1
------------------------
+-----------
 
 **Release date:** Oct. 2023
 

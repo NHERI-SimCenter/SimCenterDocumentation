@@ -1,0 +1,11 @@
+BE, Establish a National Infrastructure Data Base for characterizing the physical and natural infrastructure, , , , 
+BE.1 , Ability to use cumulative knowledge bases rather than the piecemeal individual approaches,  , , ,
+BE.1.1 , Utilize Federated Databases to maintain individual databases & data sources yet provide central database resource, SP , M , InProgress, 1.1.3.2.1
+BE.2, Include national building model inventories, , , ,
+BE.2.1, "Incorporate Building data from existing datasets published by federal government, states, counties, and cities", SP, M, InProgress, "1.1.3.1.2 `UM <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/usage/desktop/R2DTool/tools.html#brails-buildings>`_"
+BE.2.2, "Ingest building data from web-scraping techniques, e.g. from Zillow, county websites", SP, M, InProgress, "1.1.3.1.2 `UM <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/usage/desktop/R2DTool/tools.html#brails-buildings>`_"
+BE.2.3, Ingest building data using AI/ML techniques and satellite and street-level images, SP, M, InProgress, "1.1.3.1.2 `UM <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/usage/desktop/R2DTool/tools.html#brails-buildings>`_"
+BE.3, Incorporate transportation newtwork data from existing datasets made available through www, , , ,
+BE.3.1, Ingest additionally needed transportation network data utilizing AI/ML and satellite and street-level images, SP, M, InProgress, 1.1.3.1.3
+BE.4 , Include National Models of Utility Networks, GC , M , ,
+BE.4.1, Incorporate utility network data from existing datasets made available through www, SP, M, InProgress, 1.1.3.1.4

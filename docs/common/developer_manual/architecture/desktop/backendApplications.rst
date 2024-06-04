@@ -41,6 +41,24 @@ The backend applications are categorized by function into the following workflow
         applications/preprocFEM
         applications/preprocUQ
 
+.. only:: HydroUQ_app
+
+    #. |createEVENT|
+    #. |createSAM|
+    #. |createEDP|
+    #. |performSIMULATION|
+    #. |performUQ|
+
+    .. toctree::
+       :maxdepth: 1
+       :hidden:
+       
+       applications/eventApps
+       applications/modelingApps
+       applications/EDPApps
+       applications/simulationApps
+       applications/UQApps
+
 
 .. only:: WEUQ_app
 

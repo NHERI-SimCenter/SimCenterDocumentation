@@ -16,11 +16,11 @@ APPS = [
     "PBE",
     "EE-UQ",
     "WE-UQ",
+    "HydroUQ",
     "quoFEM",
     "BRAILS",
     "pelicun",
-    "requirements",
-    "HydroUQ",
+    "requirements"
 ]
 if app_name in APPS:
     # `make` was invoked from root, all env vars should already be defined.
@@ -31,6 +31,7 @@ else:
     #app_name = 'PBE'
     #app_name = 'EE-UQ'
     app_name = 'WE-UQ'
+    app_name = 'HydroUQ'
     #app_name = 'quoFEM'
     #app_name = 'pelicun'
 
@@ -65,6 +66,7 @@ if app_name == "pelicun":
 
 # Add any Sphinx extension modules 
 extensions =  [
+    "sphinx_design",
     "sphinx-jsonschema",
     "sphinxcontrib.bibtex",
     "toctree_filter",
@@ -73,9 +75,9 @@ extensions =  [
     "rendre.sphinx",
     "sphinx.ext.autodoc",
     "crate.sphinx.csv",
-    "sphinx_panels",
+#    "sphinx_panels",
 #    "sphinxcontrib.spelling",
-#    'sphinx_toolbox.collapse',
+    'sphinx_toolbox.collapse',
     'sphinx_tabs.tabs',
 ]
 
@@ -130,7 +132,8 @@ exclude_patterns = (
         "**/Hydro*",
         "Hydro*",
         "**/hydro/*",
-
+        "**/*hydro*",
+        "**/hdro-*",
         "common/user_manual/examples/desktop/E*",  # R2D examples
         "**/R2D*",
         "reqments.rst",
@@ -159,6 +162,7 @@ toc_filter_exclusions = [
     "response",
     "earthquake",
     "wind",
+    "hydro",
     "R2D",
     "PBE",
     "quoFEM",
@@ -234,7 +238,7 @@ rst_prolog = f"""
 .. |DakotaDownload| replace:: `Dakota Download`_
 .. _Dakota Download: https://dakota.sandia.gov/download.html
 .. |Dakota Theory Manual| replace:: `Dakota Theory Manual`_
-.. _Dakota Theory Manual: https://dakota.sandia.gov/sites/default/files/docs/6.11/Theory-6.11.0.pdf
+.. _Dakota Theory Manual: https://www.sandia.gov/app/uploads/sites/241/2023/03/Theory-6.13.0.pdf
 
 .. |FEAPpv| replace:: **FEAPpv**
 .. |FeapLink| replace:: `FEAPpv`_
@@ -305,6 +309,14 @@ extlinks.update(
     }
 )
 
+examples_url = f"https://github.com/JustinBonus/HydroUQ/tree/mpm/Examples/"
+extlinks.update(
+    {
+        f"hdro-{i:04}": (f"{examples_url}/hdro-{i:04}/%s", f"hdro-{i:04}") 
+        for i in range(1, 99)
+    }
+)
+
 examples_url = f"https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples/"
 extlinks.update(
     {
@@ -337,23 +349,18 @@ extlinks.update(
     }
 )
 
-examples_url = f"https://github.com/NHERI-SimCenter/HydroUQ/tree/master/Examples/"
-extlinks.update(
-    {
-        f"hdro-{i:04}": (f"{examples_url}/hydro-{i:04}/%s", f"hydro-{i:04}")
-        for i in range(1, 20)
-    }
-)
 
 #
 # App-specific settings
 #------------------------------------------------------
 docTestbeds = "True"
 
-if app_name == "HydroUQ":
+
+if app_name == "HydroUQ" or app_name == "Hydro":
 
     project = "Hydro-UQ"
-    author = "Ajay B Harish, Frank McKenna"
+    copyright = f"2018-{str(datetime.today().year)}, The Regents of the University of California"
+    author = "Justin Bonus, Ajay B Harish, Frank McKenna"
 
     tags.add("tsunami")
     tags.add("stormsurge")
@@ -361,6 +368,7 @@ if app_name == "HydroUQ":
     tags.add("notQuoFEM")
     tags.add("notR2D")
     tags.add("Hydro")
+    tags.add("desktop_app") # JB - Added this, but it may not be necessary
 
     toc_filter_exclusions.remove("Hydro")
     toc_filter_exclusions.remove("desktop")
@@ -369,39 +377,48 @@ if app_name == "HydroUQ":
 
     exclude_patterns.remove("**/*desktop*")
     exclude_patterns.remove("**/*earthquake*")
+    exclude_patterns.remove("**/*hydro*")
     exclude_patterns.remove("**/*response*")
     exclude_patterns.remove("**/Hydro*")
     exclude_patterns.remove("Hydro*")
     exclude_patterns.remove("**/hydro/*")
+    exclude_patterns.remove("**/hdro-*")
 
     # TODO: fix these temporary changes
     exclude_patterns.append("**/user_manual/usage/desktop/earthquake/*")
     exclude_patterns.append("**/*architectureLevel4.rst*")
-    exclude_patterns.append("**/reqments/index.rst")
-    exclude_patterns.append("**/requirements/bigRequirements.rst")
-    exclude_patterns.append("**/DakotaSensitivity.rst")
-    exclude_patterns.append("**/DakotaReliability.rst")
+    # exclude_patterns.append("**/reqments/index.rst")
+    # exclude_patterns.append("**/requirements/bigRequirements.rst")
+    #exclude_patterns.append("**/DakotaSensitivity.rst")
+    #exclude_patterns.append("**/DakotaReliability.rst")
     exclude_patterns.append("**/DakotaParameterEstimation.rst")
     exclude_patterns.append("**/DakotaInverseProblems.rst")
+    exclude_patterns.append("**/desktop/hydro-*")
+    exclude_patterns.append("**/testbeds/*")
     # END TODO
-
+    # exclude_patterns.append("**/damping.rst") # Added below to be more consistent with quofem - JB
+    # exclude_patterns.append("**/desktop/FEM.rst")
+    # exclude_patterns.append("**/desktop/GI.rst")
+    # exclude_patterns.append("**/desktop/SIM.rst")
+    sync_examples = True
     html_theme_options.update(
         {
             "analytics_id": "...",  # TODO: add analytics ID
         }
     )
-    #master_doc = "Hydro"
     master_doc = "index"
-    sync_examples = True
+    # master_doc = "Hydro"
+
 
     rst_prolog += f"""
 .. |full tool name| replace:: Water-borne Hazards Engineering with Uncertainty Quantification
-.. |test example| replace:: :ref:`(Under development)`
-.. |tool version| replace:: 1.0
+.. |test example| replace:: :ref:`hdro-0002`
+.. |tool version| replace:: 3.1.0
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0
 .. _Hydro Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ
-.. |figMissingCRT| replace:: :numref:`figMissingCRT`
-.. |contact person| replace:: Ajay B Harish (ajaybh@berkeley.edu), Frank Mckenna (fmk@berkeley.edu), NHERI SimCenter, University of California Berkeley
+.. _HydroUQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ
+.. |figMissingCRT| replace:: :numref:`figMissingCRT-HydroUQ`
+.. |contact person| replace:: Justin Bonus (bonus@berkeley.edu), Ajay B Harish (ajay.harish@manchester.uk.edu), Frank Mckenna (fmk@berkeley.edu), NHERI SimCenter, University of California Berkeley
 
 """
 
@@ -409,7 +426,7 @@ elif app_name == "R2DTool":
 
     project = "Regional Resilience Determination Tool"
 
-    author = "Frank McKenna, Stevan Gavrilovic, Adam Zsarnóczay, Kuanshi Zhong, Wael Elhaddad, Joanna Zou, Claudio Perez"
+    author = "Frank McKenna, Stevan Gavrilovic, Jinyan Zhao, Kuanshi Zhong, Adam Zsarnoczay, Barbaros Cetiner, Sang-ri Yi, Pedro Arduino, Wael Elhaddad"
     sync_examples = True
 
     tags.add("desktop_app")
@@ -451,7 +468,7 @@ elif app_name == "R2DTool":
 .. |test example| replace:: :ref:`r2dt-0006`
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0
 .. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt
-.. |tool version| replace:: 4.0
+.. |tool version| replace:: 4.1
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 
@@ -467,7 +484,8 @@ elif app_name == "PBE":
     project = "Performance Based Engineering Application"
 
     author = (
-        "Adam Zsarnóczay, Frank McKenna, Stevan Gavrilovic, Kuanshi Zhong, Chaofeng Wang, Michael Gardner, Wael Elhaddad"
+        "Adam Zsarnoczay, Frank McKenna, Charles Wang, Stevan Gavrilovic, Michael Gardner, Sang-ri Yi, Aakash Bangalore Satish, Wael\
+ Elhaddad, & Peter Mackenzie-Helnwein"
     )
     sync_examples = True
 
@@ -504,7 +522,7 @@ elif app_name == "PBE":
 .. |full tool name| replace:: Performance Based Engineering Application
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
 .. _PBE Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE
-.. |tool version| replace:: 3.3
+.. |tool version| replace:: 3.4
 .. |test example| replace:: :ref:`pbdl-0001`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-PBE`
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu
@@ -519,7 +537,8 @@ elif app_name == "PBE":
 elif app_name == "EE-UQ":
     project = "Earthquake Engineering with Uncertainty Quantification"
     author = (
-        "Frank McKenna, Wael Elhaddad, Michael Gardner, Chaofeng Wang, Adam Zsarnóczay"
+        "Frank McKenna, Kuanshi Zhong, Michael Gardner, Adam Zsarnoczay, Sang-ri Yi, Aakash Bangalore Satish, Charles Wang, Wael\
+ Elhaddad & Peter Mackenzie-Helnwein"
     )
 
     tags.add("desktop_app")
@@ -548,7 +567,7 @@ elif app_name == "EE-UQ":
 
     rst_prolog += """
 .. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application (EE-UQ)
-.. |tool version| replace:: 3.4
+.. |tool version| replace:: 3.5
 .. |test example| replace:: :ref:`eeuq-0001`
 .. _EE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/EE_UQ
 .. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
@@ -630,8 +649,8 @@ elif app_name == "WE-UQ":
     exclude_patterns.remove("**/weuq-*")
 
     exclude_patterns.append("**/testbeds/*")
-    exclude_patterns.append("**/DakotaSensitivity.rst")
-    exclude_patterns.append("**/DakotaReliability.rst")
+    #exclude_patterns.append("**/DakotaSensitivity.rst")
+    #exclude_patterns.append("**/DakotaReliability.rst")
     exclude_patterns.append("**/DakotaParameterEstimation.rst")
     exclude_patterns.append("**/DakotaInverseProblems.rst")
 
@@ -760,6 +779,7 @@ elif app_name == "requirements":
         "common/reqments/PBE.rst",
         #"common/reqments/WEUQ.rst",
         "common/reqments/WE-UQ-Requirements.rst",
+        "common/reqments/HydroUQ-Requirements.rst",
         "common/reqments/allRequirements.rst",
         "common/reqments/bigRequirements.rst",
         "common/reqments/edRequirements.rst",
@@ -852,14 +872,14 @@ spelling_exclude_patterns=['ignored_*']
 
 # sync files for examples
 if sync_examples:
-    # TODO: Temporary fix
-    if not example_config:
-        import yaml
-        with open("../examples.yaml","r") as f:
-            example_config = yaml.load(f,Loader=yaml.Loader)["HydroUQ"]
+    # # TODO: Temporary fix
+    # if not example_config:
+    #     import yaml
+    #     with open("../examples.yaml","r") as f:
+    #         example_config = yaml.load(f,Loader=yaml.Loader)["HydroUQ"]
     # Load the `sync_files` routine from ./modules/sync_files.py
     from sync_files import sync_files
-    if app_name == "R2DToolSkip":
+    if app_name == "R2DTool":
         sync_files(
         src_dir=os.path.abspath(f"../../R2DExamples"),
         dst_dir="common/user_manual/examples/desktop",

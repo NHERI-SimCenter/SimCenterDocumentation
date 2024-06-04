@@ -4,7 +4,7 @@
 About
 *****
 
-|full tool name|  is an open-source research application, that is hosted on the |tool github link|, and released under the **2-Clause BSD** license (see :ref:`lblLicense` ). The application provides uncertainty quantification methods (forward, inverse, reliability, sensitivity, parameter estimation, and surrogate modeling) to researchers in natural hazards who utilize existing simulation software applications, such as Finite Element applications, in their research. It has been developed at the SimCenter, within the University of California, Berkeley. The SimCenter is part of the Natural Hazards Engineering Research Infrastructure (NHERI) program, funded by the National Science Foundation. 
+|full tool name|  is an open-source research application, that is hosted on the |tool github link|, and released under the **2-Clause BSD** license (see :ref:`lblLicense` ). The application provides uncertainty quantification methods (forward, inverse, reliability, sensitivity, parameter estimation, and surrogate modeling) to researchers in natural hazards who utilize existing simulation software applications, such as Finite Element applications, in their research. It has been developed at the SimCenter, within the University of California, Berkeley. The SimCenter is part of the Natural Hazards Engineering Research Infrastructure (NHERI) program, funded by the U.S. National Science Foundation. 
 
 .. figure:: quoFEM.gif
      :align: center
@@ -21,7 +21,7 @@ This is Version |tool version| of the tool. Users are encouraged to comment on w
 Capabilities and Limitations
 ------------------------------
 
-Below are key capabilities and limitations of |short tool id|, categorized by Uncertainty Quantification (UQ), Finite Element Method (FEM), Random Variabiles (RV), Quantity of Interest (QoI), Results (RES), and general.
+Below are key capabilities and limitations of |short tool id|, categorized by Uncertainty Quantification (UQ), Finite Element Method (FEM), Random Variables (RV), Quantity of Interest (QoI), Results (RES), and general.
 
 
 .. list-table:: 
@@ -32,7 +32,7 @@ Below are key capabilities and limitations of |short tool id|, categorized by Un
      - Capabilities
      - Limitations
    * - UQ
-     - Easy access to different :ref:`UQ methods<lblFEM>`. Parallelized UQ algorithms. Multiple alternative algorithms for each method.
+     - Easy access to different :ref:`UQ methods<lblUQ>`. Parallelized UQ algorithms. Multiple alternative algorithms for each method.
      - No support for optimization under uncertainty and local sensitivity analysis.
    * - FEM
      - Easy interface for user-provided simulation models (not only FEM models but *any model*), including Opensees, python, or any other simulation models (e.g. FEM or non-FEM software) with a python-scripted interface.
@@ -41,7 +41,7 @@ Below are key capabilities and limitations of |short tool id|, categorized by Un
      - 12 different kinds of probability distributions with correlations.
      - No support for random fields, non-Gaussian copular, or user-defined variables.
    * - QoI
-     - Scalar and vector QoI. Parsing of QoI names using :ref:`a post processing script<lblFEM>`.
+     - Scalar and vector QoI. Parsing of QoI names using :ref:`a post-processing script<lblFEM>`.
      - 
    * - RES
      - Interactive plotting of scatter charts, histograms, and cumulative mass functions. Summary of statistics. Save data into a CSV file.
