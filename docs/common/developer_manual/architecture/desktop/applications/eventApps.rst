@@ -13,14 +13,15 @@ This input information is saved in an ``EVENT.json`` file, located in its corres
 
 The following options for event applications vary in the type of event, event properties, and format of the event file that it processes.
 
- 
 
+..
+  Note: This commented out directive is being kept around because it generates the HTML that is sourced
+  below
+  .. rendre:: cli-gallery
+     :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/backends.cache.json
+     :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
 
-.. rendre:: cli-gallery
-   :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/backends.cache.json
-   :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
-
-   :include-exclusive: %./categories:createEVENT
+     :include-exclusive: %./categories:createEVENT
 
 
 .. only:: HydroUQ_app
@@ -37,3 +38,9 @@ The following options for event applications vary in the type of event, event pr
 
    .. raw:: html
       :file: _static/html/WE-UQ/createEVENT.html
+
+.. only:: R2D_app
+
+   .. raw:: html
+      :file: _static/html/RDT/createEVENT.html
+

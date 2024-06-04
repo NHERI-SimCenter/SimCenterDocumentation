@@ -15,7 +15,7 @@ After response simulation is completed, the ``EDP.json`` file is populated with 
 
 The following options for simulation applications vary in the type of finite element program or procedure used for EDPs estimation.
 
-
+..
 .. rendre:: cli-gallery
    :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/backends.cache.json
    :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
@@ -36,3 +36,9 @@ The following options for simulation applications vary in the type of finite ele
 
    .. raw:: html
       :file: _static/html/WE-UQ/performSIMULATION.html
+
+.. only:: R2D_app
+
+   .. raw:: html
+      :file: _static/html/WE-UQ/performSIMULATION.html
+

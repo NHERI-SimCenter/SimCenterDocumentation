@@ -16,11 +16,14 @@ If no RVs are specified, then the UQ application directly runs commands in the d
 The following options for UQ applications vary in the software package used to perform uncertainty quantification.
 
 
-.. rendre:: cli-gallery
-   :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/backends.cache.json
-   :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
+..
+  Note: This commented out directive is being kept around because it generates the HTML that is sourced
+  below
+  .. rendre:: cli-gallery
+     :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/backends.cache.json
+     :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
 
-   :include-exclusive: %./categories:performUQ
+     :include-exclusive: %./categories:performUQ
 
 
 .. only:: HydroUQ_app
@@ -37,3 +40,9 @@ The following options for UQ applications vary in the software package used to p
 
    .. raw:: html
       :file: _static/html/WE-UQ/preprocUQ.html
+
+.. only:: R2D_app
+
+   .. raw:: html
+      :file: _static/html/WE-UQ/preprocUQ.html
+

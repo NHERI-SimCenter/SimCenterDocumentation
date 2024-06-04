@@ -15,12 +15,14 @@ The inputs are parsed into ``#-BIM.json`` files in the **results** folder.
 The following options for building applications vary in the file type of the input building source file it processes.
 
 
+..
+  Note: This commented out directive is being kept around because it generates the HTML that is sourced
+  below
+  .. rendre:: cli-gallery
+     :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/backends.cache.json
+     :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
 
-.. rendre:: cli-gallery
-   :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/backends.cache.json
-   :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
-
-   :include-exclusive: %./categories:createBIM
+     :include-exclusive: %./categories:createBIM
 
 
 .. only:: HydroUQ_app
@@ -37,3 +39,9 @@ The following options for building applications vary in the file type of the inp
 
    .. raw:: html
       :file: _static/html/WE-UQ/createBIM.html
+
+.. only:: R2D_app
+
+   .. raw:: html
+      :file: _static/html/WE-UQ/createBIM.html
+
