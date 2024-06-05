@@ -683,7 +683,14 @@ ground motions will be added to the GIS widget. The grid points are represented
 with a cross symbol. Clicking on a grid point will produce a popup with information
 about the ground motions at that point.
 
+Video Resources
+++++++++++++++++++++++++++++
 
+  .. raw:: html
+
+      <div style="text-align: center;">
+         <iframe src="https://www.youtube.com/embed/ARaiTIDkwpI" width="715" height="441" frameborder="5" allowfullscreen="allowfullscreen"></iframe>
+      </div>
 
 
 
