@@ -57,7 +57,7 @@ between points on the reference hazard curves and the corresponding points on ha
    min \Sigma_{i=1}^{I} \Sigma_{r=1}^{R} w_{ir} (e_{ir}^{+}+e_{ir}^{-})
 
 where :math:`e_{ir}^{+}` and :math:`e_{ir}^{-}` are the errors resulting from overestimating and underestimating, respectively, the reference hazard curve for the site :math:`i` 
-at the return period `r`. The weight :math:`w_{ir}` is taken as the return period so that the error occurring at a longer return period (i.e., higher intensity level) can be 
+at the return period :math:`r`. The weight :math:`w_{ir}` is taken as the return period so that the error occurring at a longer return period (i.e., higher intensity level) can be 
 scaled relatively more than the error occurring at a shorter return period. This typically helps the final fitting given the nonlinear shape of a hazard curve.
 
 Assuming we have overall :math:`J` candidate earthquakes, for any earthquake scenario :math:`j`, we can use empirical ground motion model(s) to compute its resulting ground motion intensity

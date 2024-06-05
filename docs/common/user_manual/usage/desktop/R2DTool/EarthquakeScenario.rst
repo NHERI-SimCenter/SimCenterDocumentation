@@ -304,7 +304,7 @@ OpenQuake Earthquake Rupture Forecasting
 	to define ruptures from earthquake sources (faults) and estimate the occurrence rate of earthquake 
 	ruptures. In contrast to **OpenSHA ERF**, where the earthquake source models
 	are built in UCERFs, users need to provide a Source File (``.xml``) in `OpenQuake's
-	conventions <https://docs.openquake.org/oq-engine/manual/latest/hazard.html#source-typologies>`_.
+	conventions <https://docs.openquake.org/oq-engine/manual/latest/user-guide/inputs/seismic-source-model-inputs.html#source-typologies>`_.
 	Note that although R2D allows defining multiple "sourceGroup", defining seismic
 	source logic trees is not supported now.
 
