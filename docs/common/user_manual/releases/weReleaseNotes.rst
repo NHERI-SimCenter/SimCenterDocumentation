@@ -13,7 +13,9 @@ Version 3.3 (Current)
 
 **Highlights**
 
+#. Simulate wind loading on structures surrounded by an array of buildings. Surrounding buildings heights may be randomized or user-defined.
 #. A new wind load generator module: wind-tunnel informed stochastic wind pressure generator
+#. Empty domain simulation tool.
    
 Version 3.2
 -----------
