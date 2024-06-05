@@ -41,7 +41,7 @@ toc_filter_exclusions = [
 	'TInF',
 	'S3hark',
 	'pelicun',
-        'requirements'
+    'requirements'
 ]
 
 
@@ -87,10 +87,10 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 html_theme = 'sphinx_rtd_theme'
 
 html_theme_options = {
-        'analytics_id': 'UA-2431545-1',
+    'analytics_id': 'UA-2431545-1',
 	'logo_only': True,
 	'prev_next_buttons_location': None,
-        "body_max_width": None
+    'body_max_width': None
 }
 
 #  'style_nav_header_background': '#F2F2F2' #64B5F6 #607D8B,
@@ -110,7 +110,8 @@ html_static_path = ['_static']
 # https://www.sphinx-doc.org/en/master/usage/configuration.html
 
 latex_elements = {
-  'extraclassoptions': 'openany,oneside'
+    'extraclassoptions': 'openany,oneside',
+    'preamble': r'''\usepackage{lscape}'''
 }
 
 pdf_break_level = 2

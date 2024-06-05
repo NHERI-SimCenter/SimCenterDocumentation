@@ -1,0 +1,270 @@
+
+
+
+<hr>
+<div class="twbs">
+  <div class="gallery accordion" id="gallery">
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0019</code>
+        <h5 class="card-title mb-0" >
+          MDOF-LU
+        </h5>
+        <p class="card-text">
+          Creates SAM.json file and generates script for creating a hysteretic multi-degree of freedom (MDOF) system subject to earthquake time history analysis, based on the Lu method. Analysis is executed by the OpenSeesSimulation application.
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0019">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0019')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0019')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0019">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>BIM file<code> &lt;string&gt;</code></dt>
+                  <dd>File containing a dictionary of building information.</dd>
+                
+                  <dt>EVENT file<code> &lt;string&gt;</code></dt>
+                  <dd>File containing event intensity measure for each simulation per building.</dd>
+                
+                  <dt>HAZUS data<code> &lt;path&gt;</code></dt>
+                  <dd>Defines location of the HAZUS building configuration file.</dd>
+                
+                  <dt>stdStiffness<code> &lt;float&gt;</code></dt>
+                  <dd>Defines the standard deviation that should be considered when sampling the stiffness for the building.</dd>
+                
+                  <dt>stdDamping<code> &lt;float&gt;</code></dt>
+                  <dd>Defines the standard deviation that should be considered when sampling the damping ratio for the building.</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0019">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0020</code>
+        <h5 class="card-title mb-0" >
+          OpenSeesInput
+        </h5>
+        <p class="card-text">
+          Creates SAM.json file containing model information for an input OpenSees structural model. Analysis is executed in the OpenSeesSimulation application.
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0020">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0020')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0020')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0020">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>filenameBIM<code> &lt;FileName(r)&gt;</code></dt>
+                  <dd>name of bim file</dd>
+                
+                  <dt>filenameEVENT<code> &lt;FileName(r)&gt;</code></dt>
+                  <dd>name of file containing the event data</dd>
+                
+                  <dt>filenameSAM<code> &lt;FileName(w)&gt;</code></dt>
+                  <dd>name of file containing the outputted SAM</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0020">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0021</code>
+        <h5 class="card-title mb-0" >
+          OpenSeesPyInput
+        </h5>
+        <p class="card-text">
+          Creates SAM.json file containing model information for an input OpenSeesPy structural model. The functions 'build_model' and 'run_analysis' must be defined in the model script. Analysis is executed in the OpenSeesPySimulation application.
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0021">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0021')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0021')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0021">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>filenameBIM<code> &lt;string&gt;</code></dt>
+                  <dd>File containing a dictionary of building information.</dd>
+                
+                  <dt>filenameEVENT<code> &lt;string&gt;</code></dt>
+                  <dd>File containing event intensity measure for each simulation per building.</dd>
+                
+                  <dt>modelPath<code> &lt;FileName(r)&gt;</code></dt>
+                  <dd>Defines the location of the input OpenSeesPy model files.</dd>
+                
+                  <dt>mainScript<code> &lt;FileName(r)&gt;</code></dt>
+                  <dd>Defines the name of the main model file which contains the build_model and run_analysis functions.</dd>
+                
+                  <dt>ndm<code> &lt;string&gt;</code></dt>
+                  <dd>Defines the number of degrees of freedom in the numerical model.</dd>
+                
+                  <dt>dofMap<code> &lt;int&gt;</code></dt>
+                  <dd>By default, the workflow assumes X=1, Y=2, Z=3 mapping between directions and degrees of freedom, with XY being the horizontal directions. This input allows you to define an alternative mapping by providing three numbers separated by commas in a string, such as '1, 3, 2' if you wish to have Y as the vertical direction.</dd>
+                
+                  <dt>ctrlNodes<code> &lt;string&gt;</code></dt>
+                  <dd>Defines the IDs of nodes in the OpenSeesPy model where EDPs are recorded. If the number of ctrlNodes provided exceeds the number of stories, only the firsts n+1 nodes will be used for an n-story building.</dd>
+                
+                  <dt>filenameSAM<code> &lt;FileName(w)&gt;</code></dt>
+                  <dd>File containing model information for response simulation.</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0021">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre>usage: OpenSeesPyInput.py [-h] [--filenameBIM FILENAMEBIM]
+                          [--filenameEVENT FILENAMEEVENT]
+                          [--filenameSAM FILENAMESAM]
+                          [--mainScript MAINSCRIPT] [--modelPath MODELPATH]
+                          [--ndm NDM] [--dofMap DOFMAP] [--getRV [GETRV]]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --filenameBIM FILENAMEBIM
+  --filenameEVENT FILENAMEEVENT
+  --filenameSAM FILENAMESAM
+  --mainScript MAINSCRIPT
+  --modelPath MODELPATH
+  --ndm NDM
+  --dofMap DOFMAP
+  --getRV [GETRV]
+</pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  
+<div class="accordion-item card shadow-sm my-3 gallery-item" >
+    <details>
+      <summary class="card-header"><code>bknd-0022</code>
+        <h5 class="card-title mb-0" >
+          MDOF_BuildingModel
+        </h5>
+        <p class="card-text">
+          No description
+        </p>
+      </summary>
+
+      <div class="accordion-body collapse" data-parent="gallery" id="collapse-bknd-0022">
+        <div class="card-body">
+          <div class="nav nav-tabs py-4">
+            <div class="nav-item">
+              <a class="tablinks nav-link active" onclick="openCardTab(event,'tab-inputs-bknd-0022')" >Inputs</a>
+            </div>
+            <div class="nav-item">
+              <a class="tablinks nav-link" onclick="openCardTab(event,'tab-cli-bknd-0022')" >CLI</a>
+            </div>
+          </div>
+          <div class="tab-content">
+            <div class="tabcontent tab-pane active show" id="tab-inputs-bknd-0022">
+              <div class="pt-2 mt-2">
+                <dl>
+                
+                  <dt>filenameBIM<code> &lt;FileName(r)&gt;</code></dt>
+                  <dd>name of bim file</dd>
+                
+                  <dt>filenameEVENT<code> &lt;FileName(r)&gt;</code></dt>
+                  <dd>name of file containing the event data</dd>
+                
+                  <dt>filenameSAM<code> &lt;FileName(w)&gt;</code></dt>
+                  <dd>name of file containing the outputted SAM</dd>
+                
+                </dl>
+              </div>
+            </div>
+            <div class="tabcontent tab-pane" id="tab-cli-bknd-0022">
+              <code class="my-2 mx-2" style="border: none;">
+                <pre></pre>
+              </code>
+            </div>
+          </div>
+        </div>
+      </div>
+  </details>
+</div>
+
+  </div>
+</div>
+
+
+<script>
+function openCardTab(evt, cityName) {
+  // Declare all variables
+  var i, tabcontent, tablinks;
+
+  // Get all elements with class="tabcontent" and hide them
+  tabcontent = document.getElementsByClassName("tabcontent");
+  for (i = 0; i < tabcontent.length; i++) {
+    tabcontent[i].style.display = "none";
+  }
+
+  // Get all elements with class="tablinks" and remove the class "active"
+  tablinks = document.getElementsByClassName("tablinks");
+  for (i = 0; i < tablinks.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" active", "");
+  }
+
+  // Show the current tab, and add an "active" class to the button that opened the tab
+  document.getElementById(cityName).style.display = "block";
+  evt.currentTarget.className += " active";
+}
+</script> 
+

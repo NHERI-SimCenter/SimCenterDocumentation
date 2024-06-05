@@ -1,8 +1,8 @@
 .. _lbl-initialcond:
 
-***********************************************
+------------------
 Initial conditions
-***********************************************
+------------------
 
 The initial settings window can be activated by selecting the option from the left panel as shown in :numref:`InitialSett`. At present, this option is available only to set the initial height of the water in the domain. By default, the domain is defined to contain only air (i.e., alpha is zero). It is, thus, necessary to define a box where water is present (i.e., alpha is one).
 

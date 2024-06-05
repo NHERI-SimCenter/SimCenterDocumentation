@@ -4,23 +4,22 @@
 Asset Description
 *****************
 
-This section describes how a large-scale building inventory was constructed in two phases. The initial 
-phase of this work involved identifying the attributes needed. The second phase involved work to 
-obtain these attributes for each building using machine learning and 
-techniques from computer vision to create an initial set of attributes. The remaining attributes were 
-then obtained using other data sources as discussed below.
+This section describes the construction of a large-scale building inventory in two phases. The initial 
+phase involved identifying the necessary attributes. The second phase involved using machine learning and computer vision techniques to
+ obtain these attributes for each building, creating an initial set of attributes. The remaining attributes were 
+ then obtained using other data sources, as discussed below.
 
 Phase I: Attribute Definition
-===============================
+==============================
 
 All the attributes required for loss estimation were first identified to develop the Building Inventory 
-data model. This Building Inventory data model presented in :numref:`tab-bldg_inv_data_model_lc`
+data model. This Building Inventory data model, presented in :numref:`tab-bldg_inv_data_model_lc`, 
 provides a set of attributes that will be assigned to each asset to form the building inventory file 
-serving as input to the workflow. For each attribute a 
-row in the table is provided. Each row has a number of columns: the attribute name, description, 
-format (alphanumeric, floating point number, etc.), the data source used to define that attribute.
-An expanded version of :numref:`tab-bldg_inv_data_model_lc` with the full details of this data
-model are available on `DesignSafe PRJ-3207 <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/01.%20Input:%20BIM%20-%20Building%20Inventory%20Data>`_.
+serving as input to the workflow. For each attribute, a row in the table is provided. Each 
+row has several columns: the attribute name, description, 
+format (alphanumeric, floating point number, etc.), and the data source used to define that attribute. 
+An expanded version of :numref:`tab-bldg_inv_data_model_lc` with the full details of this data 
+model is available on `DesignSafe PRJ-3207 <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/01.%20Input:%20BIM%20-%20Building%20Inventory%20Data>`_.
 
 .. csv-table:: Building inventory data model, detailed for Lake Charles Inventory.
    :name: tab-bldg_inv_data_model_lc
@@ -30,60 +29,60 @@ model are available on `DesignSafe PRJ-3207 <https://www.designsafe-ci.org/data/
    :widths: 15, 40, 25, 20
 
 Phase II: Inventory Generation
-===============================
+==============================
 
-This section describes how the large-scale building inventory was constructed for Lake Charles using 
-a phased approach that used machine learning, computer vision algorithm and data distributions to 
-generate all attributes required for 
+This section describes the construction of the large-scale building inventory for Lake Charles using 
+a phased approach that utilized machine learning, computer vision algorithms, and data distributions to 
+generate all required attributes for 
 the corresponding loss assessment. It is emphasized that the intent is to demonstrate how an 
-inventory could be constructed and not to address potential errors, omissions or inaccuracies in 
-the source data, i.e., source data are assumed to be accurate and no additional quality assurance 
+inventory could be constructed, not to address potential errors, omissions, or inaccuracies in 
+the source data. In other words, source data are assumed to be accurate, and no additional quality assurance 
 was conducted outside of addressing glaring omissions or errors.
 
 For each of the attributes identified in :numref:`tab-bldg_inv_data_model_lc`, 
-a description of the attribute and information on how the data was identified and validated is presented.
+a description of the attribute and information on how the data was identified and validated are presented.
 
-AI/ML Techniques combined with Computer Vision
-------------------------------------------------
+AI/ML Techniques Combined with Computer Vision
+----------------------------------------------
 
-Many of those attributes were generated with the SimCenter’s 
+Many of these attributes were generated with the SimCenter’s 
 `BRAILS <https://nheri-simcenter.github.io/BRAILS-Documentation/index.html>`_ CityBuilder application. 
-To avoid replication in the text, the following describes how those attributes 
+To avoid repetition in the text, the following describes how these attributes 
 were obtained. The sections below will present the validation of the data.
 
-CityBuilder is a python application that incorporates different AI/ML modules from BRAILS for performing 
-specific tasks. The user creates a python script importing City Builder, constructing a CityBuilder 
-object and then asking that object to build the inventory. The example script shown below, albeit 
-our GoogleMapAPIKey removed, will create a building inventory file for use in the workflow.  
+CityBuilder is a Python application that incorporates different AI/ML modules from BRAILS for performing 
+specific tasks. The user creates a Python script importing City Builder, constructs a CityBuilder 
+object, and then asks that object to build the inventory. The example script shown below, albeit 
+with our GoogleMapAPIKey removed, will create a building inventory file for use in the workflow.
 
 .. code-block:: python
 
-  # Import the module from BRAILS
-  from brails.CityBuilder import CityBuilder
-  # Initialize the CityBuilder
-  cityBuilder = CityBuilder(attributes=['occupancy','roofshape'], 
-                    numBldg=10,random=True, place='Lake Charles, Louisiana', 
-                    GoogleMapAPIKey='REMOVED GOOGLE API KEY')
-  # create the city-scale BIM file
-  BIM = cityBuilder.build()
+# Import the module from BRAILS
+from brails.CityBuilder import CityBuilder
+# Initialize the CityBuilder
+cityBuilder = CityBuilder(attributes=['occupancy', 'roofshape'], 
+                          numBldg=10, random=True, place='Lake Charles, Louisiana', 
+                          GoogleMapAPIKey='REMOVED GOOGLE API KEY')
+# Create the city-scale BIM file
+BIM = cityBuilder.build()
 
 Upon execution, CityBuilder will:
 
-#. Download footprints for all buildings in the interested region, Lake Charles, from the 
+#. Download footprints for all buildings in the specified region, Lake Charles, from the 
    `Microsoft Footprint Dataset <https://github.com/microsoft/USBuildingFootprints>`_ ([Microsoft18]_).
-#. Calculates the coordinate (Latitude, Longitude) for each building’s centroid, based on the footprint information.
-#. Download both a satellite image and a street view image for each building using Google API's and the extracted coordinates.
-#. Perform computations on the images to obtain the interested building attributes using a series of pre-trained AI models.
+#. Calculate the coordinates (Latitude, Longitude) for the centroid of each building, based on the footprint information.
+#. Download both a satellite image and a street view image for each building using Google APIs and the calculated coordinates.
+#. Perform computations on the images to obtain the desired building attributes using a series of pre-trained AI models.
 
 Attribute: RoofShape
 `````````````````````
 
-The RoofShape is obtained by CityBuilder using the BRAILS Roof shape module. The roof shape module 
-determines roof shape based on a satellite image obtained for the building. The module uses machine 
-learning, specifically it utilizes a convolutional neural network that has been trained on satellite 
-images. In AI/ML terminology the Roof Shape module is an image classifier: it takes an image and 
+The RoofShape is obtained by CityBuilder using the BRAILS Roof Shape module. This module 
+determines the roof shape based on a satellite image obtained for the building. It uses machine 
+learning, specifically, it utilizes a convolutional neural network that has been trained on satellite 
+images. In AI/ML terminology, the Roof Shape module is an image classifier: it takes an image and 
 classifies it into one of three categories used in HAZUS: gable, hip, or flat as shown in 
-:numref:`roof_shape`. The original training of the AI model utilized 6,000 images obtained from google 
+:numref:`roof_shape`. The original training of the AI model utilized 6,000 images obtained from Google 
 satellite imagery in conjunction with roof labels obtained from 
 `Open Street Maps <https://www.openstreetmap.org/>`_. As many roofs have more complex shapes, a 
 similitude measure is used to determine which of these roof geometries is the best match to a given roof. 
@@ -99,12 +98,12 @@ The trained classifier was employed here to classify the roof information for La
    
    Roof type classification with examples of aerial images (a-f) and simplified archetypes (d-f) used by Hazus.
 
-The performance of the roof shape classifier was validated against two ground truth datasets.
+The performance of the roof shape classifier was validated against two ground truth datasets. 
 The first is comprised of 125 manually labeled satellite images sampled from OpenStreetMap from 
 across the US, retaining only those with unobstructed views of building roofs (a cleaned dataset). 
 The second is 56 residences assessed by StEER for which roof types were one of the three HAZUS classes, 
 e.g., removing all roofs labeled as "Complex" according to StEER's distinct image labeling standards. 
-The validation process is documented
+The validation process is documented 
 `here <https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/roof.html>`_. 
 The confusion matrices are presented in :numref:`roof_shape_vali`. These matrices visually present 
 the comparison between the predictions and actual data and should have values of 1.0 along the diagonal 
@@ -121,12 +120,12 @@ if the classification is perfect, affirming the accuracy of the classification b
 Attribute: OccupancyClass
 ```````````````````````````
 
-The occupancy class attribute is also determined by CityBuilder using the occupancy class classifier 
-module in BRAILS. The occupancy classifier is also a convolutional neural network. This network trained 
-using 15,743 google street view images with labels derived from OpenStreetMaps and the NJDEP dataset in 
+The occupancy class attribute is determined by CityBuilder using the occupancy class classifier 
+module in BRAILS. The occupancy classifier is a convolutional neural network. This network was trained 
+using 15,743 Google Street View images with labels derived from OpenStreetMaps and the NJDEP dataset in 
 the `Atlantic County, NJ testbed Asset Description <https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/asset_description.html>`_.
-This classifier labels buildings as one of: RES1 (single family building), RES3 
-(multi-family building), COM1 (Commercial building). More details of the classifier can be found 
+This classifier labels buildings as one of: RES1 (single-family building), RES3 
+(multi-family building), COM1 (Commercial building). More details about the classifier can be found 
 `here <https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/occupancyClassifier.html>`_.
 
 The performance of the classifier was validated against a ground truth dataset that contains 293 street 
@@ -276,12 +275,12 @@ which is in line with the general intuition.
 
 Attribute: RoofSlope
 `````````````````````
-RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained 
+RoofSlope is calculated as the ratio between the roof height and the roof run. The roof height is obtained 
 by determining the difference between the bottom plane and apex elevations of the roof as defined in the 
 :ref:`lbl-testbed_LC_asset_description_meanroofht` 
-section. Roof run is determined as half the smaller dimension of the building, as determined from 
+section. The roof run is determined as half the smaller dimension of the building, as determined from 
 the dimensions of the building footprint. :numref:`mean_slope_app` displays the AI-predicted mean roof height versus the 
-AI-precited roof pitch ratios. As expected, very little correlation between these two parameters are observed.
+AI-predicted roof pitch ratios. As expected, very little correlation between these two parameters is observed.
 
 .. figure:: figure/RoofSlopeApp.png
    :name: mean_slope_app
@@ -292,31 +291,31 @@ AI-precited roof pitch ratios. As expected, very little correlation between thes
    AI-predicted RoofSlope versus mean roof height.
 
 
-Phase III: Augmentation Using Third-Party Data, Site-specific Observations, and Existing Knowledge
+Phase III: Augmentation Using Third-Party Data, Site-Specific Observations, and Existing Knowledge
 ====================================================================================================
 
-The AI-generated building inventory is further augmented with multiple sources of information, including the 
+The AI-generated building inventory is further augmented with multiple sources of information, including 
 third-party datasets, site-specific statistics summarized from observations, and existing knowledge and 
-engineering judgement. The following attributes are obtained or derived from third-party data.
+engineering judgment. The following attributes are obtained or derived from third-party data.
 
 Attribute: DWS II
 -----------------
 
-Design Wind Speed for Risk Category II construction in mph (ASCE 7-16), was obtained by queries to the 
+Design Wind Speed for Risk Category II construction in mph (ASCE 7-16) was obtained by queries to the 
 `ATC Hazards by Location API <https://hazards.atcouncil.org/>`_ ([ATC20]_).
 
 Attribute: LULC
 ----------------
 
 Land use code is downloaded from `WebGIS <http://www.webgis.com/terr_pages/LA/lulcutm/calcasieu.html>`_.
-Each land use class is represented by a integer as listed in :numref:`tab-bldg_inv_data_model_lc`
+Each land use class is represented by an integer as listed in :numref:`tab-bldg_inv_data_model_lc`.
 
 Attribute: YearBuilt
 ----------------------
 
-We initially derived the year built information based on the National Structure Inventory (NSI), which contains year 
+We initially derived the year built information from the National Structure Inventory (NSI), which contains year 
 built information for geocoded addresses in the region of interest. It should be noted that not all buildings 
-are included in the NSI dataset and the geocodes of the addresses do not match perfectly with building locations, 
+are included in the NSI dataset and the geocodes of the addresses do not perfectly match with building locations, 
 as shown in :numref:`year_built_nsi`.
 
 .. figure:: figure/YearBuiltNSI.png
@@ -328,10 +327,10 @@ as shown in :numref:`year_built_nsi`.
    National Structure Inventory data points.
 
 To address this issue, `SURF <https://github.com/NHERI-SimCenter/SURF>`_ ([Wang19]_) is employed to construct and train a neural 
-network on the year built information from 
+network on the year built information from the 
 National Structure Inventory (NSI). The neural network is then used to predict the year built 
 information for each building based on the spatial patterns it learned from the NSI dataset. 
-The theory of using neural networks to learn the spatial patterns in data and to predict for 
+The theory of using neural networks to learn the spatial patterns in data and to predict 
 missing values is detailed `here <https://doi.org/10.1016/j.autcon.2020.103474>`_.  
 The result is shown in :numref:`year_built_comp`.
 
@@ -344,11 +343,11 @@ The result is shown in :numref:`year_built_comp`.
    Comparison of year built between NSI and SURF.
 
 In parallel to this exploration, `Zillow <https://www.zillow.com/>`_ also provides the year built information for 
-many of the residual buildings in the studied region.
+many of the residential buildings in the studied region.
 
-Similar to the implementation of NSI dataset, the 1182 data points of year built from Zillow are used to train a 
-neural network, :numref:`surf_yb_test` shows the verification of the trained neural network (predicted vs. true values,
-Zillow dataset). More than :math:`85%` buildings have prediction errors less than 20 years.  
+Similar to the implementation of the NSI dataset, the 1182 data points of year built from Zillow are used to train a 
+neural network. :numref:`surf_yb_test` shows the verification of the trained neural network (predicted vs. true values,
+Zillow dataset). More than :math:`85%` of buildings have prediction errors less than 20 years.  
 
 .. figure:: figure/SURF_YearBuiltTest.png
    :name: surf_yb_test
@@ -359,10 +358,10 @@ Zillow dataset). More than :math:`85%` buildings have prediction errors less tha
    SURF-predicted vs. original year built from Zillow dataset.
 
 The neural network is used to predict the year built information for the entire Lake Charles inventory. :numref:`surf_yb_comp`
-contrast the resulting SURF-Zillow and the SURF-NSI year built spatial distribution. The difference in year built is relatively 
-small for the downtown buildings (~1960s) but increases at the bounds with a maximum of 80 years.
+contrasts the resulting SURF-Zillow and the SURF-NSI year built spatial distribution. The difference in year built is relatively 
+small for the downtown buildings (~1960s) but increases at the outskirts with a maximum of 80 years.
 The Zillow-trained classifier is undergoing continued improvements and will be released with the next version of this testbed. 
-The current version of the testbed will thus use the NSI data as the basis for the Year Built Attribute
+The current version of the testbed will thus use the NSI data as the basis for the Year Built Attribute.
 
 .. figure:: figure/YearBuilt_NSI_SURFZS.png
    :name: surf_yb_comp
@@ -375,13 +374,13 @@ The current version of the testbed will thus use the NSI data as the basis for t
 Attribute: Garage
 ------------------
 
-A garage detector utilizing EfficienDet object detection architecture was trained to identify the 
-existence of attached garage and carport structures in street-level imagery of the buildings 
-included in the Lake Charles inventory. Properties are either classified as having an attached garage 
-or not having an attached garage (which includes both detached garages and homes with no garage)
+A garage detector utilizing the EfficienDet object detection architecture was trained to identify the 
+existence of attached garages and carport structures in street-level imagery of the buildings 
+included in the Lake Charles inventory. Properties are classified as either having an attached garage 
+or not having an attached garage (which includes both detached garages and homes with no garage). 
 The model was trained on the `EfficientDet-D4 architecture <https://arxiv.org/abs/1911.09070>`_ with 
-dataset of 1,887 images, using 80% for training, 10% for validation, and 10% for testing of the model. 
-Similar to the number of floors detector model, initial weights of this model were set to model weights 
+a dataset of 1,887 images, using 80% for training, 10% for validation, and 10% for testing. 
+Similar to the number of floors detector model, the initial weights of this model were set to the model weights 
 of the (pretrained) object detection model that, at the time, achieved state-of-the-art performance on 
 the `2017 COCO Detection set <https://cocodataset.org/#download>`_. For this task, the peak detector 
 performance was attained using the `Adam optimizer <https://arxiv.org/abs/1412.6980>`_ 
@@ -397,7 +396,7 @@ garage detections performed by the model.
    Samples of the garage detection model showing successful identification of attached garages and carports.
 
 On the test set, the model achieves an accuracy of 92%. :numref:`garage_cm` shows the confusion matrix of the 
-model classifications on the test set. On a seperate test set consisting of images from only Lake Charles, 
+model classifications on the test set. On a separate test set consisting of images from only Lake Charles, 
 model performance is lower at 71%. :numref:`garage_cm` (b) shows the confusion matrix for model predictions on this 
 latter dataset.
 
@@ -409,30 +408,28 @@ latter dataset.
 
    Confusion matrices for the garage predictor used in this study. The matrix on the left (a) shows the model’s prediction accuracy when tested on a set of 189 images randomly selected from CA and NJ. The matrix on the right (b) depicts the model accuracy on images selected from the Lake Charles area.
 
-
 Attribute: BuildingType
 ------------------------
 
 Based on information found in the National Structure Inventory, 89% of residential buildings 
-(single-family and multi-family) are wood, the rest are masonry. In the analysis, we conservatively 
+(single-family and multi-family) are wood, while the rest are masonry. In the analysis, we conservatively 
 assume all residential buildings are wood.
 
 Attribute: AvgJanTemp
 ----------------------
 
 The average temperature in Lake Charles in January is above the critical value of 25F, 
-based on NOAA average daily temperature. Referring :numref:`tab-bldg_inv_data_model_lc`, we used 
+based on NOAA average daily temperature data. Referring to :numref:`tab-bldg_inv_data_model_lc`, we used 
 "Above" for the buildings in the studied inventory.
 
-
 Populated Inventories
-========================
+=====================
 
 Executing this three-phase process resulted in the assignment of all required attributes at the asset description 
-stage of the workflow for the Lake Charles building inventory, and :numref:`bldg_inv_lc` shows example data samples. 
+stage of the workflow for the Lake Charles building inventory. :numref:`bldg_inv_lc` shows example data samples. 
 The entire inventory can be accessed `here <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published/PRJ-3207v4>`_.
 
-.. csv-table:: Illustrative sample of building in Lake Charles Inventory.
+.. csv-table:: Illustrative sample of buildings in Lake Charles Inventory.
    :name: bldg_inv_lc
    :file: data/example_inventory_lc.csv
    :align: center

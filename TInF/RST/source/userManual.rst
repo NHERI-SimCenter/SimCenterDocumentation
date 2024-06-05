@@ -3,8 +3,7 @@
 User Manual
 ===========
 
-The workflow for adding parameters for various kinds of turbulence inflow models to your 
-OpenFOAM model is as follows.
+The workflow for adding parameters for various kinds of turbulence inflow models to your OpenFOAM model is as follows.
 
 **Step 1: Source Selection**
     Start the Turbulence Inflow Tool (TInF) and on the opening screen select the Source Tab
@@ -37,7 +36,7 @@ OpenFOAM model is as follows.
 
 
 **Step 2: Parameter Definition**
-    In the Parameters tab (:numref:`fig_TInF07` and  :numref:`fig_TInF08`, item 1), first select the desired method.
+    In the Parameters tab (:numref:`fig_TInF07` and :numref:`fig_TInF08`, item 1), first select the desired method.
 
     .. _fig_TInF07:
     .. figure:: _images/TInF-07.png
@@ -51,8 +50,8 @@ OpenFOAM model is as follows.
 
 
     Based on the selected method, additional parameters will be collected.  The particular parameters and
-    their meaning are discussed in detail in Chapter :ref:`sec_TInF-theory`.
-    Depending on selected model and sub-options, as well as your screen size, you may need to scroll down to
+    their meaning is discussed in detail in Chapter :ref:`sec_TInF-theory`.
+    Depending on the selected model and sub-options, as well as your screen size, you may need to scroll down to
     get access to all parameter fields (:numref:`fig_TInF07` and  :numref:`fig_TInF08`, item 2).
     
     .. note:: the window manager on MacOS is hiding any scroll bar until you attempt to slide the parameter fields up.

@@ -9,17 +9,17 @@ Damage State
 
 This section summarizes the resulting expected damage states of the building 
 assets from the Hayward Earthquake. The expected damage state is computed as 
-the weighted average over the 20,000 PELICUN realizations each of which has a predicted 
-damage state metric, i.e., 0 (None), 1 (Slight), 2 (Moderate) , 3 (Extensive), 
+the weighted average over the 20,000 PELICUN realizations, each of which has a predicted 
+damage state metric, i.e., 0 (None), 1 (Slight), 2 (Moderate), 3 (Extensive), 
 and 4 (Complete). :numref:`fig-s-ds` shows expected structural damages which have a 
-wide spectrum from nearly none damaged (in the South Bay regions) to Moderate/Extensive 
+wide spectrum from nearly no damage (in the South Bay regions) to Moderate/Extensive 
 damage (in the East Bay region). Recalling the example 2-story wood frame residential 
-building in :ref:`lbl-testbed_SF_response_simulation`, it has an expected damge state of 
-about 1.6 with a breakdown statics: 2.3\% in None (DS0), 40.6\% in Slight (DS1), 54.4\% in 
-Moderate (DS3), and 2.7\% in Extensive (DS4). And the building is very unlikely to collapse. 
+building in :ref:`lbl-testbed_SF_response_simulation`, it has an expected damage state of 
+about 1.6 with breakdown statistics: 2.3\% in None (DS0), 40.6\% in Slight (DS1), 54.4\% in 
+Moderate (DS3), and 2.7\% in Extensive (DS4). The building is very unlikely to collapse. 
 Referring to :ref:`lbl-testbed_SF_damage_and_loss`, this building is likely to experience plaster or gypsum-board 
 cracks at corners of door and window openings; small diagonal cracks across shear wall 
-panels; or/and cracks in brick chimneys or toppling of tall masonry chimneys.
+panels; or cracks in brick chimneys or toppling of tall masonry chimneys.
 
 .. _fig-s-ds:
 
@@ -31,12 +31,12 @@ panels; or/and cracks in brick chimneys or toppling of tall masonry chimneys.
    Expected structural damage states from San Francisco testbed.
 
 :numref:`fig-ns-ds` shows expected non-structural damages which tend to be 
-server if compared to the structural damage. For the building assets in the 
+severe if compared to the structural damage. For the building assets in the 
 South Bay regions, Slight to Moderate non-structural damages are likely. Buildings 
 located near the Hayward fault are likely to experience Moderate to Extensive 
 non-structural damages. The example wood frame building is expected to have a 
 Moderate damage state (DS = 2.0 with a probability of 64\%). Detailed breakdown 
-statistics are plotted in :numref:`fig-ds`. THe building is likely to experience 
+statistics are plotted in :numref:`fig-ds`. The building is likely to experience 
 the following potential damages: (1) cracks requiring repair and
 repainting; some partitions may require replacement of gypsum board or other finishes, 
 (2) falling of tiles, (3) connections of exterior wall panels to structural frame 
@@ -66,7 +66,7 @@ elevator machinery and rails may require realignment.
 Expected Loss Ratio
 ====================
 
-An example of the resulting losses calculated for the Mw 7.0
+Examples of the resulting losses calculated for the Mw 7.0
 Hayward scenario are shown in :numref:`fig-loss_ratio_comp`. The color shading
 represents the loss ratios for each building, calculated as the
 mean repair costs normalized by the building replacement
@@ -75,14 +75,14 @@ ratios reported in the USGS Mw 7.0 Haywired Earthquake
 Scenario ([Hudnut18]_). Exposure and losses in
 the Haywired scenario were calculated using the HAZUS
 software. While it is instructive to compare results between
-the two studies, there are differences in the input data, scope
-and goals of the studies which are important to keep in
-mind. As the main purpose of the SimCenter testbed was
-to assemble and exercise the computational workflow, the
+the two studies, there are differences in the input data, scope,
+and goals of the studies, which are important to keep in
+mind. The main purpose of the SimCenter testbed was
+to assemble and exercise the computational workflow. The
 models and results in the SimCenter study are preliminary,
 based on readily available information and implemented by
-a small team over a couple months. This contrasts with
-the multi-year multi-investigator Haywired study, whose goal
+a small team over a couple of months. This contrasts with
+the multi-year, multi-investigator Haywired study, whose goal
 is to inform earthquake planning and preparedness for the
 San Francisco Bay Area.
 
@@ -96,12 +96,12 @@ San Francisco Bay Area.
    Comparison of building loss ratios from San Francisco testbed - SimCenter (left), USGS-Haywired (right).
 
 Both studies were based on Mw 7.0 Hayward fault ruptures
-simulated using the SW4 software by the LLNL research group,
-however, the ground motion time histories are different for the
+simulated using the SW4 software by the LLNL research group.
+However, the ground motion time histories are different for the
 two studies. Epicenters for the two earthquake scenarios are close
 (East Oakland and San Leandro for Haywired and SimCenter,
-respectively), but other rupture characteristics are different and
-the SimCenter ground motions were simulated with more recent
+respectively), but other rupture characteristics are different. The
+SimCenter ground motions were simulated with more recent
 versions of the SW4 engine and the USGS geophysical model
 of the Bay Area. In general, the ground motions used in
 the SimCenter study are less severe than those used in the
@@ -112,7 +112,7 @@ The Haywired study extends over an area including the
 counties of Monterey, Sacramento, and Sonoma, whereas the
 SimCenter testbed is limited to the central six counties from
 Santa Clara to Marin. Due to the larger coverage, the Haywired
-study had a larger total building population (3.04 M), but
+study had a larger total building population (3.04 M). However,
 the number of buildings in the six central counties in the
 Haywired study (1.71 M) is comparable to the number in
 the SimCenter database (1.84M). There are, however, large
@@ -121,20 +121,21 @@ and inventory value (replacement values) between the building
 exposure databases, which make comparisons of total losses
 between the two studies questionable.
 
+
 To reduce the influence of the differences in the building
 exposure values in the two studies, the comparison is limited to
 damage and loss ratios in the six central counties. The average loss
 ratio over the entire building population is less in the SimCenter
-testbed (~ 3% of replacement value) as compared to theHaywired
+testbed (~ 3% of replacement value) as compared to the Haywired
 study (~ 5% of replacement value). Nevertheless, as shown in
 :numref:`fig-loss_ratio_comp`, the geographical distribution of losses shows good
 agreement between the two. The SimCenter study predicts a
 larger ratio of non-structural to structural damage (7.5:1 vs. 4.5:1
 in the Haywired study) and considerably smaller fractions of the
-building stock being collapsed (less than 0.01 vs. 0.8%) and redtagged
-(0.1 vs. 10%). Accordingly, the proportion of buildings
+building stock being collapsed (less than 0.01% vs. 0.8%) and red-tagged
+(0.1% vs. 10%). Accordingly, the proportion of buildings
 that sustain minor or no damage is higher in the SimCenter
-study compared to Haywired (58 vs. 49%). These results are
+study compared to Haywired (58% vs. 49%). These results are
 consistent with the less intense ground motions in the SimCenter
 scenario, and they highlight the sensitivity of results of such
 complex studies to inventory data, models for response, damage,
@@ -145,7 +146,7 @@ Haywired study and the SimCenter workflow simulation is
 the level of resolution in the assessment and the propagation
 of various sources of uncertainty throughout the simulation.
 Whereas the HAZUS-based study aggregates building damage
-and losses based on census track (zip code) data, the SimCenter
+and losses based on census tract (zip code) data, the SimCenter
 workflow has resolution down to the building parcel level, and
 it can disaggregate losses within a building down to individual
 components on each floor. This feature, coupled with a detailed
@@ -167,6 +168,7 @@ increased opportunities to explore questions related to land use
 planning and zoning, seismic design and retrofit requirements,
 public policy and administrative initiatives, and other actions to
 enhance community resilience.
+
 
 
 .. [Hudnut18]

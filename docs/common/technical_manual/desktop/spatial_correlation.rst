@@ -4,7 +4,7 @@
 Ground Motion Intensity Spatial Correlation Model Options
 =========================================================
 
-The regional seismic risk analysis requires the prediction of ground motion intensities at multiple sites. Such joint predictions need to consider the correlation between ground motion intensities at different sites given a specific earthquake scenario. In general, ground motion models predict intensities at an individual site :math:`i` due to an earthquake :math:`j` have the following form:
+The regional seismic risk analysis requires the prediction of ground motion intensities at multiple sites. Such joint predictions need to consider the correlation between ground motion intensities at different sites given a specific earthquake scenario. In general, ground motion models predicting intensities at an individual site :math:`i` due to an earthquake :math:`j` have the following form:
 
 .. math::
 
@@ -20,7 +20,7 @@ where :math:`Y_{ij}` is the intensity measure (e.g., :math:`Sa(T)`), :math:`\bar
 Intra-event Correlation Model Options
 -------------------------------------
 
-[Jayaram08]_ found that the spatially distributed intra-event residuals :math:`\epsilon_j = (\epsilon_{1j}, \epsilon_{2j}, ..., \epsilon_{dj})` follows a multivariate normal distribution. This multivariate normal distribution can be defined by the mean, variance, and correlation (between :math:`\epsilon_{i_1j}` and :math:`\epsilon_{i_2j}`). The mean is zero (as discussed previously) and the variance can be predicted by ground motion models, but the correlation between residuals at two different sites needs to be described. The semivariogram :math:`\gamma(u,u^\prime)` is used to describe the expected squared difference between two locations :math:`u` and :math:`u^\prime`. Because it is very difficult to obtain several observations of a random variable at a given pair of sites, the stationarity assumption is usually applied to simplify it to a more trackable problem. It is typically assumed that the semivariogram only depends on the distance :math:`h` - the stationary semivariogram :math:`\gamma(h)` can be obtained from data as follows:
+[Jayaram08]_ found that the spatially distributed intra-event residuals :math:`\epsilon_j = (\epsilon_{1j}, \epsilon_{2j}, ..., \epsilon_{dj})` follows a multivariate normal distribution. This multivariate normal distribution can be defined by the mean, variance, and correlation (between :math:`\epsilon_{i_1j}` and :math:`\epsilon_{i_2j}`). The mean is zero (as discussed previously) and the variance can be predicted by ground motion models, but the correlation between residuals at two different sites needs to be described. The semivariogram :math:`\gamma(u,u^\prime)` is used to describe the expected squared difference between two locations :math:`u` and :math:`u^\prime`. Because it is very difficult to obtain several observations of a random variable at a given pair of sites, the stationarity assumption is usually applied to simplify it to a more tractable problem. It is typically assumed that the semivariogram only depends on the distance :math:`h` - the stationary semivariogram :math:`\gamma(h)` can be obtained from data as follows:
 
 .. math::
 
@@ -44,12 +44,12 @@ Similarly, the correlation coefficient is defined as:
 
    \rho(h) = \frac{C(h)}{C(0)} = 1 - \frac{\gamma(h)}{C(0)}
 
-Given the semivariogram is often preferred in geostatistical practice (because it does not require a prior estimation of the mean), many studies were carried to find the semivariogram models to derive the correlation :math:`rho(h)` of ground motion intensities. The available models in the current |short tool name| are briefly summarized in following sections.
+Given the semivariogram is often preferred in geostatistical practice (because it does not require a prior estimation of the mean), many studies were carried out to find the semivariogram models to derive the correlation :math:`rho(h)` of ground motion intensities. The available models in the current |short tool name| are briefly summarized in the following sections.
 
 Jayaram and Baker (2009)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-[Jayaram09]_ adopted a exponential model for the semivariogram function with a isotropic hypothesis (i.e., the distance :math:`h` is the separation length):
+[Jayaram09]_ adopted an exponential model for the semivariogram function with an isotropic hypothesis (i.e., the distance :math:`h` is the separation length):
 
 .. math::
 
@@ -84,7 +84,7 @@ where T is the period. If the :math:`V_{S30}` values are very close in the given
 Loth and Baker (2013)
 ^^^^^^^^^^^^^^^^^^^^^
 
-Note that the cross-semivariograms between different pairs of intensity measures can be different, for instance, :math:`\rho_{Sa(T=0.1s),Sa(T=0.2s)}(h)` might be greater than :math:`\rho_{Sa(T=0.1s),Sa(T=1s)}(h)`. This means one needs to repeat a calibration process many times to develop semivariogram functions and correlation models that have higher resolutions (i.e., direct semivariogram fit). Instead of fitting each semivariogram independently, [Loth13]_ proposed a predictive model for spatial covariance of spectral accelerations at different periods:
+Note that the cross-semivariograms between different pairs of intensity measures can be different, for instance, :math:`\rho_{Sa(T=0.1s),Sa(T=0.2s)}(h)` might be greater than :math:`\rho_{Sa(T=0.1s), Sa(T=1s)}(h)`. This means one needs to repeat a calibration process many times to develop semivariogram functions and correlation models that have higher resolutions (i.e., direct semivariogram fit). Instead of fitting each semivariogram independently, [Loth13]_ proposed a predictive model for spatial covariance of spectral accelerations at different periods:
 
 .. math::
 
@@ -174,13 +174,13 @@ where :math:`I_{h=0}` is the indicator function equal to 1 at :math:`h = 0` and 
 Markhvida et al. (2017)
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-[Markhvida17]_ proposed to use Principal Component Analysis (PCA) to develop the predictive model for cross-correlograms. In theorem, PCA performs a linear transformation of the variables of interests to an orthogonal basis, where the resulting projections onto the new basis are uncorrelated:
+[Markhvida17]_ proposed to use Principal Component Analysis (PCA) to develop the predictive model for cross-correlograms. In theory, PCA performs a linear transformation of the variables of interest to an orthogonal basis, where the resulting projections onto the new basis are uncorrelated:
 
 .. math::
 
    \textbf{P} \textbf{Z} = \textbf{Y}
 
-where :math:`\textbf{P}` is an orthogonal linear transformation matrix, :math:`\textbf{Z}` is the original data matrix, and :math:`\textbf{Y}` is the transformed variable matrix which contains uncorrelated principal components :math:`\textbf{Y}_i`. Since :math:`\textbf{P}` is orthogonal, so the inversion is easy to compute:
+where :math:`\textbf{P}` is an orthogonal linear transformation matrix, :math:`\textbf{Z}` is the original data matrix, and :math:`\textbf{Y}` is the transformed variable matrix which contains uncorrelated principal components :math:`\textbf{Y}_i`. Since :math:`\textbf{P}` is orthogonal, the inversion is easy to compute:
 
 .. math::
 

@@ -11,7 +11,7 @@ Global sensitivity analysis is used to quantify the contribution of each input v
 Algorithm
 ^^^^^^^^^^^^
 
-In the SimCenterUQ engine, sensitivity indices are estimated by **Gaussian mixture model-based probability distribution approximation** method presented in Hu and Mahadevan (2019) [Hu19]_. To run this sensitivity analysis, the user has to specify the number of samples and a random seed. The method can handle correlated random variables as well.
+In the SimCenterUQ engine, sensitivity indices are estimated by the **Gaussian mixture model-based probability distribution approximation** method presented in Hu and Mahadevan (2019) [Hu19]_. To run this sensitivity analysis, the user has to specify the number of samples and a random seed. The method can handle correlated random variables as well.
 
 
 .. note::
@@ -48,7 +48,7 @@ Performing sensitivity analysis requires Monte Carlo Samples. This can be either
 			:width: 1200
 
 		  	Sensitivity analysis input panel (Import Dataset).
-		- The directory to input and output dataset needs to be provided. The dataset can either be comma/tab-separated file or binary file.
+		- The directory to input and output dataset needs to be provided. The dataset can be either a comma/tab-separated file or a binary file.
 
 		- **Comma- or tab-separated file (.csv or .txt)**
 
@@ -69,7 +69,7 @@ Performing sensitivity analysis requires Monte Carlo Samples. This can be either
 
 			   Example of data input files
 
-		- **Binary (.bin)**: |app| accepts binary **floating-point** numeric matrix in a **row major order**. Below is an example Matlab script that can be used to create proper binary input files from [number of samples] x [input or output dimension] matlab matrix
+		- **Binary (.bin)**: |app| accepts binary **floating-point** numeric matrix in a **row major order**. Below is an example Matlab script that can be used to create proper binary input files from [number of samples] x [input or output dimension] Matlab matrix
 
 			.. literalinclude:: figures/SimCenterUQ/matlab_dat_to_bin.m
 			   :language: matlab
@@ -102,14 +102,14 @@ In order to associate more input variables, the set {:math:`x_i,x_j`} can be sim
 
 .. note::
 
-   - When multiple outputs are considered, global sensitivity analysis is performed separately for each QoI, but the base Monte Carlo samples are can be re-used for different QoIs. 
-   - When random variables defined in **RV** tab are not exhaustive, i.e. if the model contains *unexplained* randomness, the total Sobol index value may be underestimated by omitting the interaction with the missing variables.
+   - When multiple outputs are considered, global sensitivity analysis is performed separately for each QoI, but the base Monte Carlo samples can be re-used for different QoIs. 
+   - When random variables defined in the **RV** tab are not exhaustive, i.e. if the model contains *unexplained* randomness, the total Sobol index value may be underestimated by omitting the interaction with the missing variables.
 
 
 Principal Component Analysis (PCA) with QoI
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When the number of the quantity of interests (QoI) exceeds 15, quoFEM, by default, performs **principal component analysis and probability model-based global sensitivity analysis (PCA-PSA)**. The user can otherwise manually specify the option by selecting either ``Yes`` or ``No``. If ``Yes`` is selected, the user can also provide the ``potion of variance explained`` in the range of 0 and 1.0. As this value gets close to 1, the accuracy of the approximation improves while the computational demand also increases. Note that when 1.0 is selected, the dimension will not be reduced. The default value is 0.99. We do not recommend using a value lower than 0.99 unless the user thoroughly understands its consequences.
+When the number of the quantities of interest (QoIs) exceeds 15, quoFEM, by default, performs **principal component analysis and probability model-based global sensitivity analysis (PCA-PSA)**. The user can otherwise manually specify the option by selecting either ``Yes`` or ``No``. If ``Yes`` is selected, the user can also provide the ``potion of variance explained`` in the range of 0 and 1.0. As this value gets close to 1, the accuracy of the approximation improves while the computational demand also increases. Note that when 1.0 is selected, the dimension will not be reduced. The default value is 0.99. We do not recommend using a value lower than 0.99 unless the user thoroughly understands its consequences.
 
 .. _figSimSensitivity4:
 

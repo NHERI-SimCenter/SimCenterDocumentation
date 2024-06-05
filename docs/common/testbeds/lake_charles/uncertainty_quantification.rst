@@ -63,14 +63,14 @@ As discussed in :ref:`lbl-testbed_LC_damage_and_loss`, the testbed implemented :
 (Probabilistic Estimation of Losses, Injuries, and Community resilience Under 
 Natural disasters) to quantify damage (damage states) and loss (in the form of decision variables, e.g., loss ratio). 
 Uncertainty from the hazard characterization step is first considered by the random sampling module in PELICUN to 
-numerically sample the distribution of intensity measures (which are treated as engineering parameters, EDPs in the HAZUS method). 
+numerically sample the distribution of intensity measures (which are treated as engineering demand parameters, EDPs in the HAZUS method). 
 Specifically, 1000 samples of combined wind speeds are generated 
 for each asset in this testbed. Second, the corresponding damage and loss models are populated for each asset from HAZUS 
 based on the :ref:`lbl-testbed_LC_asset_representation`. As described 
 in :ref:`lbl-testbed_LC_damage_and_loss`, the damage models are continuous functions (normal or lognormal distribution 
 functions) fit to the synthetic data by maximizing the likelihood of the observations assuming a Binomial distribution of 
 outcomes at each intensity level in the HAZUS database. Hence, at a given intensity level (a certain wind speed), the damage state and corresponding loss ratio of an asset follow probabilistic distributions, considering all 
-uncertainty in the key properties that can influence the building performance.
+uncertainty in the key properties that can influence the building's performance.
 
 .. [FEMA21]
    FEMA (2021), Hazus Hurricane Technical Manual. Hazus 4.2 Service Pack 3. Federal Emergency Management Agency, Washington D.C. 

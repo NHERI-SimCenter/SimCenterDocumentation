@@ -6,16 +6,16 @@ Probabilistic Learning on Manifolds (PLoM)
 About PLoM
 ^^^^^^^^^^^^
 
-**PLoM** is an open source python package that implements the algorithm of **Probabilistic 
+**PLoM** is an open-source Python package that implements the algorithm of **Probabilistic 
 Learning on Manifolds** with and without constraints ([SoizeGhanem2016]_, [SoizeGhanem2020]_) 
 for *generating realizations of a random vector in a finite Euclidean space that are 
 statistically consistent with a given dataset of that vector*. 
 
 PLoM functionality in SimCenter tools is built upon `PLoM <https://github.com/sanjayg0/PLoM>`_ 
-package (available under MIT license), an opensource python package for Probabilistic 
+package (available under MIT license), an opensource Python package for Probabilistic 
 Learning on Manifolds [ZhongGualGovindjee2021]_. The package mainly consists of python 
 modules and invokes a dynamic library for more efficiently computing the gradient of 
-the potential, and can be imported and run on Linux, macOS, and Windows platform. 
+the potential, and can be imported and run on Linux, macOS, and Windows platforms. 
 
 Basic Model
 ^^^^^^^^^^^^^^
@@ -35,7 +35,7 @@ and ``Sampling and Simulation``.
 Option 1: Import Data File
 ----------------------------
 
-Under ``Import Data File`` option, UQ Engine expects users to directly provide the 
+Under the ``Import Data File`` option, UQ Engine expects users to directly provide the 
 training data matrices. For instance, users can upload tabulated data files for input variables 
 and corresponding output responses, by using the ``Raw Data`` mode. Example input and output variables 
 (:download:`PLoM_variables.csv <earthquake/src/plom/PLoM_variables.csv>` and 
@@ -50,10 +50,10 @@ variable name starts with "%", and (3) data are tabulated from the second row.
 
    User-provided raw data files for training dataset
 
-``New Sample Number Ratio`` is an integer defining the ratio of new realization size and the input 
+``New Sample Number Ratio`` is an integer defining the ratio of the new realization size and the input 
 sample size. For instance, if the input file includes 100 data points, using a ``New Sample Number Ratio`` 
-of 5 would produce 500 new realizations. In addition, if ``New Sample Number Ratio`` is set to zero, 
-then no new sample will be generate, however, the trained model can be saved.
+of 5 would produce 500 new realizations. In addition, if the ``New Sample Number Ratio`` is set to zero, 
+then no new sample will be generated, however, the trained model can be saved.
 
 .. figure:: figures/plomSampleRatio.png
    :align: center
@@ -75,10 +75,10 @@ the saved pre-trained model.
 Option 2: Sampling and Simulation
 ----------------------------------
 
-Under ``Sampling and Simulation`` option, UQ Engine will first invokes **FEM** applications 
+Under the ``Sampling and Simulation`` option, UQ Engine will first invoke **FEM** applications 
 (e.g., OpenSees) to run numerical simulations and generate the needed training dataset. So, 
 instead of directly providing the training data, users are responsible for configuring the 
-simulation model and anlaysis.
+simulation model and analysis.
 
 .. figure:: figures/plomSimulation.png
    :align: center
@@ -90,15 +90,15 @@ simulation model and anlaysis.
 Advanced Options
 ^^^^^^^^^^^^^^^^^^
 
-Advanced users are able to configure more modeling parameters by checking
+Advanced users can configure more modeling parameters by checking
 ``Advanced Options`` checkbox.
 
 General
 ---------------
 
-* **Log-space Transform**: apply logrithmic transformation to the data metrix
+* **Log-space Transform**: apply a logarithmic transformation to the data matrix
 * **Random Seed**: enable replicating analysis
-* **PCA Tolerance**: truncating eigen value model representation from principal component analysis
+* **PCA Tolerance**: truncating eigenvalue model representation from principal component analysis
 
 .. figure:: figures/plomAdvGeneral.png
    :align: center
@@ -112,7 +112,7 @@ Kernel Density Estimation
 
 * **KDE Smooth Factor**: smooth factor in kernel density base function
 * **Diffusion Maps**: whether invokes diffusion maps
-* **Diff. Maps Tolerance**: truncating ratio between the last considered eignevalue and the first eigenvalue
+* **Diff. Maps Tolerance**: truncating ratio between the last considered eigenvalue and the first eigenvalue
 
 .. figure:: figures/plomAdvKDE.png
    :align: center
@@ -126,7 +126,7 @@ Constraints
 
 * **Add constraints**: whether applies constraints to the model
 * **Constraints file (.py)**: constraint file path
-* **Iteration Number**: maixmum number of iterations 
+* **Iteration Number**: maximum number of iterations 
 * **Iteration Tolerance**: maximum tolerance in iteration
 
 .. figure:: figures/plomAdvConstr.png
@@ -141,7 +141,7 @@ User-Defined Variables
 
 * **None**: no extra variables except for those defined in **RV** and **EDP** panel to be considered
 * **User-Defined**: users can upload a script for computing the extra variables in the analysis
-* **Ground Motion Intensity**: for earthquake simulation, user can add various intensity measures as extra variables, 
+* **Ground Motion Intensity**: for earthquake simulation, the user can add various intensity measures as extra variables, 
                                for instance, Peak Ground Acceleration, Pseudo Spectral Acceleration at multiple periods
 
 .. figure:: figures/plomAdvUserDefinedVar.png
@@ -154,7 +154,7 @@ User-Defined Variables
 Results and Postprocess
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once the training completed, two plots will be generated in **RES** panel for the PLoM training results:
+Once the training is completed, two plots will be generated in the **RES** panel for the PLoM training results:
 
 * **PCA**: plots the curve of PCA representation error versus the PCA eigenvalues overlapped by the truncating PCA eigenvalue used in training.
 * **KDE**: plots the curve of diffusion map eigenvalue by components overlapped by the truncating eigenvalue used in training
@@ -185,7 +185,7 @@ loaded back for generating extra samples in the future (as described previously)
    Save PLoM model
 
 The training data / new sample points can be visualized under the ``Data Values`` tab, and saved to a 
-user-defined directory by clicking ``Save Table`` or ``Save Column Seperately`` buttom on the top right corner.
+user-defined directory by clicking the ``Save Table`` or the ``Save Column Separately ``button on the top right corner.
 
 .. figure:: figures/plomResPlot.png
    :align: center

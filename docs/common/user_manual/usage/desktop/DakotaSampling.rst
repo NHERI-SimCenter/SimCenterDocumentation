@@ -19,7 +19,7 @@ Depending on the option selected, the user must specify the appropriate input pa
 Monte Carlo Sampling (MCS) 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-MCS is among the most robust and universally applicable sampling methods. Moreover, the convergence rate of MCS methods are independent of the problem dimensionality, albeit the convergence rate of such MCS methods is relatively slow at :math:`N^{-1/2}`. In MCS, a sample drawn at any step is independent of all previous samples. 
+MCS is among the most robust and universally applicable sampling methods. Moreover, the convergence rate of MCS methods is independent of the problem dimensionality, albeit the convergence rate of such MCS methods is relatively slow at :math:`N^{-1/2}`. In MCS, a sample drawn at any step is independent of all previous samples. 
 
 :numref:`figMCS` shows the input panel corresponding to the Monte Carlo Sampling setting. Two input parameters need to be specified: (1) the number of samples of the output to be produced, which is equal to the number of times the model is evaluated, and (2) the seed for the pseudo-random number generator.
 
@@ -35,7 +35,7 @@ MCS is among the most robust and universally applicable sampling methods. Moreov
 Latin Hypercube Sampling (LHS)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Conventional Monte Carlo method generates each sample independently, which may produce undesired clusters and gaps between the samples arising from the sampling variability. On the other hand, Latin hypercube sampling (LHS) aims to prevent those gaps and clusters by 'evenly' spreading out the samples throughout the whole input domain. This can significantly reduce the sampling variability and facilitate faster convergence of the probabilistic statistics. In particular, LHS divides the input domain of each variable into N intervals with equal probability and locates the samples such that only one sample lies on each interval. This strategy forces the samples to be more uniformly spread across the domain. In general, LHS is encouraged over MCS as it provides unbiased estimation with a smaller standard error. For example, `this article <https://old.analytica.com/blog/latin-hypercube-vs.-monte-carlo-sampling>`_ suggests that the convergence rate of a sample mean is about quadratically faster with LHS than with Monte Carlo simulation. However, it is noted that one drawback of LHS is that there is no closed-form expression to quantify the error level of the estimators. This means that the user may need to perform multiple batch samplings to quantify the error from the sample variability
+The conventional Monte Carlo method generates each sample independently, which may produce undesired clusters and gaps between the samples arising from the sampling variability. On the other hand, Latin hypercube sampling (LHS) aims to prevent those gaps and clusters by 'evenly' spreading out the samples throughout the whole input domain. This can significantly reduce the sampling variability and facilitate faster convergence of the probabilistic statistics. In particular, LHS divides the input domain of each variable into N intervals with equal probability and locates the samples such that only one sample lies on each interval. This strategy forces the samples to be more uniformly spread across the domain. In general, LHS is encouraged over MCS as it provides unbiased estimation with a smaller standard error. For example, `this article <https://old.analytica.com/blog/latin-hypercube-vs.-monte-carlo-sampling>`_ suggests that the convergence rate of a sample mean is about quadratically faster with LHS than with Monte Carlo simulation. However, it is noted that one drawback of LHS is that there is no closed-form expression to quantify the error level of the estimators. This means that the user may need to perform multiple batch samplings to quantify the error from the sample variability
 
 
 .. _figLHS1:
@@ -84,7 +84,7 @@ Other surrogate models, different from Gaussian process regression are also avai
 Polynomial Chaos Expansion (PCE)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Polynomial Chaos Expansion (PCE) is another surrogate model that can replace the expensive simulation model. Similar to the input GPR panel, the input panel for PCE model shown in :numref:`figPCE` consists of training and sampling parts. The input parameters in the *surrogate training data* set specify the dataset used for training the surrogate model, while the parameters in the *surrogate sampling data* are related to the samples generated using the surrogate. Extreme care must be taken in specifying the parameters of the training dataset to result in an accurate approximation. 
+Polynomial Chaos Expansion (PCE) is another surrogate model that can replace the expensive simulation model. Similar to the input GPR panel, the input panel for the PCE model shown in :numref:`figPCE` consists of training and sampling parts. The input parameters in the *surrogate training data* set specify the dataset used for training the surrogate model, while the parameters in the *surrogate sampling data* are related to the samples generated using the surrogate. Extreme care must be taken in specifying the parameters of the training dataset to result in an accurate approximation. 
 
 
 .. _figPCE:
@@ -96,6 +96,6 @@ Polynomial Chaos Expansion (PCE) is another surrogate model that can replace the
 	PCE forward propagation input panel.
 
 
-If the user is not familiar with the training parameters of the surrogates, it is recommended to refrain from using the surrogates (PCE in particular) and instead use conventional sampling approaches such as MCS and LHS, despite a higher computational cost. 
+If the user is not familiar with the training parameters of the surrogates, it is recommended to refrain from using the surrogates (PCE in particular) and to instead use conventional sampling approaches such as MCS and LHS, despite a higher computational cost. 
 
 

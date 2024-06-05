@@ -53,6 +53,14 @@ WE:
 	rm -fr ../../WE-UQ-Documentation/docs/common
 	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" ../../WE-UQ-Documentation/docs $(O)
 
+HydroUQ:
+	make clean
+	rm -fr ../../HydroUQ-Documentation/docs/_sources
+	rm -fr ../../HydroUQ-Documentation/docs/_static
+	rm -fr ../../HydroUQ-Documentation/docs/_images
+	rm -fr ../../HydroUQ-Documentation/docs/common
+	@$(SPHINXBUILD) -b html "$(SOURCEDIR)" ../../HydroUQ-Documentation/docs $(O)
+
 Bootcamp:
 	make clean
 	rm -fr ../../SimCenterBootcamp2020/docs/_sources

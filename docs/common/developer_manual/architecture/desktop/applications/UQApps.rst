@@ -23,3 +23,17 @@ The following options for UQ applications vary in the software package used to p
    :include-exclusive: %./categories:performUQ
 
 
+.. only:: HydroUQ_app
+
+   .. raw:: html
+      :file: _static/html/HydroUQ/preprocUQ.html
+
+.. only:: EEUQ_app
+
+   .. raw:: html
+      :file: _static/html/EE-UQ/preprocUQ.html
+
+.. only:: WEUQ_app
+
+   .. raw:: html
+      :file: _static/html/WE-UQ/preprocUQ.html

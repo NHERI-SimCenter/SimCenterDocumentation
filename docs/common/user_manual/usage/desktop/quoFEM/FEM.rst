@@ -3,8 +3,16 @@
 FEM: Finite Element Method
 ==========================
 
-The **FEM** tab will present users with a selection of FEM
-applications. Currently, there are six options: OpenSees, Python, FEAPpv, SurrogateGP (using a surrogate model trained in quoFEM in place of a numerical simulation model), Custom (user-specified application), Multi Model (using more than one model in an analysis), along with the option of specifying no simulation model.
+The **FEM** tab will present users with a selection of FEM applications. Currently, there are six options: 
+
+  #. OpenSees
+  #. Python
+  #. FEAPpv
+  #. SurrogateGP (using a surrogate model trained in quoFEM in place of a numerical simulation model)
+  #. Custom (user-specified application)
+  #. Multi Model (using more than one model in an analysis), along with the option of specifying no simulation model.
+
+  The user must select one of these applications to proceed with the analysis. The user must also provide the necessary input files for the selected application. The input files required for each application are described in the following sections.
 
 .. _figFEM:
 
@@ -23,20 +31,20 @@ applications. Currently, there are six options: OpenSees, Python, FEAPpv, Surrog
 OpenSees
 ^^^^^^^^
 
-When the choice of FEM application is OpenSees (the default application), the user is presented with the input panel shown in figure above and there are two entry fields for filenames:
+When the choice of FEM application is OpenSees (the default application), the user is presented with the input panel shown in the figure above and there are two entry fields for filenames:
 
-1. **Input Script**: The user must specify a main input script. When entered the application will parse this file looking for variables set with the ``pset`` option (a unique set command to the OpenSees interpreter that is used to identify parameter values). For each variable whose value is set with ``pset``, the program will auto populate the variable in the **RV** tab.
+1. **Input Script**: The user must specify a main input script. When entered the application will parse this file looking for variables set with the ``pset`` option (a unique set command to the OpenSees interpreter that is used to identify parameter values). For each variable whose value is set with ``pset``, the program will auto-populate the variable in the **RV** tab.
 
 .. literalinclude:: TrussModel.tcl
    :language: tcl
 
-2. **Postprocess Script** (optional): This is an optional entry where the user has the option of specifying either a tcl script or a Python script that will be used to postprocess the results and create a ``results.out`` file after the main script runs. See for instance, :ref:`example 1<qfem-0001>`.
+2. **Postprocess Script** (optional): This is an optional entry where the user has the option of specifying either a tcl script or a Python script that will be used to post-process the results and create a ``results.out`` file after the main script runs. See for instance, :ref:`example 1<qfem-0001>`.
 
 .. note::
    The postprocess file can be either a tcl script or a Python script and the file extensions must be either ``.py`` or ``.tcl``.
 
 .. warning::
-   If a tcl script file and the user is reading results from files created with OpenSees recorder commands, the user must ensure there is a ``wipe recorders`` command at the end of the main script or at the start of the postprocessing script.
+   If a tcl script file is used and the user is reading results from files created with OpenSees recorder commands, the user must ensure there is a ``wipe recorders`` command at either the end of the main script or the start of the postprocessing script.
 
 
 Python
@@ -51,12 +59,12 @@ The user provides a main script and has the option to provide 2 other scripts:
 
 1. **Postprocess Script** (Optional): This must be a Python script which is provided the QoI variable names when started. This entry can be left blank if the main script creates a ``results.out`` file with a single line as described for the OpenSees application.
 
-2. **Parameters File**: This file allows for the automatic population of the **RV** tab with any variables found in the file. For example if the file contained the following:
+2. **Parameters File**: This file allows for the automatic population of the **RV** tab with any variables found in the file. For example, if the file contained the following:
 
   .. literalinclude:: TrussParams.py
      :language: py
 
-  The **RV** tab would be populated with the ``E``, ``P``, ``Ao``, and ``Au`` random variables. See :ref:`example 2<qfem-0002>` for more. For the Windows users, see the below important warning.
+  The **RV** tab would be populated with the ``E``, ``P``, ``Ao``, and ``Au`` random variables. See :ref:`example 2<qfem-0002>` for more. For users on Windows systems, see the important warning below:
 
 .. Caution::
 
@@ -71,7 +79,7 @@ The user provides a main script and has the option to provide 2 other scripts:
 
     * **"Pip install" Python packages**
 
-      If your model requires additional python packages, use the following command to install them.
+      If your model requires additional Python packages, use the following command to install them.
 
       .. code-block:: bash
 
@@ -90,7 +98,7 @@ The user provides a main script and has the option to provide 2 other scripts:
 
          Custom Python Path
 
-      If you would like to use other version of python in quoFEM, use the custom option in ``File``-``Preference``. Then you will need to **manually install** the packages required to run SimCenter workflow using.
+      If you would like to use another version of Python in quoFEM, use the custom option in ``File``-``Preference``, then you will need to **manually install** the packages required to run the SimCenter workflow using the following command:
 
       .. code-block:: bash
 
@@ -103,7 +111,7 @@ The user provides a main script and has the option to provide 2 other scripts:
 FEAPpv
 ^^^^^^
 
-|FEAPpv| is another FEM engine used by the |app| that is publicly available from the |FEAPpvDownload| page. FEAPpv is a general purpose finite element analysis program which is designed for research and educational use. To install |FEAPpv| you must download the source code and follow the build instructions on the **Source Code Download and Compile Instructions** section of the |FEAPpvDownload| page.
+|FEAPpv| is another FEM engine used by the |app| that is publicly available from the |FEAPpvDownload| page. FEAPpv is a general-purpose finite element analysis program that is designed for research and educational use. To install |FEAPpv| you must download the source code and follow the build instructions on the **Source Code Download and Compile Instructions** section of the |FEAPpvDownload| page.
 
 Similar to the OpenSees application, when the user selects FEAPpv the user is requested to provide two files.
 
@@ -113,14 +121,14 @@ Similar to the OpenSees application, when the user selects FEAPpv the user is re
   :width: 1200
 
 
-1. **Input File**: The user must specify a main input file.  A part of this file may contain variables set in the ``PARA`` section. The variables in this section will be read by the UI when the file is entered and will be autopopulated in the **RV** tab. For example if a file containing the following code was specified:
+1. **Input File**: The user must specify a main input file.  A part of this file may contain variables set in the ``PARA`` section. The variables in this section will be read by the UI when the file is entered and will be autopopulated in the **RV** tab. For example, if a file containing the following code was specified:
 
 .. literalinclude:: TrussTemplate.txt
 
 
   then the parameters ``E``, ``P``, ``Ao``, ``Au`` would be read by the application and placed in the **RV** tab.
 
-2. **Postprocess Script**: The user must provide the name of the Python script that will run when FEAPpv has finished executing. This Python script must load the output file from FEAPpv and create the ``results.out`` file. Currently the user has no control over the name of the output file created by FEAPpv, ``SimCenterOut.txt``. It is this file the post-process script must open and use to create the ``results.out`` file.
+2. **Postprocess Script**: The user must provide the name of the Python script that will run when FEAPpv has finished executing. This Python script must load the output file from FEAPpv and create the ``results.out`` file. Currently, the user has no control over the name of the output file created by FEAPpv, ``SimCenterOut.txt``. It is this file the post-process script must open and use, to create the ``results.out`` file.
 
 
 Custom
@@ -142,7 +150,7 @@ space.
 
 For the custom simulation application, the user provides at least two inputs:
 
-* The script that drives the simulations which must be named
+* The script that drives the simulations, which must be named
   ``driver.bat`` on Windows and ``driver`` on MacOS and Linux
  
 * The script that post-processes the simulation results and writes them to
@@ -154,7 +162,7 @@ required by the application by increasing the number of input slots, as shown in
 correct location for quoFEM to access them during analyses. Users also have the
 option to simply place all the required files in the same location as the
 provided workflow driver script -- quoFEM will automatically copy any files in this
-directory. This is particularly helpful if several different applications with
+directory. This is particularly helpful if several applications with
 numerous inputs are all being called by the workflow driver script and avoids
 the need to explicitly input each one of these files.
 
@@ -184,17 +192,17 @@ In place of the physical simulation models, the Gaussian process surrogate model
 
 When users select the SurrogateGP option, they are requested to provide **Surrogate info file (.json)** that contains the information about the surrogate model. Users can open it with a text editor to see the contents. Once the file is loaded, users may choose the tolerance level of the predictive variance.
 
-* **Maximum Allowable Normalized Variance**: Prediction variance divided by the variance level of the training dataset. If more than one QoIs is introduced, only the highest normalized variance value will be considered.
+* **Maximum Allowable Normalized Variance**: Prediction variance divided by the variance level of the training dataset. If more than one QoI is introduced, only the highest normalized variance value will be considered.
 
 .. Warning:: 
    * It is important to understand that the predictive variance does not necessarily imply the error level of the model.
-   * The provided percentage ratio of the out-of-tolerance samples is only a rough guideline since it assumed that the samples are uniformly populated throughout the range user provided during the training session. Therefore, if user selects other distribution types and ranges, the percentage estimation will not be correct anymore. 
+   * The provided percentage ratio of the out-of-tolerance samples is only a rough guideline since it assumes that the samples are uniformly populated throughout the range the user provided during the training session. Therefore, if the user selects other distribution types and ranges, the percentage estimation will not be correct anymore. 
 
 Users may either stop the analysis, continue, or run exact FEM simulations whenever the tolerance limit is exceeded.
 
-* **Stop Analysis**: The analysis is immediately terminated. quoFEM will show the error (eg. dakota engine gives "No dakotaTab.out file" error)
+* **Stop Analysis**: The analysis is immediately terminated. quoFEM will show the error (e.g. dakota engine gives "No dakotaTab.out file" error)
 
-* **Continue**: The tolerance level is ignored and the analysis is continued. This option is not recommended.
+* **Continue**: The tolerance level is ignored, and the analysis is continued. This option is not recommended.
 
 * **Run Exact FEM Simulation**: The program will run the exact FEM simulation user provided in the training session. In case the surrogate model is constructed purely based on the data and without any model information (case 3 in section 2.1.2.2), this option will be disabled. To allow this option, an additional folder that contains the simulation information is required. This folder, called **Simulation template folder (templatedir_SIM)**, contains the simulator scripts (workflow driver) and required files to run the original simulation model. This file can be obtained by 
 
@@ -202,9 +210,9 @@ Users may either stop the analysis, continue, or run exact FEM simulations whene
 
   The **surrogate model file (.json)** and **Simulation template folder (templatedir_SIM)** can be generated from the quoFEM. See :ref:`lblSimSurrogate`.
 
-Additionally, **GP output** can be set as either the *median prediction* or a *random sample* generated from the normal distribution (or lognormal distribution if the user used log-transform when training) with the predictive median and variance. **NOTE:** the random generator does not account for the Gaussian process correlation, and each realization of QoI given RVs is independent of each other. Only users familiar with GP modeling and who understand the limitation are recommended to use the *random sample* option.
+Additionally, **GP output** can be set as either the *median prediction* or a *random sample* generated from the normal distribution (or lognormal distribution if the user used log-transform when training) with the predictive median and variance. **NOTE:** that the random generator does not account for the Gaussian process correlation, and each realization of QoI given RVs is independent of each other. Only users familiar with GP modeling and who understand the limitations are recommended to use the *random sample* option.
 
-If the user wants to inspect the simulation status or check error/warning messages related to the surrogate model, they can refer to the messages written at: ``{Local Jobs Directory}/tmp.SimCenter/surrogateLog.err``. (Note: ``{Local Jobs Directory}`` is specified from the file-preference in the menu bar.)
+If the user wants to inspect the simulation status or check error/warning messages related to the surrogate model, they can refer to the messages written at: ``{Local Jobs Directory}/tmp.SimCenter/surrogateLog.err``. (Note: ``{Local Jobs Directory}`` is specified from the 'File' → 'Preferences' in the menu bar.)
 
 .. _surrogateFEM2:
 
@@ -217,7 +225,7 @@ If the user wants to inspect the simulation status or check error/warning messag
 
 .. Note:: 
 
-  Once the surrogate model is imported, RV and QoI tab will be auto-populated. Users are allowed to remove some of the QoIs if not interested but may not add new QoIs or modify the names of existing QoIs.
+  Once the surrogate model is imported, the RV and QoI tab will be auto-populated. Users are allowed to remove some QoIs if not interested but may not add new QoIs or modify the names of existing QoIs.
 
 
 Multi Model
@@ -244,7 +252,7 @@ By adding a model, a new tab is created in the FEM panel where users can choose 
 
 .. Note:: 
 
-  If a Multi Model application is selected, at least 2 models must be defined.
+  If a **Multi Model** application is selected, at least 2 models must be defined.
 
 
 .. only:: quoFEM_app

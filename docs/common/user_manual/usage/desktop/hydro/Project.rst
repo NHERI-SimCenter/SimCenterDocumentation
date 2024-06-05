@@ -1,8 +1,8 @@
 .. _lbl-projsett:
 
-***********************************************
-Project settings
-***********************************************
+----------------
+Project Settings
+----------------
 
 The first step is to setup the project as shown in :numref:`EVTSettings`. All of these settings, except ``Simulation type``, are optional. However, setting them makes the future steps easier.
 

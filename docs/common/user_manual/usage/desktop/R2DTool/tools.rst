@@ -4,7 +4,7 @@
 Tools
 =====
 
-The main menu toolbar contains the tools dropdown menu. Tools in R2D are applications that are provided to create inputs for certain workflow applications, e.g. the **Earthquake Scenario Simulation** tool will provide inputs for the User Defined Ground motion and the Regional Site Response HAZ widegets.
+The main menu toolbar features the tools dropdown menu. In R2D, tools are applications designed to generate inputs for specific workflow applications. For instance, the E**Earthquake Event Simulation** tool generates inputs for the User Defined Ground Motion and the Regional Site Response HAZ widgets.
 
 .. include:: EarthquakeScenario.rst
 .. include:: OpenQuake.rst	     

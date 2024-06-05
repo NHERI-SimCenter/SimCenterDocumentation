@@ -1,9 +1,10 @@
 .. _lblUQ:
 
+==============================
 UQ: Uncertainty Quantification
 ==============================
 
-The first selection panel the user must select from and enter data into is the **UQ** tab. It is in this panel that the user selects the **UQ Engine** to use for performing the uncertainty quantification calculations. The **UQ Engine** provides algorithms for solving various types of uncertainty analysis and optimization problems. 
+The **UQ** tab is the panel where users select the **UQ Engine** for uncertainty quantification calculations. The **UQ Engine** encompasses algorithms for various uncertainty analysis and optimization problems.
 
 .. role:: uqblue
 
@@ -89,7 +90,7 @@ The first selection panel the user must select from and enter data into is the *
              | ▪ :ref:`lblDakotaBayesianCalibration` in Dakota
              | ▪ :ref:`lblUCSDTMCMC` in UCSD-UQ   :bdg-link-danger:`Example1 <../../examples/desktop/qfem-0014/README.html>` :bdg-link-danger:`Example2 <../../examples/desktop/qfem-0019/README.html>`
 
-            | Theory details can be found in Dakota user manual and :ref:`here<lbluqUCSDSimTechnical>`.
+            | Theory details can be found in the Dakota user manual and :ref:`here<lbluqUCSDSimTechnical>`.
 
    .. grid:: 2
      :gutter: 1
@@ -147,14 +148,13 @@ The first selection panel the user must select from and enter data into is the *
 
 
 .. only:: notQuoFEM
-     
-   The **UQ Engine** options currently available are Dakota and SimCenterUQ
 
+   The **UQ Engine** options currently available are Dakota and SimCenterUQ.
 
 Dakota UQ Engine
 ----------------
 
-This UQ engine utilizes the `Dakota Software <https://dakota.sandia.gov/>`_, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. **Dakota** provides the user with a large number of methods for different kinds of analyses. For this reason, we have divided the methods into categories through a pull-down menu, as shown below. Once the category has been selected, a number of different methods are made available to the user.
+This UQ engine utilizes the `Dakota Software <https://dakota.sandia.gov/>`_, a state-of-the-art research application that is robust and provides many methods for optimization and UQ, a selection of which we utilize in this application. **Dakota** provides the user with several methods for different kinds of analyses. For this reason, we have divided the methods into categories through a pull-down menu, as shown below. Once the category has been selected, a few different methods are made available to the user.
 
 * By checking the ``Parallel Execution``, the UQ analysis will be performed in parallel. It will try to use all the processors available on the machine. 
 
@@ -175,42 +175,45 @@ The following categories are available:
    :maxdepth: 1
 
    DakotaSampling
-   :EEUQ:DakotaSensitivity
-   :EEUQ:DakotaReliability
-   :Hydro:DakotaSensitivity
-   :Hydro:DakotaReliability    
-   :quoFEM:DakotaSensitivity
-   :quoFEM:DakotaReliability
+   DakotaSensitivity
+   DakotaReliability
    :quoFEM:DakotaDeterministicCalibration
    :quoFEM:DakotaBayesianCalibration
    :quoFEM:DakotaGradientFreeOptimization
 
-.. only:: quoFEM_app or EEUQ_app
+SimCenter UQ Engine
+-------------------
 
-   SimCenter UQ Engine
-   -------------------
+The **SimCenterUQ** engine is a UQ engine developed in-house at the SimCenter that accommodates different UQ methods, which are organized into categories that can be accessed through a pull-down menu, as shown below:
 
-   The **SimCenterUQ** engine is a UQ engine developed in-house at the SimCenter that accommodates different UQ methods, which are organized into categories that can be accessed through a pull-down menu, as shown below:
+.. _figSimCenterUQ:
 
-   .. _figSimCenterUQ:
+.. figure:: figures/SimCenterUQ.png
+   :align: center
+   :figclass: align-center
+   :width: 1200
 
-   .. figure:: figures/SimCenterUQ.png
-      :align: center
-      :figclass: align-center
-      :width: 1200
+   SimCenterUQ engine and category selection.
 
-      SimCenterUQ engine and category selection.
+The following category options are available:
 
-   The following category options are available:
+.. toctree-filt::
+   :maxdepth: 1
 
-   .. toctree-filt::
-      :maxdepth: 1
-
-      SimCenterUQSampling
-      SimCenterUQSensitivity
-      SimCenterUQSurrogate
-      SimCenterUQPLoM
-
+   SimCenterUQSampling
+   :quoFEM:SimCenterUQSensitivity
+   :quoFEM:SimCenterUQSurrogate
+   :quoFEM:SimCenterUQPLoM
+   :quoFEM:SimCenterUQMF
+   :EEUQ:SimCenterUQSensitivity
+   :EEUQ:SimCenterUQSurrogate
+   :EEUQ:SimCenterUQPLoM
+   :EEUQ:SimCenterUQMF
+   :WEUQ:SimCenterUQSensitivity
+   :WEUQ:SimCenterUQMF
+   :Hydro:SimCenterUQSensitivity
+   :Hydro:SimCenterUQMF
+   
 .. only:: quoFEM_app
 
    UCSD UQ Engine

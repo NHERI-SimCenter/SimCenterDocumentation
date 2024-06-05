@@ -37,7 +37,7 @@ Local Reliability Methods
 
 Local reliability methods introduce a first/second-order local approximation of the response or :math:`g(\mathbf{x})` around either "Mean Value" or "Design point (also known as the most probable point, MPP)". Each of these methods involves gradient-based local optimization. The local reliability methods can also be used for "inverse reliability problems" which aim to identify the unknown parameter (random variables) combination that produces prescribed probability levels. The user selects the local method using the pull-down menu.
 
-The default local reliability method is inverse reliability using the first-order reliability approximation (FORM) method. For the FORM method the user provides the following inputs:
+The default local reliability method is inverse reliability using the first-order reliability approximation (FORM) method. For the FORM method, the user provides the following inputs:
 
 .. _figLocalMPP:
 
@@ -52,7 +52,7 @@ The default local reliability method is inverse reliability using the first-orde
 
 - ``no_approx``: the MPP search on the original response functions without the use of any approximations. Combining this option with first-order and second-order integration approaches (see next section) results in the traditional first-order and second-order reliability methods (FORM and SORM).
 
-- ``x_taylor_mean``: a single Taylor series per response/probability level in x-space centered at the uncertain variable means. (Combined with a first-order approach, this is commonly known as the Advanced Mean Value (AMV) method and combined with the second-order approach the method has been named AMV2:)
+- ``x_taylor_mean``: a single Taylor series per response/probability level in x-space centered at the uncertain variable means. (Combined with a first-order approach, this is commonly known as the Advanced Mean Value (AMV) method, and combined with the second-order approach the method has been named AMV2:)
 
 - ``u_taylor_mean``: same as AMV/AMV2, except that the Taylor series is expanded in u-space, termed u-space AMV methods.
 
@@ -66,7 +66,7 @@ The default local reliability method is inverse reliability using the first-orde
 
 .. warning::
    
-   Only a single quantity of interest (QoI) is allowed to be specified when using most probable point searching. The Mean Value search method works for multiple QoIs.
+   Only a single quantity of interest (QoI) is allowed to be specified when using the most probable point searching. The Mean Value search method works for multiple QoIs.
 
 .. [EldredBichonAdams2006]:
 
@@ -97,7 +97,7 @@ Global Reliability Methods
 
 Local reliability methods, while computationally efficient, do not always work. When confronted with a limit state function that is nonsmooth, local gradient-based optimizers may stall due to gradient inaccuracy and fail to converge to an MPP. Moreover, if the limit state is multimodal (multiple MPPs), then a gradient-based local method can, at best, locate only one local MPP solution. Finally, an approximation to the limit state at this MPP may fail to adequately capture the contour of a highly nonlinear limit state. Global reliability methods are designed to handle nonsmooth and multimodal failure surfaces. They do this by creating global approximations of :math:`g(\mathbf{x})`, say :math:`\tilde{g}(\mathbf{x})`, based on Gaussian process models. They accurately resolve a particular contour of a response function and then estimate probabilities using multimodal adaptive importance sampling. 
 
-The user specifies if the gaussian process is to be created in x-space (original) or u-space (transformed) [Read :ref:`HERE<lbluqSimTechnical>` for more about the transformation]. The user also specifies the response quantity levels (there is no option to define probability levels) and a seed.
+The user specifies if the Gaussian process is to be created in x-space (original) or u-space (transformed) [Read :ref:`HERE<lbluqSimTechnical>` for more about the transformation]. The user also specifies the response quantity levels (there is no option to define probability levels) and a seed.
 
 
 .. _figGlobalReliability:
@@ -118,9 +118,9 @@ Importance Sampling (IS)
 ----------------------------
 
 
-For problems where one is interested in the rare events rather than the whole distribution of output, such as earthquake or storm surge events, conventional sampling methods may require an excessively large number of simulations to obtain an accurate estimation of tail distribution. For such problems, importance sampling (IS) provides a bypass to conventional sampling methods (MCS or LHS), whereby an alternative sampling distribution is introduced around the tail part of the original distribution so that the generated samples have a better resolution at the domain of interest.
+For problems where one is interested in rare events rather than the whole distribution of output, such as earthquake or storm surge events, conventional sampling methods may require an excessively large number of simulations to obtain an accurate estimation of tail distribution. For such problems, importance sampling (IS) provides a bypass to conventional sampling methods (MCS or LHS), whereby an alternative sampling distribution is introduced around the tail part of the original distribution so that the generated samples have a better resolution at the domain of interest.
 
-:numref:`figIS` shows the input panel for IS scheme. Similar to MCS and LHS, IS requires both the number of samples to be executed and the corresponding seed for generating such random samples. In addition, IS algorithm can be performed via three different approaches, as specified by the third input method:
+:numref:`figIS` shows the input panel for the IS scheme. Similar to MCS and LHS, IS requires both the number of samples to be executed and the corresponding seed for generating such random samples. In addition, the IS algorithm can be performed via three different approaches, as specified by the third input method:
 
 1.  **Basic Sampling**: A sampling density is constructed in the failure region based on an initial LHS sampling, followed by the generation of importance samples and weights and evaluation of the Cumulative Distribution Function.  
 2. **Adaptive Sampling**: The basic sampling procedure is repeated iteratively until a convergence in failure probability is achieved. 

@@ -18,9 +18,9 @@ in :numref:`fig-SCEventPanel`.
 
 Note: the name of the random variable must not start with a number, or contain any spaces or special characters, such as -, +, \%, etc.
 
-The  **Remove** button is used to remove events. To remove an event, the user must first select events they wish to remove, which is done by clicking on the small circle at the left side of the event frame. All of the selected events are removed when the **Remove** button is pressed.
+The  **Remove** button is used to remove events. To remove an event, the user must first select the events they wish to remove, which is done by clicking on the small circle at the left side of the event frame. All of the selected events are removed when the **Remove** button is pressed.
 
-The **Load Directory** button provides a convenient method to load multiple events. All event files shall first be placed into the same folder. We recommend putting the files in a folder of their own, with no other files besides the wind loading events in it. After pressing the **Load Directory** button, the user will be able to choose the directory that contains the files, and the application will load all event files (i.e., every file with a ``.json`` extension) into the widget automatically.
+The **Load Directory** button provides a convenient method to load multiple events. All event files shall first be placed into the same folder. We recommend putting the files in a folder of their own, with no other files besides the wind-loading events in it. After pressing the **Load Directory** button, the user will be able to choose the directory that contains the files, and the application will load all event files (i.e., every file with a ``.json`` extension) into the widget automatically.
 
 Initially, every event will be given a load factor of 1.0. Load factors can be assigned automatically by preparing
 a ``Records.txt`` file in the directory with the events. Each line in the ``Records.txt`` shall represent one event file, and contain two comma-separated values: the event file name and the desired scale factor. The application will open that file automatically and assign the prescribed load factors to the events. Using a ``Records.txt`` file also allows users to load only a subset of the events from a folder by listing only those in the file. An example ``Records.txt`` is shown below:

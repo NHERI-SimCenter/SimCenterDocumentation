@@ -1,9 +1,18 @@
 .. _lbl-geoclawtopo:
 
 Topography
-==================
+==========
 
-There are three aspects to specifying the geometry in GeoClaw: (a) Bathymetry of the ocean floor and topography of the coastal area (b) Location and size of the fault of interest for tsunami simulation (c) Displacement of the fault.
+There are three aspects to specifying the geometry in GeoClaw: 
+
+#. Bathymetry of the ocean floor and topography of the coastal area.
+#. Location and size of the fault of interest for tsunami simulation.
+#. Displacement of the fault.
+
+.. contents:: Table of Contents
+   :local:
+   :backlinks: none
+   :depth: 2
 
 Bathymetry
 --------------
@@ -118,11 +127,10 @@ Alternatively, there are several online databases that are available to download
     clawpack.clawutil.data.get_remote_file(url, output_dir=scratch_dir, 
             file_name=topo_fname, verbose=True)
 
-Note
-^^^^^^^
+.. note::
+   In types 2 and 3, the values and labels are interchangeable. However, the order of lines is important.
+   It is possible to automatically invert the *z*-values. This can be achieved by specifying the value of ``topotype`` as -1, -2 or -3.
 
-* In types 2 and 3, the values and labels are interchangeable. However, the order of lines is important.
-* It is possible to automatically invert the *z*-values. This can be achieved by specifying the value of ``topotype`` as -1, -2 or -3.
 
 Fault geometry
 ------------------
@@ -204,10 +212,8 @@ Once the above set of parameters have been specified for each sub-fault, they ar
     fault = dtopotools.Fault()
     fault.subfaults = [subfault]
 
-Note
-^^^^^^^
-
-* It is possible that the rupture is time-dependent (of also known as kinematic). In such a case, the ``rupture_time`` and ``rise_time`` also need to be specified for each sub-fault.
+.. note::
+   It is possible that the rupture is time-dependent (of also known as kinematic). In such a case, the ``rupture_time`` and ``rise_time`` also need to be specified for each sub-fault.
 
 
 Fault motion
@@ -262,3 +268,4 @@ or alternatively as
 .. code-block:: python 
 
     >> python maketopo.py
+

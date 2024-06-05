@@ -4,8 +4,8 @@ Site Response Analysis
 --------------------------
 
 |s3harkName| allows users to determine the event at the base of the building by performing an effective free-field site response analysis of a soil column. 
-In this panel the user specifies a ground motion at the bottom of the soil column. 
-After the soil layers have been properly defined, the motion at the ground surface are given at the end of the analysis 
+In this panel, the user specifies a ground motion at the bottom of the soil column. 
+After the soil layers have been properly defined, the motion at the ground surface is given at the end of the analysis 
 and that motion can be used in the simulation of the building response.
 
 The full user graphic interface looks like what is shown in :numref:`ui`
@@ -40,23 +40,23 @@ Soil Column Graphic
 
 The first graphic on the left of the panel shows a visualization of the soil column created. 
 Each layer has a different randomly generated color.
-When the user add or delete a soil layer, this graphic will refresh. 
+When the user adds or deletes a soil layer, this graphic will refresh. 
 
 .. _mesh:
 
 FE Mesh Graphic
 ^^^^^^^^^^^^^^^
 The second graphic on the left shows the finite element mesh and profile plots. 
-Upon the finish of the analysis, selecting any of the tabs on the right inside this graphic (i.e., PGA, :math:`\gamma max`, maxDisp, maxRu, maxRuPWP) 
+Upon the finish of the analysis, select any of the tabs on the right inside this graphic (i.e., PGA, :math:`\gamma max`, maxDisp, maxRu, maxRuPWP) 
 will show various results from the simulation at the mesh points.
 
 Operations Area
 ^^^^^^^^^^^^^^^
-The right side of this area shows some information of the created soil column, such as the total height and number of soil layers.
+The right side of this area shows some information on the created soil column, such as the total height and number of soil layers.
 The user also finds the Ground Water Table (GWT) input field, plus and minus buttons in this area.
-If the user pressed the plus button, a layer will be added below a currently selected layer. 
+If the user presses the plus button, a layer will be added below a currently selected layer. 
 If the minus button is pressed the currently selected layer will be removed. 
-The GWT input field allows the user to specify the level of the ground water table.
+The GWT input field allows the user to specify the level of the groundwater table.
 
 .. note:: 
 
@@ -64,17 +64,7 @@ The GWT input field allows the user to specify the level of the ground water tab
 
 Soil Layer Table
 ^^^^^^^^^^^^^^^^
-This table is where the user provides the characteristics of soil layers, such as layer thickness, density, Vs30, material type, and element size in the finite element mesh.
-
-Single click at a cell will make a soil layer selected, which will highlight the layer using green color in the table.
-
-Also the layer will be highlighted by red box in the :ref:`Soil Column Graphic <profileColumn>`.
-
-Meanwhile the :ref:`Layer Properties Tab <layerPropertiesTab>` will be activated.
-
-Double click a cell to edit it in the table.
-
-If you change the ``Material`` cell of a layer, the :ref:`Layer Properties Tab <layerPropertiesTab>` will change correspondingly.
+This table is where the user provides the characteristics of soil layers, such as layer thickness, density, Vs30, material type, and element size in the finite element mesh. Single click at a cell will make a soil layer, which will highlight the layer using green color in the table. Also the layer will be highlighted by a red box in the :ref:`Soil Column Graphic <profileColumn>`. Meanwhile the :ref:`Layer Properties Tab <layerPropertiesTab>` will be activated. Double-click a cell to edit it in the table. If you change the ``Material`` cell of a layer, the :ref:`Layer Properties Tab <layerPropertiesTab>` will change correspondingly.
 
 Tabbed Area
 ^^^^^^^^^^^
@@ -85,11 +75,11 @@ Configure Tab
 This tab allows the user to specify the paths to the OpenSees executable and a ground motion file that represent the ground shaking at the
 bedrock. The rock motion file must follow the SimCenter event format. 
 Examples of SimCenter event files are available in the :download:`motion demos <https://nheri-simcenter.github.io/s3hark-Documentation/_downloads/4aad74c55afc9d112aa4bb1963afa7f7/DemoGM.zip>`. 
-|s3harkName| will determine to use 2D column or 3D column based on the ground motion file provided. 
-When a ground motion file is selected from the local computer, or the path of the ground motion file is typed in, 
+|s3harkName| will determine whether to use a 2D column or 3D column based on the ground motion file provided. 
+When a ground motion file is selected from the local computer or the path of the ground motion file is typed in, 
 |s3harkName| will figure out if it’s a 1D or 2D shaking file. If it’s 1D shaking, all elements will be 2D. If it’s 2D shaking, 
 all elements will be 3D. 
-The definition of 2D and 3D slope are different. See :numref:`slope-2d` and :numref:`slope-3d`.
+The definitions of 2D and 3D slope are different. See :numref:`slope-2d` and :numref:`slope-3d`.
 
 More details about this tab can be found in :ref:`configure`.
 
@@ -138,13 +128,7 @@ Upon the finish of the simulation, a message will be displayed (:numref:`done`).
 
 View Results
 ^^^^^^^^^^^^
-Click the button to dismiss the message window, the response tab will be activated.
-
-The user can click on any element in the mesh graphic, the selected element will be highlighted in red and the selected nodes will be pointed out by blue arrows. 
-
-The time history of selected element / node will be shown in the :ref:`Response Tab <responseTab>`.
-
-This allows the user to review the ground motion predicted at selected nodes :numref:`responseNode`.
+Click the button to dismiss the message window, the response tab will be activated. The user can click on any element in the mesh graphic, the selected element will be highlighted in red and the selected nodes will be pointed out by blue arrows. The time history of the selected element/node will be shown in the :ref:`Response Tab <responseTab>`. This allows the user to review the ground motion predicted at selected nodes :numref:`responseNode`.
 
 .. _responseNode:
 
@@ -155,11 +139,9 @@ This allows the user to review the ground motion predicted at selected nodes :nu
 	Response at a selected node
 
 
-
 .. note:: 
 
-   - If the Analyze button is not pressed, no simulation will be performed,
-     therefore no simulation is performed and there will be no ground motions provided to the building, if your are using |s3harkName| inside other SimCenter applications.
+   - If the Analyze button is not pressed, no simulation will be performed, therefore no simulation is performed and there will be no ground motions provided to the building if you are using |s3harkName| inside other SimCenter applications.
 
 
 
@@ -167,8 +149,6 @@ This allows the user to review the ground motion predicted at selected nodes :nu
 
 Configure
 ^^^^^^^^^
-
-
 
 .. _configure-1d:
 
@@ -178,21 +158,16 @@ Configure
 
 	Configuration with a 1D shaking motion
 
-In the configure tab, two paths need to be specified. 
-
-You can either type them or click the '+' button to select them from your computer.
-
-If you don't have OpenSees installed, the instruction can be found :ref:`here <https://nheri-simcenter.github.io/s3hark-Documentation/common/user_manual/quickstart/quickstart.html#download-and-install-opensees>`.
-If you don't have a ground motion file, demos can be downloaded :download:`here <https://nheri-simcenter.github.io/s3hark-Documentation/_downloads/4aad74c55afc9d112aa4bb1963afa7f7/DemoGM.zip>`.
+In the configure tab, two paths need to be specified. You can either type them or click the '+' button to select them from your computer. If you don't have OpenSees installed, the instruction can be found :ref:`here <https://nheri-simcenter.github.io/s3hark-Documentation/common/user_manual/quickstart/quickstart.html#download-and-install-opensees>`. If you don't have a ground motion file, demos can be downloaded :download:`here <https://nheri-simcenter.github.io/s3hark-Documentation/_downloads/4aad74c55afc9d112aa4bb1963afa7f7/DemoGM.zip>`.
 
 .. note:: 
 
    - Variables are assumed to have m, kPa, and kN units in |s3harkName|.    
 
 The first demo is SRT-GM-Input-Style3.json, which contains the shaking motion in one direction (1D shaking). 
-If you select this files as the input motion, your tab will look like the one shown in :numref:`configure-1d`. 
-You can edit the slope degree :math:`\alpha`. For flat ground the value should be set as 0. 
-If 1D shaking motion provided, |s3harkName| automatically treat the problem as a 2D plane strain problem. 
+If you select this file as the input motion, your tab will look like the one shown in :numref:`configure-1d`. 
+You can edit the slope degree :math:`\alpha`. For flat ground, the value should be set as 0. 
+If 1D shaking motion provided, |s3harkName| automatically treats the problem as a 2D plane strain problem. 
 2D elements will be used. The slope diagram is plotted in :numref:`slope-2d`.
 
 .. _slope-2d:
@@ -216,7 +191,7 @@ If you select this file as the input motion, your tab will look like the one sho
 	Configuration with a bi-directional shaking motion
 
 You can see |s3harkName| detected the file you provided is a 2D shaking, 
-|s3harkName| automatically treat the problem as a 3D problem. 
+|s3harkName| automatically treats the problem as a 3D problem. 
 3D elements will be used. The slope diagram is plotted in :numref:`slope-3d`:
 
 
@@ -234,7 +209,7 @@ For flat ground :math:`\alpha` and :math:`\beta` should be set as 0.
 Modeling Spatial Variability Uncertainty of Soil
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The most recent version of |s3harkName| allows user to include spatial variability in the definition of soil profile.
+The most recent version of |s3harkName| allows the user to include spatial variability in the definition of soil profile.
 This functionality is achieved using several newly added SimCenter backend python scripts.
 
 Generating Gaussian Random field
@@ -268,7 +243,7 @@ The residuals are characterized statistically as random variables, usually with 
 The pattern of the residuals depends on the local spatial variability of a property. The residual about a trend
 does not change erratically in a probabilistically independent way. Rather, similar property values (positive or
 negative residuals around a trend) occur together in adjacent locations characterizing the scale of fluctuation
-(or wave length of a residual along the trend) as shown in :numref:`fig_InherentVariability`.
+(or wavelength of a residual along the trend) as shown in :numref:`fig_InherentVariability`.
 
 Gaussian stochastic random fields are generated for the liquefiable soil layer by randomizing the assigned
 soil strength parameter over the soil layers with a certain spatial probability density.
@@ -281,7 +256,7 @@ field for a soil property consists of a trend (or mean) field and a residual fie
 
 The trend field (:math:`t(z)`) represents the deterministic mean field assigned by the user. To obtain the
 residual field (:math:`w(z)`), a Gaussian random field can be generated using the algorithm proposed by :cite:`Yamazaki1988`.
-A normal distribution with coefficient of variation, *COV*, is required. The scale of fluctuation is defined by corelation
+A normal distribution with a coefficient of variation, *COV*, is required. The scale of fluctuation is defined by correlation
 length. The values obtained using :cite:`Yamazaki1988`'s method are interpolated according to the soil element center locations.
 
 A summary of the random field preparation procedure for the site response event analysis is summarized here:
@@ -296,16 +271,16 @@ Enumerated lists:
   F_{stochastic} = F_{mean} \; + \; F_{residual} \, = F_{mean} \; + \; COV \; F_{mean} \; F_{Gaussian}\,
 
 .. note::
-   - A reasonable mesh resolution is recommended. Selection of element size should consider several factors, including but not limited to, layer shear wave velocity (for frequency resolution), corelation length (for random field resolution), and computation efficiency.
+   - A reasonable mesh resolution is recommended. The selection of element size should consider several factors, including but not limited to, layer shear wave velocity (for frequency resolution), correlation length (for random field resolution), and computation efficiency.
 
 Calibration of Constitutive Model
 """""""""""""""""""""""""""""""""
 
-Since soil properties, instead of material input parameters, are randomized, it is imperative to choose representative input parameters for constitutive models based on the random variable chosen by user.
-An independent calibration process of constitutive model should be carried out carefully. Currently, a couple of pre-calibrated correlations are included in |s3harkName|, including PM4Sand and PDMY03 based on relative
-density (:math:`D_R`). The detailed corelation can be found in *calibration.py*. The user is also encouraged to modify the script to include their own calibration of constitutive models.
+Since soil properties, instead of material input parameters, are randomized, it is imperative to choose representative input parameters for constitutive models based on the random variable chosen by the user.
+An independent calibration process of the constitutive model should be carried out carefully. Currently, a couple of pre-calibrated correlations are included in |s3harkName|, including PM4Sand and PDMY03 based on relative
+density (:math:`D_R`). The detailed correlation can be found in *calibration.py*. The user is also encouraged to modify the script to include their own calibration of constitutive models.
 
-Currently, three constitutive models are supported in |s3harkName| to have random field, namely, Elastic Isotropic (Elastic_Random), PM4Sand (PM4Sand_Random), and PDMY03 (PDMY03_Random). When these models are selected,
+Currently, three constitutive models are supported in |s3harkName| to have random fields, namely, Elastic Isotropic (Elastic_Random), PM4Sand (PM4Sand_Random), and PDMY03 (PDMY03_Random). When these models are selected,
 the analysis will be carried out using SimCenter workflow. As a result, profile and response plots are not updated inside |s3harkName|.
 
 .. figure:: ./figures/s3harkFigures/Random_All.png
@@ -337,12 +312,12 @@ PM4Sand
     :figclass: align-center
 
 
-The calibration of PM4Sand model is based on a parametric study using quoFEM :cite:`Chen2020a`. The calibration procedure for PM4Sand is straight forward for general sand-like soil behaviors as intended by the model developers.
-When detailed laboratory tests results are available, the apparent relative density :math:`D_R` can be estimated using void ratio and measured :math:`e_{max}` and :math:`e_{min}`. However, as discussed in :cite:`boulanger2015pm4sand`,
+The calibration of the PM4Sand model is based on a parametric study using quoFEM :cite:`Chen2020a`. The calibration procedure for PM4Sand is straightforward for general sand-like soil behaviors as intended by the model developers.
+When detailed laboratory test results are available, the apparent relative density :math:`D_R` can be estimated using void ratio and measured :math:`e_{max}` and :math:`e_{min}`. However, as discussed in :cite:`boulanger2015pm4sand`,
 :math:`D_R` is defined to bound the model response rather than a strict measured of relative density from maximum and minimum density tests. Therefore, the user can adjust its value as part of the calibration process, and the default
 critical state line might need to be re-positioned by adjusting secondary parameters :math:`Q` and :math:`R`, as well. Nevertheless, the estimated :math:`D_R` provides a reasonable value, such that the resulting model response is also
 reasonable. :math:`G_o` can be estimated using small-strain shear modulus estimation methods for different confining pressures. Once :math:`D_R` and :math:`G_o` are determined, :math:`h_{po}` can be calibrated iteratively by matching:
-1) excess pore pressure evolution for a range of individual laboratory tests, and/or 2) specific values of :math:`CRR`. Additional secondary parameters can also be adjusted to fine tune the model response. For example, adjusting :math:`h_o`
+1) excess pore pressure evolution for a range of individual laboratory tests, and/or 2) specific values of :math:`CRR`. Additional secondary parameters can also be adjusted to fine-tune the model response. For example, adjusting :math:`h_o`
 can result in different modulus reduction curves.
 
 On the other hand, when comprehensive laboratory tests are not available for specific sites, model calibration needs to be based on in-situ test data such as SPT blow count, CPT penetration resistance, or shear wave velocity (Vs).
@@ -389,7 +364,7 @@ CDSS tests were done, a python script was called by Dakota to calculate the numb
 Number of cycles to reach 1\% and 2\% SA and the slope (-b) and intercept (a) of the CSR curves (:cite:`Idriss2008`) in logarithmic scale were also recorded. The number of cycles were rounded up to the nearest half. Then a cyclic strength curve was
 interpolated to calculate the Cyclic Resistance Ratio, CRR, which was determined as the CSR corresponding to 15 cycles. CRRs were bounded between 0.05 and 0.5 for interpolation accuracy.
 
-The results were processed through a linear regression analysis using *Matlab* to find the correlation between the input, :math:`D_R`, :math:`h_{po}` and :math:`G_o`, and the output CRR. Different combination of terms were explored and the following
+The results were processed through linear regression analysis using *Matlab* to find the correlation between the input, :math:`D_R`, :math:`h_{po}` and :math:`G_o`, and the output CRR. Different combinations of terms were explored and the following
 format produced the largest :math:`R^2`,
 
 .. math::
@@ -422,9 +397,9 @@ PressureDenpendentMultiYield03
     :align: center
     :figclass: align-center
 
-PressureDenpendentMultiYield03 is updated from PressureDenpendentMultiYield02, that was developed for liquefaction and cyclic mobility, to comply with the established guidelines on the dependence of liquefaction triggering to the number of loading cycles,
+PressureDenpendentMultiYield03 is updated from PressureDenpendentMultiYield02, which was developed for liquefaction and cyclic mobility, to comply with the established guidelines on the dependence of liquefaction triggering to the number of loading cycles,
 effective overburden stress (:math:`K\sigma`), and static shear stress (:math:`K\alpha`). The model has been improved with new flow rules to better capture contraction and dilation in sands and has been implemented as PDMY03 in OpenSees. In |s3harkName|, the calibration of PDMY03
-model is based on interpolating pre calibrated parameter sets for various of relative densities.
+model is based on interpolating pre-calibrated parameter sets for various of relative densities.
 
 
 .. figure:: ./figures/s3harkFigures/Pdmy03_parameters.png

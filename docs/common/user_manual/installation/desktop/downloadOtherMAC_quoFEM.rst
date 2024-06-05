@@ -6,7 +6,7 @@ MacOS Users
 Install Location
 ^^^^^^^^^^^^^^^^
 
-The following set of instructions assumes all files will be placed in the **bin** folder in your home directory. You can of course place them anywhere you want, you just need to make appropriate changes to the **env PATH** settings discussed later. If you wish to follow our placement strategy, inside this **bin** folder create **3** additional folders named **dakota**, **OpenSees** and **FEAPpv**.
+The following set of instructions assumes all files will be placed in the **bin** folder in your home directory. You can of course place them anywhere you want, you just need to make appropriate changes to the **env PATH** settings discussed later. If you wish to follow our placement strategy, inside this **bin** folder create **3** additional folders named **dakota**, **OpenSees**, and **FEAPpv**.
 
 .. note::
 
@@ -16,7 +16,7 @@ Python
 ^^^^^^
 
 The Mac comes with Python pre-installed, which is currently the somewhat 
-dated version 2.7. We recommend installing Python 3.7 from `Python.org <https://www.python.org/downloads/mac-osx>`_ . We recommend installing using the 
+dated version 2.7. We recommend installing Python 3.7 from `Python.org <https://www.python.org/downloads/mac-osx>`_. We recommend installing using the 
 **macOS 64-bit installer**. The installer used to place a python3 executable in your /usr/local/bin directory, whose location should be on your system PATH, Version 3.8 does not appear to do so anymore, see the note below. 
 
 .. note:: 

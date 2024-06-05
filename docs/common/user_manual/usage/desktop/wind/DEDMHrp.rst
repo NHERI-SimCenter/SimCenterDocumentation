@@ -12,7 +12,7 @@ To understand the inputs, it is necessary to understand that the DEDM-HRP websit
 
 	DEDM HRP wind loading event.
 
-The inputs for the event, as shown in figure :numref:`fig-dedm-hrp` require the user to specify which of these tests to use:
+The inputs for the event, as shown in the figure :numref:`fig-dedm-hrp` require the user to specify which of these tests to use:
 
 #. The user to select from one of the three cross-sectional shapes.
 
@@ -22,9 +22,9 @@ The inputs for the event, as shown in figure :numref:`fig-dedm-hrp` require the 
 
 #. Mean Wind Speed at Top of Building: The basic wind speed in the ASCE standard (e.g., ASCE 7-16) is defined as 3-sec gust at 10 m height. However, the DEDM-HRP asks for the inputs of mean wind speeds at the top of a full-scale building. This is because of the nature of the TPU database: TPU’s pressure coefficients were obtained using mean wind speed at the top of a test model.
 
-#. Duration of test data, either 10min or 1 hour.
+#. Duration of test data, either 10 min or 1 hour.
 
-#. The angle of incidence, 0 through 90 in 5 degree increments.
+#. The angle of incidence, 0 through 90 in 5-degree increments.
 
 The actual loads applied to the building are obtained using the pressure taps. They are scaled from the TPU datasets based on the height of the building provided in the general information. The scaling employed by Vortex-Winds does not take into account the width and depth provided in the General Information. The forces are determined based on the widths and depths of the wind tunnel model scaled by the height in the General Information to the height of the model in the wind tunnel experiment.
 

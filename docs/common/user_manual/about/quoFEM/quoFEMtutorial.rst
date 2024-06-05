@@ -10,7 +10,7 @@ If you have not yet installed quoFEM, please see
    * :ref:`Run quoFEM without installation<lblquoFEM_DCV>`
 
 .. important::
-     If you just downloaded quoFEM, but have previously used the older version of it or other SimCenter tools, it is recommended to reset the cached path values by pressing the ``reset`` button in ``File``-``Preference``.
+     If you just downloaded quoFEM, but have previously used the older version of it or other SimCenter tools, it is recommended to reset the cached path values by pressing the ``reset`` button in ``File``-``Preferences``.
 
 
 
@@ -102,7 +102,7 @@ This tutorial will show how a **deterministic** model written/interfaced in a Py
                  Now we are ready to run a probabilistic analysis using this model.
 
                 .. note::
-                    openseespy, numpy and matplotlib libraries are readily available in quoFEM because:
+                    openseespy, numpy, and matplotlib libraries are readily available in quoFEM because:
 
                     * Windows 
                             quoFEM is bundled with a Python executable which has those packages pre-installed. See :ref:`here<lblFEM>`.
@@ -204,7 +204,7 @@ This tutorial will show how a **deterministic** model written/interfaced in a Py
                     :width: 1200
 
 
-            quoFEM has four input taps - UQ, FEM, RV, EDP(QoI)- that guide users to provide the required inputs for the UQ analysis
+            quoFEM has four input tabs - UQ, FEM, RV, EDP(QoI)- that guide users to provide the required inputs for the UQ analysis
 
 
             1. **UQ (Uncertainty Quantification)**
@@ -270,7 +270,7 @@ This tutorial will show how a **deterministic** model written/interfaced in a Py
                 The order should match that written in the ``results.out`` file, and the specified name of QoIs is used only for the display in this example. Please see :ref:`here<lblQUO_QOI>` to learn about vector QoIs that have a length greater than 1 
 
 
-            When all the fields are filled in, click the **Run** button, and the analysis will be performed. **Do not press the Run button twice** - it will give you an error. You can check the progress status in your **Local Working directory** which can be found in the preference window. The number attached to 'workdir'. indicates the simulation index, and each folder contains the details for each simulation run.
+            When all the fields are filled in, click the **Run** button, and the analysis will be performed. **Do not press the Run button twice** - it will give you an error. You can check the progress status in your **Local Working directory** which can be found in the preference window. The number attached to 'workdir.' indicates the simulation index, and each folder contains the details for each simulation run.
 
                 .. figure:: figures/step2_RES1.PNG
                     :align: center
@@ -345,7 +345,7 @@ This tutorial will show how a **deterministic** model written/interfaced in a Py
                     Run at DesignSafe
 
 
-            If one sets 32 processors, quoFEM will run 32 model evaluations simultaneously in parallel. By clicking **Submit**, the jobs will be automatically submitted to DesignSafe. (See :ref:`here<lblArchitecture>` to learn more about "What happens when **RUN at DesignSafe** button is clicked"). Depending on how busy the **Frontera** at TACC is, your job may start within 30 sec or it may take longer. By clicking **GET from DesignSafe**, one can check the status. The major stages are **Queued**, **Running**, and **Finished**. 
+            If one sets 32 processors, quoFEM will run 32 model evaluations simultaneously in parallel. By clicking **Submit**, the jobs will be automatically submitted to DesignSafe. (See :ref:`here<lblArchitecture>` to learn more about "What happens when **RUN at DesignSafe** button is clicked"). Depending on how busy the **Frontera** at TACC is, your job may start within 30 sec, or it may take longer. By clicking **GET from DesignSafe**, one can check the status. The major stages are **Queued**, **Running**, and **Finished**. 
 
 
                 .. figure:: figures/step3_Jobs.PNG
@@ -409,17 +409,17 @@ This tutorial will show how a **deterministic** model written/interfaced in a Py
 
             * **When "RUN at DesignSafe" fails**
 
-                When the remote analysis fails while the local analysis is successful, there can be many reasons. Some of the common cases are Python compatibility issues and missing Python packages, as discussed earlier on this page. Another common cause is related to cross-platform compatibility (Windows/mac versus Linux). This is usually observed in the relative file paths. For example, the below works on Mac and Windows,
+                When the remote analysis fails while the local analysis is successful, there can be many reasons. Some common cases are Python compatibility issues and missing Python packages, as discussed earlier on this page. Another common cause is related to cross-platform compatibility (Windows/mac versus Linux). This is usually observed in the relative file paths. For example, the below works on Mac and Windows,
                 
                 .. code-block:: python
 
-                    getDisp=pd.read_csv(r'TestResult\disp.out', delimiter= ' ')
+                    getDisp=pd.read_csv(r'TestResult\disp.out', delimiter=' ')
 
                 but will throw an error on Linux. Below will also work on Linux.
 
                 .. code-block:: python
 
-                    getDisp=pd.read_csv(os.path.join('TestResult', "disp.out"), delimiter= ' ')
+                    getDisp=pd.read_csv(os.path.join('TestResult', "disp.out"), delimiter=' ')
                 
 
             * **Questions, bug reports, and feature requests**

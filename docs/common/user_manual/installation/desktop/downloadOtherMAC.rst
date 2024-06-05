@@ -19,7 +19,8 @@ The Mac comes with Python pre-installed, which is currently the somewhat
 dated version 2.7. We recommend installing Python 3.7 from `Python.org <https://www.python.org/downloads/mac-osx>`_ . We recommend installing using the 
 **macOS 64-bit installer**. The installer used to place a python3 executable in your /usr/local/bin directory, whose location should be on your system PATH, Version 3.8 does not appear to do so anymore, see the note below. 
 
-.. note:: 
+.. note::
+
    #. We use the python.org installation over others, due to its simplicity of installation.
    #. In the current installation of **Python** it leaves two script files in a folder when the installation ends. You need to execute both script files to get Python set up correctly so that it can be invoked from the terminal. To execute the files, double click on them. The two files, shown in the image below, are **Update Shell Profile.command.sh** and **Install CertificateCommand.sh**.
 
@@ -40,13 +41,14 @@ Once Python is installed, you need to extend it by installing the following pack
       pip3 install hdf5
 
 .. note:: 
+   
    #. To start a terminal window you can use the spotlight app (magnifying glass at the top right corner of the desktop). Start the spotlight app and type in the terminal. The terminal application should appear as the top hit. Click on it to start it.
 
    #. When the |app| is running, open the File/Preferences and make sure that python3 appears under **External Applications:Python**. If you used older versions of SimCenter tools this was not the default.
 
    #. If you forget to invoke the **UpdateShellProfile.command.sh" script at the end of the installation, you can always edit the correct shell file later to add the **PATH** variable. 
 
-  #. As an alternative, you can install the SimCenter's pelicun module, which will include all three of the above
+   #. As an alternative, you can install the SimCenter's pelicun module, which will include all three of the above
 
    .. code-block:: python
 
@@ -65,8 +67,9 @@ OpenSees
 |OpenSeesLink| is the default FEM engine used by the |app| that is publicly available from the |OpenSeesDownload| page. To download the **OpenSees** you have to enter your email address, which may also require you to register (that requirement is going away and may be gone by the time you read this). At the bottom of the page under the section **Mac Version** is a table with two links: one for the **OpenSees** and also a link to |Tcl|, whose libraries OpenSees needs on your computer to run. You will need to follow both links to download both applications.
 
 Steps to Install OpenSees on a Mac:
-      1. Follow the OpenSees link and download the OpenSees.zip file. Uncompress the file and you will have an **OpenSees-3.2.2** folder. Move that folder to the **bin/OpenSees** folder. 
-      2. Download and run the Tcl installer.
+      
+   1. Follow the OpenSees link and download the OpenSees.zip file. Uncompress the file and you will have an **OpenSees-3.2.2** folder. Move that folder to the **bin/OpenSees** folder. 
+   2. Download and run the Tcl installer.
 
 
 .. note::
@@ -109,6 +112,7 @@ Test the Install of Python, OpenSees & Dakota
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Steps to Test the Installation of the Applications:
+   
    1. Open a terminal window (type ``terminal`` in spotlight search)
    2. Type ``python3`` (this should bring up the Python interpreter)
    3. Enter the following to test the installation of the modules and quit the application:

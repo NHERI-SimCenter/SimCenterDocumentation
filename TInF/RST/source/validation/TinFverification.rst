@@ -10,7 +10,7 @@ The performance of the turbulence inflow tool in reproducing the statistical pro
    nOutputFace 6;
    outputFaceIndices (0 1 2 3 4 5);
 
-The two entries to be specified in the lines, i.e., *nOutputFace* and *outputFaceIndices*, denote the total number and the indices of the face elements (on the inflow patch) at which the time-histories of the velocities are to be recorded. Note that the components of *outputFaceIndices* should be integers lying between zero and the total number of the face elements on the inflow patch. Meanwhile, the number of the components of *outputFaceIndices* should equal to the value of *nOutputFace* which is an integer no larger than the total number of the face elements on the inflow patch. If the command lines shown above are added to the *inflowProperties* file, separate file named by the indices of the output face elements will be generated inside the *postProcessing* folder (created if not exists) at the root directory of the case project during the simulations. Those files (see below) contain not only the time-histories of the velocities but also the parameters defining the statistical properties of the targeted turbulence.
+The two entries to be specified in the lines, i.e., *nOutputFace* and *outputFaceIndices*, denote the total number and the indices of the face elements (on the inflow patch) at which the time-histories of the velocities are to be recorded. Note that the components of *outputFaceIndices* should be integers lying between zero and the total number of the face elements on the inflow patch. Meanwhile, the number of the components of *outputFaceIndices* should equal to the value of *nOutputFace* which is an integer no larger than the total number of the face elements on the inflow patch. If the command lines shown above are added to the *inflowProperties* file, a separate file named by the indices of the output face elements will be generated inside the *postProcessing* folder (created if not exist) at the root directory of the case project during the simulations. Those files (see below) contain not only the time histories of the velocities but also the parameters defining the statistical properties of the targeted turbulence.
 
 .. code-block:: none
 
@@ -38,7 +38,7 @@ The two entries to be specified in the lines, i.e., *nOutputFace* and *outputFac
    0.1 1.143417e+01 2.590234e-01 -1.843147e+00
    ...
 
-When simulations are finished, one can easily verify if the synthetic turbulence meet the initial requirements by conducting a statistical analysis of the velocity fluctuations contained in the files. For simplicity, some Matlab codes for the statistical analysis of velocity fluctuations are provided. These codes are capable of computing the correlation coefficients and the velocity spectral functions of the synthetic turbulence at some specific face elements on the inflow patch and plotting the comparison between the synthetic profiles and the targeted ones. A number of examples are given below for demonstration.
+When simulations are finished, one can easily verify if the synthetic turbulence meets the initial requirements by conducting a statistical analysis of the velocity fluctuations contained in the files. For simplicity, some Matlab codes for the statistical analysis of velocity fluctuations are provided. These codes are capable of computing the correlation coefficients and the velocity spectral functions of the synthetic turbulence at some specific face elements on the inflow patch and plotting the comparison between the synthetic profiles and the targeted ones. Several examples are given below for demonstration.
 
 .. _figTinF1V:
 
@@ -103,3 +103,4 @@ When simulations are finished, one can easily verify if the synthetic turbulence
       :figclass: align-center
 
       SEM with :math:`U = 10\mathrm{m/s}`, :math:`L_{11} = 1\mathrm{m}`, :math:`L_{22} = 0.75\mathrm{m}`, and :math:`L_{33} = 0.5\mathrm{m}` and a step function for eddy shape: correlation functions
+

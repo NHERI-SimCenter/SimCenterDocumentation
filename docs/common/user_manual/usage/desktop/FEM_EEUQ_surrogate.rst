@@ -19,7 +19,7 @@ For the users who are interested in the advanced options please refer to the `qu
 
 .. Note:: 
 
-  Once the surrogate model is imported, RV and EDP tab will be auto-populated. The users are may not add or remove EDPs.
+  Once the surrogate model is imported, the RV tab will be auto-populated and EDP names will be displayed under the surrogate model file path. The users can populate EDP tab using the names. The users may not add or remove EDPs.
 
 .. Important:: 
 

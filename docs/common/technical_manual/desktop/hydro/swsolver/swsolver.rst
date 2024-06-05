@@ -1,16 +1,24 @@
 .. _lbl-geoclaw:
 
+*********************
 Shallow Water Solvers
-=======================
+*********************
 
-There are several shallow water solvers available. In this work, we have focused on two of the primary ones of interest to the community: GeoClaw and AdCirc.
+There are several shallow water equation (SWE) solvers available. Here we discuss two popular choices in the tsunami and storm-surge simulation fields: GeoClaw and AdCirc.
 
+.. contents:: Table of Contents
+   :local:
+   :backlinks: none
+
+.. _lbl-swsolver-geoclaw:
+
+=======
 GeoClaw
------------
+=======
 
-GeoClaw is a part of Clawpacky that was originally developed in 1994 by Prof. Randall LeVeque and co-workers. It is available as a part of the clawpack package that uses finite volume methods for to solve linear and nonlinear hyperbolic systems. It employs high-resolution Godunov0type methods with limiters in a general framework applicable to wave-related problems and thus often used for tsunami modeling. More information can be found on the website of `Clawpack <https://www.clawpack.org>`_.
+GeoClaw is a part of Clawpack (Conservation Laws Package) that was originally developed in 1994 by Professor Randall LeVeque and co-workers. It is available as a part of the Clawpack package, using finite volume methods (FVM) to solve linear and nonlinear hyperbolic systems. It employs high-resolution, Godunov-type methods with limiters in a general framework applicable to wave-related problems. It is often used for tsunami modeling, having been validated extensively to demonstrate its viability for fast computations with good accuracy. More information on GeoClaw may be found at the dedicated website for `Clawpack <https://www.clawpack.org>`_.
 
-In this documentation, we will discuss aspects of particular importance to the Hydro-UQ platform that includes the input and output formats of the GeoClaw files. The Hydro-UQ tool allows the users to upload their own GeoClaw input files. 
+Herein, we will only discuss aspects of GeoClaw with particular importance to the HydroUQ platform. This includes the possible input and output formats of the GeoClaw files. The Hydro-UQ tool allows the users to upload their own GeoClaw input files for continuiation in CFD tools (e.g. OpenFOAM) on the condition that they match a file format described herein exactly. 
 
 .. toctree::
    :maxdepth: 1
@@ -21,15 +29,22 @@ In this documentation, we will discuss aspects of particular importance to the H
    geoclaw-output
 
 
+.. _lbl-swsolver-adcirc:
+
+======
 AdCirc 
---------
+======
 
-At present, AdCirc is not supported. Please contact us if you would like to use AdCirc.
+Currently, AdCirc is not supported in HydroUQ but could become available granted there is enough user demand. AdCirc is a popular software for storm-surge simulations and broadly excellent solutions to water-borne events. Please contact us if you would like to use AdCirc in HydroUQ in the near-future.
 
-SimCenter formats
---------------------
+.. _lbl-swsolver-simcenter:
 
-Development of file standards can help in the sustainable growth of community projects. SimCenter proposes the below formats for storing information related to the shallow water solvers.
+
+===================
+SimCenter Standards
+===================
+
+Development of shallow-water flow file standards can help in the sustainable growth of community projects. SimCenter proposes the below formats for storing information related to the shallow water solvers.
 
 .. toctree::
    :maxdepth: 1

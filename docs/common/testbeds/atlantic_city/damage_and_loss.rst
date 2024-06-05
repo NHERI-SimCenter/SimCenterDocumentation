@@ -7,14 +7,14 @@ Damage and Loss Estimation
 Damage and loss functions from the HAZUS Hurricane Damage and Loss Model ([FEMA18a_], [FEMA18b_]) 
 were implemented in `PELICUN <https://pelicun.readthedocs.io/en/latest/>`_ to support loss assessment for 
 all configurations of buildings currently supported by HAZUS for wind and flood hazards. These 
-configurations represent all the possible unique configurations of building attributes associated 
+configurations represent all possible unique configurations of building attributes associated 
 with each building class (defined by material) and subclass (defined by occupancy), as discussed in 
 :ref:`testbed_AC_asset_representation`. For example, wood (class) single-family homes 1-2+ stories 
 (subclass) would have damage and loss functions associated with each unique combination of attributes 
 used to define key features of the load path and components (e.g., roof shape, secondary water resistance, 
 roof deck attachment, roof-wall connection, shutters, garage), as well as the exposure (terrain roughness).
 
-The HAZUS damage and loss functions consist of tabular data to describe the fragility or expected losses as a 
+The HAZUS damage and loss functions consist of tabular data that describe the fragility or expected losses as a 
 function of hazard intensity. These data were used to calibrate coupled damage and loss models to estimate 
 the damage state and the corresponding expected loss ratio for each building configuration in PELICUN. 
 Continuous functions (Normal or Lognormal cumulative density functions) were fit to the synthetic data 
@@ -23,7 +23,7 @@ discrete hazard intensity in the HAZUS database. Coupling the damage and loss mo
 more realistic outcomes (e.g., a building with no damage cannot have total loss when the two models are 
 coupled), and the parameterized models allow for more efficient storage and computations within the workflow.
 
-1. For the **wind loss assessment**, the HAZUS functions consist of tabular data to 
+1. For the **wind loss assessment**, the HAZUS functions consist of tabular data that 
    describe the fragility or expected losses as a function of peak wind speed (PWS). 
    Only data up to 200 mph wind speeds were used because the substantial reduction in the 
    number of observations introduces significant measurement error above that level (:numref:`wind_df`). 
@@ -48,7 +48,7 @@ coupled), and the parameterized models allow for more efficient storage and comp
 
    Depth-damage ratio curves for the flood loss assessment.
 
-The **total loss** from wind and flood damages are estimated by combining the "wind-only" and "flood-only"
+The **total loss** from wind and flood damages is estimated by combining the "wind-only" and "flood-only"
 losses following the combination rule in [FEMA18a]_. The primary motivation for the combined wind and
 flood loss methodology is to avoid “double counting” of damage. At a minimum, the combined wind and
 flood loss must be at least the larger of the wind-only or the flood-only loss. At a maximum, the combined
@@ -63,13 +63,13 @@ as:
 where :math:`L_{wind}` is the wind-only loss ratio, :math:`L_{flood}` is the flood-only loss ratio, and :math:`L_{combined}`
 is the combined loss ratio. The HAZUS combination rule first assumes that the wind-induced damage and flood-induced damage
 are spread uniformly and randomly over a building. In this idealized case, the two damage mechanisms can be treated as
-independent, and the expected combined loss ratio is simply as:
+independent, and the expected combined loss ratio is simply:
 
 .. math::
 
    L_{combined} = L_{wind} + L_{flood} - L_{wind} \times L_{flood}
 
-However,  it is nonetheless clear that neither wind nor storm surge damages are
+However, it is clear that neither wind nor storm surge damages are
 uniformly and randomly distributed throughout a structure. Wind damage is most
 frequently initiated at the roof and fenestrations (i.e., windows,
 doors, or other openings in the building envelope), whereas flood damage is most
@@ -99,7 +99,7 @@ sum of combined sub-assembly loss ratios:
 
 .. math::
 
-   L_{combined} = \sum\limits_{i=1}^7 L_{wind,i} + L_{flood,i} - L_{wind,i} \times L_{flood,i}
+   L_{combined} = \sum\limits_{i=1}^7 (L_{wind,i} + L_{flood,i} - L_{wind,i} \times L_{flood,i})
 
 where :math:`L_{wind,i}` is the wind-only loss ratio of the :math:`i^{th}` sub-assembly, and
 :math:`L_{flood,i}` is the flood-only loss ratio of the :math:`i^{th}` sub-assembly. These sub-assembly

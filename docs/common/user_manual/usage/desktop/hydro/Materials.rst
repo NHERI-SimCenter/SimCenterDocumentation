@@ -1,8 +1,8 @@
 .. _lbl-materials:
 
-***********************************************
+---------
 Materials
-***********************************************
+---------
 
 The |app| is set up for multiphase flow simulations using the volume of fluid method. The materials window can be activated by selecting the option from the left panel as shown in :numref:`Material`.
 

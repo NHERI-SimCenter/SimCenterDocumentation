@@ -27,7 +27,7 @@ Index :math:`j` denotes the stage number, :math:`m` denotes the total number of 
 prior joint PDF :math:`p(\theta)`. The TMCMC sampler progresses by monotonically increasing the value of :math:`\beta_j`, at each stage :math:`j`, until it reaches the value of 1. At the final stage :math:`(j = m)`, parameter :math:`\beta_m = 1`, the tempered distribution :math:`p(\mathbf{\theta \ | \ y})_{j = m}` is the target posterior joint PDF :math:`p(\mathbf{\theta \ | \ y})`. 
 
 
-TMCMC represents the tempered posterior PDF at every stage by a set of weighted samples (known as particles). TMCMC approximates the :math:`j^{th}` stage tempered posterior PDF :math:`p(\mathbf{\theta \ | \ y})_j`  by weighing, resampling, and perturbing the particles of the :math:`j-1^{th}` stage intermediate joint PDF :math:`p(\mathbf{\theta \ | \ y})_{j-1}` . For details about the TMCMC algorithm, the interested reader is referred to Ching and Chen [Ching2007]_, Minson et. al. [Minson2013]_.
+TMCMC represents the tempered posterior PDF at every stage by a set of weighted samples (known as particles). TMCMC approximates the :math:`j^{th}` stage tempered posterior PDF :math:`p(\mathbf{\theta \ | \ y})_j`  by weighing, resampling, and perturbing the particles of the :math:`j-1^{th}` stage intermediate joint PDF :math:`p(\mathbf{\theta \ | \ y})_{j-1}`. For details about the TMCMC algorithm, the interested reader is referred to Ching and Chen [Ching2007]_, Minson et. al. [Minson2013]_.
 
 
 .. [Ching2007] 
@@ -79,7 +79,7 @@ Assuming :math:`\sigma_i^2`  to be statistically independent of :math:`\theta_i`
    p(\theta_i, \sigma_i^2, \eta | \mathbf{y}_i) \propto p(\mathbf{y}_i | \theta_i, \sigma_i^2)  p(\sigma_i^2) p(\theta_i | \eta) p(\eta)
    :label: bayes_rule_for_one_coupon_after_assumptions
 
-In the context of hierarchical Bayesian modeling, the entire experimental dataset from multiple specimens of the same kind, :math:`\mathbf{Y} = \{\mathbf{y}_1, \mathbf{y}_2, ..., \mathbf{y}_{N_s}\}`, is considered. The model parameters and the prediction error variances for all specimens are assumed to be mutually statistically independent, while the set of the model parameter estimates are assumed to be samples from a parent distribution. The figure :numref:`figHierarchicalModel` shows the structure of the hierarchical model.  
+In the context of hierarchical Bayesian modeling, the entire experimental dataset from multiple specimens of the same kind, :math:`\mathbf{Y} = \{\mathbf{y}_1, \mathbf{y}_2, ..., \mathbf{y}_{N_s}\}`, is considered. The model parameters and the prediction error variances for all specimens are assumed to be mutually statistically independent, while the set of model parameter estimates are assumed to be samples from a parent distribution. The figure :numref:`figHierarchicalModel` shows the structure of the hierarchical model.  
 
 .. _figHierarchicalModel:
 
@@ -101,7 +101,7 @@ The marginal posterior distribution of the hyperparameters, :math:`p(\eta | \mat
    p(\eta | \mathbf{Y}) = \int_{\Theta, \mathbf{s}} p(\Theta, \mathbf{s}, \eta | \mathbf{Y}) d\Theta d\mathbf{s}
    :label: marginal_posterior_of_hyperparameters
 
-The distribution :math:`p(\eta | \mathbf{Y})` describes the epistemic uncertainty in the value of the hyperparameters  :math:`\eta` due to the finite number of specimens :math:`N_s` in the experimental dataset. 
+The distribution :math:`p(\eta | \mathbf{Y})` describes the epistemic uncertainty in the value of the hyperparameters :math:`\eta` due to the finite number of specimens :math:`N_s` in the experimental dataset. 
 
 In the hierarchical approach, the probability distribution of the model parameters conditioned on the entire measurement dataset, :math:`p(\theta | \mathbf{Y})`, is given by
 
@@ -110,7 +110,7 @@ In the hierarchical approach, the probability distribution of the model paramete
    :label: posterior_predictive_distribution_of_theta
 
 
-The conditional distribution :math:`p(\theta | \eta)`  models the aleatory specimen-to-specimen variability. Therefore, the probability distribution  :math:`p(\theta | \mathbf{Y})`, referred to as the posterior predictive distribution of the model parameters :math:`\theta`, encompasses both the aleatory specimen-to-specimen uncertainty and the epistemic estimation uncertainty (due to the finite number of specimens :math:`N_s`  in the experimental dataset and the finite length of the experimental data corresponding to each specimen). It can be utilized for uncertainty quantification and propagation in reliability and risk analyses. 
+The conditional distribution :math:`p(\theta | \eta)` models the aleatory specimen-to-specimen variability. Therefore, the probability distribution :math:`p(\theta | \mathbf{Y})`, referred to as the posterior predictive distribution of the model parameters :math:`\theta`, encompasses both the aleatory specimen-to-specimen uncertainty and the epistemic estimation uncertainty (due to the finite number of specimens :math:`N_s`  in the experimental dataset and the finite length of the experimental data corresponding to each specimen). It can be utilized for uncertainty quantification and propagation in reliability and risk analyses. 
 
 
 .. _lbluqUCSD_hierarchical_normal:
@@ -208,7 +208,7 @@ The Metropolis within Gibbs sampler generates values from the posterior joint PD
 
    #. For each dataset, generate independently a sample value of :math:`\sigma_i^{2(k+1)}` from the conditional posterior distribution of each :math:`\sigma_i^2`: :math:`IG(\alpha_n, \beta_n)`
 
-   #. For each dataset, generate a sample value of the model parameters :math:`\theta_i` from the conditional posterior  :math:`p(\mathbf{y}_i | \theta_i, \sigma_i^2)   p(\theta_i | \mu_\theta, \Sigma_\theta)` with a Metropolis-Hastings step as follows:
+   #. For each dataset, generate a sample value of the model parameters :math:`\theta_i` from the conditional posterior :math:`p(\mathbf{y}_i | \theta_i, \sigma_i^2)   p(\theta_i | \mu_\theta, \Sigma_\theta)` with a Metropolis-Hastings step as follows:
 
       a. Generate a candidate sample :math:`\theta_{i(c)}` from a local random walk proposal density :math:`\theta_{i(c)} \sim N(\theta_i^{(k)}, \Sigma_i^{(k)})` where :math:`\Sigma_i^{(k)}` is the proposal covariance matrix of the random walk.
 

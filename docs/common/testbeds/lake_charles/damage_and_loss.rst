@@ -8,7 +8,6 @@ Damage and loss functions from the HAZUS Hurricane Damage and Loss Model ([FEMA1
 were implemented in `PELICUN <https://pelicun.readthedocs.io/en/latest/>`_ to support loss assessment for 
 all configurations of buildings currently supported by HAZUS for wind and flood hazards. 
 
-
 These configurations represent all the possible unique configurations of building attributes associated 
 with each building class (defined by material) and subclass (defined by occupancy) defined in the 
 `Atlantic County, NJ testbed <https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/asset_representation.html>`_. 
@@ -16,7 +15,7 @@ For example, wood (class) single-family homes 1-2+ stories
 (subclass) would have damage and loss functions associated with each unique combination of attributes 
 used to define key features of the load path and components (e.g., roof shape, secondary water resistance, 
 roof deck attachment, roof-wall connection, shutters, garage), as well as the exposure (terrain roughness).
-Notably, only the WSF and WMUH configurations are relevant to this testbed.
+ Notably, only the WSF and WMUH configurations are relevant to this testbed.
 
 The HAZUS damage and loss functions consist of tabular data to describe the fragility or expected losses as a 
 function of hazard intensity. These data were used to calibrate coupled damage and loss models to estimate 

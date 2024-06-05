@@ -1,6 +1,30 @@
 .. _lbl-geom-stl:
 
-Here the user needs to provide the ``STL`` files related to the geometry here of the ocean floor. In addition, it is required to provide separate ``STL`` files for all the boundaries and buildings. The files need to be in the 'STL ASCII format. The files need to be named as
+-------------------------------
+Custom Geometry Using STL Files
+-------------------------------
+
+The ``STL`` file format is pervasive in fluid simulation software, hence HydroUQ provides support for the format.
+
+To define a complex ocean bathymetry, you may use multiple ``STL`` files to replicate the ocean floor if they form a manifold when combined. 
+
+Custom structures, boundaries, and other features may also be defined using  ``STL`` files. An example is shown in the HydroUQ UI below:
+
+.. _fig-geom-stl:
+
+.. figure:: Geometry/figures/STLfile.png
+   :align: center
+   :width: 400
+   :figclass: align-center
+
+   UI for loading the geometry as ``STL`` files
+
+
+.. important::
+   For the most robust experience, HydroUQ requires that these custom input files obey the ``STL ASCII`` format. 
+
+
+For OpenFOAM simulations, the following ``STL`` files are **required** to be either produced by the user or selected from existing files: 
 
 #. **Entry.stl** - This is the patch for the inlet of the fluid
 #. **Exit.stl** - This is the patch for the outlet of the fluid
@@ -11,15 +35,11 @@ Here the user needs to provide the ``STL`` files related to the geometry here of
 #. **Buildings.stl** - This is the building of interest on which we aim to determine the structural response
 #. **Otherbuildings.stl** - These are the other buildings around the structure of interest and could affect the flow around the structure of interest.
 
-The other input is the direction of gravity. For this type of simulation, it is recommended to use ``-z`` for the gravity direction.
 
-.. figure:: Geometry/figures/STLfile.png
-   :align: center
-   :width: 400
-   :figclass: align-center
+.. warning::
+   Failure to provide any of the above files will result in an error for HydroUQ OpenFOAM simulations.
 
-   UI for loading the geometry as ``STL`` files
-    
+
 .. note::
+   It is necessary to provide each of these ``STL`` files separately, not preemptively combined into a single file.
 
-    #. It is necessary to provide each of these ``STL`` files separately. Hydro-UQ uses them to determine the boundary conditions accurately.

@@ -7,11 +7,11 @@ Getting Started
 R2D Interface
 ---------------
 
-One approach to run the testbed simulation is via the 
+One approach to running the testbed simulation is via the 
 `R2D application <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt>`_.
 After successfully downloading and launching, the major steps for setting up the run are listed as follows:
 
-#. Set the **Units** in the **GI** panel as shown in :numref:`r2d_gi` and check interested output files.
+#. Set the **Units** in the **GI** panel as shown in :numref:`r2d_gi` and check the desired output files.
 
    .. figure:: figure/R2D_GI.png
       :name: r2d_gi
@@ -22,7 +22,7 @@ After successfully downloading and launching, the major steps for setting up the
       R2D GI setup.
 #. Download and unzip the `HurricaneLaura_MappedPWS <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/02.%20Input:%20HAZ%20-%20Hazard%20Characterization>`_. 
    Set the **Event File Listing Wind Field** in the **HAZ** panel to the "EventGrid.csv" in the unzipped "IMs" folder.
-   The app would automatically load the directory (:numref:`r2d_haz`). And the **Units of Event Input File** should be 
+   The app will automatically load the directory (:numref:`r2d_haz`). The **Units of Event Input File** should be 
    "Miles per hour".
 
    .. figure:: figure/R2D_HAZ.png
@@ -34,7 +34,7 @@ After successfully downloading and launching, the major steps for setting up the
       R2D HAZ setup.
 #. Download the `BIM_LakeCharles_Full.csv <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/01.%20Input:%20BIM%20-%20Building%20Inventory%20Data>`_ (under **01. Input: BIM - Building Inventory Data** folder). 
    Select **CSV to BIM** in the **ASD** panel and set the **Import Path** to "BIM_LakeCharles_Full.csv" (:numref:`r2d_asd`). 
-   Specify the building IDs that you would like to include in the simulation.
+   Specify the building IDs that you want to include in the simulation.
 
    .. figure:: figure/R2D_ASD.png
       :name: r2d_asd
@@ -52,16 +52,16 @@ After successfully downloading and launching, the major steps for setting up the
       :width: 500
 
       R2D HTA setup.
-#. Set the "Building Modeling" in **MOD** panel to "None". 
+#. Set the "Building Modeling" in the **MOD** panel to "None".
 
-   .. figure:: figure/R2D_MOD.png
-      :name: r2d_mod
-      :align: center
-      :figclass: align-center
-      :width: 500
+.. figure:: figure/R2D_MOD.png
+   :name: r2d_mod
+   :align: center
+   :figclass: align-center
+   :width: 500
 
-      R2D MOD setup.
-#. Set the "Building Analysis Engine" in **ANA** panel to "IMasEDP". 
+   R2D MOD setup.
+#. Set the "Building Analysis Engine" in the **ANA** panel to "IMasEDP". 
 
    .. figure:: figure/R2D_ANA.png
       :name: r2d_ana
@@ -69,12 +69,12 @@ After successfully downloading and launching, the major steps for setting up the
       :figclass: align-center
       :width: 500
 
-      R2D ANA setup.
-#. Set the "Damage and Loss Method" in **DL** panel to "HAZUS MH HU". Download the rulset scripts from 
+   R2D ANA setup.
+#. Set the "Damage and Loss Method" in the **DL** panel to "HAZUS MH HU". Download the ruleset scripts from 
    `DesignSafe PRJ-3207 <https://www.designsafe-ci.org/data/browser/public/designsafe.storage.published//PRJ-3207v4/03.%20Input:%20DL%20-%20Rulesets%20for%20Asset%20Representation/scripts>`_ 
-   (under **03. Input: DL - Rulesets for Asset Representation/scripts** folder) and 
-   set the **Auto populate script** to "auto_HU_LA.py" (:numref:`r2d_dl`). Note please place the rulset scripts 
-   in an individual folder so that the application could copy and load them later. 
+   (under the **03. Input: DL - Rulesets for Asset Representation/scripts** folder) and 
+   set the **Auto populate script** to "auto_HU_LA.py" (:numref:`r2d_dl`). Please note, place the ruleset scripts 
+   in an individual folder so that the application can copy and load them later. 
 
    .. figure:: figure/R2D_DL.png
       :name: r2d_dl
@@ -82,8 +82,8 @@ After successfully downloading and launching, the major steps for setting up the
       :figclass: align-center
       :width: 500
 
-      R2D DL setup.
-#. Set the "UQ Application" in **UQ** panel to "None". 
+   R2D DL setup.
+#. Set the "UQ Application" in the **UQ** panel to "None". 
 
    .. figure:: figure/R2D_UQ.png
       :name: r2d_uq
@@ -91,10 +91,10 @@ After successfully downloading and launching, the major steps for setting up the
       :figclass: align-center
       :width: 500
 
-      R2D UQ setup.
+   R2D UQ setup.
 
-After setting up the simulation, please click the **RUN** to execute the analysis. Once the simulation completed, 
-the app would direct you to the **RES** panel (:numref:`r2d_res`) where you could examine and export the results.
+After setting up the simulation, click **RUN** to execute the analysis. Once the simulation is completed, 
+the app will direct you to the **RES** panel (:numref:`r2d_res`) where you can examine and export the results.
 
 .. figure:: figure/R2D_RES.png
    :name: r2d_res
@@ -104,30 +104,30 @@ the app would direct you to the **RES** panel (:numref:`r2d_res`) where you coul
 
    R2D RES panel.
 
-For simulating the damage and loss for a large region of interest (please remember to reset the building IDs in **ASD**), it would be efficient to submit and run the job 
+For simulating the damage and loss for a large region of interest (remember to reset the building IDs in **ASD**), it is efficient to submit and run the job 
 to `DesignSafe <https://www.designsafe-ci.org/>`_ on `Frontera <https://www.tacc.utexas.edu/systems/frontera>`_. 
-This can be done in R2D by clicking **RUN at DesignSafe** (one would need to have a valid 
-`DesignSafe account <https://www.designsafe-ci.org/account/register/>`_ for login and access the computing resource). 
-:numref:`r2d_run_ds` provides an example configuration to run the analysis (and please see `R2D User Guide <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/usage/desktop/usage.html#figremjobpanel>`_ for detailed descriptions).
-The individual building simulations are paralleled when being conducted on Frontera which accelerate the process. It is suggested for the entire building 
+This can be done in R2D by clicking **RUN at DesignSafe** (you will need to have a valid 
+`DesignSafe account <https://www.designsafe-ci.org/account/register/>`_ for login and access to the computing resource). 
+:numref:`r2d_run_ds` provides an example configuration to run the analysis (see `R2D User Guide <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/usage/desktop/usage.html#figremjobpanel>`_ for detailed descriptions).
+The individual building simulations are parallelized when conducted on Frontera, which accelerates the process. It is suggested for the entire building 
 inventory in this testbed to use 20 minutes with 96 Skylake (SKX) cores (e.g., 2 nodes with 48 processors per node) to complete 
-the simulation. One would receive a job failure message if the specified CPU hours are not sufficient to complete the run. 
-Note that the product of node number, processor number per node, and buildings per task should be greater than the 
+the simulation. You will receive a job failure message if the specified CPU hours are not sufficient to complete the run. 
+Note that the product of the node number, processor number per node, and buildings per task should be greater than the 
 total number of buildings in the inventory to be analyzed.
 
-.. figure:: figure/R2D_RUN.png
-   :name: r2d_run_ds
+.. figure:: figure/R2D_MOD.png
+   :name: r2d_mod
    :align: center
    :figclass: align-center
-   :width: 300
+   :width: 500
 
-   R2D - Run at DesignSafe (configuration).
+R2D - Run at DesignSafe (Configuration)
 
-Users could monitor the job status and retrieve result data by **GET from DesignSafe** button (:numref:`r2d_get_ds`). The retrieved data include
-four major result files, i.e., *BIM.hdf*, *EDP.hdf*, *DM.hdf*, and *DV.hdf*. R2D also automatically converts the hdf files to csv files that are easier to work with.
-While R2D provides basic visualization functionalities (:numref:`r2d_res`), users could access the data which are downloaded under the remote work directory, e.g., 
-*/Documents/R2D/RemoteWorkDir* (this directory is machine specific and can be found in **File->Preferences->Remote Jobs Directory**).
-Once having these result files, users could extract and process interested information - the next section will use 
+Users can monitor the job status and retrieve result data by clicking the **GET from DesignSafe** button (:numref:`r2d_get_ds`). The retrieved data includes
+four major result files, namely, *BIM.hdf*, *EDP.hdf*, *DM.hdf*, and *DV.hdf*. R2D also automatically converts the hdf files to csv files for easier manipulation.
+While R2D provides basic visualization functionalities (:numref:`r2d_res`), users can access the data downloaded under the remote work directory, e.g., 
+*/Documents/R2D/RemoteWorkDir* (this directory is machine-specific and can be found in **File->Preferences->Remote Jobs Directory**).
+Upon obtaining these result files, users can extract and process the information of interest - the next section will use 
 the results from this testbed as an example to discuss more details.
 
 .. figure:: figure/get_from_designsafe.png
@@ -177,7 +177,7 @@ scenarios (:numref:`hurricane_cat`) are shown in :numref:`dl_c2` to :numref:`dl_
    Estimated regional loss maps for the **Category 5** hurricane.
 
 Average expected loss ratios are also computed for individual cities, which are
-summarized in :numref:`cl_c2` to :numref:`cl_c5`
+summarized in :numref:`cl_c2` to :numref:`cl_c5`.
 
 .. figure:: figure/city_loss_c2.png
    :name: cl_c2
@@ -211,11 +211,11 @@ summarized in :numref:`cl_c2` to :numref:`cl_c5`
 
    City-wise average expected loss ratios (**Category 5** hurricane).
 
-For the top five cities with most assets in the building inventory, the average
-expected wind losses are computed for different built eras. Buildings before 1980s generally
-have relatively higher wind loss ratios where 1970s is found to be the worst decade for
-Atlantic City, Brigantine, and Galloway. Since 1980, the building performance is improved
-where the post-2000 buildings are found to behave much better than buildings in the other groups. 
+For the top five cities with the most assets in the building inventory, the average
+expected wind losses are computed for different construction eras. Buildings built before the 1980s generally
+have relatively higher wind loss ratios, with the 1970s found to be the worst decade for
+Atlantic City, Brigantine, and Galloway. Since 1980, building performance has improved,
+with post-2000 buildings found to perform much better than buildings from other periods.
 
 .. figure:: figure/atlantic_wind_loss.png
    :name: wl_atlantic

@@ -4,16 +4,16 @@
 Hazard Characterization
 ***********************
 
-Both the wind and flood hazards affect the building inventory in this testbed. As the initial implementation of 
+Both wind and flood hazards affect the building inventory in this testbed. The initial implementation of 
 the regional assessment workflow incorporates the HAZUS Hurricane Damage and Loss Assessment methodology, 
-hazards are quantified by two intensity measures: Peak Wind Speed (PWS) and Peak Water Depth (PWD). 
-The PWS refers to the maximum 3-second gust measured at the reference height of 10m in open terrain 
-(equivalent to Exposure C in ASCE 7-16). The PWD is the maximum depth of flooding (height of storm 
+quantifying hazards by two intensity measures: Peak Wind Speed (PWS) and Peak Water Depth (PWD). 
+PWS refers to the maximum 3-second gust measured at the reference height of 10m in open terrain 
+(equivalent to Exposure C in ASCE 7-16), while PWD is the maximum depth of flooding (height of storm 
 surge above grade) during the storm.
 
-The following sections will introduce the options for generating these two types of hazard inputs using 
-either a historical scenario or a synthetic storm scenario, as discussed in the following sections. 
-Note that as part of the Asset Representation Process (see :ref:`lbl-testbed_AC_asset_representation`), the design wind speeds from 
+The following sections introduce options for generating these two types of hazard inputs using 
+either a historical or a synthetic storm scenario. Note that as part of the Asset Representation Process 
+(see :ref:`lbl-testbed_AC_asset_representation`), the design wind speeds from 
 ASCE 7 are already included for each building footprint for reference.
 
 .. _lbl-testbed_AC_hazard_characterization_synthetic:
@@ -21,10 +21,10 @@ ASCE 7 are already included for each building footprint for reference.
 Synthetic Storm Scenario
 ========================
 
-An Atlantic City landfall scenario was generated using the Storm Hazard Projection Tool developed in the 
+A landfall scenario for Atlantic City was generated using the Storm Hazard Projection Tool developed in the 
 NJcoast project ([NJCoast20_]). The constructed hazard scenario uses NJcoast’s basic simulation option, 
 which identifies the 25 hurricane tracks from the SHP tool’s surrogate model that match the targeted 
-storm scenario, in this case: a hurricane with Category 5 intensity (central pressure differential 
+storm scenario, in this case: a Category 5 intensity hurricane (central pressure differential 
 of 75-100 mbar, radius of maximum winds of 15.4 to 98 mi) making landfall near the Atlantic City 
 Beach Patrol Station (39.348308° N, -74.452544° W) under average tides. This scenario is sufficient 
 to inundate coastal areas in the testbed geography and generate significant wave run-up in some 
@@ -37,13 +37,13 @@ The SHP Tool generates its wind fields using a highly efficient, linear analytic
 layer winds of a moving hurricane developed by Snaiki and Wu ([Snaiki17a_], [Snaiki17b_]). 
 To account for the exposure in each New Jersey county, an effective roughness length (weighted average) 
 of the upwind terrain is used based on the Land Use/Land Cover data reported by the state’s Bureau of 
-GIS. In order to generate a wind field, this model requires the time-evolving hurricane track, 
+GIS. To generate a wind field, this model requires the time-evolving hurricane track, 
 characterized by the position (latitude, longitude), the central pressure, the radius of maximum winds, 
 and the forward speed. While the model is 
 fully height-resolving and time-evolving, for a given input hurricane scenario, the wind hazard is 
 characterized by the maximum 10-minute mean wind speed observed during the entire hurricane track. 
 This is reported at the reference height of 10 m over a uniform grid (0.85-mile spacing, 1.37 km) 
-across the entire state in miles per hour, which is then accordingly adjusted for compatibility with 
+across the entire state in miles per hour, which is then adjusted for compatibility with 
 the averaging interval assumed by the HAZUS Hurricane Damage and Loss Model. Since the wind speed 
 (:math:`V(600s, 10m, z_0)`) from the NJcoast SHP Tool is averaged over the time window of 1 hour, 
 a number of standard conversions (see :ref:`lbl-testbed_AC_wind_speed_conversion`) 
@@ -52,14 +52,14 @@ parse the wind speed to the 3-second and open-terrain PWS
 
 As the initial developer of this model has made the underlying code available for this testbed, 
 users have two ways to engage this model to generate wind fields for this testbed:
-1. Users can adopt the aforementioned default sythetic Category 5 scenario striking Atlantic City
-2. Users can generate a custom storm scenario by providing the requied inputs into this linear 
-1. analytical model to generate a customized windfield for use with this testbed.
+1. Users can adopt the aforementioned default synthetic Category 5 scenario striking Atlantic City.
+2. Users can generate a custom storm scenario by providing the required inputs into this linear 
+   analytical model to generate a customized wind field for use with this testbed.
 
-Wind fields described by either approach are then locally interpolated to the coordiantes associated with each 
+Wind fields described by either approach are then locally interpolated to the coordinates associated with each 
 footprint. The resulting 3s-gust peak wind speed (PWS) ranges from 178 mph to 191 mph given the simulated 
 Category-5 hurricane event (:numref:`pws`). Because the SPH model tracks the maximum wind speed over the 
-entire hurricane time history - so the inland cities are subjected to slightly higher wind speed than 
+entire hurricane time history, the inland cities are subjected to slightly higher wind speed than 
 the coastal cities.
 
 .. figure:: figure/pws.png
@@ -111,12 +111,12 @@ Flood Damage and Loss Assessment.
 Multiple Category Analysis (MCA)
 ---------------------------------
 
-Note that the resulting 3s-gust PWS values by this Category-5 hurricane is much higher than
-the design wind speed specified by ASCE 7-16 ([ASCE16]_) for the Atlantic County which ranges
-from 105 mph to 115 mph. Since this extreme scenario bears a small likelihood, this testbed
-also scales the wind and flood water field down to lower categories to conduct the so-called
-Multiple Category Analysis to exam the building performance under different intense scenarios 
-(:numref:`hurricane_cat`) and were used later in the Verification Results (see :ref:`lbl-testbed_AC_sample_results`).
+Note that the resulting 3s-gust PWS values from this Category-5 hurricane are much higher than
+the design wind speed specified by ASCE 7-16 ([ASCE16]_) for Atlantic County, which ranges
+from 105 mph to 115 mph. Since this extreme scenario has a small likelihood, this testbed
+also scales the wind and flood water fields down to lower categories to conduct the so-called
+Multiple Category Analysis to examine the building performance under different intensity scenarios 
+(:numref:`hurricane_cat`). These were used later in the Verification Results (see :ref:`lbl-testbed_AC_sample_results`).
 
 .. table:: Scaled peak wind speed and peak water depth for different hurricane categories.
    :name: hurricane_cat
@@ -149,10 +149,10 @@ Historical Storm Scenario
 ==========================
 
 Hindcast simulations of historical storm events are equally valuable, particularly when they are coupled 
-with observations of damage and loss across an inventory. As such this testbed includes the option to use 
+with observations of damage and loss across an inventory. As such, this testbed includes the option to use 
 existing hindcast data from established community providers as input to the loss estimation workflow. 
 New Jersey’s most notable storm event in recent history was Superstorm Sandy (2012). According to [NJDEP15]_ 
-and [USDOC13]_, Sandy's devastation included 346,000 homes damaged. The New Jersey State Hazard Mitigation 
+and [USDOC13]_, Sandy's devastation included damage to 346,000 homes. The New Jersey State Hazard Mitigation 
 Plan [NJSHMP]_ further notes that storm surge accounts for 90% of the deaths and property damage during 
 hurricanes in this region. While Atlantic County was designated as a “Sandy-Affected Community” 
 by FEMA and the State of New Jersey, the wind and storm surge intensities in the county were significantly 
@@ -178,19 +178,19 @@ directly used in the presented hurricane workflow, as visualized in :numref:`ara
 
 Alternatively, users can also use other available wind field resources. For instance, 
 `RMS Legacy Archive <https://www.rms.com/event-response/hwind/legacy-archive/storms>`_ provides access to 
-historical hurricane events including the `Superstorm Sandy <https://legacy-archive.rms.com/storms/sandy2012.html>`_ 
-for an alternate description of the field. Similar to the ARA peak wind speed field, in order to run the workflow, users 
+historical hurricane events including `Superstorm Sandy <https://legacy-archive.rms.com/storms/sandy2012.html>`_. 
+Similar to the ARA peak wind speed field, in order to run the workflow, users 
 would first convert the data from other resources to the format as shown in `ARA_Example.zip <https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/testbeds/atlantic_city/data/ARA_Example.zip>`_.
 
 Storm Surge Modeling
 ---------------------
 
 ADCIRC hindcast of Superstorm Sandy was generated by the Westerink Group at the University of Notre Dame and 
-made available to the SimCentetr. :numref:`adcirc_pwd` shows the peak storm surge from the hindcast. Note that 
+made available to the SimCenter. :numref:`adcirc_pwd` shows the peak storm surge from the hindcast. Note that 
 the scope of the hindcast focused on the heavier-impacted regions of New York and Northern New Jersey, 
-which were resolved with a finer mesh than more southern counties like Atlantic County, i.e., ~0.5 km (New York and Norther New Jersey) vs. ~3 km (Southern counties) between two closest nodes. In futher constrast with the NACCS ADCIRC runs referenced in :ref:`lbl-testbed_AC_hazard_characterization_storm`, 
+which were resolved with a finer mesh than more southern counties like Atlantic County, i.e., ~0.5 km (New York and Northern New Jersey) vs. ~3 km (Southern counties) between two closest nodes. In further contrast with the NACCS ADCIRC runs referenced in :ref:`lbl-testbed_AC_hazard_characterization_storm`, 
 the grids adopted for the Sandy hindcast in this region of New Jersey did not extend into the riverine systems. Noting these 
-limits of the simulation, peak water depth over land displayed in :numref:`adcirc_sitepwd` assumes zero values in the rivering 
+limits of the simulation, peak water depth over land displayed in :numref:`adcirc_sitepwd` assumes zero values in the riverine 
 systems and at any point inland of the grid points shown in :numref:`adcirc_waterelev`. The
 `ADCIRC_Example.zip <https://github.com/NHERI-SimCenter/SimCenterDocumentation/tree/master/docs/common/testbeds/atlantic_city/data/ADCIRC_Example.zip>`_ provides the peak water depth grid that can be used in 
 the presented hurricane workflow.

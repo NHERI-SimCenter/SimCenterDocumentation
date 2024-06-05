@@ -177,7 +177,7 @@ RES (Summary and Visualization of UQ Analysis Results)
 
 #. Visualization of surrogate modeling (GP) results
 
-     A. Goodness-of-fit measures            
+     A. Goodness-of-fit measures
      B. 90% confidence interval and prediction interval
      C. Save GP model
 

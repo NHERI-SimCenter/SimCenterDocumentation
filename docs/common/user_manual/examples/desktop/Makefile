@@ -1,5 +1,5 @@
 
-.PHONY : ee we rdt pbe qfem pelicun
+.PHONY : ee we rdt pbe qfem pelicun hydro
 
 SIMCENTER_DEV = ../../../../../..
 SRCDIR = $(SIMCENTER_DEV)/$(SIMDOC_APP)/examples
@@ -12,12 +12,13 @@ rdt:     SIMDOC_APP=RDT
 pbe:     SIMDOC_APP=PBE
 qfem:    SIMDOC_APP=quoFEM
 pelicun: SIMDOC_APP=pelicun
+hydro:   SIMDOC_APP=HydroUQ
 export   SIMDOC_APP
 
 TARGETS = $(shell $(RENDRE) list --line -- \%./doc)
 SOURCES = $(addprefix $(SRCDIR)/./,$(TARGETS))
 
-ee we rdt pbe qfem pelicun:
+ee we rdt pbe qfem pelicun hydro:
 	rsync -Rcv $(SOURCES) .
 
 

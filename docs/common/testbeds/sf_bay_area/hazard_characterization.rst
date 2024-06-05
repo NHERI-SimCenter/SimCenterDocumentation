@@ -7,7 +7,7 @@ Hazard Characterization
 The ground motions for the Mw 7.0 Hayward earthquake were
 simulated by Rodgers et al. ([Rodgers19]_) at the Lawrence Livermore
 National Lab (LLNL) using the SW4 finite difference code
-([Petersson17]_). SW4 solves the elasto dynamic
+([Petersson17]_). SW4 solves the elastodynamic
 equations of motion in the time domain for a 3D solid.
 A 77 ~ 13 km rupture surface was projected onto the fault
 geometry in the 3D geologic and seismic model for the Bay

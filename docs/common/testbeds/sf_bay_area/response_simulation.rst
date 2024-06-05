@@ -7,7 +7,7 @@ Response Simulation
 The non-linear response of buildings to ground shaking is
 simulated using OpenSees ([OpenSees20]_) and an application,
 **MDOF-LU**, that generates an idealized structural analysis model
-based on structure type, height, plan area, year of construction
+based on structure type, height, plan area, year of construction,
 and the type of occupancy. The **MDOF-LU** application is based
 on a method developed by [Lu14]_ that uses the
 building configurations in the HAZUS earthquake technical
@@ -21,12 +21,12 @@ peak floor accelerations are recorded for subsequent damage
 and loss analyses. :numref:`fig-acc` shows one example pair of 
 2D ground motion acceleration histories. It is used for analyzing 
 a 2-story wood frame multi-unit residential building in Berkeley 
-(initially build in 1972 and tagged as a Moderate-Code design). 
+(initially built in 1972 and tagged as a Moderate-Code design). 
 :numref:`fig-srd` shows the resulting story drift ratio and 
 peak floor acceleration demands under the example ground motion 
-pair. The vibration in Y direction (North-South) is intenser 
+pair. The vibration in the Y direction (North-South) is more intense 
 (peak story drift ratio is around 1.9\% in the first story, and 
-peak floor acceleration is around 4 g in the second story.
+peak floor acceleration is around 4 g in the second story).
 
 .. _fig-acc:
 
@@ -73,4 +73,3 @@ of the simulated structural responses of the example wood frame.
    A coarse-grained parallel approach for seismic damage simulations of urban areas based on refined
    models and GPU/CPU cooperative computing. Adv. Engine. Soft. 70, 90–103. 
    doi: 10.1016/j.advengsoft.2014.01.010
-

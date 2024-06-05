@@ -72,7 +72,7 @@ By default, quoFEM assumes a block-diagonal error covariance structure. An examp
 	N = N_{exp} \times \sum_{i=1}^{N_q} l_i
 	:label: eqnCalibrationTerms
 
-Note that quoFEM requires that the calibration data be provided in a text file separate from the script where the model is defined. In this text file, the number of rows corresponds to the number of experiment :math:`N_{exp}`, and the number of terms in each row (i.e., the number of columns) is equal to :math:`\sum_{i=1}^{N_q} l_i`. Hence, the total number of calibration terms :math:`N` is equal to the product of the number of rows and number of columns in the calibration data file. 
+Note that quoFEM requires that the calibration data be provided in a text file separate from the script where the model is defined. In this text file, the number of rows corresponds to the number of experiments :math:`N_{exp}`, and the number of terms in each row (i.e., the number of columns) is equal to :math:`\sum_{i=1}^{N_q} l_i`. Hence, the total number of calibration terms :math:`N` is equal to the product of the number of rows and number of columns in the calibration data file. 
 
 The error-covariance matrix is a block-diagonal square matrix of size :math:`N \times N`. There are :math:`N_{exp} \times N_q` blocks on the diagonal. For each of these blocks, if it corresponds to a scalar response quantity, then a scalar variance value is used by default else, a scalar matrix (i.e., an identity matrix of size :math:`l_i \times l_i` multiplied by a scalar value) is used by default. 
 

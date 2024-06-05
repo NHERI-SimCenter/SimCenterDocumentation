@@ -90,6 +90,15 @@ To download the |app|, first navigate to the |appLink| page. As shown in :numref
 
       WE-UQ download page.
 
+.. only::HydroUQ_app
+
+   .. _figDownload:
+
+   .. figure:: figures/H20Download.png
+      :align: center
+      :figclass: align-center
+
+      Hydro-UQ download page.
 
 .. only:: quoFEM_app
 
@@ -155,6 +164,16 @@ Now test if the application starts properly. Navigate to the location where you 
     :figclass: align-center
 
     WE-UQ application on startup.
+
+.. only:: HydroUQ_app
+   
+   .. _figUI-Hydro:
+
+   .. figure:: figures/HydroWin.png
+      :align: center
+      :figclass: align-center
+      
+      Hydro-UQ application on startup.
 
 .. only:: quoFEM_app
 

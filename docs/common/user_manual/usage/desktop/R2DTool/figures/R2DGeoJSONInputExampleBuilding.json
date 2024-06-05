@@ -8,7 +8,7 @@
   },
   "features": [
     {
-      "id": 0,
+      "id": "0",
       "type": "Feature",
       "geometry": {
         "type": "Polygon",

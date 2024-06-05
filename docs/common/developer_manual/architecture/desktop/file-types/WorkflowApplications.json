@@ -1,112 +1,324 @@
+
 {
-  "BuildingApplications": {
+  "DefaultValues": {
+      "workflowInput": "scInput.json",
+      "filenameAIM": "AIM.json",
+      "filenameEVENT": "EVENT.json",
+      "filenameSAM": "SAM.json",
+      "filenameEDP": "EDP.json",
+      "filenameSIM": "SIM.json",
+      "driverFile": "driver",
+      "filenameDL": "AIM.json",
+      "workflowOutput": "EDP.json"
+  },
+  "AssetsApplications": {
     "API": {
       "Inputs": [
       ],
       "Outputs": [
         {
-          "id": "buildingFile",
+          "id": "assetFile",
           "type": "string",
-          "description": "name of JSON file containing an array of id,filename pairs. For each building id the aplication creates a BIM file with name filename",
-          "default": "buildingsFile.json"
+          "description": "name of JSON file containing an array of id,filename pairs. For each asset id the aplication creates a AIM file with name filename",
+          "default": "assetsFile.json"
         }
       ]
     },
     "Applications": [
       {
-        "Name": "GenericBimDatabase",
-        "ExecutablePath": "applications/createBIM/genericBimDatabase/GenericBimDatabase",
+        "Name": "GenericAimDatabase",
+          "ExecutablePath": "applications/createAIM/genericAimDatabase/GenericAimDatabase",
         "ApplicationSpecificInputs": [
           {
             "id": "Min",
             "type": "int",
-            "description": "min id of building to obtain BIM for",
-            "default": 1
+            "description": "min id of asset to obtain AIM for"
           },
           {
             "id": "Max",
             "type": "int",
-            "description": "max id of building to obtain BIM for",
-            "default": 10
+            "description": "max id of asset to obtain AIM for"
           },
           {
-            "id": "buildingSourceFile",
+            "id": "assetSourceFile",
             "type": "path",
-            "description": "path to buildings file",
-            "default": ""
+            "description": "path to asset file"
           },
           {
             "id": "config",
             "type": "path",
-            "description": "path to buildings config file",
-            "default": ""
+            "description": "path to asset config file"
           }
         ]
       },
       {
-        "Name": "GeoJSON_to_BIM",
-        "ExecutablePath": "applications/createBIM/GeoJSON_to_BIM/GeoJSON_to_BIM.py",
+        "Name": "GeoJSON_to_AIM",
+          "ExecutablePath": "applications/createAIM/GeoJSON_to_AIM/GeoJSON_to_AIM.py",
         "ApplicationSpecificInputs": [
           {
             "id": "Min",
             "type": "int",
-            "description": "min id of building to obtain BIM for",
-            "default": 1
+            "description": "min id of asset to obtain AIM for"
           },
           {
             "id": "Max",
             "type": "int",
-            "description": "max id of building to obtain BIM for",
-            "default": 10
+            "description": "max id of asset to obtain AIM for"
           },
           {
-            "id": "buildingSourceFile",
+            "id": "assetSourceFile",
             "type": "path",
-            "description": "path to buildings database file",
-            "default": ""
+            "description": "path to asset database file"
           },
           {
             "id": "configFile",
             "type": "path",
-            "description": "path to workflow config file",
-            "default": ""
+            "description": "path to workflow config file"
           }
         ]
       },
       {
-        "Name": "CSV_to_BIM",
-        "ExecutablePath": "applications/createBIM/CSV_to_BIM/CSV_to_BIM.py",
+        "Name": "GEOJSON_TO_ASSET",
+          "ExecutablePath": "applications/createAIM/GeoJSON_to_ASSET/GeoJSON_to_ASSET.py",
+        "ApplicationSpecificInputs": [
+          {
+            "id": "assetFile",
+            "type": "path",
+            "description": "path to asset database file"
+          },
+          {
+            "id": "assetType",
+            "type": "string",
+            "description": "name of the asset type e.g., Building, Transportation Network"
+          },
+          {
+            "id": "inputJsonFile",
+            "type": "path",
+            "description": "path to the rWHALE.json"
+          }
+        ]
+      },
+	  {
+        "Name": "INP_FILE",
+          "ExecutablePath": "applications/createAIM/INP_FILE/INP_FILE.py",
+        "ApplicationSpecificInputs": [
+          {
+            "id": "assetFile",
+            "type": "path",
+            "description": "path to asset database file"
+          },
+          {
+            "id": "assetType",
+            "type": "string",
+            "description": "name of the asset type e.g., Building, Transportation Network"
+          },
+          {
+            "id": "inputJsonFile",
+            "type": "path",
+            "description": "path to the rWHALE.json"
+          }
+        ]
+      },
+      {
+        "Name": "CSV_to_AIM",
+        "ExecutablePath": "applications/createAIM/CSV_to_AIM/CSV_to_AIM.py",  
+        "RunsParallel": true,   
         "ApplicationSpecificInputs": [
           {
             "id": "Min",
             "type": "int",
-            "description": "min id of building to obtain BIM for",
+            "description": "min id of asset to obtain AIM for"
+          },
+          {
+            "id": "Max",
+            "type": "int",
+            "description": "max id of asset to obtain AIM for"
+          },
+          {
+            "id": "filter",
+            "type": "string",
+            "description": "string with the asset ids to run"
+          },
+          {
+            "id": "assetSourceFile",
+            "type": "path",
+            "description": "path to asset database file"
+          }
+        ]
+      },
+      {
+        "Name": "GIS_to_AIM",
+        "ExecutablePath": "applications/createAIM/CSV_to_AIM/CSV_to_AIM.py",
+        "ApplicationSpecificInputs": [
+          {
+            "id": "Min",
+            "type": "int",
+            "description": "min id of asset to obtain AIM for",
             "default": 1
           },
           {
             "id": "Max",
             "type": "int",
-            "description": "max id of building to obtain BIM for",
+            "description": "max id of asset to obtain AIM for",
             "default": 10
           },
           {
-            "id": "buildingSourceFile",
+            "id": "filter",
+            "type": "string",
+            "description": "string with the asset ids to run",
+            "default": ""
+          },
+          {
+            "id": "assetSourceFile",
             "type": "path",
-            "description": "path to buildings database file",
+            "description": "path to asset database file",
             "default": ""
           }
+        ]
+      },
+      {
+        "Name": "CSV_to_WATERNETWORK",
+        "ExecutablePath": null,
+        "ApplicationSpecificInputs": [
+          {
+            "id": "WaterNetworkNodes",
+            "type": "json",
+            "description": "water network node information"
+          },
+          {
+            "id": "WaterNetworkPipelines",
+            "type": "json",
+            "description": "water network node information"
+          }
+        ]
+      },
+      {
+        "Name": "GIS_to_WATERNETWORK",
+        "ExecutablePath": null,
+        "ApplicationSpecificInputs": [
+          {
+            "id": "WaterNetworkNodes",
+            "type": "json",
+            "description": "water network node information"
+          },
+          {
+            "id": "WaterNetworkPipelines",
+            "type": "json",
+            "description": "water network node information"
+          }
+        ]
+      },
+      {
+        "Name": "JSON_to_TRANSPORTNETWORK",
+        "ExecutablePath": "modules/createAIM/JSON_to_AIM/JSON_to_AIM_transport.py",
+        "ApplicationSpecificInputs": [
+          {
+            "id": "assetSourceFile",
+            "type": "path",
+            "description": "path to asset database file"
+          },
+          {
+            "id": "bridgesFilter",
+            "type": "string",
+            "description": "Filter applied to select a subset of bridges from the inventory"
+          },
+          {
+            "id": "tunnelsFilter",
+            "type": "string",
+            "description": "Filter applied to select a subset of tunnels from the inventory"
+          },
+          {
+            "id": "roadsFilter",
+            "type": "string",
+            "description": "Filter applied to select a subset of roads from the inventory"
+          },
+          {
+            "id": "roadSegLength",
+            "type": "float",
+            "description": "Maximum length (m) of road segments in the created AIM files",
+            "default": 100
+          }
+        ]
+      }
+  ]
+  },
+  "RegionalEventApplications": {
+    "API": {
+       "Inputs": [
+        {
+          "id": "input",
+          "type": "path",
+          "description": "Name of JSON input file",
+          "default": "inputRWHALE.json"
+        }
+      ],
+      "Outputs": [
+      ]
+    },
+    "Applications":[
+      {
+        "Name": "DummyEventApp",
+        "ExecutablePath": "applications/performRegionalEventSimulation/DummyEventApp/DEA.py",
+        "ApplicationSpecificInputs": [
+          {
+            "id": "appSpecInput1",
+            "type": "string",
+            "description": "Description..."
+          },
+          {
+            "id": "appSpecInput2",
+            "type": "int",
+            "description": "Description..."
+          }
+        ]
+      },
+      {
+        "Name": "UserInputGM",
+        "ExecutablePath": null,
+        "ApplicationSpecificInputs": [
+        ]
+      },
+      {
+        "Name": "EQSS",
+        "ExecutablePath": null,
+        "ApplicationSpecificInputs": [
+        ]
+      },
+      {
+        "Name": "UserInputShakeMap",
+        "ExecutablePath": null,
+        "ApplicationSpecificInputs": [
+        ]
+      },
+      {
+        "Name": "UserInputHurricane",
+        "ExecutablePath": null,
+        "ApplicationSpecificInputs": [
+        ]
+      },
+      {
+        "Name": "UserInputRasterHazard",
+        "ExecutablePath": null,
+        "ApplicationSpecificInputs": [
+        ]
+      },
+      {
+        "Name": "RegionalSiteResponse",
+        "ExecutablePath": "applications/Workflow/siteResponseWHALE.py",
+        "RunsParallel": true,   
+        "ApplicationSpecificInputs": [
         ]
       }
     ]
   },
-  "RegionalEventApplications": {
+  "RegionalMappingApplications": {
     "API": {
       "Inputs":[
         {
-          "id": "buildingFile",
+          "id": "assetFile",
           "type": "path",
-          "description": "Name of JSON file containing an array of id,filename pairs. For each building id the aplication creates a BIM file with name filename",
-          "default": "buildings.json"
+          "description": "Name of JSON file containing an array of id,filename pairs. For each asset id the aplication creates a AIM file with name filename",
+          "default": "assets.json"
         }
       ],
       "Outputs":[
@@ -115,7 +327,8 @@
     "Applications": [
       {
         "Name": "NearestNeighborEvents",
-        "ExecutablePath": "applications/performRegionalEventSimulation/NearestNeighborEvents/NNE.py",
+        "ExecutablePath": "applications/performRegionalMapping/NearestNeighborEvents/NNE.py",
+  "RunsParallel": true,
         "ApplicationSpecificInputs": [
           {
             "id": "filenameEVENTgrid",
@@ -136,6 +349,23 @@
             "id": "filter_label",
             "type": "string",
             "description": "Custom label to use for pre-selection of grid points"
+          },
+          {
+            "id": "seed",
+            "type": "int",
+            "description": "Seed for the random generator"
+          }
+        ]
+      },
+      {
+        "Name": "SiteSpecifiedEvents",
+          "ExecutablePath": "applications/performRegionalMapping/SiteSpecifiedEvents/SSE.py",
+  "RunsParallel": true,   
+        "ApplicationSpecificInputs": [
+          {
+            "id": "filenameEVENTgrid",
+            "type": "path",
+            "description": "Path to file containing location information on each event file"
           }
         ]
       }
@@ -145,45 +375,69 @@
     "API": {
       "Inputs": [
       {
-          "id": "filenameBIM",
-          "type": "string",
-          "description": "name of bim file",
-          "default": "BIM.json"
+          "id": "filenameAIM",
+          "type": "workflowDefault",
+          "description": "name of AIM file"
       }
       ],
       "Outputs": [
       {
           "id": "filenameEVENT",
-          "type": "string",
-          "description": "name of file containing the event data",
-          "default": "EVENT.json"
+          "type": "workflowDefault",
+          "description": "name of file containing the event data"
       }
       ]
     },
     "Applications": [
       {
-        "Name": "SimCenterEvent",
-        "ExecutablePath": "applications/createEVENT/SimCenterEvent.py",
-        "ApplicationSpecificInputs": [
-	]
-      },
-      {
         "Name": "ExistingSimCenterEvents",
         "ExecutablePath": "applications/createEVENT/multipleSimCenter/MultipleSCEvents",
         "ApplicationSpecificInputs": [
-	]
+  ]
       },
+    {
+        "Name": "PhysicsBasedMotion",
+        "ExecutablePath": "applications/createEVENT/physicsBasedMotion/PhysicsBasedMotion",
+        "ApplicationSpecificInputs": [
+  ]
+      },	
       {
         "Name": "ExistingPEER_Events",
         "ExecutablePath": "applications/createEVENT/multiplePEER/MultiplePEER",
         "ApplicationSpecificInputs": [
-	]
+  ]
       },
       {
         "Name": "Site Response",
-        "ExecutablePath": "applications/createEVENT/siteResponse/SiteResponse",
+        "ExecutablePath": "applications/createEVENT/siteResponse/SiteResponse.py",
         "ApplicationSpecificInputs": [
-	]
+  ]
+      },
+      {
+        "Name": "RegionalSiteResponse",
+        "ExecutablePath": "applications/createEVENT/siteResponse/RegionalSiteResponse.py",
+        "ApplicationSpecificInputs": [
+          {
+            "id": "pathEventData",
+            "type": "path",
+            "description": "Path to directory containing event data files in SimCenter format"
+          },
+          {
+            "id": "modelPath",
+            "type": "path",
+            "description": "Defines the location of the OpenSees tcl model files."
+          },
+          {
+            "id": "mainScript",
+            "type": "string",
+            "description": "Defines the name of the main model file."
+          },
+          {
+            "id": "ndm",
+            "type": "int",
+            "description": "Defines the number of degrees of freedom in the numerical model."
+          }
+        ]
       },
       {
         "Name": "HazardBasedEvent",
@@ -200,6 +454,11 @@
         "ExecutablePath": "applications/createEVENT/LowRiseTPU/LowRiseTPU",
         "ApplicationSpecificInputs":[]
       },
+      {
+        "Name": "HighRiseTPU",
+        "ExecutablePath": "applications/createEVENT/HighRiseTPU/HighRiseTPU",
+        "ApplicationSpecificInputs":[]
+      },  
       {
         "Name": "WindTunnelExperiment",
         "ExecutablePath": "applications/createEVENT/windTunnelExperiment/WindTunnelExperiment",
@@ -226,19 +485,62 @@
           }
         ]
       },
+  {
+            "Name": "CFDEvent",
+            "ExecutablePath": "applications/createEVENT/CFDEvent/CFDEvent.py",
+            "ApplicationSpecificInputs":[
+        {
+      "id":"OpenFOAMCase",
+      "type":"string",
+      "description": "Remote directory containing OpenFOAM case input"
+        },
+    {
+        "id":"OpenFOAMSolver",
+        "type":"string",
+        "description": "OpenFOAM solver used"
+    }]
+        },
       {
-        "Name": "CFDEvent",
-        "ExecutablePath": "applications/createEVENT/CFDEvent/CFDEvent.py",
+        "Name": "IsolatedBuildingCFD",
+        "ExecutablePath": "applications/createEVENT/isolatedBuildingCFD/IsolatedBuildingCFD.py",
         "ApplicationSpecificInputs":[
-		{
-			"id":"OpenFOAMCase",
-			"type":"string",
+        ]
+      },
+      {
+        "Name": "CoupledDigitalTwin",
+        "ExecutablePath": "applications/createEVENT/coupledDigitalTwin/CoupledDigitalTwin.py",
+        "ApplicationSpecificInputs":[
+        ]
+      },  
+      {
+        "Name": "MPM",
+        "ExecutablePath": "applications/createEVENT/MPM/MPM.py",
+        "ApplicationSpecificInputs":[
+          {
+            "id":"publicDirectory",
+            "type":"string",
+            "description": "Remote directory hosting ClaymoreUW MPM assets (e.g. geometries, checkpoints, motion-paths) for the application for any user to access on the HPC system."
+          }
+        ]
+      },
+      {
+        "Name": "StochasticWaveJonswap",
+        "ExecutablePath": "applications/createEVENT/stochasticWave/StochasticWave.py",
+        "ApplicationSpecificInputs":[]
+      },  
+      {
+        "Name": "GeoClawOpenFOAM",
+        "ExecutablePath": "applications/createEVENT/GeoClawOpenFOAM/GeoClawOpenFOAM.py",
+        "ApplicationSpecificInputs":[
+    {
+      "id":"OpenFOAMCase",
+      "type":"string",
             "description": "Remote directory containing OpenFOAM case input"
-		},{
-			"id":"OpenFOAMSolver",
-			"type":"string",
+    },{
+      "id":"OpenFOAMSolver",
+      "type":"string",
             "description": "OpenFOAM solver used"
-		}]
+    }]
       },
       {
         "Name": "NNGM",
@@ -272,9 +574,9 @@
         "ExecutablePath": "applications/createEVENT/SimCenterEvent/SimCenterEvent.py",
         "ApplicationSpecificInputs": [
           {
-            "id": "pathEventData",
-            "type": "path",
-            "description": "Path to directory containig event data files in SimCenter format"
+            "id": "inputUnit",
+            "type": "string",
+            "description": "Units of the data in the input file"
           }
         ]
       },
@@ -287,6 +589,22 @@
         "Name": "pointWindSpeed",
         "ExecutablePath": "applications/createEVENT/pointWindSpeed/pointWindSpeed",
         "ApplicationSpecificInputs":["filenameWindSpeedCloudData"]
+      },
+      {
+        "Name": "gridGroundMoionSelection",
+        "ExecutablePath": "applications/createEVENT/uniformPEER/gridGroundMoion.py"
+      },
+      {
+        "Name": "ExperimentalWindForces",
+        "ExecutablePath": "applications/createEVENT/experimentalWindForces/experimentalWindForces.py"
+      },
+      {
+        "Name": "ExperimentalWindPressures",
+        "ExecutablePath": "applications/createEVENT/experimentalWindPressures/experimentalWindPressures.py"
+      },
+      {
+        "Name": "WindForceSpectrum",
+        "ExecutablePath": "applications/createEVENT/experimentalWindForces/experimentalWindForces.py"
       }
     ]
   },
@@ -294,24 +612,21 @@
     "API": {
       "Inputs": [
       {
-          "id": "filenameBIM",
-          "type": "string",
-          "description": "name of bim file",
-          "default": "BIM.json"
+          "id": "filenameAIM",
+          "type": "workflowDefault",
+          "description": "name of AIM file"
       },
       {
           "id": "filenameEVENT",
-          "type": "string",
-          "description": "name of file containing the event data",
-          "default": "EVENT.json"
+          "type": "workflowDefault",
+          "description": "name of file containing the event data"
       }
       ],
       "Outputs": [
       {
           "id": "filenameSAM",
-          "type": "string",
-          "description": "name of file containing the outputted SAM",
-          "default": "SAM.json"
+          "type": "workflowDefault",
+          "description": "name of file containing the outputted SAM"
       }
       ]
     },
@@ -340,7 +655,49 @@
       {
         "Name": "OpenSeesInput",
         "ExecutablePath": "applications/createSAM/openSeesInput/OpenSeesInput",
-        "ApplicationSpecificInputs": []
+        "ApplicationSpecificInputs": [
+          {
+            "id": "fileName",
+            "type": "string",
+            "description": "Defines the name of the main OpenSees model file."
+          },
+          {
+            "id": "filePath",
+            "type": "string",
+            "description": "Defines the location of the main OpenSees model file."
+          }
+        ]
+      },
+      {
+        "Name": "CustomPyInput",
+        "ExecutablePath": "applications/createSAM/customPyInput/customPyInput.py",
+        "ApplicationSpecificInputs": [
+          {
+            "id": "mainScript",
+            "type": "string",
+            "description": "Defines the name of the main model file."
+          },
+          {
+            "id": "modelPath",
+            "type": "string",
+            "description": "Defines the location of the OpenSeesPy model files."
+          },
+          {
+            "id": "ndm",
+            "type": "int",
+            "description": "Defines the number of degrees of freedom in the numerical model."
+          },
+          {
+            "id": "dofMap",
+            "type": "string",
+            "description": "The workflow assumes X=1, Y=2, Z=3 mapping between directions and degrees of freedom; XY being the horizontal directions. This input allows you to define an alternative mapping by providing three numbers separated by commas in a string, such as '1, 3, 2' if you want to have Y as the vertical direction."
+          },
+          {
+            "id": "columnLine",
+            "type": "string",
+            "description": "Defines the ids of the nodes that shall be used for EDP calculations. Only the firsts n+1 nodes will be used for an n-story building."
+          }
+        ]
       },
       {
         "Name": "OpenSeesPyInput",
@@ -367,15 +724,44 @@
             "description": "The workflow assumes X=1, Y=2, Z=3 mapping between directions and degrees of freedom; XY being the horizontal directions. This input allows you to define an alternative mapping by providing three numbers separated by commas in a string, such as '1, 3, 2' if you want to have Y as the vertical direction."
           },
           {
-            "id": "ctrlNodes",
+            "id": "columnLine",
             "type": "string",
-            "description": "Defines the ids of the control nodes that shall be used for EDP calculations. Only the firsts n+1 nodes will be used for an n-story building."
+            "description": "Defines the ids of the nodes that shall be used for EDP calculations. Only the firsts n+1 nodes will be used for an n-story building."
           }
         ]
       },
       {
         "Name": "MDOF_BuildingModel",
         "ExecutablePath": "applications/createSAM/mdofBuildingModel/MDOF_BuildingModel",
+        "ApplicationSpecificInputs": []
+      },
+      {
+        "Name": "MultiModel",
+        "ExecutablePath": "applications/Workflow/MultiModelApplication.py",
+          "ApplicationSpecificInputs": [
+              {"id": "appKey",
+               "type": "string",
+               "description": "keyword of application data in input file"
+        }
+    ]
+      },
+      {
+        "Name": "SteelBuildingModel",
+        "ExecutablePath": "applications/createSAM/AutoSDA/main_program.py",
+        "ApplicationSpecificInputs": []
+      },
+      {
+        "Name": "ConcreteBuildingModel",
+        "ExecutablePath": "applications/createSAM/RCFIAP/RC_FIAP_main.py",
+        "ApplicationSpecificInputs": []
+      },
+      {
+        "Name": "SurrogateGPBuildingModel",
+        "ExecutablePath": "applications/createSAM/surrogateGP/SurrogateGP.py"
+      },
+      {
+        "Name": "MultiModel-SIM",
+        "ExecutablePath": "applications/createSAM/multimodel/multipleSIMs.py",
         "ApplicationSpecificInputs": []
       }
     ]
@@ -384,30 +770,26 @@
     "API": {
       "Inputs": [
       {
-          "id": "filenameBIM",
-          "type": "string",
-          "description": "name of bim file",
-          "default": "BIM.json"
+          "id": "filenameAIM",
+          "type": "workflowDefault",
+          "description": "name of AIM file"
       },
       {
           "id": "filenameEVENT",
-          "type": "string",
-          "description": "name of file containing the event data",
-          "default": "EVENT.json"
+          "type": "workflowDefault",
+          "description": "name of file containing the event data"
       },
       {
           "id": "filenameSAM",
-          "type": "string",
-          "description": "name of file containing the SAM",
-          "default": "SAM.json"
+          "type": "workflowDefault",
+          "description": "name of file containing the SAM"
       }
       ],
       "Outputs": [
       {
           "id": "filenameEDP",
-          "type": "string",
-          "description": "name of file containing the EDP to be determined from the analysis",
-          "default": "EDP.json"
+          "type": "workflowDefault",
+    "description": "name of file containing the EDP to be determined from the analysis"
       }
       ]
     },
@@ -428,6 +810,16 @@
         "ApplicationSpecificInputs": []
       },
       {
+        "Name": "StandardEDP",
+        "ExecutablePath": "applications/createEDP/standardEDP/StandardEDP",
+        "ApplicationSpecificInputs": []
+      },
+      {
+        "Name": "DummyEDP",
+        "ExecutablePath": "applications/createEDP/dummyEDP/DummyEDP",
+        "ApplicationSpecificInputs": []
+      },
+      {
         "Name": "StandardGMT_EDP",
         "ExecutablePath": "applications/createEDP/gmtEDP/StandardGMT_EDP",
         "ApplicationSpecificInputs": []
@@ -435,11 +827,48 @@
       {
         "Name": "UserDefinedEDP",
         "ExecutablePath": "applications/createEDP/userEDP/UserDefinedEDP",
-        "ApplicationSpecificInputs": []
+        "ApplicationSpecificInputs": [
+          {
+            "id": "EDPPath",
+            "type": "path",
+            "description": "Identifies the location of where the txt files with requested EDPs are stored."
+          }
+        ]
+      },
+      {
+        "Name": "UserDefinedEDP_R",
+        "ExecutablePath": "applications/createEDP/userEDP_R/UserDefinedEDP.py",
+        "ApplicationSpecificInputs": [
+          {
+            "id": "EDPspecs",
+            "type": "path",
+            "description": "Identifies the location of a json file that specifies the requested EDPs."
+          }
+        ]
       },
       {
         "Name": "SimpleEDP",
         "ExecutablePath": "applications/createEDP/simpleEDP/simpleEDP.py",
+        "ApplicationSpecificInputs": []
+      },
+      {
+        "Name": "SurrogateEDP",
+        "ExecutablePath": "applications/createEDP/surrogateEDP/surrogateEDP.py",
+        "ApplicationSpecificInputs": []
+      },
+      {
+        "Name": "StandardHydroEDP",
+        "ExecutablePath": "applications/createEDP/standardHydroEDP/StandardHydroEDP",
+        "ApplicationSpecificInputs": []
+      },
+      {
+        "Name": "StandardTsunamiEDP",
+        "ExecutablePath": "applications/createEDP/standardTsunamiEDP/StandardTsunamiEDP",
+        "ApplicationSpecificInputs": []
+      },
+      {
+        "Name": "StandardStormSurgeEDP",
+        "ExecutablePath": "applications/createEDP/standardStormSurgeEDP/StandardStormSurgeEDP",
         "ApplicationSpecificInputs": []
       }
     ]
@@ -448,36 +877,31 @@
     "API": {
       "Inputs": [
       {
-          "id": "filenameBIM",
-          "type": "string",
-          "description": "name of file containing the BIM",
-          "default": "BIM.json"
+          "id": "filenameAIM",
+          "type": "workflowDefault",
+          "description": "name of file containing the AIM"
       },
       {
           "id": "filenameSAM",
-          "type": "string",
-          "description": "name of file containing the SAM",
-          "default": "SAM.json"
+          "type": "workflowDefault",
+          "description": "name of file containing the SAM"
       },
       {
           "id": "filenameEVENT",
-          "type": "string",
-          "description": "name of file containing the event data",
-          "default": "EVENT.json"
+          "type": "workflowDefault",
+          "description": "name of file containing the event data"
       }
       ],
       "Outputs": [
       {
           "id": "filenameEDP",
-          "type": "string",
-          "description": "name of EDP file to be added to",
-          "default": "EDP.json"
+          "type": "workflowDefault",
+          "description": "name of EDP file to be added to"
       },
       {
           "id": "filenameSIM",
-          "type": "string",
-          "description": "name of SIM file to be added to",
-          "default": "SIM.json"
+          "type": "workflowDefault",
+          "description": "name of SIM file to be added to"
       }
       ]
     },
@@ -491,9 +915,23 @@
         "ExecutablePath": "applications/performSIMULATION/openSeesPy/OpenSeesPySimulation.py"
       },
       {
+        "Name": "CustomPy-Simulation",
+        "ExecutablePath": "applications/performSIMULATION/customPy/customPySimulation.py"
+      },
+      {
         "Name": "ExtractPGA",
         "ExecutablePath": "applications/performSIMULATION/extractPGA/ExtractPGA"
       },
+      {
+        "Name": "MultiModel",
+        "ExecutablePath": "applications/Workflow/MultiModelApplication.py",
+          "ApplicationSpecificInputs": [
+              {"id": "appKey",
+               "type": "string",
+               "description": "keyword of application data in input file"
+        }
+    ]
+      },  
       {
         "Name": "OpenSees-Simulation_R",
         "ExecutablePath": "applications/performSIMULATION/openSees_R/OpenSeesSimulation.py"
@@ -501,181 +939,147 @@
       {
         "Name": "IMasEDP",
         "ExecutablePath": "applications/performSIMULATION/IMasEDP/IMasEDP.py"
+      },
+      {
+        "Name": "SurrogateSimulation",
+        "ExecutablePath": "applications/performSIMULATION/surrogateSimulation/SurrogateSimulation.py"
+      },
+      {
+        "Name": "SurrogateRegionalPy",
+        "ExecutablePath": "applications/performSIMULATION/surrogateRegionalPy/SurrogateRegionalPy.py"
+      },
+      {
+        "Name": "MultiModel-FEA",
+        "ExecutablePath": "applications/performSIMULATION/multimodel/multipleSimulations.py"
       }
     ]
   },
   "UQApplications": {
+      "API": {
+    "Inputs": [
+        {
+      "id": "workflowInput",
+      "type": "workflowDefault",
+      "description": "name of input file"
+        },
+        {
+      "id": "driverFile",
+      "type": "workflowDefault",
+      "description": "name of file containing the simulation driver"
+        }
+    ],
+    "Outputs": [
+        {
+      "id": "workflowOutput",
+      "type": "workflowDefault",
+      "description": "name of EDP file to be added to"
+        }
+    ]
+    },
+    "Applications": [
+      {
+        "Name": "Dakota-UQ",
+        "ExecutablePath": "applications/performUQ/dakota/DakotaUQ.py"
+      },
+      {
+        "Name": "SimCenter-UQ",
+        "ExecutablePath": "applications/performUQ/SimCenterUQ/SimCenterUQ.py"
+      },
+      {
+        "Name": "UCSD-UQ",
+        "ExecutablePath": "applications/performUQ/UCSD_UQ/UCSD_UQ.py"
+      },    
+      {
+        "Name": "UQpy",
+        "ExecutablePath": "applications/performUQ/UQpy/UQpyEngine.py"
+      },    
+      {
+        "Name": "Dakota-FEM",
+        "ExecutablePath": "applications/performUQ/dakota_R/DakotaFEM.py"
+      },{
+        "Name": "Dakota-UQ1",
+        "ExecutablePath": "applications/performUQ/dakota/DakotaFEM1.py"
+      },
+      {
+        "Name": "CustomUQ",
+        "ExecutablePath": "applications/performUQ/other/runOtherUQ.py"
+      }
+    ]
+  },
+  "FEMApplications": {
     "API": {
       "Inputs": [
       {
-          "id": "filenameBIM",
-          "type": "string",
-          "description": "name of file containing the BIM",
-          "default": "BIM.json"
-      },
-      {
-          "id": "filenameSAM",
-          "type": "string",
-          "description": "name of file containing the SAM",
-          "default": "SAM.json"
-      },
-      {
-          "id": "filenameEVENT",
-          "type": "string",
-          "description": "name of file containing the event data",
-          "default": "EVENT.json"
-      },
-      {
-          "id": "filenameEDP",
-          "type": "string",
-          "description": "name of file containing the event data",
-          "default": "EDP.json"
-      },
-      {
-          "id": "filenameSIM",
-          "type": "string",
-          "description": "name of file containing the event data",
-          "default": "SIM.json"
-      },
-      {
-          "id": "driverFile",
-          "type": "string",
-          "description": "name of file containing the simulation driver",
-          "default": "driver"
+          "id": "workflowInput",
+          "type": "workflowDefault",
+          "description": "name of file containing the input"
       }
       ],
       "Outputs": [
       {
-          "id": "filenameEDP",
-          "type": "string",
-          "description": "name of EDP file to be added to",
-          "default": "EDP.json"
+          "id": "driverFile",
+          "type": "workflowDefault",
+          "description": "name of output file"
       }
       ]
     },
     "Applications": [
       {
-        "Name": "Dakota-UQ",
-        "ExecutablePath": "applications/performUQ/dakota/DakotaFEM.py",
-        "ApplicationSpecificInputs": [
-          {
-            "id": "method",
-            "type": "string",
-            "description": "Defines the UQ method to use."
-          },
-          {
-            "id": "samples",
-            "type": "int",
-            "description": "Specifies the number of realizations to generate. For surrogate models, these samples are used to train the model."
-          },
-          {
-            "id": "samples2",
-            "type": "int",
-            "description": "Only for surrogate models. Specifies the number of realizations to generate from the trained model."
-          },
-          {
-            "id": "seed",
-            "type": "int",
-            "description": "Specifies the random seed."
-          },
-          {
-            "id": "seed2",
-            "type": "int",
-            "description": "Only for surrogate models. Specifies the random seed to generate samples from the models."
-          },
-          {
-            "id": "ismethod",
-            "type": "string",
-            "description": "Specifies the importance sampling method."
-          },
-          {
-            "id": "dataMethod",
-            "type": "string",
-            "description": "..."
-          },
-          {
-            "id": "dataMethod2",
-            "type": "string",
-            "description": "..."
-          },
-          {
-            "id": "type",
-            "type": "string",
-            "description": "..."
-          },
-          {
-            "id": "concurrency",
-            "type": "int",
-            "description": "Specifies the number of processes to use for simulation."
-          },
-          {
-            "id": "keepSamples",
-            "type": "bool",
-            "description": "True if the intermediate results shall be kept for each sample."
-          },
-          {
-            "id": "runType",
-            "type": "string",
-            "description": "..."
-          }
+        "Name": "OpenSees",
+        "ExecutablePath": "applications/performFEM/OpenSees/createOpenSeesDriver",
+         "ApplicationSpecificInputs": [
         ]
       },
       {
-        "Name": "Dakota-FEM",
-        "ExecutablePath": "applications/performUQ/dakota/DakotaFEM.py"
-      },{
-        "Name": "Dakota-UQ1",
-        "ExecutablePath": "applications/performUQ/dakota/DakotaFEM1.py"
-      }
+        "Name": "OpenSeesPy",
+        "ExecutablePath": "applications/performFEM/OpenSeesPy/createOpenSeesPyDriver",
+        "ApplicationSpecificInputs": []
+      },
+      {
+        "Name": "SurrogateGP",
+        "ExecutablePath": "applications/performFEM/surrogateGP/createGpDriver",
+        "ApplicationSpecificInputs": []
+      },
+      {
+        "Name": "FEAPpv",
+        "ExecutablePath": "applications/performFEM/feappv/createFeapDriver",
+        "ApplicationSpecificInputs": []
+      },
+      {
+        "Name": "MultiModel",
+        "ExecutablePath": "applications/Workflow/MultiModelDriver.py",
+        "ApplicationSpecificInputs": []
+      } ,
+      {
+        "Name": "Custom",
+        "ExecutablePath": "applications/performFEM/Custom/createCustomDriver",
+        "ApplicationSpecificInputs": []
+      } 
     ]
-  },
+  },    
   "DLApplications": {
     "API": {
       "Inputs": [
       {
           "id": "filenameDL",
-          "type": "string",
-          "description": "name of file containing the DL model information",
-          "default": "BIM.json"
+          "type": "workflowDefault",
+          "description": "name of file containing the DL model information"
       },
       {
-          "id": "filenameEDP",
+          "id": "demandFile",
           "type": "string",
           "description": "name of file containing the EDP data",
           "default": "response.csv"
       }
       ],
       "Outputs": [
-      {
-          "id": "outputEDP",
-          "type": "string",
-          "description": "name of file to store response estimates",
-          "default": "EDP.csv"
-      },
-      {
-          "id": "outputDM",
-          "type": "string",
-          "description": "name of file to store damage estimates",
-          "default": "DM.csv"
-      },
-      {
-          "id": "outputDV",
-          "type": "string",
-          "description": "name of DV file to store decision variable estimates",
-          "default": "DV.csv"
-      }
       ]
     },
-    "Applications": [
+    "Applications": [      
       {
-        "Name": "pelicun",
-        "ExecutablePath": "applications/performDL/pelicun/DL_calculation.py",
+        "Name": "Pelicun3",
+        "ExecutablePath": "applications/performDL/pelicun3/pelicun3_wrapper.py",
         "ApplicationSpecificInputs": [
-          {
-            "id": "DL_Method",
-            "type": "string",
-            "description": "Defines the damage and loss assessment method."
-          },
           {
             "id": "Realizations",
             "type": "int",
@@ -705,6 +1109,69 @@
             "id": "ground_failure",
             "type": "bool",
             "description": "If true, fragility groups associated with ground failure are added in the auto-population phase. Note that such analysis requires PGD values as inputs."
+          },
+          {
+            "id": "auto_script",
+            "type": "path",
+            "description": "Identifies the location of a python script that can be used to auto-populate the loss model."
+          },
+          {
+            "id": "custom_model_dir",
+            "type": "path",
+            "description": "Identifies the location of user-provided custom damage and loss models."
+          },
+          {
+            "id": "regional",
+            "type": "bool",
+            "description": "If yes, the analysis is part of a regional simulation and results will be aggregated."
+          }
+        ]
+      },
+      {
+        "Name": "CBCitiesDL",
+        "ExecutablePath": "applications/performDL/CBCities/CBCitiesWDNDL.py",
+        "ApplicationSpecificInputs": [
+        ]
+      }
+    ]
+  },
+    "SystemPerformanceApplications":{
+	"API": {
+	    "Inputs": [
+	    ],
+	    "Outputs": [
+	    ]
+	},
+	"Applications": [
+	    {
+		"Name": "REWETRecovery",
+		"ExecutablePath": "applications/systemPerformance/REWEt/REWET_Wrapper.py",
+		"ApplicationSpecificInputs": [		    
+		]
+	    }
+	]
+    },
+  "PerformanceApplications": {
+    "API": {
+      "Inputs": [
+      ],
+      "Outputs": [
+      ]
+    },
+    "Applications": [
+      {
+        "Name": "REDi",
+        "ExecutablePath": "applications/performanceAssessment/REDi/REDiWrapper.py",
+        "ApplicationSpecificInputs": [
+          {
+            "id": "dirnameOutput",
+            "type": "string",
+            "description": "Path to the working directory containing the Pelicun results."
+          },
+          {
+            "id": "riskParametersPath",
+            "type": "string",
+            "description": "Path to the risk parameters json file ."
           }
         ]
       }

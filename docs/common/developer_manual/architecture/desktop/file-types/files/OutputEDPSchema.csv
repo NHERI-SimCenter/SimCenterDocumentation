@@ -1,4 +1,4 @@
-type,PFA,PFA,PFA,PFA,PFA,PFA,PFA,PFA,PID,PID,PID,PID
+type,PFA,PFA,PFA,PFA,PFD,PFD,PFD,PFD,PID,PID,PID,PID
 loc,0,0,0,0,1,1,1,1,1,1,1,1
 dir,1,1,2,2,1,1,2,2,1,1,2,2
 stat,median,beta,median,beta,median,beta,median,beta,median,beta,median,beta

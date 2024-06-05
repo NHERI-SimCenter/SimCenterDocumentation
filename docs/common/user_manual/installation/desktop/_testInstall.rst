@@ -7,7 +7,7 @@ Test the Application
 
     Before running any simulations, we recommend testing the application and the simulation environment on your computer by running a test calculation.
 
-    We have prepared a test workflow that you can load from the ``Examples/E0_Test`` folder in the application directory. Open the ``E0_test_input.json`` file with the PBE application. It should automatically populate the settings in the user interface. Without changing anything, click on the **Run** button in the bottom left corner of the application. Running the simulation should not take more than a few minutes and the results should be displayed in the end automatically. If you see a scatter plot of results in the end, your environment is set up appropriately and you are ready to start running your own simulations.
+    We have prepared a test workflow that you can load from the ``Examples/E0_Test`` folder in the application directory. Open the ``E0_test_input.json`` file with the PBE application. It should automatically populate the settings in the user interface. Without changing anything, click on the **Run** button in the bottom left corner of the application. Running the simulation should not take more than a few minutes and the results should be displayed in the end automatically. If you see a scatter plot of results in the end, your environment is set up appropriately, and you are ready to start running your own simulations.
 
 .. only:: R2D_app
 
@@ -41,7 +41,7 @@ Test the Application
               2. In the panel set the ``# samples`` to 10
               3. Select the **EVT** panel, by clicking on the **EVT** letters on the left side of the application, this will bring up the Stochastic Motion event, which is the default event application
               4. In this panel set **moment magnitude** entry to **mag**, ``Closest to Site Rupture Distance`` to 30, and ``Average Shear Wave Velocity`` to **300.0**
-              5. Select the **RV** panel, by clicking on the **RV** letters on the left side of the application, this will bring up the Random  Variables panel
+              5. Select the **RV** panel, by clicking on the **RV** letters on the left side of the application, this will bring up the Random Variables panel
               6. For the **mean** and **Standard Dev** quantities for the **mag** random variable, enter **7.0** and **0.1** respectively
               7. Select the **Run** button at the bottom left of the screen
               8. After several dialog boxes pop up showing status, the **RES** tab will be displayed. There should be some results in it

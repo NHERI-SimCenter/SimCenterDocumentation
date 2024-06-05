@@ -1,8 +1,8 @@
 ﻿Variable Name,Type,Example Value,Note
 eventID,string,site_8040x00001,Name of earthquake time history 
-1-PSA(0.5s)-0-1,double,12.0041496,"Peak spectral acceleration for 0.5 second, horizental direction 1"
-1-DS575-0-1,double,8.915,"Strong motion Duration, horizental direction 1"
-1-SaRatio-0-1,double,0.95366258,"Spectral acceleration (Sa) ratio at some user-specified Sa values, horizental direction 1"
-1-PSA(0.5s)-0-2,double,10.13654727,"Peak spectral acceleration for 0.5 second, horizental direction 2"
-1-DS575-0-2,double,9.4,"Strong motion Duration, horizental direction 2"
-1-SaRatio-0-2,double,0.822609112,"Spectral acceleration (Sa) ratio at some user-specified Sa values, horizental direction 2"
+1-PSA(0.5s)-0-1,double,12.0041496,"Peak spectral acceleration for 0.5 second, horizontal direction 1"
+1-DS575-0-1,double,8.915,"Strong motion Duration, horizontal direction 1"
+1-SaRatio-0-1,double,0.95366258,"Spectral acceleration (Sa) ratio at some user-specified Sa values, horizontal direction 1"
+1-PSA(0.5s)-0-2,double,10.13654727,"Peak spectral acceleration for 0.5 second, horizontal direction 2"
+1-DS575-0-2,double,9.4,"Strong motion Duration, horizontal direction 2"
+1-SaRatio-0-2,double,0.822609112,"Spectral acceleration (Sa) ratio at some user-specified Sa values, horizontal direction 2"

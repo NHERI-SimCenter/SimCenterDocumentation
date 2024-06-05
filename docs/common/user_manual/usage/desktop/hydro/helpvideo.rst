@@ -1,20 +1,32 @@
 .. _lbl-helpvideos:
 
-*********************
-Help Videos
-*********************
+**************
+Video Overview
+**************
 
-A walk-through video of the ``HydroUQ`` is given below
+Walk-throughs, expert tips, and use-case videos for the ``HydroUQ`` desktop application are provided below:
 
-.. raw:: html
+.. _lbl-LiveExpertTipsHydroUQ:
 
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/b3ZXjlAoQbk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+Live Expert Tips
+================
 
-A walk-through video of the ``Hydro EVT`` is given below
+.. dropdown:: Fluid-Structure Interaction with OpenFOAM and OpenSees
+   :open:
 
-.. raw:: html
+   .. raw:: html
 
-   <iframe width="560" height="315" src="https://www.youtube.com/embed/b3ZXjlAoQbk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div style="text-align: center;">
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/j5R_bsVq6IU"  width="560" height="315" title="Fluid-Structure Interaction with OpenFOAM and OpenSees with Hydro-UQ"  frameborder="5" allowfullscreen="allowfullscreen"></iframe>
+      </div>
 
 
-If you would like more help videos on any particular topic, please write to us through the |messageBoard|.
+.. dropdown:: Coupling Regional Tsunami and Storm-Surge Simulation with Local-Scale Structural Response
+   :open:
+
+   .. raw:: html
+
+      <div style="text-align: center;">
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/yOb6k_L9V7Q?si=E26vX6EyI89MbUK3"  width="560" height="315" title="Fluid-Structure Interaction with OpenFOAM and OpenSees with Hydro-UQ"  frameborder="5" allowfullscreen="allowfullscreen"></iframe>
+      </div>
+

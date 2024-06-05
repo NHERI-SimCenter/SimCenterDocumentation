@@ -1,7 +1,8 @@
 .. _lbl-simcentertopo:
 
+----------------------
 Topography: SimCenter
-=======================
+----------------------
 
 One of the primary inputs for a shallow-water solver includes the bathymetric data. In the SimCenter format for the topography files, the surface of water is considered for references as :math:`z=0`.
 

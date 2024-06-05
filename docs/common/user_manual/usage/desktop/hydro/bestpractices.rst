@@ -1,8 +1,8 @@
 .. _lbl-bestpractices:
 
-*********************
+*******************************
 Best Practices
-*********************
+*******************************
 
 Errors and uncertainties
 ===============================
@@ -14,7 +14,7 @@ There are several sources of errors that are often observed in CFD simulations. 
 #. If the solution shows divergence, check the boundary conditions, grid, discretization, and convergence errors. Check whether the flow is steady or unsteady and the timestep used in this regard.
 
 Froude number
-=================
+===============================
 
 #. One of the essential non-dimensional numbers that describe different flow regimes for open channel flow. It is a dimensionless quantity that is a ratio of the inertial and gravitational forces as :math:`Fr = \frac{V}{\sqrt{gD}}`. Here ``V`` is the water velocity, ``D`` is the hydraulic depth across the cross-sectional area of the flow, and ``g`` is the gravity. 
 
@@ -23,7 +23,7 @@ Froude number
 #. It is necessary to consider both the Froude number and Reynolds number to determine separation effects like breaking waves.
 
 Spatial discretization
-===========================
+===============================
 
 #. Mesh checking is always essential. |app| performs a mesh check, and the log is available for review after the simulation is complete. It is much recommended to review this.
 
@@ -38,7 +38,7 @@ Spatial discretization
 # Avoid highly skewed cells so that the angles between gridlines are orthogonal or near orthogonal. Angles with less than 40-degrees or greater than 140-degrees may lead to numerical instabilities or unsatisfactory results.
 
 Temporal discretization
-===========================
+===============================
 
 #. It is suggested to take a small timestep to start with so that it can be automatically increased to check the influence of timesteps on the results. 
 
@@ -48,7 +48,7 @@ Temporal discretization
 
 
 Boundary conditions
-======================
+===============================
 
 #. The ``EVT`` requires one to provide six boundary conditions for the six standard patches ``Entry``, ``Exit``, ``Right``, ``Left``, ``Bottom`` and ``Top``.
 
@@ -61,7 +61,7 @@ Boundary conditions
 #. Ensure that the wall boundary conditions are specified for the solid walls. 
 
 SW-CFD domain sizes
-=======================
+===============================
 
 #. Note that each degree of latitude is approximately 69 miles (111 km apart). At the Equator, the distance is 68.703 miles (110.567 km); at Tropic of Cancer and Capricorn, it is 68.94 miles (110.948 km), and at the poles, it is 69.94 miles (111.699 km).
 
@@ -72,7 +72,7 @@ SW-CFD domain sizes
 #. If the simulation type is SW-CFD coupling, then there can be wave reflections. Such wave reflections can lead to unphysical fluid accumulation at the boundary. 
 
 Turbulence modeling
-======================
+===============================
 
 #. Compute the Reynolds number to determine if the flow is turbulent. Do not use turbulent models for laminar flows.
 
@@ -114,16 +114,16 @@ where :math:`L` is the characteristic length scale, :math:`y^{+}` is the desired
 #. The :math:`k-\omega` model is very sensitive to the freestream boundary conditions. However, it performs well for flows with variable pressure gradients.
 
 User errors
-===============
+===============================
 
 #. Check for details in the geometry. Do not over-simplify the geometry without an understanding of the given problem.
 
-#. Inaccurate use of boundary conditions, poor-quality grids are commonly observed user errors.
+#. Inaccurate use of boundary conditions and / or low-quality grids (e.g., poorly meshed in critical locations, inadaquate resolution for the problem) are commonly observed user errors.
 
 #. Ensure that the timestep sizes provided are reasonable. 
 
 Checking results
-======================
+===============================
 
 #. Check the overall mass balance.
 

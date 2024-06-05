@@ -1,8 +1,8 @@
 .. _lbl-meshing:
 
-***********************************************
+-------
 Meshing
-***********************************************
+-------
 
 The |app| provides basic meshing capabilities. The meshing window can be activated by selecting the option from the left panel as shown in :numref:`MeshWin`.
 
