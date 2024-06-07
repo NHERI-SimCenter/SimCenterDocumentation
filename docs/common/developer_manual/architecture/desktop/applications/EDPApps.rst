@@ -18,12 +18,14 @@ Note that in the EDP file, DOF=1,2 are assumed to correspond to perpendicular ho
 The following options for EDP applications vary in the type of EDPs identified for the simulation output.
 
 
+..
+  NOTE: This commented out directive is being kept around because it generates the HTML that is sourced
+  below
+  .. rendre:: cli-gallery
+     :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/backends.cache.json
+     :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
 
-.. rendre:: cli-gallery
-   :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/backends.cache.json
-   :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
-
-   :include-exclusive: %./categories:createEDP
+     :include-exclusive: %./categories:createEDP
 
 
 .. only:: HydroUQ_app
@@ -37,6 +39,11 @@ The following options for EDP applications vary in the type of EDPs identified f
       :file: _static/html/EE-UQ/createEDP.html
 
 .. only:: WEUQ_app
+
+   .. raw:: html
+      :file: _static/html/WE-UQ/createEDP.html
+
+.. only:: R2D_app
 
    .. raw:: html
       :file: _static/html/WE-UQ/createEDP.html

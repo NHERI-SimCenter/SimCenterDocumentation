@@ -2,6 +2,7 @@ import os, sys, re, json
 from dataclasses import dataclass
 import jsonpath2
 
+EMPTY = '_'
 EXENAME = "json2csv.py"
 
 EXAMPLE_DIRS = {
@@ -31,29 +32,33 @@ def apply_filter(specs:dict, *files)->dict:
         try:
             with open(file,"r") as f:
                 input = json.load(f)
-            for group in specs.values():
-                for key,conf in group.items():
-                    if "config" in conf:
-                        try:
-                            matches = list(map( lambda m: m.current_value,
-                                jsonpath2.path.Path.parse_str(conf["config"]).match(input)
-                            ))
-                            if matches:
-                                results[file].append(key)
-                        except Exception as e:
-                            print(conf["config"],e,file=sys.stderr)
-                    elif "config_paths" in conf:
-                        matches = list(map(
-                            lambda m: m.current_value,
-                            jsonpath2.path.Path.parse_str(conf["config_paths"]).match(input)
+        except FileNotFoundError:
+            print(f"WARNING File {file} not found", file=sys.stderr)
+            continue
+
+        for group in specs.values():
+            for key,conf in group.items():
+                if "config" in conf:
+                    try:
+                        matches = list(map( lambda m: m.current_value,
+                            jsonpath2.path.Path.parse_str(conf["config"]).match(input)
                         ))
                         if matches:
-                            for cval in conf["config_values"]:
-                                if cval in matches:
-                                    results[file].append(key)
-                                    break;
-        except Exception as e:
-            print(file,e,file=sys.stderr)
+                            results[file].append(key)
+                    except Exception as e:
+                        print(conf["config"],e,file=sys.stderr)
+                elif "config_paths" in conf:
+                    matches = list(map(
+                        lambda m: m.current_value,
+                        jsonpath2.path.Path.parse_str(conf["config_paths"]).match(input)
+                    ))
+                    if matches:
+                        for cval in conf["config_values"]:
+                            if cval in matches:
+                                results[file].append(key)
+                                break;
+        # except Exception as e:
+        #     print(file,e,file=sys.stderr)
     return results
 
 
@@ -88,9 +93,9 @@ def create_link(v:str,app:str=None)->str:
             return v
     elif v and EXAMPLE_DIRS[app] is not None:
         match = re.search(f"({EXAMPLE_DIRS[app]})",v)
-        return f'":{match.group(0)}:`/`"' if match else '_'
+        return f'":{match.group(0)}:`/`"' if match else EMPTY
     else:
-        return '_'
+        return EMPTY
 
 def find_implementation(key:str,item:dict, examples:dict, options=None)->list:
     if "implementation" in item:
@@ -98,11 +103,11 @@ def find_implementation(key:str,item:dict, examples:dict, options=None)->list:
             if item["implementation"] == "core" or item["implementation"] == "standard":
                 return {
                     #app: "**core**" if v else "NA" for app,v in examples.items()
-                    app: "**core**" if examples[app] else '_' for app in EXAMPLE_DIRS.keys()
+                    app: "**core**" if examples[app] else EMPTY for app in EXAMPLE_DIRS.keys()
                 }
         else:
             implementations = {
-               k: item["implementation"][k] if k in item["implementation"] else  '_'
+               k: item["implementation"][k] if k in item["implementation"] else  EMPTY
                for k in EXAMPLE_DIRS.keys()
             }
             return {
@@ -110,7 +115,7 @@ def find_implementation(key:str,item:dict, examples:dict, options=None)->list:
                     for k,v in implementations.items()
             }
     else:
-        return {app: create_link(find_first(key,examples[app]),app) if examples[app] else "_"
+        return {app: create_link(find_first(key,examples[app]),app) if app in examples and examples[app] else EMPTY
                 for app in EXAMPLE_DIRS.keys()}
 
 
@@ -128,21 +133,19 @@ def print_reqs(items:list,parent,level:int,examples:dict,options=None)->dict:
 
         key = f"{parent}.{j+1}"
         if "items" in item and item["items"]:
-            field_template = '"**{}**"'
+            field_format = lambda s: f'"**{s}**"' if s != EMPTY else EMPTY
             print(", ".join(
-                map(field_template.format,
-                    [key, item["target"], "_", "_", "_"] + ["_"]*len(EXAMPLE_DIRS)
+                map(field_format,
+                    [key, item["target"], EMPTY, EMPTY, EMPTY] + [EMPTY]*len(EXAMPLE_DIRS)
             )), file=options.file)
             print_reqs(item["items"],key,level+1,examples,options)
 
         else:
-            fields = [f'"{f}"' if f else '_' for f in item["fields"]]
+            fields = [f'"{f}"' if f else EMPTY for f in item["fields"]]
             refs = list(find_implementation(key, item, examples,options).values())
-            print(f'"{key}", "{item["target"]}",' + ", ".join(fields + refs),
+            print(f'"{key}", "{item["target"]}", ' + ", ".join(fields + refs),
                     file=options.file
             )
-
-
 
 @dataclass
 class Options:
@@ -180,17 +183,18 @@ if __name__ == "__main__":
             conf_path=v["config_paths"] if "config_paths" in v else None)
         for k,v in reqs.items()
     }
-    apps_included = {k: True for k in apps}
+
     filtered_examples = {
         app: apply_filter(specs,*apps[app]) for app in apps
     }
-    for k,item in reqs.items():
 
+    for k,item in reqs.items():
         if "apps" in item:
             examples = {
                 app: v if app in item["apps"] else False
                     for app,v in filtered_examples.items()
             }
+
         else:
             examples = filtered_examples
 

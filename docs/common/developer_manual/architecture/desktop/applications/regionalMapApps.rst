@@ -17,11 +17,18 @@ Once events are chosen, the application writes the name of the event file in its
 The following options for regional mapping applications vary in the algorithm or method used to make the event assignment.
 
 
+..
+  NOTE: This commented out directive is being kept around because it generates the HTML that is sourced
+  below
+  .. rendre:: cli-gallery
+     :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/backends.cache.json
+     :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
 
-.. rendre:: cli-gallery
-   :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/backends.cache.json
-   :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
+     :include-exclusive: %./categories:performRegionalMapping
 
-   :include-exclusive: %./categories:performRegionalMapping
 
+.. only:: R2D_app
+
+   .. raw:: html
+      :file: _static/html/RDT/performRegionalMapping.html
 
