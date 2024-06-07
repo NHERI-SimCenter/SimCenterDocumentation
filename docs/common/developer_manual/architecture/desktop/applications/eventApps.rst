@@ -22,3 +22,18 @@ The following options for event applications vary in the type of event, event pr
 
    :include-exclusive: %./categories:createEVENT
 
+
+.. only:: HydroUQ_app
+
+   .. raw:: html
+      :file: _static/html/HydroUQ/createEVENT.html
+
+.. only:: EEUQ_app
+
+   .. raw:: html
+      :file: _static/html/EE-UQ/createEVENT.html
+
+.. only:: WEUQ_app
+
+   .. raw:: html
+      :file: _static/html/WE-UQ/createEVENT.html

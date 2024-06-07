@@ -27,7 +27,6 @@ If you have not yet installed Python 3.7, we recommend installing Python 3.7 fro
 **Windowsx86 64-bit executable installer**.  
 
 .. note::
-
    Allow the installer to change your system environment variables so that the directory containing the executable is on your path. This requires checking the small box asking for this when the installer starts. The box is located at the bottom of the installer application window.
 
 .. warning::
@@ -95,6 +94,7 @@ Test the Install of Python, OpenSees & Dakota
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Steps to Test:
+
    1. Open a command window window(type `cmd` in search)
    2. Type `python3` in the application that starts (this should bring up python interpreter)
    3. Enter the following to test the installation of the modules and quit the application:

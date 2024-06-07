@@ -21,3 +21,19 @@ The following options for building applications vary in the file type of the inp
    :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
 
    :include-exclusive: %./categories:createBIM
+
+
+.. only:: HydroUQ_app
+
+   .. raw:: html
+      :file: _static/html/HydroUQ/createBIM.html
+
+.. only:: EEUQ_app
+
+   .. raw:: html
+      :file: _static/html/EE-UQ/createBIM.html
+
+.. only:: WEUQ_app
+
+   .. raw:: html
+      :file: _static/html/WE-UQ/createBIM.html

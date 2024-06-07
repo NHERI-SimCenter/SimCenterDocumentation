@@ -1,7 +1,7 @@
 # Requirements
 
 Tables on the requirement pages are built from automatically generated CSV
-files which are created in the [`docs/common/reqments/_out/`](../docs/common/reqments/_out/)
+files which are created in the [`docs/common/reqments/_out_from_json/`](../docs/common/reqments/_out_from_json/)
 directory.
 
 The data for these CSV files come from a common set of JSON files located 
@@ -24,9 +24,9 @@ Sphinx directive. Columns generally correspond to the following fields:
 5:  quoFEM
 6:  EE-UQ
 7:  WE-UQ
-8:  PBE
-9:  R2D
-10: HydroUQ
+8: HydroUQ
+9:  PBE
+10:  R2D
 ```
 
 
@@ -44,7 +44,7 @@ of:
 
 1. The string literal `"core"`. This indicates that the requirement
    is satisfied by the core design of the SimCenter framework.
-2. An object/dictionary mapping keys `qfem`, `eeuq`, `weuq`, `r2dt`, 
+2. An object/dictionary mapping keys `qfem`, `eeuq`, `weuq`, `hydro`, `r2dt`, 
    and `pbdl` to a link. For example:
   
    ```json
@@ -52,6 +52,7 @@ of:
              "qfem": "https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM",
              "weuq": "https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ",
              "eeuq": "https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/EE_UQ",
+             "hydro": "https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/HydroUQ",
              "pbdl": "https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE",
              "r2dt": "https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt"
         }

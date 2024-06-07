@@ -6,37 +6,7 @@ Gaussian Process (GP) Surrogate Modeling
 ******************************************
 
 .. Note:: 
-     Surrogate modeling functionality of |short tool id| is built upon `GPy <https://sheffieldml.github.io/GPy/>`_ library (available under BSD 3-clause license), an opensource python framework for Gaussian process modeling developed in the Sheffield machine learning group. 
-
-.. Warning::
-     Update: 01.04.2024
-
-     **Only on Mac**, the GPy module (v.1.12 or lower) has a dependency version compatibility issue with other python packages SimCenter uses. 
-     To run GPy on SimCenter tools, one needs to install the latest developer release of GPy. Below is the error message you get.
-     
-     .. code:: console
-
-        Surrogate modeling module uses GPy python package which is facing a version compatibility issue at this moment (01.05.2024). 
-        To use the surrogate module, one needs to update manually the GPy version to 1.13. The instructions can be found in the documentation: 
-        https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/usage/desktop/SimCenterUQSurrogate.html#lblsimsurrogate
-
-     Until the GPy version v1.13 is available on pip, one can install the `developer release of GPy v1.13 <https://github.com/SheffieldML/GPy>`_ by typing the following commands one by one in the terminal 
-
-     .. code:: console
-
-        git clone https://github.com/SheffieldML/GPy.git
-        cd GPy
-        {$PathToPythonExe} -m pip uninstall GPy
-        {$PathToPythonExe} setup.py install
-
-     where ``{$PathToPythonExe}`` should be replaced with the python path found in the File-Preference window. After the third line, they will ask for the confirmation (type Y and enter). Check the installation status by typing
-      
-     .. code:: console
-
-        {$PathToPythonExe} -m pip show GPy
-
-     and confirming that the version appears as 1.13.x. For any questions and bug reports, please contact us through `user forum <https://simcenter-messageboard.designsafe-ci.org/smf/index.php>`_.
-
+     Surrogate modeling functionality of |short tool id| is built upon `GPy <https://sheffieldml.github.io/GPy/>`_ library (available under BSD 3-clause license), an opensource Python framework for Gaussian process modeling developed in the Sheffield machine learning group. 
 
 .. only:: quoFEM_app
 
@@ -61,9 +31,9 @@ Gaussian Process (GP) Surrogate Modeling
 
     **Case 1 (Sampling and Simulation)**: The user provides lower and upper bounds of each random variable (RV) and a simulation model. |short tool id| will find the best training points sequentially by the adaptive **design of experiments** (DoE) strategies until the model converges or reaches a user-specified computational tolerance. 
 
-    **Case 2 (Import RV Dataset and run Simulation)**: The user provides sample population of RVs as a separate text file. |short tool id| will run simulations to get QoI values and build a surrogate model. 
+    **Case 2 (Import RV Dataset and run Simulation)**: The user provides a sample population of RVs as a separate text file. |short tool id| will run simulations to get QoI values and build a surrogate model. 
 
-    **Case 3 (Import both RV and QoI Dataset)**: The user provides sample population of RVs and QoIs. |short tool id| will not run any simulations and build a surrogate model purely based on the provided dataset.
+    **Case 3 (Import both RV and QoI Dataset)**: The user provides a sample population of RVs and QoIs. |short tool id| will not run any simulations and build a surrogate model purely based on the provided dataset.
 
     .. list-table:: |short tool id| workflow (DoE: Design of experiments)      
        :widths: 2 5 5 5
@@ -104,9 +74,9 @@ Gaussian Process (GP) Surrogate Modeling
 
     * **Output of surrogate model**: Following the performance-based earthquake engineering practice, the response estimation module in SimCenter workflow concerns only the peak responses (e.g. peak acceleration, peak drift ratio at each floor) rather than the whole time history. Therefore, the surrogate modeling algorithms in this tool are designed to predict the non-time history responses.
 
-    * **Input of surrogate model**: To keep the input dimension of the surrogate model to a reasonable scale, the ground motion time history are first parameterized into a number of key features in the algorithm. This can be, for example, the sources properties (e.g. M,R) or time/frequency domain excitation property at the site of interest (e.g. intensity measures) ([Kyprioti2021]_, [Zhong2023]_).
+    * **Input of surrogate model**: To keep the input dimension of the surrogate model to a reasonable scale, the ground motion time history is first parameterized in the algorithm into several key features. This can be, for example, the source properties (e.g. M, R) or time/frequency domain excitation property at the site of interest (e.g. intensity measures) ([Kyprioti2021]_, [Zhong2023]_).
 
-    The surrogate prediction of EDP given the ground motion parameters typically inherits significant randomness, as the amount of information provided by these parameters are not sufficient to determine the exact model peak response. Therefore, the key task in surrogate modeling is to capture the remaining amount of uncertainty in the EDP predictions, as shown in the above figure.
+    The surrogate prediction of EDP given the ground motion parameters typically inherits significant randomness, as the amount of information provided by these parameters is not sufficient to determine the exact model peak response. Therefore, the key task in surrogate modeling is to capture the remaining amount of uncertainty in the EDP predictions, as shown in the above figure.
 
     **The trained surrogate model can be saved in a portable file (.json format) and later imported** in place of the original simulation model for UQ analysis or optimization purposes. See user guide :ref:`section 2.2.5 <SIM-user_manual-EEUQsur>` for how to import the surrogate model in |short tool id|.
 
@@ -127,7 +97,7 @@ Case 1: Sampling and Simulation
 .. only:: EEUQ_app
 
     .. Note::
-        Another SimCenter tool named `quoFEM <https://simcenter.designsafe-ci.org/research-tools/quofem-application/>`_ also supports surrogate modeling capability that shares the same algorithm with EE-UQ. However, quoFEM is targeted at more general applications not restricted to earthquake problems. quoFEM additionally supports different user-provided information types, allowing users to directly (i) Import RV Dataset and run the Simulation (Case 2), or (ii) Import both RV and EDP Dataset (Case 3). Currently, in EE-UQ, we only support the  Sampling and simulation option (Case 1).
+        Another SimCenter tool named `quoFEM <https://simcenter.designsafe-ci.org/research-tools/quofem-application/>`_ also supports surrogate modeling capability that shares the same algorithm with EE-UQ. However, quoFEM is targeted at more general applications not restricted to earthquake problems. quoFEM additionally supports different user-provided information types, allowing users to directly (i) Import an RV Dataset and run the Simulation (Case 2), or (ii) Import both RV and EDP Datasets (Case 3). Currently, in EE-UQ, we only support the Sampling and simulation option (Case 1).
 
 When the **Training Dataset** option is set to the ``Sampling and Simulation``, a simulation model should be presented in the later tabs. The training points are sampled adaptively by the design of experiments.
 
@@ -152,7 +122,7 @@ When the **Training Dataset** option is set to the ``Sampling and Simulation``, 
         \end{align*}    
 
    |   where 
-   |      :math:`y_k` : exact response from the model simulation
+   |      :math:`y_k`: exact response from the model simulation
    |      :math:`\hat{y}_k`: estimated response by LOOCV surrogate model prediction
    |      :math:`N`: number of samples used to train the surrogate model
 
@@ -174,10 +144,10 @@ Note that the results from the parallel and serial run may not be exactly the sa
 .. only:: quoFEM_app
 
     * **Kernel function**: Correlation function for Gaussian process regression. Matern5/2 function is the default, and Matern3/2, Radial Basis, and Exponential functions (exponent :math:`\gamma=1`) are additionally supported. (For details, please refer to `chapter 4 <http://gaussianprocess.org/gpml/chapters/RW4.pdf>`_ of the book Gaussian Processes for Machine Learning)
-    * **Add Linear Trend Function**: When increasing or decreasing trend is expected over the variables domain, a linear trend function may be introduced. The default is unchecked, ie. no trend function.
-    * **Log-space Transform of QoI**: When the user can guarantee that the response quantities are always greater than 0, user may want to introduce a surrogate model in log-transformed space of QoI. The default is unchecked, ie. original physical coordinate.
-    * **Design of Experiments options**: User may manually select the design of experiments (DoE) method and the number of the initial DoE. The default is "none" and the default number of DoE is 4 times the number of random variables.
-    * **Nugget Variances**: User may define nugget variances or bounds of the nugget variances if needed. The default is "optimize". See subsection titled 'Heteroscedastic Gaussian Process' to learn more about this feature.
+    * **Add Linear Trend Function**: When an increasing or decreasing trend is expected over the variables' domain, a linear trend function may be introduced. The default is unchecked, i.e. no trend function.
+    * **Log-space Transform of QoI**: When the user can guarantee that the response quantities are always greater than 0, the user may want to introduce a surrogate model in the log-transformed space of the QoI. The default is unchecked, i.e. the original physical coordinates.
+    * **Design of Experiments options**: The user may manually select the design of experiments (DoE) method and the number of the initial DoE. The default is "none" and the default number of DoE is 4 times the number of random variables.
+    * **Nugget Variances**: The user may define nugget variances or bounds of the nugget variances if needed. The default is "optimize". See the subsection titled 'Heteroscedastic Gaussian Process' to learn more about this feature.
 
 
 .. only:: EEUQ_app
@@ -326,7 +296,7 @@ Note that the results from the parallel and serial run may not be exactly the sa
 
        Multi-fidelity modeling panel
 
-    For each fidelity models, either model, data, or both can be provided for each fidelity level.
+    For each of the fidelity levels, either the model, the data, or both can be provided.
 
     .. _figSimMF2:
 
@@ -359,7 +329,7 @@ Note that the results from the parallel and serial run may not be exactly the sa
 
        Input fields for heteroscedastic GP
 
-    Heteroscedastic Gaussian Process can be trained by selecting 'Heteroscedastic' option in the 'Nugget Variance' field. The following two parameters are requested:
+    A heteroscedastic Gaussian Process can be trained by selecting the 'Heteroscedastic' option in the 'Nugget Variance' field. The following two parameters are requested:
 
     * **Number of samples to be replicated (A)** : From the number of unique samples specified in the 'Number of Samples' field, decide how many of them will have replications. 
     * **Number of replications per sample (B)** : Specify how many replications will be generated for the number of samples specified in A. 
@@ -396,7 +366,7 @@ Once the training is completed, the following three verification measures are pr
 
 * **Leave-one-out cross-validation (LOOCV)**
 
-  | LOOCV prediction :math:`\hat{\boldsymbol{y}}_k` at each sample location :math:`\boldsymbol{x}_k` is obatined by the following procedure: A temporary surrogate model :math:`\hat{\boldsymbol{y}}=f^{sur}_{loo,k}(\boldsymbol{\boldsymbol{x}})` is constructed using the samples :math:`\{\boldsymbol{x}_1,\boldsymbol{x}_2,...,\boldsymbol{x}_{k-1},\boldsymbol{x}_{k+1},...,\boldsymbol{x}_N\}` and the calibrated parameters, and the prediction :math:`\hat{\boldsymbol{y}}_k=f^{sur}_{loo,k}(\boldsymbol{x}_k)` is compared with the exact outcome .
+  | LOOCV prediction :math:`\hat{\boldsymbol{y}}_k` at each sample location :math:`\boldsymbol{x}_k` is obtained by the following procedure: A temporary surrogate model :math:`\hat{\boldsymbol{y}}=f^{sur}_{loo,k}(\boldsymbol{\boldsymbol{x}})` is constructed using the samples :math:`\{\boldsymbol{x}_1,\boldsymbol{x}_2,...,\boldsymbol{x}_{k-1},\boldsymbol{x}_{k+1},...,\boldsymbol{x}_N\}` and the calibrated parameters, and the prediction :math:`\hat{\boldsymbol{y}}_k=f^{sur}_{loo,k}(\boldsymbol{x}_k)` is compared with the exact outcome.
 
 
 We provide different verification measures for two different cases.
@@ -406,7 +376,7 @@ We provide different verification measures for two different cases.
     
     .. Tip:: Due to the stochasticity in the ground motion, EE-UQ concerns case (ii).
 
-(i) When nugget variance is low : The LOOCV prediction :math:`\hat{\boldsymbol{y}}_k` is expected to match the exact outcome :math:`\boldsymbol{y_k}=f(\boldsymbol{x}_k)` when the surrogate model is well-trained. To quantify the goodness, R2 error, normalized root-mean-squared-error (NRMSE), and correlation coefficient are provided:
+(i) When nugget variance is low: The LOOCV prediction :math:`\hat{\boldsymbol{y}}_k` is expected to match the exact outcome :math:`\boldsymbol{y_k}=f(\boldsymbol{x}_k)` when the surrogate model is well-trained. To quantify the goodness, R2 error, normalized root-mean-squared-error (NRMSE), and correlation coefficient are provided:
 
     * **R2 error**
 
@@ -435,7 +405,7 @@ We provide different verification measures for two different cases.
 
     * **Correlation coefficient**
 
-      | Correlation coefficient is a statistic that measures linear correlation between two variables
+      | Correlation coefficient is a statistic that measures the linear correlation between two variables
 
       .. math::
         :label: corr
@@ -452,11 +422,11 @@ We provide different verification measures for two different cases.
       | The surrogate model is considered well-trained when the **correlation coefficient (** :math:`-1<\rho<1` **) approaches 1**
 
 
-(ii) When nugget variance is high : The distance between LOOCV prediction :math:`\hat{\boldsymbol{y}}_k` and the exact outcome :math:`\boldsymbol{y_k}=f(\boldsymbol{x}_k)` is expected to follow a normal distribution when the surrogate model is well-trained. To quantify the goodness, inter-quartile ratio (IQR) and Cramer-Von Mises statistics can be evaluated:
+(ii) When nugget variance is high: The distance between LOOCV prediction :math:`\hat{\boldsymbol{y}}_k` and the exact outcome :math:`\boldsymbol{y_k}=f(\boldsymbol{x}_k)` is expected to follow a normal distribution when the surrogate model is well-trained. To quantify the goodness, inter-quartile ratio (IQR) and Cramer-Von Mises statistics can be evaluated:
 
     * **Inter-quartile ratio (IQR)**: IQR provides the ratio of the sample QoIs that lies in 25-75% LOOCV prediction bounds (interquartile range). The IQR values should theoretically approach 0.5 if the prediction is accurate.
 
-    * **Cramer-Von Mises statistics**: Cramer-Von Mises statistics calculate the normality score. The assumption of a GP is that the observations follow a normal distribution conditional on the input parameters. To assess the normality of the model predictions, the difference between the mean prediction :math:`\hat{y}_k` and the sample observation  :math:`y_k` value is divided by the standard deviation prediction from surrogate :math:`\hat{\sigma}_{y,k}`:
+    * **Cramer-Von Mises statistics**: Cramer-Von Mises statistics calculate the normality score. A GP assumes that the observations follow a normal distribution conditional on the input parameters. To assess the normality of the model predictions, the difference between the mean prediction :math:`\hat{y}_k` and the sample observation  :math:`y_k` value is divided by the standard deviation prediction from surrogate :math:`\hat{\sigma}_{y,k}`:
 
       .. math::
         :label: normed
@@ -483,22 +453,22 @@ Additionally, **scatter plot** between the predicted and exact responses is pres
      Since these validation measures are calculated from the cross-validation predictions, they can be **biased**, particularly when a highly localized nonlinear range exists in the actual response surface, and those regions are not covered by the training samples. The introduction of adaptive design of experiments helps to suppress the bias by enabling the targeted selection of simulation points around potentially faulty regions.
 
 .. Warning:: 
-     Note that GP-based surrogate models can be used to fit only smooth, continuous functions. When the surrogate model is poorly trained, a parametric study is highly recommended to check any possible discontinuity presented in the simulation model.
+     Note that GP-based surrogate models can be used to fit only smooth, continuous functions. When the surrogate model is poorly trained, a parametric study is highly recommended to check for any possible discontinuity presented in the simulation model.
 
 
 Saving Options
 --------------
 * **Save GP Model**: The constructed surrogate model is saved. One main file and one auxiliary folder will be saved.
 
-   - **SurroateGP Info File** (default name: ``SimGpModel.json``) : This file contains information required to quickly reconstruct the surrogate model and predict the response for different input realizations. This can be later imported in EEUQ.
-   - **Simulation template directory** (default name: ``tmplatedir_SIM``) : This folder contains all the scripts and commands to run the original dynamic time history analysis. This folder can later be imported into EEUQ along with the surrogate model to alternate between original simulations and surrogate predictions or compare the surrogate predictions to the response of the original model. 
+   - **SurroateGP Info File** (default name: ``SimGpModel.json``): This file contains information required to quickly reconstruct the surrogate model and predict the response for different input realizations. This can be later imported into EEUQ.
+   - **Simulation template directory** (default name: ``tmplatedir_SIM``): This folder contains all the scripts and commands to run the original dynamic time history analysis. This folder can later be imported into EEUQ along with the surrogate model to alternate between original simulations and surrogate predictions or compare the surrogate predictions to the response of the original model. 
 
    - Only for the multi-fidelity case in quoFEM, additional **SurroateGP model file** (default name: ``SimGpModel.pkl``) will be written along with the above two.
 
 
 .. warning::
 
-   Do not place above surrogate model files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads or Documents folders contains and awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!
+   Do not place the above surrogate model files in your root, downloads, or desktop folder as when the application runs it will copy the contents on the directories and subdirectories containing these files multiple times. If you are like us, your root, Downloads, or Documents folders contain an awful lot of files and when the backend workflow runs you will slowly find you will run out of disk space!
 
 * **Save GP Info**: This is a report generated for user reference. It contains the GP model parameter and other information. The default file name is ``GPresults.out``.
 * **RV Data**, **QoI Data**:It saves the samples of RV and QoI. The default file names are ``X.txt`` and ``Y.txt``, respectively. **IMPORTANT**: To continue surrogate modeling with additional simulations, save the RV and QoI sample files using this button and import them as initial points. Refer to the 'Start with Existing Dataset' option in Case 1.

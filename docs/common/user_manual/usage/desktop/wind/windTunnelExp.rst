@@ -2,7 +2,7 @@ Wind Tunnel Experiment
 ----------------------
 
 
-This application will take the wind tunnel data provided and scale it based on wind speed provided in this interface, and the building dimensions provided in the General Information. The theory on scaling wind tunnel data is provided in the theory. The data for the wind tunnel is provided in a JSON file format. That file contains information on model dimensions, model wind speed, model frequency, tap locations and time-varying pressure tap coefficients.
+This application will take the wind tunnel data provided and scale it based on the wind speed provided in this interface, and the building dimensions provided in the General Information. The theory on scaling wind tunnel data is provided in the theory. The data for the wind tunnel is provided in a JSON file format. That file contains information on model dimensions, model wind speed, model frequency, tap locations and time-varying pressure tap coefficients.
 
 .. _fig-windTunnelExp:
 .. figure:: figures/windTunnelExperiment.png

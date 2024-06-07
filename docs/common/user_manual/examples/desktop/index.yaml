@@ -80,3 +80,22 @@ WEUQ:
     title: "30-Story Frame - Sensitivity"
   - id: weuq-13
     title: "50-Story Building - Wind Load Evaluation with CFD"
+  - id: weuq-14
+    title: "50-Story Building - Wind Load Evaluation with CFD"
+  - id: weuq-15
+    title: "Digital Twin - Empty Domain CFD Simulation"
+
+#--------------------------------------------------
+# HydroUQ Examples
+#---------------------------------------------------
+HydroUQ:
+  - id: hdro-01
+    title: "Simple Example of running CFD using OpenFOAM"
+  - id: hdro-02
+    title: "Debris Impacts in a Tsunami-Like Wave - Oregon State University Large Wave Flume"
+  - id: hdro-03
+    title: "Coupled Digital Twin - Simple Cantilevered Cylinder Half-Submerged in Crossflow"
+  - id: hdro-04
+    title: "Debris Motion through Obstacles in a Tsunami-Like Wave - Waseda University Tsunami Wave Basin"
+
+#--------------------------------------------------

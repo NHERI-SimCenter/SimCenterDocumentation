@@ -38,6 +38,8 @@ WE-UQ:
     - weuq-0011
     - weuq-0013
     - weuq-0014
+    - weuq-0015
+    - weuq-0016
 
 EE-UQ:
   include-item:
@@ -67,10 +69,14 @@ R2DTool:
   - E10SiteResponse
   - E12IstanbulRegionalSeismicRiskAnalysis
   - E14BasicHAZUSTransportation
+  - E16WDNRecoveryAndPerformanceAssessment
 
 HydroUQ:
   include-item:
-    - hdro-0001
+    # - hdro-0001
+    - hdro-0002
+    - hdro-0003
+    # - hdro-0004
 
 requirements: []
 

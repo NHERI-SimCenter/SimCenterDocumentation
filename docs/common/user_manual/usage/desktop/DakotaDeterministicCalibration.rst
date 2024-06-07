@@ -23,7 +23,7 @@ The panel that is presented to the user when this Dakota Category is chosen, is 
   	Dakota deterministic calibration input panel.
 
 
-For deterministic calibration two different optimization algorithms are currently provided under the Method drop-down menu, namely OPT++GaussNewton and NL2SOL. For both methods three input parameters need to be specified as shown in the figure: 
+For deterministic calibration, two different optimization algorithms are currently provided under the Method drop-down menu, namely OPT++GaussNewton and NL2SOL. For both methods three input parameters need to be specified as shown in the figure: 
 
 1. the maximum number of iterations for the optimization algorithm
 2. the convergence tolerance
@@ -40,15 +40,13 @@ NL2SOL
 The NL2SOL method is based on an adaptive nonlinear least-squares algorithm, devised by Dennis and colleagues ([Dennis81a]_, [Dennis81b]_). NL2SOL uses a trust region method and adaptively switches between two Hessian approximations, the Gauss-Newton approximation alone and the Gauss-Newton approximation plus a quasi-Newton approximation to the rest of the Hessian. This latter approximation is useful when the starting guess is far from the solution. For problems with large residuals, this algorithm is known to be more reliable than Gauss-Newton.
 
 
-.. note::
+.. note:: Calibration data file requirements
 
-	Calibration data file requirements
-	==================================
 	The data are provided in the calibration data file, which must fulfill the following requirements:
 
 	1. Each row of the calibration data file contains data from one experiment. The individual entries in every row of this file can be separated by spaces, tabs, or commas.
 	2. The number of entries in each row must equal the sum of the length of all outputs defined in the **QoI** panel.
-	3. The order of the entries in each row of the calibration data file must match the order in which the outputs are defined in the **QoI** panel, and must correspond to the output from the computational model in the ``results.out`` file.
+	3. The order of the entries in each row of the calibration data file must match the order in which the outputs are defined in the **QoI** panel and must correspond to the output from the computational model in the ``results.out`` file.
 
 	For example, if there are data from two experiments, and there are 2 response quantities, of length 2 and 1 respectively, then, there must be two rows of values in the calibration data file, the length of each row must be 3, the first two values in each row correspond to the first response quantity and the third value in each row corresponds to the second response quantity. 
 

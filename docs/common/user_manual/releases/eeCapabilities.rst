@@ -5,13 +5,13 @@
 Capabilities
 ************
 
-**Version 3.4** of |app| was released **September 29**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+**Version 3.5** of |app| was released **April 2024**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 Structural Information Model
 ============================
 
-Applications used to specify/select the structural model to be used in analysis.
+Applications used to specify/select the structural model to be used in the analysis.
 
 #. MDOF: creating idealized multi-degree-of-freedom models
 #. OpenSees: user-defined OpenSees models
@@ -32,7 +32,8 @@ Applications used to specify/select ground motions for the structure.
 #.  Site Response: propagating rock motions to the surface
 #.  Multiple PEER: using multiple PEER recordings
 #.  Multiple SimCenter: using multiple SimCenter-format recordings
-#.  User Specified Database: selecting and scaling ground motions from the user-specified flatfile
+#.  User-specified Database: selecting and scaling ground motions from the user-specified flatfile
+#.  Physics-based ground motion simulations generate by the `M9 project <https://sites.uw.edu/pnet/m9-simulations/>`_.
 
 
 Engineering Demand Parameter Generator
@@ -73,7 +74,7 @@ Applications to perform the uncertainty quantification for the response paramete
 
         #. Monte Carlo Sampling (MCS)
 
-           a. Resample from existing correlated dataset of samples
+           a. Resample from an existing correlated dataset of samples
 
         #. :blue:`Multi-fidelity Monte Carlo (MFMC)`
 
