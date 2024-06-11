@@ -274,36 +274,34 @@ AI-predicted roof pitch ratios. As expected, very little correlation between the
 
 Attribute: WindowArea
 `````````````````````
-The proportion of windows to the overall surface area is not available in inventory and 
-                    assessor datasets, though it is required for wind loss modeling. Generally, window area can be 
-					assumed based on the building occupancy class, using Department of Energy industry databases. 
-					This property can also be estimated from street-level imagery by utilizing the 
-					window masks generated during the segmentation process when determining building 
-					elevations. For this application, window area is defined as a percentage of the total 
-					facade area, calculated as the ratio of the area of window masks to the area of the front facade 
-					of the building. The underlying assumption is that the proportion of surface area occupied 
-					by windows at the front of the building is representative of the amount of window openings 
-					on the sides and rear of the building. This allows the ratio calculated for the front 
-					face of the building to be applied to the whole building. This assumption may hold for 
-					single-family residential buildings, but possibly not for commercial construction where 
-					street fronts have higher proportions of glass. Instead of this computer vision approach,
-					users may choose to adopt industry norms for their window areas (see note below).
-                    
-                    .. note::
-                       
-                     **Industry Norms on Window Area**: Engineered residential buildings can be assumed to have low window-to-wall 
-					 area ratios (WWR) based on the information for Reference Buildings in Baltimore, MD from the 
-					`Office of Energy Efficiency and Renewable Energy <https://www.energy.gov/eere/downloads/reference-buildings-building-type-midrise-apartment>`_. Reference Buildings were created for select cities 
-					 based on climate profile; of the available cities, Baltimore is selected since its climate is most 
-					 similar to Atlantic City, NJ. Office buildings (used as a test case for commercial) have WWR of 
-					 33%, and apartments (used as a test case for residential) have WWR of 15%.
+The proportion of windows to the overall surface area is not readily available in inventory and assessor 
+datasets, even though it is required for wind loss modeling. Generally, window area can be assumed based 
+on the building occupancy class, using Department of Energy industry databases. This property can also 
+be estimated from street-level imagery by utilizing the window masks generated during the segmentation 
+process when determining building elevations. For this application, window area is defined as a percentage 
+of the total facade area, calculated as the ratio of the area of window masks to the area of the front 
+facade of the building. The underlying assumption is that the proportion of surface area occupied by 
+windows at the front of the building is representative of the amount of window openings on the sides and 
+rear of the building. This allows the ratio calculated for the front face of the building to be applied 
+to the whole building. This assumption may hold for single-family residential buildings, but possibly 
+not for commercial construction where street fronts have higher proportions of glass. Instead of this 
+computer vision approach, users may choose to adopt industry norms for their window areas (see note below).
 
-... note::
+.. note::
 
-   The process of constructing the **Atlantic County Inventory** for footprints beyond those in the 
-   **Flood-Exposed Inventory** highlighted a number of tasks/issues that are commonly encountered when constructing an inventory 
-   in a location with sparse inventory data. Recommended best practices are summarized in :ref:`lbl-testbed_AC_best_practices`.
+   **Industry Norms on Window Area**: Engineered residential buildings can be assumed to have low 
+   window-to-wall area ratios (WWR) based on the information for Reference Buildings in Baltimore, 
+   MD from the 
+   `Office of Energy Efficiency and Renewable Energy 
+   <https://www.energy.gov/eere/downloads/reference-buildings-building-type-midrise-apartment>`_. 
+   Reference Buildings were created for select cities based on climate profile; of the available cities, 
+   Baltimore is selected since its climate is most similar to Atlantic City, NJ. Office buildings 
+   (used as a test case for commercial) have WWR of 33%, and apartments (used as a test case for residential) 
+   have WWR of 15%.
 
+.. note::
+
+   The process of constructing the **Atlantic County Inventory** for footprints beyond those in the **Flood-Exposed Inventory** highlighted a number of tasks/issues that are commonly encountered when constructing an inventory in a location with sparse inventory data. Recommended best practices are summarized in :ref:`lbl-testbed_AC_best_practices`.
 Phase III: Augmentation Using Third-Party Data
 ================================================
 
@@ -331,6 +329,7 @@ Estimator (SDE) Tool (:numref:`tab-sdeAttri`).
 
 .. _tab-sdeAttri:
 
+.. csv-table:: Advanced attributes for FEMA Substantial Damage Estimator (SDE) Tool, available for all properties in Flood-Exposed Inventory.
 .. csv-table:: Advanced attributes for FEMA Substantial Damage Estimator (SDE) Tool, available for all properties in Flood-Exposed Inventory.
    :name: sde_attri
    :file: data/sde_attributes.csv

@@ -4,7 +4,7 @@
 Earthquake Assessment
 *********************
 
-This example is a small-scale regional earthquake risk assessment which performs response simulation and damage/loss estimation for a group of 20 buildings. The buildings are modeled as elastic-perfectly plastic single-degree-of-freedom (SDOF) systems defined by three input model parameters: the weight ``W``, yield strength ``f_yield``, and fundamental period ``T1``. The buildings are distributed in space in a 4x5 grid, within a 3x3 grid of event sites. At each event site, 5 ground motion records of similar intensity are assigned.
+This example is a small-scale regional earthquake risk assessment that performs response simulation and damage/loss estimation for a group of 20 buildings. The buildings are modeled as elastic-perfectly plastic single-degree-of-freedom (SDOF) systems defined by three input model parameters: the weight ``W``, yield strength ``f_yield``, and fundamental period ``T1``. The buildings are distributed in space in a 4x5 grid, within a 3x3 grid of event sites. At each event site, 5 ground motion records of similar intensity are assigned.
 
 
 .. figure:: figures/regionalearthquakeexample.png
@@ -17,8 +17,7 @@ Inputs
 
 The example input files can be downloaded here: :download:`example_eq.zip <files/example_eq.zip>`. For more information about required input files, refer to :ref:`Inputs <lblUserDefInputs>`.
 
-
-1. **Configuration file**: The configuration file specifies all simulation settings, including the application types, input file names, units, and type of outputs.
+1. **Configuration file**: The configuration file specifies all simulation settings, including the application types, input file names, units, and types of outputs.
 
 .. literalinclude:: files/rWHALE_config_eq.json
    :language: python
@@ -35,12 +34,11 @@ The example input files can be downloaded here: :download:`example_eq.zip <files
 
 3. **Regional Mapping Application**: This example uses the :ref:`NearestNeighborEvents <lblregionalMapApp>` regional mapping application. From the parameters set in the configuration file, the algorithm is set to randomly select 5 samples of ground motion records from the 4 nearest neighbors for each building asset.
 
-
 .. figure:: figures/regionalearthquakeexample_annot.png
    :align: center
    :figclass: align-center
 
-4. **Event Application**: This example uses the :ref:`SimCenterEvents <lblEventApp>` event application. It takes as input the EventGrid.csv, event files with the ground motion intensity measures, and the site files which specify the five ground motions assigned to each event site.
+4. **Event Application**: This example uses the :ref:`SimCenterEvents <lblEventApp>` event application. It takes as input the EventGrid.csv, event files with the ground motion intensity measures, and the site files that specify the five ground motions assigned to each event site.
 
 **Event grid file:**
 
@@ -55,7 +53,6 @@ The example input files can be downloaded here: :download:`example_eq.zip <files
    :file: files/site0.csv
    :header-rows: 1
    :align: center
-
 
 5. **Modeling Application**: This example uses the :ref:`OpenSeesPyInput <lblModelingApp>` modeling application. The buildings are modeled as elastic-perfectly plastic single-degree-of-freedom (SDOF) systems defined by three input model parameters: the weight ``W``, yield strength ``f_yield``, and fundamental period ``T1``. Functions are included which record the peak response as EDPs for each of the EDP types specified in the EDP_specs.json file.
 
@@ -75,14 +72,9 @@ The example input files can be downloaded here: :download:`example_eq.zip <files
 
 7. **Simulation Application**: This example uses the :ref:`OpenSeesPySimulation <lblSimulationApp>` simulation application, which corresponds to the **OpenSeesPyInput** modeling application. It reads the ``build_model`` and ``run_analysis`` functions from the model file to perform the response simulation.
 
-
-
 8. **UQ Application**: This example uses the :ref:`Dakota-UQ <lblUQApp>` UQ application to run the response simulation. In the configuration file, the number of samples specified for the UQ application should match the number of ground motion samples per building asset specified for the RegionalMapping application.
 
-
-
 9. **DL Application**: This example uses the :ref:`pelicun <lblDLApp>` DL application. From the :ref:`building source file <lblUserDefInputs>`, since the DL method selected is "HAZUS MH EQ", damage/loss estimation is performed using the HAZUS loss assessment method based on earthquake EDPs produced from the response simulation.
-
 
 Run Workflow
 ============
@@ -93,9 +85,7 @@ The workflow can be executed by uploading the appropriate files to :ref:`DesignS
 
     python "C:/rWHALE/applications/Workflow/R2D_workflow.py" "C:/rWHALE/cantilever_example/rWHALE_config_eq.json" --registry "C:/rWHALE/applications/Workflow/WorkflowApplications.json" --referenceDir "C:/rWHALE/cantilever_example/input_data/" -w "C:/rWHALE/cantilever_example/results"
 
-
-
-This command locates the backend applications in the folder "applications", and the input files in a directory "cantilever_example". Please ensure that the paths in the command appropriately identify the locations of the files in your directory.
+This command locates the backend applications in the folder "applications" and the input files in a directory "cantilever_example". Please ensure that the paths in the command appropriately identify the locations of the files in your directory.
 
 ::
 
@@ -121,10 +111,8 @@ This command locates the backend applications in the folder "applications", and 
         ├── EDPspecs.json               # EDP specifications file
         └── input_params.csv            # building source file
 
-
-
 Outputs
-==========
+=======
 
 The example output files can be downloaded here: :download:`output_data_eq.zip <files/output_data_eq.zip>`. For more information about the output files produced, refer to :ref:`Outputs <lblOutputs>`.
 
@@ -135,7 +123,6 @@ The example output files can be downloaded here: :download:`output_data_eq.zip <
    :header-rows: 1
    :align: center
 
-
 2. **DM_1-19.csv**: reports collapse probability and damage state probability for each building asset.
 
 .. csv-table:: DM_1-19.csv
@@ -143,8 +130,7 @@ The example output files can be downloaded here: :download:`output_data_eq.zip <
    :header-rows: 1
    :align: center
 
-
-2. **DV_1-19.csv**: reports decision variable estimates (repair cost, repair time, injuries) for each building asset.
+3. **DV_1-19.csv**: reports decision variable estimates (repair cost, repair time, injuries) for each building asset.
 
 .. csv-table:: DV_1-19.csv
    :file: files/DV_1-19.csv

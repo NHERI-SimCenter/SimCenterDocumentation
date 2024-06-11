@@ -12,17 +12,6 @@ The input structural model information is parsed into a ``SAM.json`` file, locat
    :align: center
    :figclass: align-center
 
-
-The following options for modeling applications vary in the type of model and finite element program used for response simulation.
-
-
-.. rendre:: cli-gallery
-   :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/backends.cache.json
-   :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
-
-   :include-exclusive: %./categories:createSAM
-
-
 .. only:: HydroUQ_app
 
    .. raw:: html
