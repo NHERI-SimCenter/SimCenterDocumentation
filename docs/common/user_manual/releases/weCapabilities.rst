@@ -5,7 +5,7 @@
 Capabilities
 ************
 
-**Version 3.2.0** of |app| was released **March 2024**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+**Version 3.3.0** of |app| was released **April 2024**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 Structural Information Model
@@ -24,11 +24,18 @@ Wind Loading Event
 
 Applications used to specify/select wind loading for the structure.
 
-#.  Stochastic Wind: simulating stochastic wind speed using spectral method
+#.  Stochastic Wind: Simulating stochastic wind speed using spectral methods. Includes the Wittig and Sinha 1975 model.
 #.  CFD - Digital Wind Tunnel: CFD simulation of boundary layer wind tunnel
 #.  CFD - Wind Load on Isolated Buildings: CFD-based wind load simulation for isolated buildings with complex geometry
-#.  DEDM_HRP: database-enabled design framework based on wind-tunnel data for high-rise buildings 
-#.  LowRiseTPU: extracting aerodynamics loads based on the TPU database for low-rise buildings
+#.  :blue:`CFD - Wind Load on Surrounded Buildings:` 
+    CFD-based wind load simulation for buildings surrounded by other buildings
+#.  Experimental Wind Forces: As seen in "Uncertainty Quantification and Simulation of Wind-Tunnel-Informed Stochastic Wind Loads". User specified force file input.
+#.  Experimental Wind Forces: As seen in "Uncertainty Quantification and Simulation of Wind-Tunnel-Informed Stochastic Wind Loads". User specified pressure file input. Includes CPSD group size.
+#.  Experimental Wind Pressures: As seen in "Uncertainty Quantification and Simulation of Wind-Tunnel-Informed Stochastic Wind Loads".
+#.  Wind Force Spectrum (CPSD) - As seen in "Optimization of uncertain structures subject to stochastic wind loads under system-level first excursion constraints: A data-driven approach. Provided by Prof. Seymour Spence's lab .
+#.  DEDM_HRP: Database-enabled design framework based on wind-tunnel data for high-rise buildings 
+#.  LowRiseTPU: Extracting aerodynamics loads based on the TPU database for low-rise buildings
+#.  HighRiseTPU: Extracting aerodynamics loads based on the TPU database for high-rise buildings
 #.  Wind Tunnel Experiment: uses pressure tap measurements from building in wind tunnel experiment
 #.  Existing: User-supplied time-varying floor loads
 
@@ -82,11 +89,14 @@ Applications to perform the uncertainty quantification for the response paramete
 
            a. Import input/output samples from data files
 
-#. Surrogate Modeling
+#. Reliability Analysis
 
-     A. SimCenterUQ Engine Surrogate Options:
+   A. Dakota Reliability Options
 
-        #. Surrogate modeling using Probabilistic Learning on Manifolds (PLoM)
+        #. Local Reliability Analysis
+        #. Global Reliability Analysis
+        #. Importance Sampling
+   
 	   
 Additional Tools 
 ===============

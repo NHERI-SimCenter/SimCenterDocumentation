@@ -97,5 +97,7 @@ HydroUQ:
     title: "Coupled Digital Twin - Simple Cantilevered Cylinder Half-Submerged in Crossflow"
   - id: hdro-04
     title: "Debris Motion through Obstacles in a Tsunami-Like Wave - Waseda University Tsunami Wave Basin"
+  - id: hdro-05
+    title: "Stochastic Wave Loading on a Frame Structure - Forward and Sensitivity UQ on Six Uncertain Parameters with Unique Distributions"
 
 #--------------------------------------------------
