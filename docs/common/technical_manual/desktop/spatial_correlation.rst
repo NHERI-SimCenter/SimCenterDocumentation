@@ -32,7 +32,7 @@ where :math:`Z_u` and :math:`Z_{u+h}` are the random variable realizations at si
 
    C(h) = E[(Z_u - \mu_Z)(Z_{u+h} - \mu_Z)]
 
-where :math:`\mu_Z` is the mean (which is zero under the stationarity assumption). Note this spatial covariance can also be related to the semivariogram with:
+where :math:`\mu_Z` is the mean (which is assumed as zero in [Jayaram08]_). Note this spatial covariance can also be related to the semivariogram with:
 
 .. math::
 
@@ -44,7 +44,7 @@ Similarly, the correlation coefficient is defined as:
 
    \rho(h) = \frac{C(h)}{C(0)} = 1 - \frac{\gamma(h)}{C(0)}
 
-Given the semivariogram is often preferred in geostatistical practice (because it does not require a prior estimation of the mean), many studies were carried out to find the semivariogram models to derive the correlation :math:`rho(h)` of ground motion intensities. The available models in the current |short tool name| are briefly summarized in the following sections.
+Given the semivariogram is often preferred in geostatistical practice (because it does not require a prior estimation of the mean), many studies were carried out to find the semivariogram models to derive the correlation :math:`\rho(h)` of ground motion intensities. The available models in the current |short tool name| are briefly summarized in the following sections.
 
 Jayaram and Baker (2009)
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -249,7 +249,7 @@ The general idea is to include more degrees of freedom in the predictive model i
 
 .. [Jayaram08]
 
-   Jayaram N, Baker JW. Statistical tests of the joint distribution of spectral acceleration values. Bulletin of the Seismological Society of America 2008; 98(5):2231–2243.
+   Jayaram, N., & Baker, J. W. (2008). Statistical tests of the joint distribution of spectral acceleration values. Bulletin of the Seismological Society of America, 98(5), 2231-2243.
 
 .. [Jayaram09]
 
