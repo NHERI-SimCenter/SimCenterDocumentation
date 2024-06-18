@@ -47,7 +47,7 @@ The default local reliability method is the most probable point (MPP) method. Fo
 
    Eldred, M.S., Bichon, B.J., and Adams, B.M., "Overview of Reliability Analysis and Design Capabilities in DAKOTA, Proceedings of the NSF Workshop on Reliable Engineering Computing (REC 2006), Savannah, GA, February 22-24, 2006.
 
-The second local reliability method available is the Mean Value method (also known as MVFOSM). It is the simplest and least-expensive reliability method because it estimates the response means, response standard deviations, and all response probability levels from a single evaluation of the response functions and their gradients at the uncertain variable means. This approximation can have acceptable accuracy when the response functions are nearly linear. Their distributions are approximately Gaussian, but **can have poor accuracy in other situations**.
+The second local reliability method available is the Mean Value method (also known as MVFOSM). It is the simplest and least-expensive reliability method because it estimates the response means, response standard deviations and all response probability levels from a single evaluation of the response functions and their gradients at the uncertain variable means. This approximation can have acceptable accuracy when the response functions are nearly linear. Their distributions are approximately Gaussian, but **can have poor accuracy in other situations**.
 
 As shown in the figure below, the user selects either to use response levels or probability levels. The user then inputs the levels.
 

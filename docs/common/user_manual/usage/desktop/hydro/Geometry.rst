@@ -4,7 +4,7 @@
 Geometry
 ********
 
-There are four aspects related to the definition of geometry, namely geometry of the ocean floor or wave flume, buildings or specimens, floating bodies, and shallow water to CFD interface. This section discusses the setup of all aspects of geometry.
+There are four aspects related to the definition of geometry, namely geometry of the ocean floor or wave flume, buildings or specimens, floating bodies, and shallow water to the CFD interface. This section discusses the setup of all aspects of geometry.
 
 Bathymetry
 ==========
@@ -42,7 +42,7 @@ The shallow-water to CFD interface can only be defined for the simulation type w
 
    Uploading the ``.csv`` file that defines the interface
 
-Consider the problem description as shown in the :numref:`SWCFDInter2`. Consider an event (earthquake on a fault or low-pressure due to a hurricane) represented by the red line on the left. The shallow-water solvers are used over the Ocean domain. In order to provide a high-fidelity solution for the structural response, the shallow-water domain is further refined using 3D CFD. The yellow boxes represent the shallow water to CFD interfaces. This interface information is provided in a ``.csv`` file. 
+Consider the problem description as shown in the :numref:`SWCFDInter2`. Consider an event (earthquake on a fault or low-pressure due to a hurricane) represented by the red line on the left. The shallow-water solvers are used over the Ocean domain. To provide a high-fidelity solution for the structural response, the shallow-water domain is further refined using 3D CFD. The yellow boxes represent the shallow water to CFD interfaces. This interface information is provided in a ``.csv`` file. 
 
 .. _SWCFDInter2:
 
@@ -66,13 +66,13 @@ The ``.csv`` needs four patches to be explicitly defined. The first is the patch
 
 .. note::
 
-   #. It is necessary that the point provided to define the interface needs to be closed and a quadrilateral.
+   #. It is necessary that the points provided to define the interface needs to be closed and create a quadrilateral.
    #. The patch names need to be provided to identify appropriate boundaries.
 
 Buildings and Scaled Specimens
 ==============================
 
-Buildings or specimens can be defined in the ``EVT``. It is important here to note that there can be two types of buildings: (a) Building of interest for which the structural response is measured (b) Other neighboring buildings that impact the flow fields.
+Buildings or specimens can be defined in the ``EVT``. It is important here to note that there can be two types of buildings: (a) The building of interest for which the structural response is measured (b) Other neighboring buildings that impact the flow fields.
 
 These can either be defined manually in a tabular format or parametrically as shown in :numref:`BuildDef`.
 
@@ -101,7 +101,7 @@ For the manual definition of the building, a tabular format is used for the user
       At present, HydroUQ only supports one type of building to be defined using a ``STL`` geometry. This file needs to be in ASCII format. 
       This limitation will be removed in the upcoming versions.
 
-#. **Center:** This refers to the location of the building/specimen. This is defined in terms of the coordinates (``x`` , ``y`` , ``z``) or latitude-longitude depending on the type of simulation chosen earlier in :ref:`lbl-projsett`. Suppose the simulation is based on shallow-water to CFD or bathymetry settings. In that case, the latitude and longitude need to be specified. Else, the position is input in terms of the coordinates.
+#. **Center:** This refers to the location of the building/specimen. This is defined in terms of the coordinates (``x`` , ``y`` , ``z``) or latitude-longitude depending on the type of simulation chosen earlier in :ref:`lbl-projsett`. Suppose the simulation is based on shallow-water to CFD or bathymetry settings. In that case, the latitude and longitude need to be specified. Otherwise, the position is input in terms of the coordinates.
 
    .. note::
       Here, the building position refers to the center of the bottom surface of the building. 
@@ -115,7 +115,7 @@ Parametric Definition
 
 The parametric definition of the building is recommended for usage mainly for the flume. This is recommended for usage when all the buildings are of the same shape and size. Here, the buildings are automatically generated based on a set of parametric inputs. The building of interest is directly determined by the |app| by using the coordinate information from the ``GI`` tab and matching it with the nearest building. The set of parameters include:
 
-#. **Number of buildings along the coast:** This refers to the number of building in the direction orthogonal to the flow, i.e., between right and left interfaces or walls of the CFD domain.
+#. **Number of buildings along the coast:** This refers to the number of buildings in the direction orthogonal to the flow, i.e., between right and left interfaces or walls of the CFD domain.
 #. **Number of buildings into the coast:** This refers to the number of buildings in the flow direction, i.e., between entry and exit of the CFD domain.
 #. **Distance from coast:** This refers to the distance of the first building from (0,0).
 #. **Distance between buildings (Side):** This refers to the center-to-center distance between the buildings in the direction orthogonal to the flow. 
@@ -148,4 +148,4 @@ The parametric definition of the building is recommended for usage mainly for th
 Debris and Floating Bodies
 ==========================
 
-Currently, HydroUQ |version| only supports floating bodies in the Material Point Method Event. This may expand to include OpenFOAM in an upcoming versions of |app|.
+Currently, HydroUQ |version| only supports floating bodies in the Material Point Method Event. This may expand to include OpenFOAM in an upcoming version of |app|.

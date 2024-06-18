@@ -9,7 +9,7 @@ The **FEM** tab will present users with a selection of FEM applications that wil
 .. contents::
    :local:
 
-Currently, there is one application, OpenSees. The current OpenSees implementation extends the standard OpenSees executable with a pre- and post-processor to take the BIM and EVENT files and use OpenSees to simulate the response and return it in an EDP file.
+Currently, there is one application, OpenSees. The current OpenSees implementation extends the standard OpenSees executable with a pre-/post-processor to take the BIM and EVENT files and use OpenSees to simulate the response and return it in an EDP file.
 
 .. _figFEM:
 
@@ -28,7 +28,7 @@ options to be used in the transient analysis. As shown in :numref:`figFEM`, this
 
 #. `Integration Scheme <http://opensees.berkeley.edu/wiki/index.php/Integrator_Command>`_: The integration scheme specifies the time-stepping algorithm being employed to solve the transient problem (:math:`M \ddot{U}(t) + C \dot{U}(t)  + Fs(U(t)) = P(t)`). The integration scheme determined the coefficients in the :math:`A` matrix,  the meaning of the :math:`x` and :math:`b` vectors and how the nodal displacements, velocities, and accelerations should be updated given :math:`x`. The default is Newmark's linear acceleration method (Newmark 0.5 0.25). Other Newmark methods can be employed by changing the :math:`\alpha` and  :math:`\beta` terms, and other methods, HHT, CentralDifference, can be selected.
 
-#. `Convergence Test <http://opensees.berkeley.edu/wiki/index.php/Test_Command>`_, the default is the norm of the unbalance force with a convergence tolerance of 1.0e-2 and a limit of 10 trial steps to achieve convergence. Other convergence criteria that can be chosen include NormDispIncr, EnergyIncrement, and the relative norms.
+#. `Convergence Test <http://opensees.berkeley.edu/wiki/index.php/Test_Command>`_, the default is the norm of the unbalanced force with a convergence tolerance of 1.0e-2 and a limit of 10 trial steps to achieve convergence. Other convergence criteria that can be chosen include NormDispIncr, EnergyIncrement, and the relative norms.
 
 #. Damping Model: The pull-down menu defaults to **Rayleigh Damping**. The other option is **Modal Damping**. The theory behind the two is presented in :ref:`lblDamping`.
 
@@ -45,7 +45,7 @@ options to be used in the transient analysis. As shown in :numref:`figFEM`, this
 #. Analysis Script. This shall be left blank by default. Advanced users of OpenSees who have their preferred analysis script and wish to provide their own damping model can give it here. If this option is provided, the user in their script should use the variables **numStep** and **dt**.
 
 
-A default transient analysis script is run with these inputs. It is built for Version 3.0.0+ of OpenSees and uses a divide and conquer algorithm to overcome convergence issues. This new algorithm does not work for every nonlinear problem. The actual analysis command that is created based on the defaults is the following:
+A default transient analysis script is run with these inputs. It is built for Version 3.0.0+ of OpenSees and uses a divide-and-conquer algorithm to overcome convergence issues. This new algorithm does not work for every nonlinear problem. The actual analysis command that is created based on the defaults is the following:
 
 .. code-block:: none
 
