@@ -22,7 +22,7 @@ Synthetic Storm Scenario
 ========================
 
 A landfall scenario for Atlantic City was generated using the Storm Hazard Projection Tool developed in the 
-NJcoast project ([NJCoast20_]). The constructed hazard scenario uses NJcoast’s basic simulation option, 
+NJcoast project ([NJCoast20]_). The constructed hazard scenario uses NJcoast’s basic simulation option, 
 which identifies the 25 hurricane tracks from the SHP tool’s surrogate model that match the targeted 
 storm scenario, in this case: a Category 5 intensity hurricane (central pressure differential 
 of 75-100 mbar, radius of maximum winds of 15.4 to 98 mi) making landfall near the Atlantic City 
@@ -34,7 +34,7 @@ Wind Modeling
 --------------
 
 The SHP Tool generates its wind fields using a highly efficient, linear analytical model for the boundary 
-layer winds of a moving hurricane developed by Snaiki and Wu ([Snaiki17a_], [Snaiki17b_]). 
+layer winds of a moving hurricane developed by Snaiki and Wu ([Snaiki17a]_, [Snaiki17b]_). 
 To account for the exposure in each New Jersey county, an effective roughness length (weighted average) 
 of the upwind terrain is used based on the Land Use/Land Cover data reported by the state’s Bureau of 
 GIS. To generate a wind field, this model requires the time-evolving hurricane track, 
@@ -52,9 +52,9 @@ parse the wind speed to the 3-second and open-terrain PWS
 
 As the initial developer of this model has made the underlying code available for this testbed, 
 users have two ways to engage this model to generate wind fields for this testbed:
+
 1. Users can adopt the aforementioned default synthetic Category 5 scenario striking Atlantic City.
-2. Users can generate a custom storm scenario by providing the required inputs into this linear 
-   analytical model to generate a customized wind field for use with this testbed.
+2. Users can generate a custom storm scenario by providing the required inputs into this linear analytical model to generate a customized wind field for use with this testbed.
 
 Wind fields described by either approach are then locally interpolated to the coordinates associated with each 
 footprint. The resulting 3s-gust peak wind speed (PWS) ranges from 178 mph to 191 mph given the simulated 
