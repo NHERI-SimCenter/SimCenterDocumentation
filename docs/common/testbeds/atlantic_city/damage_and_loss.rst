@@ -4,7 +4,7 @@
 Damage and Loss Estimation
 **************************
 
-Damage and loss functions from the HAZUS Hurricane Damage and Loss Model ([FEMA18a_], [FEMA18b_]) 
+Damage and loss functions from the HAZUS Hurricane Damage and Loss Model ([FEMA18a]_, [FEMA18b]_) 
 were implemented in `PELICUN <https://pelicun.readthedocs.io/en/latest/>`_ to support loss assessment for 
 all configurations of buildings currently supported by HAZUS for wind and flood hazards. These 
 configurations represent all possible unique configurations of building attributes associated 
@@ -26,10 +26,10 @@ coupled), and the parameterized models allow for more efficient storage and comp
 1. For the **wind loss assessment**, the HAZUS functions consist of tabular data that 
    describe the fragility or expected losses as a function of peak wind speed (PWS). 
    Only data up to 200 mph wind speeds were used because the substantial reduction in the 
-   number of observations introduces significant measurement error above that level (:numref:`wind_df`). 
+   number of observations introduces significant measurement error above that level (:numref:`wind_df_ac`). 
 
 .. figure:: figure/wind_damage_functions.png
-   :name: wind_df
+   :name: wind_df_ac
    :align: center
    :figclass: align-center
    :width: 600
@@ -38,10 +38,10 @@ coupled), and the parameterized models allow for more efficient storage and comp
 
 2. For the **flood loss assessment**, the HAZUS functions are in the form of depth-damage ratio curves, relating
    the peak water depth (PWD) of flooding (in feet), as measured from the top of the first finished floor,
-   to a percent of the total replacement cost of the asset (:numref:`flood_ddc`).
+   to a percent of the total replacement cost of the asset (:numref:`flood_ddc_ac`).
 
 .. figure:: figure/flood_depth_damage_curves.png
-   :name: flood_ddc
+   :name: flood_ddc_ac
    :align: center
    :figclass: align-center
    :width: 600
@@ -88,7 +88,7 @@ components into a consistent set of building sub-assemblies:
    HAZUS building sub-assemblies ([FEMA18a]_):
       1. Foundation: Includes site work, footings, and walls, slabs, piers or piles.
       2. Below First Floor: Items other than the foundation that are located below the first floor of the structure such as mechanical equipment, stairways, parking pads, break away flood walls, etc.
-      3. Structure Framing: Includes all of the main load carrying structural members of the building below the roof framing and above the foundation.
+      3. Structure Framing: Includes all the main load carrying structural members of the building below the roof framing and above the foundation.
       4. Roof Covering: Includes the roof membrane material and flashing.
       5. Roof Framing: Includes trusses, rafters, and sheathing.
       6. Exterior Walls: Includes wall covering, windows, exterior doors, and insulation.
