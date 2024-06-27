@@ -14,11 +14,11 @@ Building Inventory
 ===================
 
 From the entire building inventory, `85 buildings <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/atlantic_city/data/VerificationSample.csv>`_ are selected from 5 building
-classes and 8 built eras. :numref:`scatter_matrix` shows the data distributions of the built year, surface
+classes and 8 built eras. :numref:`scatter_matrix_ac` shows the data distributions of the built year, surface
 roughness (:math:`z_0`), peak wind speed (PWS), and peak water depth (PWD).
 
 .. figure:: figure/ScatterMatrix.png
-   :name: scatter_matrix
+   :name: scatter_matrix_ac
    :align: center
    :figclass: align-center
    :width: 700
@@ -38,12 +38,12 @@ The calculations are made for all four hurricane categories:
    3. Cat-3: PWS ~= 120 mph, maximum surge depth ~= 10 ft
    4. Cat-2: PWS ~= 100 mph, maximum surge depth ~= 7 ft
 
-:numref:`hand_calc` compares the hand-calculated loss ratios and the simulated
+:numref:`hand_calc_ac` compares the hand-calculated loss ratios and the simulated
 results, which are in good agreement. The finite differences seen in the flood loss ratios
 are due to the random sampling process in estimating the expected loss ratios.
 
 .. figure:: figure/SimuVSHandCalc.png
-   :name: hand_calc
+   :name: hand_calc_ac
    :align: center
    :figclass: align-center
    :width: 600
