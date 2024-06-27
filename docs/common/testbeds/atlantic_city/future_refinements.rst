@@ -42,7 +42,7 @@ community are especially welcome:
 6. The SimCenter aspires to incorporate increasing levels of fidelity in its characterization of hazards, 
    modeling of buildings (to support application of pressures/loads and structural analysis), and ability 
    to describe damage at the component level, with fault-trees that capture cascading damage sequences 
-   resulting from breaches of the building envelope. Thus there is considerable need for community 
+   resulting from breaches of the building envelope. Thus, there is considerable need for community 
    research contributions such as libraries of fragilities, archetype building models, and catalogs 
    of high-fidelity hazard simulations (hindcasts of historical events or synthetic storm data). 
    This is especially the case of coastal hazards. With aspirations to replicate this workflow in other 
