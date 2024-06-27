@@ -1,10 +1,9 @@
 .. _lblOutputs:
 
 Outputs
-===================
+=======
 
-After DL assessment is complete, the workflow collects the EDP.csv, DM.csv, and DV.csv files produced for each building asset and aggregates the results into single output files. When run locally, the workflow returns the output in a CSV format which is located in the *results* folder. When run remotely, the workflow returns the output in an HDF format which is located in the job archive. The HDF files may be converted into CSV format as a post-processing step.
-
+After the DL assessment is complete, the workflow collects the EDP.csv, DM.csv, and DV.csv files produced for each building asset and aggregates the results into single output files. When run locally, the workflow returns the output in CSV format, which is located in the *results* folder. When run remotely, the workflow returns the output in HDF format, which is located in the job archive. The HDF files can be converted into CSV format as a post-processing step.
 
 .. jsonschema:: File_Schema.json#/properties/Outputs/outputEDP
 

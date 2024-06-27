@@ -69,14 +69,15 @@ R2DTool:
   - E10SiteResponse
   - E12IstanbulRegionalSeismicRiskAnalysis
   - E14BasicHAZUSTransportation
-  - E15WDNRecoveryAndPerformanceAssessment
+  - E16WDNRecoveryAndPerformanceAssessment
 
 HydroUQ:
   include-item:
     # - hdro-0001
+    - hdro-0005
     - hdro-0002
     - hdro-0003
-    # - hdro-0004
+    - hdro-0004
 
 requirements: []
 

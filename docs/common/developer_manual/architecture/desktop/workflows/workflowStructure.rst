@@ -5,7 +5,8 @@ Workflow Structure
 
 The backend applications for the |app| follow a standard workflow:
 
-I. **Read the configuration file.** At the start of the workflow, the workflow settings specified in the configuration file are parsed (:ref:`Inputs <lblUserDefInputs>`). *Note that if a particular component application is excluded from the configuration file, then it is automatically skipped in the workflow.*
+
+I. **Read the configuration file.** At the start of the workflow, the settings specified in the configuration file are parsed (:ref:`Inputs <lblUserDefInputs>`). *Note that if a particular component application is not included in the configuration file, it is automatically skipped in the workflow.*
 
 II. **Pre-process building and event data.** The workflow completes a one-time step of setting up BIM files (:ref:`Building <lblBuildingApp>` Application) for each building asset and assigning events to each building site (:ref:`RegionalMapping <lblRegionalMapApp>` Application).
 

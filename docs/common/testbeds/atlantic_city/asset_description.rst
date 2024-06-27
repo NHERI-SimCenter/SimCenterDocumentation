@@ -304,6 +304,7 @@ users may choose to adopt industry norms for their window areas (see note below)
    **Flood-Exposed Inventory** highlighted a number of tasks/issues that are commonly encountered when constructing an inventory 
    in a location with sparse inventory data. Recommended best practices are summarized in :ref:`lbl-testbed_AC_best_practices`.
 
+
 Phase III: Augmentation Using Third-Party Data
 ================================================
 
@@ -331,6 +332,7 @@ Estimator (SDE) Tool (:numref:`tab-sdeAttri`).
 
 .. _tab-sdeAttri:
 
+.. csv-table:: Advanced attributes for FEMA Substantial Damage Estimator (SDE) Tool, available for all properties in Flood-Exposed Inventory.
 .. csv-table:: Advanced attributes for FEMA Substantial Damage Estimator (SDE) Tool, available for all properties in Flood-Exposed Inventory.
    :name: sde_attri
    :file: data/sde_attributes.csv

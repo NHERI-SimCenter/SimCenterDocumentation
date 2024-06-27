@@ -4,67 +4,67 @@
 Reading the Log File
 ********************
 
-The sequence of tasks carried out by the backend applications is outlined in the **log file** produced by the workflow. For :ref:`local runs <lblrunLocal>`, this log is displayed in the command terminal and is reproduced in a file named ``log.txt`` in the ``results/`` directory. For :ref:`remote runs <lblrunRemote>` through Tapis, this log file is called ``launcher.out`` in the job archive folder on DesignSafe. This guide will explain how to understand the statements printed in the log file.
+The sequence of tasks carried out by the backend applications is outlined in the **log file** produced by the workflow. For :ref:`local runs <lblrunLocal>`, this log is displayed in the command terminal and is reproduced in a file named ``log.txt`` in the ``results/`` directory. For :ref:`remote runs <lblrunRemote>` through Tapis, this log file is named ``launcher.out`` and is located in the job archive folder on DesignSafe. This guide will explain how to understand the statements printed in the log file.
 
 The following is an example log file for a successful workflow run. The workflow can be broken down into the following sections:
 
-I. **Read the configuration file:**
+I. **Reading the configuration file:**
 
-    - **lines 12-13**: Identifies the path to the :ref:`configuration file <lblUserDefInputs>`, which specifies the job details, and the *application registry file*, which specifies all available applications.
+    - **lines 12-13**: Identifies the path to the :ref:`configuration file <lblUserDefInputs>`, which specifies the job details, and the *application registry file*, which lists all available applications.
 
-    - **line 16-62**: Reads the application registry file and displays all available applications.
+    - **lines 16-62**: Reads the application registry file and displays all available applications.
 
-    - **line 64-85**: Reads the configuration file and displays the units, local application directory, remote application directory, reference directory, and the applications chosen for each workflow step. Any workflow steps that are skipped (excluded from the configuration file) are also listed here.
+    - **lines 64-85**: Reads the configuration file and displays the units, local application directory, remote application directory, reference directory, and the applications chosen for each workflow step. Any workflow steps that are skipped (excluded from the configuration file) are also listed here.
 
-II. **Pre-process building and event data:**
+II. **Pre-processing building and event data:**
 
-    - **line 93**: Python command for executing the :ref:`Building <lblBuildingApp>` application, creating the BIM files for each building asset.
+    - **line 93**: Python command for executing the :ref:`Building <lblBuildingApp>` application, which creates the BIM files for each building asset.
 
         ::
 
             python "C:/rWHALE/applications/createBIM/CSV_to_BIM/CSV_to_BIM.py" "--buildingFile" "C:/rWHALE/earthquake_example/results/buildings1-2.json" "--Min" "1" "--Max" "2" "--buildingSourceFile" "C:/rWHALE/earthquake_example/input_data/input_params.csv" "--getRV"
 
 
-    - **line 103**: Python command for executing the :ref:`RegionalMapping <lblRegionalMapApp>` application, assigning events to each of the building assets.
+    - **line 103**: Python command for executing the :ref:`RegionalMapping <lblRegionalMapApp>` application, which assigns events to each of the building assets.
 
         ::
 
             python "C:/rWHALE/applications/performRegionalMapping/NearestNeighborEvents/NNE.py" "--buildingFile" "C:/rWHALE/earthquake_example/results/buildings1-2.json" "--filenameEVENTgrid" "C:/rWHALE/earthquake_example/input_data/records/EventGrid.csv" "--samples" "2" "--neighbors" "1"
 
 
-III. **Set up and run simulations for each building asset:**
+III. **Setting up and running simulations for each building asset:**
 
     - **line 111**: Starts with the first building asset. In this first pass, the EVENT, SAM, EDP, SIM files corresponding to "1-BIM.json" are created.
 
-    - **line 118**: Python command for executing the :ref:`Event <lblEventApp>` application, creating the EVENT file for the building asset.
+    - **line 118**: Python command for executing the :ref:`Event <lblEventApp>` application, which creates the EVENT file for the building asset.
 
         ::
 
             python "C:/rWHALE/applications/createEVENT/SimCenterEvent/SimCenterEvent.py" "--filenameBIM" "1-BIM.json" "--filenameEVENT" "EVENT.json" "--pathEventData" "C:/rWHALE/earthquake_example/input_data/records/" "--getRV"
 
 
-    - **line 126**: Python command for executing the :ref:`Modeling <lblModelingApp>` application, creating the SAM file for the built asset.
+    - **line 126**: Python command for executing the :ref:`Modeling <lblModelingApp>` application, which creates the SAM file for the building asset.
 
         ::
 
             python "C:/rWHALE/applications/createSAM/openSeesPyInput/OpenSeesPyInput.py" "--filenameBIM" "1-BIM.json" "--filenameEVENT" "EVENT.json" "--filenameSAM" "SAM.json" "--mainScript" "cantilever.py" "--modelPath" "C:/rWHALE/earthquake_example/input_data/model/" "--ndm" "3" "--dofMap" "1,2,3" "--getRV"
 
 
-    - **line 134**: Python command for executing the :ref:`EDP <lblEDPApp>` application, creating the EDP file for the building asset.
+    - **line 134**: Python command for executing the :ref:`EDP <lblEDPApp>` application, which creates the EDP file for the building asset.
 
         ::
 
             python "C:/rWHALE/applications/createEDP/userEDP_R/UserDefinedEDP.py" "--filenameBIM" "1-BIM.json" "--filenameEVENT" "EVENT.json" "--filenameSAM" "SAM.json" "--filenameEDP" "EDP.json" "--EDPspecs" "C:/rWHALE/earthquake_example/input_data/EDP_specs.json" "--getRV"
 
 
-    - **line 142**: Python command for executing the :ref:`Simulation <lblSimulationApp>` application, creating the SIM file for the building asset.
+    - **line 142**: Python command for executing the :ref:`Simulation <lblSimulationApp>` application, which creates the SIM file for the building asset.
 
         ::
 
             python "C:/rWHALE/applications/performSIMULATION/openSeesPy/OpenSeesPySimulation.py" "--filenameBIM" "1-BIM.json" "--filenameSAM" "SAM.json" "--filenameEVENT" "EVENT.json" "--filenameEDP" "EDP.json" "--filenameSIM" "SIM.json" "--getRV"
 
 
-    - **lines 153-157**: Commands which are written to the *workflow driver file*. In a "second pass" through the workflow, these commands are executed by running the workflow driver file.
+    - **lines 153-157**: Commands that are written to the *workflow driver file*. In a "second pass" through the workflow, these commands are executed by running the workflow driver file.
 
         ::
 
@@ -96,7 +96,7 @@ III. **Set up and run simulations for each building asset:**
             python "C:/rWHALE/applications/performDL/pelicun/DL_calculation.py" "--filenameDL" "1-BIM.json" "--filenameEDP" "response.csv" "--outputEDP" "EDP.csv" "--outputDM" "DM.csv" "--outputDV" "DV.csv" "--DL_Method" "HAZUS MH EQ" "--Realizations" "2" "--detailed_results" "False" "--log_file" "True" "--coupled_EDP" "True" "--event_time" "off" "--ground_failure" "False"
 
 
-    - **line 213**: Continues to the second building asset ("2-BIM.json") and repeats the same workflow steps.
+    - **line 213**: Continues with the second building asset ("2-BIM.json") and repeats the same workflow steps.
 
 
 IV. **Aggregate outputs for all building assets:**

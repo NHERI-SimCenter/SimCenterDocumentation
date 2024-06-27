@@ -68,7 +68,7 @@ considered as partial collapse of the entire building.
 
 .. note::
 
-**Non-structural Damage (Suspended Ceilings)**:
+   **Non-structural Damage (Suspended Ceilings)**:
 
    1. Slight: A few ceiling tiles have moved or fallen down.
 

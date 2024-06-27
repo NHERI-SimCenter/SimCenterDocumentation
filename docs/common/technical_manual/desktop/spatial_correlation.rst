@@ -4,7 +4,7 @@
 Ground Motion Intensity Spatial Correlation Model Options
 =========================================================
 
-The regional seismic risk analysis requires the prediction of ground motion intensities at multiple sites. Such joint predictions need to consider the correlation between ground motion intensities at different sites given a specific earthquake scenario. In general, ground motion models predicting intensities at an individual site :math:`i` due to an earthquake :math:`j` have the following form:
+Regional seismic risk analysis requires the prediction of ground motion intensities at multiple sites. Such joint predictions need to consider the correlation between ground motion intensities at different sites given a specific earthquake scenario. In general, ground motion models predicting intensities at an individual site :math:`i` due to an earthquake :math:`j` have the following form:
 
 .. math::
 
@@ -32,7 +32,7 @@ where :math:`Z_u` and :math:`Z_{u+h}` are the random variable realizations at si
 
    C(h) = E[(Z_u - \mu_Z)(Z_{u+h} - \mu_Z)]
 
-where :math:`\mu_Z` is the mean (which is zero under the stationarity assumption). Note this spatial covariance can also be related to the semivariogram with:
+where :math:`\mu_Z` is the mean (which is assumed as zero in [Jayaram08]_). Note this spatial covariance can also be related to the semivariogram with:
 
 .. math::
 
@@ -44,7 +44,7 @@ Similarly, the correlation coefficient is defined as:
 
    \rho(h) = \frac{C(h)}{C(0)} = 1 - \frac{\gamma(h)}{C(0)}
 
-Given the semivariogram is often preferred in geostatistical practice (because it does not require a prior estimation of the mean), many studies were carried out to find the semivariogram models to derive the correlation :math:`rho(h)` of ground motion intensities. The available models in the current |short tool name| are briefly summarized in the following sections.
+Given the semivariogram is often preferred in geostatistical practice (because it does not require a prior estimation of the mean), many studies were carried out to find the semivariogram models to derive the correlation :math:`\rho(h)` of ground motion intensities. The available models in the current |short tool name| are briefly summarized in the following sections.
 
 Jayaram and Baker (2009)
 ^^^^^^^^^^^^^^^^^^^^^^^^
@@ -53,29 +53,29 @@ Jayaram and Baker (2009)
 
 .. math::
 
-   \gamma(h) = a[1 - exp(-3h / b)]
+   \gamma(h) = a[1 - \exp(-3h / b)]
 
-where a and b are two modeling coefficients, namely sill and the range of the semivariogram function, respectively. When :math:`h = 0`, :math:`\gamma(h=0) = 0` which leads to :math:`\rho(h = 0) = 1`. As the distance between two sites increases, i.e., :math:`h` increases, :math:`\gamma(h)` increases and :math:`\rho(h)` decreases, which is consistent with the decaying trend of correlation between the two sites. After calibrating the model to past earthquake recordings, the following model was proposed for predicting the spatial correlation :math:`\rho(h)`:
+where :math:`a` and :math:`b` are two modeling coefficients, namely sill and the range of the semivariogram function, respectively. When :math:`h = 0`, :math:`\gamma(h=0) = 0` which leads to :math:`\rho(h = 0) = 1`. As the distance between two sites increases, i.e., :math:`h` increases, :math:`\gamma(h)` increases and :math:`\rho(h)` decreases, which is consistent with the decaying trend of correlation between the two sites. After calibrating the model to past earthquake recordings, the following model was proposed for predicting the spatial correlation :math:`\rho(h)`:
 
 .. math::
 
-   \rho(h) = exp(-3h / b)
+   \rho(h) = \exp(-3h / b)
 
-The range of the semivariogram function :math:`b` was found to depend on the similarity of :math:`V_{S30}` values in the given region. If the :math:`V_{S30}` values do not show clustering, the :math:`b` is computed by:
+The range of the semivariogram function :math:`b` was found to depend on the similarity of :math:`V_{S30}` values in the given region. If the :math:`V_{S30}` values do not show clustering, :math:`b` is computed by:
 
 .. math::
 
    b = 8.5 + 17.2T, T < 1s
 
-   b = 22.0 + 3.7T, T \leq 1s
+   b = 22.0 + 3.7T, T \geq 1s
 
-where T is the period. If the :math:`V_{S30}` values are very close in the given region, the :math:`b` can be computed by:
+If the :math:`V_{S30}` values are very close in the given region, :math:`b` can be computed by:
 
 .. math::
 
    b = 40.7 - 15.0T, T < 1s
 
-   b = 22.0 + 3.7T, T \leq 1s
+   b = 22.0 + 3.7T, T \geq 1s
 
 .. note::
 
@@ -84,13 +84,13 @@ where T is the period. If the :math:`V_{S30}` values are very close in the given
 Loth and Baker (2013)
 ^^^^^^^^^^^^^^^^^^^^^
 
-Note that the cross-semivariograms between different pairs of intensity measures can be different, for instance, :math:`\rho_{Sa(T=0.1s),Sa(T=0.2s)}(h)` might be greater than :math:`\rho_{Sa(T=0.1s), Sa(T=1s)}(h)`. This means one needs to repeat a calibration process many times to develop semivariogram functions and correlation models that have higher resolutions (i.e., direct semivariogram fit). Instead of fitting each semivariogram independently, [Loth13]_ proposed a predictive model for spatial covariance of spectral accelerations at different periods:
+Note that the cross-semivariograms between different pairs of intensity measures can be different; for instance, :math:`\rho_{Sa(T=0.1s),Sa(T=0.2s)}(h)` might be greater than :math:`\rho_{Sa(T=0.1s),Sa(T=1s)}(h)`. This means one needs to repeat a calibration process many times to develop semivariogram functions and correlation models that have higher resolutions (i.e., direct semivariogram fit). Instead of fitting each semivariogram independently, [Loth13]_ proposed a predictive model for spatial covariance of spectral accelerations at different periods:
 
 .. math::
 
-   \textbf{C}(h) = \textbf{B}^1 exp(-3h/20) + \textbf{B}^2 exp(-3h/70) + \textbf{B}^3 I_{h=0}
+   \textbf{C}(h) = \textbf{B}^1 \exp(-3h/20) + \textbf{B}^2 \exp(-3h/70) + \textbf{B}^3 I_{h=0}
 
-where :math:`I_{h=0}` is the indicator function equal to 1 at :math:`h = 0` and 0 otherwise. And the three coefficient matrices :math:`\textbf{B}^1`, :math:`\textbf{B}^2`, and :math:`\textbf{B}^3` were calibrated by 2080 recordings from 8 earthquakes.
+where :math:`I_{h=0}` is the indicator function equal to 1 at :math:`h = 0` and 0 otherwise. The three coefficient matrices :math:`\textbf{B}^1`, :math:`\textbf{B}^2`, and :math:`\textbf{B}^3` were calibrated by 2080 recordings from 8 earthquakes.
 
 .. figure:: figures/spatial_correlation_1.png
    :align: center
@@ -238,7 +238,7 @@ where :math:`c_{0i}`, :math:`c_{1i}`, :math:`c_{2i}`, :math:`a_{1i}`, and :math:
    | 5.0          | 0.15    | 0.33    | 0.37    | 0.33    | -0.28   | 0.28    | -0.18   | -0.33   | -0.31   | 0.13    | 0.08    | -0.07   | -0.05   | -0.44   | -0.04   | 0.03    | 3.0     | 0.00    | 0.00    |
    +--------------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+
 
-The general idea is to include more degrees of freedom in the predictive model if compared to linear models (e.g., [Loth13]_). The figure below contrasts the correlation coefficient functions by PCA and the linear model by [Loth13]_.
+The general idea is to include more degrees of freedom in the predictive model compared to linear models (e.g., [Loth13]_). The figure below contrasts the correlation coefficient functions of PCA and the linear model by [Loth13]_.
 
 .. figure:: figures/spatial_correlation_2.png
    :align: center
@@ -246,10 +246,9 @@ The general idea is to include more degrees of freedom in the predictive model i
 
    Comparison of principal component analysis (PCA) model and linear model of coregionalization (LMC) correlograms and cross-correlograms ([Loth13]_) for different periods
 
-
 .. [Jayaram08]
 
-   Jayaram N, Baker JW. Statistical tests of the joint distribution of spectral acceleration values. Bulletin of the Seismological Society of America 2008; 98(5):2231–2243.
+   Jayaram, N., & Baker, J. W. (2008). Statistical tests of the joint distribution of spectral acceleration values. Bulletin of the Seismological Society of America, 98(5), 2231-2243.
 
 .. [Jayaram09]
 

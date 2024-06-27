@@ -3,30 +3,30 @@
 Hazard Occurrence
 ===================
 
-A regional seismic risk analysis consists of three elements: (1) an exposure time over which the risk is evaluated, 
+A regional seismic risk analysis comprises three elements: (1) an exposure time over which the risk is evaluated, 
 (2) a loss or quantification to be evaluated, and (3) a specification of the probability of incurring the loss during the specified 
-exposure time. These three elements can be formulated into different workflows and one of the possible workflows can include: 
-(1) hazard analysis (understanding the possible seismic sources in the studied region), (2) ground motion characterization 
-(representing the possible seismicity by earthquake ground motions at each site, e.g., time history records, intensity measures), 
+exposure time. These three elements can be formulated into different workflows. One possible workflow includes: 
+(1) hazard analysis (understanding the potential seismic sources in the studied region), (2) ground motion characterization 
+(representing the potential seismicity by earthquake ground motions at each site, e.g., time history records, intensity measures), 
 (3) inventory identification (collecting the basic information of the buildings and infrastructures to be analyzed), and (4) 
 response/damage/loss assessment (mapping the ground motion characteristics and building inventory to the response, damage, and loss in the region).
 
-Different from the seismic risk analysis of a single structure, the spatial correlation between different site locations usually needs to be 
-considered in estimating the total damage and loss of a portfolio of buildings or infrastructures.  This consideration is naturally fulfilled if 
+Unlike the seismic risk analysis of a single structure, the spatial correlation between different site locations usually needs to be 
+considered when estimating the total damage and loss of a portfolio of buildings or infrastructures.  This consideration is naturally fulfilled if 
 physics-based earthquake simulation is involved.  If empirical ground motion models are used, then spatial correlation models (please see more 
 details in :ref:`lblCorrelation`) need to be evaluated and used in sampling the ground motion maps explicitly. The simulated ground motions are 
 then used as the input for assessing the regional seismic risk of the portfolio.
 
 To propagate the uncertainty in the seismic hazard, ground motion characteristics, and structural damage and loss fragility, the risk analysis 
-typically needs a sufficient number of samples (realizations) to reliably estimate the mean and variation of possible damage and loss. For instance, 
-if applying the conventional Monte Carlo method (e.g., [Bazzurro07]_), for each of the considered earthquake scenarios (with a specific magnitude and location), 
-many ground motion intensity maps are first simulated. Then, for each of the ground motion maps, several assessments of damage and loss are 
+typically requires a sufficient number of samples (realizations) to reliably estimate the mean and variation of potential damage and loss. For instance, 
+when applying the conventional Monte Carlo method (e.g., [Bazzurro07]_), for each of the considered earthquake scenarios (with a specific magnitude and location), 
+numerous ground motion intensity maps are first simulated. Then, for each of the ground motion maps, several assessments of damage and loss are 
 conducted to propagate the uncertainty in the inventory, response analysis model, and/or fragility functions. The process is repeated for 
-all considered earthquake scenarios which leads to a tremendous number of realizations and an excessive computational demand.
+all considered earthquake scenarios, leading to a large number of realizations and an excessive computational demand.
 
 To alleviate the computational cost of regional seismic risk analysis, a concept of *probabilistic earthquake scenarios* was proposed and developed by 
-many researchers (e.g., [Chang00]_, [Jayaram10]_, [Vaziri12]_). The key idea is to first reduce the full set of possible earthquake scenarios that affect the studied 
-region to a select subset of earthquakes each of which is used to evaluate the building and infrastructure performance, and then aggregate the results with 
+many researchers (e.g., [Chang00]_, [Jayaram10]_, [Vaziri12]_). The key idea is to first reduce the full set of potential earthquake scenarios that affect the studied 
+region to a select subset of earthquakes. Each of these earthquakes is used to evaluate the performance of the buildings and infrastructure, and then the results are aggregated with 
 modified hazard-consistent probabilities for individual selected earthquakes.  The modified probabilities of selected earthquakes are optimized 
 so that the original hazard curves of individual sites can be recovered as much as possible ([Han12]_). Different optimization algorithms are implemented 
 (e.g., [Wang20]_), different target functions beyond the error in hazard curve (e.g., [Miller14]_) are considered, and multiple intensity measures (e.g., [Ma22]_) 
@@ -57,7 +57,7 @@ between points on the reference hazard curves and the corresponding points on ha
    min \Sigma_{i=1}^{I} \Sigma_{r=1}^{R} w_{ir} (e_{ir}^{+}+e_{ir}^{-})
 
 where :math:`e_{ir}^{+}` and :math:`e_{ir}^{-}` are the errors resulting from overestimating and underestimating, respectively, the reference hazard curve for the site :math:`i` 
-at the return period `r`. The weight :math:`w_{ir}` is taken as the return period so that the error occurring at a longer return period (i.e., higher intensity level) can be 
+at the return period :math:`r`. The weight :math:`w_{ir}` is taken as the return period so that the error occurring at a longer return period (i.e., higher intensity level) can be 
 scaled relatively more than the error occurring at a shorter return period. This typically helps the final fitting given the nonlinear shape of a hazard curve.
 
 Assuming we have overall :math:`J` candidate earthquakes, for any earthquake scenario :math:`j`, we can use empirical ground motion model(s) to compute its resulting ground motion intensity
@@ -98,7 +98,7 @@ a few more details of each major step.
 
    Workflow to generate a hazard-consistent reduced sample of earthquakes and ground motion maps using the OPS method.
 
-In this example, we want to get a minimal number of earthquakes with modified occurrence rates to recover the reference hazard curves at each site location as much as possible. 
+In this example, we aim to get a minimal number of earthquakes with modified occurrence rates to recover the reference hazard curves at each site location as much as possible. 
 The figure below plots the example sites in the San Francisco Bay Area, whose longitude and latitude data can be downloaded :download:`here <./src/SiteFile.csv>`. 
 
 .. figure:: figures/hazard_occurrence_sites.png
@@ -109,7 +109,7 @@ The figure below plots the example sites in the San Francisco Bay Area, whose lo
    Site locations for hazard occurrence modeling and probabilistic earthquake scenarios.
 
 Once downloaded, the site csv file can be loaded in the site widget of the **HAZ** panel under the "Earthquake Scenario Simulation" option. The figure below shows the site widget 
-after the file is loaded. The site-specific Vs30 data are fetched from Wills et al. 2015 model.
+after the file is loaded. The site-specific Vs30 data are fetched from the Wills et al. 2015 model.
 
 .. figure:: figures/hazard_occurrence_site_widget.png
    :align: center
@@ -118,10 +118,10 @@ after the file is loaded. The site-specific Vs30 data are fetched from Wills et 
 
    Loading the site csv file in the site widget (scattering locations).
 
-The figure below summarizes the hazard occurrence configuration: we want to select earthquake scenarios from the UCERF2 seismic sources. For 
-this demonstration, we want to have 100 candidate earthquakes.  The backend script in the R2D follows the suggestion by Han and Davidson (2012) 
+The figure below summarizes the hazard occurrence configuration: we aim to select earthquake scenarios from the UCERF2 seismic sources. For 
+this demonstration, we aim to have 100 candidate earthquakes.  The backend script in the R2D follows the suggestion by Han and Davidson (2012) 
 ([Han12]_) to first order the candidate by its true occurrence rates - so the 100 candidates here are the ones with the highest occurrence rates to 
-the region. For the reduced representation with the probabilistic earthquake scenarios, we want no more than 10 earthquakes and no more than 100 
+the region. For the reduced representation with the probabilistic earthquake scenarios, we aim to have no more than 10 earthquakes and no more than 100 
 ground motion maps. Note this setup is just for demonstration as the example site locations are not distant from each other - for more distributed 
 sites, the candidate earthquake number, as well as the reduced earthquake number, should be increased to have better-matching results ([Han12]_).
 
@@ -132,22 +132,15 @@ sites, the candidate earthquake number, as well as the reduced earthquake number
 
    Configurations for hazard occurrence modeling.
 
-For all sites, we do not prescribe but fetch the site-specific hazard curves directly from `USGS API <https://earthquake.usgs.gov/nshmp-haz-ws/hazard>`_.
-The intensity measure for the hazard curve is the response spectral acceleration at 1.0 second, Sa(T=1.0). The hazard curves are digitized at 
-four different return periods from 224 years to 2475 years. These four levels will be used later to compute the error for fitting the hazard curve. 
-These hazard curves are also saved during the simulation, please see the example format in :download:`./src/HazardCurves.json`. 
+For all sites, we fetch the site-specific hazard curves directly from the `USGS API <https://earthquake.usgs.gov/nshmp-haz-ws/hazard>`_, rather than prescribing them. The intensity measure for the hazard curve is the response spectral acceleration at 1.0 second, Sa(T=1.0). The hazard curves are digitized at four different return periods, ranging from 224 years to 2475 years. These four levels will be used later to compute the error for fitting the hazard curve. These hazard curves are also saved during the simulation; please see the example format in :download:`./src/HazardCurves.json`. 
 
-Once everything above is set up, please click the "Run Hazard Simulation" button located in the bottom right of the **HAZ** panel. It may take 5 to 10 
-minutes to run the entire example (an internet connection is needed for fetching data in this example).  Once the run is completed, there are three types of 
-output files in the "Output Directory" (please feel free to change the default one to your own directory in the 
-textbox located in the bottom left of the **HAZ** panel):
+Once the above setup is complete, please click the "Run Hazard Simulation" button located in the bottom right of the **HAZ** panel. It may take 5 to 10 minutes to run the entire example (an internet connection is required for fetching data in this example). Once the run is completed, three types of output files can be found in the "Output Directory" (you are free to change the default directory to your own in the textbox located in the bottom left of the **HAZ** panel):
 
-1. *RupSampled.json*: the information about the selected probabilistic earthquake ruptures (:download:`example <./src/RupSampled.json>`).
-2. *InfoSampledGM.json*: the information about the selected ground motion maps (:download:`example <./src/InfoSampledGM.json>`).
-3. *SiteIM.json*: the simulated intensity measures of the selected ground motion maps (:download:`example <./src/SiteIM.json>`).
+1. *RupSampled.json*: This file contains information about the selected probabilistic earthquake ruptures (:download:`example <./src/RupSampled.json>`).
+2. *InfoSampledGM.json*: This file contains information about the selected ground motion maps (:download:`example <./src/InfoSampledGM.json>`).
+3. *SiteIM.json*: This file contains the simulated intensity measures of the selected ground motion maps (:download:`example <./src/SiteIM.json>`).
 
-To validate the selected earthquake scenarios, the figure below contrasts the recovered seismic hazard curve and the reference hazard curve
-(ground truth) for each site.
+To validate the selected earthquake scenarios, the figure below contrasts the recovered seismic hazard curve and the reference hazard curve (ground truth) for each site.
 
 .. figure:: figures/hazard_occurrence_result.png
    :align: center
@@ -155,7 +148,6 @@ To validate the selected earthquake scenarios, the figure below contrasts the re
    :width: 800
 
    Comparison of recovered and reference hazard curves for the first 9 sites in the example.
-
 
 .. [Bazzurro07]
    Bazzurro, P., & Luco, N. (2007). Effects of different sources of uncertainty and correlation on earthquake-generated losses. Australian Journal of Civil Engineering, 4(1), 1-14.
