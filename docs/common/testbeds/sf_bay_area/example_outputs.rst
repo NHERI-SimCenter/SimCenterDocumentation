@@ -151,7 +151,7 @@ workflow has resolution down to the building parcel level, and
 it can disaggregate losses within a building down to individual
 components on each floor. This feature, coupled with a detailed
 description of the probability distributions of damage and losses
-for each building, can allow urban planners and policy makers
+for each building, can allow urban planners and policymakers
 to query various possible outcomes–including the rare, but
 catastrophic ones–of the earthquake scenario. High-resolution
 results (see upper panels in :numref:`fig-loss_ratio_comp`) provide valuable data for

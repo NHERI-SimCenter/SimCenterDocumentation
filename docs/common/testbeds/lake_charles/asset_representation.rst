@@ -72,20 +72,21 @@ connection, shutters, garage), and the number of attributes necessary to describ
 
 As these attributes are beyond what is typically encompassed in a building inventory, a library of rulesets 
 to infer the HAZUS-required attributes was developed and implemented for the `Atlantic County, NJ <https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html>`_ testbed, 
- based upon the fields available in the building inventory, legacy building codes in New Jersey, local 
- construction practices/norms, surveys capturing owner-driven mitigation actions (e.g., [Javeline19]_) 
- and market/industry data. Where possible, the rulesets are time-evolving, considering the age of 
- construction to determine the governing code edition and availability of specific mitigation measures 
- in the market. Though reliant on engineering judgment and historical data availability, each rule provides 
- detailed notes cross-referencing the various documents and practices that governed that era of construction 
- and thus informed the ruleset formation. In cases where engineering judgment was required, rules were assigned 
- based on what was understood to be the most common construction practice. In cases where that was not clear, 
- the ruleset assigned the most vulnerable configuration for a more conservative approach to loss estimation. 
+based upon the fields available in the building inventory, legacy building codes in New Jersey, local 
+construction practices/norms, surveys capturing owner-driven mitigation actions (e.g., [Javeline19]_) 
+and market/industry data. Where possible, the rulesets are time-evolving, considering the age of 
+construction to determine the governing code edition and availability of specific mitigation measures 
+in the market. Though reliant on engineering judgment and historical data availability, each rule provides 
+detailed notes cross-referencing the various documents and practices that governed that era of construction 
+and thus informed the ruleset formation. In cases where engineering judgment was required, rules were assigned 
+based on what was understood to be the most common construction practice. In cases where that was not clear, 
+the ruleset assigned the most vulnerable configuration for a more conservative approach to loss estimation. 
+
 The rulesets from the `Atlantic County, NJ <https://nheri-simcenter.github.io/R2D-Documentation/common/testbeds/atlantic_city/index.html>`_ testbed are applied here, without modification, as the purpose 
- herein is solely to demonstrate the workflow. It is acknowledged that, while also grounded in the 
- International Residential Code and International Building Code, Louisiana has a different regulatory 
- framework and code eras that would require adaptation of the rulesets. Such adaptations are encouraged 
- as part of the community’s use and adaptation of this workflow in its research.
+herein is solely to demonstrate the workflow. It is acknowledged that, while also grounded in the 
+International Residential Code and International Building Code, Louisiana has a different regulatory 
+framework and code eras that would require adaptation of the rulesets. Such adaptations are encouraged 
+as part of the community’s use and adaptation of this workflow in its research.
 
 .. csv-table:: Building attributes for wind loss assessment for WSF and WMUH.
    :name: wind_bldg_attri
@@ -96,7 +97,7 @@ The rulesets from the `Atlantic County, NJ <https://nheri-simcenter.github.io/R2
 
 Note that the rulesets for assigning wind loss attributes call upon two meta-variables relevant to wind losses 
 for any building: “Hazard Prone Region” and “Wind Borne Debris,” which are assigned based on the design wind 
-speed at the asset location (Building Inventory field “DWSII”) and the flood zone (building inventory field 
+speed at the asset location (building inventory field **DWSII**) and the flood zone (building inventory field 
 **FloodZone**). The rules used to assign these meta-variables are provided in 
 :numref:`addinfo_ruleset_metavar`. Also note that the roof shape (building inventory field **RoofShape**), 
 derived from aerial imagery, and terrain roughness (building inventory field **Terrain**), derived from 

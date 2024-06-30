@@ -8,8 +8,8 @@ Since the wind speed (:math:`V(600s, 10m, z_0)`) from the NJcoast SHP Tool is av
 a number of standard conversions parse the wind speed to the 3-second and open-terrain PWS 
 (i.e., :math:`V(3s, 10m, Exposure C)`):
 
-1. Compute :math:`\alpha` and :math:`z_g` by ASCE 7-16 ([ASCE16_]) Equation C26.10-3 and C26.10-4
-taking :math:`c_1 = 5.65, c_2 = 450` for units in m):
+1. Compute :math:`\alpha` and :math:`z_g` by ASCE 7-16 ([ASCE16]_) Equation C26.10-3 and C26.10-4
+taking :math:`c_1 = 5.65, c_2 = 450` for units in m:
 
 .. math::
 
@@ -24,13 +24,13 @@ taking :math:`c_1 = 5.65, c_2 = 450` for units in m):
    V(600s, z_g, z_0) = V(600s, 10m, z_0) \times (\frac{z_{g,SHP}}{10m})^{1/\alpha_{SHP}}
 
 3. Compute the Exposure C (open-terrain) wind speed at 10m height :math:`V(600s, 10m, Exposure C)`, with
-:math:`\alpha_C = 9.5` and :math:`z_{g,C} = 274.32 m` ([ASCE16_]):
+:math:`\alpha_C = 9.5` and :math:`z_{g,C} = 274.32 m` ([ASCE16]_):
 
 .. math::
 
    V(600s, 10m, Exposure C) = V(600s, z_{g,C}, z_0) \times (\frac{10m}{z_g})^{1/\alpha_C}
 
-4. Convert the result to 3s-gust wind speed using the ESDU conversion [ESDU02_]:
+4. Convert the result to 3s-gust wind speed using the ESDU conversion [ESDU02]_:
 
 .. math::
 

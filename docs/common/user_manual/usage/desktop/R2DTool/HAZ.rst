@@ -98,6 +98,7 @@ Regional Site Response
 Site response analysis evaluates seismic wave propagation through soil, assuming horizontal boundaries and vertical SH-wave propagation. The output includes ground surface response and, for liquefiable soils, maximum shear strain and excess pore pressure ratio plots.
 
 .. _fig_siteResponse:
+
 .. figure:: figures/siteResponse.png
    :align: center
    :figclass: align-center
@@ -107,6 +108,7 @@ Site response analysis evaluates seismic wave propagation through soil, assuming
 **Regional Site Response** offers four functionalities for site response analysis, each represented by a widget:
 
 .. _fig_siteResponsePane:
+
 .. figure:: figures/R2DSiteResponsePane.png
    :align: center
    :figclass: align-center

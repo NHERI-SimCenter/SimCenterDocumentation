@@ -10,7 +10,7 @@ sources, different strategies were implemented in the workflow to quantify their
 sections will introduce the details about each component.
 
 In Asset Representation
-==============================
+=======================
 
 As discussed in :ref:`lbl-testbed_LC_asset_representation`, the HAZUS Hurricane Technical Manual ([FEMA21]_) differentiates 
 buildings based on asset attributes for the subjected hazard type (wind or storm surge). These attributes 
@@ -34,21 +34,21 @@ random variables may change.
 
 
 In Hazard Characterization
-==============================
+==========================
 
 Given a specific category of hurricane, the uncertainty of site peak wind speed 
 is considered with the inherent variation in observing the random events at the site (which is usually termed as aleatory 
 uncertainty). For the aleatory uncertainty, as discussed in :ref:`lbl-testbed_LC_hazard_characterization`, this workflow 
 adapts a nearest-neighbors method to propagate uncertainty through the workflow, as 
-illustrated in :numref:`nearestneighbors`. The peak wind speed values are simulated 
+illustrated in :numref:`nearestneighbors_lc`. The peak wind speed values are simulated 
 on a prescribed grid (blue round dots), and for each selected asset location (red square dot),
-the workflow  randomly selects 5 samples of 
+the workflow randomly selects 5 samples of 
 the intensity measure (wind speed) from the 4 nearest neighbors (yellow circles). Note this random 
 sampling is performed along with the multiple realizations from the epistemic uncertainty quantification, so the 
 two uncertainty sources are considered simultaneously. 
 
 .. figure:: figure/nn.png
-   :name: nearestneighbors
+   :name: nearestneighbors_lc
    :align: center
    :figclass: align-center
    :figwidth: 600
@@ -57,7 +57,7 @@ two uncertainty sources are considered simultaneously.
 
 
 In Damage and Loss Assessment
-==============================
+=============================
 
 As discussed in :ref:`lbl-testbed_LC_damage_and_loss`, the testbed implemented :ref:`PELICUN <https://pelicun.readthedocs.io/en/latest/index.html>` 
 (Probabilistic Estimation of Losses, Injuries, and Community resilience Under 

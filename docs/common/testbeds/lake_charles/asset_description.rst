@@ -6,11 +6,10 @@ Asset Description
 
 This section describes the construction of a large-scale building inventory in two phases. The initial 
 phase involved identifying the necessary attributes. The second phase involved using machine learning and computer vision techniques to
- obtain these attributes for each building, creating an initial set of attributes. The remaining attributes were 
- then obtained using other data sources, as discussed below.
+obtain these attributes for each building, creating an initial set of attributes. The remaining attributes were then obtained using other data sources, as discussed below.
 
 Phase I: Attribute Definition
-==============================
+=============================
 
 All the attributes required for loss estimation were first identified to develop the Building Inventory 
 data model. This Building Inventory data model, presented in :numref:`tab-bldg_inv_data_model_lc`, 
@@ -57,14 +56,14 @@ with our GoogleMapAPIKey removed, will create a building inventory file for use 
 
 .. code-block:: python
 
-# Import the module from BRAILS
-from brails.CityBuilder import CityBuilder
-# Initialize the CityBuilder
-cityBuilder = CityBuilder(attributes=['occupancy', 'roofshape'], 
-                          numBldg=10, random=True, place='Lake Charles, Louisiana', 
-                          GoogleMapAPIKey='REMOVED GOOGLE API KEY')
-# Create the city-scale BIM file
-BIM = cityBuilder.build()
+   # Import the module from BRAILS
+   from brails.CityBuilder import CityBuilder
+   # Initialize the CityBuilder
+   cityBuilder = CityBuilder(attributes=['occupancy', 'roofshape'], 
+                           numBldg=10, random=True, place='Lake Charles, Louisiana', 
+                           GoogleMapAPIKey='REMOVED GOOGLE API KEY')
+   # Create the city-scale BIM file
+   BIM = cityBuilder.build()
 
 Upon execution, CityBuilder will:
 
@@ -75,7 +74,7 @@ Upon execution, CityBuilder will:
 #. Perform computations on the images to obtain the desired building attributes using a series of pre-trained AI models.
 
 Attribute: RoofShape
-`````````````````````
+````````````````````
 
 The RoofShape is obtained by CityBuilder using the BRAILS Roof Shape module. This module 
 determines the roof shape based on a satellite image obtained for the building. It uses machine 
@@ -84,7 +83,7 @@ images. In AI/ML terminology, the Roof Shape module is an image classifier: it t
 classifies it into one of three categories used in HAZUS: gable, hip, or flat as shown in 
 :numref:`roof_shape`. The original training of the AI model utilized 6,000 images obtained from Google 
 satellite imagery in conjunction with roof labels obtained from 
-`Open Street Maps <https://www.openstreetmap.org/>`_. As many roofs have more complex shapes, a 
+`OpenStreetMap <https://www.openstreetmap.org/>`_. As many roofs have more complex shapes, a 
 similitude measure is used to determine which of these roof geometries is the best match to a given roof. 
 More details of the classifier can be found 
 `here <https://nheri-simcenter.github.io/BRAILS-Documentation/common/user_manual/modules/roofClassifier.html>`_. 
@@ -96,10 +95,10 @@ The trained classifier was employed here to classify the roof information for La
    :figclass: align-center
    :width: 500
    
-   Roof type classification with examples of aerial images (a-f) and simplified archetypes (d-f) used by Hazus.
+   Roof type classification with examples of aerial images (a-f) and simplified archetypes (d-f) used by HAZUS.
 
 The performance of the roof shape classifier was validated against two ground truth datasets. 
-The first is comprised of 125 manually labeled satellite images sampled from OpenStreetMap from 
+The first comprises 125 manually labeled satellite images sampled from OpenStreetMap from 
 across the US, retaining only those with unobstructed views of building roofs (a cleaned dataset). 
 The second is 56 residences assessed by StEER for which roof types were one of the three HAZUS classes, 
 e.g., removing all roofs labeled as "Complex" according to StEER's distinct image labeling standards. 
@@ -118,7 +117,7 @@ if the classification is perfect, affirming the accuracy of the classification b
    Validation of BRAILS predicted roof shapes to roof shapes from OpenStreetMap and StEER.
 
 Attribute: OccupancyClass
-```````````````````````````
+`````````````````````````
 
 The occupancy class attribute is determined by CityBuilder using the occupancy class classifier 
 module in BRAILS. The occupancy classifier is a convolutional neural network. This network was trained 
@@ -132,7 +131,7 @@ The performance of the classifier was validated against a ground truth dataset t
 view images from the United States with unobstructed views of the buildings (cleaned data). The full 
 validation was documented `here <https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/occupancy.html>`_. 
 The confusion matrix, which presents visually the predictions versus actual data from the original 
-293 image validation set, is as shown in :numref:`occ_class_vali` for OpenStreetMaps (see plot a), and 
+293 image validation set, is as shown in :numref:`occ_class_vali` for OpenStreetMap (see plot a), and 
 the NJDEP dataset (see plot b). :numref:`occ_class_pred` displays the BRAILS occupancy predictions for 
 Lake Charles for a selected region. Note that only those classified as RES1 or RES3 are retained in 
 this testbed focused on residential construction (and the COM1 is assigned to the buildings that are classified 
@@ -162,7 +161,7 @@ can automatically detect rows of building windows was established to generate th
 of visible floor locations from street-level images. The model was trained on the 
 `EfficientDet-D7 architecture <https://arxiv.org/abs/1911.09070>`_ with a dataset of 60,000 images, 
 using 80% for training, 15% for validation, and 5% testing of the model. In order to ensure faster model 
-convergence, initial weights of the model were set to model weights of the (pretrained) object detection 
+convergence, initial weights of the model were set to model weights of the (pre-trained) object detection 
 model that, at the time, achieved state-of-the-art performance on the 
 `2017 COCO Detection set <https://cocodataset.org/#download>`_. For this 
 specific implementation, the peak model performance was achieved using the `Adam optimizer <https://arxiv.org/abs/1412.6980>`_ at a learning 
@@ -175,7 +174,7 @@ floor detections performed by the model.
    :figclass: align-center
    :width: 600
 
-   Sample floor detections of the floor detection model (each detection is indicated by a green bounding box). The percentage value shown on the top right corner of a bounding box indicates model confidence level associated with that prediction.
+   Sample floor detections of the floor detection model (each detection is indicated by a green bounding box). The percentage value shown in the top right corner of a bounding box indicates model confidence level associated with that prediction.
 
 For an image, the described floor detection model generates the bounding box output for its 
 detections and calculates the confidence level associated with each detection 
@@ -292,7 +291,7 @@ AI-predicted roof pitch ratios. As expected, very little correlation between the
 
 
 Phase III: Augmentation Using Third-Party Data, Site-Specific Observations, and Existing Knowledge
-====================================================================================================
+==================================================================================================
 
 The AI-generated building inventory is further augmented with multiple sources of information, including 
 third-party datasets, site-specific statistics summarized from observations, and existing knowledge and 
@@ -305,13 +304,13 @@ Design Wind Speed for Risk Category II construction in mph (ASCE 7-16) was obtai
 `ATC Hazards by Location API <https://hazards.atcouncil.org/>`_ ([ATC20]_).
 
 Attribute: LULC
-----------------
+---------------
 
 Land use code is downloaded from `WebGIS <http://www.webgis.com/terr_pages/LA/lulcutm/calcasieu.html>`_.
 Each land use class is represented by an integer as listed in :numref:`tab-bldg_inv_data_model_lc`.
 
 Attribute: YearBuilt
-----------------------
+--------------------
 
 We initially derived the year built information from the National Structure Inventory (NSI), which contains year 
 built information for geocoded addresses in the region of interest. It should be noted that not all buildings 
@@ -374,14 +373,14 @@ The current version of the testbed will thus use the NSI data as the basis for t
 Attribute: Garage
 ------------------
 
-A garage detector utilizing the EfficienDet object detection architecture was trained to identify the 
+A garage detector utilizing the EfficientDet object detection architecture was trained to identify the 
 existence of attached garages and carport structures in street-level imagery of the buildings 
 included in the Lake Charles inventory. Properties are classified as either having an attached garage 
 or not having an attached garage (which includes both detached garages and homes with no garage). 
 The model was trained on the `EfficientDet-D4 architecture <https://arxiv.org/abs/1911.09070>`_ with 
 a dataset of 1,887 images, using 80% for training, 10% for validation, and 10% for testing. 
 Similar to the number of floors detector model, the initial weights of this model were set to the model weights 
-of the (pretrained) object detection model that, at the time, achieved state-of-the-art performance on 
+of the (pre-trained) object detection model that, at the time, achieved state-of-the-art performance on 
 the `2017 COCO Detection set <https://cocodataset.org/#download>`_. For this task, the peak detector 
 performance was attained using the `Adam optimizer <https://arxiv.org/abs/1412.6980>`_ 
 at a learning rate of 0.0001 (batch size: 2) after 25 epochs. :numref:`garage_eg` shows sample 
@@ -409,14 +408,14 @@ latter dataset.
    Confusion matrices for the garage predictor used in this study. The matrix on the left (a) shows the model’s prediction accuracy when tested on a set of 189 images randomly selected from CA and NJ. The matrix on the right (b) depicts the model accuracy on images selected from the Lake Charles area.
 
 Attribute: BuildingType
-------------------------
+-----------------------
 
 Based on information found in the National Structure Inventory, 89% of residential buildings 
 (single-family and multi-family) are wood, while the rest are masonry. In the analysis, we conservatively 
 assume all residential buildings are wood.
 
 Attribute: AvgJanTemp
-----------------------
+---------------------
 
 The average temperature in Lake Charles in January is above the critical value of 25F, 
 based on NOAA average daily temperature data. Referring to :numref:`tab-bldg_inv_data_model_lc`, we used 
