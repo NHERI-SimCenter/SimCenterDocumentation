@@ -41,7 +41,7 @@ The sensitivity analysis results will show both the main effect and total effect
 
     When the associated FEM model is computationally expensive, the user should consider that the actual number of the simulation runs is larger than the number of samples specified in the input panel. The exact number of simulation runs are NS*(2+NRV)
     
-        - NS = number of samples specified by user
+        - NS = number of samples specified by the user
         - NRV = number of random variables
 
 

@@ -19,7 +19,7 @@ A successful run or download of a job that ran successfully at |DesignSafe| will
 
    Results summary.
 
-The second panel, shown in :numref:`figResultsData` presents the results both graphically and in tabular form. By selecting different columns with left and right mouse buttons in the table below the graphic, the information in the graph is changed. Selecting the left mouse button changes the Y-axis, the right mouse changes the X-axis. If the same column is selected using both left and right keys, either the CDF and PDF are displayed. If the last mouse press was with the left button, the PDF would be displayed; if the previous mouse press was the right one, the CDF would be displayed.
+The second panel, shown in :numref:`figResultsData` presents the results both graphically and in tabular form. By selecting different columns with left and right mouse buttons in the table below the graphic, the information in the graph is changed. Selecting the left mouse button changes the Y-axis, the right mouse changes the X-axis. If the same column is selected using both the left and right keys, either the CDF or PDF is displayed. If the last mouse press was with the left button, the PDF would be displayed; if the previous mouse press was the right one, the CDF would be displayed.
  
 Regarding the columns in the table below the figure: You will see a column for each random variable the workflow came across and then the columns for the response quantities. There may be more random variables than you specified. This is because, for specific applications, the user may introduce additional random variables for the UQ engine to consider. 
 
