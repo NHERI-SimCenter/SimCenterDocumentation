@@ -19,4 +19,5 @@ a list of events (i.e., typically time-dependent loads that represent natural di
 	usageS3hark
 	userSpecifiedDatabase
 	physicsBased
+	multimodelEvent
 
