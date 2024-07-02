@@ -32,7 +32,7 @@ Version 3.1
     **Debris**
 
         a. Added debris modeling to ``MPM`` simulations.
-        b. Added support for complex debris geomtries (e.g. vehicles, shipping crates, composed primitives).
+        b. Added support for complex debris geometries (e.g. vehicles, shipping crates, composed primitives).
         c. Added support for advanced debris material models (e.g. ``Fixed-Corotated``, ``Neo-Hookean``, ``Drucker-Prager``, ``Non-Associative Cam-Clay``).
 
 
@@ -60,7 +60,7 @@ Version 3.1
                     * ``Fixed-Corotated``: Hyperelastic material model for plastic and rubber-like materials.
                     * ``Neo-Hookean``: Hyperelastic material model for plastic and rubber-like materials.
                     * ``Drucker-Prager``: Applicable to granular materials, concrete, and other materials with a yield surface.
-                    * ``Non-Associative Cam-Clay``: Aplicable to clays, concrete, and other topology changing material bodies
+                    * ``Non-Associative Cam-Clay``: Applicable to clays, concrete, and other topology-changing material bodies
 
 
             #. **Geometry**
@@ -86,21 +86,21 @@ Version 3.1
                 * Bodies may be split across multiple hardware partitions.
                 * Accelerates simulation times by running multiple bodies in parallel.
                 * A valid hardware partition may be a core, a GPU, or a node in an HPC cluster.
-                * Each partition may hold some maximum number of bodies at once (specific to the system which the simulating tool was compiled on).
+                * Each partition may hold some maximum number of bodies at once (specific to the system on which the simulating tool was compiled).
 
         #. **Boundaries**
 
-            Any object in a simulation that is not a sensor or body is considered a ``Boundary``. ``Boundaries``, the collection of ``Boundary`` objects, are enforced boundary conditions which may apply to parts of the simulation (e.g. on grid-nodes or particles).
+            Any object in a simulation that is not a sensor or body is considered a ``Boundary``. ``Boundaries``, the collection of ``Boundary`` objects, are enforced boundary conditions that may apply to parts of the simulation (e.g. on grid nodes or particles).
 
             * Added boundaries for geometry primitives (e.g. ``sphere``, ``box``, ``cylinder``).
             * Added selectable contact models (e.g. ``Sticky``, ``Slip``, ``Separable``).
             * Added boundaries for the ``OSU LWF`` and ``WU TWB`` digital twin bathymetries. 
             * Added boundary for the ``OSU LWF`` moving piston wave-maker. 
-            * Implemented array operations for boundary conditions (e.g. instace a boundary at specified spacings in X, Y, and Z).
+            * Implemented array operations for boundary conditions (e.g. instance a boundary at specified spacings in X, Y, and Z).
 
         #. **Sensors**
 
-            Any object in a simulation that is not a boundary condition or body is considered a ``Sensor``. ``Sensors``, the collection of ``Sensor`` objects, are used to monitor the simulation, collect desired data, reduce said data, and report the aggregated output as a time-series. In effect, they replicate instruments / sensors used in experiments (e.g. load-cells, wave-gauges, piezometers, velocimeters).
+            Any object in a simulation that is not a boundary condition or body is considered a ``Sensor``. ``Sensors``, the collection of ``Sensor`` objects, are used to monitor the simulation, collect desired data, reduce said data, and report the aggregated output as a time-series. In effect, they replicate instruments/sensors used in experiments (e.g. load-cells, wave-gauges, piezometers, velocimeters).
 
             * Sensors may be placed on numerical bodies (e.g. on ``particles`` or ``grid-nodes`` for ``MPM``) to monitor the simulation.
             * Supports force, pressure, velocity, and elevation sensors by default.
@@ -110,18 +110,18 @@ Version 3.1
 
         #. **Outputs**
 
-            Collection of simulation settings that do not effect the simulation itself, but rather the output it gives to the user.
+            Collection of simulation settings that do not affect the simulation itself, but rather the output it gives to the user.
 
             * Supports output of simulation geometry data in the form of ``.bgeo`` files, ``.vtk`` files, and ``.csv`` files.
             * Supports output of simulation sensor data in the form of ``.csv`` and ``.txt`` files.
             * Supports output of simulation state data in the form of ``.bgeo`` files.
-            * Enable / disable tracking of and output of simulation energy (kinetic, strain, etc.).
-            * Enable / disable output of simulation checkpoints (allow for a simulation to be resumed if stopped).
+            * Enable/disable tracking of and output of simulation energy (kinetic, strain, etc.).
+            * Enable/disable output of simulation checkpoints (allow for a simulation to be resumed if stopped).
 
     **Visualization**
 
         * Enabled visualization of the Event (``EVT``) using ``Qt3D``
-        * Added support for mouse controls of camera in 3D visualization.
+        * Added support for mouse controls of the camera in 3D visualization.
         * Added support for visualizing simulation ``Bodies`` in 3D.
         * Added support for visualizing simulation ``Boundaries`` in 3D.
         * Added support for visualizing simulation ``Sensors`` in 3D.
@@ -134,7 +134,7 @@ Version 3.1
 
     **DesignSafe Support and Hardware**
 
-        * Multi-GPU accelerated simulations now supported in certain simulation types (e.g. ``ClaymoreUW MPM``).
+        * Multi-GPU accelerated simulations are now supported in certain simulation types (e.g. ``ClaymoreUW MPM``).
 
         * Updated support for the TACC Frontera supercomputer:
 
@@ -225,7 +225,7 @@ Version 1.0
 
     #. **Boundary conditions**: 
 
-        a. The boundary conditions can be selected based using standard patch names. Here standard patches include entry / exit / inlet / outlet / left / right. 
+        a. The boundary conditions can be selected based using standard patch names. Here standard patches include entry/exit / inlet/outlet / left/right. 
         b. Velocity boundary conditions for inlet conditions include shallow-water solutions, moving wall, and constant velocity; for outlet conditions include zeroGradient and inletOutlet
         c. Pressure boundary conditions include zeroGradient and fixedValue. Alternatively, the user can also leave the default option. An appropriate boundary condition relevant to the velocity boundary will be chosen.
         d. It is recommended to use the wall boundary conditions for walls
@@ -234,7 +234,7 @@ Version 1.0
 
         a. Allows simple decomposition techniques from OpenFOAM.
         b. Can set start and end times for simulation
-        c. Can set time interval and the write intervals
+        c. Can set time intervals and write intervals
         d. Restarting facility is supported
 
     #. **Turbulence**:

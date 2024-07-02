@@ -6,7 +6,7 @@ EVT: Hydro Events
 
 The event panel presents the user with a drop-down menu with a list of available event applications. 
 
-Event applications are applications that, given the building and user supplied data inputs, will generate a list of events (i.e., typically time-dependent loads that represent natural disasters) for the building. 
+Event applications are applications that, given the building and user-supplied data inputs, will generate a list of events (i.e., typically time-dependent loads that represent natural disasters) for the building. 
 
 The ``Hydro EVT`` is used to setup the flow parameters related to the water-borne hazard event. This can either be a coupling between the shallow-water and CFD solver or using the CFD solver alone. 
 
@@ -21,7 +21,7 @@ The following options are available in the drop-down menu:
 
 
 .. note::
-   :sup:`*` The new ``MPM`` module is only availble in the current release |tool version| as a standalone ``Tools`` app, though it is designed to be an EVT option. It will be fully-implemented as a workflow EVT in the next release.
+   :sup:`*` The new ``MPM`` module is only available in the current release |tool version| as a standalone ``Tools`` app, though it is designed to be an EVT option. It will be fully implemented as a workflow EVT in the next release.
 
 
 
