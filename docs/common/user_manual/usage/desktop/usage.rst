@@ -5,7 +5,7 @@ User Interface
 **************
 
 
-The |app| is a scientific workflow application that creates workflows and runs them in the background. These workflows can integrate multiple applications, detailed further in the backend and workflows section (:ref:`lblArchitecture`). Upon launching |app|, the user is presented with the user interface (UI) shown in |figGenericUI|, which facilitates the selection of workflow applications, configuration of application parameters, initiation of workflows either locally or remotely, and visualization of simulation outcomes.
+The |app| is a scientific workflow application that creates workflows and runs them in the background. These workflows can integrate multiple applications, as detailed in the backend and workflows section (:ref:`lblArchitecture`). Upon launching |app|, users are presented with the user interface (UI) shown in |figGenericUI|. This UI facilitates the selection of workflow applications, configuration of application parameters, initiation of workflows either locally or remotely, and visualization of simulation outcomes.
 
 .. only:: quoFEM_app
 
