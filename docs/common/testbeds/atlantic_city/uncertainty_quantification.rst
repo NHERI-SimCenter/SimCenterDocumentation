@@ -22,11 +22,11 @@ indicates that roughly 45% of house owners were likely to apply shutters on some
 asset representation (ruleset), a pre-2000 house has a 45% probability to be assigned to have shutters, and a 55% 
 probability to be assigned with no shutter. Note that the resulting HAZUS building type is deterministic for 
 each individual sample while the uncertainty induced by different possible attribute options are evaluated 
-via multiple random realizations. :numref:`uq_rulesets` summarizes the three building attributes whose values
- are randomly generated in this testbed. 
+via multiple random realizations. :numref:`uq_rulesets_ac` summarizes the three building attributes whose values 
+are randomly generated in this testbed. 
 
 .. csv-table:: Random sampling in the rulesets.
-   :name: uq_rulesets
+   :name: uq_rulesets_ac
    :file: data/uq_rulesets.csv
    :header-rows: 1
    :align: center
@@ -49,12 +49,12 @@ These multiple realizations are then randomly sampled and used as the EDP in sim
 assessment (more details in the next section).
 
 For the aleatory uncertainty, this workflow adapts a nearest-neighbors method to propagate uncertainty through the workflow, as 
-illustrated in :numref:`nearestneighbors`. The peak wind speed and storm surge values are simulated 
- a prescribed grid (wind fields) or pre-selected save points (storm surge) (blue round dots), and for each selected asset location (red square dot),
- the workflow randomly selects 5 samples of 
- the intensity measure (wind speed and storm surge) from the 4 nearest neighbors (yellow circles). Note that this random 
- sampling is performed along with the multiple realizations from the epistemic uncertainty quantification, so the 
- two uncertainty sources are considered simultaneously. 
+illustrated in :numref:`nearestneighbors`. The peak wind speed and storm surge values are simulated at
+a prescribed grid (wind fields) or pre-selected save points (storm surge) (blue round dots), and for each selected asset location (red square dot),
+the workflow randomly selects 5 samples of 
+the intensity measure (wind speed and storm surge) from the 4 nearest neighbors (yellow circles). Note that this random 
+sampling is performed along with the multiple realizations from the epistemic uncertainty quantification, so the 
+two uncertainty sources are considered simultaneously. 
 
 .. figure:: figure/nn.png
    :name: nearestneighbors

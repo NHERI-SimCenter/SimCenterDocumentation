@@ -58,7 +58,7 @@ considered as partial collapse of the entire building.
    2. Moderate: Larger and more extensive cracks requiring repair and
    repainting; some partitions may require replacement of gypsum board or other finishes.
 
-   3. Extensive: Most of the partitions are cracked and a significant
+   3. Extensive: Most of the partitions are cracked, and a significant
    portion may require replacement of finishes; some door frames in the partitions are also
    damaged and require re-setting.
 
@@ -68,7 +68,7 @@ considered as partial collapse of the entire building.
 
 .. note::
 
-**Non-structural Damage (Suspended Ceilings)**:
+   **Non-structural Damage (Suspended Ceilings)**:
 
    1. Slight: A few ceiling tiles have moved or fallen down.
 
@@ -134,7 +134,7 @@ functions, **PELICUN** generates 20,000 realizations of damage and
 losses for each building, and stores statistics of the resulting
 performance data that are relevant for regional-scale evaluation.
 The results are output as HDF5 (Hierarchical Data Format) files
-that can be processed and visualized through MatLab, Python,
+that can be processed and visualized through MATLAB, Python,
 Jupyter notebooks, or converted to CSV format.
 
 

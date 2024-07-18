@@ -65,8 +65,8 @@ Verification of Rulesets
 ===========================
 
 Following the discussion in the previous section, this section discusses the verification process 
-for the Rulesets introduced in :ref:`lbl-testbed_LC_asset_representation`. This verification includes 
-two aspects: (1) verifying the implementation of Rulesets and (2) verifying the influence 
+for the rulesets introduced in :ref:`lbl-testbed_LC_asset_representation`. This verification includes 
+two aspects: (1) verifying the implementation of rulesets and (2) verifying the influence 
 of rulesets. The first aspect is addressed by the 
 `pytest module <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/blob/main/rulesets/LA/scripts/tests/test_auto_HU_LA.py>`_ 
 in the `AssetRepresentationRulesets <https://github.com/NHERI-SimCenter/AssetRepresentationRulesets/releases/tag/v1.0.0>`_.  Each 

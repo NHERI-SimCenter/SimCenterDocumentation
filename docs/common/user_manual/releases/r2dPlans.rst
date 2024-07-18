@@ -11,7 +11,7 @@ The following features are planned to be developed for upcoming releases of |app
 
 June 2024
 ----------
-#. **Water Distribution Network, Buried Pipelines** (1.3.4.3): Add modeling capabilities for buried water pipelines and other water distribution infrastructure.
+#. **Landslide-induced ground deformation** (1.3.4.4): Add modeling capabilities for buried water pipelines and other water distribution infrastructure.
 
 #. **Efficient Forward Propagation using Multi-Fidelity Monte-Carlo** (1.2.3.1): This feature leverages a small number of high-fidelity model outputs to improve the accuracy of efficient, approximate models, such as surrogates, enhancing performance with minimal computational overhead.
 

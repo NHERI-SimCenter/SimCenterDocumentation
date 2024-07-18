@@ -42,7 +42,7 @@ assess the damage to individual buildings under multiple hurricane-induced hazar
 penetration due to the breach of building envelopes and/or wind-borne debris impact are also captured in the 
 damage and loss modeling, though the physics of these phenomena themselves are not explicitly modeled. 
 Similarly, other hydrologic hazards related to accumulated rainfall, inland flooding, overland flow, and 
-riveline flooding, are not captured.
+riverine flooding, are not captured.
 Supported building classes include residential, commercial and industrial construction, critical facilities, 
 and manufactured homes, constructed of wood, steel, reinforced concrete, and masonry. The adoption of HAZUS 
 loss estimation frameworks constrains the current testbed to buildings 6 stories and under and only the 
@@ -113,14 +113,14 @@ wind and floodplain hazards.
    Geospatial visualization of subclasses of buildings in the Flood-Exposed Inventory.
 
 The following figures summarize the characteristics of these inventories, including distribution by municipality 
-(:numref:`fig-distAssetMunicipality`), by year built (:numref:`fig-distBuiltYear`), by occupancy (:numref:`fig-occupancyType`), 
-by number of stories (:numref:`fig-numStory`), and by primary construction material (:numref:`fig-constrMaterial`). 
+(:numref:`fig-distAssetMunicipality_AC`), by year built (:numref:`fig-distBuiltYear_AC`), by occupancy (:numref:`fig-occupancyType_AC`), 
+by number of stories (:numref:`fig-numStory_AC`), and by primary construction material (:numref:`fig-constrMaterial_AC`). 
 Notably, these inventories are typified by older vintages of construction (79% of Atlantic County buildings were constructed 
 before 1980), with a dominance of low-rise (1-2 stories), residential, wood frame construction (approximately 
 90% of Atlantic County buildings). Steel and reinforced concrete construction is more prevalent in downtown 
 Atlantic City. 
 
-.. _fig-distAssetMunicipality:
+.. _fig-distAssetMunicipality_AC:
 
 .. figure:: figure/num_building_city_twoset.png
    :align: center
@@ -129,7 +129,7 @@ Atlantic City.
 
    Distribution of the number of buildings by municipality.
 
-.. _fig-distBuiltYear:
+.. _fig-distBuiltYear_AC:
 
 .. figure:: figure/built_year_allset.png
    :align: center
@@ -138,7 +138,7 @@ Atlantic City.
 
    Distribution of buildings by year built.
 
-.. _fig-occupancyType:
+.. _fig-occupancyType_AC:
 
 .. figure:: figure/occupancy_type_allset.png
    :align: center
@@ -147,7 +147,7 @@ Atlantic City.
 
    Distribution of buildings by occupancy type.
 
-.. _fig-numStory:
+.. _fig-numStory_AC:
 
 .. figure:: figure/story_number_allset.png
    :align: center
@@ -156,7 +156,7 @@ Atlantic City.
 
    Distribution of buildings by total number of stories.
 
-.. _fig-constrMaterial:
+.. _fig-constrMaterial_AC:
 
 .. figure:: figure/building_type_allset.png
    :align: center

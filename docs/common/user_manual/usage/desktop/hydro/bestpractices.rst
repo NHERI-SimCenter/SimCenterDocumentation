@@ -11,7 +11,7 @@ There are several sources of errors that are often observed in CFD simulations. 
 
 #. The model is described by the Navier-Stokes equations. The exact N-S equations are solved when Direct Numerical Simulations (DNS) are employed. However, when the RANS approach is involved, as in HydroUQ, this involves approximations that could lead to errors and uncertainties. Thus, selecting the correct parameters is paramount.
 
-#. If the solution shows divergence, check the boundary conditions, grid, discretization, and convergence errors. Check whether the flow is steady or unsteady and the timestep used in this regard.
+#. If the solution shows divergence, check the boundary conditions, grid, discretization, and convergence errors. Check whether the flow is steady or unsteady and the time step used in this regard.
 
 Froude number
 ===============================
@@ -35,7 +35,7 @@ Spatial discretization
 
 #. It is recommended that the aspect ratio be below 5 but can be up to 10 inside the boundary layer. Ensure that the change in grid size is gradual, and the maximum variation in grid spacing should be less than 20%.
 
-# Avoid highly skewed cells so that the angles between gridlines are orthogonal or near orthogonal. Angles with less than 40-degrees or greater than 140-degrees may lead to numerical instabilities or unsatisfactory results.
+# Avoid highly skewed cells so that the angles between grid lines are orthogonal or near orthogonal. Angles with less than 40 degrees or greater than 140 degrees may lead to numerical instabilities or unsatisfactory results.
 
 Temporal discretization
 ===============================
@@ -63,13 +63,13 @@ Boundary conditions
 SW-CFD domain sizes
 ===============================
 
-#. Note that each degree of latitude is approximately 69 miles (111 km apart). At the Equator, the distance is 68.703 miles (110.567 km); at Tropic of Cancer and Capricorn, it is 68.94 miles (110.948 km), and at the poles, it is 69.94 miles (111.699 km).
+#. Note that each degree of latitude is approximately 69 miles (111 km apart). At the Equator, the distance is 68.703 miles (110.567 km); at the Tropic of Cancer and Capricorn, it is 68.94 miles (110.948 km), and at the poles, it is 69.94 miles (111.699 km).
 
 #. 60 minutes = 1 degree
 
 #. For a 1-minute grid used in the SW-solver, this is approximately a 2 x 2 km grid (in terms of distances). This could still be a considerably large domain for the CFD simulation, depending on the topography and bathymetry.
 
-#. If the simulation type is SW-CFD coupling, then there can be wave reflections. Such wave reflections can lead to unphysical fluid accumulation at the boundary. 
+#. If the simulation type is SW-CFD coupling, then there can be wave reflections. Such wave reflections can lead to non-physical fluid accumulation at the boundary. 
 
 Turbulence modeling
 ===============================
@@ -111,14 +111,14 @@ where :math:`L` is the characteristic length scale, :math:`y^{+}` is the desired
 
 #. The :math:`k-\epsilon` model is inaccurate for flows with adverse pressure gradients. It does not allow integration of the conservation equations through the viscous sublayer where low Reynolds number corrections are recommended.
 
-#. The :math:`k-\omega` model is very sensitive to the freestream boundary conditions. However, it performs well for flows with variable pressure gradients.
+#. The :math:`k-\omega` model is very sensitive to the free-stream boundary conditions. However, it performs well for flows with variable pressure gradients.
 
 User errors
 ===============================
 
 #. Check for details in the geometry. Do not over-simplify the geometry without an understanding of the given problem.
 
-#. Inaccurate use of boundary conditions and / or low-quality grids (e.g., poorly meshed in critical locations, inadaquate resolution for the problem) are commonly observed user errors.
+#. Inaccurate use of boundary conditions and/or low-quality grids (e.g., poorly meshed in critical locations, inadequate resolution for the problem) are commonly observed user errors.
 
 #. Ensure that the timestep sizes provided are reasonable. 
 

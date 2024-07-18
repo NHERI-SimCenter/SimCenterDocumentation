@@ -14,7 +14,7 @@ The Hayward Fault, which runs up the eastern edge of the Bay Area, is capable of
 the Mw 6.7 event that occurred in 1868. 
 
 Rationale
-===========
+=========
 
 This testbed for regional earthquake risk assessment of the San Francisco Bay Area under the Hayward Earthquake:
 

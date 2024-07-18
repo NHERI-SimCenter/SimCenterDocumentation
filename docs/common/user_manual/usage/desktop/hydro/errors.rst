@@ -41,9 +41,9 @@ The following is a list of things that we have observed go wrong when the user i
 
    #. **dakota.err file exists but is empty**: This means that Dakota ran, but there was a problem with the simulation. Go to one of the ``workdir`` locations. There is a file workflow driver that can be run. Run it and see what the errors are.
 
-   #. **You ran at DesignSafe and no dakota.out files come back**: Go to your data depot folder at DesignSafe using your browser. Go to archive/jobs and use the job number shown in table that pops up when you ask to get the job from DesignSafe. Study both the ``.err`` and ``.out`` files in that directory for a clues to as what went wrong.
+   #. **You ran at DesignSafe and no dakota.out files come back**: Go to your data depot folder at DesignSafe using your browser. Go to archive/jobs and use the job number shown in the table that pops up when you ask to get the job from DesignSafe. Study both the ``.err`` and ``.out`` files in that directory for clues to as what went wrong.
 
-If problems persists, please post them on the |messageBoard|
+If the problem persis, please post them on the |messageBoard|
 
 Other issues
 ----------------
@@ -52,7 +52,7 @@ Some of the other common tips and tricks for troubleshooting include:
 
 **Know the objective**
 
-Before starting the simulation, it is essential to understand the intended goal of the project. This will help set up appropriate inputs. ``Hydro-UQ`` workflows already helps with this to the best extent possible. Yet, the user's understanding of the physics is much necessary.
+Before starting the simulation, it is essential to understand the intended goal of the project. This will help set up appropriate inputs. ``Hydro-UQ`` workflows already help with this to the best extent possible. Yet, the user's understanding of the physics is much necessary.
 
 **Mesh quality**
 

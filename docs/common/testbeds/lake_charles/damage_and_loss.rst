@@ -15,7 +15,7 @@ For example, wood (class) single-family homes 1-2+ stories
 (subclass) would have damage and loss functions associated with each unique combination of attributes 
 used to define key features of the load path and components (e.g., roof shape, secondary water resistance, 
 roof deck attachment, roof-wall connection, shutters, garage), as well as the exposure (terrain roughness).
- Notably, only the WSF and WMUH configurations are relevant to this testbed.
+Notably, only the WSF and WMUH configurations are relevant to this testbed.
 
 The HAZUS damage and loss functions consist of tabular data to describe the fragility or expected losses as a 
 function of hazard intensity. These data were used to calibrate coupled damage and loss models to estimate 

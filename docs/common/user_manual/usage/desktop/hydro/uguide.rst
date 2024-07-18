@@ -12,7 +12,7 @@ The HydroUQ app, as will be discussed in :ref:`lblArchitecture`, is a hazard eve
    :align: center
    :figclass: align-center
 
-   The Hydro-UQ app user interface, with the EVT panel selected and the lnew HydroUQ v3.0 GUI. Numerical solver shown is the MPM solver, which is only available as a standalone pop-out Tool in the current app release, with integration in the next release.
+   The Hydro-UQ app user interface, with the EVT panel selected and the new HydroUQ v3.0 GUI. The numerical solver shown is the MPM solver, which is only available as a standalone pop-out Tool in the current app release, with integration in the next release.
 
 .. _legacyGUI:
 

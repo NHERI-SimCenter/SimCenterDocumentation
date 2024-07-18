@@ -16,7 +16,7 @@ The first step is to setup the project as shown in :numref:`EVTSettings`. All of
 
 1. **Project name and description**: This is an *optional* parameter primarily meant for the user to identify and differentiate between projects.
 
-2. **Simulation type**: This is *mandatory* and without a selection of the type, no other options can be set. The various simulation types available in ``Hydro`` event are as shown in :numref:`SimType`. The differences between different simulation types are as given below.
+2. **Simulation type**: This is *mandatory* and without a selection of the type, no other options can be set. The various simulation options available in ``Hydro`` event are as shown in :numref:`SimType`. The differences between different simulation types are as given below.
 
    .. _SimType:
 
@@ -26,7 +26,7 @@ The first step is to setup the project as shown in :numref:`EVTSettings`. All of
 
       Simulation types available in ``Hydro`` event
 
-   a. **CFD to resolve SW (Using SW results)**: This setting facilitates the user to import solutions from pre-run two-dimensional shallow water solver. The user can select small portions of the shallow-water domain and setup high-fidelity three-dimensional CFD on these selected areas. For example: If one had a GeoClaw simulation for an earthquake on the Alaska fault and one is interested in the inundation in Cresant City, CA (USA). Then, the user can bring in the GeoClaw solutions and resolve the near-coast using a full three-dimensional CFD simulation. 
+   a. **CFD to resolve SW (Using SW results)**: This setting facilitates the user to import solutions from a pre-run two-dimensional shallow water solver. The user can select small portions of the shallow-water domain and setup high-fidelity three-dimensional CFD on these selected areas. For example: If one had a GeoClaw simulation for an earthquake on the Alaska fault and one is interested in the inundation in Cresant City, CA (USA). Then, the user can bring in the GeoClaw solutions and resolve the near-coast using a full three-dimensional CFD simulation. 
 
    b. **CFD using bathymetry data**: This simulation type allows the user to setup a CFD simulation using the geometry defined through the bathymetry data of the ocean floor. 
 

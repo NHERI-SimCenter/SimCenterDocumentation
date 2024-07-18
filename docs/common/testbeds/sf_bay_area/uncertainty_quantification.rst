@@ -10,7 +10,7 @@ sources, different strategies were implemented in the workflow to quantify their
 sections will introduce the details about each component.
 
 In Hazard Characterization
-==============================
+==========================
 
 Given a specific category of hurricane, there are two different sources of uncertainty for site peak wind speed 
 and storm surge values: (1) the uncertainty induced by possible different epicenters, rupture propagations, soil velocity models, 
@@ -24,7 +24,7 @@ illustrated in :numref:`nearestneighbors`. The ground motions are processed from
 on a prescribed grid, and for each selected asset location (red square dot), the workflow randomly selects 25 samples of 
 the ground motions from the 4 nearest neighbors (yellow circles). Note this random 
 sampling is performed along with the multiple realizations from the epistemic uncertainty quantification, so the 
-two uncertainty sources are considered simultaneously. Note the ground motions at one building site from nearest 
+two uncertainty sources are considered simultaneously. Note the ground motions at one building site from the nearest 
 grid points can be repeated as these 25 samples are also intended for considering the structural modeling uncertainty 
 (i.e., stiffness and damping parameters in the next section). 
 
@@ -38,7 +38,7 @@ grid points can be repeated as these 25 samples are also intended for considerin
 
 
 In Structural Response Simulation
-====================================
+=================================
 
 The approximations and uncertainties in the structural model and behavior are considered by treating the
 initial stiffness and the damping ratio as random variables with a 0.1 coefficient of variation. 
@@ -47,7 +47,7 @@ and damping parameters for each of the 25 non-linear dynamic analyses for each b
 
 
 In Damage and Loss Assessment
-==============================
+=============================
 
 The testbed implemented :ref:`pelicun<https://pelicun.readthedocs.io/en/latest/index.html>` (Probabilistic Estimation of Losses, Injuries, and Community resilience Under 
 Natural disasters) to quantify damage (damage states) and loss (in the form of decision variables, e.g., loss ratio). 

@@ -3,7 +3,7 @@
 Forward Propagation
 ***************************
  
-The forward propagation analysis provides a probabilistic understanding of output variables by producing sample realizations and statistical moments (mean, standard deviation, skewness, and kurtosis). Currently, five sampling methods are available: Monte Carlo Sampling (MCS), Latin Hypercube Sampling (LHS), Importance Sampling (IS), and sampling-based on surrogate models, including Gaussian Process Regression (GPR) and Polynomial Chaos Expansion (PCE). Depending on the option selected, the user must specify the appropriate input parameters. For instance, for MCS, the number of samples specifies the number of simulations to be performed. Providing a random seed allows the user to reproduce the sampling results multiple times. The user selects the sampling method from the dropdown ``Methods`` menu. Additional information regarding sampling techniques offered in Dakota can be found `here <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/method-sampling.html>`_. 
+The forward propagation analysis provides a probabilistic understanding of output variables by producing sample realizations and statistical moments (mean, standard deviation, skewness, and kurtosis). Currently, five sampling methods are available: Monte Carlo Sampling (MCS), Latin Hypercube Sampling (LHS), Importance Sampling (IS), and sampling based on surrogate models, including Gaussian Process Regression (GPR) and Polynomial Chaos Expansion (PCE). Depending on the option selected, the user must specify the appropriate input parameters. For instance, for MCS, the number of samples specifies the number of simulations to be performed. Providing a random seed allows the user to reproduce the sampling results multiple times. The user selects the sampling method from the dropdown ``Methods`` menu. Additional information regarding sampling techniques offered in Dakota can be found `here <https://dakota.sandia.gov//sites/default/files/docs/6.9/html-ref/method-sampling.html>`_. 
 
 Monte Carlo Sampling (MCS) 
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -41,7 +41,7 @@ Latin hypercube sampling (LHS) is a pseudo-random, stratified sampling approach.
 Importance Sampling (IS)
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-For problems where one is interested in the rare events rather than the whole distribution of output, such as earthquake or storm surge events, conventional sampling methods may require a considerable number of simulations to obtain an accurate estimation of tail distribution. For such problems, importance sampling (IS) bypasses conventional sampling methods (MCS or LHS). An alternative sampling distribution is introduced around the tail part of the original distribution so that the generated samples have a better resolution at the domain of interest.
+For problems where one is interested in rare events rather than the whole distribution of output, such as earthquake or storm surge events, conventional sampling methods may require a considerable number of simulations to obtain an accurate estimation of tail distribution. For such problems, importance sampling (IS) bypasses conventional sampling methods (MCS or LHS). An alternative sampling distribution is introduced around the tail part of the original distribution so that the generated samples have a better resolution at the domain of interest.
 
 :numref:`figIS` shows the input panel for IS scheme. Like MCS and LHS, IS requires both the number of samples to be executed and the corresponding seed for generating such random samples. In addition, IS algorithm can be performed via three different approaches, as specified by the third input method:
 
@@ -65,7 +65,7 @@ For more information on each, please refer to the Dakota manual.
 Gaussian Process Regression (GPR)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-For the problems in which computationally expensive models are involved, conventional sampling schemes such as LHS and MCS can be highly time-consuming. A surrogate model can be constructed based on a fewer number of simulation runs in such a case. Then the surrogate model can be used to efficiently generate a required number of samples replacing the expensive simulations.
+For the problems in which computationally expensive models are involved, conventional sampling schemes such as LHS and MCS can be highly time-consuming. A surrogate model can be constructed based on a fewer number of simulation runs in such a case. Then the surrogate model can be used to efficiently generate the required number of samples replacing the expensive simulations.
 
 Gaussian Process Regression (GPR), also known as Kriging, is a well-established surrogate technique that constructs an approximated response surface based on Gaussian process modeling and covariance matrix optimizations. :numref:`figGPR` shows the input panel for the GPR model that consists of training and sampling panels. 
 

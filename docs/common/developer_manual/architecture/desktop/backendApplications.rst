@@ -1,20 +1,12 @@
 .. _lblbackendApps:
 
-
-.. 
-    .. _term1:: component applications
-
-
 *********************
 Backend Applications
 *********************
 
-
-The backend applications are categorized by function into the following workflow |term1| which creates and populate *intermediate files* used to propagate information from one component application to the next. The |term1| and their intermediate files are as follows:
-
+The backend applications are categorized by function into the following workflow :term:`modules` which create and populate *intermediate files* used to propagate information from one component application to the next. The :term:`modules` and their intermediate files are as follows:
 
 .. |term1| replace:: modules
-
 
 .. |createBIM| replace:: :ref:`Building Applications <lblBuildingApp>` - create the BIM files for every building asset, containing building properties.
 
@@ -32,9 +24,8 @@ The backend applications are categorized by function into the following workflow
 
 .. |performDL| replace:: :ref:`Damage and Loss (DL) Applications <lblDLApp>` - estimate expected damages and losses from the EDP application's output.
 
-
 .. only:: quoFEM_app
-    
+
     .. toctree::
         :maxdepth: 1
 
@@ -145,6 +136,4 @@ The backend applications are categorized by function into the following workflow
         applications/UQApps
         applications/DLApps
 
-
-These applications make up the "backbone" of SimCenter workflow systems, with each one calling on a different subset of the component applications.
-
+These applications constitute the "backbone" of SimCenter workflow systems, with each one calling on a different subset of the component applications.

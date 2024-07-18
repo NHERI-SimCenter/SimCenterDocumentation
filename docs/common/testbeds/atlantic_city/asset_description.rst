@@ -83,11 +83,11 @@ convergence, the initial weights of the model were set to the model weights of t
 model that, at the time, achieved state-of-the-art performance on the 
 `2017 COCO Detection set <https://cocodataset.org/#download>`_. For this 
 specific implementation, the peak model performance was achieved using the `Adam optimizer <https://arxiv.org/abs/1412.6980>`_ at a learning 
-rate of 0.0001 (batch size: 2), after 50 epochs. :numref:`num_stories_detection` shows examples of the 
+rate of 0.0001 (batch size: 2), after 50 epochs. :numref:`num_stories_detection_ac` shows examples of the 
 floor detections performed by the model.
 
 .. figure:: figure/NumOfStoriesDetection.png
-   :name: num_stories_detection
+   :name: num_stories_detection_ac
    :align: center
    :figclass: align-center
    :width: 600
@@ -96,7 +96,7 @@ floor detections performed by the model.
 
 For an image, the described floor detection model generates the bounding box output for its 
 detections and calculates the confidence level associated with each detection 
-(see :numref:`num_stories_detection`). A post-processor that converts stacks of neighboring 
+(see :numref:`num_stories_detection_ac`). A post-processor that converts stacks of neighboring 
 bounding boxes into floor counts was developed to convert this output into floor counts. 
 Recognizing that an image may contain multiple buildings at a time, this post-processor was 
 designed to perform counts at the individual building level. 
@@ -104,45 +104,45 @@ designed to perform counts at the individual building level.
 For a random image dataset of buildings captured using arbitrary camera orientations (also 
 termed in the wild images), the developed floor detection model was determined to capture 
 the number of floors information of buildings with an accuracy of 86%. 
-:numref:`num_stories_vali` (a) provides a breakdown of this accuracy measure for 
+:numref:`num_stories_vali_ac` (a) provides a breakdown of this accuracy measure for 
 different prediction classes (i.e., the confusion matrix of model classifications). 
 It was also observed that if the image dataset is established such that building images 
 are captured with minimal obstructions, the building is at the center of the image, and 
 perspective distortions are limited, the number of floors detections were performed at an 
-accuracy level of 94.7% by the model. :numref:`num_stories_vali` (b)
+accuracy level of 94.7% by the model. :numref:`num_stories_vali_ac` (b)
 shows the confusion matrix for the model predicting on the “cleaned” image data. 
 In quantifying both accuracy levels, a test set of 3,000 images randomly selected 
 across all counties of a companion testbed in New Jersey, excluding Atlantic County (the site of that 
 testbed), was utilized.
 
 .. figure:: figure/NumOfStoriesVali.png
-   :name: num_stories_vali
+   :name: num_stories_vali_ac
    :align: center
    :figclass: align-center
    :width: 600
 
    Confusion matrices for the number of floors predictor used in this study.
 
-.. _lbl-testbed_LC_asset_description_meanroofht:
+.. _lbl-testbed_LC_asset_description_meanroofht_AC:
 
 Attribute: MeanRoofHt
 ``````````````````````
 
-The elevation of the bottom plane of the roof (lowest edge of roof line) and the elevation of the roof 
+The elevation of the bottom plane of the roof (lowest edge of roofline) and the elevation of the roof 
 (peak of gable or apex of hip) are estimated with respect to grade (in feet) from street-level imagery. 
 These geometric properties are defined visually for common residential coastal typologies in 
-:numref:`building_elevation`. The mean height of the roof system is then derived as 
+:numref:`building_elevation_ac`. The mean height of the roof system is then derived as 
 the average of these dimensions.
 
 .. figure:: figure/BldgElev.png
-   :name: building_elevation
+   :name: building_elevation_ac
    :align: center
    :figclass: align-center
    :width: 600
    
    Schematics demonstrating elevation quantities for different foundation systems common in coastal areas.
 
-The MeanRoofHt is based on the following AI technique. :numref:`mean_roof_ht_app` 
+The MeanRoofHt is based on the following AI technique. :numref:`mean_roof_ht_app_ac` 
 plots the predicted roof height versus the number of floors of the inventory.
 
 As in any single-image metrology application, extracting the building elevations from imagery requires:
@@ -178,12 +178,12 @@ dataset. The peak model performance was attained using the `Adam optimizer <http
 (batch size: 4), after 40 epochs. The conversion between pixel dimensions and real-world dimensions was 
 attained by the use of field of view and camera distance information collected for each street-level imagery.
 
-:numref:`mean_roof_ht_app` shows a scatter plot of the AI-predicted mean roof heights vs. AI-predicted number of floors. 
+:numref:`mean_roof_ht_app_ac` shows a scatter plot of the AI-predicted mean roof heights vs. AI-predicted number of floors. 
 A general trend observed in this plot is that the roof height increases with the number of floors, 
 which is in line with general intuition.
 
 .. figure:: figure/MeanRoofHtApp.png
-   :name: mean_roof_ht_app
+   :name: mean_roof_ht_app_ac
    :align: center
    :figclass: align-center
    :width: 400
@@ -199,13 +199,13 @@ Attribute: RoofSlope
 `````````````````````
 RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained 
 by determining the difference between the bottom plane and apex elevations of the roof as defined in the 
-:ref:`lbl-testbed_LC_asset_description_meanroofht` 
+:ref:`lbl-testbed_LC_asset_description_meanroofht_AC` 
 section. Roof run is determined as half the smaller dimension of the building, as determined from 
-the dimensions of the building footprint. :numref:`mean_slope_app` displays the AI-predicted mean roof height versus the 
+the dimensions of the building footprint. :numref:`mean_slope_app_ac` displays the AI-predicted mean roof height versus the 
 AI-predicted roof pitch ratios. As expected, very little correlation between these two parameters is observed.
 
 .. figure:: figure/RoofSlopeApp.png
-   :name: mean_slope_app
+   :name: mean_slope_app_ac
    :align: center
    :figclass: align-center
    :width: 400
@@ -220,7 +220,7 @@ determines roof shape based on a satellite image obtained for the building. The 
 learning, specifically, it utilizes a convolutional neural network that has been trained on satellite 
 images. In AI/ML terminology, the Roof Shape module is an image classifier: it takes an image and 
 classifies it into one of three categories used in HAZUS: gable, hip, or flat as shown in 
-:numref:`roof_shape`. The original training of the AI model utilized 6,000 images obtained from Google 
+:numref:`roof_shape_ac`. The original training of the AI model utilized 6,000 images obtained from Google 
 satellite imagery in conjunction with roof labels obtained from 
 `Open Street Maps <https://www.openstreetmap.org/>`_. As many roofs have more complex shapes, a 
 similitude measure is used to determine which of these roof geometries is the best match to a given roof. 
@@ -229,7 +229,7 @@ More details of the classifier can be found
 The trained classifier was employed here to classify the roof information for Atlantic County.
 
 .. figure:: figure/RoofShape.png
-   :name: roof_shape
+   :name: roof_shape_ac
    :align: center
    :figclass: align-center
    :width: 500
@@ -243,66 +243,67 @@ The second is 56 residences assessed by StEER for which roof types were one of t
 e.g., removing all roofs labeled as "Complex" according to StEER's distinct image labeling standards. 
 The validation process is documented
 `here <https://nheri-simcenter.github.io/BRAILS-Documentation/common/technical_manual/roof.html>`_. 
-The confusion matrices are presented in :numref:`roof_shape_vali`. These matrices visually present 
+The confusion matrices are presented in :numref:`roof_shape_vali_ac`. These matrices visually present 
 the comparison between the predictions and actual data and should have values of 1.0 along the diagonal 
 if the classification is perfect, affirming the accuracy of the classification by the roof shape classifier.
 
 .. figure:: figure/RoofShapeVali.png
-   :name: roof_shape_vali
+   :name: roof_shape_vali_ac
    :align: center
    :figclass: align-center
    :width: 600
 
    Validation of BRAILS predicted roof shapes to roof shapes from OpenStreetMap and StEER.
 
-Attribute: RoofSlope
-`````````````````````
-RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained 
-by determining the difference between the bottom plane and apex elevations of the roof as defined in the 
-:ref:`lbl-testbed_LC_asset_description_meanroofht` 
-section. Roof run is determined as half the smaller dimension of the building, as determined from 
-the dimensions of the building footprint. :numref:`mean_slope_app` displays the AI-predicted mean roof height versus the 
-AI-predicted roof pitch ratios. As expected, very little correlation between these two parameters is observed.
+.. Attribute: RoofSlope
+.. `````````````````````
+.. RoofSlope is calculated as the ratio between the roof height and the roof run. Roof height is obtained 
+.. by determining the difference between the bottom plane and apex elevations of the roof as defined in the 
+.. :ref:`lbl-testbed_LC_asset_description_meanroofht_AC` 
+.. section. Roof run is determined as half the smaller dimension of the building, as determined from 
+.. the dimensions of the building footprint. :numref:`mean_slope_app_ac` displays the AI-predicted mean roof height versus the 
+.. AI-predicted roof pitch ratios. As expected, very little correlation between these two parameters is observed.
 
-.. figure:: figure/RoofSlopeApp.png
-   :name: mean_slope_app
-   :align: center
-   :figclass: align-center
-   :width: 400
+.. .. figure:: figure/RoofSlopeApp.png
+..    :name: mean_slope_app_ac
+..    :align: center
+..    :figclass: align-center
+..    :width: 400
 
-   AI-predicted RoofSlope versus mean roof height.
+..    AI-predicted RoofSlope versus mean roof height.
 
 Attribute: WindowArea
 `````````````````````
-The proportion of windows to the overall surface area is not available in inventory and 
-                    assessor datasets, though it is required for wind loss modeling. Generally, window area can be 
-					assumed based on the building occupancy class, using Department of Energy industry databases. 
-					This property can also be estimated from street-level imagery by utilizing the 
-					window masks generated during the segmentation process when determining building 
-					elevations. For this application, window area is defined as a percentage of the total 
-					facade area, calculated as the ratio of the area of window masks to the area of the front facade 
-					of the building. The underlying assumption is that the proportion of surface area occupied 
-					by windows at the front of the building is representative of the amount of window openings 
-					on the sides and rear of the building. This allows the ratio calculated for the front 
-					face of the building to be applied to the whole building. This assumption may hold for 
-					single-family residential buildings, but possibly not for commercial construction where 
-					street fronts have higher proportions of glass. Instead of this computer vision approach,
-					users may choose to adopt industry norms for their window areas (see note below).
-                    
-                    .. note::
-                       
-                     **Industry Norms on Window Area**: Engineered residential buildings can be assumed to have low window-to-wall 
-					 area ratios (WWR) based on the information for Reference Buildings in Baltimore, MD from the 
-					`Office of Energy Efficiency and Renewable Energy <https://www.energy.gov/eere/downloads/reference-buildings-building-type-midrise-apartment>`_. Reference Buildings were created for select cities 
-					 based on climate profile; of the available cities, Baltimore is selected since its climate is most 
-					 similar to Atlantic City, NJ. Office buildings (used as a test case for commercial) have WWR of 
-					 33%, and apartments (used as a test case for residential) have WWR of 15%.
 
-... note::
+The proportion of windows to the overall surface area is not available in inventory and 
+assessor datasets, though it is required for wind loss modeling. Generally, window area can be 
+assumed based on the building occupancy class, using Department of Energy industry databases. 
+This property can also be estimated from street-level imagery by utilizing the 
+window masks generated during the segmentation process when determining building 
+elevations. For this application, window area is defined as a percentage of the total 
+facade area, calculated as the ratio of the area of window masks to the area of the front facade 
+of the building. The underlying assumption is that the proportion of surface area occupied 
+by windows at the front of the building is representative of the amount of window openings 
+on the sides and rear of the building. This allows the ratio calculated for the front 
+face of the building to be applied to the whole building. This assumption may hold for 
+single-family residential buildings, but possibly not for commercial construction where 
+street fronts have higher proportions of glass. Instead of this computer vision approach,
+users may choose to adopt industry norms for their window areas (see note below).
+      
+.. note::
+         
+   **Industry Norms on Window Area**: Engineered residential buildings can be assumed to have low window-to-wall 
+   area ratios (WWR) based on the information for Reference Buildings in Baltimore, MD from the `Office of Energy Efficiency and Renewable Energy <https://www.energy.gov/eere/downloads/reference-buildings-building-type-midrise-apartment>`_. Reference Buildings were created for select cities 
+   based on climate profile; of the available cities, Baltimore is selected since its climate is most 
+   similar to Atlantic City, NJ. Office buildings (used as a test case for commercial) have WWR of 
+   33%, and apartments (used as a test case for residential) have WWR of 15%.
+
+.. note::
 
    The process of constructing the **Atlantic County Inventory** for footprints beyond those in the 
    **Flood-Exposed Inventory** highlighted a number of tasks/issues that are commonly encountered when constructing an inventory 
    in a location with sparse inventory data. Recommended best practices are summarized in :ref:`lbl-testbed_AC_best_practices`.
+
 
 Phase III: Augmentation Using Third-Party Data
 ================================================
@@ -331,6 +332,7 @@ Estimator (SDE) Tool (:numref:`tab-sdeAttri`).
 
 .. _tab-sdeAttri:
 
+.. csv-table:: Advanced attributes for FEMA Substantial Damage Estimator (SDE) Tool, available for all properties in Flood-Exposed Inventory.
 .. csv-table:: Advanced attributes for FEMA Substantial Damage Estimator (SDE) Tool, available for all properties in Flood-Exposed Inventory.
    :name: sde_attri
    :file: data/sde_attributes.csv
@@ -374,7 +376,7 @@ vulnerable attribute option). These initial assignments were then updated if add
    2. **ATC Hazards** by Location API ([ATC20]_) was used to query Design Wind Speeds as defined in ASCE 7.
    3. **Terrain features** (roughness length associated with different exposure classes) were derived from Land Use Land Cover data (part of NJGIN Open Data [NJGIN20]_).
 
-   See the Transformation and Detail columns in the PDFs listed in :numref:`tab-bldgInventory` for specifics of how each attribute 
+   See the Transformation and Detail columns in the PDFs listed in :numref:`tab-bldg_inv_data_model_ac` for specifics of how each attribute 
    was assigned using these various third-party data sources.
 
 .. _lbl-testbed_AC_asset_description_phase_iv:
@@ -425,7 +427,7 @@ The Flood-Exposed Inventory was then used to extract the subset of buildings def
      - Number of Assets
      - Typical Run Time
    * - Atlantic County Inventory
-     - Atlantic County Inventory
+     - `Atlantic County Inventory <https://github.com/NHERI-SimCenter/SimCenterDocumentation/blob/master/docs/common/testbeds/atlantic_city/data/AtlanticCountyInventory.csv>`_
      - 100,721
      - ~ 1,500 CPU-Hour
    * - Flood-Exposed Inventory

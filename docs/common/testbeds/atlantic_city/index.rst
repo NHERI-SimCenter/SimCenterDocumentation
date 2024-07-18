@@ -50,7 +50,7 @@ DesignSafe and the versioned source codes are archived via Zenodo. Other related
 
 This version history of the documentation is tracked in :numref:`doc_version_AC`
 and the versions of all applications and rulesets of the current version of the testbed are reported in :numref:`software_version_AC`.
-:numref:`brails_version_LC` provides the versions of BRAILS and its various classifiers used in the generation of results herein.
+:numref:`brails_version_AC` provides the versions of BRAILS and its various classifiers used in the generation of results herein.
 
 .. list-table:: Testbed Version History
    :name: doc_version_AC
@@ -147,7 +147,6 @@ This forum can also be browsed for additional updates, answers to Frequently Ask
 .. toctree-filt::
    :maxdepth: 1
 
-   acknowledgements
    overview
    asset_description
    hazard_characterization

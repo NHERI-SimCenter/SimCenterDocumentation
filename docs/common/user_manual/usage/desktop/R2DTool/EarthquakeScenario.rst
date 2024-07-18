@@ -304,7 +304,7 @@ OpenQuake Earthquake Rupture Forecasting
 	to define ruptures from earthquake sources (faults) and estimate the occurrence rate of earthquake 
 	ruptures. In contrast to **OpenSHA ERF**, where the earthquake source models
 	are built in UCERFs, users need to provide a Source File (``.xml``) in `OpenQuake's
-	conventions <https://docs.openquake.org/oq-engine/manual/latest/hazard.html#source-typologies>`_.
+	conventions <https://docs.openquake.org/oq-engine/manual/latest/user-guide/inputs/seismic-source-model-inputs.html#source-typologies>`_.
 	Note that although R2D allows defining multiple "sourceGroup", defining seismic
 	source logic trees is not supported now.
 
@@ -683,7 +683,14 @@ ground motions will be added to the GIS widget. The grid points are represented
 with a cross symbol. Clicking on a grid point will produce a popup with information
 about the ground motions at that point.
 
+Video Resources
+++++++++++++++++++++++++++++
 
+  .. raw:: html
+
+      <div style="text-align: center;">
+         <iframe src="https://www.youtube.com/embed/ARaiTIDkwpI" width="715" height="441" frameborder="5" allowfullscreen="allowfullscreen"></iframe>
+      </div>
 
 
 

@@ -13,19 +13,6 @@ Note that in the EDP file, DOF=1,2 are assumed to correspond to perpendicular ho
    :align: center
    :figclass: align-center
 
-
-
-The following options for EDP applications vary in the type of EDPs identified for the simulation output.
-
-
-
-.. rendre:: cli-gallery
-   :data-file: $SIMCENTER_DEV/SimCenterBackendApplications/meta/backends.cache.json
-   :load-defaults: $SIMCENTER_DEV/SimCenterBackendApplications/meta/index.yaml#/$SIMDOC_APP
-
-   :include-exclusive: %./categories:createEDP
-
-
 .. only:: HydroUQ_app
 
    .. raw:: html

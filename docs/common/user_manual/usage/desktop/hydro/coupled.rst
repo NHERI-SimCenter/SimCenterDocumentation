@@ -28,13 +28,13 @@ Coupled Simulation Settings
 
 The user is presented with a variety of settings to specify the coupled simulation. The GUI is shown in Figure  :numref:`EVT-CoupledSettings` and individual input parameters are as follows:
 
-``Time Step``: The coupling timestep for the solution. This value should be selected such that CFD model CFL criterion is satisfied, as well as the required minimum timestep for finite element analysis model stability.
+``Time Step``: The coupling timestep for the solution. This value should be selected such that the CFD model CFL criterion is satisfied, as well as the required minimum timestep for finite element analysis model stability.
 
 ``Duration``: Coupled simulation duration.
 
 ``Preload Structure w/ Gravity``: Utilize the nodal masses to create a gravity loading in the -Z direction of the OpenSees model. (optional, this could be handled manually within the OpenSees script itself)
 
-``Run Preliminary Structural Analysis``: Utilize the end state of the OpenSees analysis (if defined in the OpenSees script) as the initial state of structure during the coupled analysis.
+``Run Preliminary Structural Analysis``: Utilize the end state of the OpenSees analysis (if defined in the OpenSees script) as the initial state of the structure during the coupled analysis.
 
 .. _EVT-CoupledSettings:
 
@@ -62,25 +62,25 @@ The user is presented with a variety of settings to specify the coupled simulati
 
 ``Initial Relaxation Factor``: The relaxation factor for FSI coupling iterations.
 
-``Maximum Coupling Iterations``: Default, 100. Keep at a large value, should converge before reaching maximum iterations.
+``Maximum Coupling Iterations``: Default, 100. Keep at a large value, and should converge before reaching maximum iterations.
 
 ``Coupling Iteration Convergence Tolerance``: This is a relative convergence measure of the coupling data passed between participants within each coupling timestep. This value should be below 5e-3, but not too small. This is a measure of how much the coupling residuals change from coupling iteration to coupling iteration. Once the values have nearly approached their desired values from the interface acceleration techniques, the coupling convergence tolerance is satisfied.
 
-``Data Mapping Scheme``: Nearest Neighbor is recommended. Radial-basis-function mapping is available, but is less stable and slower than nearest neighbor.
+``Data Mapping Scheme``: Nearest Neighbor is recommended. Radial-basis-function mapping is available but is less stable and slower than the nearest neighbor.
 
 ``Output Data from Coupling Iterations``: Not recommended. Intended for debugging of coupling iterations for models which are not converging.
 
 ``Coupling Iteration Output Data Frequency``: A large value is recommended.
 
 
-Specificy OpenSees Structural Model and an External Surface File
+Specify OpenSees Structural Model and an External Surface File
 ----------------------------------------------------------------
 
 **OpenSees Model**
 
 ``OpenSees File``: Must be an OpenSeesPy script
 
-``External surface file``: Must be a STL file, this is the boundary which will represent the structure within a three-dimensional CFD simulation, which will be coupled to the FEA model)
+``External surface file``: Must be an STL file, this is the boundary that will represent the structure within a three-dimensional CFD simulation, which will be coupled to the FEA model)
 
 
 .. figure:: coupled/OpenSees.png 
@@ -90,12 +90,12 @@ Specificy OpenSees Structural Model and an External Surface File
    OpenSees
 
 
-Specificy OpenFOAM CFD Model and Initial Conditions
+Specify OpenFOAM CFD Model and Initial Conditions
 ---------------------------------------------------
 
 **OpenFOAM Model**
 
-Select a NHERI flume facility or specify the flume geometry within the text field boxes provided.
+Select the NHERI flume facility or specify the flume geometry within the text field boxes provided.
                                                                                                                                                                            
 Specify a flume cell size (this is the approximate edge length size of the volumes within the CFD domain for the largest cells). The minimum flume cell size could tentatively be 8 times smaller than this value, due to mesh castellation during automatic meshing routines. Use caution when specifying this value. CFD mesh resolution is increased in the structural near field.
 
@@ -109,7 +109,7 @@ Specify a flume cell size (this is the approximate edge length size of the volum
 
 **Specify the flume bathymetry (STL file, or point list of x position, elevation of flume floor at x position).**
 
-If there is no bathymetry, please provide points within the point list which are outside of the boundary of the flume, or specify the bottom of the flume as a two point list with your start x location and end x location as the start and end of the flume and the flume elevation at both points as 0.
+If there is no bathymetry, please provide points within the point list that are outside of the boundary of the flume, or specify the bottom of the flume as a two-point list with your start x location and end x location as the start and end of the flume and the flume elevation at both points as 0.
 
 
 .. figure:: coupled/bathymetryOF.png
@@ -140,7 +140,7 @@ If there is no bathymetry, please provide points within the point list which are
 
 **Specify the wave generation techniques for the CFD model, if waves are desired.**
 
-``Paddle Generated Waves``: Upload a CSV of times, displacements of the paddle at the inlet. This will create a paddle generated wave through motion of the CFD boundary at the minimum X boundary of the model.
+``Paddle Generated Waves``: Upload a CSV of times, displacements of the paddle at the inlet. This will create a paddle-generated wave through the motion of the CFD boundary at the minimum X boundary of the model.
                                                                                                                                                                             
 ``Periodic Waves``: Specify the wave properties to apply a periodic wave inlet boundary condition to the CFD model.
                 
@@ -156,7 +156,7 @@ If there is no bathymetry, please provide points within the point list which are
 Specify Outputs       
 ---------------
                                                                                                                                                                                                                                                                                                                                              
-A variety of outputs from the coupled model can be obtained through specification of the output settings.
+A variety of outputs from the coupled model can be obtained through the specification of the output settings.
  
 - Output VTK - Output a VTK file of the OpenSees and OpenFOAM models at the specified time interval.
 
