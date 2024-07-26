@@ -48,7 +48,7 @@ and damping parameters for each of the 25 non-linear dynamic analyses for each b
 In Damage and Loss Assessment
 =============================
 
-The testbed implemented :ref:`pelicun <https://pelicun.readthedocs.io/en/latest/index.html>` (Probabilistic Estimation of Losses, Injuries, and Community resilience Under 
+The testbed implemented `pelicun <https://pelicun.readthedocs.io/en/latest/index.html>` (Probabilistic Estimation of Losses, Injuries, and Community resilience Under 
 Natural disasters) to quantify damage (damage states) and loss (in the form of decision variables, e.g., loss ratio). 
 The dispersion in the simulated drift and acceleration demands is inflated by 0.22 to account for additional modeling uncertainties
 not considered in the non-linear dynamic analyses. Specifically, 20,000 realizations of damage and
