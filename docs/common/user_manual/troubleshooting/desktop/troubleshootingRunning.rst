@@ -7,7 +7,7 @@ When running simulations, failures can occur due to various reasons such as inco
 
 #. A temporary directory, ``tmp.SimCenter``, is created in the working directory, followed by a ``templatedir`` within it.
 #. The UI processes all input panels, and workflow applications transfer necessary files to the ``templatedir``.
-#. A Python script, specific to the simulation type (rWHALE.py for regional simulations, sWHALE.py for individual assessments), is executed from ``templatedir``. rWHALE serves as a wrapper, invoking sWHALE for each asset in regional assessments.
+#. A Python script, specific to the simulation type (rWHALE.py for regional simulations, sWHALE.py for individual assessments), is executed from the ``templatedir``. rWHALE serves as a wrapper, invoking sWHALE for each asset in regional assessments.
 #. For structural response simulations, uncertainty quantification is managed by the chosen UQ Engine (e.g., Dakota), which generates an input file (e.g., ``dakota.in``) placed in ``tmp.SimCenter``.
 #. The UQ engine runs the response simulation using the earlier created input file.
 #. For each structural response realization, the UQ engine creates a separate workdir folder within ``tmp.SimCenter``.
