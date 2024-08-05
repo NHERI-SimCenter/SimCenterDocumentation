@@ -9,9 +9,9 @@ RES: Results
 Workflow Results
 ----------------
 
-A successful run or download of a job that ran successfully at |DesignSafe| will result in 2 tabbed widgets displayed in the results panel.  The first tab, as shown in :numRef:`figResultsSummary` shows the summary statistics: **mean**, **stdDev**, and **kurtosis**. 
+A successful run or download of a job that ran successfully at |DesignSafe| will result in 2 tabbed widgets displayed in the results panel.  The first tab, as shown in :numref:`figResultsSummaryMPM` shows the summary statistics: **mean**, **stdDev**, and **kurtosis**. 
 
-.. _figResultsSummary:
+.. _figResultsSummaryMPM:
 
 .. figure:: figures/resultsSummary.png
    :align: center
