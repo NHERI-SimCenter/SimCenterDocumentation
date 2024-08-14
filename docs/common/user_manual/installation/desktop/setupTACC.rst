@@ -3,7 +3,7 @@
 Running Jobs at DesignSafe
 ==========================
 
-To run jobs on TACC high performance compute resources, the user must obtain an a job allocation and then run applications to create **credentials** on each of the compute resourcses they wish to run on.
+To run jobs on TACC high performance compute resources using the **Run at DesignSafe** button, the user must obtain a job allocation and then they must run applications to create **credentials** on each of the compute resourcses their jobs will run on.
 
 **Allocation**
 ^^^^^^^^^^^^^^
