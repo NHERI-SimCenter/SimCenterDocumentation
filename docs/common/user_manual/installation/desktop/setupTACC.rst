@@ -8,7 +8,7 @@ To run jobs on TACC high performance compute resources, the user must obtain an 
 **Allocation**
 ^^^^^^^^^^^^^^
 
-To obtain an allocation, the user can either submit a ticket through `DesignSafe <https://www.designsafe-ci.org/help/new-ticket/>_ requesting an allocation or through `TACC <https://tacc.utexas.edu/use-tacc/allocations/>`_. The **DesignSafe** process is probably quickest and easiest, e.g. a ticket with "Please can I have an allocation to run SimCenter tools on DesignSafe" will be sufficient.
+To obtain an allocation, the user can either submit a ticket through `DesignSafe <https://www.designsafe-ci.org/help/new-ticket/>`_ requesting an allocation or through `TACC <https://tacc.utexas.edu/use-tacc/allocations/>`_. The **DesignSafe** process is probably quickest and easiest, e.g. a ticket with "Please can I have an allocation to run SimCenter tools on DesignSafe" will be sufficient.
 
 **Credentials**
 ^^^^^^^^^^^^^^^
