@@ -8,12 +8,12 @@ To run jobs on TACC high performance compute resources, the user must obtain an 
 **Allocation**
 ^^^^^^^^^^^^^^
 
-To obtain an allocation, the user can either submit a ticket through `DesignSafe <https://www.designsafe-ci.org/help/new-ticket/>`_ requesting an allocation or through `TACC <https://tacc.utexas.edu/use-tacc/allocations/>`_. The **DesignSafe** process is probably quickest and easiest, e.g. a ticket with "Please can I have an allocation to run SimCenter tools on DesignSafe" will be sufficient.
+To obtain an allocation, the user can either submit a `DesignSafe Ticket <https://www.designsafe-ci.org/help/new-ticket/>`_ requesting an allocation or through the more formal `TACC allocation process <https://tacc.utexas.edu/use-tacc/allocations/>`_. The **DesignSafe** process is probably quickest and easiest, e.g. a ticket with "Please can I have an allocation to run SimCenter jobs at DesignSafe" will be sufficient.
 
 **Credentials**
 ^^^^^^^^^^^^^^^
 
-Due to cybersecurity issues, DesignSafe is requiring that all users obtain credentials for the machines on which jobs will run. Before you can run the application using the 'Run at DesignSafe' button, you must first obtain credentials for the machine(s) you may run on. If you follow the links provided you will be taken to a DesignSafe app page for this process:
+Due to cybersecurity issues, DesignSafe is requiring that all users obtain credentials for the machines on which jobs will run. Before you can run the application using the 'Run at DesignSafe' button, you must first obtain credentials for the machine(s) your jobs will run on. If you follow the links provided you will be taken to a DesignSafe app launch page specifically created for this process:
 
 .. only:: R2D_app
 
