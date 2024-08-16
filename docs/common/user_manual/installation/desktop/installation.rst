@@ -11,3 +11,4 @@ All SimCenter applications can be downloaded from the |ResearchTools| page. This
 
    install_Windows
    install_macOS
+   setupTACC
