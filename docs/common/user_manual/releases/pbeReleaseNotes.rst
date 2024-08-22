@@ -241,4 +241,4 @@ Version 1
 
 
 
-Users are welcome to contact us on the `Message Board <http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0>`_ for new feature requests.
+Users are welcome to contact us on the |messageBoard| for new feature requests.

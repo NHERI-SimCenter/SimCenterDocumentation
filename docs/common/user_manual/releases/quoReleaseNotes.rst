@@ -16,7 +16,7 @@ Major Version 4
 
       **Highlights**
          #. A needed release for changes required to interact with DesignSafe and new TapisV3 interface.
-         #. Due to AI generated spam on message board, users now directed to post questions using `github discussions <https://github.com/orgs/NHERI-SimCenter/discussions>`_ instead of SimCenter Forum.
+         #. Due to AI generated spam on message board, users now directed to post questions using |messageBoard| instead of SimCenter Forum.
 
 Major Version 3
 ===============

@@ -6,7 +6,7 @@
 Release Plans
 *************
 
-The following features are planned to be developed for upcoming releases of |app|. Development priorities may change depending on feedback from the community and our users. For suggestions or to contribute, we encourage you to reach out via the `SimCenter Forum <http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0&_gl=1*1mybwj*_ga*NzI5NDMzMDUzLjE2ODU0ODE2MzQ.*_ga_D96RT1T24K*MTcxNDc3MzkxMy4zMTEuMC4xNzE0NzczOTEzLjAuMC4w>`_.
+The following features are planned to be developed for upcoming releases of |app|. Development priorities may change depending on feedback from the community and our users. For suggestions or to contribute, we encourage you to reach out via the |messageBoard|.
 
 
 June 2024

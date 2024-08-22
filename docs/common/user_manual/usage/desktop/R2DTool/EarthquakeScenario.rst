@@ -272,7 +272,7 @@ in the lower part of the Earthquake Rupture Panel.
 	calculation type and identify their scenario. Afterward, a narrow selection criteria can be specified
 	in R2D to reduce the run time.
 .. note:: User other ERF models available in OpenSHA is also possible by directly running the backend application
-	codes of R2D. Please contact the developer at the `SimCenter Forum <http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0&_gl=1*1q12h3o*_ga*NzI5NDMzMDUzLjE2ODU0ODE2MzQ.*_ga_D96RT1T24K*MTcwNDkzMzIxOC4xODAuMC4xNzA0OTMzMjE4LjAuMC4w>`_
+	codes of R2D. Please contact the developer at the |messageBoard|
 	for inquiries and feature requests. 
 
 Point Source
