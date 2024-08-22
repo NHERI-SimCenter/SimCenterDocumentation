@@ -5,8 +5,29 @@
 Release Notes
 *************
 
-Version 3.5.0 (Current)
------------------------
+
+Version 4.0.0 
+-------------
+
+**Release date:** Aug. 2024
+
+**Highlights**
+
+#. A needed release for changes required to interact with DesignSafe and new TapisV3 interface.
+#. Due to AI generated spam on message board, users now directed to post questions using github discussions.
+
+Version 3.6.0 
+--------------
+
+**Release date:** June. 2024
+
+**Highlights**
+
+#. Added Option to allow differenet events in multi-model and multi-fidelity simulations
+
+
+Version 3.5.0
+-------------
 
 **Release date:** March. 2024
 
@@ -16,7 +37,7 @@ Version 3.5.0 (Current)
 
 
 Version 3.4.0
------------------------
+-------------
 
 **Release date:** October 2023
 
