@@ -277,4 +277,4 @@ Version 3.1.0
 #. FEM: invoking OpenSeesPy
 #. ...\*
 
-\*: Users are welcome to contact us on `forum <http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0>`_ for new feature requests.
+\*: Users are welcome to contact us on |messageBoard| for new feature requests.

@@ -203,7 +203,7 @@ rst_prolog = f"""
 .. |appLink| replace:: `{app_name2} Download`_
 .. |tool github link| replace:: `{app_name2} Github page`_
 .. |githubLink| replace:: `{app_name2} Github page`_
-.. |messageBoard| replace:: `Message Board`_
+.. |messageBoard| replace:: `github discussion page`_
 .. |app requirements| replace:: :ref:`lblRequirements`
 
 .. _{app_name2} Github page: https://github.com/NHERI-SimCenter/{app_name}
@@ -414,7 +414,7 @@ if app_name == "HydroUQ" or app_name == "Hydro":
 .. |full tool name| replace:: Water-borne Hazards Engineering with Uncertainty Quantification
 .. |test example| replace:: :ref:`hdro-0002`
 .. |tool version| replace:: 3.1.0
-.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=17.0
+.. _github discussion page: https://github.com/orgs/NHERI-SimCenter/discussions/categories/hydro-uq
 .. _Hydro Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ
 .. _HydroUQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-HydroUQ`
@@ -466,7 +466,7 @@ elif app_name == "R2DTool":
     rst_prolog += f"""\
 .. |full tool name| replace:: Regional Resilience Determination Tool
 .. |test example| replace:: :ref:`r2dt-0006`
-.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=8.0
+.. _github discussion page: https://github.com/orgs/NHERI-SimCenter/discussions/categories/r2d
 .. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt
 .. |tool version| replace:: 4.2
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
@@ -520,7 +520,7 @@ elif app_name == "PBE":
 
     rst_prolog += """\
 .. |full tool name| replace:: Performance Based Engineering Application
-.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
+.. _github discussion page: https://github.com/orgs/NHERI-SimCenter/discussions/categories/pbe
 .. _PBE Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE
 .. |tool version| replace:: 3.4
 .. |test example| replace:: :ref:`pbdl-0001`
@@ -570,7 +570,7 @@ elif app_name == "EE-UQ":
 .. |tool version| replace:: 3.5
 .. |test example| replace:: :ref:`eeuq-0001`
 .. _EE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/EE_UQ
-.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0
+.. _github discussion page: https://github.com/orgs/NHERI-SimCenter/discussions/categories/ee-uq
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-EE`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 
@@ -614,7 +614,7 @@ elif app_name == "quoFEM":
 .. |test example| replace:: :ref:`qfem-0001`
 .. |tool version| replace:: 3.5
 .. _quoFEM Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/quoFEM
-.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0
+.. _github discussion page: https://github.com/orgs/NHERI-SimCenter/discussions/categories/quofem
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 
@@ -663,7 +663,7 @@ elif app_name == "WE-UQ":
 .. |test example| replace:: :ref:`weuq-0001`
 .. |tool version| replace:: 3.2
 .. _WE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ
-.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=5.0
+.. _github discussion page: https://github.com/orgs/NHERI-SimCenter/discussions/categories/we-uq
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-WE`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 
@@ -706,8 +706,8 @@ elif app_name == 'pelicun':
 .. |githubLink| replace:: `pelicun Github page`_
 .. _pelicun Github page: https://github.com/NHERI-SimCenter/pelicun
 
-.. |messageBoard| replace:: `Message Board`_
-.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=7.0
+.. |messageBoard| replace:: `github discussion page`_
+.. _github discussion page: https://github.com/orgs/NHERI-SimCenter/discussions/categories/pelicun
 
 .. |app requirements| replace:: :ref:`lblRequirements`
 
