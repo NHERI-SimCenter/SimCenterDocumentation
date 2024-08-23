@@ -536,13 +536,16 @@ Special thanks to Dr. Anne Hulsey for sharing the python package `seaturtles <ht
 
 Ground Failure Models
 **********************
+The level 1 liquefaction and landslide models developed in PEER's `OpenSRA project <https://peer.berkeley.edu/opensra>`_ are implemented in R2D. Please refer to 
+Largent et al. (2023) [OpenSRAFrontiers]_ for the details of the models.
+
 Ground failure models are selected in this tab. Fig. :numref:`fig-R2DEQSGroundFailurePanel`
 is the user interface of the ground failure models panel. Users select the ground failure sources with the
 ground failure source checkboxes. When a checkbox is checked, a ground failure tab
 (e.g., Fig. :numref:`fig-R2DEQSLiquefactionPanel` for liquefaction) will be displayed.
 The ground failure models require geospatial data input. For example, distance to water bodies and
 groundwater depth are required for several liquefaction trigging models. These geospatial
-data may be large and are not distributed with R2D by default. When any of the liquefaction
+data may be large and are not distributed with R2D by default. When any of the ground failure
 source checkboxes are checked, R2D will check if the geospatial data exits in the R2D package.
 If they do not exist, a window like Fig. :numref:`fig-R2DEQGroundFailureDownloadWindow` will pop up.
 If you would like to use the R2D default database, please click "Yes" and wait until
@@ -550,10 +553,31 @@ the download completes to continue the analysis. If you do not plan to use the R
 the default database, you can click "Cancel" and provide the database with custom 
 GIS files or define the geospatial values in the Site File loaded Site Definition Panel.
 
+.. note:: Default data for landslide induced ground deformation: 
+	The default slope data ("CA_Slope_30m_WGS84_degree") used in landslide is too big (1.9 Gb) and can not be downloaded
+	automatically. To use the default data, please go to `https://zenodo.org/records/13357384 <https://zenodo.org/records/13357384>`_ on 
+	your browser and download the latest version of the "groundFailure.zip" file. 
+	After the download completes. Please unzip the "groundFailure.zip" file and place the unzipped folder in R2D's default database folder.
+	
+	- For Apple Mac users, the default database folder can be find by right-clicking on R2D in your Finder and select "Show Package Contents" (See Fig. :numref:`fig-R2DEQGroundFailureShowContent`). The default database folder is in "Contents >> MacOS >> Databases". If a "groundFailure" folder exists. Please move the "CA_Slope_30m_WGS84_degree" folder in the downloaded "groundFailure.zip" to existing "groundFailure".
 
-Currently, only the permanent ground
-deformation (PGD) induced by liquefaction can be estimated. The PGD induced by landslide and earthquake fault displacement will be added in future releases.
+	.. _fig-R2DEQGroundFailureShowContent:
+
+	.. figure:: figures/R2DEQGroundFailureShowContent.png
+	  :align: center
+	  :scale: 75%
+	  :figclass: align-center
+
+	  Databases location on Apple Mac.
+
+	- For Windows users, the default database folder can be find in "R2D_Windows_Download >> Databases". If a "groundFailure" folder exists. Please move the "CA_Slope_30m_WGS84_degree" folder in the downloaded "groundFailure.zip" to existing "groundFailure".
+
+Currently, the permanent ground
+deformation (PGD) induced by liquefaction and landslide can be estimated. The PGD induced by earthquake fault displacement will be added in future releases.
 The estimated horizontal ground deformation (PGD_h) and vertical ground deformation (PGD_v) are in the units of meter (m).
+
+.. [OpenSRAFrontiers]
+	Largent, M., Bray, J., Watson-Lamprey, J., & Abrahamson, N. (2023). Developing software to assess the seismic risk of natural gas infrastructure: OpenSRA. Frontiers in Built Environment, 9, 1176919.
 
   	.. _fig-R2DEQSGroundFailurePanel:
 
@@ -566,7 +590,7 @@ The estimated horizontal ground deformation (PGD_h) and vertical ground deformat
   	.. _fig-R2DEQGroundFailureDownloadWindow:
 
   	.. figure:: figures/R2DEQGroundFailureDownloadWindow.png
-  	  :scale: 50%
+  	  :scale: 100%
   	  :align: center
   	  :figclass: align-center
 
@@ -617,9 +641,7 @@ The details of the models are described in 4.2.2.1.3.1 of [Hazus2020]_ and `Open
 The units of the lateral spreading ground deformation (liq_PGD_h) and settlement ground deformation (liq_PGD_v) estimated with R2D is meter (m).
 liq_PGD_h and liq_PGD_v will be saved in the final output if the checkboxes below the lateral spreading and settlement selection combo box are checked.
 
-The output will also contain fields of "PGD_h" and "PGD_v". Currently, they are equal to "liq_PGD_h" and "liq_PGD_v" and they will be 
-the aggregated PGD induced by liquefaction, landslide, and fault displacement in future releases.
-
+The output will also contain fields of "PGD_h" and "PGD_v". If only liquefaction models are evaluated, they are equal to "liq_PGD_h" and "liq_PGD_v". If both liquefaction and landslide models are evaluated, the "PGD_h" value will be the sum of ground deformation induced by liquefaction and landslide.
 
 .. [Zhu2017]
    Zhu, J., Baise, L. G., & Thompson, E. M. (2017). An updated geospatial liquefaction model for global application. Bulletin of the Seismological Society of America, 107(3), 1365-1385.
@@ -635,6 +657,45 @@ the aggregated PGD induced by liquefaction, landslide, and fault displacement in
 
 	Ground Failure Models Panel.
 
+Landslide-induced Ground Failure
++++++++++++++++++++++++++++++++++++
+**Landslide Ground Displacement Model** |br|
+The model developed by Bray and Macedo (2019) [BrayMacedo2019]_ is implemented in R2D. This model estimates landslide-induced ground displacement using five model-specific input variables, along with the output (Earthquake Magnitude and Peak Ground Acceleration) defined/estimated in the "Earthquake Rupture" tab and "Ground Motion Models" tab.
+
+The five model-specific variables for the Bray and Macedo (2019) model need to be defined at each site. The five input variables and their corresponding input methods in R2D are:
+
+- Slope (degree):
+	- Define with raster (nearest pixel): Use the slope value defined at the nearest pixel to each site in a raster file (e.g., a .tif file).
+	- Defined ("slope") in Site File (.csv): A column named "slope" is defined in the "Site File" input in the "Sites" tab. 
+- Slope Thickness
+	- Use constant value (m): Assume a constant slope thickness at all sites. Seismically induced disrupted soil slides are typically shallow, usually 1 – 3 m thick ([GrantEtal2016]_). A value of 2 m is used as the default in R2D.
+	- Define with raster (nearest pixel): Use the slope thickness value defined at the nearest pixel to each site in a raster file (e.g., a .tif file).
+	- Defined ("slopeThickness") in Site File (.csv): A column named "slopeThickness" is defined in the "Site File" input in the "Sites" tab. 
+- Slope Unit Weigth (kN/m^3)
+	- Use constant value (kN/m^3): Assume a constant soil unit weight at all sites. A unit weight of 17 kN/m³ is used as the default value in openSRA [OpenSRAFrontiers]_. The same default value is used in R2D.
+	- Define with raster (nearest pixel): Use the soil unit weight defined at the nearest pixel to each site in a raster file (e.g., a .tif file).
+	- Defined ("gammaSoil") in Site File (.csv): A column named "gammaSoil" is defined in the "Site File" input in the "Sites" tab. 
+- Soil Cohesion (kPa)
+	- Infer from Geologic Map (Bain et al. 2022): Infer soil cohesion from a geologic map according to Table B.15 in Bain et al. 2022 [BainEtal2022]_. If this option is selected, a field to input the Geologic Map File will appear at the bottom of this tab. The default California state-wide geologic map in R2D is the map developed by Wills et al. (2015) [WillsEtAl2015]_.
+	- Use constant value (kPa): Assume a constant soil cohesion value at all sites. 
+	- Defined ("cohesionSoil") in Site File (.csv): A column named "cohesionSoil" is defined in the "Site File" input in the "Sites" tab.
+- Soil Friction Angle (degree)
+	- Infer from Geologic Map (Bain et al. 2022): Infer the soil friction angle from a geologic map according to Table B.15 in Bain et al. 2022 [BainEtal2022]_. If this option is selected, a field to input the Geologic Map File will appear at the bottom of this tab. The default California state-wide geologic map in R2D is the map developed by Wills et al. (2015) [WillsEtAl2015]_.
+	- Use constant value (degree): Assume a constant soil friction angle value at all sites. 
+	- Defined ("phiSoil") in Site File (.csv): A column named "phiSoil" is defined in the "Site File" input in the "Sites" tab. 
+
+The units of the landslide ground deformation (lsd_PGD_h) estimated with R2D is meter (m).
+liq_PGD_h will be saved in the final output if the checkbox in the **Save Ouput** combo box are checked.
+
+The output will also contain a field of "PGD_h". If only landslide model is evaluated, it is equal to "lsd_PGD_h". If both liquefaction and landslide models are evaluated, the "PGD_h" value will be the sum of ground deformation induced by liquefaction and landslide.
+
+.. [BrayMacedo2019]
+	Bray, J. D., & Macedo, J. (2019). Procedure for estimating shear-induced seismic slope displacement for shallow crustal earthquakes. Journal of Geotechnical and Geoenvironmental engineering, 145(12), 04019106.
+.. [GrantEtal2016]
+	Grant, A., Wartman, J., & Abou-Jaoude, G. (2016). Multimodal method for coseismic landslide hazard assessment. Engineering Geology, 212, 146-160.
+.. [BainEtal2022]
+	Bain, Chris; Hutabarat, Daniel; Bray, Jonathan D.; Abrahamson, Norman; O’Rourke, Thomas D.;  Lindvall, Scott. 2022. Performance-Based Earthquake Engineering Assessment Tool for Natural Gas Storage and Pipeline Systems, Task B - Enhanced Liquefaction and Ground Deformation Report. California Energy Commission. July 2022.
+	
 Ground Motion Record Selection
 ******************************
 
