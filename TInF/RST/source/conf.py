@@ -33,7 +33,7 @@ rst_prolog = """
 .. |appLink| replace:: `Turbulence Inflow Tool page`_
 .. _Turbulence Inflow Tool page: https://simcenter.designsafe-ci.org/research-tools/tinf/
 .. |messageBoard| replace:: `Message Board`_
-.. _Message Board: https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=5.0
+.. _Message Board: https://github.com/orgs/NHERI-SimCenter/discussions/categories/general-questions
 .. |toolVersion| replace:: '1.0.2'
 .. |openfoam.org| replace:: `OpenFOAM Foundation`_
 .. _OpenFOAM Foundation: https://openfoam.org

@@ -8,7 +8,16 @@ Release Notes
 Version 3
 =========
 
-   .. dropdown::    Version 3.4 (:blue:`Current`)
+   .. dropdown::    Version 3.5 (:blue:`Current`)
+      :open:
+
+      **Release date:** June 2024
+
+      **Major updates:**
+
+      - Ability to include different events in multi-model and multi-fidelity simulations
+	
+   .. dropdown::    Version 3.4
       :open:
 
       **Release date:** March 2024
@@ -232,4 +241,4 @@ Version 1
 
 
 
-Users are welcome to contact us on the `Message Board <http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0>`_ for new feature requests.
+Users are welcome to contact us on the |messageBoard| for new feature requests.

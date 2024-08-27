@@ -4,7 +4,7 @@
 Feedback
 ******************************
 
-If you have any feedback, data requests, or questions, please post them on the `SimCenter Regional Testbeds <http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=22.0>`_. 
+If you have any feedback, data requests, or questions, please post them on the |messageBoard|. 
 When creating a **New Topic**, it would be helpful if you could indicate the nature of your post in the **Subject** area:
 
 #. For general feedback, e.g., FEEDBACK: Provide comments on the testbed features, documentation, capabilities, etc.
