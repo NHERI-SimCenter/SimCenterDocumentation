@@ -26,11 +26,29 @@ Install on Windows 10
 
    Install OpenFOAM for Windows
    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-   To install OpenFOAM-10 on Windows 10, follow the instructions below: 
+   To install OpenFOAM-10 on Windows 10 or 11, follow the instructions below: 
 
-   #. First, open *PowerShell* from the start menu and run it as an administrator. Then, in the command window type ``wsl --install`` which will install all the necessary Linux features. For detailed instructions please follow `Install WSL <https://learn.microsoft.com/en-us/windows/wsl/install>`_.
+   1. First, open *PowerShell* from the start menu and run it as an administrator. In the command window, type the following which will install all the necessary Linux features. For detailed instructions please follow `Install WSL <https://learn.microsoft.com/en-us/windows/wsl/install>`_.
    
-   #. Open WSL from the start menu and run the following commands on the opened terminal window.  
+   .. code:: bash
+      
+      wsl --install --distribution Ubuntu
+
+   .. figure:: figures/weuq_wsl_installation.png
+      :align: center
+      :width: 75%
+
+      Installing WSL(Ubuntu) Subsystem.
+
+   This will install Ubuntu distribution and launch a new linux terminal to configure the installation. Then, input your user name and password to setup the system as shown bellow.
+
+      .. figure:: figures/weuq_wsl_configuration.png
+         :align: center
+         :width: 75%
+
+         Configuring WSL(Ubuntu) Subsystem.
+
+   2. Then, open WSL from the start menu and execute the following commands line by line on the opened terminal window.  
 
    .. code:: bash
 
@@ -40,7 +58,13 @@ Install on Windows 10
       sudo apt-get install openfoam10
 
 
-   Further instructions can be found in `OpenFOAM.org <https://openfoam.org/download/windows/>`_.
+   .. figure:: figures/weuq_openfoam_installation.png
+      :align: center
+      :width: 75%
+
+      Installing OpenFOAM-10 on WSL.
+
+      
 
 
 .. only:: HydroUQ_app
