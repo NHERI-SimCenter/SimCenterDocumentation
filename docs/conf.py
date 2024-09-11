@@ -359,8 +359,8 @@ docTestbeds = "True"
 if app_name == "HydroUQ" or app_name == "Hydro":
 
     project = "Hydro-UQ"
-    copyright = f"2018-{str(datetime.today().year)}, The Regents of the University of California"
-    author = "Justin Bonus, Ajay B Harish, Frank McKenna"
+    copyright = f"2020-{str(datetime.today().year)}, The Regents of the University of California"
+    author = "Frank McKenna, Justin Bonus, Ajay B Harish & Nicolette Lewis"
 
     tags.add("tsunami")
     tags.add("stormsurge")
