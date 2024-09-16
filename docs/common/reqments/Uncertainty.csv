@@ -31,7 +31,7 @@ UB.6, Ability to use a default log-likelihood function, UF, M, Implemented,`qfem
 UB.7, Ability to use Kalman Filtering, UF, M, _, _, _, _, _, _, _
 UB.8, Ability to use Particle Filtering, UF, M, _, _, _, _, _, _, _
 UB.9, Ability to perform model-class selection/averaging, UF,D,Implemented,`qfem-0029 <https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/examples/desktop/qfem-0029/README.html>`_,NA,NA,NA,NA,NA
-UB.10, Ability to perform hierarchical Bayesian calibration, UF,D,Implemented,`qfem-0028 <https://nheri-simcenter.github.ia/quoFEM-Documentation/common/user_manual/examples/desktop/qfem-0028/README.html>`_,NA,NA,NA,NA,NA
+UB.10, Ability to perform hierarchical Bayesian calibration, UF,D,Implemented,`qfem-0028 <https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/examples/desktop/qfem-0028/README.html>`_,NA,NA,NA,NA,NA
 UB.11, Ability to perform surrogate-aided Bayesian calibration, UF,D,In Progress,1.1.2.3.4,NA,NA,NA,NA,NA
 UH.1, Ability to sample from manifold, SP, M, Implemented,`qfem-0022 <https://nheri-simcenter.github.io/quoFEM-Documentation/common/user_manual/examples/desktop/qfem-0022/README.html>`_,`eeuq-0006 <https://nheri-simcenter.github.io/EE-UQ-Documentation/common/user_manual/examples/desktop/eeuq-0006/README.html>`_,NA,NA,NA,NA
 UH.2, Ability to build Reduced Order Model, SP, M,In Progress,1.2.4.4,,NA,NA,NA,NA
