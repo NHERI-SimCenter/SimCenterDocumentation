@@ -140,7 +140,7 @@ damage and loss. This can include taking advantage of the data published by the 
 The revised damage and loss models or extensions to the heuristic rulesets can be contributed back to the SimCenter 
 to expand the capabilities of this community software. 
 
-If you have any feedback or questions, please check out the `SimCenter Regional Testbeds <http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=22.0>`_. 
+If you have any feedback or questions, please check out the |messageBoard|. 
 This forum can also be browsed for additional updates, answers to Frequently Asked Questions, and suggestions from the SimCenter team and user community.
 
 .. _lbl-testbeds-manual:

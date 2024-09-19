@@ -6,7 +6,18 @@
 Release Notes
 ***************************
 
-Version 4.1.0 (Current)
+Version 5.0.0 (Current)
+-----------------------
+
+**Release date:** August 2024
+
+**Highlights**
+
+#. A needed release for changes required to interact with DesignSafe and new TapisV3 interface.
+#. Due to AI generated spam on message board, users now directed to post questions using github discussions.
+#. A procedure for estimating shear-induced seismic slope displacement for shallow crustal earthquakes is added to the earthquake event generation tool.
+
+Version 4.1.0
 -----------------------
 
 **Release date:** April 2024

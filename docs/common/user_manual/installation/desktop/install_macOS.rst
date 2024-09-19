@@ -27,13 +27,7 @@ SimCenter tools require an x86-based Python 3.9. If your current Python version 
       
       Python: Kernel Version
 
-#. Visit `Python.org <https://www.python.org/downloads/macos/>`_ and download the **macOS 64-bit Intel-only installer** for Python 3.9.
-
-   .. figure:: figures/pythonDownload.png
-      :align: center
-      :figclass: align-center
-      
-      Python: python.org MacOS Download Page
+#. To download a Python installer with your browser open the |appLink| page. There, you will find various files and directories available for download. Locate the file named **python-3.9.13-macosx10.9.pkg**, which we copied from `Python.org <https://www.python.org/downloads/macos/>`_. Proceed to download this installer file and then open it on your local machine to initiate the Python installation process.
 
 #. Run the installer. Upon completion, a folder with several files will open, as shown in the figure below. Execute ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh`` by double-clicking each.
 

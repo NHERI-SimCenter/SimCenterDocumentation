@@ -394,7 +394,7 @@ This tutorial will show how a **deterministic** model written/interfaced in a Py
                 .. note::
                     **When running at DesignSafe (e.g. Step 3)**, SimCenter workflow uses its own Python executable installed on the cloud computer. Currently, the only supported Python packages are those installed through the 'nheri_simcenter' package. The available list of packages includes - numpy, scipy, sklearn, pandas, tables, pydoe, gpy, emukit, plotly, matplotlib. If your model uses a package beyond this list, quoFEM analysis will fail.
 
-                    An option to allow user-defined Python packages on DesignSafe is under implementation. Meanwhile, if you need to request to use additional Python packages, please contact us through `user forum <https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0>`_.
+                    An option to allow user-defined Python packages on DesignSafe is under implementation. Meanwhile, if you need to request to use additional Python packages, please contact us through |messageBoard|.
 
 
             * **When your model consists of more than one script**
@@ -404,7 +404,7 @@ This tutorial will show how a **deterministic** model written/interfaced in a Py
 
             * **Debugging**
 
-                When quoFEM analysis fails and the error message points you to a working directory, often the detailed error messages are written in ``ops.out`` file in the directory. Other ``.log`` and ``.err`` files can have information to help you identify the cause of the failure. Please feel free to ask us through `user forum <https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0>`_.
+                When quoFEM analysis fails and the error message points you to a working directory, often the detailed error messages are written in ``ops.out`` file in the directory. Other ``.log`` and ``.err`` files can have information to help you identify the cause of the failure. Please feel free to ask us through |messageBoard|.
 
 
             * **When "RUN at DesignSafe" fails**
@@ -424,6 +424,6 @@ This tutorial will show how a **deterministic** model written/interfaced in a Py
 
             * **Questions, bug reports, and feature requests**
 
-                We have an active `user forum <https://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=4.0>`_, for any users who have questions or feature requests. The response is mostly within 24 hours and usually much less.
+                We have an active |messageBoard|, for any users who have questions or feature requests. The response is mostly within 24 hours and usually much less.
 
 

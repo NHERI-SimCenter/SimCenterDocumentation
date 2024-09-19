@@ -1,10 +1,22 @@
-.. _lbl-release_quoFEM:
+.. _lbl-release_quoFEM2:
 .. role:: blue
 
 *************
 Release Notes
 *************
 
+
+Major Version 4
+===============
+
+   .. dropdown:: Version 4.0 (:blue:`Current`)
+      :open:
+
+      **Release date:** Aug. 2024
+
+      **Highlights**
+         #. A needed release for changes required to interact with DesignSafe and new TapisV3 interface.
+         #. Due to AI generated spam on message board, users now directed to post questions using |messageBoard| instead of SimCenter Forum.
 
 Major Version 3
 ===============
@@ -14,7 +26,7 @@ Major Version 3
       The major version number was increased from 2 to 3 as changes were made to the input and output formats of |app|. This means old examples will not be loaded in this version of the tool.
 
 
-   .. dropdown:: Version 3.5 (:blue:`Current`)
+   .. dropdown:: Version 3.5
       :open:
 
       **Release date:** December. 2023
