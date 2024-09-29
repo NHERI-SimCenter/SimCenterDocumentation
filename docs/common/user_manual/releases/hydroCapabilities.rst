@@ -116,15 +116,9 @@ EVT (Event Selection)
 
           #. Available for running on TACC HPC
 
-     #. :blue:`Celeris`` (Coming Soon)` :sup:`3`
-     
-          #. :blue:`Boussinesq wave solver`
+..
+   #. :blue:`Celeris`` (Coming Soon)` :sup:`3` #. :blue:`Boussinesq wave solver`  #. :blue:`Nonlinear shallow-water solver`  #. :blue:`WebGPU Accelerated` #. :blue:`Available for running through integrated browser (no installation required)`
 
-          #. :blue:`Nonlinear shallow-water solver`
-
-          #. :blue:`WebGPU Accelerated`
-
-          #. :blue:`Available for running through integrated browser (no installation required)`
 
 .. note:: 
      
@@ -132,7 +126,10 @@ EVT (Event Selection)
 
      :sup:`2` GeoClaw functionality from HydroUQ v1.0 is partially deprecated in the current version. It is to be fully reintroduced in the near future.
 
+
+..
      :sup:`3` Celeris is a new addition to the suite of numerical methods available in HydroUQ. It is currently in beta development and will be released soon.
+
 
 
 FEM (Computational Model Specification)
