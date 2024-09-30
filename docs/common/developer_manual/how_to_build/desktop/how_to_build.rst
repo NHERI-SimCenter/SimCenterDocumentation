@@ -4,7 +4,7 @@
 How to Build
 ============
 
-SimCenter tools comprise a frontend user interface (UI) and backend applications. They are kept in separate GitHub repositories and are also built separately. The following sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI and the backend.
+SimCenter tools consist of a frontend user interface (UI) and backend applications. They are maintained in separate GitHub repositories and are also built separately. The following sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI with the backend.
 
 .. note::
 
