@@ -56,3 +56,15 @@ The interface for Transportation Infrastructure damage and loss in Pelicun mirro
 **Hazus MH EQ IM** follows the damage and loss model from the `Hazus Earthquake Model Technical Manual <https://www.fema.gov/sites/default/files/documents/fema_hazus-earthquake-model-technical-manual-5-1.pdf>`_. For bridges, it requires `SA_0.3` and `SA_1.0` for ground shaking-induced damage assessment. Ground failure considerations require permanent ground deformation (`PGD_h` and `PGD_v`) inputs for bridges and roadways, while tunnels need peak ground acceleration (`PGA`) and permanent ground deformation (`PGD_h` and `PGD_v`).
 
 The **User-provided Fragilities** option allows for custom fragility functions, necessitating an auto-populate script and a folder path for the fragility functions, as detailed in :numref:`fig-R2DPelicunDLPanel`. See Example 9 in :ref:`R2D examples <lbl-examples>` for an example.
+
+.. _lbl-DLWaterDistributionNetworkPelicun:
+
+Pelicun Damage and Loss for Water Distribution Infrastructure
+-------------------------------------------------------------
+Similar to Transportation infrastructure, the interface for Water Distribution Infrastructure damage and loss in Pelicun mirrors that of buildings, as shown in :numref:`fig-R2DPelicunDLPanel`. Supported **damage and loss methodology** options include **Hazus MH EQ IM** and **User-provided Fragilities**. 
+
+Currently, **Hazus MH EQ IM** follows the damage and loss model from the `Hazus Earthquake Model Technical Manual <https://www.fema.gov/sites/default/files/documents/fema_hazus-earthquake-model-technical-manual-5-1.pdf>`_. The Damages are calculated based on peak ground acceleration (`PGA`) and permanent ground deformation. Since pipelines can sometimes be very long, each pipe is segmented into many smaller segments internally in Pelicun and then the damage is estimated for each segment. Damaged states are: 1- undamaged, 2- leak, and 3- break.
+
+Damages for tank, pumps stations are not estimated.
+
+The **User-provided Fragilities** option allows for custom fragility functions, necessitating an auto-populate script and a folder path for the fragility functions, as detailed in :numref:`fig-R2DPelicunDLPanel`. See Example 9 in :ref:`R2D examples <lbl-examples>` for an example.
