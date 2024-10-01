@@ -31,42 +31,32 @@ The additional simulations required for uncertainty quantification can be prohib
 
 .. _lblCapabilitiesAndLimitationsHydroUQ:
 
-Capabilities and Limitations
-============================
+Capabilities
+============
 
-Below are key, modular capabilities and limitations of |short tool id|, categorized by Uncertainty Quantification (UQ), Design Building General Information (GI), Structural Information & Analysis Model (SIM), Natural Hazard Event (EVT), Engineering Demand Parameters (EDP), Finite Element Method (FEM), Random Variables (RV), and Results (RES).
+Below are key, modular capabilities of |short tool id|, categorized by Uncertainty Quantification (UQ), Design Building General Information (GI), Structural Information & Analysis Model (SIM), Natural Hazard Event (EVT), Engineering Demand Parameters (EDP), Finite Element Method (FEM), Random Variables (RV), and Results (RES).
 
 .. list-table:: 
-   :widths: 5 50 50 
+   :widths: 5 100 
    :header-rows: 1
 
    * - Item
      - Capabilities
-     - Limitations
    * - UQ
      - Easy access to different UQ methods. Parallelized UQ algorithms. Multiple alternative algorithms for each method.
-     - No support for optimization under uncertainty and local sensitivity analysis.
    * - GI
      - Basic interface for user-provided general building information (e.g. location, age, and building type).
-     - No support for sophisticated user-defined building types. Yet to implement a map-style interface for building location so users must type in coordinates manually. 
    * - SIM
      - Easy interface for user-provided structural information and analysis models (e.g. geometry, material properties, and boundary conditions). Provides a multi-degree-of-freedom (MDOF) building model. Allows for OpenSeesPy models defined in user-provided scripts. Supports investigation of multiple potential building models with associated "belief" values for each. 
-     - Does not make full use of information (e.g. location of the building and date built influences which ASCE guidelines may have applied) provided in GI for automated structural information and analysis model generation.
    * - EVT 
      - OpenFOAM computational fluid dynamics (CFD) simulations. GeoClaw Shallow-Water Equations (SWE) and OpenFOAM CFD one-way coupled simulations. FOAMySees two-way coupled CFD-FEA simulations. Material Point Method (MPM, ClaymoreUW) simulations. Pre-built and validated digital wave-flume twins. 
-     - Most simulation types are limited to remote execution on TACC supercomputers.
    * - FEM
      - Easy interface for user-provided simulation models (not only FEM models but *any model*), including Opensees, Python, or any other simulation models (e.g. FEM or non-FEM software) with only a python-scripted interface provided by the user to HydroUQ.
-     - Graphical user-interface support for alternative finite element analysis (FEA) software and non-FEA software is limited.
    * - RV
      - Twelve different kinds of probability distributions with correlations.
-     - Does not expose which variables support this feature well to the user. No support for random fields, non-Gaussian copular, or user-defined variables.
    * - EDP
      - Scalar and vector EDP parsing. Hazard specific EDP lists (e.g. tsunami and storm-surge). Support for user-defined EDPs.
-     - Separate Intensity Measures (IMs) and EDPs (load and response), in functionality and GUI presentation, is not fully delineated yet.
    * - RES
      - Interactive plotting of scatter charts, histograms, and cumulative mass functions. Summary of statistics. Save data into a CSV file.
-     - Limited flexibility for in-app visualization. Results must be ported to external plotting software for more advanced visualization.
    * - General
      - Graphical user interface. Free and easy one-click remote running option. 
-     - Limited guidance on how to effectively contribute to this open-source project.

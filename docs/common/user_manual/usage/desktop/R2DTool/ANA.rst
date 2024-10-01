@@ -25,6 +25,7 @@ For building analysis, the following applications are supported:
   - OpenSees
   - OpenSeesPy
   - IMasEDP
+  - Capacity Spectrum Method
   - PreTrained Surrogate Models
   - CustomPy-Simulation
   - None
@@ -57,6 +58,34 @@ IMasEDP Analysis Model
 *************************
 
 The IMasEDP application directly uses the hazard intensity measure (IM) as the engineering demand parameter (EDP), bypassing structural analysis.
+
+Capacity Spectrum Method
+*************************
+The **Capacity Spectrum Method** is a simplified method for estimating the seismic performance of structures. The method uses the capacity curve of the structure and the response spectrum of the ground motion to estimate the maximum response of the structure. The method is based on the assumption that the maximum response of the structure is the intersection of the capacity curve and the response spectrum. The method requires three inputs: the demand spectrum, the capacity curve, and the damping model. 
+
+Demand Spectrum Model:
+~~~~~~~~~~~~~~~~~~~~~~
+The demand spectrum model is the response spectrum of the ground motion assuming a 5% damping ratio. The demand spectrum model defined in HAZUS [HAZUS2022]_ is implemented in R2D now. This model uses pesudo-spectrum acceleration at 0.3 seconds and 1.0 seonds as the anchor points and completes the spectrum using the method described in section 4.1.3.2 of [HAZUS2022]_, considering the earthquake magnitude.
+
+To use the HAZUS demand spectrum model, "SA_0.3" and "SA_1.0" should exist in the columns of the ground motion intensity measures defined in the **ASD** tab. Other demand spectrum model can be implemented by editing SimCenterBackendApplication Python script `here <https://github.com/NHERI-SimCenter/SimCenterBackendApplications/blob/master/modules/performSIMULATION/capacitySpectrum/DemandModels.py>`_ or contacting the developers.
+
+.. [HAZUS2022]
+	Federal Emergency Management Agency (FEMA) (2022) Hazus Multi-Hazard Loss Estimation Methodology: Earthquake Model (Hazus®-MH . Technical Manual 5.1). Washington, DC: Mitigation Division, Department of Homeland Security, Federal Emergency Management Agency.
+
+Capacity Curve Model:
+~~~~~~~~~~~~~~~~~~~~~~
+The capacity curve model proposed by Cao and Peterson [cao2006]_ is implemented in R2D. The model is an extension of the [HAZUS2022]_ capacity curve model. The model uses the capacity curve parameters (e.g. yield strength, yield displacement, ultimate strength, ultimate displacement etc.) to anchor the capacity curve of the structure. Further, an ecliptic passing the yield and ultimate points in [HAZUS2022]_ is used to complete the capacity curve. To use this model, all building information needed to classfify the building into a class defined in [HAZUS2022]_ should be provided in the **ASD** tab. `R2D Example 1 <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/examples/desktop/E1BasicHAZUS/README.html>`_ provides an example of how to define the building inventory for the capacity curve model.
+
+The model is implemented in the SimCenterBackendApplication Python script `here <https://github.com/NHERI-SimCenter/SimCenterBackendApplications/blob/master/modules/performSIMULATION/capacitySpectrum/CapacityModels.py>`_. New capacity curve models can be implemented by editing the backend source code or contacting the developers.
+
+Damping Model:
+~~~~~~~~~~~~~~~~~~~~~~
+The capacity spectrum method requires a damping model to estimate the maximum response of the structure. The damping model proposed by Cao and Peterson [cao2006]_ is implemented in R2D. The model is an extension of the [HAZUS2022]_ capacity curve model. As defined in section 5.6 of [HAZUS2022]_, effective damping ratio is the sum of elastic damping and hysteretic damping. The effective damping ratio is estimated according to the building class defined in [HAZUS2022]_, and the hysteretic damping is estimated using the curve proposed by Cao and Peterson [cao2006]_. The effective damping is used to estimate the demand spectrum reduction parameters (See section 5.6.1.1 of [HAZUS2022]_) iteratively.
+
+The model is implemented in the SimCenterBackendApplication Python script `here <https://github.com/NHERI-SimCenter/SimCenterBackendApplications/blob/master/modules/performSIMULATION/capacitySpectrum/DemandModels.py>`_. New damping models can be implemented by editing the backend source code or contacting the developers.
+
+.. [cao2006]
+	Cao, T., & Petersen, M. D. (2006). Uncertainty of earthquake losses due to model uncertainty of input ground motions in the Los Angeles area. Bulletin of the Seismological Society of America, 96(2), 365-376.
 
 Pre-trained surrogate models
 ****************************
@@ -148,3 +177,6 @@ IMasEDP Analysis Model
 *************************
 
 Similar to buildings, the IMasEDP application for transportation infrastructure uses the hazard intensity measure (IM) directly as the engineering demand parameter (EDP), bypassing structural analysis.
+
+
+
