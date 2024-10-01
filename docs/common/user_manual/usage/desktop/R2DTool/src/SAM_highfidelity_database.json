@@ -1,0 +1,156 @@
+[
+    
+    {
+        "id": 1,
+        "mainScript": "./model1/Ex5.Frame2D.build.ElasticSection.tcl",
+        "type": "OpenSeesInput",
+        "NodeMapping":
+        [
+            {
+                "node": 11,
+                "cline": "response",
+                "floor": "0"
+            },
+            {
+                "node": 21,
+                "cline": "response",
+                "floor": "1"
+            },
+            {
+                "node": 31,
+                "cline": "response",
+                "floor": "2"
+            },
+            {
+                "node": 41,
+                "cline": "response",
+                "floor": "3"
+            }
+        ],
+        "numStory": 3,
+        "ndm": 2,
+        "ndf": 3,
+        "dampingRatio": 0.02
+    },
+    {
+        "id": [2,3],
+        "mainScript": "./model2/MRF_2Story_Concentrated.tcl",
+        "type": "OpenSeesInput",
+        "NodeMapping":
+        [
+            {
+                "node": 11,
+                "cline": "response",
+                "floor": "0"
+            },
+            {
+                "node": 12,
+                "cline": "response",
+                "floor": "1"
+            },
+            {
+                "node": 13,
+                "cline": "response",
+                "floor": "2"
+            }
+        ],
+        "numStory": 2,
+        "ndm": 2,
+        "ndf": 3,
+        "dampingRatio": 0.02
+    },
+   {
+        "id": 10,
+        "mainScript": "./model3/Alt_ROM_Simulation_BoucWen_Drift.tcl",
+        "type": "OpenSeesInput",
+        "NodeMapping":
+        [
+            {
+                "node": 10,
+                "cline": "response",
+                "floor": "0"
+            },
+            {
+                "node": 1,
+                "cline": "response",
+                "floor": "1"
+            },
+            {
+                "node": 2,
+                "cline": "response",
+                "floor": "2"
+            },
+            {
+                "node": 3,
+                "cline": "response",
+                "floor": "3"
+            },
+            {
+                "node": 4,
+                "cline": "response",
+                "floor": "4"
+            },
+            {
+                "node": 5,
+                "cline": "response",
+                "floor": "5"
+            },
+            {
+                "node": 6,
+                "cline": "response",
+                "floor": "6"
+            },
+            {
+                "node": 7,
+                "cline": "response",
+                "floor": "7"
+            },
+            {
+                "node": 8,
+                "cline": "response",
+                "floor": "8"
+            },
+            {
+                "node": 9,
+                "cline": "response",
+                "floor": "9"
+            }
+        ],
+        "numStory": 9,
+        "ndm": 2,
+        "ndf": 3,
+        "dampingRatio": 0.02
+    },
+    {
+        "id": 12,
+        "mainScript": "./model4/ShearBuilding3.tcl",
+        "type": "OpenSeesInput",
+        "NodeMapping":
+        [
+            {
+                "node": 1,
+                "cline": "response",
+                "floor": "0"
+            },
+            {
+                "node": 2,
+                "cline": "response",
+                "floor": "1"
+            },
+            {
+                "node": 3,
+                "cline": "response",
+                "floor": "2"
+            },
+            {
+                "node": 4,
+                "cline": "response",
+                "floor": "3"
+            }
+        ],
+        "numStory": 3,
+        "ndm": 2,
+        "ndf": 3,
+        "dampingRatio": 0.02
+    }
+]

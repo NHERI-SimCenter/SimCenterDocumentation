@@ -548,7 +548,7 @@ Before running the MFMC simulation model, the users are advised to check the val
 
 * **The models should take the same input random variables and produce the same output quantities of interest.** For example, if the target system is a structure, if one model takes stiffness as a random variable and the other does not, the model violates the problem definition. Similarly, if :math:`j`-th output of the HF model is the 1st-floor inter-story drift, :math:`j`-th output of the LF model should also be the 1st-floor inter-story drift. 
 
-* **The models should have a clear hierarchy in terms of accuracy and time.** When the HF and LF model responses are different, the assumption is that the HF response is always accurate. Therefore, if an LF model runs faster than the HF model, it is optimal to run only the HF model, and there is no reason to introduce MFMC.
+* **The models should have a clear hierarchy in terms of accuracy and time.** When the HF and LF model responses are different, the assumption is that the HF response is always accurate. Therefore, if an HF model runs faster than the LF model, it is optimal to always run only the HF model, and there is no reason to introduce MFMC.
 
 * **The response of different models should have a high correlation**. The efficiency of MFMC heavily depends on the correlation between the HF and LF model outputs. Only if the correlation is fairly high, the MF estimation is meaningfully efficient than conducting only HF simulations. 
 
