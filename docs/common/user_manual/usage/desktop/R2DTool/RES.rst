@@ -32,3 +32,23 @@ Pelicun Damage and Loss
 
 	Pelicun results visualization panel.
 
+REWET System Performance Result 
+------------------------
+
+When you run a System Performance module (e.g., REWET), R2DTool produces results regarding system performance assessment. These data are shown in the GIS and Tabular format in the results section, similar to Pelicun's Loss and Damage data model. Besides that, system-wide curves, which describe the functionality of the network according to a metric, shown widget on the right side of the app ( :numref:`fig-R2DRESRSPPanel`). REWET's specific data consist of:
+
+	1. **Total Outage Time:** This is the total time that each junction did not provide service level (Basic Service Category [Davis21]), i.e., the total amount of time each junction could not deliver water (Water Delivery) and water quantity as much as needed (Water Quantity).
+	
+	2. **Network Performance Curves:** By knowing the state of each junction at each time, R2DTool assesses the percentage of the nodes that are at each status at each time of the simulation. Then, Network Performance Curves are created for Delivery and Quantity BSC [Davis21].
+
+.. _fig-R2DRESRSPPanel:
+
+.. figure:: figures/R2D-Result-SP.png
+	:align: center
+	:figclass: align-center
+
+	REWET results visualization panel.
+
+.. [Davis21]
+	Davis, Craig A. "Understanding functionality and operability for infrastructure system resilience." Natural Hazards Review 22.1 (2021): 06020005.
+

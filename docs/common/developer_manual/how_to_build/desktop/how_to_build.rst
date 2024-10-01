@@ -4,7 +4,7 @@
 How to Build
 ============
 
-SimCenter tools comprise a frontend user interface (UI) and backend applications. They are kept in separate GitHub repositories and are also built separately. The following sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI and the backend.
+SimCenter tools consist of a frontend user interface (UI) and backend applications. They are maintained in separate GitHub repositories and are also built separately. The following sections outline (1) the applications needed to build and run, (2) instructions for building the backend applications, (3) instructions for building the frontend UI, and (4) operations to perform in the running UI to link the UI with the backend.
 
 .. note::
 
@@ -83,8 +83,9 @@ Build the applications
         git clone https://github.com/NHERI-SimCenter/SimCenterBackendApplications
 
 #. To build the applications, you need to navigate to the **SimCenterBackendApplications** folder that was created with the **git clone** command. Once there, issue the following set of commands to create a **build** folder, change directory to that folder, install needed software using Conan, and finally use **CMake** to build and install the applications. The following are the set of commands to type in the terminal (see notes below the code block if the commands fail).
-
-    For those developers using the Windows operating system, in a terminal or PowerShell window you need to type the following:
+	
+	On Windows, it is necessary to specify a compiler for CMake. To do this, you need to add additional arguments to line 4. That means, 
+    for those developers using the Windows operating system, in a terminal or PowerShell window you need to type the following:
 
             .. code:: console
 
@@ -95,8 +96,8 @@ Build the applications
               cmake --build . --config Release
               cmake --install .
               cd ..
-
-    On Windows, it is necessary to specify a compiler for CMake. To do this, you need to add additional arguments to line 4, i.e., if you have Visual Studio 2019, you would instead type:
+	   
+	Developer using other machines should type the following command:
 
             .. code:: console
 
@@ -222,11 +223,15 @@ Linux or Mac users will type the following in a terminal window from inside the 
 
         /Users/fmckenna/Qt/5.15.2/clang_64/bin/qmake ../|short tool id|.pro
 
-   #. On Windows 10 with Visual Studio, the above commands need to be performed using a `Visual Studio x64 command prompt <https://docs.microsoft.com/en-us/cpp/build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line?view=msvc-160>`_.
+   #. On Windows 10 and later with Visual Studio, the above commands need to be performed using a `Visual Studio x64 command prompt <https://docs.microsoft.com/en-us/cpp/build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line?view=msvc-160>`_.
 
    #. If installed, jom can also be used to build in parallel.
 
 Once built, you can now run the tool executable.
+
+.. note::
+
+	On Windows machines, you need to copy essential QGIS DLLs. To do so, run *make.bat* in R2DTool root directory **or** manually copy and past them in ./ build directory. Otehrwise, after runing **R2D.exe** file in ./build directory, you will receive missing DLL errors.
 
 *************************************
 Modify the User Interface Preferences

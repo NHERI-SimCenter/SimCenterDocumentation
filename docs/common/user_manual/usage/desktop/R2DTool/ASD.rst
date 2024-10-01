@@ -92,11 +92,33 @@ The `"properties"` item should contain all information necessary for subsequent 
   
   GeoJSON to Asset input panel after loading a building ``.geojson`` database.
   
+.. _lbl-ASDWaterDistributionNetwork:
 
 Regional Water Distribution Networks
 -------------------------------------
 
-The water distribution network panel (:numref:`fig-wdnInputPanel`) allows for the input of nodes and pipelines. Users select the import application via the **Regional Water Network Selection** combo box.
+The water distribution network panel (:numref:`fig-WDNINPASD`) allows for the input of nodes and pipelines. Users select the import application via the **Regional Water Network Selection** combo box.
+
+INP to Water Distribution Network
+*********************************
+
+This application imports water distribution networks from the EPANET INP format. The INP file contains many features and is widely used in the industry. Although the INP file includes coordinates, the coordinate reference system must be defined within this application.
+
+For more information, please refer to `EPANET's Document <https://epanet22.readthedocs.io/en/latest/back_matter.html>`_.
+
+Please note that this is the preferred input method for using REWET in R2D.
+
+.. _fig-WDNINPASD:
+
+.. figure:: figures/R2DWDNASDINP.png
+  :align: center
+  :figclass: align-center
+
+  INP network distribution network input panel.
+
+
+This application imports a water distribution network from .csv files representing nodes and pipelines.
+
 
 CSV to Regional Water Network
 *****************************
@@ -114,7 +136,6 @@ This application imports a water distribution network from .csv files representi
   :figclass: align-center
 
   CSV to regional water network input panel.
-
 
 GIS to Regional Water Network
 *****************************
