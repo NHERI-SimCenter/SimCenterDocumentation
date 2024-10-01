@@ -17,10 +17,10 @@ The Isolated Building CFD Model is a Computational Fluid Dynamics (CFD) based wi
 #. Define the geometry of the building and the computational domain
 #. Generate the mesh using global and local refinement options
 #. Define boundary conditions with the characteristics of the approaching wind
-#. Specify turbulence model, solver type, and other numerical setups 
+#. Specify turbulence model, solver type, and other numerical setups
 #. Define the outputs to be monitored from the CFD simulation
-#. Submit the simulation to run remotely and follow up on the progress 
-#. Post-process and verify the results from the simulation 
+#. Submit the simulation to run remotely and follow up on the progress
+#. Post-process and verify the results from the simulation
 
 
 Considering the high computational cost of the simulation, the CFD models can only be run remotely using High-Performance Computing (HPC) resources at DesignSafe-CI. Thus, the user is required to have DesignSafe account to run the simulations. Also, the generated CFD model is saved locally as a standard OpenFOAM case. This will permit the user to copy this directory and run the simulation using their own OpenFOAM installation elsewhere. 
@@ -382,7 +382,7 @@ If *TInf* option is specified at the *inlet* of the boundary, inputs for the inf
 
 #.  **Generation Method**: The technique for generating the inflow turbulence. Five different methods commonly used in the computational wind engineering community are implemented.
 
-    * **DFSR**: Uses Divergence-free Spectral Representation (DFSR) method developed by [Melaku2021]_.   
+    * **DFSR**: Uses Divergence-free Spectral Representation (DFSR) method developed by [Melaku2021]_ and [Melaku2024]_.   
     * **DFM**: Uses Digital Filtering Method (DFM) developed by [Klein2003]_ and [Xie2008]_. 
     * **SEM**: Uses Synthetic Eddy Method (SEM) developed by [Jarrin2006]_.   
     * **DFSEM**: Uses Divergence-free Synthetic Eddy Method (DFSEM) developed by [Poletto2013]_.  
@@ -477,7 +477,7 @@ Parallelization
 
 Monitoring
 ----------------
-The CFD simulation is typically run using millions of grids. Saving all the simulation data at each time step slows down the solver and takes lots of space. Therefore, in this event, we monitor only relevant quantities (wind loads and flow fields) that will be used in the workflow. Under this tab, the user selects the type of wind loads to monitor which include integrated loads on the structure as well as surface pressure fluctuations at specific points on the building walls. Integrated loads represent the wind forces the building structure experiences. Two types of integrated loads are monitored, which include *Base Loads* and *Story Loads*.
+The CFD simulation is typically run using millions of grids. Saving all the simulation data at each time step slows down the solver and takes lots of storage space. Therefore, in this event, we monitor only relevant quantities (wind loads and flow fields) that will be used in the workflow. Under this tab, the user selects the type of wind loads to monitor which include integrated loads on the structure as well as surface pressure fluctuations at specific points on the building walls. Integrated loads represent the wind forces the building structure experiences. Two types of integrated loads are monitored, which include *Base Loads* and *Story Loads*.
 
 .. _fig-iso-monitoring-tab:
 .. figure:: figures/IsolatedBuildingCFD/monitoring_tab.svg
@@ -520,6 +520,73 @@ For the cladding loads, local pressure fluctuations on the building surface can 
 
 The sampling points can be visualized on the building surface by clicking **Show Coordinate of Points**. This will open the STL file of the building with points marked on the building surface. A sample demo is shown in :numref:`fig-iso-monitoring-tab` . On the left side of the opened window, a table for the coordinates is shown, while on the right side, the 3D visualization is displaced.    
 
+
+Results(CFD)
+--------------
+In this tab, the intermediate results from the CFD simulation are reported. Once the simulation is completed, the integrated and cladding loads monitored in the previous tab are post-processed and displayed here. The user can check *Base Loads*, *Story Loads*, *Pressure Coefficients* as shown in the following figure.  
+
+.. _fig-iso-results-tab:
+.. figure:: figures/IsolatedBuildingCFD/result_tab.svg
+   :align: center
+   :width: 65%
+   
+   Tab to display the results from CFD simulation. 
+
+Base Loads
+"""""""""""
+:numref:`fig-iso-result-base-load-tab` shows a dialog window for visualizing base aerodynamic loads for the building. In the *Time History* tab of this window, the user can select base loads (force and moments) in the three principal directions (:math:`x, y, z`) and display them in the chart on the left side. The charts show the time-series and the Power Spectral Density(PSD) plots for any selected component. 
+
+.. _fig-iso-result-base-load-tab:
+.. figure:: figures/IsolatedBuildingCFD/result_tab_base_load.svg
+   :align: center
+   :width: 100%
+   
+   Display base loads on the building: (right) raw time series for each component; (left top) time-history plot for selected component; (left bottom) power spectral density(PSD) of selected component. 
+
+In the same window, the *Summary* tab shows the statistics of the forces and moments. It reports the mean, standard deviation, Skewness and Kurtosis for all the components as shown in below.  
+
+.. _fig-iso-result-base-load2-tab:
+.. figure:: figures/IsolatedBuildingCFD/result_tab_base_load_summary.svg
+   :align: center
+   :width: 75%
+   
+   Summary of the four statistical moments of the base loads. 
+
+
+Story Loads
+""""""""""""
+Similarly, by clicking **Show Story Load Data** in :numref:`fig-iso-results-tab`, the story forces can be visualized. For example, in :numref:`fig-iso-result-base-load-tab`, the column *Force-X-5* in the table refers to the story force at :math:`5^{th}` floor in :math:`x`-direction. 
+
+.. _fig-iso-result-story-load-tab:
+.. figure:: figures/IsolatedBuildingCFD/result_tab_story_load.svg
+   :align: center
+   :width: 100%
+   
+   Display story loads: (right) raw time series for each story height and component; (left top) time-history plot for selected component; (left bottom) power spectral density(PSD) of selected component. 
+
+
+Pressure Coefficients
+""""""""""""""""""""""
+By clicking **Plot Pressure Data** in :numref:`fig-iso-results-tab`, the pressure measurements can be visualized. The local pressure fluctuations on the building surface monitored on points specified in :numref:`fig-iso-monitoring-tab` are post-processed and converted to pressure coefficients ease of interpretation. The pressure coefficients (:math:`C_p`) are calculated using the following formula:
+
+.. math::
+	C_p (t) = \frac{p(t)-p_0}{\frac{1}{2}\rho U^2_H} 
+	:label: eqnCp
+
+In the above equation, :math:`p(t)` is pressure measured from the CFD; :math:`p_0` is reference pressure and in the current workflow it is set to 0; :math:`rho` density of air; :math:`U_H` is mean wind speed at the building height taken from input in *Boundary Condition* tab.  Similarly to the integrated loads, :math:`C_p` values at all probe locations (points) can be inspected as shown below. 
+
+.. _fig-iso-result-story-load-tab:
+.. figure:: figures/IsolatedBuildingCFD/result_tab_pressure_coefficient.svg
+   :align: center
+   :width: 100%
+   
+   Pressure coefficients: (right) raw time series of :math:`C_p(t)` at all measurement locations; (left top) time-history plot for selected location; (left bottom) power spectral density(PSD) at selected location. 
+
+
+.. note::
+	Alternatively, all the intermediate results shown above are saved locally where the simulation case files are stored. The user can access this files by following following case directory in *Start* tab and locating the sub-directory ``constant/simCenter/output/windLoads``. 	
+
+
 .. [Greenshields2015] Greenshields, C.J. (2015). OpenFOAM Programmer's Guide. OpenFOAM Foundation Ltd.
 
 .. [Franke2007] Franke, J., Hellsten, A., Schlünzen, K.H. and Carissimo, B., 2007. COST Action 732: Best practice guideline for the CFD simulation of flows in the urban environment.
@@ -527,6 +594,8 @@ The sampling points can be visualized on the building surface by clicking **Show
 .. [Greenshields2022] Greenshields, C.J. (2022). https://doc.cfd.direct/openfoam/user-guide-v10/snappyhexmesh
 
 .. [Melaku2021] Melaku, A.F. and Bitsuamlak, G.T., 2021. A divergence-free inflow turbulence generator using spectral representation method for large-eddy simulation of ABL flows. Journal of Wind Engineering and Industrial Aerodynamics, 212, p.104580.
+
+.. [Melaku2024] Melaku, A.F. and Bitsuamlak, G.T., 2024. Prospect of LES for predicting wind loads and responses of tall buildings. Journal of Wind Engineering and Industrial Aerodynamics, 244, p.105613.
 
 .. [Klein2003] Klein, M., Sadiki, A. and Janicka, J., 2003. A digital filter-based generation of inflow data for spatially developing direct numerical or large eddy simulations. Journal of Computational Physics, 186(2), pp.652-665.
 
