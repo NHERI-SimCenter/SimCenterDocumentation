@@ -138,16 +138,16 @@ This option allows to import either high- or low-fidelity OpenSees models for ea
      - Specify the nodes that will represent each story. See the below table.
    * - numStory
      - integer
-     - number of stories
+     - Number of stories
    * - ndm
      - integer
-     - dimenion size
+     - Dimenion size
    * - ndf
      - integer
-     - degree of freedom per node
+     - Degree of freedom per node
    * - dampingRatio
      - float
-     - damping ratio for dynamic analysis
+     - Damping ratio for dynamic analysis
 
   The key ``NodeMapping`` should contain an array with a size :math:`N_f+1`, where :math:`N_f`` is the number of floors. Each element of array must include the following three keys.
 
@@ -160,12 +160,12 @@ This option allows to import either high- or low-fidelity OpenSees models for ea
    * - node
      - integer
    * - cline
-     - string
+     - string (always use "response")
    * - floor
      - string
 
      
-* **Low-fidelity model**: By default, we use MDOF-Lu model to evaluate the response of assets that are not specified in the high-fidelity database file. MDOF-Lu model takes the basic asset information (e.g. number of stories, structural types, etc.) provided in the ASD tab and automatically generates a simplified multi-degree of freedom nonlinear OpenSees model. See :ref:`lbl-MODMDOFLu`
+* **Low-fidelity model**: By default, we use MDOF-Lu model to evaluate the dynamic response of assets that are not specified in the high-fidelity database file. MDOF-Lu model takes the basic asset information (e.g. number of stories, structural types, etc.) provided in the ASD tab and automatically generates a simplified multi-degree of freedom nonlinear OpenSees model. See :ref:`lbl-MODMDOFLu`
 
 .. note:: Make sure the asset inventory specified in the ASD tab has consistent story numbers, structural types, and other attributes with the user-provided OpenSees (high-fidelity) model, in order to ensure correct evaluation of damage and loss.
 
