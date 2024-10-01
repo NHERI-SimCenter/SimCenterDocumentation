@@ -231,7 +231,7 @@ Once built, you can now run the tool executable.
 
 .. note::
 
-	On Windows machines, you need to copy essential qGIS DLLs. To do so, run *make.bat* in R2DTool root directory **or** manually copy and past them in ./ build directory. Otehrwise, after runing **R2D.exe** file in ./build directory, you will receive missing DLL errors.
+	On Windows machines, you need to copy essential QGIS DLLs. To do so, run *make.bat* in R2DTool root directory **or** manually copy and past them in ./ build directory. Otehrwise, after runing **R2D.exe** file in ./build directory, you will receive missing DLL errors.
 
 *************************************
 Modify the User Interface Preferences
