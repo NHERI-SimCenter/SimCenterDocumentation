@@ -12,8 +12,9 @@ Version 4.1 (Current)
 
 **Highlights**
 
+#. Implemented new functionality to visualize and export overall/pressure loads on building for performance based wind engineering analysis.
+#. New capability to surrogate structural responses and use the surrogate model in the workflow.
 #. Added numerical example for simulating wind loads on a building with surroundings assuming a idealized topology.
-#. Implemented new functionality to visualize and export overall/pressure loads on building for performance based wind engineering analysis. 
 #. Minor bug fixes to pre-/post-processing of the CFD-based events.
 
 

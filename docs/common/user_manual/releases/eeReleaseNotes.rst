@@ -6,6 +6,19 @@ Release Notes
 *************
 
 
+Version 4.1.0 
+-------------
+
+**Release date:** Sept. 2024
+
+**Highlights**
+
+
+#. Domain Reduction Method option added in tools to create events for buildings given large physics- based simulations.
+#. ShakerMaker option added to tool to perform earthquake rupture simulations.
+#. OpenSees@DesignSafe option added in tools to allow users to run OpenSees, OpenSeesMP, OpenSeesSP, and OpenSeesPy simulations utilizing TACC HPC resources from their desktop.
+
+
 Version 4.0.0 
 -------------
 
