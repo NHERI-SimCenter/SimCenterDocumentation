@@ -22,7 +22,7 @@ Applications used to specify/select the structural model to be used in the analy
 #. Multiple models: selecting multiple structural information models
 
     
-Earthquake Motion Event (Tools) :blue:`[← Relocation from main window to tools under menu bar]`
+Earthquake Motion Event
 ===============================
 
 Applications used to specify/select ground motions for the structure.
