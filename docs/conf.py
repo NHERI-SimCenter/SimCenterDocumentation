@@ -567,7 +567,7 @@ elif app_name == "EE-UQ":
 
     rst_prolog += """
 .. |full tool name| replace:: Earthquake Engineering with Uncertainty Quantification Application (EE-UQ)
-.. |tool version| replace:: 3.5
+.. |tool version| replace:: 4.1
 .. |test example| replace:: :ref:`eeuq-0001`
 .. _EE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/EE_UQ
 .. _github discussion page: https://github.com/orgs/NHERI-SimCenter/discussions/categories/ee-uq
