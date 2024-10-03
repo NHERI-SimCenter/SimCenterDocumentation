@@ -13,10 +13,10 @@ Version 5.1.0 (Current)
 
 **Highlights**
 
-#. Inclusion of REWET for recovery of water networks after event. (**WBS 1.1.3.5.2, 1.1.4.2.4, 1.1.3.4.1, 1.1.3.4.3, 1.1.3.4.4, and 1.1.3.4.7**)
-#. Revise interface to review uncertainty in recovery response. (**WBS 1.1.3.6.4**)
-#. Add the capacity spectrum method to for building seismic performance estimation. (**WBS** )
-#. Allowing multiple fidelities of models in a single regional analysis by allowing user-defined OpenSees models for a subset of buildings in the region to run in workflows. (**WBS 1.2.3.1** )
+#. **Inclusion of REWET for recovery of water networks after event** (WBS 1.1.3.5.2, 1.1.4.2.4, 1.1.3.4.1, 1.1.3.4.3, 1.1.3.4.4, and 1.1.3.4.7)
+#. **Revise interface to review uncertainty in recovery response** (WBS 1.1.3.6.4)
+#. **Add the capacity spectrum method to for building seismic performance estimation**
+#. **Develop Multi-Fidelity Models in Regional Simulations** (WBS 1.3.3.1): Allowing multiple fidelities of models in a single regional analysis by allowing user-defined OpenSees models for a subset of buildings in the region to run in workflows.
 
 
 Version 5.0.0
