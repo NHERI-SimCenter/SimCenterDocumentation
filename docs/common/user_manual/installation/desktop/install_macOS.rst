@@ -95,11 +95,11 @@ SimCenter tools require an x86-based Python 3.9. If your current Python version 
    .. note::
       The packaged distribution of OpenFOAM is only available for Linux systems. To install OpenFOAM on macOS, the user needs to use Docker for Mac. Docker will provide a virtual environment for running Linux applications on macOS.
 
-   To install OpenFOAM-10 on macOS, follow the instructions in `OpenFOAM for macOS <https://openfoam.org/download/10-macos/>`_ .
+   To download and install Docker for macOS from the following site `Docker for macOS <https://docs.docker.com/desktop/install/mac-install/>`_ .
 
-
-
-
+   .. note::
+      Make sure to download Docker distribution that maches your machine requirements (Apple or Intel chip). 
+      
 .. only:: HydroUQ_app
    
    Install OpenFOAM for macOS
