@@ -6,8 +6,21 @@
 Release Notes
 ***************************
 
-Version 5.0.0 (Current)
+Version 5.1.0 (Current)
 -----------------------
+
+**Release date:** September 2024
+
+**Highlights**
+
+#. Inclusion of REWET for recovery of water networks after event. (**WBS 1.1.3.5.2, and 1.1.4.2.4**)
+#. Revise interface to review uncertainty in recovery response. (**WBS 1.1.3.6.4**)
+#. Add the capacity spectrum method to for building seismic performance estimation. (**WBS** )
+#. Allowing multiple fidelities of models in a single regional analysis by allowing user-defined OpenSees models for a subset of buildings in the region to run in workflows. (**WBS 1.2.3.1** )
+
+
+Version 5.0.0
+-------------
 
 **Release date:** August 2024
 
@@ -18,7 +31,7 @@ Version 5.0.0 (Current)
 #. A procedure for estimating shear-induced seismic slope displacement for shallow crustal earthquakes is added to the earthquake event generation tool.
 
 Version 4.1.0
------------------------
+-------------
 
 **Release date:** April 2024
 
@@ -34,7 +47,7 @@ Version 4.1.0
 #. Updated the damage and loss engine Pelicun to version 3.3. 
 
 Version 4.0.1
------------------------
+-------------
 
 **Release date:** January 2024
 
@@ -46,7 +59,7 @@ Version 4.0.1
 #. Integration of PreTrained Surrogate Models from EE-UQ for structural analysis.
 
 Version 3.0.0
------------------------
+-------------
 
 **Release date:** May 2023
 
