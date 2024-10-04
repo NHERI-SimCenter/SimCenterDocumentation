@@ -34,4 +34,22 @@ Below are common issues encountered during failures, along with troubleshooting 
 
 #. **No results and you used the Site Response to create the event**. You must run a simulated event in the Site Response Widget before you can submit a job to run.
 
+
+#. **Don't Like Default Screen Layout**. There are configuarion you can do for startup. In the directory in which the executable exists you can place a **config.json** file. At present the options are limited: You can set screen size of the application to be full screen, and you can set and change the size of the **output** window. A sample config .json file:
+
+.. code-block::
+
+   {
+      "screenSize":"fullScreen",
+      "outputLocation":{"position":"right","numPixels":500}
+   }
+
+.. note::
+
+   You can also start the application from the terminal and pass config options. These options overwrite any existing.
+   
+   .. code-block
+   
+       application -screenSize fullScreen -helpLocation '{"position":"right","numPixels":400}'
+   
 For unresolved issues, please seek assistance on the |messageBoard|.

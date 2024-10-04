@@ -87,6 +87,88 @@ where the keys of ``SAM.json`` are defined as follows:
 
 .. [Lu2020] Lu, X., McKenna, F., Cheng, Q., Xu, Z., Zeng, X., & Mahin, S. A. (2020). An open-source framework for regional earthquake loss estimation using city-scale nonlinear time history analysis. Earthquake Spectra, 36(2), 806-831.
 
+.. _lbl-MultiFidelity:
+
+High-Fidelity Models and MDOF-LU
+**********************************
+
+This option allows to import either high- or low-fidelity OpenSees models for each assets:
+
+* **High-fidelity model**: For a subset of building in a region, the users can import the opensees models. The model pathes and the corresponding asset ids should be specified through the database file, which is formated as a JSON array. Each element in the array represents a building model. Below is an example of the database file:
+
+  .. collapse:: An example of highfidelity database file (click)
+
+      Given the database file below, R2D will evaluate the user-provided high-fidelity OpenSees models to obtain the responses for assets 1, 2, 3, 10, and 12, while low-fidelity models will be used for all other assets. 
+
+      .. literalinclude:: src/SAM_highfidelity_database.json
+          :language: json
+
+      The file system corresponding to the json looks like below. Note that only the main files are explicitly specified to represent the entire directory.
+
+  .. collapse:: The file structure corresponding to the example database file (click)
+
+      .. figure:: figures/R2DMultiFidelityBuildings.png
+          :align: center
+          :figclass: align-center
+          :width: 30%
+
+          The file structure corresponding to the database file.
+
+
+  The required keys are listed below. Please ensure that your database (.json) file includes all necessary information.
+
+  .. list-table:: High-fidelity model database (.json) 
+   :header-rows: 1
+   :widths: 10 20 50 
+
+   * - Key
+     - Type
+     - Description
+   * - id
+     - array or integer
+     - The asset ids that will be mapped to this model
+   * - mainScript
+     - string
+     - Path to the main analysis script. Locate any additional scripts in the same directory.
+   * - type
+     - string
+     - Always use "OpenSeesInput". This is for sanity check.
+   * - NodeMapping
+     - array of json object
+     - Specify the nodes that will represent each story. See the below table.
+   * - numStory
+     - integer
+     - Number of stories
+   * - ndm
+     - integer
+     - Dimenion size
+   * - ndf
+     - integer
+     - Degree of freedom per node
+   * - dampingRatio
+     - float
+     - Damping ratio for dynamic analysis
+
+  The key ``NodeMapping`` should contain an array with a size :math:`N_f+1`, where :math:`N_f`` is the number of floors. Each element of array must include the following three keys.
+
+.. list-table:: High-fidelity model database (.json)
+   :header-rows: 1
+   :widths: 10 20
+
+   * - Key
+     - Type
+   * - node
+     - integer
+   * - cline
+     - string (always use "response")
+   * - floor
+     - string
+
+     
+* **Low-fidelity model**: By default, we use MDOF-Lu model to evaluate the dynamic response of assets that are not specified in the high-fidelity database file. MDOF-Lu model takes the basic asset information (e.g. number of stories, structural types, etc.) provided in the ASD tab and automatically generates a simplified multi-degree of freedom nonlinear OpenSees model. See :ref:`lbl-MODMDOFLu`
+
+.. note:: Make sure the asset inventory specified in the ASD tab has consistent story numbers, structural types, and other attributes with the user-provided OpenSees (high-fidelity) model, in order to ensure correct evaluation of damage and loss.
+
 OpenSeesPy Building Model
 *************************
 
