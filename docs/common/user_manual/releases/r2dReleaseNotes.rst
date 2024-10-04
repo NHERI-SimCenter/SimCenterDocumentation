@@ -14,10 +14,9 @@ Version 5.1.0 (Current)
 **Highlights**
 
 #. **Inclusion of REWET for recovery of water networks after event** (WBS 1.1.4.2.4, 1.1.3.4.1, 1.1.3.4.3, and 1.1.3.4.7)
-#. **Add Datasets to Simulate High-Resolution Damages and Losses in Buried Pipeline Networks** (1.3.5.4): Expansion of the `SimCenter Damage and Loss Model Library <https://github.com/NHERI-SimCenter/DamageAndLossModelLibrary>`_ to include detailed water pipeline damage and loss models.
-#. **Landslide-induced ground deformation** (1.3.4.4): Add modeling capabilities for buried water pipelines and other water distribution infrastructure.
+#. **Add Datasets to Simulate High-Resolution Damages and Losses in Buried Pipeline Networks** (WBS 1.3.5.4): Expansion of the `SimCenter Damage and Loss Model Library <https://github.com/NHERI-SimCenter/pelicun/tree/master/pelicun/resources/SimCenterDBDL>`_ to include detailed water pipeline damage and loss models.
 #. **Revise interface to review uncertainty in recovery response** (WBS 1.1.3.6.4)
-#. **Add the capacity spectrum method to for building seismic performance estimation**
+#. **Add the capacity spectrum method to for building seismic performance estimation** (`R2D.3.2 <https://nheri-simcenter.github.io/R2D-Documentation/common/reqments/R2D.html>`_)
 #. **Develop Multi-Fidelity Models in Regional Simulations** (WBS 1.3.3.1): Allowing multiple fidelities of models in a single regional analysis by allowing user-defined OpenSees models for a subset of buildings in the region to run in workflows.
 
 

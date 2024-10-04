@@ -38,7 +38,7 @@ Major updates from Version 4.0 are adding liquefaction-induced ground deformatio
     * :ref:`Buildings <lbl-MODBuildings>`:
 		a. MDOF-LU (MDOF shear building model).
 		b. OpenSeesPy building generator.
-		c. None (Used for the IMasEDP option in Asset Analysis).
+		c. None (Used for the IMasEDP and Capacity Spectrum Method options in Asset Analysis).
 		d. CustomPy.
     * :ref:`Transportation infrastructure <lbl-MODTransport>`:
 	    a. None (Used for the IMasEDP option in Asset Analysis).
@@ -48,8 +48,9 @@ Major updates from Version 4.0 are adding liquefaction-induced ground deformatio
 		a. OpenSees.
 		b. OpenSeesPy. 
 		c. IMasEDP (simplified analysis using Intensity Measures (IMs) as Engineering Demand Parameters (EDPs)).
-		d. CustomPy for CustomPy Asset Modeling.
-		e. Pre-trained surrogate models.
+		d. Capacity Spectrum Method.
+		e. CustomPy for CustomPy Asset Modeling.
+		f. Pre-trained surrogate models.
     * :ref:`Transportation infrastructure <lbl-ANATransport>`:
 	    a. IMasEDP (simplified analysis using Intensity Measures (IMs) as Engineering Demand Parameters (EDPs)).
 		
