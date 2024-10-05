@@ -13,7 +13,7 @@ This application will take the wind tunnel data provided and scale it based on t
 
 #. The user to select the shape of the building, currently only Cuboid shapes are permitted.
 
-#. The Wind speed.
+#. Mean wind speed at the building roof-height.
 
 #. The file containing the experimental data. The file contains information about the dimensions of the building model in the wind tunnel, the wind speed (the meaning of wind speed is dependent on what wind speed measurement was used in the test), time-varying data for the pressure coefficients, information on the frequency of these data points, and information on the locations of pressure taps for which pressure coefficients are provided. An abbreviated example is shown below.
 
