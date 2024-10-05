@@ -240,6 +240,11 @@ rst_prolog = f"""
 .. |Dakota Theory Manual| replace:: `Dakota Theory Manual`_
 .. _Dakota Theory Manual: https://www.sandia.gov/app/uploads/sites/241/2023/03/Theory-6.13.0.pdf
 
+.. |peer nga link| replace:: `PEER_NGA`_
+.. _PEER_NGA: https://ngawest2.berkeley.edu/
+.. |opensha link| replace:: `OpenSHA`_
+.. _OpenSHA: https://opensha.org/
+
 .. |FEAPpv| replace:: **FEAPpv**
 .. |FeapLink| replace:: `FEAPpv`_
 .. _FEAPpv: http://projects.ce.berkeley.edu/feap/feappv/
