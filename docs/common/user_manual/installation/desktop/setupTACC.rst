@@ -21,7 +21,7 @@ Due to cybersecurity issues, DesignSafe is requiring that all users obtain crede
 
 .. only:: PBE_app
 
-     1. `Frontera Credentials <https://www.designsafe-ci.org/rw/workspace/frontera-credential>`_
+    1. `Stampede3 Credentials <https://www.designsafe-ci.org/rw/workspace/stampede3-credential>`_
    
 .. only:: HydroUQ_app
 	  
@@ -30,7 +30,7 @@ Due to cybersecurity issues, DesignSafe is requiring that all users obtain crede
    
 .. only:: EEUQ_app
 
-     1. `Frontera Credentials <https://www.designsafe-ci.org/rw/workspace/frontera-credential>`_	  
+     1. `Stampede3 Credentials <https://www.designsafe-ci.org/rw/workspace/stampede3-credential>`_	  
 
 .. only:: WEUQ_app
 

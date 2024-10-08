@@ -1,4 +1,4 @@
-
+≈
 E6 - ShakeMap Scenario
 ========================
 
@@ -12,7 +12,7 @@ This example demonstrates HAZUS earthquake damage and loss assessment capabiliti
    :width: 400px
    :align: center
 
-#. **VIZ** This example illustrates the PGA contours of a ShakeMap scenario earthquake, i.e., one that has not occurred, on the San Andreas fault. In addition, it shows the buidling assets available in San Mateo, CA. 
+#. **VIZ** This example illustrates the PGA contours of a ShakeMap scenario earthquake, i.e., one that has not occurred, on the San Andreas fault. In addition, it shows the building assets available in San Mateo, CA. 
 
    .. figure:: figures/r2dt-0006-VIZ.png
       :width: 600px
@@ -78,7 +78,7 @@ This example demonstrates HAZUS earthquake damage and loss assessment capabiliti
 
    The random variable panel will be left empty for this example.
 
-#. **RES** The analysis outputs for the selected buildings are shown in the figure below. It is important to note that the results are based on an approximate characterization of the ground motions and preliminary buildings data that has not been curated or verified thoroughly yet. The results presented herein are only for demonstrating the use of R2DTool and do not serve as an accurate representation of the real losses resulting from the earthquake.
+#. **RES** The analysis outputs for the selected buildings are shown in the figure below. It is important to note that the results are based on an approximate characterization of the ground motions and preliminary building data that has not been curated or verified thoroughly yet. The results presented herein are only for demonstrating the use of R2DTool and do not serve as an accurate representation of the real losses resulting from the earthquake.
 
    .. figure:: figures/r2dt-0006-RES.png
       :width: 600px
