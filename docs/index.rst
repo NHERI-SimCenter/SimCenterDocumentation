@@ -128,6 +128,7 @@
    :R2D:common/user_manual/usage/desktop/R2DTool/tools
    :WEUQ:common/user_manual/usage/desktop/wind/tools
    :Hydro:common/user_manual/usage/desktop/hydro/tools
+   :EEUQ:common/user_manual/usage/desktop/earthquake/tools
 
    :EEUQ:common/user_manual/examples/desktop/examples
    :WEUQ:common/user_manual/examples/desktop/examples
