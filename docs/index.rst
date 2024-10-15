@@ -129,6 +129,8 @@
    :WEUQ:common/user_manual/usage/desktop/wind/tools
    :Hydro:common/user_manual/usage/desktop/hydro/tools
    :EEUQ:common/user_manual/usage/desktop/earthquake/tools
+   :PBE:common/user_manual/usage/desktop/PBE/tools
+   :quoFEM:common/user_manual/usage/desktop/quoFEM/tools      
 
    :EEUQ:common/user_manual/examples/desktop/examples
    :WEUQ:common/user_manual/examples/desktop/examples
