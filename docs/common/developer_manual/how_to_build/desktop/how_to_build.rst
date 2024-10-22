@@ -197,31 +197,31 @@ The operations are similar to what was done when building the backend applicatio
 
 Windows developers will type the following in a terminal or a PowerShell window:
 
-    .. code:: console
+    .. parsed-literal::
 
-      mkdir build
-      cd build
-      conan install .. --build missing
-      qmake ../|short tool id|.pro
-      nmake
+       mkdir build
+       cd build
+       conan install .. --build missing
+       qmake ../|short tool id|.pro
+       nmake
 
 Linux or Mac users will type the following in a terminal window from inside the |app| directory:
 
-    .. code:: console
+    .. parsed-literal::
 
-      mkdir build
-      cd build
-      conan install .. --build missing
-      qmake ../|short tool id|.pro
-      make
+       mkdir build
+       cd build
+       conan install .. --build missing
+       qmake ../|short tool id|.pro
+       make
 
 .. note::
 
    #. qmake is an application installed with Qt. To be able to run the command as known, the path to the Qt bin folder needs to be added to your **PATH** environment variable. Alternatively, you need to specify the full path to qmake, i.e., on my desktop (if I had not set my PATH variable), I would replace line 3 with the following:
+      
+       .. parsed-literal::
 
-      .. code:: console
-
-        /Users/fmckenna/Qt/5.15.2/clang_64/bin/qmake ../|short tool id|.pro
+           /Users/fmckenna/Qt/5.15.2/clang_64/bin/qmake ../|short tool id|.pro
 
    #. On Windows 10 and later with Visual Studio, the above commands need to be performed using a `Visual Studio x64 command prompt <https://docs.microsoft.com/en-us/cpp/build/how-to-enable-a-64-bit-visual-cpp-toolset-on-the-command-line?view=msvc-160>`_.
 
