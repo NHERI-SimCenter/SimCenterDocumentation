@@ -28,10 +28,10 @@ if app_name in APPS:
 else:
     pass
     #app_name = 'R2DTool'
-    #app_name = 'PBE'
+    app_name = 'PBE'
     #app_name = 'EE-UQ'
-    app_name = 'WE-UQ'
-    app_name = 'HydroUQ'
+    #app_name = 'WE-UQ'
+    #app_name = 'HydroUQ'
     #app_name = 'quoFEM'
     #app_name = 'pelicun'
 
@@ -527,7 +527,7 @@ elif app_name == "PBE":
 .. |full tool name| replace:: Performance Based Engineering Application
 .. _github discussion page: https://github.com/orgs/NHERI-SimCenter/discussions/categories/pbe
 .. _PBE Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE
-.. |tool version| replace:: 3.4
+.. |tool version| replace:: 4.1
 .. |test example| replace:: :ref:`pbdl-0001`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-PBE`
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu

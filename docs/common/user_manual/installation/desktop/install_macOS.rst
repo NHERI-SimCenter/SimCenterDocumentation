@@ -228,11 +228,11 @@ Once the application starts, verify the setup by running an example problem |tes
    .. _figUI-PBE:
 
    .. figure:: figures/PBE_startup.png
-	:align: center
-        :figclass: align-center
-        :width: 75%
+      :align: center
+      :figclass: align-center
+      :width: 75%
 
-    PBE application on startup.
+      PBE application on startup.
 
 .. only:: EEUQ_app
 
