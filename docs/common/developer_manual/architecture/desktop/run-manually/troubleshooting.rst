@@ -15,4 +15,4 @@ For troubleshooting with the log file, the following steps are recommended:
 
         ``dakota -input dakota.in -output dakota.out -error dakota.err``
 
-If problems still persist, you are encouraged to read previously posted questions or post your own at the `SimCenter Forum <https://simcenter-messageboard.designsafe-ci.org/smf/index.php>`_. A member of the SimCenter developer team will respond to your question on the platform.
+If problems still persist, you are encouraged to read previously posted questions or post your own at the |messageBoard|. A member of the SimCenter developer team will respond to your question on the platform.

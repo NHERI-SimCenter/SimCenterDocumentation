@@ -102,7 +102,7 @@ the app would direct you to the **RES** panel (:numref:`r2d_res`) where you coul
    R2D RES panel.
 
 For simulating the damage and loss for a large region of interest (please remember to reset the building IDs in **ASD**), it would be efficient to submit and run the job 
-to `DesignSafe <https://www.designsafe-ci.org/>`_ on `Stampede2 <https://www.tacc.utexas.edu/systems/stampede2>`_. 
+to `DesignSafe <https://www.designsafe-ci.org/>`_ on `Frontera <https://tacc.utexas.edu/systems/frontera/>`_. 
 This can be done in R2D by clicking **RUN at DesignSafe** (one would need to have a valid 
 `DesignSafe account <https://www.designsafe-ci.org/account/register/>`_ for login and access the computing resource). 
 :numref:`r2d_run_ds` provides an example configuration to run the analysis (and please see `R2D User Guide <https://nheri-simcenter.github.io/R2D-Documentation/common/user_manual/usage/desktop/usage.html#figremjobpanel>`_ for detailed descriptions).

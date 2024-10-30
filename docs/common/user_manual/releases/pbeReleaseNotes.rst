@@ -5,11 +5,44 @@
 Release Notes
 *************
 
+Version 4
+=========
+
+   .. dropdown::    Version 4.1 (:blue:`Current`)
+      :open:
+
+      **Release date:** September 2024
+
+      **Major updates:**
+
+      - Domain Reduction Method option added in tools to create events for buildings given large physics- based simulations.
+
+      - ShakerMaker option added to tool to perform earthquake rupture simulations.
+
+      - OpenSees@DesignSafe option added in tools to allow users to run OpenSees, OpenSeesMP, OpenSeesSP, and OpenSeesPy simulations utilizing TACC HPC resources from their desktop.      
+
+   .. dropdown::    Version 4.0
+
+      **Release date:** August 2024
+
+      **Major updates:**
+
+      - A needed release for changes required to interact with DesignSafe and new TapisV3 interface.
+
+      - Due to AI generated spam on message board, users now directed to post questions using github discussions.
+
 Version 3
 =========
 
-   .. dropdown::    Version 3.4 (:blue:`Current`)
-      :open:
+   .. dropdown::    Version 3.5
+
+      **Release date:** June 2024
+
+      **Major updates:**
+
+      - Ability to include different events in multi-model and multi-fidelity simulations
+	
+   .. dropdown::    Version 3.4
 
       **Release date:** March 2024
 
@@ -54,7 +87,6 @@ Version 3
               - A lot of minor bugs fixed and robustness of the Pelicun engine ensured by bringing back continuous integration.
 
    .. dropdown::    Version 3.3 
-      :open:
 
       **Release date:** Jan 2024
 
@@ -232,4 +264,4 @@ Version 1
 
 
 
-Users are welcome to contact us on the `Message Board <http://simcenter-messageboard.designsafe-ci.org/smf/index.php?board=6.0>`_ for new feature requests.
+Users are welcome to contact us on the |messageBoard| for new feature requests.

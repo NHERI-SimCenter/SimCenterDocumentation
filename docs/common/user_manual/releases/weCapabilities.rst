@@ -5,7 +5,7 @@
 Capabilities
 ************
 
-**Version 3.3.0** of |app| was released **April 2024**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+**Version 4.1.0** of |app| was released **Sept 2024**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 Structural Information Model
@@ -101,5 +101,9 @@ Applications to perform the uncertainty quantification for the response paramete
 Additional Tools 
 ===============
 
-#. :blue:`Empty Domain CFD Simulation`:
+#. **Empty Domain CFD Simulation**:
    Capability to perform empty domain simulation to characterize Atmospheric Boundary Layer (ABL) flows using large-eddy simulation (LES). This feature uses the Turbulence Inflow Tool (TInF) tool for calibrating ABL flows for a subsequent wind load evaluation study. 
+
+   
+#. :blue:`Isolated Building CFD Simulation`:
+   Added a functionality to perform CFD-based wind load simulation on isolated building as a stand-alone workflow tool. This tool uses the user's local machine for performing pre-processing and run the actual CFD simulation on DesignSafe.  

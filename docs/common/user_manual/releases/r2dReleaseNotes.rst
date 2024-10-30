@@ -6,8 +6,33 @@
 Release Notes
 ***************************
 
-Version 4.1.0 (Current)
+Version 5.1.0 (Current)
 -----------------------
+
+**Release date:** September 2024
+
+**Highlights**
+
+#. **Inclusion of REWET for recovery of water networks after event** (WBS 1.1.4.2.4, 1.1.3.4.1, 1.1.3.4.3, and 1.1.3.4.7)
+#. **Add Datasets to Simulate High-Resolution Damages and Losses in Buried Pipeline Networks** (WBS 1.3.5.4): Expansion of the `SimCenter Damage and Loss Model Library <https://github.com/NHERI-SimCenter/pelicun/tree/master/pelicun/resources/SimCenterDBDL>`_ to include detailed water pipeline damage and loss models.
+#. **Revise interface to review uncertainty in recovery response** (WBS 1.1.3.6.4)
+#. **Add the capacity spectrum method to for building seismic performance estimation** (`R2D.3.2 <https://nheri-simcenter.github.io/R2D-Documentation/common/reqments/R2D.html>`_)
+#. **Develop Multi-Fidelity Models in Regional Simulations** (WBS 1.3.3.1): Allowing multiple fidelities of models in a single regional analysis by allowing user-defined OpenSees models for a subset of buildings in the region to run in workflows.
+
+
+Version 5.0.0
+-------------
+
+**Release date:** August 2024
+
+**Highlights**
+
+#. A needed release for changes required to interact with DesignSafe and new TapisV3 interface.
+#. Due to AI generated spam on message board, users now directed to post questions using github discussions.
+#. A procedure for estimating shear-induced seismic slope displacement for shallow crustal earthquakes is added to the earthquake event generation tool.
+
+Version 4.1.0
+-------------
 
 **Release date:** April 2024
 
@@ -23,7 +48,7 @@ Version 4.1.0 (Current)
 #. Updated the damage and loss engine Pelicun to version 3.3. 
 
 Version 4.0.1
------------------------
+-------------
 
 **Release date:** January 2024
 
@@ -35,7 +60,7 @@ Version 4.0.1
 #. Integration of PreTrained Surrogate Models from EE-UQ for structural analysis.
 
 Version 3.0.0
------------------------
+-------------
 
 **Release date:** May 2023
 

@@ -37,7 +37,7 @@ Global sensitivity analysis
 ===========================
 
 Video Resources 
-------------------
+----------------
 Global Sensitivity Analysis: why, what, and how.
 
 .. raw:: html
@@ -53,7 +53,7 @@ Global Sensitivity Analysis: why, what, and how.
 
 
 Variance-based global sensitivity indices
------------------------------------
+-----------------------------------------
 Global sensitivity analysis (GSA) is performed to quantify the contribution of each input variable to the uncertainty in QoI. Using the global sensitivity indices, users can set preferences between random variables considering both inherent randomness and its propagation through the model. GSA helps users to understand the overall impact of different sources of uncertainties, as well as accelerate UQ computations by focusing on dominant dimensions or screening out trivial input variables.
 
 .. _figSensitivity1:
@@ -105,7 +105,7 @@ where :math:`\boldsymbol{x}_{\sim ij}` indicates the set of all input variables 
 
 
 Estimation of Sobol indices using Probabilistic model-based global sensitivity analysis (PM-GSA)
-----------------------------
+------------------------------------------------------------------------------------------------
 
 GSA is typically computationally expensive. High computation cost attributes to the multiple integrations (:math:`d`-dimensional) associated with the variance and expectation operations shown in Eqs. :eq:`Si` and :eq:`SiT`. To reduce the computational cost, efficient Monte Carlo methods, stochastic expansion methods, or meta-model-based methods can be employed. Among different approaches, the SimCenterUQ engine supports the probability model-based GSA (PM-GSA) framework developed by [Hu2019]_. 
 
@@ -133,7 +133,7 @@ using the expectation-maximization (EM) algorithm. The mean operation Eq. :eq:`S
 
 
 Dealing with high-dimensional responses with PCA-PSA
----------------------------------------------------
+----------------------------------------------------
 
 When the number of the quantities of interest (QoI) is very large, it is computationally cumbersome to perform above Gaussian fitting independently for each QoI. To promote efficient global sensitivity analysis for such cases, SimCenterUQ provides the 'principal component analysis-based PM-GSA' module, which is referred to as PCA-PSA [Jung2022]_. In this method, the dimension of QoI is first reduced by principal component analysis (PCA), and the conditional variance required to calculate the Sobol indices (the numerators in :eq:`Si` and :eq:`SiT`) is approximately reconstructed from those of the conditional variance/covariance information of the reduced dimension variables. If the high-dimensional QoI has a linear data structure that be reconstructed with a small number of principal components, the computational gain of this approach can be significant. For example, suppose QoI can be reconstructed using 10 principal components. In that case, the Gaussian mixture fitting, which is the most time-consuming step of PM-GSA apart from FEM analysis, needs to be repeated only 10 times per random variable or group of random variables regardless of the actual dimension of QoI. :ref:`This example<qfem-0023>` shows how PCA-PSA can facilitate efficient global sensitivity analysis for a field (time series) QoI.
 
@@ -142,7 +142,7 @@ When the number of the quantities of interest (QoI) is very large, it is computa
 
 
 Aggregated sensitivity index
------------------------------
+----------------------------
 
 When the quantities of interest (QoI) are given as a vector or field variable, an aggregated sensitivity index can provide insight into the system's overall sensitivity characteristics. The aggregated sensitivity index achieves this by calculating the weighted average of the sensitivity indices of each QoI component, where the weights are proportional to the variances of the components [Jung2022]_. Component sensitivity indices are useful for visualization, while the aggregated sensitivity index gives instant intuition on how much each variable influences the system response overall. See :ref:`this example<qfem-0023>`.
 
@@ -152,10 +152,10 @@ When the quantities of interest (QoI) are given as a vector or field variable, a
 .. _lbluqSimTechnical_Surrogate:
 
 Global surrogate modeling 
-============================
+=========================
 
 Introduction to Gaussian process regression (Kriging)
---------------------------------------------------------
+-----------------------------------------------------
 
 Global surrogate modeling aims to build a regression model that reproduces the outcomes of computationally expensive high-fidelity simulations. 
 
@@ -193,7 +193,7 @@ Therefore, the main tasks of surrogate modeling are (1) to find optimal stochast
 
 
 Dealing with noisy measurements
---------------------------------------------------------
+-------------------------------
 
 	| In natural hazard applications, often the exact observations of :math:`\boldsymbol{y}` are not available and only the noisy observations :math:`\boldsymbol{y^{obs}}` are available:
 
@@ -289,7 +289,7 @@ Input-Output settings
 
 
 Kernel and basis functions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 The covariance kernel of the outcome process is unknown in most practical applications. Therefore, the mathematical form of the kernel is first assumed, and its parameters are calibrated based on the observation data. Following are some popular stationary covariance kernels. 
 
 * **Radial-basis function (RBF)**
@@ -349,7 +349,7 @@ Once the kernel form is selected, the parameters are calibrated to maximize the 
 
 
 Adaptive Design of Experiments (DoE)
--------------------------------------
+------------------------------------
 
 .. only:: quoFEM_app
 
@@ -509,10 +509,10 @@ We provide different verification measures for two different cases.
 .. _lbluqSimTechnical_MFMC:
 
 Multi-fidelity Monte Carlo (MFMC)
-=====================================
+=================================
 
 Models with different infidelities
----------------------------------------
+----------------------------------
 When one has multiple models of a target system with different fidelities, one can introduce multi-fidelity Monte Carlo (MFMC) methods. MFMC helps us to reduce the high-fidelity simulation runs by leveraging a large number of low-fidelity simulations. The high-fidelity and low-fidelity models are defined as the following.  
 
  * **High-fidelity (HF) model**: The model with the desired level of accuracy and high computational cost. 
@@ -543,12 +543,12 @@ The goal of MFMC is to estimate the statistics of the HF model using a small num
 
 
 Pre-execution checklist for MFMC
-----------------------------------------------
+--------------------------------
 Before running the MFMC simulation model, the users are advised to check the validity and effectiveness of MFMC for their problem. Only when the below conditions are satisfied, the users are expected to gain meaningful benefits by using MFMC compared to only HF simulations:
 
 * **The models should take the same input random variables and produce the same output quantities of interest.** For example, if the target system is a structure, if one model takes stiffness as a random variable and the other does not, the model violates the problem definition. Similarly, if :math:`j`-th output of the HF model is the 1st-floor inter-story drift, :math:`j`-th output of the LF model should also be the 1st-floor inter-story drift. 
 
-* **The models should have a clear hierarchy in terms of accuracy and time.** When the HF and LF model responses are different, the assumption is that the HF response is always accurate. Therefore, if an LF model runs faster than the HF model, it is optimal to run only the HF model, and there is no reason to introduce MFMC.
+* **The models should have a clear hierarchy in terms of accuracy and time.** When the HF and LF model responses are different, the assumption is that the HF response is always accurate. Therefore, if an HF model runs faster than the LF model, it is optimal to always run only the HF model, and there is no reason to introduce MFMC.
 
 * **The response of different models should have a high correlation**. The efficiency of MFMC heavily depends on the correlation between the HF and LF model outputs. Only if the correlation is fairly high, the MF estimation is meaningfully efficient than conducting only HF simulations. 
 
@@ -565,7 +565,7 @@ The efficiency of MFMC can be evaluated using the speed-up ratio, defined as the
 
 
 Algorithm details
-----------------------------------------------
+-----------------
 The implementation of MFMC in |short tool id| follows that of [Patsialis2021]_ which is based on the original work of [Peherstorfer2016]_. Let us denote the HF and LF output for a given input :math:`x` as 
 
    .. math::
@@ -668,7 +668,7 @@ Note that the first four terms are evaluated using only :math:`D_1`, and the las
 
 
 Speed-up
-----------------------------------------------
+--------
 The speed-up is an efficiency metric that represents the computational time you save by using MFMC compared to only HF simulations to reach the same level of accuracy (same variance).
 
    .. math::

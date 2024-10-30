@@ -5,8 +5,42 @@
 Release Notes
 *************
 
-Version 3.5.0 (Current)
------------------------
+
+Version 4.1.0 
+-------------
+
+**Release date:** Sept. 2024
+
+**Highlights**
+
+
+#. Domain Reduction Method option added in tools to create events for buildings given large physics- based simulations.
+#. ShakerMaker option added to tool to perform earthquake rupture simulations.
+#. OpenSees@DesignSafe option added in tools to allow users to run OpenSees, OpenSeesMP, OpenSeesSP, and OpenSeesPy simulations utilizing TACC HPC resources from their desktop.
+
+
+Version 4.0.0 
+-------------
+
+**Release date:** Aug. 2024
+
+**Highlights**
+
+#. A needed release for changes required to interact with DesignSafe and new TapisV3 interface.
+#. Due to AI generated spam on message board, users now directed to post questions using github discussions.
+
+Version 3.6.0 
+--------------
+
+**Release date:** June. 2024
+
+**Highlights**
+
+#. Added Option to allow differenet events in multi-model and multi-fidelity simulations
+
+
+Version 3.5.0
+-------------
 
 **Release date:** March. 2024
 
@@ -16,7 +50,7 @@ Version 3.5.0 (Current)
 
 
 Version 3.4.0
------------------------
+-------------
 
 **Release date:** October 2023
 

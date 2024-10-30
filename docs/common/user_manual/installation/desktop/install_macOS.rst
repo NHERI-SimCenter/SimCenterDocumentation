@@ -27,13 +27,7 @@ SimCenter tools require an x86-based Python 3.9. If your current Python version 
       
       Python: Kernel Version
 
-#. Visit `Python.org <https://www.python.org/downloads/macos/>`_ and download the **macOS 64-bit Intel-only installer** for Python 3.9.
-
-   .. figure:: figures/pythonDownload.png
-      :align: center
-      :figclass: align-center
-      
-      Python: python.org MacOS Download Page
+#. To download a Python installer with your browser open the |appLink| page. There, you will find various files and directories available for download. Locate the file named **python-3.9.13-macosx10.9.pkg**, which we copied from `Python.org <https://www.python.org/downloads/macos/>`_. Proceed to download this installer file and then open it on your local machine to initiate the Python installation process.
 
 #. Run the installer. Upon completion, a folder with several files will open, as shown in the figure below. Execute ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh`` by double-clicking each.
 
@@ -101,11 +95,11 @@ SimCenter tools require an x86-based Python 3.9. If your current Python version 
    .. note::
       The packaged distribution of OpenFOAM is only available for Linux systems. To install OpenFOAM on macOS, the user needs to use Docker for Mac. Docker will provide a virtual environment for running Linux applications on macOS.
 
-   To install OpenFOAM-10 on macOS, follow the instructions in `OpenFOAM for macOS <https://openfoam.org/download/10-macos/>`_ .
+   To download and install Docker for macOS from the following site `Docker for macOS <https://docs.docker.com/desktop/install/mac-install/>`_ .
 
-
-
-
+   .. note::
+      Make sure to download Docker distribution that maches your machine requirements (Apple or Intel chip). 
+      
 .. only:: HydroUQ_app
    
    Install OpenFOAM for macOS
@@ -234,11 +228,11 @@ Once the application starts, verify the setup by running an example problem |tes
    .. _figUI-PBE:
 
    .. figure:: figures/PBE_startup.png
-	:align: center
-        :figclass: align-center
-        :width: 75%
+      :align: center
+      :figclass: align-center
+      :width: 75%
 
-    PBE application on startup.
+      PBE application on startup.
 
 .. only:: EEUQ_app
 

@@ -5,8 +5,42 @@
 Release Notes
 *************
 
+Version 4.1 (Current)
+-----------------------
 
-Version 3.3 (Current)
+**Release date:** Sept. 2024
+
+**Highlights**
+
+#. Implemented new functionality to visualize and export overall/pressure loads on building for performance based wind engineering analysis.
+#. New capability to surrogate structural responses and use the surrogate model in the workflow.
+#. Added numerical example for simulating wind loads on a building with surroundings assuming a idealized topology.
+#. Minor bug fixes to pre-/post-processing of the CFD-based events.
+
+
+Version 4.0
+-----------------------
+
+**Release date:** Aug. 2024
+
+**Highlights**
+
+#. Added CFD functionality to simulate wind loads on isolated buildings without running the entire workflow in WE-UQ
+#. Major changes required for interfacing with DesignSafe the newly released Version 3 of Tapis. Updated major version to reflect preferences needed for users to submit jobs to TACC HPC resources.
+
+
+Version 3.4
+-----------------------
+
+**Release date:** May. 2024
+
+**Highlights**
+
+#. Simulate wind loading on structures surrounded by an array of buildings. Surrounding buildings heights may be randomized or user-defined.
+#. Minor bug fixes in the tool.
+   
+
+Version 3.3
 -----------------------
 
 **Release date:** Apr. 2024
@@ -17,6 +51,8 @@ Version 3.3 (Current)
 #. A new wind load generator module: wind-tunnel informed stochastic wind pressure generator
 #. Empty domain simulation tool.
    
+
+
 Version 3.2
 -----------
 

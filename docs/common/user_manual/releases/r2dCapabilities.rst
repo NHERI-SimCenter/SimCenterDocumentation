@@ -5,7 +5,7 @@
 Capabilities
 ************
 
-**Version** |tool version| of |app| was released in **April 2024**, introducing significant updates and enhancements. This document outlines the functionalities available in the current version, highlighting new features and improvements in :blue:`blue`.
+**Version** |tool version| of |app| was released in **Sep 30, 2024**, introducing significant updates and enhancements. This document outlines the functionalities available in the current version, highlighting new features and improvements in :blue:`blue`.
 
 Major updates from Version 4.0 are adding liquefaction-induced ground deformation estimation in the :blue:`regional earthquake event generation tool`, refactored :blue:`regional inventory generation tool BRAILS`, and upgraded :blue:`damage and loss engine Pelicun`. 
 
@@ -27,13 +27,18 @@ Major updates from Version 4.0 are adding liquefaction-induced ground deformatio
     * :ref:`Transportation infrastructure <lbl-ASDTransport>`:
 		a. Load transportation infrastructure database in SimCenter's ``.geojson`` format.
 		b. Load transportation infrastructure database in common ``.gis`` format.
+	* :ref:`Water Distribution Network <lbl-ASDWaterDistributionNetwork>`:
+		a. Load water distribution network database in EPANet's format (used for REWET).
+		b. Load water distribution network from .csv files representing nodes and pipelines.
+		c. Load water distribution network from GIS files representing nodes and pipelines.
+		d. Load water distribution network database in EPANet's format.
 		   
 	
 #. **Asset Modeling**: 
     * :ref:`Buildings <lbl-MODBuildings>`:
 		a. MDOF-LU (MDOF shear building model).
 		b. OpenSeesPy building generator.
-		c. None (Used for the IMasEDP option in Asset Analysis).
+		c. None (Used for the IMasEDP and Capacity Spectrum Method options in Asset Analysis).
 		d. CustomPy.
     * :ref:`Transportation infrastructure <lbl-MODTransport>`:
 	    a. None (Used for the IMasEDP option in Asset Analysis).
@@ -43,22 +48,30 @@ Major updates from Version 4.0 are adding liquefaction-induced ground deformatio
 		a. OpenSees.
 		b. OpenSeesPy. 
 		c. IMasEDP (simplified analysis using Intensity Measures (IMs) as Engineering Demand Parameters (EDPs)).
-		d. CustomPy for CustomPy Asset Modeling.
-		e. Pre-trained surrogate models.
+		d. Capacity Spectrum Method.
+		e. CustomPy for CustomPy Asset Modeling.
+		f. Pre-trained surrogate models.
     * :ref:`Transportation infrastructure <lbl-ANATransport>`:
 	    a. IMasEDP (simplified analysis using Intensity Measures (IMs) as Engineering Demand Parameters (EDPs)).
 		
 #. **Damage and Loss**: 
-    * :ref:`Buildings <lbl-DLBuildingPelicun>`:
+	* :ref:`Buildings <lbl-DLBuildingPelicun>`:
 		* Pelicun Damage and Loss Methods:
 			a. HAZUS MH EQ Story
 			b. HAZUS MH EQ IM
 			c. HAZUS MH HU
 			d. User-provided Models
-    * :ref:`Transportation infrastructure <lbl-DLTransportPelicun>`
+	* :ref:`Transportation infrastructure <lbl-DLTransportPelicun>`:
 		* Pelicun Damage and Loss Methods:
 			a. HAZUS MH EQ IM
 			b. User-provided Models
+	* :ref:`Water Network infrastructure <lbl-ASDWaterDistributionNetwork>`:
+		* Pelicun Damage and Loss Methods:
+			a. HAZUS MH EQ IM
+			b. User-provided Models
+
+#. **System Performance**:
+	* :ref:`REWET <lbl-SPREWET>` System performance with or without Recovery 
 			
 #. **Uncertainty Quantification**: 
     * :ref:`Dakota <lblUQ>`:
