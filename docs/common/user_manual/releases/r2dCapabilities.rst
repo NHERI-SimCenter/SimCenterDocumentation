@@ -27,7 +27,7 @@ Major updates from Version 4.0 are adding liquefaction-induced ground deformatio
     * :ref:`Transportation infrastructure <lbl-ASDTransport>`:
 		a. Load transportation infrastructure database in SimCenter's ``.geojson`` format.
 		b. Load transportation infrastructure database in common ``.gis`` format.
-	* :ref:`Water Distribution Network <lbl-ASDWaterDistributionNetwork>`:
+    * :ref:`Water Distribution Network <lbl-ASDWaterDistributionNetwork>`:
 		a. Load water distribution network database in EPANet's format (used for REWET).
 		b. Load water distribution network from .csv files representing nodes and pipelines.
 		c. Load water distribution network from GIS files representing nodes and pipelines.

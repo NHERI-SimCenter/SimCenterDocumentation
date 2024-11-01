@@ -32,6 +32,7 @@ Sept 2025
 #. **Multi-Scale Models for Wind and Water** (1.3.3.2): Development of multi-scale modeling capabilities for wind and water hazard assessment.
 
 #. **Efficient Forward Propagation using Multi-Fidelity Monte-Carlo** (1.2.3.1): This feature leverages a small number of high-fidelity model outputs to improve the accuracy of efficient, approximate models, such as surrogates, enhancing performance with minimal computational overhead.
+
 .. note::
 
     The numbers in parentheses are internal tracking identifiers.

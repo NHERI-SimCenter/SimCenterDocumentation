@@ -333,7 +333,6 @@ Estimator (SDE) Tool (:numref:`tab-sdeAttri`).
 .. _tab-sdeAttri:
 
 .. csv-table:: Advanced attributes for FEMA Substantial Damage Estimator (SDE) Tool, available for all properties in Flood-Exposed Inventory.
-.. csv-table:: Advanced attributes for FEMA Substantial Damage Estimator (SDE) Tool, available for all properties in Flood-Exposed Inventory.
    :name: sde_attri
    :file: data/sde_attributes.csv
    :header-rows: 1

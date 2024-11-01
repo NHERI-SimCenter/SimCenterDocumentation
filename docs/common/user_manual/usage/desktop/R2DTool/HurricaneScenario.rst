@@ -157,6 +157,6 @@ The **User-specified Hurricane** application loads the results of a **Hurricane 
   :align: center
   :figclass: align-center                     
 
-
+  User-defined hurricane input panel.
 
 
