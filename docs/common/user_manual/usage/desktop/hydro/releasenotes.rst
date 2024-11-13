@@ -5,10 +5,38 @@
 Release Notes
 *************
 
+
+Version 4.0
+===========
+
+.. dropdown:: Version 4.0.0 (:blue:`Current`)
+    :open:
+
+    **Release date:** September 30th, 2024
+
+    
+    **Simulation Types**:
+
+        a. Added ``Boussinesq and NLSW wave-solver`` via ``Python and Celeris (Taichi Lang)``.
+        b. Added ``Stochastic Wave Event`` via ``Python and welib``.
+
+
+    **Tools**
+
+        * Added tool for accessing NOAA's Digital Coast web-app suite (e.g., sea-level rise viewer).
+        * Added Taichi Lang tool for local HPC in custom and example numerical simulations. 
+
+
+    **Examples**
+
+        * Added example simulation for stochastic loading of a monopile structure in ``StochasticWaves EVT``. 
+        * Added example simulation for a piston wave-maker in ``TaichiEvent`` with local HPC enabled.
+
+
 Version 3.1
 ===========
 
-.. dropdown:: Version 3.1.0 (:blue:`Current`)
+.. dropdown:: Version 3.1.0
     :open:
 
     **Release date:** April 1st, 2024
