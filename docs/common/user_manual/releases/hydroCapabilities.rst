@@ -5,7 +5,7 @@
 Capabilities
 ************
 
-Version |tool version| of the |app| was released on **April 1st, 2024**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+Version |tool version| of the |app| was released on **September 30th, 2024**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 
@@ -15,9 +15,13 @@ Version |tool version| of the |app| was released on **April 1st, 2024**. The fol
 
    B. Run GeoClaw, a widely used shallow-water solver vetted for tsunamis / storm surges, via the graphical user interface.
 
-   C. :blue:`Define and adjust prebuilt, digital twin wave-makers (1D / 2D pistons, pumps, gravity head).`
+   C. For advanced users, full authority is provided to input hydrodynamic files from tools of their choice.
 
-   D. :blue:`For advanced users, full authority is provided to input hydrodynamic files from tools of their choice.`
+   D. :blue:`Define and adjust prebuilt, digital twin wave-makers (piston based, vacuum-chamber release).`
+
+   E. :blue:`Simulate coastal wave events using the Celeris wave-solver (Boussinesq, non-linear shallow water).`
+
+   F. :blue:`Employ local high-performance computation (GPU & CPU) using Taichi Lang (examples provided).`
 
 #. Structural Model: Defines the structural modeling approach and returns the scripts required to perform the response simulation. One or more models can be assigned to a workflow. Using more than one model allows for benchmarking and epistemic uncertainty analysis. The following options are available:
 
@@ -47,6 +51,8 @@ SIM (Structural Model)
 #. Multi-degree-of-freedom (MDOF) model
 #. MDOF-LU
 #. OpenSees
+#. :blue:`Steel Building Model`
+#. :blue:`Concrete Building Model`
 #. Custom Python Script (customPy)
 #. Multiple Models
 
@@ -117,8 +123,7 @@ EVT (Event Selection)
           #. Available for running on TACC HPC
 
 ..
-   #. :blue:`Celeris`` (Coming Soon)` :sup:`3` #. :blue:`Boussinesq wave solver`  #. :blue:`Nonlinear shallow-water solver`  #. :blue:`WebGPU Accelerated` #. :blue:`Available for running through integrated browser (no installation required)`
-
+   #. :blue:`Celeris`` (v0)` :sup:`3` #. :blue:`Boussinesq wave solver`  #. :blue:`Nonlinear shallow-water solver`  #. :blue:`Taichi Lang accelerated (GPU & CPU).`
 
 .. note:: 
      
@@ -128,7 +133,7 @@ EVT (Event Selection)
 
 
 ..
-     :sup:`3` Celeris is a new addition to the suite of numerical methods available in HydroUQ. It is currently in beta development and will be released soon.
+     :sup:`3` Celeris is a new addition to the suite of numerical methods available in HydroUQ. It is in active development, with major and minor updates occurring in tandem to HydroUQ.
 
 
 
@@ -179,13 +184,21 @@ EDP (Outputs from Computational Models)
 
           #. Peak Roof Displacement (PRD)
 
-     #. :blue:`Standard Tsunami EDPs``
+     #. :blue:`Standard Hydrodynamic EDPs`
 
-          #. :blue:`Peak force / pressure / wave-velocity / wave-height / inter-story drift (PID) / roof displacement (PRD)`
+          #. :blue:`Peak floor displacement (PFD)`
 
-          #. :blue:`Total impulse / wave-duration / wave momentum-flux`
+          #. :blue:`Peak floor acceleration (PFA)`
 
-          #. :blue:`Average wave velocity / wave height`
+          #. :blue:`Peak floor force (PFF)`
+
+          #. :blue:`Peak floor pressure (PFP)`
+
+          #. :blue:`Peak wave height (PWH)`
+
+          #. :blue:`Average wave velocity (AWV)`
+
+          #. :blue:`Total wave momentum-flux (TWM)`
 
      #. User Defined EDPs
 
