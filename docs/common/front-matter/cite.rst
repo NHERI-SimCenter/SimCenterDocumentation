@@ -32,8 +32,8 @@ How To Cite
 .. only:: HydroUQ_app
       
    1. Frank McKenna, Justin Bonus, Ajay B Harish, & Nicolette Lewis. (2024). 
-      NHERI-SimCenter/HydroUQ: Version 3.1.0 (v3.1.0). 
-      Zenodo. `DOI: 0.5281/zenodo.10902090 <https://doi.org/10.5281/zenodo.10902090>`_
+      NHERI-SimCenter/HydroUQ: Version 4.0.0 (v4.0.0). 
+      Zenodo. `DOI: 10.5281/zenodo.13865413 <https://doi.org/10.5281/zenodo.13865413>`_
 
 2. Gregory G. Deierlein, Frank McKenna, Adam Zsarnóczay, Tracy Kijewski-Correa, Ahsan Kareem,
    Wael Elhaddad, Laura Lowes, Matt J. Schoettler, and Sanjay Govindjee (2020)
