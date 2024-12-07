@@ -11,7 +11,8 @@ The main menu toolbar features the tools dropdown menu. In R2D, tools are applic
 .. include:: HurricaneScenario.rst
 .. include:: CensusData.rst
 .. include:: BRAILSBuildings.rst
-.. include:: BRAILSTransportation.rst	     	     	     
+.. include:: BRAILSTransportation.rst
+.. include:: ResidualDemandTrafficSimulator.rst	     	     	     
 
 
 
