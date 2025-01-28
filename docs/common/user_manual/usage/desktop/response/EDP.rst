@@ -155,9 +155,7 @@ As shown in the figure, this panel allows the user to determine their own output
 
 Component and Cladding EDP
 ---------------------------
-This option provides EDP capabilities for evaluating wind loads, including forces and pressure, on building components and cladding. Unlike the standard wind EDP option, it does not perform structural analysis. Instead, it can be used to compute cladding loads on buildings and components or directly on the cladding itself directly using CFD or experimental measurement. However, in the current release this option only works with the CFD-based workflows. 
-
-The following figure illustrates the inputs required for this option:
+This option provides EDP capabilities for evaluating wind loads, including forces and pressure, on building components and cladding. Unlike the standard wind EDP option, it does not perform structural analysis. Instead, it can be used to compute pressure or forces directly from CFD model or experimental measurement. In the current release this option only works with the CFD-based workflows. The following figure illustrates the inputs required for this option:
 
 .. figure:: figures/componentCladdingEDP.jpg
 	:align: center
@@ -259,7 +257,7 @@ The following figure illustrates the inputs required for this option:
 3. **Snap Components to Building Surface**: If checked, geometries of each component will be snapped to the building facade.  
 
 
-4. **Map Component Geometry onto Building Surfaces**: By clicking this button, the user can generate the component geometries and visualize them with the building geometry. When the button is clicked and new dialog window will show up as seen in the figure bellow. Also, the points that will be used to sample pressure measurements are displayed. These measurement points and the corresponding tributary areas will be used for perform area integration for the wind load calculation. 
+4. **Map Component Geometry onto Building Surfaces**: By clicking this button, the user can generate the elements and visualize them with the building geometry. When the button is clicked and new dialog window will show up as seen in the figure bellow. Also, the points that will be used to sample pressure measurements are displayed. These measurement points and the corresponding tributary areas will be used for performing area integration for the wind load calculation in the final analysis. 
 
 	.. figure:: figures/component_cladding_mapping.jpg
 		:align: center
