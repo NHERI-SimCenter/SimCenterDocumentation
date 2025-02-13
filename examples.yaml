@@ -41,6 +41,7 @@ WE-UQ:
     - weuq-0015
     - weuq-0016
     - weuq-0017
+    - weuq-0019
 
 EE-UQ:
   include-item:
@@ -70,7 +71,9 @@ R2DTool:
   - E10SiteResponse
   - E12IstanbulRegionalSeismicRiskAnalysis
   - E14BasicHAZUSTransportation
-  - E16WDNRecoveryAndPerformanceAssessment
+  - E15WDNRecoveryAndPerformanceAssessment
+  - E16ElectricPowerEarthquake
+  - E17EarthquakeRecovery
 
 HydroUQ:
   include-item:
