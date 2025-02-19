@@ -5,9 +5,41 @@
 ***************************
 Release Notes
 ***************************
-
-Version 5.1.0 (Current)
+Version 5.2.0 (Current)
 -----------------------
+
+**Release date:** November 2024
+
+**Highlights**
+
+#. **Inclusion of Residual Demand model for post-disaster traffic flow simulation** 
+
+
+Version 5.3.0 (Current)
+-----------------------
+
+**Release date:** Feb 2025
+
+**Highlights**
+
+#. Added Power Network for a HAZUS damage assessment.
+   
+#. Integration of pyrecodes software for performing Recovery simulation post event.
+
+
+Version 5.2.0
+-------------
+
+**Release date:** December 2025
+
+**Highlights**
+
+#. A traffic flow simulator was integrated to assess the impact of natural hazards on highway transportation services. The Residual Demand Simulator, based on pseudo-equilibrium dynamic traffic assignment theory, was originally developed by Zhao et al. (2019).
+
+#. The HAZUS-style highway bridge analysis was improved by applying capacity scaling factors, such as skewness, spectral shape, and 3D effect factors, as defined in the HAZUS technical manual. The refined bridge analysis now fully aligns with FEMA’s HAZUS methodology.
+
+Version 5.1.0
+-------------
 
 **Release date:** September 2024
 
