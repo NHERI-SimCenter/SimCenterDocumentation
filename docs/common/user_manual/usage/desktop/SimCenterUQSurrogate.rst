@@ -59,7 +59,7 @@ Gaussian Process (GP) Surrogate Modeling
 
     **The trained surrogate model can be saved in a portable file (.json format) and later imported** in place of the original simulation model for UQ analysis or optimization purposes. See user guide section 2.3.5 for how to import the surrogate model in |short tool id|.
 
-.. only:: EE-UQ
+.. only:: EEUQ_app
 
     The ``Train GP Surrogate Model`` module is used to construct a Gaussian process (GP) based **surrogate model** that substitutes expensive computational **simulation models**. The challenge of surrogate modeling in earthquake engineering arrives from the stochasticity in the ground motion time history and corresponding stochastic output. 
 
