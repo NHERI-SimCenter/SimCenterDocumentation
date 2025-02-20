@@ -5,7 +5,21 @@
 Release Notes
 *************
 
-Version 4.1 (Current)
+Version 4.2 (Current)
+-----------------------
+
+**Release date:** Feb. 2025
+
+**Highlights**
+
+#. Implemented new EDP options for calculating wind loads on components and cladding of a building. 
+#. Defined JSON scheme for specifying the geometry of component and cladding elements from basic shapes and transformation. 
+#. Added automated post-processing functionality for computing area averaged peak loads.
+#. Added new numerical example for demonstrating the feature for a two story low-rise building.
+#. Minor bug fixes to WE-UQ and backend applications.
+
+
+Version 4.1
 -----------------------
 
 **Release date:** Sept. 2024
