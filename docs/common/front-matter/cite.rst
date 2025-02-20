@@ -6,7 +6,7 @@ How To Cite
 
 .. only:: R2D_app
 
-   1. Frank McKenna, Stevan Gavrilovic, Jinyan Zhao, Kuanshi Zhong, Adam Zsarnoczay, Barbaros Cetiner, Sina Naeimi, Sang-ri Yi, Aakash Bangalore Satish, & Pedro Arduino. (2024). NHERI-SimCenter/R2DTool: Version 5.1.0 (v5.1.0). Zenodo. `DOI: <https://doi.org/10.5281/zenodo.13865393>`_
+   1. Frank McKenna, Stevan Gavrilovic, Jinyan Zhao, Kuanshi Zhong, Adam Zsarnoczay, Barbaros Cetiner, Sina Naeimi, Sang-ri Yi, Aakash Bangalore Satish, Pedro Arduino, & Wael Elhaddad. (2024). NHERI-SimCenter/R2DTool: Version 5.2.0 (v5.2.0). Zenodo `DOI: https://doi.org/10.5281/zenodo.14219019 <https://doi.org/10.5281/zenodo.14219019>`_
 	     
 .. only:: PBE_app
 
@@ -19,7 +19,7 @@ How To Cite
 .. only:: WEUQ_app
 
    1. Frank McKenna, Abiy F. Melaku, Fei Ding, Jiawei Wan, Peter Mackenzie-Helnwein, Michael Gardner, Sang-ri Yi,
-      Aakash Bangalore Satish & Wael Elhaddad (2024). NHERI-SimCenter/WE-UQ: Version 4.1.0 (v4.1.0). 
+      Aakash Bangalore Satish & Wael Elhaddad (2025). NHERI-SimCenter/WE-UQ: Version 4.2.0 (v4.2.0). 
       Zenodo. `10.5281/zenodo.13865388 <https://doi.org/10.5281/zenodo.13865388>`_
 	     
 .. only:: quoFEM_app

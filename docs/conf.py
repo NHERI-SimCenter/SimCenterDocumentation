@@ -473,7 +473,7 @@ elif app_name == "R2DTool":
 .. |test example| replace:: :ref:`r2dt-0006`
 .. _github discussion page: https://github.com/orgs/NHERI-SimCenter/discussions/categories/r2d
 .. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt
-.. |tool version| replace:: 5.1
+.. |tool version| replace:: 5.2
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 
@@ -666,7 +666,7 @@ elif app_name == "WE-UQ":
     rst_prolog += f"""
 .. |full tool name| replace:: Wind Engineering with Uncertainty Quantification Application
 .. |test example| replace:: :ref:`weuq-0001`
-.. |tool version| replace:: 4.1
+.. |tool version| replace:: 4.2
 .. _WE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ
 .. _github discussion page: https://github.com/orgs/NHERI-SimCenter/discussions/categories/we-uq
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-WE`

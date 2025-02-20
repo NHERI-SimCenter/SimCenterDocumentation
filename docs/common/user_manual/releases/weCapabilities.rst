@@ -5,7 +5,7 @@
 Capabilities
 ************
 
-**Version 4.1.0** of |app| was released **Sept 2024**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+**Version 4.2.0** of |app| was released **Feb 2025**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 Structural Information Model
@@ -27,8 +27,7 @@ Applications used to specify/select wind loading for the structure.
 #.  Stochastic Wind: Simulating stochastic wind speed using spectral methods. Includes the Wittig and Sinha 1975 model.
 #.  CFD - Digital Wind Tunnel: CFD simulation of boundary layer wind tunnel
 #.  CFD - Wind Load on Isolated Buildings: CFD-based wind load simulation for isolated buildings with complex geometry
-#.  :blue:`CFD - Wind Load on Surrounded Buildings:` 
-    CFD-based wind load simulation for buildings surrounded by other buildings
+#.  CFD - Wind Load on Surrounded Buildings: CFD-based wind load simulation for buildings surrounded by other buildings
 #.  Experimental Wind Forces: As seen in "Uncertainty Quantification and Simulation of Wind-Tunnel-Informed Stochastic Wind Loads". User specified force file input.
 #.  Experimental Wind Forces: As seen in "Uncertainty Quantification and Simulation of Wind-Tunnel-Informed Stochastic Wind Loads". User specified pressure file input. Includes CPSD group size.
 #.  Experimental Wind Pressures: As seen in "Uncertainty Quantification and Simulation of Wind-Tunnel-Informed Stochastic Wind Loads".
@@ -47,7 +46,7 @@ Applications to identify the output parameters of interest given the wind loadin
 
 #. Standard Wind: (serviceability) inter-story drift ratio, peak floor acceleration
 #. User Defined: user-specified EDP
-    
+#. :blue:`Component and Cladding EDP: area averaged peak loads on a predefined region/zone`
     
 Finite Element Application
 ==========================
@@ -105,5 +104,5 @@ Additional Tools
    Capability to perform empty domain simulation to characterize Atmospheric Boundary Layer (ABL) flows using large-eddy simulation (LES). This feature uses the Turbulence Inflow Tool (TInF) tool for calibrating ABL flows for a subsequent wind load evaluation study. 
 
    
-#. :blue:`Isolated Building CFD Simulation`:
+#. **Isolated Building CFD Simulation**:
    Added a functionality to perform CFD-based wind load simulation on isolated building as a stand-alone workflow tool. This tool uses the user's local machine for performing pre-processing and run the actual CFD simulation on DesignSafe.  

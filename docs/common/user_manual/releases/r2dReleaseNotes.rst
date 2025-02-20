@@ -5,6 +5,15 @@
 ***************************
 Release Notes
 ***************************
+Version 5.2.0 (Current)
+-----------------------
+
+**Release date:** November 2024
+
+**Highlights**
+
+#. **Inclusion of Residual Demand model for post-disaster traffic flow simulation** 
+
 
 Version 5.3.0 (Current)
 -----------------------
