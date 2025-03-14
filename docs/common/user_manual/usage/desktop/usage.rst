@@ -163,6 +163,10 @@ The main window of the UI comprises the following key components:
 
    **Running Jobs Remotely**
 
+   .. warning::
+
+      Before you can run a job at DesignSafe, you need a current TACC HPC allocation. To obtain such you need to submit a `ticket to TACC <https://www.designsafe-ci.org/help/tickets/>`_ with words similar to "Hello, I would like an initial HPC allocation to explore the SimCenter applications". For users of previous versions of the tools, this is a new requirement required due to changes to the revised software used to communicate with these HPC machines.
+      
    .. only:: notR2D
 
       Clicking on the **RUN at DesignSafe** button will show the remote job submission dialog shown below (:numref:`figRemJobPanel-notR2D`)
