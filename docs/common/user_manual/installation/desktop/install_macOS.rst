@@ -42,7 +42,7 @@ SimCenter tools require an x86-based Python 3.9. If your current Python version 
 
    .. code-block:: bash
       
-      pip3 install nheri_simcenter --upgrade
+      xcode-select --install
       python3 -m pip3 install --upgrade nheri_simcenter
 
 
