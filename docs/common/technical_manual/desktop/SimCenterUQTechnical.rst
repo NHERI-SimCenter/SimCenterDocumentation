@@ -410,7 +410,7 @@ Adaptive Design of Experiments (DoE)
 	* **Count**: the number of model evaluations exceeds a predefined count constraint 
 	* **Accuracy**: the accuracy measure of the model meets a predefined convergence level
 
-only:: EEUQ_app
+.. only:: EEUQ_app
 	
 	Currently not supported in EE-UQ.
 

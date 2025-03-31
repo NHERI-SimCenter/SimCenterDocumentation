@@ -7,9 +7,17 @@ Install on MacOS
 Install Python 3.9
 ^^^^^^^^^^^^^^^^^^
 
-SimCenter tools require an x86-based Python 3.9. If your current Python version is incompatible, follow these steps to install the required version from `Python.org <https://www.python.org/downloads/macos/>`_.
+SimCenter tools require an **x86-based Python 3.9** installation. To check if your current Python installation is compatible, follow Steps **1** and **2** below. If it is incompatible, proceed with Steps **3** through **6** below to install a compatible version.
 
-#. To check your Python version compatibility, issue the following in a terminal window.
+
+#. Open a Terminal Window. To do this on your Mac:
+   
+   .. code::
+      
+     1) Press Command (⌘) + Spacebar to open Spotlight Search
+     2) Type “Terminal” and press Enter in Spotlight Search.
+
+#. To check if your Python version is compatible, run the following commands in your terminal window:
 
    .. code::
    
@@ -18,7 +26,7 @@ SimCenter tools require an x86-based Python 3.9. If your current Python version 
       platform.uname()
       exit()
 
-   Ensure the output indicates Python 3.9 and `machine='x86_64'`, as shown in the screenshot below. If not, proceed to install Python 3.9 x86.
+   Ensure the output indicates Python 3.9 and `machine='x86_64'`, as shown in the screenshot below. If your python installation does not meet these requirements, proceed with the installation outlined in steps **3** and **4** below. If your system does meet the requirements, skip to step **5**.
 
    .. figure:: figures/pythonKernel.png
       :align: center
@@ -27,9 +35,9 @@ SimCenter tools require an x86-based Python 3.9. If your current Python version 
       
       Python: Kernel Version
 
-#. To download a Python installer with your browser open the |appLink| page. There, you will find various files and directories available for download. Locate the file named **python-3.9.13-macosx10.9.pkg**, which we copied from `Python.org <https://www.python.org/downloads/macos/>`_. Proceed to download this installer file and then open it on your local machine to initiate the Python installation process.
+#. Clink on the this link -> |appLink|. On the browser page that this brings up,  you will find various files and directories available for download. Locate the file named **python-3.9.13-macosx10.9.pkg**, which we copied from `Python.org <https://www.python.org/downloads/macos/>`_. Proceed to download this installer file.
 
-#. Run the installer. Upon completion, a folder with several files will open, as shown in the figure below. Execute ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh`` by double-clicking each.
+#. Locate this installer file on your system and double click on it to start the installation process. Upon completion, a folder with several files will open, as shown in the figure below. Execute ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh`` by double-clicking each.
 
    .. figure:: figures/pythonInstallShell.png
       :align: center
@@ -38,38 +46,18 @@ SimCenter tools require an x86-based Python 3.9. If your current Python version 
       
       Python: Folder Displayed at Conclusion of Install
 
-#. Install additional packages via the **nheri_simcenter** package by starting a Terminal window and type the following command:
+#. In the terminal window you have opened in step **1**, you need to issue the following **2** commands to ensure the command line tools for x-code and some additional python modules are installed:
 
    .. code-block:: bash
       
-      pip3 install nheri_simcenter --upgrade
+      xcode-select --install
       python3 -m pip3 install --upgrade nheri_simcenter
 
-
-   .. note::
-      Use of `pip` versus `pip3`, and `python` versus `python3` or `python3.9` may vary depending on your system configuration. 
-      If the above commands fail, try using `pip` and `python` instead.
-
-
-   Make sure you see a message that confirms the successful installation of the nheri-simcenter package before proceeding to the next step.
+#. Repeat steps **1** and **2** to ensure that python was correctly installed. See note below if you still see the incorrect version and platform in the ``NEW`` terminal window.
 
 .. note::
 
-   1. If you forget to invoke the ``UpdateShellProfile.command.sh`` script at the end of the install, you can always execute the correct shell file later to update the ``PATH`` variable to point to the Python application.
-      On Linux systems, the shell is the program that takes commands from the keyboard that you enter in the terminal window and passes them to the operating system to perform by invoking applications and passing data between applications. In the good old days, it was the only interface available to the user, i.e., there was no such thing as Finder! There are a number of shell programs that can be installed and made available to you. The most popular is the **bash** shell, and the up-and-coming one is the **Z** shell. Power MacOS users will write shell scripts to do many useful things. By default, the applications that the shell program will invoke are limited to applications in a few specific directories that are defined in the user's ``PATH``. Users can modify this path by editing files that the shell program will read from every time the program is started.
-      When the frontend application is running the computations it is actually running a backend application using the shell program. As a consequence the shell program must be made aware of the locations of some of the external applications that you have installed as **OpenSees** and **Dakota** do not provide installers that automatically do this when they are installed. Other applications, like **Tcl** provide scripts that you invoke to do it. In short, you have to edit the file appropriate to the shell you are using.
-
-      To find which shell program you are using when you issue commands inside the terminal window, type the following:
-
-      .. code:: bash
-
-         env | grep SHELL
-
-
-      If the result is ``/bin/bash`` you will need to edit the ``.bashrc`` file or the ``bash_profile`` file. If the result is ``/bin/zsh`` you will need to edit the ``.zshrc`` or ``.zprofile``. Typically, the ``.bash_profile`` or the ``.zprofile`` file is the one to edit as by design these will invoke the ``.bashrc`` or ``.zshrc`` file. If in doubt, look for these files in your home directory and see which of these other installers have modified.
-
-   2. Python 3.10 from python.org will also work, though there is no x86 installer. The reason we do not recommend its usage is that there are additional settings that need to be modified in the application under the Preferences tab as that python package has a different mechanism for invoking the x86 version, specifically **python3-intel64**.
-
+   If you still have the incorrect version of python installed after following the above steps, it probably means you forget to invoke the **Update Shell Profile Command.command** script at the end of step **4**. You can still do it using **Finder**. Open Finder and navigate to the **/Applications/Python 3.9** folder. Here you will see a number of files, including the two you forgot to run: **Install Cerificates Command.command** and **Update Shell Profile Command.commnd**. Double click on these files to run them. Finally repeat steps **1** and **2** again. If this still fails to produce the correct output for step **2**, please contact us for direct support.
 
 .. only:: R2D_app
 
