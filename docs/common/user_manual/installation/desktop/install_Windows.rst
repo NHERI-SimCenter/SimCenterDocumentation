@@ -32,7 +32,7 @@ Install on Windows 10
    
    .. code:: bash
       
-      wsl --install --distribution Ubuntu
+      wsl --install --distribution Ubuntu-22.04
 
    .. figure:: figures/weuq_wsl_installation.png
       :align: center
