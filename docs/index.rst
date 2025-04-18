@@ -180,6 +180,7 @@
    .. :docTestbeds:common/testbeds/anchorage/index
    :docTestbeds:common/testbeds/lake_charles/index
    :docTestbeds:common/testbeds/Alameda/index
+   :docTestbeds:common/testbeds/fort_myers/index		
 
 .. _lbl-dldb-manual:
 
