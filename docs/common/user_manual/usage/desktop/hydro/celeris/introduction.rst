@@ -29,7 +29,7 @@ Class Architecture and Workflow
 
 The simulation setup can be performed directly within a Python script or through JSON files by specifying the domain geometry, initial conditions, and boundary conditions.
 
-.. figure:: /images/Celeris.svg
+.. figure:: images/Celeris.svg
    :width: 90%
    :align: center
 
@@ -41,7 +41,7 @@ CelerisAi can solve the shallow water equations or the extended Boussinesq equat
 Workflow to solve the Shallow water equations
 +++++++++++++++++++++++++++++++++++++++++++++
 
-.. figure:: /images/Celeris_SWE.svg
+.. figure:: images/Celeris_SWE.svg
    :width: 80%
    :align: center
 
@@ -50,7 +50,7 @@ Workflow to solve the Shallow water equations
 Workflow to solve the extended Boussinesq equations
 +++++++++++++++++++++++++++++++++++++++++++++++++++
 
-.. figure:: /images/Celeris_Bouss.svg
+.. figure:: images/Celeris_Bouss.svg
    :width: 80%
    :align: center
 
