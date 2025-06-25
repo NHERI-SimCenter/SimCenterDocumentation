@@ -420,7 +420,7 @@ if app_name == "HydroUQ" or app_name == "Hydro":
     rst_prolog += f"""\
 .. |full tool name| replace:: Water-borne Hazards Engineering with Uncertainty Quantification
 .. |test example| replace:: :ref:`hdro-0005`
-.. |tool version| replace:: 4.0.0
+.. |tool version| replace:: 4.1.0
 .. _github discussion page: https://github.com/orgs/NHERI-SimCenter/discussions/categories/hydro-uq
 .. _Hydro Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ
 .. _HydroUQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ

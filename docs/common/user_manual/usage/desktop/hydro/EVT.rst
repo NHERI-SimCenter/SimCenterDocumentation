@@ -18,6 +18,7 @@ The following options are available in the drop-down menu:
    general
    coupled
    MPM
+   celeris/index
 
 
 .. note::
