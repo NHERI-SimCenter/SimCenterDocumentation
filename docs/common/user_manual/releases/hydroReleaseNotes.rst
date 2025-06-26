@@ -5,6 +5,38 @@
 Release Notes
 ***************************
 
+Version 4.1
+=================
+
+    .. dropdown:: Version 4.1.0 (:blue:`Current`)
+        :open:
+
+        **Release date:** May 1st, 2025
+
+        **Highlights**
+
+            #. **Simulation types**:
+
+                a. Material Point Method via ClaymoreUW.
+
+                b. Boussinesq and Nonlinear Shallow Water Equations (SWEs) via Celeris.
+
+                c. Morison wave loading equations for stochastic wave spectra via welib.
+
+            #. **Tools**
+            
+                a. BRAILS implemented into Celeris as a tool for applying building inventories to bathymetries for wave simulations.
+
+                b. NOAA global DEM mosaic API implemented into Celeris as a tool for downloading bathymetry data anywhere in the world. 
+
+            #. **Digital Twins**
+
+                a. Added Oregon State University's Large Wave Flume (OSU LWF) as a validated digital twin for MPM and Celeris.
+
+                b. Added Oregon State University's Directional Wave Basin (OSU DWB) as a validated digital twin for MPM and Celeris.
+
+
+
 Version 3.1
 =================
 
