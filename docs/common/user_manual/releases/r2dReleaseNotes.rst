@@ -5,18 +5,21 @@
 ***************************
 Release Notes
 ***************************
-Version 5.2.0 (Current)
------------------------
 
-**Release date:** November 2024
+
+Version 5.4.0
+-------------
+
+**Release date:** May 2025
 
 **Highlights**
 
-#. **Inclusion of Residual Demand model for post-disaster traffic flow simulation** 
+#. Revisions to work with latest release of Pelicun and the DL library.
+   
+#. Changes to how the auto-population scripts are run in the workflows.
 
-
-Version 5.3.0 (Current)
------------------------
+Version 5.3.0
+-------------
 
 **Release date:** Feb 2025
 
