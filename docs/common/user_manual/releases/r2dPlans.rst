@@ -10,7 +10,7 @@ The following features are planned to be developed for upcoming releases of |app
 
 
 
-July 2025
+Sept 2025
 ----------
 
 #. **Add Datasets to Simulate Subassembly Damage and Losses Under Wind Demands** (1.3.5.1): Incorporation of damage and loss data published in recent Performance-Based Wind Engineering research to facilitate high-resolution wind hazard performance assessments. The data is added to the `SimCenter Damage and Loss Model Library <https://github.com/NHERI-SimCenter/DamageAndLossModelLibrary>`_. 

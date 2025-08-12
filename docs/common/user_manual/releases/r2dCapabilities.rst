@@ -5,11 +5,12 @@
 Capabilities
 ************
 
-**Version** |tool version| of |app| was released in **Nov 25, 2024**, introducing significant updates and enhancements. This document outlines the functionalities available in the current version, highlighting new features and improvements in :blue:`blue`.
+**Version** |tool version| of |app| was released in **May 16, 2025**, introducing significant updates and enhancements. This document outlines the functionalities available in the current version, highlighting new features and improvements in :blue:`blue`.
 
-Major updates from Version 4.0 are adding liquefaction-induced ground deformation estimation in the :blue:`regional earthquake event generation tool`, refactored :blue:`regional inventory generation tool BRAILS`, and upgraded :blue:`damage and loss engine Pelicun`. 
+Major updates from the previous version is related to changes made to incorporate the latest release of Pelicun and the DL models. Also changes have been made to how and when the autopopulation scripts run in the workflow.
 
-**Release date:** November, 2024
+
+**Release date:** May, 2025
 
 #. **Hazard Types**:
 
@@ -73,6 +74,9 @@ Major updates from Version 4.0 are adding liquefaction-induced ground deformatio
 #. **System Performance**:
 	* :ref:`REWET <lbl-SPREWET>` System performance for water network with or without recovery 
 	* :ref:`ResidualDemand <lbl-ResidualDemandTrafficSimulator>` Post-disaster traffic flow simulation
+
+#. **Recovery**:
+	* Regional Recovery simulation using :ref:`Pyrecodes <lbl-PYRECODES>`.
 			
 #. **Uncertainty Quantification**: 
     * :ref:`Dakota <lblUQ>`:

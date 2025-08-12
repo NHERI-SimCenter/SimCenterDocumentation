@@ -51,14 +51,36 @@ SimCenter tools require an **x86-based Python 3.9** installation. To check if yo
    .. code-block:: bash
       
       xcode-select --install
-      python3 -m pip3 install --upgrade nheri_simcenter
+      python3 -m pip install --upgrade nheri_simcenter
+
+
+   If this step fails, see WARNING below.
 
 #. Repeat steps **1** and **2** to ensure that python was correctly installed. See note below if you still see the incorrect version and platform in the ``NEW`` terminal window.
 
 .. note::
 
-   If you still have the incorrect version of python installed after following the above steps, it probably means you forget to invoke the **Update Shell Profile Command.command** script at the end of step **4**. You can still do it using **Finder**. Open Finder and navigate to the **/Applications/Python 3.9** folder. Here you will see a number of files, including the two you forgot to run: **Install Cerificates Command.command** and **Update Shell Profile Command.commnd**. Double click on these files to run them. Finally repeat steps **1** and **2** again. If this still fails to produce the correct output for step **2**, please contact us for direct support.
+   If step **5** was successfull and you still have the incorrect version of python installed after following the above steps, it probably means you forget to invoke the **Update Shell Profile Command.command** script at the end of step **4**. You can still do it using **Finder**. Open Finder and navigate to the **/Applications/Python 3.9** folder. Here you will see a number of files, including the two you forgot to run: **Install Cerificates Command.command** and **Update Shell Profile Command.commnd**. Double click on these files to run them. Finally repeat steps **1** and **2** again. If this still fails to produce the correct output for step **2**, please contact us for direct support.
 
+.. warning::
+
+   If step 5 above fails, it is because the system is finding a different version of python on your system. This is going to require you do additional things.
+
+   1. Firstly you need to create a **python environment** for your SimCenter applications. This is done by issuing the following set of commands. 
+
+     .. code-block:: bash
+      
+        cd ~
+        mkdir python_env
+        cd python_env
+        /Library/Frameworks/Python.framework/Versions/3.9/bin/python3 -m venv python_simcenter
+        source ./python_simcenter/bin/activate
+        python3 -m pip install --upgrade nheri_simcenter   
+
+     Basically the commands will create a directory in your home folder called **python_env** and cd into it, the **python3 -m venv python_simcenter** will create the new python environment, which is contained in a directory python_simcenter. To activate this environment you source the script **activate** in the bin folder of this new directory. With the environment activated you can now install nheri-simcenter.	If this too fails, please contact us.
+	
+   2. When the application is actually running, you need to change the location of the **python** application that is run. To do this, in the top menu bar, under the tool icon select Preferences. Change the location of python,  the first variable you can edit, to the python3 in the nee environment, i.e. **/Users/YOUR_LOGIN/python_env/python_simcenter/bin/python3**. Finally Press the **Save** button. Please note that YOUR_LOGIN needs to be replaced with your actual login!
+	
 .. only:: R2D_app
 
    **Install Java**
