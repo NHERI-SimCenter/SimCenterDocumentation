@@ -7,6 +7,18 @@ Release Notes
 ***************************
 
 
+Version 5.5.0
+-------------
+
+**Release date:** August 2025
+
+**Highlights**
+#. Hazus Storm Surge option for damage and loss modeling: Enable running simulations with only inundation demand using loss  functions (also known as depth-to-damage curves) from the Hazus Flood model.
+
+#. When running Hazus-style calculations that return loss ratios, both the loss ratio and the absolute losses are shown in the RES panel if the replacement costs are provided for the building.
+   
+
+   
 Version 5.4.0
 -------------
 

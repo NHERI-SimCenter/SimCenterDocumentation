@@ -433,7 +433,7 @@ elif app_name == "R2DTool":
 
     project = "Regional Resilience Determination Tool"
 
-    author = "Frank McKenna, Stevan Gavrilovic, Jinyan Zhao, Kuanshi Zhong, Adam Zsarnoczay, Barbaros Cetiner, Sang-ri Yi, Pedro Arduino, Wael Elhaddad"
+    author = "Frank McKenna, Stevan Gavrilovic, Jinyan Zhao, Kuanshi Zhong, Adam Zsarnoczay, Barbaros Cetiner, Sang-ri Yi, Aakash Bangalore Satish, Amin Pakzad, Pedro Arduino, Wael Elhaddad"
     sync_examples = True
 
     tags.add("desktop_app")
@@ -475,7 +475,7 @@ elif app_name == "R2DTool":
 .. |test example| replace:: :ref:`r2dt-0006`
 .. _github discussion page: https://github.com/orgs/NHERI-SimCenter/discussions/categories/r2d
 .. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt
-.. |tool version| replace:: 5.2
+.. |tool version| replace:: 5.5
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 
