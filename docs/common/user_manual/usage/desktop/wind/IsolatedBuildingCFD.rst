@@ -390,7 +390,37 @@ If *TInf* option is specified at the *inlet* of the boundary, inputs for the inf
 
 #.  **Inflow Time Step**: The time step used for generating inflow turbulence.  Can assume a value different from the solver time step.  For intermediate time steps, a linear interpolation is used. 
 #.  **Max. Frequency**: Define the maximum cut-off frequency for the inflow generation. Directly calculated from the inflow time step as :math:`f_{max} = 1/(2\Delta t)`.  
-#.  **Wind Profile**: Provides options to define wind profiles used for the inflow generation in a tabular form. 
+#.  **Wind Profile**: Provides options to define wind profiles used for the inflow generation in different forms.  There are three options options for the user to specify the wind profiles.  
+
+
+    * **Table**: This options lets the user specify a tabulated wind profile as a *.csv* file.   
+    * **ASCE-49**: If the user selects this option, the wind profiles will be generated based on ASCE-49 recommendations for a given exposure condition and reference wind speed.   
+    * **WRF-Model**: This options lets the user extract boundary condition from a prior coarse simulation e.g. WRF model and populate the wind profiles. For mean velocity profile, values from the WRF model are used and for the remaining turbulence characteristics ASCE-49 is used.    
+
+
+
+.. _fig-iso-inf-tab:
+.. figure:: figures/IsolatedBuildingCFD/boundary_conditions_TInf.svg
+   :align: center
+   :width: 75%
+
+	Options for specifying inflow turbulence target wind profiles. 
+
+
+.. _fig-iso-inf1-tab:
+.. figure:: figures/IsolatedBuildingCFD/boundary_conditions_TInf_ASCE-49.svg
+   :align: center
+   :width: 75%
+
+	Options for specifying target wind profiles based on ASCE-49. 
+
+
+.. _fig-iso-inf2-tab:
+.. figure:: figures/IsolatedBuildingCFD/boundary_conditions_TInf_WRF.svg
+   :align: center
+   :width: 50%
+
+	Options for specifying target wind profiles based on WRF-Model. 
 
 
 Numerical Setup
