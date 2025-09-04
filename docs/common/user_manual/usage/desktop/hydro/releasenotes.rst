@@ -1,271 +1,217 @@
 .. _lbl-release:
 .. role:: blue
 
-*************
+***************************
 Release Notes
-*************
+***************************
+
+Version 4.2
+=================
+
+    .. dropdown:: Version 4.2.0 (:blue:`Current`)
+        :open:
+
+        **Release date:** August 20th, 2025
+
+        **Highlights**
+
+            #. **Examples**
+
+                a. Four examples for stochastic wave loading (JONSWAP spectra) that showcase UQ capabilities locally and remotely.
+
+                b. One example in Taichi Lang demonstrating local high-performance computing for real-time wave loading.
+
+                c. Three examples in the Celeris wave-solver showing near-real time performance for both wave flumes experiments and field-scale bathymetries, e.g. Loiza, Puerto Rico.
+
+                d. Five examples in the Material Point Method (MPM) solver demonstrating various wave and debris flumes across the world.
+
+            #. **Remote Jobs**:
+
+                a. Migration to Stampede3 from the Frontera supercomputer for improved run-times and longevity.
+
+                b. 'Share Job' feature now available to allow users to share simulation jobs across DesignSafe projects and users.
+
+                c. 'Open Job Folder' feature will take you directly to your remote job's output files on DesignSafe.
+
+                d. 'View Job Metadata' feature will take you to DesignSafe's comprehensive metadata page automatically.
+
+            #. **Bug-Fixes**
+            
+                a. Greatly improved support for HydroUQ on Windows and Mac machines, as well as on Linux.
+
+                b. Fixed bugs in launching Python processes on various operating systems.
+
+                c. Improved MPM and Celeris modules so that they are more robust and easier to use.
 
 
-Version 4.0
-===========
 
-.. dropdown:: Version 4.0.0 (:blue:`Current`)
-    :open:
+Version 4.1
+=================
 
-    **Release date:** September 30th, 2024
+    .. dropdown:: Version 4.1.0
+        :open:
 
-    
-    **Simulation Types**:
+        **Release date:** May 1st, 2025
 
-        a. Added ``Boussinesq and NLSW wave-solver`` via ``Python and Celeris (Taichi Lang)``.
-        b. Added ``Stochastic Wave Event`` via ``Python and welib``.
+        **Highlights**
 
+            #. **Simulation types**:
 
-    **Tools**
+                a. Material Point Method via ClaymoreUW.
 
-        * Added tool for accessing NOAA's Digital Coast web-app suite (e.g., sea-level rise viewer).
-        * Added Taichi Lang tool for local HPC in custom and example numerical simulations. 
+                b. Boussinesq and Nonlinear Shallow Water Equations (SWEs) via Celeris.
 
+                c. Morison wave loading equations for stochastic wave spectra via welib.
 
-    **Examples**
+            #. **Tools**
+            
+                a. BRAILS implemented into Celeris as a tool for applying building inventories to bathymetries for wave simulations.
 
-        * Added example simulation for stochastic loading of a monopile structure in ``StochasticWaves EVT``. 
-        * Added example simulation for a piston wave-maker in ``TaichiEvent`` with local HPC enabled.
+                b. NOAA global DEM mosaic API implemented into Celeris as a tool for downloading bathymetry data anywhere in the world. 
+
+            #. **Digital Twins**
+
+                a. Added Oregon State University's Large Wave Flume (OSU LWF) as a validated digital twin for MPM and Celeris.
+
+                b. Added Oregon State University's Directional Wave Basin (OSU DWB) as a validated digital twin for MPM and Celeris.
+
 
 
 Version 3.1
-===========
+=================
 
-.. dropdown:: Version 3.1.0
-    :open:
+    .. dropdown:: Version 3.1.0
+        :open:
 
-    **Release date:** April 1st, 2024
+        **Release date:** April 1st, 2024
 
-    
-    **Simulation Types**:
+        **Highlights**
 
-        a. Added ``Material Point Method`` via ``ClaymoreUW``.
-        b. Updated ``Finite Volume Method`` + ``Finite Element Method`` via ``FOAMySees`` (``OpenFOAM`` + ``OpenSees``). 
-        c. Partially deprecating ``Shallow Water Equations`` + ``Finite Volume Method`` via (``GeoClaw`` + ``OpenFOAM``). Pending an update in an upcoming minor release.
+            #. **Simulation types**:
 
-    **Physics**
+                a. Material Point Method via ClaymoreUW.
 
-        Broad capabilities of the underlying physics simulation now include:
+                b. Finite Volume Method + Finite Elements via FOAMySees (OpenFOAM + OpenSees). Two-way FSI coupling between CFD and structural solvers. 
 
-        a. Large deformations
-        b. Nonlinear materials
-        c. Multi-material and multi-phase interaction
-        d. Debris-fluid-structure interaction
+            #. **Physics**
 
-    **Debris**
+                a. Large deformations
+                b. Nonlinear materials
+                c. Multi-material and multi-phase interaction
+                d. Debris-fluid-structure interaction
 
-        a. Added debris modeling to ``MPM`` simulations.
-        b. Added support for complex debris geometries (e.g. vehicles, shipping crates, composed primitives).
-        c. Added support for advanced debris material models (e.g. ``Fixed-Corotated``, ``Neo-Hookean``, ``Drucker-Prager``, ``Non-Associative Cam-Clay``).
+            #. **Materials**: 
 
+                a. Supports elastic, plastic, hyperelastic, and elasto-plastic materials in MPM.
 
-    **User Interface**
+                b. Supports kinematic viscosity and density of the two phases in addition to the surface tension between the fluids in OpenFOAM.
 
-        Significant overhaul of the Event GUI to allow for a more intuitive and user-friendly experience. Includes backend updates to the schema and application logic to support the new features.
+            #. **Tools**
+            
+                a. Certain Events (EVT) may now run as standalone tools (i.e. does not require a SimCenter workflow for UQ, etc.). Simplifies implementation of new modules.
 
-        #. **Settings**
+                b. Added Tapis API support for running Tools remotely, allowing for specialized Tapis applications and system/queue selection
 
-            * Panel for setting simulation parameters (e.g. time step, characteristic length, domain size, CFL number).
-            * Panel for setting computer parameters (e.g. number of cores, number of GPUs, etc.).
-            * Panel for setting similitude parameters (e.g. Froude scale, Cauchy scale, etc.).
+            #. **Digital Twins**
 
-        #. **Bodies**
+                a. Digital twins now allow for debris and floating bodies.
 
-            Any entity in a simulation that is not a boundary condition or sensor is considered a ``Body``. ``Bodies``, the collection of ``Body`` objects, may be composed of particles, or meshes. Each ``Body`` is specified by its ``Material``, ``Geometry``, ``Algorithm``, and ``Partitions``.
+                b. Added Oregon State University's Large Wave Flume (OSU LWF) as a digital twin for MPM and FOAMySees.
 
-            #. **Material**
+                c. Added Waseda University's Tsunami Wave Basin (WU TWB) as a digital twin for MPM.
 
-                #. Supports ``elastic``, ``hyperelastic``, and ``elasto-plastic`` material models.
-                
-                #. New constitutive laws:
+            #. **DesignSafe Support and Hardware**
 
-                    * ``J-Fluid``: Weakly-compressible isotropic fluid with viscous shear stress. Uses the Tait-Murnaghan equation of state. 
-                    * ``Fixed-Corotated``: Hyperelastic material model for plastic and rubber-like materials.
-                    * ``Neo-Hookean``: Hyperelastic material model for plastic and rubber-like materials.
-                    * ``Drucker-Prager``: Applicable to granular materials, concrete, and other materials with a yield surface.
-                    * ``Non-Associative Cam-Clay``: Applicable to clays, concrete, and other topology-changing material bodies
+                a. Multi-GPU accelerated simulations now supported in certain simulation types (e.g. ClaymoreUW MPM).
 
+                b. Updated support for the TACC Frontera supercomputer.
 
-            #. **Geometry**
+                    * Access the 'rtx' queue. Includes 4 NVIDIA RTX Quadro 5000 GPUs (16GB memory each).
 
-                * Added a composable geometry editor for creating and modifying geometry.
-                * Implemented boolean operations for geometry (e.g. union, intersection, difference).
-                * Implemented array operations for geometry (e.g. create an array of the same geometry at specified spacings in X, Y, and Z).
-                * Implemented rotation operations for geometry (e.g. rotate a geometry about an axis by a specified angle).
-                * Implemented translation operations for geometry (e.g. translate a geometry by a specified distance in X, Y, and Z).
-                * Implemented geometry file import from ``.sdf`` files.
-                * Added geometry primitives (e.g. ``sphere``, ``box``, ``cylinder``).
+                b. Added support for the TACC Lonestar6 supercomputer.
 
-            #. **Algorithm**
+                    * Access the 'gpu-a100' queue. Includes 3 NVIDIA A100 GPUs (40GB memory each).
+                    * Access the 'gpu-h100' queue. Includes 2 NVIDIA H100 GPUs (80GB memory each).
 
-                * Implemented Affine Particle-in-Cell (APIC) algorithm for ``MPM``
-                * Implemented Fluid-Implicit Particles (FLIP) algorithm for ``MPM``
-                * Implemented Affine-Separable Fluid-Implicit Particles (ASFIP) algorithm for ``MPM``
-                * Implemented F-Bar volumetric antilocking algorithm for ``MPM``
-                * Implemented quadratic B-Spline shape functions for ``MPM``
+                c. Updated support for the Tapis API (used to run jobs remotely).
 
-            #. **Partitions**
-
-                * Bodies may be split across multiple hardware partitions.
-                * Accelerates simulation times by running multiple bodies in parallel.
-                * A valid hardware partition may be a core, a GPU, or a node in an HPC cluster.
-                * Each partition may hold some maximum number of bodies at once (specific to the system on which the simulating tool was compiled).
-
-        #. **Boundaries**
-
-            Any object in a simulation that is not a sensor or body is considered a ``Boundary``. ``Boundaries``, the collection of ``Boundary`` objects, are enforced boundary conditions that may apply to parts of the simulation (e.g. on grid nodes or particles).
-
-            * Added boundaries for geometry primitives (e.g. ``sphere``, ``box``, ``cylinder``).
-            * Added selectable contact models (e.g. ``Sticky``, ``Slip``, ``Separable``).
-            * Added boundaries for the ``OSU LWF`` and ``WU TWB`` digital twin bathymetries. 
-            * Added boundary for the ``OSU LWF`` moving piston wave-maker. 
-            * Implemented array operations for boundary conditions (e.g. instance a boundary at specified spacings in X, Y, and Z).
-
-        #. **Sensors**
-
-            Any object in a simulation that is not a boundary condition or body is considered a ``Sensor``. ``Sensors``, the collection of ``Sensor`` objects, are used to monitor the simulation, collect desired data, reduce said data, and report the aggregated output as a time-series. In effect, they replicate instruments/sensors used in experiments (e.g. load-cells, wave-gauges, piezometers, velocimeters).
-
-            * Sensors may be placed on numerical bodies (e.g. on ``particles`` or ``grid-nodes`` for ``MPM``) to monitor the simulation.
-            * Supports force, pressure, velocity, and elevation sensors by default.
-            * Custom sensors may be added to the simulation through the GUI.
-            * Supports automatic reduction operations (e.g. sum, average, max, min) to reduce sensor data to a single scalar or vector value per sampling step.
-            * Allows specification of sensor output frequency.
-
-        #. **Outputs**
-
-            Collection of simulation settings that do not affect the simulation itself, but rather the output it gives to the user.
-
-            * Supports output of simulation geometry data in the form of ``.bgeo`` files, ``.vtk`` files, and ``.csv`` files.
-            * Supports output of simulation sensor data in the form of ``.csv`` and ``.txt`` files.
-            * Supports output of simulation state data in the form of ``.bgeo`` files.
-            * Enable/disable tracking of and output of simulation energy (kinetic, strain, etc.).
-            * Enable/disable output of simulation checkpoints (allow for a simulation to be resumed if stopped).
-
-    **Visualization**
-
-        * Enabled visualization of the Event (``EVT``) using ``Qt3D``
-        * Added support for mouse controls of the camera in 3D visualization.
-        * Added support for visualizing simulation ``Bodies`` in 3D.
-        * Added support for visualizing simulation ``Boundaries`` in 3D.
-        * Added support for visualizing simulation ``Sensors`` in 3D.
-
-    **Digital Twins**
-
-        * Added Oregon State University's Large Wave Flume (``OSU LWF``) as a digital twin for ``MPM``.
-        * Added Waseda University's Tsunami Wave Basin (``WU TWB``) as a digital twin for ``MPM``.
-        * Digital twins now allow for debris and floating bodies.
-
-    **DesignSafe Support and Hardware**
-
-        * Multi-GPU accelerated simulations are now supported in certain simulation types (e.g. ``ClaymoreUW MPM``).
-
-        * Updated support for the TACC Frontera supercomputer:
-
-            * Access the ``rtx`` queue. Includes 4 NVIDIA RTX Quadro 5000 GPUs (16GB memory each).
-
-        * Added support for the TACC Lonestar6 supercomputer:
-
-            * Access the ``gpu-a100`` queue. Includes 3 NVIDIA A100 GPUs (40GB memory each).
-            * Access the ``gpu-a100-small`` queue. Includes 1 NVIDIA A100 GPU (40GB memory).
-
-        * Updated support for the Tapis API used to run jobs remotely.
-
-    **Tools**
-
-        * Events (``EVT``) may now run as standalone tools (i.e. does not require a SimCenter workflow for UQ, etc.)
-        * Added ``Tapis`` API support for running Tools remotely, allowing for specialized ``Tapis`` applications and system/queue selection
-
-
-    **Examples**
-
-        * Added example simulations for ``OSU LWF`` digital twin in ``FOAMySees`` 
-        * Added example simulations for ``OSU LWF`` digital twin in ``ClaymoreUW``.
-        * Added example simulations for ``WU TWB`` digital twin in ``ClaymoreUW``.
 
 
 Version 2.0
 =================
+    .. dropdown:: Version 2.0.0
+        :open:
 
-.. dropdown:: Version 2.0.0
-    :open:
+        **Release date:**  November 30th, 2023
 
-    **Release date:**  November 30th, 2023
-
-        #. **Simulation types**:
-        
-            b. ``Finite Volume Method`` + ``Finite Element Method`` via ``FOAMySees`` (``OpenFOAM`` + ``OpenSees``). Two-way FSI coupling between CFD and structural solvers. 
-
-        #. **Digital Twin**
-        
-            a. ``OSU LWF`` digital twin now supports ``FOAMySees`` (``OpenFOAM`` + ``OpenSees``). 
+            #. **Simulation types**:
             
-            b. Added options for adjustable bathymetry and flexible two-way coupled structures.
-        
-        #. **New multi-model and multi-fidelity modeling options**
+                a. Two-way FSI coupling between CFD and structural solvers. Uses FOAMySees (OpenFOAM + OpenSees) with coupling library preCICE.
+
+            #. **Digital Twin**
+            
+                a. OSU LWF digital twin now supports FOAMySees (OpenFOAM + OpenSees). Added options for adjustable bathymetry and flexible two-way coupled structures.
+            
+            #. **New multi-model and multi-fidelity modeling options**
 
 
 Version 1.0
 =================
+    .. dropdown:: Version 1.0.0
+        :open:
 
-.. dropdown:: Version 1.0.0
-    :open:
 
-    **Release date:** Apr 30th, 2021
+        **Release date:** Apr 30th, 2021
 
-    #. Supports run on DesignSafe only. Local run on the user's desktop is not supported.
+        #. Supports run on DesignSafe only. Local run on the user's desktop is not supported.
 
-    #. |app| ``v1.0.0`` currently requires the users to ensure that the inputs provided are 
+        #. |app| ``v1.0.0`` currently requires the users to ensure that the inputs provided are 
 
-    #. Supports two-phase isothermal flows only. Water and air are considered as the two primary phases. However, this can be modified in the material properties to accommodate any other alternative two-phases instead.
+        #. Supports two-phase isothermal flows only. Water and air are considered as the two primary phases. However, this can be modified in the material properties to accommodate any other alternative two-phases instead.
 
-    #. **Simulation types**:
+        #. **Simulation types**:
 
-        a. CFD to resolve SW (Using SW results), CFD using bathymetry data, CFD of wave flume is supported.
-        b. For simulation type with SW-CFD coupling, ``v1.0.0`` considers one point on the interface. However, if you would like more flexibility, please let us know using the :ref:`lblBugs`.
+            a. CFD to resolve SW (Using SW results), CFD using bathymetry data, CFD of wave flume is supported.
+            b. For simulation type with SW-CFD coupling, ``v1.0.0`` considers one point on the interface. However, if you would like more flexibility, please let us know using the :ref:`lblBugs`.
 
-    #. **Geometry**: 
+        #. **Geometry**: 
 
-        a. Geometry can be imported as Bathymetry files (GeoClaw format - type 1), STL files, or the Hydro flume digital twin. 
-        b. Shallow-water to CFD interface can be imported as a ``.csv`` file only.
-        c. Buildings of cuboid shapes are supported in ``v1.0.0``. For other shapes, the user can upload them as an STL file. The buildings need to be specified in the table or can be generated parametrically. Importing buildings as a ``.csv`` file is not currently supported in ``v1.0.0`` but can be requested using the :ref:`lblBugs`. 
-        d. Floating bodies and debris modeling are not supported in ``v1.0.0``. Support will be added in upcoming versions. If you are interested in this feature, please write to us at :ref:`lblBugs`.
+            a. Geometry can be imported as Bathymetry files (GeoClaw format - type 1), STL files, or the Hydro flume digital twin. 
+            b. Shallow-water to CFD interface can be imported as a ``.csv`` file only.
+            c. Buildings of cuboid shapes are supported in ``v1.0.0``. For other shapes, the user can upload them as an STL file. The buildings need to be specified in the table or can be generated parametrically. Importing buildings as a ``.csv`` file is not currently supported in ``v1.0.0`` but can be requested using the :ref:`lblBugs`. 
+            d. Floating bodies and debris modeling are not supported in ``v1.0.0``. Support will be added in upcoming versions. If you are interested in this feature, please write to us at :ref:`lblBugs`.
 
-    #. **Meshing**: 
-    
-        a. Supports blockMesh and snappyHexMesh for internal meshing.
-        b. Supports import for the following mesh formats: Ansys Fluent (.msh), Ansys I-DEAS (.ans), CFX mesh (.geo), GAMBIT mesh (.neu), Gmsh mesh (.msh).
-        c. Supports import of OpenFOAM mesh dictionaries, namely the blockMeshDict and snappyHexMeshDict. Additionally, surfaceFeatureExtractDict is required if STL files are used to define the geometry.
+        #. **Meshing**: 
 
-    #. **Materials**: 
-        a. Supports Newtonian materials only.
+            a. Supports blockMesh and snappyHexMesh for internal meshing.
+            b. Supports import for the following mesh formats: Ansys Fluent (.msh), Ansys I-DEAS (.ans), CFX mesh (.geo), GAMBIT mesh (.neu), Gmsh mesh (.msh).
+            c. Supports import of OpenFOAM mesh dictionaries, namely the blockMeshDict and snappyHexMeshDict. Additionally, surfaceFeatureExtractDict is required if STL files are used to define the geometry.
 
-        b. Supports kinematic viscosity and density of the two phases in addition to the surface tension between the fluids.
+        #. **Materials**: 
 
-    #. **Initial conditions**: 
+            a. Supports Newtonian materials only.
+            b. Supports kinematic viscosity and density of the two phases in addition to the surface tension between the fluids.
 
-        a. For CFD simulations that resolve the shallow-water solutions, the initial conditions are derived from the shallow-water solutions.
-        b. For all other simulation types, the user-specified initial conditions include phase only. 
+        #. **Initial conditions**: 
 
-    #. **Boundary conditions**: 
+            a. For CFD simulations that resolve the shallow-water solutions, the initial conditions are derived from the shallow-water solutions.
+            b. For all other simulation types, the user-specified initial conditions include phase only. 
 
-        a. The boundary conditions can be selected based using standard patch names. Here standard patches include entry/exit / inlet/outlet / left/right. 
-        b. Velocity boundary conditions for inlet conditions include shallow-water solutions, moving wall, and constant velocity; for outlet conditions include zeroGradient and inletOutlet
-        c. Pressure boundary conditions include zeroGradient and fixedValue. Alternatively, the user can also leave the default option. An appropriate boundary condition relevant to the velocity boundary will be chosen.
-        d. It is recommended to use the wall boundary conditions for walls
+        #. **Boundary conditions**: 
 
-    #. **Domain decomposition and solver**: 
+            a. The boundary conditions can be selected based using standard patch names. Here standard patches include entry / exit / inlet / outlet / left / right. 
+            b. Velocity boundary conditions for inlet conditions include shallow-water solutions, moving wall, and constant velocity; for outlet conditions include zeroGradient and inletOutlet
+            c. Pressure boundary conditions include zeroGradient and fixedValue. Alternatively, the user can also leave the default option. An appropriate boundary condition relevant to the velocity boundary will be chosen.
+            d. It is recommended to use the wall boundary conditions for walls
 
-        a. Allows simple decomposition techniques from OpenFOAM.
-        b. Can set start and end times for simulation
-        c. Can set time intervals and write intervals
-        d. Restarting facility is supported
+        #. **Domain decomposition and solver**: 
 
-    #. **Turbulence**:
-    
-        a. Presently, only RANS is supported for turbulence modeling.
-        b. If you would like to use LES, please let us know about it using :ref:`lblBugs`.
+            a. Allows simple decomposition techniques from OpenFOAM.
+            b. Can set start and end times for simulation
+            c. Can set time interval and the write intervals
+            d. Restarting facility is supported
+
+        #. **Turbulence**:
+
+            a. Presently, only RANS is supported for turbulence modeling.
+            b. If you would like to use LES, please let us know about it using :ref:`lblBugs`.

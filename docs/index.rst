@@ -140,6 +140,13 @@
    :R2D:common/user_manual/examples/desktop/examples
    :pelicun:common/user_manual/examples/pelicun/examples
    
+   :EEUQ:common/user_manual/usage/desktop/jobs
+   :WEUQ:common/user_manual/usage/desktop/jobs
+   :PBE:common/user_manual/usage/desktop/jobs
+   :Hydro:common/user_manual/usage/desktop/jobs	
+   :quoFEM:common/user_manual/usage/desktop/jobs
+   :R2D:common/user_manual/usage/desktop/jobs
+   
    :Hydro:common/user_manual/usage/desktop/hydro/bestpractices
 
    :EEUQ:common/user_manual/troubleshooting/desktop/troubleshooting
