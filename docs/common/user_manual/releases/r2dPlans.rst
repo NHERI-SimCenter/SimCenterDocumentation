@@ -9,8 +9,7 @@ Release Plans
 The following features are planned to be developed for upcoming releases of |app|. Development priorities may change depending on feedback from the community and our users. For suggestions or to contribute, we encourage you to reach out via the |messageBoard|.
 
 
-
-July 2025
+Sept 2025
 ----------
 
 #. **Add Datasets to Simulate Subassembly Damage and Losses Under Wind Demands** (1.3.5.1): Incorporation of damage and loss data published in recent Performance-Based Wind Engineering research to facilitate high-resolution wind hazard performance assessments. The data is added to the `SimCenter Damage and Loss Model Library <https://github.com/NHERI-SimCenter/DamageAndLossModelLibrary>`_. 
@@ -27,7 +26,7 @@ July 2025
 
 #. **Add Datasets to Simulate Subassembly Damage and Losses Under Water Hazard Demands** (1.3.5.2): Expansion of the `SimCenter Damage and Loss Model Library <https://github.com/NHERI-SimCenter/DamageAndLossModelLibrary>`_ to include water hazard-specific damage and loss models.s
 
-Sept 2025
+Sept 2026
 ---------
 #. **Multi-Fidelity Models in Regional Simulations** (1.3.3.1): Introduction of multi-fidelity modeling approaches for enhanced regional simulation capability.
 

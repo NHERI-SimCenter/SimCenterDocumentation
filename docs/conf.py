@@ -9,6 +9,7 @@
 
 import os, sys
 from datetime import datetime
+import sphinx
 
 app_name = os.path.expandvars("$SIMDOC_APP")
 APPS = [
@@ -68,6 +69,7 @@ if app_name == "pelicun":
 extensions =  [
     "sphinx_design",
     "sphinx-jsonschema",
+    "sphinx_copybutton",
     "sphinxcontrib.bibtex",
     "toctree_filter",
     "sphinxcontrib.images",
@@ -431,7 +433,7 @@ elif app_name == "R2DTool":
 
     project = "Regional Resilience Determination Tool"
 
-    author = "Frank McKenna, Stevan Gavrilovic, Jinyan Zhao, Kuanshi Zhong, Adam Zsarnoczay, Barbaros Cetiner, Sang-ri Yi, Pedro Arduino, Wael Elhaddad"
+    author = "Frank McKenna, Stevan Gavrilovic, Jinyan Zhao, Kuanshi Zhong, Adam Zsarnoczay, Barbaros Cetiner, Sang-ri Yi, Aakash Bangalore Satish, Amin Pakzad, Pedro Arduino, Wael Elhaddad"
     sync_examples = True
 
     tags.add("desktop_app")
@@ -473,7 +475,7 @@ elif app_name == "R2DTool":
 .. |test example| replace:: :ref:`r2dt-0006`
 .. _github discussion page: https://github.com/orgs/NHERI-SimCenter/discussions/categories/r2d
 .. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt
-.. |tool version| replace:: 5.2
+.. |tool version| replace:: 5.5
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 
@@ -874,6 +876,10 @@ spelling_show_suggestions=True
 spelling_word_list_filename = ["spelling.txt"]
 spelling_exclude_patterns=['ignored_*']
 
+suppress_warnings = ['misc.highlighting_failure']
+#sphinx.config['suppress_warnings'] = ['misc.highlighting_failure']
+#sphinx.config['html_allow_unicode'] = True  # Optional, if Unicode in HTML
+html_allow_unicode = True  
 
 # sync files for examples
 if sync_examples:

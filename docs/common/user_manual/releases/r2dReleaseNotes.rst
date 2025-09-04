@@ -5,18 +5,34 @@
 ***************************
 Release Notes
 ***************************
-Version 5.2.0 (Current)
------------------------
 
-**Release date:** November 2024
+
+Version 5.5.0
+-------------
+
+**Release date:** August 2025
 
 **Highlights**
 
-#. **Inclusion of Residual Demand model for post-disaster traffic flow simulation** 
+#. Hazus Storm Surge option for damage and loss modeling: Enable running simulations with only inundation demand using loss  functions (also known as depth-to-damage curves) from the Hazus Flood model.
 
+#. When running Hazus-style calculations that return loss ratios, both the loss ratio and the absolute losses are shown in the RES panel if the replacement costs are provided for the building.
+   
 
-Version 5.3.0 (Current)
------------------------
+   
+Version 5.4.0
+-------------
+
+**Release date:** May 2025
+
+**Highlights**
+
+#. Revisions to work with latest release of Pelicun and the DL library.
+   
+#. Changes to how the auto-population scripts are run in the workflows.
+
+Version 5.3.0
+-------------
 
 **Release date:** Feb 2025
 
