@@ -1,7 +1,15 @@
+.. _lblEVT-Celeris-Domain:
+
 Domain
 ======
 
 Defines the numerical domain for the wave propagation solver in CelerisAi.
+
+.. figure:: ../figures/EVT_Celeris_Domain.png
+   :align: center
+   :width: 600
+   :alt: EVT Celeris Domain panel.
+   :figclass: align-center
 
 This class sets up the domain geometry (:math:`x_1`, :math:`x_2`, :math:`y_1`, :math:`y_2`) and resolution (:math:`N_x`, :math:`N_y`), 
 handles bathymetric/topographic data (via an instance of a :class:`Topodata` class), 

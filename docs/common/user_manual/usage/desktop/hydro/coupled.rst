@@ -1,6 +1,10 @@
 ====================
-Coupled Digital Twin
+FOAMySees Coupled Digital Twin (Legacy)
 ====================
+
+.. important::
+
+   FOAMySees Coupled Digital Twin functionality is currently disabled in HydroUQ due to the migration of remote supercomputing resources from Frontera to Stampede3. This functionality will be reintroduced in a future release if funding allows.
 
 This panel allows users to utilize a coupled OpenFOAM CFD simulation and OpenSeesPy finite element simulation to obtain loads and pressures on the building for subsequent UQ analysis. A screenshot of the GUI is shown below in :numref:`EVT-Coupled`
 

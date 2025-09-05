@@ -1,9 +1,13 @@
+.. _lblEVT-Celeris-modules:
+
 Celeris Modules
 ===============
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
 
-   celeris
+   celeris_main
    solver
    domain
+   brails
+   results

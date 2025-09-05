@@ -5,6 +5,44 @@
 Release Notes
 ***************************
 
+Version 4.2
+=================
+
+    .. dropdown:: Version 4.2.0 (:blue:`Current`)
+        :open:
+
+        **Release date:** August 20th, 2025
+
+        **Highlights**
+
+            #. **Examples**
+
+                a. Four examples for stochastic wave loading (JONSWAP spectra) that showcase UQ capabilities locally and remotely.
+
+                b. One example in Taichi Lang demonstrating local high-performance computing for real-time wave loading.
+
+                c. Three examples in the Celeris wave-solver showing near-real time performance for both wave flumes experiments and field-scale bathymetries, e.g. Loiza, Puerto Rico.
+
+                d. Five examples in the Material Point Method (MPM) solver demonstrating various wave and debris flumes across the world.
+
+            #. **Remote Jobs**:
+
+                a. 'Share Job' feature now available to allow users to share simulation jobs across DesignSafe projects and users.
+
+                b. 'Open Job Folder' feature will take you directly to your remote job's output files on DesignSafe.
+
+                c. 'View Job Metadata' feature will take you to DesignSafe's comprehensive metadata page automatically.
+
+            #. **Bug-Fixes**
+            
+                a. Greatly improved support for HydroUQ on Windows and Mac machines, as well as on Linux.
+
+                b. Fixed bugs in launching Python processes on various operating systems.
+
+                c. Improved MPM and Celeris modules so that they are more robust and easier to use.
+
+
+
 Version 4.1
 =================
 
