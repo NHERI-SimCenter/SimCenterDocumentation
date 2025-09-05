@@ -5,7 +5,20 @@
 Release Notes
 *************
 
-Version 4.2 (Current)
+Version 4.4 (Current)
+-----------------------
+
+**Release date:** Sept. 2025
+
+**Highlights**
+
+#. Added multi-scale simulation capability using WRF model input as a boundary condition to the CFD model.
+#. Migrated all workflows to OpenFOAM v10.
+#. Fixed bugs for local and DesignSafe runs.
+
+
+
+Version 4.2
 -----------------------
 
 **Release date:** Feb. 2025
