@@ -126,4 +126,4 @@ The details of experimental wind pressure data should be provided either in a MA
 
 	Example of information inside a Json file (.json)  (``ntap`` = 509, ``ntimesteps`` = ``frequency`` x ``period`` =20,000, units: meter, Newton, second)
 
-The example Matlab file shown in the image can be found at :weuq-0016:`/src`, named ``CpSimCenter.mat``
+The example Matlab file shown in the image can be found at `WE-UQ/Examples/weuq-0016 <https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples//weuq-0016//>`_, named ``CpSimCenter.mat``
