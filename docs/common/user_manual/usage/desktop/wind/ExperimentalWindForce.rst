@@ -108,4 +108,4 @@ The details of experimental wind force data should be provided either in a MATLA
 
 	Example of information inside a JSON file (.json) (``nfloor`` = 25, ``ntimesteps`` = 20,000, units: meter, Newton, second)
 
-The example Json file shown in the image can be found at :weuq-0012:`/src`, named ``Forces_ANG000_phase1.json``
+The example Json file shown in the image can be found at `WE-UQ/Examples/weuq-0012 <https://github.com/NHERI-SimCenter/WE-UQ/tree/master/Examples//weuq-0012//>`_, named ``Forces_ANG000_phase1.json``
