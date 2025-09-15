@@ -3,9 +3,12 @@
 Troubleshooting
 ===============
 
-.. toctree::
+.. contents:: Table of Contents
+	:local:
+	:depth: 2
+	:backlinks: none
 
-   troubleshootingStartup
-   troubleshootingRunning
+.. include:: troubleshootingStartup.rst
 
+.. include:: troubleshootingRunning.rst
 

@@ -1,7 +1,15 @@
+.. _lblEVT-Celeris-Solver:
+
 Solver
 ======
 
 Main numerical solver class for the CelerisAi model.
+
+.. figure:: ../figures/EVT_Celeris_Solver.png
+   :align: center
+   :width: 600
+   :alt: EVT Celeris Solver panel.
+   :figclass: align-center
 
 This class manages the entire simulation process, including:
 

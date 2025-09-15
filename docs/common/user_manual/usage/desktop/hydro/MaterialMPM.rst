@@ -4,6 +4,14 @@
 Material
 --------
 
+The material panel is where you set parameters related to the material properties / constitutive law of the bodies in the simulation.
+
+.. figure:: figures/GUI_Bodies_Fluid_Material.png
+   :align: center
+   :width: 600
+   :alt: HydroUQ material panel.
+   :figclass: align-center
+
 Water, plastic, concrete, sand, steel, clay, rubber, etc. are some of the material presets that can be used to define the bodies. Constitutive laws are selected based on the material preset with appropriate initial values for the material properties. Constitutive laws are used to define the material behavior under different loading conditions. Options include:
 
 #. **Isotropic Fluid with Viscous Shear Stress / J-Fluid:** This is used to define a basic Newtonian fluid. The material properties include density, bulk modulus, derivative of the bulk modulus with respect to pressure, and dynamic viscosity.
