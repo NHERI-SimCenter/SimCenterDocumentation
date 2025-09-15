@@ -5,7 +5,7 @@
 Capabilities
 ************
 
-Version |tool version| of the |app| was released on **September 30th, 2024**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
+Version |tool version| of the |app| was released on **August 20th, 2025**. The following lists the functionality available in this current version. (Note: New features and fixes in this release are marked :blue:`blue` in the following list of features.)
 
 
 
@@ -21,7 +21,9 @@ Version |tool version| of the |app| was released on **September 30th, 2024**. Th
 
    E. :blue:`Simulate coastal wave events using the Celeris wave-solver (Boussinesq, non-linear shallow water).`
 
-   F. :blue:`Employ local high-performance computation (GPU & CPU) using Taichi Lang (examples provided).`
+   F. :blue:`Access BRAILS building inventories and NOAA bathymetry-topographies through the Celeris module coupling.`
+
+   G. :blue:`Employ local high-performance computation (GPU & CPU) using Taichi Lang (examples provided).`
 
 #. Structural Model: Defines the structural modeling approach and returns the scripts required to perform the response simulation. One or more models can be assigned to a workflow. Using more than one model allows for benchmarking and epistemic uncertainty analysis. The following options are available:
 
@@ -68,13 +70,19 @@ EVT (Event Selection)
 
      #. Digital Twins
 
-          #. Prevalidated digital twins of wave-flume experimental facilities
+          #. Prevalidated digital wave-flumes replicating experimental facilities
 
-          #. Available wave-flume twins
+          #. Available digital wave-flumes
 
                #. Oregon State University Large Wave Flume (OSU LWF)
 
+               #. :blue:`Oregon State University Directional Wave Basin (OSU DWB)`
+
+               #. :blue:`University of Washington's Wind-and-Sea Interaction Facility (UW WASIRF)`
+
                #. :blue:`Waseda University's Tsunami Wave Basin (WU TWB)`
+
+               #. :blue:`United States Geological Survey Debris-Flow Flume (USGS DFF)`
 
           #. Available wave-maker twins
 
@@ -86,31 +94,47 @@ EVT (Event Selection)
 
 #. Numerical Methods
 
-     #. OpenFOAM
+     #. :blue:`Material Point Method (ClaymoreUW MPM)`
+
+          #. :blue:`Unified debris-fluid-structure-soil interaction simulations using Material Point Method (MPM)`
+
+          #. :blue:`Accepts custom event probe types and locations`
+
+          #. :blue:`Multi-GPU accelerated`
+
+          #. :blue:`Available for running on TACC HPC`
+
+     #. :blue:`Celeris`
+
+          #. :blue:`Boussinesq wave solver`
+
+          #. :blue:`Nonlinear shallow-water solver`
+
+          #. :blue:`Accepts custom bathymetries and event probe locations`
+
+          #. :blue:`Automatic BRAILS inventory with NOAA bathymetries`
+
+          #. :blue:`Taichi Lang accelerated (GPU & CPU).`
+
+          #. :blue:`Available for running on local machine`
+
+     #. FOAMySees (**Returning Soon**) :sup:`1`
+
+          #. Computational Fluid Dynamics using OpenFOAM
+
+          #. Computational Structural Dynamics using OpenSees
+
+          #. Two-way coupled using Precice library
+
+          #. Available for running on TACC HPC
+
+     #. OpenFOAM (**Returning Soon**) :sup:`2`
           
           #. Computational Fluid Dynamics
 
           #. Partially deprecated functionality for allowing inlets for GeoClaw / generic shallow-water equation solutions in OpenFOAM :sup:`2`
 
           #. Available for running on TACC HPC
-
-     #. :blue:`FOAMySees`
-
-          #. :blue:`Computational Fluid Dynamics using OpenFOAM`
-
-          #. :blue:`Computational Structural Dynamics using OpenSees`
-
-          #. :blue:`Two-way coupled using Precice library`
-
-          #. :blue:`Available for running on TACC HPC`
-
-     #. :blue:`Material Point Method (ClaymoreUW MPM)` :sup:`1`
-
-          #. :blue:`Unified debris-fluid-structure-soil interaction simulations using Material Point Method (MPM)`
-
-          #. :blue:`Multi-GPU accelerated`
-
-          #. :blue:`Available for running on TACC HPC`
 
      #. GeoClaw (**Returning Soon**) :sup:`2`
 
@@ -122,18 +146,10 @@ EVT (Event Selection)
 
           #. Available for running on TACC HPC
 
-..
-   #. :blue:`Celeris`` (v0)` :sup:`3` #. :blue:`Boussinesq wave solver`  #. :blue:`Nonlinear shallow-water solver`  #. :blue:`Taichi Lang accelerated (GPU & CPU).`
-
 .. note:: 
      
-     :sup:`1` ClaymoreUW MPM numerical method currently only available as a standalone tool in the ``Tools`` header-ribbon. Soon to be introduced into the full workflow.
-
-     :sup:`2` GeoClaw functionality from HydroUQ v1.0 is partially deprecated in the current version. It is to be fully reintroduced in the near future.
-
-
-..
-     :sup:`3` Celeris is a new addition to the suite of numerical methods available in HydroUQ. It is in active development, with major and minor updates occurring in tandem to HydroUQ.
+     :sup:`1` FOAMySees functionality from HydroUQ v2.0 is deprecated in the current version due to remote supercomputer migration from Frontera to Stampede3. It is to be fully reintroduced in the near future if funding returns to this project.
+     :sup:`2` OpenFOAM-GeoClaw functionality from HydroUQ v1.0 is deprecated in the current version due to remote supercomputer migration from Frontera to Stampede3. It is to be fully reintroduced in the near future if funding returns to this project.
 
 
 

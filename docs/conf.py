@@ -367,7 +367,7 @@ if app_name == "HydroUQ" or app_name == "Hydro":
 
     project = "Hydro-UQ"
     copyright = f"2020-{str(datetime.today().year)}, The Regents of the University of California"
-    author = "Frank McKenna, Justin Bonus, Ajay B Harish & Nicolette Lewis"
+    author = "Justin Bonus, Frank McKenna, Pedro Arduino, Ajay B Harish, Nicolette Lewis"
 
     tags.add("tsunami")
     tags.add("stormsurge")
@@ -420,12 +420,12 @@ if app_name == "HydroUQ" or app_name == "Hydro":
     rst_prolog += f"""\
 .. |full tool name| replace:: Water-borne Hazards Engineering with Uncertainty Quantification
 .. |test example| replace:: :ref:`hdro-0005`
-.. |tool version| replace:: 4.1.0
+.. |tool version| replace:: 4.2.0
 .. _github discussion page: https://github.com/orgs/NHERI-SimCenter/discussions/categories/hydro-uq
 .. _Hydro Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ
 .. _HydroUQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/HydroUQ
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-HydroUQ`
-.. |contact person| replace:: Frank Mckenna (fmk@berkeley.edu), Justin Bonus (bonus@berkeley.edu), Ajay B Harish (ajay.harish@manchester.uk.edu), Nicolette Lewis (nlewis@schnabel-eng.com). NHERI SimCenter, University of California Berkeley.
+.. |contact person| replace::  Justin Bonus (bonus@berkeley.edu), Frank Mckenna (fmk@berkeley.edu), Pedro Arduino (parduino@uw.edu), Ajay B Harish (ajay.harish@manchester.uk.edu), Nicolette Lewis (nlewis@schnabel-eng.com). NHERI SimCenter, University of California Berkeley.
 
 """
 
@@ -433,7 +433,7 @@ elif app_name == "R2DTool":
 
     project = "Regional Resilience Determination Tool"
 
-    author = "Frank McKenna, Stevan Gavrilovic, Jinyan Zhao, Kuanshi Zhong, Adam Zsarnoczay, Barbaros Cetiner, Sang-ri Yi, Pedro Arduino, Wael Elhaddad"
+    author = "Frank McKenna, Stevan Gavrilovic, Jinyan Zhao, Kuanshi Zhong, Adam Zsarnoczay, Barbaros Cetiner, Sang-ri Yi, Aakash Bangalore Satish, Amin Pakzad, Pedro Arduino, Wael Elhaddad"
     sync_examples = True
 
     tags.add("desktop_app")
@@ -475,7 +475,7 @@ elif app_name == "R2DTool":
 .. |test example| replace:: :ref:`r2dt-0006`
 .. _github discussion page: https://github.com/orgs/NHERI-SimCenter/discussions/categories/r2d
 .. _R2D Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/SimCenter/Software/R2Dt
-.. |tool version| replace:: 5.2
+.. |tool version| replace:: 5.5
 .. |figMissingCRT| replace:: :numref:`figMissingCRT`
 .. |contact person| replace:: Frank McKenna, NHERI SimCenter, UC Berkeley, fmckenna@berkeley.edu
 
@@ -668,7 +668,7 @@ elif app_name == "WE-UQ":
     rst_prolog += f"""
 .. |full tool name| replace:: Wind Engineering with Uncertainty Quantification Application
 .. |test example| replace:: :ref:`weuq-0001`
-.. |tool version| replace:: 4.2
+.. |tool version| replace:: 4.4
 .. _WE-UQ Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community//SimCenter/Software/WE_UQ
 .. _github discussion page: https://github.com/orgs/NHERI-SimCenter/discussions/categories/we-uq
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-WE`

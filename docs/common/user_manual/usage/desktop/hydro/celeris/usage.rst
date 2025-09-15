@@ -1,3 +1,5 @@
+.. _lblEVT-Celeris-usage:
+
 Usage
 =====
 
