@@ -52,9 +52,7 @@ The required inputs to perform Bayesian calibration in quoFEM using the TMCMC al
 	:align: center
 	:figclass: align-center
 
-   When **Use Approximation** is disabled, the algorithm performs direct TMCMC sampling using the full computational model at each evaluation. While this provides unbiased sampling, it may be computationally prohibitive for expensive models.
-
-   For simple models that evaluate quickly (~ <1 minute), direct TMCMC may be sufficient and does not require surrogate approximation.
+When **Use Approximation** is disabled, the algorithm performs direct TMCMC sampling using the full computational model at each evaluation. While this provides unbiased sampling, it may be computationally prohibitive for expensive models. For simple models that evaluate quickly (~ <1 minute), direct TMCMC may be sufficient and does not require surrogate approximation.
 
 Defining the log-likelihood function
 ====================================
