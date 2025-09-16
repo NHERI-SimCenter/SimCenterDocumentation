@@ -32,6 +32,7 @@ quoFEM:
     - qfem-0030
     - qfem-0031
     - qfem-0032
+    - qfem-0034    
 
 WE-UQ:
   include-item:
