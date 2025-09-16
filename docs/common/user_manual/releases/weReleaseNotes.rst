@@ -17,6 +17,17 @@ Version 4.4 (Current)
 #. Fixed bugs for local and DesignSafe runs.
 
 
+Version 4.3
+-----------------------
+
+**Release date:** May 2025
+
+**Highlights**
+
+#. Generates full-scale atmospheric boundary layer wind profiles compliant with ASCE 49-21, through the GUI and creating OpenFOAM boundary condition files.
+#. Previews velocity and turbulence profiles interactively for quick verification.. 
+#. Streamlines the complete CFD inflow setup and push recent bug fixes.
+
 
 Version 4.2
 -----------------------
