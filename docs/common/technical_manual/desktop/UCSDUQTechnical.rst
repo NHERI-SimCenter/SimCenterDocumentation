@@ -203,8 +203,7 @@ The GP-AB algorithm proceeds as follows:
    - Evaluate the high-fidelity model at these points and build the initial PCA+GP surrogate.
 
 #. **Posterior Approximation:**
-   - Use the GP surrogate to evaluate :math:`\tilde{L}^{(k)}_D(\theta, q)` and run TMCMC
-     (warm-start if possible) to sample the posterior.
+   - Use the GP surrogate to evaluate :math:`\tilde{L}^{(k)}_D(\theta, q)` and run TMCMC (warm-start if possible) to sample the posterior.
 
 #. **Convergence Check:**
    - Compute :math:`g_{\mathrm{KL}}`.
