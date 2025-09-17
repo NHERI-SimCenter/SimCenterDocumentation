@@ -40,7 +40,7 @@ Install on Windows 10
 
       Installing WSL(Ubuntu) Subsystem.
 
-   This will install Ubuntu distribution and launch a new linux terminal to configure the installation. Then, input your user name and password to setup the system as shown bellow.
+   This will install Ubuntu distribution and launch a new linux terminal to configure the installation. Then, input your username and password to set up the system as shown below.
 
       .. figure:: figures/weuq_wsl_configuration.png
          :align: center
@@ -177,7 +177,7 @@ After installation, perform basic checks by running the |short tool id|.exe from
 
 .. note::
 
-   Since the SimCenter is not registered as a Windows vendor, our applications may trigger a warning about unsigned applications from unknown sources when you start the |short tool name| application for the first time. It is safe to bypass this warning for SimCenter applications.
+   Since the SimCenter is not registered as a Windows vendor, our applications may trigger a warning about unsigned applications from unknown sources when you start the |short tool name| for the first time. It is safe to bypass this warning for SimCenter applications.
 
 
 Launch the application to view the user interface as shown in |figWinUI|. It's recommended to run the |test example| to ensure proper operation.
@@ -255,4 +255,4 @@ If the test example fails, refer to :ref:`troubleshooting<lblTroubleshooting>`.
 
    - Avoid setting the local working directory under cloud-synced folders like OneDrive or Box, which may cause file-not-found errors.
    - Avoid including non-alphabetic characters or spaces in the path, which may potentially lead to encoding or file-not-found errors.
-   - Avoid setting the local working directory on a different drive than the app executable (.exe), which may result in permission errors , e.g. the executable is under the C drive, and the working directory is under the E drive.
+   - Avoid setting the local working directory on a different drive than the app executable (.exe), which may result in permission errors, e.g. the executable is under the C drive, and the working directory is under the E drive.

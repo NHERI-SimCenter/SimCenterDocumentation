@@ -8,7 +8,7 @@ Methods in UCSD UQ Engine
 Transitional Markov chain Monte Carlo
 =====================================
 
-TMCMC is a numerical method used to obtain samples of the target posterior PDF. This algorithm is flexible, applicable in general settings, and parallelizable. Thus, it can be used to effectively sample the posterior PDF, when the likelihood function involves a computationally expensive FE model evaluation, using high-performance computing (HPC) resources.
+TMCMC is a numerical method used to obtain samples of the target posterior PDF. This algorithm is flexible, applicable in general settings, and parallelizable. Thus, it can be used to effectively sample the posterior PDF, when the likelihood function involves an FE model evaluation, using high-performance computing (HPC) resources.
 
 
 In Bayesian inference, the posterior probability distribution of the unknown quantities, represented by the vector :math:`\mathbf{\theta}`, is obtained by applying Bayes' rule as follows:
@@ -35,6 +35,198 @@ TMCMC represents the tempered posterior PDF at every stage by a set of weighted 
    
 .. [Minson2013] 
    S. E. Minson, M. Simons, and J. L. Beck, “Bayesian Inversion for Finite Fault Earthquake Source Models I-Theory and Algorithm”, *Geophysical Journal International*, 194(3), 1701- 1726, 2013.
+
+
+.. _lbluqUCSD_ugpab2:
+
+Gaussian Process-Aided Bayesian Calibration (GP-AB)
+===================================================
+
+The GP-AB algorithm [Taflanidis2025]_ is a surrogate-aided extension of the Transitional Markov Chain Monte Carlo
+(:ref:`lbluqUCSD_TMCMC`) sampling method. It is designed for Bayesian updating problems
+in which evaluating the likelihood function :math:`L_D(\theta, q)` requires computationally expensive
+finite element (FE) simulations. By replacing these simulations with predictions from a
+Gaussian Process (GP) surrogate model, GP-AB can significantly reduce the computational cost of posterior sampling
+while still converging to the same posterior distribution obtained if the original FE model was used.
+
+In GP-AB, the GP surrogate is developed and **adaptively refined** in an iterative process using a
+design of experiments (DoE) strategy that balances *exploitation* (focusing on regions of high
+posterior probability) and *exploration* (sampling previously under-explored regions). This
+adaptive refinement continues until the surrogate-based posterior converges according to specified
+criteria described in the following sections.
+
+Formulation of the Bayesian Calibration Problem
+-----------------------------------------------
+
+Consider a model with unknown parameters :math:`\theta \in \mathbb{R}^{n_\theta}` and
+prediction error parameters :math:`q \in \mathbb{R}^{n_q}`, where :math:`n_\theta` and
+:math:`n_q` denote their respective dimensions. Let :math:`D` denote the available
+input-output data, consisting of measured system outputs
+:math:`\hat{\mathbf{y}}` for known inputs :math:`\hat{\mathbf{u}}`.
+
+The posterior probability density function (PDF) is given by Bayes' rule:
+
+.. math::
+   p(\theta, q \,|\, D) \ \propto\ L_D(\theta, q) \ p(\theta) \ p(q)
+   :label: ugpab2_bayes_rule
+
+where :math:`L_D(\theta, q)` is the likelihood of the data given the parameters,
+and :math:`p(\theta)` and :math:`p(q)` are the prior PDFs.
+
+The target posterior :math:`p(\theta, q \,|\, D)` is approximated using TMCMC, but
+instead of evaluating the expensive model response :math:`\mathbf{y}(\theta|\mathbf{u})`
+at every sample, GP-AB builds a GP surrogate that predicts this response accurately
+in the regions of interest.
+
+Likelihood Function
+-------------------
+
+In the quoFEM implementation, a Gaussian likelihood is used, with unknown error variances.  
+Assigning a Jeffreys prior :math:`p(q) \propto 1/q` to the unknown variance  
+yields a closed-form likelihood in terms of the model parameters :math:`\theta` only.
+
+Let :math:`z(\theta) \in \mathbb{R}^{n_z}` be the stacked vector of all model outputs
+for the observation cases in :math:`D`, and :math:`\hat{z}` the corresponding stacked
+measurements. The residual vector is:
+
+.. math::
+   \mathbf{r}(\theta) = \hat{z} - z(\theta)
+
+The resulting marginalized likelihood is:
+
+.. math::
+   L_D(\theta) \ \propto \
+   \left[ \mathbf{r}(\theta)^\mathsf{T} \mathbf{r}(\theta) \right]^{-\,n_D/2}
+
+where :math:`n_D = n_z` is the total number of scalar observations.
+
+
+Surrogate Model Formulation
+---------------------------
+
+The surrogate is built for the vectorized model response:
+
+.. math::
+   z(\theta) = \mathrm{vec}\!\left( Y_D(\theta) \right) \in \mathbb{R}^{n_z}
+
+where :math:`Y_D(\theta)` stacks the model outputs for all observation cases in :math:`D`,
+and :math:`n_z = n_y \, n_D` is the total number of output components.
+
+Because :math:`n_z` can be large, **Principal Component Analysis (PCA)** is used to
+reduce the output dimension before GP training. Let :math:`\{ v_q \}_{q=1}^{n_v}`
+be the retained principal component (PC) scores, chosen so that a prescribed fraction
+:math:`r_{pc}` of the variance in the training outputs is preserved. A separate GP
+metamodel is calibrated for each PC score:
+
+.. math::
+   v_q(\theta) \ \sim \ GP\!\left( \tilde{v}_q(\theta), \ \sigma_{v_q}^2(\theta) \right)
+
+where :math:`\tilde{v}_q(\theta)` and :math:`\sigma_{v_q}^2(\theta)` are the GP-predicted mean
+and variance, respectively. The predicted model response is reconstructed as:
+
+.. math::
+   \tilde{z}(\theta) \ =\ \mu_z + P \, \tilde{\mathbf{v}}(\theta)
+
+with :math:`\mu_z` the mean output vector from training data, :math:`P` the PCA projection
+matrix, and :math:`\tilde{\mathbf{v}}(\theta)` the vector of GP-predicted PC scores.
+
+The GP-predicted response :math:`\tilde{z}(\theta)` is then used in place of
+:math:`z(\theta)` when evaluating the likelihood and posterior.
+
+Adaptive Design of Experiments (DoE)
+------------------------------------
+
+At each iteration :math:`k`, the surrogate is improved by adding :math:`2 * {n_\theta}` new
+training points. Candidate points are chosen using the **weighted integrated mean
+squared error (IMSE)** acquisition function:
+
+.. math::
+   \mathrm{IMSE}(\theta_\text{new}) =
+   \int_{\Theta_d} \phi(\theta) \ \hat{\sigma}^2\!\left( \theta \,\middle|\, \Theta^{(k)}, \theta_\text{new}, s^{*(k)} \right) \, d\theta
+   :label: ugpab2_imse
+
+where:
+
+- :math:`\Theta_d` is the parameter domain,
+- :math:`\phi(\theta)` is a weight function prioritizing important regions,
+- :math:`\hat{\sigma}^2` is the average GP predictive variance across all output components
+  after adding :math:`\theta_\text{new}`,
+- :math:`s^{*(k)}` are the optimized GP hyperparameters at iteration :math:`k`.
+
+**Weight function:**
+:math:`\phi(\theta)` is a convex combination of the GP-approximated *target* posterior and some *intermediate* TMCMC densities from the current iteration:
+
+.. math::
+   \phi(\theta) = \sum_{j={j^*}}^{j_t} \tau_j \ \tilde{\pi}^{(k)}_{[j]}(\theta),
+   \quad \sum_j \tau_j = 1
+
+This balances exploitation of the high-probability posterior regions with exploration
+along the TMCMC path from prior to posterior. :math:`j^*` is defined in the following section on warm-starting TMCMC, and :math:`j_t` is the total number of stages in the current iteration.
+
+A fraction of the new points is selected
+purely for exploration by setting :math:`\phi(\theta) \equiv 1`.
+
+Convergence Assessment
+----------------------
+
+Convergence of the surrogate-based posterior is tested between consecutive iterations
+using a **dimension-normalized KL divergence:**
+
+   .. math::
+      g^{(k)}_{\mathrm{KL}} =
+      \frac{1}{n_\theta} \ \mathrm{KL}\!\left( \tilde{\pi}^{(k)}(\theta) \ \big\| \ \tilde{\pi}^{(k-1)}(\theta) \right)
+      :label: ugpab2_gkl
+
+   where the KL divergence is estimated by importance sampling using the TMCMC samples.
+
+An optional **LOOCV error metric** :math:`g^{(k)}_{\mathrm{CV}}` can be used to assess
+GP predictive accuracy independently of the posterior approximation.
+
+If :math:`g_{\mathrm{KL}} < c_{\mathrm{KL}}` and :math:`g_{\mathrm{CV}} < c_{\mathrm{CV}}`,
+the algorithm stops.
+
+Warm-Start TMCMC
+----------------
+
+If the LOOCV error :math:`g_{\mathrm{CV}}` is below a threshold, TMCMC can be *warm-started*
+at a later stage :math:`j^*` by reweighting samples from the same stage of the previous
+iteration, avoiding re-sampling from the prior. The stage :math:`j^*` is chosen such that
+the coefficient of variation of these weights is below a specified limit.
+
+Algorithm Summary
+-----------------
+
+The GP-AB algorithm proceeds as follows:
+
+#. **Initialization:**
+   - Select initial training points in :math:`\Theta_d` via a space-filling design.
+   - Evaluate the high-fidelity model at these points and build the initial PCA+GP surrogate.
+
+#. **Posterior Approximation:**
+   - Use the GP surrogate to evaluate :math:`\tilde{L}^{(k)}_D(\theta, q)` and run TMCMC (warm-start if possible) to sample the posterior.
+
+#. **Convergence Check:**
+   - Compute :math:`g_{\mathrm{KL}}`.
+   - If it is below a threshold (0.001), stop.
+
+#. **Adaptive DoE:**
+   - Select :math:`\lceil r_{\mathrm{ex}} * {2*n_\theta} \rceil` exploitation points using weighted IMSE.
+   - Select the remainder for exploration.
+   - Run high-fidelity simulations at new points, update the surrogate, and increment :math:`k`.
+
+#. Repeat steps 2-4 until convergence or computational budget is reached.
+
+Remarks
+-------
+
+- GP-AB focuses GP refinement on regions relevant to the posterior, improving
+  efficiency over space-filling designs.
+- The balance between exploitation and exploration controls robustness: more
+  exploration is promoted automatically during the initial iterations of GP-AB to reduce the risk of missing important regions.
+- Warm-starting TMCMC can further reduce sampling cost when surrogates are accurate.
+
+.. [Taflanidis2025] 
+   A.A. Taflanidis, B.S. Aakash, S.R. Yi, and J.P. Conte, “Surrogate-aided Bayesian calibration with adaptive learning strategies”, *Mechanical Systems and Signal Processing*, 237, 113014, 2025. https://doi.org/10.1016/j.ymssp.2025.113014
 
 
 .. _lbluqUCSD_hierarchical:
@@ -116,7 +308,7 @@ The conditional distribution :math:`p(\theta | \eta)` models the aleatory specim
 .. _lbluqUCSD_hierarchical_normal:
 
 Special Case: Normal Population Distribution
-++++++++++++++++++++++++++++++++++++++++++++
+--------------------------------------------
 The hierarchical modeling approach discussed above captures the specimen-to-specimen aleatory variability by modeling the model parameters corresponding to each experiment as a realization from a population distribution. In the UCSD_UQ engine, a multivariate normal distribution :math:`\theta | \eta \sim N (\mu_\theta, \Sigma_\theta)` is adopted (i.e., :math:`\eta = (\mu_\theta, \Sigma_\theta)`) as:
 
 .. math::
@@ -153,7 +345,7 @@ and the :ref:`Nataf transform <lbluqSimTechnical_Nataf>` is utilized to map the 
 .. _lbluqUCSD_hierarchical_sampling_algorithm:
 
 Sampling the Posterior Probability Distribution of the Parameters of the Hierarchical Model
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+-------------------------------------------------------------------------------------------
 Due to the high dimensionality (:math:`n_\theta \times n_s + n_s + n_\theta + n_\theta \times \frac{(n_\theta+1)}{2}`, corresponding to the dimensions of the :math:`\theta_i` of each dataset, :math:`\sigma_i^2` for each dataset, :math:`\mu_\theta` and :math:`\Sigma_\theta`, respectively) of the posterior joint PDF shown in :math:numref:`bayes_rule_for_hierarchical_model_with_normal_population`, the Metropolis within Gibbs algorithm is used to generate samples from the posterior probability distribution. To do this, conditional posterior distributions are derived for blocks of parameters from the joint posterior distribution :math:numref:`bayes_rule_for_hierarchical_model_with_normal_population` of all the parameters of the hierarchical model. The Gibbs sampler generates values from these conditional posterior distributions iteratively. The conditional posterior distributions are lower dimensional than the joint distribution. The assumptions made next result in a few of the conditional posterior distributions being of a form that can be easily sampled from, thereby making it feasible to draw samples from the high-dimensional joint posterior PDF of the hierarchical model.
 
 The prior distributions for each :math:`\sigma_i^2` are selected as the inverse gamma (IG) distribution:
