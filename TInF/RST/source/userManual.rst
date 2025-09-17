@@ -3,7 +3,7 @@
 User Manual
 ===========
 
-The workflow for adding parameters for various kinds of turbulence inflow models to your OpenFOAM model is as follows.
+The workflow for adding parameters for various kinds of turbulence inflow models to your OpenFOAM model is as follows. The current version of the TInf primarily works with OpenFOAM-10.
 
 **Step 1: Source Selection**
     Start the Turbulence Inflow Tool (TInF) and on the opening screen select the Source Tab

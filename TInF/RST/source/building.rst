@@ -12,11 +12,11 @@ Please note that in order to build and run the Turbulent Inflow Tool, your syste
     
     #. Install the `Qt framework <https://www.qt.io/download/>`_. Qt is free for open source developers. Qt version 5.10 or later is required and version 5.12 or later is recommended.
 
-    #. Install OpenFOAM (v6 or v7) from the |openfoam.org|
+    #. Install OpenFOAM (v10) from the |openfoam.org|
 
 .. note::
 
-   The first open source release of ``OpenFOAM`` was in 2004. It was based on the ``FOAM`` code, which was originally developed by Henry Weller in 1989. As sometimes happens with open source software when commercial interests get involved, the code forked over time and a number of open source distributions from different entities are available. The two main distributions of the code come from the |openfoam.org| and from |openfoam.com|. Currently |app| compiles and runs with versions **6** and **7** of the code released by the |openfoam.org|.
+   The first open source release of ``OpenFOAM`` was in 2004. It was based on the ``FOAM`` code, which was originally developed by Henry Weller in 1989. As sometimes happens with open source software when commercial interests get involved, the code forked over time and a number of open source distributions from different entities are available. The two main distributions of the code come from the |openfoam.org| and from |openfoam.com|. Currently |app| compiles and runs primarily with **10** of the code released by the |openfoam.org|.
 
 Building the UI from Source
 ---------------------------
@@ -42,7 +42,7 @@ Download the source code of the turbulent velocity boundary conditions from
     https://github.com/NHERI-SimCenter/TurbulenceInflowTool/tree/master/openFOAM_code
 
 
-The source code files are contained in a directory named *turbulentInflow*. Note that the code is provided for OpenFOAM version 6 and 7, and is slightly different in this two versions. Please choose the correct package to download according the version of OpenFOAM you have installed on your computer.
+The source code files are contained in a directory named *turbulentInflow*. Note that the code is provided for OpenFOAM version 6, 7, 10, 11 and is slightly different in each versions. Version 10 has been tested rigorously compared to the others. Please choose the correct package to download according the version of OpenFOAM you have installed on your computer. For all the inflow boundary condition used in WE-UQ, OpenFOAM-10 is used. 
 
 Create a project directory by typing the following script in a terminal prompt:
 
