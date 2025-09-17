@@ -19,8 +19,9 @@ Nataf transformation is introduced to standardize the interface between UQ metho
 
    Standardization of random variables using Nataf transformation
 
-.. Note::
-(Ongoing implementation) All the custom UQ algorithms need to prepare for the standard Gaussian input while quoFEM intertwines with the simulation model to receive standard normal input u and gives physical :math:`y=G(u)` back.
+.. note::
+   
+   (Ongoing implementation) All the custom UQ algorithms need to prepare for the standard Gaussian input while quoFEM intertwines with the simulation model to receive standard normal input u and gives physical :math:`y=G(u)` back.
 
 For the Nataf transformation, the SimCenterUQ engine borrows a part of the distribution class structure developed by the ERA group at the Technical University of Munich [ERA2019]_ 
 
@@ -198,7 +199,7 @@ Dealing with noisy measurements
 	| In natural hazard applications, often the exact observations of :math:`\boldsymbol{y}` are not available and only the noisy observations :math:`\boldsymbol{y^{obs}}` are available:
 
 	.. math::
-		:label: GP
+		:label: GP2
 
 			\boldsymbol{y^{obs}}=\boldsymbol{y} + \boldsymbol{\varepsilon} =g^{\rm{ex}} (\boldsymbol{x}) + \boldsymbol{\varepsilon}
 
