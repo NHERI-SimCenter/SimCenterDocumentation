@@ -9,7 +9,15 @@ Release Notes
 Major Version 4
 ===============
 
-   .. dropdown:: Version 4.0 (:blue:`Current`)
+   .. dropdown:: Version 4.1 (:blue:`Current`)
+      :open:
+
+      **Release date:** Sep. 2025
+
+      **Highlights**
+         #. Surrogate-aided Bayesian calibration of expensive numerical models using an iteratively refined Gaussian Process (GP) surrogate model utilizing adaptive design of experiments targeting posterior distribution accuracy.
+
+   .. dropdown:: Version 4.0
       :open:
 
       **Release date:** Aug. 2024

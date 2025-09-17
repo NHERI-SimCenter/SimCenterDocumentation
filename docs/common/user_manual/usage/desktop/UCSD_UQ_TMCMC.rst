@@ -14,7 +14,7 @@ Transitional Markov chain Monte Carlo (TMCMC) is an algorithm that is used to dr
 
 To use the TMCMC algorithm, select the **UCSD-UQ** engine in the **UQ** panel. Currently, only the TMCMC method is available with the **UCSD-UQ** engine. 
 
-The required inputs to perform Bayesian calibration in quoFEM using the TMCMC algorithm are **# Samples**, **Seed**, and **Calibration Data File**. Specifying **Log Likelihood Script** is optional. Figure :numref:`figTMCMCPanel` shows the input panel that is presented when the TMCMC method is selected. Each of the options on this panel will be explained next.
+The required inputs to perform Bayesian calibration in quoFEM using the TMCMC algorithm are **# Samples**, **Seed**, and **Calibration Data File**. Specifying **Log Likelihood Script** is optional. Additionally, users can enable the **Use Approximation** option for surrogate-aided Bayesian calibration. Figure :numref:`figTMCMCPanel` shows the input panel that is presented when the TMCMC method is selected. Each of the options on this panel will be explained next.
 
 .. _figTMCMCPanel:
 
@@ -44,6 +44,15 @@ The required inputs to perform Bayesian calibration in quoFEM using the TMCMC al
 
 4. **Log Likelihood Script**: By default, a Gaussian log-likelihood function is used in the TMCMC algorithm. If desired, a different log-likelihood function defined in a Python script can be provided, and the path to this Python script is provided here. 
 
+5. **Use Approximation**: This checkbox enables surrogate-aided Bayesian calibration using Gaussian Process (GP) surrogates. When enabled, the algorithm uses an adaptive learning strategy to build a GP surrogate model that approximates the computational model response. This dramatically reduces the number of required model evaluations while maintaining calibration accuracy. The surrogate model is iteratively refined using active learning, requiring only tens of strategically selected model evaluations instead of the thousands typically needed for direct TMCMC sampling. This option is particularly beneficial for computationally expensive models where individual evaluations require significant time.
+
+.. _figTMCMCPanelUseApproximation:
+
+.. figure:: figures/UCSD_Non-hierarchical_use_approximation.png
+	:align: center
+	:figclass: align-center
+
+When **Use Approximation** is disabled, the algorithm performs direct TMCMC sampling using the full computational model at each evaluation. While this provides unbiased sampling, it may be computationally prohibitive for expensive models. For simple models that evaluate quickly (~ <1 minute), direct TMCMC may be sufficient and does not require surrogate approximation.
 
 Defining the log-likelihood function
 ====================================

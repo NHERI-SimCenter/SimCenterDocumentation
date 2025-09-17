@@ -67,7 +67,9 @@ UQ (Uncertainty Quantification and Optimization Options)
            a. Override default log-likelihood function
            b. Override default error covariance structure
            c. Calibrate multipliers on error covariance structure
-     
+
+        #. :blue:`Surrogate-aided Bayesian calibration using Gaussian Process (GP) surrogate model`
+
      C. :ref:`Hierarchical Models <lblUCSDHierarchical>`
 
         #. Bayesian updating of parameters of a hierarchical model
