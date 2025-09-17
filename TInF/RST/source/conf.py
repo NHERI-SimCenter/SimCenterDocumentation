@@ -19,7 +19,7 @@
 
 project = 'TInF Tool'
 copyright = 'SimCenter, University of California at Berkeley'
-author = 'Jia-Wei Wan, Peter Mackenzie-Helnwein'
+author = 'Abiy Melaku, Jia-Wei Wan, Peter Mackenzie-Helnwein'
 
 # The full version, including alpha/beta/rc tags
 release = '0.2'
@@ -34,7 +34,7 @@ rst_prolog = """
 .. _Turbulence Inflow Tool page: https://simcenter.designsafe-ci.org/research-tools/tinf/
 .. |messageBoard| replace:: `Message Board`_
 .. _Message Board: https://github.com/orgs/NHERI-SimCenter/discussions/categories/general-questions
-.. |toolVersion| replace:: '1.0.2'
+.. |toolVersion| replace:: '2.0.0'
 .. |openfoam.org| replace:: `OpenFOAM Foundation`_
 .. _OpenFOAM Foundation: https://openfoam.org
 .. |openfoam.com| replace:: `ESI OpenFOAM`_
