@@ -45,6 +45,7 @@ WE-UQ:
     - weuq-0014
     - weuq-0019
     - weuq-0017
+    - advancedCFD
 
 EE-UQ:
   include-item:
