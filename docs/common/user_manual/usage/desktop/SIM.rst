@@ -71,6 +71,7 @@ This panel is for users who have an existing OpenSees model of a building that p
 In OpenSees there is an option to set a variable to have a certain value using either the ``set`` or ``pset`` command, e.g ``pset a 5.0`` will set the variable a to have a value 5 in the OpenSees script. In |short tool id|, any variable found in the main script to be set using the ``pset`` command will be assumed to be a random variable. As such, when a new main script is loaded, all variables set with ``pset`` will appear as random variables in the **UQ** panel.
 
 
+
 .. only:: EEUQ_app
 
    .. _lblAutoSDASIM:
@@ -215,6 +216,193 @@ where the keys of ``SAM.json`` are defined as follows:
 
 
 .. [Lu2020] Lu, X., McKenna, F., Cheng, Q., Xu, Z., Zeng, X., & Mahin, S. A. (2020). An open-source framework for regional earthquake loss estimation using the city-scale nonlinear time history analysis. Earthquake Spectra, 36(2), 806-831.
+
+.. only:: EEUQ_app
+
+   .. _lblSSISIM:
+
+   SSI Simulation (Custom 3D Building and Soil/Foundation Type 1)
+   --------------------------------------------------------------
+
+   This application enables full 3D soil–structure interaction (SSI) modeling entirely within **EE‑UQ**. It couples a user‑provided structural model ("Custom 3D Building") to a parametric soil/foundation system ("Soil & Foundation Type 1"). The SSI builder automates the creation of the soil domain, mat foundation, optional pile‑supported foundation head, and the building–foundation coupling—no manual constraint scripting is required.
+
+   The interface consists of two tabs:
+
+   - Building (Custom 3D Building)
+   - Soil and Foundation (Type 1)
+
+   Building (Custom 3D Building)
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+   Provide the following:
+
+   #. **Model file**: Main OpenSees TCL for the structure. Remove fixed‑base restraints at the base—SSI will couple the base to the soil/foundation.
+   #. **Mesh file (optional)**: Optional geometry (e.g., VTK/HDF) for visualization.
+   #. **Response Nodes**: Story‑level nodes (e.g., center‑of‑mass per floor), listed from base to roof. Used by the Standard Earthquake EDP option.
+   #. **Bounds**: Structural footprint bounding box (x_min/x_max, y_min/y_max, z_min/z_max).
+   #. **Columns base**: Table of base support nodes with their coordinates. Each row contains:
+
+      - ``tag``: Structural node tag at the base of a column/line of support
+      - ``x, y, z``: Coordinates (in meters)
+
+      The SSI builder uses this information to place building–foundation connections, apply embedment, align the foundation head and piles to the building footprint, and enforce interface constraints consistently with the SSI mesh.
+
+   Notes on random variables (RVs) and partitions:
+
+   - Any TCL variable specified via ``pset`` in the model file is registered as a constant in **UQ**; use **RV** panel to define distributions when needed.
+   - The **num_partitions** for the building is inferred from the widget settings; total cores per simulation sample will include partitions requested by the building and soil/foundation (see below).
+
+   Soil and Foundation (Type 1)
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+   Define the SSI domain and interfaces:
+
+   - **Soil**:
+
+     - **Plan bounds**: ``x_min/x_max``, ``y_min/y_max``
+     - **Discretization**: ``nx``, ``ny`` (number of soil elements in x/y)
+     - **Gravity**: typically ``gravity_z = -9.81`` m/s²
+     - **num_partitions**: MPI partitions for the soil mesh
+     - **boundary_conditions**: ``periodic`` (laminar/perimeter input) or ``DRM``
+     - **Soil profile table** (from bottom to top), each row includes:
+
+       ``z_bot``, ``z_top``, ``nz``, ``material`` (e.g., Elastic), ``mat_props``
+       (for Elastic: E, ν, ρ), ``damping`` (e.g., Frequency‑Rayleigh), ``damping_props`` (ζ, f_low, f_high)
+
+     - When **DRM** is selected, additional **DRM options** are available:
+
+       ``absorbing_layer_type`` (Rayleigh or PML), ``num_partitions``, ``number_of_layers``, ``Rayleigh_damping``, ``match_damping``.
+
+     .. figure:: figures/SSIType1Soil.png
+        :align: center
+        :figclass: align-center
+        :width: 800
+
+        Soil settings in SSI Type 1 (plan bounds, mesh, soil profile, and DRM options).
+
+   - **Foundation**:
+
+     - **Block**: ``dx, dy, dz`` (mesh sizes), ``embedded`` (True/False), ``num_partitions``
+     - **Column embedment**: ``column_embedment_depth`` and **column_section_props** (E, A, Iy, Iz, G, J) used to transmit forces at the building–foundation interface
+     - **Foundation profile table**: bounds (x/y ranges and z_top/z_bot), material ``Elastic`` with ``mat_props`` = (E, ν, ρ), and ``damping`` with ``damping_props`` (ζ, f_low, f_high)
+
+     .. figure:: figures/SSIType1Foundation.png
+        :align: center
+        :figclass: align-center
+        :width: 800
+
+        Foundation block and profile in SSI Type 1 (mesh sizes, embedment, section properties).
+
+   - **Piles (optional)**:
+
+     - **pile_profile table**: Supports "Grid" or "Single" layouts with geometry (x/y at top/bottom, z_top/z_bot, nz, radius r), ``section`` (No‑Section), ``material`` (Elastic), ``mat_props`` (E, A, Iy, Iz, G, J), and ``transformation`` (Linear/PDelta with a direction vector)
+     - **pile_interface**: ``num_points_on_perimeter``, ``num_points_along_length``, ``penalty_parameter``
+
+     .. figure:: figures/SSIType1Pile.png
+        :align: center
+        :figclass: align-center
+        :width: 800
+
+        Pile profile and interface discretization in SSI Type 1.
+
+   Random variables in soil/foundation tables:
+
+   - You may enter tokens like ``RV.vs1`` inside ``mat_props`` fields; the widget will auto‑register RV names found in the tables so you can set distributions in the **RV** panel.
+
+   EDPs and results:
+
+   - **Laminar/perimeter inputs**: Standard Earthquake EDPs are supported when the structure runs as a single partition. For multi‑partition runs or custom outputs, use **User‑Defined EDP** and provide your own recorders.
+   - **DRM inputs**: Use **User‑Defined EDP** with recorders (e.g., a ``recorders.tcl``) to extract structural and/or soil responses while using boundary conditions.
+
+   Planning resources (cores per sample):
+
+   - A practical rule of thumb is:
+
+     ``cores_per_sample ≈ Building.num_partitions + Soil.num_partitions + Foundation.num_partitions``
+
+     and when using DRM, add ``+ DRM.num_partitions`` from the DRM options. Match your DesignSafe job size (nodes × cores per node) to the desired number of concurrent samples times ``cores_per_sample``.
+
+   Plot button and browser viewer
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+   Clicking **Plot** in the SSI Simulation panel exports the current SSI modeling JSON and launches a lightweight, browser‑based 3D viewer (PyVista + trame) that helps you verify geometry and settings before you run on DesignSafe. The viewer (see below) supports:
+
+   - Scene presets:
+     - **Quick Plot**: fast boxes/cylinders for soil layers, foundation blocks, and piles
+     - **Discretize** (one‑time): builds the actual meshes from your inputs and caches them in memory
+     - **Actual Plot**: renders the cached actual meshes, with optional scalar coloring
+     - **Reset Camera** and **Clear All** utilities
+   - Visibility and opacity:
+     - Toggle on/off soil, foundation, piles, and (optional) building mesh overlay
+     - Adjust opacity sliders for each component
+   - Scalar coloring:
+     - Choose among available fields (e.g., Core/Region/ElementTag/MaterialTag) for the discretized view
+   - Camera & helpers:
+     - One‑click views (isometric, XY, XZ, YZ)
+     - Axes and grid toggles
+
+   .. figure:: figures/SSI_ploter.png
+      :align: center
+      :figclass: align-center
+      :width: 900
+
+      SSI Plotter launched from the Plot button (browser‑based).
+
+   Notes:
+   - If a building **mesh file** is provided in the Building tab, it will be overlaid for footprint checks and alignment with the soil/foundation.
+   - The viewer runs locally and is meant for inspection; it does not replace post‑processing of full simulation results.
+
+
+   Using the tables and help panel
+   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+   - Table controls: each table (soil profile, foundation profile, pile profile) offers **Add row**, **Remove**, and **Clear** buttons below the grid. Click a cell to edit values; combo boxes are provided for categorical fields (e.g., ``material``, ``damping``, ``type``, ``section``, and ``transformation``).
+   - RV tokens: in numeric list fields like ``mat_props`` and ``damping_props``, you may enter comma‑separated values; any token that starts with ``RV.`` (e.g., ``RV.vs1``) is auto‑registered as a random variable for later specification in the **RV** panel.
+   - Validation: the **Validate** button checks common issues (e.g., x/y bounds ordering, positive nz, required rows present, correct material/damping selections, pile parameter counts). Any issues are reported in a dialog so they can be corrected before submission.
+   - Help panel: a contextual help panel on the right summarizes field meanings and provides tips for each tab (Soil, Foundation, Piles). Use it as a quick reference while filling the tables.
+
+   .. figure:: figures/SSI_Building.png
+      :align: center
+      :figclass: align-center
+      :width: 800
+
+      Custom 3D Building tab (model file, response nodes, footprint bounds, and base column nodes).
+
+
+.. only:: EEUQ_app
+   
+   .. _lblFemoraSIM:
+
+   Femora (Building Model Generator)
+   ----------------------------------
+
+   The **Femora** SIM option lets you use a Femora‑based model generator as your structural model source in EE‑UQ. This is a compact panel for pointing to a Femora model file and specifying the key runtime parameters that the workflow needs. It integrates with the EE‑UQ workflow (and DesignSafe) to run multi‑core OpenSees analyses, as demonstrated in EE‑UQ Example 12.
+
+   Inputs (see figure below):
+
+   #. **Model File**: Femora model file (``*.py``, ``*.json``, or ``*.femora``) to load. Use "Browse" to select the file.
+   #. **Number of Cores**: Total cores used per simulation sample for the structural analysis. Choose this to match your DesignSafe resource request.
+   #. **Response Nodes**: Comma/space/semicolon‑separated list of node tags from base to roof. These are used for response extraction (e.g., PFAs, PFDs, PIDs) when Standard Earthquake EDPs are applied.
+   #. **Spatial Dimension (ndm)**: Typically 3 for 3D models.
+   #. **DOF at Nodes (ndf)**: Typical 3 for solid/translation‑only models or 6 for frame elements. Match your model.
+   #. **Damping Ratio**: Optional global damping ratio. Check "Use Damping" to enable entry. The value is exposed to the workflow for compatible solvers.
+   #. **Add Random Variable**: Adds a new random variable entry (each entry is an RV name). All RVs are exported and can be assigned distributions in the **RV** panel. The Femora model can use these RVs for parameters.
+
+   .. figure:: figures/Femora_input.png
+      :align: center
+      :figclass: align-center
+      :width: 800
+
+      Femora SIM input panel in EE‑UQ.
+
+   Behavior and outputs:
+
+   - Clicking **Run** (locally) or **Run at DesignSafe** uses the specified core count per sample. Plan your DesignSafe job accordingly (nodes × cores per node ≥ concurrent_samples × numCores).
+   - The Femora SIM serializes to JSON as ``type = FemoraInput`` with the fields shown above; the workflow backend uses these entries to launch the analysis and collect EDPs.
+   - Response nodes are also mirrored into ``centroidNodes`` for compatibility with standard EDP extraction.
+   - Random variables added here are exported as name/value pairs (``RV.<name>``) so you can set distributions and sampling in the **RV** panel.
+
+
 
 
 .. _lblMultipleModelsSIM:
