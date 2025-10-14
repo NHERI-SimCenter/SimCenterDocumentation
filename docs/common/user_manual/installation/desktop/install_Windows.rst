@@ -65,8 +65,29 @@ Install on Windows 10
       Installing OpenFOAM-10 on WSL.
 
       
+   .. note::
 
+      To verify that **OpenFOAM** has been installed correctly for **WE-UQ**, follow these steps:
 
+      Once WE-UQ is installed, open the application. From the **Examples** pull-down menu, select **Example E5**. When this example loads, WE-UQ calls OpenFOAM in the background to create a mesh of the model. If the mesh does not display, OpenFOAM is not functioning correctly for your setup.
+
+      There are a few possible causes:
+
+      1. **Missing .bashrc entry**  
+	 During OpenFOAM installation, you are instructed to edit your ``.bashrc`` file.  
+	 If you have not done so, add the following line to the file:
+
+	 ``. /opt/openfoam10/etc/bashrc``
+
+	 You can edit the file using a text editor such as **nano** or **vi**.
+
+      2. **Different default shell**  
+	 If you have already added the above line, your Ubuntu system may be configured to use a shell other than the default **bash** shell.  In that case, try replacing the previous line with:
+
+	 ``source /opt/openfoam10/etc/bashrc``
+
+      3. WE-UQ sets the path to it's backend applications the first time the application starts. If you move the application subsequent to this or download the application again, you need to **reset** these paths. To do this go to **File**, **Preferences** and press the **Reset** and **Save** buttons.
+      
 .. only:: HydroUQ_app
 
    This version of the |app| uses *OpenFOAM* for pre-processing the CFD model. Backend mesh generation and visualization, which the GUI relies on, are powered by *OpenFOAM-10* and *OpenFOAM-7*'s built-in meshing tools.  
