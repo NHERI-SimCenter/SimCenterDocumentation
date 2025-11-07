@@ -9,9 +9,9 @@ Analytics
 ---------
 
 The |app| uses Google Analytics to collect anonymous information about how the application is used.  
-This data helps the development team improve both the software and its documentation, and it also supports required usage reporting to the National Science Foundation.
+This data helps improve both the software and its documentation, and it also supports required usage reporting to the U.S. National Science Foundation.
 
-The information gathered may include: 1) The city and duration of usage sessions, 2) The number of local and remote workflow runs, 3) Which example problems are loaded, and 4) Workflow failure errors.
+The information gathered includes: the city and duration of usage, the number of local and remote workflow runs, which example problems are loaded, and errors.
 
 .. note::
    
