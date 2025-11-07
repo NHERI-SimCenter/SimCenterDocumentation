@@ -78,7 +78,7 @@
 
    :EEUQ:common/user_manual/releases/eeCapabilities   
    :EEUQ:common/user_manual/releases/eeReleaseNotes
-   :EEUQ:common/user_manual/releases/eePlans	   
+..   :EEUQ:common/user_manual/releases/eePlans	   
 
    :WEUQ:common/user_manual/releases/weCapabilities
    :WEUQ:common/user_manual/releases/weReleaseNotes
@@ -90,7 +90,7 @@
 
    :PBE:common/user_manual/releases/pbeCapabilities
    :PBE:common/user_manual/releases/pbeReleaseNotes
-   :PBE:common/user_manual/releases/pbePlans
+..   :PBE:common/user_manual/releases/pbePlans
       
    :R2D:common/user_manual/releases/r2dCapabilities 	 
    :R2D:common/user_manual/releases/r2dPlans 
@@ -172,6 +172,8 @@
 
    :Hydro:common/user_manual/usage/desktop/hydro/helpvideo
 
+   common/user_manual/usage/desktop/Misc
+
    .. :Hydro:common/user_manual/user_inputs_documentation/User_Input_Documentation_Tables
 
 .. _lbl-testbeds-manual:
@@ -252,3 +254,5 @@ References
 ==========
 
 .. bibliography:: common/references.bib
+
+		  
