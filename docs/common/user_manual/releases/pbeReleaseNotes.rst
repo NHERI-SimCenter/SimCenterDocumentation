@@ -8,7 +8,7 @@ Release Notes
 Version 4
 =========
 
-   .. dropdown::    Version 4.5 (:blue:`Current`)
+   .. dropdown::    Version 4.6 (:blue:`Current`)
       :open:
 
       **Release date:** May 2026
