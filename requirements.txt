@@ -13,4 +13,8 @@ jsonpath2
 sphinxcontrib.spelling==7.2.1
 sphinx_toolbox
 sphinx_design
+sphinx-copybutton
+sphinx-tabs
 aurore
+# aurore imports pkg_resources, which setuptools removed in 81+
+setuptools<81

@@ -524,12 +524,16 @@ elif app_name == "PBE":
     exclude_patterns.append("**/resEE.rst")
     # END TODO
 
+    # PBE has its own macOS install file (install_macOS_PBE.rst); skip the
+    # shared one to avoid duplicate-label and stale-content warnings.
+    exclude_patterns.append("**/install_macOS.rst")
+
 
     rst_prolog += """\
 .. |full tool name| replace:: Performance Based Engineering Application
 .. _github discussion page: https://github.com/orgs/NHERI-SimCenter/discussions/categories/pbe
 .. _PBE Download: https://www.designsafe-ci.org/data/browser/public/designsafe.storage.community/%2FSimCenter%2FSoftware%2FPBE
-.. |tool version| replace:: 4.1
+.. |tool version| replace:: 4.6
 .. |test example| replace:: :ref:`pbdl-0001`
 .. |figMissingCRT| replace:: :numref:`figMissingCRT-PBE`
 .. |contact person| replace:: Adam Zsarnóczay, NHERI SimCenter, Stanford University, adamzs@stanford.edu

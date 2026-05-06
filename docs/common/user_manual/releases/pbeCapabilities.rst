@@ -5,7 +5,7 @@
 Capabilities
 ************
 
-The following functionality is available in **version 4.1** of the |app| that was released on **September 30, 2024**.
+The following functionality is available in **version 4.6** of the |app| that was released in **May 2026**.
 
 Structural Response
 ===================
@@ -35,6 +35,7 @@ Use functional recovery simulation engines to estimate the recovery process and 
 The following options are available:
 
 #. ARUP REDi Seismic Downtime Model
+#. ATC-138 Functional Recovery Methodology (FEMA, based on Cook et al. 2022)
 
 
 Uncertainty Quantification
