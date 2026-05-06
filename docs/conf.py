@@ -524,6 +524,10 @@ elif app_name == "PBE":
     exclude_patterns.append("**/resEE.rst")
     # END TODO
 
+    # PBE has its own macOS install file (install_macOS_PBE.rst); skip the
+    # shared one to avoid duplicate-label and stale-content warnings.
+    exclude_patterns.append("**/install_macOS.rst")
+
 
     rst_prolog += """\
 .. |full tool name| replace:: Performance Based Engineering Application
