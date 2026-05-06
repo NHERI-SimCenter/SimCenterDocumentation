@@ -8,8 +8,101 @@ Release Notes
 Version 4
 =========
 
-   .. dropdown::    Version 4.1 (:blue:`Current`)
+   .. dropdown::    Version 4.5 (:blue:`Current`)
       :open:
+
+      **Release date:** May 2026
+
+      **Major updates:**
+
+      - **ATC-138 Functional Recovery Assessment:** Integrated the
+        `ATC-138 functional recovery methodology <https://femap58.atcouncil.org/fr-methodology>`_
+        as a new option in the Performance (PRF) tab. The underlying atc138
+        Python package implements the Cook et al. (2022) probabilistic
+        framework, extending FEMA P-58 damage simulation outputs into recovery
+        timelines via fault-tree analysis, impeding factors, and repair
+        scheduling. The Results panel reports Reoccupancy, Functional Recovery,
+        and Full Recovery time statistics. A new Example 4 demonstrates the
+        simulation capabilities and can be used as a template.
+
+      - Update to Pelicun 3.9, which brings numpy 2 compatibility, broader
+        pandas/scipy dependency ranges, and a number of internal robustness
+        and warning-cleanup fixes.
+
+      - **Migration to Qt 6:** the desktop application now builds
+        against Qt 6 (previously Qt 5.15), aligning PBE with modern Qt
+        support.
+
+      - **Native Apple Silicon (arm64) builds:** the macOS distribution
+        now ships an arm64 binary in addition to x86_64, so users on
+        Apple Silicon Macs can expect significantly faster simulations.
+
+   .. dropdown::    Version 4.4
+
+      **Release date:** October 2025
+
+      **Major updates:**
+
+      - Update to Pelicun 3.8, which adds a new interface to the SimCenter
+        Damage and Loss Model Library (DLML) from the Pelicun package
+        for easier maintenance and more flexible access to new model data.
+
+      - Inherited event-handling enhancements from EE-UQ:
+
+        - Femora input support, enabling multiple OpenSeesMP simulations
+        - Soil-Structure Interaction (SSI) widget for custom buildings
+          supported on piles or mat foundations
+
+      - HPC usability improvements for jobs launched on DesignSafe:
+
+        - **Share Job** -- share remote simulation jobs across
+          DesignSafe projects and users
+        - **Open Job Folder** -- jump directly to a remote job's output
+          files on DesignSafe
+        - **View Job Metadata** -- open DesignSafe's metadata page for
+          the job
+
+   .. dropdown::    Version 4.3
+
+      **Release date:** May 2025
+
+      **Major updates:**
+
+      - Update to Pelicun 3.6 and rework of the DL/Pelicun input panel
+        to fully leverage the SimCenter Damage and Loss Model Library,
+        exposing all available methods (including new Hazus Hurricane
+        wind variants and storm-surge support) directly in the user
+        interface.
+
+   .. dropdown::    Version 4.2
+
+      **Release date:** February 2025
+
+      **Major updates:**
+
+      - Update to Pelicun 3.5 and the underlying SimCenter Damage and
+        Loss Model Library (DLML).
+
+      - New damage and loss models available via DLML:
+
+        - Several Hazus models developed for portfolio-type studies
+          (also used in R2D), included primarily for educational use.
+        - First release of the SimCenter Wind Component Library, a
+          major enhancement collecting high-resolution component-level
+          models for wind-pressure-induced damage from the literature.
+
+      - References for damage and loss models are now shown in the
+        user interface to encourage recognition of model developers'
+        work. The DLML will be extended in future releases to provide
+        comprehensive references for all included models. The Wind
+        Component Library currently has references for every model
+        in it.
+
+      - **Optional loss calculations:** users can opt out of loss
+        calculation by selecting "None" under component repair
+        consequence databases and turning all loss outputs off.
+
+   .. dropdown::    Version 4.1
 
       **Release date:** September 2024
 
@@ -19,7 +112,7 @@ Version 4
 
       - ShakerMaker option added to tool to perform earthquake rupture simulations.
 
-      - OpenSees@DesignSafe option added in tools to allow users to run OpenSees, OpenSeesMP, OpenSeesSP, and OpenSeesPy simulations utilizing TACC HPC resources from their desktop.      
+      - OpenSees@DesignSafe option added in tools to allow users to run OpenSees, OpenSeesMP, OpenSeesSP, and OpenSeesPy simulations utilizing TACC HPC resources from their desktop.
 
    .. dropdown::    Version 4.0
 
