@@ -10,7 +10,7 @@ How To Cite
 	     
 .. only:: PBE_app
 
-   1. Adam Zsarnoczay, Frank McKenna, Michael Gardner, Michael Gardner, Charles Wang, Sang-ri Yi, Aakash Bangalore Satish, Amin Pakzad, & Wael Elhaddad. (2024). NHERI-SimCenter/PBE: Version 4.1.0 (v4.1.0). Zenodo. `DOI: https://doi.org/10.5281/zenodo.13865401 <https://doi.org/10.5281/zenodo.13865401>`_
+   1. Adam Zsarnoczay, Frank McKenna, Sang-ri Yi, Aakash Bangalore Satish, Michael Gardner, Charles Wang, Amin Pakzad, Barbaros Cetiner, & Wael Elhaddad. (2025). NHERI-SimCenter/PBE: Version 4.4.0 (v4.4.0). Zenodo. `DOI: https://doi.org/10.5281/zenodo.17239569 <https://doi.org/10.5281/zenodo.17239569>`_
   
 .. only:: EEUQ_app
 
@@ -35,8 +35,11 @@ How To Cite
       NHERI-SimCenter/HydroUQ: Version 4.2.0 (v4.2.0). 
       Zenodo. `DOI: 10.5281/zenodo.4731073 <https://doi.org/10.5281/zenodo.4731073>`_
 
-2. Gregory G. Deierlein, Frank McKenna, Adam Zsarnóczay, Tracy Kijewski-Correa, Ahsan Kareem,
-   Wael Elhaddad, Laura Lowes, Matt J. Schoettler, and Sanjay Govindjee (2020)
-   A Cloud-Enabled Application Framework for Simulating Regional-Scale Impacts of
-   Natural Hazards on the Built Environment. Frontiers in the Built Environment. 6:558706.
-   `DOI: 10.3389/fbuil.2020.558706 <https://doi.org/10.3389/fbuil.2020.558706>`_
+2. Adam Zsarnóczay, Gregory G. Deierlein, Frank McKenna, Matthew Schoettler, Sang-Ri Yi,
+   Barbaros Cetiner, Aakash Bangalore Satish, Jinyan Zhao, Justin Bonus, Abiy F. Melaku,
+   Sina Naeimi, Pedro Arduino, Rachel Davidson, Catherine Gorle, Sanjay Govindjee,
+   Ahsan Kareem, Tracy L. Kijewski-Correa, Laura N. Lowes, Michael Motley,
+   Seymour M. J. Spence, Ertugrul Taciroglu, Alexandros A. Taflanidis, and Matthew DeJong
+   (2025). An open-source simulation platform to support and foster research collaboration
+   in natural hazards engineering. Frontiers in Built Environment. 11:1590479.
+   `DOI: 10.3389/fbuil.2025.1590479 <https://doi.org/10.3389/fbuil.2025.1590479>`_

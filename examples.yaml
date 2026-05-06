@@ -8,8 +8,9 @@ pelicun: {}
 PBE:
   include-item:
     - pbdl-0001
-    - pbdl-0002    
+    - pbdl-0002
     - pbdl-0003
+    - pbdl-0004
 
 
 quoFEM:
@@ -45,7 +46,6 @@ WE-UQ:
     - weuq-0014
     - weuq-0019
     - weuq-0017
-    - advancedCFD
 
 EE-UQ:
   include-item:
@@ -61,7 +61,8 @@ EE-UQ:
     - eeuq-0010
     - eeuq-0011
     - eeuq-0012
-    - eeuq-0013
+    - eeuq-0013    
+
 
 R2DTool:
   include-item:
