@@ -4,40 +4,23 @@
 Install on MacOS
 ===================
 
-Install Python 3.9
-^^^^^^^^^^^^^^^^^^
+Install Python
+^^^^^^^^^^^^^^
 
-SimCenter tools require an **x86-based Python 3.9** installation. To check if your current Python installation is compatible, follow Steps **1** and **2** below. If it is incompatible, proceed with Steps **3** through **6** below to install a compatible version.
+The |app| requires Python be installed on your machine and that the version of it be in the **3.10 -- 3.12** range. 
 
+To check what you have, open Terminal (Spotlight: ⌘+Space, type
+"Terminal", press Enter) and run::
 
-#. Open a Terminal Window. To do this on your Mac:
-   
-   .. code::
-      
-     1) Press Command (⌘) + Spacebar to open Spotlight Search
-     2) Type “Terminal” and press Enter in Spotlight Search.
+   python3 --version
 
-#. To check if your Python version is compatible, run the following commands in your terminal window:
+If it reports a 3.10, 3.11, or 3.12 number, you're set and can go to the next step. If not, you need to install an appropriate version. We recommend 3.12.
 
-   .. code::
-   
-      python3
-      import platform
-      platform.uname()
-      exit()
+**To Install Python 3.12**
 
-   Ensure the output indicates Python 3.9 and `machine='x86_64'`, as shown in the screenshot below. If your python installation does not meet these requirements, proceed with the installation outlined in steps **3** and **4** below. If your system does meet the requirements, skip to step **5**.
+#.  Go to the tool download page (link: |appLink|). On the browser page that this brings up, you will find various files and directories available for download. Locate the file named **python-3.12.6-macosx11.pkg**, which we copied from `Python.org <https://www.python.org/downloads/macos/>`_. Proceed to download this installer file.
 
-   .. figure:: figures/pythonKernel.png
-      :align: center
-      :figclass: align-center
-      :width: 75%
-      
-      Python: Kernel Version
-
-#. Clink on the this link -> |appLink|. On the browser page that this brings up,  you will find various files and directories available for download. Locate the file named **python-3.9.13-macosx10.9.pkg**, which we copied from `Python.org <https://www.python.org/downloads/macos/>`_. Proceed to download this installer file.
-
-#. Locate this installer file on your system and double click on it to start the installation process. Upon completion, a folder with several files will open, as shown in the figure below. Execute ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh`` by double-clicking each.
+#. Locate this installer file in your Downloads folder, and double click on it to start the installation process. Upon completion, a folder with several files will open, as shown in the figure below. Execute ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh`` by double-clicking each.
 
    .. figure:: figures/pythonInstallShell.png
       :align: center
@@ -46,41 +29,59 @@ SimCenter tools require an **x86-based Python 3.9** installation. To check if yo
       
       Python: Folder Displayed at Conclusion of Install
 
-#. In the terminal window you have opened in step **1**, you need to issue the following **2** commands to ensure the command line tools for x-code and some additional python modules are installed:
-
-   .. code-block:: bash
-      
-      xcode-select --install
-      python3 -m pip install --upgrade nheri_simcenter
-
-
-   If this step fails, see WARNING below.
-
-#. Repeat steps **1** and **2** to ensure that python was correctly installed. See note below if you still see the incorrect version and platform in the ``NEW`` terminal window.
+#. Repeat the first python version check above in a ``NEW`` terminal window.
 
 .. note::
 
-   If step **5** was successfull and you still have the incorrect version of python installed after following the above steps, it probably means you forget to invoke the **Update Shell Profile Command.command** script at the end of step **4**. You can still do it using **Finder**. Open Finder and navigate to the **/Applications/Python 3.9** folder. Here you will see a number of files, including the two you forgot to run: **Install Cerificates Command.command** and **Update Shell Profile Command.commnd**. Double click on these files to run them. Finally repeat steps **1** and **2** again. If this still fails to produce the correct output for step **2**, please contact us for direct support.
+   If you still have the incorrect version of python installed after following the above steps, it probably means you forgot to invoke the **Update Shell Profile Command.command** script at the end of step **2**. You can still do it using **Finder**. Open Finder and navigate to the **/Applications/Python 3.12** folder. Here you will see a number of files, including the two you forgot to run: **Install Certificates Command.command** and **Update Shell Profile Command.command**. Double click on these files to run them. Finally open a **NEW** terminal again and check your version of python.
 
-.. warning::
+Optional: Create a Python Environment
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-   If step 5 above fails, it is because the system is finding a different version of python on your system. This is going to require you do additional things.
+If you have a current version of Python that meets the requirements (3.10, 3.11 or 3.12) and want to re-use it, or if you will be using additional SimCenter applications, we strongly recommend creating a **python virtual environment**. This is in case the **pip install** command you are about to issue, downloads and installs python packages that don't mix with your current ones or ones you will need in the future. To create a python environment for |app|, issue the following in the terminal window:
 
-   1. Firstly you need to create a **python environment** for your SimCenter applications. This is done by issuing the following set of commands. 
-
-     .. code-block:: bash
+.. parsed-literal::		     
       
         cd ~
         mkdir python_env
         cd python_env
-        /Library/Frameworks/Python.framework/Versions/3.9/bin/python3 -m venv python_simcenter
-        source ./python_simcenter/bin/activate
-        python3 -m pip install --upgrade nheri_simcenter   
+        python3 -m venv python-|short tool id|
+        source ./python-|short tool id|/bin/activate
 
-     Basically the commands will create a directory in your home folder called **python_env** and cd into it, the **python3 -m venv python_simcenter** will create the new python environment, which is contained in a directory python_simcenter. To activate this environment you source the script **activate** in the bin folder of this new directory. With the environment activated you can now install nheri-simcenter.	If this too fails, please contact us.
-	
-   2. When the application is actually running, you need to change the location of the **python** application that is run. To do this, in the top menu bar, under the tool icon select Preferences. Change the location of python,  the first variable you can edit, to the python3 in the nee environment, i.e. **/Users/YOUR_LOGIN/python_env/python_simcenter/bin/python3**. Finally Press the **Save** button. Please note that YOUR_LOGIN needs to be replaced with your actual login!
-	
+.. note::
+
+  These commands create a folder in your home directory named **python_env**, instruct the current default python interpreter to create a directory for a virtual environment named python-{short tool id| in this folder, and from the many files in this new folder that are present, you invoke a script ``activate`` that sets up the terminal environment such that it uses the python interpreter you created the environment with and, most importantly, will install python packages into this folder.
+
+
+Install Python Modules
+^^^^^^^^^^^^^^^^^^^^^^
+
+#. In the terminal window you have opened, you need to issue the following **2** commands to ensure the command line tools for x-code and some additional python modules are installed:
+
+.. only:: quoFEM_app
+
+   .. code-block:: bash
+      
+      xcode-select --install
+      python3 -m pip install --upgrade "nheri_simcenter[quofem]"
+
+
+Note Your Python Path
+^^^^^^^^^^^^^^^^^^^^^
+
+|app| needs the full path to the Python interpreter. Find it with the ``which`` command in Terminal.
+
+   .. code-block:: bash
+
+      which python3
+
+If you are using the newly installed python without a virtual environment you should see something like ``/Library/Frameworks/Python.framework/Versions/3.12/bin/python3``. If using a python environment: /Users/YOUR_LOGIN/python_env/python-|short tool id|/bin/python3. Copy this path to your clipboard.
+
+.. note::
+
+   When the application is actually running, you will need to change the location of the **python** application that will run **if** you are using a virtual environment or if the existing python interpreter you are using is in a different location. To do this, in the top menu bar, under the tool icon select Preferences (on some macOS versions it is Settings). Change the location of python, the first variable you can edit, to the python3 path noted, e.g. /Users/YOUR_LOGIN/python_env/python-|short tool id|/bin/python3. Finally press the **Save** button. Please note that YOUR_LOGIN needs to be replaced with your actual login!
+
+
 .. only:: R2D_app
 
    **Install Java**
@@ -92,7 +93,7 @@ SimCenter tools require an **x86-based Python 3.9** installation. To check if yo
    Download and install Java from the official Java website. Version `16.0.2 <https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html>`_ is confirmed compatible with the latest |app|. Follow the installation prompts. If a JVM error appears, suggesting the JAVA_HOME environment variable needs setting, refer to this `guide <https://docs.oracle.com/cd/E19182-01/821-0917/inst_jdk_javahome_t/index.html>`_.
  
    .. note::
-      The Java website should automatically detect and suggest the appropriate installer for your operating system. Ensure "64-bit Java for Windows" is indicated before downloading the Java installer.
+      The Java website should automatically detect and suggest the appropriate installer for your operating system.
 
 
 .. only:: WEUQ_app
@@ -108,7 +109,7 @@ SimCenter tools require an **x86-based Python 3.9** installation. To check if yo
    To download and install Docker for macOS from the following site `Docker for macOS <https://docs.docker.com/desktop/install/mac-install/>`_ .
 
    .. note::
-      Make sure to download Docker distribution that maches your machine requirements (Apple or Intel chip). 
+      Make sure to download Docker distribution that matches your machine requirements (Apple or Intel chip). 
       
 .. only:: HydroUQ_app
    
@@ -123,11 +124,18 @@ SimCenter tools require an **x86-based Python 3.9** installation. To check if yo
    To install OpenFOAM-10 on macOS, follow the instructions in `OpenFOAM for macOS <https://openfoam.org/download/10-macos/>`_ .
 
 
-
 **Download the Application**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To download the |app|, navigate to the |appLink| page which should resemble |figDownload|. The download page contains a list of downloadable files and directories.
+To download the |app|, navigate to the |appLink| page which should resemble |figDownload|. The download page contains a list of downloadable files and directories. Two macOS build are listed |tool app id|_MacOS_Download_arm64.dmg, for Apple Silicon Macs (chips named **M1**, **M2**, **M3**, **M4*, and *M5*)  and |tool app id|_Mac_Download_x86_64.dmg for older INtel-based Macs. 
+
+.. note::
+
+   To check which you have: click the **Apple menu** in the top-left corner of your screen and choose **About This Mac**. Look at the **Chip**
+   (o**Processor**) line. If it starts with "Apple", you want the **arm64** download. If it says "Intel", you want the **x86_64** download.
+   If you pick the arm64 build on an Apple Silicon Mac, |short tool id|  runs natively and is significantly faster than under emulation. The
+   arm64 build will not run on an Intel based Mac.
+
 
 .. only:: R2D_app
 
@@ -197,20 +205,21 @@ To download the |app|, navigate to the |appLink| page which should resemble |fig
 
 
 
-Click on the file with a name ending with **Mac_Download.dmg** to download the |app|. In the pop-up window, click on the **Download** button in the bottom right corner. After the download is completed, open the dmg file and **copy** the |short tool name| **to a location in your filesystem**.
+Click on the appropriate file link in the pop-up window, then click on the **Download** button in the bottom right corner. After the download is completed, open the dmg file and **copy** the |short tool id| **to a location in your filesystem**.
 
 .. note::
-   We suggest copying the application to your Desktop. After copying the application, you can move the dmg file to the trash or eject it.
+   
+   We suggest copying the application either the Applications folder or your Desktop. After copying the application, you can move the dmg file to the trash or eject it.
 
 
 Test the Installation
 ^^^^^^^^^^^^^^^^^^^^^
 
-Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by running the |short tool id|.exe executable.
+Once the installation procedure has been completed, it is a good practice to run some basic checks. Navigate to the location where you placed the application and open it by double-clicking the |short tool id| application.
 
 .. note::
 
-   SimCenter apps are code-signed and notarized, but because they are not downloaded from the operating system's app store, they may not be recognized as safe applications. Depending on your security settings, when you start a SimCenter app for the first time, your operating system may show a dialog box indicating it is unsafe. If this dialog appears, choose the cancel button. Try to start the app again, this time by right-clicking on it and selecting open.
+   SimCenter apps are code-signed and notarized, but because they are not downloaded from the **Apple** app store, they will not be recognized as safe applications. Depending on your security settings, when you start a SimCenter app for the first time, your operating system may show a dialog box indicating it is unsafe. If this dialog appears, choose the cancel button. Try to start the app again, this time by right-clicking on it and selecting open.
 
    If the app still fails to open. You need to go to System Settings->Privacy and Security. Under the Security section, you need to at least temporarily select the option to allow applications downloaded from the **App Store and Identified Developers**. With this checked try again. If it fails again, go back to System Settings->Privacy and Security. Just below the section you just checked, there should be some text about why the app was stopped and an option to **Open Anyway**, as shown in the figure below. Click on the button and the app should start.
 
