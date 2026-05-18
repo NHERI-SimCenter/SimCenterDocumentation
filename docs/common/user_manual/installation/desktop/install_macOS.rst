@@ -94,6 +94,18 @@ SimCenter tools require an **x86-based Python 3.9** installation. To check if yo
    .. note::
       The Java website should automatically detect and suggest the appropriate installer for your operating system. Ensure "64-bit Java for Windows" is indicated before downloading the Java installer.
 
+   **Install OpenMP**
+   ^^^^^^^^^^^^^^^^^^
+
+   .. note::
+      OpenMP is required by ``pandarm``, the routing engine used by R2D's Residual Demand module for regional transportation network analysis. Install it via Homebrew:
+
+      .. code-block:: bash
+
+         brew install libomp
+
+      If Homebrew is not yet installed, follow the instructions at `brew.sh <https://brew.sh>`_.
+
 
 .. only:: WEUQ_app
    
