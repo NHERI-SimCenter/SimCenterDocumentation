@@ -4,95 +4,193 @@
 Install on MacOS
 ===================
 
-Install Python 3.9
-^^^^^^^^^^^^^^^^^^
+Install Python
+^^^^^^^^^^^^^^
 
-SimCenter tools require an **x86-based Python 3.9** installation. To check if your current Python installation is compatible, follow Steps **1** and **2** below. If it is incompatible, proceed with Steps **3** through **6** below to install a compatible version.
-
+SimCenter tools work with **Python 3.10, 3.11, or 3.12**. We recommend **Python 3.12**. To check whether your current Python is compatible, follow Steps **1** and **2** below. If it is incompatible (or you don't have Python installed), proceed with Steps **3** through **6** to install a compatible version.
 
 #. Open a Terminal Window. To do this on your Mac:
-   
+
    .. code::
-      
+
      1) Press Command (⌘) + Spacebar to open Spotlight Search
      2) Type “Terminal” and press Enter in Spotlight Search.
 
-#. To check if your Python version is compatible, run the following commands in your terminal window:
+#. To check whether your Python version is compatible, run the following command in your terminal window:
 
    .. code::
-   
-      python3
-      import platform
-      platform.uname()
-      exit()
 
-   Ensure the output indicates Python 3.9 and `machine='x86_64'`, as shown in the screenshot below. If your python installation does not meet these requirements, proceed with the installation outlined in steps **3** and **4** below. If your system does meet the requirements, skip to step **5**.
+      python3 --version
 
-   .. figure:: figures/pythonKernel.png
-      :align: center
-      :figclass: align-center
-      :width: 75%
-      
-      Python: Kernel Version
+   If the output reports Python 3.10, 3.11, or 3.12 (for example ``Python 3.12.7``), your installation is compatible -- skip to step **5**. Otherwise, proceed with steps **3** and **4** to install a compatible version.
 
-#. Clink on the this link -> |appLink|. On the browser page that this brings up,  you will find various files and directories available for download. Locate the file named **python-3.9.13-macosx10.9.pkg**, which we copied from `Python.org <https://www.python.org/downloads/macos/>`_. Proceed to download this installer file.
+#. Click on this link -> |appLink|. On the browser page that this brings up, you will find various files and directories available for download. Locate the file named **python-3.12.X-macos11.pkg** (where ``X`` is the latest patch number), which we copied from `Python.org <https://www.python.org/downloads/macos/>`_. Proceed to download this installer file.
 
-#. Locate this installer file on your system and double click on it to start the installation process. Upon completion, a folder with several files will open, as shown in the figure below. Execute ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh`` by double-clicking each.
+#. Locate this installer file on your system and double click on it to start the installation process. Upon completion, a folder with several files will open, as shown in the figure below. Execute ``Update Shell Profile.command`` and ``Install Certificates.command`` by double-clicking each.
 
    .. figure:: figures/pythonInstallShell.png
       :align: center
       :figclass: align-center
       :width: 75%
-      
+
       Python: Folder Displayed at Conclusion of Install
 
-#. In the terminal window you have opened in step **1**, you need to issue the following **2** commands to ensure the command line tools for x-code and some additional python modules are installed:
+#. In the terminal window you opened in step **1**, run the following commands to install Apple's command line tools and the SimCenter Python packages needed by |app|.
 
-   .. code-block:: bash
-      
-      xcode-select --install
-      python3 -m pip install --upgrade nheri_simcenter
+   .. only:: R2D_app
 
+      .. code-block:: bash
+
+         xcode-select --install
+         python3 -m pip install --upgrade "nheri_simcenter[r2d]"
+
+   .. only:: PBE_app
+
+      .. code-block:: bash
+
+         xcode-select --install
+         python3 -m pip install --upgrade "nheri_simcenter[pbe]"
+
+   .. only:: EEUQ_app
+
+      .. code-block:: bash
+
+         xcode-select --install
+         python3 -m pip install --upgrade "nheri_simcenter[eeuq]"
+
+   .. only:: WEUQ_app
+
+      .. code-block:: bash
+
+         xcode-select --install
+         python3 -m pip install --upgrade "nheri_simcenter[weuq]"
+
+   .. only:: quoFEM_app
+
+      .. code-block:: bash
+
+         xcode-select --install
+         python3 -m pip install --upgrade "nheri_simcenter[quofem]"
+
+   .. only:: HydroUQ_app
+
+      .. code-block:: bash
+
+         xcode-select --install
+         python3 -m pip install --upgrade "nheri_simcenter[hydrouq]"
+
+   The bracketed extra tells the installer to pull in only the packages |app| needs rather than every SimCenter dependency. The download is a few hundred megabytes and typically takes 1-3 minutes.
 
    If this step fails, see WARNING below.
 
-#. Repeat steps **1** and **2** to ensure that python was correctly installed. See note below if you still see the incorrect version and platform in the ``NEW`` terminal window.
+#. Repeat steps **1** and **2** to ensure that Python was correctly installed. See note below if you still see the incorrect version in the ``NEW`` terminal window.
 
 .. note::
 
-   If step **5** was successfull and you still have the incorrect version of python installed after following the above steps, it probably means you forget to invoke the **Update Shell Profile Command.command** script at the end of step **4**. You can still do it using **Finder**. Open Finder and navigate to the **/Applications/Python 3.9** folder. Here you will see a number of files, including the two you forgot to run: **Install Cerificates Command.command** and **Update Shell Profile Command.commnd**. Double click on these files to run them. Finally repeat steps **1** and **2** again. If this still fails to produce the correct output for step **2**, please contact us for direct support.
+   If step **5** was successful and you still have the incorrect version of Python after following the above steps, it probably means you forgot to invoke the **Update Shell Profile.command** script at the end of step **4**. You can still do it using **Finder**. Open Finder and navigate to the **/Applications/Python 3.12** folder. Here you will see a number of files, including the two you may have forgotten to run: **Install Certificates.command** and **Update Shell Profile.command**. Double-click each to run them. Finally repeat steps **1** and **2** again. If this still fails to produce the correct output for step **2**, please contact us for direct support.
 
 .. warning::
 
-   If step 5 above fails, it is because the system is finding a different version of python on your system. This is going to require you do additional things.
+   If step 5 above fails, it is because the system is finding a different version of Python on your system. This is going to require you do additional things.
 
-   1. Firstly you need to create a **python environment** for your SimCenter applications. This is done by issuing the following set of commands. 
+   1. First you need to create a **Python environment** for your SimCenter applications. This is done by issuing the following set of commands.
 
-     .. code-block:: bash
-      
-        cd ~
-        mkdir python_env
-        cd python_env
-        /Library/Frameworks/Python.framework/Versions/3.9/bin/python3 -m venv python_simcenter
-        source ./python_simcenter/bin/activate
-        python3 -m pip install --upgrade nheri_simcenter   
+      .. only:: R2D_app
 
-     Basically the commands will create a directory in your home folder called **python_env** and cd into it, the **python3 -m venv python_simcenter** will create the new python environment, which is contained in a directory python_simcenter. To activate this environment you source the script **activate** in the bin folder of this new directory. With the environment activated you can now install nheri-simcenter.	If this too fails, please contact us.
-	
-   2. When the application is actually running, you need to change the location of the **python** application that is run. To do this, in the top menu bar, under the tool icon select Preferences. Change the location of python,  the first variable you can edit, to the python3 in the nee environment, i.e. **/Users/YOUR_LOGIN/python_env/python_simcenter/bin/python3**. Finally Press the **Save** button. Please note that YOUR_LOGIN needs to be replaced with your actual login!
+         .. code-block:: bash
+
+            cd ~
+            mkdir python_env
+            cd python_env
+            /Library/Frameworks/Python.framework/Versions/3.12/bin/python3 -m venv python_simcenter
+            source ./python_simcenter/bin/activate
+            python3 -m pip install --upgrade "nheri_simcenter[r2d]"
+
+      .. only:: PBE_app
+
+         .. code-block:: bash
+
+            cd ~
+            mkdir python_env
+            cd python_env
+            /Library/Frameworks/Python.framework/Versions/3.12/bin/python3 -m venv python_simcenter
+            source ./python_simcenter/bin/activate
+            python3 -m pip install --upgrade "nheri_simcenter[pbe]"
+
+      .. only:: EEUQ_app
+
+         .. code-block:: bash
+
+            cd ~
+            mkdir python_env
+            cd python_env
+            /Library/Frameworks/Python.framework/Versions/3.12/bin/python3 -m venv python_simcenter
+            source ./python_simcenter/bin/activate
+            python3 -m pip install --upgrade "nheri_simcenter[eeuq]"
+
+      .. only:: WEUQ_app
+
+         .. code-block:: bash
+
+            cd ~
+            mkdir python_env
+            cd python_env
+            /Library/Frameworks/Python.framework/Versions/3.12/bin/python3 -m venv python_simcenter
+            source ./python_simcenter/bin/activate
+            python3 -m pip install --upgrade "nheri_simcenter[weuq]"
+
+      .. only:: quoFEM_app
+
+         .. code-block:: bash
+
+            cd ~
+            mkdir python_env
+            cd python_env
+            /Library/Frameworks/Python.framework/Versions/3.12/bin/python3 -m venv python_simcenter
+            source ./python_simcenter/bin/activate
+            python3 -m pip install --upgrade "nheri_simcenter[quofem]"
+
+      .. only:: HydroUQ_app
+
+         .. code-block:: bash
+
+            cd ~
+            mkdir python_env
+            cd python_env
+            /Library/Frameworks/Python.framework/Versions/3.12/bin/python3 -m venv python_simcenter
+            source ./python_simcenter/bin/activate
+            python3 -m pip install --upgrade "nheri_simcenter[hydrouq]"
+
+      The commands create a directory in your home folder called **python_env**, then create a new Python environment inside it (a folder called **python_simcenter**). To activate this environment you source the script **activate** in its **bin** folder. With the environment activated you can install the SimCenter Python package. If this too fails, please contact us.
+
+   2. When the application is actually running, you need to change the location of the **Python** application that is run. To do this, in the top menu bar, under the tool icon select Preferences. Change the location of Python -- the first variable you can edit -- to the python3 in the new environment, i.e. **/Users/YOUR_LOGIN/python_env/python_simcenter/bin/python3**. Finally press the **Save** button. Please note that YOUR_LOGIN needs to be replaced with your actual login!
 	
 .. only:: R2D_app
 
-   **Install Java**
-   ^^^^^^^^^^^^^^^^
+   **Install Java (JDK 17)**
+   ^^^^^^^^^^^^^^^^^^^^^^^^^
 
    .. note::
-      Java is required for utilizing OpenSHA for regional seismic hazard characterization (:ref:`ground_motion_tool`). Skip this step if you do not intend to use this feature.
+      Java is required only if you plan to use the OpenSHA-based regional seismic hazard feature in |app| (:ref:`ground_motion_tool`). If you do not need this feature, you can skip this section.
 
-   Download and install Java from the official Java website. Version `16.0.2 <https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html>`_ is confirmed compatible with the latest |app|. Follow the installation prompts. If a JVM error appears, suggesting the JAVA_HOME environment variable needs setting, refer to this `guide <https://docs.oracle.com/cd/E19182-01/821-0917/inst_jdk_javahome_t/index.html>`_.
- 
-   .. note::
-      The Java website should automatically detect and suggest the appropriate installer for your operating system. Ensure "64-bit Java for Windows" is indicated before downloading the Java installer.
+   |app| is tested with **Eclipse Temurin JDK 17**, the long-term-support (LTS) build of Java. We recommend this exact version.
+
+   **Which installer should I download?**
+
+   The right installer depends on your Mac's processor, because Java must match the architecture of the Python you installed earlier:
+
+   * **Apple Silicon Mac** (chips named **M1**, **M2**, **M3**, or **M4** -- any Mac sold since late 2020): download the **macOS aarch64** installer from `Temurin JDK 17 — macOS Apple Silicon (aarch64) <https://adoptium.net/temurin/releases/?version=17&package=jdk&os=mac&arch=aarch64>`_.
+   * **Intel Mac** (any Mac sold before late 2020): download the **macOS x64** installer from `Temurin JDK 17 — macOS x64 <https://adoptium.net/temurin/releases/?version=17&package=jdk&os=mac&arch=x64>`_.
+
+   To check which kind of Mac you have, click the **Apple menu** in the top-left corner of your screen and choose **About This Mac**. Look at the **Chip** (or **Processor**) line: if it starts with "Apple" you want the aarch64 installer; if it says "Intel" you want the x64 installer.
+
+   **To install:**
+
+   1. Click the matching link above. On the Adoptium page, click the download icon next to the PKG option to download the ``.pkg`` file. You'll get a file named something like ``OpenJDK17U-jdk_aarch64_mac_hotspot_17.0.X_Y.pkg`` (or ``...x64...`` for Intel).
+   2. Once the download finishes, double-click the ``.pkg`` file in your **Downloads** folder. The macOS installer will open. Accept the defaults on each screen and click **Install** at the end. You may be asked for your password.
+
+   .. tip::
+      If you already have a different Java version installed on your Mac, you do not need to remove it. Multiple Java versions coexist without conflict -- each lives in its own folder under ``/Library/Java/JavaVirtualMachines/``.
 
    **Install OpenMP**
    ^^^^^^^^^^^^^^^^^^
