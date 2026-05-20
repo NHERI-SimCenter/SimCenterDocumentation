@@ -13,7 +13,7 @@ SimCenter Applications can be run in one of two ways:
 As A Desktop Application
 ------------------------
 
-All SimCenter applications can be downloaded from the |ResearchTools| page and run as a local application. The advantage of such an approach is that the applications start instantaneously, you can utilize the local files on your desktop in the applications as inputs, you can process the results again on your desktop. The disadvantage of the approach is that it requires downloading the application, and if you are on a Mac downloading and installing an x86 version of **Python**. This section walks you through the installation process on Windows and macOS operating systems from downloading the application to testing that it has been installed correctly.
+All SimCenter applications can be downloaded from the |ResearchTools| page and run as a local application. The advantage of such an approach is that the applications start instantaneously, you can utilize the local files on your desktop in the applications as inputs, you can process the results again on your desktop. The disadvantage of the approach is that it requires downloading the application, and if you are on a Mac, downloading and installing **Python 3.12** as well. This section walks you through the installation process on Windows and macOS operating systems from downloading the application to testing that it has been installed correctly.
 
 .. toctree-filt::
    :maxdepth: 2
