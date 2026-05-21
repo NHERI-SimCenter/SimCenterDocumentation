@@ -113,63 +113,104 @@ and Z2pt5 are several ways that shear-wave velocity data is incorporated into se
 	Measured or Inferred. Inferred Vs30 values are estimated based on correlations
 	with local surface geology or slope and may introduce larger intra-event standard
 	deviations. See detailed discussions in [AbrahamsonSilvaKamai2013]_.
-	R2D supports three models to infer Vs30 values and a user-specified method to 
-	specify measured Vs30 values. The unit of Vs30 in R2D is meter per second.
-		- CGS/Wills Vs30 (Wills et al., 2015) [willsetal2015]_
-			This model is applicable to California, US, and is created based on 
-			correlations of Vs30 with geologic units and surface slope. The database
-			is obtained by interfacing the `WillsMap2015 <https://github.com/opensha/opensha/blob/master/src/main/java/org/opensha/commons/data/siteData/impl/WillsMap2015.java>`_ class in **openSHA**, which
-			obtained the database from the electronic supplements of [willsetal2015]_.
-		- Thompson California Vs30 (Thompson et al. 2018) [Thompson2018]_
-			This model is applicable to California, US and the raw data can be obtained from the `USGS website <https://www.sciencebase.gov/catalog/item/5a5fa029e4b06e28e9bfc43a>`_.
-		- Global Vs30 (Heath et al., 2020) [Heath2020]_
-			This model is applicable to anywhere on the Earth. Heath et al. (2020)
-			developed a hybrid global Vs30 map database that defaults to the global slope-based Vs30 map,
-			but smoothly insets the more accurate regional Vs30 maps where available.
-			The raw data can be obtained from the `USGS website <https://www.sciencebase.gov/catalog/item/5d815a9ae4b0c4f70d0586c8>`_.
+	R2D exposes five Vs30 models, all retrieved through the OpenSHA site-data
+	API, plus a user-specified method to provide measured Vs30 values. The
+	first four are derived from California-specific surveys and only return
+	values inside the state; sites outside California fall back to the
+	global Wald & Allen model so a value is always produced. The unit of
+	Vs30 in R2D is meter per second.
+		- Thompson VS30 Map (2022) [California only] [Thompson2022]_
+			Latest revision of Thompson's hybrid California Vs30 map. ~92 m
+			(3 arc-sec) native resolution, combining Wills et al. (2015) with
+			geology- and topography-based proxies where direct measurements
+			are unavailable.
+		- Thompson VS30 Map (2018) [California only] [Thompson2018]_
+			Earlier version of the Thompson hybrid map, retained for
+			backward comparison. Native resolution ~230 m (7.5 arc-sec).
+			Use the 2022 map unless reproducing prior results.
+		- CGS/Wills VS30 Map (2015) [California only] [willsetal2015]_
+			California Geological Survey continuous Vs30 map based on
+			correlations of Vs30 with geologic units and surface slope.
+			Native ~28 m (0.9 arc-sec) resolution — the finest of the
+			five options.
+		- CGS/Wills Site Classification Map (2006) [California only] [willsclahan2006]_
+			Earlier categorical site-class map (NEHRP-style A/B/C/D
+			classes) translated to representative Vs30 values via OpenSHA's
+			SiteTranslator. Retained for backward comparison with older
+			studies.
+		- Global Vs30 from Topographic Slope (Wald & Allen 2008) [WaldAllen2007]_
+			Global topographic-slope-based Vs30 estimate (Active Tectonic /
+			Stable Continent coefficients applied by region). Native ~925 m
+			(30 arc-sec) resolution. This is also the fallback used for any
+			site where one of the California-only maps above returns NaN.
 		- User-specified
 			This method allows the user to input user-specified Vs30 values. This option
 			is only available if **Scattering Locations** is used to define site locations.
 			The user-specified values should be included in the user-provided ``.csv``
 			file with a column named ("vs30"). If the user-specified option is
-			selected, users need also specify if the provided "vs30" values are 
+			selected, users need also specify if the provided "vs30" values are
 			measured or inferred by providing a "vsInferred" column in the ``.csv`` file
 			or checking/unchecking the "Specified Vs30 values are inferred"
-			check box. 
+			check box.
     #. **Z1pt0 Model**
-	The depth (km) to where shear-wave velocity = 1.0 km/sec (the first occurrence if more than one depth exists). Z1pt0 and Z2pt5 
+	The depth (m) to where shear-wave velocity = 1.0 km/sec (the first occurrence if more than one depth exists). Z1pt0 and Z2pt5
 	are related to long-period site response. Z2pt5 may be more directly related to the long-period site response, but Z1pt0
-	is used in many site classifications because it is closer to the traditional geotechnical parameter of “depth to bedrock” and
+	is used in many site classifications because it is closer to the traditional geotechnical parameter of "depth to bedrock" and
 	is easier to measure for specific projects [AbrahamsonSilvaKamai2014]_. The unit of Z1pt0 in R2D is meter.
-		- OpenSHA default model
-			This model applies to California. R2D will interpolate the SCEC Community Velocity Model Version 4, Iteration 26, Basin Depth,
-			SCEC CCA, Iteration 6, Basin Depth, SCEC Community Velocity Model Version 4 Basin Depth,
-			SCEC/Harvard Community Velocity Model Version 11.9.x Basin Depth, and USGS Bay Area Velocity Model Release 8.3.0
-			model to get the value of Z1pt0. The models are accessed by calling the class `OrderedSiteDataProviderList <https://github.com/opensha/opensha/blob/ba07dd44cb1b11448a88b142382d3a129df24df1/src/main/java/org/opensha/commons/data/siteData/OrderedSiteDataProviderList.java#L365>`_
-			in **openSHA**. If a NaN value is obtained from the interpolation, the prediction equation (Eq.1) in 
-			[ChiouYoungs2014]_ will be used to infer Z1pt0 value from Vs30. 
+
+	All OpenSHA basin-depth models are California-only. When a model
+	returns NaN at a site (either outside its coverage area or where the
+	underlying community velocity model has no data), R2D falls back to
+	the empirical prediction equation Eq.1 of [ChiouYoungs2014]_ to infer
+	Z1pt0 from Vs30.
+		- OpenSHA default model *(recommended default)*
+			Uses the OpenSHA sequenced fallback: returns the first non-NaN
+			value among the providers below, in OpenSHA's default order.
+			Recommended when you do not have a strong preference for a specific
+			community velocity model.
+		- USGS SF Bay Area Velocity Model Release 21.1
+			Latest USGS San Francisco Bay Area velocity model. Recommended
+			for portfolios concentrated in the SF Bay Area, since the
+			sequenced default may return a value from an older or
+			less-region-specific model first.
+		- USGS Bay Area Velocity Model Release 8.3.0
+			Earlier USGS SF Bay model, retained for backward comparison.
+		- SCEC Community Velocity Model Version 4, Iteration 26, Basin Depth
+			SCEC SoCal community velocity model, Version 4 Iteration 26.
+		- SCEC Community Velocity Model Version 4, Iteration 26, M01 w/ Taper, Basin Depth
+			Tapered variant of CVM4i26.
+		- SCEC CCA, Iteration 6, Basin Depth
+			SCEC Central California community velocity model, Iteration 6.
+		- SCEC Community Velocity Model Version 4 Basin Depth
+			Earlier SCEC SoCal community velocity model (CVM4 base).
+		- SCEC/Harvard Community Velocity Model Version 11.9.x Basin Depth
+			SCEC/Harvard CVM-H.
+		- SCEC CyberShake Study 18.8 Stitched Basin Depth
+			Stitched CVM used in SCEC CyberShake Study 18.8.
+		- SCEC CyberShake Study 24.8 Stitched Basin Depth
+			Stitched CVM used in SCEC CyberShake Study 24.8.
 		- User-specified
-			If the **Single Location** or **Grid of Locations** site definition method is selected. The value specified in the **Z1pt0 Model** pane
+			If the **Single Location** or **Grid of Locations** site definition method is selected, the value specified in the **Z1pt0 Model** pane
 			will be applied to all the site(s).
-			If the **Scattering Location** site definition method is selected.  R2D will check if a "z1pt0" column exists
+			If the **Scattering Location** site definition method is selected, R2D will check if a "z1pt0" column exists
 			in the Site File (.csv). If such a column exists, the values in the Site File (.csv) will be used.
 			Otherwise, the value specified in the **Z1pt0** pane will be applied to all sites.
 
     #. **Z2pt5 Model**
-	The depth (km) to where shear-wave velocity = 2.5 km/sec (the first occurrence if more than one depth exists). Z1pt0 and Z2pt5 
+	The depth (m) to where shear-wave velocity = 2.5 km/sec (the first occurrence if more than one depth exists). Z1pt0 and Z2pt5
 	are related to long-period site response. Z2pt5 may be more directly related to the long-period site response.
 	The unit of Z2pt5 in R2D is meter.
-		- OpenSHA default model
-			This model applies to California. R2D will interpolate the SCEC Community Velocity Model Version 4, Iteration 26, Basin Depth,
-			SCEC CCA, Iteration 6, Basin Depth, SCEC Community Velocity Model Version 4 Basin Depth,
-			SCEC/Harvard Community Velocity Model Version 11.9.x Basin Depth, and USGS Bay Area Velocity Model Release 8.3.0
-			model to get the value of Z2pt5. The models are accessed by calling the class `OrderedSiteDataProviderList <https://github.com/opensha/opensha/blob/ba07dd44cb1b11448a88b142382d3a129df24df1/src/main/java/org/opensha/commons/data/siteData/OrderedSiteDataProviderList.java#L365>`_
-			in **openSHA**. If a NaN value is obtained from the interpolation, the prediction equation (Eq.33) in 
-			[CampbellBozorgnia2014]_ will be used to infer Z2pt5 value from Vs30. 
+
+	The Z2pt5 model picker exposes the same set of options as the Z1pt0
+	picker (see above). When the selected model returns NaN at a site,
+	R2D falls back to the empirical prediction equation Eq.33 of
+	[CampbellBozorgnia2014]_ to infer Z2pt5 from Vs30.
+		- OpenSHA default model *(recommended default)* — sequenced fallback through OpenSHA's default basin-depth provider order.
+		- Specific OpenSHA basin-depth providers — same list as for Z1pt0 above (USGS SF Bay Area 21.1; USGS Bay Area 8.3.0; SCEC CVM4i26 with and without M01 taper; SCEC CCA i6; SCEC CVM4; SCEC/Harvard CVM-H; SCEC CyberShake Study 18.8 and 24.8).
 		- User-specified
-			If the **Single Location** or **Grid of Locations** site definition method is selected. The value specified in the **Z2pt5 Model** pane
+			If the **Single Location** or **Grid of Locations** site definition method is selected, the value specified in the **Z2pt5 Model** pane
 			will be applied to all the site(s).
-			If the **Scattering Location** site definition method is selected.  R2D will check if a "Z2pt5" column exists
+			If the **Scattering Location** site definition method is selected, R2D will check if a "z2pt5" column exists
 			in the Site File (.csv). If such a column exists, the values in the Site File (.csv) will be used.
 			Otherwise, the value specified in the **Z2pt5** pane will be applied to all sites.
 
@@ -205,10 +246,14 @@ R2D preferences.
 
 .. [AbrahamsonSilvaKamai2013]
 	Abrahamson, N. A., Silva, W. J., and Kamai, R., 2013. Update of the AS08 Ground Motion Prediction Equations Based on the NGA-West2 Data Set, PEER Report No. 2013/04, Pacific Earthquake Engineering Research Center, University of California, Berkeley.
-.. [Heath2020]
-	Heath, D.C., Wald, D.J., Worden, C.B., Thompson, E.M., and Smoczyk, G.M., 2020, A Global Hybrid Vs30 Map with a Topographic-Slope-Based Default and Regional Map Insets: U.S. Geological Survey data release, https://doi.org/10.5066/P96HFVXM.
 .. [Thompson2018]
-	Thompson, E.M., 2018, An Updated Vs30 Map for California with Geologic and Topographic Constraints (ver. 2.0, July 2022): U.S. Geological Survey data release, https://doi.org/10.5066/F7JQ108S.
+	Thompson, E.M., 2018, An Updated Vs30 Map for California with Geologic and Topographic Constraints: U.S. Geological Survey data release.
+.. [Thompson2022]
+	Thompson, E.M., 2022, An Updated Vs30 Map for California with Geologic and Topographic Constraints (ver. 2.0, October 2022): U.S. Geological Survey data release, https://doi.org/10.5066/F7JQ108S.
+.. [WaldAllen2007]
+	Wald, D. J., & Allen, T. I. (2007). Topographic slope as a proxy for seismic site conditions and amplification. Bulletin of the Seismological Society of America, 97(5), 1379-1395.
+.. [willsclahan2006]
+	Wills, C. J., & Clahan, K. B. (2006). Developing a map of geologically defined site-condition categories for California. Bulletin of the Seismological Society of America, 96(4A), 1483-1501.
 .. [willsetal2015]
 	Wills, C. J., Gutierrez, C. I., Perez, F. G., & Branum, D. M. (2015). A next generation VS30 map for California based on geology and topography. Bulletin of the Seismological Society of America, 105(6), 3083-3091
 
