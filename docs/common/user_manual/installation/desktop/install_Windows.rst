@@ -5,16 +5,27 @@ Install on Windows 10
 
 .. only:: R2D_app
 
-   **Install Java**
-   ^^^^^^^^^^^^^^^^
+   **Install Java (JDK 17)**
+   ^^^^^^^^^^^^^^^^^^^^^^^^^
 
    .. note::
-      Java is required for utilizing OpenSHA for regional seismic hazard characterization (:ref:`ground_motion_tool`). Skip this step if you do not intend to use this feature.
+      Java is required only if you plan to use the OpenSHA-based regional seismic hazard feature in |app| (:ref:`ground_motion_tool`). If you do not need this feature, you can skip this section.
 
-   Download and install Java from the official Java website. Version `16.0.2 <https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html>`_ is confirmed compatible with the latest |app|. Follow the installation prompts. If a JVM error appears, suggesting the JAVA_HOME environment variable needs setting, refer to this `guide <https://docs.oracle.com/cd/E19182-01/821-0917/inst_jdk_javahome_t/index.html>`_.
- 
+   |app| is tested with **Eclipse Temurin JDK 17**, the long-term-support (LTS) build of Java. We recommend this exact version: it matches what our Python-to-Java bridge (JPype) is officially tested against, so installing it gives you the smoothest experience.
+
+   **Which installer should I download?**
+
+   For virtually every Windows PC sold since the mid-2010s, the answer is the **Windows x64** installer. If you are unsure whether your machine is 64-bit, open **Settings → System → About** and look for **System type**. "64-bit operating system, x64-based processor" means you want the Windows x64 installer below.
+
+   1. Click this link to open the Adoptium download page, pre-filtered to the right installer: `Temurin JDK 17 — Windows x64 <https://adoptium.net/temurin/releases/?version=17&package=jdk&os=windows&arch=x64>`_.
+   2. On that page, click the large download icon next to the MSI option. Your browser will download a file named something like ``OpenJDK17U-jdk_x64_windows_hotspot_17.0.X_Y.msi``.
+   3. Once the download finishes, double-click the ``.msi`` file. The Windows installer will open. Accept the defaults on each screen and click **Install**. You may see a User Account Control prompt asking for permission — click **Yes**.
+
+   .. tip::
+      If you have already installed a different Java version, you do not need to remove it. Multiple Java versions coexist without conflict on Windows.
+
    .. note::
-      The Java website should automatically detect and suggest the appropriate installer for your operating system. Ensure "64-bit Java for Windows" is indicated before downloading the Java installer.
+
 
 
 .. only:: WEUQ_app

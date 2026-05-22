@@ -4,6 +4,55 @@
 Install on MacOS
 ===================
 
+.. only:: R2D_app
+	  
+   **Install OpenMP**
+   ^^^^^^^^^^^^^^^^^^
+
+      OpenMP is required by the python module ``pandarm``, the routing engine used by R2D's Residual Demand module for regional transportation network analysis. You need to install OpenMP before installing python. OpenMP is installed via Homebrew by entering the following in a terminal window:
+
+      .. code-block:: bash
+
+         brew install libomp
+
+      .. note:: 
+
+	 1. If Homebrew is not yet installed, follow the instructions at `brew.sh <https://brew.sh>`_.
+
+	 2. To open a terminal window use Spotlight (⌘+Space), type "Terminal" and press your keyboards Enter key.
+
+
+.. only:: R2D_app
+
+   **Install Java (JDK 17)**
+   ^^^^^^^^^^^^^^^^^^^^^^^^^
+
+   .. note::
+      Java is required only if you plan to use the OpenSHA-based regional seismic hazard feature in |app| (:ref:`ground_motion_tool`). If you do not need this feature, you can skip this section.
+
+   |app| is tested with **Eclipse Temurin JDK 17**, the long-term-support (LTS) build of Java. We recommend this exact version.
+
+   **Which installer should I download?**
+
+   The right installer depends on your Mac's processor, because Java must match the architecture of the Python you installed earlier:
+
+   * **Apple Silicon Mac** (chips named **M1**, **M2**, **M3**, or **M4** -- any Mac sold since late 2020): download the **macOS aarch64** installer from `Temurin JDK 17 — macOS Apple Silicon (aarch64) <https://adoptium.net/temurin/releases/?version=17&package=jdk&os=mac&arch=aarch64>`_.
+   * **Intel Mac** (any Mac sold before late 2020): download the **macOS x64** installer from `Temurin JDK 17 — macOS x64 <https://adoptium.net/temurin/releases/?version=17&package=jdk&os=mac&arch=x64>`_.
+
+   To check which kind of Mac you have, click the **Apple menu** in the top-left corner of your screen and choose **About This Mac**. Look at the **Chip** (or **Processor**) line: if it starts with "Apple" you want the aarch64 installer; if it says "Intel" you want the x64 installer.
+
+   **To install:**
+
+   1. Click the matching link above. On the Adoptium page, click the download icon next to the PKG option to download the ``.pkg`` file. You'll get a file named something like ``OpenJDK17U-jdk_aarch64_mac_hotspot_17.0.X_Y.pkg`` (or ``...x64...`` for Intel).
+   2. Once the download finishes, double-click the ``.pkg`` file in your **Downloads** folder. The macOS installer will open. Accept the defaults on each screen and click **Install** at the end. You may be asked for your password.
+
+   .. tip::
+      If you already have a different Java version installed on your Mac, you do not need to remove it. Multiple Java versions coexist without conflict -- each lives in its own folder under ``/Library/Java/JavaVirtualMachines/``.
+
+   .. note::
+      The Java website should automatically detect and suggest the appropriate installer for your operating system.
+
+	    
 Install Python
 ^^^^^^^^^^^^^^
 
@@ -22,23 +71,30 @@ If it reports a 3.10, 3.11, or 3.12 number, you're set and can go to the next st
 
 #. Locate this installer file in your Downloads folder, and double click on it to start the installation process. Upon completion, a folder with several files will open, as shown in the figure below. Execute ``Update Shell Profile.command.sh`` and ``Install CertificateCommand.sh`` by double-clicking each.
 
+#. Click on this link -> |appLink|. On the browser page that this brings up, you will find various files and directories available for download. Locate the file named **python-3.12.X-macos11.pkg** (where ``X`` is the latest patch number), which we copied from `Python.org <https://www.python.org/downloads/macos/>`_. Proceed to download this installer file.
+
+#. Locate this installer file on your system and double click on it to start the installation process. Upon completion, a folder with several files will open, as shown in the figure below. Execute ``Update Shell Profile.command`` and ``Install Certificates.command`` by double-clicking each.
+
+
    .. figure:: figures/pythonInstallShell.png
       :align: center
       :figclass: align-center
       :width: 75%
-      
+
       Python: Folder Displayed at Conclusion of Install
+
 
 #. Repeat the first python version check above in a ``NEW`` terminal window.
 
 .. note::
 
-   If you still have the incorrect version of python installed after following the above steps, it probably means you forgot to invoke the **Update Shell Profile Command.command** script at the end of step **2**. You can still do it using **Finder**. Open Finder and navigate to the **/Applications/Python 3.12** folder. Here you will see a number of files, including the two you forgot to run: **Install Certificates Command.command** and **Update Shell Profile Command.command**. Double click on these files to run them. Finally open a **NEW** terminal again and check your version of python.
+   If you still have the incorrect version of python installed after following the above steps, it probably means you forgot to invoke the **Update Shell Profile Command.command** script. You can still do it using **Finder**. Open Finder and navigate to the **/Applications/Python 3.12** folder. Here you will see a number of files, including the two you forgot to run: **Install Certificates Command.command** and **Update Shell Profile Command.command**. Double click on these files to run them. Finally open a **NEW** terminal again and check your version of python.
+
 
 Optional: Create a Python Environment
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-If you have a current version of Python that meets the requirements (3.10, 3.11 or 3.12) and want to re-use it, or if you will be using additional SimCenter applications, we strongly recommend creating a **python virtual environment**. This is in case the **pip install** command you are about to issue, downloads and installs python packages that don't mix with your current ones or ones you will need in the future. To create a python environment for |app|, issue the following in the terminal window:
+If you have a current version of Python that meets the requirements (3.10, 3.11 or 3.12) and want to re-use it, or if you will be using additional SimCenter applications, we strongly recommend creating a **python virtual environment**. This is in case the python modules wou will install in next step don't mix with your current ones or ones you will need in the future. To create a python environment for |app| and then switch to that environment, issue the following in the terminal window:
 
 .. parsed-literal::		     
       
@@ -52,11 +108,10 @@ If you have a current version of Python that meets the requirements (3.10, 3.11 
 
   These commands create a folder in your home directory named **python_env**, instruct the current default python interpreter to create a directory for a virtual environment named python-{short tool id| in this folder, and from the many files in this new folder that are present, you invoke a script ``activate`` that sets up the terminal environment such that it uses the python interpreter you created the environment with and, most importantly, will install python packages into this folder.
 
-
 Install Python Modules
 ^^^^^^^^^^^^^^^^^^^^^^
 
-#. In the terminal window you have opened, you need to issue the following **2** commands to ensure the command line tools for x-code and some additional python modules are installed:
+In the terminal window you have opened, you need to issue the following **2** commands to ensure the command line tools for x-code exist on your machine and that some python modules are installed for the current python you are using:
 
 .. only:: quoFEM_app
 
@@ -64,6 +119,43 @@ Install Python Modules
       
       xcode-select --install
       python3 -m pip install --upgrade "nheri_simcenter[quofem]"
+
+.. only:: R2D_app
+
+   .. code-block:: bash
+
+      xcode-select --install
+      python3 -m pip install --upgrade "nheri_simcenter[r2d]"
+
+.. only:: PBE_app
+
+   .. code-block:: bash
+
+      xcode-select --install
+      python3 -m pip install --upgrade "nheri_simcenter[pbe]"
+
+.. only:: EEUQ_app
+
+   .. code-block:: bash
+
+      xcode-select --install
+      python3 -m pip install --upgrade "nheri_simcenter[eeuq]"
+
+.. only:: WEUQ_app
+
+   .. code-block:: bash
+
+      xcode-select --install
+      python3 -m pip install --upgrade "nheri_simcenter[weuq]"
+
+.. only:: HydroUQ_app
+
+   .. code-block:: bash
+
+     xcode-select --install
+     python3 -m pip install --upgrade "nheri_simcenter[hydrouq]"
+
+   The bracketed extra tells the installer to pull in only the packages |app| needs rather than every SimCenter dependency. The download is a few hundred megabytes and typically takes 1-3 minutes.
 
 
 Note Your Python Path
@@ -75,26 +167,11 @@ Note Your Python Path
 
       which python3
 
-If you are using the newly installed python without a virtual environment you should see something like ``/Library/Frameworks/Python.framework/Versions/3.12/bin/python3``. If using a python environment: /Users/YOUR_LOGIN/python_env/python-|short tool id|/bin/python3. Copy this path to your clipboard.
+If you are using the newly installed python without a virtual environment you should see: ``/Library/Frameworks/Python.framework/Versions/3.12/bin/python3``. If using a python environment you willl instead see: /Users/YOUR_LOGIN/python_env/python-|short tool id|/bin/python3. Copy this path to your clipboard.
 
 .. note::
 
    When the application is actually running, you will need to change the location of the **python** application that will run **if** you are using a virtual environment or if the existing python interpreter you are using is in a different location. To do this, in the top menu bar, under the tool icon select Preferences (on some macOS versions it is Settings). Change the location of python, the first variable you can edit, to the python3 path noted, e.g. /Users/YOUR_LOGIN/python_env/python-|short tool id|/bin/python3. Finally press the **Save** button. Please note that YOUR_LOGIN needs to be replaced with your actual login!
-
-
-.. only:: R2D_app
-
-   **Install Java**
-   ^^^^^^^^^^^^^^^^
-
-   .. note::
-      Java is required for utilizing OpenSHA for regional seismic hazard characterization (:ref:`ground_motion_tool`). Skip this step if you do not intend to use this feature.
-
-   Download and install Java from the official Java website. Version `16.0.2 <https://www.oracle.com/java/technologies/javase/jdk16-archive-downloads.html>`_ is confirmed compatible with the latest |app|. Follow the installation prompts. If a JVM error appears, suggesting the JAVA_HOME environment variable needs setting, refer to this `guide <https://docs.oracle.com/cd/E19182-01/821-0917/inst_jdk_javahome_t/index.html>`_.
- 
-   .. note::
-      The Java website should automatically detect and suggest the appropriate installer for your operating system.
-
 
 .. only:: WEUQ_app
    
@@ -122,7 +199,6 @@ If you are using the newly installed python without a virtual environment you sh
       The packaged distribution of OpenFOAM is only available for Linux systems. To install OpenFOAM on macOS, the user needs to use Docker for Mac. Docker will provide a virtual environment for running Linux applications on macOS.
 
    To install OpenFOAM-10 on macOS, follow the instructions in `OpenFOAM for macOS <https://openfoam.org/download/10-macos/>`_ .
-
 
 **Download the Application**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
